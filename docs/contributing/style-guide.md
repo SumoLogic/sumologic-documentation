@@ -511,13 +511,13 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 <TabItem value="Markdown">
 
 ```md
-<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
 
 </TabItem>
 </Tabs>

@@ -14,9 +14,9 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For detailed guidelines, see [Contributor Guidelines](/docs/contributing).
+For detailed instructions, including our style guide, see [Contributor Guidelines](/docs/contributing).
 
-We recommend forking the repo, creating all content changes in branches, and submitting pull requests. We will work with you to get this content reviewed, tested, and merged for publishing.
+We recommend forking our repo, applying your content changes in a new branch, and submitting a pull request. We will work with you to get this content reviewed, tested, and merged for publishing.
 
 ## Building Locally
 
