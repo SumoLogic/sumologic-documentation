@@ -101,6 +101,17 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        {
+          sitemap: {
+            lastmod: 'date',
+            changefreq: 'daily',
+            ignorePatterns: [
+              '/tags/**',
+              '/docs/reuse/**'
+            ],
+            filename: 'sitemap.xml',
+          },
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -127,12 +138,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    ['@docusaurus/plugin-sitemap',
-      {
-        changefreq: 'weekly',
-        ignorePatterns: ['/docs/reuse/**'],
-      },
-    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
