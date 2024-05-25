@@ -70,6 +70,8 @@ Click **Select Source Category** - the source expression box - and type/select t
 
 ## Step 3: Execute a prompt
 
+Next, you'll see customized **Suggestions**, based on the source category you've selected.
+
 ### Suggestions (recommended)
 
 Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
@@ -112,7 +114,14 @@ As a best practice, start with a simple prompt, verify the query translation, an
 1. Further refinement. `Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. Filter logs that contain redis-cluster in name. Sort the results by count`.
 
 :::tip
-Express your chain of thought to the AI by breaking up the prompt into smaller problems that the AI can answer more accurately.
+
+<details>
+<summary>Express your chain of thought to the AI by breaking up your prompt into smaller problems that the AI can answer more accurately. Click here to see an example.</summary>
+
+<img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+
+</details>
+
 :::
 
 ### Edit query code
