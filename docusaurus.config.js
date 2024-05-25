@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
