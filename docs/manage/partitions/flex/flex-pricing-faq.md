@@ -16,7 +16,7 @@ import FlexPricing from '../../../reuse/flex-pricing.md';
 
 ## Is the Flex pricing available to existing Cloud Flex customers?
 
-No, it is not available for the existing customers. Flex will become available for existing customers in the near future. Currently, Flex Licencing is the default plan for new customers who sign up with Sumo Logic. 
+No, it is not available for the existing customers. Flex will become available for existing customers in the near future. Currently, Flex Licencing is the default plan for new customers who sign up with Sumo Logic.
 
 ## How is Flex Pricing different from the other data tiers?
 
@@ -75,4 +75,10 @@ The table below should give you a sense of how the number of partitions you use 
 We recommend you configure partitions to have less than 5 TB per day flowing into them. This practice:
 
 * Reduces the cost of each query.
-* Results in faster queries, since less data has to be scanned.  
+* Results in faster queries, since less data has to be scanned. 
+
+## How are preview queries charged?
+
+While the current impact is minimal, preview queries, such as those displayed during creation or monitoring processes, may incur charges depending on the context. For instance, during monitor creation, a query may run automatically to display data, potentially resulting in charges for the queried period. Although these charges are typically negligible, they can affect cost optimization.
+
+To avoid unnecessary charges, consider implementing user-initiated query execution. In scenarios like the Alert Response Page (ARP) and Emulate search, preview queries may incur repetitive charges. Optimizing these processes can help reduce costs and enhance user experience.
