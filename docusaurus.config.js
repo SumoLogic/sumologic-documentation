@@ -104,7 +104,10 @@ module.exports = {
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
-          ignorePatterns: ['/docs/reuse/**'],
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
           filename: 'sitemap.xml',
         },
         blog: {
