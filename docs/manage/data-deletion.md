@@ -29,7 +29,8 @@ Key Features:
 
 ### From the Logs tab
 
-1. Go to **Manage Data** > **Logs** > **Deletion Requests**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).Kanso--> Go to **Manage Data** > **Logs** > **Deletion Requests**.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the left nav, click **Logs** > **Deletion Requests**. Kanso-->
+
 1. Click **+ Raise Logs Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
 1. Select the **Time Range** when the data was ingested.
