@@ -34,7 +34,7 @@ As an example, let's say we have two existing docs called **Nginx app** and **Ng
 
 If the doc URL you're removing appears in other docs, you'll need to update those instances to prevent broken links.
 
-In your GitHub authoring tool, run a search for the URL you're removing. In this case, it looks like the legacy URL appears in other docs. Check with a Sumo subject matter expert (SME) to confirm that you can replace all with the new URL.
+In your GitHub authoring tool, run a search for the URL you're removing. In this case, it looks like the legacy URL appears in other docs. Check with a Sumo Logic subject matter expert to confirm that you can replace all with the new URL.
 
 <img src={useBaseUrl('img/contributing/old-url.png')} alt="header sizes" />
 
@@ -52,7 +52,7 @@ Remove the doc from the navigation menu ([sidebars.ts](https://github.com/SumoLo
 
 ## Step 5: Add deprecation note (optional)
 
-If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide#admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
+If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide#admonitions) in the new doc stating the legacy solution has been deprecated. Check with a subject matter expert to be sure.
 
 
 ## Step 6: Hide from Google results (optional)
