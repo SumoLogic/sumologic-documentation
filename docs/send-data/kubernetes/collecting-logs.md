@@ -588,8 +588,7 @@ Remember to use [attributes after translation to Sumo Logic schema](https://gith
 :::
 
 :::note
-If a log matches multiple statements, it will be sent to all corresponding exporters.
-For example, the following routing table will send logs from the `production` namespace to `sumologic/production` and `awss3/production`:
+If a log matches multiple statements, it will be sent to all corresponding exporters. For example, the following routing table will send logs from the `production` namespace to `sumologic/production` and `awss3/production`:
 
 ```yaml
 - exporter: awss3/production
