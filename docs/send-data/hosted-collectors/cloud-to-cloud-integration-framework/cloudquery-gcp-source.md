@@ -26,10 +26,6 @@ import TerraformExample from '!!raw-loader!/files/c2c/cloudquery-gcp/example.tf'
 
 The CloudQuery GCP integration pulls inventory from various Google Cloud Platform (GCP) APIs via the CloudQuery GCP plugin, transforms it into the CloudQuery schema, and then sends it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

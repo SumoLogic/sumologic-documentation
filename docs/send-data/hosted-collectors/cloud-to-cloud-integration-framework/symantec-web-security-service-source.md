@@ -22,10 +22,6 @@ The Symantec Web Security Service Source provides a secure endpoint to receive W
 * Logs are ingested in batches of 1,000.
 * Logs are polled every five minutes.
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |

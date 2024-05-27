@@ -11,10 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Miro Source API integration ingests audit logs obtained from the [Audit log API](https://developers.miro.com/docs/rest-api-reference-guide#audit-logs). You will be able to collect audit logs activity from your Miro platform using our new Miro Cloud-to-Cloud Source connector.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

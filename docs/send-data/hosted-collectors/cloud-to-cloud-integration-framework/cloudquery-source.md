@@ -28,10 +28,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CloudQuery integration is used to pull inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
