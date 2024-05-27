@@ -1,11 +1,11 @@
 ---
 id: troubleshoot-with-explore
-title: Troubleshoot Kubernetes with Explore
+title: Troubleshoot with Kubernetes Views
 sidebar_label: Troubleshooting
-description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
+description: Kubernetes views allow you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
-[Explore navigation](/docs/dashboards/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+[Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
@@ -73,4 +73,4 @@ After further investigation, we discovered that Kenneth left the company and wa
 
 ## More Information
 
-* [Explore navigation](/docs/dashboards/explore-view)
+* [Explore Monitoring Dashboards](/docs/dashboards/explore-view/#kubernetes-views)

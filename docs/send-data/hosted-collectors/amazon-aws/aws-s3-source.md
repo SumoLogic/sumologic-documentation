@@ -99,7 +99,7 @@ import Iframe from 'react-iframe';
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-bucket-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListBucketVersions** and **GetObjectVersion** permissions.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
