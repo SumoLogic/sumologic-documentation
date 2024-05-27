@@ -579,9 +579,7 @@ metadata:
 
 `sumologic.logs.otelcol.routing.table` is a list of maps, which consist of the keys `exporter` and `statement`.
 
-Logs are sent to `exporter` when `statement` is met. `exporter` should be defined in `sumologic.logs.otelcol.extraExporters`,
-or the default `sumologic` may be used. `statement` has to be written in
-[Open Telemetry Transformation Language](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/routingprocessor/README.md#tech-preview-opentelemetry-transformation-language-statements-as-routing-conditions).
+Logs are sent to `exporter` when `statement` is met. `exporter` should be defined in `sumologic.logs.otelcol.extraExporters`, or the default `sumologic` may be used. `statement` has to be written in [OpenTelemetry Transformation Language](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/routingprocessor/README.md#tech-preview-opentelemetry-transformation-language-statements-as-routing-conditions).
 
 :::note
 Remember to use [attributes after translation to Sumo Logic schema](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/sumologicprocessor#attribute-translation). For xample, use `namespace` instead of `k8s.namespace.name`.
