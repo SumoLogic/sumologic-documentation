@@ -31,7 +31,7 @@ To create a Scheduled Search:
     ```sql
     _index=sumologic_volume
     | where _sourceCategory="collector_volume"
-    | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
+    | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
     | json field=data "sizeInBytes", "count" as bytes, count
     | bytes/1024/1024/1024 as gbytes
     | sum(gbytes) as gbytes by collector
