@@ -258,7 +258,8 @@ This query runs against the tracing volume index and uses the [*outlier*](/docs/
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | timeslice 6h
 |sum(billedBytes) as "billedBytes" by _timeslice
 |outlier "billedBytes"
