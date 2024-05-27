@@ -101,8 +101,8 @@ This query runs against the metrics volume index and uses the [outlier](/docs/se
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "dataPoints" as bytes
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | timeslice 6h
 | sum(datapoints) as datapoints by _timeslice
 | outlier datapoints
