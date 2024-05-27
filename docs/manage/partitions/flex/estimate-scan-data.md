@@ -36,7 +36,11 @@ Daily scan data will not be available if scheduled search runs only on selected 
 
 ## Scan estimates in SLO
 
-When creating or modifying a log-based SLO, you can view the Daily scan and Yearly scan data information based on the SLO details by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> on top of the SLO right side panel.
+To view the Daily scan and Yearly scan data information based on a log-based SLO:
+
+1. Go to the Monitoring and click the SLOs tab.
+1. Hover over your SLO, click the three-dot kebab menu, and then click **Edit**. 
+1. Click the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> in the upper right corner.
 
 Estimate the scan for different types of log-based SLOs:
 
