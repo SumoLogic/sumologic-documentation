@@ -42,11 +42,8 @@ To view the Daily scan and Yearly scan data information based on a log-based SLO
 1. Hover over your SLO, click the three-dot kebab menu, and then click **Edit**. 
 1. Click the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> in the upper right corner.
 
-Estimate the scan for different types of log-based SLOs:
-
-- **Request-Based SLOs**. For request-based SLOs, data is scanned once per minute and stored in SLO storage. Any late-arriving data is accounted for in a corrective fashion and appended to the SLO storage.
-
-- **Window-Based SLOs**. For window-based SLOs, data is scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times.
+- For **Request-based SLOs**, data is scanned once per minute and stored in SLO storage. Any late-arriving data is accounted for in a corrective fashion and appended to the SLO storage.
+- For **Window-based SLOs**, data is scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times.
 
 <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-estimates-slo.png')} alt="scan-estimates-slo" style={{border:'1px solid gray'}} width="600" />
 
