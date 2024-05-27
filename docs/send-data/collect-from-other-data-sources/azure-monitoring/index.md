@@ -51,7 +51,7 @@ Sumo provides Azure Resource Manager (ARM) templates to build the pipelines, on
 
 You download an ARM template, edit it to add the URL of your HTTP source, copy the template into Azure Portal, and deploy it. Then, you can start pushing your monitoring data from Azure Monitor through the pipeline into Sumo.   
 
-For instructions, see [Collect Logs from Azure Monitor](collect-logs-azure-monitor.md) and [Collect Metrics from Azure Monitor](collect-metrics-azure-monitor.md).
+For instructions, see [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source) and [Collect Metrics from Azure Monitor](collect-metrics-azure-monitor.md).
 
 ## Azure resource cost considerations
 
