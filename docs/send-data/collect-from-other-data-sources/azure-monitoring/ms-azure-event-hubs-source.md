@@ -104,3 +104,14 @@ To configure an Azure Event Hubs Source:
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose Stream to an event hub as the destination. Use the event hub namespace and event hub name configured in the Prerequisites section in the destination details section. You can use the default policy RootManageSharedAccessKey as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+
+## Troubleshooting
+
+### Azure error when exporting logs 
+
+If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Azure Active Directory tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+
+```
+An Azure subscription is required to use this capability.
+Please create an Azure subscription to get started.
+```

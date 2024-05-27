@@ -110,58 +110,63 @@ For more information about using Live Tail, see [Live Tail](/docs/search/live-ta
 
 ### Common Azure function errors
 
-`ExitCode C0000005
+ExitCode C0000005
 
 ExitCodeString NATIVE ACCESS VIOLATION
 
-Managed Exception = System.AccessViolationException:Attempted to read or
-write protected memory. This is often an indication that other memory is corrupt.
+Managed Exception = System.AccessViolationException:Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
 
-CallStack - Managed Exception`
+CallStack - Managed Exception
 
-The above error occurs in certain situations the runtime initiates a host shutdown via `HostingEnvironment.InitiateShutdown`, for example, when an unhandled global exception occurs, when a function `TimeoutException` is thrown, or when performance counter thresholds are exceeded
-(`HostHealthMonitor`).
+The above error occurs in certain situations the runtime initiates a host shutdown using HostingEnvironment.InitiateShutdown, for example, when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
-If the error still persists, then
+If the error still persists in BlobTaskProducer function and failure rate > 1% then
 
-1. If you want to collect metrics only  you can migrate from Consumption plan to Premium plan by making changes in the ARM template.
-```json
-{
-  "type":"Microsoft.Web/serverfarms",
-  "kind":"app",
-  "name":"[parameters('serverfarms_SumoAzureLogsAppServicePlan_name')]",
-  "apiVersion":"2018-02-01",
-  "location":"[resourceGroup().location]",
-  "sku":{
-    "name":"P1v2",
-    "tier":"PremiumV2",
-    "size":"P1v2",
-    "family":"Pv2",
-    "capacity":2
-  },
-  "properties":{
-    "maximumElasticWorkerCount":1,
-    "perSiteScaling":false,
-    "targetWorkerCount":0,
-    "targetWorkerSizeId":0,
-    "reserved":false,
-    "isSpot":false,
-    "isXenon":false,
-    "hyperV":false
-  },
-  "dependsOn":[
+\> Increase the time out of the BlobTaskProducer Function to 30 min in host.json by clicking on Appfiles 
 
-  ]
-}
+![error](/img/send-data/azure-error1.png)
+
+\> Increase the number of min instances in app service plan of the BlobTaskProducer function
+
+1. Go to Monitor > Autoscale
+
+1. Select the resource group in which you deployed the ARM template and select app service plan `(SUMOBRProducerPlan\<suffix\>)` in resource type
+
+    ![arm-template-suffix](/img/send-data/arm-template-suffix.png)
+
+1. Click on Manual scale and set min instance count to 2. You can also use auto scaling to save on costs.
+
+    ![azure-manual-scale](/img/send-data/azure-manual-scale.png)
+
+If the error still persists in BlobTaskConsumer function and failure rate > 1% then you can migrate from Consumption plan to Premium plan by making changes in the ARM template 
+
 ```
-2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud-to-Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
-  ```
-  Exception while executing function: Functions.BlobTaskProducer
-  StorageError: The table specified does not exists 
-
-  RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23
-  ```
-
-This error occurs when the FileOffsetMap table is not created inside Table service.
+{
+            "comments": "Generalized from resource: '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/BlobReaderGroup/providers/Microsoft.Web/serverfarms/ConsumerPlan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "kind": "app",
+            "name": "[parameters('serverfarms_ConsumerPlan_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "P1v2",
+                "tier": "PremiumV2",
+                "size": "P1v2",
+                "family": "Pv2",
+                "capacity": 2
+            },
+            "properties": {
+                "maximumElasticWorkerCount": 1,
+                "perSiteScaling": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "reserved": false,
+                "isSpot": false,
+                "isXenon": false,
+                "hyperV": false
+            },
+            "dependsOn": []
+        },
+```

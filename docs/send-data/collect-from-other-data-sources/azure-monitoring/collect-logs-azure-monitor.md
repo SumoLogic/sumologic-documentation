@@ -236,4 +236,4 @@ If the error still persists in BlobTaskConsumer function and failure rate > 1% t
 
 ### Azure Integration FAQs 
 
-For answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Advanced RISC Machine) architecture, see [Azure Integrations using ARM](/docs/integrations/microsoft-azure/arm-integration-faq).
+For answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Advanced RISC Machine) architecture, see [Azure Integrations using ARM](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq).

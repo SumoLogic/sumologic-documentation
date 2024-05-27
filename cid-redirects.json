@@ -750,10 +750,10 @@
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit": "/docs/integrations/microsoft-azure/audit",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/02Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub": "/docs/integrations/microsoft-azure/audit",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards": "/docs/integrations/microsoft-azure/audit",
-  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs": "/docs/integrations/microsoft-azure/arm-integration-faq",
-  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/01General_FAQs": "/docs/integrations/microsoft-azure/arm-integration-faq",
-  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/02Event_Hub_FAQs": "/docs/integrations/microsoft-azure/arm-integration-faq",
-  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/03Blob_Storage_FAQs": "/docs/integrations/microsoft-azure/arm-integration-faq",
+  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq",
+  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/01General_FAQs": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq",
+  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/02Event_Hub_FAQs": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq",
+  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/03Blob_Storage_FAQs": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Kubernetes_Service_(AKS)_-_Control_Plane": "/docs/integrations/microsoft-azure/kubernetes",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Kubernetes_Service_(AKS)_-_Control_Plane/Collect_logs_for_the_AKS_-_Control_Plane_App": "/docs/integrations/microsoft-azure/kubernetes",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Kubernetes_Service_(AKS)_-_Control_Plane/Install_the_AKS_-_Control_Plane_App_and_view_the_Dashboards": "/docs/integrations/microsoft-azure/kubernetes",
@@ -3902,5 +3902,6 @@
   "/docs/integrations/security-threat-detection/palo-alto-networks-8":"/docs/integrations/security-threat-detection/palo-alto-networks-9",
   "/docs/integrations/microsoft-azure/windows-legacy-pci-compliance": "/docs/integrations/microsoft-azure/windows-json-pci-compliance",
   "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
-  "/docs/integrations/microsoft-azure/active-directory-legacy": "/docs/integrations/microsoft-azure/active-directory-json"
+  "/docs/integrations/microsoft-azure/active-directory-legacy": "/docs/integrations/microsoft-azure/active-directory-json",
+  "/docs/integrations/microsoft-azure/arm-integration-faq": "docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq"
 }
