@@ -544,9 +544,9 @@ metadata:
 
 ### Send all logs to Sumo Logic and a part of it to other locations
 
-In case you want to send only part of logs to other location, you should use `sumologic.logs.otelcol.routing.table` in addition to `sumologic.logs.otelcol.extraExporters`.
+If you want to send only specific parts of logs to another location, you should use `sumologic.logs.otelcol.routing.table` along with `sumologic.logs.otelcol.extraExporters`.
 
-In the following example, all logs are going to be sent to Sumo Logic, and in addition only logs from the `production` namespace are going to be sent to AWS S3.
+In the following example, all logs are sent to Sumo Logic, while only the logs from the `production` namespace are also sent to AWS S3.
 
 ```yaml
 sumologic:
