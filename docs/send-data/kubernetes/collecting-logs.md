@@ -543,7 +543,7 @@ metadata:
               key: endpoint-production-logs
 ```
 
-For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
 
 ### Send all logs to Sumo Logic and a part of it to other locations
 
@@ -578,7 +578,7 @@ metadata:
               key: endpoint-production-logs
 ```
 
-For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
 
 `sumologic.logs.otelcol.routing.table` is a list of maps, which consist of the keys `exporter` and `statement`.
 
