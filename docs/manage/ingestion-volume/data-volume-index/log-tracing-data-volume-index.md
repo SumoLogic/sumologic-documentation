@@ -245,8 +245,8 @@ This query returns the tracing volume for a specific Collector. The Collector n
 
 ```sql
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "billedBytes", "spansCount" as bytes, count
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | where collector ="<<collector_json>>"
 |sum(billedBytes) as billedBytes by collector
 | fields billedBytes
