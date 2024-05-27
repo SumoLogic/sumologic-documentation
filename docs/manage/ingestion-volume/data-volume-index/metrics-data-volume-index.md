@@ -88,8 +88,8 @@ This query returns the metric volume for a specific Collector. The Collector nam
 
 ```sql
 _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "dataPoints" as bytes
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})"
+| json field=data "dataPoints"
 | where collector= "<<collector_name>>"
 | sum(datapoints) as datapoints by collector
 | fields datapoints
