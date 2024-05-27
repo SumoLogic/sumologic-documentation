@@ -67,7 +67,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 **Namespace** for **Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch** service is **AWS/ECS**.
 
-**Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic [Explore](/docs/dashboards/explore-view) view. Metrics can be queried via the `account field`.
+**Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried via the `account field`.
 
 ### Collect Container Insights Metrics for Amazon ECS 
 
@@ -95,7 +95,7 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
 11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) 
 12. **Source Category.** Enter `aws/observability/cloudtrail/logs`.
-13. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the "account field".
+13. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the "account field".
     ![account](https://lh3.googleusercontent.com/k8UTbrMidpw6fw0kJA8mw4Ln4a6-crE0QjWOcJ6tlsgBcFJ81pbym2My80-LGHnlW4A6Zn6Vh65bxf2ePb7PmP39QcGbRCwR_3VBmRxZz4XHHgWjFsJucnaLYcFCBq6crH14hOAzuSbOLzOJBPSEYtUuoIKRftRn5lQ7yVRMiGw5oQDgvOPRrZk60g)
 14. **AWS Access**. There are two options for AWS access: 
     - Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.

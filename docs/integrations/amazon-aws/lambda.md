@@ -148,7 +148,7 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
 * While configuring the cloudwatch log source, following Fields can be added in the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
     * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
     * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
@@ -163,7 +163,7 @@ To configure a CloudTrail Source, perform these steps:
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the cloud trail log source, the following field can be added to the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
 
@@ -180,7 +180,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 :::
 
-* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
+* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 

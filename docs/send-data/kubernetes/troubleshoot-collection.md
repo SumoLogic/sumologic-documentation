@@ -986,7 +986,7 @@ Add the following configuration to your `user-values.yaml`:
 debug:
   sumologicMock:
     enabled: true
-  enableLocalMode: tru
+  enableLocalMode: true
 ```
 
 And then, you can see throughput in the Sumo Logic Mock logs:
