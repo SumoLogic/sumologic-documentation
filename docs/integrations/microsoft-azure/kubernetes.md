@@ -165,7 +165,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 Now that you have set up collection for AKS, you can install the Sumo Logic app for AKS and access the pre-configured Kubernetes dashboards for visibility into your AKS environment from a single-pane-of-glass.
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
+All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 

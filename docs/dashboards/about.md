@@ -51,7 +51,7 @@ The following table shows the availability of features for Dashboard.
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack-in-explore) |
+| Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
