@@ -122,7 +122,7 @@ This alert can be useful if you suspect that one of your collectors has stopped 
 * **Query**:  
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
-   | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
+   | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
    | json field=data "sizeInBytes", "count" as bytes, count
    | sum(bytes) as total_bytes by collector
    | round(total_bytes / 1024 / 1024) as total_mbytes
