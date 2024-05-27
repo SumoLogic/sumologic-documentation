@@ -58,8 +58,8 @@ This query returns the metric volume by source category.
 
 ```sql
 _index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "dataPoints" as bytes
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | sum(datapoints) as datapoints by sourcecategory
 ```
 
