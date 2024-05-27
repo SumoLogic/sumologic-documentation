@@ -23,8 +23,8 @@ period.
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "billedBytes", "spansCount" as bytes, count
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | timeslice 1h
 | sum(billedBytes) as %"billedBytes" by _timeslice
 | predict %"billedBytes" by 1h model=ar, forecast=20
