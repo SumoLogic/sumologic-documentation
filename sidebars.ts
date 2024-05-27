@@ -507,7 +507,6 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-monitoring/index'},
               items: [
                 'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
-                'send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
                 'send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq',
               ],
