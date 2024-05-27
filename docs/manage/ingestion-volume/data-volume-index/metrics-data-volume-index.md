@@ -116,8 +116,8 @@ This query runs against the metrics volume index and uses the [predict](/docs/se
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume datapoints
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "dataPoints" as bytes
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | timeslice 1h
 | sum(datapoints) as datapoints by _timeslice
 | predict datapoints by 1h model=ar, forecast=20
