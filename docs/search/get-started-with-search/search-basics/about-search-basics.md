@@ -66,11 +66,11 @@ Searches can be long and complex, but they are limited to a maximum of 15,000 ch
 
 When executing a query, there are several types of data that can contribute to the search result. However, default data is always used when executing a search query that does not include `_index` in it, helping you to optimize the search cost.
 
-For non-flex cutomers, the data in continuous tier is considered as default scope for a query without `_index`.
+For non-flex customers, the data in continuous tier is considered as default scope for a query without `_index`.
 
 For example, when you run the query without referring to `_index`, for example `error | count` or `*`, only continuous tier data will be considered for the query, as frequent and infrequent data is excluded from the default scope. 
 
-For [flex customers](/docs/manage/partitions/flex/create-edit-partitions-flex), you can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition.
+For [flex customers](/docs/manage/partitions/flex/create-edit-partition-flex), you can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition.
 
 For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). When you run the query without referring to `_index`, for example `error | count` or `*`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope.
 
