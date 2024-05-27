@@ -215,8 +215,8 @@ This query returns the tracing volume by source category.
 
 ```sql
 _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
-| json field=data "billedBytes", "spansCount" as bytes, count
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 |sum(billedBytes) as"billedBytes" by sourcecategory
 ```
 
