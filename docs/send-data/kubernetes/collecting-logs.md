@@ -637,7 +637,7 @@ metadata:
               key: endpoint-production-logs
 ```
 
-For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
 
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
