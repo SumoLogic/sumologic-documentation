@@ -514,52 +514,48 @@ It is possible to send logs to multiple locations. This section describes the fo
 
 ### Send logs simultaneously to Sumo Logic and other locations
 
-In order to send data to Sumo Logic and other locations, `sumologic.logs.otelcol.extraExporters` should be used.
+In order to send data to Sumo Logic and other locations (for example another Sumo Logic organization), `sumologic.logs.otelcol.extraExporters` should be used.
 
-With the following configuration, data will be sent to both Sumo Logic and AWS S3:
+With the following configuration, data will be sent to both default Sumo Logic organization and the production one:
 
 ```yaml
 sumologic:
   logs:
     otelcol:
       extraExporters:
-        ## define `awss3/production` exporter
-        ## as no routing is defined, all data will go to this expoter in addition to the default one
-        awss3:
-          s3uploader:
-              region: 'eu-central-1'
-              s3_bucket: 'databucket'
-              s3_prefix: 'metric'
-              s3_partition: 'minute'
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
 metadata:
   logs:
     statefulset:
       extraEnvVars:
-        # Set env variables for awss3 exporter
-        - name: AWS_ACCESS_KEY_ID
-          value: "< YOUR AWS ACCESS KEY >"
-        - name: AWS_SECRET_ACCESS_KEY
-          value: "< YOUR AWS SECRET ACCESS KEY >"
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
 ```
+
+For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
 
 ### Send all logs to Sumo Logic and a part of it to other locations
 
 If you want to send only specific parts of logs to another location, you should use `sumologic.logs.otelcol.routing.table` along with `sumologic.logs.otelcol.extraExporters`.
 
-In the following example, all logs are sent to Sumo Logic, while only the logs from the `production` namespace are also sent to AWS S3.
+In the following example, all logs are sent to defaul Sumo Logic organization, while only the logs from the `production` namespace are also sent to production Sumo Logic organization.
 
 ```yaml
 sumologic:
   logs:
     otelcol:
       extraExporters:
-        ## define `awss3/production` exporter
-        awss3/production:
-          s3uploader:
-              region: 'eu-central-1'
-              s3_bucket: 'databucket'
-              s3_prefix: 'metric'
-              s3_partition: 'minute'
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
       routing:
         table:
           ## send all logs from `production` namespace to `awss3/production` exporter
@@ -570,12 +566,15 @@ metadata:
   logs:
     statefulset:
       extraEnvVars:
-        # Set env variables for awss3 exporter
-        - name: AWS_ACCESS_KEY_ID
-          value: "< YOUR AWS ACCESS KEY >"
-        - name: AWS_SECRET_ACCESS_KEY
-          value: "< YOUR AWS SECRET ACCESS KEY >"
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
 ```
+
+For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
 
 `sumologic.logs.otelcol.routing.table` is a list of maps, which consist of the keys `exporter` and `statement`.
 
@@ -612,7 +611,8 @@ sumologic:
       extraExporters:
         ## define `sumologic/production` exporter
         sumologic/production:
-          endpoint: http://my-production-sumologic-otlp-source
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
       routing:
         ## use sumologic as fallbackExporter, which means it will get all data which do not match any statement
         fallbackExporters:
@@ -621,7 +621,19 @@ sumologic:
           ## send all logs from `production` namespace to `sumologic/production` exporter
           - exporter: sumologic/production
             statement: route() where resource.attributes["namespace"] == "production"
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
 ```
+
+For the above example `sumologic-secrets` secret with `endpoint-production-logs` key in the Sumo Logic installation namespace is required.
 
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
