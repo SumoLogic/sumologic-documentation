@@ -545,7 +545,7 @@ For the above example `sumologic-secrets` secret with `endpoint-production-logs`
 
 If you want to send only specific parts of logs to another location, you should use `sumologic.logs.otelcol.routing.table` along with `sumologic.logs.otelcol.extraExporters`.
 
-In the following example, all logs are sent to defaul Sumo Logic organization, while only the logs from the `production` namespace are also sent to production Sumo Logic organization.
+In the following example, all logs are sent to default Sumo Logic organization, while only the logs from the `production` namespace are also sent to production Sumo Logic organization.
 
 ```yaml
 sumologic:
