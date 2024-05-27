@@ -26,7 +26,7 @@ You can calculate the message volume for a specific Source Host using this quer
 ```sql
 _index=sumologic_volume
 | where _sourceCategory="sourcehost_volume"
-| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\]}*\)" multi
+| parse regex "\"(?<sourcehost>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
 | bytes/1024/1024 as MB
 | sum(MB) as MB by sourcehost
