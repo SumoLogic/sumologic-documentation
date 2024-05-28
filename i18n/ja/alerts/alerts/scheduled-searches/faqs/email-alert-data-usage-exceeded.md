@@ -28,10 +28,11 @@ To create a Scheduled Search:
 
 1. On the **Search** page, enter the sample query provided below as a template for your Scheduled Search. Adjust the **plan_size** and **thresholds** accordingly, as mentioned the comments in the sample query.
 
-    ```
+    ```sql
     _index=sumologic_volume
     | where _sourceCategory="collector_volume"
-    | parse regex "(?<collector>\"[^\"]*\")\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+    | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+    | json field=data "sizeInBytes", "count" as bytes, count
     | bytes/1024/1024/1024 as gbytes
     | sum(gbytes) as gbytes by collector
     | total gbytes as todays_volume

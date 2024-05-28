@@ -50,8 +50,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/dashboards/explore-view/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Explore</h4></a>
-  <p><strong>Explore</strong> gives you an easy way to view and navigate the hierarchy of your environment.</p>
+  <a href="/docs/dashboards/explore-view/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Explore Monitoring Dashboards</h4></a>
+  <p>Monitoring dashboards give you an easy way to view and navigate the hierarchy of your environment.</p>
   </div>
 </div>
 <div className="box smallbox card">

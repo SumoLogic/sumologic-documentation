@@ -179,9 +179,9 @@ This dashboard is launched by clicking on a datapoint in the **Optimization 3.1*
 
 ![img](/img/kubernetes/Container_Time_Series.png)
 
-### Explore Integration
+### Dashboard Integration
 
-Stack linking for the **Optimization 1 - Summary for Kubernetes Deployment** and **Optimization 2 - Detail for Kubernetes Deployment** dashboards will appear with the Explore hierarchy associated with your Kubernetes deployment. If necessary, check stack linking settings as below. 
+Stack linking for the **Optimization 1 - Summary for Kubernetes Deployment** and **Optimization 2 - Detail for Kubernetes Deployment** dashboards will appear with the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) associated with your Kubernetes deployment. If necessary, check stack linking settings as below. 
 
 ![img](/img/kubernetes/explore-integration.png)
 

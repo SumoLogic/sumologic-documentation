@@ -21,10 +21,6 @@ The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by 
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -107,7 +103,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | base_url | String | Yes | `null` | The API base url for the region of your CrowdStrike account. |  |
 | client_id | String | Yes | `null` | The CrowdStrike Client ID you want to use to authenticate collection requests. |  |
 | client_secret | String | Yes |  `null`| The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
-| pollingInterval | String | No | 15m | This sets how often the Source checks for data. |  |
+| pollingInterval | String | No | 15m | This sets how often the Source checks for data. The polling interval value should be atleast one minute. |  |
 
 ### JSON example
 

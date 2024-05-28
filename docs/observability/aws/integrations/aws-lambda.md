@@ -89,7 +89,7 @@ _sourceCategory=Labs/AWS/Lambda
 
 ## Viewing AWS Lambda dashboards
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
