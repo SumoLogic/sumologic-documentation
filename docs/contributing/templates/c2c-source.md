@@ -32,7 +32,7 @@ This source is **not** yet available in the [Fed deployment](/docs/api/getting-s
 
 ## Data collected
 
-\Add all the data sources and respective pollig iterval information\
+\Add all the data sources and respective polling interval information.\
 
 | Polling Interval | Data |
 | :--- | :--- |
@@ -49,23 +49,23 @@ Example:
 
 #### Prerequisites
 
-\NOTE: This section doesn't apply to all sources; use only where needed\
+\NOTE: This section doesn't apply to all sources; use only where needed.\
 
-Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ....
+Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ...
 
-\Insert steps to configure the Source in the Vendor UI\
+\Insert steps to configure the Source in the Vendor UI.\
 
 Example: [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration)
 
 ### Source configuration
 
-\Insert steps to configure the Source in the Sumo Logic UI\
+\Insert steps to configure the Source in the Sumo Logic UI.\
 
 Example: [Source configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration)
 
 ## Metadata fields
 
-\Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly.\
+\Insert metadata fields in the Sumo Logic UI. Update the below table accordingly.\
 
 | Field | Value | Description |
 | :--- | :--- | :--- |

@@ -30,10 +30,6 @@ The following event types are available to collect:
 * incident
 * endpoint
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
