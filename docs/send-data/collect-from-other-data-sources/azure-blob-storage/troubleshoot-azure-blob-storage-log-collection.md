@@ -128,7 +128,7 @@ If the error still persists in BlobTaskProducer function and failure rate > 1% t
 
 ![error](/img/send-data/azure-error1.png)
 
-\> Increase the number of min instances in app service plan of the BlobTaskProducer function
+* Increase the minimum **Instance count** in app service plan of the `BlobTaskProducer` function by doing the following:
 
 1. Go to Monitor > Autoscale
 
