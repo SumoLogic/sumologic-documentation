@@ -15,7 +15,7 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 ## Actions
 
 * **IP Reputation** *(Enrichment)* - Retrieves IP reputation information and saves the report as incident attachment or artifcat (only for Cloud SOAR).
-* **IP Reputation V2** *(Enrichment)* - Gather IP reputation information.
+* **IP Reputation V2** *(Enrichment)* - Retrieves IP reputation information.
 
 ## Notes
 
