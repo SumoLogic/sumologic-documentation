@@ -28,12 +28,12 @@ To collect CloudPassage Halo logs for Sumo Logic you need to configure:
 
 ### Sumo Logic Collector Configuration
 
-If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Then, follow the instructions on how to [create a collector](#Create-the-collector).
+If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Then, follow the instructions on how to [create a collector](#create-the-collector).
 
 
 #### Create the collector
 
-1. Click **Manage** **Data** > **Collection** > **Add Collector**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Click **Hosted Collector.**
 3. In **Add Hosted Collector** enter:
    * **Name.** Halo_Lambda_Ingestor.

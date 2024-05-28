@@ -5,9 +5,9 @@ tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/joe-sandbox.png')} alt="joe-sandbox" width="50"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/joe-sandbox.png')} alt="joe-sandbox" width="100"/>
 
-***Version: 1.0  
+***Version: 1.5  
 Updated: Mar 6, 2024***
 
 Execute suspicious files and URLs for analysis during incident investigation using Joe Security Sandbox.

@@ -91,18 +91,18 @@ This section provides information on how to perform basic everyday tasks using 
 
 **All users:**
 
-* [Launch log searches, metrics visualizations, and Live Tail sessions](#launch-searches-metrics-visualizations-and-live-tail-sessions)
-* [View recent dashboards and searches](#view-recent-dashboards-and-searches)
+* [Launch log searches, metrics visualizations, and Live Tail sessions](#launch-searches-metrics-visualizations-andlive-tail-sessions)
+* [View recent dashboards and searches](#view-recentdashboards-and-searches)
 * [View Favorites and add dashboards and searches to the list](#view-favorites-and-add-dashboards-and-searches-to-the-list)
 * [Share a dashboard, search, or folder](#share-a-dashboard-search-or-folder)
 * [View content that is shared with you](#view-content-that-is-shared-with-you)
-* [Pin and manage searches](#pin-and-manage-searches)
+* [Pin and manage searches](#pin-and-managesearches)
 * [Manage your personal account preferences](#manage-your-personal-account-preferences)
 * [Get help: docs, community, and more](#get-help-docs-community-and-more)
 
 **Sumo Logic Administrators:**
 
-* [Admin: Manage data collection, data settings, and alerts](#admin-manage-data-collection-data-settings-and-alerts)
+* [Admin: Manage data collection, data settings, and alerts](#admin-managedata-collection-data-settings-and-alerts)
 * [Admin: Manage accounts, users, and security](#admin-manage-accounts-users-and-security)
 
 ### Launch searches, metrics visualizations, and Live Tail sessions 
@@ -216,7 +216,7 @@ Whenever you have a question, there are a number of ways in which you can get 
    * [Collector](/release-notes-collector)
 * Search documentation
 * Visit the **Learn Page** in the Sumo Logic UI
-* Post a question on the [**Sumo Logic Community**](https://support.sumologic.com/hc/en-us/community/topics)
+* Post a question on the [**Sumo Logic Community**](https://support.sumologic.com/support/s/topiccatalog)
 * Contact [**Support**](https://support.sumologic.com/)
 * Try our **Customer Slack** channel
 
@@ -253,6 +253,6 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
 Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo Logic skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
-You do not have to stop there either. You can take the next step and become Sumo Logic Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page, click the **Learn** tab, and click **Get Certified**. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
+You do not have to stop there either. You can take the next step and become Sumo Logic Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page, click the **Learn** tab, and click **Get Certified**. See [Certification FAQs](/docs/get-started/training-certification-faq) for more information.
 
 <img src={useBaseUrl('img/get-started/certifications.png')} alt="Certifications" style={{border: '1px solid gray'}} width="500" />

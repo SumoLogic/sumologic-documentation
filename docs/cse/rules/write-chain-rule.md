@@ -35,35 +35,29 @@ import Iframe from 'react-iframe'; 
 
 ## Create a Chain rule
 
-1. Choose **Rules** from the Content menu.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
 1. In the rules editor:
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.
-   <br/><img src={useBaseUrl('img/cse/chain.png')} alt="Chain rule" width="600"/>
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/chain.png')} alt="Chain rule" style={{border: '1px solid gray'}} width="600"/>
 
-## Configure “If Triggered” settings
+### Configure “If Triggered” settings
 
-1. **When ... Record matches expression.** Enter two or more rule expressions. For each, select the number of matches that are required.
+1. **When at least ... Record matches expression**. Enter two or more rule expressions. For each, select the number of matches that are required.
+1. For each rule expression, click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. **grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
 1. **in ... order.** Choose either:
+      * **any** if matches can occur in any order.
+      * **exact** if matches must occur in the same order as you have ordered the rule expressions. If you choose this option, you can only have two rule expressions.
+1. **within...**. Select the duration within which the rule expression must evaluate to “true” more than the number of times specified in **When at least n Record matches expression** for the rule to fire a Signal.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+    :::note
+    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    :::
 
-   * **any** if matches can occur in any order.
-   * **exact** if matches must occur in the same order as you have ordered the rule expressions. If you choose this option, you can only have two rule expressions.
+### Configure “Then Create a Signal” settings
 
-## Test your rule expression
-After creating a rule expression, you can test it against existing Records in Cloud SIEM.
-
-1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range.
-
-:::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
-:::
-
-## Configure “Then Create a Signal” settings
-
+1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Define the Entity field — for example, an IP address, hostname, and so on — in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary.** Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.

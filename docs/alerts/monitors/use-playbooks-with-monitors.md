@@ -39,8 +39,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. Go to the main menu.
-1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
 1. The Automation Service screen opens on the **Playbook** tab. 
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/). 
@@ -83,17 +82,32 @@ An anomaly monitor is triggered when unusual conditions  are detected. Anomaly m
 Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
+Watch this micro lesson to learn about anomaly monitors.
+
+<Iframe url="https://www.youtube.com/embed/nMRoYb1YCfg?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+import Iframe from 'react-iframe';
+
+
 To create an anomaly monitor that runs an automated playbook in response to an alert:
 
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
 1. Select the **Logs** monitor type.
-1. Select **Anomaly** under **Detection Method**. <br/>(Note that **Outlier** monitors are under **Anomaly** because they use anomaly detection on in-query data.) <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="800" />
+1. Select **Anomaly** under **Detection Method**. <br/>(Note that **Outlier** monitors are under **Anomaly** because they use anomaly detection on in-query data.) <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="600" />
 1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#provide-a-query-logs-and-metrics-only) for the logs to be monitored for anomalous behavior.
 1. In the **Critical** tab under **Trigger Type**, select the parameters for the alert trigger:
-   * **Detection Window**. Select the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the detection window is 5-10 times longer than the timeslice used in the log query. 
-   * **Detector Sensitivity**. Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts, and low sensitivity will result in fewer alerts. Use high sensitivity if you do not want to miss out on most anomalies.  
-   * **Minimum Anomaly Count**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. 
+   * **Alert when anomaly count is at least ___ (max. 5) at any time within ___**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.  
+   * **Show me fewer alerts --- more alerts**. Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.  
 1. Perform [Step 2: Advanced Settings](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional) and [Step 3: Notifications](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window. 
 1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select one or more playbooks that run when the monitor triggers an alert.  <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1. Perform [Step 5: Monitor Details](/docs/alerts/monitors/create-monitor/#step-5-monitor-details).
@@ -137,3 +151,25 @@ Some integrations that have useful actions for monitors include:
    * **Search Sumo Logic**. Query logs data from Sumo Logic.
 * **Sumo Logic Notifications**. Integration with the Sumo Logic platform for monitors and Slack notifications. <br/>Actions include:
    * **Assess Alert Status**. Periodically monitor status of a Sumo Logic alert and notify a Slack user if the alert is unresolved.
+
+### Pass custom fields from a monitor to playbooks
+
+Results from an alert query are passed to a playbook through the [automation payload](/docs/alerts/monitors/automation-payload-variables/). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node. 
+
+:::note
+You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the monitor configuration to pass fields from the query to the playbook.
+:::
+
+#### Configure parameters from an alert
+
+1. Click **Edit** on the Start Node.
+1. Select **Alert** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_alert.png')} alt="Payload parameters from an alert" style={{border: '1px solid gray'}} width="700" />
+1. The parameters from the default [automation payload variables](/docs/alerts/monitors/automation-payload-variables/) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
+
+#### Configure Parameters from a JSON Payload 
+
+1. Click **Edit** on the Start Node.
+1. Select **Parse from Json** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_json.png')} alt="Payload parameters from a Json payload" style={{border: '1px solid gray'}} width="700" />
+1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/alerts/monitors/automation-payload-variables/#view-playbook-payload).
+1. Paste the payload into the **Enter Json payload** text box and click **Parse**. The fields from the payload will be auto parsed to parameters. <br/><img src={useBaseUrl('img/alerts/parse_from_json_payload.png')} alt="Parse from Json payload" style={{border: '1px solid gray'}} width="700" />
+1. Add or remove parameters based on the playbook requirements and click **Update**. <br/><img src={useBaseUrl('img/alerts/parse_from_json_parameters.png')} alt="Json Payload parameters" style={{border: '1px solid gray'}} width="700" />

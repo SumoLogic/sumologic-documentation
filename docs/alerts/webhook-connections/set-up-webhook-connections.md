@@ -40,7 +40,7 @@ The first step in integrating webhooks with Sumo Logic is to configure one or mo
 
 To set up a webhook connection:
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. On the **Connections** page click the **+** button on the top right of the table.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
@@ -87,8 +87,7 @@ All variables are case-insensitive.
 | `{{NumQueryResults}}` | The number of results the query returned. Results can be raw messages, time-series, or aggregates.<br/><br/>An aggregate query returns the number of aggregate results; displayed in the Aggregates tab of the Search page.<br/><br/>A non-aggregate query returns the number of raw results; displayed in the Messages tab of the Search page.| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{Id}}` | The unique identifier of the monitor or search that triggered the alert. For example, `00000000000468D5`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{DetectionMethod}}` | This is the type of Detection Method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`,  `LogsMissingDataCondition`, `MetricsMissingDataCondition`, or `StaticCondition` (deprecated). | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`.
-Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
 | `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example:<br/>`07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerTime}}` | The time the monitor was triggered. For example:<br/>`07/13/2021 03:38:30 PM UTC.` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerCondition}}` | The condition that triggered the alert. For example:<br/>`Greater than or equal to 1.0 in the last 15 minutes` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |

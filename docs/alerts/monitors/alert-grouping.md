@@ -20,7 +20,7 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 ### Metrics
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
@@ -32,7 +32,7 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 ### Logs
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Click **Add a New monitor**.
 3. Select **Logs** as the type of Monitor.
 4. Enter your logs query, then select your desired Alert Grouping option:
@@ -42,6 +42,9 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
 
+## Set a Muting Schedule for an alert group
+
+Optionally, you can apply a Muting Schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
 
 ## Use Cases
 
@@ -119,13 +122,13 @@ This alert can be useful if you suspect that one of your collectors has stopped 
 * **Query**:  
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
-   | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop
+   | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+   | json field=data "sizeInBytes", "count" as bytes, count
    | sum(bytes) as total_bytes by collector
    | round(total_bytes / 1024 / 1024) as total_mbytes
    | fields total_mbytes, collector
    ```
 * **Group Condition**: `collector` <br/><img src={useBaseUrl('img/monitors/Suggested-Monitors.png')} alt="alert-grouping" style={{border: '1px solid gray'}} width="800" />
-
 
 ## FAQ
 
@@ -157,3 +160,5 @@ For example, let's say that you configured a monitor to generate one alert per c
 #### What fields are not allowed for Alert Grouping?
 
 Fields with very high cardinality such as `_blockid`, `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for Alert Grouping.
+
+Fields from aggregate operators such as [`_count`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent/#count), [`_avg`](/docs/search/search-query-language/group-aggregate-operators/avg), and [`_sum`](/docs/search/search-query-language/group-aggregate-operators/sum) are not allowed.

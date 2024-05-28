@@ -23,14 +23,13 @@ If your RUM app is removed accidentally, you'll need to install it manually:
 1. Click **Add to Library**.
 1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
 
-## Using Explore View
+## Using Real User Monitoring view
 
-Once the RUM app has been installed, use our [Explore view](/docs/dashboards/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
+Once the RUM app has been installed, use the Real User Monitoring view to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-1. Go to **+New** > **Explore**.
-1. Under **Explore By**, **click Real User Monitoring**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Application Monitoring > User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  Kanso-->
 1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
-1. Set your desired filters. **Explore** organizes RUM data on five levels:
+1. Set your desired filters. RUM data is organized on five levels:
    * **Application**: corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
    * **Service**: corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
    * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). Supports up to 10 **deployment.environment** values.
@@ -58,7 +57,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 
 You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point.
 
-Overview dashboards on all Explore levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
+Overview dashboards on all view levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
 
 ![RUM Overview](/img/rum/RUM-Overview.png)
 

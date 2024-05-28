@@ -30,7 +30,7 @@ Sumo Logic apps for Kubernetes and Explore require the below listed fields to be
 
 This is normally done in the setup job when `sumologic.setupEnabled` is set to `true` (default behavior).
 
-In the unlikely scenario that this fails, you can create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
+In the unlikely scenario that this fails, you can create them manually by visiting [Fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
 
 This is to ensure your logs are tagged with relevant metadata.
 
@@ -986,7 +986,7 @@ Add the following configuration to your `user-values.yaml`:
 debug:
   sumologicMock:
     enabled: true
-  enableLocalMode: tru
+  enableLocalMode: true
 ```
 
 And then, you can see throughput in the Sumo Logic Mock logs:

@@ -17,7 +17,7 @@ Why would you want to use Cloud SOAR when the Automation Service already does au
 
 ### Case and incident management
 
-The Automation Service doesn't include any of Cloud SOAR’s case management or [incident management](/docs/cloud-soar/main-menu/#incidents) functionality. Managing at the incident level and assigning to cases gives SecOps teams flexibility to respond in a number of ways, and to run reports and do analysis.
+The Automation Service doesn't include any of Cloud SOAR’s case management or [incident management](/docs/cloud-soar/incidents-triage) functionality. Managing at the incident level and assigning to cases gives SecOps teams flexibility to respond in a number of ways, and to run reports and do analysis.
 
 ### Daemon and trigger action types
 

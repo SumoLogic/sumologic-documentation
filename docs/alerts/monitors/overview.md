@@ -9,8 +9,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="45"/>
-
 Monitors track your metrics and logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
 :::note
@@ -19,7 +17,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Prerequisites
 
-To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
+To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#folder-permissions) about controlling permissions at the monitor or folder level.
 
 ## Rules
 

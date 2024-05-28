@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -127,7 +136,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -468,7 +476,7 @@ module.exports = {
             items: [
               {
                 label: 'Contact Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -476,7 +484,7 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
             title: 'Help',

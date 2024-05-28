@@ -58,7 +58,7 @@ For instructions, see [Script Action](/docs/send-data/installed-collectors/sour
 
 Existing customers of both ServiceNow and Sumo Logic can now take advantage of the integration between the services. With this integration, search results from Sumo Logic are uploaded to your organization's ServiceNow account, allowing your organization to investigate issues across your deployment.
 
-The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic.
+The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad hoc ServiceNow investigations using search results in Sumo Logic.
 
 For instructions, see [ServiceNow](/docs/alerts/webhook-connections/servicenow/).
 

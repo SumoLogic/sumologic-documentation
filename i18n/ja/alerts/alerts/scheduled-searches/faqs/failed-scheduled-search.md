@@ -35,4 +35,4 @@ See also, [What Happens When a Scheduled Search is Suspended?](suspended-schedul
 
 ## What else can I do? 
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 

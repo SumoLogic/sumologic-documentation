@@ -15,7 +15,7 @@ The Windows Performance app provides insight into your system's operation and ev
 
 The Windows Performance app assumes events are coming from Windows Performance sources.
 
-**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
+**Also, you'll need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#collecting-logs-for-the-windows-performance-app).
 
 ### Sample log messages
 
@@ -135,7 +135,7 @@ To collect logs for the Windows Performance App, do the following:
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. Go to **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:

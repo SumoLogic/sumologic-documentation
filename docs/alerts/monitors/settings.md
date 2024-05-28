@@ -7,7 +7,14 @@ description: Monitors continuously query your logs or metrics and send notificat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Monitors page (**Manage Data** > **Monitoring** > **Monitors**) allows you to view, create, manage, and organize your Monitors. The page displays the following information:
+The Monitors page allows you to view, create, manage, and organize your Monitors. 
+
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Monitors page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Monitors page, in the main Sumo Logic menu select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+ Kanso-->
+
+The page displays the following information:
 * **Name**. Name of the Monitor.
 * **Status**. A Monitor is considered **Normal** when none of the trigger conditions are met and your data is actively being monitored.
 * **Type**. A Monitor type is either Logs or Metrics, based on the type of data being monitored.
@@ -23,7 +30,7 @@ Open the [Alert List](alert-response.md) to view all of the triggered alerts fr
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
 * **Add** > **New Folder**. Create a folder to organize your Monitors.
-* **Add** > **New Monitor**. Create a [new Monitor](#add-a-monitor).
+* **Add** > **New Monitor**. Create a [new Monitor](/docs/alerts/monitors/create-monitor).
 * **Add** > **Import**. Import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
 
 :::important
@@ -93,7 +100,7 @@ Adding a **Tag** to a Monitor can help you categorize, search, filter, and corre
 
 To add a tag to an existing monitor:
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 1. Double-click on any monitor in your list.
 1. In the side panel, click **Edit**.
 1. Under step 4 (**Monitor Details**), create a tag using the `key=value` format.
@@ -101,7 +108,7 @@ To add a tag to an existing monitor:
 
 To add a tag while creating a new monitor:
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 1. Click **Add** > **New Monitor**.
 1. Follow the steps to create a new monitor. When you get to step 4 (**Monitor Details**), you can:
    * Create a new tag using the `key=value` format.
@@ -121,7 +128,7 @@ Access to folders that contain Monitors is controlled by permissions. If you hav
 * **Manage**. Ability to move folders and to grant other roles permissions to the folder. If you grant this permission, the permissions listed above will be granted as well.
 
 To set permissions for a Monitors folder:
-1. Go to **Manage Data > Monitoring > Monitors** in the Sumo Logic UI.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions.**
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  

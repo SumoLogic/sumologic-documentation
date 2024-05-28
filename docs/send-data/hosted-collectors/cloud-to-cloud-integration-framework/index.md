@@ -43,7 +43,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 
 ## Integrations
 
-The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. 
+The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta.
 
 ## Versions
 
@@ -172,6 +172,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions"><img src={useBaseUrl('img/icons/business/SaaS.png')} alt="icon" width="50"/><h4>Cloud-to-Cloud Versions</h4></a>
   <p>Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="100"/><h4>CloudQuery</h4></a>
+  <p>Provides a secure endpoint to receive data from CloudQuery.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -11,6 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
+<img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" style={{border:'1px solid gray'}} width="800"/>
+
 Sumo Logic apps address these common use cases:
 
 * **Increase availability and performance.** Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
@@ -37,9 +39,22 @@ What makes Next-Gen different from Classic apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
+
+#### How to install Next-Gen Apps
+
+import AppInstall from '../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
+
 ### Classic Apps (Legacy)
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
+
+#### How to install Classic Apps
+
+import ClassicAppInstall from '../reuse/apps/app-install.md';
+
+<ClassicAppInstall/>
 
 ## Prerequisites
 
@@ -54,13 +69,7 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Installing apps to your Library
-
-import AppInstall from '../reuse/apps/app-install.md';
-
-<AppInstall/>
-
-## Install apps in multiple environments
+## Install classic apps in multiple environments
 
 If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
@@ -179,31 +188,45 @@ The Log Analysis QuickStart app, created for new users of Sumo Logic, includes s
 
 Whether you're new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 
-### Installation
+## Installing the Log Analysis QuickStart app
 
-To install the app:
+import AppInstallV2 from '../reuse/apps/app-install-v2.md';
 
-1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
-1. Click **Add Integration**.<br/><img src={useBaseUrl('/img/get-started/library/log-quickstart-analysis.png')} alt="log-quickstart-analysis" style={{border:'1px solid gray'}} width="500" />
-1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
-    :::info
-    If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you do not know which `_sourceCategory` to select, ask your administrator who configured the Source.
-    :::
-1. Leave the app in the default folder location (**Personal** folder in your **Library**) or choose a different location. You can also click **New Folder** to add it to a new folder.
-1. Click **Next**. A dialog will confirm the app is installed successfully.
+<AppInstallV2/>
 
-### Visits Dashboard
+## Viewing Log Analysis QuickStart dashboards
 
-The Visits Dashboard displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
+import ViewDashboards from '../reuse/apps/view-dashboards.md';
 
-<img src={useBaseUrl('/img/get-started/library/log-analysis-qs-visits.png')} alt="log_analysis_app_visits" style={{border:'1px solid gray'}} width="800" />
+<ViewDashboards/>
 
-* **Geo Location of All Users.** Uses a geolocation search to display the locations of IP addresses used by visitors.
-* **Frequent IP Addresses.** Shows a list of the most frequently used IP addresses by visitors.
-* **Logins Over Time.** Displays the successful and failed logins over the past three hours.
-* **Frequent Email Addresses.** Displays the most frequently used email addresses.
-* **Sessions.** Monitor errors across all sessions in your deployment.
-* **Observed IP Addresses by Type.** Displays IP addresses used by internal and external visitors.
+### Keywords and Metadata
+
+This Dashboard provides several ways to monitor your logs based on the metadata of your data. All of the Panels include searches for specific issues. You can learn more about metadata options in [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+
+* **High Priority Keywords.** Displays how often the terms error, failure, and exception appear in all log messages over time.
+* **Medium Priority Keywords.** Displays how often the terms time out, warn, check, exist, reject, deny, and timeout appear in all log messages over time.
+* **Issues by Origin.** Displays how often high priority keywords occur by the origin of issue, which could be application, data or service.
+* **Issues in Top Categories.** This Panel shows the top 10 source categories by number of log messages that contain error, exception, or failure terms.
+* **Issues in Top 10 Hosts.** Displays the top 10 hosts by number of log messages that contain error, exception, or failure terms.
+* **Issues in Top 10 Files.** Shows the top 10 files by number of log messages that contain error, exception, or failure terms.
+* **Issues by Category.** This panel displays the number of log messages that contain error, exception, or failure terms by Source Category over time.
+* **Issues by Host.** Displays the number of log messages that contain time out, error, exceptions, and failures broken down by Source Host over time.
+* **Issues by File Name.** Displays the number of log messages that contain error, exception, or failure terms issues by log file name over time.
+
+### Collectors and Source Monitoring
+
+The Panels in the Collector and Source Monitoring Dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
+
+* **Issues by Collector.** This panel displays the number of log messages that contain error, exception, or failure terms by Collector.
+* **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
+* **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
+
+## Viewing Log Analysis QuickStart dashboards
+
+import ViewDashboards2 from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards2/>
 
 ### Keywords and Metadata
 

@@ -428,7 +428,7 @@ Alerts can be installed by either importing a JSON file or a Terraform script. T
    * For alerts applicable only to a specific farm, your custom filter would be: `webserver_farm=iis-standalone.01`.
    * For alerts applicable to all farms that start with `iis-standalone`, your custom filter would be: `webserver_system=iis-standalone*`.
    * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=iis-1` AND `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
-4. Go to **Manage Data** > **Alerts** > **Monitors**.
+4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 5. Click **Add**.<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
 6. Click **Import** and then copy-paste the above JSON to import monitors.
 
@@ -436,7 +436,7 @@ Monitors are disabled by default. Once you have installed the alerts using this 
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **Download and install Terraform**. You'll need to [download and install Terraform](https://www.terraform.io/downloads.html), version 0.13 or later.
 3. **Download the Sumo Logic Terraform package for IIS Server alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/IIS). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/**.
@@ -493,7 +493,7 @@ By default, the monitors are configured in a monitor **folder** called **IIS**, 
     1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/` and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     3. Run `terraform apply`.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
