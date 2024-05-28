@@ -1,8 +1,7 @@
 ---
 id: flex-pricing-faq
-title: Flex Pricing FAQ
-sidebar_label: FAQ
-description: Answers to frequently asked questions about Sumo Logic Flex Pricing.
+title: Flex FAQs
+description: Answers to FAQ about Flex.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
