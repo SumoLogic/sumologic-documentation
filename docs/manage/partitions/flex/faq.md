@@ -1,7 +1,8 @@
 ---
-id: flex-pricing-faq
-title: Flex FAQs
-description: Answers to FAQ about Flex.
+id: faq
+title: Flex Pricing FAQ
+sidebar_label: FAQ
+description: Answers to frequently asked questions about Sumo Logic Flex Pricing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,17 +15,18 @@ import FlexPricing from '../../../reuse/flex-pricing.md';
 
 <FlexPricing/>
 
-## Is the Flex pricing available to existing Cloud Flex customers?
+## Is Flex Pricing available to existing Cloud Flex customers?
 
-No, it is not available for the existing customers. Flex will become available for existing customers in the near future. Currently, Flex Licencing is the default plan for new customers who sign up with Sumo Logic. 
+No, Flex Pricing is not currently available for existing Cloud Flex customers. However, it will become available in the near future. Currently, Flex Pricing is the default plan for new customers signing up with Sumo Logic.
 
 ## How is Flex Pricing different from the other data tiers?
 
-With Flex Pricing, there is no cost to ingest and index log data and no requirement to manage storage on your own or rehydrate at a premium for log indexing. This removes the complexity of predetermining the type of analytics required before that data is even in the system. Simply pay for analytics and insights, not data management.
+With Flex Pricing, there is no cost to ingest and index log data, and no requirement to manage storage on your own or rehydrate at a premium for log indexing. This removes the complexity of predetermining the type of analytics required before the data is in the system. You simply pay for analytics and insights, not data management.
 
 ## Can I restrict access to Flex data to select users?
 
-You can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control) to restrict access to partitions in the Flex. Although you can’t use a role search filter to restrict access to a partition by name, you can filter by the metadata that forms the routing expression for a partition. 
+
+Yes, you can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control) to restrict access to partitions in Flex. Although you can’t use a role search filter to restrict access to a partition by name, you can filter by the metadata that forms the routing expression for a partition.
 
 For example, if you want to strict access to a partition whose routing expression is:
 
@@ -77,13 +79,15 @@ We recommend you configure partitions to have less than 5 TB per day flowing int
 * Reduces the cost of each query.
 * Results in faster queries, since less data has to be scanned.  
 
-## How to optimize the query using default scope?
+## How can I optimize my query using default scope?
 
-Default scope allows you to include or exclude the partitions in the search query, helping you to optimize the search cost. For example, consider if a query needs to run through 10 partitions which consumes about 10 GB of search data, narrowing the search query using the default scope can improve the query performance and scan cost. You can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition. Let's say, out of 10 partitions you excluded two partitions. Now, when you run a query which does not have `_index` / `_view` term referenced in the query, the search will only consider the included partitions, reducing the amount of data scanned and lowering the cost.
+Default scope allows you to include or exclude partitions in your search query, helping to optimize search costs and performance. For example, if a query needs to run through 10 partitions, consuming about 10 GB of search data, narrowing the search query using the default scope can improve query performance and reduce scan costs.
 
-When partitions are marked as included and `_index`/`_view` is not referenced in the query, all the included partitions will be considered for the search query by default. Default scope can also come into use when `AND` or `OR` conditions are referred to in the query with `_index`. For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
+You can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating or updating the partition. If, out of 10 partitions, you exclude two partitions, any query that does not reference `_index` or `_view` will only consider the included partitions. This reduces the amount of data scanned and lowers the cost.
+
+When partitions are marked as included and `_index` or `_view` is not referenced in the query, all included partitions will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
 
 - When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
 - When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
-- Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query. 
-- However, when you run the query, for example `_index="Partition A" OR error`, all of the partitions (Partition A, Partition B, and Partition C) will be considered for the query, because the error keyword might be present in Partition B or C as well. So in cases like this, we need to scan all three of them. 
+- Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query.
+- However, when you run a query like `_index="Partition A" OR error`, all partitions (Partition A, Partition B, and Partition C) will be considered. This is because the error keyword might be present in Partition B or C as well, requiring a scan of all three partitions.
