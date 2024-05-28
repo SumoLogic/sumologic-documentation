@@ -36,7 +36,7 @@ To schedule a dashboard email report, do the following:
    * **Subject.** Enter a subject for the email.
    * **Message.** Enter the body of the email.
 1. Click **Schedule** to schedule the report.
-1. (Optional) Click **Schedule New Report** to create multiple scheduled reports for the dashboard.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report_1.png')} style={{border: '1px solid gray'}} alt="scheduled_report_1>" width="600"/>
+1. (Optional) Click **Schedule New Report** to create multiple scheduled reports for the dashboard. By allowing multiple reports from a single dashboard, you can save time, reduce effort, and ensure the delivery of critical insights to your team members and stakeholders. With scheduled reports, you can keep everyone informed with daily updates for your operations team or monthly summaries for executive reviews.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report_1.png')} style={{border: '1px solid gray'}} alt="scheduled_report_1>" width="600"/>
 
 ### Limitations
 
