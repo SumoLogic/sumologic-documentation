@@ -105,7 +105,7 @@
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage": "/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Troubleshoot_Azure_Blob_Storage_Log_Collection": "/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring": "/docs/send-data/collect-from-other-data-sources/azure-monitoring",
-  "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/",
+  "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure-API-Management-Collector": "/docs/send-data/collect-from-other-data-sources/azure-monitoring",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure-API-Management": "/docs/send-data/collect-from-other-data-sources/azure-monitoring",
