@@ -76,7 +76,7 @@ The table below should give you a sense of how the number of partitions you use 
 We recommend you configure partitions to have less than 5 TB per day flowing into them. This practice:
 
 * Reduces the cost of each query.
-* Results in faster queries, since less data has to be scanned.  
+* Accelerates queries, as less data has to be scanned.
 
 ## How do I optimize my query using default scope?
 
