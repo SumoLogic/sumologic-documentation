@@ -62,7 +62,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/flex/flex-pricing-faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
+  <a href="/docs/manage/partitions/flex/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
   <p> Answers to FAQ about Flex.</p>
   </div>
 </div>
