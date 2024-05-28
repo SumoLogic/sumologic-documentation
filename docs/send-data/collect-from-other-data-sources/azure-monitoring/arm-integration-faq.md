@@ -149,7 +149,7 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 
 ### How do I troubleshoot an Event Hub Integration?
 
-For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#troubleshooting) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+For detailed information, see the [Azure Event Hubs Source for Logs Troubleshooting section](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#troubleshooting). This includes testing the function using [**Sample** Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 ### What can I do if a function is timing out?
 
