@@ -6,7 +6,7 @@ description: Frequently asked questions about collecting data into Sumo Logic th
 ---
 
 :::sumo
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://community.sumologic.com/s/topic/0TOE0000000g6anOAA/Collect-Data).
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
@@ -110,7 +110,9 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data** > **Collection** > **Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+     1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+
+     1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -175,7 +177,7 @@ You can revert back to a default configuration by removing the corresponding li
 
 #### Question
 
-Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results don't show this data. Is this possible?
+Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results do not show this data. Is this possible?
 
 #### Answer
 
@@ -546,7 +548,9 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic, select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. Kanso-->
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -562,7 +566,7 @@ If your user account is not an administrator check your Role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors don't send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 
@@ -585,14 +589,14 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 
     ![img](/img/send-data/timezone_parsing_options.png)
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
-   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files don't have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
+   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
    * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your Sources to the same time zone.
 
 :::important

@@ -3,20 +3,21 @@ title: McAfee Web Gateway
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/mcafee-web-gateway.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-web-gateway.png')} alt="mcafee-web-gateway" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Utilize McAfee Web Gateway to issue containment actions during an active incident.
 
 ## Actions
 
-* **Block IP** (*Containment*) - Block traffic in McAfee Web Gateway to/from the specified IP
-* **Unblock IP** (*Containment*) - Remove block in McAfee Web Gateway to/from the specified IP
-* **Block URL** (*Containment*) - Block traffic in McAfee Web Gateway to/from the specified URL
-* **Unblock URL** (*Containment*) - Remove block in McAfee Web Gateway to/from the specified URL
+* **Block IP** (*Containment*) - Block traffic in McAfee Web Gateway to/from the specified IP.
+* **Unblock IP** (*Containment*) - Remove block in McAfee Web Gateway to/from the specified IP.
+* **Block URL** (*Containment*) - Block traffic in McAfee Web Gateway to/from the specified URL.
+* **Unblock URL** (*Containment*) - Remove block in McAfee Web Gateway to/from the specified URL.
 
 ## Change Log
 

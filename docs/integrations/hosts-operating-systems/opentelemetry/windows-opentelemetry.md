@@ -24,7 +24,10 @@ The Windows app, which is based on the Windows event log format, consists of pre
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of Windows app install if not already present. 
 
-- **`sumo.datasource`**. Has a fixed value of **windows**.
+- **`sumo.datasource`**. Has a fixed value of `windows`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host group is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed. 
 
 ## Log types
 
@@ -51,11 +54,11 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml file required for Windows event logs and metrics Collection.
+In this step, you will configure the YAML file required for Windows event logs and metrics Collection.
 
 Any custom fields can be tagged along with the data in this step.
 
@@ -65,7 +68,7 @@ import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collec
 
 <ProcMetrics/>
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
+Click on the **Download YAML File** button to get the YAML file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid gray'}} width="800"/>
 
 ### Step 3: Send logs to Sumo
 
@@ -85,7 +88,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -121,6 +124,10 @@ import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md
 import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
+
+:::note
+If you receive an error during installation that includes the message `failed to bind to address localhost`, change all instances of `localhost` to `127.0.0.1` in the YAML file. 
+:::
 
 ## Sample metrics message
 

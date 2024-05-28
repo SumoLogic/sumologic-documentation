@@ -3,20 +3,21 @@ title: McAfee ATD
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/mcafee-atd.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-atd.png')} alt="mcafee-atd" width="100"/>
 
-Version: 1.2  
-Updated: Jul 12, 2023
+***Version: 1.2  
+Updated: Jul 12, 2023***
 
 Utilize McAfee Advanced Threat Defenseto gather file reputation and enrichment details.
 
 ## Actions
 
-* **Detonate Report** (*Enrichment*) - Get the detonation report for the specified file
-* **Detonate File** (*Enrichment*) - Detonate the specified file
-* **File Reputation** (*Enrichment*) - Get the file reputation report for the specified file
-* **Get Analyzer Profiles** (*Enrichment*) - Get all analyzer profiles
+* **Detonate Report** (*Enrichment*) - Get the detonation report for the specified file.
+* **Detonate File** (*Enrichment*) - Detonate the specified file.
+* **File Reputation** (*Enrichment*) - Get the file reputation report for the specified file.
+* **Get Analyzer Profiles** (*Enrichment*) - Get all analyzer profiles.
 
 ## Change Log
 

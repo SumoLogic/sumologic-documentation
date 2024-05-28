@@ -105,7 +105,7 @@ _sourceCategory="nite-primary-eks/events"
 
 ### AWS CloudTrail
 
-After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
+After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 ```sql
 _sourceCategory=*cloudtrail*

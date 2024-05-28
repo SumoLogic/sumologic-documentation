@@ -3,11 +3,12 @@ title: Panda EDR
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/panda-edr.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/panda-edr.png')} alt="panda-edr" width="100"/>
 
-Version: 1.3  
-Updated: Nov 24, 2023
+***Version: 1.3  
+Updated: Nov 24, 2023***
 
 Remotely monitor and manage devices that run these Panda Aether platform endpoint security products:
 

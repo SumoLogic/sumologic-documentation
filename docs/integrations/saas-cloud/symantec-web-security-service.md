@@ -2,8 +2,9 @@
 id: symantec-web-security-service
 title: Symantec Web Security Service
 sidebar_label: Symantec Web Security Service
-description: The Sumo Logic App for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats.
+description: The Sumo Logic app for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
@@ -17,9 +18,9 @@ With the Sumo Logic app for Symantec Web Security, you can:
 
 ## Log types
 
-This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
+This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
 
-## Sample log messages
+## Sample log message
 
 ```json title="Access Log"
  {
@@ -50,7 +51,7 @@ This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample queries
+## Sample query
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
@@ -64,20 +65,22 @@ _sourceCategory=swssDev
 
 To set up [Cloud-to-Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
 
-## Installing the Symantec Web Security Service App​
+## Installing the Symantec Web Security Service app
 
-This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Symantec Web Security Service dashboards
 
-## Viewing Symantec Web Security Service Dashboards​
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-### Symantec Web Security Service - Security Overview
+<ViewDashboards/>
 
-**Symantec Web Security Service - Security Overview** dashboard provides a comprehensive view of the network security status. It includes widgets for the total number of requests, unique malware detected, geo locations of blocked requests, category statistics, top 10 blocked hosts, top 10 blocked users, top 10 blocked traffic verdicts, security concerns, malicious file type (URI extension), malware action on identification, requests over time, and virus count over time. This information helps you to monitor and manage the network security in real-time, which allows you to quickly identify and respond to potential threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Security-Overview.png')} alt="Symantec-Web-Security-Service-Security-Overview" width="800"/>
+### Security Overview
 
-### Symantec Web Security Service - Web Activity Overview
+The **Symantec Web Security Service - Security Overview** dashboard provides a comprehensive view of the network security status. It includes widgets for the total number of requests, unique malware detected, geo locations of blocked requests, category statistics, top 10 blocked hosts, top 10 blocked users, top 10 blocked traffic verdicts, security concerns, malicious file type (URI extension), malware action on identification, requests over time, and virus count over time. This information helps you to monitor and manage the network security in real-time, which allows you to quickly identify and respond to potential threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Security-Overview.png')} alt="Symantec-Web-Security-Service-Security-Overview" width="800"/>
 
-**Symantec WWeb Security ServiceSS - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>
+### Web Activity Overview
+
+The **Symantec Web Security Service - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>

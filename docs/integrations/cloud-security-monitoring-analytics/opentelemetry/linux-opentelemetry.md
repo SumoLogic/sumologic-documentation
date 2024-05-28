@@ -21,6 +21,29 @@ The following tag will be created as part of Linux app installation, if not alre
 
 - `sumo.datasource`. Has a fixed value of **linux**.
 
+## Prereqisites
+
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any of the log files are missing, you can configure the missing file collection in the next step.
+:::
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
 ## Collection configuration and app installation
 
 :::note
@@ -64,7 +87,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid black'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid gray'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.

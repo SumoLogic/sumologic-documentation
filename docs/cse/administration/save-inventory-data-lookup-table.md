@@ -73,9 +73,9 @@ Where:
 
 * `_sourceCategory` identifies the source category you assigned to the Active Directory Source.
 * `_collector` identifies the collector where the Active Directory source runs. 
-* `PATH` is the path of the lookup table, in this format:   `path://"/Library/Admin Recommended/userIdToUsername"` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.
+* `PATH` is the path of the lookup table, in this format:   `path://"/Library/Admin Recommended/userIdToUsername"` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.
 
-   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="Three dot menu" width="600"/>
+   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="three-dot menu" width="600"/>
 
 ## Step 3: Save and schedule the search
 
@@ -85,7 +85,7 @@ Be sure to choose “Email” as the **Alert type**. (*Don’t* select **Save to
 
 To save and schedule the search:
 
-1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as" width="600"/>
+1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as" width="600"/>
 1. On the **Save Item** popup:
    * **Name**. Enter a name for the query.
    * **Time range**. Select a time range for the query.

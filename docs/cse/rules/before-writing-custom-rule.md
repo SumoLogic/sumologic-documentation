@@ -13,7 +13,7 @@ This topic has information about writing custom Cloud SIEM rules.
 Before you create a custom rule, check to see if there is a [built-in rule](/docs/cse/rules/cse-built-in-rules) that meets or comes close to meeting your need. You can easily tailor built-in rules using [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions).
 :::
 
-By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
+By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules cannot.
 
 ## Related topics
 
@@ -40,7 +40,7 @@ Let’s say you’re going to write a rule that fires every time a successful Wi
 
 To find and review a log mapping:
 
-1. Click the gear icon and select **Log Mappings**.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  Kanso-->
 1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results when we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t. <br/><img src={useBaseUrl('img/cse/matching-mappings.png')} alt="Mapping mappings" width="800"/>
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping. <br/><img src={useBaseUrl('img/cse/selected-mapping-top.png')} alt="Selected mapping" width="500"/>
 1. The **Fields** section of the page shows how raw message fields are mapped to Cloud SIEM schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. <br/><img src={useBaseUrl('img/cse/selected-mapping-bottom.png')} alt="Selected mapping bottom" width="500"/>

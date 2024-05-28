@@ -67,6 +67,7 @@ Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from thes
 * S3 Event Notifications Integration is not supported.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*` 
 
 ## S3 Event Notifications Integration
 
@@ -93,12 +94,12 @@ import Iframe from 'react-iframe';
 
 ## Create an Amazon S3 Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-bucket-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListBucketVersions** and **GetObjectVersion** permissions.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
@@ -106,7 +107,9 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details. 
+
+   Following is an example of a managed S3 bucket's name and path expression entered in the dialog. Together they comprise an S3 bucket data path. For more information, see [S3 Bucket Data Path](https://docs.umbrella.com/deployment-umbrella/docs/cisco-managed-s3-bucket#s3-bucket-data-path) in the Cisco documentation. <br/><img src={useBaseUrl('img/send-data/bucket-name-and-path-expression.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="600" />
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
@@ -189,7 +192,7 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
-     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
@@ -202,11 +205,9 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 
 ### SNS with one bucket and multiple Sources
 
-    :::important
-    S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type.
-
-    In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
-    :::
+:::important
+S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type. In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
+:::
 
 When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
@@ -220,7 +221,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 

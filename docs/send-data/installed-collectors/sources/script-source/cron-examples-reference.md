@@ -31,7 +31,7 @@ Cron expressions are comprised of six required fields (seconds, minutes, hours, 
 | Day (of month)  | 1-31               | \* ? / L W                     |
 | Month           | 1-12 or JAN-DEC    | \- \* /                        |
 | Day (of week)   | 1-7 or SUN-SAT     | \- \* ? / L #                  |
-| Year (optional) | empty, 1970-2199   | \- \* /                        |
+| Year (optional) | empty              | \- \* /                        |
 
 There are several special characters that are used to specify values:
 
@@ -50,10 +50,11 @@ There are several special characters that are used to specify values:
 
 These are examples of CRON expressions.
 
-* A run frequency of once at 16:25 on December 18, 2018: `0 25 16 18 DEC ? 2018`
 * A run frequency of 12:00 PM (noon) every day: `0 0 12 * * ?`
 * A run frequency of 11:00 PM every weekday night: `0 0 23 ? * MON-FRI`
 * A run frequency of 10:15 AM every day:` 0 15 10 * * ?`
 * A run frequency of 10:15 AM every Monday, Tuesday, Wednesday, Thursday and Friday: `0 15 10 ? * MON-FRI`
 * A run frequency of 12:00 PM (noon) every first day of the month: `0 0 12 1 1/1 ? *`
 * A run frequency of every hour between 8:00 AM and 5:00 PM Monday-Friday: `0 0 8-17 ? * MON-FRI`
+
+

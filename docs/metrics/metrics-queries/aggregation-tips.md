@@ -47,6 +47,6 @@ If you’re running multiple queries, a tip will be provided for each of the que
 
 ## Disable tips
 
-If you prefer not to see query tips, choose **Disable Query Tips** from the three-dot more options menu in the Metrics Explorer.
+If you prefer not to see query tips, choose **Disable Query Tips** from the three-dot kebab menu in the Metrics Explorer.
 
 <img src={useBaseUrl('img/metrics/disable-query-tips.png')} alt="line-commented.png" />

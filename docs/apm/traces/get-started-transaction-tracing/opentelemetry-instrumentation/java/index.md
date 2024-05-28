@@ -7,10 +7,6 @@ description: OpenTelemetry Instrumentation for Java automatically detects when o
 
 Perhaps the most convenient way to start capturing telemetry from Java (or, generally speaking, JVM) is to incorporate [OpenTelemetry Instrumentation for Java](https://github.com/open-telemetry/opentelemetry-java-instrumentation). It automatically detects when one of the [popular libraries](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers) is being used in the service and injects the instrumentation without writing any code. It’s also possible to mix automatic instrumentation with manual instrumentation if needed. This method works for all Java 8+ JVMs.
 
-:::tip
-If the OTLP Java exporter fails due to missing system libraries, we recommend using the Zipkin exporter.
-:::
-
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
@@ -31,24 +27,24 @@ Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environmen
 
 ## Installation
 
-The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the OpenTelemetry Collector (or Collector/Agent) needs to be prepared first (`COLLECTOR_HOSTNAME`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
+The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the OpenTelemetry Collector (or Collector/Agent) needs to be prepared first (`OTLP_HTTP_ENDPOINT`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
 
-Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version **1.26.0**.
+Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version **1.32.1**.
 
 ## Step 1: Download and distribute the agent JAR
 
-The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.26.0/opentelemetry-javaagent.jar) should be downloaded and distributed to each of the service hosts or containers, as the JVM will need access to it.
+The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.32.1/opentelemetry-javaagent.jar) should be downloaded and distributed to each of the service hosts or containers, as the JVM will need access to it.
 
 :::note
 Ensure that the agent has root permissions for the Java jar files.
 :::
 
-## Step 2: Update the JVM configuration (valid for version 1.26.0)
+## Step 2: Update the JVM configuration (valid for version 1.32.1)
 
 Either of the following options could be used as the template, with the following changes:
 
 * The path to the javaagent JAR file needs to replaced with the location of the file downloaded and distributed in step 1.
-* `OTLP_HTTP_ENDPOINT` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you don't yet have the collector installed:
+* `OTLP_HTTP_ENDPOINT` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you do not yet have the collector installed:
   * [Set up traces collection for Kubernetes environments](../../set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments](../../set-up-traces-collection-for-other-environments.md)
 * `SERVICE_NAME` needs to be replaced with the name used for the identification of the service.
@@ -63,6 +59,7 @@ JAVA_TOOL_OPTIONS="-javaagent:path/to/opentelemetry-javaagent.jar"
 
 OTEL_TRACES_EXPORTER=otlp
 OTEL_METRICS_EXPORTER=none
+OTEL_LOGS_EXPORTER=none
 OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT
 OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
 OTEL_SERVICE_NAME=SERVICE_NAME
@@ -78,6 +75,7 @@ attributes:
 java -javaagent:path/to/opentelemetry-javaagent.jar \
     -Dotel.traces.exporter=otlp \
     -Dotel.metrics.exporter=none \
+    -Dotel.logs.exporter=none \
     -Dotel.exporter.otlp.endpoint=http://OTLP_HTTP_ENDPOINT \
     -Dotel.exporter.otlp.protocol=http/protobuf \
     -Dotel.service.name=SERVICE_NAME \
@@ -94,5 +92,5 @@ When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number 
 To confirm the instrumentation was installed, after starting the service, the following log lines are to be expected in the console:
 
 ```log
-[otel.javaagent 2023-06-12 09:39:15:913 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.26.0
+[otel.javaagent 2024-02-28 10:15:24:219 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.32.1
 ```

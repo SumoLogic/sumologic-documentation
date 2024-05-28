@@ -174,7 +174,7 @@ dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 ```
 
 
-## Collecting Logs and Metrics for the Amazon Redshift ULM app
+## Collecting logs and metrics for the Amazon Redshift ULM app
 
 This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM app.
 
@@ -207,7 +207,7 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
    * **Bucket Name**. Enter the exact name of your Redshift Audit Log S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. AWS/Redshift/Audit
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
@@ -250,19 +250,17 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
     7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 3. Click **Save**.
 
-
 ## Installing the Amazon Redshift ULM app
 
-Now that you have configured log and metric collection, install the Sumo Logic app for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Amazon Redshift ULM dashboards​
 
-## Viewing Amazon Redshift Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-This section describes each of the dashboards in the Sumo Logic app for Amazon Redshift.
-
+<ViewDashboards/>
 
 ### Overview
 

@@ -22,7 +22,7 @@ For multi-account to work, your username (email address) must be the same in the
 If you would still like to have an account that is separate from your Sumo Logic Multi-account, simply use a different email address. This way, you can keep this account separate from your Multi-account username and password.
 
 :::note
-Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Accounts](/docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts.md) , depending on your Sumo Logic packaging.
+Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Legacy Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts) or [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
 :::
 
 Single account users are unaffected by multi-account Access, and will not see this option in the UI.
@@ -55,7 +55,12 @@ As an administrator using SAML, if you have users that need to view and switch t
 
 Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
 
-There you can set the following account settings in **Administration > Security > Password Policy**:
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
+ Kanso-->
+
+In the Password Policy page, you can set the following account settings:
 
 * **Passwords expire in** (days)
 * **Password reuse after** (number of unique passwords you must use before you can reuse an old password)

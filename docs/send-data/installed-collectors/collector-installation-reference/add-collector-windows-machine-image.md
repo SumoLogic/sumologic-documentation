@@ -12,7 +12,7 @@ Collectors normally register with Sumo Logic during the installation process, bu
 
 ## Initial collector installation
 
-Download the appropriate collector from the **Manage Data > Collection > Collection** page or from the list below.
+Download the appropriate collector from the [**Collection**](/docs/send-data/collection/) page or from the list below.
 
 1. Download your collector. Choose from the 32-bit or 64-bit static URLs for latest Windows collector builds, and make sure to choose your correct Sumo Logic pod. Find the list of URLs in [Download a collector from a static URL](download-collector-from-static-url.md) in Help.
 

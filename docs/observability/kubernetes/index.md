@@ -9,6 +9,10 @@ import Iframe from 'react-iframe';
 
 In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (data collection and app/dashboard installation) to monitoring, managing, and troubleshooting your Kubernetes environment. Our solution provides an easy way to visualize your Kubernetes logs, metrics, traces, and more.
 
+:::tip
+See the [Sumo Logic Kubernetes Collection Deployment Guide](/docs/send-data/kubernetes/helm-chart-overview.md) for information on advanced configurations, best practices, performance, troubleshooting, and upgrading to our latest version.
+:::
+
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
@@ -55,8 +59,8 @@ In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (da
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshooting with Explore</h4></a>
-      <p>Explore navigation allows you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
+      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshoot with Kubernetes Views</h4></a>
+      <p>Kubernetes views allow you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
       </div>
     </div>
   </div>

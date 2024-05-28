@@ -3,17 +3,18 @@ title: Stellar Cyber Starlight
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png')} alt="stellar-cyber-starlight" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
-Query Starlight events during active incident investigations with Cloud SOAR tegration with Stellar Cyber Starlight
+Query Starlight events during active incident investigations with Cloud SOAR tegration with Stellar Cyber Starlight.
 
 ## Actions
 
-* **Search Into Events Starlight** (*Enrichment*) - Search into Starlight events
+* **Search Into Events Starlight** (*Enrichment*) - Search into Starlight events.
 
 ## Change Log
 

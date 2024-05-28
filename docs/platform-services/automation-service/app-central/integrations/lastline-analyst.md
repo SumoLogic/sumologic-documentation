@@ -3,11 +3,12 @@ title: Lastline Analyst
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/lastline-analyst.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lastline-analyst.png')} alt="lastline-analyst" width="100"/>
 
-Version: 1.2  
-Updated: Nov 10, 2023
+***Version: 1.2  
+Updated: Nov 10, 2023***
 
 Utilize Lastline AI-powered sandboxing to triage incidents.
 

@@ -52,7 +52,7 @@ With a mask string of `AAA` would provide the following result:
     auth"\s*:\s*"Basic\s*([^"]+)" 
     ```
 
-* Do not unnecessarily match on more of the log than needed. From the previous example, don't use the following expression as it matches more than necessary, 
+* Do not unnecessarily match on more of the log than needed. From the previous example, do not use the following expression as it matches more than necessary, 
 
     ```
     (?s).*auth"\s*:\s*"Basic\s*([^"]+)".*(?s)
@@ -70,7 +70,7 @@ With a mask string of `AAA` would provide the following result:
 
 * If you'd like to use a different mask for each value, you'll need to create a separate mask rule for each value. For example, if you'd like to mask IP addresses with a string that's different from the user email string, you'd create another filter with the expression` (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\)]` and you could use `USER_ADDRESS` as the mask string.
 
-* Make sure you don't specify a regular expression that has a capturing group that matches a full log line. Doing so will result in the entire log line being masked.
+* Make sure you do not specify a regular expression that has a capturing group that matches a full log line. Doing so will result in the entire log line being masked.
 
 * If you need to mask values on multiple lines use single line modifiers (?s). For example:
 
@@ -80,7 +80,7 @@ With a mask string of `AAA` would provide the following result:
 
 * A **mask string** exceeding five times the size of the original string will be trimmed. For example, if a mask rule increases the size from 7 bytes to 38 bytes, it will be trimmed to 35 bytes (which is 5 times 7 bytes), where the last 3 bytes of the message are dropped. 
 
-* Single-line log messages are split into 1MB slices and multiline messages are split after 2,000 lines or 512KB, whichever comes first. A rule will process these slices, not the full log message. Any text that falls on either side of the message slices after being split won't be masked if they don't match the rule's regular expression.
+* Single-line log messages are split into 1MB slices and multiline messages are split after 2,000 lines or 512KB, whichever comes first. A rule will process these slices, not the full log message. Any text that falls on either side of the message slices after being split won't be masked if they do not match the rule's regular expression.
 
 ## Examples
 

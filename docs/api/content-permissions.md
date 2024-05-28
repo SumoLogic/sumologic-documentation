@@ -1,6 +1,6 @@
 ---
 id: content-permissions
-title: Content Permissions Management APIs
+title: Content Permissions APIs
 sidebar_label: Content Permissions
 hide_table_of_contents: true
 description: Use HTTP endpoints to manage content permissions.
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="60"/>
 
-The Content Permissions API allows you to share your folders, searches, and dashboards with specific users or roles from HTTP endpoints. For more information, see [Share Content](https://help.sumologic.com/?cid=8675309).
+The Content Permissions API allows you to share your folders, searches, and dashboards with specific users or roles from HTTP endpoints. For more information, see [Share Content](/docs/manage/content-sharing/).
 
 import ApiIntro from '../reuse/api-intro.md';
 

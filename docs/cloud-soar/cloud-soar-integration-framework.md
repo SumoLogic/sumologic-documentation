@@ -258,7 +258,7 @@ And you must add it into the action `kwargs`:
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -492,12 +492,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text
@@ -574,7 +574,7 @@ The following sections describe the valid hook values to use in a trigger defini
 
 ##### Entities hooks
 
-Following are the hooks for [entities](/docs/cloud-soar/main-menu/#entities) (observables) events that run when objects are created:
+Following are the hooks for [entities](/docs/cloud-soar/incidents-triage/#entities) (observables) events that run when objects are created:
 * `addObservableArtifact`. When an artifact entity is created.
 * `addObservableDomain`. When a domain entity is created.
 * `addObservableIp`. When an IP address entity is created.
@@ -644,7 +644,7 @@ opt_11: <value>
 
 Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
-* `incidentCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
 * `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
 
@@ -1498,12 +1498,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text
@@ -1575,7 +1575,7 @@ fields:
     required: true
 ```
 
-Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
+Now you can perform a `POST` request to the [Cloud SOAR API](/docs/api/cloud-soar/) `/webhook` resource with a raw payload:
 ```json
 {
   "title": "test",

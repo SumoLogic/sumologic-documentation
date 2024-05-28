@@ -2,14 +2,14 @@
 id: sailpoint
 title: SailPoint
 sidebar_label: SailPoint
-description: The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint.
+description: The Sumo Logic app for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} />
 
-SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. The App consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
+SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic app for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. This app consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
 
 ## Log types
 
@@ -17,7 +17,6 @@ The SailPoint Source ingests:
 
 * Events from the [Search API Endpoint](https://developer.sailpoint.com/idn/api/v3/search).
 * Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/idn/api/v3/get-public-identities).
-
 
 ### Sample log messages
 
@@ -101,7 +100,6 @@ _sourceCategory=Labs/sailpoint ipAddress
 | sort _count
 ```
 
-
 ```sql title="SailPoint Event Type"
 _sourceCategory=Labs/sailpoint
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name | json "org" as org
@@ -113,17 +111,17 @@ _sourceCategory=Labs/sailpoint
 
 Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
+## Installing the SailPoint app
 
-## Installing the SailPoint App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section demonstrates how to install the SailPoint App.
+<AppInstall2/>
 
-import AppInstall from '../../reuse/apps/app-install.md';
+## Viewing SailPoint dashboards
 
-<AppInstall/>
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-## Viewing SailPoint Dashboards
+<ViewDashboards/>
 
 ### Overview
 
@@ -131,13 +129,11 @@ The **SailPoint - Overview** dashboard provides a summary of SailPoint events, a
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Overview.png')} alt="overview"/>
 
-
 ### Successful Authentications
 
 The **SailPoint - Successful Authentications** dashboard provides the details of success logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful-Authentications"/>
-
 
 ### Failed Authentications
 

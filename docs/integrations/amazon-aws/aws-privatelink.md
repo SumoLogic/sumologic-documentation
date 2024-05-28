@@ -19,6 +19,7 @@ Following sources are supported for AWS PrivateLink:
 
 - **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to the Sumo Logic.
 - **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
+- **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter). 
 
 The following sources are not supported for AWS PrivateLink: 
 
@@ -26,7 +27,6 @@ The following sources are not supported for AWS PrivateLink:
 - AWS S3
 - AWS Cloudwatch source
 - Sumo Logic OpenTelemtry Distro
-- OTLP sources
 - RUM sources
 
 ## Enable PrivateLink for ALB
@@ -114,7 +114,7 @@ https://endpoint9.collection.us2.sumologic.com</td>
 
 ### No VPC Peering
 
-If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you don't need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
+If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
 ![Endpoint](/img/beta/endpoints.png)
 

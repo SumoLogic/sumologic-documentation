@@ -17,7 +17,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 ## Configure a Syslog Source
 
-1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
 1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
@@ -29,7 +29,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 1. Create any processing rules you'd like for the new Source.
 1. When you are finished configuring the Source, click **Save**.
@@ -126,7 +126,7 @@ config similar to the following to proxy the syslog data:
 
 ```
 cert = /etc/stunnel/stunnel.pem
-sslVersion = SSLv3
+sslVersion = TLSv1.2
 chroot = /var/run/stunnel/
 setuid = nobody
 setgid = nobody
@@ -143,7 +143,8 @@ connect = 1514
 In this example, we're listening for incoming TLS connections on the host port 1543/TCP ("accept = 1543"). Then this forwards the plain text data to port 1514/TCP, ("connect = 1514") or the port defined in the Collector Syslog config, via the loop back.
 
 :::note
-Your Collector Syslog source must be configured to listen over TCP for this proxy to work correctly.
+* Your Collector Syslog source must be configured to listen over TCP for this proxy to work correctly.
+* The example uses `sslVersion = TLSv1.2` Check that your SSL version works properly.
 :::
 
 Find more information on Stunnel and its available configuration options, see https://www.stunnel.org/docs.html.
@@ -185,7 +186,7 @@ These steps can help identify the problem:
 
 1. **Use netstat to verify that Sumo is listening on the port.** Once the Syslog source is configured, verify on the collector host that there is a listen process on the configured port in the output of "netstat -nap". If there is no Sumo process listening on the configured protocol (TCP/UDP) and port, it could be that the Sumo process could not bind to the port because another process was using the port. In this case, a collector log message will indicate that the Sumo process failed to bind to the port.
 
-1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it from http://nmap.org/nca.
+1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it [here](https://nmap.org/ncat).
 
     Sample commands to set up the client are shown below. If you are running the command on the host where the collector runs, replace `"<ip_address>"` with `"localhost"`.
 
@@ -228,3 +229,9 @@ These steps can help identify the problem:
     ```
     2017-05-07 17:20:08,293 -0500 [Thread-2875] ERROR com.sumologic.scala.collector.input.syslog.EventInput - Received event: Exception. server com.sumologic.scala.collector.input.syslog.TCPSyslogServer@45424f69, socketAddress /172.21.36.28:60097 java.net.SocketTimeoutException: Read timed out
     ```
+
+## Error messages
+
+For the Syslog source, the installed collector sends a heartbeat at regular intervals and marks the collector health as healthy or unhealthy.
+
+Errors, if any, are reported in `collector.out.log` log file.

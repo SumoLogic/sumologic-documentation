@@ -3,11 +3,11 @@ id: transactionize-operator
 title: Transactionize Operator
 ---
 
-The **Transactionize** operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
+The _Transactionize_ operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
-Unlike other "group by" operators, where the logs in a group must match on all defined fields, transactionize just needs one field to match in order to assign logs to the same group.
+Unlike other "group by" operators, where the logs in a group must match on all defined fields, `transactionize` just needs one field to match in order to assign logs to the same group.
 
-The match can be transitive, meaning that logs are grouped when messages have adjacent matching fields. For example, all of the following logs would be grouped in a transactionize query:
+The match can be transitive, meaning that logs are grouped when messages have adjacent matching fields. For example, all of the following logs would be grouped in a `transactionize` query:
 
 A, , , ...  
 A, B, , ...  
@@ -20,6 +20,10 @@ In search results, the `transactionize` operator adds transaction fields. The fi
 * `_group_size`. The number of log messages in the transaction.
 * `_group_orphaned`. You can set when a field is not a member of the transaction, but you want to keep it for comparison or analysis by setting the `keepOrphans` parameter (described below in [Parameters](#parameters) below) to true.
 * `_group_signature`. DEPRECATED. Use the [merge operator](merge-operator.md) in the subquery instead.
+
+:::tip
+Use the [`merge` operator](merge-operator.md), which reduces a stream of events to a single event using a specified merge strategy, as a subquery for the `transactionize` operator.
+:::
 
 ## Syntax
 

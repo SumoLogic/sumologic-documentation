@@ -49,7 +49,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. In the Sumo web app, go to **Administration > Security > SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Click **+ Add Configuration** to create a new configuration.
 
     ![add-config-icon.png](/img/security/add-config-icon.png)
@@ -85,7 +85,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
     ![img](/img/security/ga_saml_service_provider.png)
 
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security"), for example, us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com`
+    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 

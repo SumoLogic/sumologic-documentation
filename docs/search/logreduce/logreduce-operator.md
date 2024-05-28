@@ -30,7 +30,7 @@ When you've already run a search query with non-aggregate results, you can use t
 
 ### Rules
 
-* The logreduce operator can't be used with [group-by operators](/docs/search/search-query-language/group-aggregate-operators) such as "count by field".
+* The logreduce operator cannot be used with [group-by operators](/docs/search/search-query-language/group-aggregate-operators) such as "count by field".
 
 ### Syntax
 
@@ -59,7 +59,7 @@ Details option syntax:
 <code>... | logreduce | details &lt;signatureId&gt;</code><br/>
 
 :::important
-Once a LogReduce query has run with the details operator, you can't use that query again, for example, in a separate Search tab.
+Once a LogReduce query has run with the details operator, you cannot use that query again, for example, in a separate Search tab.
 :::
 
 ### Optimize option

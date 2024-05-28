@@ -66,9 +66,9 @@ For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.c
 
 ## Installing the Cisco Umbrella app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Cisco Umbrella dashboards
 

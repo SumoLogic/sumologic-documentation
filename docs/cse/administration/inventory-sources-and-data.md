@@ -19,11 +19,11 @@ The screenshots in this section show how Cloud SIEM presents inventory data in t
 
 This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Cloud SIEM image" width="400" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Cloud SIEM image" style={{border: '1px solid gray'}} width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Cloud SIEM image" width="400"/>
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Cloud SIEM image" style={{border: '1px solid gray'}} width="400"/>
 
 ## About inventory data sources
 
@@ -32,6 +32,10 @@ Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-sourc
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example, the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
+
+:::note
+The AWS Inventory Source collects the inventory of AWS resources in your AWS account, but is usable only by the Root Cause Explorer. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+:::
 
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |

@@ -7,7 +7,7 @@ description: This page describes full list of changes in Kubernetes Collection v
 
 - Drop Prometheus recording rule metrics
 
-  OpenTelemetry can't collect Prometheus recording rule metrics. The new version therefore stops collecting the following recording rule metrics.
+  OpenTelemetry cannot collect Prometheus recording rule metrics. The new version therefore stops collecting the following recording rule metrics.
 
   - kube_pod_info_node_count
   - node_cpu_saturation_load1

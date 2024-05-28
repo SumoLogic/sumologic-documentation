@@ -20,7 +20,7 @@ Key features of the Druva Cyber Resilience app include:
 
 ## Log types
 
-The Druva Cyber Resilience App utilizes Sumo Logic's Druva Cyber Resilience Source to gather [Events](https://developer.druva.com/reference/listeventsbytracker) from Cyber Resilience.
+The Druva Cyber Resilience app utilizes Sumo Logic's Druva Cyber Resilience Source to gather [Events](https://developer.druva.com/reference/listeventsbytracker) from Cyber Resilience.
 
 ## Sample log messages
 
@@ -62,9 +62,11 @@ _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
+To set up [Cloud-to-Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
 
-## Installing the Druva Cyber Resilience app
+## Installing the Druva Cyber Resilience app​
+
+This section has instructions for installing the Druva app for Sumo Logic.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 

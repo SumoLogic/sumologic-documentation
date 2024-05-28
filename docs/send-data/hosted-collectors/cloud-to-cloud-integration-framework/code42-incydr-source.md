@@ -19,10 +19,6 @@ The Code42 Incydr is an insider risk management solution that allows you to dete
 
 Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -50,7 +46,7 @@ The Code42 Incydr source requires you to provide the **Base URL**, **Client ID**
 When you create an Code42 Incydr source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Code42 Incydr Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Code42 Incydr**.
 1. Enter a **Name** for the source. The description is optional. 
@@ -62,6 +58,12 @@ To configure a Code42 Incydr Source:
 1. In **Client ID**, enter the Client ID you generated from the Code42 Incydr platform.
 1. In **Secret Key**, enter the Secret Key you generated from the Code42 Incydr platform.
 1. In **Data Collection**, select the type of source from which you want to collect the data from. This allows you to limit the response to just the data you want.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Code42/Code42 Incydr` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

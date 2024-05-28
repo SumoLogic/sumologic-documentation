@@ -12,7 +12,7 @@ This section has instructions for creating and editing users in Sumo Logic. For 
 
 To create a user:
 
-1. Go to **Administration** > **Users and Roles** > **Users**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->
 1. Click the **+ Add User** on the upper right side of the page.
 1. The **Create New User** pane appears on the right side of the page.
 
@@ -31,7 +31,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## View a user
 
-1. Go to **Administration** > **Users and Roles** > **Users**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->
 1. Click the row for the user you want to view.
 1. A pane appears on the right side of the page with the user's details.
 
@@ -48,10 +48,10 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## Edit a user
 
-1. Go to **Administration** > **Users and Roles** > **Users**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->
 
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
 
-1. Select the row for the user you want to edit and choose **Edit** from the three-dot options menu.
+1. Select the row for the user you want to edit and choose **Edit** from the three-dot kebab options menu.
 1. An edit pane appears on the right side of the page. For information about edit options, see [Create a user](#create-a-user) above.
 1. After editing the user, click **Save**.

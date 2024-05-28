@@ -80,7 +80,6 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 ## Limitations
 
-* Not supported with [Real Time alerts](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results).
 * [Time Compare](../time-compare.md) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
@@ -145,7 +144,7 @@ Results show each unique signature:
 
 ![CloudTrail example LogReduce Values.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png)
 
-Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
+Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 **Drill down**
 

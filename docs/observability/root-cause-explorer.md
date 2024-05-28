@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
+<!--Kanso 
+:::warning
+Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui/). We recommend using other [Observability](/docs/observability/) tools instead.
+:::
+ Kanso-->
+
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
 Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
@@ -189,9 +195,9 @@ This section describes the Root Cause Explorer UI and how to interact with it.
 
 ### Accessing Root Cause Explorer
 
-You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI, and by selecting Root Cause Explorer in the AWS Observability Explore UI from an Events of Interest dashboard panel as shown below.
+You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI, and by selecting Root Cause Explorer in the AWS Observability UI from an Events of Interest dashboard panel as shown below.
 
-To open the Root Cause Explorer from the Explore UI:
+To open the Root Cause Explorer:
 
 1. Click **+ New** and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
 2. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.![rce](/img/rce/rce1.png)
@@ -210,7 +216,7 @@ The filters at the top of the Root Cause Explorer page allow you to filter the E
 
 ![automatic-filters.png](/img/rce/automatic-filters.png)
 
-The filters with an orange border on the left side, which refer to AWS infrastructure and hosts, are automatically set, based on the currently selected resource in the Explore hierarchy. The screenshot above has filters for **Region**, **Namespace**, and **Account**. If the currently selected resource in Explore is deeper in the hierarchy, one or more additional resource filters, for instance **Tablename**, would be visible. **Kubernetes** and **Trace** filters appear to the right of the resource type filters. An eye icon with a strikethrough indicates that the associated data is currently filtered, so that it not visualized. To toggle an individual filter on and off, you can use the eye icon in a chip. You can toggle all AWS, all K8S, or all Trace on or off using the controls in the  expanded filter area, shown in the screenshot in [Search filters for traces and Kubernetes](#search-filters-for-traces-and-kubernetes), below.
+The filters with an orange border on the left side, which refer to AWS infrastructure and hosts, are automatically set, based on the currently selected resource in the hierarchy. The screenshot above has filters for **Region**, **Namespace**, and **Account**. If the currently selected resource is deeper in the hierarchy, one or more additional resource filters, for instance **Tablename**, would be visible. **Kubernetes** and **Trace** filters appear to the right of the resource type filters. An eye icon with a strikethrough indicates that the associated data is currently filtered, so that it not visualized. To toggle an individual filter on and off, you can use the eye icon in a chip. You can toggle all AWS, all K8S, or all Trace on or off using the controls in the  expanded filter area, shown in the screenshot in [Search filters for traces and Kubernetes](#search-filters-for-traces-and-kubernetes), below.
 
 The numeric value to the right of a filter indicates how many Events of Interest are associated with a particular search filter. When you click on a filter, a popup lists the available resources of that resource type. A checkmark indicates that a resource is selected. You can add or remove a resource by clicking on the resource in the popup.
 
@@ -332,7 +338,7 @@ Then, in AWS Observability (AWS DynamoDB - Events dashboard, All Table Events 
 
 ## Analyzing Events of Interest Using Log Queries
 
-Root Cause Explorer streams Events of Interest data as log messages into the Continuous Intelligence Platform. This allows you to correlate problems that appear in Events of Interest data with signals evident from your organization-specific application or infrastructure logs or metrics data. Beside ad hoc searches, you can build dashboards that provide these correlations. 
+Root Cause Explorer streams Events of Interest data as log messages into the Sumo Logic SaaS Log Analytics Platform. This allows you to correlate problems that appear in Events of Interest data with signals evident from your organization-specific application or infrastructure logs or metrics data. Beside ad hoc searches, you can build dashboards that provide these correlations. 
 
 The availability of Events of Interest (EOI) data as log messages allows you to:
 
@@ -515,7 +521,7 @@ For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch So
 The AWS Inventory Source collects the inventory of AWS resources in your AWS account, such as EC2 and RDS instances, including all metadata and tags applied to those resources. We use this data to construct a topology of resources, such as which resource talks to or depends upon which other resources, and so on. The CloudFormation template configures the source with the read permissions listed below. However, data is only collected for the namespace provided to the CloudFormation template.
 
 :::important
-AWS Inventory Source is usable only by the Root Cause Explorer and is not exposed anywhere else in Continuous Intelligence Platform (CIP).
+AWS Inventory Source is usable only by the Root Cause Explorer and is not exposed anywhere else in the Sumo Logic SaaS Log Analytics Platform.
 :::
 
 ### Permissions

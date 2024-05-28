@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -40,13 +36,14 @@ To generate an API token:
 1. Sign in to the SentinelOne Management Console with Admin user credentials.
 1. In the Management Console, click **Settings**.
 1. In the **Settings** view, click **Users**.
-1. Click **New User**.
-1. Enter the information for the new console user.
+1. Click **Service Users**.
+1. Click **Actions** dropdown and select **Create New Service User**.
+1. Enter the information for the new service user.
 1. In **Role**, select **Admin**.
 1. Click **Save**.
 1. Log in to the SentinelOne Management Console with the credentials of the new user.
 1. Navigate to **Settings > Users**.
-1. Select the newly added console user.
+1. Select the newly added service user.
 1. Click **Options**.
 1. Click **Generate API token**.
 1. Copy or download this API Token.
@@ -57,7 +54,7 @@ When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector
 
 To configure a SentinelOne Mgmt API Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **SentinelOne Mgmt API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.

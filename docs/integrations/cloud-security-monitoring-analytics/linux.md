@@ -13,14 +13,12 @@ The Cloud Security monitoring and Analytics app for Linux ingests any distributi
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See Installed Collectors for information on other OSs.
 
-
-## System Requirements
+## System requirements
 
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
 * Single core, 512MB RAM
 * 8GB disk space
 * Package installers require TLS 1.2 or higher.
-
 
 ## Collecting Data for the Linux Integration
 
@@ -28,10 +26,14 @@ Follow the steps in this topic to install or uninstall a collector on Linux. See
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
--or-
-* Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
-
+* Sumo Logic
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+    1. Click **Add Collector**.
+    1. Click **Installed Collector**.
+    1. Click the link for the collector to begin the download.
+* Browser 
+    1. Open a browser.
+    1. Enter the static URL for your pod. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url/) for a list of URLs for your deployment pod. The download begins immediately.
 
 ### Install the Collector on Linux
 
@@ -43,17 +45,17 @@ Choose one of these methods to install the Collector:
 Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
 
 1. Open the downloaded installer file.
-2. If prompted, enter the root or Administrator user name and password for the system.
-3. Open the wizard to show the Welcome page. Click **Next**.
-4. Accept the license agreement and click **Next**.
-5. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
-6. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
-7. Choose an authentication method.
-   * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-   * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-   * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
-8. Click **Finish** to complete the setup.
-9. In Sumo Logic select **Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
+1. If prompted, enter the root or Administrator user name and password for the system.
+1. Open the wizard to show the Welcome page. Click **Next**.
+1. Accept the license agreement and click **Next**.
+1. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
+1. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
+1. Choose an authentication method.
+   * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
+   * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
+1. Click **Finish** to complete the setup.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. Verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
 
 </details>
 
@@ -197,14 +199,13 @@ Use the following command to start the collector service.
  ```bash
  sudo ./collector start
  ```
-13. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
+13. Verify that you can see the collector. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 
 </details>
 
 You can build a Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
 After installing Collectors, you can configure Sources from Sumo Logic or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
-
 
 ### Uninstalling the Collector
 
@@ -272,53 +273,54 @@ sudo systemctl daemon-reload
 
 
 2. **Remove the collector from Sumo Logic**:
-   1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.
 
 A success message is displayed and the collector is removed from the list.
 
 
-## Installing the Linux App
+## Installing the Linux app
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Linux Security Monitoring Dashboards
+## Viewing Linux Security Monitoring dashboards
 
-### Linux - Security Monitoring - Overview
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
+<ViewDashboards/>
+
+### Security Monitoring - Overview
+
+The **Security Monitoring - Overview** dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
 **Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
+### Security Analytics - Login Activity
 
-### Linux - Security Analytics - Login Activity
-
-**Dashboard description:** This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
+The **Security Analytics - Login Activity** dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
+### Security Analytics - Privileged Activity
 
-### Linux - Security Analytics - Privileged Activity
-
-**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Analytics - Privileged Activity** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
 
+### Security Monitoring - User, Service, and System Monitoring
 
-### Linux - Security Monitoring - User, Service, and System Monitoring
-
-**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Monitoring - User, Service, and System Monitoring** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 

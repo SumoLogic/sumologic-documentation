@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -127,7 +136,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -263,6 +271,7 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -457,7 +466,7 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Request Demo',
+                label: 'Request a Demo',
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
@@ -466,8 +475,8 @@ module.exports = {
           {
             items: [
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                label: 'Contact Support',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -475,10 +484,10 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
-            title: 'Contact Us',
+            title: 'Help',
           },
           {
             items: [
@@ -496,6 +505,23 @@ module.exports = {
               },
             ],
             title: 'Open Source',
+          },
+          {
+            items: [
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@sumologic/videos',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/sumo-logic',
+              },
+              {
+                label: 'X (Twitter)',
+                href: 'https://twitter.com/SumoLogic',
+              },
+            ],
+            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

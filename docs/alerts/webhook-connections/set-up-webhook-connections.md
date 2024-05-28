@@ -7,17 +7,19 @@ description: Webhook connections allow you to send Sumo Logic alerts to third-pa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A Webhook is an HTTP callback, which is an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
+:::info Prerequisite
+To create a webhook connection, you'll need the [Manage Connections role capability](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
+:::
 
-For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled
-search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you can send from Sumo Logic, but your third party might impose restrictions. In addition, the payload of a webhook may be restricted by Sumo or the third party.
+A _webhook_ is an HTTP callback, which is an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
+
+For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you can send from Sumo Logic, but your third party might impose restrictions. In addition, the payload of a webhook may be restricted by Sumo or the third party.
 
 Along with a fully customizable webhook connection, you can quickly create webhooks for:
 
 * [AWS Lambda](aws-lambda.md)
 * [Azure Functions](microsoft-azure-functions.md)
 * [Datadog](datadog.md)
-* [HipChat](hipchat.md)
 * [Jira](jira-cloud.md)
 * [Microsoft Teams](microsoft-teams.md)
 * [New Relic](new-relic.md)
@@ -34,15 +36,11 @@ If a scheduled search fails or times out, no data will be sent via webhook. In t
 
 ## Set up a webhook connection
 
-:::note
-To configure a webhook connection, you must have a Sumo role that grants you the **Manage connections** capability.
-:::
-
 The first step in integrating webhooks with Sumo Logic is to configure one or more connections, which are HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections, depending on your organization's needs.
 
 To set up a webhook connection:
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. On the **Connections** page click the **+** button on the top right of the table.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
@@ -89,8 +87,7 @@ All variables are case-insensitive.
 | `{{NumQueryResults}}` | The number of results the query returned. Results can be raw messages, time-series, or aggregates.<br/><br/>An aggregate query returns the number of aggregate results; displayed in the Aggregates tab of the Search page.<br/><br/>A non-aggregate query returns the number of raw results; displayed in the Messages tab of the Search page.| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{Id}}` | The unique identifier of the monitor or search that triggered the alert. For example, `00000000000468D5`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{DetectionMethod}}` | This is the type of Detection Method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`,  `LogsMissingDataCondition`, `MetricsMissingDataCondition`, or `StaticCondition` (deprecated). | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`.
-Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
 | `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example:<br/>`07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerTime}}` | The time the monitor was triggered. For example:<br/>`07/13/2021 03:38:30 PM UTC.` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerCondition}}` | The condition that triggered the alert. For example:<br/>`Greater than or equal to 1.0 in the last 15 minutes` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -279,7 +276,7 @@ Basic QWxhZGRpbjpPcGVuU2VzYW1l
 
 ## Test a connection
 
-After configuring the connection, click the **Test Connection** button at the bottom left of the **Payload** area. If the connection is made, you will see a 200 OK response message.
+After configuring the connection, click the **Test Connection** button at the bottom left of the **Payload** area. If the connection is made, you will see a `200 OK` response message.
 
 This test does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
@@ -291,8 +288,8 @@ If the connection is successful, you'll see a message appearing in the third-par
 
 If the integration is not working as expected, there shall be a payload issue. You shall need to troubleshoot the generated payload. Here are some HTTP debugging tools that shall help you capture the generated payload and troubleshoot.
 
-* [Beeceptor](https://beeceptor.com/). Helps troubleshoot HTTP payload and configuration issues when working with webhooks and HTTP POST requests. You can inspect the JSON payload in real-time, enabling you to gain insights into the data being sent and received. 
-* [Request Inspector](https://requestinspector.com/). Helps you in capturing HTTP requests and responding with `200 OK`. You can review the raw payload and find discrepancies between actual and expected. 
+* [Beeceptor](https://beeceptor.com/). Helps troubleshoot HTTP payload and configuration issues when working with webhooks and HTTP POST requests. You can inspect the JSON payload in real-time, enabling you to gain insights into the data being sent and received.
+* [Request Inspector](https://requestinspector.com/). Helps you in capturing HTTP requests and responding with `200 OK`. You can review the raw payload and find discrepancies between actual and expected.
 
 ## Editing and deleting connections
 

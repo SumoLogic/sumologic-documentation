@@ -37,8 +37,8 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 
 The script takes two inputs:
 
-1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#Create-an-access-key) in the _Access Keys_ topic for more information.
-2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#Create-an-access-key) in the _Access Keys_ topic for more information.
+1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#from-the-preferences-page) for more information.
+2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#from-the-preferences-page) for more information.
 
 **AWS_PROFILE** can be set as an environment variable from the command line before executing the script. If it is not set, the “default” aws profile will be used.
 

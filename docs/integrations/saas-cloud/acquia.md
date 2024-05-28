@@ -141,7 +141,7 @@ request_id
 
 This section provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
-Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#Configuring-a-cloud-syslog-source).
+Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#configuring-a-cloud-syslog-source).
 
 
 ### Step 1: Configure a collector
@@ -150,7 +150,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 
 To create a new Sumo Logic hosted collector, do the following:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Click **Add Collector**.
 3. Click **Hosted Collector**.
 4. Provide a **Name** for the Collector.
@@ -172,9 +172,9 @@ After the Collector has been set up, it appears on the Collection page as a Host
 
 This task shows you how to configure a cloud syslog source for Acquia log collection.
 
-#### Before you begin
+#### Prerequisites
 
-It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](/#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
+It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](#configuring-a-cloud-syslog-source), be sure to specify the following configurations:
 
 * Source:
   * **Name**. (Required) A name is required, the Description is optional.
@@ -214,7 +214,7 @@ To configure a cloud syslog source, do the following:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 7. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 8. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new source.
 9. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
@@ -247,9 +247,9 @@ To configure Acquia log forwarding, follow the instructions in the Acquia [docum
 
 This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Acquia dashboards
 
