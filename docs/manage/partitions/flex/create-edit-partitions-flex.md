@@ -66,7 +66,7 @@ You can make some changes to an existing partition:  
 
 * You can change the retention period of the partition.
   :::note
-  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.
+  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Index. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
 * You cannot change the name of a partition, the routing expression, or reuse a partition name.
@@ -83,7 +83,7 @@ You can make some changes to an existing partition:  
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.
     :::
-1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
+1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
 ### Audit logging for routing expression changes
