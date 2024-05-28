@@ -507,7 +507,7 @@ sumologic:
 ## Sending data to multiple targets
 
 :::note
-This feature is available from version [v4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.7.1) of Kubernetes Helm Chart.
+This feature is available from version [v4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) of Kubernetes Helm Chart.
 :::
 
 It is possible to send logs to multiple locations. This section describes the following cases:
