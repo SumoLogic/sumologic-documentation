@@ -124,7 +124,7 @@ If you're using this function for quite some time then we recommend redeploying 
 
 If the error still persists in BlobTaskProducer function and failure rate > 1% then
 
-\> Increase the time out of the BlobTaskProducer Function to 30 min in host.json by clicking on Appfiles 
+* Increase the timeout of the BlobTaskProducer Function to 30 min in host.json by clicking on **App files**. 
 
 ![error](/img/send-data/azure-error1.png)
 
