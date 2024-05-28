@@ -60,7 +60,7 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 ### How do I export Azure function logs?
 
-All the Azure Function are enabled with application insights. To export Azure function logs, do the following:
+All Azure functions are enabled with application insights. To export Azure function logs, do the following:
 
 1. Navigate to your **Azure Function** app from **App Catalog**.
 1. Go to **Monitoring > Logs**, and run the below query.
