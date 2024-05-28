@@ -21,10 +21,6 @@ The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by 
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
