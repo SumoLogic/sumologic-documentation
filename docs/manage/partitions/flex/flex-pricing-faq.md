@@ -87,7 +87,7 @@ When partitions are marked as included and `_index`/`_view` is not referenced in
 - When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
 - When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
 - Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query. 
-- However, when you run the query, for example `_index="Partition A" OR error`, all of the partitions (Partition A, Partition B, and Partition C) will be considered for the query, because the error keyword might be present in Partition B or C as well. So in cases like this, we need to scan all three of them.
+- However, when you run the query, for example `_index="Partition A" OR error`, all of the partitions (Partition A, Partition B, and Partition C) will be considered for the query. This is because the error keyword might be present in Partition B or C as well. So in cases like this, we need to scan all three of them.
 
 ## How are preview queries charged?
 
