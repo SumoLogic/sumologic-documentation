@@ -62,7 +62,7 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 All Azure functions are enabled with application insights. To export Azure function logs, do the following:
 
-1. Navigate to your **Azure Function** app from **App Catalog**.
+1. Go to the Sumo Logic **App Catalog** and navigate to your **Azure Function** app.
 1. Go to **Monitoring > Logs**, and run the below query.
     ```sql
     union isfuzzy=true
