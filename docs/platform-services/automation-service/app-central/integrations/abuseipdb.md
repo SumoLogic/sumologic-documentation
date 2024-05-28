@@ -7,14 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuseipdb.png')} alt="abuseipdb" width="100"/>
 
-***Version: 1.3  
-Updated: Oct 06, 2023***
+***Version: 1.4  
+Updated: May 28, 2024***
 
 Enrich IP addresses with reputation information gathered from AbuseIPDB.
 
 ## Actions
 
-* **IP Reputation** *(Enrichment)* - Gather IP reputation information (only for Cloud SOAR).
+* **IP Reputation** *(Enrichment)* - Retrieves IP reputation information and saves the report as incident attachment or artifcat (only for Cloud SOAR).
 * **IP Reputation V2** *(Enrichment)* - Gather IP reputation information.
 
 ## Notes
@@ -32,3 +32,6 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 	+ Added new action: IP Reputation V2
 	+ Changed fields visibility
 	+ Fixed Typo
+* May 28, 2024 (v1.4)
+    + Action updated: IP Reputation.
+    + Save as Incident attachment/artifact.
