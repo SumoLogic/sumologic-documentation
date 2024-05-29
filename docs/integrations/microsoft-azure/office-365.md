@@ -120,13 +120,25 @@ We recommend the following Source Category naming convention:
 * **DLP.** O365/DLP
 
 
-## Installing the Microsoft Office 365 App
+## Installing the Microsoft Office 365 app
 
 Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Microsoft Office 365 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Office 365 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Microsoft Office 365 dashboards
 

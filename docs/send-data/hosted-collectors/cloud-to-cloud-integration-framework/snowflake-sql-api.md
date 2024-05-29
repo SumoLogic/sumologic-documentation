@@ -25,10 +25,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 Customers can provide custom SQL queries for the source to execute and a configuration to translate the results to custom metrics data.
 

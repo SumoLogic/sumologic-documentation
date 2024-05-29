@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="atlassian-jira-v2" width="80"/>
 
-***Version: 2.5  
-Updated: Jul 04, 2023***
+***Version: 2.6  
+Updated: May 23, 2024***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.   
 
@@ -75,3 +75,4 @@ Ticketing System
 		- Create Issue
 		- Update Issue
 		- Update Issue Status
+* May 23, 2024 (v2.6) - Updated the  Add Issue Attachments To Incident action.

@@ -23,10 +23,6 @@ This Source requires you to be licensed for Proofpoint On Demand’s Remote Sy
 The Proofpoint PoD API is not public; you'll need to request details on the API from Proofpoint.
 :::
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
