@@ -10,7 +10,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We are excited to introduce the **Multiple Scheduled Reports** feature to our dashboards, this powerful new capability allows you to configure multiple reports against a dashboard, providing enhanced flexibility and control over your reporting needs. Here are some of the key features that this feature offers:
+We are excited to introduce the **Multiple Scheduled Reports** feature to Sumo Logic dashboards. This powerful new capability allows you to configure multiple reports against a dashboard, providing enhanced flexibility and control over your reporting needs. Key features include:
 
 - **Multiple Configurations**. Set up several reports from the same dashboard, each with its unique settings.
 - **Custom Variable Values**. Assign different variable values to each report, tailoring the data to meet specific reporting needs.
