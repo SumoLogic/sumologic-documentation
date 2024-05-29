@@ -54,7 +54,7 @@ To update an existing a Scheduled Report dashboard email:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Edit** against the required report. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report_1.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
-1. Make desired changes and click **Update** to save them. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
+1. Make your desired changes. When you're done, click **Update**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 
 ## Delete a Scheduled Report
 
