@@ -492,12 +492,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text
@@ -644,7 +644,7 @@ opt_11: <value>
 
 Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
-* `incidentCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
 * `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
 
@@ -1498,12 +1498,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text

@@ -126,7 +126,7 @@ area and provide details of the event.
 
 To search the Audit Event Index for logs that describe Cloud SOAR events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**. <br/><img src={useBaseUrl('/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png')} alt="New log search" width="400"/>
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_system_events or _index=sumologic_audit_events) _sourceCategory=oar*

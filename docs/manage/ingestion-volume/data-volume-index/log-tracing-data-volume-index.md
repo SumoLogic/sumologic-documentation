@@ -65,19 +65,18 @@ If the data volume index is not enabled, a search will not produce any results.
 
 The data volume index messages are JSON formatted messages that contain parent objects for each source data point, and child objects that detail the message size and count for each parent.
 
-For example, a single message for the "Collector" volume data may look similar to the following, with **field, dataTier, sizeinBytes,** and **count values** for those five minutes.
+For example, a single message for the "Collector" volume data may look similar to the following, with `field`, `dataTier`, `sizeinBytes`, `extractedAndCollectedFieldsSize`, and `count` values for those five minutes.
 
 ```
-[{"field":"rds_slow_query_logs","dataTier":"Continuous","sizeInBytes":284642723,"count":218177},
-{"field":"epd_dat_b_cluster","dataTier":"Continuous","sizeInBytes":556961,"count":1038},
-{"field":"aws-observability-collector","dataTier":"Continuous","sizeInBytes":117132,"count":92},
-{"field":"epd_dat_a_cluster","dataTier":"Continuous","sizeInBytes":2163905,"count":2157},...]
+{"field":"vibs_inf","dataTier":"Infrequent","sizeInBytes":10539077,"extractedAndCollectedFieldsSize":445829,"count":3092},
+{"field":"epd_dev_inf","dataTier":"Infrequent","sizeInBytes":39698534,"extractedAndCollectedFieldsSize":19835099,"count":130358},
+{"field":"epd_pr_inf","dataTier":"Infrequent","sizeInBytes":2204671,"extractedAndCollectedFieldsSize":1426875,"count":8864}
 ```
 
-For example, a single message for the "Collector" volume data may look similar to the following flex data, with field, dataTier, sizeInBytes, and count values for those five minutes.
+For example, a single message for the "Collector" volume data may look similar to the following flex data, with `field`, `dataTier`, `sizeInBytes`, `extractedAndCollectedFieldsSize`, and `count` values for those five minutes.
 
 ```
-{"field": "part_a","dataTier": "Flex","sizeInBytes": 13754115,"count": 10255}
+{"field": "part_a","dataTier":"Flex","sizeInBytes":13754115,"extractedAndCollectedFieldsSize":6835091,"count":10255}
 ```
 
 ## Examples
@@ -187,6 +186,7 @@ For example, a single message for collector volume data may look similar to the 
     "collector_b":{"billedBytes":523296,spansCount: 47082},
     "collector_c":{"billedBytes":733536,spansCount: 89086},
     "collector_d":{"billedBytes":133296,spansCount: 53083},
+}
 ```
 
 ### Querying the Tracing Data Volume index
@@ -215,7 +215,8 @@ This query returns the tracing volume by source category.
 
 ```sql
 _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
-| parse regex "\"(?<sourcecategory>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 |sum(billedBytes) as"billedBytes" by sourcecategory
 ```
 
@@ -229,7 +230,8 @@ This query returns the tracing volume by collector.
 
 ```sql
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 |sum(billedBytes) as "billedBytes" by collector
 ```
 
@@ -241,9 +243,10 @@ This query produces results like these:
 
 This query returns the tracing volume for a specific Collector. The Collector name can be supplied within a JSON operation to get the data for that Collector.
 
-```
+```sql
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | where collector ="<<collector_json>>"
 |sum(billedBytes) as billedBytes by collector
 | fields billedBytes
@@ -253,9 +256,10 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query runs against the tracing volume index and uses the [*outlier*](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
-```
+```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | timeslice 6h
 |sum(billedBytes) as "billedBytes" by _timeslice
 |outlier "billedBytes"
@@ -267,11 +271,12 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 This query runs against the tracing volume index and uses the [*predict*](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
-```
+```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | timeslice 1h
-|sum(billedBytes) as %"billedBytes" by _timeslice
+| sum(billedBytes) as %"billedBytes" by _timeslice
 | predict %"billedBytes" by 1h model=ar, forecast=20
 | fields - billedBytes_error
 ```

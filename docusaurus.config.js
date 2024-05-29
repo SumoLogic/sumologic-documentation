@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -127,7 +136,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -235,12 +243,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      content: `RSAC 2024 is almost here. It’s game on for AI-driven DevSecOps! Meet us at booth #6271 on May 6–9.  👉 <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdX9T4-ksh_LhCAu7_C1SG3WDnjTgoV1Tgy8VoxwAankcQw/viewform"> Book a meeting</a>.`,
-      backgroundColor: '#2f0f3d',
-      textColor: '#fff',
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options

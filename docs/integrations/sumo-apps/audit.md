@@ -34,6 +34,12 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+## Create monitors for the Sumo Logic Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ## Viewing Sumo Logic Audit dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

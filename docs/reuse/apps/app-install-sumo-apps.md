@@ -1,6 +1,6 @@
 To install the app:
 
-1. From the Sumo Logic navigation, select **App Catalog**.
+1. Select **App Catalog**.
 1. In the **Search Apps** field, search for and then select your app.
 1. Optionally, you can scroll down to preview the dashboards included with the app. Then, click **Install App** (sometimes this button says **Add Integration**).
 1. On the next configuration page, under **Select Folder for your App**, complete the following fields:
