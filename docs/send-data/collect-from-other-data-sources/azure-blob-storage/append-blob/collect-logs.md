@@ -117,7 +117,7 @@ To authorize the App Service to list the Storage Account key, do the following:
 
    * **Subscription**: Choose Pay as you Go.
    * **Managed Identity**: Choose Function App.
-   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
+   * **Select**:  **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
 1. Click **Review + assign**
 1. Click **Save**.
 
@@ -172,7 +172,7 @@ To create an event grid subscription, do the following:
 1. Specify the following Select Event Hub parameters, then click **Confirm Selection.**
 
    * **Resource Group**. Select the resource group you created [Step 3](#step-3-enabling-vnet-integration-optional) in which all the resources created by ARM template are present.
-   * **Event Hub Namespace**. Select **SUMOBREventHubNamespace\<*unique string*\\>**.
+   * **Event Hub Namespace**. Select **SUMOABEvtHubNS\<*unique string*\\>**.
    * **Event Hub**. Select **blobreadereventhub** from the dropdown.
 
 1. Specify the following Filters tab options:
@@ -188,10 +188,10 @@ To create an event grid subscription, do the following:
 
 ### Step 3: Enabling VNet Integration (Optional)
 
-Assuming you have used the modified template which uses standard/premium plan for BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions. This assumes that your storage account access is enabled for selected networks.
+Assuming you have used the modified template which uses standard/premium plan for BlobTaskConsumer function. This assumes that your storage account access is enabled for selected networks.
 
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
-1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
+1. Perform below steps for both BlobTaskConsumer function apps.
 
    1. Go to **Function App > Networking**. 
    1. Under Outbound traffic, click on Vnet Integration. 
@@ -210,7 +210,7 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
     ![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
 
-1. Add the outbound ip addresses (copied in step 2.d) from both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions under Firewall with each ip in a single row of Address range column.
+1. Add the outbound ip addresses (copied in step 2.d) from both BlobTaskConsumer function under Firewall with each ip in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
@@ -220,4 +220,4 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
 | File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| ~3 minutes | 100 | 100MB X 80 + 104MB X 20 | Avg 40MB/sec <br/> MAX 190MB/sec | MAX 411811/sec | 3.77 minutes | 9.31 | 20,643,840 |
+| ~2 hrs | 8000 | 6.18 MB X 5 + 7995 X 5.36 MB  | 5.95 MB/sec | MAX 113789/sec | ~ 2 hrs | 41.89 | 81925120 |

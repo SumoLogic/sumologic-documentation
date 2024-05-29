@@ -14,19 +14,11 @@ This solution is for newly created blobs only (not for existing blobs). 
 
 For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).
 
-## Azure information resources
-
-To learn more about exporting monitoring data from Azure services to Azure Blob Storage, see the following topics in Azure help.  
-
-| Azure feature | Learn about it | Set up logging |
-|:--|:--|:--|
-| Flow Logging | [Introduction to flow logging for network security groups.](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview) | [Tutorial: Log network traffic to and from a virtual machine using the Azure portal](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal) |
-
 ## Azure-Sumo pipeline
 
 The diagram below illustrates the Azure-Sumo pipeline for Azure logs collection from Azure Blob Storage. Monitoring data flow describes the flow of logs from Azure Blob Storage to Sumo Logic.  Pipeline components describes the actors in the flow.
 
-![Azure-Sumo-pipeline-Sumologic.png](/img/send-data/Azure-Sumo-pipeline-Sumologic.png)
+![Azure-Sumo-pipeline-Sumologic.png](/img/send-data/appendblob/AppendBlobReader.png)
 
 ## Monitoring data flow
 
@@ -82,3 +74,11 @@ It is assumed that:
 :::
 
 For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).
+
+## Azure Append Blob Limitations
+
+1. Limitations 1
+1. Limitations 2
+1. Limitations 3
+1. Limitations 4
+1. Limitations 5
