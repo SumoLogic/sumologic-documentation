@@ -47,6 +47,22 @@ To view the Daily scan and Yearly scan data information based on a log-based SLO
 
 <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-estimates-slo.png')} alt="scan-estimates-slo" style={{border:'1px solid gray'}} width="600" />
 
+
+## Dashboard scan estimates
+
+When you enter a query to create a dashboard, Sumo Logic will estimate and display the amount of data scanned in Flex. This detail is vital as with Flex pricing, you're charged for the amount of data that's scanned to complete the query. 
+
+You can view the scan detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable Flex model.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-estimates-dashboard-creation.png')} alt="scan-estimates-dashboard-creation" style={{border:'1px solid gray'}} width="800" />
+
+You can also view the amount of data consumed for individual panels, after creating the dashboard, helping you to mitigate costs. 
+
+To view the scan estimates for the dashboard panel you have created:
+1. Go to the panel for which you want to see the scan details.
+1. Click the three-dot kebab menu, and then select **Info**. 
+1. You can see the scan data details against **Scanned Bytes - Flex**.
+
+<img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-estimates-dashboards.png')} alt="scan-estimates-dashboards" style={{border:'1px solid gray'}} width="600" />
+
 ## Best practices
 
 - Use the `_index` field to reduce the scope of the query.
