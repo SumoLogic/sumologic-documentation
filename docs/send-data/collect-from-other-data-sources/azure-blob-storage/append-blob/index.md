@@ -33,10 +33,10 @@ The diagram below illustrates the Azure-Sumo pipeline for Azure logs collection 
 Here’s a summary of how various components are stitched together in the pipeline.
 
 1. Azure services send monitoring data (logs and metrics) to Azure Blob containers in a storage account. General-purpose v2 (GPv2) and Blob storage accounts are supported.
-1. An Event subscription is configured with Azure Blob container as the publisher and Event Hub as the subscriber. Event Grid then routes all the create block events to Event Hub. 
-1. On receipt of data from Event Grid, an event hub triggers its Azure function named TaskProducer to create a task. (This is a JSON object that includes the start and end byte of the block blob).These tasks are then pushed to Azure Service Bus Queue.
-1. Another Azure function named TaskConsumer is triggered in response to a new task in Azure Service Bus Queue. This function reads the data in the given range (from start byte to end byte), transforms the data, and sends it to an HTTP source on a hosted collector in Sumo. Each of the three Azure functions sends their logs to storage accounts (named `sumobrlogs<unique_prefix>`) created by an Azure Resource Template (ARM).
-1. If the TaskConsumer function is unable to process or send the message, (due to throttling or failure,  upon reaching a MaxDeliveryCount threshold of 10, it sends the message to secondary sub-queue, called a dead-letter queue (DLQ). Another Azure function named DLQTaskConsumer is triggered every 5 minutes by a timer trigger to retry sending the messages.
+1. An Event subscription is configured with Azure Blob container as the publisher and Event Hub as the subscriber. Event Grid then routes all the create append events to Event Hub. 
+1. On receipt of data from Event Grid, an event hub triggers its Azure function named AppendBlobTaskProducer to create a task. (This is a JSON object that includes the start of the append blob).These tasks are then pushed to Azure Service Bus Queue.
+1. Another Azure function named AppendBlobTaskConsumer is triggered in response to a new task in Azure Service Bus Queue. This function reads the data in the given range (from start byte to batchSize bytes), transforms the data, and sends it to an HTTP source on a hosted collector in Sumo. Each of the three Azure functions sends their logs to storage accounts (named `SUMOAB<unique_prefix>`) created by an Azure Resource Template (ARM).
+1. If the AppendBlobTaskConsumer function is unable to process or send the message, (due to throttling or failure,  upon reaching a MaxDeliveryCount threshold of 10, it sends the message to secondary sub-queue, called a dead-letter queue (DLQ). Another Azure function named DLQTaskConsumer is triggered every 5 minutes by a timer trigger to retry sending the messages.
 
 :::note
 There is no automatic cleanup of the DLQ. Messages remain in the DLQ until you explicitly retrieve them.
@@ -49,7 +49,7 @@ The table below describes the key components in the Azure-Sumo pipeline.
 | Component Description     | Description |
 |:--|:--|
 | Azure Event Grid | A fully-managed intelligent event routing service that allows for uniform event consumption using a publish-subscribe model. You select the Azure resource you would like to subscribe to, and specify the event handler or webhook endpoint to which to send the event.  |
-| Azure Event Hubs | A data streaming platform and event ingestion service capable of receiving, storing. and processing millions of events per second. Event Grid routes “create block blob” events to an event hub, which triggers a Sumo-provided Azure function. |
+| Azure Event Hubs | A data streaming platform and event ingestion service capable of receiving, storing. and processing millions of events per second. Event Grid routes “create append blob” events to an event hub, which triggers a Sumo-provided Azure function. |
 | Sumo-provided Azure functions | Small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo HTTP source. Each of the functions also maintains its own logs for function debug information. |
 | Sumo HTTP source | A Sumo HTTP source on a hosted collector receives the monitoring data from the TaskConsumer Azure function.  |
 | Azure Blob Storage | Microsoft's object storage solution for the cloud, optimized for storing large amounts of unstructured data, such as text or binary data. |
@@ -59,7 +59,7 @@ The table below describes the key components in the Azure-Sumo pipeline.
 
 Sumo provides an Azure Resource Management (ARM) template to build most of the components in the pipeline. The template creates: 
 
-* An event hub to which Azure Event Grid routes create block blobs events. 
+* An event hub to which Azure Event Grid routes create append blobs events. 
 * A Service Bus for storing tasks.
 * Three Azure functions—TaskProducer, TaskConsumer, and DLQTaskConsumer—that are responsible for sending monitoring data to Sumo.
 * A storage account to which the Azure functions write their log messages about successful and failed transmissions.
@@ -73,10 +73,9 @@ For more information, see [Filtering events](https://docs.microsoft.com/en-us/az
 :::note
 It is assumed that:
 
-* The Azure service updates the blob (adding new blocks) in small chunks and has been tested with block blobs.
+* The Azure service updates the blob (adding new blocks) in small chunks and has been tested with append blobs.
 * Any JSON file in the JSON lines format that is uploaded into a storage account will result in JSON objects being extracted and sent to Sumo Logic.
-* Log files have a file extension of .csv, .json, .blob, or .log.
-  * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo Logic.
+* Log files have a file extension of .json, .blob, or .log.
   * If the file is .json, the JSON objects are extracted and sent to Sumo Logic.
   * If the file is .blob, the JSON objects are extracted and sent to Sumo Logic.
   * If the file is .log, log lines are sent to Sumo Logic as is.  

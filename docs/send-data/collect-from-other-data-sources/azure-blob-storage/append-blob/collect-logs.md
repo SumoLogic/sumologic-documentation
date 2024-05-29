@@ -20,9 +20,9 @@ This section has instructions for configuring a pipeline for shipping logs avail
 ## Functional overview
 
 1. You configure the Azure service to export logs to a container in a storage account created for that purpose.
-1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo-provided ARM) as subscriber. Event Grid routes block blob creation events to event hub.
-1. Event Hub streams the events to the TaskProducer Azure function, which creates tasks (a JSON object that specifies start and end byte, container name, blob path) and pushes those tasks to the service bus task queue.
-1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the block blob, from start byte to stop byte, and sends that data to Sumo. 
+1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo-provided ARM) as subscriber. Event Grid routes append blob creation events to event hub.
+1. Event Hub streams the events to the TaskProducer Azure function, which creates tasks (a JSON object that specifies start and batchsize, container name, blob path) and pushes those tasks to the service bus task queue.
+1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the append blob, from start byte to batchsize, and sends that data to Sumo. 
 1. The set up also includes failure handling mechanism. For more information about the solution strategy, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob).
 
 ## Step 1. Configure Azure storage account 
@@ -57,18 +57,17 @@ In this step, you configure an HTTP source to receive logs from the Azure functi
 
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
 
-1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template.
-    :::note
-    The above template uses Consumption Plan which does not support VNet integration, you can use [blobreaderdeploywithPremiumPlan.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json) which uses Elastic Premium plan.
-    :::
+1. Download the [appendblobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/AppendBlobReader/src/appendblobreaderdeploy.json) ARM template.
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
 1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/edit-template.png')} alt="edit-template" width="800"/>
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-arm.png')} alt="edit-template" width="800"/>
 1. Click **Save**.
 1. On the Custom deployment blade, do the following:
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose Location.
    1. Set the values of the following parameters:
+        * **DeployingAgainForSameStorageAccount**. Choose 'no' if you are deploying in this subscription for the first time, else choose 'yes'.
+        * **EventGridSystemTopicName**. If you are deploying template again for same storage account then provide the existing System Topic Name for the StorageAccount.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-reuse-sa.png')} alt="edit-template" width="800"/>
       * **SumoEndpointURL**. URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
       * **StorageAccountName**. Name of the storage account where you are storing logs from Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * **StorageAccountResourceGroupName**. Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
@@ -77,29 +76,9 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     :::note
     Resource group names should not consist of an underscore.
     :::
-1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
-1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/> ![notification-success.png](/img/send-data/notification-success.png)
-1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
-1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
-1. In the **Data Storage** menu, do the following:
-    1. Click **Tables**.
-    1. Click **+ Table**.
-    1. Enter **FileOffsetMap** as table name and click **OK**.<br/> <img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
-
-<details>
-
-<summary>Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage</summary>
-
-This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example.
-* Login to the Azure Portal.
-* Click **Network security groups > Select a network security group**.
-* Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
-* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
-* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
-* Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
-* Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
-
-</details>
+1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-rg.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
+1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<img src={useBaseUrl('/img/send-data/appendblob/appendblob-notification.png')} alt="Notifications" width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
 
 :::tip
 If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection).
