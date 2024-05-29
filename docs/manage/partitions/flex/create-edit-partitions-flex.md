@@ -83,7 +83,7 @@ You can make some changes to an existing partition:  
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.
     :::
-1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of sumologic_default**.
+1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of `sumologic_default`**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
 ### Audit logging for routing expression changes
