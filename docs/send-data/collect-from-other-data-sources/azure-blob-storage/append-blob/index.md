@@ -28,11 +28,6 @@ Here’s a summary of how various components are stitched together in the pipeli
 1. An Event subscription is configured with Azure Blob container as the publisher and Event Hub as the subscriber. Event Grid then routes all the create append events to Event Hub. 
 1. On receipt of data from Event Grid, an event hub triggers its Azure function named AppendBlobTaskProducer to create a task. (This is a JSON object that includes the start of the append blob).These tasks are then pushed to Azure Service Bus Queue.
 1. Another Azure function named AppendBlobTaskConsumer is triggered in response to a new task in Azure Service Bus Queue. This function reads the data in the given range (from start byte to batchSize bytes), transforms the data, and sends it to an HTTP source on a hosted collector in Sumo. Each of the three Azure functions sends their logs to storage accounts (named `SUMOAB<unique_prefix>`) created by an Azure Resource Template (ARM).
-1. If the AppendBlobTaskConsumer function is unable to process or send the message, (due to throttling or failure,  upon reaching a MaxDeliveryCount threshold of 10, it sends the message to secondary sub-queue, called a dead-letter queue (DLQ). Another Azure function named DLQTaskConsumer is triggered every 5 minutes by a timer trigger to retry sending the messages.
-
-:::note
-There is no automatic cleanup of the DLQ. Messages remain in the DLQ until you explicitly retrieve them.
-:::
 
 ## Pipeline components
 
@@ -53,7 +48,7 @@ Sumo provides an Azure Resource Management (ARM) template to build most of the c
 
 * An event hub to which Azure Event Grid routes create append blobs events. 
 * A Service Bus for storing tasks.
-* Three Azure functions—TaskProducer, TaskConsumer, and DLQTaskConsumer—that are responsible for sending monitoring data to Sumo.
+* Three Azure functions—TaskProducer, TaskConsumer, is responsible for sending monitoring data to Sumo.
 * A storage account to which the Azure functions write their log messages about successful and failed transmissions.
 
 You download the Sumo-provided ARM template, upload the template to the Azure Portal, set the parameters that identify the URL of your Sumo HTTP source, and the connection string of for the Azure Storage Account (where Azure services export their logs), and deploy the template.
