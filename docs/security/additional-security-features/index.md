@@ -5,7 +5,7 @@ title: Additional Security Features
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic offers additional security features beyond Cloud SIEM, Cloud SOAR, and Cloud Infrastructure Security. You can use these features to:
+Sumo Logic offers additional security features beyond Cloud SIEM, Cloud SOAR, and Cloud Infrastructure Security. You can use these additional features to:
 
 * Collect security log and event data from your infrastructure and applications, on-premises and in-cloud.
 * Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.

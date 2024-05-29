@@ -2,12 +2,12 @@
 id: threat-detection-and-investigation
 title: Threat Detection and Investigation
 sidebar_label: Threat Detection and Investigation
-description: Learn how to use Cloud Infrastructure Security to monitor security data and investigate incidents.
+description: Learn how to use Sumo Logic to monitor security data and investigate incidents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use Cloud Infrastructure Security for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
+To use Sumo Logic for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
 ## About threat detection and investigation
 
@@ -17,7 +17,7 @@ Threat detection and investigation refers to identifying and exploring threats o
 
 *Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to the threat and plan for system improvements to reduce risk in the future.
 
-Advanced security analytics solutions like Cloud Infrastructure Security provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevSecOps teams to observe and investigate security threats within your cloud infrastructure.
+Sumo Logic provides organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevSecOps teams to observe and investigate security threats within your cloud infrastructure.
 
 
 ### Best practices guide for implementing threat detection and investigation
@@ -26,11 +26,11 @@ Following are the basic steps involved in implementing a threat detection and in
 
 #### Step 1: Collect and aggregate all security data into a single, unified location
 
-Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [**Data lakes**](/docs/cloud-infrastructure-security/data-lake/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
+Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [**Data lakes**](/docs/additional-security-features/data-lake/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
 
 #### Step 2: Use integrations to discover trends or potential threats
 
-Increase the velocity and accuracy of threat detection with integrations to applications that provide insight to threats. Cloud Infrastructure Security offers numerous [out-of-the-box integrations](#pre-built-apps-for-threat-detection-and-investigation) with queries for custom searching and monitoring.
+Increase the velocity and accuracy of threat detection with integrations to applications that provide insight to threats. Sumo Logic offers numerous [out-of-the-box integrations](#pre-built-apps-for-threat-detection-and-investigation) with queries for custom searching and monitoring.
 
 #### Step 3: Configure robust alerting policies to notify SecOps teams when changes or outliers occur
 
@@ -43,7 +43,7 @@ Attacks may persist without further investigation and patches, so it’s critica
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
-* [**Cloud Infrastructure Security for AWS**](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws/). App that provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
+* [**Cloud Infrastructure Security**](/docs/cloud-infrastructure-security/). Apps that provide visibility into your cloud environments to give you insights into active threats, security control failures, and suspicious activity. 
 * [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
 * [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
