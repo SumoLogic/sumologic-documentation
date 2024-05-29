@@ -55,6 +55,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the Alert Logic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Alert Logic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Alert Logic dashboards​
 
 import ViewDash from '../../reuse/apps/view-dashboards.md';
