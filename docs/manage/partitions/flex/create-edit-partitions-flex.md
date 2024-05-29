@@ -66,7 +66,7 @@ You can make some changes to an existing partition:  
 
 * You can change the retention period of the partition.
   :::note
-  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of sumologic_default. You can change the retention period for any of these internal partitions as desired.
+  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of `sumologic_default`. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
 * You cannot change the name of a partition, the routing expression, or reuse a partition name.
