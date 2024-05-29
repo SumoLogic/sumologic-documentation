@@ -1,7 +1,6 @@
 ---
 slug: /security
 title: Sumo Logic Security Solutions
-tags: [security, cloud infrastructure security, cloud siem, cloud soar]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

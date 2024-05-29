@@ -700,7 +700,6 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
-            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -860,7 +859,6 @@ module.exports = {
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
-            'manage/security/audit-indexes/audit-index-access',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
@@ -2458,10 +2456,20 @@ integrations: [
       link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
       items: [
         'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
-        'cloud-infrastructure-security/data-lake',
-        'cloud-infrastructure-security/audit-and-compliance',
-        'cloud-infrastructure-security/threat-detection-and-investigation',
-        'cloud-infrastructure-security/application-security',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Additional Security Features',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'additional-security-features/index'},
+      items: [
+        'additional-security-features/introduction-to-additional-security-features',
+        'additional-security-features/data-lake',
+        'additional-security-features/audit-and-compliance',
+        'additional-security-features/threat-detection-and-investigation',
+        'additional-security-features/application-security',
       ],
     },
     {
@@ -2801,7 +2809,6 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'get-started/sumo-logic-ui-new',
-        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],
