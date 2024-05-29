@@ -32,4 +32,5 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 	+ Added new action: IP Reputation V2
 	+ Changed fields visibility
 	+ Fixed Typo
-* May 28, 2024 (v1.4) Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts
+* May 28, 2024 (v1.4)
+	+ Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts
