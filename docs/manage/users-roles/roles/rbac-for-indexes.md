@@ -1,6 +1,6 @@
 ---
 id: rbac-for-indexes
-title: Index Access and Advanced Search Filters
+title: Index Access and Advanced Search Filters (Beta)
 description: Index access search filtering allows you to use rule permissions to determine who gets access to certain indexes.
 ---
 
