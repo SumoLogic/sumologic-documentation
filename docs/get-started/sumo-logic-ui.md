@@ -18,7 +18,7 @@ The **left nav bar** provides easy access to libraries, personal collections of
 * **Recent** dashboards and searches
 * A list of your **Favorites** (dashboards and searches)
 * Your **Personal** library of dashboards and searches
-* A **Library** of shared dashboards and searches (within your organization)<br/>![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
+* A **Library** of shared dashboards and searches (within your organization)<br/><img src={useBaseUrl('img/get-started/ui/TUI_Left_Nav.png')} alt="Left navigation" style={{border: '1px solid gray'}} width="800" />
 
 ### Search and switch browsing modes
 
@@ -26,7 +26,7 @@ The top of the **left nav bar** is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
+* Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
 
 ### Hide and show the left nav bar
 
@@ -54,7 +54,7 @@ Every page you select opens in a new tab, and the tabs are shown at the top 
 * New log search, metrics visualization or Live Tail session
 * App catalog 
 * Manage pages 
-* Account page <br/>![WTS_UI_Tabs.png](/img/get-started/ui/WTS_UI_Tabs.png)
+* Account page <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Tabs.png')} alt="Tabs example" style={{border: '1px solid gray'}} width="800" />
 
 ### Rename or close a tab
 
@@ -73,8 +73,8 @@ Log Search, Metrics, and Live Tail tabs have additional options you can use to 
 
 To access additional Log Search, Metrics, and Live Tail options, do the following:
 
-1. Hover the cursor over the tab **Details** icon.<br/>  ![WTS_Tab-options-details.png](/img/get-started/ui/WTS_Tab-options-details.png)
-1. Click the three-dot kebab icon on the tab and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/tab-options.png')} alt="tab-options.png" style={{border: '1px solid gray'}} width="300"/>
+1. Hover the cursor over the three-dot kebab icon.<br/><img src={useBaseUrl('img/get-started/ui/WTS_Tab-options-details.png')} alt="Three-dot icon" style={{border: '1px solid gray'}} width="300"/>
+1. Click the icon and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/tab-options.png')} alt="Tab options" style={{border: '1px solid gray'}} width="300"/>
 1. Use the left (`<`) and right (`>`) arrows at each end of the Tab menu bar to move back and forth through the tabs.
 
 The following table lists the options available for the Search, Metrics, and Live Tail tabs.
@@ -148,16 +148,12 @@ You can create a list of favorite dashboards and searches that appear in the le
 
 To view Favorites and add to the list, do the following:
 
-1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.<br/>  ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
-1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. <br/>  ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
+1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.<br/><img src={useBaseUrl('/img/get-started/ui/WTS_UI_View_list-of-Favorites.png')} alt="Favorites" style={{border: '1px solid gray'}} width="300" />
+1. To add a dashboard to the Favorites list, open the dashboard, select the three-dot kebab icon at the top right of the menu bar, and select **Favorite** from the dropdown list. <br/>  ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
    1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
-
-The dashboard and search appear in the Favorites list in the Left Nav Bar.
-
-<img src={useBaseUrl('img/get-started/ui/WTS_UI_Additions-to-Favorites-list.png')} alt="WTS_UI_Additions-to-Favorites-list.png" width="300"/>
 
 ### Share a dashboard, search, or folder
 
@@ -236,7 +232,7 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **left nav bar** and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/manage-data.png')} alt="manage data" style={{border: '1px solid gray'}} width="175" />
+1. Go to the **left nav bar** and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/manage-data.png')} alt="Manage Data menu options" style={{border: '1px solid gray'}} width="300" />
 1. Choose from the following, as needed:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
@@ -249,7 +245,7 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the **left nav bar** and click **Administration**. <br/>![WTS_UI_Administration_menu-options.png](/img/get-started/ui/WTS_UI_Administration_menu-options.png)
+1. Go to the **left nav bar** and click **Administration**. <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Administration_menu-options.png')} alt="Administration menu options" style={{border: '1px solid gray'}} width="300" />
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
