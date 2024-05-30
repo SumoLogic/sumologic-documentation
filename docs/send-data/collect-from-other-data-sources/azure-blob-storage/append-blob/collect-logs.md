@@ -81,7 +81,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
 
 :::tip
-If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection).
+If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection).
 :::
 
 ## Ingesting from Multiple Storage Accounts (Optional)
