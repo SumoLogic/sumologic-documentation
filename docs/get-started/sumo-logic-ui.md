@@ -41,6 +41,10 @@ In the lower section of the left nav bar, you can access the [App Catalog](apps-
 
 <img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
+:::note
+The **Automation** option does not appear in the navigation menu if your organization has **Cloud SOAR** installed, because automation is provided by Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
+:::
+
 ## Working with tabs
 
 Every page you select opens in a new tab, and the tabs are shown at the top of the UI. You can have up to 50 tabs open at one time. Each of the following selections opens a new tab:
@@ -70,7 +74,7 @@ Log Search, Metrics, and Live Tail tabs have additional options you can use to 
 To access additional Log Search, Metrics, and Live Tail options, do the following:
 
 1. Hover the cursor over the tab **Details** icon.<br/>  ![WTS_Tab-options-details.png](/img/get-started/ui/WTS_Tab-options-details.png)
-1. Select the tab and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/tab-options.png')} alt="tab-options.png" width="300"/>
+1. Click the three-dot kebab icon on the tab and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/tab-options.png')} alt="tab-options.png" style={{border: '1px solid gray'}} width="300"/>
 1. Use the left (`<`) and right (`>`) arrows at each end of the Tab menu bar to move back and forth through the tabs.
 
 The following table lists the options available for the Search, Metrics, and Live Tail tabs.
@@ -78,12 +82,13 @@ The following table lists the options available for the Search, Metrics, and Liv
 | Option | Search tab  | Metrics tab  | Live Tail tab |
 |:--|:--|:--|:--|
 | Pin | ![check](/img/reuse/check.png) | — | — |
-| Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
 | Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
 | Duplicate | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
+| Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
 | Close | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png) |
 | Close Other Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
 | Close All Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
+| Close Tabs to the Right | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
 ## Mastering everyday tasks
 
@@ -127,14 +132,15 @@ To launch a search, metrics visualization, or live tail session, do the followin
 
 You see the Home landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
 
-* recently opened dashboards
-* recently run searches
-* recommended dashboards 
-* pinned searches
+* Recently opened dashboards
+* Recently run searches
+* Recommended dashboards 
+* Pinned searches
+* Recently run metrics
 
 Click the **Home** icon at the far left of the Tab menu bar to return to the Home page at any time.
 
-![WTS_UI_Home_landing-page.png](/img/get-started/ui/WTS_UI_Home_landing-page.png)
+<img src={useBaseUrl('/img/get-started/ui/WTS_UI_Home_landing-page.png')} alt="Home page" style={{border: '1px solid gray'}} width="800" />
 
 ### View Favorites and add dashboards and searches to the list
 
@@ -226,7 +232,7 @@ See [Getting Help and Contacts](/docs/get-started/help) for full information.
 
 ### Admin: Manage data collection, data settings, and alerts
 
-Sumo Logic Administrators (Admins) are responsible for managing data collection, data settings, and alerts for their organization. You must have Sumo Logic Admin role privileges to perform these tasks.
+Sumo Logic Administrators (Admins) are responsible for managing data collection, data settings, and alert monitoring for their organization. You must have Sumo Logic Admin role privileges to perform these tasks.
 
 To manage data in Sumo Logic, do the following:
 
@@ -235,7 +241,7 @@ To manage data in Sumo Logic, do the following:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
     * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
-    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/alerts/webhook-connections), and [health events](/docs/manage/health-events).
+    * **Monitoring.** [Monitors](/docs/alerts/monitors), [connections](/docs/alerts/webhook-connections), and [health events](/docs/manage/health-events).
 
 ### Admin: Manage accounts, users, and security
 
