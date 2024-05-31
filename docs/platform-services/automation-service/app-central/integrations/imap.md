@@ -6,7 +6,7 @@ tags: [ cloud soar integrations ]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imap.png')} alt="imap" width="80"/>
+<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/imap.png')} alt="imap" width="80"/>
 
 ***Version: 1.3  
 Updated: Mar 4, 2024***
@@ -158,7 +158,7 @@ The final playbook looks like this:<br/><img src={useBaseUrl('/img/platform-serv
 
 * **IP**: ([0-9]+(?:\.[0-9]+){3})
 * **Email**: [\w\.-]+@[\w\.-]+
-* **URL**: (?i)(?:(?:https?|ftp):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~\_|$?!:,.]\*\)|[-A-Z0-9+&@#\/%=~\_|$?!:,.])\*(?:\([-A-Z0-9+&@#\/%=~\_|$?!:,.]\*\)|[A-Z0-9+&@#\/%=~\_|$])
+* **URL**: `(?i)(?:(?:https?|ftp):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~\_|$?!:,.]\*\)|[-A-Z0-9+&@#\/%=~\_|$?!:,.])\*(?:\([-A-Z0-9+&@#\/%=~\_|$?!:,.]\*\)|[A-Z0-9+&@#\/%=~\_|$])`
 * **Domain**: (?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{,61}[a-zA-Z0-9])?\.)\*[a-zA-Z]{2,6}(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}
 * **MD5**: \b[0-9a-fA-F]{32}\b
 * **SHA1**: \b[0-9a-fA-F]{40}\b
