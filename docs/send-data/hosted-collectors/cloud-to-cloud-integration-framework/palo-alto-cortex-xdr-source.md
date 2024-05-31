@@ -21,10 +21,6 @@ By using the Cortex XDR Source Integration, you can easily access and analyze da
 
 The Cortex XDR Source Integration is a valuable Source for security teams that want to enhance their threat detection capabilities and streamline their incident response process. It helps you to effectively monitor your security posture, identify threats in real-time, and respond quickly to potential attacks.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -74,7 +70,7 @@ When you create a Palo Alto Cortex XDR Source, you add it to a Hosted Collector
 
 To configure a Palo Alto Cortex XDR Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Palo Alto Cortex XDR**.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.

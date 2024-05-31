@@ -25,7 +25,7 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 
 ## Metadata fields
 
-**Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](https://help.sumologic.com/docs/cse/).
+**Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
 
 :::note
 The checkbox only shows up if you have CSE and if the C2C already have CSE content like parsers and rules.

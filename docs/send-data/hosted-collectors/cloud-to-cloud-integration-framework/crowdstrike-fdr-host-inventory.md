@@ -21,10 +21,6 @@ The CrowdStrike FDR Host Inventory Source provides a secure endpoint to receive 
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -70,7 +66,7 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FDR Host Inventory API:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **CrowdStrike FDR Host Inventory** icon.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.

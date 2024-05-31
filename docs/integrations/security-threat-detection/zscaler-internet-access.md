@@ -185,6 +185,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the Zscaler Internet Access app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Zscaler Internet Access app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Zscaler Internet Access dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

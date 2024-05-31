@@ -3903,5 +3903,6 @@
   "/docs/integrations/security-threat-detection/palo-alto-networks-8":"/docs/integrations/security-threat-detection/palo-alto-networks-9",
   "/docs/integrations/microsoft-azure/windows-legacy-pci-compliance": "/docs/integrations/microsoft-azure/windows-json-pci-compliance",
   "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
-  "/docs/integrations/microsoft-azure/active-directory-legacy": "/docs/integrations/microsoft-azure/active-directory-json"
+  "/docs/integrations/microsoft-azure/active-directory-legacy": "/docs/integrations/microsoft-azure/active-directory-json",
+  "/docs/reuse/fed-deployment-note": "/docs/api/getting-started"
 }
