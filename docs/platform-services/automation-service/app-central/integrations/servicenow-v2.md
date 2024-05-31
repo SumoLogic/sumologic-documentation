@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/servicenow-v2.png')} alt="servicenow" width="100"/>
 
-***Version: 2.4  
-Updated: April 5, 2024***
+***Version: 2.5  
+Updated: May 31, 2024***
 
 ServiceNow V2 SaaS is for technical management support - create, update, and gather ServiceNow ticket information.
 
@@ -92,3 +92,4 @@ Ticketing System
 * April 5, 2023 - Action Close Ticket added.
 * June 30, 2023 (v2.3) - Integration code improved.
 * April 5, 2024 (v2.4) - Fixed an issue that prevents the resource testing to work correctly.
+* May 31, 2024 (v2.5) - Fixed an issue in actions: **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.
