@@ -24,8 +24,8 @@ Apache source template creates an OpenTelemetry configuration that can be pushed
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of the Apache app installation.
 
 - **`webengine.cluster.name`**. User configured. Enter a uniquely identifiable name for your Apache web server cluster to show in the Sumo Logic dashboards.
-- **`webengine.system`**. Fixed value of **apache**
-- **`sumo.datasource`**. Fixed value of **apache**
+- **`webengine.system`**. Fixed value of **apache**.
+- **`sumo.datasource`**. Fixed value of **apache**.
 - **`webengine.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
 ## Prerequisites
@@ -34,15 +34,15 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 		
 The receiver gets stats from an Apache Web Server instance using the `server-status?auto` endpoint. This receiver supports Apache Web Server version 2.4+.
 		
-**Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support (https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+**Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
 		
 ### For logs collection
 		
-* **Configure the Apache log files**:
-	* Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
-	* Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
+**Configure the Apache log files**:
+1. Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
+1. Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
 	* For access logs, the following directive is to be noted:
-		- **CustomLog**. access log file path and format (standard common and combined)
+		- **CustomLog**. Access log file path and format (standard common and combined).
 	* For error logs, the following directives are to be noted:
 		- **ErrorLog**. Error log file path.
 		- **LogLevel**. To control the number of messages logged to the `error_log`.
@@ -74,7 +74,7 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 		
 ## Source Template configuration
 		
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push Source Template to it : 
+You can follow the below steps to set a remotely managed OpenTelemetry collector and push Source Template to it.
 		
 ### Step 1: Set up remotely managed Otel collector
 		
