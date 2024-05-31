@@ -34,11 +34,11 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 		
 The receiver gets stats from an Apache Web Server instance using the `server-status?auto` endpoint. This receiver supports Apache Web Server version 2.4+.
 		
-**Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+Receive server statistics by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
 		
 ### For logs collection
 		
-**Configure the Apache log files**:
+Configure the Apache log files:
 1. Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
 1. Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
 	* For access logs, the following directive is to be noted:
