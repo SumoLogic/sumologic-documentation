@@ -21,7 +21,7 @@ Here are some of the key features the new solution offers:
 * **Misconfigurations**. See areas in your environment that need to be addressed because they fail best practice security controls.
 * **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
 
-To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/security/cloud-infrastructure-security-for-aws/cloud-infrastructure-security-for-aws/).
+To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/).
 
 
 :::note Action Required
