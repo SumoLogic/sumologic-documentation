@@ -115,7 +115,7 @@ To configure an HTTP source for Azure, do the following:
 
 ### Step 3: Configure Azure Resources using ARM template
 
-To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template).
+To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template).
 
 ### Step 4: Enable NSG flow logs via the Azure Portal
 
