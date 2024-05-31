@@ -9,6 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To use Sumo Logic for audit and compliance, you can use [pre-built apps](#pre-built-apps-for-audit-and-compliance), or [build your own queries](#build-queries-for-audit-and-compliance).
 
+## Pre-built apps for audit and compliance
+
+[Install](/docs/get-started/apps-integrations) the following apps for compliance:
+* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
+
+Following are some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
+* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
+* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
+* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
+* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
+* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
+* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
+* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
+
 ## About audit and compliance
 
 Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/additional-security-features/threat-detection-and-investigation/), are also recommended.
@@ -79,22 +94,6 @@ Sumo Logic monitors incoming data and security controls in real-time to identify
 #### Step 7: Create a unified system
 
 Use Sumo Logic's countless data integrations and out-of-the box applications ensure that all data is properly collected and cataloged as it’s generated.
-
-## Pre-built apps for audit and compliance
-
-[Install](/docs/get-started/apps-integrations) the following apps for compliance:
-* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
-
-Following are some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
-* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
-* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
-* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
-* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
-* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
-* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
-* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
-* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
-
 
 ### Use case: PCI compliance
 

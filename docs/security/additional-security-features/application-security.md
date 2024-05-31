@@ -9,6 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To use Sumo Logic for application security, you can use [pre-built apps](#pre-built-apps-for-application-security), or create your own queries.
 
+## Pre-built apps for application security
+
+* [Software Development Optimization Solution](/docs/observability/sdo/). Solution that includes the [SDO app](/docs/observability/sdo/install-sdo-app-view-dashboards/), which monitors your development pipeline and provides metrics and actionable insights generated automatically from your development tools.
+* [App Development](/docs/integrations/app-development/). Apps for platforms and tools that support software development processes, including GitHub, Jenkins, JFrog Artifactory, and Jira, and many others.
+
 ## About application security
 
 Application security monitors a company’s software offerings to ensure they are not vulnerable or infiltrated by malicious code at any point in the continuous integration/continuous deployment (CI/CD) process and production cycle. 
@@ -87,7 +92,3 @@ Never assume applications are fully protected. Monitor consistently to uncover p
 
 Benchmark against industry standards and other internal software protection levels.
 
-## Pre-built apps for application security
-
-* [Software Development Optimization Solution](/docs/observability/sdo/). Solution that includes the [SDO app](/docs/observability/sdo/install-sdo-app-view-dashboards/), which monitors your development pipeline and provides metrics and actionable insights generated automatically from your development tools.
-* [App Development](/docs/integrations/app-development/). Apps for platforms and tools that support software development processes, including GitHub, Jenkins, JFrog Artifactory, and Jira, and many others.

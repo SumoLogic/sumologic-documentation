@@ -5,18 +5,24 @@ title: Additional Security Features
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic offers additional security features beyond Cloud SIEM, Cloud SOAR, and Cloud Infrastructure Security. You can use these additional features to:
+Sumo Logic offers additional security features beyond Cloud Infrastructure Security, Cloud SIEM, andCloud SOAR. You can use these additional features to:
 
 * Collect security log and event data from your infrastructure and applications, on-premises and in-cloud.
 * Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 
-In this guide, we'll present the following concepts:
+This section contains the following topics:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/additional-security-features/introduction-to-additional-security-features"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Additional Security Features</h4></a>
   <p>Get an introduction to basic concepts of using Sumo Logic for security use cases.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/additional-security-features/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
+  <p>Learn how to monitor security data and investigate incidents.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -29,12 +35,6 @@ In this guide, we'll present the following concepts:
   <div className="container">
   <a href="/docs/additional-security-features/audit-and-compliance"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit and Compliance</h4></a>
   <p>Learn how to use Sumo Logic apps to assist with audit and compliance.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/additional-security-features/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
-  <p>Learn how to monitor security data and investigate incidents.</p>
   </div>
 </div>
 <div className="box smallbox card">

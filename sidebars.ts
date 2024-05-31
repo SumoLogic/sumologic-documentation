@@ -2723,9 +2723,9 @@ integrations: [
       link: {type: 'doc', id: 'security/additional-security-features/index'},
       items: [
         'security/additional-security-features/introduction-to-additional-security-features',
+        'security/additional-security-features/threat-detection-and-investigation',
         'security/additional-security-features/data-lake',
         'security/additional-security-features/audit-and-compliance',
-        'security/additional-security-features/threat-detection-and-investigation',
         'security/additional-security-features/application-security',
       ],
     },

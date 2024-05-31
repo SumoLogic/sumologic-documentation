@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To use Sumo Logic for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
+## Pre-built apps for threat detection and investigation
+
+[Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
+* [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
+* [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
+* [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
+
 ## About threat detection and investigation
 
 Threat detection and investigation refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and effectively as possible.
@@ -39,15 +47,6 @@ The quicker your team can get to work, the quicker investigation and mitigation 
 #### Step 4: Perform root cause analysis to investigate the threat fully
 
 Attacks may persist without further investigation and patches, so it’s critical to find and patch any vulnerabilities as soon as possible. Sumo Logic provides broad-reaching [search capabilities](/docs/search/search-query-language/) so teams can perform extensive threat investigations quickly.
-
-## Pre-built apps for threat detection and investigation
-
-[Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
-* [**Cloud Infrastructure Security**](/docs/cloud-infrastructure-security/). Apps that provide visibility into your cloud environments to give you insights into active threats, security control failures, and suspicious activity. 
-* [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
-* [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
-* [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
 ## Build a dashboard for threat detection and investigation
 

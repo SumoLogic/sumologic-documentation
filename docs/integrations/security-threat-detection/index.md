@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 
+import CisNote from '../../reuse/cis-note.md';
+
+<CisNote/>
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
