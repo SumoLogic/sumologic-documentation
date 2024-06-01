@@ -1,5 +1,5 @@
 ---
-id: introduction-to-additional-security-features
+id: introduction
 title: Introduction to Additional Security Features
 sidebar_label: Introduction
 description: Learn basic concepts about supplemental security features of Sumo Logic. 
