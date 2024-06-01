@@ -2454,7 +2454,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'security/cloud-infrastructure-security/index'},
       items: [
-        'security/cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
+        'security/cloud-infrastructure-security/introduction',
         'security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
       ],
     },
@@ -2722,7 +2722,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'security/additional-security-features/index'},
       items: [
-        'security/additional-security-features/introduction-to-additional-security-features',
+        'security/additional-security-features/introduction',
         'security/additional-security-features/threat-detection-and-investigation',
         'security/additional-security-features/data-lake',
         'security/additional-security-features/audit-and-compliance',

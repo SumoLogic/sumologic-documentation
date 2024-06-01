@@ -26,7 +26,7 @@ Following are some of the Sumo Logic apps you can [install](/docs/get-started/ap
 
 ## About audit and compliance
 
-Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/additional-security-features/threat-detection-and-investigation/), are also recommended.
+Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/security/additional-security-features/threat-detection-and-investigation), are also recommended.
 
 A compliance audit is an inspection of an organization to check whether compliance standards are being met. Sumo Logic supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
@@ -69,7 +69,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/additional-security-features/data-lake/) for speed and effectiveness of analysis.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/security/additional-security-features/data-lake/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 

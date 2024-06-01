@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 [Cloud Infrastructure Security](/docs/cloud-infrastructure-security/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/) are Sumo Logic's primary security solutions. But Sumo Logic offers additional security features, including apps, customizable dashboards, and tools to analyze your security data. These allow you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
 You can use Sumo Logic for:
-* [Threat detection and investigation](/docs/additional-security-features/threat-detection-and-investigation/). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
-* [Security data lake storage](/docs/additional-security-features/data-lake/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
-* [Audit and compliance](/docs/additional-security-features/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
-* [Application security](/docs/additional-security-features/application-security/). Monitor your software development pipeline to ensure it is secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
+* [Threat detection and investigation](/docs/security/additional-security-features/threat-detection-and-investigation). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
+* [Security data lake storage](/docs/security/additional-security-features/data-lake). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
+* [Audit and compliance](/docs/security/additional-security-features/audit-and-compliance). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
+* [Application security](/docs/security/additional-security-features/application-security). Monitor your software development pipeline to ensure it is secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
 
 ## The Sumo Logic data pipeline
 
