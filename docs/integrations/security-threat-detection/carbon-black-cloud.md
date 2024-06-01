@@ -77,7 +77,7 @@ As a prerequisite, [Grant Sumo Logic access](/docs/send-data/hosted-collectors/a
 Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select **Amazon S3**.
 4. Enter a name for the new Source. A description is optional.
@@ -119,6 +119,18 @@ Please carefully evaluate this information to assure that your configuration ref
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Carbon Black Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Carbon Black Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Carbon Black Cloud dashboards​
 
@@ -164,7 +176,7 @@ Use this dashboard to:
 * Top Alerted processes
 * Alerts by OS
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF.png')} alt="Carbon_Black_Cloud dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Alerts.png')} alt="Carbon_Black_Cloud dashboards" />
 
 ### Endpoint Standard - Device
 

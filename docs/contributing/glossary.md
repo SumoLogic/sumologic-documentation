@@ -110,10 +110,6 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
-**[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
-
-
-
 
 ## F
 

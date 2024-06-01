@@ -38,7 +38,7 @@ metric=CPU_Sys _sourceCategory=Labs/AWS/Host/Metrics _sourceHost=* _collector=* 
 
 ## Viewing AWS EC2 Host Metrics dashboards
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 

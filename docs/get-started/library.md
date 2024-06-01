@@ -33,11 +33,11 @@ The left nav also includes shortcuts to other convenient features:
 
 ## Organize the Library
 
-Folders are available for organizing content in the Library. Some folders are set up automatically; for example, a folder is created automatically for Setup Wizard searches. You can also create custom folders and move items among folders. 
+Folders are available for organizing content in the Library. Some folders are set up automatically. You can also create custom folders and move items among folders. 
 
 The path to the current Library folder is shown near the top of the Library page.
 
-![setup-wizard-search](/img/get-started/library/setup-wizard-search.png)
+<img src={useBaseUrl('img/get-started/library/library-path.png')} alt="Library path" style={{border: '1px solid gray'}} width="400" />
 
 To create a new folder, click **Add New > New Folder**, enter the folder name and an optional description, and click **Add**.
 

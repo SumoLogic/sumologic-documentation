@@ -154,7 +154,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by going to the **Explore** tab side navigation and clicking **Cluster**.
+All the dashboards are linked to the [monitoring dashboards](/docs/dashboards/explore-view/) so they can be easily accessed.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane

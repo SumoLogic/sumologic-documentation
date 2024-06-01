@@ -109,7 +109,7 @@ This section provides instructions for installing the Kubernetes Control Plane A
 * Determining custom data filters for source categories
 * Installing the app
 
-All the dashboards are linked to the Explore tab and can be easily accessed by clicking the Cluster, in the left navigation pane of Explore tab.
+All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) and can be easily accessed by clicking the Cluster, in the left navigation pane of tab.
 
 ### Step 1: Determine custom data filters for source categories
 

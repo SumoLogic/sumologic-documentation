@@ -33,7 +33,7 @@ If this is the first time you are creating an HTTPS collector, review how to cre
 
 #### Create the collector
 
-1. Click **Manage** **Data** > **Collection** > **Add Collector**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Click **Hosted Collector.**
 3. In **Add Hosted Collector** enter:
    * **Name.** Halo_Lambda_Ingestor.
@@ -148,12 +148,23 @@ Sample policy: Be sure to use the proper permission level.
 21. A successfully configured trigger will have a success message and appear similar to the trigger below.
 22. You are done for the first Lambda code! You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
-
 ## Installing the CloudPassage Halo app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the CloudPassage Halo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CloudPassage Halo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing CloudPassage Halo dashboards​
 

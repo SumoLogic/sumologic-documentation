@@ -22,10 +22,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -59,7 +55,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 
 ### Source configuration
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google Workspace AlertCenter**.
 1. **Name.** Enter a name for the Source.

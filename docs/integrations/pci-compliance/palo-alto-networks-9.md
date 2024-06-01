@@ -106,6 +106,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the PCI for Palo Alto Networks 9 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI for Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing PCI for Palo Alto Networks 9 dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

@@ -104,7 +104,7 @@ To sign up through AWS Marketplace:
     - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
 1. Click **Sign Up**.
 
-Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
+Sumo Logic sends you an email to activate your account.
 
 ### Activate your account
 
@@ -120,9 +120,7 @@ To activate your Sumo Logic Trial account:
 1. Fill out the **Activate Your Account** form.
 1. Click **Activate**.
 
-In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
-
-Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
+In a few minutes, your account is activated.
 
 ### Upgrade your account
 

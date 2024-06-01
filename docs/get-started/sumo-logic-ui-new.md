@@ -258,7 +258,7 @@ We are excited to introduce the Sumo Logic Unified Experience, internally known 
 
 The disparate user interface and varying navigation patterns among Log Analytics, Cloud SIEM, and Cloud SOAR have made it challenging for users to effectively utilize these tools together for monitoring and troubleshooting.
 
-The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Explore, Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
+The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
 
 In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The **New UI** navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
 </details>

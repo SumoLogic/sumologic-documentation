@@ -61,6 +61,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the Global Intelligence for Nginx app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Global Intelligence for Nginx app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Global Intelligence for Nginx dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -74,7 +86,7 @@ The **GI Nginx - 01 Golden Signals** dashboard tabulates requests per second, HT
 Use this dashboard to:
 
 * Compare requests per second, HTTP method mix and GB per request along with response types, errors and log levels distribution for your company’s Nginx servers versus all servers.
-* As noted [here](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers), Ngnix request rate is affected by: (a) CPUs allocated (b) data transferred  and (c) use of HTTPs. Assess if your Nginx request rates are significantly lower for a given server compared to other Nginx. If so, consult the Nginx documentation to determine if adequate CPU resources are allocated. Next, check if differences in HTTP method mix (greater share of POST over GET) or (greater) GB per request might explain lower request rates. Error rate differences compared to the benchmark might imply application incidents (for server-side error codes) or user / client side issues (for 4XX errors). Diagnose these further by correlating with application incidents, GB per request differences or other factors. 
+* As noted [here](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers), Nginx request rate is affected by: (a) CPUs allocated (b) data transferred  and (c) use of HTTPs. Assess if your Nginx request rates are significantly lower for a given server compared to other Nginx. If so, consult the Nginx documentation to determine if adequate CPU resources are allocated. Next, check if differences in HTTP method mix (greater share of POST over GET) or (greater) GB per request might explain lower request rates. Error rate differences compared to the benchmark might imply application incidents (for server-side error codes) or user / client side issues (for 4XX errors). Diagnose these further by correlating with application incidents, GB per request differences or other factors. 
 * Use the trend line panels for request rate, GB per request and errors to understand if your Nginx errors have a temporal pattern that might help explain differences compared to benchmarks. 
 
 ![golden signals.jpg](/img/global-intelligence/nginx-golden-signals.jpeg)

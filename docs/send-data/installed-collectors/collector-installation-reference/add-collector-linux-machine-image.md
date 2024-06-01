@@ -14,7 +14,7 @@ launched.
 
 ## Initial Collector installation
 
-Download the appropriate collector from the Sumo Logic **Manage Data > Collection > Collection** page, or from the list below.
+Download the appropriate collector from the Sumo Logic **Collection** page, or from the list below.
 
 1. Download your collector. Choose from the 32-bit or 64-bit static URLs for latest Linux collector builds, and make sure to choose your correct Sumo Logic pod. Find the list of URLs in [Download a Collector from a static URL](download-collector-from-static-url.md) in Help.
 
