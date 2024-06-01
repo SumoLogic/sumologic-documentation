@@ -12,7 +12,7 @@ This section contains the following topics:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/cloud-infrastructure-security/introduction-to-cloud-infrastructure-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Cloud Infrastructure Security</h4></a>
+  <a href="/docs/security/cloud-infrastructure-security/introduction"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Cloud Infrastructure Security</h4></a>
   <p>Learn basic concepts about Cloud Infrastructure Security.</p>
   </div>
 </div>

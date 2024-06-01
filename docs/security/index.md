@@ -11,7 +11,7 @@ Sumo Logic's security solutions support the entire spectrum of security use case
 
 | Cloud monitoring | Threat detection and investigation | Threat response |
 | :-- | :-- | :-- |
-| [Cloud Infrastructure Security](/docs/cloud-infrastructure-security/) | [Cloud SIEM](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
+| [Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security/) | [Cloud SIEM](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
 | Provides enhanced insight **for security analysts** into threat activity via a unified security and compliance audit view of your cloud infrastructure. Leveraging cloud-native tools and telemetry, it accelerates development, operations, security, and reliability management teams in maintaining security visibility into their environment, managing their risk and attack surface. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and remediation of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
 
 

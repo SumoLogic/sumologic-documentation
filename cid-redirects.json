@@ -3856,7 +3856,7 @@
   "/cid/-1": "/",
   "/docs/api/beta": "/docs/api",
   "/docs/api/dashboard-data": "/docs/api/dashboard",
-  "/docs/cloud-security-analytics": "/docs/cloud-infrastructure-security",
+  "/docs/cloud-security-analytics": "/docs/security/cloud-infrastructure-security",
   "/docs/cloud-security-analytics/introduction-to-cloud-security-analytics": "/docs/security",
   "/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws": "/docs/security",
   "/docs/cloud-security-analytics/data-lake": "/docs/security",
