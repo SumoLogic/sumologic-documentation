@@ -1,5 +1,5 @@
 ---
-slug: /cloud-infrastructure-security
+slug: /security/cloud-infrastructure-security
 title: Cloud Infrastructure Security
 ---
 
