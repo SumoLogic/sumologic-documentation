@@ -14,9 +14,9 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For detailed instructions, including our style guide, see [Contributor Guidelines](/docs/contributing).
+For detailed instructions, including our style guide, see [Contributor Guidelines](https://help.sumologic.com/docs/contributing).
 
-We recommend forking our repo, applying your content changes in a new branch, and submitting a pull request. We will work with you to get this content reviewed, tested, and merged for publishing.
+We recommend you fork our repo, create a new branch, apply your content changes to that branch, and then submit a pull request. We will work with you to get this content reviewed, tested, and merged for publishing.
 
 ## Building Locally
 
