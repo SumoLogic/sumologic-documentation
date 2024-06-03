@@ -88,33 +88,21 @@ _sourceCategory="o365dummy"
 | transpose row _timeslice column status
 ```
 
-## Collecting logs from Microsoft Exchange Trace Logs app
+## Collecting logs from Microsoft Exchange Trace Logs App
 
 This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace Logs API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Exchange Trace Logs app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install.md';
 
-<AppInstall2/>
+<AppInstall/>
 
-## Upgrading the Microsoft Exchange Trace Logs app (Optional)
+## Viewing Microsoft Exchange Trace Logs Dashboards
 
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Microsoft Exchange Trace Logs app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
-## Viewing Microsoft Exchange Trace Logs dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
+* All dashboard have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+* You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 ### Overview
 
