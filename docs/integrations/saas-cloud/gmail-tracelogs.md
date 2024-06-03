@@ -138,31 +138,19 @@ _sourceCategory=Labs/GmailTraceLogs
 
 ## Collecting Logs for Gmail Trace Logs app
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs app](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
 
 ## Installing the Gmail Trace Logs app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install.md';
 
-<AppInstall2/>
-
-## Upgrading the Gmail Trace Logs app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Gmail Trace Logs app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<AppInstall/>
 
 ## Viewing Gmail Trace Logs dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+**All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-<ViewDashboards/>
+**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 ### Security Overview Dashboard
 
