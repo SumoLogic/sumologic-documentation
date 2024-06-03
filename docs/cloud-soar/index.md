@@ -12,6 +12,8 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this means you're using the legacy version. Refer to the [Legacy Cloud SOAR](/docs/cloud-soar/legacy/) section.
 :::
 
+This section contains the following topics:
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
