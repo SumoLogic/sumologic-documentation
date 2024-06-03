@@ -29,7 +29,7 @@ When you create a child org, you provision it with credits, based on the ingest 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
 
-Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration > Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
+Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## About Cloud SIEM provisioning
 
@@ -82,7 +82,7 @@ This section has instructions for creating a POV Trial org. 
 After you create a child org, you can’t delete it.
 :::
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click **+ Add Organization**. <br/> ![orgs-page.png](/img/subscriptions/orgs-page.png)
 1. The **Create New Organization** pane appears.<br/> ![create-new-org-sp.png](/img/subscriptions/sp-create-new-org.png)
 1. **Organization Name**. Enter a unique name for the org.
@@ -98,7 +98,7 @@ After you create a child org, you can’t delete it.
 
 ## Upgrade a POV Trial org 
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the trial org you want to upgrade.<br/> <img src={useBaseUrl('/img/subscriptions/org-to-update.png')} alt="modify" style={{border:'1px solid gray'}} width="800"/>
 1. The right pane appears with information about the org. Click **Edit**.<br/> <img src={useBaseUrl('/img/subscriptions/edit-option.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.<br/> <img src={useBaseUrl('/img/subscriptions/upgrade-plan.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
@@ -124,7 +124,7 @@ After you create a child org, you can’t delete it.
 You can update an Enterprise org’s credits allocation, but not a Trial POV org.
 
 1. To change an org's credits allocation
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane.<br/> <img src={useBaseUrl('/img/subscriptions/edit-org-3.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
@@ -135,13 +135,13 @@ You can update an Enterprise org’s credits allocation, but not a Trial POV org
 
 To deactivate a POV Trial org
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot kebab menu and choose **Deactivate**.<img src={useBaseUrl('/img/subscriptions/deactivate.png')} alt="deactivate" style={{border:'1px solid gray'}} />
 
 ## Monitor Cloud SIEM provisioning
 
-Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" style={{border:'1px solid gray'}} />
 
@@ -206,7 +206,7 @@ By clicking the **Download Report** button, you can download the selected child 
 
 If a [custom subdomain](create-manage-orgs.md) has been configured for a child org, and you have an account in the org, you can access it from the Organizations UI.
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" style={{border:'1px solid gray'}} width="400"/>
 
@@ -214,7 +214,7 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 
 You can access the child credits usage for a selected organization from the **Organizations** UI. 
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to access the credits usage.
 1. Scrow down to **Credits Usage**. You can see the total percentage of credits consumed out of the total number of credits allocated.
 1. Click **Open in Account Overview** for detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="400"/>
@@ -223,7 +223,7 @@ You can access the child credits usage for a selected organization from the **Or
 
 Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
 
-1. Go to **Administration** > **Organizations**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to check the baselines.
 1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid gray'}}  width="400"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="400"/>
 

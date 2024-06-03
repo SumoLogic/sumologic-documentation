@@ -178,6 +178,18 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
+## Upgrading the Flex app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Flex app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Flex app dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
