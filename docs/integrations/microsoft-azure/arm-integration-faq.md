@@ -263,7 +263,7 @@ Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fe
 Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
 ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template), substep 11.
+Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/#step-3-configure-azure-resources-using-arm-template), substep 11.
 
 Error: You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
 
