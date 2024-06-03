@@ -19,14 +19,26 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Viewing Enterprise Search Audit dashboards
+## Upgrading the Enterprise Search Audit app (Optional)
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-## Enterprise Search Audit App
+<AppUpdate/>
+
+## Uninstalling the Enterprise Search Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+
+## Viewing Enterprise Search Audit App dashboards
 
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Enterprise Search Audit - Search Overview
 

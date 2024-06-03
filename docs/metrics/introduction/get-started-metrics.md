@@ -47,21 +47,6 @@ If you already have an Installed Collector, upgrade the Collector to start inges
         allowfullscreen
         />
 
-**Ingest Host Metrics by Installing a Collector through the Setup Wizard**
-
-If you do not have any installed metrics Sources, you can install one easily by using the Setup Wizard.
-
-<Iframe url="https://www.youtube.com/embed/QBTI6phfAKI"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
 Other metrics Source options are also available:
 
 * **Amazon CloudWatch source.** Allows you to gather metrics data from an Amazon resource. First grant access to read the CloudWatch metrics, and then set up the Amazon CloudWatch Source. 
