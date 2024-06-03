@@ -87,7 +87,7 @@ You can modify the default scope by selecting or deselecting the **Include this 
 
 When partitions are marked as included and `_index` or `_view` is not referenced in the query, all included partitions will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
 
-- When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope.
+- When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
 - When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
 - Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query. 
 - However, when you run a query like `_index="Partition A" OR error`, all partitions (Partition A, Partition B, and Partition C) will be considered. This is because the `error` keyword might be present in Partition B or C as well, requiring a scan of all three partitions.
