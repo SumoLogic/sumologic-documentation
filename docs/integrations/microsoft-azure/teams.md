@@ -2,14 +2,14 @@
 id: teams
 title: Microsoft Teams
 sidebar_label: Microsoft Teams
-description: The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
+description: The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels, and permission changes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="75"/>
 
-The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
+The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels, and permission changes.
 
 
 ## Log types  
@@ -49,28 +49,43 @@ _sourceCategory="O365/General"
 | count by operation
 ```
 
-## Collecting Logs
+## Collecting logs
 
-This section has instructions for collecting logs for the Sumo App for Teams.
+This section has instructions for collecting logs for the Sumo Logic app for Teams.
 
 ### Collection process overview
 
 To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
 
+## Installing the Microsoft Teams app   
 
-## Installing the Microsoft Teams App   
+This section shows you how to install the Sumo Logic app for Microsoft Teams.
 
-This section shows you how to install the Sumo Logic App for Microsoft Teams.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Upgrading the Microsoft Teams app (Optional)
 
-## Viewing Microsoft Teams Dashboards  
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Microsoft Teams dashboards  
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The Teams - Overview dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
+The **Teams - Overview** dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
 
 Use this dashboard to:
 * Identify user sessions relative to their locations.
@@ -82,7 +97,7 @@ Use this dashboard to:
 
 ### User Sessions
 
-The Teams - User Sessions dashboard provides an in depth view of the user logins and related statistics in your Teams environment
+The **Teams - User Sessions** dashboard provides an in depth view of the user logins and related statistics in your Teams environment
 
 Use this dashboard to:
 * Identify user sessions relative to their locations and compare login statistics over time.
@@ -93,7 +108,7 @@ Use this dashboard to:
 
 ### Team Statistics
 
-The Teams - Team Statistics dashboard offers complete details on the Team activity occurring in your organization.
+The **Teams - Team Statistics** dashboard offers complete details on the Team activity occurring in your organization.
 
 Use this dashboard to:
 * Gain insight into teams being added and removed.
@@ -105,7 +120,7 @@ Use this dashboard to:
 
 ### Channel Statistics
 
-The Teams - Channel  Statistics dashboard offers complete visibility into the Channel activity occurring in your Teams.
+The **Teams - Channel Statistics** dashboard offers complete visibility into the Channel activity occurring in your Teams.
 
 Use this dashboard to:
 * Gain insight into the channels being added and removed.
@@ -118,7 +133,7 @@ Use this dashboard to:
 
 ### User and Role Changes
 
-The Teams - User and Role Changes dashboard provides insight on the user and role changes being applied in your environment.
+The **Teams - User and Role Changes** dashboard provides insight on the user and role changes being applied in your environment.
 
 Use this dashboard to:
 * Report on the users making role changes and the top object types being affected.
