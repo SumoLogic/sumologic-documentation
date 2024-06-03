@@ -14,30 +14,18 @@ The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowd
 
 ## Log types
 
-The Threat Intel Quick Analysis app can be used for any type of logs, regardless of format. Ideal log sources should include **IP**, **URL**, **domain**, **Hash 256**, and/or **email** information.
+The Threat Intel Quick Analysis App can be used for any type of logs, regardless of format. Ideal log sources should include **IP**, **URL**, **domain**, **Hash 256**, and/or **email** information.
 
 
-## Installing the Threat Intel Quick Analysis app
+## Installing the Threat Intel Quick Analysis App
 
 This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](#threat-intel-optimization). Alternatively, you can run this app on smaller and more specific data streams.
 
-This section provides instructions on how to install the Threat Intel Quick Analysis app, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install.md';
 
-<AppInstall2/>
-
-## Upgrading the Threat Intel Quick Analysis app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Threat Intel Quick Analysis app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<AppInstall/>
 
 ## Threat Intel Optimization
 
@@ -641,9 +629,9 @@ Once an indicator has been marked with a malicious confidence level, it continue
 
 ## Viewing Threat Intel Quick Analysis Dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+All Dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel Quick Analysis data. Because the Threat Intel Quick Analysis has the most bearing on recent threats, most panels are set to the 15 minute time range. You can adjust time ranges as needed.
 
-<ViewDashboards/>
+Live mode and real-time queries are not supported for dashboards at this time.
 
 ### Overview
 
