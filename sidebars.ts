@@ -718,7 +718,6 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
-            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -878,7 +877,6 @@ module.exports = {
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
-            'manage/security/audit-indexes/audit-index-access',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
@@ -1917,7 +1915,6 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
-        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -2473,13 +2470,10 @@ integrations: [
       label: 'Cloud Infrastructure Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
+      link: {type: 'doc', id: 'security/cloud-infrastructure-security/index'},
       items: [
-        'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
-        'cloud-infrastructure-security/data-lake',
-        'cloud-infrastructure-security/audit-and-compliance',
-        'cloud-infrastructure-security/threat-detection-and-investigation',
-        'cloud-infrastructure-security/application-security',
+        'security/cloud-infrastructure-security/introduction',
+        'security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
       ],
     },
     {
@@ -2739,6 +2733,20 @@ integrations: [
       },
       ],
     },
+    {
+      type: 'category',
+      label: 'Additional Security Features',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'security/additional-security-features/index'},
+      items: [
+        'security/additional-security-features/introduction',
+        'security/additional-security-features/threat-detection-and-investigation',
+        'security/additional-security-features/data-lake',
+        'security/additional-security-features/audit-and-compliance',
+        'security/additional-security-features/application-security',
+      ],
+    },
   ],
   api: [
     {
@@ -2819,7 +2827,6 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'get-started/sumo-logic-ui-new',
-        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],
