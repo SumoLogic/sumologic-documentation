@@ -138,9 +138,7 @@ The following section details how you can resolve various errors: 
 
 **Error**: `{\"error\":\"invalid_grant\",\"error_description\":\"no client credentials user enabled\"}`. This is due to incorrect policies and permissions for authorization.
 
-To resolve this:
-
-1. If you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
+To resolve this, if you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
 
 **Error**: Object type 'Document' is not supported
 
@@ -187,33 +185,23 @@ If the error still occurs after following the above instructions, contact the Sa
 
 **Error**: Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
-To resolve this:
-
-1. Provide the correct "SignOn Url". 
+To resolve this, provide the correct "SignOn Url". 
 
 **Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
-To resolve this:
-
-1. Provide the correct “Client ID”.
+To resolve this, provide the correct “Client ID”.
 
 **Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
-To resolve this:
-
-1. Provide the correct “Client Secret”. 
+To resolve this, provide the correct “Client Secret”. 
 
 **Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
-To resolve this:
-
-1. Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
+To resolve this, change it from login.salesforce.com to `<instanceURL>.salesforce.com`
 
 **Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
-To resolve this:
-
-1. Please create a support ticket with sumo logic to increase the memory for your container.
+To resolve this, create a support ticket with sumo logic to increase the memory for your container.
 
 **Error**: Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
 
