@@ -270,7 +270,7 @@ To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry
 
 `private TracerProvider tracerProvider` was added as a class variable to create the trace provider in the next step. In the `Application_Start()` method, `Sdk.CreateTracerProviderBuilder()` was introduced. Thanks to this it is possible to configure what can be instrumented and where the telemetry data will be sent.
 
-`.AddAspNetInstrumentation()` adds .NET instrumentation. The service name and application attributes are set by the `.SetResourceBuilder()`which reads the values from `OTEL_RESOURCE_ATTRIBUTES` environment variable. An exporter has to be configured to send the spans. In this case, it is the [OpenTelemetryProtocol exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.8.0/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net) which is configured by the `.AddOtlpExporter()` method.
+`.AddAspNetInstrumentation()` adds .NET instrumentation. The service name and application attributes are set by the `.SetResourceBuilder()` which reads the values from the `OTEL_RESOURCE_ATTRIBUTES` environment variable. An exporter has to be configured to send the spans. In this case, it is the [OpenTelemetryProtocol exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.8.0/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net) which is configured by the `.AddOtlpExporter()` method.
 
 ```cs
 public class MvcApplication : System.Web.HttpApplication
