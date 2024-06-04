@@ -76,7 +76,7 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 		
 You can follow the below steps to set a remotely managed OpenTelemetry collector and push Source Template to it.
 		
-### Step 1: Set up remotely managed Otel collector
+### Step 1: Set up remotely managed OpenTelemetry collector
 		
 import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
