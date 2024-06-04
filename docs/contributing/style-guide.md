@@ -1195,7 +1195,7 @@ To add a text-only release note:
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-    * `title`. Title for release note that includes Product or Feature name.
+    * `title`. Title for release note that includes product or feature name.
        :::note
        For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
        :::
