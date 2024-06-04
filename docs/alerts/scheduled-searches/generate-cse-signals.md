@@ -1,7 +1,7 @@
 ---
 id: generate-cse-signals
 title: Generate Cloud SIEM Signals With a Scheduled Search
-sidebar_label: Generate Cloud SIEM Signals With a Scheduled Search
+sidebar_label: Generate Cloud SIEM Signals
 description: You can generate a Cloud SIEM Signal with a scheduled search.
 ---
 
@@ -66,10 +66,10 @@ type you select. A field whose name does not match a Cloud SIEM attribute will n
 ## Scheduling the search
 
 1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" width="800"/>
-1. The **Save Item** popup appears. 
+1. The **Save Item** popup appears.
    :::note
    The name of your scheduled search will appear as the signal name in Cloud SIEM.
-   ::: 
+   :::
    <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
 1. Click **Schedule this search**.
 1. The **Save Item** popup prompts you to select a run frequency.<br/> ![run-frequency.png](/img/alerts/run-freq-signal-gen.png)

@@ -173,13 +173,13 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
     1. Click **Integrations** in the navigation menu.
     1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" style={{border: '1px solid gray'}} width="400"/>
-    1. Download this file: <a href="https://help.sumologic.com/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
+    1. Download this file: <a href="/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
     1. In the **New Integration** dialog, drag the file into the **Select File** box.
     1. Click **Upload**. An IP Quality Score integration is created.
     1. Open the new **IP Quality Score** integration.
     1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-upload-button.png')} alt="Upload button" style={{border: '1px solid gray'}} width="250"/>
     1. In the **Upload** dialog, select **Action** in the **kind** field.
-    1. Download this file: <a href="https://help.sumologic.com/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
+    1. Download this file: <a href="/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
     1. Drag the file into the **Select File** box.
     1. Click **Upload**. The **IP Reputation** action appears in the IP Quality Score integration.
 1. Add the IP Quality Score integration resource:

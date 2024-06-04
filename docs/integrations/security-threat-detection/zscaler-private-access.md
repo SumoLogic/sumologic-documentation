@@ -49,7 +49,7 @@ To collect logs for ZPA, do the following in Sumo Logic:
     * **Timestamp Format**. Auto Detect
 4. In the Processing Rules for Logs section, add a Processing Rule:
     * **Name:** `Remove Syslog String`
-    * **Filter**: `(\<\d+\>1 - - - - - - <>\{)`
+    * **Filter**: `(\<\d+\>1 - - - - - - \>\{)`
     * **Type**: `Mask messages that match`
     * **Mask String**: `{`
 5. Click **Save**.
@@ -131,6 +131,18 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Zscaler Private Access app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Zscaler Private Access app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing ZPA Dashboards  
 

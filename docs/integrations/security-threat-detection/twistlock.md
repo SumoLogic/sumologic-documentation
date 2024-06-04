@@ -110,6 +110,18 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+## Upgrading the Twistlock app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Twistlock app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Twistlock dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -201,6 +213,18 @@ Use this dashboard to:
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Twistlock Classic app (Optional)
+
+import AppUpdate2 from '../../reuse/apps/app-update.md';
+
+<AppUpdate2/>
+
+## Uninstalling the Twistlock Classic app (Optional)
+
+import AppUninstall2 from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall2/>
 
 ## Viewing Twistlock Classic dashboards​
 

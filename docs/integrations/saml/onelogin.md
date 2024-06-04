@@ -125,6 +125,18 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+## Upgrading the OneLogin app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the OneLogin app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing OneLogin dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';

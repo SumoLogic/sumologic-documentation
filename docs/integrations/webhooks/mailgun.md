@@ -115,6 +115,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the iLeMailgunrt app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Mailgun app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Mailgun dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -418,7 +427,7 @@ module.exports = {
             className: 'header-trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s/contactsupport',
+            to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
           },

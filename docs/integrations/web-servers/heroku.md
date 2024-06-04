@@ -190,7 +190,7 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
    d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
    ```
 2. Define an FER in Sumo Logic.
-    1. In the Sumo Logic web app, go to **Manage Data > Settings > Field Extraction Rules**.
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
@@ -214,6 +214,18 @@ These custom app `_sourceNames` will appear as values in the dashboard filter va
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Heroku app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Heroku app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 :::note
 While using the **Sumo Add-on**, the value `_sourceCategory=heroku` should be used while installing the app.

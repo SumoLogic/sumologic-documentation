@@ -96,8 +96,20 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the Cloudflare app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cloudflare app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Cloudflare dashboards
-=======
+
 This section has instructions for installing the Cloudflare App for Sumo Logic.
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and dashboards.

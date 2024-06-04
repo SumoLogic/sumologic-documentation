@@ -2,18 +2,33 @@
 id: audit-and-compliance
 title: Audit and Compliance
 sidebar_label: Audit and Compliance
-description: Learn how to use Cloud Infrastructure Security to assist with audit and compliance. 
+description: Learn how to use Sumo Logic to assist with audit and compliance. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use Cloud Infrastructure Security for audit and compliance, you can use [pre-built apps](#pre-built-apps-for-audit-and-compliance), or [build your own queries](#build-queries-for-audit-and-compliance).
+To use Sumo Logic for audit and compliance, you can use [pre-built apps](#pre-built-apps-for-audit-and-compliance), or [build your own queries](#build-queries-for-audit-and-compliance).
+
+## Pre-built apps for audit and compliance
+
+[Install](/docs/get-started/apps-integrations) the following apps for compliance:
+* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
+
+Following are some of the Sumo Logic apps you can [install](/docs/get-started/apps-integrations) for auditing:
+* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
+* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
+* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
+* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
+* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
+* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
+* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
 
 ## About audit and compliance
 
-Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/cloud-infrastructure-security/threat-detection-and-investigation/), are also recommended.
+Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/security/additional-security-features/threat-detection-and-investigation), are also recommended.
 
-A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Infrastructure Security supports two types of audits:
+A compliance audit is an inspection of an organization to check whether compliance standards are being met. Sumo Logic supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
 * **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards.
 
@@ -54,7 +69,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-infrastructure-security/data-lake/) for speed and effectiveness of analysis.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/security/additional-security-features/data-lake/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 
@@ -74,27 +89,11 @@ Retain data for as long as you need it to perform your audit and compliance proc
 
 #### Step 6: Monitor in real-time
 
-Cloud Infrastructure Security monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+Sumo Logic monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 
 #### Step 7: Create a unified system
 
 Use Sumo Logic's countless data integrations and out-of-the box applications ensure that all data is properly collected and cataloged as it’s generated.
-
-## Pre-built apps for audit and compliance
-
-[Install](/docs/get-started/apps-integrations) the following apps for compliance:
-* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
-
-Following are some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
-* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
-* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
-* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
-* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
-* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
-* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
-* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
-* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
-
 
 ### Use case: PCI compliance
 
@@ -143,7 +142,7 @@ For example, there may be log messages on destination `port 80`. While these mig
 
 ## Build queries for audit and compliance
 
-You can use Cloud Infrastructure Security to build queries to assist you in audit and compliance tasks. 
+You can use Sumo Logic to build queries to assist you in audit and compliance tasks. 
 
 ### Use case: Audit AWS root for compliance
 
@@ -159,7 +158,7 @@ The root account generally has unrestricted access to resources in an account. A
 
 ### Perform a query for AWS root activity
 
-To use Cloud Infrastructure Security to start an audit of AWS root for compliance, perform these steps:
+To use Sumo Logic to start an audit of AWS root for compliance, perform these steps:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Log Search**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  Kanso-->
 1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three-dot icon on the right side of the query builder, then select **Advanced Mode**.
