@@ -82,7 +82,7 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 <CollectorInstallation/>
 		
-### Step 2: Configuring Source Template
+### Step 2: Configure the Source Template
 		
 In this step, you will configure the yaml required for Apache Collection.
 		
