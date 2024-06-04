@@ -497,7 +497,7 @@ module.exports = {
               items: [
                 {
                   type: 'category',
-                  label: 'Block Blob',
+                  label: 'Block Blobs',
                   collapsible: true,
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },

@@ -34,9 +34,9 @@ Watch this tutorial to learn how to collect logs from Azure Blob Storage.
 ## Functional overview
 
 1. You configure the Azure service to export logs to a container in a storage account created for that purpose.
-1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo-provided ARM) as subscriber. Event Grid routes block blob creation events to event hub.
+1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo Logic-provided ARM) as subscriber. Event Grid routes block blob creation events to event hub.
 1. Event Hub streams the events to the TaskProducer Azure function, which creates tasks (a JSON object that specifies start and end byte, container name, blob path) and pushes those tasks to the service bus task queue.
-1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the block blob, from start byte to stop byte, and sends that data to Sumo. 
+1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the block blob, from start byte to stop byte, and sends that data to Sumo Logic. 
 1. The set up also includes failure handling mechanism. For more information about the solution strategy, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob).
 
 ## Step 1. Configure Azure storage account 
@@ -69,7 +69,7 @@ In this step, you configure an HTTP source to receive logs from the Azure functi
 
 ## Step 3. Configure Azure resources using ARM template
 
-In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
+In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
 
 1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template.
     :::note
@@ -121,7 +121,7 @@ If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [T
 
 ## Ingesting from Multiple Storage Accounts (Optional)
 
-If you want to ingest data into Sumo from multiple storage accounts, perform following tasks for each storage account separately.
+If you want to ingest data into Sumo Logic from multiple storage accounts, perform following tasks for each storage account separately.
 
 :::note
 The following steps assume you have noted down the resource group name, storage account name, and container name where the blobs will be ingested from.

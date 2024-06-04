@@ -2,12 +2,12 @@
 id: troubleshoot-log-collection
 title: Troubleshoot Azure Storage Log Collection
 sidebar_label: Troubleshooting
-description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
+description: Follow these steps to learn why log data is not flowing into Sumo Logic from Azure Blob Storage.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs do not start flowing into Sumo Logic after you perform the Collect Logs from Azure Blob Storage procedure, see the troubleshooting tips below.
+If logs do not start flowing into Sumo Logic after you perform the procedure to collect logs from Azure blob storage (using [block blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/) or [append blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs/)), see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 
@@ -96,9 +96,9 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 ## Verify with Live Tail
 
-In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
+In Sumo Logic, open a Live Tail tab and run a search to verify Sumo Logic is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
 
-For more information about using Live Tail, see [Live Tail](/docs/search/live-tail). 
+For more information about using Live Tail, see [Sumo Logic Live Tail](/docs/search/live-tail). 
 
 ### Verify Azure Function is not getting Failed
 
