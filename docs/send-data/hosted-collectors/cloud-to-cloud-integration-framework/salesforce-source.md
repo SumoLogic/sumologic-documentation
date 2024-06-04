@@ -37,21 +37,21 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
 1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards. The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
 1. Create a dedicated user and profile for the integration as referred to in [Create User Profiles](https://help.salesforce.com/s/articleView?id=sf.emergency_response_admin_userprofiles.htm&type=5) and [Add a Single User](https://help.salesforce.com/s/articleView?id=sf.adding_new_users.htm&type=5) sections of the Salesforce Documentation.
 1. Go to the profile created in Step 1 and provide the following permissions required by the source:
-   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**  
-   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.  
-   * Under **Standard Object Permissions** select **Documents.**  
+   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**
+   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.
+   * Under **Standard Object Permissions** select **Documents.**
    * Also if your Salesforce portal requires a single sign on, you need to bypass this user by unchecking the **Is Single Sign-On Enabled** setting in the profile under the **System Permissions** group.
 1. Create a Connected App in Salesforce to generate the “Consumer Key” (client_id) and “Consumer Secret” (client_secret) API tokens if these are not already available. To do so:
-   * Login to Salesforce.  
+   * Login to Salesforce.
    * Go to **Setup > Platform Tools > Apps > App Manager**.
    * Select **New Connected App**. Enter the following [Basic Information](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm&type=5).
      * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic.
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
-     * **Contact Email**. Enter your email id.   
-   * API (Enable OAuth Settings)   
+     * **Contact Email**. Enter your email id.
+   * API (Enable OAuth Settings)
      * Make sure **Enable OAuth Settings** is checked.
      * Provide the **Callback URL**.
-     * Select **OAuth Scope**. Access and manage your data (API).  
+     * Select **OAuth Scope**. Access and manage your data (API).
      * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
      * When you understand the security risks, accept the warning (if prompted).
      * Select **Save** and then **Continue**.
@@ -71,7 +71,7 @@ To configure a Salesforce Source:
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM.      
+1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -135,6 +135,12 @@ After you configure your Source, you should check the status of the source in th
 ![salesforce-troubleshooting](/img/send-data/salesforce-troubleshooting.jpg)
 
 The following section details how you can resolve various errors: 
+
+**Error**: `{\"error\":\"invalid_grant\",\"error_description\":\"no client credentials user enabled\"}`. This is due to incorrect policies and permissions for authorization.
+
+To resolve this:
+
+1. If you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
 
 **Error**: Object type 'Document' is not supported
 
@@ -223,6 +229,7 @@ To resolve this: 
 
 ## FAQ
 
+1. For migration fron 2.1.1 to 3.x.x we ne make sure to follow the steps mentioned in vendor configuration section.
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
