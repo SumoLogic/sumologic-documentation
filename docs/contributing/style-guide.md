@@ -1197,7 +1197,7 @@ To add a text-only release note:
     ```
     * `title`. Title for release note that includes product or feature name.
        :::note
-       For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
+       For service release notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous service release notes for category names.
        :::
     * `keywords`. Add a brief bulleted list of major keywords.
     * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
