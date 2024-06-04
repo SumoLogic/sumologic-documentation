@@ -229,7 +229,6 @@ To resolve this: 
 
 ## FAQ
 
-1. For migration fron 2.1.1 to 3.x.x we ne make sure to follow the steps mentioned in vendor configuration section.
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
