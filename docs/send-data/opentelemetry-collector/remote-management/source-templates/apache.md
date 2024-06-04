@@ -95,7 +95,7 @@ Below are the inputs required:
 		
 You can add any custom fields which you want to tag along with the data ingested through the source template in Sumo Logic.
 
-### Step 3: Pushing Source Template to appropriate remotely managed collectors
+### Step 3: Push the Source Template to the desired remotely managed collectors
 
 import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
 
