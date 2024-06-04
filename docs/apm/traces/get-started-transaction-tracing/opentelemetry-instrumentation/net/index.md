@@ -305,7 +305,7 @@ public class MvcApplication : System.Web.HttpApplication
 
 ### Step 4. Instrumentation configuration
 
-The final step is to provide configuration for instrumentation. There are few things which have to be configured: exporter endpoint, service and application name. Configuration can be provided using environment variables or `web.config` file.
+The final step is to provide configuration for instrumentation. There are a few things which have to be configured: exporter endpoint, service, and application name. Configuration can be provided using environment variables or `web.config` file.
 
 #### Environment variables
 
