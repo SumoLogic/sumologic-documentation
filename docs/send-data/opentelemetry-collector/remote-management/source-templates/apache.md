@@ -72,9 +72,9 @@ $NewAcl.SetAccessRule($fileSystemAccessRule)
 Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 ```
 		
-## Source Template configuration
+## Source template configuration
 		
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push Source Template to it.
+You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
@@ -82,7 +82,7 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 <CollectorInstallation/>
 		
-### Step 2: Configure the Source Template
+### Step 2: Configure the source template
 		
 In this step, you will configure the yaml required for Apache Collection.
 		
@@ -95,7 +95,7 @@ Below are the inputs required:
 		
 You can add any custom fields which you want to tag along with the data ingested through the source template in Sumo Logic.
 
-### Step 3: Push the Source Template to the desired remotely managed collectors
+### Step 3: Push the source template to the desired remotely managed collectors
 
 import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
 
