@@ -41,11 +41,11 @@ Receive server statistics by configuring the server's `httpd.conf` file to [enab
 Configure the Apache log files:
 1. Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
 1. Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
-	* For access logs, the following directive is to be noted:
-		- **CustomLog**. Access log file path and format (standard common and combined).
-	* For error logs, the following directives are to be noted:
-		- **ErrorLog**. Error log file path.
-		- **LogLevel**. To control the number of messages logged to the `error_log`.
+   * For access logs, the following directive is to be noted:
+      - **CustomLog**. Access log file path and format (standard common and combined).
+   * For error logs, the following directives are to be noted:
+      - **ErrorLog**. Error log file path.
+      - **LogLevel**. To control the number of messages logged to the `error_log`.
 		
 Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
 		
