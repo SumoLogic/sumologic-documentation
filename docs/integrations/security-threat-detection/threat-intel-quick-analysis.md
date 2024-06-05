@@ -62,7 +62,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 ### Domain
 
-See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **Domain** dashboard displays the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Domain_Dashboard.png')} alt="Threat Intel Dashboard" />
 
