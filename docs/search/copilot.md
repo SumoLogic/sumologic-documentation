@@ -2,6 +2,7 @@
 id: copilot
 title: Sumo Logic Copilot - Feature Preview
 sidebar_label: Copilot 🤖
+description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
   - artificial intelligence
@@ -17,19 +18,41 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
+<p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
-:::
 
-Sumo Logic Copilot is an AI-based assistant that streamlines log analysis insights by allowing you to ask questions in plain English and provides search suggestions, all without your having to write a log query.
+Sumo Logic Copilot is an AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 
-In this document, you'll learn the recommended Copilot workflow as well as best practices.
+### Key features
 
-<details>
-<summary>Click here to watch a step-by-step video investigation using Copilot.</summary>
+* **AI-curated insights**. Get customized insights tailored to your data.
+* **Natural language queries**. Ask questions in plain English.
+* **Pre-built insights**. Utilize pre-built insights to accelerate your workflow.
+* **Root cause analysis**. Quickly identify the root cause of issues with AI assistance.
+
+### Who benefits from Copilot?
+
+Copilot is ideal for:
+
+* **On-call engineers**. Accelerate time to resolution for application insights.
+* **Security engineers**. Quickly obtain security insights.
+
+### How Copilot helps
+
+Copilot combines pre-built insights with the ability to ask questions of your logs in natural English, helping you to:
+
+* **Find root causes faster**. Use AI to quickly pinpoint issues.
+* **Enhance efficiency**. Streamline the log analysis process.
+
+
+## Sample queries
 
 <!-- add micro lesson video when published-->
 <!-- replace with https://www.youtube.com/watch?v=QrRvN2Bg4NY ? -->
+
+### Troubleshooting example
+
+In the scenario depicted in the video, we leverage Copilot to investigate a security issue where it appears AWS CloudTrail access keys were leaked outside an organization.
 
 <Iframe url="https://player.vimeo.com/video/939372059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         width="854px"
@@ -43,8 +66,7 @@ In this document, you'll learn the recommended Copilot workflow as well as best 
         allowfullscreen
         />
 
-
-In the scenario depicted in the video, we leverage Copilot to investigate a security issue: AWS CloudTrail access keys being leaked outside an organization. Here's a recap:
+Here's a recap:
 
 1. First, we select the data source for AWS CloudTrail audit logs.
 1. Launch our log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
@@ -54,31 +76,57 @@ In the scenario depicted in the video, we leverage Copilot to investigate a secu
 1. Add the security `groupid` to the prompt to tabulate events containing that data.
 1. Focus on a specific access key, `ABCDEFGOYCM3PIKNOVRA`, noting `PutRolePolicy` events indicating permission elevation. Multiple AWS accounts are impacted.
 1. We conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
-</details>
 
-## Step 1: Open Copilot
+### Security example
+
+This video demonstrates how to use Copilot to analyze AWS CloudTrail data by reviewing AI-curated suggestions, refining searches with natural language prompts, and launching an AI-generated dashboard for root cause analysis and sharing.
+
+<Iframe url="https://www.youtube.com/embed/QrRvN2Bg4NY?si=Bsc2mRbqMPq8bsqg"
+        width="854px"
+        height="480px"
+        title="Copilot Demo"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+Here's a recap:
+
+1. **Select AWS CloudTrail**. Start by selecting AWS CloudTrail as the data source.
+1. **Review Suggestions**. Look at the **Suggestions** section where AI-curated natural language insights are provided, customized for the specific AWS CloudTrail data.
+1. **Select a Suggestion**. Choose the suggestion `Count logs by eventname`.
+1. **Refine Search**. Enhance your search for log anomalies by adding `access key and sourceIp` to the prompt. No need to edit the query code.
+1. **Filter Results**. Narrow down the results by adding `eventname contains Create` to the prompt.
+1. **Review Recommendations**. Quickly review AI-driven recommendations to identify attacker TTPs (Tactics, Techniques, and Procedures).
+1. **Launch Dashboard**. Launch an AI-generated dashboard directly from the UI for root cause analysis.
+
+## How to use Copilot
+In this section, you'll learn the recommended workflow for using Copilot effectively, along with best practices to maximize its benefits.
+
+### Step 1: Open Copilot
 
 To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home page.
 
 <img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
-## Step 2: Select a source category
+### Step 2: Select a source category
 
 Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
-## Step 3: Execute a prompt
+### Step 3: Execute a prompt
 
-Next, you'll see customized **Suggestions**, based on the source category you've selected.
-
-### Suggestions (recommended)
+#### Suggestions (recommended)
 
 Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
 
 <img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-### Manual entry
+#### Manual entry
 
 :::tip
 Because manually typing an AI prompt requires careful precision for optimal performance, we recommend clicking the prebuilt [Suggestions](#suggestions-recommended) prompts, which have been proven effective through extensive testing.
@@ -92,19 +140,19 @@ You'll need to be very specific. Broad questions do not return good results. Whe
 If the statement in the **Ask Something...** field can't be translated into a query, this field will say "Failed translation".
 :::
 
-## Step 4: Refine your investigation
+### Step 4: Refine your investigation
 
 After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations.
 
 Optionally, follow any of the below steps to refine your search.
 
-### Refine
+#### Refine
 
 Click any of the **Suggestions** > **Refine** prompts to apply suggested refinements to your existing investigation.
 
 <img src={useBaseUrl('img/search/copilot/refine.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-#### Progressive refinement
+##### Progressive refinement
 
 As a best practice, start with a simple prompt, verify the query translation, and refine it gradually. For example:
 
@@ -124,7 +172,7 @@ As a best practice, start with a simple prompt, verify the query translation, an
 
 :::
 
-### Edit query code
+#### Edit query code
 
 If needed, you can edit your log search query code.
 
@@ -146,28 +194,28 @@ If needed, you can edit your log search query code.
    ```
    :::
 
-### Chart type
+#### Chart type
 
 Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view, to visualize your results.
 
 <img src={useBaseUrl('img/search/copilot/chart-types.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="300" />
 
-### Time range
+#### Time range
 
 1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="400" />
 1. Click the search button.<br/><img src={useBaseUrl('img/search/copilot/search-button.png')} alt="Copilot search button" style={{border: '1px solid gray'}} width="250" />
 
-### Feedback
 
-We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
-
-<img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="200" />
-
-
-## Step 5: Open in Log Search
+### Step 5: Open in Log Search
 
 Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo's search functionality. You can continue investigating, save the search, and remediate.
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="400" />
 
 If you'd like to start over and begin a new investigation, click the **New Conversation** icon.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="275" />
+
+## Feedback
+
+We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
+
+<img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="200" />
