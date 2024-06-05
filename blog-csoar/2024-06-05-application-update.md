@@ -28,7 +28,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   * Fixed issue related to Internal Integration and output edit.
   * Fixed issue related to Join and unique operator.
 * Entities: Fixed table loading issue.
-* Fixed issue related to trigger action, when api are involved.
+* Fixed issue related to trigger action, when APIs are involved.
 
 #### Cloud SOAR
 * SecOps: Fixed issue when filtering cards with large number of Incidents or Triage events.
