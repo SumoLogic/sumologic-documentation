@@ -91,7 +91,7 @@ See the frequency of Email threats by Actor, Log Source, Malicious Confidence, a
 
 ### IP
 
-See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **IP** dashboard displays the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_IP_Dashboard.png')} alt="Threat Intel Dashboard" />
 
