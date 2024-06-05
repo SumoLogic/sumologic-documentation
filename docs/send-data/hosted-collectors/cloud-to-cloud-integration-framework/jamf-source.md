@@ -30,7 +30,7 @@ Jamf is a software company that specializes in mobile device management (MDM) an
 
 The Jamf source requires you to provide the Base URL, Client ID, and Client Secret to access the source data.
 
-- The Base URL is used to retrieve the source data from the Jamf. The **Base URL** for Jamf is `https://yourServer.jamfcloud.com`.
+- The Base URL is used to retrieve the source data from the Jamf. The **Base URL** for Jamf is `https://yourServer.jamfcloud.com`, replace `yourServer` with your organization server.
 - To generate the **Client ID** and **Client Secret**, follow the instructions mentioned in the [Jamf documentation](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html).
 
 ### Source configuration
@@ -59,7 +59,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Jmaf"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"jmaf"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
