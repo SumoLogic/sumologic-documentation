@@ -107,7 +107,7 @@ See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and 
 
 ### URL
 
-See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **URL** dashboard displays the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
 
