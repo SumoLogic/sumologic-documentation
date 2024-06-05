@@ -1,3 +1,7 @@
+.navbar__item .navbar__link .navbar__link--active {
+  color: white;
+}
+
 .dropdown--show .navbar__link::after {
   color: var(--ifm-navbar-link-hover-color);
 }
