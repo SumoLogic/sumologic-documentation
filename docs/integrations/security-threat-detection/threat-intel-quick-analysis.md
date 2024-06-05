@@ -32,7 +32,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Threat Intel Quick Analysis app (Optional)
+## Uninstalling the Threat Intel Quick Analysis app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
