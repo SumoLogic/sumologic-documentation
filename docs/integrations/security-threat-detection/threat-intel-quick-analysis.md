@@ -46,7 +46,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **Overview** dashboard shows you the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
