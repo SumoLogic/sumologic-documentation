@@ -1,6 +1,6 @@
 ---
 id: ai-machine-learning
-title: Sumo Logic AI and Machine Learning-Backed Features
+title: Harnessing AI and Machine Learning with Sumo Logic
 sidebar_label: AI and Machine Learning
 description: Leverage Sumo Logic AI- and ML-backed features to set up alerts, resolve issues, and reduce MTTR.
 keywords:
@@ -50,7 +50,7 @@ With Copilot, you can effortlessly investigate complex issues without writing in
 
 ### LogReduce
 
-LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on string similarity, and boils down thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, teaching LogReduce for more specific outcomes. [Learn more](/docs/search/logreduce).
+LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on string similarity and distill thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, teaching LogReduce for more specific outcomes. [Learn more](/docs/search/logreduce).
 
 ### LogCompare
 
