@@ -30,7 +30,7 @@ Some Webhook events may not be available based on the plan type. Refer to the Pr
 
 Follow the below steps to get the required fields for user configuration:
 1. Sign in to [Zoom Marketplace](https://marketplace.zoom.us/).
-1. In the upper right corner, click **Develop > Build App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="zoom-sign-in" width="400"/>
+1. In the upper right corner, click **Develop > Build Legacy App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="zoom-sign-in" style={{border: '1px solid gray'}} width="200"/>
 1. **Create** a Webhook Only.
 1. Specify the following App Information:
     - App Name    
