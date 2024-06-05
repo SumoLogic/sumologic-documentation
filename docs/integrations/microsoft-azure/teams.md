@@ -65,7 +65,7 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Teams app (Optional)
+## Upgrading the Microsoft Teams app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
