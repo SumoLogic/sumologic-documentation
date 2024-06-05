@@ -76,7 +76,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 ### Email
 
-See the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **Email** dashboard displays the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Email_Dashboard.png')} alt="Threat Intel Dashboard" />
 
