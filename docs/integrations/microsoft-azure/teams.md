@@ -71,7 +71,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Microsoft Teams app (Optional)
+## Uninstalling the Microsoft Teams app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
