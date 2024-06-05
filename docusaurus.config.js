@@ -427,7 +427,7 @@ module.exports = {
             className: 'header-trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s/contactsupport',
+            to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
           },

@@ -31,6 +31,7 @@ module.exports = {
         'get-started/library',
         'get-started/sumo-logic-ui',
         'get-started/system-requirements',
+        'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
         'get-started/training-certification-faq',
         'get-started/help',

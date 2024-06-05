@@ -1675,6 +1675,7 @@
   "/cid/1079": "/docs/metrics/metrics-queries",
   "/cid/1080": "/docs/metrics/introduction/get-started-metrics",
   "/cid/1081": "/docs/metrics",
+  "/cid/10314": "/docs/send-data/opentelemetry-collector/remote-management/source-templates/apache",
   "/cid/10817": "/docs/integrations/sumo-apps/cse",
   "/cid/10818": "/docs/integrations/sumo-apps/cse",
   "/cid/1082": "/docs/metrics/introduction/get-started-metrics",

@@ -47,6 +47,9 @@ Copilot combines pre-built insights with the ability to ask questions of your lo
 
 ## Sample queries
 
+<!-- add micro lesson video when published-->
+<!-- replace with https://www.youtube.com/watch?v=QrRvN2Bg4NY ? -->
+
 ### Troubleshooting example
 
 In the scenario depicted in the video, we leverage Copilot to investigate a security issue where it appears AWS CloudTrail access keys were leaked outside an organization.
@@ -159,7 +162,14 @@ As a best practice, start with a simple prompt, verify the query translation, an
 1. Further refinement. `Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. Filter logs that contain redis-cluster in name. Sort the results by count`.
 
 :::tip
-Express your chain of thought to the AI by breaking up the prompt into smaller problems that the AI can answer more accurately.
+
+<details>
+<summary>Express your chain of thought to the AI by breaking up your prompt into smaller problems that the AI can answer more accurately. Click here to see an example.</summary>
+
+<img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+
+</details>
+
 :::
 
 #### Edit query code
