@@ -40,7 +40,7 @@ Our alerting, security, and remediation features go beyond visual analytics. The
 
 ## Observability
 
-Sumo Logic provides observability into your technology stack by analyzing the millions of log files created by your technology stack, detecting anomalies and outlier data, and reporting security issues in a timely fashion with fewer false positives.
+Sumo Logic provides observability into your technology stack by analyzing the millions of log files created in your environment, detecting anomalies and outlier data, and reporting security issues in a timely fashion with fewer false positives.
 
 ### Copilot
 
