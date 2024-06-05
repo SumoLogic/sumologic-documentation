@@ -122,7 +122,7 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 
 ### Hash 256
 
-See the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+The **Hash 256** dashboard displays the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
 
