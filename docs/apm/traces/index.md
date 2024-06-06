@@ -1,8 +1,7 @@
 ---
 slug: /apm/traces
 title: Traces
-description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
-tags: [traces, trace, tracing]
+description: Monitor your application's performance with Sumo Logic trace analytics. Learn how to utilize your tracing data, including dashboards, service maps, spans, and queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

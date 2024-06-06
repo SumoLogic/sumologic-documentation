@@ -3,7 +3,8 @@ id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
 description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
-tags: [get started, getting started]
+keywords:
+  - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -48,7 +49,7 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### Installed and Hosted Collector
 
 1. Log in to Sumo Logic.
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
 1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 

@@ -2,7 +2,6 @@
 slug: /apm/real-user-monitoring
 title: Real User Monitoring (RUM)
 description: Real User Monitoring (RUM) gives you insights into the quality of customer interactions with the digital interfaces of your business.
-tags: [real user monitoring, rum]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +11,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="60"/>
 
-Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
+Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source-powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
 RUM provides you visibility into end-to-end individual user transactions to quickly understand the user experience. You'll get insights into delays that occurred on the client, overall end-to-end transaction times, network timings, rendering events, and can perform high-level monitoring, alerting, as well as troubleshooting any potential slow-downs. You have full details about the specific performance of top user cohorts, their geographical locations, browsers, and operating systems. You can also fully understand the overall experience of all users and transactions of your digital business, all the time.
 
@@ -48,9 +47,9 @@ See Real User Monitoring in action.
 
 Access Traces to confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**.
+<!--Kanso
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
  Kanso-->
 
 ## Guides

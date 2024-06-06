@@ -4,7 +4,6 @@ keywords:
   - cloud siem
   - rule level signal suppression
   - MITRE explorer
-tags: [application update]
 image: https://help.sumologic.com/img/sumo-square.png
 hide_table_of_contents: true
 authors:
@@ -30,6 +29,6 @@ The setting is in the "Show Advanced" section. You can specify a suppression per
 
 #### Bug Fixes
 
-* Some system events that automatically occur after an Insight is created (such as enrichment, automation service calls, and so on) were not consistently executing. 
+* Some system events that automatically occur after an Insight is created (such as enrichment, automation service calls, and so on) were not consistently executing.
 * Some system events that automatically occur just before rule processing (such as adding Geo IP and ASN data, checking match lists, and so on) were not consistently executing.
 * Users were unable to duplicate rules due to an internal error.
