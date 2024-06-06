@@ -27,7 +27,7 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [Mtrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard utilizes the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for Dashboard.
 
