@@ -1,7 +1,6 @@
 ---
 title: Forcepoint Web Security
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

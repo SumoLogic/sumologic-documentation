@@ -1,7 +1,6 @@
 ---
 title: Qualys EDR
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -1,7 +1,8 @@
 ---
-id: data-tiers-faqs
-title: Data Tiers FAQs
-description: Answers to FAQ about Data Tiers.
+id: faq
+title: Data Tiers FAQ
+sidebar_label: FAQ
+description: Answers to frequently asked questions about Data Tiers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

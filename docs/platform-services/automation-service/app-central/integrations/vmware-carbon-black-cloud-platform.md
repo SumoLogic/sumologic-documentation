@@ -1,7 +1,6 @@
 ---
 title: VMware Carbon Black Cloud Platform
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

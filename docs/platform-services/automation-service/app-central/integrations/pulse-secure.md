@@ -1,7 +1,6 @@
 ---
 title: Pulse Secure
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

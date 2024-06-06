@@ -1,7 +1,6 @@
 ---
 title: WithSecure Endpoint Protection
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

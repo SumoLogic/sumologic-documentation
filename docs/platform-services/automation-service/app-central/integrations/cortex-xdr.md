@@ -1,7 +1,6 @@
 ---
 title: Cortex XDR
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

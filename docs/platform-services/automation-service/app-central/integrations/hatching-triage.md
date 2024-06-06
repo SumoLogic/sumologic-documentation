@@ -1,7 +1,6 @@
 ---
 title: Hatching Triage
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

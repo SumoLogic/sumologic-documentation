@@ -1,7 +1,6 @@
 ---
 title: Kaspersky CyberTrace
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
