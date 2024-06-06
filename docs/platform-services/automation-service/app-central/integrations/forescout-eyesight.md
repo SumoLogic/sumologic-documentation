@@ -1,7 +1,6 @@
 ---
 title: Forescout eyeSight
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

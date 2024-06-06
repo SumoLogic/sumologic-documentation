@@ -1,7 +1,6 @@
 ---
 title: Stellar Cyber Starlight
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -1,7 +1,6 @@
 ---
 title: Microsoft EWS Daemon
 description: ''
-tags: [ cloud soar integrations ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

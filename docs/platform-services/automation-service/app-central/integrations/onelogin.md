@@ -1,7 +1,6 @@
 ---
 title: OneLogin
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

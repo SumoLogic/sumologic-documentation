@@ -1,7 +1,6 @@
 ---
 title: Jamf
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

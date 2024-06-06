@@ -1,7 +1,6 @@
 ---
 title: Palo Alto Networks NGFW
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

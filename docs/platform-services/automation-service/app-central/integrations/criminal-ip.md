@@ -1,7 +1,6 @@
 ---
 title: Criminal IP
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

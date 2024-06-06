@@ -1,7 +1,6 @@
 ---
 title: Prisma Cloud
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
