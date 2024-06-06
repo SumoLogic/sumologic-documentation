@@ -2,7 +2,8 @@
 slug: /manage/security
 title: Security
 description: Learn how to set up security for Sumo Logic accounts.
-tags: [security]
+keywords:
+  - account security
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
