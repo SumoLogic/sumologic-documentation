@@ -1,5 +1,5 @@
 ---
-title: Jamf (Collection) 
+title: Jamf C2C Source (Collection) 
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - cloud-to-cloud
