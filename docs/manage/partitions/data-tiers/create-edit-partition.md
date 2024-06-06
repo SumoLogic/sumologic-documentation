@@ -96,7 +96,7 @@ Before changing the routing expression for a partition, consider the impact of t
 ### Audit logging for routing expression changes
 
 If you change the routing expression for a partition, an event is
-written to the Audit Event Index with the following details:
+written to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) with the following details:
 
 * `EventName` is "PartitionUpdated"
 * `Subsystem` is "Partition"
