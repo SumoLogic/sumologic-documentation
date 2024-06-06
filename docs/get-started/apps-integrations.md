@@ -164,7 +164,7 @@ If you do not have data that matches the requirements of the search query, or if
 Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume app") do not require you to select a Source Category.
 :::
 
-## Custom Data Filters
+## Custom data filters
 
 When you install a Sumo Logic app, you tell Sumo what data to search and present in app dashboards.
 
