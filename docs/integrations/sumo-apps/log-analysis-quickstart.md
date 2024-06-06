@@ -35,7 +35,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Keywords and Metadata
 
-These dashboards provide several ways to monitor your logs based on the metadata of your data. All of the panels include searches for specific issues. You can learn more about metadata options in [Built-In Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+This dashboard provides several ways to monitor your logs based on the metadata of your data. All of the panels include searches for specific issues. You can learn more about metadata options in [Built-In Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
 * **High Priority Keywords.** Displays how often the terms error, failure, and exception appear in all log messages over time.
 * **Medium Priority Keywords.** Displays how often the terms time out, warn, check, exist, reject, deny, and timeout appear in all log messages over time.
