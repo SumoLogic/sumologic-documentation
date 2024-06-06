@@ -1,7 +1,6 @@
 ---
 title: Snyk
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

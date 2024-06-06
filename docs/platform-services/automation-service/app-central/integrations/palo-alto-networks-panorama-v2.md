@@ -1,7 +1,6 @@
 ---
 title: Palo Alto Networks Panorama V2
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
