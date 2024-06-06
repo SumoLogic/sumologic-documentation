@@ -49,7 +49,7 @@ This dashboard provides several ways to monitor your logs based on the metadata 
 
 ### Collectors and Source Monitoring
 
-The Panels in the Collector and Source Monitoring Dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
+The panels in the Collector and Source Monitoring dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
 
 * **Issues by Collector.** This panel displays the number of log messages that contain error, exception, or failure terms by Collector.
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
