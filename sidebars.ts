@@ -2350,6 +2350,7 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
+          'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
         ],
       },
