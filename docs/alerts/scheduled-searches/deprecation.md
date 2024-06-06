@@ -27,7 +27,7 @@ Real-Time Scheduled Searches that were created up until **May 29, 2024** will co
 
 ## What do I need to do?
 
-Before **May 15, 2025**, please migrate any Real-Time Scheduled Searches to either Monitors or reduce its frequency to the minimum frequency of 15m.
+Before **May 15, 2025**, please migrate any Real-Time Scheduled Searches to either Monitors or reduce its frequency to the minimum of 15m or another suitable timerange. Any Real-Time Scheduled Searches that remain after the deprecation date will automatically be converted to 15m schedules. For each automatic conversion, there will be a corresponding audit log for this activity written to your Sumo instance. 
 
 ### Can I import a scheduled search into a monitor?
 
