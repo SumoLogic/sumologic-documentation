@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cisco Webex is a cloud-based video conferencing and collaboration product suite, which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (meetings, rooms, messages, and memberships) data and sends it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

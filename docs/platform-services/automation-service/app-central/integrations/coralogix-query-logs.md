@@ -1,7 +1,6 @@
 ---
 title: Coralogix - Query Logs
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

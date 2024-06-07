@@ -23,10 +23,6 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 
 The types of events are defined in the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

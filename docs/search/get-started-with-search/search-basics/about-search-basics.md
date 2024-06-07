@@ -62,6 +62,13 @@ This method lines up the pipes and makes your query much easier to read.
 Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
 :::
 
+## Default data scope
+
+The data that is used to execute the query when there is no `_index`, `_sourcecategory`, `_view` , or metadata fields in the source expression of a query is called Default scope data.
+
+- For data-tier customers, the data in continuous tier is considered as default scope. For queries relying on default scope, example, `_index`, `_sourcecategory`, `_view` , or metadata fields, for example `error | count` or `*`, only continuous tier data will be considered for the query, as frequent and infrequent data is excluded from the default scope.
+- For [flex customers](/docs/manage/partitions/flex/create-edit-partition-flex), you can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition. For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). When you run the query without referring to `_index`, for example `error | count` or `*`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope.
+
 ## See also
 
 * Learn [How to Build a Search](/docs/search/get-started-with-search/build-search).

@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
+<!--Kanso 
+:::warning
+Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui/). We recommend using other [Observability](/docs/observability/) tools instead.
+:::
+ Kanso-->
+
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
 Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.

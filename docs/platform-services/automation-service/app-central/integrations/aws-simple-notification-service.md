@@ -1,7 +1,6 @@
 ---
 title: AWS Simple Notification Service
 description: ''
-tags: []
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

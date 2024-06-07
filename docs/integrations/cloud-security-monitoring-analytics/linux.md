@@ -51,9 +51,8 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
 1. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
 1. Choose an authentication method.
-   * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-   * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-   * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
+   * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
+   * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
 1. Click **Finish** to complete the setup.
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
@@ -288,6 +287,18 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Linux app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Linux app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Linux Security Monitoring dashboards
 

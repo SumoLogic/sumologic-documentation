@@ -2,7 +2,6 @@
 title: February 19, 2024 - Application Update
 keywords:
   - cloud siem
-tags: [application update]
 image: https://help.sumologic.com/img/sumo-square.png
 authors:
   - url: https://help.sumologic.com/release-notes-cse/rss.xml

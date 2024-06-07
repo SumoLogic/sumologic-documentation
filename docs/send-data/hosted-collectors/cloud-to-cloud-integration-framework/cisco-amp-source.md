@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco AMP Source provides a secure endpoint to receive data from the Cisco Amp [System Log API](https://api-docs.amp.cisco.com/api_resources?api_host=api.amp.cisco.com&api_version=v1). It securely stores the required authentication, scheduling, and state tracking information.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

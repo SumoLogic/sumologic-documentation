@@ -20,10 +20,6 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |

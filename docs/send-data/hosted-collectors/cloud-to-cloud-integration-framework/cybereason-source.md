@@ -23,10 +23,6 @@ The Cybereason API documentation is not public and can only be accessed by part
 
 If you want to explicitly allow the static IP addresses used for this Source on Cybereason see our [table of static IP addresses by deployment](cloud-to-cloud-source-versions.md).
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |

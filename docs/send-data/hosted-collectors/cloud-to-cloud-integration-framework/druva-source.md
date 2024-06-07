@@ -21,9 +21,6 @@ The Druva source provides the ability to analyze and fetch event logs from the *
 This integration accesses the Druva inSync API to retrieve audit events. API documents can be found
 [here](https://developer.druva.com/docs/event-apis).
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
 
 ## Data collected
 

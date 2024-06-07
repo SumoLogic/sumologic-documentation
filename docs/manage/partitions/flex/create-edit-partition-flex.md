@@ -25,7 +25,7 @@ To create or edit a Partition, you must be an account Administrator or have th
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
-1. (Optional) **Include this partition in default scope**. This checkbox is already selected. Deselect this checkbox if you need to exclude this partition as the default scope in your search. If the partition is added as a default scope then the partition is considered for any search query by default.
+1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.  
     :::
@@ -66,7 +66,7 @@ You can make some changes to an existing partition:  
 
 * You can change the retention period of the partition.
   :::note
-  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.
+  By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of `sumologic_default`. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
 * You cannot change the name of a partition, the routing expression, or reuse a partition name.
@@ -83,13 +83,13 @@ You can make some changes to an existing partition:  
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.
     :::
-1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
+1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of `sumologic_default`**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
 ### Audit logging for routing expression changes
 
 If you change the routing expression for a partition, an event is
-written to the Audit Event Index with the following details:
+written to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) with the following details:
 
 * `EventName` is "PartitionUpdated"
 * `Subsystem` is "Partition"
