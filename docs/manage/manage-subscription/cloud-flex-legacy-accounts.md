@@ -94,7 +94,7 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
 * Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
 * Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
-* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/get-started/apps-integrations#log-analysis-quickstart-app).
+* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/integrations/sumo-apps/log-analysis-quickstart).
 * The limitations of a Free account cannot be changed, but you can upgrade to a Professional account at any time.
 * For information on throttling and account caps, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
 
