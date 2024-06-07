@@ -22,8 +22,7 @@ The Microsoft Graph Security API Source provides a secure endpoint to receive a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 

@@ -1,7 +1,6 @@
 ---
 title: Coralogix - Send Logs
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

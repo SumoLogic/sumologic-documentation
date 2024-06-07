@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Audit indexes provide event logs on account activities, allowing you to monitor and audit changes. Query the indexes to find a wide variety of information on your account activity.
 
 You can also view data from audit indexes in dashboards when you install these apps:
-* [**Sumo Logic Audit App**](http://localhost:3000/docs/integrations/sumo-apps/audit/). Displays data from the [Audit Index](/docs/manage/security/audit-indexes/audit-index).
+* [**Sumo Logic Audit App**](/docs/integrations/sumo-apps/audit/). Displays data from the [Audit Index](/docs/manage/security/audit-indexes/audit-index).
 * [**Enterprise Audit Apps**](/docs/integrations/sumo-apps/enterprise-audit/). Display data from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
 * [**Sumo Logic Infrequent Data Tier App**](/docs/integrations/sumo-apps/infrequent-data-tier) and [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). Display data from the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
 * [**Sumo Logic Flex App**](/docs/integrations/sumo-apps/flex). Display data from the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
