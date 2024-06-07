@@ -26,7 +26,7 @@ To add a panel with a single value chart:
 
     Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} alt="Metrics selection for query builder" style={{border: '1px solid gray'}} width="700" />
 
-    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png')} alt="new single value chart metrics" style={{border: '1px solid gray'}} width="800" />
+    To create a metrics query utilize the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png')} alt="new single value chart metrics" style={{border: '1px solid gray'}} width="800" />
 
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />

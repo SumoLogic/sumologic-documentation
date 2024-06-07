@@ -1,7 +1,6 @@
 ---
 title: Mail Tools
 description: ''
-tags: [cloud soar integrations]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

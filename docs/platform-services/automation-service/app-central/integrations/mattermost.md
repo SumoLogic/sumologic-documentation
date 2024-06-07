@@ -1,7 +1,6 @@
 ---
 title: Mattermost
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -4,7 +4,6 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-tags: [cloud soar release notes, automation service, application update]
 image: https://help.sumologic.com/img/sumo-square.png
 authors:
   - url: https://help.sumologic.com/release-notes-csoar/rss.xml
@@ -18,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Incident list: Restored all bulk operations for select all option.
 
 ### Bug fixes
-* Playbooks: 
+* Playbooks:
   * Fixed start node configuration issue.
   * Fixed Input values not displayed correctly in Condition node.
   * Fixed issue related to send email action when cc field is not populated.
@@ -32,7 +31,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 #### Cloud SOAR
 * SecOps: Fixed issue when filtering cards with large number of Incidents or Triage events.
-* Incidents: 
+* Incidents:
   * Fixed closing note permission.
   * Fixed issue with old SOAR Incidents not loading.
   * Fixed issue related to mandatory Incident closing note.

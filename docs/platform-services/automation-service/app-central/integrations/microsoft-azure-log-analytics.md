@@ -1,7 +1,6 @@
 ---
 title: Microsoft Azure Log Analytics
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

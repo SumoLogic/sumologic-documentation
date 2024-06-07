@@ -1,39 +1,41 @@
 ---
 slug: /dashboards
-title: Dashboard
-description: The Dashboard platform allows you to analyze metric and log data on the same dashboard, in a streamlined user experience.
-tags: [dashboards, dashboard]
+title: Dashboards
+description: Sumo Logic dashboards enable you to analyze logs and metrics data together on a single dashboard, providing a streamlined user experience.
+keywords:
+  - dashboard
+  - dashboards
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Dashboards allow you to analyze metrics and log data on the same dashboard, in a streamlined user experience.
+Sumo Logic dashboards enable you to analyze logs and metrics data together on a single dashboard, providing a streamlined user experience.
 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/dashboards/about"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>About Dashboards </h4></a>
-  <p>Learn the benefits of Dashboard and how it seamlessly integrates log, metrics, and trace data.</p>
+  <a href="/docs/dashboards/about"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>About Dashboards</h4></a>
+  <p>Learn about the benefits of Sumo Logic dashboards and how they seamlessly integrate logs, metrics, and traces data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/dashboards/filter-template-variables/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Filtering Dashboards with Template Variables</h4></a>
-  <p>Create your own custom Dashboard and add charts.</p>
+  <p>Create your own custom dashboards and add charts.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/dashboards/dashboards-migration/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Migrating from Dashboards (Classic) to Dashboards</h4></a>
-  <p>Learn how to migrate Classic to dashboards.</p>
+  <a href="/docs/dashboards/dashboards-migration/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Migrating from Legacy Dashboards</h4></a>
+  <p>Learn how to migrate data from our legacy dashboards solution.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/dashboards/create-dashboard-new"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Create a Dashboard</h4></a>
-  <p>Create and customize Dashboards with a panel and query.</p>
+  <p>Create and customize dashboards with panels and queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -63,13 +65,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/dashboards/export-dashboard-new/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Exporting Dashboards</h4></a>
-  <p>Learn how to export Dashboards as a PDF or PNG file.</p>
+  <p>Learn how to export dashboards as PDF or PNG files.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/dashboards/faq/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
-  <p>Find answers to frequently asked questions about our Dashboards.</p>
+  <p>Find answers to frequently asked questions about our dashboards.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -105,7 +107,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/dashboards/advanced"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Advanced Features</h4></a>
-  <p>Learn about the Dashboards advanced features.</p>
+  <p>Learn about advanced dashboard features.</p>
   </div>
 </div>
 </div>
