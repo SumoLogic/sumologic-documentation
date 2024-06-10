@@ -8,7 +8,7 @@ description: Webhook connections allow you to send Sumo Logic alerts to third-pa
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info Prerequisite
-To create a webhook connection, you'll need the [Manage Connections role capability](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
+To create a webhook connection, you need the View Connections and Manage Connections [role capabilities](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
 :::
 
 A _webhook_ is an HTTP callback, which is an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
