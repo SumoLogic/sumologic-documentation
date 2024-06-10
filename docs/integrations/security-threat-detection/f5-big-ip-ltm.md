@@ -105,7 +105,7 @@ Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazona
 
 Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`
-* `SUMOLOGIC_SECRET_KEY`. `Thisis4fakeendpoint4testing==`
+* `SUMOLOGIC_SECRET_KEY`. `test-endpoint`
 
 Now, using telemetry, we will define a [Sumo Logic sink](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumo-logic). This will enable us to forward statistics and events from the BIG-IP to Sumo Logic. Use the following curl command and replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT`.
 
