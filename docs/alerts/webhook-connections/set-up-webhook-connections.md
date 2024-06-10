@@ -25,7 +25,7 @@ Along with a fully customizable webhook connection, you can quickly create webho
 * [New Relic](new-relic.md)
 * [Opsgenie](opsgenie.md)
 * [PagerDuty](pagerduty.md)
-* [Service Now](/docs/alerts/webhook-connections/servicenow/set-up-connections)
+* [ServiceNow](/docs/alerts/webhook-connections/servicenow/set-up-connections)
 * [Slack](slack.md)
 
 Most services with a REST API should allow you to create a connection using the generic webhook.
