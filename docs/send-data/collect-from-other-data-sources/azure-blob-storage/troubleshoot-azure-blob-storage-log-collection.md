@@ -43,7 +43,7 @@ If you get namespace invalid error make sure it follows the naming convention sp
  ]
 ```
 
-For common deployment errors, refer to the [Troubleshoot common Azure deployment errors](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
+For common deployment errors, refer to [Troubleshoot common Azure deployment errors](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
 
 ## AutoScaling producer function to handle huge load on creating tasks for consumer function
 
