@@ -39,11 +39,11 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 For example:
 
 ```sql
-_sourceCategory=cylance "IP Address"
-| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+_sourceCategory=cylance ""IP Address""
+| parse regex ""(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})""
 | where !isNull(ip_address)
-| where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+| where ip_address != ""0.0.0.0"" and ip_address != ""127.0.0.1""
+| threatlookup singleIndicator ip_address
 ```
 
 ### Field Extraction Rule
@@ -56,14 +56,11 @@ parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Na
 ```
 
 2. Customize your query so you can use parsed fields from FER with the Threat Intel Lookup operator, where `src_ip` is the parsed field from FER (see step # 1). For example:
-```
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
-| json field=raw "labels[*].name" as label_name
-| replace(label_name, "\\/","->") as label_name
-| replace(label_name, "\""," ") as label_name
-| where  type="ip_address" and !isNull(malicious_confidence)
-| if (isEmpty(actor), "Unassigned", actor) as Actor
-| count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
+
+```sql
+| threatlookup singleIndicator src_ip | | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| count as threat_count by src_ip, malicious_confidence, Actor,  _source
 | sort by threat_count
 ```
 
@@ -74,14 +71,11 @@ Use scheduled views with the Threat Lookup operator to find threats. Scheduled V
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
    ```
-   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
-   | json field=raw "labels[*].name" as label_name
-   | replace(label_name, "\\/","->") as label_name
-   | replace(label_name, "\""," ") as label_name
-   | where  type="ip_address" and !isNull(malicious_confidence)
-   | if (isEmpty(actor), "Unassigned", actor) as Actor
-   | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
-   | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
+    _sourceCategory=cylance | threatlookup singleIndicator src_ip
+    | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+    | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
+    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
 2. Now, you can run your Threat Intel query on top of this view:
   ```sql
@@ -374,9 +368,9 @@ Yes, you can customize the query with in the App. For example:
 ```
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 | where Your_IP != "0.0.0.0" and Your_IP != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=Your_IP
-| where  type="ip_address" and !isNull(malicious_confidence)
-| if (isEmpty(actor), "Unassigned", actor) as Actor
+| threatlookup singleIndicator Your_IP
+| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
 | count by Actor
 ```
 

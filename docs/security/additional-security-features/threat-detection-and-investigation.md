@@ -285,18 +285,18 @@ We need a way to see if any of the IP addresses we have logged are known threats
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
-     _sourceCategory=Labs/AWS/CloudTrail
-     | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
-     | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-     | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-     | where type="ip_address" and !isNull(malicious_confidence)
-     | if (isEmpty(actor), "Unassigned", actor) as Actor
-     | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
-     | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
-     | timeslice 1m
-     | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
-     | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
-     | outlier _count window=5,threshold=3,consecutive=1,direction=+-
+      _sourceCategory=Labs/AWS/CloudTrail
+      | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
+      | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+      | threatlookup singleIndicator  ip_address
+      | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+      | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+      | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
+      | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
+      | timeslice 1m
+      | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
+      | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
+      | outlier _count window=5,threshold=3,consecutive=1,direction=+-
      ```
 1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.)
 1. Under **Chart Type**, select **Line Chart**.
