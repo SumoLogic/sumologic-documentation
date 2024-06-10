@@ -116,7 +116,7 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 
 ### Source configuration
 
-When you create a SailPoint Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Slack Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Duo Source:
 
