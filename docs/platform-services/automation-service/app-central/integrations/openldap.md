@@ -1,7 +1,6 @@
 ---
 title: OpenLDAP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

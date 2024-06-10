@@ -658,8 +658,8 @@ module.exports = {
           items: [
             'manage/partitions/data-tiers/create-edit-partition',
             'manage/partitions/data-tiers/view-partition-details',
-            'manage/partitions/data-tiers/data-tiers-faqs',
             'manage/partitions/data-tiers/searching-data-tiers',
+            'manage/partitions/data-tiers/faq',
           ]
         },
         {
@@ -672,7 +672,7 @@ module.exports = {
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
             'manage/partitions/flex/estimate-scan-data',
-            'manage/partitions/flex/flex-pricing-faq',
+            'manage/partitions/flex/faq',
           ]
         },
         'manage/partitions/run-search-against-partition',
@@ -2350,6 +2350,7 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
+          'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
         ],
       },

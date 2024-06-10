@@ -2,7 +2,9 @@
 slug: /search
 title: Log Search
 description: Learn about the Sumo Logic search language, operators, and search features.
-tags: [log search, search]
+keywords:
+  - search
+  - log search
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

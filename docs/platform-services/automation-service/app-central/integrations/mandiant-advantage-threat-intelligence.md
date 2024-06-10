@@ -1,7 +1,6 @@
 ---
 title: Mandiant Advantage Threat intelligence
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

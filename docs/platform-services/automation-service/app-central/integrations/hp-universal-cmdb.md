@@ -1,7 +1,6 @@
 ---
 title: HP Universal CMDB
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

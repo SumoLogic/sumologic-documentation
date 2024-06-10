@@ -1,7 +1,6 @@
 ---
 title: Cisco IOS XE
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

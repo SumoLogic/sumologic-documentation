@@ -1,7 +1,6 @@
 ---
 title: Claroty
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

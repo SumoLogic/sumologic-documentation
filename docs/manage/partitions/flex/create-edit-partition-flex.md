@@ -25,7 +25,7 @@ To create or edit a Partition, you must be an account Administrator or have th
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
-1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/flex-pricing-faq/#how-to-optimize-the-query-using-default-scope).
+1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.  
     :::
@@ -89,7 +89,7 @@ You can make some changes to an existing partition:  
 ### Audit logging for routing expression changes
 
 If you change the routing expression for a partition, an event is
-written to the Audit Event Index with the following details:
+written to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) with the following details:
 
 * `EventName` is "PartitionUpdated"
 * `Subsystem` is "Partition"

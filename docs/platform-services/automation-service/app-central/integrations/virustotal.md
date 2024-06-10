@@ -1,7 +1,6 @@
 ---
 title: VirusTotal
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
