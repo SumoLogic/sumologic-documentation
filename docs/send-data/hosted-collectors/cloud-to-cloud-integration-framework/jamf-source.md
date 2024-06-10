@@ -1,6 +1,6 @@
 ---
 id: jamf-source
-title: Jamf Source
+title: Jamf Source (Beta)
 sidebar_label: Jamf
 tags:
   - cloud-to-cloud
@@ -14,6 +14,12 @@ import TerraformExample from '!!raw-loader!/files/c2c/jamf/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jamf.png')} alt="thumbnail icon" width="85"/>
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 Jamf is a software company that specializes in mobile device management (MDM) and endpoint management solutions for Apple devices such as Macs, iPhones, iPads, and Apple TVs. This Jamf integration helps you to ingest inventory data using the [Jamf Pro API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/jamf-pro-api-overview) and [Jamf Classic API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/getting-started-2).
 
