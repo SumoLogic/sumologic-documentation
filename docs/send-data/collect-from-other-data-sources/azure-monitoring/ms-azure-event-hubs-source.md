@@ -107,7 +107,7 @@ To create the diagnostic settings in Azure portal, refer to the [documentation](
 
 ### Azure error when exporting logs 
 
-If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Azure Active Directory tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Microsoft Entra tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 
 ```
 An Azure subscription is required to use this capability.
