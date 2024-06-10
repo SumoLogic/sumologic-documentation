@@ -100,7 +100,7 @@ For more information about using Live Tail, see [Live Tail](/docs/search/live-ta
 1. Navigate to **Application Insights**.<br/><img src={useBaseUrl('/img/send-data/app-insights.png')}  style={{border: '1px solid gray'}} alt="app-insights" width="800"/>
 1. Go to **Failures** section.<br/><img src={useBaseUrl('/img/send-data/failures.png')}  style={{border: '1px solid gray'}} alt="failures" width="800"/>
 1. Click on the Function Name under Operation Name.
-1. In the top 3 exception types, click on the count it will open a sample exception.
+1. In the top 3 exception types, click on the count. It will open a sample exception.
 1. Click on any exception it will open an end to end transaction details page where you can click on View all telemetry to view all the logs for that execution.<br/><img src={useBaseUrl('/img/send-data/end-transaction.png')} alt="end-transaction" width="800"/>
 
 ### Common Azure function errors
