@@ -7,7 +7,7 @@ description: Follow these steps to learn why log data is not flowing into Sumo L
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs do not start flowing into Sumo Logic after you perform the procedure to collect logs from Azure blob storage (using [block blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/) or [append blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs/)), see the troubleshooting tips below.
+If logs do not start flowing into Sumo Logic after you perform the procedure to collect logs from Azure blob storage (using [block blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/) or [append blobs](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs/)), see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 
@@ -15,13 +15,11 @@ If you received the following error while deploying the ARM template: **The Reso
 
 ![Azure_ARM-template-error.png](/img/send-data/Azure_ARM-template-error.png)
 
-If you attempted to redeploy the template after getting this error and used the **same storage account + resource group values** in the first failed deployment, follow these steps.
+To redeploy, do the following steps:
 
-Refer to [this video](https://sumologic.link/6e020df8d1d7), then redeploy the template, in the following way: 
-
-1. Go to the resource group where the deployment failed
-1. Click on Failed deployment, and then click on Microsoft.Template(last deployment) in the next window.
-1. Click **Redeploy**, provide the required fields, and click **Purchase**. You should see the successful deployment notification.
+1. Go to the resource group where the deployment failed.
+1. Click on **Deployments** under **Settings**, and then click on **Microsoft.Template**(last deployment) in the next window.
+1. Click **Redeploy**, provide the required fields, and click **Purchase**. You should see the successful deployment notification.
 
 ![Azure_ARM-template-troubleshoot.png](/img/send-data/Azure_ARM-template-troubleshoot.png)
 
@@ -47,7 +45,7 @@ If you get namespace invalid error make sure it follows the naming convention sp
  ]
 ```
 
-For common deployment errors, refer to [Troubleshoot common Azure deployment errors](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
+For common deployment errors, refer to [Troubleshoot common Azure deployment errors](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors).
 
 ## AutoScaling producer function to handle huge load on creating tasks for consumer function
 
@@ -60,31 +58,31 @@ For common deployment errors, refer to [Troubleshoot common Azure deployment err
 
 ## Verify configurations
 
-Make sure that the resources you created in the Collect Logs from Azure Blob Storage procedure were successfully created.
+Make sure that the resources you created in the Collect Logs from Azure Blob Storage procedure were successfully created.
 
-1. Go to Resource groups, and select the resource group you created or selected in Configure Azure resources using ARM Template. You should see resources you created:
-   * Two App Service plans. 
+1. Go to Resource groups, and select the resource group you created or selected in Configure Azure resources using ARM Template. You should see resources you created:
+   * Two App Service plans.
    * Three App Services.
    * A Service Bus Namespace.
    * An Event Hubs Namespace.
    * A Storage account.
-1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App and click it. 
-1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
+1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App and click it.
+1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL.
 
 ## Verify Block Blob Create Events are getting published
 
-1. Click **All Services**. Go to Event Grid Subscription services. 
+1. Click **All Services**. Go to Event Grid Subscription services.
 1. Select Storage Account and region from the dropdown.
 1. Select the Event Subscription created in Step 3 from the list.
-1. Click **Metrics.**
-1. On the Event Grid Metrics page, check that the **Publish Succeeded** and **Delivery Succeeded** counts are greater than zero.<br/>![event-grid-metrics.png](/img/send-data/event-grid-metrics.png)
+1. Click **Metrics.**
+1. On the Event Grid Metrics page, check that the **Publish Succeeded** and **Delivery Succeeded** counts are greater than zero.<br/>![event-grid-metrics.png](/img/send-data/event-grid-metrics.png)
 
 ## Verify Event Hub is receiving log messages
 
 To verify that events are appearing in your event hub:
 
-1. In the left pane of Azure Portal, Click **Eventhub**.
-1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace and click it. 
+1. In the left pane of Azure Portal, Click **Eventhub**.
+1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace and click it.
 1. Click the **Messages** link.
 1. Message summary information appears below the chart. Check that the **Incoming Messages** count is greater than zero.<br/>  ![eventhub-messages-metrics.png](/img/send-data/eventhub-messages-metrics.png)
 
@@ -96,9 +94,9 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 ## Verify with Live Tail
 
-In Sumo Logic, open a Live Tail tab and run a search to verify Sumo Logic is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
+In Sumo Logic, open a Live Tail tab and run a search to verify Sumo Logic is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`
 
-For more information about using Live Tail, see [Sumo Logic Live Tail](/docs/search/live-tail). 
+For more information about using Live Tail, see [Sumo Logic Live Tail](/docs/search/live-tail).
 
 ### Verify Azure Function is not getting Failed
 
@@ -127,7 +125,7 @@ If you're using this function for quite some time then we recommend redeploying 
 
 If the error still persists, then
 
-1. If you want to collect metrics only  you can migrate from Consumption plan to Premium plan by making changes in the ARM template.
+1. If you want to collect metrics only  you can migrate from Consumption plan to Premium plan by making changes in the ARM template.
 ```json
 {
   "type":"Microsoft.Web/serverfarms",
@@ -160,7 +158,7 @@ If the error still persists, then
 2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud-to-Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
   ```
   Exception while executing function: Functions.BlobTaskProducer
-  StorageError: The table specified does not exists 
+  StorageError: The table specified does not exists
 
   RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23
   ```
