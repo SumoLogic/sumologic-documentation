@@ -59,4 +59,4 @@ For information about Azure pricing, see [Event Hubs pricing](https://azure.micr
 
 ## Azure Integration FAQs 
 
-For answers to frequently asked questions about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture, see [Azure Integrations using ARM](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq).
+For answers to frequently asked questions about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture, see [Azure Integration with ARM FAQ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq).
