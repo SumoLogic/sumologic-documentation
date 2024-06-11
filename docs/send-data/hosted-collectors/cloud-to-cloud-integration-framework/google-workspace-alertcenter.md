@@ -104,13 +104,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.json)
+<a href="/files/c2c/google-workspace-alertcenter/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.tf)
+<a href="/files/c2c/google-workspace-alertcenter/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
