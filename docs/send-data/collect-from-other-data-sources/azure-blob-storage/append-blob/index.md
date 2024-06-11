@@ -54,17 +54,9 @@ The table below describes the key components in the Azure-Sumo Logic pipeline.
 * Three Azure functions — AppendBlobFileTracker, AppendTaskProducer, AppendBlobTaskConsumer, that are responsible for sending monitoring data to Sumo Logic.
 * A storage account to which the Azure functions write their log messages about successful and failed transmissions.
 
-You download the Sumo Logic-provided ARM template, upload the template to the Azure Portal, set the parameters that identify the URL of your Sumo Logic HTTP source, and the name of the Azure Storage Account and its resource group (where Azure services export their logs), and deploy the template.
+You download the Sumo Logic-provided ARM template, upload the template to the Azure Portal, set the parameters that identify the URL of your Sumo Logic HTTP source, and the name of the Azure Storage Account and its resource group (where Azure services export their logs), and deploy the template. For detailed instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).
 
 After deployment if you want to collect from multiple storage accounts, you create an Event Grid subscription with an Azure Storage Account as a publisher and the event hub created by the ARM template as the subscriber.You can also specify prefix/suffix filters to filter the events based container name and blob name.
 
 For more information, see [Filtering events](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-overview#filtering-events) in Azure help. Then, you can start exporting your monitoring data from the Azure Service to Azure Blob Storage.
 
-:::note
-It is assumed that:
-
-
-
-:::
-
-For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).

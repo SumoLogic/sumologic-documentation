@@ -216,7 +216,7 @@ This assumes that your storage account access is enabled for selected networks.
 
 ## Collection testing performance numbers
 
-| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count | Max Latency
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| ~15min | 8000 | 8000 X 5.36 MB  | 23 MB/sec | MAX 11378.49/sec | ~ 27 min | 41.8GB | 81925120 | 12.74 min
-| ~29min | 16000 | 16000 X 5.36 MB  | 45.07 MB/sec | MAX 74415.97/sec | ~ 41 min | 79.3GB | 133,948,750 | 11.98 min
+| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count | Max Latency |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| ~15min | 8000 | 8000 x 5.36 MB  | 23 MB/sec | 11378.49/sec | ~ 27 min | 41.8GB | 81,925,120 | 12.74 min |
+| ~29min | 16000 | 16000 x 5.36 MB  | 45.07 MB/sec | 74415.97/sec | ~ 41 min | 79.3GB | 133,948,750 | 11.98 min |
