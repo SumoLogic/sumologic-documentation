@@ -12,7 +12,7 @@ To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](
 
 The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `instrumentation.createDefaultInstrumentation` to `true` and `instrumentation.instrumentationNamespaces` will help with that.
 
-The value of the flag `instrumentation.instrumentationNamespaces` is backslash comma-separated namespaces list, for example: `instrumentation.instrumentationNamespaces="ns1\,ns2\,ns3"`.
+The value of the flag `instrumentation.instrumentationNamespaces` is backslash comma-separated namespaces list. For example: `instrumentation.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
 
