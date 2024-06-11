@@ -1,5 +1,5 @@
 ---
-title: New Environment Variables Added to Lambda Function (Collection)
+title: Upgraded Sumo Logic AWS Lambda Extension (Collection)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
@@ -11,9 +11,10 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce the addition of new environmental variables such as `KMS_KEY_ID`, `KMS_CACHE_SECONDS`, `TELEMETRY_MAX_BYTES`, `TELEMETRY_MAX_ITEMS`, and `TELEMETRY_TIMEOUT_MS` to our Lambda function, to help you customize the function behaviour. [Learn more](/docs/send-data/collect-from-other-data-sources/collect-aws-lambda-logs-extension/#step-3-adding-the-environment-variables).
+We're excited to announce the release of Sumo Logic AWS Lambda Extension version 8. Here are the key features that this upgrade provides:
 
-
-## Security fix
-
+- Improved the support for AWS KMS encrypted `SUMOLOGIC_HTTP_ENDPOINT`, including the introduction of new `KMS_KEY_ID` and `KMS_CACHE_SECONDS` environment variables.
+- Introduced three new environment variables `TELEMETRY_MAX_BYTES`, `TELEMETRY_MAX_ITEMS`, and `TELEMETRY_TIMEOUT_MS`, which helps you to reduce the ingestion delay based on log volume.
 - Upgraded Golang to version 1.22 to resolve 20+ security vulnerabilities.
+
+To learn more, refer to the [Lambda extensions changelog](https://github.com/SumoLogic/sumologic-lambda-extensions/releases/tag/v1.2.0).
