@@ -38,7 +38,7 @@ The value of the flag `instrumentation.instrumentationNamespaces` is backslash c
 During the installation process, **OpenTelemetry Instrumentation** custom resources with all settings are deployed in the provided namespaces.
 
 :::note
-Updating of Sumo Logic Kubernetes Collection to version newer than [4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) in case of customized configuration of OpenTelemetry Operator can cause issues with chart installation. Please see required changes in the [parameters](https://github.com/SumoLogic/sumologic-kubernetes-collection/pull/3733/).
+Updating the Sumo Logic Kubernetes Collection to a version newer than [4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) may cause issues with chart installation if there is a customized configuration of the OpenTelemetry Operator. Refer to the required changes in the [parameters](https://github.com/SumoLogic/sumologic-kubernetes-collection/pull/3733/).
 :::
 
 ## Auto-instrumentation injection
