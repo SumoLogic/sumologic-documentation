@@ -63,19 +63,8 @@ For more information, see [Filtering events](https://docs.microsoft.com/en-us/az
 :::note
 It is assumed that:
 
-* The Azure service updates the blob (adding new blocks) in small chunks and has been tested with append blobs.
-* Any JSON file in the JSON lines format that is uploaded into a storage account will result in JSON objects being extracted and sent to Sumo Logic.
-* Log files have a file extension of .json (JSONLines), .blob(JSONLines), .csv or .log.
-  * If the file is .json or .blob, the JSON objects are extracted and sent to Sumo Logic.
-  * If the file is .log or .csv, log lines are sent to Sumo Logic as-is.
+
+
 :::
 
 For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).
-
-## Azure Append Blob Limitations
-
-1. Limitations 1
-1. Limitations 2
-1. Limitations 3
-1. Limitations 4
-1. Limitations 5

@@ -176,7 +176,7 @@ To create an event grid subscription, do the following:
    * **Event Hub Namespace**. Select **SUMOABEvtHubNS\<*unique string*\\>**.
    * **Event Hub**. Select **blobreadereventhub** from the dropdown.
 
-1. Specify the following Filters tab options:
+1. Specify the following Filters tab options(Optional):
 
    * Check **Enable subject filtering**.
    * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs: `/blobServices/default/containers/<container_name>/`
@@ -189,21 +189,34 @@ To create an event grid subscription, do the following:
 
 ### Step 3: Enabling VNet Integration (Optional)
 
-This step assumes you have used the modified template which uses standard/premium plan for BlobTaskConsumer function. This assumes that your storage account access is enabled for selected networks.
+This assumes that your storage account access is enabled for selected networks.
 
 1. Create a subnet in a virtual network using the instructions in the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region, you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
-1. Perform below steps for both BlobTaskConsumer function apps.
-   1. Go to **Function App > Networking**.
-   1. Under Outbound traffic, click on Vnet Integration. <br/>![azureblob-outbound](/img/send-data/azureblob-outbound.png)
+1. Perform below steps for BlobTaskConsumer function app:
+   1. Go to **Function App > Settings > Networking**.
+   1. Under Outbound traffic, click on Vnet Integration. <br/>![azureblob-outbound](/img/send-data/appendblob/azureappendblob-outbound.png)
    1. Add the Vnet and subnet created in Step 1. <br/>![azureblob-vnet](/img/send-data/azureblob-vnet.png)
    1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account. <br/> ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
 1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet. <br/>![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
 1. Add the outbound ip addresses (copied in step 2.iv) from both BlobTaskConsumer function under Firewall with each ip in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below. <br/>![azureblob-subnet](/img/send-data/azureblob-subnet.png)
 
+## Azure Append Blob Limitations
+
+1. By default the boundary regex used for json and log files are defined below. You can override it by updating `getBoundaryRegex` method of `AzureBlobTaskConsumer` function.
+   * **log**: `'\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}'`
+   * **json**: `'\{\\s*\"'`
+1. By default, it's assumed that after 48 hours the log file won't be updated. You can override it by setting `MAX_LOG_FILE_ROLLOVER_HOURS` setting in `AppendBlobTaskProducer` function.
+1. By default batch size is automatically calculated based on number of files present in the storage account and maximum batch size can be 200MB.
+1. `AppendBlobTaskProducer` function sets the lock (for max 30min) and creates the task (in service bus) for the file , and then automatically releases it if `AppendBlobTaskConsumer` fails to process it, if you are seeing queueing delay of more than 30min you can increase `maxlockThresholdMin` in `getLockedEntitiesExceedingThreshold` method of `AppendBlobTaskProducer` function.
+1. Log files have a file extension of .json (JSONLines), .blob(JSONLines), .csv, .txt or .log.
+    * If the file is .json or .blob, the JSON objects are extracted and sent to Sumo Logic.
+    * If the file is .log, .txt or .csv, log lines are sent to Sumo Logic as-is.
+1. By default all the data is ingested to single HTTP source if you want to send data to multiple source (recommended in case of different log formats) you can override the `getSumoEndpoint` function in `AppendBlobTaskConsumer` function.
 
 ## Collection testing performance numbers
 
-| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
+| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count | Max Latency
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| ~2 hrs | 8000 | 6.18 MB X 5 + 7995 X 5.36 MB  | 5.95 MB/sec | MAX 113789/sec | ~ 2 hrs | 41.89 | 81925120 |
+| ~15min | 8000 | 8000 X 5.36 MB  | 23 MB/sec | MAX 11378.49/sec | ~ 27 min | 41.8GB | 81925120 | 12.74 min
+| ~29min | 16000 | 16000 X 5.36 MB  | 45.07 MB/sec | MAX 74415.97/sec | ~ 41 min | 79.3GB | 133,948,750 | 11.98 min

@@ -210,7 +210,7 @@ To create an event grid subscription, do the following:
    * **Event Hub Namespace**. Select **SUMOBREventHubNamespace\<*unique string*\\>**.
    * **Event Hub**. Select **blobreadereventhub** from the dropdown.
 
-1. Specify the following Filters tab options:
+1. Specify the following Filters tab options(Optional):
 
    * Check Enable subject filtering.
    * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs. `/blobServices/default/containers/<container_name>/`
@@ -228,7 +228,7 @@ Assuming you have used the modified template which uses standard/premium plan fo
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
 1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
 
-   1. Go to **Function App > Networking**.
+   1. Go to **Function App > Settings > Networking**.
    1. Under Outbound traffic, click on Vnet Integration.
 
     ![azureblob-outbound](/img/send-data/azureblob-outbound.png)
