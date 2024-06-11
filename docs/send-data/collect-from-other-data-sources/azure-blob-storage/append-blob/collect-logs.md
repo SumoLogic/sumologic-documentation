@@ -67,8 +67,8 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose Location.
    1. Set the values of the following parameters:
-     * **DeployingAgainForSameStorageAccount**. Choose 'no' if you are deploying in this subscription for the first time, else choose 'yes'.
-     * **EventGridSystemTopicName**. If you are deploying a template again for the same storage account, then provide the existing System Topic Name for the StorageAccount.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-reuse-sa.png')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
+     * **DeployingAgainForSameStorageAccount**. Choose 'yes' if you are deploying the ARM template again for the same storage account, else choose 'no'.
+     * **EventGridSystemTopicName**. If you are deploying the ARM template again for the same storage account, then provide the existing System Topic Name for the StorageAccount, else it will be created automatically.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-reuse-sa.png')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
      * **SumoEndpointURL**. URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
      * **StorageAccountName**. Name of the storage account where you are storing logs from the Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
      * **StorageAccountResourceGroupName**. Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
@@ -151,7 +151,7 @@ To create an event grid subscription, do the following:
    * **Subscription**. Select Pay As You Go.
    * **Resource Group**. Select the Resource Group for the Storage Account to which your Azure service will export logs, from where you want to ingest logs.
    * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
-
+   * **System Topic Name**. Provide the topic name, if the system topic already exists then it will automatically select the existing topic.
     :::note
     If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
     :::
@@ -213,6 +213,7 @@ This assumes that your storage account access is enabled for selected networks.
     * If the file is .json or .blob, the JSON objects are extracted and sent to Sumo Logic.
     * If the file is .log, .txt or .csv, log lines are sent to Sumo Logic as-is.
 1. By default all the data is ingested to single HTTP source if you want to send data to multiple source (recommended in case of different log formats) you can override the `getSumoEndpoint` function in `AppendBlobTaskConsumer` function.
+1. Blob file name present in `_sourceName` metadata will be truncated if it exceeds 128 char.
 
 ## Collection testing performance numbers
 
