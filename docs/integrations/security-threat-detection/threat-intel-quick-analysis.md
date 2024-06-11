@@ -393,13 +393,12 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 ```
 | parse regex "(?\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-| json field=raw "labels[*].name" as label_name
-| replace(label_name, "\\/","->") as label_name
-| replace(label_name, "\""," ") as label_name
-| where type="ip_address" and !isNull(malicious_confidence)
+| threatlookup singleIndicator ip_address
+| parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
+| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
 | where !(label_name matches "*TorProxy*")
-| if (isEmpty(actor), "Unassigned", actor) as Actor
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
 | count by ip_address, malicious_confidence, Actor,  _source, label_name
 | sort by _count
 ```
