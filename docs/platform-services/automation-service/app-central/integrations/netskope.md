@@ -1,7 +1,6 @@
 ---
 title: Netskope
 description: ''
-tags: [ cloud soar integrations ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

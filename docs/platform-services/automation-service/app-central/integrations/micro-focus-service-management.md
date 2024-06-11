@@ -1,7 +1,6 @@
 ---
 title: Micro Focus Service Management
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

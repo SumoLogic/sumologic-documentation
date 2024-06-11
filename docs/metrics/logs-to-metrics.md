@@ -2,7 +2,6 @@
 id: logs-to-metrics
 title: Logs-to-Metrics
 description: Set up rules to extract or create metrics from log data.
-tags: [logs to metrics, logs-to-metrics]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -136,7 +135,7 @@ You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with t
          * `_sourceName`
          * `_collector`
          * `_sourceCategory` 
-         
+
     <br/><img src={useBaseUrl('img/metrics/mets-dims.png')} alt="Select metrics and dimensions" style={{border: '1px solid gray'}} width="600" />
 
     1. Click the **Metrics** checkbox for a field that is a numerical value that you want to plot and analyze, such as latency. You can designate more than one field as a metric, as long as they are both numerical values. On the other hand, if your logs don’t contain embedded metrics, and you are creating a metric based on log count, you will not mark any of the fields as metrics. A field you select as a metric must contain a numerical value, otherwise it will not be extracted.

@@ -52,12 +52,10 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
 
   | Field | Value |
   |:---|:---|
-  | Azure Event Hubs Namespace | `cnctest.servicebus.windows.net` |
+  | Azure Event Hubs Namespace | `cnctest` |
   | Event Hubs Instance Name | `my-hub` |
   | Shared Access Policy Name | `SumoCollectionPolicy` |
   | Shared Access Policy Key (use primary key) | `mOsLf3RE...` |
-
-  <img src={useBaseUrl('img/send-data/azure-event-configs.png')} alt="azure event hub" />
 
 ### Source configuration
 

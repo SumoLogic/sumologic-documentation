@@ -1,7 +1,6 @@
 ---
 title: Cisco ESA
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

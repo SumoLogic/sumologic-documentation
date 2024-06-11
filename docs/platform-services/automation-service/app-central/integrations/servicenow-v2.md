@@ -92,4 +92,4 @@ Ticketing System
 * April 5, 2023 - Action Close Ticket added.
 * June 30, 2023 (v2.3) - Integration code improved.
 * April 5, 2024 (v2.4) - Fixed an issue that prevents the resource testing to work correctly.
-* May 31, 2024 (v2.5) - Fixed an issue in actions: **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.
+* May 31, 2024 (v2.5) - Fixed an issue in actions **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.

@@ -56,6 +56,8 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
+
 ### Enterprise Audit - Collector and Data Forwarding Management app
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Data_Forwarding_icon.png')} alt="test" />

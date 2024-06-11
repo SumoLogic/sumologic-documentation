@@ -1,7 +1,6 @@
 ---
 title: AWS Private Certificate Authority
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

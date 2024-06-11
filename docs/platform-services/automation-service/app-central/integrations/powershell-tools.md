@@ -1,7 +1,6 @@
 ---
 title: PowerShell Tools
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

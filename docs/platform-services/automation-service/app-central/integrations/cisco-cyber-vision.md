@@ -1,7 +1,6 @@
 ---
 title: Cisco Cyber Vision
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

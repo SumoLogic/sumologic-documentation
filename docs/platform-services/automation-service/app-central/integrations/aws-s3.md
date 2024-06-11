@@ -1,7 +1,6 @@
 ---
 title: AWS S3
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

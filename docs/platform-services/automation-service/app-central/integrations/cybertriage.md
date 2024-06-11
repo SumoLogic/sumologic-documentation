@@ -1,7 +1,6 @@
 ---
 title: CyberTriage
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
