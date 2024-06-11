@@ -132,7 +132,7 @@ Add the following environment variables to your Lambda function:
 | `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional |
 | `SUMO_SPAN_DROP` | Set to true in case you would like the extension to drop spans from ingested into Sumo Logic. The default value assumed is false. | Optional |
 | `SUMO_ENHANCE_JSON_LOGS` | Ingest the logs in JSON format with a message key containing raw log message and other metadata such as `loggroup`, `isColdStart`, and `logStream`. Default is true. | Optional |
-| `KMS_KEY_ID`| Key ID of the Customer managed key used for decrypting the `SUMO_HTTP_ENDPOINT` which can be obtained from the [AWS console](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html). |Optional|
+| `KMS_KEY_ID`| Key ID of the "Customer managed key" used for decrypting the `SUMO_HTTP_ENDPOINT` which can be obtained from the [AWS console](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html). |Optional|
 | `KMS_CACHE_SECONDS`| Set the cache timeout in seconds. Default is 5 seconds. |Optional|
 | `TELEMETRY_MAX_BYTES`| The maximum volume of telemetry (in bytes) to buffer in memory. Default is 262,144. Minimum is 262,144. Maximum is 1,048,576. |Optional|
 | `TELEMETRY_MAX_ITEMS`| The maximum number of events to buffer in memory. Default is 10,000. Minimum is 1000. Maximum is 10,000. |Optional|
