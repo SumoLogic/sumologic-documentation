@@ -118,7 +118,7 @@ To authorize the App Service to list the storage account key, do the following:
 
    * **Subscription**: Choose Pay as you Go.
    * **Managed Identity**: Choose Function App.
-   * **Select**:  **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
+   * **Select**:  **SUMOABTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
 1. Click **Review + assign**.
 1. Click **Save**.
 
