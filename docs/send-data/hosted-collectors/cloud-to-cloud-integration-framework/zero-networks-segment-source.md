@@ -94,7 +94,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-<a href="/files/c2c/zero-networks-segment/example.tf)" target="_blank">Download example</a>
+<a href="/files/c2c/zero-networks-segment/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
