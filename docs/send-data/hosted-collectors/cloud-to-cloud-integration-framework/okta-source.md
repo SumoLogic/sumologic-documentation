@@ -90,7 +90,7 @@ eventTypes | String | No | `null` | Comma separated list of events to collect. R
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-<a href="/files/c2c/okta/example.tf" target="_blank">Download example</a>
+<a href="/files/c2c/okta/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
