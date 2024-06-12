@@ -3,7 +3,7 @@ title: Sumo Logic AWS Lambda Extension v8 (Collection)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
-  - lamdda
+  - lambda
   - environmental-variable
 hide_table_of_contents: true
 authors:
