@@ -20,7 +20,7 @@ This guide provides answers to frequently asked questions (FAQ) about integratin
 
 For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring).
 
-For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage).
+For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage).
 
 
 ## General FAQ
@@ -34,7 +34,7 @@ Azure provides a wide array of configurable security auditing and logging option
 
 ### Which node version is supported?
 
-The Sumo Logic app has been tested on v0.10.40, the oldest supported version. The latest available version in Azure for Azure Monitor is v8.9.4 and for Azure Blob Storage is v18.12.1. For information on how to change a node version, see the Azure [Changing node version](https://blogs.msdn.microsoft.com/azureossds/2016/04/20/nodejs-and-npm-versions-on-azure-app-services/) support article.
+The Azure functions supports Node ~18. For information on how to change a node version, see the Azure [Changing node version](https://blogs.msdn.microsoft.com/azureossds/2016/04/20/nodejs-and-npm-versions-on-azure-app-services/) support article.
 
 
 ### What happens if the template is re-deployed? Are the resources recreated? Is there any data loss?
@@ -84,7 +84,7 @@ This page provides answers for frequently asked integration questions about Azur
 
 ### What log sources are supported by Event Hub?
 
-1. Exporting data from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor): Includes the majority of services, including Network Watcher, SQL DB, EventHubs, Cosmos DB, Data Factory, KeyVault, and Stream Analytics export their logs and metrics to Azure Monitor.
+1. Exporting data from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor): Includes the majority of services, including SQL DB, EventHubs, Cosmos DB, Data Factory, KeyVault, and Stream Analytics export their logs and metrics to Azure Monitor.
    * [Azure Diagnostic Logs](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) [Supported Services](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
    * Supported [Metrics](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
    * [Activity Logs](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs)
@@ -104,7 +104,7 @@ This page provides answers for frequently asked integration questions about Azur
 
 ### How is the function scaled?
 
-**To increase the number of parallel instances:** the number of messages are ordered in one partition. By default, messages are distributed in round robin manner. Each Function instance is backed by 1 EventProcessorHost (EPH). EventHub only allows 1 EPH to hold a lease on a partition, but >1 partition can be assigned an EPH. This means the number of EPH `<=` number of partitions in EventHub. Hence, increasing number of partitions in Event Hub(default maxlimit is 32. You have to raise a support request to increasing it, and this will increase the consumption rate. For more information, see the [Azure Trigger Scaling document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---scaling).
+**To increase the number of parallel instances:** the number of messages are ordered in one partition. By default, messages are distributed in round robin manner. Each Function instance is backed by 1 EventProcessorHost (EPH). EventHub only allows 1 EPH to hold a lease on a partition, but >1 partition can be assigned an EPH. This means the number of EPH `<=` number of partitions in EventHub. Hence, increasing number of partitions in Event Hub(default maxlimit is 32, you can raise a support request to increase it further). For more information, see the [Azure Trigger Scaling document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---scaling).
 
 **To increase the number of fetched messages per function:** increase the maxBatchSize(The maximum event count received per receive loop) property in host.json(default is 64) For more information, see  the [Azure Trigger - host.json properties document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---hostjson-properties).
 
@@ -149,7 +149,9 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 
 ### How do I troubleshoot an Event Hub Integration?
 
-For detailed information, see the Azure Event Hubs Source for Logs [Troubleshooting](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#troubleshooting) section. This includes testing the function using [**Sample** Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) and [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+* **Logs Collection Pipeline**: Refer the [Troubleshooting section in Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#troubleshooting).
+
+* **Metrics Collection Pipeline**: Refer the [Troubleshooting metrics collection in Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection). You can also [manually trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal?pivots=programming-language-javascript#test-the-function) the azure function using [**Sample** Logs Payload](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Sample Metrics Payload](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 ### What can I do if a function is timing out?
 
@@ -165,9 +167,6 @@ Follow the instructions in the Microsoft Azure documentation for [Enabling Appli
 2. Enter context.log(“debug statements”) and save.
 3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#troubleshooting).
 
-### How do I deploy the ARM template in Azure Gov cloud?
-
-Use this [template](https://appdev-cloudformation-templates.s3.amazonaws.com/azuredeploy_gov_logs.json) which has been customized for Azure Gov cloud to deploy the resources.
 
 ### How do I ensure that the Event Hub is receiving log messages?
 
@@ -247,57 +246,60 @@ To filter events by container name, do the following:
 
 ### Blob Reader error messages
 
-```
-Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
-```
+* Error: The request is being throttled
+   ```
+    at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
+   ```
 
-Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fetch more events and will create larger blocks for reading. Then, decrease maxConcurrentCalls calls setting in BlobTaskConsumer's host.json. This will limit the number of concurrent invocations, reducing the number of read requests.
+      **Solution**: Increase the maxBatchSize in BlobTaskProducer's host.json This will fetch more events and will create larger blocks for reading. Then, decrease maxConcurrentCalls calls setting in BlobTaskConsumer's host.json. This will limit the number of concurrent invocations, reducing the number of read requests.
 
-```
-Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
-```
+* FileOffSetMap Table does not exist
+   ```
+   Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
+   ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
+      **Solution**: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
 
-Error: You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
+* You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:
 
-```
-Tenant ID, application ID, principal ID, and scope are not allowed to be updated. (Code: RoleAssignmentUpdateNotPermitted)
-```
+   ```
+   Tenant ID, application ID, principal ID, and scope are not allowed to be updated. (Code: RoleAssignmentUpdateNotPermitted)
+   ```
 
-For more information, see [Create roleAssignment fails with error "Tenant ID, application ID, principal ID, and scope are not allowed to be updated"](https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD).
+   For more information, see [Create roleAssignment fails with error "Tenant ID, application ID, principal ID, and scope are not allowed to be updated"](https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD).
 
-Solution: Create a new resource group for the Sumo Logic collection resources. If that doesn't fix the problem, then change the variables in the ARM template from this:
+         **Solution**: Create a new resource group for the Sumo Logic collection resources. If that doesn't fix the problem, then change the variables in the ARM template from this:
 
-```
-"consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(deployment().name, resourceGroup().id))]", \
-    "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(deployment().name, resourceGroup().id))]", \
-```
+      ```
+      "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(deployment().name, resourceGroup().id))]", \
+          "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(deployment().name, resourceGroup().id))]", \
+      ```
 
-To this:
-```
-"consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]", \
-    "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]"
-```
+   To this:
+      ```
+      "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]", \
+          "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]"
+      ```
 
-```
-Error: Azure fails to install dependencies on a node.
-System.AggregateException : One or more errors occurred.
----> Error: Cannot find module 'azure-storage' \
-```
+* Error: Azure fails to install dependencies on a node.
+   ```
+   System.AggregateException : One or more errors occurred.
+   ---> Error: Cannot find module 'azure-storage' \
+   ```
 
-Solution: Run `npm install` from the console.
+      **Solution**: Run `npm install` from the console.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobTaskConsumer.png')} alt="Azure ARM FAQs" />
 
-```
-Error: Subscription for Microsoft.EventGrid is not registered.
-```
+* Subscription for resource type not registered
+   ```
+   Error: Subscription for Microsoft.EventGrid is not registered.
+   ```
 
-Solution: To register the provider, do the following:
-1. Go to subscriptions.
-2. Select the subscription name where ARM template is deployed.
-3. Select the Resource providers under settings on the left.
-4. Search for Microsoft.EventGrid and register it.
+      **Solution**: To register the provider, do the following:
+      1. Go to subscriptions.
+      2. Select the subscription name where ARM template is deployed.
+      3. Select the Resource providers under settings on the left.
+      4. Search for Microsoft.EventGrid and register it.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Subscriptions.png')} alt="Azure ARM FAQs" />

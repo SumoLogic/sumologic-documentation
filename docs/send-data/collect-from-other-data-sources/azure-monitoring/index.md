@@ -4,9 +4,9 @@ title: Azure Monitoring
 description: Overview of strategy for collecting application and infrastructure data (logs and metrics) for Azure services using Azure Monitor.
 ---
 
-This page has information about Sumo’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor. This solution enables you to monitor:
+This page has information about Sumo’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor. This solution enables you to collect following data:
 
-* **Activity Logs**. Activity Logs are subscription-level logs that provide insight into the operations performed on resources in your subscription, for example, creating a virtual machine or deleting a logic app.
+* **Activity Logs**. Activity Logs are subscription-level logs that provide insight into the operations performed on resources in your subscription, for example, creating a virtual machine or deleting a logic app.
 * **Diagnostics Logs**. Diagnostics Logs are resource-level logs that provide insight into operations that were performed within a resource itself, for example, getting a secret from a Key Vault.
 * **Metrics**. Metrics provide performance statistics for different resources and the operating system in a virtual machine.
 
@@ -43,25 +43,31 @@ Here’s a summary of how logs and metrics from Azure services get into Sumo Log
 The Azure-Sumo pipelines for Azure log and metric collection use event hubs, Sumo-provided Azure functions, Sumo-hosted Event Hub consumers to get monitoring data from Azure Monitor to Sumo. Here’s what each component does:
 
 * **Azure Monitor** collects logs and metrics for most Microsoft Azure services, and serves as a pipeline for accessing to monitoring data from an Azure environment,
-* **Azure Event Hubs** is a data streaming platform and event ingestion service that you can use to integrate Azure Monitor with Sumo Logic. Azure Monitor streams monitoring data to an event hub which triggers a Sumo-provided Azure function.
+* **Azure Event Hubs** is a data streaming platform and event ingestion service that you can use to integrate Azure Monitor with Sumo Logic. Azure Monitor streams monitoring data to an event hub. Two separate Event Hubs instance are required one for metrics and one for logs.
+* The **Sumo Logic Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to HTTP endpoint for some reason) and another for function debug information.
+* A **Sumo Logic HTTP source** receives and ingests the monitoring data from the Azure function. This is used in metrics collection pipeline.
+* A **Azure Event Hubs Source for Logs** consumes the log events from the Event Hub. It securely stores the required authentication, scheduling, and state tracking information. This is used in logs collection pipeline.
 * The **Sumo Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to Sumo for some reason) and another for function debug information.
-* A **Sumo HTTP source** receives and ingests the monitoring data from the Azure function. There is one HTTP source for logs, and another for metrics. An HTTP source can be configured for metrics or logs, not both.
-* The **Sumo Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to Sumo for some reason) and another for function debug information.
-* A **Sumo HTTP source** receives and ingests the monitoring data from the Azure function. There is one HTTP source for logs, and another for metrics. An HTTP source can be configured for metrics or logs, not both.
+
 
 
 ## About the configuration process
 
-Sumo provides Azure Resource Manager (ARM) templates to build the pipelines, one for logs, one for metrics. Each template creates an event hub to which Azure Monitor streams logs or metrics, an Azure function for sending monitoring data on to Sumo, and storage accounts to which the function writes its own log messages about successful and failed transmissions.
+### Logs
 
-You download an ARM template, edit it to add the URL of your HTTP source, copy the template into Azure Portal, and deploy it. Then, you can start pushing your monitoring data from Azure Monitor through the pipeline into Sumo.   
+You need to create a Event Hub namespace and Event Hub instance in Azure in the same region as the resource being monitored, configures a Shared Access Policy to the newly created Event Hub instance which is then used to configure a Azure Event Hubs Source to a Hosted Collector. Then, you can start pushing your monitoring data from Azure Monitor into Event Hub (created manually) by configuring Diagnostic Settings on your azure resource.
 
-For instructions, see [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source) and [Collect Metrics from Azure Monitor](collect-metrics-azure-monitor.md).
+For detailed instructions, refer [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
+
+### Metrics
+Sumo Logic provides Azure Resource Manager (ARM) templates to build the metric collection pipelines. This template creates an Event Hub to which Azure Monitor streams metrics, an Azure function for sending monitoring data to HTTP source, and Storage Accounts to which the function writes its own log messages about successful and failed transmissions. You download an ARM template, edit it to add the URL of your HTTP source, copy the template into Azure Portal, and deploy it. Then, you can start pushing your monitoring data from Azure Monitor into Event Hub (created by ARM template) by configuring Diagnostic Settings on your azure resource.
+
+For detailed instructions, refer [Collect Metrics from Azure Monitor](collect-metrics-azure-monitor.md).
 
 ## Azure resource cost considerations
 
 For information about Azure pricing, see [Event Hubs pricing](https://azure.microsoft.com/en-us/pricing/details/event-hubs/) and [Block Blob pricing](https://azure.microsoft.com/en-us/pricing/details/storage/blobs/).
 
-## Azure Integration FAQs 
+## Azure Integration FAQs
 
 For answers to frequently asked questions about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture, see [Azure Integration with ARM FAQ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq).
