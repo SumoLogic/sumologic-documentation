@@ -21,7 +21,7 @@ Refer to [this video](https://sumologic.link/6e020df8d1d7), then redeploy the 
 1. Click on Failed deployment, and then click on Microsoft.Template(last deployment) in the next window.
 1. Click **Redeploy**, provide the required fields, and click **Purchase**. You should see the successful deployment notification.<br/><img src={useBaseUrl('/img/send-data/Azure_ARM-template-troubleshoot.png')}  style={{border: '1px solid gray'}} alt="Azure_ARM-template-troubleshoot" width="800"/>
 
-If you get namespace invalid error make sure it follows the naming convention specified in this [doc](https://docs.microsoft.com/en-us/rest/api/servicebus/create-namespace).
+If you get namespace invalid error, make sure it follows the naming convention specified in this [doc](https://docs.microsoft.com/en-us/rest/api/servicebus/create-namespace).
 
 ```
 {
