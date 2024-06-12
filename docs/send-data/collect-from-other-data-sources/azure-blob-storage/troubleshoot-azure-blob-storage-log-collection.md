@@ -86,7 +86,7 @@ To verify that events are appearing in your event hub:
 
 ## Verify Service Bus Queue is receiving tasks
 
-Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNamespace\<unique string>` Service Bus Namespace. Check that the incoming messages count is greater than zero. <br/><img src={useBaseUrl('/img/send-data/service-bus-metrics.png')}  style={{border: '1px solid gray'}} alt="service-bus-metrics" width="800"/>
+Go to Service Bus Service from the Azure portal and click the `SUMOBRTaskQueueNamespace\<unique string>` Service Bus Namespace. Check that the incoming messages count is greater than zero. <br/><img src={useBaseUrl('/img/send-data/service-bus-metrics.png')}  style={{border: '1px solid gray'}} alt="service-bus-metrics" width="800"/>
 
 ## Verify with Live Tail
 
