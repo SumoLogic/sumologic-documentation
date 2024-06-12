@@ -1,5 +1,5 @@
 ---
-title: Upgraded Sumo Logic AWS Lambda Extension (Collection)
+title: Sumo Logic AWS Lambda Extension v8 (Collection)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
