@@ -133,13 +133,13 @@ The following table shows theÂ **config** parameters for a Palo Alto Cortex XDRÂ
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/palo-alto-cortex-xdr/example.json)
+<a href="/files/c2c/palo-alto-cortex-xdr/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/palo-alto-cortex-xdr/example.tf)
+<a href="/files/c2c/palo-alto-cortex-xdr/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

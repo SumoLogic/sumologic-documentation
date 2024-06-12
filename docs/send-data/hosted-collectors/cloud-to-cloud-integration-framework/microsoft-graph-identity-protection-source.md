@@ -119,13 +119,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-identity-protection/example.json)
+<a href="/files/c2c/microsoft-graph-identity-protection/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-identity-protection/example.tf)
+<a href="/files/c2c/microsoft-graph-identity-protection/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
