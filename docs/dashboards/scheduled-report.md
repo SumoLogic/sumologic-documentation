@@ -34,7 +34,7 @@ To schedule a dashboard email report, do the following:
          * **Monthly.** Choose which day of which week of the month you want the report to be sent.
       * **Time.** Choose the time of day you want the dashboard to be sent.
       * **Time Zone.** Choose your time zone.
-   * **Add recipents**. 
+   * **Add recipients**. 
       * **Email to.** Enter the email addresses where you want the dashboard to be sent.
       * **Subject.** Enter a subject for the email.
       * **Message.** Enter the body of the email.
@@ -87,7 +87,7 @@ To duplicate to an existing a Scheduled Report:
 
 ## Subscribe to a Scheduled Report
 
-To subscibe to an existing a Scheduled Report:
+To subscribe to an existing a Scheduled Report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Subscribe** against the required report to automatically inject your user email into the list of recipients. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/subscribe_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
