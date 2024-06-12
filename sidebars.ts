@@ -495,11 +495,29 @@ module.exports = {
               label: 'Azure Blob Storage',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index'},
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index' },
               items: [
-                'send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage',
-                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
-              ],
+                {
+                  type: 'category',
+                  label: 'Block Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Append Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs'],
+                },
+                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection',
+              ]
             },
             {
               type: 'category',
@@ -509,8 +527,8 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-monitoring/index'},
               items: [
                 'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
-                'send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
+                'send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq',
               ],
             },
             'send-data/collect-from-other-data-sources/docker-collection-methods',
@@ -660,8 +678,8 @@ module.exports = {
           items: [
             'manage/partitions/data-tiers/create-edit-partition',
             'manage/partitions/data-tiers/view-partition-details',
-            'manage/partitions/data-tiers/data-tiers-faqs',
             'manage/partitions/data-tiers/searching-data-tiers',
+            'manage/partitions/data-tiers/faq',
           ]
         },
         {
@@ -674,7 +692,7 @@ module.exports = {
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
             'manage/partitions/flex/estimate-scan-data',
-            'manage/partitions/flex/flex-pricing-faq',
+            'manage/partitions/flex/faq',
           ]
         },
         'manage/partitions/run-search-against-partition',
@@ -1923,7 +1941,6 @@ integrations: [
          'integrations/microsoft-azure/active-directory-json',
          'integrations/microsoft-azure/active-directory-azure',
          'integrations/microsoft-azure/audit',
-         'integrations/microsoft-azure/arm-integration-faq',
          'integrations/microsoft-azure/azure-analysis-services',
          'integrations/microsoft-azure/azure-api-management',
          'integrations/microsoft-azure/azure-app-configuration',
@@ -2353,6 +2370,7 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
+          'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
         ],
       },

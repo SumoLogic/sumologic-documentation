@@ -67,7 +67,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Azure Blob Storage</h4></a>
+  <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Azure Blob Storage</h4></a>
   <p>Learn about event-based pipeline to ship monitoring data from Azure Blob Storage to an HTTP source.</p>
   </div>
 </div>

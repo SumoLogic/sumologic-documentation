@@ -1,7 +1,6 @@
 ---
 title: Neurons ITSM
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

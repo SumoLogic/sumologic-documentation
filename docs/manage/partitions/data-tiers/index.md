@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page describes Sumo Logic's Data Tiers feature.
 
 :::tip
-For related information, see [Data Tiers FAQs](data-tiers-faqs.md).
+For related information, see [Data Tiers FAQ](faq.md).
 :::
 
 :::info

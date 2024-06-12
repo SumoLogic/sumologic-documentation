@@ -1,7 +1,6 @@
 ---
 title: Google Safe Browsing
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

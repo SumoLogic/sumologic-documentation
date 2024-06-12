@@ -1,7 +1,6 @@
 ---
 title: MSSQL
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
