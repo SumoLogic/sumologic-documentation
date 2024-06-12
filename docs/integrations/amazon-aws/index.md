@@ -2,7 +2,6 @@
 slug: /integrations/amazon-aws
 title: Amazon and AWS
 description: Learn how to use Sumo Logic apps for Amazon and AWS.
-tags: [amazon, aws]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

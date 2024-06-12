@@ -109,6 +109,8 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
+
 ### Data Scanned Overview
 
 The **Infrequent Data Tier - Data Scanned Overview** dashboard provides visibility into the total amount of data scanned by infrequent queries. This allows you to monitor and control on-demand search costs for the Infrequent Tier.

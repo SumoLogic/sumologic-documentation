@@ -1,7 +1,6 @@
 ---
 title: Microsoft Teams
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

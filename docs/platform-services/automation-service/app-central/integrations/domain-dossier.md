@@ -1,7 +1,6 @@
 ---
 title: Domain Dossier
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

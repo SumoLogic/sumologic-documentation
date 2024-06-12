@@ -1,7 +1,6 @@
 ---
 title: Material Security
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

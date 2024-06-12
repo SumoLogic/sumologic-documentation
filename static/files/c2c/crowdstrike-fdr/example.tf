@@ -12,9 +12,6 @@ resource "sumologic_cloud_to_cloud_source" "crowdstrike_FDR_source" {
       "SqsQueueURL":"https://sqs.us-west-1.amazonaws.com/***/***",
       "multilineEnabled":false,
       "accessKeyId":"********",
-      "fields":{
-        "_siemForward":false
-      },
       "category":"Sumo/FDR",
       "timestampFormatAutoDetection":false,
       "s3Region":"us-west-1",

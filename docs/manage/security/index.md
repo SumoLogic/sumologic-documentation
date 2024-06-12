@@ -2,12 +2,17 @@
 slug: /manage/security
 title: Security
 description: Learn how to set up security for Sumo Logic accounts.
-tags: [security]
+keywords:
+  - account security
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="50"/>
+
+:::tip 
+Looking for our security features like Cloud SIEM and Cloud SOAR? Head to [Sumo Logic Security Solutions](/docs/security).
+:::
 
 The Security page is available only to administrators.
 
