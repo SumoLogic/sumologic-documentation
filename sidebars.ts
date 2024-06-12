@@ -493,11 +493,29 @@ module.exports = {
               label: 'Azure Blob Storage',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index'},
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index' },
               items: [
-                'send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage',
-                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
-              ],
+                {
+                  type: 'category',
+                  label: 'Block Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Append Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs'],
+                },
+                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection',
+              ]
             },
             {
               type: 'category',
