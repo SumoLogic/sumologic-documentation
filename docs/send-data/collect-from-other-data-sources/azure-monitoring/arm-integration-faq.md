@@ -13,14 +13,14 @@ This guide provides answers to frequently asked questions (FAQ) about integratin
 
 ## Common Error Messages
 
-* For Event Hub, see [Event Hub error messages](#event-hub-error-messages).
+* For Event Hub, see [Event Hub error messages](#event-hub-export-error-messages).
 * For Blob Storage, see [Blob Reader error messages](#blob-reader-error-messages).
 
 ## Integration overview
 
 For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring).
 
-For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs).
+For an introduction to Sumo Logic's solution for collecting logs using an event-based pipeline from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/).
 
 
 ## General FAQ
@@ -50,6 +50,18 @@ For Blob Storage, do the following:
 
 1. Go to the **BlockTaskConsumer** function created by the ARM template.
 2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata (`url`, `containerName`, `blobName`, `storageName`, `resourceGroupName`, `subscriptionId`) present in **serviceBusTask**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobStorage_Logs.png')} alt="Azure ARM FAQs" />
+
+
+For Azure Monitor, you need to create an FER or create multiple sources.
+
+The following is a Field Extraction Rule (FER) solution.
+
+You extract the resource type in FERs and override the `_sourceCategory` with `<custom source category for ex azure_logs/prod/NETWORKSECURITYGROUPS>` so that when a user searches, the new sourcecategory is used. For example:
+
+```
+_sourceCategory = azure_logs | json auto | parse field=resource_id  "/*/*"
+as resource_type, resource_name | concat('azure_logs/prod/", resource_type) as _sourceCategory
+```
 
 ### How do I view Azure function logs?
 
@@ -172,13 +184,19 @@ Follow the instructions in the Microsoft Azure documentation for [Enabling Appli
 
 If events are not getting into the Event Hub, the event grid subscription publisher settings are not configured properly.
 
-#### Event Hub error messages
+#### Event Hub export error messages
 
 * **Resources should be in the same region.** Resource `/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg` is in region `eastus` and resource `/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw` is in region `westus`. This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
 * **Create or update activity logprofilesfailure.** If you get this error message in Azure when setting up an Event Hub Export, do the following:
     1. Search for Subscriptions in all services.
     2. Select your subscription > Resource Providers.
     3. Search for and Enable **microsoft.insights**.
+* If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Microsoft Entra tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+
+   ```
+   An Azure subscription is required to use this capability.
+   Please create an Azure subscription to get started.
+   ```
 
 
 ## Blob Storage FAQs
@@ -193,7 +211,7 @@ FileOffsetMap is a table created in Azure Table Storage that is used for interna
 
 ### How does the collection mechanism work?
 
-For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs) section of the Azure Blog Storage page.
+For a summary of how various components are stitched together in the pipeline, see the `Monitoring data flow` section for [block blob](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob#monitoring-data-flow) and [append blob](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob#monitoring-data-flow) of the Azure Blob Storage page.
 
 
 ### How do I scale the function?
@@ -258,7 +276,7 @@ To filter events by container name, do the following:
    Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
    ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/#step-3-configure-azure-resources-using-arm-template), substep 11.
+      **Solution**: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/#step-3-configure-azure-resources-using-arm-template), substep 11.
 
 * You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:
 
@@ -303,3 +321,54 @@ Solution: This error comes when FileOffsetMap does not exists. Check and confirm
       4. Search for Microsoft.EventGrid and register it.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Subscriptions.png')} alt="Azure ARM FAQs" />
+
+*  Native Access Violation in Azure Functions
+
+   ```
+   ExitCode C0000005
+
+   ExitCodeString NATIVE ACCESS VIOLATION
+
+   Managed Exception = System.AccessViolationException:Attempted to read or
+   write protected memory. This is often an indication that other memory is corrupt.
+
+   CallStack - Managed Exception
+   ```
+
+   The above error occurs in certain situations the runtime initiates a host shutdown via `HostingEnvironment.InitiateShutdown`, for example, when an unhandled global exception occurs, when a function `TimeoutException` is thrown, or when performance counter thresholds are exceeded
+   (`HostHealthMonitor`).
+
+   **Solution**:  If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
+
+   If the error still persists, then you can migrate from Consumption plan to Premium plan by making changes in the ARM template.
+
+   ```json
+   {
+     "type":"Microsoft.Web/serverfarms",
+     "kind":"app",
+     "name":"[parameters('serverfarms_SumoAzureLogsAppServicePlan_name')]",
+     "apiVersion":"2018-02-01",
+     "location":"[resourceGroup().location]",
+     "sku":{
+       "name":"P1v2",
+       "tier":"PremiumV2",
+       "size":"P1v2",
+       "family":"Pv2",
+       "capacity":2
+     },
+     "properties":{
+       "maximumElasticWorkerCount":1,
+       "perSiteScaling":false,
+       "targetWorkerCount":0,
+       "targetWorkerSizeId":0,
+       "reserved":false,
+       "isSpot":false,
+       "isXenon":false,
+       "hyperV":false
+     },
+     "dependsOn":[
+
+     ]
+   }
+   ```
+

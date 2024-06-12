@@ -106,11 +106,5 @@ To create the diagnostic settings in Azure portal, refer to the [documentation](
 
 ## Troubleshooting
 
-### Azure error when exporting logs 
+For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
 
-If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Microsoft Entra tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
-
-```
-An Azure subscription is required to use this capability.
-Please create an Azure subscription to get started.
-```
