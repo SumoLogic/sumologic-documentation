@@ -126,7 +126,7 @@ If the error still persists in BlobTaskProducer function and failure rate > 1% t
     1. Select the resource group in which you deployed the ARM template and select app service plan `(SUMOBRProducerPlan\<suffix\>)` in resource type.<br/><img src={useBaseUrl('/img/send-data/arm-template-suffix.png')} alt="arm-template-suffix" width="800"/>
     1. Click on Manual scale and set min instance count to 2. You can also use auto scaling to save on costs.<br/><img src={useBaseUrl('/img/send-data/azure-manual-scale.png')} alt="azure-manual-scale" width="800"/>
 
-    If the error still persists in BlobTaskConsumer function and failure rate > 1% then you can migrate from Consumption plan to Premium plan by making changes in the ARM template 
+    If the error still persists in the BlobTaskConsumer function, and the failure rate > 1%, then you can migrate from Consumption plan to Premium plan by making the following changes in the ARM template:
 
     ```
     {
