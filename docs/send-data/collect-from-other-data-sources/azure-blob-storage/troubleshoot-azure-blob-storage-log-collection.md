@@ -116,7 +116,7 @@ The above error occurs in certain situations when the runtime initiates a host s
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
-If the error still persists in BlobTaskProducer function and failure rate > 1% then:
+If the error still persists in the BlobTaskProducer function, and the failure rate > 1%, do the following:
 
 * Increase the timeout of the BlobTaskProducer Function to 30 min in host.json by clicking on **App files**. <br/><img src={useBaseUrl('/img/send-data/azure-error1.png')} alt="error" width="800"/>
 
