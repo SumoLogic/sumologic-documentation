@@ -112,7 +112,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-<a href="/files/c2c/workday/example.tf)" target="_blank">Download example</a>
+<a href="/files/c2c/workday/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
