@@ -55,7 +55,7 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/metrics/logs-to-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Logs to Metrics</h4></a>
+  <a href="/docs/metrics/logs-to-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Logs-to-Metrics</h4></a>
   <p>Set up rules to extract or create metrics from log data.</p>
   </div>
 </div>
@@ -65,16 +65,10 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
   <p>View detailed information about your metrics data consumption.</p>
   </div>
 </div>
-<div className="box smallbox9 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
   <p>Kubernetes metrics are collected when you deploy our Kubernetes collection.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/metrics/metric-charts"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Metrics Charts</h4></a>
-  <p>Visualize metrics data in Sumo Logic.</p>
   </div>
 </div>
 </div>
