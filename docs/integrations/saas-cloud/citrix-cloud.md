@@ -68,9 +68,21 @@ sourceCategory="citrixCloudSource"
 
 ## Installing the Citrix Cloud app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
+
+## Upgrading the Citrix Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Citrix Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Citrix Cloud dashboards
 

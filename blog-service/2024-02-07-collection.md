@@ -1,6 +1,6 @@
 ---
 title: Azure Monitor Metrics Collection (Collection)
-image: https://www.sumologic.com/img/logo.svg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
   - azure-metrics

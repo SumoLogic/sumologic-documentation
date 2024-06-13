@@ -57,8 +57,20 @@ Once a request has been submitted, a support ticket is automatically opened. A r
     </div>
     <div className="box smallbox card">
       <div className="container">
+      <a href="/docs/integrations/sumo-apps/flex"><img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="40"/><h4>Flex</h4></a>
+      <p>A guide to the Sumo Logic Flex app.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
       <a href="/docs/integrations/sumo-apps/infrequent-data-tier"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Infrequent Data Tier</h4></a>
       <p>A guide to the Sumo Logic Infrequent Data Tier app.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href="/docs/integrations/sumo-apps/log-analysis-quickstart"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Log Analysis QuickStart</h4></a>
+      <p>A guide to the Sumo Logic Log Analysis QuickStart app.</p>
       </div>
     </div>
     <div className="box smallbox card">

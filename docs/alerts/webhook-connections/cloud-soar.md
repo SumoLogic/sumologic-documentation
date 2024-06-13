@@ -18,10 +18,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To create a webhook connection from Sumo Logic to Cloud SOAR:
 
-1. In Sumo Logic, go to **Manage Data** > **Monitoring** > **Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. Click **+ Add** and choose **Cloud SOAR** as the connection type.<br/> <img src={useBaseUrl('img/connection-and-integration/SOAR-webhook-icon.png')} alt="SOAR webhook icon.png" width="200"/>
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** and **Authorization Header** are automatically defined by Sumo Logic. You should not edit these.
 1. The **Templates** dropdown shows a list of all incident templates, by name, configured in your Cloud SOAR environment.
 1. The default **Payload** synchronizes with the selected template and the associated `template_id` field is automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 1. Click **Save**.
+
+For more detailed instructions, see [Configure a webhook for Cloud SOAR](/docs/cloud-soar/automation/#configure-a-webhook-for-cloud-soar).

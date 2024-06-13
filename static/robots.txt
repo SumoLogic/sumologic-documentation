@@ -2,4 +2,7 @@
 
 User-agent: *
 Allow: /
+Disallow:
+    /docs/reuse/
+    /docs/tags/
 Sitemap: https://help.sumologic.com/sitemap.xml

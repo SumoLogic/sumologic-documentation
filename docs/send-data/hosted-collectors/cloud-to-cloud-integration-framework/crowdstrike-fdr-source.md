@@ -21,10 +21,6 @@ The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint 
 The [CrowdStrike API documentation](https://falcon.crowdstrike.com/login/?next=%2Fdocumentation%2F9%2Ffalcon-data-replicator) is not public and can only be accessed by partners or customers.
 :::
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -47,12 +43,11 @@ When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Bef
 
 To configure a CrowdStrike FDR Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FDR**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option no fields are set.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -67,7 +62,7 @@ To configure a CrowdStrike FDR Source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/). 
 1. **Advanced Options for Logs**.
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information. 
 1. When you are finished configuring the Source, click **Save**.
 
@@ -88,7 +83,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. |`{"fieldA": "valueA"}` |
 | secretAccessKey` | String | Yes |  | The AWS Secret Access Key you got from CrowdStrike. |  |
 | SqsQueueURL | String | Yes |  `null` | The SQS Queue URL you got from CrowdStrike. |  |
 | accessKeyId | String | Yes |  `null` | The AWS Access Key ID you got from CrowdStrike. |  |
@@ -99,13 +94,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-fdr/example.json)
+<a href="/files/c2c/crowdstrike-fdr/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-fdr/example.tf)
+<a href="/files/c2c/crowdstrike-fdr/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

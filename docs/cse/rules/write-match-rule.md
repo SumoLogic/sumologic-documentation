@@ -45,18 +45,28 @@ import Iframe from 'react-iframe'; 
 
 ## Create a Match rule
 
-1. Choose **Rules** from the Content menu.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic, menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
 1. On the **Create a Rule** page, click **Create** in the **Match** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/match.png')} alt="Match rule" width="600"/>
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/match.png')} alt="Match rule" style={{border: '1px solid gray'}} width="600"/>
 
-## Configure "Then Create a Signal" settings
+### Configure "If Triggered" settings
 
+1.  **When a Record matches the expression.** Enter a rule expression that the rule must match before generating a Signal. 
+1. Click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+    :::note
+    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    :::
+
+### Configure "Then Create a Signal" settings
+
+1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **using the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
     :::note
-    * When you're configuring a Threshold and Chain rule, you don't supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
+    * When you're configuring a Threshold and Chain rule, you do not supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
     * For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.
     :::
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
@@ -67,15 +77,15 @@ import Iframe from 'react-iframe'; 
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" width="325"/>
+1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" width="450"/>
+   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" style={{border: '1px solid gray'}} width="450"/>
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
-   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" width="450"/>
+   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" style={{border: '1px solid gray'}} width="450"/>
    1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" width="450"/>
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" style={{border: '1px solid gray'}} width="450"/>
    1. Select one of the following options:
       * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
       * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.
@@ -87,19 +97,6 @@ import Iframe from 'react-iframe'; 
    The conditions you define will be processed in the order you define them. Once a match occurs, processing stops–remaining conditions are ignored.
    :::
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any Signals created from this rule, and inherited by any insights generated from those signals.
-
-
-## Test your rule expression
-After creating a rule expression, you can test it against existing Records in Cloud SIEM.
-
-1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range.
-
-:::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
-:::
-
 
 ## Save as prototype
 If you are not sure that your rule is ready for prime time, you can save it as a prototype. A prototype rule generates Signals, but those Signals won't contribute to Insights. (Signals generated by a prototype rule do not increment the rule's **On Entity** entity's Activity Score.) Running the rule as a prototype for a while allows you to determine whether the rule is too noisy and fires too many Signals.

@@ -2,7 +2,7 @@
 id: jfrog-xray
 title: JFrog Xray
 sidebar_label: JFrog Xray
-description: Page notifications Off Share The JFrog Xray app provides visibility into the state of artifacts and components in your JFrog Artifactory repository.
+description: The JFrog Xray app provides visibility into the state of artifacts and components in your JFrog Artifactory repository.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,8 +20,8 @@ The Sumo Logic app for JFrog Xray and collection are tested on JFrog Xray 2.9.0 
 The JFrog Xray app uses the following log types:
 
 * JFrog Xray logs. JFrog Xray logs are in JSON format. For more information, see JFrog Xray [Webhook payload](https://www.jfrog.com/confluence/display/XRAY/Policies#Policies-WebhookPayload).
-* Artifactory logs. For more information, see [Collect Logs for Artifactory.](/docs/integrations/app-development/jfrog-artifactory#Collect-Logs-for-Artifactory)
-* Kubernetes logs. For more information, see [Collect Logs for Kubernetes.](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App)
+* Artifactory logs. For more information, see [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
+* Kubernetes logs. For more information, see [Collect Logs for Kubernetes.](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app)
 
 
 
@@ -109,14 +109,14 @@ Collect the following details:
 
 We recommend collecting data from JFrog Artifactory so as to investigate sources of vulnerable artifacts and who is using them. This is done by correlating Xray logs with Artifactory logs.
 
-To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#Collect-Logs-for-Artifactory).
+To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
 
 
 ### Step 3: Collect Kubernetes logs
 
 If you have set up a Docker repository in Aritfactory and are running containers in a Kubernetes cluster, we recommend collecting data from your Kubernetes cluster so as to understand all vulnerable containers running in production.
 
-To perform this setup, follow the instructions in [Collect Logs for Kubernetes](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+To perform this setup, follow the instructions in [Collect Logs for Kubernetes](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 
 
 ### Step 4: Add Hosted Collector and HTTP Source
@@ -125,7 +125,7 @@ In this step you set up a hosted Sumo Logic collector and HTTP source to collect
 
 Identify an existing Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
-When you configure the HTTP source, make sure to save the HTTP Source Address URL. You will need it when you configure the webhook in [Step 5](#Step_5:_Set_up_a_collection_method_for_JFrog_Xray).  
+When you configure the HTTP source, make sure to save the HTTP Source Address URL. You will need it when you configure the webhook in [Step 5](#step-5-set-up-a-collection-method-for-jfrog-xray).  
 
 To add a hosted collector and HTTP source:
 1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -162,7 +162,7 @@ To deploy the Sumo Logic JFrog xray SAM Application, do the following:
 If you have multiple JFrog Xray instances from which you want to collect logs and send to Sumo Logic, perform the following task.
 
 To configure collection for multiple JFrog Xray instances, do the following:
-1. [Deploy the SAM application](#Deploy+a+SAM+application) with configuration for a new project.
+1. [Deploy the SAM application](#step-5-set-up-a-collection-method-for-jfrog-xray) with configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (**DBNAME**) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).
 
 </details>
@@ -299,32 +299,29 @@ sudo yum install python-devel
 ```
 
 
-## Installing the JFrog Xray App
+## Installing the JFrog Xray app
 
-This section has instructions for installing the JFrog Xray app.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-To install the app, do the following:
+<AppInstall2/>
 
-1. In the App Catalog, search for and select the **JFrog Xray** app. To see a preview of the dashboards included with the app before installing, click Preview Dashboards.
-2. Click **Add to Library**. The **Add JFrog Xray to Library** dialog appears.
-3. Specify the following:
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   * **JFrog Xray log data source**. Click in the **Source Category** entry field, and select the source category you assigned to the HTTP source you created in [Step 4: Add a hosted collector and HTTP source](#step-4-add-hosted-collector-and-http-source).
-   * Artifactory log data source. Enter a string that matches the source categories you assigned to the local file sources that you set up to receive Artifactory logs in [Step 2: Collect Artifactory logs](#step-2-collect-artifactory-logs). If you followed the instructions for setting the source categories, enter `_sourceCategory=*artifactory*`
-   * **Kubernetes log data source**. Select the log source for the HTTP source that receives Kubernetes Events logs.
-   * **Advanced**. (Optional) If desired, specify the location in Library where the app will be installed (the default is the Personal folder in the library), or click **New Folder** to add a new folder in which to place the app.
-4. Click **Add to Library**. Once an app is installed, it appears in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+## Upgrading the JFrog Xray app (Optional)
 
-Panels start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
+<AppUpdate/>
 
-## Viewing JFrog Xray Dashboards
+## Uninstalling the JFrog Xray app (Optional)
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
-You can use filters to drill down and examine the data on a granular level
+<AppUninstall/>
 
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+## Viewing JFrog Xray dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 
 ### Overview

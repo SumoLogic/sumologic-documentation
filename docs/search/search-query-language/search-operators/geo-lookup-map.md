@@ -6,7 +6,7 @@ sidebar_label: Geo Lookup (Map)
 
 Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the lookup operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
-Any IP addresses that don't have a location, such as internal addresses, will return null values.
+Any IP addresses that do not have a location, such as internal addresses, will return null values.
 
 :::note
 The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards/panels/map-charts).
@@ -55,7 +55,7 @@ This syntax produces aggregate results, so you can add a map to a Dashboard.
 ## Limitations
 
 * Map charts have a display limit of 10,000 results.
-* Colors of map markers can't be changed.
+* Colors of map markers cannot be changed.
 
 ## Examples
 

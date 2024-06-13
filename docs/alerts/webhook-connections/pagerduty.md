@@ -39,7 +39,7 @@ The URL and supported payload are different based on the version of the PagerDut
 
 ### Events API V2
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. On the Connections page click **Add**.
 1. Click **PagerDuty**.
 1. In the Create Connection dialog, enter the name of the Connection.
@@ -51,7 +51,6 @@ The URL and supported payload are different based on the version of the PagerDut
    {
      "routing_key": "SERVICE KEY",
      "event_action": "trigger",
-     "description": "{{TriggerType}} Alert:{{AlertName}}",
      "client": "Sumo Logic",
      "client_url": "{{AlertResponseURL}}",
      "payload": {

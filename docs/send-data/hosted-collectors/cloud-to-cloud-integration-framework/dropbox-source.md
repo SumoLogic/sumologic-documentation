@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Dropbox Source provides a secure endpoint to receive team events from the [Get Events API](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events). It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -49,7 +45,7 @@ When you create a Dropbox source, you add it to a Hosted Collector. Before crea
 
 To configure a Dropbox source:
 
-1. In Sumo Logic, navigate to **Manage Data > Collection** and open the **Collection** tab. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Dropbox**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -97,13 +93,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/dropbox/example.json)
+<a href="/files/c2c/dropbox/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/dropbox/example.tf)
+<a href="/files/c2c/dropbox/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

@@ -90,7 +90,7 @@ These instructions assume that the Security Administrator, System Auditor, and R
 
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#advanced-configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable.
 
 ### Recommended Deployment Process
 
@@ -148,7 +148,7 @@ This section demonstrates how to configure the Workday portal to integrate with 
 5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
     * **Workday REST API Endpoint.** The endpoint to use access to the resources in your Tenant.
     * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant).
-6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot action buttons.
+6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action buttons.
 7. In the new pop up window, click **API Client** > Manage Refresh Token for Integrations.
 8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
 9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
@@ -213,6 +213,18 @@ This section provides instructions on how to install the Workday app, as well as
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+## Upgrading the Workday app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Workday app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Workday dashboards
 

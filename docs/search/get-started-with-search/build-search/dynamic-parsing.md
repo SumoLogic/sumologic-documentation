@@ -23,13 +23,13 @@ With this FER defined, any search on JSON data will automatically parse out i
 
 ## Set up Dynamic Parsing
 
-By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** can't be edited or deleted. With this FER configured, you don't have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](/docs/manage/field-extractions/create-field-extraction-rule.md).
+By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** cannot be edited or deleted. With this FER configured, you do not have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 To optimize search performance you can manually set up Dynamic Parsing by defining your own Run Time FERs.
 
 Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will not be applicable.
 
-1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
 1. Click **+ Add** at top right of the table to create an FER.  
 
     ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
@@ -40,7 +40,7 @@ Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which 
 
     * **Applied At**. Select **Run Time**.
 
-    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
+    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
 
         Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
 
@@ -131,4 +131,4 @@ The following are limitations around the number of fields:
 * Dynamic Parsing extracts up to 100 fields per message. This 100 field count includes all built-in and parsed fields.
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
 * The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
-* Non-aggregate queries in Scheduled Views and Scheduled Searches can't be created in auto parse mode (Dynamic Parsing).
+* Non-aggregate queries in Scheduled Views and Scheduled Searches cannot be created in auto parse mode (Dynamic Parsing).

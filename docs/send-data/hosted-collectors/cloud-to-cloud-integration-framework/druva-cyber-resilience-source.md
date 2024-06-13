@@ -20,10 +20,6 @@ The Druva Data Resiliency Cloud provides unified, easy-to-manage data protection
 
 The Druva Cyber Resilience source provides the ability to fetch realize events generated within the Druva Realize product using the [Druva Realize Events API](https://developer.druva.com/reference/listeventsbytracker) and sends it to Sumo Logic. Realize events API helps you to collect unusual data activity events, access events, and login events generated in Druva Cyber Resilience product.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -47,7 +43,7 @@ When you create a Druva Cyber Resilience Source, you add it to a Hosted Collecto
 
 To configure a Druva Cyber Resilience Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Druva Cyber Resilience** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -59,6 +55,12 @@ To configure a Druva Cyber Resilience Source:
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata field
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Druva/Druva Cyber Resilience` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
@@ -86,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/druva-cyber-resilience/example.json)
+<a href="/files/c2c/druva-cyber-resilience/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/druva-cyber-resilience/example.tf)
+<a href="/files/c2c/druva-cyber-resilience/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

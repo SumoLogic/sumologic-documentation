@@ -22,10 +22,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -51,7 +47,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
    https://www.googleapis.com/auth/apps.alerts
    ```
    :::note
-   If you don't add an OAuth scope to your Google Workspace service account, you won't be authorized to fetch alert details. Learn more about OAuth scopes:
+   If you do not add an OAuth scope to your Google Workspace service account, you won't be authorized to fetch alert details. Learn more about OAuth scopes:
    * [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
    * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
    :::
@@ -59,7 +55,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 
 ### Source configuration
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google Workspace AlertCenter**.
 1. **Name.** Enter a name for the Source.
@@ -71,7 +67,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 1. **Delegated User Email.** Enter the admin email address for the domain. This email should be the address that is configured for the specific service account in the Google Cloud console.
 1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
-1. **Exclude Alert Types**. (Optional) Enter the data alert types and scope that you don't want to send to Sumo Logic.
+1. **Exclude Alert Types**. (Optional) Enter the data alert types and scope that you do not want to send to Sumo Logic.
    :::note
    All alert types are selected by default unless you exclude some of the alert types in the config JSON schema.
    :::
@@ -108,13 +104,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.json)
+<a href="/files/c2c/google-workspace-alertcenter/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.tf)
+<a href="/files/c2c/google-workspace-alertcenter/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

@@ -66,7 +66,7 @@ _sourceCategory=AWS/WAF {{client_ip}}
 
 Follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-### Before you begin
+### Prerequisites
 
 In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesis Data Firehose. In the next step, you'll configure Sumo to collect logs from the bucket.
 

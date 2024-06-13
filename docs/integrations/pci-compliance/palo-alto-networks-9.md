@@ -1,14 +1,14 @@
 ---
 id: palo-alto-networks-9
 title: PCI Compliance for Palo Alto Networks 9
-description: The Sumo Logic App for PCI Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+description: The Sumo Logic app for PCI Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+The Sumo Logic app for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 ## Log types
 
@@ -28,7 +28,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 </table>
 
 
-## Collecting Logs for PCI Compliance for Palo Alto Networks 9
+## Collecting logs for PCI Compliance for Palo Alto Networks 9
 
 This section has instructions for collecting logs for the PCI Compliance for Palo Alto Networks 9 app. This app supports Palo Alto Networks v9 and v8.
 
@@ -39,7 +39,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](#Create-a-Hosted-Collector).
+1. Log in to Sumo Logic and [create a Hosted Collector](#create-a-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
     1. Enter a Source Name.
     2. Provide a Source Category: **NW/PAN/V9**
@@ -59,19 +59,19 @@ To create a server profile specifying the log destination, do the following:
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
     1. **Name**: Sumo_CloudSyslog_EndPoint01
-    2. **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    2. **Syslog Server**: URL from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     3. **Transport**: SSL
-    4. **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    4. **Port**: Port from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     5. **Format**: `IETF`
     6. **Facility**: `LOG_USER`
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
    * [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
    ```
-   ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+   ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)>
    ```
    * [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
    ```
-   ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <strong><em><Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+   ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <strong><em><Token from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)>
    ```
 7. Click OK.
 8. Commit the changes.
@@ -100,17 +100,29 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 | count by _timeslice
 ```
 
+## Install the PCI for Palo Alto Networks 9 app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Install the PCI for Palo Alto Networks 9 App
+<AppInstall2/>
 
-Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data. This app supports PAN-OS v8 and v9.
+## Upgrading the PCI for Palo Alto Networks 9 app (Optional)
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-<AppInstall/>
+<AppUpdate/>
 
-## Viewing PCI for Palo Alto Networks 9 Dashboards
+## Uninstalling the PCI for Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing PCI for Palo Alto Networks 9 dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 
 ### PCI Req 01 - Accepted and Rejected Traffic

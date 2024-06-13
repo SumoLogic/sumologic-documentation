@@ -21,8 +21,6 @@ The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Dem
 This Source requires you to be licensed for Proofpoint On Demand’s Remote Syslog feature. Please reach out to Proofpoint for more information.
 
 The Proofpoint PoD API is not public; you'll need to request details on the API from Proofpoint.
-
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -47,7 +45,7 @@ When you create a Proofpoint On Demand Source, you add it to a Hosted Collecto
 
 To configure a Proofpoint On Demand Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Proofpoint On Demand**.
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -97,13 +95,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/proofpoint-on-demand/example.json)
+<a href="/files/c2c/proofpoint-on-demand/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/proofpoint-on-demand/example.tf)
+<a href="/files/c2c/proofpoint-on-demand/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

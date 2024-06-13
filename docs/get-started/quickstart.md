@@ -3,7 +3,8 @@ id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
 description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
-tags: [get started, getting started]
+keywords:
+  - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,7 +21,7 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-## Before you begin
+## Prerequisites
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
@@ -37,7 +38,8 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### OpenTelemetry Collector
 
 1. Log in to Sumo Logic.
-1. Go to **App Catalog** and click the app you'd like to install.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **App Catalog**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select **App Catalog** Kanso-->
+1. Click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
    :::note
    Only V2 apps have the **Add a New Collector** option.
@@ -47,7 +49,8 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### Installed and Hosted Collector
 
 1. Log in to Sumo Logic.
-1. From the Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. Select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
 1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 
 ### Set up Source
@@ -69,17 +72,13 @@ Once your data is available in Sumo, you and your colleagues can search your log
 
 You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 
-![WTS Home Search Icons](/img/get-started/WTS_Home-Search-icons.png)
-
-The [Setup Wizard](/docs/send-data/setup-wizard) is a quick way to get started loading data into Sumo Logic, then searching an analyzing the data with Sumo Logic's predefined searches and dashboards.
-
 ## Step 3: Monitor and troubleshoot your environment
 
 Not sure how to use your data to monitor and and troubleshoot your environment? Sumo Logic offers a variety of Apps with predefined queries and visualizations that help you get up and running quickly.
 
 ### App Catalog
 
-You can **browse our library of available apps** by selecting **App Catalog** in the left navigation panel, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
+You can **browse our library of available apps** by selecting **App Catalog**, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
 
 ![Apps Catalog](/img/get-started/WTS_Apps-Catalog.png)
 
@@ -120,12 +119,12 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 ## More Resources
 
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
-* [Traces Quickstart](/docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
-* [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.
+* [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
+* [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/daily-volume/quickstart). Learn how to create and use Ingest Budgets.
 
 See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).

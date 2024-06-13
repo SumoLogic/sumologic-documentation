@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Airtable API integration ingests audit logs periodically from the Airtable app platform into the Sumo Logic environment for storing and analyzing data.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -51,7 +47,7 @@ Complete the following steps to create service account credentials:
 In this configuration, you will set up an Airtable source account with your Enterprise account and configure it to be authorized and authenticated to use audit logs from Airtable API.
 
 To configure an Airtable Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a **Hosted Collector**.
 1. Search for and select **Airtable**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -90,13 +86,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/airtable/example.json)
+<a href="/files/c2c/airtable/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/airtable/example.tf)
+<a href="/files/c2c/airtable/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

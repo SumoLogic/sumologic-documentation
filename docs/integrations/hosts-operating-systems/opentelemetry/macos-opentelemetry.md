@@ -25,7 +25,10 @@ The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metric
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
 
-- **`sumo.datasource`** - Has fixed value of **mac**.
+- **`sumo.datasource`**. Has a fixed value of `mac`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the mac host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the mac host cluster is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed.
 
 ## Collection configuration and app installation
 
@@ -39,7 +42,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -53,7 +56,7 @@ import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collec
 
 <ProcMetrics/>
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid black'}} width="800"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid gray'}} width="800"/>
 
 ### Step 3: Send metrics to Sumo
 

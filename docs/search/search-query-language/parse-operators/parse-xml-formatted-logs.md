@@ -20,13 +20,13 @@ Ingested XML files must be well-formed and valid in order to be parsed by the XM
 
 * `nodrop` 
 
-    The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+    The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
 
 ## Rules
 
 * If no field is specified, then the entire text of incoming messages is used.
 * If the XPaths are not valid, an error is thrown.
-* If the number of field names don't match the specified XPaths, an error is thrown.
+* If the number of field names do not match the specified XPaths, an error is thrown.
 * If the field is not well-formed XML, null is returned, unless you have specified `nodrop`.
 * If the XPath does not match anything in the log, then null is returned, unless you have specified `nodrop`.
 * If the XPath matches an element, then its string representation is returned.
@@ -56,7 +56,7 @@ You must specify the full path to the elements you want to parse. This means tha
 
 **No expanded syntax axis specifiers**
 
-Expanded syntax is not supported. For example, the following expressions can't be used:
+Expanded syntax is not supported. For example, the following expressions cannot be used:
 
 `/child::af`
 

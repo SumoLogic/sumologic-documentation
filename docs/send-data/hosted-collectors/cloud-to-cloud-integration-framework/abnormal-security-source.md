@@ -5,7 +5,7 @@ sidebar_label: Abnormal Security
 tags:
   - cloud-to-cloud
   - abnormal-security
-description: Learn how to collect abnormal threat logs from the Abnormal Security source.
+description: Learn how to collect abnormal threat and case logs from the Abnormal Security source.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -17,11 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Abnormal Security is a behavioral AI-based email security platform that learns the behavior of every identity in a cloud email environment and analyzes the risk of every event to block the most sophisticated attacks.
 
-The Abnormal Security integration ingests threat data identified by the abnormal threat log using the [Abnormal Security API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1).
-
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+The Abnormal Security integration ingests threat data and case data identified by the abnormal threat log and cases using the [Abnormal Security API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1).
 
 ## Data collected
 
@@ -29,6 +25,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | :--- | :--- |
 | 5 min |  [Threat ID](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats)|
 | 5 min |  [Threat Details](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats__threatId_)|
+| 5 min |  [Cases](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Cases/get_cases)|
 
 ## Setup
 
@@ -47,7 +44,7 @@ The Abnormal Security source requires you to provide an authentication token. To
 When you create an Abnormal Security Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Abnormal Security Source, follow the steps below:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Abnormal Security**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -56,6 +53,7 @@ To configure an Abnormal Security Source, follow the steps below:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, also known as dropped.
 1. Enter the **Access Token** for authorization collected from the [Abnormal Security platform](#set-up-and-configuration).
+1. Additionally, if you like to collect the case data, enter **cases** in the **Supported APIs to collect** section. Threat data will be collected by default. But, if you like to collect only case data, you can unselect **threats** from the **Supported APIs to collect** section.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
@@ -77,18 +75,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | accessToken | String | Yes | `null`| Access token used to retrieve abnormal threats. |  |
+| datacollection | array | Yes | `threats`| List of APIs to fetch the data from. | `threats, cases` |
 
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/abnormal-security/example.json)
+<a href="/files/c2c/abnormal-security/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/abnormal-security/example.tf)
+<a href="/files/c2c/abnormal-security/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

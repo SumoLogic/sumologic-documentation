@@ -23,9 +23,32 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
 
-### Across apps
+- **`sumo.datasource`**. Has a fixed value of `linux`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed.
 
-- **`sumo.datasource`** - has a fixed value of **linux**.
+## Prereqisites
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any log files are missing, you can configure the missing file collection in the next step.
+:::
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -43,7 +66,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -78,7 +101,7 @@ import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collec
 
 <ProcMetrics/>
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid black'}} width="800"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid gray'}} width="800"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 

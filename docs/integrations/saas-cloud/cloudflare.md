@@ -92,12 +92,24 @@ Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > 
 
 ## Installing the Cloudflare app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Cloudflare dashboards 
-=======
+## Upgrading the Cloudflare app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cloudflare app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Cloudflare dashboards
+
 This section has instructions for installing the Cloudflare App for Sumo Logic.
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and dashboards.

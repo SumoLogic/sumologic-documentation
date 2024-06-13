@@ -2,7 +2,7 @@
 id: span-analytics
 title: Span Analytics APIs
 sidebar_label: Span Analytics
-description: The Span Analytics API allows you to browse spans collected in the system.
+description: Span Analytics APIs allow you to browse spans collected in the system.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -100,13 +100,27 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams app
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Upgrading the Amazon Kinesis - Streams app (Optional)
 
-## Viewing Amazon Kinesis Streams dashboards
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Kinesis - Streams app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Amazon Kinesis - Streams dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Events
 
@@ -132,8 +146,6 @@ See the details of Kinesis events including the count over time, location, API c
 
 
 ### Metrics
-11
-
 
 See the details of the Kinesis metrics including the incoming bytes, incoming records, get records, put and get latency, write and read provisioned throughput exceeded, and iterator age.
 

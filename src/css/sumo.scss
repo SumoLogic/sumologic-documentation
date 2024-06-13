@@ -9,6 +9,7 @@
 // Fonts!
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "api-override.css";
 
 @font-face {
   font-family: 'Material Icons';
@@ -257,14 +258,16 @@ html[data-theme='light'] {
 }
 
 .header-trial::before {
-  content: 'Start free trial';
+  content: 'START FREE TRIAL';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 3px 8px;
-  font-size: 12px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
+  margin-right: -20px;
 }
 
 .header-trial::after {
@@ -276,8 +279,13 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
+  margin-right: -20px;
 }
 
 //Contact Support nav button
@@ -286,13 +294,14 @@ html[data-theme='light'] {
 }
 
 .header-support::before {
-  content: 'Contact Support';
+  content: 'CONTACT SUPPORT';
   background: transparent;
   border: 1px solid #000;
   color: var(--ifm-navbar-link-color);
   border-radius: 3px;
-  padding: 3px 8px;
-  font-size: 12px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -306,6 +315,9 @@ html[data-theme='light'] {
   border: 1px solid #E5F4FA;
   color: var(--ifm-navbar-link-color);
   border-radius: 3px;
+  padding: 4px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -1085,7 +1097,6 @@ html[data-theme='dark'] .node polygon {
 }
 
 html[data-theme='dark'] .card:hover {
-  border-top: 4px solid var(--ds-blue-700);
   transition: none;
 }
 

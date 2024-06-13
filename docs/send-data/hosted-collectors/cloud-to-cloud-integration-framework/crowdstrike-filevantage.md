@@ -15,14 +15,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file change logs and ingest them into Sumo Logic.
+The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file changelogs and ingest them into Sumo Logic.
 
 :::important
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
-:::
-
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -30,7 +26,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 15 minutes |  [highVolumeQueryChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#highvolumequerychanges) - Retrieves log resource IDs|
-| 15 minutes |  [getChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#getchanges) - Retrieves file change logs from resource IDs from previous endpoint|
+| 15 minutes |  [getChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#getchanges) - Retrieves file changelogs from resource IDs from previous endpoint|
 
 
 ## Setup
@@ -72,11 +68,11 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FileVantage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FileVantage Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FileVantage** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`. 
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
@@ -107,16 +103,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | base_url | String | Yes | `null` | The API base url for the region of your CrowdStrike account. |  |
 | client_id | String | Yes | `null` | The CrowdStrike Client ID you want to use to authenticate collection requests. |  |
 | client_secret | String | Yes |  `null`| The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
-| pollingInterval | String | No | 15m | This sets how often the Source checks for data. |  |
+| pollingInterval | String | No | 15m | This sets how often the Source checks for data. The polling interval value should be atleast one minute. |  |
 
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-filevantage/example.json)
+<a href="/files/c2c/crowdstrike-filevantage/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-filevantage/example.tf)
+<a href="/files/c2c/crowdstrike-filevantage/example.tf" target="_blank">Download example</a>
+
+### Limitation
+
+- This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.

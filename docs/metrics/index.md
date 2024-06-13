@@ -1,15 +1,12 @@
 ---
 slug: /metrics
 title: Metrics
-description: Sumo Logic Metrics can measure infrastructure, application performance or custom business and operational data.
-tags: [metrics, metric]
+description: Sumo Logic metrics can measure infrastructure, application performance or custom business and operational data.
+keywords:
+  - metrics
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-:::info Classic Metrics Deprecation
-Effective January 2024, we've deprecated our [Classic Metrics and Classic Dashboards](/docs/metrics/metrics-queries/metrics-explorer/#switch-to-the-classic-metrics-ui) interface in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
-:::
 
 Metrics are numeric samples of data collected over time. They can measure infrastructure, such as operating system performance, disk activity, application performance, or custom business and operational data that is coded into your organization’s applications.
 

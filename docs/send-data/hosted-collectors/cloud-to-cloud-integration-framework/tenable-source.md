@@ -21,10 +21,6 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
    * The Audit Log API is used to collect [audit logs](https://developer.tenable.com/reference/audit-log-events). It does not provide a pagination function. Logs are polled every 24 hours with a limit of 5,000.
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -49,7 +45,7 @@ When you create a Tenable source, you add it to a Hosted Collector. Before crea
 
 To configure a Tenable source:
 
-1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select for and select **Tenable**.
 1. Enter a **Name** for the source. The description is optional.
@@ -111,13 +107,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/tenable/example.json)
+<a href="/files/c2c/tenable/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/tenable/example.tf)
+<a href="/files/c2c/tenable/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

@@ -22,10 +22,6 @@ Data is polled every five minutes and can take a couple of minutes to be searcha
 
 If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](cloud-to-cloud-source-versions.md).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -78,7 +74,7 @@ When you create a Microsoft Graph Azure AD Reporting Source, you add it to a Ho
 
 To configure a Microsoft Graph Azure AD Reporting Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **MS Graph Azure AD Reporting**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -128,13 +124,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-azure-ad-reporting/example.json)
+<a href="/files/c2c/microsoft-graph-azure-ad-reporting/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-azure-ad-reporting/example.tf)
+<a href="/files/c2c/microsoft-graph-azure-ad-reporting/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

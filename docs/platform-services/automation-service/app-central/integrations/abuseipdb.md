@@ -1,25 +1,25 @@
 ---
 title: AbuseIPDB
 description: ''
-tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/abuseipdb.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuseipdb.png')} alt="abuseipdb" width="100"/>
 
-Version: 1.3  
-Updated: Oct 06, 2023
+***Version: 1.4  
+Updated: May 29, 2024***
 
 Enrich IP addresses with reputation information gathered from AbuseIPDB.
 
 ## Actions
 
-* **IP Reputation** *(Enrichment)* - Gather IP reputation information (only for Cloud SOAR)
-* **IP Reputation V2** *(Enrichment)* - Gather IP reputation information
+* **IP Reputation** *(Enrichment)* - Retrieves IP reputation information and saves the report as incident attachment or artifact (only for Cloud SOAR).
+* **IP Reputation V2** *(Enrichment)* - Retrieves IP reputation information.
 
 ## Notes
 
-* Results of the IP reputation check can be saved in .csv file format (only for Cloud SOAR)
-* Multiple searches with any keyword in the comments
+* Results of the IP reputation check can be saved in .csv file format (only for Cloud SOAR).
+* Multiple searches with any keyword in the comments.
 
 ## Change Log
 
@@ -31,3 +31,5 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 	+ Added new action: IP Reputation V2
 	+ Changed fields visibility
 	+ Fixed Typo
+* May 29, 2024 (v1.4)
+	+ Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts

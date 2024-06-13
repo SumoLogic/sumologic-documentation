@@ -2,7 +2,7 @@
 id: elasticsearch-opentelemetry
 title: Elasticsearch - OpenTelemetry Collector
 sidebar_label: Elasticsearch - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Elasticsearch.
+description: Learn about the Sumo Logic OpenTelemetry app for Elasticsearch.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -28,20 +28,44 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `sumo.datasource`. Has a fixed value of **elasticsearch**.
 - `db.node.name`. Has the value of host name of the machine which is being monitored.
 
-### Prerequisites
+## Prerequisites
+
+### For metrics collection
 
 This receiver supports Elasticsearch versions 7.9+.
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-**Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+### For logs collection
 
-* debug: a lot of information, useful for development/testing
-* verbose: includes information not often needed, but logs less than debug
-* notice (default value): moderately verbose, ideal for production environments
-* warning: only very important/critical messages are logged
+Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+
+* **debug**. A lot of information, useful for development/testing.
+* **verbose**. Includes information not often needed, but logs less than debug.
+* **notice** (default value). Moderately verbose, ideal for production environments.
+* **warning**. Only important/critical messages are logged.
 
 All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
@@ -55,7 +79,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Collector.png' style={{border:'1px solid black'}}  alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Collector.png' style={{border:'1px solid gray'}}  alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -72,9 +96,9 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 

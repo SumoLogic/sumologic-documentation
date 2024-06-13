@@ -80,7 +80,7 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 
 ### Step 2: Configure a Source
 
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#configure-a-cloudsyslogsource). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 Example: **prod/web/apache/access**.
@@ -196,9 +196,21 @@ SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath
 
 ## Installing the Cylance app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
+
+## Upgrading the Cylance app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cylance app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Cylance dashboards
 

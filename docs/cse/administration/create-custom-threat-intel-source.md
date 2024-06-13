@@ -36,12 +36,12 @@ in both rules and search. The built-in rules that come with Cloud SIEM
 automatically create a Signal for Records that have been enriched in
 this way.
 
-Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Turning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
+Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
 ### Create a threat intelligence source from Cloud SIEM UI
 
-1. Click the Content menu and select **Threat Intelligence**.
+1.  <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Threat Intelligence**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  Kanso-->
 1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
 1. Click **Custom** on the **Add Source** popup. <br/><img src={useBaseUrl('img/cse/custom-button.png')} alt="Custom button" width="600"/>
 1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. <br/><img src={useBaseUrl('img/cse/add-custom-source.png')} alt="Add new source" width="600"/>

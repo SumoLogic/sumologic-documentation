@@ -2,7 +2,8 @@
 slug: /send-data/hosted-collectors
 title: Hosted Collectors
 description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic. You can configure Sources for Collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
-tags: [hosted collectors]
+keywords:
+  - hosted collector
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +14,7 @@ import Iframe from 'react-iframe';
 With a single Hosted Collector, you can create and configure Sources to collect data from any number of Sources, for example:
 
 * Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
-* Send data directly to Sumo endpoint using your custom collection method
+* Send data directly to a Sumo endpoint using your custom collection method
 
 Data collection flow for S3 buckets and HTTP requests:<br/>![team built hosted diagram.png](/img/send-data/team-built-hosted-diagram.png)
 

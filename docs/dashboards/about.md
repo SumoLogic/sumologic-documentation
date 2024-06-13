@@ -27,7 +27,7 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [metrics query builder](/docs/metrics/metrics-queries/metrics-explorer/) with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard utilizes the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for Dashboard.
 
@@ -51,13 +51,13 @@ The following table shows the availability of features for Dashboard.
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-dashboard-new-to-explore) |
+| Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
 ## Restricted Operators in Dashboard
 
-The following operators can't be used with Dashboard:
+The following operators cannot be used with Dashboard:
 
 * Details
 * LogReduce
@@ -77,10 +77,10 @@ Live mode restrictions do not apply to Dashboard. 
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard from the Search page.
 * Dashboard queries cannot return more than 1440 data points.
-  
+
 ## Rules
 
-* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
+* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
    * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
@@ -96,7 +96,7 @@ There are some restrictions when using operators with dashboards. To learn more,
 
 ## Dark Theme
 
-Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
 
 ## Clickable Legend
 

@@ -124,11 +124,11 @@ For example:
 ## Rules
 
 * The compare operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
-* If you want to use `timeslice` with `compare`, don't alias `timeslice`.
+* If you want to use `timeslice` with `compare`, do not alias `timeslice`.
 
 ### Limitations
 
-* Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
+* Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
     ```sql
     ... | compare timeshift 1d 14

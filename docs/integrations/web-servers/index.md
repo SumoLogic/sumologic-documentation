@@ -1,14 +1,12 @@
 ---
 slug: /integrations/web-servers
 title: Web Servers
+description: Learn how to use Sumo Logic apps for web servers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="45"/>
-
 This guide has documentation for Sumo apps for web servers.
-
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -51,13 +49,6 @@ This guide has documentation for Sumo apps for web servers.
   <img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Thumbnail icon" width="40"/>
   <h4><a href="/docs/integrations/web-servers/nginx-ingress">Nginx Ingress</a></h4>
   <p>The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/web-servers/nginx-legacy">Nginx (Legacy)</a></h4>
-  <p>The Sumo Logic App for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.</p>
   </div>
 </div>
   <div className="box smallbox card">
