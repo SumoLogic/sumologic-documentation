@@ -44,7 +44,7 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/threat-intelligence/upload-formats"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>CrowdStrike Threat Intelligence</h4></a>
+  <a href="/docs/security/threat-intelligence/crowdstrike-threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>CrowdStrike Threat Intelligence</h4></a>
   <p>Learn about CrowdStrike threat intelligence indicators.</p>
   </div>
 </div>
