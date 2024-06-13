@@ -359,7 +359,7 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
        <details>
        <summary>CloudQuery</summary>
 
-       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. (This functionality is in [preview](/release-notes-service/2024/05/13/apps/). If you would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
+       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. 
        
        If fields are missing, or you need to change them, do the following:
        * **8.1 Configure CloudQuery C2C Source**
@@ -512,7 +512,7 @@ The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (C
 The **Infrastructure Overview** dashboard helps you identify all accounts, services, and resources within your cloud environment. It helps you get deep visibility into your cloud infrastructure to understand how many cloud resources are running and their configurations.
 
 :::note
-This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). 
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
@@ -532,7 +532,7 @@ The **Security Control Failures - AWS Security Hub** dashboard shows resources t
 The **Security Control Failures Overview** dashboard shows you misconfigurations in your environment that may leave you vulnerable to attackers. These checks are run natively by Sumo Logic to find blind spots in your AWS infrastructure. 
 
 :::note
-This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive.
+To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). 
 ::: 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-overview.png')} alt="Security Control Failures Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
@@ -542,7 +542,7 @@ This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see 
 The **Security Control Failures Investigation** dashboard provides a detailed view for the [**Security Control Failures Overview**](#security-control-failures-overview) dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
 
 :::note
-This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws).  
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" style={{border: '1px solid gray'}} width="600"/>
