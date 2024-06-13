@@ -18,7 +18,6 @@ The Sumo Logic app for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, and 
 
 ## Sample log messages
 
-
 ```json title="Web log"
 {
   "sourcetype": "zscalernss-web",
