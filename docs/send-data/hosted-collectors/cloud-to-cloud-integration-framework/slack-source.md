@@ -136,13 +136,13 @@ To configure a Slack Source:
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/slack/example.json)
+<a href="/files/c2c/slack/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/slack/example.tf)
+<a href="/files/c2c/slack/example.tf" target="_blank">Download example</a>
 
 ## Limitation 
 

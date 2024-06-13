@@ -106,21 +106,21 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource1}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example1.json)
+<a href="/files/c2c/cse-aws-ec-inventory/example1.json" target="_blank">Download example</a>
 
 <CodeBlock language="json">{MyComponentSource2}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example2.json)
+<a href="/files/c2c/cse-aws-ec-inventory/example2.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample1}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example1.tf)
+<a href="/files/c2c/cse-aws-ec-inventory/example1.tf" target="_blank">Download example</a>
 
 <CodeBlock language="json">{TerraformExample2}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example2.tf)
+<a href="/files/c2c/cse-aws-ec-inventory/example2.tf" target="_blank">Download example</a>
 
 ## FAQ
 
