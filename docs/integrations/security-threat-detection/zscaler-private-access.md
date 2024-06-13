@@ -32,7 +32,7 @@ LSS is deployed using two components, a log receiver and a ZPA App Connector. LS
 
 To collect logs for ZPA, follow the below steps in Sumo Logic.
 
-### Step 1. Configure Sumo Logic hosted collector and a Cloud Syslog source
+### Step 1: Configure Sumo Logic hosted collector and a Cloud Syslog source
 
 1. Configure a [Sumo Logic Hosted Collector](/docs/send-data/hosted-collectors).
 2. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#configure-a-cloudsyslogsource) and configure the following Source fields:
@@ -51,12 +51,12 @@ To collect logs for ZPA, follow the below steps in Sumo Logic.
 
 Copy and paste the **Token, Host and Port** in a secure location. You will need these when you configure ZPA LSS.
 
-### Step 2. Configure App Connector in ZPA
+### Step 2: Configure App Connector in ZPA
 
 1. Open ZPA and configure a new [App Connector](https://help.zscaler.com/zpa/configuring-connectors).
 2. Copy the provisioning key created/selected during App Connector configuration.
 
-### Step 3. Deploy an App Connector on a Supported Platform
+### Step 3: Deploy an App Connector on a Supported Platform
 
 After adding an [App Connector](https://help.zscaler.com/zpa/about-connectorprovisioningwizard), you'll need to deploy it. Deployment consists of installing and enrolling the App Connector, which allows the App Connector to obtain a TLS client certificate for authenticating to the ZPA cloud. Once deployed, the App Connector is ready to send logs to Sumo Logic.
 
@@ -66,7 +66,7 @@ The deployment process varies depending on the platform used for the App Connect
 
 To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com/knowledge-base-categories/supported-platforms-connectors) for your platform.
 
-### Step 4. Configure Log Receivers in ZPA to send logs to Sumo Logic
+### Step 4: Configure Log Receivers in ZPA to send logs to Sumo Logic
 
 Once you have deployed the App Connector, you'll need to configure log receivers to send logs to the Sumo Logic cloud syslog endpoint by doing the following:
 
