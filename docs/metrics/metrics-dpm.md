@@ -33,6 +33,8 @@ Navigate to **Administration > Account > Metrics Data Ingestion**.
 
 1. **Date and time**. Select a time to see the metrics gathered for the previous hour. 
 1. **Ingest Trend for** `<date>`. The trend for ingest for the current day, broken down by hour. 
+1. **Metric**. Select a specific metric to view its ingest breakdown. Leave blank if you want to view breakdown for all metrics.
+1. **Filter**. Select the dimensions for which you want to view ingest breakdown. Leave blank if you want to view all dimensions. (You cannot use the filter if you selected a specific metric in the **Metric** field.)
 1. **Total Ingest Data Points (1 hr)**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
 1. **Ingest DPM (1 hr)**. The data points per minute (DPM) ingested during the previous hour.
 1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested during the previous day. 

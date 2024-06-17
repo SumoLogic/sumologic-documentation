@@ -93,13 +93,13 @@ The following table shows the **config** parameters for a Carbon Black Invent
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/carbon-black-inventory/example.json)
+<a href="/files/c2c/carbon-black-inventory/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/carbon-black-inventory/example.tf)
+<a href="/files/c2c/carbon-black-inventory/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

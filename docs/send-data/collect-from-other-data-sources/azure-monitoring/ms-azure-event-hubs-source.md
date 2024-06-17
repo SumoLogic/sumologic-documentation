@@ -57,6 +57,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
   | Shared Access Policy Name | `SumoCollectionPolicy` |
   | Shared Access Policy Key (use primary key) | `mOsLf3RE...` |
 
+
 ### Source configuration
 
 When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
@@ -102,3 +103,8 @@ To configure an Azure Event Hubs Source:
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose Stream to an event hub as the destination. Use the event hub namespace and event hub name configured in the Prerequisites section in the destination details section. You can use the default policy RootManageSharedAccessKey as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+
+## Troubleshooting
+
+For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
+
