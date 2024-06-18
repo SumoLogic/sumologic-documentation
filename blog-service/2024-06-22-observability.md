@@ -1,5 +1,5 @@
 ---
-title: SLO - Treat Absent Data for Window and Threshold Based SLOs (Observability)
+title: Improved Data Handling for Window and Threshold-Based SLOs (Observability)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - slo
