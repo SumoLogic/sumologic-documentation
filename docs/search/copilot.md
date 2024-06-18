@@ -55,27 +55,29 @@ In the scenario depicted in the video, we leverage Copilot to investigate a secu
 1. We conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
 </details>
 
-## Step 1: Open Copilot
+## Recommended workflow
+
+### Step 1: Open Copilot
 
 To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home page.
 
 <img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
-## Step 2: Select a source category
+### Step 2: Select a source category
 
 Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
-## Step 3: Execute a prompt
+### Step 3: Execute a prompt
 
-### Suggestions (recommended)
+#### Suggestions (recommended)
 
 Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
 
 <img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-### Manual entry
+#### Manual entry
 
 :::tip
 Because manually typing an AI prompt requires careful precision for optimal performance, we recommend clicking the prebuilt [Suggestions](#suggestions-recommended) prompts, which have been proven effective through extensive testing.
@@ -89,19 +91,19 @@ You'll need to be very specific. Broad questions do not return good results. Whe
 If the statement in the **Ask Something...** field can't be translated into a query, this field will say "Failed translation".
 :::
 
-## Step 4: Refine your investigation
+### Step 4: Refine your investigation
 
 After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations.
 
 Optionally, follow any of the below steps to refine your search.
 
-### Refine
+#### Refine
 
 Click any of the **Suggestions** > **Refine** prompts to apply suggested refinements to your existing investigation.
 
 <img src={useBaseUrl('img/search/copilot/refine.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-#### Progressive refinement
+##### Progressive refinement
 
 As a best practice, start with a simple prompt, verify the query translation, and refine it gradually. For example:
 
@@ -114,7 +116,7 @@ As a best practice, start with a simple prompt, verify the query translation, an
 Express your chain of thought to the AI by breaking up the prompt into smaller problems that the AI can answer more accurately.
 :::
 
-### Edit query code
+#### Edit query code
 
 If needed, you can edit your log search query code.
 
@@ -136,28 +138,63 @@ If needed, you can edit your log search query code.
    ```
    :::
 
-### Chart type
+#### Chart type
 
 Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view, to visualize your results.
 
 <img src={useBaseUrl('img/search/copilot/chart-types.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="300" />
 
-### Time range
+#### Time range
 
 1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="400" />
 1. Click the search button.<br/><img src={useBaseUrl('img/search/copilot/search-button.png')} alt="Copilot search button" style={{border: '1px solid gray'}} width="250" />
 
-### Feedback
+#### Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
 
 <img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="200" />
 
 
-## Step 5: Open in Log Search
+### Step 5: Open in Log Search
 
-Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo's search functionality. You can continue investigating, save the search, and remediate.
+Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="400" />
 
 If you'd like to start over and begin a new investigation, click the **New Conversation** icon.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="275" />
+
+## Copilot example for Cloud SIEM
+
+Rowena is a SecOps engineer who uses [Cloud SIEM](/docs/cse/). She is worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, she wants to investigate network records and be proactive. She is under pressure to complete her investigation quickly. While familiar with Sumo Logic, she does not write log queries every day and could use a little help. Fortunately, all her Cloud SIEM records are in Sumo Logic. 
+
+1. In Copilot, Rowena types the source for Cloud SIEM network records: 
+   ```
+   * _index=sec_record_network
+   ```
+1. Rowena knows what she is looking for. So, she asks:
+   ```
+   Count logs by action. Sort the results.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-1.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="500" />
+1. As soon as she does that, she can look at the **Suggestions** section on the right. These suggestions are curated based on their relevance to this Cloud SIEM source. Rowena picks a suggestion to compare results to the last hour:
+   ```
+   Count logs by action. Sort the results. versus the previous 1h
+   ```
+   Notice the system translated this suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+1. Switching to table view, Rowena notices “Malicious” in the search results. So, she adds in  `Filter results by action contains Malicious` to the query:
+   ```
+   Count logs by action. Sort the results. Filter results by action contains Malicious.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-3.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   :::note 
+   If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
+   ::: 
+1. Next, Rowena looks for URLs that pertain to the malicious action: 
+   ```
+   Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-4.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+1. Even though the activity was blocked, Rowena can investigate the affected users in the endpoint records next. 
+
+To summarize, Rowena concludes there is malicious activity originating from certain users who need to be investigated further.
