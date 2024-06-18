@@ -10,8 +10,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We are happy to introduce a new update for handling missing data in window and threshold-based Service Level Objectives (SLOs). Previously, any window without data was treated as a successful window and the threshold condition check was skipped. With this update, for windows without data the threshold will be compared against **zero** to determine whether they are successful or not. Below are some of the key advantages of this change:
+We are happy to introduce a new update for handling missing data in window and threshold-based Service Level Objectives (SLOs). Previously, any window without data was treated as successful, and the threshold condition check was skipped. With this update, for windows without data, the threshold will be compared against **zero** to determine their success or failure. 
 
-* **Enhanced Accuracy**. Treating missing data as zero prevents incorrect assumptions about data quality, leading to more reliable SLO evaluations.
-* **Consistency**. Ensures uniformity in data treatment across different intervals, improving the overall consistency of SLO calculations.
+This change will enable expressing SLOs where missing data represents unsuccessful windows with ease. For example, consider an SLO definition where one expects a non-zero number of heartbeat log messages to be present in a given window. Previously, such windows were treated as successful by default. But with this update, modelling such cases will become much easier.
 
