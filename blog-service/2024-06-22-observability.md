@@ -10,7 +10,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We are happy to introduce you to a new change in handling missing data for window and threshold-based Service Level Objectives (SLOs). Previously, any absent data in an interval was assumed to be in the goodCnt category. With this update, missing data will be treated as **zero**, ensuring a more precise determination of the data category after setting the parameter value. Below are some of the key advantages that this change offers:
+We are happy to introduce a new update for handling missing data in window and threshold-based Service Level Objectives (SLOs). Previously, any absent data in an interval was assumed to be in the `goodCnt` category. With this update, missing data will now be treated as **zero**, ensuring a more precise determination of the data category after setting the parameter value. Below are some of the key advantages of this change:
 
-**Enhanced Accuracy**. Treating missing data as 0 prevents incorrect assumptions about the data quality, leading to more reliable SLO evaluations.
-**Consistency**. Ensures uniformity in data treatment across different intervals, improving the overall consistency of SLO calculations.
+* **Enhanced Accuracy**. Treating missing data as zero prevents incorrect assumptions about data quality, leading to more reliable SLO evaluations.
+* **Consistency**. Ensures uniformity in data treatment across different intervals, improving the overall consistency of SLO calculations.
