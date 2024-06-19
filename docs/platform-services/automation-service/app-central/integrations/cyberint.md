@@ -30,7 +30,7 @@ Cyberint offers to proactively monitor and positively impact external risk expos
     - **Company Name**. Company (client) name associated with your Cyberint instance.
     - (Optional) **Verify Server Certificate**. Validates a server’s SSL certificate.
     - (Optional) **Connection Timeout (s)**. Sets the maximum amount of time an integration will wait for a server's response before terminating the connection.
-    - (Optional) **Automation engine**. Select **Cloud execution** (for this certified integration) or select a Bridge option (for custom integrations)
+    - (Optional) **Automation engine**. Select **Cloud execution** (for this certified integration) or select a Bridge option (for custom integrations).
     - (Optional) **Proxy Options**. Specifies the settings for routing network requests through a proxy server to manage and control internet traffic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
 4. Before saving the configuration you can **TEST** the connection to validate the configuration. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-4.png')} style={{border:'1px solid gray'}} alt="cyberint" width="350"/>
 5. Click **SAVE**.
