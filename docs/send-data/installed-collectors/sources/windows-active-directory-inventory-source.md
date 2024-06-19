@@ -28,6 +28,8 @@ The following information is collected:
 * Employee’s manager
 * Security groups to which the employee is assigned, which allows Cloud SIEM to determine the privileges the user has on the company network
 
+## Setup
+
 :::tip
 Install a single Active Directory Source to collect inventory data from your entire AD domain.
 :::
@@ -68,7 +70,7 @@ You can return to this dialog and edit the settings for the Source at any time.
 
 ## Configuring sourceCategory using variables
 
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.
@@ -76,19 +78,19 @@ Not all Sources can define a Source Host value.
 
 When configuring your Source, specify the system environment variables by prepending sys. and wrapping them in double curly brackets `{{}}` in this form:
 
-```bash
+```
 {{sys.VAR_NAME}}
 ```
 
 Where VAR_NAME is an environment variable name, for example:
 
-```bash
+```
 {{sys.PATH}}
 ```
 
 You can use multiple variables, for example:
 
-```bash
+```
 {{sys.PATH}}-{{sys.YourEnvVar}}
 ```
 
@@ -100,7 +102,7 @@ The example above uses a hyphen (`-`) character to separate variable components.
 
 You can incorporate text in the metadata expression, for example:
 
-```bash
+```
 AnyTextYouWant_{{sys.PATH}}_{{sys.YourEnvVar}}
 ```
 
@@ -116,13 +118,13 @@ The Directory Filter allows you to use LDAP queries to filter AD objects based o
 
 For example, to filter AD objects where the department is Sales, use the following LDAP filter:
 
-```sh
+```
 Get-ADUser -LDAPFilter "(&(objectClass=user)(department=Sales))"
 ```
 
 **Usage in Directory Filter**
 
-```plaintext
+```
 (&(objectClass=user)(department=Sales))
 ```
 
@@ -130,13 +132,13 @@ Before applying this filter in the source configuration, you can verify it by ru
 
 Another common filter is to get all user objects:
 
-```plaintext
+```
 (&(objectClass=user)(objectCategory=person))
 ```
 
 This yields AD objects with the following class:
 
-```plaintext
+```
 top;person;organizationalPerson;user
 ```
 
@@ -146,7 +148,7 @@ The Exclude Distinguished Name Suffixes option filters AD objects based solely o
 
 For example, to exclude objects from a specific OU:
 
-```plaintext
+```
 OU=Sales,DC=example,DC=com
 ```
 
