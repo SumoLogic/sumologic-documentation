@@ -21,7 +21,7 @@ Cyberint offers to proactively monitor and positively impact external risk expos
 
 ## Cyberint in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, click on the **Integrations** menu item in the left sidebar and click on installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
+1. To configure the integration, log in to the application, click on the **Integrations** menu item in the left sidebar and click on the installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
 2. The app details will appear. Click on the + button to add new **Resource** (connection configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-2.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
 3. Populate all the required fields (*):
     - **Label**. Unique name of the connection configuration.
