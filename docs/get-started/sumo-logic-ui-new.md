@@ -87,7 +87,7 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 * Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" style={{border: '1px solid gray'}} width="400"/>
 
 :::tip
-Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="400"/>
+Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="300"/>
 :::
 
 ## Using the top navigation bar
@@ -121,7 +121,7 @@ With the Sumo Logic Administrator role, you can manage user accounts, user roles
 
 #### Content Administrator Library
 
-The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
+The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
 
 ### Manage your personal account preferences
 
@@ -326,7 +326,6 @@ You have the flexibility to opt out whenever you choose. Just go to left navigat
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
 
-If you enter the **New UI** URL in your browser, it will still direct you to the **New UI**. We have implemented a translation from the **Classic UI** to the **New UI**, but not the other way around.
 </details>
 
 <details>
