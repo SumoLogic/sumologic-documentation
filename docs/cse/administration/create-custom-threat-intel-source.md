@@ -76,7 +76,7 @@ save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src=
 
 #### Create a CSV file
 
-The .csv file can contain up to three columns, which are described below. 
+The .csv file can contain up to four columns, which are described below. 
 
 | Column     | Description  |   
 | :-- | :-- |
