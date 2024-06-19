@@ -181,7 +181,7 @@ Rowena is a SecOps engineer who uses [Cloud SIEM](/docs/cse/). She is worried ab
    ```
    Count logs by action. Sort the results. versus the previous 1h
    ```
-   Notice the system translated this suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
 1. Switching to table view, Rowena notices “Malicious” in the search results. So, she adds in  `Filter results by action contains Malicious` to the query:
    ```
    Count logs by action. Sort the results. Filter results by action contains Malicious.
