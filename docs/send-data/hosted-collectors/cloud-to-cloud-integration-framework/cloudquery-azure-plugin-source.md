@@ -69,7 +69,7 @@ If the subscription ID is not specified, it will use all visible subscriptions.
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery-azure-plugin/example.json)
+<a href="/files//c2c/cloudquery-azure-plugin/example.json" target="_blank">Download example</a>
 
 ## FAQ
 

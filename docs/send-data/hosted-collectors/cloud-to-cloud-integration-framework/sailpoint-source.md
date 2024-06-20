@@ -103,13 +103,13 @@ See [Create processing rules using JSON](/docs/send-data/use-json-configure-sou
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/sailpoint/example.json)
+<a href="/files/c2c/sailpoint/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/sailpoint/example.tf)
+<a href="/files/c2c/sailpoint/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

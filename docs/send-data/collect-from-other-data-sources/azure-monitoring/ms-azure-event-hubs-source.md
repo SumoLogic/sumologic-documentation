@@ -52,12 +52,11 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
 
   | Field | Value |
   |:---|:---|
-  | Azure Event Hubs Namespace | `cnctest.servicebus.windows.net` |
+  | Azure Event Hubs Namespace | `cnctest` |
   | Event Hubs Instance Name | `my-hub` |
   | Shared Access Policy Name | `SumoCollectionPolicy` |
   | Shared Access Policy Key (use primary key) | `mOsLf3RE...` |
 
-  <img src={useBaseUrl('img/send-data/azure-event-configs.png')} alt="azure event hub" />
 
 ### Source configuration
 
@@ -104,3 +103,8 @@ To configure an Azure Event Hubs Source:
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose Stream to an event hub as the destination. Use the event hub namespace and event hub name configured in the Prerequisites section in the destination details section. You can use the default policy RootManageSharedAccessKey as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+
+## Troubleshooting
+
+For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
+
