@@ -13,8 +13,6 @@ This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics 
 
 You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the [Amazon Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-firehose/?kinesis-blogs.sort-by=item.additionalFields.createdDate&kinesis-blogs.sort-order=desc). AWS CloudWatch Metrics can be streamed using AWS Metric Streams, a managed service that exports CloudWatch metrics data with low latency, and without management overhead or custom integration. With Metric Streams, you can create dedicated, continuous streams of metric data that can be delivered to Sumo Logic by Kinesis Data Firehose.
 
-<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/>
-
 ## How it works
 
 The diagram below illustrates the metrics collection pipeline.
