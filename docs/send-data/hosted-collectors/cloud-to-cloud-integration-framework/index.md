@@ -284,7 +284,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jmaf-source"><img src={useBaseUrl('img/integrations/security-threat-detection/jamf.png')} alt="icon" width="60"/><h4>Jamf</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jmaf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="60"/><h4>Jamf</h4></a>
   <p>Learn how to collect data from the Jamf platform.</p>
   </div>
 </div>
