@@ -200,7 +200,7 @@ sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.nam
 
 ## Create monitors for the Sumo Logic Audit app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ## Viewing Memcached Dashboards
 
