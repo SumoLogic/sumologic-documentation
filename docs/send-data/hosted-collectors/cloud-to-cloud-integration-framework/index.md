@@ -434,6 +434,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security</h4></a>
+        <p>Learn to collect incident and incident events using the Symantec Incidents API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Web Security Service</h4></a>
         <p>Learn to receive WSS Access logs from the Symantec WSS API.</p>
         </div>
