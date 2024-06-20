@@ -256,6 +256,7 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
    <td> &#62; 0   </td>
    <td> &#60;&#61; 0 </td>
   </tr>
+  <tr>
    <td>Memcached - High Memory Usage </td>
    <td>This alert fires when the memory usage is greater than configured threshold value </td>
    <td>Warning   </td>
