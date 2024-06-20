@@ -207,17 +207,52 @@ Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **L
 1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="400" />
 1. Click the search button.<br/><img src={useBaseUrl('img/search/copilot/search-button.png')} alt="Copilot search button" style={{border: '1px solid gray'}} width="250" />
 
-
 ### Step 5: Open in Log Search
 
-Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo's search functionality. You can continue investigating, save the search, and remediate.
+Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="400" />
 
 If you'd like to start over and begin a new investigation, click the **New Conversation** icon.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="275" />
+
+## Copilot example for Cloud SIEM
+
+You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic. 
+
+1. In Copilot, you type the source for Cloud SIEM network records: 
+   ```
+   * _index=sec_record_network
+   ```
+1. You know what you are looking for. So, you ask:
+   ```
+   Count logs by action. Sort the results.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-1.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="500" />
+1. As soon as you do that, you can look at the **Suggestions** section on the right. These suggestions are curated based on their relevance to this Cloud SIEM source. You pick a suggestion to compare results to the last hour:
+   ```
+   Count logs by action. Sort the results. versus the previous 1h
+   ```
+   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+1. Switching to table view, you notice “Malicious” in the search results. So, you add in `Filter results by action contains Malicious` to the query:
+   ```
+   Count logs by action. Sort the results. Filter results by action contains Malicious.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-3.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   :::note 
+   If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
+   ::: 
+1. Next, you look for URLs that pertain to the malicious action: 
+   ```
+   Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.
+   ```
+   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-4.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next. 
+
+To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.
 
 ## Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
 
 <img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="200" />
+
