@@ -98,7 +98,7 @@ The global toolbar (top nav bar) provides access to various functions in the fol
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="350"/>
 
-#### Go to all menu options
+#### Go To... menu options
 
 The **Go To...** button in the top menu lets you quickly access any menu. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
 
