@@ -22,8 +22,7 @@ The Microsoft Graph Security API Source provides a secure endpoint to receive a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
@@ -130,13 +129,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.json)
+<a href="/files/c2c/microsoft-graph-security-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.tf)
+<a href="/files/c2c/microsoft-graph-security-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

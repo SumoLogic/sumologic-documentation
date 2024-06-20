@@ -12,3 +12,7 @@ To update the app, do the following:
         1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 Your upgraded app will be installed in the **Installed Apps** folder and dashboard panels will start to fill automatically.
+
+:::note
+Go to the **Release Notes** tab to see the change log for new updates in the app.
+:::

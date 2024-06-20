@@ -302,13 +302,13 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.json)
+<a href="/files/c2c/akamai-siem-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.tf)
+<a href="/files/c2c/akamai-siem-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

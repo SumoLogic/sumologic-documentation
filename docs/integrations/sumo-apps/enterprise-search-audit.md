@@ -31,7 +31,6 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-
 ## Viewing Enterprise Search Audit App dashboards
 
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.

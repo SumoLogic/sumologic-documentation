@@ -1,7 +1,6 @@
 ---
 title: PhishLabs EIR - IOC Feed
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

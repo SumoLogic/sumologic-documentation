@@ -1,7 +1,6 @@
 ---
 title: Proofpoint TAP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

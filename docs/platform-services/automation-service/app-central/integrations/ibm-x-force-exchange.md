@@ -1,7 +1,6 @@
 ---
 title: IBM X-Force Exchange
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

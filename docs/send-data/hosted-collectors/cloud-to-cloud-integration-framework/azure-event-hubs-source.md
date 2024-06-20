@@ -53,14 +53,12 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
     Copy the Primary/Secondary key associated with this policy.
 1. When [configuring the Azure Event Hubs Source](#vendor-configuration) in Sumo Logic, our input fields might be:
 
-  | Field | Value  |
-  |:----------------------------|:----------------------|
-  | Azure Event Hubs Namespace | cnctest.servicebus.windows.net |
-  | Event Hubs Instance Name   | my-hub               |
-  | Shared Access Policy Name  | SumoCollectionPolicy |
-  | Shared Access Policy Key<br/>(use primary key)  | mOsLf3RE…            |
-
-  ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
+   | Field | Value  |
+   |:----------------------------|:----------------------|
+   | Azure Event Hubs Namespace | cnctest |
+   | Event Hubs Instance Name   | my-hub               |
+   | Shared Access Policy Name  | SumoCollectionPolicy |
+   | Shared Access Policy Key<br/>(use primary key)  | mOsLf3RE…            |
 
 ### Source configuration
 
@@ -136,13 +134,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/azure-event-hubs/example.json)
+<a href="/files/c2c/azure-event-hubs/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/azure-event-hubs/example.tf)
+<a href="/files/c2c/azure-event-hubs/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
