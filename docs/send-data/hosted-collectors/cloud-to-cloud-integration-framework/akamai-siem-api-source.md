@@ -22,10 +22,6 @@ The Akamai SIEM API Source provides a secure endpoint to receive security events
 This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). If your Source exceeds this rate, [contact Sumo Logic support](https://support.sumologic.com) for alternative collection techniques.
 :::
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -44,7 +40,7 @@ When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Be
 
 To configure an Akamai SIEM API Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a HostedCollector.
 1. Search for and select **Akamai SIEM API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -306,13 +302,13 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.json)
+<a href="/files/c2c/akamai-siem-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.tf)
+<a href="/files/c2c/akamai-siem-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

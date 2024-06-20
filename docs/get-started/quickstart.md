@@ -3,7 +3,8 @@ id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
 description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
-tags: [get started, getting started]
+keywords:
+  - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

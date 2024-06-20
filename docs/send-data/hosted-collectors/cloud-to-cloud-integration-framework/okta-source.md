@@ -19,10 +19,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/), [Users API](https://developer.okta.com/docs/reference/api/users/), and [User's Group API](https://developer.okta.com/docs/reference/api/users/#get-user-s-groups).
 It securely stores the required authentication, scheduling, and state tracking information.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -41,7 +37,7 @@ The Okta source requires you to provide the API token to access the data. To cre
 When you create an Okta Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Okta Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Okta**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -94,13 +90,13 @@ eventTypes | String | No | `null` | Comma separated list of events to collect. R
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/okta/example.json)
+<a href="/files/c2c/okta/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/okta/example.tf)
+<a href="/files/c2c/okta/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

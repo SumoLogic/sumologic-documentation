@@ -288,6 +288,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
@@ -493,11 +494,29 @@ module.exports = {
               label: 'Azure Blob Storage',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index'},
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index' },
               items: [
-                'send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage',
-                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
-              ],
+                {
+                  type: 'category',
+                  label: 'Block Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Append Blobs',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs'],
+                },
+                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection',
+              ]
             },
             {
               type: 'category',
@@ -507,8 +526,8 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-monitoring/index'},
               items: [
                 'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
-                'send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
+                'send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq',
               ],
             },
             'send-data/collect-from-other-data-sources/docker-collection-methods',
@@ -658,8 +677,8 @@ module.exports = {
           items: [
             'manage/partitions/data-tiers/create-edit-partition',
             'manage/partitions/data-tiers/view-partition-details',
-            'manage/partitions/data-tiers/data-tiers-faqs',
             'manage/partitions/data-tiers/searching-data-tiers',
+            'manage/partitions/data-tiers/faq',
           ]
         },
         {
@@ -672,7 +691,7 @@ module.exports = {
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
             'manage/partitions/flex/estimate-scan-data',
-            'manage/partitions/flex/flex-pricing-faq',
+            'manage/partitions/flex/faq',
           ]
         },
         'manage/partitions/run-search-against-partition',
@@ -700,7 +719,6 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
-            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -860,7 +878,6 @@ module.exports = {
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
-            'manage/security/audit-indexes/audit-index-access',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
@@ -1900,7 +1917,6 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
-        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -1924,7 +1940,6 @@ integrations: [
          'integrations/microsoft-azure/active-directory-json',
          'integrations/microsoft-azure/active-directory-azure',
          'integrations/microsoft-azure/audit',
-         'integrations/microsoft-azure/arm-integration-faq',
          'integrations/microsoft-azure/azure-analysis-services',
          'integrations/microsoft-azure/azure-api-management',
          'integrations/microsoft-azure/azure-app-configuration',
@@ -2354,6 +2369,7 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
+          'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
         ],
       },
@@ -2456,13 +2472,10 @@ integrations: [
       label: 'Cloud Infrastructure Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
+      link: {type: 'doc', id: 'security/cloud-infrastructure-security/index'},
       items: [
-        'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
-        'cloud-infrastructure-security/data-lake',
-        'cloud-infrastructure-security/audit-and-compliance',
-        'cloud-infrastructure-security/threat-detection-and-investigation',
-        'cloud-infrastructure-security/application-security',
+        'security/cloud-infrastructure-security/introduction',
+        'security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
       ],
     },
     {
@@ -2722,6 +2735,20 @@ integrations: [
       },
       ],
     },
+    {
+      type: 'category',
+      label: 'Additional Security Features',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'security/additional-security-features/index'},
+      items: [
+        'security/additional-security-features/introduction',
+        'security/additional-security-features/threat-detection-and-investigation',
+        'security/additional-security-features/data-lake',
+        'security/additional-security-features/audit-and-compliance',
+        'security/additional-security-features/application-security',
+      ],
+    },
   ],
   api: [
     {
@@ -2802,7 +2829,6 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'get-started/sumo-logic-ui-new',
-        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],

@@ -1,7 +1,6 @@
 ---
 title: Lacework
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

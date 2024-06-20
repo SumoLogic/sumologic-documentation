@@ -23,10 +23,6 @@ The Proofpoint integration supports the following four event types:
  * Clicks Permitted
  * Clicks Blocked
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 :::note
 The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in their [documentation](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). The integration will only be able to fetch a maximum of the last 7 days data. So there is a chance of data loss if the C2C stops functioning for more than a 7-day time interval.
 :::
@@ -187,7 +183,7 @@ When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Befo
 
 To configure a Proofpoint TAP Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Proofpoint TAP**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -242,13 +238,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/proofpoint-tap/example.json)
+<a href="/files/c2c/proofpoint-tap/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/proofpoint-tap/example.tf)
+<a href="/files/c2c/proofpoint-tap/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

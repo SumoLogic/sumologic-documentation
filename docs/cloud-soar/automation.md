@@ -495,7 +495,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
     ```
     :::note
     * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
-    * For information on additional fields, please refer to the [Cloud SOAR APIs](https://help.sumologic.com/docs/api/cloud-soar/) documentation. 
+    * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation. 
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
 1. Click **Save**.

@@ -1,7 +1,6 @@
 ---
 title: Mimecast
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

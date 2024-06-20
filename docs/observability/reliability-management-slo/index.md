@@ -1,15 +1,19 @@
 ---
 slug: /observability/reliability-management-slo
 title: Reliability Management (SLOs/SLIs)
-description: Learn how to use Sumo Logic Reliability Management, including creating SLO monitors, configuring queries, setting SLIs, and using dashboards.
-tags: [Reliability Management, SLO]
+description: Learn how to use Sumo Logic Reliability Management, a comprehensive solution that includes creating SLO monitors, configuring queries, setting SLIs, and utilizing dashboards.
+keywords:
+  - slo
+  - sli
+  - reliability management
+  - service-level objective
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A reliable end user experience is the key goal for observability. In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
 
-This guide provides an overview of Sumo Logic Reliability Management using Service Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
+This guide provides an overview of Sumo Logic Reliability Management using Service-Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
 import Iframe from 'react-iframe';
 
@@ -123,10 +127,10 @@ SLO data is retained for 800 days. It is retained separately, regardless of unde
 
 ## Accessing SLOs
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. 
+<!--Kanso
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
  Kanso-->
 
 In the SLO screen, you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.

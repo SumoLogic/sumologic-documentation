@@ -40,9 +40,23 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Viewing Enterprise Audit app dashboards
+## Upgrading the Enterprise Audit apps (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit apps (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Enterprise Audit App Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Enterprise Audit - Collector and Data Forwarding Management app
 

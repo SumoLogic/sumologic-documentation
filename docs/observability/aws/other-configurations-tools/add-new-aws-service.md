@@ -1,13 +1,13 @@
 ---
 id: add-new-aws-service
-title: Add a New AWS Service to the AWS Observability Explore Hierarchy
+title: Add a New AWS Service to the AWS Observability View Hierarchy
 sidebar_label: Add a New AWS Service
 description: Learn how to add a new dashboard to the Hierarchy.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The AWS Observability view in Explore provides a unified view of your AWS Services within Sumo Logic from multiple AWS accounts. It shows a hierarchy across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow.
+The [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) provides a unified view of your AWS Services within Sumo Logic from multiple AWS accounts. It shows a hierarchy across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow.
 
 By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, Amazon DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
 
@@ -22,7 +22,7 @@ hierarchy: 
 
 ## Add a new service to the AWS Observability View
 
-As dashboards can be created based on both logs and metrics data, in this section, we identify how to add dashboards based on both data types to the AWS Observability Explore views. 
+As dashboards can be created based on both logs and metrics data, in this section, we identify how to add dashboards based on both data types to the AWS Observability views. 
 
 ## Step 1. Enrich Metrics Data 
 
@@ -182,8 +182,7 @@ Replace these variables with your own in the code samples in this section:
 
 Once you are done with the above steps, the AWS service will be added to the AWS Observability view hierarchy. To validate this:
 
-1. Go to Explorer in your Sumo Logic account.
-1. Select AWS Observability from the dropdown.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. Then select **AWS Observability** from the dropdown menu in the upper left. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Infrastructure Monitoring > AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **Observability**.  Kanso-->
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
 <img src={useBaseUrl('img/observability/Validate_hierarchy.png')} alt="Validate hierarchy" style={{border: '1px solid gray'}} width="400" />
@@ -269,7 +268,7 @@ Refer to this document for further details on how to use filters with template 
 ### Improve Queries to include variables in log queries (Optional)
 
 Write log queries to include variables so data can be filtered in the
-Explore view. See the Sumo Logic help doc for details on how to use
+[AWS Observability view](/docs/dashboards/explore-view/#aws-observability). See the Sumo Logic help doc for details on how to use
 template variables in log queries.
 
 For example:

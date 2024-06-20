@@ -28,10 +28,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CloudQuery integration is used to pull inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -51,7 +47,7 @@ import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 When you create an CloudQuery source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a CloudQuery Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CloudQuery**.
 1. Enter a **Name** for the source. The description is optional. 
@@ -101,13 +97,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{AccountComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery/accountExample.json)
+<a href="/files/c2c/cloudquery/accountExample.json" target="_blank">Download example</a>
 
 #### Organization level configuration
 
 <CodeBlock language="json">{OrgComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery/orgExample.json)
+<a href="/files/c2c/cloudquery/orgExample.json" target="_blank">Download example</a>
 
 ### Terraform example
 
@@ -115,13 +111,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{AccountTFExample}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery/accountExample.tf)
+<a href="/files/c2c/cloudquery/accountExample.tf" target="_blank">Download example</a>
 
 #### Organization level configuration
 
 <CodeBlock language="json">{OrgTFExample}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery/orgExample.tf)
+<a href="/files/c2c/cloudquery/orgExample.tf" target="_blank">Download example</a>
 
 ## Limitations
 

@@ -22,10 +22,6 @@ The Symantec Web Security Service Source provides a secure endpoint to receive W
 * Logs are ingested in batches of 1,000.
 * Logs are polled every five minutes.
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -60,7 +56,7 @@ When you create a Symantec Web Security Service Source, you add it to a Hosted 
 
 To configure a Symantec Web Security Service Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Symantec Web Security Service**.<br/> ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
@@ -106,13 +102,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/symantec-web-security-service/example.json)
+<a href="/files/c2c/symantec-web-security-service/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/symantec-web-security-service/example.tf)
+<a href="/files/c2c/symantec-web-security-service/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

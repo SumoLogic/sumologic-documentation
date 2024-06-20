@@ -2,6 +2,11 @@
 id: time-reference
 title: Timestamps, Time Zones, Time Ranges, and Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
+keywords:
+  - time
+  - time reference
+  - timezone
+  - time zone
 ---
 
 import Tabs from '@theme/Tabs';
@@ -123,7 +128,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to step 2.
-   * To edit the timestamp settings for an existing Source, navigate to **Manage Data** > **Collection** > **Collection**. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="source-edit" width="600"/>
+   * To edit the timestamp settings for an existing Source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="source-edit" width="600"/>
 1. Navigate to the **Advanced Options for Logs (Optional)** section.<br/><img src={useBaseUrl('img/send-data/advanced-options-logs.png')} alt="advanced-options-logs" />
 1. Under **Timestamp Format**, select **Specify a format** > **+ Add Timestamp Format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="specify-timestamp-format" width="300"/>
 1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>

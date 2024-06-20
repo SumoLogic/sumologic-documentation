@@ -159,7 +159,7 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ## Viewing AWS API Gateway dashboards
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of our AWS Observability solution.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of our AWS Observability solution.
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 

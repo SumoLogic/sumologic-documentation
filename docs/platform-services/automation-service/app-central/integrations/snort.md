@@ -1,7 +1,6 @@
 ---
 title: Snort
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

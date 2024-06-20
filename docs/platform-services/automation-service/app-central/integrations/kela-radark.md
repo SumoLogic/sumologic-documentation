@@ -1,7 +1,6 @@
 ---
 title: Kela RaDark
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

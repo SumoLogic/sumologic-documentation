@@ -99,12 +99,9 @@ More configuration examples (i.e. OpenShift) can found seen in [this document](h
 
 ## Viewing Data In Sumo Logic
 
-Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
+Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards]/docs/integrations/containers-orchestration/kubernetes#installing-the-kubernetes-app or [open Kubernetes view](/docs/observability/kubernetes/monitoring#open-kubernetes-views) in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
 <img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} />
-
-[sumo-k8s-app-dashboards]: /docs/integrations/containers-orchestration/kubernetes#installing-the-kubernetes-app
-[open a new explore tab]: /docs/observability/kubernetes/monitoring#open-explore
 
 ## Customizing Installation
 

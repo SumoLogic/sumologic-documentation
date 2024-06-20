@@ -27,7 +27,7 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [metrics query builder](/docs/metrics/metrics-queries/metrics-explorer/) with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard utilizes the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for Dashboard.
 
@@ -51,7 +51,7 @@ The following table shows the availability of features for Dashboard.
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack-in-explore) |
+| Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 

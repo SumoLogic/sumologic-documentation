@@ -1,15 +1,14 @@
 ---
 title: GreyNoise
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/greynoise.png')} alt="greynoise" width="100"/>
 
-***Version: 1.5  
-Updated: Feb 26, 2024***
+***Version: 1.6  
+Updated: May 20, 2024***
 
 GreyNoise tells security analysts what not to worry about. They do this by curating data on IPs that saturate security tools with noise. This unique perspective helps analysts confidently ignore irrelevant or harmless activity, creating more time to uncover and investigate true threats. Includes Actions to allow IP enrichments and GNQL queries via the GreyNoise API.
 
@@ -35,3 +34,4 @@ GreyNoise tells security analysts what not to worry about. They do this by curat
     * Code refactoring
     * Fixed Typo
     * Other minor fixes
+* May 20, 2024 (v1.6) - Fixed syntax Error with API URL

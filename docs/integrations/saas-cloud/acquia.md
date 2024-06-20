@@ -150,7 +150,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 
 To create a new Sumo Logic hosted collector, do the following:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Click **Add Collector**.
 3. Click **Hosted Collector**.
 4. Provide a **Name** for the Collector.
@@ -250,6 +250,18 @@ This section provides instructions on how to install the Acquia App, as well as 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Acquia app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Acquia app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Acquia dashboards
 

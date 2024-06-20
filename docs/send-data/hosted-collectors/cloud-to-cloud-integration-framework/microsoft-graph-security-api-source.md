@@ -18,16 +18,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
@@ -73,7 +68,7 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Graph Security API**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -134,13 +129,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.json)
+<a href="/files/c2c/microsoft-graph-security-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.tf)
+<a href="/files/c2c/microsoft-graph-security-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
