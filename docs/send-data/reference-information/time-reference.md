@@ -131,7 +131,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    * To edit the timestamp settings for an existing Source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="source-edit" style={{border: '1px solid gray'}} width="600"/>
 1. Navigate to the **Advanced Options for Logs (Optional)** section.<br/><img src={useBaseUrl('img/send-data/advanced-options-logs.png')} alt="advanced-options-logs" style={{border: '1px solid gray'}} />
 1. Under **Timestamp Format**, select **Specify a format** > **+ Add Timestamp Format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="specify-timestamp-format" style={{border: '1px solid gray'}} width="300"/>
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" width="600"/><br/>
+1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" style={{border: '1px solid gray'}} width="600"/><br/>
    :::note
    If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
    :::
