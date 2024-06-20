@@ -1,8 +1,8 @@
 ---
 id: config-based-source
-title: Config Based Source
-sidebar_label: Config Based Source
-description: Learn how to set up a Config Based C2C to collect data into the Sumo Logic environment.
+title: Universal Connector
+sidebar_label: Universal Connector
+description: Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-With our configuration-based (_config-based_) cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
+With our Universal Connector (_config-based_) cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
 
 ## Setup
 
