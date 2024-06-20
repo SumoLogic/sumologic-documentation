@@ -44,7 +44,7 @@ There are several role capabilities that are required to work with orgs:
 * **Create Trial Organizations**. This capability is required to create and provision trial organizations. 
 * **Upgrade Trial Organizations**. This capability is required to upgrade trial organizations. 
 
-## Create a new organization
+## Create a new child organization
 
 This section has instructions for creating a new org. 
 
@@ -57,6 +57,10 @@ After you create a new org, you can’t delete it.
 1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/subscriptions/create-new-org.png')} alt="create-new-org.png" style={{border:'1px solid gray'}} width="400" />
 
 ### Allocate Credits
+
+:::note
+You need to set the baseline to allocate credits.
+:::
 
 1. **Plan Type**. Select your organization's plan type. 
 1. **Deployment**. Select a Sumo Logic deployment from the list.
@@ -76,11 +80,12 @@ After you create a new org, you can’t delete it.
             Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
             :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
-1. The calculator now shows the recommended credit allocation and the [throttling limits](/docs/manage/ingestion-volume/log-ingestion/).
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how much credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
+1. Throttling limits displays the rate of ingestion. To know more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 1. Click **Done**, once you are done adding the credits.
 
-* **Credits to be allocated**.
-* **Remaining Credits (Parent)**.
+* **Credits to be allocated**. Displays the allocated credits for this child org once the baseline is set.
+* **Remaining Credits (Parent)**. Displays the number of credits that have not yet been allocated to child orgs.
 
 ### Basic Details
 
@@ -91,15 +96,27 @@ After you create a new org, you can’t delete it.
 
 ## Update an org's credits allocation
 
+:::info
+If the org has already depleted with the credits, you can see a red color warning icon in the **Usage %** column and a red colured usage bar in the **Allocation & usage** section when you view the selected org.
+:::
+
 To change an org's credits allocation:
 1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-1. In the **Modify Allocation**, you can add or reduce the credit based on your requirement. Make sure that the credit that you enter is more than the credit that is already consumed. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid gray'}} alt="allocation" width="450" />
-1. If you want to edit the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.
+1. In the **Modify Allocation**, you can increase or decrease the credit based on your requirement.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
+      :::note
+      Ensure your total new allocation is not less than the consumed credits.
+      :::
+      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
+      Click on **View Details**, to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+1. (Optional) If you want to modify the allocation by editing the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation. 
+      1. Depending on the credit recommendation for the new baseline, edit the credit in the **Modify Allocation** section. For example, if you have increased the Continuous Log Ingest value and in the recommended allocation you are suggested to add more credits to the org. Navigate to the **Modify Allocation** section, select **Credits to be Added** and enter the recommended additional credit value.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+1. Click **Save**, once you finish editing the credit values.
 
 ## Monitor Cloud SIEM provisioning
+
 Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} style={{border:'1px solid gray'}} alt="status" />

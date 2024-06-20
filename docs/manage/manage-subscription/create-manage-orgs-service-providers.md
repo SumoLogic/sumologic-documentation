@@ -132,20 +132,36 @@ After you create a child org, you can’t delete it.
             Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
             :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how much credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
 1. Click **Done** after adding the baseline.
 1. Click **Save** to save the changes.
 
+:::info
+If a POV trial org is not upgraded to Enterprise plan after 45 days, the org will be degraded to **CF Credit - Free** plan. If you need to upgrade this plan to Enterprise, follow the below steps:
+1. Click the org with  **CF Credit - Free** plan that you want to upgrade.
+1. The right pane appears with information about the org, click **Upgrade**.
+:::
+
 ## Update an org's credits allocation
 
-You can update an Enterprise org’s credits allocation, but not a Trial POV org.
+:::info
+If the org has already depleted with the credits, you can see a red color warning icon in the **Usage %** column and a red colured usage bar in the **Allocation & usage** section when you view the selected org.
+:::
 
 To change an org's credits allocation:
 1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-1. In the **Modify Allocation**, you can add or reduce the credit based on your requirement. Make sure that the credit that you enter is more than the credit that is already consumed. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid gray'}} alt="allocation" width="450" />
-1. If you want to edit the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.
+1. In the **Modify Allocation**, you can increase or decrease the credit based on your requirement.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
+      :::note
+      Ensure your total new allocation is not less than the consumed credits.
+      :::
+      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
+      Click on **View Details**, to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+1. (Optional) If you want to modify the allocation by editing the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation. 
+      1. Depending on the credit recommendation for the new baseline, edit the credit in the **Modify Allocation** section. For example, if you have increased the Continuous Log Ingest value and in the recommended allocation you are suggested to add more credits to the org. Navigate to the **Modify Allocation** section, select **Credits to be Added** and enter the recommended additional credit value.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+1. Click **Save**, once you finish editing the credit values.
 
 ## Deactivate a POV Trial org
 
