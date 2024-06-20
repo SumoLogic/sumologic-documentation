@@ -262,7 +262,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 Create or modify telegraf.conf, and copy and paste the text below:
 ```sql
-[[inputs.Haproxy]]
+[[inputs.haproxy]]
   username = "username_CHANGEME"
   password = "password_CHANGEME"
   servers = ["http://127.0.0.1:8888/stats"]
@@ -289,7 +289,7 @@ Please enter values for the following parameters (marked `CHANGEME` above):
     **Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
 
 * `data_format - “prometheus”` In the output plugins section, that is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
-* `proxy_system: “haproxy”` - In the input plugins section: `[[inputs.Haproxy]]` - This value identifies the proxy system.
+* `proxy_system: “haproxy”` - In the input plugins section: `[[inputs.haproxy]]` - This value identifies the proxy system.
 * `component: “proxy”`.  In the input plugins section: This value identifies application components.
 
 For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
