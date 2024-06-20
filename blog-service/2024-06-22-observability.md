@@ -12,4 +12,4 @@ authors:
 
 We are happy to introduce a new update for handling missing data in window and threshold-based Service Level Objectives (SLOs). Previously, any window without data was treated as successful, and the threshold condition check was skipped. With this update, for windows without data, the threshold will be compared against **zero** to determine their success or failure. 
 
-This change simplifies expressing SLOs where missing data signifies unsuccessful windows. For example, consider an SLO definition where a non-zero number of heartbeat log messages is expected in a given window. Previously, such windows were treated as successful by default. With this update, modeling such cases will become much easier and more accurate.
+This change simplifies expressing SLOs where missing data signifies unsuccessful windows. For example, consider an SLO definition where absence of heartbeat log messages signifies an unsuccessful window. Previously, such windows were treated as successful by default. With this update, modeling such cases will become much easier and more accurate.
