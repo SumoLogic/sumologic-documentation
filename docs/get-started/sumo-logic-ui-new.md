@@ -86,10 +86,6 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 * **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="400"/>
 * Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" style={{border: '1px solid gray'}} width="400"/>
 
-Use the **Library** search bar to find the above quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" style={{border: '1px solid gray'}} width="550"/>
-
-If you're an admin, you can view the Library in [Content Administrator](#content-administrator-library) mode.
-
 :::tip
 Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="300"/>
 :::
