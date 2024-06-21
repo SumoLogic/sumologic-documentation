@@ -113,7 +113,7 @@ To change an org's credits allocation:
 1. (Optional) If you want to modify the allocation by editing the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
       1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation. 
       1. Depending on the credit recommendation for the new baseline, edit the credits in the **Modify Allocation** section. For example, if you have increased the Continuous Log Ingest value and the recommended allocation suggests adding more credits to the organization, navigate to the **Modify Allocation** section, select **Credits to be Added**, and enter the recommended additional credit value.<br/><img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-1. Click **Save**, once you finish editing the credit values.
+1. Click **Save** once you finish editing the credit values.
 
 ## Monitor Cloud SIEM provisioning
 
