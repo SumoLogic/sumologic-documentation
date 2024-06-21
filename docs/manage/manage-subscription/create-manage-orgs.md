@@ -81,7 +81,7 @@ You need to set the baseline to allocate credits.
             :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how much credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
-1. Throttling limits displays the rate of ingestion. To know more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
+1. Throttling limits displays the rate of ingestion. To learn more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 1. Click **Done**, once you are done adding the credits.
 
 * **Credits to be allocated**. Displays the allocated credits for this child org once the baseline is set.
