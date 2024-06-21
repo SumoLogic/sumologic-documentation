@@ -68,7 +68,7 @@ To configure a Symantec Endpoint Security Source, follow the steps below:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
