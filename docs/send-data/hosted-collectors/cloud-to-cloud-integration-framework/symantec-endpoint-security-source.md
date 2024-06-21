@@ -35,7 +35,7 @@ The Symantec Endpoint Security source requires you to provide an authentication 
 1. Click on **Add Client Application**.
 1. Enter any name for the application and press the **Add** button. The client application details screen appears.
 1. Select required privileges for the client application and click **Save**.
-1. Click on **More Options icon** and select **Client Secret**.
+1. Click the **More Options** icon and select **Client Secret**.
 1. Copy the **OAuth Credentials** value.
 1. Run the below curl command with the required headers to generate the bearer token:
     ```
