@@ -16,10 +16,10 @@ Jira is a proprietary issue tracking product developed by Atlassian that allows 
 
 * **Add Comment to Issue** *(Notification)* - Add a comment to the specified issue.
 * **Add Issue Attachments To Incident** *(Enrichment)* - Add attachment from Jira issue to Cloud SOAR Incident.
-* **Check Issue Status Schedule** *(Scheduled)* - To wait for or check a status update of a Jira ticket/issue
+* **Check Issue Status Schedule** *(Scheduled)* - To wait for or check a status update of a Jira ticket/issue.
 * **Create Issue** (*Notification*) - Create a new issue in the specified Jira project.
 * **Delete Issue** (*Containment*) - Delete the specified issue.
-* **Download Attachment** *(Enrichment)* - Returns the contents of an attachment in an encoded format that can be used for further analysis selecting output.raw in your Playbooks.
+* **Download Attachment** *(Enrichment)* - Returns the contents of an attachment in an encoded format that can be used for further analysis selecting `output.raw` in your playbooks.
 * **Get Issue** *(Enrichment)* - Returns the details for an issue.
 * **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
 * **List Issue Types** *(Enrichment)* - List issue types.
@@ -64,8 +64,8 @@ Ticketing System
 
 * June 22, 2022 - First upload
 * December 19, 2022
-    + solved an issue for which the Search Into Issues action could not work correctly searching by JQL
-    + added hint for Host
+    + Solved an issue for which the Search Into Issues action could not work correctly searching by JQL
+    + Added hint for Host
 * March 27, 2023 (v2.2)
     + Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
     + Deprecated Endpoint updated

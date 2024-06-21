@@ -59,4 +59,4 @@ Threat Intelligence-Reputation
 * April 4, 2024 (v1.11) New action added:
     + Search VirusTotal
 * June 20, 2024 (v1.12)
-    + Updated action Scan File V2: added checkbox field for handling files passed through output.raw
+    + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
