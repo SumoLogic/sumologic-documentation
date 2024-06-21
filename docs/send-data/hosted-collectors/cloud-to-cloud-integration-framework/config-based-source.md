@@ -43,7 +43,7 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 ## Source configuration
 
-When you create an Config Based Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
@@ -277,7 +277,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter  | Type        | Value                                         | Required | Description                      |
 |:-----------|:------------|:----------------------------------------------|:---------|:---------------------------------|
 | schemaRef  | JSON Object | `{"type":"Config Based"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Universal"`                                 | Yes      | Type of source.                  |
+| sourceType | String      | `"Config Based"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration Object
