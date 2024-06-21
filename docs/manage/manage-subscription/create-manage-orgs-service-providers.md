@@ -156,7 +156,7 @@ To change an org's credits allocation:
       :::note
       Ensure your total new allocation is not less than the consumed credits.
       :::
-      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
+      You can select **Credits to be Added** and enter the recommended credit value or desired credit amount to top-up and avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
       Click on **View Details**, to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
 1. (Optional) If you want to modify the allocation by editing the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
       1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation. 
