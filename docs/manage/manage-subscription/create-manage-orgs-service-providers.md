@@ -102,7 +102,7 @@ After you create a child org, you can’t delete it.
       * **Metrics**. Estimated daily metric data points per minute (DPM) ingestion.
       * **Tracing**. Estimated daily ingestion of traces.
       * **CSE Log Ingest**. Estimated daily Cloud SIEM ingestion.
-1. Click **Done**, to go back.
+1. Click **Done** to go back.
 
 ### Basic Details
 
