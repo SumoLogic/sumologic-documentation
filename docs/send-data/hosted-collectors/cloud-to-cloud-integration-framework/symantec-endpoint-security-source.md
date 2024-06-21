@@ -29,7 +29,7 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 
 ### Vendor configuration
 
-The Symantec Endpoint Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
+The Symantec Endpoint Security source requires you to provide credentials. To obtain the client secret, follow the steps below.
 1. Sign in to the [Symantec Endpoint Security](https://login.broadcom.com/) platform.
 1. Go to **Integration** and select **Client Applications**.
 1. Click on **Add Client Application**.
