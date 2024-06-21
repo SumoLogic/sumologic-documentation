@@ -139,7 +139,7 @@ After you create a child org, you can’t delete it.
 :::info
 If a POV trial org is not upgraded to Enterprise plan after 45 days, the org will be degraded to **CF Credit - Free** plan. If you need to upgrade this plan to Enterprise, follow the below steps:
 1. Click the org with  **CF Credit - Free** plan that you want to upgrade.
-1. The right pane appears with information about the org, click **Upgrade**.
+1. The right pane appears with information about the org. Click **Upgrade**.
 :::
 
 ## Update an org's credits allocation
