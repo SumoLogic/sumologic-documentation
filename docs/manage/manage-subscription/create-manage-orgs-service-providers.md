@@ -126,7 +126,7 @@ After you create a child org, you can’t delete it.
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
    * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
    * **Tracing**. Enter estimated daily ingestion of traces.
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM, the Cloud Log Ingest field appears.
+1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. The Cloud Log Ingest field appears.
       1. Enter a value in GB.
             :::note
             Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
