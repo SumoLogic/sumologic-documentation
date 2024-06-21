@@ -21,7 +21,6 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 
 | Polling Interval | Data Source | Description |
 | :--- | :--- |  :--- |
-| 5 min |  [Token](https://api.sep.securitycloud.symantec.com/v1/oauth2/tokens)| Used to generate a bearer token to subsequent API calls. |
 | 5 min |  [Incidents](https://api.sep.securitycloud.symantec.com/v1/incidents)| Used to retrieve incidents and incident events. |
 | 5 min |  [Incident Events](https://api.sep.securitycloud.symantec.com/v1/incidents/events)| Used to retrieve incident related events based on time range filter. |
 
