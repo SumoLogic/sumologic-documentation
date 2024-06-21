@@ -132,7 +132,7 @@ After you create a child org, you can’t delete it.
             Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
             :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
-1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how much credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
 1. Click **Done** after adding the baseline.
 1. Click **Save** to save the changes.
 
