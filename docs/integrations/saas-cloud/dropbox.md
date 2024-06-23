@@ -92,7 +92,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Active Team Members"
 _sourceCategory="dropboxSource"

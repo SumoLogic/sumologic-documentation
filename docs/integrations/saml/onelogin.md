@@ -109,7 +109,7 @@ Each event is a single-line JSON, containing information such as:
 }
 ```
 
-## Sample query
+## Sample queries
 
 ```sql title="Name - Events by User"
 _sourceCategory=onelogin

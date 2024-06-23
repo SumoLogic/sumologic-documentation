@@ -54,7 +54,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
       "id": "450256789"
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory=miro

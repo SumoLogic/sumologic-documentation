@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 

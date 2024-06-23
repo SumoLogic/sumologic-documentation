@@ -147,7 +147,7 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/squadcast type "incident.triggered"

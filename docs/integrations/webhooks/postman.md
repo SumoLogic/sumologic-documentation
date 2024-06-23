@@ -67,7 +67,7 @@ The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/postman "collection" "_postman_id"

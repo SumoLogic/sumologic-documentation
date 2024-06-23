@@ -53,7 +53,7 @@ The Sumo Logic app for Stripe ingests Stripe events into Sumo Logic through an o
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourcecategory=webhook/stripe object

@@ -35,7 +35,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, a
 }
 ```
 
-### Sample query
+### Sample queries
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 

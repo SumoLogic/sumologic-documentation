@@ -114,7 +114,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/netlify" "name"

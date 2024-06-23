@@ -181,7 +181,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample query
+### Sample queries
 
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident

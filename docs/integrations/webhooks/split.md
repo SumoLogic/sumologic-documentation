@@ -87,7 +87,7 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/split type auditLogType

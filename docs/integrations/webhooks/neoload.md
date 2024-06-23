@@ -42,7 +42,7 @@ The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic throug
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/neoload"

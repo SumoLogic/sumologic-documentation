@@ -73,7 +73,7 @@ The JFrog Xray app uses the following log types:
 
 
 
-### Query Sample
+### Sample queries
 
 The sample query is from Watches Invoked panel of the **JFrog Xray - Overview** dashboard.
 

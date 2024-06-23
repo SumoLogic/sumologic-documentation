@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics app uses Windows Security 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
