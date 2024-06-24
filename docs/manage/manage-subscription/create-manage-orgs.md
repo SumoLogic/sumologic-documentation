@@ -58,41 +58,40 @@ After you create a new org, you can’t delete it.
 
 ### Allocate Credits
 
-:::note
-You need to set the baseline to allocate credits.
-:::
-
 1. **Plan Type**. Select your organization's plan type. 
 1. **Deployment**. Select a Sumo Logic deployment from the list.
       :::note
       Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
       :::
-1. Click **Set Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
-1. Enter the following:
+1. Click **Set Baseline**.
+      :::note
+      You need to set the baseline to allocate credits.
+      :::
+      <img src={useBaseUrl('img/subscriptions/allocate-credits-set-baseline.png')} alt="allocate-credits-set-baseline" style={{border:'1px solid gray'}} width="450" />
+1. In the credit calculator, enter the following:
       * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
       * **Frequent Log Ingest.** Enter estimated daily ingestion to the Frequent Tier.
       * **Infrequent Log Ingest.** Enter estimated daily ingestion to the Infrequent Tier.
       * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
-      * **Tracing**. Enter estimated daily ingestion of traces.
+      * **Tracing**. Enter estimated daily ingestion of traces.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
 1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. The Cloud Log Ingest field appears.
       1. Enter a value in GB.
             :::note
             Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
             :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
-1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndown in your contact, and the days remaining in your contract.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contact, and the days remaining in your contract.
 1. Throttling limits displays the rate of ingestion. To learn more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
-1. Click **Done**, once you are done adding the credits.
-
-* **Credits to be allocated**. Displays the allocated credits for this child org once the baseline is set.
-* **Remaining Credits (Parent)**. Displays the number of credits that have not yet been allocated to child orgs.
+1. Click **Done**, once you are done adding the basline.
+1. **Credits to be allocated**. The recommended credits for this child org will be displayed once you set the baseline. You can add or reduce the credit based on your requirement.
+1. **Remaining Credits (Parent)**. Total balance credits available in the parent org after using the credits for child org.
 
 ### Basic Details
 
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
 1. **Account Owner First Name**. Enter the account owner’s first name.
-1. **Account Owner Last Name**. Enter the account owner’s last name.
+1. **Account Owner Last Name**. Enter the account owner’s last name.<br/> <img src={useBaseUrl('img/subscriptions/basic-details.png')} alt="basic-details" style={{border:'1px solid gray'}} width="450" />
 
 ## Update an org's credits allocation
 
@@ -104,15 +103,21 @@ To change an org's credits allocation:
 1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-1. In the **Modify Allocation**, you can increase or decrease the credit based on your requirement.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
+1. In the **Modify Allocation**, you can increase or decrease the credits based on your requirement.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
       :::note
       Ensure your total new allocation is not less than the consumed credits.
       :::
-      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period. <br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
-      Click on **View Details**, to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
-1. (Optional) If you want to modify the allocation by editing the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-      1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation. 
-      1. Depending on the credit recommendation for the new baseline, edit the credits in the **Modify Allocation** section. For example, if you have increased the Continuous Log Ingest value and the recommended allocation suggests adding more credits to the organization, navigate to the **Modify Allocation** section, select **Credits to be Added**, and enter the recommended additional credit value.<br/><img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period.
+      
+      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
+      <br/>Click on **View Details**, to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+      
+      **Example 2**: Consider you need to increase credits to your child org. The below image shows that you have used 35 credits out of 31026 credits allocated to your child org. Now, if you wish to increase the credits to your child org, select **Credits to be Added** and add the additional credits required.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
+1. If you want to modify the baseline, click on **View Baseline**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Click on **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.
+      1. Depending on the new baseline values, the calculator now shows the recommended credit allocation, which provides a suggestion on how many credits you would need to add for the child org.<br/><img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion.<br/><img src={useBaseUrl('img/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
+      1. (Optional) Click on **View Details**, to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
 ## Monitor Cloud SIEM provisioning
