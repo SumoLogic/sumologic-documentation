@@ -18,7 +18,7 @@ Sumo Logic provides the ability to configure private connectivity between your A
 Following sources are supported for AWS PrivateLink: 
 
 - **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to the Sumo Logic.
-- **Sumo Logic OpenTelemetry Distro Collector sources**. Data collected on OpenTelemetry Distro collectors deployed on customer VPC and sent to the Sumo Logic
+- **Sumo Logic OpenTelemetry Distro Collector sources**. Data collected on OpenTelemetry Distro collectors deployed on customer VPC and sent to Sumo Logic.
 - **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
 - **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter). 
 
