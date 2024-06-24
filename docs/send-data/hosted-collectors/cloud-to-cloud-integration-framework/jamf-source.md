@@ -1,6 +1,6 @@
 ---
 id: jamf-source
-title: Jamf Source (Beta)
+title: Jamf Source
 sidebar_label: Jamf
 tags:
   - cloud-to-cloud
@@ -14,12 +14,6 @@ import TerraformExample from '!!raw-loader!/files/c2c/jamf/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jamf.png')} alt="thumbnail icon" width="85"/>
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 Jamf is a software company that specializes in mobile device management (MDM) and endpoint management solutions for Apple devices such as Macs, iPhones, iPads, and Apple TVs. This Jamf integration helps you to ingest inventory data using the [Jamf Pro API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/jamf-pro-api-overview) and [Jamf Classic API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/getting-started-2).
 
@@ -55,6 +49,7 @@ To configure the Jamf Source:
 1. In **Base URL**, enter your Jamf instance domain, `https://yourServer.jamfcloud.com`.
 1. In **Client ID**, enter the Client ID you generated from the Jamf platform.
 1. In **Client Secret**, enter the Client Secret you generated from the Jamf platform.
+1. (Optional) In **Look Back Time**, enter the first collection start time. Default is 1 day.
 1. (Optional) The **Polling Interval** is set for 24 hours by default. You can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -80,6 +75,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | baseURL | String | Yes | `null` | Your Jamf instance domain.  | `https://yourServer.jamfcloud.com` |
 | clientID | Boolean | No | `null` | Client ID generated from the JAMF platform. |  |
 | clientSecret | String | No | `null` | Client Secret generated from the Jamf platform. |  |
+| progressWindowInitialLookback | Integer | No | 1 day | First collection start time. |  |
 | pollingInterval | String | No | 24 hours | This sets how often the Source checks for data. | `24 Hours` |
 
 ### JSON example
