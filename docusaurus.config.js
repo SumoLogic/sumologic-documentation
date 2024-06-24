@@ -425,11 +425,13 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
           },
           {
             to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
+            alt: 'Contact Sumo Logic support',
           },
           {
             position: 'right',
@@ -518,7 +520,7 @@ module.exports = {
               },
               {
                 label: 'X (Twitter)',
-                href: 'https://twitter.com/SumoLogic',
+                href: 'https://x.com/SumoLogic',
               },
             ],
             title: 'Social',

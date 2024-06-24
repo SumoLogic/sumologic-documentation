@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
-import bgImage from '../../static/img/hero-secondary-background.png';
-import heroImage from '../../static/img/hero-secondary-graphic.png';
+import bgImage from '../../static/img/hero-secondary-background.webp';
+import heroImage from '../../static/img/hero-secondary-graphic.webp';
 import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg'
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
@@ -166,6 +166,7 @@ export const Home = () => {
               <Box
                 component='img'
                 alt='hero background image'
+                loading='lazy'
                 aria-hidden='true'
                 src={heroImage}
                 width={{
