@@ -71,6 +71,7 @@
     "node-fetch": "^2.6.7",
     "node-forge": "^1.3.0",
     "nth-check": "^2.0.1",
+    "postcss": "^8.4.38",
     "postcss-calc": "9.0.1",
     "postcss-colormin": "6.1.0",
     "postcss-convert-values": "6.1.0",
