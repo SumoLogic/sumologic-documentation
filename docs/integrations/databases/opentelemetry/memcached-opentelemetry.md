@@ -198,7 +198,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 
-## Create monitors for the Sumo Logic Audit app
+## Create monitors for the Sumo Logic Memcached app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
