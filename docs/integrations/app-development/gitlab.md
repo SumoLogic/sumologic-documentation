@@ -95,7 +95,7 @@ Refer to the [GitLab Webhooks documentation](https://docs.gitlab.com/ee/user/pro
 
 Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
-1. In Sumo Logic, click **Manage Data > Logs** > [Fields](/docs/manage/fields.md#add-field).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 2. Add Field ‎**x-GitLab-event**‎.
 
 
@@ -118,11 +118,12 @@ Field x-gitlab-event not found, please check the spelling and try again.
 Do the following to resolve:
 
 1. Close all app dashboards.
-2. In Sumo Logic, click **Manage Data > Logs** > [Fields](/docs/manage/fields.md#add-field) and delete the **x-gitlab-event field.**
-3. Add it again using the Dropped Fields section:
+2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Delete the **x-gitlab-event field.**
+1. Add it again using the Dropped Fields section:
     * At **Dropped Fields** dropdown, click on **x-gitlab-event**, then click **Create Field** to create the field.
     * Wait for new events to be pushed from GitLab. The app should work without any `Field x-gitlab-event not found` errors.
-4. Re-open GitLab dashboards.
+1. Re-open GitLab dashboards.
 
 
 ## Viewing GitLab Dashboards

@@ -1,7 +1,6 @@
 ---
 slug: /cloud-soar
 title: Cloud SOAR
-tags: [security]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,6 +10,8 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 :::info
 If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this means you're using the legacy version. Refer to the [Legacy Cloud SOAR](/docs/cloud-soar/legacy/) section.
 :::
+
+This section contains the following topics:
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
@@ -29,18 +30,6 @@ If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this
   <div className="container">
   <a href="/docs/cloud-soar/compared-to-automation-service"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Cloud SOAR Compared to the Automation Service</h4></a>
   <p>Compare the features of Cloud SOAR with the Automation Service.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cloud-soar/global-functions-menu"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Global Functions Menu</h4></a>
-  <p>Cloud SOAR configuration and administrative options.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cloud-soar/main-menu"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Main Menu</h4></a>
-  <p>Cloud SOAR operational functions.</p>
   </div>
 </div>
 <div className="box smallbox card">

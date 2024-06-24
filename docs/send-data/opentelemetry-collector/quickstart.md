@@ -58,11 +58,11 @@ We've created a one-step installation script to make it easier to install the co
 
 1. First, set up an environment variable to hold the installation token you just created. Open up a shell and run the following command:
    ```bash
-   export SUMOLOGIC_INSTALL_TOKEN=<TOKEN>
+   export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
    ```
 1. Next, run the install script. You’ll need to use `sudo` here, so ensure you run this from an account with admin privileges.
    ```bash
-   curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
+   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s --
    ```
 1. After running the install script, you should see the following files installed:
    - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.

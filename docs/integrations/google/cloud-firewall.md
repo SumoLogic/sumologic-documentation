@@ -37,7 +37,7 @@ _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "
 ```
 
 
-## Collecting Logs for the Google Cloud Firewall App
+## Collecting logs for the Google Cloud Firewall app
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
 
@@ -91,7 +91,7 @@ However, this is not recommended since you cannot define specific Source Categor
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
@@ -154,14 +154,29 @@ The section provides instructions for installing the Google Cloud Firewall App, 
 
 Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Google Cloud Firewall Dashboards
+## Upgrading the Google Cloud Firewall app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Firewall app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Google Cloud Firewall dashboards
 
 This section provides examples of the Google Cloud Firewall App accompanied with descriptions.
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

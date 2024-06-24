@@ -14,7 +14,7 @@ Amazon Inspector is an automated vulnerability management service that continual
 For information about integrating Amazon Inspector with Security Hub, see [Integration with AWS Security Hub](https://docs.aws.amazon.com/inspector/latest/user/securityhub-integration.html) in Amazon help.
 :::
 
-## Collecting Findings for the Amazon Inspector App
+## Collecting findings for the Amazon Inspector app
 
 Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub.
 
@@ -111,19 +111,31 @@ To deploy an AWS Security Hub App collector:
   max(severity_normalized) by resource_type
 ```
 
-## Installing the Amazon Inspector App
+## Installing the Amazon Inspector app
 
 Once you've set up ingestion of findings from AWS Security Hub, you can install the Sumo Logic app for Amazon Inspector and use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing the Amazon Inspector Overview Dashboard
+## Upgrading the Amazon Inspector app (Optional)
 
-This dashboard has a set of filters that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard. You can filter by AWS account ID, finding ID, finding type, normalized severity, and title.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/inspector-app-filters.png')} alt="Amazon Inspector" />
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing the Amazon Inspector Overview dashboard
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 The dashboard provides an overview of Security Hub findings broken down by severity.
 

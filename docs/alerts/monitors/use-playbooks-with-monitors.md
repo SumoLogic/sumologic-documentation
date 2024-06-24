@@ -39,8 +39,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. Go to the main menu.
-1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
 1. The Automation Service screen opens on the **Playbook** tab. 
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/). 
@@ -152,3 +151,25 @@ Some integrations that have useful actions for monitors include:
    * **Search Sumo Logic**. Query logs data from Sumo Logic.
 * **Sumo Logic Notifications**. Integration with the Sumo Logic platform for monitors and Slack notifications. <br/>Actions include:
    * **Assess Alert Status**. Periodically monitor status of a Sumo Logic alert and notify a Slack user if the alert is unresolved.
+
+### Pass custom fields from a monitor to playbooks
+
+Results from an alert query are passed to a playbook through the [automation payload](/docs/alerts/monitors/automation-payload-variables/). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node. 
+
+:::note
+You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the monitor configuration to pass fields from the query to the playbook.
+:::
+
+#### Configure parameters from an alert
+
+1. Click **Edit** on the Start Node.
+1. Select **Alert** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_alert.png')} alt="Payload parameters from an alert" style={{border: '1px solid gray'}} width="700" />
+1. The parameters from the default [automation payload variables](/docs/alerts/monitors/automation-payload-variables/) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
+
+#### Configure Parameters from a JSON Payload 
+
+1. Click **Edit** on the Start Node.
+1. Select **Parse from Json** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_json.png')} alt="Payload parameters from a Json payload" style={{border: '1px solid gray'}} width="700" />
+1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/alerts/monitors/automation-payload-variables/#view-playbook-payload).
+1. Paste the payload into the **Enter Json payload** text box and click **Parse**. The fields from the payload will be auto parsed to parameters. <br/><img src={useBaseUrl('img/alerts/parse_from_json_payload.png')} alt="Parse from Json payload" style={{border: '1px solid gray'}} width="700" />
+1. Add or remove parameters based on the playbook requirements and click **Update**. <br/><img src={useBaseUrl('img/alerts/parse_from_json_parameters.png')} alt="Json Payload parameters" style={{border: '1px solid gray'}} width="700" />

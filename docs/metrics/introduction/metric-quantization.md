@@ -60,6 +60,7 @@ We use the term rollup to refer to the aggregation function Sumo uses when quant
    <td>Calculates the sum of the values of the data points for a time series in each bucket. </td>
   </tr>
   <tr>
+   <td><code>count</code></td>
    <td>Calculates the count of data points for a time series in each bucket. </td>
   </tr>
 </table>

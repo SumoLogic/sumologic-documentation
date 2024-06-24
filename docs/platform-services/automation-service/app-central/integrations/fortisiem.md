@@ -1,7 +1,6 @@
 ---
 title: FortiSIEM
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

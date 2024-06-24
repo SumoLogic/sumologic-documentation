@@ -3,7 +3,6 @@ title: March 22, 2024 - Application Update
 keywords:
   - cloud siem
   - MITRE
-tags: [application update]
 image: https://help.sumologic.com/img/sumo-square.png
 hide_table_of_contents: true
 authors:
@@ -23,5 +22,5 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug fixes
 
-* In some cases, events that are supposed to occur automatically after an Insight is opened were not executing, or were severely delayed. 
-* If an Insight comment included a long URL, text wrapping was not behaving correctly and some text was being clipped from view. Also, newline characters were not always being honored properly in comments. 
+* In some cases, events that are supposed to occur automatically after an Insight is opened were not executing, or were severely delayed.
+* If an Insight comment included a long URL, text wrapping was not behaving correctly and some text was being clipped from view. Also, newline characters were not always being honored properly in comments.
