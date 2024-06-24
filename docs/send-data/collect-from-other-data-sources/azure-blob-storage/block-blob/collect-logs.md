@@ -83,6 +83,8 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose Location.
    1. Set the values of the following parameters:
+      * **DeployingAgainForSameStorageAccount**. Choose 'yes' if you are deploying the ARM template again for the same storage account, else choose 'no'.
+      * **EventGridSystemTopicName**. If you are deploying the ARM template again for the same storage account, then provide the existing System Topic Name for the StorageAccount, else it will be created automatically.<br/>
       * **SumoEndpointURL**. URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
       * **StorageAccountName**. Name of the storage account where you are storing logs from Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * **StorageAccountResourceGroupName**. Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
@@ -94,11 +96,6 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
 1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/> ![notification-success.png](/img/send-data/notification-success.png)
 1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
-1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
-1. In the **Data Storage** menu, do the following:
-    1. Click **Tables**.
-    1. Click **+ Table**.
-    1. Enter **FileOffsetMap** as table name and click **OK**.<br/> <img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
 
 <details>
 
@@ -185,7 +182,7 @@ To create an event grid subscription, do the following:
    * **Subscription**. Select Pay As You Go
    * **Resource Group**. Select the Resource Group for the Storage Account to which your Azure service will export logs, from where you want to ingest logs.
    * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
-
+   * **System Topic Name**. Provide the topic name, if the system topic already exists then it will automatically select the existing topic.
     :::note
     If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
     :::

@@ -23,7 +23,7 @@ Furthermore, Monitors will continue to be the focus area for our Product and Eng
 
 After **May 29, 2024**, it will no longer be possible to create a new Scheduled Search with a frequency of Real-Time. We recommend you create a Monitor to address this use case. Note that this does not have any effect on the creation of new Scheduled Searches with other frequencies of 15 Minutes, Hourly, Daily, Weekly, or a specific Cron schedule for example.
 
-Real-Time Scheduled Searches that were created up until **May 29, 2024** will continue to function without any interruption for 1 year until **May 15, 2025**, and any edits to those schedules will still be supported until the next year.
+Real-Time Scheduled Searches that were created up until **May 29, 2024** will continue to function without any interruption for 1 year until **May 15, 2025**, and any edits to those schedules will still be supported until the next year. Please note, however, that if the frequency of an existing Real-Time Scheduled search is modified to a different parameter, it will not be able to be changed back to Real-Time.
 
 ## What do I need to do?
 
