@@ -14,7 +14,7 @@ The Sumo Logic Kubernetes Control Plane App manages the master node control plan
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
 :::note
-Sumo Logic only supports Kubernetes 1.16 or later version of Kubernetes Control Plane app.
+Sumo Logic supports only Kubernetes versions 1.16 or later for the Kubernetes Control Plane app.
 :::
 
 ## Log and metric types
