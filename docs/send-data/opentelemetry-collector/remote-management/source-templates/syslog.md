@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-The Syslog source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, agent will start listening to the configured port for syslogs and send it to Sumo Logic.
+The Syslog source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, the agent will start listening on the configured port for syslogs and send them to Sumo Logic.
 		
 ## Fields creation in Sumo Logic for Syslog
 
@@ -28,8 +28,8 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 - **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the group of host are identified.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 
-## Prerequisitive
-Ensure that the syslog are in the [rfc5424](https://datatracker.ietf.org/doc/html/rfc5424) protocol. Since we use otel [syslog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) with this protocol. This will ensure proper parsing of the syslog metadata when ingested in Sumo Logic.
+## Prerequisite
+Ensure that the syslogs conform to the [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424) protocol. Since we use the OpenTelemetry [syslog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) with this protocol, this will ensure proper parsing of the syslog metadata when ingested into Sumo Logic.
 
 ## Source template configuration
 		
