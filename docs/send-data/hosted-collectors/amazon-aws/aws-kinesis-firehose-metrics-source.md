@@ -103,4 +103,4 @@ Inclusive and exclusive filters can’t be combined. You can choose namespaces t
 1. Select the metric stream and click **Edit**.<br/>  ![metric-stream_2.png](/img/send-data/metric-stream_2.png)
 1. Click **All metrics** and select the **Exclude metric namespaces** option.
 1. From the list of AWS namespaces, select the namespaces whose metrics you do not want to receive.
-1. Click **Save changes** at the bottom of the page. 
+1. Click **Save changes** at the bottom of the page.
