@@ -36,3 +36,11 @@ The following example returns `V` with a value of `http://codec.apache.org/comm
 The following example returns `V` with a value of `This is a test string`:
 
 `| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`
+
+The following example returns `V` with a value of `ありがと ございます`:
+
+`| base64Decode("44GC44KK44GM44GoIOOBlOOBluOBhOOBvuOBmQ==") as V`
+
+:::note
+If you are not getting the expected results, ensure that the decoding format you are using matches the one you used for encoding.
+:::
