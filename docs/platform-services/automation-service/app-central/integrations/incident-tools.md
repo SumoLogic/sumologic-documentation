@@ -85,4 +85,4 @@ Supervised Active Intelligence Automation
     * Search Entities
     * Search Incidents
     * Update Entity
-* June 24, 2024 (v1.8) - Removed the requirement for ***Field ID*** and ***Field Value*** fields in the **Update Incident Fields** action (the fields are now optional).  
+* June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
