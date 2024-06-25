@@ -21,7 +21,7 @@ For best practices on naming your fields, see [Field Naming Convention](field-na
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::
 
-![FER page.png](/img/field-extraction-rules/fer-page.png)
+<img src={useBaseUrl('/img/field-extraction-rules/fer-page.png')} alt="fer-page" style={{border:'1px solid gray'}} width="800"/>
 
 The Field Extraction Rules page displays the following information: 
 
