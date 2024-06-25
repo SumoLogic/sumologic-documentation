@@ -37,7 +37,7 @@ The following example returns `V` with a value of `This is a test string`:
 
 `| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`
 
-The following example returns `V` with a value of `ありがと ございます`:
+The Base64Decode function supports decoding non-ASCII characters in addition to ASCII. The following example returns `V` with a value of `ありがと ございます`:
 
 `| base64Decode("44GC44KK44GM44GoIOOBlOOBluOBhOOBvuOBmQ==") as V`
 
