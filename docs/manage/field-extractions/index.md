@@ -17,6 +17,12 @@ For best practices on naming your fields, see [Field Naming Convention](field-na
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
  Kanso-->
 
+To refine the table results, utilize the **Add a Filter** section located above the table. *AND* logic will be applied if you are filtering between different sections and *OR* logic will be applied if you are filtering between the same section.
+
+:::note 
+You can see the suggestions only if there are two or more responses for the same column/section. 
+:::
+
 :::important
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::

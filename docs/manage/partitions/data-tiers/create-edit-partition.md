@@ -86,6 +86,10 @@ Before changing the routing expression for a partition, consider the impact of t
 ### How to edit a partition
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. To refine the table results, utilize the **Add a Filter** section located above the table. *AND* logic will be applied if you are filtering between different sections and *OR* logic will be applied if you are filtering between the same section.
+  :::note 
+  You can see the suggestions only if there are two or more responses for the same column/section. 
+  :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
