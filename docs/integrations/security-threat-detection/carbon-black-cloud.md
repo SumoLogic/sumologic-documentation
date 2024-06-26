@@ -2,7 +2,7 @@
 id: carbon-black-cloud
 title: Carbon Black Cloud
 sidebar_label: Carbon Black Cloud
-description: The Carbon Black Cloud app analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. App dashboards provide visibility into threats, TTPs, devices, and more.
+description: The Carbon Black Cloud app analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -61,7 +61,7 @@ _sourceCategory=CBCloud WATCHLIST
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) for the Carbon Black Cloud App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Carbon Black Cloud source category, which you will need to use when installing the app. By following these steps, you can ensure that your Carbon Black Cloud App is properly integrated and configured to collect and analyze your Carbon Black Cloud data.
+To set up [Cloud-to-Cloud Integration Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) for the Carbon Black Cloud app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Carbon Black Cloud source category, which you will need to use when installing the app. By following these steps, you can ensure that your Carbon Black Cloud app is properly integrated and configured to collect and analyze your Carbon Black Cloud data.
 
 ## Installing the Carbon Black Cloud app
 
