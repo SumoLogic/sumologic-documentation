@@ -36,5 +36,5 @@ Scan and analyze websites. When a URL is submitted to urlscan.io, an automated p
 * August 2, 2023 (v1.4 & v1.5) - Integration refactored
 * June 26, 2024 (v1.6) - New actions added
 	+ Check Scan Status
-    + Get URL Report
+        + Get URL Report
 * June 26, 2024 (v1.7) - Updated the name of the action "Get URl Report" to "Get URL Report"
