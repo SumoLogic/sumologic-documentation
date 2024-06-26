@@ -49,7 +49,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  Kanso-->
 1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" style={{border: '1px solid gray'}} width="800"/>
-1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" width="800"/>
+1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
