@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Memcached](https://memcached.org/about) app is a logs based app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
+The [Memcached](https://memcached.org/about) app is a logs-based app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 
 The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
@@ -26,7 +26,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - **`sumo.datasource`**. Has a fixed value of **memcached**.
 - **`db.system`**. Has a fixed value of **memcached**
 - **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
-- **`db.cluster.name`**. User configured. Enter a name to identify this Memcache cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`db.cluster.name`**. User configured. Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.node.name`**. This has value of the FQDN of the machine where OpenTelemetry collector is collecting logs and metrics from.
 
 
@@ -86,7 +86,7 @@ In this step, you will configure the yaml file required for Memcached Collection
 
 The files are typically located in `/var/log/memcached/memcached.log`. If you're using a customized path, check the respective conf file (default location: `/etc/memcached.conf`) for this information.
 
-For metrics you are required to provide the memcached endpoint (default endpoint for memcache is localhost:11211) along with the collection_interval. Collection interval is set to 1 minute by default.
+For metrics, you're required to provide the Memcached endpoint (default is localhost:11211) along with the `collection_interval` (default is 1 minute).
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
@@ -167,16 +167,45 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 <LogsOutro/>
 
 
-## Sample log message
+## Sample log messages
 
 ```
 Jun 23 07:35:01 node03 memcached: \
 <31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
 ```
 
-## Sample metric message
+## Sample metric messages
+
 ```
-{"queryId":"A","_source":"memcached-otel","_metricId":"lU4jhUa6YoiLX9eJZGHHjA","_sourceName":"Http Input","host.id":"i-0cc7753247bad73ae","host.group":"memcachedlinux","os.type":"linux","sumo.datasource":"memcached","db.system":"memcached","command":"touch","db.node.name":"ip-172-31-64-180.ec2.internal","_sourceCategory":"Labs/memcached-otel","deployment.environment":"memcachedlinux","_contentType":"Carbon2","host.name":"ip-172-31-64-180.ec2.internal","metric":"memcached.commands","_collectorId":"000000000F90B095","_sourceId":"00000000594E7C3A","unit":"{commands}","db.cluster.name":"test","_collector":"Labs - memcached-otel","max":10,"min":0,"avg":7,"sum":70,"latest":10,"count":10}
+{
+  "queryId": "A",
+  "_source": "memcached-otel",
+  "_metricId": "lU4jhUa6YoiLX9eJZGHHjA",
+  "_sourceName": "Http Input",
+  "host.id": "i-0cc7753247bad73ae",
+  "host.group": "memcachedlinux",
+  "os.type": "linux",
+  "sumo.datasource": "memcached",
+  "db.system": "memcached",
+  "command": "touch",
+  "db.node.name": "ip-172-31-64-180.ec2.internal",
+  "_sourceCategory": "Labs/memcached-otel",
+  "deployment.environment": "memcachedlinux",
+  "_contentType": "Carbon2",
+  "host.name": "ip-172-31-64-180.ec2.internal",
+  "metric": "memcached.commands",
+  "_collectorId": "000000000F90B095",
+  "_sourceId": "00000000594E7C3A",
+  "unit": "{commands}",
+  "db.cluster.name": "test",
+  "_collector": "Labs - memcached-otel",
+  "max": 10,
+  "min": 0,
+  "avg": 7,
+  "sum": 70,
+  "latest": 10,
+  "count": 10
+}
 ```
 
 ## Sample logs queries
@@ -191,7 +220,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 | timeslice by 1h 
 | sum(ERROR) as ERROR by _timeslice
 ```
-## Sample metrics query
+## Sample metrics queries
 **Total Get**
 
 ```
@@ -258,14 +287,14 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
   </tr>
   <tr>
    <td>Memcached - High Memory Usage </td>
-   <td>This alert fires when the memory usage is greater than configured threshold value </td>
+   <td>This alert fires when the memory usage is greater than configured threshold value.</td>
    <td>Warning   </td>
    <td> &#62;80 </td>
    <td> &#60;&#61; 80   </td>
   </tr>
   <tr>
    <td>Memcached - Cache Hit Ratio   </td>
-   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%   </td>
+   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%.</td>
    <td>Critical </td>
    <td> &#60;&#61;50   </td>
    <td> &#62;50   </td>
