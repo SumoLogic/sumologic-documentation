@@ -33,7 +33,7 @@ Scan and analyse websites. When a URL is submitted to urlscan.io, an automated p
 	+ add env var class
 	+ remove version attribute in the actions
 * June 26, 2023 (v1.3) - Removed unnecessary empty lines
-* August 2, 2023 (v1.5) - Integration refactored
+* August 2, 2023 (v1.4 & v1.5) - Integration refactored
 * June 26, 2024 (v1.6) - New actions added
 	+ Check Scan Status
     + Get URL Report
