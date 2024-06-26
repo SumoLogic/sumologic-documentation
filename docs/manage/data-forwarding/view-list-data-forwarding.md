@@ -9,7 +9,7 @@ The page talks about viewing information about the data forwarding configured fo
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" style={{border:'1px solid gray'}} width="800"/>
 1. Once you're in the **Data Forwarding** tab, apply the following settings:
-    * **Add a filter**. To refine the table results, utilize the **Add a filter** section located above the table. *AND* logic will be applied if you are filtering between different sections and *OR* logic will be applied if you are filtering between the same section.
+    * **Add a filter**. To refine the table results, utilize the **Add a Filter** section located above the table. *AND* logic will be applied if you are filtering between different sections and *OR* logic will be applied if you are filtering between the same section.
         :::note
         You can see the suggestions only if there are two or more responses for the same column or section.
         :::
