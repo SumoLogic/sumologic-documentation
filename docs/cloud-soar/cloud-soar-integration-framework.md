@@ -784,9 +784,9 @@ null
 For other example YAML files, see:
 * [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
 * [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
-#### show_modal (default true)
+#### show_modal
 
-Specify whether textual input will be display 
+Specifies whether to display the textual input. Default value is `true`. 
 
 #### check_not_null_field
 
