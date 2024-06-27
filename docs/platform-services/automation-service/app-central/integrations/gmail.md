@@ -137,4 +137,4 @@ Interact with filters, mail messages, and attachments in Google Mail.
 	+ Other general changes
 		- Code refactoring
 * June 26, 2024 (v1.5)
-	+ Updated Send Email action with the new Cloud SOAR API; it is now possible to send incident attachments.
+	+ Update: The Send Email action now supports the new Cloud SOAR API. This update enables you to send incident attachments directly through the email action.
