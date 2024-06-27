@@ -1,6 +1,6 @@
 ---
 id: syslog
-title: Syslog Source Template
+title: Syslog Source Template (Beta)
 sidebar_label: Syslog
 description: Learn about the Sumo Logic Syslog source template for OpenTelemetry.
 ---
