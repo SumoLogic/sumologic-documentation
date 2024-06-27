@@ -24,7 +24,7 @@ The Syslog source template creates an OpenTelemetry configuration that can be pu
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod or qa.
+- **`deployment.environment`**. User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod, or qa.
 - **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the group of host are identified.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 
