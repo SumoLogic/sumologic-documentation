@@ -33,7 +33,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 The **Scope** supports the option to assign ingest budgets to your log data by either:
 
-* A Field that is enabled in the [Fields](/docs/manage/fields) table (not including fields created by Field Extraction Rules).
+* A field that is enabled in the [Fields](https://github.com/docs/manage/fields) table. Note that fields created by [Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule) are not included in this option.
 * One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
 The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
