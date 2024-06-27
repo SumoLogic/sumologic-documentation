@@ -2,7 +2,7 @@
 id: ai-machine-learning
 title: Harnessing AI and Machine Learning with Sumo Logic
 sidebar_label: AI and Machine Learning
-description: Leverage Sumo Logic AI- and ML-backed features to set up alerts, resolve issues, and reduce MTTR.
+description: Leverage Sumo Logic AI- and ML-backed features to set up alerts, resolve issues, and reduce MTTR, enhancing cloud security management and streamlining incident response. Empower your team with advanced observability and proactive threat detection.
 keywords:
    - artificial intelligence
    - ai
@@ -10,7 +10,6 @@ keywords:
    - ml
    - llm
    - mttr
-tags: [ai, ml, artificial intelligence, machine learning]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
