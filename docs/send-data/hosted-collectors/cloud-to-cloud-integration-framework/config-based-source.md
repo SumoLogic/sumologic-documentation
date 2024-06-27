@@ -6,6 +6,7 @@ description: Learn how to set up a Universal Connector to collect data into the 
 ---
 
 import CodeBlock from '@theme/CodeBlock';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
@@ -50,7 +51,7 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    - ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
