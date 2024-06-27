@@ -10,7 +10,7 @@ description: Create a mask rule to replace an expression with a mask string.
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default "#####" 
+A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default `"#####"`.
 
 Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is a good method for reducing overall ingestion volume.
 
@@ -26,7 +26,7 @@ You could use the following filter expression:
 auth=User:.*\.com
 ```
 
-With a masking string of `auth=User:AAA` would provide the following result:
+Using the masking string `auth=User:AAA` would provide the following result:
 
 ```
 2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
@@ -40,10 +40,11 @@ With a masking string of `auth=User:AAA` would provide the following result:
 
     ```
     {
-    "reqHdr":{
-    "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=",
-    "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
-    }}
+      "reqHdr":{
+        "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=",
+        "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
+      }
+    }
     ```
 
     You would use the following as a mask expression to mask the auth parameter's token:
@@ -52,17 +53,18 @@ With a masking string of `auth=User:AAA` would provide the following result:
     "auth"\s*:\s*"Basic\s*[^"]+"
     ```
     
-    If the masking string given here is **"auth":"#####"** then the log output will be : 
+    If the masking string given here is `"auth":"#####"`, then the log output will be: 
 
     ```
     {
-    "reqHdr":{
-    "auth":"#####"
-    "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
-    }}
+      "reqHdr": {
+        "auth":"#####",
+        "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
+      }
+    }
     ```
 
-* Do not unnecessarily match on more of the log than needed. From the previous example, do not use the following expression as it matches more than necessary and will mask the whole log with the masking string. 
+* Do not unnecessarily match on more of the log than needed. As seen in the previous example, avoid using overly broad expressions that could mask the entire log. This ensures that only the sensitive information is masked, not the whole log entry.
 
     ```
     (?s).*auth"\s*:\s*"Basic\s*([^"]+)".*(?s)
@@ -70,15 +72,17 @@ With a masking string of `auth=User:AAA` would provide the following result:
 
 * Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being masked.
 
-* If you need to mask values on multiple lines use single line modifiers (?s). For example:
+* If you need to mask values on multiple lines, use single-line modifiers (?s). For example:
 
     ```
     auth=User\:(.*(?s).*session=.*?)\]
     ```
 
 :::note 
-- Note that for masking we use [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function for which $ must be escaped to $$ to bypass environment variable substitution logic. To input a literal $, use $$$.
-- For masking string if you use character like double quote(") and backslash(\\), they will be escaped by a backslash when masking the logs.
+- For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
+   - $ must be escaped as $$ to bypass environment variable substitution logic.
+   - To input a literal $, use $$$.
+- When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
 :::
 
 ## Examples
@@ -91,7 +95,7 @@ Any masking expression should be tested and verified with a sample source file b
 
 You can mask credit card numbers from log messages using a regular expression within a mask rule. Once masked with a known string, you can then perform a search for that string within your logs to detect if credit card numbers may be leaking into your log files.
 
-The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Master Card, and Discover credit card numbers:
+The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Mastercard, and Discover credit card numbers:
 
 ```
 ((?:(?:4\d{3})|(?:5[1-5]\d{2})|6(?:011|5[0-9]{2}))(?:-?|\040?)(?:\d{4}(?:-?|\040?)){3}|(?:3[4,7]\d{2})(?:-?|\040?)\d{6}(?:-?|\040?)\d{5})
