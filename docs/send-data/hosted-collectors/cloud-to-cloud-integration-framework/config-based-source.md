@@ -1,8 +1,8 @@
 ---
 id: config-based-source
-title: Config Based Source
-sidebar_label: Config Based Source
-description: Learn how to set up a Config Based C2C to collect data into the Sumo Logic environment.
+title: Universal Connector
+sidebar_label: Universal Connector
+description: Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-With our configuration-based (_config-based_) cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
+With our Universal Connector cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
 
 ## Setup
 
@@ -44,11 +44,11 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 ## Source configuration
 
-When you create an Config Based Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Config Based**.
+1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
@@ -278,7 +278,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter  | Type        | Value                                         | Required | Description                      |
 |:-----------|:------------|:----------------------------------------------|:---------|:---------------------------------|
 | schemaRef  | JSON Object | `{"type":"Config Based"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Universal"`                                 | Yes      | Type of source.                  |
+| sourceType | String      | `"Config Based"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration Object
