@@ -694,6 +694,7 @@ When users interact with the custom action trigger button, they can provide a te
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
+show_modal: true        
 script:
  code: |
    import json
@@ -736,10 +737,56 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
+```json
+integration: 'Incident Tools'
+name: 'Custom trigger button'
+type: Trigger
+show_modal: false        
+script:
+ code: |
+   import json
+   import argparse
+   import requests
+   import sys
+   parser = argparse.ArgumentParser()
+   parser.add_argument('--incidentsDetail', help='incident before update', required=False) #param inherited by
+ hook defined in the yaml
+   parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
+   parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
+   args, unknown = parser.parse_known_args()
+   inc_det_after = json.loads(args.incidentsDetail)
+   incidentID = inc_det_after.get('id')
+   headers = {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer ' + args.token
+   }
+   end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl, incidentid=incidentID)
+   session = requests.Session()
+   session.verify = False
+   additional_info = inc_det_after.get('additional_info')
+   payload = {
+      "additional_info": additional_info,
+   }
+   incident = session.put(end_point, headers=headers, data=payload, proxies=None, timeout=(5, 60))
+   try:
+   incident.raise_for_status()
+   except Exception as e:
+   sys.stderr.write(str(e))
+   exit(0)
 
+check_not_null_field: 'opt_92' #specify that the custom field with internal id “opt_92” should be populated in
+order to display this button in the GUI.
+hook:
+ - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
+null
+```
 For other example YAML files, see:
 * [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
 * [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+#### show_modal
+
+Specifies whether to display the textual input. Default value is `true`. 
 
 #### check_not_null_field
 

@@ -81,20 +81,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-mysql-ulm">Aurora MySQL ULM</a></h4>
-  <p>A guide to the Sumo Logic app for Aurora MySQL ULM.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-postgresql-ulm">Aurora PostgreSQL ULM </a></h4>
-  <p>A guide to our app for Aurora PostgreSQL.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="Thumbnail icon" width="55"/>
   <h4><a href="/docs/integrations/amazon-aws/cloudfront">Amazon CloudFront</a></h4>
   <p>A guide to the Sumo Logic app for Amazon CloudFront.</p>
@@ -333,23 +319,9 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancer-app">AWS Elastic Load Balancer</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing">AWS Elastic Load Balancing</a></h4>
           <p>A guide to the Sumo Logic app for AWS ELB.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/elb-classic.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing-classic">AWS Elastic Load Balancing - Classic</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB - Classic.</p>
           </div>
         </div>
         <div className="box smallbox card">
