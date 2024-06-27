@@ -214,7 +214,7 @@ Fields in your account are manageable in the Fields page
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Fields page, in the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
  Kanso-->
 
-To refine the table results, utilize the **Add a filter** section located above the table. *AND* logic will be applied if you are filtering between different sections and *OR* logic will be applied if you are filtering between the same section.
+To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
 
 :::note 
 You can see the suggestions only if there are two or more responses for the same column or section. 
