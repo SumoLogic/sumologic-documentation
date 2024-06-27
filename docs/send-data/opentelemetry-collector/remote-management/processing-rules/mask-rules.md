@@ -26,7 +26,7 @@ You could use the following filter expression:
 auth=User:.*\.com
 ```
 
-With a masking string of `auth=User:AAA` would provide the following result:
+Using the masking string `auth=User:AAA` would provide the following result:
 
 ```
 2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
@@ -53,7 +53,7 @@ With a masking string of `auth=User:AAA` would provide the following result:
     "auth"\s*:\s*"Basic\s*[^"]+"
     ```
     
-    If the masking string given here is `"auth":"#####"` then the log output will be: 
+    If the masking string given here is `"auth":"#####"`, then the log output will be: 
 
     ```
     {
@@ -72,7 +72,7 @@ With a masking string of `auth=User:AAA` would provide the following result:
 
 * Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being masked.
 
-* If you need to mask values on multiple lines use single line modifiers (?s). For example:
+* If you need to mask values on multiple lines, use single-line modifiers (?s). For example:
 
     ```
     auth=User\:(.*(?s).*session=.*?)\]
