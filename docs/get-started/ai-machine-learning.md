@@ -32,7 +32,7 @@ Pattern learning is fundamental to machine learning and deep learning, where alg
 
 </details>
 
-Our alerting, security, and remediation features go beyond visual analytics. They are tools that accelerate issue resolution, reduce mean time to respond (MTTR), and empower you to proactively monitor and safeguard your technology stack against evolving threats.
+Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
 
 <!-- Remove or ask brand to create a cleaner, branded version
 <img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
