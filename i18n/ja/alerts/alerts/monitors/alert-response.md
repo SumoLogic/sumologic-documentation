@@ -49,15 +49,10 @@ variable:
 
 Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (active on top), and then chronologically by creation time.
 
-To open the Alert List, click the bell icon in the top menu.
-
-![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
-
-<!--
-Kanso: To open the Alert List, click **Alerts** > **Alert List**.
-
-delete this along with the img file: ![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
--->
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/> 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**. 
+ Kanso-->
 
 * Use the search bar to filter by name, severity, or status.
 
