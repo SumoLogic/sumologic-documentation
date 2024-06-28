@@ -233,7 +233,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
   * **-u**: User name to use when connecting to vCenter server. Required.
   * **-p**: Password to use when connecting to vCenter server. Required.
   * **-ts**: Timestamp File. Default ‘.timelog_metrics’.
-  * **-t**: Sumologic installed collector host name for streaming metrics. This is required in case of syslog server.
+  * **-t**: Host name where sumologic installed collector is installed. Required.
   * **-to**: Target Sumologic port to use, default 514. Optional.
   * **-cf**: Configuration File. Required.
   * **-l**: Log File Prefix. Default: `vsphere_metrics_`. By Default the log file is created in the execution directory. Full log path and log prefix can also be specified for example: `-l C:\Users\user6\vsphere_metrics`, where “vsphere_metrics” is the log prefix and is required. The log file is created with prefix + current timestamp.
