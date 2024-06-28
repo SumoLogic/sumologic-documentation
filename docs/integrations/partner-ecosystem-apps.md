@@ -21,6 +21,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
 * [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
+* [Endace](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Endace)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
 * [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
 * [Keeper Security](https://docs.keeper.io/en/v/enterprise-guide/event-reporting/sumo-logic)

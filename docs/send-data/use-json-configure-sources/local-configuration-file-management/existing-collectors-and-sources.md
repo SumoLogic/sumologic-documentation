@@ -74,7 +74,8 @@ sudo ./collector restart
 ```
 
 ```sh title="Windows"
-net restart sumo-collector
+net stop sumo-collector
+net start sumo-collector
 ```
 
 ## Step 5. Verify the Sources are configured properly
