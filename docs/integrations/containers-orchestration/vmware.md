@@ -52,7 +52,7 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 
 ## Prerequisites
 
-* **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, and 7.0.
+* **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, 7.0 and 8.0.
 * **Sumo Logic scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://appdevstore.s3.amazonaws.com/VMWare/sumo-vsphere-ulm.zip).
 
 
@@ -153,9 +153,9 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 * **-o**: Remote vCenter Server port to use, default 443. Optional.
 * **-u**: User name to use when connecting to vCenter server. Required.
 * **-p**: Password to use when connecting to vCenter server. Required.
-* **-f**: Output File Prefix. Target syslog server or file is required.
+* **-f**: Output File Prefix. Target syslog server or file is required. Optional.
 * **-ts**: Timestamp File. Default ‘.timelog_events’. Optional.
-* **-t**: Target Sumologic syslog server. Target syslog server or file is required.
+* **-t**: Target Sumologic syslog server. Target syslog server or file is required. Optional.
 * **-to**: Target Sumologic port to use, default 514. Optional.
 * **-bT**: Begin Time to query for the events. Default Current Time.
 * **-eT**: End Time to query for the events. Default Current Time minus 24 hours.
