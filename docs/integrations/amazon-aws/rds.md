@@ -660,7 +660,7 @@ The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an
 
 Use this dashboard to:
 * Obtain count of slow queries and unique slow queries.
-* Identify number of Slow queries by user, host and command type along with slow queries over time by user and database.
+* Identify number of slow queries by user, host, and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
@@ -712,7 +712,7 @@ Use this dashboard to:
 
 ### 19. Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview
 
-The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
+The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides information about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
 
 Use this dashboard to:
 * Get a high-level overview of your MSSQL infrastructure like instance type and version.
