@@ -491,7 +491,7 @@ Custom filter examples:
 1. For alerts applicable only to a specific cluster, your custom filter would be `db_cluster=oracle-prod.01`.
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
 3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
 
