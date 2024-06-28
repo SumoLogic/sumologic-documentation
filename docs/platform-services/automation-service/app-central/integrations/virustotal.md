@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.11  
-Updated: April 4, 2024***
+***Version: 1.12  
+Updated: June 21, 2024***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
@@ -58,3 +58,5 @@ Threat Intelligence-Reputation
 * March 4, 2024 (v1.10) - Updated code for compatibility with Python 3.12
 * April 4, 2024 (v1.11) New action added:
     + Search VirusTotal
+* June 20, 2024 (v1.12)
+    + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
