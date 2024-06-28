@@ -155,7 +155,7 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 * **-p**: Password to use when connecting to vCenter server. Required.
 * **-f**: Output File Prefix. Target syslog server or file is required. Optional.
 * **-ts**: Timestamp File. Default ‘.timelog_events’. Optional.
-* **-t**: Target Sumologic syslog server. Target syslog server or file is required. Optional.
+* **-t**: Sumologic installed collector host name. This is required in case of syslog server. If using local file source this parameter is not required.
 * **-to**: Target Sumologic port to use, default 514. Optional.
 * **-bT**: Begin Time to query for the events. Default Current Time.
 * **-eT**: End Time to query for the events. Default Current Time minus 24 hours.
@@ -223,7 +223,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics_6_5.py -s 192.168.124.29 -t sumologic_host
 **Example 2: Using specific log directory with a specific log file prefix and encrypted Password.**
 
 ```bash
-python3 $SCRIPT_PATH/esx_perf_metrics_6_5.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -cf $SCRIPT_PATH/sumo.json -l /var/log/vmware/log/vsphere_metrics -pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' -pE True
+python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -cf $SCRIPT_PATH/sumo.json -l /var/log/vmware/log/vsphere_metrics -pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' -pE True
 ```
 
 **The script supports the following parameters:**
@@ -233,7 +233,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics_6_5.py -s 192.168.124.29 -t sumologic_host
   * **-u**: User name to use when connecting to vCenter server. Required.
   * **-p**: Password to use when connecting to vCenter server. Required.
   * **-ts**: Timestamp File. Default ‘.timelog_metrics’.
-  * **-t**: Target Sumologic syslog server. Required.
+  * **-t**: Sumologic installed collector host name for streaming metrics. This is required in case of syslog server.
   * **-to**: Target Sumologic port to use, default 514. Optional.
   * **-cf**: Configuration File. Required.
   * **-l**: Log File Prefix. Default: `vsphere_metrics_`. By Default the log file is created in the execution directory. Full log path and log prefix can also be specified for example: `-l C:\Users\user6\vsphere_metrics`, where “vsphere_metrics” is the log prefix and is required. The log file is created with prefix + current timestamp.
