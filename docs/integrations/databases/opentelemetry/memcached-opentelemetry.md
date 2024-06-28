@@ -249,20 +249,18 @@ The **Memcached - Operations** Dashboard provides detailed analysis on connectio
 
 The **Memcached - Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-Command-Stats.png' alt="Memcached dashboards" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Command-Stats.png' alt="Memcached dashboards" />
 
 
 ### Cache Information
 
 The **Memcached - Cache Information** dashboard provides insight into cache states, cache hit, and miss rate over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-Cache-Information.png' alt="Memcached dashboards" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Cache-Information.png' alt="Memcached dashboards" />
 
 ### Logs
 
 The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
-
-<img src={useBaseUrl('img/integrations/databases/Memcached-Logs.png')} alt="Memcached dashboards" />
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-Logs.png' alt="Memcached dashboards" />
 
@@ -298,5 +296,12 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
    <td>Critical </td>
    <td> &#60;&#61;50   </td>
    <td> &#62;50   </td>
+  </tr>
+  <tr>
+   <td>Memcached - High Number of Connections   </td>
+   <td>This alert fires when the number of current connection for memcached exceed given threshold. </td>
+   <td>Critical </td>
+   <td> &#62;1000   </td>
+   <td> &#60;&#61;1000   </td>
   </tr>
 </table>
