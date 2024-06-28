@@ -53,6 +53,7 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 ## Prerequisites
 
 * **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, 7.0 and 8.0.
+* **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, 7.0 and 8.0.
 * **Sumo Logic scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://appdevstore.s3.amazonaws.com/VMWare/sumo-vsphere-ulm.zip).
 
 
