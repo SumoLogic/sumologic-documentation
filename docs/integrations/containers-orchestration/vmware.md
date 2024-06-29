@@ -155,7 +155,7 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 * **-p**: Password to use when connecting to vCenter server. Required.
 * **-f**: Output File Prefix. Target syslog server or file is required. Optional.
 * **-ts**: Timestamp File. Default ‘.timelog_events’. Optional.
-* **-t**: Sumologic installed collector host name. This is required in case of syslog server. If using local file source this parameter is not required.
+* **-t**: Host name of Sumo Logic installed collector. This is required in case of syslog server. If you are using local file source, this parameter is not required.
 * **-to**: Target Sumologic port to use, default 514. Optional.
 * **-bT**: Begin Time to query for the events. Default Current Time.
 * **-eT**: End Time to query for the events. Default Current Time minus 24 hours.
@@ -233,7 +233,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
   * **-u**: User name to use when connecting to vCenter server. Required.
   * **-p**: Password to use when connecting to vCenter server. Required.
   * **-ts**: Timestamp File. Default ‘.timelog_metrics’.
-  * **-t**: Host name where sumologic installed collector is installed. Required.
+  * **-t**: Host name where Sumo Logic installed collector is installed. Required.
   * **-to**: Target Sumologic port to use, default 514. Optional.
   * **-cf**: Configuration File. Required.
   * **-l**: Log File Prefix. Default: `vsphere_metrics_`. By Default the log file is created in the execution directory. Full log path and log prefix can also be specified for example: `-l C:\Users\user6\vsphere_metrics`, where “vsphere_metrics” is the log prefix and is required. The log file is created with prefix + current timestamp.
