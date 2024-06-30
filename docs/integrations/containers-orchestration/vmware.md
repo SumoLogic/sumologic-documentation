@@ -257,18 +257,18 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
 
 By default, the first time **events.py** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog_events** for the next call to pick up.
 
-To collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, run the script as following:
+To collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, run the script as follows:
 
 ```bash
 python3 events.py -s <vcenter server> \
 -t <syslog host> -to <syslog host port> -bT <time>
 ```
 
-The syslog server should reflect the IP address or hostname of the machine where the Sumo Logic collector is installed; the syslog_port should reflect the port number that you previously set up for the Source responsible for collecting vCenter Server Events. For example, to collect all events starting from 5:00 pm on October 8, 2012, you would run the following command:
+The syslog server should reflect the IP address or hostname of the machine where the Sumo Logic collector is installed; the syslog_port should reflect the port number that you previously set up for the Source responsible for collecting vCenter Server Events. For example, to collect all events starting from 5:00 pm on October 8, 2023, you would run the following command:
 
 ```py
 python3 events.py  -s 192.168.23.242 \
--t vcenterhost -to 1514 -bT '2012-10-08 00:17:00.000+0000'
+-t vcenterhost -to 1514 -bT '2023-10-08 00:17:00.000+0000'
 ```
 
 Once this command completes successfully, you can pick up ongoing events by setting up the cron job.
@@ -297,7 +297,7 @@ b'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4='
 b'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg=='
 ```
 
-**Modify the scripts to include the encrypted password and the key**
+**Modify the scripts** to include the encrypted password and the key:
 
 ```py title="Example for Metrics"
 python3 esx_perf_metrics_6_5.py -u [username] \
