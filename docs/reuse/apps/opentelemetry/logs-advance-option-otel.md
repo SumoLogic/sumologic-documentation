@@ -1,6 +1,6 @@
 **Advance options** for log collection can be used as follows : 
 
-    **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source by specifying the following :
-        - **Timestamp locator** : This will be a [Go regular expression](https://github.com/google/re2/wiki/Syntax) which should have timestamp matched using a named capture group. Name of this captured group should be “timestamp_field”
-        - **Layout** : The exact layout of the timestamp to be parsed for example - %Y-%m-%dT%H:%M:%S.%LZ. [Here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68) are the rules for it.
+    **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source by specifying the following:
+        - **Timestamp locator**. This will be a [Go regular expression](https://github.com/google/re2/wiki/Syntax) which should have timestamp matched using a named capture group. Name of this captured group should be “timestamp_field”.
+        - **Layout**. The exact layout of the timestamp to be parsed for example - %Y-%m-%dT%H:%M:%S.%LZ. To learn more about the rules, [refer here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68).
         - **Location (Time zone)** : The geographic location (timezone) to use when parsing a timestamp that does not include a timezone. The available locations depend on the local IANA Time Zone database. This page contains many examples, such as America/New_York.

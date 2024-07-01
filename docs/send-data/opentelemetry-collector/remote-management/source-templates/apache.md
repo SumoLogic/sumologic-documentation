@@ -25,7 +25,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 - **`sumo.datasource`**. Fixed value of **apache**.
 - **`webengine.system`**. Fixed value of **apache**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the apache env resides. For example: dev, prod or qa.
+- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the apache env resides. For example: dev, prod, or qa.
 - **`webengine.cluster.name`**. User configured. Enter a uniquely identifiable name for your Apache web server cluster to show in the Sumo Logic dashboards.
 - **`webengine.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
