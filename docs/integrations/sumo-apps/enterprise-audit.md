@@ -62,7 +62,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Data_Forwarding_icon.png')} alt="test" />
 
-The **Enterprise Audit - Collector and Data Forwarding Management App** dashboards present information on Collector, Sources activities, and data forwarding trends by destination types. This App has the following two dashboard categories:
+The **Enterprise Audit - Collector and Data Forwarding Management App** dashboards present information on Collector, Sources activities, and data forwarding trends by destination types. This app has the following two dashboard categories:
 * Collector Management
 * Data Forwarding Management
 
