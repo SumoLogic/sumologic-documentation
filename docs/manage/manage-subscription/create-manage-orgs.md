@@ -68,7 +68,7 @@ After you create a new org, you can’t delete it.
       You need to set the baseline to allocate credits.
       :::
       <img src={useBaseUrl('img/subscriptions/allocate-credits-set-baseline.png')} alt="allocate-credits-set-baseline" style={{border:'1px solid gray'}} width="450" />
-1. In the credit calculator, enter the following:
+1. In the credits calculator, enter the following:
       * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
       * **Frequent Log Ingest.** Enter estimated daily ingestion to the Frequent Tier.
       * **Infrequent Log Ingest.** Enter estimated daily ingestion to the Infrequent Tier.
