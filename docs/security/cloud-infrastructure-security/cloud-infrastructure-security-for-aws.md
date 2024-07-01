@@ -359,7 +359,7 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
        <details>
        <summary>CloudQuery</summary>
 
-       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. 
+       This section demonstrates how you can optionally create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. 
        
        If fields are missing, or you need to change them, do the following:
        * **8.1 Configure CloudQuery C2C Source**
