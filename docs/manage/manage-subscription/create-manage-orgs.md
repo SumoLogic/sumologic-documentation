@@ -95,7 +95,7 @@ After you create a new org, you can’t delete it.
 ## Update an org's credits allocation
 
 :::info
-If the org has already depleted credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.
+If the org has already depleted its credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.
 :::
 
 To change an org's credits allocation:
