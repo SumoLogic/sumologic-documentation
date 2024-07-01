@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/sophos-central/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/sophos-central/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/sophos-central/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/>
@@ -51,7 +52,7 @@ To configure a Sophos Central Source:
 1. Select **Sophos Central**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). 
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -98,13 +99,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/sophos-central/example.json)
+<a href="/files/c2c/sophos-central/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/sophos-central/example.tf)
+<a href="/files/c2c/sophos-central/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
