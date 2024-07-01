@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-***Version: 1.7  
-Updated: Mar 4, 2024***
+***Version: 1.8  
+Updated: June 24, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -85,3 +85,4 @@ Supervised Active Intelligence Automation
     * Search Entities
     * Search Incidents
     * Update Entity
+* June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
