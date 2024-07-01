@@ -14,7 +14,7 @@ The CloudPassage Halo app helps you detect security violations and look for thre
 You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This app enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 
 
-## Collecting Logs for the CloudPassage Halo app
+## Collecting logs for the CloudPassage Halo app
 
 The CloudPassage Halo app uses the Halo REST API and AWS Lambda to collect Halo events.  
 

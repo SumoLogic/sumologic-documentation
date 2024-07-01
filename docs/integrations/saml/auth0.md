@@ -14,7 +14,7 @@ Auth0 is a cloud-based, extensible identity provider for applications. The Sumo 
 For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
 
 
-## Collecting Logs for Auth0
+## Collecting logs for Auth0
 This procedure explains how to collect error logs from Auth0.
 
 Sumo Logic collects the following log types:

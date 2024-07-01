@@ -226,3 +226,16 @@ use the following JSON:
 ]
 ```  
  
+### Resize data label font size
+
+To resize the font size of data labels in a pie chart: <br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-label-font-size.png')} style={{border: '1px solid gray'}} alt="Data label font size" width="600"/>
+
+add this line under the general section:
+
+```json
+"general": {
+...
+"indexLabelFontSize": 8
+},
+
+```

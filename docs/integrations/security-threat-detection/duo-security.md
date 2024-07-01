@@ -21,7 +21,7 @@ When you generate the Duo credentials, you should do it for the Admin API applic
 * Administrator Logs
 * Telephony Logs
 
-## Collecting Logs for the Duo Security app
+## Collecting logs for the Duo Security app
 
 To collect logs from the Duo Security App, use the new [Cloud-to-Cloud Integration for Duo Security App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app.
 

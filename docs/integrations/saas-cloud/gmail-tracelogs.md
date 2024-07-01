@@ -19,7 +19,7 @@ The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://s
 
 For details, see the [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en&ref_topic=7233311).
 
-### Sample Logs
+### Sample log messages
 
 ```json
 {
@@ -136,7 +136,7 @@ _sourceCategory=Labs/GmailTraceLogs
 | sort by _count
 ```
 
-## Collecting Logs for Gmail Trace Logs app
+## Collecting logs for Gmail Trace Logs app
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
 

@@ -19,7 +19,7 @@ This App has been tested with following Kafka versions:
 * 2.6.0
 * 2.7.0
 
-## Sample Logs
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -63,7 +63,7 @@ messaging_cluster=* messaging_system="kafka" \
 | count by date_time, severity, msg | sort by date_time | limit 10
 ```
 
-## Collecting Logs and Metrics for Kafka
+## Collecting logs and metrics for Kafka
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
@@ -410,7 +410,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
      * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=Kafka-prod.01`
      * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `messaging_cluster=Kafka-prod*`
      * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=Kafka-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-   2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+   2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
    3. Click **Add**
    4. Click Import to import monitors from the JSON above.
 
