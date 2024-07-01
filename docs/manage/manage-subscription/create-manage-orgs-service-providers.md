@@ -149,11 +149,10 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
    * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
    * **Tracing**. Enter estimated daily ingestion of traces.
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. The Cloud Log Ingest field appears.
-      1. Enter a value in GB.
-            :::note
-            Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
-            :::
+1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+          :::note
+          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
+          :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contact, and the days remaining in your contract.
 1. Click **Done** after adding the baseline.
