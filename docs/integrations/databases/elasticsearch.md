@@ -58,7 +58,7 @@ The Elasticsearch app is a unified logs and metrics app that helps you monitor t
 </Tabs>
 
 
-## Collecting Logs and Metrics for the Elasticsearch app
+## Collecting logs and metrics for the Elasticsearch app
 
 Configuring log and metric collection for the Elasticsearch app includes the following tasks.
 

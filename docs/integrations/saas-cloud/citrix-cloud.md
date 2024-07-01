@@ -15,7 +15,7 @@ The Citrix Cloud is a platform that manages and hosts various Citrix cloud servi
 
 This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions#fields) documentation.
 
-### Sample log
+### Sample log messages
 
 ```json
 {

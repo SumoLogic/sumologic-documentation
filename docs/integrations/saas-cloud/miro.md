@@ -19,7 +19,7 @@ With the Sumo Logic app for Miro, security teams can stay on top of potential se
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Log"
 {

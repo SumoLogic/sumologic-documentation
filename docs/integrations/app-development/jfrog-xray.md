@@ -90,7 +90,7 @@ _sourceCategory = Labs/jfrog/xray
 | count_distinct(WatchName) as %"Number of Watches"
 ```
 
-## Collecting Logs for JFrog Xray
+## Collecting logs for JFrog Xray
 
 This section explains how to collect logs from JFrog Xray and ingest them into Sumo Logic for use with the JFrog Xray pre-defined dashboards and searches. To get the most of out this app, we recommend you also collect logs from Artifactory as well as Kubernetes.
 

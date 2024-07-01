@@ -15,7 +15,7 @@ Netlify is a web development platform for building fast and dynamic websites, e-
 
 The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic through an outgoing webhook available in Netlify. For more information on supported events that are ingested through the Netlify webhook, see the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/)
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>

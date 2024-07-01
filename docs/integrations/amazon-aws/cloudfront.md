@@ -28,7 +28,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 | sort by count
 ```
 
-## Collecting Logs for the Amazon CloudFront app
+## Collecting logs for the Amazon CloudFront app
 
 ### Prerequisites
 

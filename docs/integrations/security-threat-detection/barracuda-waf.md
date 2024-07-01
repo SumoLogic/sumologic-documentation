@@ -53,7 +53,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 | limit 5
 ```
 
-## Collecting Logs for Barracuda WAF app
+## Collecting logs for Barracuda WAF app
 
 This section shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
 

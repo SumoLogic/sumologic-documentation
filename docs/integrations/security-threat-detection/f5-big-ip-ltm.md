@@ -17,7 +17,7 @@ The Sumo Logic app for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimiz
 
 The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
 
-### Sample log message 
+### Sample log messages
 
 ```json title="LTM Request Log"
 {
@@ -101,7 +101,7 @@ curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
-Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1. 
+Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
 
 Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`

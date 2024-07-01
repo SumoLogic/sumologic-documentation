@@ -62,7 +62,7 @@ account="account" region="region" namespace="AWS/ApplicationELB"
 account="account" region="region" Namespace="AWS/ApplicationELB" loadbalancer="loadbalancer" AvailabilityZone=* TargetGroup=* metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
 ```
 
-## Collecting Logs and Metrics for the AWS Application Load Balancer
+## Collecting logs and metrics for the AWS Application Load Balancer
 
 ### Collecting Metrics
 

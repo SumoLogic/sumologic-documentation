@@ -22,7 +22,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 - Comments
 - Errors
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>

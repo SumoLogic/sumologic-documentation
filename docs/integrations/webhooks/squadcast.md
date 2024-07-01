@@ -42,7 +42,7 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 - SLO-Violating Incident spent error budget
 - StatusPage updated
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>

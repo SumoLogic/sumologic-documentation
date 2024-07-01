@@ -14,7 +14,7 @@ Amazon Simple Storage Service (S3) provides a simple web services interface that
 
 Amazon S3 Audit uses Server Access Logs (activity logs). For more information, see [Amazon S3 server access log format](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
 
-### Sample log message
+### Sample log messages
 
 The server access log files consist of a sequence of new-line delimited log records. Each log record represents one request and consists of space delimited fields. The following is an example log consisting of six log records.
 
@@ -30,7 +30,7 @@ The server access log files consist of a sequence of new-line delimited log reco
 | count by operation
 ```
 
-## Collecting Logs for the Amazon S3 Audit app
+## Collecting logs for the Amazon S3 Audit app
 
 Amazon Simple Storage Service (S3) provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web.
 

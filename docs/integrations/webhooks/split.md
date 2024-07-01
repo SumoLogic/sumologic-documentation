@@ -19,7 +19,7 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
 - Admin audit logs
 - Impressions
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>
