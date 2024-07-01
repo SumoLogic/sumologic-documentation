@@ -77,10 +77,10 @@ To install and configure the Sumo Logic scripts, do the following:
 
 1. On the server, host, or VM create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware* or something similar.
 2. Download the Sumo Logic VMware scripts from [here](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip), into the directory you just created.
-3. Install [python](https://www.python.org/) version 3.6, or later.
-4. Install [pyvmomi](https://pypi.org/project/pyvmomi/) 6.7.3:
+3. Install [python](https://www.python.org/) version 3.9, or later.
+4. Install [pyvmomi](https://pypi.org/project/pyvmomi/) version based on the compatible vSphere version from [here](https://github.com/vmware/pyvmomi?tab=readme-ov-file#compatibility-policy):
    ```bash
-   pip install pyvmomi==6.7.3
+   pip install pyvmomi==<compatible_version>
    ```
 5. Verify that the user account which will run the Sumo Logic VMware scripts has full read/write/execute permissions for the directories where the scripts will be placed. Without adequate permissions (read/write/execute) for the directories in which the scripts files reside, unexpected script errors will occur.
 6. Edit the **cron_vcenter_events.sh** script, changing the `SCRIPT_PATH` variable to reflect the **absolute path** where the script resides. If you have multiple vCenter servers, create a new line for each one.
