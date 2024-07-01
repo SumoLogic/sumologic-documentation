@@ -24,7 +24,7 @@ RabbitMQ source template creates an OpenTelemetry configuration that can be push
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod or qa.
+- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod, or qa.
 - **`messaging.cluster.name`**. User configured. Enter a uniquely identifiable name for your rabbitMQ server cluster to show in the Sumo Logic dashboards.
 - **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
@@ -51,21 +51,19 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Local File Collection.
-		
-Below are the inputs required:
+In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration :
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/localfile
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/rabbitmq
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
 
-mport OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - You can add processing rules for logs collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules** - **Processing Rules** -  You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

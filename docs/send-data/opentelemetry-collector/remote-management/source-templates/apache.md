@@ -74,9 +74,7 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Apache Collection.
-		
-Below are the inputs required:
+In this step, you will configure the yaml required for Apache Collection. Below are the inputs required for configuration :
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.	
@@ -89,7 +87,7 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - You can add **processing rules** for logs/metrics collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules** - You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

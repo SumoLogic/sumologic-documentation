@@ -24,8 +24,8 @@ Local File source template creates an OpenTelemetry configuration that can be pu
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod or qa.
-- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the group of host are identified.
+- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod, or qa.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). This identifies the host group from where logs are collected.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 		
 ## Prerequisites
@@ -51,9 +51,7 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Local File Collection.
-		
-Below are the inputs required:
+In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration:
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
@@ -67,7 +65,7 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - You can add processing rules for logs collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules** - **Processing Rules** -  You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

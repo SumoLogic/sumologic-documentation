@@ -53,7 +53,7 @@ Below are the inputs required:
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/localfile
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/redis
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
 
@@ -61,7 +61,7 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - You can add processing rules for logs collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules** - **Processing Rules** -  You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

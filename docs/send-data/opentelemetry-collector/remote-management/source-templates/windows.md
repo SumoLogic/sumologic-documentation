@@ -24,8 +24,8 @@ Windows source template creates an OpenTelemetry configuration that can be pushe
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **windows**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the windows system resides. For example: dev, prod or qa.
-- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host group is identified.
+- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the windows system resides. For example: dev, prod, or qa.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through identifies the Windows host group.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 		
 ## Prerequisites
@@ -45,19 +45,18 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Windows Collection.
-		
-Below are the inputs required:
+In this step, you will configure the yaml required for Windows Collection. Below are the inputs required for configuration :
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
+
 #### Logs Collection
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/windows
 - **Windows Event**. In this section you can select choose among the most widely used windows event channel for which windows event log collection will be enabled. You can also provide **Custom Event Channels** providing any customer event channel for which event logs are to be collected.
 - **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse)
 
 #### Metrics Collection
-- **Metrics**. Select the metric scrappers you want to enable. By default metric collection for CPU,memory,disk,load,file system,network and paging are enabled. Process metric collection is disabled by default.
+- **Metrics**. Select the metric scrappers you want to enable. By default metric collection for CPU,memory,disk,load,file system,network and paging are enabled and process metric collection is disabled.
 
 ##### Enable process metric collection (Optional)
 
@@ -67,7 +66,7 @@ import ProcMetrics from '../../../../reuse/apps/opentelemetry/process-metric-col
 		
 - **Scan Interval**. The frequency at which the source is scanned.
 
-You can add processing rules for logs/metrics collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules** -  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
