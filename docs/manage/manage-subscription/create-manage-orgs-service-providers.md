@@ -94,7 +94,7 @@ After you create a child org, you can’t delete it.
       Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may incur additional deployment charges.
       :::
 1. Click **View Baseline**.
-1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits. <br/> <img src={useBaseUrl('/img/subscriptions/baselines-pov.png')} style={{border:'1px solid gray'}} alt="baselines-pov" width="450"/>
+1. The **Baselines** popup appears and displays the POV Trial org ingest limits, which you cannot change. <br/> <img src={useBaseUrl('/img/subscriptions/baselines-pov.png')} style={{border:'1px solid gray'}} alt="baselines-pov" width="450"/>
 1. View the following:
       * **Continuous Log Ingest**. Estimated daily ingestion to the Continuous Tier.
       * **Frequent Log Ingest.** Estimated daily ingestion to the Frequent Tier.
