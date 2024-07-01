@@ -141,7 +141,7 @@ After you create a child org, you can’t delete it.
 If a POV trial org is not upgraded to Enterprise plan after 45 days, the org will be degraded to **CF Credit - Free** plan. If you need to upgrade this plan to Enterprise, follow the below steps:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
-1. Click the org with  **CF Credit - Free** plan that you want to upgrade.
+1. Click the org with the **CF Credit - Free** plan that you want to upgrade to.
 1. The right pane appears with information about the org. Click **Upgrade**.<br/> <img src={useBaseUrl('/img/subscriptions/upgrade.png')} alt="upgrade" style={{border: '1px solid gray'}} width="400" />
 1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/subscriptions/free-org-set-baseline.png')} alt="free-org-set-baseline" style={{border: '1px solid gray'}} width="400" />
 1. The credits calculator appears.<br/> <img src={useBaseUrl('/img/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
