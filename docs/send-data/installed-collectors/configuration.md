@@ -10,7 +10,7 @@ As the name implies, an Installed Collector is installed in your environment, as
 
 A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-See [How to Choose a Collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
+See [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.
