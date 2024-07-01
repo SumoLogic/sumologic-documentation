@@ -144,7 +144,7 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 1. Click the org with  **CF Credit - Free** plan that you want to upgrade.
 1. The right pane appears with information about the org. Click **Upgrade**.<br/> <img src={useBaseUrl('/img/subscriptions/upgrade.png')} alt="upgrade" style={{border: '1px solid gray'}} width="400" />
 1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/subscriptions/free-org-set-baseline.png')} alt="free-org-set-baseline" style={{border: '1px solid gray'}} width="400" />
-1. The Credits Calculator appears.<br/> <img src={useBaseUrl('/img/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
+1. The credits calculator appears.<br/> <img src={useBaseUrl('/img/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
    * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
    * **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent Tier.
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
