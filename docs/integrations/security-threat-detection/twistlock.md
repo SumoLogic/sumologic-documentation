@@ -84,7 +84,7 @@ image_name="registry-auth.twistlock.com/tw_blm0yiaqqwvgimnirx1x0iczg9xoslag/twis
 compliance="0"
 ```
 
-### Sample query
+### Sample queries
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 

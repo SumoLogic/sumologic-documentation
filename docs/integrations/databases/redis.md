@@ -67,7 +67,7 @@ This sample Query is from the the **Redis - Logs** dashboard > **Logs** panel.
 | fields message
 ```
 
-## Collecting Logs and Metrics for Redis
+## Collecting logs and metrics for Redis
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Redis. Configuring log and metric collection for the Redis ULM app includes the following tasks:
 

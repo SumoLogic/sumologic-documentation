@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Apache Tomcat app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources.
 
-## Collecting Logs and Metrics for Apache Tomcat
+## Collecting logs and metrics for Apache Tomcat
 
 Before installing the Sumo Logic app, Apache Tomcat must be set up and configured to log events.
 

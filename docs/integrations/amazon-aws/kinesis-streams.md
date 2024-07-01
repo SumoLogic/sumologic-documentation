@@ -64,7 +64,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | count by error_code, error_msg, eventName, userName, sourceIPAddress
 ```
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams app
+## Collecting logs and metrics for the Amazon Kinesis - Streams app
 
 ### Collecting Metrics
 

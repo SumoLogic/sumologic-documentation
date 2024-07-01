@@ -18,7 +18,7 @@ This app is tested with the following Squid Proxy versions:
 * Non-Kubernetes environments: Squid Proxy version: 6.0.0
 
 
-## Collecting Logs and Metrics for the Squid Proxy app
+## Collecting logs and metrics for the Squid Proxy app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Squid Proxy.
 

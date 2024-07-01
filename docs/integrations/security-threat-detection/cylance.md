@@ -66,7 +66,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | transpose row _timeslice column event_name
 ```
 
-## Collecting Logs for the Cylance app
+## Collecting logs for the Cylance app
 
 This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 

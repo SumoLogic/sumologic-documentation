@@ -71,7 +71,7 @@ This query example is from the [**HAProxy - Overview** dashboard](#overview) > *
 | limit 5
 ```
 
-## Collecting Logs and Metrics for HAProxy
+## Collecting logs and metrics for HAProxy
 
 This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for HAProxy.
 
