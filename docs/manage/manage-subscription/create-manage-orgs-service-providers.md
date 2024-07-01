@@ -184,7 +184,7 @@ To change an org's credits allocation:
       1. Click **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
       1. Depending on the new baseline values, the calculator now shows the recommended credit allocation, which provides a suggestion on how many credits you would need to add for the child org.<br/><img src={useBaseUrl('img/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
       1. Once you set the baseline the recommended value can be seen in **Credits to be Added** section.<br/><img src={useBaseUrl('img/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
-      1. (Optional) Click on **View Details**, to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
+      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
 ## Deactivate a POV Trial org
