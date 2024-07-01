@@ -19,6 +19,7 @@ Processing rules for logs collection support the following rule types:
 * [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
 * [Mask messages that match](mask-rules.md). Replace an expression with a mask string that you can customize—this is another option to protect data, such as passwords, that you wouldn't normally track.
 
+
 Processing Rules for metrics collection support the following rule types:
 
 * [Exclude metrics that match](metrics-include-and-exclude-rules.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).

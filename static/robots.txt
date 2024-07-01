@@ -4,5 +4,6 @@ User-agent: *
 Disallow: /docs/reuse/
 Disallow: /docs/tags/
 Disallow: /ja/docs/
+Disallow: /cid-redirects.json/
 
 Sitemap: https://help.sumologic.com/sitemap.xml

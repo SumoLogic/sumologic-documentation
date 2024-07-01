@@ -1,6 +1,6 @@
 ---
 id: mask-rules
-title: Mask Rules
+title: Mask Rules (Beta)
 sidebar_label: Mask Rules
 description: Create a mask rule to replace an expression with a mask string.
 ---

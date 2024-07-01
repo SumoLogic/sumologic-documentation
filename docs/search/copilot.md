@@ -217,9 +217,9 @@ If you'd like to start over and begin a new investigation, click the **New Conve
 
 ## Copilot example for Cloud SIEM
 
-You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic. 
+You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
 
-1. In Copilot, you type the source for Cloud SIEM network records: 
+1. In Copilot, you type the source for Cloud SIEM network records:
    ```
    * _index=sec_record_network
    ```
@@ -238,15 +238,15 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
    Count logs by action. Sort the results. Filter results by action contains Malicious.
    ```
    <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-3.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
-   :::note 
+   :::note
    If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
-   ::: 
-1. Next, you look for URLs that pertain to the malicious action: 
+   :::
+1. Next, you look for URLs that pertain to the malicious action:
    ```
    Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.
    ```
    <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-4.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
-1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next. 
+1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next.
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.
 
@@ -255,4 +255,3 @@ To summarize, you conclude there is malicious activity originating from certain 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
 
 <img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="200" />
-
