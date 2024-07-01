@@ -28,4 +28,4 @@ Utilize APIVOID to gather enrichment data during incident investigations.
 * August 14, 2020 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * October 5, 2023 (v1.2) - Changed fields visibility
-* July 01, 2024 (v1.3) - Updated ***Save Screenshot*** action with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
+* July 01, 2024 (v1.3) - Updated ***Save Screenshot*** & ***Save URL*** actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
