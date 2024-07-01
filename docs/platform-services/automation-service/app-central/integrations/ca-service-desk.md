@@ -1,7 +1,6 @@
 ---
 title: CA Service Desk
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

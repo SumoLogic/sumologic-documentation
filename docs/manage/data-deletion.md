@@ -53,6 +53,20 @@ To cancel a deletion request:
 
 <img src={useBaseUrl('img/search/get-started-search/data-deletion-cancel.png')} alt="data-deletion-cancel" width="800"/>
 
+## Limitations
+
+### Handling future ingestion of sensitive data
+
+Customers must manage the future ingestion of sensitive data using [Processing Rules](/docs/send-data/collection/processing-rules). Deletion requests will only apply to data that has already been indexed, not to data that will be ingested in the future.
+
+### Deletion scope
+
+Deletion is restricted to partitions and the default view (sumologic_default) in Sumo Logic. Deletion is currently not supported for other view types, such as [Scheduled Views](/docs/manage/scheduled-views) or ad hoc views created using the save view operator. Sensitive data may still be present in these unsupported views.
+
+### Deletion request limit
+
+Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
+
 <!-- is this available now?
 Auditing of the following activities:
 -Number of Logs that have been masked/redacted/deleted.

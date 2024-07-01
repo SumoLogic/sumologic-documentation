@@ -1,7 +1,6 @@
 ---
 title: Intezer
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

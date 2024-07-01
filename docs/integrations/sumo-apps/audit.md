@@ -44,6 +44,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
+
 ### Account Management Overview
 
 See an overview of account management activities, including role, operation, and access key operations; and the location where administrative activities were performed.  

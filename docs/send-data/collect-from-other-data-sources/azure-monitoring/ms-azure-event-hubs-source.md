@@ -5,6 +5,7 @@ description: The Azure Event Hubs Source for Logs provides a secure endpoint to 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 :::note
 For higher data ingestion speed and scalability, this collection method is preferred over our similar [Azure Event Hubs cloud-to-cloud source collection method](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source).
@@ -52,12 +53,11 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
 
   | Field | Value |
   |:---|:---|
-  | Azure Event Hubs Namespace | `cnctest.servicebus.windows.net` |
+  | Azure Event Hubs Namespace | `cnctest` |
   | Event Hubs Instance Name | `my-hub` |
   | Shared Access Policy Name | `SumoCollectionPolicy` |
   | Shared Access Policy Key (use primary key) | `mOsLf3RE...` |
 
-  <img src={useBaseUrl('img/send-data/azure-event-configs.png')} alt="azure event hub" />
 
 ### Source configuration
 
@@ -70,7 +70,7 @@ To configure an Azure Event Hubs Source:
 3. Select the **Azure Event Hubs for Logs** app.
 4. Enter a Name for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-name.png')} alt="azure event hub" width="100"/>
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * A green circle with a check mark is shown when the field exists in the Fields table schema.
    * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -104,3 +104,8 @@ To configure an Azure Event Hubs Source:
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose Stream to an event hub as the destination. Use the event hub namespace and event hub name configured in the Prerequisites section in the destination details section. You can use the default policy RootManageSharedAccessKey as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+
+## Troubleshooting
+
+For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
+

@@ -1,7 +1,6 @@
 ---
 title: WithSecure Elements
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

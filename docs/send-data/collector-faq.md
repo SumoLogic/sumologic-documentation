@@ -102,7 +102,7 @@ When attempting to upgrade a Windows Collector from the UI, the upgrade fails an
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
-1. Download the [wrapper-dll.zip](/files/wrapper-dll.zip) file attached to this article, which includes the missing wrapper.dll files.
+1. Download the <a href="/files/wrapper-dll.zip" target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
 1. Stop the Sumo Logic Collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 

@@ -1,7 +1,6 @@
 ---
 title: PhishLabs EIR - Incident Data
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -615,7 +615,7 @@ Custom filter examples:
 2. For alerts applicable to all webserver farms that start with tomcat-prod, your custom filter would be: `webserver_farm=tomcat-prod*`
 3. For alerts applicable to a specific webserver farm, within a production environment, your custom filter would be: `webserver_farm=dev-tomcat-01 AND environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Click **Add**.
 3. Click **Import**.
 4. On the **Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.

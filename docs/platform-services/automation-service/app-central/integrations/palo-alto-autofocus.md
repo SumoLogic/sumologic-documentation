@@ -1,7 +1,6 @@
 ---
 title: Palo Alto AutoFocus
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

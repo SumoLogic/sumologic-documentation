@@ -1,7 +1,6 @@
 ---
 title: Joe Sandbox
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

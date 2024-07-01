@@ -1,7 +1,6 @@
 ---
 title: PhishLabs DRP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

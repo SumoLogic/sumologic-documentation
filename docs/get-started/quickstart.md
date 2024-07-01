@@ -3,7 +3,8 @@ id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
 description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
-tags: [get started, getting started]
+keywords:
+  - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -37,7 +38,7 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### OpenTelemetry Collector
 
 1. Log in to Sumo Logic.
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **App Catalog**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select **App Catalog** Kanso-->
+1. In the main Sumo Logic menu, select **App Catalog**. 
 1. Click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
    :::note
