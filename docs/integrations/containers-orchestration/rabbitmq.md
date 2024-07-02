@@ -46,7 +46,7 @@ Host: broker-1 Name: /var/log/rabbitmq/rabbit.log Category: logfile
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for RabbitMQ
+## Collecting logs and metrics for RabbitMQ
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ.
 

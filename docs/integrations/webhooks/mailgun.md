@@ -65,7 +65,7 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/mailgun"

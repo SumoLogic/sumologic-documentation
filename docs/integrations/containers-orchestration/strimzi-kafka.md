@@ -22,7 +22,7 @@ This App has been tested with following Kafka versions:
 * 3.4.0
 
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {
@@ -49,7 +49,7 @@ messaging_cluster=* messaging_system="kafka" \
 The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
 
-## Collecting Logs and Metrics for Strimzi Kafka Pods
+## Collecting logs and metrics for Strimzi Kafka Pods
 
 Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 

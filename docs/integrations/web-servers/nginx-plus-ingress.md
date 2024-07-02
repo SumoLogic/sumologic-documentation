@@ -61,7 +61,7 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 | sort _count
 ```
 
-## Collecting Logs and Metrics for Nginx Plus Ingress
+## Collecting logs and metrics for Nginx Plus Ingress
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus Ingress. This includes the following tasks:
 
