@@ -138,7 +138,7 @@ Configuration required for upgrading source from 2.X.X to 3.X.X version: 
 Changes are required to be made in the Salesforce Vendor portal. No adjustments need to be made to the source configuration in C2C Sumologic portal.
 :::
 
-* Steps to perform
+Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.X.X:
      * Login to Salesforce
      * Left side Menu, Navigate to **Build > Create > Apps**.
      * Under **Connected Apps**, Find your connected app, click **Edit**.
