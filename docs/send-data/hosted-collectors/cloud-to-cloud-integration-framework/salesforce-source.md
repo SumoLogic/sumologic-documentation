@@ -17,6 +17,10 @@ import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
 
+:::info
+To upgrade the Salesforce source from version 2.X.X to 3.X.X, refer to [Releases](#releases).
+:::
+
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
 ## Data collected
@@ -134,19 +138,24 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ### 3.X.X
 
 :::info
-Changes are required to be made in the Salesforce Vendor portal. No adjustments need to be made to the source configuration in C2C Sumologic portal.
+Configuration changes are required to be made in the Salesforce vendor portal and no adjustments are needed in Sumo Logic portal.
 :::
 
 Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.X.X:
-     * Log in to Salesforce platform.
-     * In the left side menu, navigate to **Build > Create > Apps**.
-     * Under **Connected Apps** section, find your connected app and click **Edit**.
-     * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
-     * When you understand the security risks, accept the warning (if prompted).
-     * Select **Save**.
-     * Find your connected app, click **Manage** ([learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
-     * Under **Client Credentials Flow**, for **Run As**, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
-     * Save your changes.
+
+- Log In to the Salesforce platform.
+- Navigate to **Build** > **Create** > **Apps** in the left side menu.
+- Under **Connected Apps** section, find your connected app and click **Edit**.
+- Click the **Enable Client Credentials Flow** checkbox under **API (Enable OAuth Settings)**.
+- If prompted, accept the warning once you understand the security risks and click **Save**.
+- Navigate back to **Build** > **Create** > **Apps** in the left side menu.
+- Find your connected app and click **Manage**. ([Learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+- Click **Edit Policies**.
+- Under **Client Credentials Flow**, go to **Run As** dropdown and click the **Search Button**. Find the user that you want to assign the client credentials flow.
+    :::note
+    For Enterprise Edition orgs, we recommend you to select an execution user who has the API Only User permission.
+    :::
+- Click **Save** to save your changes.
 
 ## Troubleshooting
 
