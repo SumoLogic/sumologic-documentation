@@ -11,11 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-[HAProxy](https://docs.haproxy.org/2.6/intro.html) is open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers.
+[HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of HAProxy server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
-The Sumo Logic app for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
-
-HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The OpenTelemetry collector runs on the same host as HAProxy and uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
@@ -29,11 +27,20 @@ The HAProxy logs are generated in files as configured in the configuration file 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
-- `webengine.cluster.name`. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- `webengine.system`. Has fixed value of **haproxy**
-- `sumo.datasource`. Has fixed value of **haproxy**
+- **`webengine.cluster.name`**. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.system`**. Has fixed value of **haproxy**
+- **`sumo.datasource`**. Has fixed value of **haproxy**
+- **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
 
 ## Prerequisites
+
+### For metrics collection
+
+The receiver used gets stats from an HAProxy instance using the `stats` endpoint. This receiver supports HAProxy version 2.3.9+.
+
+**Receive server statistics** by configuring the server's `haproxy.cfg` file to [enable stats support](https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/#4-stats%20enable).
+
+### For logs collection
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic app for HAProxy.
 
@@ -96,6 +103,12 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 ### Step 2: Configure integration
 
 In this step, you will configure the yaml required for HAProxy Collection.
+
+Below are the inputs required:
+
+- **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8404/stats`).
+- **HAProxy logs Path**. Enter the path to the log file for your HAProxy instance.
+- **Fields**. `webengine.cluster.name`.
 
 The path of the log file configured to capture haproxy logs is needed to be given here.
 
@@ -176,6 +189,8 @@ May 13 08:24:43 localhost haproxy[21813]:
 
 ## Sample queries
 
+### Logs
+
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
 ```
@@ -197,6 +212,34 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 | limit 5
 ```
 
+### Metrics
+
+Here's a sample Metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
+
+```
+sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment={{deployment.environment}} webengine.cluster.name={{webengine.cluster.name}} webengine.node.name={{webengine.node.name}}  haproxy.proxy_name={{haproxy.proxy_name}} 
+| parse field=status_code *  as code 
+| avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
+```
+
+## Sample Metrics
+
+```json
+{
+  "Query": "A",
+  "metric": "avg",
+  "haproxy.proxy_name": "stats",
+  "webengine.cluster.name": "haproxy_otel_cluster",
+  "webengine.node.name": "node1",
+  "min": 3385124.8,
+  "max": 3553632,
+  "latest": 3553632,
+  "avg": 3469494.86851211,
+  "sum": 1002684017.0,
+  "count": 289,
+}
+```
+
 ## Viewing HAProxy dashboards
 
 ### Overview
@@ -209,6 +252,24 @@ Use this dashboard to:
 - Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Overview.png' alt="Overview" />
+
+### Backend
+
+The **HAProxy - Backend** dashboard provides an at-a-glance view for the number of backend active servers, backend weight, respond code from backend and throughput http.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Backend.png' alt="Error Log Analysis" />
+
+### Frontend
+
+The **HAProxy - Backend** dashboard provides an at-a-glance view detail of HAProxy Frontend. It provides information such as number request to frontend, number of error requests, and current session.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Frontend.png' alt="Error Log Analysis" />
+
+### Server
+
+The **HAProxy - Backend** dashboard provides an at-a-glance view detail of HAProxy Server. This dashboard helps you monitoring uptime, and error request by proxy.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Server.png' alt="Error Log Analysis" />
 
 ### Error Log Analysis
 
@@ -290,3 +351,17 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
+
+## HAProxy Alerts
+
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | HAProxy - Access from Highly Malicious Sources | This alert fires when an HAProxy is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| Logs | HAProxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | 0 |
+| Logs | HAProxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
+| Logs | HAProxy - Backend Error | This alert fires when we detect backend server errors. | Critical | >0 | < = 0 |
+| Logs | HAProxy - Backend Server Down | This alert fires when we detect a backend server for a given HAProxy server is down. | Critical | >0 | < = 0 |
+| Metrics | HAProxy - Pending Requests | HAProxy requests are pending | Warning | >0 | < = 0 |
+| Metrics | HAProxy - Retry High | there is a high retry rate | Warning | >0 | < = 0 |
+| Metrics | HAProxy - High Server Connection Errors | there are too many connection errors to backend servers. | Warning | >100 | < = 100 |
+| Metrics | HAProxy - Server Healthcheck Failure | server healthchecks are failing. | Warning | >0 | < = 0 |
