@@ -61,7 +61,7 @@ After you create a new org, you can’t delete it.
 1. **Plan Type**. Select your organization's plan type. 
 1. **Deployment**. Select a Sumo Logic deployment from the list.
       :::note
-      Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
+      Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied on the usage.
       :::
 1. Click **Set Baseline**.
       :::note
@@ -205,7 +205,8 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to check the baselines.
-1. Click **View the organization baselines here** in the **Allocation & usage** section. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
+1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
 
 ## Audit logging for organizations
 
