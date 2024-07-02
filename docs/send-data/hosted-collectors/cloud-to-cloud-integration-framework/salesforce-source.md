@@ -153,7 +153,7 @@ Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.
 1. Click **Edit Policies**.
 1. Under **Client Credentials Flow**, go to the **Run As** dropdown and click the search button. Find the user that you want to assign the client credentials flow.
     :::note
-    For Enterprise Edition orgs, we recommend you to select an execution user who has the API Only User permission.
+    For Enterprise Edition orgs, we recommend selecting an execution user who has the API Only User permission.
     :::
 1. Click **Save** to save your changes.
 
