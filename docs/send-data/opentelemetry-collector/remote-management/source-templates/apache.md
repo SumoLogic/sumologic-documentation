@@ -25,7 +25,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 - **`sumo.datasource`**. Fixed value of **apache**.
 - **`webengine.system`**. Fixed value of **apache**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the apache env resides. For example: dev, prod, or qa.
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the apache env resides, such as `dev`, `prod`, or `qa`.
 - **`webengine.cluster.name`**. User configured. Enter a uniquely identifiable name for your Apache web server cluster to show in the Sumo Logic dashboards.
 - **`webengine.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
@@ -81,13 +81,13 @@ In this step, you will configure the yaml required for Apache Collection. Below 
 - **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:80/server-status?auto`).
 - **Access File log Path**. Enter the path to the Access log file for your Apache instance.
 - **Error file log path**. Enter the path to the error log file for your Apache instance.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/apache user needs to provide the value for `webengine.cluster.name`
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags `_sourceCategory` with the value otel/apache user needs to provide the value for `webengine.cluster.name`.
 
 import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

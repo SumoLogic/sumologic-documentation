@@ -1,6 +1,6 @@
 ---
 id: localfile
-title: LocalFile Source Template
+title: Local File Source Template
 sidebar_label: Local File
 description: Learn about the Sumo Logic Local File source template for OpenTelemetry.
 ---

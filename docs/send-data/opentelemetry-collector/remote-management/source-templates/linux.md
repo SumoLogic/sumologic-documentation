@@ -16,15 +16,15 @@ import TabItem from '@theme/TabItem';
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-Linux source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of linux logs and host metrics of linux to Sumo Logic.
+The Linux source template generates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Linux logs and host metrics for Sumo Logic.
 		
 ## Fields creation in Sumo Logic for Linux
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **linux**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the linux system resides. For example: dev, prod, or qa.
-- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). This identifies the linux host group.
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the Linux system resides, such as `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector-level field that is user-configured at the time of collector installation. It identifies the Linux host group.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 		
 ## Prerequisites
@@ -49,7 +49,7 @@ import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-p
 		
 ## Source template configuration
 		
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
@@ -66,7 +66,7 @@ In this step, you will configure the yaml required for Linux Collection. Below a
 - **Description**. Description for the source template.
 
 #### Logs Collection
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/linux
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/linux.
 - **Logs**. The following fields are pre-populated with default paths, for common log files that are used in different Linux distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
 
 #### Metrics Collection
@@ -79,8 +79,7 @@ import ProcMetrics from '../../../../reuse/apps/opentelemetry/process-metric-col
 <ProcMetrics/>
 		
 - **Scan Interval**. The frequency at which the source is scanned.
-
-You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+- **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
