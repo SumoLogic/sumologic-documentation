@@ -129,6 +129,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <a href="/files/c2c/salesforce/example.tf" target="_blank">Download example</a>
 
+## Releases
+
+### 3.X.X
+Configuration required for upgrading source from 2.X.X to 3.X.X version: 
+
+:::info
+Changes are required to be made in the Salesforce Vendor portal. No adjustments need to be made to the source configuration in C2C Sumologic portal.
+:::
+
+* Steps to perform
+     * Login to Salesforce
+     * Left side Menu, Navigate to **Build > Create > Apps**.
+     * Under **Connected Apps**, Find your connected app, click **Edit**.
+     * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
+     * When you understand the security risks, accept the warning (if prompted).
+     * Select **Save**.
+     * Find your connected app, click **Manage** ([learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+     * Under **Client Credentials Flow**, for **Run As**, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
+     * Save your changes.
+
 ## Troubleshooting
 
 After you configure your Source, you should check the status of the source in the Collectors page. In case the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
