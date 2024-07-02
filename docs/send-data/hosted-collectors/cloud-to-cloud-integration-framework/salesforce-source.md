@@ -132,7 +132,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ## Releases
 
 ### 3.X.X
-Configuration required for upgrading source from 2.X.X to 3.X.X version: 
 
 :::info
 Changes are required to be made in the Salesforce Vendor portal. No adjustments need to be made to the source configuration in C2C Sumologic portal.
