@@ -138,7 +138,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ### 3.X.X
 
 :::info
-Perform the configuration changes in the Salesforce vendor platform and no adjustments are needed in Sumo Logic platform.
+Perform the configuration changes in the Salesforce vendor platform. No adjustments are needed in Sumo Logic platform.
 :::
 
 Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.X.X:
