@@ -7,25 +7,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.12  
-Updated: June 21, 2024***
+***Version: 1.13  
+Updated: July 03, 2024***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
 ## Actions
 
 * **Add Comment** (*Notification*) - Add a new comment.
+* **Check Scanned Status** (*Scheduled*) - Check the status of a file scan or URL scan.
 * **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain v2.
+* **Download Report** (*Enrichment*) - Download a file of scan report.
 * **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
 * **Get Comment** (*Enrichment*) - Gather all comments.
+* **Get Report** (*Enrichment*) - Gather a report on a specific file or URL
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
-* **IP Reputation V3** (*Enrichment*) - Gather IP reputation information for multiple IP addresses v3.
 * **Scan File** (*Enrichment*) - Gather information on a specific file.
 * **Scan URL** (*Enrichment*) - Gather information on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-* **File Scan** **V2** (*Enrichment*) - Acquire information about a specific file without saving the report.
-* **URL Scan V2** (*Enrichment*) - Obtain information about a particular URL without storing the report.
-* **Search VirusTotal** (*Enrichment*) - Search for File Hash, URL, Domain, IP address and comments by tags.
 
 ## Category
 
@@ -60,3 +59,7 @@ Threat Intelligence-Reputation
     + Search VirusTotal
 * June 20, 2024 (v1.12)
     + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
+* July 03, 2024 (v1.13)
+    + Added new action: 
+        - **Check Scanned Status**
+        - **Get Report**
