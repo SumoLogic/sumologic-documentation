@@ -17,15 +17,15 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('/img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of your RabbitMQ logs to Sumo Logic.
+The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your RabbitMQ logs to Sumo Logic.
 		
 ## Fields creation in Sumo Logic for Local File
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
-- **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod, or qa.
-- **`messaging.cluster.name`**. User configured. Enter a uniquely identifiable name for your rabbitMQ server cluster to show in the Sumo Logic dashboards.
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
+- **`messaging.cluster.name`**. User configured. Enter a uniquely identifiable name for your RabbitMQ server cluster to show in the Sumo Logic dashboards.
 - **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
 ## Prerequisites
@@ -41,7 +41,7 @@ import OtelWindowsLogPrereq from '../../../../reuse/apps/opentelemetry/log-colle
 		
 ## Source template configuration
 		
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
@@ -55,7 +55,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/rabbitmq
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/rabbitmq.
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
 
@@ -63,7 +63,7 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules** - **Processing Rules** -  You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+**Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
