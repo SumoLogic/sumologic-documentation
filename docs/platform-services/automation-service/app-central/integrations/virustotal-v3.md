@@ -11,7 +11,7 @@ width="100"/>
 ***Version: 1.0
 Updated: July 03, 2024***
 
-Perform threat intelligence evidence gathering with VirusTotal.
+Perform threat intelligence evidence gathering with [VirusTotal V3 API](https://docs.virustotal.com/reference/overview).
 
 ## Actions
 
@@ -22,7 +22,7 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Download Report** (*Enrichment*) - Download a file of scanned report.
 * **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
 * **Get Comment** (*Enrichment*) - Gather all comments.
-* **Get Report** (*Enrichment*) - Gather a report on a specific File or URL
+* **Get Report** (*Enrichment*) - Gather a report on a specific File or URL.
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information for multiple IP addresses.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
@@ -37,4 +37,4 @@ Threat Intelligence-Reputation
 
 * July 03, 2024
     + First upload
-    + It is updated version of VirusTotal which works with V3 API.
+    + It is an updated version of VirusTotal which works with V3 API.
