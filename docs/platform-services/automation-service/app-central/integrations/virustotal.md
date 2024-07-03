@@ -5,7 +5,8 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal"
+width="100"/>
 
 ***Version: 1.13  
 Updated: July 03, 2024***
@@ -25,6 +26,12 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
+  <br/><img src={useBaseUrl('
+  /img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'
+  1px solid gray'}} alt="virus-total" width="600"/>
+  <br/><img src={useBaseUrl('
+  /img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'
+  1px solid gray'}} alt="virus-total" width="600"/>
 
 ## Category
 
@@ -61,13 +68,14 @@ Threat Intelligence-Reputation
     + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
 * July 03, 2024 (v1.13)
     * A new version is available: ***VirusTotal V3***
-    + Added new actions: 
+
+    + Added new actions:
         - **Check Scanned Status**
         - **Download Report**
         - **Get Report**
     + Updated actions:
-        - **Scan File** - Just Scan the specific file <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
-        - **Scan URL** - Just Scan on a specific URL <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
+        - **Scan File** - Just Scan the specific file
+        - **Scan URL** - Just Scan on a specific URL
     + Moved actions using V3 API to VirusTotal V3
         - **IP Reputation V3** as **IP Reputation**
         - **Search VirusTotal** as **Search VirusTotal**
