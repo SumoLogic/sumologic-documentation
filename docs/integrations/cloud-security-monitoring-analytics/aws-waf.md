@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS WAF (web application firewall) data is a rich source of security findings, as it allows you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront and let you control overall access to your content. Each dashboard within this application takes a different lens on AWS WAF data, from traffic patterns to threat intelligence, allowing you to truly identify the needles in the haystack that drives critical security concerns within your AWS infrastructure.
 
-## Collecting Logs for AWS WAF Security Analytics
+## Collecting logs for AWS WAF Security Analytics
 
 To configure Collection for AWS WAF App, follow the instructions from [Collecting Logs for the AWS WAF App](/docs/integrations/amazon-aws/waf#collecting-logs-for-the-aws-waf-app).
 

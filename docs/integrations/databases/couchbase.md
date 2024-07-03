@@ -23,7 +23,7 @@ This app has been tested with the following Couchbase with Telegraf versions:
 Telegraf 1.14 default of Kubernetes Collection will not work.
 :::
 
-## Collecting Logs and Metrics for the Couchbase app
+## Collecting logs and metrics for the Couchbase app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Couchbase.
 

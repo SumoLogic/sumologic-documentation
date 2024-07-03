@@ -92,7 +92,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName methodName principalEmail reque
 ```
 
 
-## Collecting Logs for Google Cloud Audit
+## Collecting logs for Google Cloud Audit
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Audit.
 

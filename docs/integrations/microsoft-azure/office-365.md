@@ -95,7 +95,7 @@ _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | transpose row _timeslice column workload
 ```
 
-## Collecting Logs for the Office 365 App
+## Collecting logs for the Office 365 App
 
 This section provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
 

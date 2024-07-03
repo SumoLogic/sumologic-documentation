@@ -41,7 +41,7 @@ The following sample query is from the **Average Requests Per Second: My Server 
 | sort by date asc
 ```
 
-## Collecting Logs for the Global Intelligence for Tomcat app
+## Collecting logs for the Global Intelligence for Tomcat app
 
 The Sumo Global Intelligence for Tomcat app provides insights into your key Tomcat infrastructure indicators. 
 
