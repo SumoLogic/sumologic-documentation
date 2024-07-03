@@ -144,7 +144,7 @@ Perform the configuration changes in the Salesforce vendor platform. No adjustme
 Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.X.X:
 
 1. Log in to the Salesforce platform.
-1.  From the left side menu, navigate to **Build** > **Create** > **Apps**.
+1. From the left side menu, navigate to **Build** > **Create** > **Apps**.
 1. Under the **Connected Apps** section, find your connected app and click **Edit**.
 1. Click the **Enable Client Credentials Flow** checkbox under **API (Enable OAuth Settings)**.
 1. If prompted, accept the warning once you understand the security risks and click **Save**.
