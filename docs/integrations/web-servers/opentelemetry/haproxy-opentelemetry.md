@@ -27,10 +27,11 @@ The HAProxy logs are generated in files as configured in the configuration file 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
-- **`webengine.cluster.name`**. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`**. Has fixed value of **haproxy**
 - **`sumo.datasource`**. Has fixed value of **haproxy**
+- **`webengine.system`**. Has fixed value of **haproxy**
+- **`webengine.cluster.name`**. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
+- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
 
 ## Prerequisites
 
@@ -108,11 +109,8 @@ Below are the inputs required:
 
 - **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8404/stats`).
 - **HAProxy logs Path**. Enter the path to the log file for your HAProxy instance.
-- **Fields**. `webengine.cluster.name`.
 
-The path of the log file configured to capture haproxy logs is needed to be given here.
-
-The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+The path of the log file configured to capture haproxy logs is needed to be given here. The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -217,7 +215,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 Here's a sample Metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
 ```
-sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment={{deployment.environment}} webengine.cluster.name={{webengine.cluster.name}} webengine.node.name={{webengine.node.name}}  haproxy.proxy_name={{haproxy.proxy_name}} 
+sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
 | parse field=status_code *  as code 
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
 ```
