@@ -15,15 +15,15 @@ Perform threat intelligence evidence gathering with VirusTotal.
 ## Actions
 
 * **Add Comment** (*Notification*) - Add a new comment.
-* **Check Scanned Status** (*Scheduled*) - Check the status of a file scan or URL scan.
-* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain v2.
-* **Download Report** (*Enrichment*) - Download a file of scan report.
+* **Check Scanned Status** (*Scheduled*) - Check the status of a Scan File and Scan URL.
+* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain.
+* **Download Report** (*Enrichment*) - Download a file of scanned report.
 * **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
 * **Get Comment** (*Enrichment*) - Gather all comments.
 * **Get Report** (*Enrichment*) - Gather a report on a specific file or URL
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
-* **Scan File** (*Enrichment*) - Gather information on a specific file.
-* **Scan URL** (*Enrichment*) - Gather information on a specific URL.
+* **Scan File** (*Enrichment*) - Scan the specific file.
+* **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
 
 ## Category
@@ -60,6 +60,16 @@ Threat Intelligence-Reputation
 * June 20, 2024 (v1.12)
     + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
 * July 03, 2024 (v1.13)
-    + Added new action: 
+    * A new version is available: ***VirusTotal V3***
+    + Added new actions: 
         - **Check Scanned Status**
+        - **Download Report**
         - **Get Report**
+    + Updated actions:
+        - **Scan File** - Just Scan the specific file <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
+        - **Scan URL** - Just Scan on a specific URL <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
+    + Moved actions using V3 API to VirusTotal V3
+        - **IP Reputation V3** as **IP Reputation**
+        - **Search VirusTotal** as **Search VirusTotal**
+        - **File Scan V2** as **Scan File** but it just scans the specific file
+        - **URL Scan V2** as **Scan URL** but it just scans on a specific URL
