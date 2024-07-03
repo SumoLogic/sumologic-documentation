@@ -117,7 +117,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | avg(procTime) as AvgProcTime by host,_timeslice | sort - _timeslice | transpose row _timeslice column host
 ```
 
-## Collecting Logs for the Windows Performance app
+## Collecting logs for the Windows Performance app
 
 This section provides instructions for configuring log collection for the Windows Performance app, as well as example log files and queries.
 

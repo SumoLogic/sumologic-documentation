@@ -53,7 +53,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Events by App Authorization"
 _sourceCategory="asana-app"

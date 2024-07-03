@@ -48,7 +48,7 @@ Jun 23 07:35:01 node03 memcached: \
 </Tabs>
 
 
-## Collecting Logs and Metrics for Memcached
+## Collecting logs and metrics for Memcached
 
 Configuring log and metric collection for the Memcached app includes the following tasks.
 

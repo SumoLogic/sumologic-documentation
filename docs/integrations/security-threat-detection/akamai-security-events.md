@@ -75,7 +75,7 @@ _sourceCategory=<akamai-foo>
 |count by attack_date, client_ip, city, country, rule_action, rule, rule_message, rule_selector, rule_version, config_id, policy_id,http_response
 ```
 
-## Collecting Logs for Akamai Security Events app
+## Collecting logs for Akamai Security Events app
 
 To begin collecting logs for the Sumo app for Akamai Security Events:
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Services, click the **+ New** button at the top of the screen and select **Services**. 
 <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Services, in the main Sumo Logic menu select **Application Monitoring > Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**. 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Services, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**. 
  Kanso-->
 
 ## Services List view

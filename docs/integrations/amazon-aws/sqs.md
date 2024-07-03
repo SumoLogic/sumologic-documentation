@@ -90,7 +90,7 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | top 10 username by event_count, username asc
 ```
 
-## Collecting Logs and Metrics for the Amazon SQS app
+## Collecting logs and metrics for the Amazon SQS app
 
 ### Collect Metrics for AmazonSQS
 

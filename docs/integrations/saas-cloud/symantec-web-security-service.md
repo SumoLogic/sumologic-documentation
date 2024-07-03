@@ -51,7 +51,7 @@ This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev

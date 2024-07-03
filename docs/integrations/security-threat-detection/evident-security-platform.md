@@ -19,7 +19,7 @@ The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -181,7 +181,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample query
+### Sample queries
 
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident
@@ -195,7 +195,7 @@ _sourceCategory=security_evident
 | count by status
 ```
 
-## Collecting Logs for the Evident.io ESP app
+## Collecting logs for the Evident.io ESP app
 
 This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
 

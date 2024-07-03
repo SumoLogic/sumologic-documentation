@@ -50,7 +50,7 @@ description, message, action, team, priority, source, tags, recipients nodrop
 ```
 
 
-## Collecting Logs for Opsgenie
+## Collecting logs for Opsgenie
 
 The Sumo Logic Opsgenie App is designed to effectively monitor Opsgenie alerts, team performances, detect any outliers, and track the team's Mean time to repair (MTTR) incidents. With Sumo Logic dashboards you can easily identify:
 

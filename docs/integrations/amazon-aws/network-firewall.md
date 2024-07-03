@@ -24,7 +24,7 @@ Before you begin, you must:
 3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 
-## Collecting Logs for AWS Network Firewall
+## Collecting logs for AWS Network Firewall
 
 This section has instructions for collecting logs for the Sumo Logic App for AWS Network Firewall Logs.
 

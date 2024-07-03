@@ -18,7 +18,7 @@ This app is tested with the following MariaDB versions:
 * Kubernetes: MariaDB - Version 10.5.11
 * Non-Kubernetes: MariaDB  - Version 10.7.1
 
-## Collecting Logs and Metrics for the MariaDB app
+## Collecting logs and metrics for the MariaDB app
 
 Configuring log and metric collection for the MariaDB app includes the following tasks.
 

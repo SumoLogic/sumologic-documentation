@@ -43,7 +43,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 
 You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
-## Collecting Logs for Palo Alto Firewall 10
+## Collecting logs for Palo Alto Firewall 10
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
 
