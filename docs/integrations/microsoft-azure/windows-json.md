@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -76,7 +76,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
-## Collecting Logs for the Windows JSON app
+## Collecting logs for the Windows JSON app
 
 This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 

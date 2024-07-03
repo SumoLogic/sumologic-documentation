@@ -71,6 +71,10 @@ If the subscription ID is not specified, it will use all visible subscriptions.
 
 <a href="/files//c2c/cloudquery-azure-plugin/example.json" target="_blank">Download example</a>
 
+:::note
+If you have over 75,000 Azure products/resources, you might experience crashes due to limitations in the Azure SDK plugin. If this happens, we may need to increase your memory. [Contact our support team](https://support.sumologic.com/support/s/) for assistance.
+:::
+
 ## FAQ
 
 :::info

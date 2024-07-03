@@ -13,8 +13,13 @@ import MyComponentSource from '!!raw-loader!/files/c2c/salesforce/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/salesforce/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
+
+:::info
+To upgrade the Salesforce source from version 2.X.X to 3.X.X, refer to [Releases](#releases).
+:::
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
@@ -71,7 +76,7 @@ To configure a Salesforce Source:
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -127,6 +132,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
 <a href="/files/c2c/salesforce/example.tf" target="_blank">Download example</a>
+
+## Releases
+
+### 3.X.X
+
+:::info
+Perform the configuration changes in the Salesforce vendor platform. No adjustments are needed in Sumo Logic platform.
+:::
+
+Follow the below steps to upgrade the Salesforce source from version 2.X.X to 3.X.X:
+
+1. Log in to the Salesforce platform.
+1. From the left side menu, navigate to **Build** > **Create** > **Apps**.
+1. Under the **Connected Apps** section, find your connected app and click **Edit**.
+1. Click the **Enable Client Credentials Flow** checkbox under **API (Enable OAuth Settings)**.
+1. If prompted, accept the warning once you understand the security risks and click **Save**.
+1. Navigate back to **Build** > **Create** > **Apps** in the left side menu.
+1. Find your connected app and click **Manage**. ([Learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+1. Click **Edit Policies**.
+1. Under **Client Credentials Flow**, go to the **Run As** dropdown and click the search button. Find the user that you want to assign the client credentials flow.
+    :::note
+    For Enterprise Edition orgs, we recommend selecting an execution user who has the API Only User permission.
+    :::
+1. Click **Save** to save your changes.
 
 ## Troubleshooting
 

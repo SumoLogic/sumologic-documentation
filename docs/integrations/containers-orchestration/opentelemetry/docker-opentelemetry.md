@@ -129,7 +129,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log and Metrics messages
+## Sample log and metrics messages
 
 ### Log message
 

@@ -137,7 +137,7 @@ request_id
 ```
 
 
-## Collecting Logs for the Acquia App
+## Collecting logs for the Acquia App
 
 This section provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
