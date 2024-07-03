@@ -5,8 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal"
-width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
 ***Version: 1.13  
 Updated: July 03, 2024***
@@ -21,13 +20,13 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Download Report** (*Enrichment*) - Download a file of scanned report.
 * **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
 * **Get Comment** (*Enrichment*) - Gather all comments.
-* **Get Report** (*Enrichment*) - Gather a report on a specific file or URL
+* **Get Report** (*Enrichment*) - Gather a report on a specific file or URL.
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="600"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
 
 ## Category
 
@@ -64,7 +63,6 @@ Threat Intelligence-Reputation
     + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
 * July 03, 2024 (v1.13)
     * A new version is available: ***VirusTotal V3***
-
     + Added new actions:
         - **Check Scanned Status**
         - **Download Report**
