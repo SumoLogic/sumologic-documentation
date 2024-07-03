@@ -227,10 +227,6 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 
-## Create monitors for the Sumo Logic Memcached app
-
-import CreateMonitors from '../../../reuse/apps/create-monitors.md';
-
 ## Viewing Memcached Dashboards
 
 ### Overview
@@ -263,45 +259,3 @@ The **Memcached - Cache Information** dashboard provides insight into cache stat
 The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-Logs.png' alt="Memcached dashboards" />
-
-## Memcached Alerts
-
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Memcached database cluster is available and performing as expected.
-
-<table>
-  <tr>
-   <td>Alert Name </td>
-   <td>Alert Description   </td>
-   <td>Trigger Type (Critical / Warning)   </td>
-   <td>Alert Condition </td>
-   <td>Recover Condition   </td>
-  </tr>
-  <tr>
-   <td>Memcached - Commands Error </td>
-   <td>This alert fires when we detect command errors.   </td>
-   <td>Critical   </td>
-   <td> &#62; 0   </td>
-   <td> &#60;&#61; 0 </td>
-  </tr>
-  <tr>
-   <td>Memcached - High Memory Usage </td>
-   <td>This alert fires when the memory usage is greater than configured threshold value.</td>
-   <td>Warning   </td>
-   <td> &#62;80 </td>
-   <td> &#60;&#61; 80   </td>
-  </tr>
-  <tr>
-   <td>Memcached - Cache Hit Ratio   </td>
-   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%.</td>
-   <td>Critical </td>
-   <td> &#60;&#61;50   </td>
-   <td> &#62;50   </td>
-  </tr>
-  <tr>
-   <td>Memcached - High Number of Connections   </td>
-   <td>This alert fires when the number of current connection for memcached exceed given threshold. </td>
-   <td>Critical </td>
-   <td> &#62;1000   </td>
-   <td> &#60;&#61;1000   </td>
-  </tr>
-</table>
