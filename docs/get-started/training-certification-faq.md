@@ -7,7 +7,7 @@ description: Learn more about the Sumo Logic Training and Certification Program.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/training.png')} alt="training icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="certification icon" width="50"/>
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
