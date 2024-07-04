@@ -349,17 +349,3 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
-
-## HAProxy Alerts
-
-| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|:---|:---|:---|:---|:---|:---|
-| Logs | HAProxy - Access from Highly Malicious Sources | This alert fires when an HAProxy is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
-| Logs | HAProxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | 0 |
-| Logs | HAProxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
-| Logs | HAProxy - Backend Error | This alert fires when we detect backend server errors. | Critical | >0 | < = 0 |
-| Logs | HAProxy - Backend Server Down | This alert fires when we detect a backend server for a given HAProxy server is down. | Critical | >0 | < = 0 |
-| Metrics | HAProxy - Pending Requests | HAProxy requests are pending | Warning | >0 | < = 0 |
-| Metrics | HAProxy - Retry High | there is a high retry rate | Warning | >0 | < = 0 |
-| Metrics | HAProxy - High Server Connection Errors | there are too many connection errors to backend servers. | Warning | >100 | < = 100 |
-| Metrics | HAProxy - Server Healthcheck Failure | server healthchecks are failing. | Warning | >0 | < = 0 |
