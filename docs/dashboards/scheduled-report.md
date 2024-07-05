@@ -9,10 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Scheduled Report** feature enables you to receive an emailed copy of a dashboard (PDF or PNG format) at the frequency of your choice, allowing you to get your dashboard insights without logging into the Sumo Logic platform.
 
-You can distribute the dashboard to folks in your Sumo organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
+You can distribute the dashboard to folks in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
-If a .pdf and/or .png export fails, an error email will be sent to your email ID.
+- For PNG format export you will receive both embedded and attached copy of the dashboard to your email.
+- If a .pdf and/or .png export fails, an error email will be sent to your email ID.
 :::
 
 ## Create a Scheduled Report
