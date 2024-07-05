@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We're excited to announce the release of our new Salesforce Version 3.X.X source, which provides an upgraded authorization method to client credentials flow.
 
-If you have the Salesforce source set and decided to upgrade it, you will need to update your source configuration according to the instructions below:
+If you have the Salesforce source set up and choose to upgrade it, follow the instructions below to update your source configuration:
 
 ### Vendor configuration
 
