@@ -21,11 +21,12 @@ Apache source template creates an OpenTelemetry configuration that can be pushed
 		
 ## Fields creation in Sumo Logic for Apache
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of the Apache app installation.
+If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
 
-- **`webengine.cluster.name`**. User configured. Enter a uniquely identifiable name for your Apache web server cluster to show in the Sumo Logic dashboards.
-- **`webengine.system`**. Fixed value of **apache**.
 - **`sumo.datasource`**. Fixed value of **apache**.
+- **`webengine.system`**. Fixed value of **apache**.
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the apache env resides, such as `dev`, `prod`, or `qa`.
+- **`webengine.cluster.name`**. User configured. Enter a uniquely identifiable name for your Apache web server cluster to show in the Sumo Logic dashboards.
 - **`webengine.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
 ## Prerequisites
@@ -57,20 +58,9 @@ import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-p
 		
 <LogsCollectionPrereqisites/>
 		
-For Windows systems, the collected log files should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+import OtelWindowsLogPrereq from '../../../../reuse/apps/opentelemetry/log-collection-prerequisite-windows.md';
 		
-```
-$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
-# Set properties
-$identity = "NT AUTHORITY\SYSTEM"
-$fileSystemRights = "ReadAndExecute"
-$type = "Allow"
-# Create a new rule
-$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
-# Apply new rule
-$NewAcl.SetAccessRule($fileSystemAccessRule)
-Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
-```
+<OtelWindowsLogPrereq/>
 		
 ## Source template configuration
 		
@@ -84,16 +74,20 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Apache Collection.
-		
-Below are the inputs required:
-		
+In this step, you will configure the yaml required for Apache Collection. Below are the inputs required for configuration :
+
+- **Name**. Name of the source template.
+- **Description**. Description for the source template.	
 - **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:80/server-status?auto`).
 - **Access File log Path**. Enter the path to the Access log file for your Apache instance.
 - **Error file log path**. Enter the path to the error log file for your Apache instance.
-- **Fields**. `webengine.cluster.name`.
-		
-You can add any custom fields which you want to tag along with the data ingested through the source template in Sumo Logic.
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags `_sourceCategory` with the value otel/apache user needs to provide the value for `webengine.cluster.name`.
+
+import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+
+<OtelLogAdvanceOption/>
+
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
