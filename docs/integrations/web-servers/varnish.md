@@ -50,7 +50,7 @@ This app is tested with the following versions:
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for Varnish
+## Collecting logs and metrics for Varnish
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Varnish.
 

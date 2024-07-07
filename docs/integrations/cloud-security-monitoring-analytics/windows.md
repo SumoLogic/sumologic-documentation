@@ -17,7 +17,7 @@ This section provides instructions for configuring log collection for the Window
 
 The Windows - Cloud Security Monitoring and Analytics app uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics app uses Windows Security 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 

@@ -110,7 +110,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 * Apache - Top Referrers causing errors
 
 
-## Collecting Logs and Metrics for Apache
+## Collecting logs and metrics for Apache
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 

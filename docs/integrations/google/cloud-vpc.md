@@ -102,7 +102,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 ```
 
 
-## Collecting Logs for Google Cloud VPC
+## Collecting logs for Google Cloud VPC
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
 

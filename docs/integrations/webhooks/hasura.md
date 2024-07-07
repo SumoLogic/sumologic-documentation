@@ -56,7 +56,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
   }
 }
 ```
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/hasura"

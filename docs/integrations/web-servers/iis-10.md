@@ -19,7 +19,7 @@ This app is tested with the following IIS versions:
 IIS app and integration are supported only on Windows.
 :::
 
-## Collecting Logs and Metrics for the IIS app
+## Collecting logs and metrics for the IIS app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for IIS.
 

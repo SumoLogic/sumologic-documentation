@@ -22,7 +22,7 @@ Make sure not to select the same webhook event type at multiple levels (i.e., en
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
-## Event Types
+## Event types
 
 The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 * Fork
@@ -116,7 +116,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-## Collecting Logs for GitHub
+## Collecting logs for GitHub
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 

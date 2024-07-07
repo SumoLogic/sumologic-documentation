@@ -19,7 +19,7 @@ This App has been tested with following Kafka versions:
 * 2.6.0
 * 2.7.0
 
-## Sample Logs
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -63,7 +63,7 @@ messaging_cluster=* messaging_system="kafka" \
 | count by date_time, severity, msg | sort by date_time | limit 10
 ```
 
-## Collecting Logs and Metrics for Kafka
+## Collecting logs and metrics for Kafka
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 

@@ -39,7 +39,7 @@ _sourceCategory=Azure/Web-app
 | outlier _count
 ```
 
-## Collecting Logs for Azure Web Apps
+## Collecting logs for Azure Web Apps
 
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 

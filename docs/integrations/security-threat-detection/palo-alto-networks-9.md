@@ -33,7 +33,7 @@ The Palo Alto Networks 9 app uses the following log types:
 * [Threat](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) Logs
 
 
-## Sample logs
+## Sample log messages
 
 ```json title="System logs"
 Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09

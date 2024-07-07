@@ -67,7 +67,7 @@ environment=* db_cluster=* db_system=mongodb  | json "log" as _rawlog nodrop
 | count by component
 ```
 
-## Collecting Logs and Metrics for MongoDB
+## Collecting logs and metrics for MongoDB
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for MongoDB.
 

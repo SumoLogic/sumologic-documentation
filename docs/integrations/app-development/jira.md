@@ -378,7 +378,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira app
+## Collecting logs for the Jira app
 
 This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
