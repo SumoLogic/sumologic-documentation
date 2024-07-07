@@ -26,6 +26,9 @@ Key features:
 
 ## Create a Data Deletion Request
 
+:::warning
+Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
+:::
 
 ### From the Logs tab
 
@@ -67,8 +70,10 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
 
-<!-- is this available now?
+<!-- Are these features this available?
+
 Auditing of the following activities:
--Number of Logs that have been masked/redacted/deleted.
--Daily Summary of Statistics, indicating number of queries matching each rule to make it easy for Admins to understand which rule still has data that is being hit.
+-Number of Logs that have been masked/redacted/deleted
+-Daily Summary of Statistics, indicating number of queries matching each rule to make it easy for Admins to understand which rule still has data that is being hit
+
 -->
