@@ -83,7 +83,7 @@ To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integrat
 
 </details>
 
-### Sample query
+### Sample queries
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 

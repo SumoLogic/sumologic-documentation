@@ -14,7 +14,7 @@ The Sumo Logic App for Bitbucket provides insights to development teams into how
 The Bitbucket App supports only Bitbucket Cloud.
 
 
-## Event Types
+## Event types
 
 Sumo Logic analyzes the following required types of logs for more efficient monitoring.
 
@@ -41,7 +41,7 @@ Refer to the [event documentation](https://confluence.atlassian.com/bitbucket/ev
 
 For log samples, refer to [Bitbucket Event Documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html)
 
-### Sample Log
+### Sample log messages
 
 **Deploy Events** are triggered whenever code is pushed to test, staging, or production environments.
 * Success Code Deploys
@@ -98,7 +98,7 @@ _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link d
 ```
 
 
-## Collecting Logs for Bitbucket App
+## Collecting logs for Bitbucket App
 
 This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
 

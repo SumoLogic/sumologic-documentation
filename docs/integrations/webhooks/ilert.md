@@ -65,7 +65,7 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/ilert"

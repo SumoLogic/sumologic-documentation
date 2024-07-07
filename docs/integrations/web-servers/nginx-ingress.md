@@ -27,7 +27,7 @@ The Sumo Logic app for Nginx Ingress assumes Prometheus format Metrics for Reque
 For more details on Nginx Ingress Metrics, see [Prometheus](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
 
 
-## Collecting Logs and Metrics for Nginx Ingress
+## Collecting logs and metrics for Nginx Ingress
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Ingress.
 
