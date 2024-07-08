@@ -101,6 +101,15 @@ module.exports = {
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
@@ -234,12 +243,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      content: `RSAC 2024 is almost here. It’s game on for AI-driven DevSecOps! Meet us at booth #6271 on May 6–9.  👉 <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdX9T4-ksh_LhCAu7_C1SG3WDnjTgoV1Tgy8VoxwAankcQw/viewform"> Book a meeting</a>.`,
-      backgroundColor: '#2f0f3d',
-      textColor: '#fff',
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -286,7 +289,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'getstarted',
-                label: 'Start Here',
+                label: 'Get Started',
                 icon: 'rocket',
               },
               {
@@ -303,15 +306,21 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'apps',
+                sidebarId: 'security',
+                label: 'Security',
+                icon: 'security',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'manage',
                 label: 'Manage Account',
                 icon: 'manage_accounts',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'apps',
               },
               {
                 type: 'docSidebar',
@@ -327,21 +336,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'apm',
-                label: 'Traces, RUM, APM',
-                icon: 'account_tree',
-              },
-              {
-                type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'query_stats',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'security',
-                label: 'Security',
-                icon: 'security',
               },
               {
                 type: 'docSidebar',
@@ -354,6 +351,12 @@ module.exports = {
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
                 icon: 'swap_horiz',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'apm',
+                label: 'Traces, RUM, APM',
+                icon: 'account_tree',
               },
             ]
           },
@@ -422,11 +425,13 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s/contactsupport',
+            to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
+            alt: 'Contact Sumo Logic support',
           },
           {
             position: 'right',
@@ -515,7 +520,7 @@ module.exports = {
               },
               {
                 label: 'X (Twitter)',
-                href: 'https://twitter.com/SumoLogic',
+                href: 'https://x.com/SumoLogic',
               },
             ],
             title: 'Social',

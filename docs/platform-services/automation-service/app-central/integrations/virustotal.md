@@ -1,32 +1,32 @@
 ---
 title: VirusTotal
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.11  
-Updated: April 4, 2024***
+***Version: 1.13  
+Updated: July 03, 2024***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
 ## Actions
 
 * **Add Comment** (*Notification*) - Add a new comment.
-* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain v2.
+* **Check Scanned Status** (*Scheduled*) - Check the status of a Scan File and Scan URL.
+* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain.
+* **Download Report** (*Enrichment*) - Download a file of scanned report.
 * **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
 * **Get Comment** (*Enrichment*) - Gather all comments.
+* **Get Report** (*Enrichment*) - Gather a report on a specific file or URL.
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
-* **IP Reputation V3** (*Enrichment*) - Gather IP reputation information for multiple IP addresses v3.
-* **Scan File** (*Enrichment*) - Gather information on a specific file.
-* **Scan URL** (*Enrichment*) - Gather information on a specific URL.
+* **Scan File** (*Enrichment*) - Scan the specific file.
+* **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-* **File Scan** **V2** (*Enrichment*) - Acquire information about a specific file without saving the report.
-* **URL Scan V2** (*Enrichment*) - Obtain information about a particular URL without storing the report.
-* **Search VirusTotal** (*Enrichment*) - Search for File Hash, URL, Domain, IP address and comments by tags.
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
 
 ## Category
 
@@ -59,3 +59,19 @@ Threat Intelligence-Reputation
 * March 4, 2024 (v1.10) - Updated code for compatibility with Python 3.12
 * April 4, 2024 (v1.11) New action added:
     + Search VirusTotal
+* June 20, 2024 (v1.12)
+    + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
+* July 03, 2024 (v1.13)
+    * A new version is available: ***VirusTotal V3***
+    + Added new actions:
+        - **Check Scanned Status**
+        - **Download Report**
+        - **Get Report**
+    + Updated actions:
+        - **Scan File** - Just Scan the specific file
+        - **Scan URL** - Just Scan on a specific URL
+    + Moved actions using V3 API to VirusTotal V3
+        - **IP Reputation V3** as **IP Reputation**
+        - **Search VirusTotal** as **Search VirusTotal**
+        - **File Scan V2** as **Scan File** but it just scans the specific file
+        - **URL Scan V2** as **Scan URL** but it just scans on a specific URL

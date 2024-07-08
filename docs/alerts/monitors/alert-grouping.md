@@ -20,24 +20,24 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 ### Metrics
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
    * **One alert per monitor**: If you only want to receive a single alert for the entire monitor.
    * **One alert per time series**: To receive a single alert for each time-series that is present in the metric query
-   * **One alert per [group]**: allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="alert-grouping" />
+   * **One alert per [group]**: allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="setup-metrics.png" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
 
 
 ### Logs
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 2. Click **Add a New monitor**.
 3. Select **Logs** as the type of Monitor.
 4. Enter your logs query, then select your desired Alert Grouping option:
    * **One alert per monitor**: Choose this option if you want to only receive a single alert for the entire monitor.
-   * **One alert per [group]**: Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/monitors/setup-logs.png')} alt="alert-grouping" style={{border: '1px solid gray'}} width="800" />
+   * **One alert per [group]**: Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/monitors/setup-logs.png')} alt="setup-logs.png" style={{border: '1px solid gray'}} width="800" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
@@ -122,7 +122,8 @@ This alert can be useful if you suspect that one of your collectors has stopped 
 * **Query**:  
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
-   | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop
+   | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+   | json field=data "sizeInBytes", "count" as bytes, count
    | sum(bytes) as total_bytes by collector
    | round(total_bytes / 1024 / 1024) as total_mbytes
    | fields total_mbytes, collector

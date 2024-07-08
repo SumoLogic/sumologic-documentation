@@ -36,7 +36,7 @@ in both rules and search. The built-in rules that come with Cloud SIEM
 automatically create a Signal for Records that have been enriched in
 this way.
 
-Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Turning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
+Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
 ### Create a threat intelligence source from Cloud SIEM UI
@@ -76,7 +76,7 @@ save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src=
 
 #### Create a CSV file
 
-The .csv file can contain up to three columns, which are described below. 
+The .csv file can contain up to four columns, which are described below. 
 
 | Column     | Description  |   
 | :-- | :-- |

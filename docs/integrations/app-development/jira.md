@@ -378,7 +378,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira app
+## Collecting logs for the Jira app
 
 This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
@@ -438,6 +438,18 @@ When you configure the webhook, enter the URL for the HTTP source you created in
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Jira app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jira app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Jira dashboards​
 

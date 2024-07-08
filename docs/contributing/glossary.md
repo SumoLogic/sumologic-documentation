@@ -110,10 +110,6 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
-**[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
-
-
-
 
 ## F
 
@@ -277,7 +273,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[SAML](/docs/manage/security/saml)**. Sumo Logic supports self-provisioning of Security Assertion Markup Language (SAML) to enable Single Sign-On (SSO). In addition to basic SAML configuration, you can choose optional on-demand user creation (via SAML 2.0 assertions), and designate custom log in and/or log out portals.
 
-**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can add a schedule to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
+**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can schedule it to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
 
 **[Scheduled View](/docs/manage/scheduled-views)**. A Scheduled View is a pre-aggregated index of a subset of data. After building a Scheduled View, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a Scheduled View contains an aggregate function, search results return much quicker. Additionally, queries run against a Scheduled View cannot time out. Queries that run against Views can be used in scheduled searches, Dashboards, and in ad hoc searches.
 

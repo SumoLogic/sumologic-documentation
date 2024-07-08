@@ -67,7 +67,7 @@ This sample Query is from the the **Redis - Logs** dashboard > **Logs** panel.
 | fields message
 ```
 
-## Collecting Logs and Metrics for Redis
+## Collecting logs and metrics for Redis
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Redis. Configuring log and metric collection for the Redis ULM app includes the following tasks:
 
@@ -245,7 +245,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule. To do so:
-   * Go to **Manage Data > Logs > Field Extraction Rules**.
+   * <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
    * Click the + Add button on the top right of the table.
    * The **Add Field Extraction Rule** form will appear:
    * Enter the following options:

@@ -1,7 +1,6 @@
 ---
 title: Duo
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

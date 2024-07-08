@@ -23,7 +23,7 @@ To schedule a dashboard email report, do the following:
 1. Select or enter a time range for the dashboard.
 1. If the dashboard supports template variables, select values, if desired.
 1. Click the kebab menu and select **Create Scheduled Report**.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/create_scheduled_report.png')} alt="create_scheduled_report" width="230"/>
-1. Enter your preferences in the **Schedule Report** popup.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report>" width="450"/>
+1. Enter your preferences in the **Schedule Report** popup.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="schedule report popup" width="450"/>
    * **Format.** Choose PDF or PNG.
    * **Frequency.** Choose Daily, Weekly, or Monthly.
    * **Every:** The options depend on the Frequency you selected.

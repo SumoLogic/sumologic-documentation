@@ -27,7 +27,7 @@ If this is the first time you've deployed the AWS Observability Solution, read 
 
 The sections below describe the configuration prompts in the CloudFormation template and the information you need to supply. Before you start filling out the template, it’s a good idea to review each section to make sure you know which sections you want to fill out, and that you have the information you need to proceed.
 
-AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the Explore view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
+AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
 "AWS Observability Apps-\<Version\> \<Date of installation\>" folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
 
@@ -35,8 +35,8 @@ AWS Observability integrates with Explore by populating metadata and only shows
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
@@ -67,7 +67,7 @@ The below tables displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in the Sumo Logic Explorer View, metrics and logs can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
+| Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in metrics and logs, and can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
 
@@ -77,7 +77,7 @@ You should only install the AWS Observability apps and alerts the first time you
 
 | Prompt | Guideline |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, and Amazon SQS.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, Amazon SQS, and Global Intelligence for AWS CloudTrail DevOps.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 
@@ -122,13 +122,13 @@ The below tables displays the response for each text box in this section.
 |:--|:--|
 | Select the Sumo Logic CloudWatch Logs Sources | <ul><li>**Lambda Log Forwarder** - Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.</li><li>**Kinesis Firehose Log Source** - Creates a Sumo Logic Kinesis Firehose Source to collect CloudWatch logs.</li><li>**Both** (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source) - Use this option if you would like to switch from using the Lambda Log Forwarder to the new Kinesis Firehose Log Source. If you select this option, the template will subscribe all existing log groups to the new Kinesis Firehose logs Source. To remove the old source please rerun the template by selecting the Kinesis Firehose Log Source in this option (Check the CloudWatch Logs for Lambda Log groups subscriber which should have a message “All Log Groups are subscribed to Destination Type”).</li><li>**None** - Skips installation of both sources.</li></ul> |
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
-| Subscribe log groups to Sumo Logic Lambda Forwarder | <ul><li>**New** - Automatically subscribes new AWS Lambda log groups to Lambda, to send logs to Sumo Logic.</li><li>**Existing** - Automatically subscribes existing log groups to Lambda, to send logs to Sumo Logic.</li><li>**Both** - Automatically subscribes new and existing log groups.</li><li>**None** - Skips Automatic subscription of log groups.</li></ul> |
-| Regex for AWS Log Groups | Default Value: <b>lambda\|rds</b> <br/> With default value, log group names matching with lambda or rds will be subscribed and ingesting cloudwatch logs into sumo logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination.md) in the *Auto-Subscribe AWS Log Groups to a Lambda Function topic*.<br/>
+| Subscribe log groups to destination (lambda or kinesis firehose delivery stream) | <ul><li>**New** - Automatically subscribes new AWS Lambda log groups to Lambda, to send logs to Sumo Logic.</li><li>**Existing** - Automatically subscribes existing log groups to Lambda, to send logs to Sumo Logic.</li><li>**Both** - Automatically subscribes new and existing log groups.</li><li>**None** - Skips automatic subscription of log groups.</li></ul>|
+| Regex for AWS Log Groups | Default Value: **aws/(lambda\|apigateway\|rds)** <br/> With default value, log group names matching with lambda or rds will be subscribed and ingesting cloudwatch logs into sumo logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters) in the *Auto-Subscribe ARN (Amazon Resource Name) Destination* topic.
+ 
  :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
   * Use regex `.*` for auto-subscribing all log groups.
  :::
-
 
 ## Step 9: Sumo Logic Root Cause Explorer Sources
 

@@ -75,7 +75,7 @@ _sourceCategory=<akamai-foo>
 |count by attack_date, client_ip, city, country, rule_action, rule, rule_message, rule_selector, rule_version, config_id, policy_id,http_response
 ```
 
-## Collecting Logs for Akamai Security Events app
+## Collecting logs for Akamai Security Events app
 
 To begin collecting logs for the Sumo app for Akamai Security Events:
 
@@ -92,6 +92,18 @@ This section has instructions for installing the Sumo Logic app for Akamai Secur
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Akamai Security Events app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai Security Events app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Akamai Security Events dashboards
 

@@ -312,13 +312,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="/docs/integrations/microsoft-azure/arm-integration-faq">Azure Integration with ARM FAQs</a></h4>
-      <p>A guide to the Sumo Logic app for Azure Integration with ARM FAQs.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/kubernetes">Azure Kubernetes Service Control Plane</a></h4>
       <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
@@ -385,13 +378,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
       <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Thumbnail icon" width="43"/>
       <h4><a href="/docs/integrations/microsoft-azure/teams">Microsoft Teams</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Teams.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="65"/>
-      <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
       </div>
     </div>
     <div className="box smallbox card">

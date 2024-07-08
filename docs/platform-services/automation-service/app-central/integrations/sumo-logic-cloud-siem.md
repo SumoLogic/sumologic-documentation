@@ -1,7 +1,6 @@
 ---
 title: Sumo Logic Cloud SIEM
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -70,7 +69,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-9.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 
-For detailed API documentation visit [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs).
+For detailed API documentation visit [Sumo Logic APIs](/docs/api/).
 
 ## Category
 

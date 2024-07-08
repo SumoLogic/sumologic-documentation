@@ -56,7 +56,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
   }
 }
 ```
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/hasura"
@@ -107,6 +107,18 @@ _sourceCategory=webhook/hasura
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Hasura app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Hasura app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Hasura dashboards
 

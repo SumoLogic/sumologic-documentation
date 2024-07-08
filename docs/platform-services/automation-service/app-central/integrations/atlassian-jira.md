@@ -1,7 +1,6 @@
 ---
 title: Atlassian Jira
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

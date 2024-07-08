@@ -1,7 +1,6 @@
 ---
 title: Atlassian Confluence
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -65,7 +65,7 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/mailgun"
@@ -114,6 +114,18 @@ Follow the below steps to configure the Mailgun webhook.
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the iLeMailgunrt app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Mailgun app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Mailgun dashboards
 

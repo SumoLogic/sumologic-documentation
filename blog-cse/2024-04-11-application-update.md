@@ -5,7 +5,6 @@ keywords:
   - mitre
   - light mode
   - dark mode
-tags: [application update]
 image: https://help.sumologic.com/img/sumo-square.png
 hide_table_of_contents: true
 authors:

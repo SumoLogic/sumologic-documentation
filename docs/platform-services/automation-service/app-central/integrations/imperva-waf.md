@@ -1,7 +1,6 @@
 ---
 title: Imperva WAF
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

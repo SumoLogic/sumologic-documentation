@@ -83,7 +83,7 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | top 10 message by eventCount, message asc
 ```
 
-## Collecting Logs and Metrics
+## Collecting logs and metrics
 
 This section has instructions for collecting logs and metrics for the Azure SQL app, as well as a sample log message and a query sample.
 
@@ -128,6 +128,18 @@ This section provides instructions on how to install the Azure SQL app, and show
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Azure SQL app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure SQL app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing the Azure SQL dashboards
 

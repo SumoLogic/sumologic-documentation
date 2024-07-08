@@ -258,12 +258,13 @@ html[data-theme='light'] {
 }
 
 .header-trial::before {
-  content: 'Start free trial';
+  content: 'START FREE TRIAL';
   border: 1px solid #2aa1e6;
   color: #FFF;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
   margin-right: -20px;
@@ -278,9 +279,10 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
   margin-right: -20px;
@@ -292,13 +294,14 @@ html[data-theme='light'] {
 }
 
 .header-support::before {
-  content: 'Contact Support';
+  content: 'CONTACT SUPPORT';
   background: transparent;
   border: 1px solid #000;
   color: var(--ifm-navbar-link-color);
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -311,9 +314,10 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #E5F4FA;
   color: var(--ifm-navbar-link-color);
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 4px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 

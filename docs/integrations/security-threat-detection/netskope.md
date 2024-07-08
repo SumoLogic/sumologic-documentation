@@ -83,7 +83,7 @@ To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integrat
 
 </details>
 
-### Sample query
+### Sample queries
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
@@ -109,6 +109,18 @@ This section demonstrates how to install the Netskope app, and provides examples
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Netskope app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Netskope app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Netskope dashboards
 
