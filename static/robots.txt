@@ -5,5 +5,6 @@ Disallow: /docs/reuse/
 Disallow: /docs/tags/
 Disallow: /ja/docs/
 Disallow: /cid-redirects.json/
+Disallow: /files/
 
 Sitemap: https://help.sumologic.com/sitemap.xml
