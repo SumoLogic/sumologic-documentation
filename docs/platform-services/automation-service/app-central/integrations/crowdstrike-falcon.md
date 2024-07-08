@@ -10,18 +10,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.10
 Updated: July 8, 2024***
 
-CrowdStrike Falcon integration allows to pull Detections, Incidents, searching Incidents/Devices/Detections, and updating Detections/Incidents.
+The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
 ## Actions
 
 * **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
-* **Create Indicators** *(Containment)* - Create the Indicators
+* **Create Indicators** *(Containment)* - Create the Indicators.
 * **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
 * **Device Actions** *(Containment)* - Take various actions on the hosts in your environment.
 * **Get Browser History** *(Enrichment)* - Get user Browser history.
 * **Get Endpoint** *(Enrichment)* - Get details on one or more hosts by providing agent IDs.
 * **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
-* **Get Indicators** *(Containment)* - Get Indicators By IDs
+* **Get Indicators** *(Containment)* - Get Indicators By IDs.
 * **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
