@@ -138,7 +138,7 @@ To search the Audit Event Index for logs that describe Cloud SIEM events:
 
 ## Example event log
 
-Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" style={{border: '1px solid gray'}} width="600" />
+Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="Example event log" style={{border: '1px solid gray'}} width="600" />
 
 ## Index retention period 
 
