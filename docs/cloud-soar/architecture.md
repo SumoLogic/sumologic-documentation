@@ -30,7 +30,7 @@ Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module
 
 Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
 
-<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="Cloud SOAR architecture" style={{border: '1px solid gray'}} width="800"/>
 
 ## Automation Bridge
 

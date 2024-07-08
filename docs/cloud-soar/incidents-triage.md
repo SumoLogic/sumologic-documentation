@@ -21,7 +21,7 @@ In the upper left corner you can select **Dashboard** to see dashboards showing 
 The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the incident IDs in the Incident section will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
 
 
-<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="incidents"/>
+<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
 
 
 Watch this micro lesson to learn more about Incidents in Cloud SOAR.
@@ -67,7 +67,7 @@ Bulk actions may be performed on any incidents in the Incident Overview list. To
 
 ### Add investigators
 
-Investigators are users who are involved in incidents and have access to perform operations on the incidents and view the incident data. To be able to add investigators to incidents, you must be assigned the **Manage Investigators** [Cloud SOAR role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar). 
+Investigators are users who are involved in incidents and have access to perform operations on the incidents and view the incident data. To be able to add investigators to incidents, you must be assigned the **Manage Investigators** [Cloud SOAR role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar).
 
 To add investigators to incidents:
 
@@ -79,8 +79,8 @@ To add investigators to incidents:
    :::info
    You can also select groups in addition to selecting individuals. For more information, see [Groups](/docs/cloud-soar/overview/#groups).
    :::
-1. In the **Role** column, select the role assigned to the users that you want them to have as investigators. For example, select Analyst, Administrator, or some other role. The roles must have the appropriate Cloud SOAR role capabilities that you want them to have as investigators of the incidents. 
-1. Click **Apply**. 
+1. In the **Role** column, select the role assigned to the users that you want them to have as investigators. For example, select Analyst, Administrator, or some other role. The roles must have the appropriate Cloud SOAR role capabilities that you want them to have as investigators of the incidents.
+1. Click **Apply**.
 
 #### View investigators assigned to an incident
 
@@ -98,7 +98,7 @@ For example, an incident contains sensitive data in the notes section. If you wa
 
 :::note
 To allow users to access incidents without being added as investigators, assign them the **Incident > Access all** role Cloud SOAR role capability. This privilege is useful for users who need to monitor all incidents.
-::: 
+:::
 
 
 ## Working with Incidents
@@ -226,7 +226,7 @@ Closing incident will result in asking a note for incident closing as below:
 ### Documentation
 
 The **Documentation** section provides investigators with an area to
-document all steps taken during an incident's investigation. 
+document all steps taken during an incident's investigation.
 
 ### Attachments
 
@@ -282,8 +282,8 @@ The final step in manual incident creation is to add an investigator or a group 
 ### Custom Fields
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom fields, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom fields, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
  Kanso-->
 <img src={useBaseUrl('img/cloud-soar/image46.png')} alt="Fields Configuration Settings" style={{border: '1px solid gray'}} width="800"/>
 
@@ -434,7 +434,7 @@ The name of the module can also be modified from **Triage** to a name of your ch
 
 ### Field Settings
 
-By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the Incident Type field and cannot be modified directly. New types must be added from the Incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case. 
+By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the Incident Type field and cannot be modified directly. New types must be added from the Incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case.
 
 To add additional fields:
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
@@ -493,10 +493,10 @@ To convert the event to an incident, click **Convert to Incident** in the far ri
 ## Report
 
 With the **Report** option, you can create incident reports to share with others as well as [widgets](#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
-<!--Kanso 
+<!--Kanso
  Kanso-->
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
-1. Click the **+** icon in the upper left corner. 
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/>
+1. Click the **+** icon in the upper left corner.
 1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
 1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
 1. Click **Save**. In the dialog:
@@ -504,8 +504,8 @@ With the **Report** option, you can create incident reports to share with others
     1. Click **Schedule** to schedule the report to run on a regular basis.
     1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
-1. Click **Export** to export the report to PDF. 
-1. Click **Open** to open available reports. 
+1. Click **Export** to export the report to PDF.
+1. Click **Open** to open available reports.
 
 ## Dashboards
 
@@ -584,7 +584,7 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
 1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" width="200"/><br/>A blank dashboard appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" width="700"/>
 1. Click on the name of the blank dashboard (such as **Dashboard 1** in the example), and give the dashboard a name. Click **No description available** and type a description.
 1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>The widgets panel displays to the right of the dashboard.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard-example.png')} alt="Widgets panel on the dashboard" width="700"/>
-1. Under **My Widgets** or **Public**, select widgets you'd like to add to the dashboard. These are the same widgets that are available to use in [reports](/docs/cloud-soar/incidents-triage/#report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets. 
+1. Under **My Widgets** or **Public**, select widgets you'd like to add to the dashboard. These are the same widgets that are available to use in [reports](/docs/cloud-soar/incidents-triage/#report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.
 1. Rearrange the widgets in the dashboard as desired.
 1. (Optional) Click **Public** at the top of the dashboard panel if you want to make the dashboard available for others to use.
 1. (Optional) Click **Export** to to the upper-right of the dashboard panel to export the dashboard to PDF.  

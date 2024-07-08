@@ -7,7 +7,7 @@ description: Learn more about the Sumo Logic Training and Certification Program.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/training.png')} alt="training icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="certification icon" width="50"/>
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
@@ -132,7 +132,7 @@ Make sure to complete all sections of the course.
 
 If you're seeing the following error when starting a new lesson, this is typically due to a browser setting.
 
-<img src={useBaseUrl('img/get-started/error.png')} alt="error" />
+<img src={useBaseUrl('img/get-started/error.png')} alt="Screenshot showing Sumo Logic data pipeline error regarding missing authentication cookie" />
 
 Here are some fixes:
 
