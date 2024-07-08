@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
 
-The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
+The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Observations Search, Processes Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
 The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black).
@@ -41,11 +41,11 @@ To grant access to your data you'll need to provide credentials from Carbon Blac
 * **livequery.manage** - create, read
 * **org.search.events** - create, read
 
-See the following Carbon Black documents for details on how to
-authenticate to each API:
+See the following Carbon Black documents for details on how to authenticate to each API:
 
-* [Carbon Black Cloud API](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/)
-* [Enriched Events Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/cb-defense/latest/platform-search-api-enriched-events/#authentication)
+* [Carbon Black Cloud API](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#creating-an-api-key)
+* [Observations Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/observations-api/)
+* [Processes Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/platform-search-api-processes/)
 * [Alerts API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/alerts-api/)
 
 ### Source configuration
@@ -69,6 +69,15 @@ To configure a Carbon Black Cloud Source:
 1. **Org Key**. Enter your Carbon Black Cloud Org key, found in your Carbon Black product console under **Settings > API Access > API Keys.**
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `CarbonBlack` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `Cloud` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
+| `_siemEventID` | `event_type` | For Alerts API, enter the value of field `id`. For Searches API, enter the value of any of these fields `event_id`, `alert_id`, `process`, `unknown`. Set when **Forward To SIEM** is checked. |
 
 ## JSON configuration
 
