@@ -132,7 +132,7 @@ Make sure to complete all sections of the course.
 
 If you're seeing the following error when starting a new lesson, this is typically due to a browser setting.
 
-<img src={useBaseUrl('img/get-started/error.png')} alt="error" />
+<img src={useBaseUrl('img/get-started/error.png')} alt="Screenshot showing Sumo Logic data pipeline error regarding missing authentication cookie" />
 
 Here are some fixes:
 
