@@ -20,10 +20,6 @@ The Druva Data Resiliency Cloud provides unified, easy-to-manage data protection
 
 The Druva Cyber Resilience source provides the ability to fetch realize events generated within the Druva Realize product using the [Druva Realize Events API](https://developer.druva.com/reference/listeventsbytracker) and sends it to Sumo Logic. Realize events API helps you to collect unusual data activity events, access events, and login events generated in Druva Cyber Resilience product.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -92,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/druva-cyber-resilience/example.json)
+<a href="/files/c2c/druva-cyber-resilience/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/druva-cyber-resilience/example.tf)
+<a href="/files/c2c/druva-cyber-resilience/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

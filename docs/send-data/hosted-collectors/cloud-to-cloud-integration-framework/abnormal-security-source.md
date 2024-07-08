@@ -19,10 +19,6 @@ Abnormal Security is a behavioral AI-based email security platform that learns t
 
 The Abnormal Security integration ingests threat data and case data identified by the abnormal threat log and cases using the [Abnormal Security API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1).
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -85,13 +81,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/abnormal-security/example.json)
+<a href="/files/c2c/abnormal-security/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/abnormal-security/example.tf)
+<a href="/files/c2c/abnormal-security/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

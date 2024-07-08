@@ -22,6 +22,18 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
+## Upgrading the Sumo Logic Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sumo Logic Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Create monitors for the Sumo Logic Audit app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
@@ -31,6 +43,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 ## Viewing Sumo Logic Audit dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Account Management Overview
 

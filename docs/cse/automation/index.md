@@ -2,12 +2,13 @@
 slug: /cse/automation
 title: Cloud SIEM Automation
 description: Learn how to configure automations to create notifications and enrichments in Cloud SIEM.
-tags: [cloud siem, security]
+keywords:
+  - automation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide describes how you can use the [Automation Service](/docs/platform-services/automation-service/) to configure automations in Cloud SIEM to add enrichments and create notifications for Insights and Entities. 
+This guide describes how you can use the [Automation Service](/docs/platform-services/automation-service/) to configure automations in Cloud SIEM to add enrichments and create notifications for Insights and Entities.
 
 In this section, we'll introduce the following concepts:
 

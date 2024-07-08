@@ -22,10 +22,6 @@ The source will fetch complete vulnerability instance data that has been updated
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -114,13 +110,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-spotlight/example.json)
+<a href="/files/c2c/crowdstrike-spotlight/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-spotlight/example.tf)
+<a href="/files/c2c/crowdstrike-spotlight/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

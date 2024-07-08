@@ -196,7 +196,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample logs
+## Sample log messages
 
 ```sql
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres

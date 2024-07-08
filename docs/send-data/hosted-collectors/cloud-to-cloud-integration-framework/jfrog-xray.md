@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our JFrog Xray source collects JFrog Xray violations by querying the API for new policy violations when they occur.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -82,10 +78,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/jfrog-xray/example.json)
+<a href="/files/c2c/jfrog-xray/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/jfrog-xray/example.tf)
+<a href="/files/c2c/jfrog-xray/example.tf" target="_blank">Download example</a>
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

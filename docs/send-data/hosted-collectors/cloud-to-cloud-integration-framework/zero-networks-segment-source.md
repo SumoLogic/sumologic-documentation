@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Zero Networks is a cybersecurity company that provides cloud-based security solutions for your networks and endpoints. Segment is a solution that aims to provide comprehensive network security by implementing zero-trust principles. With Segment, Zero Networks provides a cloud-based platform that allows you to create micro-segments across the network. These micro-segments are small, isolated portions of the network that are tightly controlled and can only be accessed by authorized users and devices.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -92,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/zero-networks-segment/example.json)
+<a href="/files/c2c/zero-networks-segment/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/zero-networks-segment/example.tf)
+<a href="/files/c2c/zero-networks-segment/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

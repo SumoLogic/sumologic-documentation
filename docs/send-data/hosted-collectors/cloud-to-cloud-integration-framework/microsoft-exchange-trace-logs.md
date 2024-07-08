@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Exchange Trace Logs Source collects email trace logs from the Office 365 reporting web service via the MessageTrace report under “Exchange reports”. Specific API reference information can be found [here](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)).
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -131,13 +127,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-exchange-trace-logs/example.json)
+<a href="/files/c2c/microsoft-exchange-trace-logs/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-exchange-trace-logs/example.tf)
+<a href="/files/c2c/microsoft-exchange-trace-logs/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

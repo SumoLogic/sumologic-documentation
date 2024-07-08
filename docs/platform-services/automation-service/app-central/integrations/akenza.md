@@ -1,7 +1,6 @@
 ---
 title: Akenza
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

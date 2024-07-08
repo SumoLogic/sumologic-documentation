@@ -92,7 +92,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName methodName principalEmail reque
 ```
 
 
-## Collecting Logs for Google Cloud Audit
+## Collecting logs for Google Cloud Audit
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Audit.
 
@@ -212,6 +212,18 @@ Now that you have set up collection for Google Cloud Audit, install the Sumo Log
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Google Cloud Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Google Cloud Audit dashboards
 

@@ -34,7 +34,7 @@ namespace=istio-system cluster={{cluster}}
 | transpose row _timeslice column response_code
 ```
 
-## Collecting Logs and Metrics for the Istio App
+## Collecting logs and metrics for the Istio App
 
 This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 If you've not yet set up Kubernetes Collection, visit our [Kubernetes](/docs/observability/kubernetes) and [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart) docs to learn how to install.

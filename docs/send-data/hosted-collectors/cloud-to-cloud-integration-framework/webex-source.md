@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cisco Webex is a cloud-based video conferencing and collaboration product suite, which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (meetings, rooms, messages, and memberships) data and sends it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -120,13 +116,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/webex/example.json)
+<a href="/files/c2c/webex/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/webex/example.tf)
+<a href="/files/c2c/webex/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

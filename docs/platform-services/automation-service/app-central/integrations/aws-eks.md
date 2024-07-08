@@ -1,7 +1,6 @@
 ---
 title: AWS EKS
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

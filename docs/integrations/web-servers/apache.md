@@ -110,7 +110,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 * Apache - Top Referrers causing errors
 
 
-## Collecting Logs and Metrics for Apache
+## Collecting logs and metrics for Apache
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 
@@ -456,7 +456,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/apache/apache.json) that describes the monitors.
 2. In the json file, replace `$$apache_data_source` with a custom source filter like `webserver_farm=dev-apache` for setting up alerts for a specific web server farm. If you want to configure this for all your web server farms you can find and replace `$$apache_data_source` with blank `“”`.
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click **Import** and then copy paste the above JSON to import monitors. Name will be the folder name.
 

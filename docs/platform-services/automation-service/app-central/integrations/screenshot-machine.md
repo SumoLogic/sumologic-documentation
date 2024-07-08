@@ -1,7 +1,6 @@
 ---
 title: Screenshot Machine
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

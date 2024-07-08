@@ -19,10 +19,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -99,13 +95,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/armis-api/example.json)
+<a href="/files/c2c/armis-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/armis-api/example.tf)
+<a href="/files/c2c/armis-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

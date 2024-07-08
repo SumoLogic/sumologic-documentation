@@ -1,7 +1,6 @@
 ---
 title: KnowBe4 KMSAT - Reporting
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

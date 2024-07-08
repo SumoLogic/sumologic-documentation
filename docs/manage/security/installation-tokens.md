@@ -86,16 +86,6 @@ sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken>
 Where `<installationToken>` is the **Token String** you want to use to register the Collector.
 
 
-### Setup Wizard UI installer
-
-To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard):
-
-1. Select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.<br/> ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
-1. Click next.
-1. In the input box, enter the **Token String** you want to use to register the Collector for a one-time token.
-1. Continue with the installation steps.
-
-
 ### user.properties
 
 To register an Installed Collector with [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md), you need to use the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:

@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Citrix Cloud source collects the system, operation, and session logs using the Citrix Cloud API and Citrix DaaS REST API to Sumo Logic. Citrix Cloud is a workspace management platform for IT administrators to design, deliver, and manage virtual desktops and applications, and other services, such as file sharing, on any device.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -131,13 +127,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/citrix-cloud/example.json)
+<a href="/files/c2c/citrix-cloud/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/citrix-cloud/example.tf)
+<a href="/files/c2c/citrix-cloud/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

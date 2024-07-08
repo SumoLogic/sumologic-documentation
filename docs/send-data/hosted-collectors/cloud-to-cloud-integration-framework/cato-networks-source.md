@@ -17,10 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cato Networks is a cloud-native, global SD-WAN provider that delivers a secure, optimized, and agile global network for businesses of all sizes. Cato's cloud-based platform converges multiple network and security functions into a unified solution that includes SD-WAN, network security, cloud security, and secure access service edge (SASE) capabilities.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -113,13 +109,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cato-networks/example.json)
+<a href="/files/c2c/cato-networks/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/cato-networks/example.tf)
+<a href="/files/c2c/cato-networks/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

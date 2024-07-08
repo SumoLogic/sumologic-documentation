@@ -121,15 +121,27 @@ _sourceCategory=msgip-app-src riskEventType
 | sort by _count
 ```
 
-## Collecting Logs for Microsoft Graph Identity Protection API
+## Collecting logs for Microsoft Graph Identity Protection API
 
 This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
 
-## Installing the Microsoft Graph Identity Protection App
+## Installing the Microsoft Graph Identity Protection app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Microsoft Graph Identity Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Microsoft Graph Identity Protection dashboards
 

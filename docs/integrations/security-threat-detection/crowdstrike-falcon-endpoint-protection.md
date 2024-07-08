@@ -24,7 +24,7 @@ The CrowdStrike Falcon Endpoint Protection app uses the following log types:
 
 For more information on Events, please refer to the CrowdStrike Falcon Endpoint Protection [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
-### Sample logs
+### Sample log messages
 
 For more information on Events, please refer to [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
@@ -182,7 +182,7 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 ```
 
 
-## Collecting Logs for the CrowdStrike app
+## Collecting logs for the CrowdStrike app
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
@@ -283,6 +283,18 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the CrowdStrike Falcon Endpoint Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CrowdStrike Falcon Endpoint Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
 

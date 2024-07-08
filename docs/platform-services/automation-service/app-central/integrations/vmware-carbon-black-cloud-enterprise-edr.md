@@ -1,7 +1,6 @@
 ---
 title: VMware Carbon Black Cloud Enterprise EDR
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

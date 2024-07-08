@@ -1,7 +1,6 @@
 ---
 title: Axonius
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

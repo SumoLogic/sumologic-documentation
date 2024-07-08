@@ -24,10 +24,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can use the CloudQuery integration to pull inventory from Azure APIs using CloudQuery SDK and send it to Sumo Logic.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## About Vendor
 
 CloudQuery is an open source CSPM vendor that allows the customer to analyze different vendors (for example, AWS, GCP, Azure) to see possible vulnerabilities.
@@ -73,7 +69,11 @@ If the subscription ID is not specified, it will use all visible subscriptions.
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cloudquery-azure-plugin/example.json)
+<a href="/files//c2c/cloudquery-azure-plugin/example.json" target="_blank">Download example</a>
+
+:::note
+If you have over 75,000 Azure products/resources, you might experience crashes due to limitations in the Azure SDK plugin. If this happens, we may need to increase your memory. [Contact our support team](https://support.sumologic.com/support/s/) for assistance.
+:::
 
 ## FAQ
 

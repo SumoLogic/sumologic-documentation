@@ -13,14 +13,11 @@ import ExampleJSON from '/files/c2c/1password/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/1password/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="Thumbnail icon" width="80"/>
 
 The 1Password Source provides a secure endpoint to receive sign-in attempts, item usage, and audit events from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
-
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
 
 ## Data collected
 
@@ -53,7 +50,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. Search for and select **1Password**.
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).  <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -100,13 +97,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/1password/example.json)
+<a href="/files/c2c/1password/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/1password/example.tf)
+<a href="/files/c2c/1password/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

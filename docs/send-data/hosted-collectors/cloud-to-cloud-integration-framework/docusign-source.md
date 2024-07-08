@@ -20,10 +20,6 @@ DocuSign pioneered the development of e-signature technology, and today DocuSign
 
 The DocuSign provides a secure endpoint to receive customer event data from the [DocuSign Monitor API](https://developers.docusign.com/docs/monitor-api/reference/monitor/dataset/getstream/). DocuSign Monitor helps organizations protect their agreements with round-the-clock activity tracking. The Monitor API delivers this activity tracking information directly to existing security stacks or data visualization tools—enabling teams to detect unauthorized activity, investigate incidents, and quickly respond to verified threats.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -137,13 +133,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/docusign/example.json)
+<a href="/files/c2c/docusign/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/docusign/example.tf)
+<a href="/files/c2c/docusign/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
