@@ -33,7 +33,7 @@ The following are [Fields](/docs/manage/fields/) that will be created as part of
 * **`db.cluster.name`**. User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`db.system`**. Has fixed value of redis.
 * **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
-* **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
+* **`db.node.name`**. Has the value of host name of the machine which is being monitored
 * **`sumo.datasource`**. Has fixed value of redis.
 
 ## Prerequisites
@@ -82,7 +82,7 @@ In this step, you will configure the yaml file required for Redis Collection.
 
 Below are the inputs required:
 
-- **`endpoint (no default)`**. The hostname and port of the Redis instance, separated by a colon..
+- **`endpoint (no default)`**. The hostname and port of the Redis instance, separated by a colon.(example: `localhost:6379`)
 - **Redis logs Path**. Enter the path to the log file for your Redis instance.
 
 The log file path configured to capture redis logs must be given here. The files are typically located in `/var/log/redis/redis-server.log`. If you are using a customized path, check the [`redis.conf`](https://download.redis.io/redis-stable/redis.conf) file for this information.
