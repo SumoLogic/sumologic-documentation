@@ -38,14 +38,14 @@ The Documentation team will review submissions, provide suggested edits, add new
 
 :::tip
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
-* [Doc topic (generic) template](/docs/contributing/templates/generic-doc)
+* [Doc template](/docs/contributing/templates/generic-doc)
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
 :::
 
 ## Voice and tone
 
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
-* The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
+* The reader should feel confident and informed. We should strive to engage our customers and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
 * Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
@@ -57,43 +57,31 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
+When writing instructions, use the active voice whenever possible. This example below gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
+
 ### Active voice
 
-When writing instructions, use the active voice whenever possible. For example, "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
+#### General statements
 
-This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Sumo Logic ingests multiple streams of data. | Multiple streams of data are ingested by Sumo Logic. |
 
-<div class="no-box">
-You can add a resource...
-</div>
+#### Task directives
 
-<div class="yes-box">
-Please build the query using the following...
-</div>
+We need them to complete a task. No need for please.
 
-> <small>💡 Explanation: They know they can do a thing. Clearly state to do the thing.</small>
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Build the query using the following... | Please build the query using the following... |
 
----
-<div class="no-box">
-Build the query using the following...
-</div>
+#### Instruction introduction (stem)
 
-<div class="yes-box">
-Add a resource...
-</div>
+Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active:
 
-> <small>💡 Explanation: We need them to complete a task. No need for please.</small>
-
----
-<div class="no-box">
-1. When you need to add a new collector, access Sumo Logic and find the...
-</div>
-
-<div class="yes-box">
-1. To add a new collector:<br/>1. Access Sumo Logic and find the...
-</div>
-
-> <small>💡 Explanation: Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active.</small>
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| To add a new collector:<br/>1. Access Sumo Logic and find the... | When you need to add a new collector, access Sumo Logic and find the... |
 
 ### Inclusive language
 
@@ -104,22 +92,10 @@ By writing inclusively and using culturally neutral language, our words resonate
 * Don’t use words just because they sound better. Choose short, simple words over long and complicated ones.
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
 * Use culturally neutral terms to replace terms with negative connotations. For example:
-<div class="container-boxes">
-<div class="dos-box">
-  &#9989; "allowlist"<br/>
-  &#9989; "denylist"<br/>
-  &#9989; "placeholder data"<br/>
-  &#9989; "primary" or "main"<br/>
-  &#9989; "press" or "click"
-</div>
-<div class="donts-box">  
-  &#10060; "whitelist"<br/>
-  &#10060; "blacklist"<br/>
-  &#10060; "dummy data"<br/>
-  &#10060; "master"<br/>
-  &#10060; "hit"
-</div>
-</div>
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| "allowlist"<br/>"denylist"<br/>"placeholder data"<br/>"primary" or "main"<br/>"press" or "click" | "whitelist"<br/>"blacklist"<br/>"dummy data"<br/>"master"<br/>"hit" |
 
 ## Doc structure summary
 
@@ -254,36 +230,40 @@ Here's a cool tip.
 
 ### Closed beta
 
-A closed beta release is limited to customers participating in the beta. Help topics for a closed beta feature have a **Beta** label at the top, but do not appear in the site table of contents or [Beta Features](/docs/beta/). Sumo Logic representatives provide links for closed beta topics only to customers participating in the closed beta. At the end of the beta period, we remove the **Beta** label and and publish the topics so they are available to everyone.
+Closed beta release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
 
-For a Closed Beta release:
-1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** label.
-  ```
-  ---
-  id: xyz-source
-  title: XYZ Source (Beta)
-  description: The XYZ Source provides a secure endpoint to receive event data.
-  ---
+To format a closed beta release:
 
-  <head>
-    <meta name="robots" content="noindex" />
-  </head>
+1. Underneath the frontmatter, add:
+   * [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up
+   * Sumo Logic beta label
+    ```md title="Example" {7-11}
+    ---
+    id: xyz-source
+    title: XYZ Source (Beta)
+    description: The XYZ Source provides a secure endpoint to receive event data.
+    ---
 
-  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+    <head>
+     <meta name="robots" content="noindex" />
+    </head>
 
-  First paragraph goes here...
-  ```
-1. Do _not_ add the doc to `sidebars.ts`.
-2. Do _not_ list the feature in [Beta Features](/docs/beta/).
-3. Publish the doc.
+    <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-When the feature moves from Beta to GA, remove the Robots meta tag, remove the **Beta** label, and add the doc to `sidebars.ts`.
+    First paragraph goes here...
+    ```
+2. Publish the document.
 
 ### Open beta
 
-An open beta release is available to all customers. Help topics for an open beta feature have a **Beta** label at the top, appear in the site table of contents, and are linked from a description of the feature in [Beta Features](/docs/beta/). At the end of the beta period, we remove the **Beta** label and remove the description of the feature from [Beta Features](/docs/beta/).
+When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from a description of the feature in [Beta Features](/docs/beta/).
 
-For an Open Beta release:
+At the end of the beta period, we remove the **Beta** label and remove the description of the feature from [Beta Features](/docs/beta/).
+
+At the end of the beta period, we remove the beta label and and publish the topics so they are available to everyone. When the feature moves to GA, remove the Robots meta tag, remove the beta label, and add the doc to `sidebars.ts`.
+
+To format an open beta release:
+
 1. Underneath the frontmatter, add the **Beta** label.
   ```
   ---
@@ -556,16 +536,6 @@ Nearly all file formats are supported. For more information, see [Docusaurus Sta
 
 If your file is available in another public Sumo Logic repo, provide the standard URL link. [Here's an example](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/fargate/install-metrics.sh).
 
-## Elements, UI
-
-Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
-
-import UiElements from '../reuse/ui-elements.md';
-
-<UiElements/>
-
-When providing instructions that involve multiple UI elements, list them sequentially and in cascading order. For example: Click **More Actions** > **Delete**.
-
 ## Emphasis
 
 ### Bold
@@ -763,9 +733,9 @@ When sizing images, use your discretion.
 
 For square logos, set the width to about 45-55px.
 
-|  Yes &#9989;  |  No &#10060; |
-|---|---|
-|  <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/logo-no.png')} alt="alt-text" width="400"/> |
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="Screenshot showing correctly sized logo" width="400"/> | <img src={useBaseUrl('img/contributing/logo-no.png')} alt="Screenshot showing oversized logo" width="440"/> |
 
 For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
 
@@ -773,9 +743,9 @@ For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), 
 
 Ensure that screenshots are large enough so that the content is legible, but not comically oversized. Use your discretion.
 
-|  Yes &#9989;  |  No &#10060; |
-|---|---|
-|  <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
 
 Screenshots should never be wider than 600px.
 
@@ -943,13 +913,9 @@ Whenever possible, use link text that’s relevant - such as the page title - ra
 
 When linking to other Sumo Logic documentation, use the phrase "Learn more" on its own or after the end of a sentence.
 
-<div class="no-box">
-[Find out how](/docs/send-data/collection/processing-rules/create-processing-rule) to add a processing rule to filter messages.
-</div>
-
-<div class="yes-box">
-Add a processing rule to filter messages. [Learn more](/docs/send-data/collection/processing-rules/create-processing-rule).
-</div>
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Add a processing rule to filter messages. [Learn more](/docs/send-data/collection/processing-rules/create-processing-rule).| [Find out how](/docs/send-data/collection/processing-rules/create-processing-rule) to add a processing rule to filter messages. |
 
 #### Linking to other headers in the same file
 
@@ -1042,30 +1008,32 @@ For storage and memory sizes (MB, GB), the unit of measurement should be upperca
 
 ## Metadata (frontmatter)
 
-Markdown documents have metadata (e.g., title, description, and search keywords) at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
+Markdown documents contain a YAML block of metadata at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). This block includes elements such as the title, description, and search keywords. Every page should have an `id` for sidebar navigation.
 
-```markdown
+Here is an example of a frontmatter block with sample text:
+
+```
 ---
-id: page-id
+id: page
 title: Page title
-sidebar_label: Navigation title
-description: Learn more about...
+sidebar_label: Sidebar navigation title
+description: Description about this feature.
 keywords:
     - metrics
     - traces
-tags: [apm, metrics]  
+tags: [metrics, traces]  
 ---
 ```
 
 | Parameter | Description |
 | :-- | :-- |
-| `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
+| `id:` | **(Required)** Unique identifier for the page, used in the sidebar and as the canonical link. Keep it short and only use dashes. |
 | `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
-| `title:` | **(Required)** For SEO, be sure to use main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
-| `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull the first couple of sentences instead. |
-| `keywords:` | (Optional) List of page keywords, which boosts SEO. |
-| `tags:` | (Optional) A string or list of tags that adds a label and permalink to tag to help with sorting. |
+| `title:` | **(Required)** For SEO purposes, include main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
+| `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
+| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. If omitted, search engines will pull the first couple of sentences from the page. |
+| `keywords:` | (Optional) List of keywords to enhance SEO. |
+| `tags:` | (Optional) A string or list of tags that adds labels and permalinks to help with sorting. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
@@ -1226,7 +1194,7 @@ Colons are used to introduce lists or to separate titles from subtitles. Only in
 
 ### Commas
 
-We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
+We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "[I had eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 
 ### Exclamation Points
 
@@ -1523,6 +1491,42 @@ For clarity and search engine discoverability:
 * If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
+
+
+
+## UI Elements
+
+Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
+
+import UiElements from '../reuse/ui-elements.md';
+
+<UiElements/>
+
+### Cascading instructions
+
+When providing instructions that involve multiple UI elements, list them sequentially and in cascading order. For example: Click **More Actions** > **Delete**.
+
+### Referring to locations in the UI
+
+Avoid "below", "above", "next to", and so on, when referring to UI elements on a page, as locations may change or appear differently for different users.
+
+### Mouse actions
+
+Try to avoid these if possible. Instead, use "Select".
+
+If you need to use mouse actions to be specific, use:
+* "Click" (not "Click on" or "Left-click")
+* "Right-click"
+* "Hover" (not "Mouse over")
+* "Drag"
+
+
+### When to use “select”, “choose”, and “enter”
+
+* **Select**. Use to tell users to pick something from a limited number of options, such as from a list or a dropdown menu, or when you are referring to checking or toggling a UI element.
+* **Choose**. Use to encourage the user to make a decision that is more subjective or open-ended.
+* **Enter**. Use enter when the user is explicitly inputting something from scratch, rather than from a pre-built set of options.
+
 
 ## Videos
 

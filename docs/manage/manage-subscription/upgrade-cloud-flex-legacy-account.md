@@ -41,7 +41,7 @@ It depends on your current account type:
 1. Click **Confirm** to complete the upgrade. After you click **Confirm**, the credit card you provided to Sumo Logic is charged.
 1. The upgrade is processed, then a **Congratulations** screen appears. Click **Finish**.
 
-If you have any issues, or if you do not see a charge on your credit card within 48 hours, contact [support@sumologic.com](mailto:support@sumologic.com).
+If you have any issues, or if you do not see a charge on your credit card within 48 hours, contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
 
 :::note
 The price shown in the screenshots above may not reflect the actual current price.
