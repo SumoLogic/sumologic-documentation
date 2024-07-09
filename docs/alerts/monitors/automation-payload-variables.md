@@ -2,7 +2,7 @@
 id: automation-payload-variables
 title: Automation Payload Variables
 description: Details around variables passed from a monitor to a playbook in the Automation Service.
-keywords: 
+keywords:
     - automation
     - payload
     - monitor
@@ -10,9 +10,9 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Automated playbooks can be invoked by a monitor, as described in [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors). A payload is passed from the alert to the playbook. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
+Automated playbooks can be invoked by a monitor, as described in [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors). A payload is passed from the alert to the playbook. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook.
 
-## Payload variables 
+## Payload variables
 
  The below variables are passed in the payload from an alert to a playbook. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by called `customPlaceholderMap[].user_name`.
 
@@ -47,7 +47,7 @@ Automated playbooks can be invoked by a monitor, as described in [Automated Play
 
 ## Example payload
 
-```json 
+```json
 {
   "Id": "00000000016CCCDD",
   "Name": "Amazon Guard Duty Brute Force",
@@ -127,7 +127,6 @@ Automated playbooks can be invoked by a monitor, as described in [Automated Play
 ```
 
 ## View playbook payload
-To view the variables available from an alert that triggered a playbook: 
+To view the variables available from an alert that triggered a playbook:
 1. [View the automated playbooks for an alert](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert).
-1. Expand the playbook name to view the payload. <br/><img src={useBaseUrl('img/alerts/playbook_payload.png')} alt="<View playbook payload>" style={{border: '1px solid gray'}} width="600" />
-
+1. Expand the playbook name to view the payload. <br/><img src={useBaseUrl('img/alerts/playbook_payload.png')} alt="View playbook payload" style={{border: '1px solid gray'}} width="600" />

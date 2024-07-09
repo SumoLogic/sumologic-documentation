@@ -17,7 +17,7 @@ This section describes how to create a Scheduled Search at the time you save a s
 ### Step 1. Initiate Creation
 
 1. Run a Log Search and click the save icon.
-1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="img/alerts/schedule-this-search.png" width="500"/>
+1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="schedule-this-search.png" width="500"/>
 
 ### Step 2. Set Run Frequency
 
