@@ -175,11 +175,11 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 Select **Action** from the node types.
 
-<img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Node Adding" width="500"/>
+<img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Add Node dialog showing node types" width="500"/>
 
 A new screen will be displayed showing all actions a user has to choose from.
 
-<img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Node Adding" width="500"/>
+<img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Add Node dialog showing the Type dropdown menu" width="500"/>
 
 These action types will directly interact with Cloud SOAR's integrations to either gather data or initiate actions automatically. Select the **Type** of action:
    * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
@@ -220,9 +220,9 @@ For playbook entities which support user-defined text input, such as email notif
 
 From the node's menu, choose **Condition**. A new configuration screen will be displayed which will enable a user to define a conditional statement to be met before the next node type can be executed. Under **Condition 1,** click on **Select a value** to define the first condition.
 
-<img src={useBaseUrl('img/cloud-soar/image81.png')} alt="Condition Node" width="600"/>    
+<img src={useBaseUrl('img/cloud-soar/image81.png')} alt="Add Node dialog showing a new condition" width="600"/>    
 
-<img src={useBaseUrl('img/cloud-soar/image82.png')} alt="Condition Node" width="600"/>   
+<img src={useBaseUrl('img/cloud-soar/image82.png')} alt="Add node dialog showing the Get Value field" width="600"/>   
 
 When developing the first condition, users have multiple options to choose from:
 
@@ -235,7 +235,7 @@ From our earlier example, we are going to choose to evaluate the output from our
 
 A list of available results or outputs from the previously selected integration will be displayed in JSON format. Select which output type (e.g., hashes, IP addresses, domains) to evaluate and add it to the condition.
 
-<img src={useBaseUrl('img/cloud-soar/image83.png')} alt="Node Placeholder Function" width="600"/>   
+<img src={useBaseUrl('img/cloud-soar/image83.png')} alt="List of outputs" width="600"/>   
 
 The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the
 condition.
@@ -452,9 +452,9 @@ You can build basic integrations without having to provide custom YAML files.
    1. Click **Create**. The action file is created for the integration.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-action-file.png')} alt="Create action" width="600"/><br/>The new action displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration.png')} alt="Example integration" width="600"/>
 1. Add the resource information:
    1. Click the **+** button to the left of **Resources**.
-   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Example integration" width="400"/>
-   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
-1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
+   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
+   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
+1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
 
 ### Configure a webhook for Cloud SOAR
 
@@ -604,7 +604,7 @@ You can manage Slack communication channels directly by creating/editing various
 * Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" width="800"/>
 * Adding / removing users from the incident <br/>When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.
 * Close / delete an incident <br/>When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" width="400"/>
-* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Archived Slack channel" width="800"/>
+* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Slack message in the war room" width="800"/>
 
 ## Rules
 
