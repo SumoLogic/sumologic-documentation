@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-[HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of HAProxy server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
+The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for both real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
-The OpenTelemetry collector runs on the same host as HAProxy and uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The OpenTelemetry collector runs on the same host as HAProxy and uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. HAProxy logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
@@ -29,7 +29,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 - **`sumo.datasource`**. Has fixed value of **haproxy**
 - **`webengine.system`**. Has fixed value of **haproxy**
-- **`webengine.cluster.name`**. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.cluster.name`**. User configured. Enter a name to identify the HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
 - **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
 
@@ -37,7 +37,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-The receiver used gets stats from an HAProxy instance using the `stats` endpoint. This receiver supports HAProxy version 2.3.9+.
+The receiver used gets stats from an HAProxy instance using the `stats` endpoint. This receiver supports HAProxy version 2.3.9 and later.
 
 **Receive server statistics** by configuring the server's `haproxy.cfg` file to [enable stats support](https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/#4-stats%20enable).
 
@@ -220,7 +220,7 @@ sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.serv
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
 ```
 
-## Sample Metrics
+## Sample metrics
 
 ```json
 {
