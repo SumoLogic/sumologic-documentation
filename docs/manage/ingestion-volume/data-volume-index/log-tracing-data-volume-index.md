@@ -20,6 +20,7 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceCategory     | `sourcecategory_volume`          |
 | SourceHost         | `sourcehost_volume`              |
 | View               | `view_volume`                    |
+| SourceCategory     | `view_and_extractedAndCollectedFieldSize_volume`          |
 
 You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
