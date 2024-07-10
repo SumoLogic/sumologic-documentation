@@ -44,22 +44,21 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 
 ## Voice and tone
 
-* We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
-* The reader should feel confident and informed. We should strive to engage our customers and show them where to get additional assistance when needed.
-* Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
-* Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
-* Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
-* Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
-* Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
-* Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
-* Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
-* When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
-* We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
-
-When writing instructions, use the active voice whenever possible. This example below gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
+* **Clarity and Professionalism**. We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
+* **Engagement and Assistance**. The reader should feel confident and informed. We should strive to engage our customers and show them where to get additional assistance when needed.
+* **Professional Description**. Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
+* **Conversational Tone**. Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
+* **Reader Address**. Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
+* **Readability and SEO**. Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
+* **Brand Guidelines**. Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
+* **Gentle Language**. Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
+* **Judicious Use of Absolutes**. Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
+* **Error Messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
+* **Humor**. We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
 ### Active voice
+
+When writing instructions, use the active voice whenever possible. This example below gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
 
 #### General statements
 
@@ -87,10 +86,21 @@ Introduce your instructions with the goal, then dive into the instructions. This
 
 By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
 
+#### Avoid Regional Language
+
 * Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
+
+#### Simplify Language
+
 * Avoid overly technical jargon.
 * Don’t use words just because they sound better. Choose short, simple words over long and complicated ones.
+
+#### Gender Neutrality
+
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
+
+#### Cultural Neutrality
+
 * Use culturally neutral terms to replace terms with negative connotations. For example:
 
 | &#9989; **Do** | &#10060; **Don't** |
@@ -99,21 +109,25 @@ By writing inclusively and using culturally neutral language, our words resonate
 
 ## Doc structure summary
 
-* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top.
-* Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
-* Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
-* Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
-* Keep instructions concise, easy to follow, and with not too many screenshots.
-* Include any notes, warnings, tips, or other admonitions.
+* [**Frontmatter**](#metadata-frontmatter). Metadata formatted in YAML that goes at the top.
+* **Introduction**. Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
+* **Contextual guidance**. Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
+* **Linking**. Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
+* **Conciseness**. Keep instructions concise, easy to follow, and with not too many screenshots.
+* [**Admonitions**](#admonitions). Include any notes, warnings, tips, or other admonitions.
 
 
 ## Abbreviations
 
 Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
 
-* Instead of "e.g.", use “for example”
-* Instead of "i.e.", use “that is”
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| for example | e.g. |
 
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| that is | i.e. |
 
 ## Acronyms
 
@@ -235,52 +249,63 @@ Closed beta release features are exclusively available to participating customer
 To format a closed beta release:
 
 1. Underneath the frontmatter, add:
-   * [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up
-   * Sumo Logic beta label
-    ```md title="Example" {7-11}
-    ---
-    id: xyz-source
-    title: XYZ Source (Beta)
-    description: The XYZ Source provides a secure endpoint to receive event data.
-    ---
+   * The [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
+   * The Sumo Logic Docs beta label.
+     ```md {7-11}
+     ---
+     id: xyz-source
+     title: XYZ Source (Beta)
+     description: The XYZ Source provides a secure endpoint to receive event data.
+     ---
 
-    <head>
-     <meta name="robots" content="noindex" />
-    </head>
+     <head>
+      <meta name="robots" content="noindex" />
+     </head>
 
-    <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+     <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-    First paragraph goes here...
-    ```
+     First paragraph goes here...
+     ```
 2. Publish the document.
 
 ### Open beta
 
-When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from a description of the feature in [Beta Features](/docs/beta/).
-
-At the end of the beta period, we remove the **Beta** label and remove the description of the feature from [Beta Features](/docs/beta/).
-
-At the end of the beta period, we remove the beta label and and publish the topics so they are available to everyone. When the feature moves to GA, remove the Robots meta tag, remove the beta label, and add the doc to `sidebars.ts`.
+When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from the [Beta Features](/docs/beta/) section.
 
 To format an open beta release:
 
-1. Underneath the frontmatter, add the **Beta** label.
-  ```
-  ---
-  id: xyz-source
-  title: XYZ Source (Beta)
-  description: The XYZ Source provides a secure endpoint to receive event data.
-  ---
+1. Underneath the frontmatter, add the beta label.
+   ```md {7}
+   ---
+   id: xyz-source
+   title: XYZ Source (Beta)
+   description: The XYZ Source provides a secure endpoint to receive  event data.
+   ---
 
-  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+   <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-  First paragraph goes here...
-  ```
-1. Add the doc in `sidebars.ts`.
-2. List the feature in [Beta Features](/docs/beta/).
-3. Publish the doc.
+   First paragraph goes here...
+   ```
+1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui-new.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
+     ```js title="sidebars.ts"
+     getstarted: [
+       {
+         type: 'category',
+         label: 'Welcome to Sumo Logic',
+         items: [
+           'get-started/sumo-logic-ui-new',
+           ...
+     beta: [
+       {
+         type: 'category',
+         label: 'Beta',
+         items: [
+           'get-started/sumo-logic-ui-new',
+           ...
+     ```
+1. Publish the doc.
 
-When the feature moves from Beta to GA, remove the **Beta** label and remove a description of the feature from [Beta Features](/docs/beta/).
+When the feature goes GA, remove the beta label and remove a description of the feature from the `/docs/beta` section.
 
 ## Capitalization
 
@@ -302,12 +327,13 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-    Example: `_view = sumologic_slo_output`
-
+```
+`_view = sumologic_slo_output`
+```
 </TabItem>
 <TabItem value="Result">
 
-Example: `_view = sumologic_slo_output`
+`_view = sumologic_slo_output`
 
 </TabItem>
 </Tabs>
@@ -332,21 +358,13 @@ If you know the code language, include that in the first set of backticks to act
 
 <TabItem value="Markdown">
 
-    ```json
-    {  
-      "employee": {
-      "name": "Jane Smith",   
-      "team": "Operations",   
-      "manager": true  
-      }  
-    }  
-    ```
+<img src={useBaseUrl('img/contributing/json-codeblock.png')} alt="JSON code block example" />
 
 </TabItem>
 <TabItem value="Result">
 
 ```json
-{  
+{
   "employee": {
     "name": "Jane Smith",   
     "team": "Operations",   
@@ -370,20 +388,16 @@ Here's how to add a title to your code block.
 
 <TabItem value="Markdown">
 
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
-    }
-    ```
+<img src={useBaseUrl('img/contributing/title-codeblock.png')} alt="JSX snippet with title" />
 
 </TabItem>
 <TabItem value="Result">
 
 ```jsx title="src/components/HelloDocusaurus.js"
 function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
+  return (
+    <h1>Hello, Docusaurus!</h1>
+  )
 }
 ```
 
@@ -402,18 +416,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 
 <TabItem value="Markdown">
 
-    ```sql {2-6}
-    _sourceCategory=reinvent/travel/checkout
-    [subquery:_sourceCategory=reinvent/travel/nginx
-         | count by src_ip
-         | topk(1,_count)
-         | compose src_ip keywords
-    ]
-    | json field=_raw "funcName"
-    | where funcname in ("process_cart","charge")
-    | if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-    | count by funcname
-    ```
+<img src={useBaseUrl('img/contributing/highlight-codeblock.png')} alt="SQL code snippet with highlighted lines" />
 
 </TabItem>
 <TabItem value="Result">
@@ -439,27 +442,31 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 ## Collapsible text blocks
 
-You can use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched, but not displayed, when loading a page. We recommend using expanders only for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
+Use the Docusaurus [Details](https://docusaurus.io/docs/next/markdown-features#details) feature to collapse long, additional content and long code samples. When collapsed, the content can be searched, but not displayed, when loading a page. Place long lists or lots of content in this section. The reader can expand/collapse as needed. Important content like required steps and instructions should not be placed in an expander.
 
 You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
-```html title="Copy and fill out for expanders"
+Add a title for the expander between the `<summary>` tags. Then, add all content after `<summary>` tags and before the closing `<details>` tags.
+
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+<img src={useBaseUrl('img/contributing/highlight-codeblock.png')} alt="SQL code snippet with highlighted lines" />
+
+</TabItem>
+<TabItem value="Result">
+
 <details>
-<summary>Title for the expander</summary>
 
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
-
-Add all content after Summary and before the closing details tags.
-
-</details>
-```
-
-
-<details>
-
-<summary>Example expander</summary>
-
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+<summary>Toggle me</summary>
 
 ```json title="Code in a tip with line highlight" {11-16}
 "overrides": [
@@ -483,6 +490,12 @@ Place long lists or lots of content in this section. The reader can expand/colla
 ```
 
 </details>
+
+</TabItem>
+</Tabs>
+
+
+
 
 ## Contractions
 
