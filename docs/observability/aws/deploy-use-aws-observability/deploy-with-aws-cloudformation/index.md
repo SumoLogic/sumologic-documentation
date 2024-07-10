@@ -60,7 +60,7 @@ The below tables displays the response for each text box in this section.
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
-| Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occuring during solution installation. To Opt-out change this to `false`, default value is `true` |
+| Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To Opt-out change this to `false`, default value is `true` |
 
 ## Step 3: AWS account alias 
 
