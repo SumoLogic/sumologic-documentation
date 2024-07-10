@@ -229,6 +229,6 @@ The **Redis - Command Stats Delta** dashboard provides an at-a-glance view of co
 
 Use this dashboard to review String Commands, Key Commands, Hash Commands, Sets Commands, Sorted Sets Commands, List Commands, Transaction Commands, and Scripting Commands.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Command-Stats-Delta.png' alt="Redis Command Stats Delta dashboards" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Command-Stats-Deltas.png' alt="Redis Command Stats Delta dashboards" />
 
 
