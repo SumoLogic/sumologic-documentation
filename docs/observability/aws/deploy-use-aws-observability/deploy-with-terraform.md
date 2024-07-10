@@ -749,7 +749,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
-#### Configure collection of Application Load Balancer Access Logs
+### Configure collection of Application Load Balancer Access Logs
 
 Amazon Elastic load balancers have various [load balancers](https://aws.amazon.com/elasticloadbalancing/?whats-new-cards-elb.sort-by=item.additionalFields.postDateTime&whats-new-cards-elb.sort-order=desc). AWS Observability supports access log collection for Application Load Balancers only.
 
@@ -1586,7 +1586,18 @@ Local-exec provisioner error
 Module Not Found Error: No Module named ‘sumologic’
 ```
 #### Solution
-Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/providers.tf#L1).
+Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf#L1).
+
+### Field or FER not found
+#### Error Message
+
+```
+"errors":[{"code":"field:already_exists","message":"Field with the given name already exists"}]
+
+"errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
+```
+#### Solution
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-2-configure-the-terraform-script).
 
 ### Hierarchy named 'AWS Observability' already exist
 #### Error Message
