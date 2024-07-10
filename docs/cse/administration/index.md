@@ -96,7 +96,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/administration/using-sensor-zones"><img src={useBaseUrl('img/icons/cloud/events.png')} alt="Squres icon" width="40"/><h4>Sensor Zones</h4></a>
+  <a href="/docs/cse/administration/using-sensor-zones"><img src={useBaseUrl('img/icons/cloud/events.png')} alt="Squares icon" width="40"/><h4>Sensor Zones</h4></a>
   <p>Learn how to use Sensor Zones to distinguish between Cloud SIEM Entities that have the same IP address.</p>
   </div>
 </div>

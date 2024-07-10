@@ -38,7 +38,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Sheild on a cloud icon" width="40"/><h4>Ingestion Sources for Cloud SIEM</h4></a>
+  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Ingestion Sources for Cloud SIEM</h4></a>
   <p>Learn the sources available for ingesting data to Cloud SIEM.</p>
   </div>
 </div>
