@@ -238,7 +238,7 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
 1. Click the **Save** button
 
-### invalid_grant: request not supported on this domain
+### Request not supported on this domain
 
 **Error**: `invalid_grant`
 
