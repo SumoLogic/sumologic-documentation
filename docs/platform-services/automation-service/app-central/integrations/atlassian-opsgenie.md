@@ -30,9 +30,9 @@ OpsGenie, a service powered by Atlassian in the cloud, provides operational team
 * **Get Team** *(Enrichment)* - Retrieve specific team information from OpsGenie.
 * **List Alerts** *(Enrichment)* - Retrieve a list of alerts from OpsGenie.
 * **List Incidents** *(Enrichment)* - Retrieve a list of incidents from OpsGenie.
+* **List Schedules** *(Enrichment)* - Retrieve a list of schedules from OpsGenie.
 * **List Teams** *(Enrichment)* - Retrieve a list of teams from OpsGenie.
 * **List Users** *(Enrichment)* - Retrieve a list of users from OpsGenie.
-* **List Schedules** *(Enrichment)* - Retrieve a list of schedules from OpsGenie.
 
 ## Atlassian Opsgenie configuration
 
@@ -43,4 +43,4 @@ To retrieve the API token, please refer to the following [guide](https://support
 * March 22, 2024 - First upload
 * July 11, 2024 - Added the Actions:
     + Get On Calls
-    + List Schedules
+      + List Schedules
