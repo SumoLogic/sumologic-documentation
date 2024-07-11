@@ -75,12 +75,12 @@ To calculate percentiles for the histograms, you can use three different methods
 
 Consider you have the following four dataset with histograms, each associated with a specific browser type, a countryCode, and raw measurements to calculate the percentiles in histograms.
 
-metric | 	browser	| countryCode	| value (raw measurements used to create the histogram) |
------- | --------- | --------    | ------------|
-browser_cls_histogram |	Chrome 109	| POL	 | 1000, 2000, 3000 |
-browser_cls_histogram	 | Safari 16 |	POL	| 500, 3100 |
-browser_cls_histogram	| Chrome 109 |	USA	| 200, 750, 1000 |
-browser_cls_histogram	| Safari 16 |  USA	| 50, 100, 750, 755, 800  |
+| metric | 	browser	| countryCode	| value (raw measurements used to create the histogram) |
+| ------ | --------- | --------    | ------------|
+| browser_cls_histogram |	Chrome 109	| POL	 | 1000, 2000, 3000 |
+| browser_cls_histogram	 | Safari 16 |	POL	| 500, 3100 |
+| browser_cls_histogram	| Chrome 109 |	USA	| 200, 750, 1000 |
+| browser_cls_histogram	| Safari 16 |  USA	| 50, 100, 750, 755, 800  |
 
 ### Individual Histograms  
 
@@ -88,9 +88,9 @@ To calculate the 50th percentile for each histogram individually, use `pct_50` q
 
 **Example 1**. Consider a histogram `browser_cls_histogram` for Chrome 109 in Poland with raw measurements of 1000, 2000, 3000.
 
-metric     | browser | countryCode   | value |
------- |  -------------- | ---------- |
-browser_cls_histogram| Chrome 109 | POL    |  1000, 2000, 3000 |
+| metric                | browser    | countryCode | value             |
+| --------------------- | ---------- | ----------- | ----------------- |
+| browser_cls_histogram | Chrome 109 | POL         |  1000, 2000, 3000 |
 
 To calculate the 50th percentile for this histogram, you can run the following query:
 
@@ -100,15 +100,15 @@ The query uses the `browser_cls_histogram` metric and specifies that it is an `e
 
 **Output**. The result will be.
 
-metric      countryCode    | pct_50.0 |
-------- | ------------| ------- |
-browser_cls_histogram | POL   |       2000± 5% |
+| metric                | countryCode | pct_50.0 |
+| --------------------- | ------------| -------- |
+| browser_cls_histogram | POL         | 2000± 5% |
 
 **Example 2**. Consider a `browser_cls_histogram` histogram for Safari 16 in the USA with raw measurements of 500 and 3100.
 
-metric     | browser | countryCode   | value |
----------  | -------- |  ---------- | -----  |
-browser_cls_histogram| Safari 16 | POL   | 500, 3100 |
+| metric                | browser   | countryCode | value     |
+| --------------------- | --------- | ----------- | --------- |
+| browser_cls_histogram | Safari 16 | POL         | 500, 3100 |
 
 To calculate the 50th percentile for this histogram, you can use the following query:
 
@@ -116,9 +116,9 @@ To calculate the 50th percentile for this histogram, you can use the following q
 
 **Output**. The result will be.
 
-metric               |   browser      |   countryCode  |  value|
----------------|  --------------- ---------| -------    | ---- |
-browser_cls_histogram   | Safari 16     |   POL         |   1800 ± 5% |
+| metric                | browser   | countryCode | value     |
+| --------------------- | --------- | ----------- | --------- |
+| browser_cls_histogram | Safari 16 | POL         | 1800 ± 5% |
 
 ### Percentiles Grouped by a Specific Dimension
 
@@ -134,10 +134,10 @@ The query uses the `browser_cls_histogram` metric and specifies that it is an `e
 
 **Output**. The result will be. It will return 50th percentile latencies for each country.
 
-metric     | countryCode  |  pct_50.0      
---------  |  -----------  |  --------- |
-pct_50.0 | POL     |     2000 ± 5% |
-pct_50.0 | USA     |      750 ± 5%   |
+| metric   | countryCode | pct_50.0  |
+| -------- | ----------- | --------- |
+| pct_50.0 | POL         | 2000 ± 5% |
+| pct_50.0 | USA         | 750 ± 5%  |
 
 ### Aggregated Percentile for All Histograms
 
@@ -153,9 +153,9 @@ The query uses the `browser_cls_histogram` metric and specifies that it is an `e
 
 **Output**. The result will be. It shows the calculated value of the aggregated 50th percentile with a 5% margin of error for all histograms.
 
-metric | value
------ | ----- |
-pct_50.0 | 750 ± 5% |
+| metric   | value    |
+| -------- | -------- |
+| pct_50.0 | 750 ± 5% |
 
 ### Additional Supported Quantization Methods
 
