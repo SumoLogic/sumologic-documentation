@@ -5,6 +5,7 @@ description: Learn how to create and manage multiple Sumo Logic orgs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::note
 If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).
@@ -46,7 +47,21 @@ There are several role capabilities that are required to work with orgs:
 
 ## Create a new child organization
 
-This section has instructions for creating a new org. 
+This section has instructions for creating a new org.
+
+:::sumo Micro Lesson
+Creating a New Child Org
+<Iframe url="https://www.youtube.com/embed/omTHPAJ9dIg?si=m5dVp5oXu29wq4Pu"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
 
 :::note
 After you create a new org, you can’t delete it.
