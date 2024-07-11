@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations, and access from known malicious sources.
 
-Tomcat logs are sent to Sumo Logic through the Opentelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`tomcat`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/tomcat.md). 
+Tomcat logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`tomcat`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/tomcat.md). 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Schematics.png' alt="Schematics" />
 
@@ -22,7 +22,7 @@ Tomcat logs are sent to Sumo Logic through the Opentelemetry [filelog receiver](
 The following are the [Fields](/docs/manage/fields) that will be created as part of the Tomcat App install, if not already present.
 
 - `sumo.datasource`. Has a fixed value of `tomcat`.
-- `deployment.environment`. User configured. This is the deployment environment where the Memcache cluster resides. For example: `dev`, `prod` or `qa`.
+- `deployment.environment`. User configured. This is the deployment environment where the Tomcat cluster resides. For example: `dev`, `prod` or `qa`.
 - `webengine.cluster.name`. User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo Logic.
 - `webengine.system`. Has a fixed value of `tomcat`.
 - `webengine.node.name`. This has the value of the FQDN of the machine where the OpenTelemetry collector is collecting logs and metrics from.
@@ -95,7 +95,7 @@ The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a
 
 For metrics, you're required to provide the JMX endpoint (default is `localhost:11099`) along with the `collection_interval` (default is 1 minute).
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -208,7 +208,7 @@ sumo.datasource=tomcat deployment.environment=* webengine.cluster.name=* webengi
 
 ### Overview
 
-The **Apache Tomcat - Overview** dashboard provides a high-level view of information on visitor geographic locations, responses over time, and number of error codes and top urls causing error. In addition to this you can monitor  requests, error count and their rates, along with busy and idle threads for your Tomcat instance.
+The **Apache Tomcat - Overview** dashboard provides a high-level view of information on visitor geographic locations, responses over time, and number of error codes and top urls causing error. In addition to this, you can monitor requests, error count and their rates, along with busy and idle threads for your Tomcat instance.
 
 Use this dashboard to:
 
@@ -220,7 +220,7 @@ Use this dashboard to:
 
 #### Visitor Locations
 
-The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
+The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by U.S. region over time.
 
 - Worldwide. Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 - Visits by Country Over Time. Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
