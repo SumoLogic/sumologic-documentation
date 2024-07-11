@@ -84,7 +84,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/administration/manage-custom-insight-resolutions"><img src={useBaseUrl('img/icons/operations/correlation-engine.png')} alt="Barchart with a gear icon" width="40"/><h4>Manage Custom Insight Resolutions</h4></a>
+  <a href="/docs/cse/administration/manage-custom-insight-resolutions"><img src={useBaseUrl('img/icons/operations/correlation-engine.png')} alt="Bar chart with a gear icon" width="40"/><h4>Manage Custom Insight Resolutions</h4></a>
   <p>Learn how to create and manage Custom Insight Resolutions.</p>
   </div>
 </div>
