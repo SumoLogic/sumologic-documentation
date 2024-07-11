@@ -43,4 +43,4 @@ To retrieve the API token, please refer to the following [guide](https://support
 * March 22, 2024 - First upload
 * July 11, 2024 - Added the Actions:
     + Get On Calls
-      + List Schedules
+    + List Schedules
