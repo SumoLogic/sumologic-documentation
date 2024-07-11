@@ -254,9 +254,8 @@ module.exports = {
     announcementBar: {
       id: 'announcementBar',
       content: '<b>Temporary Search Disruption</b>: Our site search may be intermittently down for maintenance. We appreciate your patience.',
-      backgroundColor: '#FFF9C4',
+      backgroundColor: '#FFECB3',
       textColor: '#000000',
-      isCloseable: false,
     },
     colorMode: {
       defaultMode: 'light',
