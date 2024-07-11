@@ -13,7 +13,7 @@ The Sumo Logic app for Amazon ElastiCache allows you to set up, run, and scale p
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Log and Metric types  
+## Log and metric types  
 
 The Amazon ElastiCache app uses the following logs and metrics:
 * [Amazon ElastiCache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
@@ -21,7 +21,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 * [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
 
-### Sample log message
+### Sample log messages
 
 ```json title="Sample CloudTrail Log Message"
 {
@@ -111,7 +111,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
     * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
     * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
     * Namespace for **Amazon ElastiCache** service is **AWS/ElastiCache**
-    * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+    * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon ElastiCache CloudTrail Logs
@@ -119,11 +119,11 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your** ElastiCache** S3 bucket.
+   * **S3 Region**. Select the Amazon Region for your **ElastiCache** S3 bucket.
    * **Bucket Name**. Enter the exact name of your **ElastiCache** S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter aws/observability/cloudtrail/logs
-   * **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+   * **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources)
    * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
@@ -135,7 +135,9 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**cacheclusterid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the “**cacheclusterid**” field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -186,22 +188,11 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 This section has instructions for installing the Sumo Logic app for **Amazon ElastiCache** and descriptions of each of the app dashboards along with associated use cases.
 
-Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for **“Amazon ElastiCache**” and select the app**.**
-2. To install the app, click **Add to Library** and complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing Amazon ElastiCache dashboards  
 
@@ -250,7 +241,7 @@ Use this dashboard to:
 
 ### Host Performance Details
 
-**The Amazon ElastiCache - Host Performance Details **dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
+The **Amazon ElastiCache - Host Performance Details** dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
 
 Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
@@ -260,7 +251,7 @@ Use this dashboard to:
 
 ### Redis Performance Details
 
-**The Amazon ElastiCache - Redis Performance Details **dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
+The **Amazon ElastiCache - Redis Performance Details** dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
 
 Use this dashboard to:
 * Monitor trends around cache hits and misses to determine if Redis clusters need to be tuned
@@ -271,7 +262,7 @@ Use this dashboard to:
 
 ### Redis Command Latency
 
-**The Amazon ElastiCache - Redis Command Latency **dashboard provides detailed insights into latency of various Redis commands.
+The **Amazon ElastiCache - Redis Command Latency** dashboard provides detailed insights into latency of various Redis commands.
 
 Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
@@ -280,7 +271,7 @@ Use this dashboard to:
 
 ### Redis Command Stats
 
-**The Amazon ElastiCache - Redis Command Stats **dashboard provides detailed insights into the number of commands being performed.
+The **Amazon ElastiCache - Redis Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
 Use this dashboard to:
 * Monitor various Get and Set commands received by your ElastiCache clusters and nodes

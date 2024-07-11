@@ -36,7 +36,7 @@ A user runs a Context Action by clicking the Context Action icon next to an Enti
 
 In the screenshot below, Context Actions are listed below the built-in **Add to Match List** and **Add to Suppressed List** options.
 
-<img src={useBaseUrl('img/cse/action-icon-entity.png')} alt="Context actions" width="300"/>
+<img src={useBaseUrl('img/cse/action-icon-entity.png')} alt="Context actions" style={{border: '1px solid gray'}} width="300"/>
 
 If an action name is shown in red font, that indicates that the action depends on a Record field that doesn’t exist.
 
@@ -57,9 +57,9 @@ import Iframe from 'react-iframe'; 
 
 ## Configure a Context Action
 
-1. Click the gear icon at the top of the Cloud SIEM UI and choose **Context Actions** under **Integrations**.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  Kanso-->
 1. On the **Context Actions** page click **Create**.
-1. This annotated screenshot shows a previously configured Context Action in edit mode.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" width="500"/>
+1. This annotated screenshot shows a previously configured Context Action in edit mode.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="500"/>
     1. Name. Enter a name for the Context Action. 
     1. Choose whether you want to open a URL to an external service or
         a Sumo Logic Query. 
@@ -98,15 +98,23 @@ To create a URL to be sent to an external service, enter the URL in the format r
 
 Examples:
 
-**Run a google search on the action target**
+#### Run a google search on the action target
 
 `https://www.google.com?q={{value}}`
 
-**Check for the action target on AbuseIPDB**
+#### Check for the action target on AbuseIPDB
 
 `https://www.abuseipdb.com/check/{{value}}`
 
-The only required parameter in the URL is `{{value}}`. Depending on your use case, you can use other template parameters to insert timestamps in the action URL. For more information, see the following section. 
+The only required parameter in the URL is `{{value}}`. Depending on your use case, you can use other template parameters to insert timestamps in the action URL. For more information, see [Template parameters for Context Actions](#template-parameters-for-context-actions). 
+
+#### Open the Criminal IP lookup page for an IP address
+
+`https://www.criminalip.io/asset/report/{{value}}`
+
+For example:
+
+<img src={useBaseUrl('img/cse/context-action-criminal-ip-example.png')} alt="Criminal IP context action example" style={{border: '1px solid gray'}} width="500"/>
 
 ## Template parameters for Context Actions
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon DocumentDB (with MongoDB compatibility) is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same application code and use the same drivers and tools that you use with MongoDB. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/documentdb/latest/developerguide/cloud_watch.html)
 * [CloudWatch Logs](https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/documentdb/latest/developerguide/logging-with-cloudtrail.html)

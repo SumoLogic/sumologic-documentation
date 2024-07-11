@@ -10,9 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="icon" width="50"/>
 
-The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints. Dynamic Parsing allows automatic field extraction from your log messages when you run a search. This allows you to view fields from logs without having to manually specify parsing logic. For more information, see [Dynamic Parsing](https://help.sumologic.com/?cid=20011).
+The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints. Dynamic Parsing allows automatic field extraction from your log messages when you run a search. This allows you to view fields from logs without having to manually specify parsing logic. For more information, see [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                                    |
 |:------------|:----------------------------------------------------------------------|

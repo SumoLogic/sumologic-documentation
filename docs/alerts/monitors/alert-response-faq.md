@@ -47,7 +47,11 @@ Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
 ## What happens to corresponding alerts when a monitor is deleted?
 
-After a monitor is deleted, corresponding alerts don't remain useful so they are deleted as well. 
+After a monitor is deleted, corresponding alerts do not remain useful so they are deleted as well. 
+
+## Are Alerts retained forever?
+
+A resolved alert is auto-deleted after 30 days of its creation.
 
 ## Where are the Log Fluctuation and Dimensional Explanation Cards for metrics-based Alerts?
 

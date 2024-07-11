@@ -117,74 +117,6 @@ Learn more about these processors:
 * [filterprocessor]
 * [sumologicexporter]
 
-## Mapping OpenTelemetry concepts to Sumo Logic
-
-OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto), which is internally constructed out of several layers. For all signals,
-these can be broken down into following:
-
-* **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
-* **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
-* **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
-
-As can be observed, while attributes can be present at both **Resource** and **Record level** currently, they are not created equal and should be interpreted separately. The Resource-Level attribute context is much broader, and they identify where data comes from, whereas Record-Level attributes concern just one record, often with many keys and values.
-
-At Sumo Logic, there is a concept of [Fields](/docs/manage/fields) for log data. Fields offer a powerful capability to associate indexable metadata with logs, though only a limited number of them can be used at a given time, and you must define them first.
-
-Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a good match for the **Resource-level** attributes, while Log Record-level attributes are good fit for the [structured representation of the log via JSON](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs), which is automatically supported by Sumo Logic Search.
-
-All **Resource-level** attributes are stored as fields, and any attributes that don't match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
-
-### Example: Log with both Resource-level and Record-level attributes
-
-Consider the following input log:
-
-```text
-  Resource:
-    Attributes:
-      "indexed-field": "some value"
-  Log:
-    Body: "Sample body"
-    Attributes:
-      "log-level-attribute": 42
-```
-
-Such log will be stored as the following set of data at Sumo Logic:
-
-```text
-  Fields:
-    "indexed-field": "some value"
-
-  _raw (JSON): {
-    "log": "Sample body",
-    "log-level-attribute": "42"
-  }
-```
-
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" />
-
-### Example: Log with Resource-level attributes only
-
-If no log-level attributes are present, the log body is stored inline. For example, for the following input:
-
-```text
-  Resource:
-    Attributes:
-      "indexed-field": "some value"
-  Log:
-    Body: "Sample body"
-```
-
-The output is stored as:
-
-```text
-  Fields:
-    "indexed-field": "some value"
-
-  _raw: "Sample body"
-```
-
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" />
-
 ## Data Tagging Recommendations
 
 We recommend reading the [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) document before continuing to become more familiar with the terms used below. The following terms are important for data tagging:
@@ -206,6 +138,21 @@ processors:
       ## upsert will override existing _sourceName field
       action: upsert
 ```
+
+If you would like to add your own custom metadata fields to your logs, you can use the same attributes processor and use `action: insert`:
+
+```yaml
+processors:
+  resource/custom_fields:
+    attributes:
+      - key: collection_method
+        value: otel
+        action: insert
+```
+
+:::note
+If you are adding custom attributes to your log metadata, then you need to ensure that these fields are also added in Sumo Logic under the **Logs > Fields** section.
+:::
 
 For more advanced processing capabilities in your data pipeline, you can make use of the **Transform** processor. This processor enables you to perform more complex transformations on your data. For example, you can concatenate multiple **Resource attributes** into  `_sourceCategory` field with a `/` character separating each attribute.
 
@@ -238,4 +185,4 @@ Refer to the [Fields](/docs/manage/fields/) documentation for more information o
 [batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
 [filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
-[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/pkg/exporter/sumologicexporter
+[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter

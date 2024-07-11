@@ -6,8 +6,9 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+import {themes as prismThemes} from 'prism-react-renderer';
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -29,6 +30,14 @@ module.exports = {
   scripts: [
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
+      async: true,
+    },
+    {
+      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
+      async: true,
+    },
+    {
+      src: './src/helper/google-tag-manager.js',
       async: true,
     },
     {
@@ -56,8 +65,7 @@ module.exports = {
   },
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
@@ -68,13 +76,12 @@ module.exports = {
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
             //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
+            //snippet support (import Abc from '../reuse/abc.md'; <Abc/> relative filepath to .md file)
             require('remark-import-partial'),
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
-            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
@@ -85,18 +92,23 @@ module.exports = {
               'tip',
               'warning',
               'important',
-              'caution',
             ],
           },
         },
         gtag: {
-          trackingID: [
-            'G-CVH19TBVSL',
-            'UA-16579649-3',
-          ],
+          trackingID: 'G-CVH19TBVSL',
         },
-        googleAnalytics: {
-          trackingID: 'UA-16579649-3',
+        googleTagManager: {
+          containerId: 'GTM-58ZK7D',
+        },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
@@ -117,7 +129,6 @@ module.exports = {
         theme: {
           customCss: [
             require.resolve('./src/css/sumo.scss'),
-            require.resolve('./src/css/sitesearch360.scss'),
           ],
         },
       }),
@@ -125,7 +136,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -224,7 +234,6 @@ module.exports = {
     ],
   ],
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       docs: {
         sidebar: {
@@ -234,12 +243,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      content: `📣 <a href="https://www.sumologic.com/aws-reinvent" target="_blank"><b>Visit Sumo Logic at AWS re:Invent 2023</b></a> 📣`,
-      backgroundColor: '#faf9e1',
-      textColor: '#000000',
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -247,6 +250,12 @@ module.exports = {
       options: {
         background: 'rgba(0, 0, 0, 0.6)',
       },
+    },
+    announcementBar: {
+      id: 'announcementBar',
+      content: '<b>Temporary Search Disruption</b>: Our site search may be intermittently down for maintenance. We appreciate your patience.',
+      backgroundColor: '#FFECB3',
+      textColor: '#000000',
     },
     colorMode: {
       defaultMode: 'light',
@@ -265,9 +274,10 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -285,7 +295,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'getstarted',
-                label: 'Start Here',
+                label: 'Get Started',
                 icon: 'rocket',
               },
               {
@@ -302,15 +312,21 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'apps',
+                sidebarId: 'security',
+                label: 'Security',
+                icon: 'security',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'manage',
                 label: 'Manage Account',
                 icon: 'manage_accounts',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'apps',
               },
               {
                 type: 'docSidebar',
@@ -326,21 +342,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'apm',
-                label: 'Traces, RUM, APM',
-                icon: 'account_tree',
-              },
-              {
-                type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'query_stats',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'security',
-                label: 'Security',
-                icon: 'security',
               },
               {
                 type: 'docSidebar',
@@ -353,6 +357,12 @@ module.exports = {
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
                 icon: 'swap_horiz',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'apm',
+                label: 'Traces, RUM, APM',
+                icon: 'account_tree',
               },
             ]
           },
@@ -421,11 +431,13 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s/contactsupport',
+            to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
+            alt: 'Contact Sumo Logic support',
           },
           {
             position: 'right',
@@ -462,7 +474,7 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Request Demo',
+                label: 'Request a Demo',
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
@@ -471,8 +483,8 @@ module.exports = {
           {
             items: [
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                label: 'Contact Support',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -480,10 +492,10 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
-            title: 'Contact Us',
+            title: 'Help',
           },
           {
             items: [
@@ -501,6 +513,23 @@ module.exports = {
               },
             ],
             title: 'Open Source',
+          },
+          {
+            items: [
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@sumologic/videos',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/sumo-logic',
+              },
+              {
+                label: 'X (Twitter)',
+                href: 'https://x.com/SumoLogic',
+              },
+            ],
+            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

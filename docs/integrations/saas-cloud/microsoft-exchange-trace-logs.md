@@ -14,7 +14,7 @@ The MessageTrace API offers insight into the handling of emails that have gone t
 
 The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -72,7 +72,7 @@ The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace repo
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Message Delivery Status"
 _sourceCategory="o365dummy"
@@ -94,7 +94,9 @@ This section explains how to collect logs from Microsoft Exchange Trace logs Api
 
 ## Installing the Microsoft Exchange Trace Logs app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Exchange Trace Logs Dashboards
 

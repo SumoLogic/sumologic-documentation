@@ -20,7 +20,7 @@ This detail can be important when you are building queries. There are at least t
 
 In the first case, if your statement looks something like "where some_value in (1, 2, 4, 16)" and you need to match (or not match) integers, then you will first need to cast "some_value" to a number.
 
-In the second case, the results will sort out of order as text values if you don't first cast the field "duration" to a number. After the field is cast to a number type, the sort order will produce expected results.
+In the second case, the results will sort out of order as text values if you do not first cast the field "duration" to a number. After the field is cast to a number type, the sort order will produce expected results.
 
 Sumo Logic accepts these functions for casting string data to a number:
 

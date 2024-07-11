@@ -11,6 +11,7 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CseRule from '../../reuse/cse-rule-description-links.md';
 
 
 This topic has information about First Seen rules and how to create them in the Cloud SIEM UI.
@@ -30,6 +31,12 @@ A First Seen rule is different from other Cloud SIEM rule types in that you don�
 
 For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, Cloud SIEM will create a Signal for every new geolocation detected and incrementally add to the baseline.
 
+:::tip
+Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception.
+
+On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
+:::
+
 Watch this micro lesson to learn more about First Seen rules.
 
 <Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
@@ -47,26 +54,33 @@ import Iframe from 'react-iframe';
 
 ## Example rule
 The screenshot below shows a First Seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
-<img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition"/>
+<img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition" style={{border: '1px solid gray'}} width="700"/>
 
 
-## Configure a First Seen rule
-This section has instructions for configuring a First Seen rule.
+## Create a First Seen rule
 
-### If Triggered
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
+1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
+1. In the rules editor:
+   1. **Name**. Enter a name for the rule.
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/empty-first-seen-rule.png')} alt="First Seen rule" style={{border: '1px solid gray'}} width="600"/>
+
+### Configure "If Triggered" settings
+
 The settings in the **If Triggered** section determine what Records the rule will be applied to and baseline-related options.
 
 1.  **When a Record matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
-1. **Has a new value for the field(s)**. Select the Record field that will be used to build the baseline.
-1. **after building a [global | per Entity]** The settings in this section define the scope of the baseline that will be built.
-   * **per Entity**. Baselines will be created for all entities for the Entity type or types that you'll specify in the following step. Note that a **per Entity** baseline creates a baseline for a particular Entity type. This baseline scope is typically used to track events that an Entity has never done before.
-   * **global**. Baselining will be performed for all entities and not for specific Entity types. Note that **global** baselines are organizational baselines and are used to track first seen activity across all Entity types.
+1. Click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+    :::note
+    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    :::
+1. **has a new value for the field(s)**. Select the Record field that will be used to build the baseline.
+1. **after building a [global | per Entity] baseline** The settings in this section define the scope of the baseline that will be built.
+   * **global**. Baselining will be performed for all entities and not for specific Entity types. Note that global baselines are organizational baselines and are used to track first seen activity across all Entity types.
+   * **per Entity**. Baselines will be created for all entities for the Entity type or types that you specify in **for the following**. Note that a per Entity baseline creates a baseline for a particular Entity type. This baseline scope is typically used to track events that an Entity has never done before. If you select more than one Entity,a baseline is tracked only for that distinct combination of entities.
    :::note
    For more information about how to select the type of base line, see the [Use case](#use-case-monitor-login-from-first-seen-geolocation), below.
-   :::
-1. **for the following Entity(ies)**. If you selected **per Entity** above, you’ll be prompted to select one or Record fields for which you want baselines built.
-   :::note
-   If there is more than one entity listed, a baseline is tracked only for that distinct combination of entities.
    :::
 1. Set the baseline and retention settings:
    1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
@@ -75,15 +89,21 @@ The settings in the **If Triggered** section determine what Records the rule wil
    The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive Signals.
    :::
 
-### Then Create a Signal
+### Configure "Then Create a Signal" settings
 
-For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) section of the Match Rule topic.
-
-:::tip
-Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception.
-
-On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
-:::
+1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
+1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **with the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
+    :::note
+    For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.
+    :::
+1. **with the description**. Define the description for the Signal the same way you did the Signal name, using text and Record fields. The Signal description should be a good indication of what the rule looks for.
+   :::note
+   <CseRule/>
+   :::
+1. **using the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
+1. **and a constant severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). Every Signal that the rule fires will have the same severity.
+1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any Signals created from this rule, and inherited by any insights generated from those signals.
 
 ## When the baseline is reset for a First Seen rule
 

@@ -55,7 +55,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 Fields can be assigned to a Collector and Source using the **Fields** input table in the Sumo user interface when creating or editing a Collector or Source.
 
-1. Navigate to **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
@@ -166,7 +166,7 @@ See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/htt
 Your fields need to be in a comma separated list of key-value pairs. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Extended HTTP Metadata Collection
@@ -178,7 +178,7 @@ When creating or editing your HTTP Source that will receive log data add the fie
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Reserved headers
@@ -199,7 +199,7 @@ Fields can be used in the following ways:
 
 * Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).
@@ -207,7 +207,12 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
 ### Manage fields
 
-Fields in your account are manageable at **Manage Data** > **Logs** > **Fields**.
+Fields in your account are manageable in the Fields page
+
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Fields page, in the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+ Kanso-->
 
 :::important
 You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
@@ -215,7 +220,7 @@ You need the **Manage Fields** [role capability](users-roles/roles/role-capab
 
 <img src={useBaseUrl('img/fields/manage-fields-page.png')} alt="Manage Fields" width="850"/>
 
-The **Manage Data** > **Logs** > **Fields** page displays the following information: 
+The Fields page displays the following information: 
 
 * **Status** shows a checkmark in a green circle ![green check circle.png](/img/reuse/green-check-circle.png) to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
@@ -227,7 +232,7 @@ The **Manage Data** > **Logs** > **Fields** page displays the following inform
 * **Sources** shows the number of Sources that reference the field. (Available when viewing custom fields.)
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
-On the **Manage Data > Logs > Fields** page you can:
+On the Fields page you can:
 
 * Click **+ Add** to add fields.
 * Search fields * The dropdown next to the add button lets you toggle between the following:

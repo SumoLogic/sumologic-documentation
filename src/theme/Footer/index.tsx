@@ -139,7 +139,7 @@ export const Footer = () => {
               color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
               'aria-label': 'Sumo Logic YouTube',
-              icon: 'faYoutube', 'aria-hidden': "true",
+              icon: faYoutube,
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -151,9 +151,9 @@ export const Footer = () => {
             {
               alt: 'Sumo Logic Twitter',
               color: '#e3e3e3',
-              href: 'https://twitter.com/SumoLogic',
+              href: 'https://x.com/SumoLogic',
               'aria-label': 'Sumo Logic Twitter',
-              icon: 'faTwitter', 'aria-hidden': "true",
+              icon: faTwitter,
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -164,7 +164,7 @@ export const Footer = () => {
             },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
-              <Link rel='noreferrer noopener'>
+              <Link href={href} rel='noreferrer noopener'>
                 <Box
                   component={FontAwesomeIcon}
                   {...other}
@@ -186,16 +186,20 @@ export const Footer = () => {
         >
           {[
             {
+              label: 'Status',
+              href: 'https://status.sumologic.com',
+            },
+            {
               label: 'Legal',
-              href: 'https://www.sumologic.com/legal/',
+              href: 'https://www.sumologic.com/legal',
             },
             {
               label: 'Privacy Statement',
-              href: 'https://www.sumologic.com/privacy-statement/',
+              href: 'https://www.sumologic.com/privacy-statement',
             },
             {
               label: 'Terms of Use',
-              href: 'https://www.sumologic.com/terms-conditions/',
+              href: 'https://www.sumologic.com/terms-conditions',
             }].map(({ href, label }) => (
               <Fragment key={href}>
                 <Link

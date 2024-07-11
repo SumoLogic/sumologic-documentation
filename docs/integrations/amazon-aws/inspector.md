@@ -14,13 +14,13 @@ Amazon Inspector is an automated vulnerability management service that continual
 For information about integrating Amazon Inspector with Security Hub, see [Integration with AWS Security Hub](https://docs.aws.amazon.com/inspector/latest/user/securityhub-integration.html) in Amazon help.
 :::
 
-## Collecting Findings for the Amazon Inspector App
+## Collecting findings for the Amazon Inspector app
 
 Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub.
 
 Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
 
-You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector).
+You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector).
 
 
 ### Step 1: Add a hosted collector and Amazon S3 source
@@ -54,7 +54,7 @@ To deploy an AWS Security Hub App collector:
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="AWS Security Hub log"
 {
@@ -95,7 +95,7 @@ To deploy an AWS Security Hub App collector:
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
@@ -111,17 +111,31 @@ To deploy an AWS Security Hub App collector:
   max(severity_normalized) by resource_type
 ```
 
-## Installing the Amazon Inspector App
+## Installing the Amazon Inspector app
 
 Once you've set up ingestion of findings from AWS Security Hub, you can install the Sumo Logic app for Amazon Inspector and use the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing the Amazon Inspector Overview Dashboard
+<AppInstall2/>
 
-This dashboard has a set of filters that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard. You can filter by AWS account ID, finding ID, finding type, normalized severity, and title.
+## Upgrading the Amazon Inspector app (Optional)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/inspector-app-filters.png')} alt="Amazon Inspector" />
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing the Amazon Inspector Overview dashboard
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 The dashboard provides an overview of Security Hub findings broken down by severity.
 

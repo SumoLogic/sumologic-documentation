@@ -182,7 +182,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
@@ -206,7 +206,7 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for GKE - Control Plane app
+## Collecting logs and metrics for GKE - Control Plane app
 
 This section has instructions for configuring log and metric collection for the Sumo Logic app for GKE - Control Plane.
 
@@ -236,13 +236,13 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Google Platform Source, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Pub/Sub topic for GCP, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Create an export of Google Kubernetes Engine logs from Logging
 
@@ -281,11 +281,11 @@ To install the app, do the following:
 2. From the **App Catalog**, search for app and select it.
 3. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.**  For **GKE Log Source**, leave Source Category selected, and enter the value of source category which you used while configuring the Google Cloud Platform (GCP) Source.
+    2. **Data Source.** For **GKE Log Source**, leave Source Category selected, and enter the value of source category which you used while configuring the Google Cloud Platform (GCP) Source.
     3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 4. Click **Add to Library**.
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking on Cluster from side navigation of the tab.
 
 ## Viewing GKE Dashboards
 

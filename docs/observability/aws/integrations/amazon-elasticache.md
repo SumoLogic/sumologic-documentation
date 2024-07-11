@@ -9,17 +9,17 @@ Amazon ElastiCache allows you to set up, run, and scale popular open-source comp
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Log and Metric Types
+## Log and metrics types
 
 The Amazon ElastiCache app uses the following logs and metrics:
 
 * [Amazon ElastiCache Host Level metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
 * [Amazon ElastiCache Redis metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
-* [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
-### Sample CloudTrail Log Message
+### Sample log messages
 
-```json
+```json title="CloudTrail"
 {
 	"eventVersion":"1.05",
 	"userIdentity":{
@@ -56,19 +56,17 @@ The Amazon ElastiCache app uses the following logs and metrics:
 }
 ```
 
-### Sample Query (Metric based)
+### Sample queries
 
 Cache Hit Rate:
 
-```sql
+```sql title="Metric"
 account=dev region=us-east-1 namespace=aws/elasticache metric=CacheHitRate statistic=Average CacheClusterId=* CacheNodeId=* | avg by account, region, namespace, CacheClusterId, CacheNodeId
-```
-
-### Sample Query (CloudTrail Log based)  
+``` 
 
 Top 10 ReplicationGroupId's:
 
-```sql
+```sql title="CloudTrail log-based"
 account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasticache.amazonaws.com\"" replicationGroupId
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com"
@@ -89,11 +87,11 @@ account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasti
 
 ```
 
-## Amazon ElastiCache Dashboards
+## Amazon ElastiCache dashboards
 
-Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud. 
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
+<FilterDashboards/>
 
 ### 1. Amazon ElastiCache - Host Performance Overview
 

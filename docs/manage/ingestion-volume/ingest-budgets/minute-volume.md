@@ -1,22 +1,10 @@
 ---
 id: minute-volume
-title: Minute Volume (Beta)
+title: Minute Volume
 description: Use Ingest Budgets Minute Volume to control data ingestion to minute granularity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<!-- IMPORTANT: When this doc goes from Beta to GA, integrate this content with /docs/manage/ingestion-volume/ingest-budgets/index.md, where there's significant overlapping content. -->
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-:::
 
 Ingest Budgets Minute Volume lets you control data ingestion to minute granularity. This granular control in data ingestion protects against Ingestion surges and spikes, thus safeguarding your account against throttling.
 
@@ -33,10 +21,16 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Avoid creating multiple ingest budgets with the same scope. In such a scenario, Ingest budgets whose capacity is reached first is executed.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
-
 ## Budget assignment​
 
-{@import ../../../reuse/budget-assignment.md}
+The **Scope** supports the option to assign ingest budgets to your log data by either:
+
+* A Field that is enabled in the [Fields](/docs/manage/fields) table.
+* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
+
+The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
+
+For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget.
 
 ## Source-type behavior​
 
@@ -49,9 +43,9 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 ## Create ingest budgets
 
-1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
 1. Click the **+ Add Budget** button on the top right of the table.
-1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid black'}} width="300" />
+1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.
@@ -67,14 +61,14 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 ## Edit ingest budget​
 
-1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
 1. In the table, find the ingest budget you want to edit and click the edit icon on the right of the row, or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 
 ## Delete ingest budget​
 
-1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
 1. In the table find the ingest budget you want to delete. Click on the ingest budget, and then under **More Actions**, click the delete icon.
 1. You will get a confirmation prompt. Ensure that you are deleting the desired ingest budget, and then click **Delete**.
 
@@ -93,7 +87,7 @@ To search for ingest budgets that are currently enforced to stop collecting data
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
-## Beta Playbook
+## Set up Minute Volume ingest budgets
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.

@@ -18,7 +18,7 @@ During the installation of the collector, you may encounter various issues or er
 This happens when the Collector installer is unable to successfully reach Sumo Logic to translate a customer's username and password to obtain a one-time registration token.
 
 * Verify Internet connectivity / proxy / URL settings are correct.
-* Attempt to access the appropriate [Sumo endpoint](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) manually.
+* Attempt to access the appropriate [Sumo endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) manually.
 
 **It's taking longer than expected to register your Collector with Sumo Logic. Please check your settings and try again.**
 
@@ -34,7 +34,7 @@ The Tanuki wrapper that starts the Collector application uses ports 31000 - 3200
 
 To solve the problem, update the firewall settings or update the port range to a different unused port range as follows.
 
-1. Edit <sumo_install_dir>/config/wrapper.conf add the following lines to the end of the file:
+1. Edit `<sumo_install_dir>/config/wrapper.conf` add the following lines to the end of the file:
 
     ```
     wrapper.jvm.port.min=<min_port_number>  # default 31000

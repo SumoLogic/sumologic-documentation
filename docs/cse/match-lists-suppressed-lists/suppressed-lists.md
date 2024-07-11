@@ -16,7 +16,7 @@ You can create Suppressed Lists from the Cloud SIEM UI or using the Cloud SIEM A
 
 Here is an example of a Suppressed List.
 
-<img src={useBaseUrl('img/cse/suppressed-list.png')} alt="Suppressed list" width="800"/>
+<img src={useBaseUrl('img/cse/suppressed-list.png')} alt="Suppressed list" style={{border: '1px solid gray'}} width="800"/>
 
 Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used).
 
@@ -78,24 +78,25 @@ A Suppressed List can contain up to 50,000 items.
 
 Perform the steps below to create a Suppressed List and add an indicator to it using the Cloud SIEM UI.
 
-1. Choose **Suppressed Lists** from the Content menu and click **Create**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Suppressed Lists**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  Kanso-->
+1. Click **Create**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Suppressed List** popup, enter the following:
    1. **Name**. Name of the Suppressed List.
    1. **Description**. Enter a description for the list. 
    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of Record field to which items on the list should be compared.
-    :::note
-    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns).
-    :::
+       :::note
+       If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns).
+       :::
    1. Click **Create**.
-1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/><img src={useBaseUrl('img/cse/suppressed-list-page-2.png')} alt="Suppressed lists page" width="800"/>
+1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/><img src={useBaseUrl('img/cse/suppressed-list-page-2.png')} alt="Suppressed lists page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the name of the Suppressed List to open it.
-1. On the **Suppressed List > Details** page, click **ADD LIST ITEM**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" width="800"/>
+1. On the **Suppressed List > Details** page, click **ADD LIST ITEM**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Suppressed List Item** popup, enter:
    1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is Domain, enter a domain.
    1. **Description**. (Optional) Enter a description of the list item.
    1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   1. Click **Add** to add the item to the list. <br/><img src={useBaseUrl('img/cse/new-item.png')} alt="New item" width="400"/>
+   1. Click **Add** to add the item to the list. <br/><img src={useBaseUrl('img/cse/new-item.png')} alt="New item" style={{border: '1px solid gray'}} width="400"/>
 1. The item now appears on the list.
 
 ## Import a list of indicators 

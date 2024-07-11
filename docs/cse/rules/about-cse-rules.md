@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Cloud SIEM rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Rules, in the top menu select **Content > Rules**. 
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+ Kanso-->
+:::tip
+For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+:::
+
 Watch this micro lesson to learn more about rules.
 
 <Iframe url="https://www.youtube.com/embed/RVGk2dDeHmk?rel=0"
@@ -71,7 +79,7 @@ When an incoming Record meets a rule's conditions, a Signal is generated for ea
 
 ## Rule types
 
-There are several kinds of rules. Each supports a different sort of firing behavior.
+There are several kinds of rules. Each supports a different sort of firing behavior (For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).)
 
 * **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
 * **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
@@ -110,7 +118,7 @@ This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists
 
 Match Lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the Cloud SIEM UI, at **Content > Match Lists**. 
+Here’s an example of a Match List in the Cloud SIEM UI. 
 
 <img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
 
@@ -159,7 +167,7 @@ This example below checks a Record for a field named `listMatches` that contains
 
 Cloud SIEM’s Threat Intelligence lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a Record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
 
-Here’s an example of a Threat Intelligence list in the Cloud SIEM UI, at **Content > Threat Intelligence**. 
+Here’s an example of a Threat Intelligence list in the Cloud SIEM UI. 
 
 <img src={useBaseUrl('img/cse/example-threat-intl.png')} alt="Example threat intelligence list" width="800"/>
 

@@ -42,7 +42,7 @@ You cannot have blank values, like `name=` .
 | `sources` | Path to JSON file that contains Source configuration. See [JSON Source Configuration](/docs/send-data/use-json-configure-sources).<br/>**Important:** On Windows the path value for "sources=" must be specified with double slashes, \\, as shown in the example. | `sources=c:\\sumo sources.json (Windows)` | Optional |
 | override | Overrides a Collector's existing Sources to delete all Sources except for the one specified by the sources parameter (above).<br/>**Important:** Don't include this parameter in sumo.conf unless necessary. Override results in Source deletion and re-creation with collector restart, and causes significant re-ingestion of already ingested data.  | `override=true` | Optional |
 | `ephemeral` | When set to true, the Collector will be deleted after 12 hours of inactivity. See [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md) for more information. | `ephemeral=true` | Optional |
-| `clobber` | Sets the clobber flag; don't include unless you'd like to clobber the Collector.  See [Forcing a Collector's Name with Clobber](force-collectors-name-clobber.md) for more information. | `clobber=true` | Optional |
+| `clobber` | Sets the clobber flag; do not include unless you'd like to clobber the Collector.  See [Forcing a Collector's Name with Clobber](force-collectors-name-clobber.md) for more information. | `clobber=true` | Optional |
 | `proxyHost` | Sets the host the Collector uses to connect via a proxy. | `proxyHost=hostName` | Optional |
 | `proxyPort` | The port number a Collector uses to connect via a proxy.  | `proxyPort=portNumber` | Optional |
 | `proxyUser` | The user name a Collector uses to connect via a proxy.  | `proxyUser=userName` | Optional |

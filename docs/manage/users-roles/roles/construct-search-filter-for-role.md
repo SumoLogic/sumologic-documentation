@@ -6,7 +6,7 @@ description: Construct a role search filter to control what log data users with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
+This page describes how to define an advanced search filter for a role. These instructions apply to the **Search filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure.
 
 
 ## Understanding search filters
@@ -51,11 +51,15 @@ The explanations of the behavior of each example filter assume that no other rol
 
 #### Search filter limitations
 
-* Role filters cannot include vertical pipes (\|).
+* Role filters should include only keyword expressions or built-in metadata field expressions using these fields: `_sourcecategory`, `_collector`, `_source`, `_sourcename`, `_sourcehost`.
+* Using `_index` or `_view` in a role filter scope is not supported.
+* Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
-* If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* The [_dataTier](/docs/manage/partitions-data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
-* For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions-data-tiers/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
+* The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
+* If one or more of your Field Extraction Rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
+* Using a field or FERs in a role filter is not supported. It will cause errors for any search run by a user in the role where the field is not valid. For example, if an FER created a field `foo`, adding the `foo=bar` scope to a role will break any search for a user where this field is not valid. This most often causes errors where users search a view where the field is not a valid schema field in that view.
+
+For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 
 #### Using metadata in a search filter
 

@@ -11,7 +11,9 @@ If you've set up the Software Development Optimization (SDO) solution [using Ter
 
 Now that you've set up SDO configuration and collection, install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and dashboards that provide you insights and visibility into your DevOps phases and pipelines.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 Each of the Software Development Optimization Solution apps provides a set of pre-configured dashboards that display real-time data from across your environment. Being able to access this information behind single-pane-of-glass allows you to more effectively monitor and troubleshoot your DevOps projects from inception through deployment.
 

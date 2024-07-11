@@ -1,0 +1,29 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Azure Event Hubs"
+        },
+        "config": {
+            "name": "Azure Event Hubs",
+            "description": "East field",
+            "namespace": "namespace",
+            "hub_name": "hub name",
+            "access_policy_name": "policyName",
+            "access_policy_key": "********",
+            "consumer_group": "groupName",
+            "fields": {
+                "_siemForward": false
+            },
+            "category": "eastTeamF",
+            "receive_with_latest_offset": true,
+            "automaticDateParsing": true,
+            "autoParseTimeFormat": false,
+            "defaultDateFormats": [{
+                "format": "dd-MM-yyyy",
+                "locator": "INFO(.*)"
+            }]
+        },
+        "sourceType": "Universal"
+    }
+}

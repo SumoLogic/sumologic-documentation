@@ -2,7 +2,7 @@
 id: user-management
 title: User Management APIs
 sidebar_label: User Management
-description: The User Management API allows you to manage user accounts from HTTP endpoints.
+description: User Management APIs allow you to manage user accounts from HTTP endpoints.
 hide_table_of_contents: true
 ---
 
@@ -10,9 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
 
-The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information, see [Manage Users](https://help.sumologic.com/?cid=1006).
+The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information, see [Manage Users](/docs/manage/users-roles/users/).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                      |
 |:------------|:--------------------------------------------------------|

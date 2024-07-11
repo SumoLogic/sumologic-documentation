@@ -37,7 +37,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#9989;| &#10060; |
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#9989;| &#10060; |
 | `{{AlertName}}` | Name of the Alert that will be displayed on the Alert page.  | &#9989;| &#9989;|
-| `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors#metrics-trigger-types) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
+| `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors/create-monitor#trigger-type) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
 
 ## Examples
 
@@ -113,6 +113,7 @@ We recommend you use the new [common variables](alert-variables.md) instead of t
 | `{{Results.fieldname}}` | The value returned from the search result for the specified field. For example, this payload specification:<br/>`{{Results.client_ip}} had {{Results.errors}} errors`<br/>Results in a subject line like this:<br/>`70.69.152.165 had 391 errors`<br/>A maximum of 200 aggregate results or 10 raw messages for this field can be sent via webhook.<br/>A field name must match (case-insensitive) the field from your search and must be **alphanumeric characters**, **underscores**, and b. If you have a field name that has an unsupported character use the [as](../../search/search-query-language/search-operators/as.md) operator to rename it. | &#9989;| &#9989;|
 | `{{AlertThreshold}}` | The condition that triggered the alert (for example, above 90 at least once in the last 5 minutes) | &#9989;| &#10060; |
 | `{{AlertSource}}` | The metric and sourceHost that triggered the alert, including associated tags for that metric. | &#9989;| &#10060; |
+| `{{AlertGroup}}` | The alert grouping that triggered the alert, including associated values for that metric. | &#9989;| &#10060; |
 | `{{AlertSource.fieldname}}` | The value returned from the AlertSource object for the specified field name. | &#9989;| &#10060; |
 | `{{AlertID}}` | The ID of the triggered alert. | &#9989;| &#10060; |
 | `{{AlertStatus}}` | Current status of the time series that triggered (for example, Critical or Warning). | &#9989;| &#10060; |

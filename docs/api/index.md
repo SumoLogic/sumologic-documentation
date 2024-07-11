@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
 :::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations) and [Sumo Dojo](http://slack.sumologic.com/).
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
 :::
 
 <div className="box-wrapper" markdown="1">
@@ -29,7 +29,6 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">  
   <a href="/docs/api/search-job"><img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="50"/><h4>Search Job API</h4></a>
-  <p>Access resources and log data from third-party scripts and applications.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -40,6 +39,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/account-management"><img src={useBaseUrl('img/icons/manage.png')} alt="Thumbnail icon" width="50"/><h4>Account Mgmt</h4></a>  
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">  
+  <a href="/docs/api/app-management"><img src={useBaseUrl('img/integrations/integrations.png')} alt="Thumbnail icon" width="55"/><h4>Apps (Beta)</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -69,12 +73,12 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/dashboard-new"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards (New)</h4></a>
+  <a href="/docs/api/dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards Management</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/data-forwarding"><img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="50"/><h4>Data Forwarding</h4></a>  
+  <a href="/docs/api/logs-data-forwarding"><img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="50"/><h4>Data Forwarding</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
@@ -119,7 +123,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-    <a href="/docs/api/metrics-query"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/><h4>Metrics Query Mgmt</h4></a>      
+  <a href="/docs/api/log-search-estimated-usage"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/><h4>Log Search Estimated Usage</h4></a>            
   </div>
 </div>
 <div className="box smallbox card">
@@ -129,7 +133,37 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+    <a href="/docs/api/metrics-query"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/><h4>Metrics Query Mgmt</h4></a>      
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/api/metrics-searches-v2"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/><h4>Metrics Searches V2</h4></a>      
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/api/metrics-searches"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/><h4>Metrics Searches</h4></a>      
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/api/metrics-transformation-rules"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/><h4>Metrics Transformation Rules</h4></a>      
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/monitors-management"><img src={useBaseUrl('img/icons/alerts.png')} alt="Thumbnail icon" width="50"/><h4>Monitors Mgmt</h4></a>    
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/muting-schedules"><img src={useBaseUrl('img/icons/alerts.png')} alt="Thumbnail icon" width="50"/><h4>Muting Schedules</h4></a>    
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/organizations-management"><img src={useBaseUrl('img/icons/manage.png')} alt="Thumbnail icon" width="50"/><h4>Organizations Mgmt</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -184,7 +218,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/tracing"><img src={useBaseUrl('img/icons/traces.png')} alt="Thumbnail icon" width="50"/><h4>Tracing</h4></a>
+  <a href="/docs/api/tracing"><img src={useBaseUrl('img/icons/traces.png')} alt="Thumbnail icon" width="50"/><h4>Traces</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -197,11 +231,4 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   <a href="/docs/api/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/><h4>Troubleshooting</h4></a>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/api/beta"><img src={useBaseUrl('img/icons/business/beta.png')} alt="Thumbnail icon" width="50"/><h4>APIs in Beta</h4></a>
-  </div>
 </div>
-
-</div>
-

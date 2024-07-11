@@ -71,7 +71,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
 This section has instructions for configuring SAML in Sumo Logic.
 
-1. Go to **Administration > Security > SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Click **+ Add Configuration** to create a new configuration.    
 
     ![config-list.png](/img/security/config-list.png)
@@ -91,7 +91,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
 1. Click **Add**. 
 1. To view the details of your configuration, select it the **Configuration List**.
-1. Copy the **Assertion Consumer** and **Entity ID** from the details pane**.** You'll paste these into the OneLogin **Configuration** page, as described in the following section.   
+1. Copy the **Assertion Consumer** and **Entity ID** from the details pane. You'll paste these into the OneLogin **Configuration** page, as described in the following section.   
 
     ![configuration-list.png](/img/security/configuration-list.png)
 

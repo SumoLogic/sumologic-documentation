@@ -9,10 +9,11 @@ tags:
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/1password/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/1password/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/1password/example.tf';
+import ExampleJSON from '/files/c2c/1password/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/1password/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="Thumbnail icon" width="80"/>
 
@@ -22,10 +23,9 @@ The 1Password Source provides a secure endpoint to receive sign-in attempts, ite
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Sign-in attempts](https://developer.1password.com/docs/events-api/reference/#post-apiv1signinattempts)
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages)
-| 5 min |  [Audit events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents)
-
+| 5 min |  [Sign-in attempts](https://developer.1password.com/docs/events-api/reference/#post-apiv1signinattempts) |
+| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Audit events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents) |
 
 ## Setup
 
@@ -45,12 +45,12 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ### Source configuration
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **1Password**.
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).  <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -65,11 +65,10 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
 | `_siemVendor` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `SignIn API -> signin-{{category}}` or `Item Usage API -> item_usage-{{action}}` | Set when **Forward To SIEM** is checked and specific to the API collected. |
+| `_siemParser` | `/Parsers/System/1Password/1Password` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
@@ -89,22 +88,22 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| `base_url` | String | Yes | `null` | Provide your 1Password customer-specific domain, such as, <code>events.1password.com</code> |  `"events.1password.com"` |
-| `api_token` | String | Yes | `null` | Provide the [1Password API token](#APIToken) you want to use to authenticate collection requests. |  `"acsac25$"` |
-| `supported_apis` | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
+| base_url | String | Yes | `null` | Provide your 1Password customer-specific domain, such as, <code>events.1password.com</code> |  `"events.1password.com"` |
+| api_token | String | Yes | `null` | Provide the [1Password API token](#APIToken) you want to use to authenticate collection requests. |  `"acsac25$"` |
+| supported_apis | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
 
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/1password/example.json)
+<a href="/files/c2c/1password/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/1password/example.tf)
+<a href="/files/c2c/1password/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -120,5 +119,5 @@ To resolve these errors:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

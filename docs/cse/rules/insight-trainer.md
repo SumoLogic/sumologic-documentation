@@ -30,13 +30,18 @@ import Iframe from 'react-iframe';
 
 ## About Insight Trainer
 
-When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
+When you [close an Insight](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution), you can give it one of the following built-in [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/): 
 
+* **Duplicate**. The insight has triggered before on the same entity and is a duplicate.
 * **False Positive**. A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
 * **No Action**. A valid detection, but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
-* **Resolved:**. A valid detection where investigation was necessary.
+* **Resolved**. A valid detection where investigation was necessary.
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
+
+:::note
+For Insight Trainer to work correctly, it needs a balanced set of Insights in a closed state with an appropriate mix of resolution statuses, such as **False Positive**, **No Action**, and **Resolved**. Unbalanced datasets can occur if resolutions are unrealistically assigned, for example, if all Insights are closed with a single closed state such as **False Positive**.
+:::
 
 You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Once a week, the Insight Trainer provides fresh recommendations based on analysis of the last 60 days of data. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. To see fresh recommendation every week, you must make suggested tuning adjustments at least once every two weeks. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
@@ -65,7 +70,13 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly, based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.
+The funnel depicts algorithmic Insights that remain after filtering Insights based on:
+   * Date range
+   * Insights containing dynamic severity rules
+   * Non-algorithmic detection (that is, rule and user Insights)
+   * Duplicate Insights
+   * Data completeness 
 1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
@@ -109,4 +120,4 @@ Following is the suggested workflow to use the Insight Trainer dashboard:
 1. Write tuning expressions for Entities, where possible.
 1. Adjust rule severities if needed.
 
-We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you don't see your false positives change much, wait a few days, and you will notice new recommendations.  
+We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you do not see your false positives change much, wait a few days, and you will notice new recommendations.  

@@ -21,7 +21,7 @@ In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/ale
 
 ## Before you start
 
-Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Limitations
@@ -33,11 +33,11 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
-1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" />
-4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" />
-5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" />
+3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" style={{border: '1px solid gray'}} width="800" />
+4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" style={{border: '1px solid gray'}} width="800" />
+5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" style={{border: '1px solid gray'}} width="800" />
 6. **Name**. Enter a name for the source.
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
@@ -49,20 +49,20 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 ## Step 2: Create a Webhook connection
 
-In this step you create a WebHook that points to the HTTP source.
+In this step, you create a webhook that points to the HTTP source.
 
-1. Go to **Manage Data > Monitoring** and select the **Connections** tab. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="connections.png" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso--> <br/><img src={useBaseUrl('img/cse/connections.png')} alt="connections.png" style={{border: '1px solid gray'}} width="800" />
 2. Click the plus sign (+) icon.
 3. On the **Select Connection Type** page, click **Webhook.**
 4. Give it a name and input the URL from the HTTP Endpoint as your URL.
 5. On the **Create New Webhook** page:
     1. **Name**. Enter a name for the Webhook.
     2. **URL**. Enter the URL of the HTTP Source you created above.
-    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" width="500"/>
+    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" style={{border: '1px solid gray'}} width="500"/>
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cse-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
@@ -73,13 +73,13 @@ In this step, you schedule the search you created above to send results to the W
 2. On the Save Item popup:
     1. **Name**. Enter a name for your search,
     2. **Time range**. Select a time range.
-    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="save-item-inv.png" width="450"/>
+    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="save-item-inv.png" style={{border: '1px solid gray'}} width="450"/>
     4. The popup refreshes.
     5. **Run Frequency**.
     6. **Time range for scheduled search**.
     7. **Timezone for scheduled search**.
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
-    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" width="450"/>
+    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" style={{border: '1px solid gray'}} width="450"/>
 
 ## Cloud SIEM inventory schema
 
@@ -93,88 +93,60 @@ The table below lists attributes most typically used in host inventory records. 
 
 <table>
   <tr>
-   <td><strong>Inventory attribute</strong>
-   </td>
-   <td><strong>Notes</strong>
-   </td>
+   <td><strong>Inventory attribute</strong>   </td>
+   <td><strong>Notes</strong>   </td>
   </tr>
   <tr>
-   <td><code>computername</code>
-   </td>
-   <td>
-   </td>
+   <td><code>computername</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>deviceUniqueId</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from other inventory items from the same source.
-   </td>
+   <td><code>deviceUniqueId</code>   </td>
+   <td>A unique ID that distinguishes an inventory item from other inventory items from the same source.   </td>
   </tr>
   <tr>
-   <td><code>groups</code>
-   </td>
-   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.
-   </td>
+   <td><code>groups</code>   </td>
+   <td>The directory service (for example, Azure AD) group that the inventory item belongs to. </td>
   </tr>
   <tr>
-   <td><code>hostname</code>
-   </td>
-   <td>
-   </td>
+   <td><code>hostname</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>ip</code>
-   </td>
-   <td>
-   </td>
+   <td><code>ip</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>location</code>
-   </td>
-   <td>
-   </td>
+   <td><code>location</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>mac</code>
-   </td>
-   <td>
-   </td>
+   <td><code>mac</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>natIp</code>
-   </td>
-   <td>
-   </td>
+   <td><code>natIp</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>normalizedComputerName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>normalizedComputerName</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>normalizedHostname</code>
-   </td>
-   <td>
-   </td>
+   <td><code>normalizedHostname</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>os</code>
-   </td>
-   <td>
-   </td>
+   <td><code>os</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>osVersion</code>
-   </td>
-   <td>
-   </td>
+   <td><code>osVersion</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>uniqueID</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.
-   </td>
+   <td><code>uniqueID</code>   </td>
+   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.   </td>
   </tr>
 </table>
 
@@ -187,64 +159,44 @@ The table below lists attributes most typically used in user inventory records. 
 
 <table>
   <tr>
-   <td><strong>Inventory attribute</strong>
-   </td>
-   <td><strong>Notes</strong>
-   </td>
+   <td><strong>Inventory attribute</strong>   </td>
+   <td><strong>Notes</strong>   </td>
   </tr>
   <tr>
-   <td><code>department</code>
-   </td>
-   <td>
-   </td>
+   <td><code>department</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>emails</code>
-   </td>
-   <td>
-   </td>
+   <td><code>emails</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>givenName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>givenName</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>groups </code>
-   </td>
-   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.
-   </td>
+   <td><code>groups </code>   </td>
+   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.   </td>
   </tr>
   <tr>
-   <td><code>lastName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>lastName</code>   </td>
+   <td></td>
   </tr>
   <tr>
-   <td><code>middleName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>middleName</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>uniqueID</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.
-   </td>
+   <td><code>uniqueID</code> </td>
+   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.   </td>
   </tr>
   <tr>
-   <td><code>userId</code>
-   </td>
-   <td>
-   </td>
+   <td><code>userId</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>username</code>
-   </td>
-   <td>
-   </td>
+   <td><code>username</code>   </td>
+   <td>   </td>
   </tr>
 </table>
 
@@ -255,7 +207,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 ### Scheduled search
 
- The search below extracts inventory fields from JAMF logs.
+The search below extracts inventory fields from JAMF logs.
 
 ```json
 _sourceCategory="security/jamf" and _collector="Jamf"
@@ -273,11 +225,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 **Notes**
 
-
-
 * `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
-
-
 
 ### Webhook payload for User Entity
 
@@ -316,7 +264,6 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 
 **Notes**
-
 
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.

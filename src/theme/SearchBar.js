@@ -27,3 +27,56 @@ function App() {
     </InstantSearch>
   );
 }
+
+import { Configure } from 'react-instantsearch';
+
+<Configure
+  clickAnalytics={true}
+  userToken={'user-1'}
+/>
+
+import { Hits } from 'react-instantsearch';
+
+const indexName = crawler_sumodocs;
+
+function Hit({ hit }) {
+  return (
+    <div
+      data-insights-object-id={hit.objectID}
+      data-insights-position={hit.__position}
+      data-insights-query-id={hit.__queryID}
+    >
+      {/* ... */}
+    </div>
+  );
+}
+
+// ...
+
+<div data-insights-index={indexName}>
+  {/* ... */}
+  <Hits hitComponent={Hit} />
+</div>
+
+
+window.dataLayer.push({
+  algoliaUserToken: 'user-1',
+});
+
+aa('onUserTokenChange', (userToken) => {
+  window.dataLayer.push({
+    algoliaUserToken: userToken,
+  });
+}, { immediate: true });
+
+<InstantSearch
+  insights={{
+    onEvent(event) {
+      const { widgetType, eventType, payload, hits } = event;
+
+      if (widgetType === 'ais.hits' && eventType === 'view') {
+        dataLayer.push({ event: 'Hits Viewed' });
+      }
+    }
+  }}
+/>

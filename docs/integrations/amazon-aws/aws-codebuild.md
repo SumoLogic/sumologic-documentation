@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers. It provides prepackaged build environments for popular programming languages and build tools such as Apache Maven, Gradle, and more. You can also customize build environments in CodeBuild to use your own build tools. CodeBuild scales automatically to meet peak build requests. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/codebuild/latest/userguide/monitoring-builds.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/codebuild/latest/userguide/cloudtrail.html)
 

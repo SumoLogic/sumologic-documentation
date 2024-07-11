@@ -45,13 +45,13 @@ This feature is available in the following account plans.
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
 
-## Log Types  
+## Log types  
 
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
 The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -88,9 +88,12 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 
 
-### Sample Query
+### Sample queries
 
-<details><summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
+<details>
+<summary>Click to expand.</summary>
+
+This sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard.
 
 ```sql
 // id=@config_lambda_categorical_values
@@ -143,7 +146,7 @@ on t1.denomGroup = t2.denomGroup
 
 </details>
 
-## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
+## Collecting logs for the Global Intelligence for AWS CloudTrail DevOps App
 
 If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and go to [Installing the App](#installing-the-global-intelligence-for-aws-cloudtrail-devops-app).
 
@@ -151,7 +154,7 @@ With this graphic, you can see how to collect logs from AWS CloudTrail DevOps an
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
 
-### Before you begin
+### Prerequisites
 
 Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
@@ -162,12 +165,14 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#collecting-logs-for-the-global-intelligence-for-aws-cloudtrail-devops-app).
 
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing GI CloudTrail DevOps Dashboards
 
@@ -190,7 +195,7 @@ Use this dashboard to:
 
 ### 02. My Company’s Throttling Errors
 
-The** GI CloudTrail DevOps - 02. My Company’s Throttling Errors** dashboard predicts throttling errors per minute based on API requests per minute, for a given AWS API. The panels compare your throttling errors per minute to the predicted value of such errors to assess if throttling is the root cause of application errors. You can select the awsRegion and recipientAccountId to view results by region and account.
+The **GI CloudTrail DevOps - 02. My Company’s Throttling Errors** dashboard predicts throttling errors per minute based on API requests per minute, for a given AWS API. The panels compare your throttling errors per minute to the predicted value of such errors to assess if throttling is the root cause of application errors. You can select the awsRegion and recipientAccountId to view results by region and account.
 
 Throttling ensures that calls to the AWS API do not exceed the maximum allowed API request limits. AWS may throttle your AWS usage just when your application experiences load and make additional API requests, leading to an incident.
 
@@ -282,7 +287,7 @@ The **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard provides i
 
 Three types of configurations are benchmarked to help users understand the common values of each setting in the Sumo Logic population for a given AWS service:
 
-1. **Categorical Configuration. **Users pick a setting from a list of values, for example, database engine brand for RDS. For categorical configurations, the benchmark is the average number of resources with a given setting computed across all resources of a given service. For example, RDS engine type (for example, MySQL) is computed as the percentage of RDS instances across all customers that use MySQL in a given AWS region.  
+1. **Categorical Configuration.** Users pick a setting from a list of values, for example, database engine brand for RDS. For categorical configurations, the benchmark is the average number of resources with a given setting computed across all resources of a given service. For example, RDS engine type (for example, MySQL) is computed as the percentage of RDS instances across all customers that use MySQL in a given AWS region.  
 2. **Numerical Configuration.** Users set a numerical value, for example, memory size for an AWS Lambda function. Numerical configurations are expressed as p99 and max values of the setting across all resources of a given service. For example, timeout value is represented as the p99 and max across all Lambda functions discovered by Global Intelligence.
 3. **Boolean Configuration.** Users turn a setting on or off, for example, multiAZ setting for RDS. Similar to categorical configuration, this is represented by the percentage of resources with true (or false) value for a given setting.
 
@@ -377,7 +382,7 @@ The following [categorical configurations](https://docs.aws.amazon.com/AmazonEla
 * **Engine.** redis | memcached
 * **EngineVersion.** version of redis | memcached in use
 * **CacheNodeType.** The compute and memory capacity of the nodes in the node group (shard). For more information, see [Choosing Your Node Size](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes-select-size.html#CacheNodes.SelectSize).
-* **AZMode. **Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.
+* **AZMode.** Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.
 
 The following numerical configurations are benchmarked:
 

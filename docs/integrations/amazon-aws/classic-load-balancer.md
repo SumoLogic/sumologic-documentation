@@ -36,7 +36,7 @@ ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Response Codes Distribution by Domain and URI (Access Log Based)"
 account={{account}} region={{region}} namespace={{namespace}}
@@ -63,7 +63,7 @@ Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
 
 
-## Collecting Logs and Metrics for the AWS Classic Load Balancer
+## Collecting logs and metrics for the AWS Classic Load Balancer
 
 ### Collect Metrics for AWS Classic Load Balancer
 
@@ -73,7 +73,7 @@ Sumo Logic supports collecting metrics using two source types
 
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 
-* ​​​​**Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account field”.
 
 
 ### Collecting Access Logs for AWS Classic Load Balancer
@@ -83,7 +83,7 @@ Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 See [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
-#### Before you begin
+#### Prerequisites
 
 Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App, complete the following steps:
 
@@ -94,11 +94,15 @@ Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App
 
 #### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **loadbalancername** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the **loadbalancername** field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -128,20 +132,9 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name or enter the app's name of your choice. 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
-
-Once an app is installed, it will appear in your folder or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing the AWS Classic Load Balancer Dashboards
 
@@ -154,7 +147,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts
 * Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 
 ### 1. AWS Classic Load Balancer - Response Analysis
@@ -165,7 +158,7 @@ Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 
 ### 2. AWS Classic Load Balancer - Backend Response Analysis
@@ -176,7 +169,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 ### 3. AWS Classic Load Balancer - Latency Overview
 
@@ -186,7 +179,7 @@ Use this dashboard to:
 * Monitor response times by load balancer, and availability zone.
 * Monitor client latency and processing times for backend servers.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Overview.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 
 ### 4. AWS Classic Load Balancer - Latency Details  
@@ -196,7 +189,7 @@ Use this dashboard to:
 Use this dashboard to:
 * Troubleshoot load balancer performance via detailed views across client, request processing and response time latencies.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Details.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 ### 5. AWS Classic Load Balancer - Connection and Host Status
 
@@ -206,7 +199,7 @@ Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for load balancers
 * Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 ### 6. AWS Classic Load Balancer - Requests and Processed Bytes  
 
@@ -216,14 +209,14 @@ Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to configure load balancers for optimal performance best
 * Determine how to allocate best backend resources based on load
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />
 
 ### 7. AWS Classic Load Balancer - Threat Intel
 
-**AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat
+**AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat
 
 Use this dashboard to:
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor malicious confidence level for all incoming malicious IP addresses posing the threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Threat-Intel.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Threat-Intel.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} />

@@ -57,7 +57,7 @@ Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to ref
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [**Test Connection** feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
@@ -69,7 +69,7 @@ One of the reasons could be that the user who created the monitor was deleted. Y
 
 ![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
 
-You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon,  
+You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot kebab icon,  
 
 ![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
@@ -79,12 +79,12 @@ then selecting **Duplicate**. If your monitor still doesn't work then it might
 
 The Monitors page allows you to disable a Monitor so you're not alerted during specific times like scheduled maintenance or upgrade windows. Follow the below steps to disable a monitor. 
 
-1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.
+1. Find and select the Monitor in the Monitors table. A three-dot kebab icon appears on the right of the row.
 
     ![menu-option.png](/img/monitors/menu-option.png)
 
-1. Click the three-dot icon to view the menu options. You can select to Enable or Disable the monitor.
+1. Click the three-dot kebab icon to view the menu options. You can select to Enable or Disable the monitor.
 
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
+Currently, you can only manually disable or enable a Monitor. You cannot disable and enable based on a schedule.
 
  

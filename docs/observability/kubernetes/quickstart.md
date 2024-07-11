@@ -12,7 +12,7 @@ import Iframe from 'react-iframe';
 
 This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in a few easy steps. This will:
 
-* Install the [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) in your Kubernetes environment
+* Install the [Sumo Logic Kubernetes Helm Chart](/docs/send-data/kubernetes) in your Kubernetes environment
 * Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
 * Install the relevant app dashboards to view data from your Kubernetes environment and share them with others in your org
 * Install the necessary alert monitors to get alerted of any issues
@@ -42,10 +42,11 @@ Video: Quick Onboarding with Kubernetes.
 
 :::
 
-## Before you begin
+## Prerequisites
 
-* A Sumo Logic account (if you don't have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account))
-* Your Sumo Logic [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys)
+* You must have a Sumo Logic account. If you do not have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account).
+* Obtain your Sumo Logic [Access ID and Access Key](/docs/manage/security/access-keys).
+* Ensure that your Sumo Logic account has the Manage Content and Manage Collector [role capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 
 ### Supported versions
 
@@ -147,17 +148,17 @@ If you're adding additional configuration, we recommend using the [helm values f
 
 ## Next Steps
 
-To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
+To get started, open a new [Kubernetes view](/docs/dashboards/explore-view/#kubernetes-views) and view your Kubernetes App Dashboards.
 
 If you're looking to monitor specific aspects of Kubernetes control plane provided by different cloud vendors (such as GKE, AKS, EKS), you'll need to install those [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
-If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
+If you do not see data in Sumo Logic, review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
 ## Additional Resources
 
 * [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
 * [Share a Dashboard](/docs/dashboards/share-dashboard-new.md)
-* [Link a dashboard to Explore](/docs/dashboards/link-dashboards.md)
+* [Linking multiple dashboards](/docs/dashboards/link-dashboards.md)
 
 
 ### Kubernetes Partner Apps

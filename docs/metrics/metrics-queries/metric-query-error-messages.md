@@ -9,11 +9,11 @@ This page describes warning and error messages that are presented for long-runni
 
 ## Errors
 
-An error means a critical issue that prevents your query from running. When an error happens, you query will not yield any result. The error could be caused by a syntax error in the query string, or by the query reaching a hard limit. You can request Sumo for a limit increase if a hard limit is reached.
+An error means a critical issue that prevents your query from running. When an error happens, you query will not yield any result. The error could be caused by a syntax error in the query string, or by the query reaching a hard limit. You can request Sumo Logic for a limit increase if a hard limit is reached.
 
 ### Query Timeout
 
-When a metric query runs for 60 seconds, it will time out, and Sumo will present a message like this:
+When a metric query runs for 60 seconds, it will time out, and Sumo Logic will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 
@@ -23,7 +23,7 @@ The error might results from the query matching too many time series, but it cou
 
 To provide the best user experience, we have hard limits that are preventing some unusual query patterns from executing. If your use case involves queries over any of these limits, please contact customer support to increase the limit. 
 
-The following hard limits apply to Metrics queries in Sumo:
+The following hard limits apply to Metrics queries in Sumo Logic:
 
 |Property|Limit|Error Message|
 |:---|:---|:---|
@@ -48,9 +48,11 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries, and 50,000 for aggregate queries (queries that have an aggregate operator like `avg` and `max`). In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
+For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
 
-When a single row of a query scans more than 50,000 time series, more than 500M raw data points or more than 50M rollup data points, Sumo will stop after scanning the current time series, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached:
+In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
+
+When a single row of a query scans more than input time series limit, more than 500M raw data points or more than 50M rollup data points, Sumo Logic will stop after scanning the current time series, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached:
 
 `This query is scanning too much data, the first (number of input time series scanned) time series were included.`
 
@@ -60,7 +62,7 @@ If the query that results in the message contains an aggregation operator, the r
 
 #### Output data limit
 
-When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
+When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
 
 `There were too many timeseries in the output, showing first 1000`
 
@@ -72,13 +74,13 @@ One solution is to add additional selectors to your query to reduce the number 
 
 #### Join data limit
 
-When a cross-row calculation (e.g. #A+#B) produces more than 1000 time series, Sumo will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
+When a cross-row calculation (e.g., #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
 
 `The cross-row calculation resulted in too many time-series. Limiting results to 1000 series.`
 
 ### Quantization interval not supported
 
-When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo’s quantization behavior, the following limitations will apply in sequence:
+When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo Logic’s quantization behavior, the following limitations will apply in sequence:
 
 - Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
 

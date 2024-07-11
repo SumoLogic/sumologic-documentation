@@ -63,7 +63,8 @@ Sumo Logic helps in transforming daily operations into intelligent business deci
 
 :::tip Data Collection strategies
 
-<details><summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
+<details>
+<summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
 
 [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
 
@@ -121,7 +122,7 @@ Once you've set up a collector and source, read these tips on configuring and ma
 
 ### Data Volume and Retention
 
-* [Data Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+* [Data Retention](/docs/manage/partitions/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. 
 * [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
@@ -138,10 +139,10 @@ Before adding Partitions, consider the following:
 * **Query Rewriting**. The query service will automatically detect routing expressions for partitions in the backend. No scoping changes are required for existing content to use partitions.
 * **Overlap Consequences**. Data should NEVER fall into multiple partitions. This will cause the data to be duplicated across the service and will increase the cost of ingesting the data.
 
-The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
+Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-* [Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
-* [Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+* [Routing Expression.](/docs/manage/partitions) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+* [Variable Retention.](/docs/manage/partitions/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ### Field Extraction Rule setup
@@ -156,7 +157,7 @@ Before creating a Field Extraction Rule (FER), consider the following:
 * **FER Scoping**. FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
 * **Limitations**. FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
-If applicable, identify a set of logs to be pre-parsed by a FER. To [create the FER](/docs/manage/field-extractions/create-field-extraction-rule), go to **Manage Data** > **Settings** > **Field Extraction Rules**. The rule will require you to implement a **Rule Name**, **Scope**, and **Parse Expression**.
+If applicable, identify a set of logs to be pre-parsed by a FER. When you create a Field Extraction Rule, it will require you to implement a **Rule Name**, **Scope**, and **Parse Expression**.
 
 ## Training and Certification
 

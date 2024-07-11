@@ -2,7 +2,7 @@
 id: field-management
 title: Field Management APIs
 sidebar_label: Field Management
-description: Use HTTP endpoints to manage your account's field table schema.
+description: Use Field Management APIs to manage your account's field table schema.
 hide_table_of_contents: true
 ---
 
@@ -10,9 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/rules.png')} alt="Thumbnail icon" width="50"/>
 
-The Field Management API allows you to configure fields from HTTP endpoints. Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. For more information, see [Fields](https://help.sumologic.com/?cid=10116).
+The Field Management API allows you to configure fields from HTTP endpoints. Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. For more information, see [Fields](/docs/manage/fields).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                         |
 |:------------|:-----------------------------------------------------------|

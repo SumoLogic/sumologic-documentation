@@ -18,7 +18,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 ## Create a Bitium SSO app to connect to Sumo Logic
 
 1. Sign into Bitium.
-1. From the **Bitium** menu, select **Manage**, and then select** Manage Apps**.
+1. From the **Bitium** menu, select **Manage**, and then select **Manage Apps**.
 
     ![Manage apps](/img/security/bitium_manage_apps.png)
 
@@ -55,7 +55,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 ## Configure SAML in Sumo Logic
 
 1. Log into Sumo Logic as an administrator.
-1. Go to **Administration > Security > SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Click **Configure**, and configure the SAML settings.
 1. **Configuration Name.** Type the name of the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode.** Select this option if you'd like to view additional details when an error occurs.
@@ -105,4 +105,6 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
  
 ## Create multiple SAML configurations
 
-{@import ../../../reuse/saml.md}
+import Saml from '../../../reuse/saml.md';
+
+<Saml/>

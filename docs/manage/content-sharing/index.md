@@ -27,10 +27,7 @@ When you share content, the users with whom you have shared it are notified by e
 
 <img src={useBaseUrl('img/content-sharing/Emailnotification.png')} alt="Sharing notification" width="500"/>
 
-To find content in the Library that has been shared with you:
-
-1. Click the clock image in the top of the left navigation bar.
-1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.  <br/><img src={useBaseUrl('img/content-sharing/Dash3.png')} alt="Recently shared by me" width="200"/>
+To find content in the Library that has been shared with you, click the clock image in the left navigation bar: <img src={useBaseUrl('img/content-sharing/recent-icon.png')} alt="Recent icon" style={{border: '1px solid gray'}} width="30" />
 
 ## Sharing dashboards, log searches, metric queries, and folders
 
@@ -63,7 +60,9 @@ To share content from the left navigation bar or the Library:
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
-{@import ../../reuse/ui-elements.md}
+import UiElements from '../../reuse/ui-elements.md';
+
+<UiElements/>
 
 ## Available Permission Levels
 

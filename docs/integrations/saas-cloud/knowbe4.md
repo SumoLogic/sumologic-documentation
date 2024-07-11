@@ -1,6 +1,6 @@
 ---
 id: knowbe4
-title: Sumo Logic App for KnowBe4
+title: KnowBe4
 sidebar_label: KnowBe4
 description: The Sumo Logic App for KnowBe4 offers functionality for monitoring and analyzing KnowBe4 Phishing Security logs.
 ---
@@ -15,11 +15,11 @@ The distribution of **Phishing Security Tests** by difficulty and long-running *
 
 The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [KnowBe4 Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) and [Recipient Results](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1{pst_id}~1recipients/get) documentation.
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Sample Phishing Security Tests Log"
 {
@@ -103,7 +103,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 ```
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id
@@ -126,7 +126,9 @@ email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment
 
 Before you begin, collect logs from KnowBe4 and ingest them into Sumo Logic. Refer to the [KnowBe4 Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/) to create the source and use the same source category while installing the app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing KnowBe4 Dashboards​
 

@@ -10,7 +10,7 @@ Once the feature is enabled, the IP address or [CIDR](http://en.wikipedia.org/
 
 You can also share dashboards with users connecting from IP addresses or CIDRs in this allowlist. That way they can see the dashboard without logging in, but the dashboard remains private to your allowlist. The public cannot see it.
 
-Allowlist settings take effect after users have logged out of their Sumo Logic accounts. If a user is logged in when you make the allow setting, they will stay logged in. Any IP or CIDR addresses must be associated with your company in order to add them to the allow. Wildcards are not supported; don't use them to specify an IP or CIDR address range.
+Allowlist settings take effect after users have logged out of their Sumo Logic accounts. If a user is logged in when you make the allow setting, they will stay logged in. Any IP or CIDR addresses must be associated with your company in order to add them to the allow. Wildcards are not supported; do not use them to specify an IP or CIDR address range.
 
 :::note
 The IP is generally your host IP address. But if your request is coming through a proxy, an x-forwarded-for header is included in the HTTP requests to Sumo Logic, which is used as the IP when evaluating the allowlist.
@@ -18,9 +18,8 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable allowlist for login and APIs
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
-1. Under** Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
+1. Under **Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
 
     ![service-allow-list-1.png](/img/security/service-allow-list-1.png)
 
@@ -30,9 +29,8 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable dashboard allowlist
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
-1. Under** Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
+1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
 
     ![service-allow-list-2.png](/img/security/service-allow-list-2.png)
 
@@ -42,8 +40,7 @@ vClick **Save**.
 
 ### Disable allowlist settings
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
 1. Under **Service Allowlist Settings**, deselect **Enable Login / API Allowlist** or **Enable Dashboard Allowlist** or both options.
 1. Click **Save**. You will be prompted to confirm that you want to disable your allowlist settings.
 1. Click **OK**.

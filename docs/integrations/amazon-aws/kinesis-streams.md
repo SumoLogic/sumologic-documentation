@@ -18,7 +18,7 @@ The app uses Kinesis logs and metrics for:
 * Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
  {  
@@ -50,7 +50,7 @@ The app uses Kinesis logs and metrics for:
  }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
@@ -64,7 +64,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | count by error_code, error_msg, eventName, userName, sourceIPAddress
 ```
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams app
+## Collecting logs and metrics for the Amazon Kinesis - Streams app
 
 ### Collecting Metrics
 
@@ -100,11 +100,27 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams app
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-## Viewing Amazon Kinesis Streams dashboards
+## Upgrading the Amazon Kinesis - Streams app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Kinesis - Streams app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Amazon Kinesis - Streams dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Events
 
@@ -130,8 +146,6 @@ See the details of Kinesis events including the count over time, location, API c
 
 
 ### Metrics
-11
-
 
 See the details of the Kinesis metrics including the incoming bytes, incoming records, get records, put and get latency, write and read provisioned throughput exceeded, and iterator age.
 

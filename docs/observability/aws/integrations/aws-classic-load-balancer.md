@@ -2,36 +2,28 @@
 id: aws-classic-load-balancer
 title: AWS Classic Load Balancer
 sidebar_label: AWS Classic Load Balancer
-description: The Sumo Logic App for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) App that gives you visibility into the health of your Classic Load Balancer.
+description: The Sumo Logic app for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) app that gives you visibility into the health of your Classic Load Balancer.
 ---
 
 The [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/) (ELB) distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones and operates at both the request level and connection level.
 
-The Sumo Logic App for AWS Observability Classic Load Balancer is a
-unified logs and metrics (ULM) App that gives you visibility into the
-health of your Classic Load Balancer. Use the pre-configured dashboards
-to understand the latency, request and host status, threat intel, and
-HTTP backend codes by availability zone.
+The Sumo Logic app for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) app that gives you visibility into the health of your Classic Load Balancer. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone.
 
-## Log and Metric Types
+## Log and metrics types
 
-The AWS Classic Load Balancer ULM App uses the following log and metric
-types:
+The AWS Classic Load Balancer ULM app uses the following log and metric types:
 
 * Metrics included in the AWS/ELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) page. 
 
-The logs are stored in a .gzip format in the specified S3 bucket and
-contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
+* The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol. For more details on the Classic Load Balancer Access log, see [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
 
-For more details on the Classic Load Balancer Access log, see the  [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+### Sample log messages
 
-### Sample Access Log Message
-
-```
+``` title="Access"
 2022-03-02T12:02:58.135502Z sumo-classicelb 2.57.121.10:61001 172.31.82.43:80 0.000039 0.001338 0.000026 404 404 0 196 "GET http://localhost:80/admin/config.php HTTP/1.1" "gbrmss/7.29.0" - -
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample was taken from the **5XX Backend Response Codes** panel on the **AWS Classic Load Balancer - Connections and Host Status** dashboard.
 
@@ -39,26 +31,13 @@ The following query sample was taken from the **5XX Backend Response Codes** pan
 account=dev region=us-east-1 Namespace=aws/elb loadbalancername=long-api-lb AvailabilityZone=* metric=HTTPCode_Backend_5XX Statistic=Sum | sum by account, region, namespace, loadbalancername, AvailabilityZone
 ```
 
-## AWS Classic Load Balancer Dashboards
+## Viewing AWS Classic Load Balancer dashboards
 
-This page provides examples and descriptions for each of the AWS
-Observability Classic Load Balancer pre-configured dashboards.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of our AWS Observability solution.
 
-Elastic Load Balancing automatically distributes your incoming traffic
-across multiple targets, such as EC2 instances, containers, and IP
-addresses, in one or more Availability Zones. It monitors the health of
-its registered targets, and routes traffic only to the healthy targets.
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic AWS Observability Classic Load Balancer Dashboards
-provides visibility into the health of Classic Load Balancer and backend
-server in your AWS environment. Use the pre-configured dashboards to
-understand the load, errors, response codes, and latency by backend
-servers, hosts as well as requests from malicious sources, and HTTP
-response codes.
-
-:::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
-:::
+<FilterDashboards/>
 
 ### AWS Classic Load Balancer - Overview
 

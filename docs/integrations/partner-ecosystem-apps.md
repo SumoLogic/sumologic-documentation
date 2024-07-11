@@ -7,7 +7,7 @@ description: Partner Ecosystem Apps are third-party Sumo Logic apps for partners
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="60"/>
 
 Sumo Logic Partner Ecosystem Apps are provided and supported by our partner network. The following links provide collection, installation, and dashboard information on working with these apps.
 * [Aqua Security](https://github.com/aquasecurity/Sumo-Logic-App/)  
@@ -17,10 +17,14 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Catchpoint](https://github.com/catchpoint/Integrations.SumoLogic/blob/main/README.md)
 * [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
 * [CloudFlare](https://developers.cloudflare.com/fundamentals/data-products/analytics-integrations/sumo-logic)
-* [Code42](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Integrate_Code42_with_Sumo_Logic)
+* [Code42](https://support.code42.com/hc/en-us/articles/14827618219671-Integrate-Code42-with-Sumo-Logic)
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
+* [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
+* [Endace](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Endace)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
+* [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
+* [Keeper Security](https://docs.keeper.io/en/v/enterprise-guide/event-reporting/sumo-logic)
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
 * [Mimecast](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
@@ -28,8 +32,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Spinnaker](https://docs.armory.io/armory-enterprise/armory-admin/observe/integrations-sumologic/)
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)
-* <a href="https://help.sumologic.com/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
-
+* <a href="/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 
 For any questions on these applications, contact our partners.

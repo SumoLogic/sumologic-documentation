@@ -1,0 +1,14 @@
+{
+    "name": "MS Exchange Trace Logs",
+    "description":"Microsoft Exchange Trace Logs",
+    "fields":{
+      "_siemForward":false
+    },
+    "app_client_id": "client_id",
+    "directory_tenant_id": "tenant_id",
+    "client_secret": "secret",
+    "authorization_code": "code",
+    "polling_interval": 300,
+    "time_offset": 3600
+  }
+  

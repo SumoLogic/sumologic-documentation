@@ -1,0 +1,17 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "JumpCloud Directory Insights",
+            "description": "Collect Events from JumpCloud Directory Insights Product",
+            "category": "jumpcloud-directory-insights",
+            "apiKey": "ebf7b9d6e1****************",
+            "orgID": "64949312***************",
+            "service": "all"
+        },
+        "schemaRef": {
+            "type": "JumpCloud Directory Insights"
+        },
+        "sourceType": "Universal"
+    }
+}

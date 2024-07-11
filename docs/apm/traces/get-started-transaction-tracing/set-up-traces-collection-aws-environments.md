@@ -25,8 +25,8 @@ AWS provides a few alternative scenarios for setting up the Collector. Document
 ### Amazon Elastic Container Service (ECS)
 
 In the case of ECS, there are two possible deployment configurations. Sumo Logic Distro can be installed on the cluster of [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-ecs-ec2.html)
-instances ([Scenario 1 below](#scenario-1-aws-opentelemetry-collector-installation-on-ecs-ec2)) or ran on [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
-([Scenario 2 below](#scenario-2-aws-opentelemetry-collector-installation-on-ecs-fargate)).
+instances ([Scenario 1 below](#scenario-1-sumo-logic-distribution-for-opentelemetry-collector-installation-on-ecs-ec2)) or ran on [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
+([Scenario 2 below](#scenario-2-sumo-logic-distribution-for-opentelemetry-collector-installation-on-ecs-fargate)).
 
 The installation and configuration are just a few steps, described below.
 
@@ -39,13 +39,13 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ecs-ec2-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-ec2-deployment.yaml
     ```
 
 1. Download the Sumo Logic Distribution for OpenTelemetry Collector configuration file:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/config.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform the Collector deployment.
@@ -86,13 +86,13 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ecs-fargate-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-fargate-deployment.yaml
     ```
 
 1. Download the configuration file.
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/config.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform the Collector deployment:
@@ -131,7 +131,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector on your EC2 instance.
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ec2-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ec2-deployment.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform a deployment.

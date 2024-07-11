@@ -1,0 +1,22 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Palo Alto Cortex XDR"
+        },
+        "config": {
+            "name": "Cortex XDR",
+            "fields": {
+                "_siemForward": false
+            },
+            "api_key": "***********",
+            "api_id": "*",
+            "fqdn": "palo-test.com",
+            "polling_interval": 600,
+            "ingest_events": true,
+            "dup_alerts": true,
+            "collect_incidents": true
+        },
+        "sourceType": "Universal"
+    }
+}

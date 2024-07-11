@@ -1,0 +1,20 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "Druva",
+            "description": "test_description",
+            "category": "source_category",
+            "baseURL": "https://apis.druva.com",
+            "clientID": "testclientid",
+            "secretKey": "*********",
+            "fields":{
+                "_siemForward":false
+            }
+        },
+        "schemaRef": {
+            "type": "Druva"
+        },
+        "sourceType": "Universal"
+    }
+}

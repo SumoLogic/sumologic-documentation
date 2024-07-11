@@ -20,7 +20,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-app-central/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>App Central in the Automation Service</h4></a>
+  <a href="/docs/platform-services/automation-service/app-central/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>App Central in the Automation Service</h4></a>
   <p>Learn how to use App Central to get new applications and tools.</p>
   </div>
 </div>
@@ -36,6 +36,12 @@ In this section, we'll introduce the following concepts:
   <p>Learn how integrations are connectors to applications from industry-leading network and security vendors. </p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/platform-services/automation-service/automation-service-audit-logging/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Automation Service Audit Logging</h4></a>
+  <p>Learn how to search the Audit Event Index for Automation Service log events. </p>
+  </div>
+</div>  
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/platform-services/automation-service/automation-service-bridge/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Bridge for the Automation Service</h4></a>

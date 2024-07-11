@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud Run is a managed compute platform that lets you run containers directly on top of Google's scalable infrastructure. For more details, refer to the [GCP documentation](https://cloud.google.com/run/docs/overview/what-is-cloud-run).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

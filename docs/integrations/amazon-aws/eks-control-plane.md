@@ -17,10 +17,11 @@ The list of supported platforms can be found [here](https://github.com/SumoLogic
 
 ## Log types
 
-Amazon EKS utilizes the following log types:
+The Amazon EKS - Control Plane app utilizes the following CloudWatch Logs:
+
 * **Kubernetes API server component logs (api)**. The cluster API server is the control plane component that exposes the Kubernetes API.
 * **Audit (audit)**. Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
-* **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+* **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (RBAC) authentication using IAM credentials.
 * **Controller manager (controllerManager)**. The controller manager manages the core control loops that are shipped with Kubernetes.
 * **Scheduler (scheduler)**. The scheduler component manages when and where to run pods in your cluster.
 
@@ -105,7 +106,7 @@ please apply your changes to the latest version and try again"}
 scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
@@ -123,7 +124,7 @@ and _sourceName = kube-apiserver-audit*
 | limit 10
 ```
 
-## Collecting Logs and Metrics for the Amazon EKS - Control Plane app
+## Collecting logs and metrics for the Amazon EKS - Control Plane app
 
 This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
 * Setting up collection and installing the Sumo Logic Kubernetes app.
@@ -150,25 +151,18 @@ To configure Amazon CloudWatch log collection, do the following:
 
 Now that you have set up collection for EKS, install the Sumo Logic app for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
 
-To install the app, do the following:
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the App Catalog, search for **EKS** and select the app.
-3. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**  For **EKS Log Source,** leave Source Category selected, and enter the value of source category which you used while configuring the Sumo Logic HTTP Source.
-    3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click **Add to Library**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+<AppInstall/>
+
+All the dashboards are linked to the [monitoring dashboards](/docs/dashboards/explore-view/) so they can be easily accessed.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane
 
-Filter with template variables    
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
+:::note Filter with template variables    
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+:::
 
 ### API Server Audit
 
@@ -199,7 +193,7 @@ Use this dashboard to:
 
 ### Authenticator
 
-The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes[ Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (RBAC) authentication using IAM credentials. See also: [Enabling IAM principal access to your cluster](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
 
 Use this dashboard to:
 * Review authentication errors.

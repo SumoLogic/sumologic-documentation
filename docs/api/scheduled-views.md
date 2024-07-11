@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                               |
 |:------------|:-----------------------------------------------------------------|

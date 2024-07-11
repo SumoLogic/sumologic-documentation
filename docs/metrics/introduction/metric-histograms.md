@@ -45,7 +45,7 @@ This query selects data from a specific source category and service, and then ca
 
 ## Why use Histograms?
 
-With histograms, you don't need to predefine any special cases for calculating percentiles. You can use the histogram to compute any percentile based on the raw measurements captured. Moreover, querying histograms is efficient and space-saving as compared to storing all the raw data.
+With histograms, you do not need to predefine any special cases for calculating percentiles. You can use the histogram to compute any percentile based on the raw measurements captured. Moreover, querying histograms is efficient and space-saving as compared to storing all the raw data.
 
 ## Querying Histograms
 

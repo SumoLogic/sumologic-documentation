@@ -1,14 +1,10 @@
 ---
 slug: /integrations/amazon-aws
 title: Amazon and AWS
-sidebar_label: Amazon and AWS
-description: Sumo Logic apps for Amazon and AWS.
-tags: [amazon, aws]
+description: Learn how to use Sumo Logic apps for Amazon and AWS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="75"/>
 
 This guide has documentation for all of the apps that Sumo provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
 
@@ -81,20 +77,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/amazon-aws/aws-private-certificate-authority">AWS Private Certificate Authority</a></h4>
   <p>A guide to the Sumo Logic integration for AWS Private Certificate Authority.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-mysql-ulm">Aurora MySQL ULM</a></h4>
-  <p>A guide to the Sumo Logic app for Aurora MySQL ULM.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-postgresql-ulm">Aurora PostgreSQL ULM </a></h4>
-  <p>A guide to our app for Aurora PostgreSQL.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -337,23 +319,9 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancer-app">AWS Elastic Load Balancer</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing">AWS Elastic Load Balancing</a></h4>
           <p>A guide to the Sumo Logic app for AWS ELB.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/elb-classic.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing-classic">AWS Elastic Load Balancing - Classic</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB - Classic.</p>
           </div>
         </div>
         <div className="box smallbox card">
@@ -396,4 +364,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/integrations/amazon-aws/threat-intel">AWS Foundations Benchmark App</a></h4>
     <p>A guide to the Sumo Logic app for AWS Threat Intel.</p>
-</div>    </div></div>                                                                                                     
+</div>    
+</div>
+</div>

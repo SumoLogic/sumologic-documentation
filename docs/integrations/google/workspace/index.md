@@ -48,23 +48,17 @@ The events sections of logs are:
 
 <table>
   <tr>
-   <td><strong>Event</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Event</strong> </td>
+   <td><strong>Description</strong> </td>
   </tr>
   <tr>
-   <td>Login type name
-   </td>
-   <td>Equivalent of status or type of activity: login_success, logout, or login_failure. In the Login Dashboard, we also have a Panel showing login_failure_type, which displays a reason for the login failure.
-   </td>
+   <td>Login type name   </td>
+   <td>Equivalent of status or type of activity: login_success, logout, or login_failure. In the Login Dashboard, we also have a Panel showing login_failure_type, which displays a reason for the login failure.   </td>
   </tr>
   <tr>
-   <td>login_challenge
-   </td>
+   <td>login_challenge   </td>
    <td>Records action related to a Login Challenge for suspicious sign ins. Specific results are logged in the login_challenge_status, where the possible values are Challenge Failed or Challenge Passed. For more information on login_challenge, refer to Google documentation:
-<p><a href="https://support.google.com/a/answer/6002699?hl=en">https://support.google.com/a/answer/6002699?hl=en</a></p>
-   </td>
+<p><a href="https://support.google.com/a/answer/6002699?hl=en">https://support.google.com/a/answer/6002699?hl=en</a></p>   </td>
   </tr>
 </table>
 
@@ -76,29 +70,21 @@ These are actions performed by Google site administrators.
 
 <table>
   <tr>
-   <td>Event
-   </td>
-   <td>Description
-   </td>
+   <td>Event </td>
+   <td>Description </td>
   </tr>
   <tr>
-   <td>USER_SETTINGS
-   </td>
+   <td>USER_SETTINGS   </td>
    <td>These are actions performed at the individual user level, such as CREATE_USER, DELETE_USER, CHANGE_PASSWORD.
-<p>A specific type of individual user action is CREATE_DATA_TRANSFER_REQUEST. This typically occurs after a user has been deleted, and the user’s contents, such as Drive, are transferred to that user’s manager.</p>
-   </td>
+<p>A specific type of individual user action is CREATE_DATA_TRANSFER_REQUEST. This typically occurs after a user has been deleted, and the user’s contents, such as Drive, are transferred to that user’s manager.</p>   </td>
   </tr>
   <tr>
-   <td>GROUP_SETTINGS
-   </td>
-   <td>These are actions such as adding and removing users from groups.
-   </td>
+   <td>GROUP_SETTINGS</td>
+   <td>These are actions such as adding and removing users from groups.   </td>
   </tr>
   <tr>
-   <td>Other
-   </td>
-   <td>Other types of actions take place, but they are less common (for example, CHROME_OS_SETTINGS, DEVICE_SETTINGS).
-   </td>
+   <td>Other   </td>
+   <td>Other types of actions take place, but they are less common (for example, CHROME_OS_SETTINGS, DEVICE_SETTINGS).   </td>
   </tr>
 </table>
 

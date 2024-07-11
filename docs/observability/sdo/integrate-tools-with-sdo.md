@@ -16,7 +16,7 @@ For example, if you were to integrate Azure DevOps, which provides developer se
 1. Install the SDO solution as documented [here](install-sdo-app-view-dashboards.md).
 1. Add SDO field extraction rules to map events from your tool to the SDO event schema.
 
-For example, if you were to map an Azure DevOps Pull Request Event to an SDO Pull Request Event Schema, you would create a new FER, and extract and map fields to the [pull request schema](supported-tools-schema.md). You can use the parse expressions defined to support out-of-the-box tools in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.json).
+For example, if you were to map an Azure DevOps Pull Request Event to an SDO Pull Request Event Schema, you would create a new FER, and extract and map fields to the [pull request schema](supported-tools-schema.md). You can use the parse expressions defined to support out-of-the-box tools in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 Refer to the Sumo Logic Community Repo to make use of [community developed FERs](https://github.com/SumoLogic/sumologic-content/tree/master/Software-Development-Optimization).
 

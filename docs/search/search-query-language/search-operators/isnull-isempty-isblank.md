@@ -13,13 +13,13 @@ sidebar_label: isNull, isEmpty, isBlank
 Fields can hold a null value for the following reasons:
 
 * A [parsing operation](/docs/search/search-query-language/parse-operators) failed to parse a value.
-* There is a mismatch from a <a href="#lookup-classic">lookup</a> operator query.
+* There is a mismatch from a [`lookup` operator](/docs/search/search-query-language/search-operators/lookup) query.
 * There is a missing field from a [geo lookup](geo-lookup-map.md) operator query.
-* There is a missing field from a [transpose](transpose.md) operator query.
+* There is a missing field from a [`transpose` operator query](transpose.md).
 
 ## When to use isNull, isEmpty, isBlank
 
-### isNull(<`string`>)
+### isNull(`<string>`)
 
 Checks if the `<string>` value is "null".
 
@@ -31,7 +31,7 @@ Checks if the `<string>` value is "null".
 
 Returns `true` if the string is null.
 
-### isEmpty(<`string`>)
+### isEmpty(`<string>`)
 
 Checks if the `<string>` value is an empty string containing no characters or whitespace.
 
@@ -43,7 +43,7 @@ Checks if the `<string>` value is an empty string containing no characters or wh
 
 Returns `true` if the string is null or empty.
 
-### isBlank(<`string`>)
+### isBlank(`<string>`)
 
 Checks if the value is null, empty, or contains only whitespace characters.
 
@@ -69,11 +69,11 @@ Running a query like:
 | if (isNull(country_code), "unknown", country_code) as country_code
 ```
 
-uses the `isNull` operator to check the field value of `country_code` and if it returns `true` has the `if` operator replace the value with the string `unknown`:
+uses the `isNull` operator to check the field value of `country_code` and if it returns `true`, has the [`if` operator](/docs/search/search-query-language/search-operators/if) replace the value with the string `unknown`:
 
-![isNull](/img/search/searchquerylanguage/search-operators/isNull.png)
+![Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message](/img/search/searchquerylanguage/search-operators/isNull.png)
 
-### Use where to check for null values
+### Use the where operator to check for null values
 
 To check for null values from a lookup operation, use a query with [`where`](where.md), like:
 

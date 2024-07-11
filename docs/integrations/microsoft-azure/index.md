@@ -1,16 +1,12 @@
 ---
 slug: /integrations/microsoft-azure
-title: Sumo Logic Apps for Microsoft and Azure
-sidebar_label: Microsoft and Azure
-description: Docs for Sumo apps for Microsoft and Microsoft Azure.
+title: Microsoft and Azure
+description: Learn how to use the Sumo Logic apps for Microsoft and Microsoft Azure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="thumbnail icon" width="100"/>
-
-This guide has documentation for all of the apps that Sumo provides for Microsoft and Microsoft Azure.
-
+This guide has documentation for all of the apps that Sumo Logic provides for Microsoft and Microsoft Azure.
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -316,13 +312,6 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="/docs/integrations/microsoft-azure/arm-integration-faq">Azure Integration with ARM FAQs</a></h4>
-      <p>A guide to the Sumo Logic app for Azure Integration with ARM FAQs.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/kubernetes">Azure Kubernetes Service Control Plane</a></h4>
       <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
@@ -372,7 +361,7 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="50"/>
+      <img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/office-365">Microsoft Office Audit 365</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Office Audit 365.</p>
       </div>
@@ -389,13 +378,6 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
       <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Thumbnail icon" width="43"/>
       <h4><a href="/docs/integrations/microsoft-azure/teams">Microsoft Teams</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Teams.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="65"/>
-      <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
       </div>
     </div>
     <div className="box smallbox card">

@@ -1,0 +1,25 @@
+{
+    "api.version":"v1",
+      "source":{
+          "schemaRef":{
+          "type":"Google BigQuery"
+          },
+          "config":{
+          "name":"MyBigQuerySource",
+          "checkpointField":"timestamp_usec",
+          "timeField":"timestamp_usec",
+          "checkpointStart":"0",
+          "query":"select message_info,event_info,event_info.timestamp_usec as timestamp_usec from `bigquery-dev-382704.BigQueryTest.GmailTest` where event_info.timestamp_usec > %CHECKPOINT%  LIMIT 2",
+          "projectId":"********",
+          "fields":{
+              "_siemForward":false
+              },
+          "pollingInterval":"2m",
+          "credentialsJson":"********"
+          },
+          "state":{
+          "state":"Collecting"
+          },
+      "sourceType":"Universal"
+    }
+  }

@@ -9,22 +9,17 @@ description: The Sumo Logic AWS Observability Lambda integration utilizes Lambda
 
 The AWS Observability Lambda utilizes Lambda Logs and Metrics from CloudWatch, as well as CloudTrail Lambda Data Events. Preconfigured dashboards provide insights into executions, such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
 
-## Log and metric types
+## Log and metrics types
 
 The AWS Lambda ULM app uses the following logs and metrics:
 
 * [AWS CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html)
-* [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html)
 * [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html)
 
-### Sample Log Messages
+### Sample log messages
 
-This section provides sample Amazon CloudWatch Log and CloudTrail Lambda
-Data Events log messages.
-
-Amazon CloudWatch Log:
-
-```json
+```json title="Amazon CloudWatch Log"
 {
 	"id":"32563142671071560797760688825700039436306340248688066573",
 	"timestamp":1511808906799,
@@ -36,9 +31,7 @@ Amazon CloudWatch Log:
 }
 ```
 
-CloudTrail Lambda Data Events:
-
-```json
+```json title="CloudTrail Lambda Data Events"
 {
    "eventVersion":"1.06",
    "userIdentity":{
@@ -80,11 +73,9 @@ CloudTrail Lambda Data Events:
 }
 ```
 
-### Sample Query 
+### Sample queries 
 
-Top Functions by Duration:
-
-```sql
+```sql title="Top Functions by Duration"
 _sourceCategory=Labs/AWS/Lambda
 | json "message"
 | json "logStream", "logGroup"
@@ -96,21 +87,17 @@ _sourceCategory=Labs/AWS/Lambda
 | top 10 functionname by DurationAvg, DurationSum, frequency
 ```
 
-# AWS Lambda Dashboards
+## Viewing AWS Lambda dashboards
 
-This page provides examples and descriptions for each of the AWS Observability Lambda pre-configured dashboards.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-[AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code without the burden of provisioning or managing servers. The AWS Lambda
-dashboards help in monitoring operation and performance trends in the Lambda function in your account.
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic AWS Observability Lambda dashboards utilize AWS Lambda logs and metrics data from AWS CloudWatch and AWS CloudTrail. Preconfigured dashboards provide insights into executions, such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
+<FilterDashboards/>
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+#### About measurements
 
-## About measurements
-
-This section explains some of the measurements and calculations
-underlying the information presented in dashboard panels.
+This section explains some of the measurements and calculations underlying the information presented in dashboard panels.
 
 * **Duration (ms).** This represents the function duration as the elapsed wall clock time, in milliseconds, from when a function starts executing as a result of an invocation to when it stops executing. Function duration is a measure of performance. **Billed Duration** for an invocation is the value of duration rounded up to the nearest 100 milliseconds.
 * **Memory Size**. The amount of memory allocated for a function.
@@ -120,12 +107,9 @@ underlying the information presented in dashboard panels.
 * **Unused Memory.** This is Memory Size - Max Memory Used = Unused Memory. Because you are billed based on Memory Size (which you allocate), this is an indicator of not allocating appropriately.
 * **IteratorAge.** This AWS Lambda CloudWatch metric is emitted for stream-based invocations (functions triggered by an Amazon DynamoDB stream or Kinesis stream). Measures, in milliseconds, the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
 
-## AWS Lambda - Overview
+### AWS Lambda - Overview
 
-The **AWS Lambda - Overview** dashboard provides intuitive insights with
-CloudWatch Lambda metrics, CloudTrail audit logs for Lambda, as well as 
-Lambda logs to give you an at-a-glance view of actions, performance, and
-health of your AWS Lambda functions.
+The **AWS Lambda - Overview** dashboard provides intuitive insights with CloudWatch Lambda metrics, CloudTrail audit logs for Lambda, as well as  Lambda logs to give you an at-a-glance view of actions, performance, and health of your AWS Lambda functions.
 
 Use this dashboard to:
 
@@ -167,8 +151,7 @@ Use this dashboard to:
 
 ### 3. AWS Lambda - Error Analysis
 
-The **AWS Lambda - Error Analysis** dashboard provides insights on
-errors and warnings in your AWS Lambda functions.
+The **AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
 
 Use this dashboard to:
 
@@ -182,9 +165,7 @@ Use this dashboard to:
 
 ### 4. AWS Lambda - Resource Usage
 
-**AWS Lambda - Resource Usage** dashboard provides insights on recent
-AWS Lambda request details, memory usage trends, function duration, and
-compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
 
 Use this dashboard to:
 
@@ -196,9 +177,7 @@ Use this dashboard to:
 
 ### 5.  AWS Lambda - Performance Trends
 
-**AWS Lambda - Performance Trends** dashboard displays log data
-analytics to provide insights on memory usage, function duration, recent
-request details, and compute usage.
+**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 
@@ -211,10 +190,7 @@ Use this dashboard to:
 
 ### 6. AWS Lambda - Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming
-requests to your AWS Lambda functions from malicious sources determined
-via Sumo Logic’s Threat Intel feature. Panels show detailed information
-on malicious IPs and the malicious confidence of each threat. 
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat. 
 
 Use this dashboard to:
 

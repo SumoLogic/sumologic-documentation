@@ -18,7 +18,7 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 1. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
-    1. If all sources in this collector will be Google Workspace Audit sources, add an additional field with key `_parser` and value */Parsers/System/Google/Google Workspace Audit*.
+    1. If all sources in this collector will be Google Workspace Audit sources, add an additional field with key `_parser` and value */Parsers/System/Google/G Suite Audit*.
     :::note
     It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
     :::
@@ -28,7 +28,7 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 1. To configure Google Workspace source, see [Configure a Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source/#configuring-a-google-workspace-apps-auditsource).
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
-    1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/Google Workspace Audit.*
+    1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/G Suite Audit.*
 1. Sign in with Google. Click to give permission to Sumo Logic to set up watchpoints using the Google Workspace Apps Reports API. Click **Accept**.
 1. Click **Save**.
 
@@ -36,6 +36,6 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
-1. On the **Log Mappings** page search for "Google Workspace" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" width="600"/>
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Google Workspace security records.<br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" width="400"/>
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  Kanso-->
+1. On the **Log Mappings** page search for "Google Workspace" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" style={{border: '1px solid gray'}} width="600"/>
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Google Workspace security records.<br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" style={{border: '1px solid gray'}} width="400"/>

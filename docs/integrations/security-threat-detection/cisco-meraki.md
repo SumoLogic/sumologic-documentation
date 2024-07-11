@@ -2,7 +2,7 @@
 id: cisco-meraki
 title: Cisco Meraki
 sidebar_label: Cisco Meraki
-description: The Sumo Logic App for Cisco Meraki provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management in your environment.
+description: The Sumo Logic app for Cisco Meraki provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
 
-## Log Types  
+## Log types  
 
-The Cisco Meraki App is dependent on the following logs:
+The Cisco Meraki app is dependent on the following logs:
 * flows
 * urls
 * events
@@ -23,11 +23,11 @@ The Cisco Meraki App is dependent on the following logs:
 For more information on log types, see these topics in Cisco Meraki documentation:
 * [Event Types and Log Samples](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples)
 * [MS Event Log Entries and Definitions](https://documentation.meraki.com/MS/Monitoring_and_Reporting/MS_Event_Log_Entries_and_Definitions)
-* [Navigating the Event Logs](https://documentation.meraki.com/MR/Monitoring_and_Reporting/Navigating_the_Event_Log#Filtering_by_Event_Type)
+* [Navigating the Event Logs](https://documentation.meraki.com/General_Administration/Cross-Platform_Content/Meraki_Event_Log#Filtering_by_Event_Type)
 * [Syslog Server Overview and Configuration](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration)
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="security_event log sample"
 <134>1 1563249630.774247467 remote_DC1_appliance security_event ids_alerted signature=1:41944:2 priority=1 timestamp=TIMESTAMPEPOCH.647461
@@ -81,7 +81,7 @@ into slot 1
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
@@ -97,9 +97,9 @@ _sourceCategory=*meraki* "security_event"
 ```
 
 
-## Collecting logs for the Cisco Meraki App
+## Collecting logs for the Cisco Meraki app
 
-This section provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
+This section provides instructions for configuring log collection for the Cisco Meraki app, as well as log and query examples.
 
 
 ### Configure Log Collection
@@ -126,22 +126,29 @@ To configure forwarding for syslog IDS/IPS events, do the following:
 
 For more information on configuring log forwarding from Cisco Meraki, see the [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration).
 
+## Installing the Cisco Meraki app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Cisco Meraki App
+<AppInstall2/>
 
-This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+## Upgrading the Cisco Meraki app (Optional)
 
-{@import ../../reuse/apps/app-install.md}
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-## View Cisco Meraki Dashboards
+<AppUpdate/>
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+## Uninstalling the Cisco Meraki app (Optional)
 
-You can use filters to drill down and examine the data on a granular level.
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppUninstall/>
 
+## Viewing Cisco Meraki dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

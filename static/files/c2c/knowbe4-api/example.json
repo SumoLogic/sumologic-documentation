@@ -1,0 +1,20 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+  		"name": "KnowBe4",
+ 	 	"description": "Test Source",
+  		"category": "source_category",
+  		"region": "US",
+  		"apiKey": "************",
+		"dataTypes": [
+    		         "phishingTests"
+  		],
+		"phishingPollInterval": 1
+          },
+        "schemaRef": {
+            "type": "KnowBe4 KMSAT"
+        },
+        "sourceType": "Universal"
+    }
+}

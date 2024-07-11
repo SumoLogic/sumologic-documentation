@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
-:::caution
+:::warning
 This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by the [Microsoft Graph Security V2 app](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
 :::
 
@@ -29,7 +29,7 @@ This app uses Sumo Logic’s Microsoft Graph Security Source to collect [Alerts]
 Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/resources/alert?view=graph-rest-1.0).
 :::
 
-## Sample log message
+## Sample log messages
 
 ```json title="Sample Alert Log"
  {
@@ -105,7 +105,7 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
        }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Alerts Count"
 _sourceCategory="ms_graph"
@@ -123,15 +123,27 @@ Follow the instructions for setting up the [Cloud-to-Cloud Integration for Micro
 
 This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Microsoft Graph Security dashboards​​
+<AppInstall2/>
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+## Upgrading the Microsoft Graph Security app (Optional)
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Microsoft Graph Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Alerts Overview
 

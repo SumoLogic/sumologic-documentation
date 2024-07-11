@@ -1,0 +1,22 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+  "name": "Mimecast",
+  "description": "Mimecast",
+  "category": "Mimecast",
+  "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "dataCollection": [
+    "siem",
+    "dlp",
+    "auditEvent",
+    "holdMessageList"
+  ]
+},
+        "schemaRef": {
+            "type": "Mimecast"
+        },
+        "sourceType": "Universal"
+    }
+}

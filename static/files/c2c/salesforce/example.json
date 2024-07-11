@@ -1,0 +1,25 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Salesforce"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "config":{
+        "signon_url":"https://login.salesforce.com/services/oauth2/token",
+        "name":"TestSalesforceSrc",
+        "client_secret":"********",
+        "description":"Test Salesforce source",
+        "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9xxxxgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
+        "inmemory_lookup":true,
+        "fields":{      
+          "_siemForward":false
+        },
+        "category":"cnc/salesforce_logs",
+        "start_time":"24 Hours ago"
+      },
+      "sourceType":"Universal"
+    }
+  }

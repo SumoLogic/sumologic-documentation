@@ -36,9 +36,9 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 ### UI Installation
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid black'}} width="900"/>
+1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
 1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
@@ -48,7 +48,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 #### Get the Installation token
 
-Get your [installation token](/docs/manage/security/installation-tokens) (if you don't have it already) and assign it to an environment variable:
+Get your [installation token](/docs/manage/security/installation-tokens) (if you do not have it already) and assign it to an environment variable:
 
 ```bash
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
@@ -60,11 +60,11 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
    ```
 * Or by first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
+   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh -d
    ```
 
@@ -87,7 +87,7 @@ The following arguments can be passed to the script:
 | `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.           | No      |
 | `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.               | Yes, in `key=value` format |
 | `--download-only`           | `w`        | Download new binary only and skip configuration part.                                       | No                         |
-| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | Yes (for example: `0.71.0-sumo-0`)  |
+| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | Yes (for example: `0.94.0-sumo-2`)  |
 | `--skip-config`             | `s`        | Do not create default configuration        | No                         |
 | `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                               | No        |
 | `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.              | No                         |
@@ -107,7 +107,7 @@ The following env variables can be used along with script:
 
 #### Step 1. Download the binary
 
-Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
+Examples for OpenTelemetry Collector version `0.94.0-sumo-2`.
 
 <Tabs
   className="unique-tabs"
@@ -120,14 +120,14 @@ Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
 <TabItem value="amd64 (x86-64)">
 
 ```bash
-curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_amd64"
+curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.94.0-sumo-2/otelcol-sumo-0.94.0-sumo-2-darwin_amd64"
 ```
 
 </TabItem>
 <TabItem value="arm64 (Apple Silicon)">
 
 ```bash
-curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_arm64"
+curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.94.0-sumo-2/otelcol-sumo-0.94.0-sumo-2-darwin_arm64"
 ```
 
 
@@ -208,13 +208,13 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 If you installed the Collector with the install script, you can use it to uninstall the Collector:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
 You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
 You can also run the following command to clear the cache. This will remove any cached data associated with the Collector.
@@ -242,7 +242,7 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 Running install script will simply upgrade collector to the latest version:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo bash
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo bash
 ```
 
 :::note
@@ -266,4 +266,126 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-For information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+
+Here are some troubleshooting steps specific to macOS.
+
+### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
+
+If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
+
+```console
+$ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+Detected OS type:	darwin
+Detected architecture:	arm64
+Going to uninstall otelcol-sumo.
+main: line 785: /Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory
+```
+
+This means that you've installed the collector before the installation script was able to use packages in macOS.
+
+To uninstall, use an older version of the installation script:
+
+```shell
+sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+```
+
+The output should be similar to this:
+
+```console
+$ sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 48284  100 48284    0     0  64169      0 --:--:-- --:--:-- --:--:-- 64169
+Going to remove Otelcol binary, user, file storage and configurations.
+Uninstallation completed
+```
+
+### Verify that the `launchd` daemon has been installed
+
+```console
+$ sudo launchctl list | grep otelcol-sumo
+54109	0	otelcol-sumo
+```
+
+### Verify that the `launchd` daemon is running
+
+```console
+$ sudo launchctl print system/otelcol-sumo
+system/otelcol-sumo = {
+	active count = 1
+	path = /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+	type = LaunchDaemon
+	state = running
+
+	program = /usr/local/bin/otelcol-sumo
+	arguments = {
+		/usr/local/bin/otelcol-sumo
+		--config
+		/etc/otelcol-sumo/sumologic.yaml
+		--config
+		glob:/etc/otelcol-sumo/conf.d/*.yaml
+	}
+
+	stdout path = /var/log/otelcol-sumo/otelcol-sumo.log
+	stderr path = /var/log/otelcol-sumo/otelcol-sumo.log
+	default environment = {
+		PATH => /usr/bin:/bin:/usr/sbin:/sbin
+	}
+
+	environment = {
+		SUMOLOGIC_INSTALLATION_TOKEN=(redacted) =>
+		XPC_SERVICE_NAME => otelcol-sumo
+	}
+
+	domain = system
+	username = _otelcol-sumo
+	group = _otelcol-sumo
+
+	minimum runtime = 10
+	exit timeout = 5
+	runs = 1
+	pid = 54109
+	immediate reason = speculative
+	forks = 2
+	execs = 1
+	initialized = 1
+	trampolined = 1
+	started suspended = 0
+	proxy started suspended = 0
+	last exit code = (never exited)
+
+	spawn type = daemon (3)
+	jetsam priority = 40
+	jetsam memory limit (active) = (unlimited)
+	jetsam memory limit (inactive) = (unlimited)
+	jetsamproperties category = daemon
+	submitted job. ignore execute allowed
+	jetsam thread limit = 32
+	cpumon = default
+	probabilistic guard malloc policy = {
+		activation rate = 1/1000
+		sample rate = 1/0
+	}
+
+	properties = keepalive | runatload | inferred program
+}
+```
+
+The output should include `active count = 1` and `state = running`. This means the daemon is running.
+
+### Verify that the collector process is running
+
+```shell
+$ ps aux | grep '[o]telcol-sumo'
+_otelcol-sumo    55368   0.0  0.2 409731808 125232   ??  Ss   12:25PM   0:00.21 /usr/local/bin/otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config glob:/etc/otelcol-sumo/conf.d/*.yaml
+```
+
+### View logs from the collector
+
+```shell
+cat /var/log/otelcol-sumo/otelcol-sumo.log
+```
+
+For more troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
