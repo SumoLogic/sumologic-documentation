@@ -90,7 +90,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/administration/manage-custom-insight-statuses"><img src={useBaseUrl('img/icons/operations/retain-and-visualize-logs.png')} alt="Barchart in a circle icon" width="40"/><h4>Managing Custom Insight Statuses</h4></a>
+  <a href="/docs/cse/administration/manage-custom-insight-statuses"><img src={useBaseUrl('img/icons/operations/retain-and-visualize-logs.png')} alt="Bar chart in a circle icon" width="40"/><h4>Managing Custom Insight Statuses</h4></a>
   <p>Learn how to create and manage Custom Insight Statuses.</p>
   </div>
 </div>
