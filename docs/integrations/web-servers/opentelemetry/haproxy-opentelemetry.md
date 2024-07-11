@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for both real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
+The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help you monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
-The OpenTelemetry collector runs on the same host as HAProxy and uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. HAProxy logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The OpenTelemetry collector runs on the same host as HAProxy, where it uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. HAProxy logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
@@ -27,11 +27,11 @@ The HAProxy logs are generated in files as configured in the configuration file 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
-- **`sumo.datasource`**. Has fixed value of **haproxy**
-- **`webengine.system`**. Has fixed value of **haproxy**
+- **`sumo.datasource`**. Has fixed value of **haproxy**.
+- **`webengine.system`**. Has fixed value of **haproxy**.
 - **`webengine.cluster.name`**. User configured. Enter a name to identify the HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
-- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
+- **`webengine.node.name`**. Has the value of host name of the machine which is being monitored.
+- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod, or qa.
 
 ## Prerequisites
 
@@ -110,7 +110,7 @@ Below are the inputs required:
 - **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8404/stats`).
 - **HAProxy logs Path**. Enter the path to the log file for your HAProxy instance.
 
-The path of the log file configured to capture haproxy logs is needed to be given here. The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+The path of the log file configured to capture haproxy logs is needed to be given here. The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the `haproxy.conf` file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -212,7 +212,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 
 ### Metrics
 
-Here's a sample Metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
+Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
 ```
 sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
@@ -253,19 +253,19 @@ Use this dashboard to:
 
 ### Backend
 
-The **HAProxy - Backend** dashboard provides an at-a-glance view for the number of backend active servers, backend weight, respond code from backend and throughput http.
+The **HAProxy - Backend** dashboard provides an at-a-glance view for the number of backend active servers, backend weight, respond code from backend, and throughput http.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Backend.png' alt="Error Log Analysis" />
 
 ### Frontend
 
-The **HAProxy - Backend** dashboard provides an at-a-glance view detail of HAProxy Frontend. It provides information such as number request to frontend, number of error requests, and current session.
+The **HAProxy - Frontend** dashboard provides details of HAProxy Frontend. It provides information such as number request to frontend, number of error requests, and current session.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Frontend.png' alt="Error Log Analysis" />
 
 ### Server
 
-The **HAProxy - Backend** dashboard provides an at-a-glance view detail of HAProxy Server. This dashboard helps you monitoring uptime, and error request by proxy.
+The **HAProxy - Server** dashboard provides details of HAProxy Server. This dashboard helps you monitor the uptime and error request by proxy.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Server.png' alt="Error Log Analysis" />
 
