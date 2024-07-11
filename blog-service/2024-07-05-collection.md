@@ -38,7 +38,3 @@ If you have the Salesforce source set up and choose to upgrade it, follow the in
 1. Search for the required source and click the **Upgrade** button.<img src={useBaseUrl('img/release-notes/service/upgrade-source.png')} alt="upgrade-source" style={{border:'1px solid gray'}} width="800"/>
 1. You will be directed to the configuration page. Ensure you do not change any of the configurations set.
 1. Click **Upgrade** at the bottom of the configuration page.
-
-:::note
-If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token`, make sure you update it to `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
-:::
