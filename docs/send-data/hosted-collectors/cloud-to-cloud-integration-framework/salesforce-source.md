@@ -242,7 +242,7 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 
 **Error**: `invalid_grant`
 
-**Solution**: Check your sign-on URL. If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token` change it to `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
+**Solution**: Check your sign-on URL. If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token` you likely need to change it to another value, such as `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 
 ## FAQ
 
