@@ -7,7 +7,7 @@ description: Learn how to create, update, delete and export a scheduled dashboar
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The sheduled report feature enables you to receive an emailed copy of a dashboard (PDF or PNG format) at the frequency of your choice, allowing you to get your dashboard insights without logging into the Sumo Logic platform.
+The scheduled report feature enables you to receive an emailed copy of a dashboard (PDF or PNG format) at the frequency of your choice, allowing you to get your dashboard insights without logging into the Sumo Logic platform.
 
 You can distribute the dashboard to people in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
