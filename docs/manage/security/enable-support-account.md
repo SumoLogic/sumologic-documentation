@@ -4,6 +4,8 @@ title: Enable a Support Account
 description: Support accounts help you address support issues when they arise.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Administrators can decide to enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, helping those agents to review and resolve complex issues. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 
 When a support account is enabled, a special user is added to your organization's Sumo Logic account, named Sumo Logic Support. This is the user that Sumo Logic support agents will use to log in to your organization's account to troubleshoot issues. If you disable your support account, the Sumo Logic Support user account is disabled.
@@ -24,7 +26,7 @@ just disable, then re-enable the support account and the Sumo Logic support user
 
 ## Enable the support account for your organization
 
-![image1.png](/img/security/enable-support1.png)
+<img src={useBaseUrl('img/security/enable-support1.png')} alt="Enable Support Account Access on the Policies tab" style={{border: '1px solid gray'}} width="600" />
 
 To enable a support account:
 

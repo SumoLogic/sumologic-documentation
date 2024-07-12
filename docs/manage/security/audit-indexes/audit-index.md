@@ -4,6 +4,8 @@ title: Audit Index
 description: Provides information on the internal events that occur in Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -43,7 +45,7 @@ You can run more targeted search by including other metadata, message fields, o
 
 Results are returned in the **Messages** tab.
 
-![audit-index-search.png](/img/security/audit-index-search.png)
+<img src={useBaseUrl('/img/security/audit-index-search.png')} alt="Hidden Field highlighted on the Messages tab of search results" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 The audit index must be enabled for a search to produce results.

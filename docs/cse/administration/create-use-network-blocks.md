@@ -123,7 +123,7 @@ The screenshot below shows a Record that contains several Network Block-related 
 * `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in Network Blocks that are marked Internal.
 * `srcDevice_ip_location` indicates that `srcDevice_ip` is in the “test_internal” Network Block.
 
-<img src={useBaseUrl('img/cse/record.png')} alt="Records" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/record.png')} alt="Example enrichment fields" style={{border: '1px solid gray'}} width="600"/>
 
 ## Using enrichment fields
 
