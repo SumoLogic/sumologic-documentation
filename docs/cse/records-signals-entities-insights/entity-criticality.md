@@ -31,8 +31,8 @@ You can configure both the detection window and the threshold Activity Score for
 ## Define a Criticality
 
 1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Entities** select **Criticality**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Criticality**. You can also click the **Go To...** menu at the top of the screen and select **Criticality**.  Kanso-->
-1. On the **Entity Criticality** page, click **Create**. <br/><img src={useBaseUrl('img/cse/Criticalities.png')} alt="Entity criticality" style={{border: '1px solid gray'}} width="800"/>
-1. The **Create Entity Criticality** popup appears.<br/><img src={useBaseUrl('img/cse/criticality-popup.png')} alt="Entity criticality" style={{border: '1px solid gray'}} width="400"/>
+1. On the **Entity Criticality** page, click **Create**. <br/><img src={useBaseUrl('img/cse/Criticalities.png')} alt="Entity Criticality dialog" style={{border: '1px solid gray'}} width="800"/>
+1. The **Create Entity Criticality** popup appears.<br/><img src={useBaseUrl('img/cse/criticality-popup.png')} alt="Create Entity Criticality dialog" style={{border: '1px solid gray'}} width="400"/>
 2. **Name**. Enter a name. 
 3. **Severity Expression**. Enter a formula for adjusting a severity value. You can use a plus sign (+), minus sign (-), an asterisk (\*), or a forward slash (/). Enter the formula in this format:   `severity+2 `
 4. Click **Create** to save the Criticality.

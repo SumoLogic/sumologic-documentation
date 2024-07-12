@@ -1849,7 +1849,7 @@ output:
 ```
 And if you use that output into `textarea` as placeholder:
 
-<img src={useBaseUrl('img/cloud-soar/integration-framework-app-d-image-1.png')} alt="Textarea" width="600"/>
+<img src={useBaseUrl('img/cloud-soar/integration-framework-app-d-image-1.png')} alt="Text area" width="600"/>
 
 You will get a print HTML of aggregated elements
 
@@ -1882,4 +1882,4 @@ output:
 
 The array will be populated with not duplicated element:
 
-<img src={useBaseUrl('img/cloud-soar/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/integration-framework-app-e-image-4.png')} alt="Pipe function specified" width="800"/>
