@@ -90,6 +90,9 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
+:::note
+  Each Redis replica requires an independent Sumo Logic collector to be installed for effective log and metric monitoring.
+:::
 
 ### Step 3: Send logs to Sumo Logic
 
