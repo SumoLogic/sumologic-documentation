@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The page talks about viewing information about the data forwarding configured for your organization.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" width="1000"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data Forwarding page" width="1000"/>
     * **Status**. Indicates whether the data forwarding is currently Active or Inactive.
     * **Destination Name**. The name used to identify the destination.
     * **Data Sources**. Indicates the number of indexes (Partition or Scheduled View) the destination is linked to.
@@ -24,8 +24,8 @@ The page talks about viewing information about the data forwarding configured fo
             * **AWS Secret key**. Secret key details gathered from the AWS used for the Key access method.
             * **Role ARN**. Role ARN provided by AWS after creating the role, used for Role-based access method.
         * **S3 Region**. Indicates the AWS S3 region in which the bucket is hosted.
-        * **S3 Server-Side Encryption**. Provides the encryption details of the forwarded data. <br/><img src={useBaseUrl('/img/data-forwarding/basic-info.png')} alt="basic-info" width="400"/>
+        * **S3 Server-Side Encryption**. Provides the encryption details of the forwarded data. <br/><img src={useBaseUrl('/img/data-forwarding/basic-info.png')} alt="Data forwarding pane" width="400"/>
     * **Details**
         * **Data Sources**. Indicates the list of sources (Partition or Scheduled View) from which the log data is forwarded to an S3 bucket.
             * **Data forwarded**. Provides the breakdown information about the data forwarded and indicates the total data forwarded to the given S3 bucket for the selected time.
-            * **Query/Routing Expression**. Indicates the query for scheduled views and routing expression for partitions for which the data is forwarded. <br/><img src={useBaseUrl('/img/data-forwarding/details.png')} alt="details" width="400"/>
+            * **Query/Routing Expression**. Indicates the query for scheduled views and routing expression for partitions for which the data is forwarded. <br/><img src={useBaseUrl('/img/data-forwarding/details.png')} alt="Data forwarding details" width="400"/>
