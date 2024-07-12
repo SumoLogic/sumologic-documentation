@@ -528,7 +528,7 @@ On the first query run, the parameter represented with the dollar one `$1` will 
 
 The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
 
-### Collecting logs from a mssql database
+### Collecting logs from an MSSQL database
 
 Here's an example configuration for Microsoft SQL that you can place in the `conf.d` directory:
 
