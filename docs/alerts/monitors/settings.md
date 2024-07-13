@@ -7,11 +7,11 @@ description: Monitors continuously query your logs or metrics and send notificat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Monitors page allows you to view, create, manage, and organize your Monitors. 
+The Monitors page allows you to view, create, manage, and organize your Monitors.
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Monitors page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+<!--Kanso
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
  Kanso-->
 
 The page displays the following information:
@@ -91,12 +91,14 @@ Note that the same threshold translating functionality supports to [Creating Mon
 
 Adding a **Tag** to a Monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your Monitors beyond their name and description. Example tag: `team=alerting`, where key is `team` and value is `alerting`.
 
-:::note Limitations
+### Syntax
+
 - Tag keys cannot start with the prefixes `sumo.` or `_`
-- Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
+- Tag keys can only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
 - Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
-- You can associate a maximum of 50 tags per monitor.
-:::
+- You can associate a maximum of 50 tags per monitor
+
+### Create a tag
 
 To add a tag to an existing monitor:
 
@@ -114,6 +116,19 @@ To add a tag while creating a new monitor:
    * Create a new tag using the `key=value` format.
    * Apply an existing tag by selecting the key and its possible values from the dropdown.
 1. Click **Save**.
+
+
+### What happens next?
+
+Tags will appear on all future alerts triggered by the same monitor. Tags will *not* be applied to any past alerts triggered by this monitor.
+
+To view and edit tags, go to your alerts list page at **Manage Data > Monitoring > Monitors**, where you'll see a tags column. This page allows filtering by tags.
+
+<img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" />
+
+You will also find your tags on the Alert Response page. Here's an example:
+
+<img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" />
 
 ## Folder permissions
 
