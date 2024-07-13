@@ -65,8 +65,8 @@ The following is an example Slack payload with the variable:
 
 The Alerts list shows all of your Alerts from Monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
-<!--Kanso
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/> 
+<!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
  Kanso-->
 
