@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Monitors page allows you to view, create, manage, and organize your Monitors.
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Monitors page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
-<!--Kanso
+<!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
  Kanso-->
 
