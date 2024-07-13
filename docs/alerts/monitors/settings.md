@@ -7,7 +7,7 @@ description: Monitors continuously query your logs or metrics and send notificat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Monitors page allows you to view, create, manage, and organize your Monitors.
+The Monitors page allows you to view, create, manage, and organize your Monitors. 
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Monitors page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
 <!--Kanso 
