@@ -199,6 +199,29 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     `Recover automatically when data becomes available for the affected time span.`
 
+**Trigger Evaluation Frequency**
+
+Log monitor triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
+
+* For static logs monitors, triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
+   | When detection window (Y) is | Evaluate trigger every |
+   |:-----------------------------|:-----------------------|
+   | 30m or less  | 1m  |
+   | 30m to 3h    | 2m |
+   | 3hr to 12h   | 10m  |
+   | Greater than 12h  | 20m |
+* For outlier logs monitors, triggers are evaluated every 5 minutes.
+* For anomaly logs monitors, triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
+   ```
+   _sourceCategory=Labs/Apache/Access
+   | timeslice 2m
+   | parse "HTTP/1.1\" * " as status_code
+   | if (status_code = "200", 1, 0) as successes
+   | if (status_code = "404", 1, 0) as fails
+   | sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
+   | (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
+   ```
+
 
 </details>
 
