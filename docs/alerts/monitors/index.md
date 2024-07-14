@@ -69,7 +69,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitor Log Ingestion and Alerts</h4></a>
-  <p>Add scheduled searches that monitor log ingestion and send alerts.</p>
+  <p>Add Scheduled Searches that monitor log ingestion and send alerts.</p>
   </div>
 </div>
 <div className="box smallbox card">
