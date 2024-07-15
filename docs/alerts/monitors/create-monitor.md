@@ -17,7 +17,7 @@ This topic shows you how to create a monitor.
 </details>
 
 
-## Step 1. Open the New Monitor window
+## Open the New Monitor window
 
 ### From your Monitors page
 
@@ -62,7 +62,7 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 Note that the same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
-## Step 2. Set trigger conditions
+## Step 1. Set trigger conditions
 
 The first step when you create a new monitor is to set the trigger conditions.
 
@@ -296,7 +296,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 </details>
 
-## Step 3. Advanced settings (optional)
+## Step 2. Advanced settings (optional)
 
 The second step when you create a new monitor is to configure advanced settings.
 
@@ -310,7 +310,7 @@ Alert Name allows you to customize the name that appears on the Alert page. By d
 ### Evaluation Delay
 Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)<br/>If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
-## Step 4. Notifications (optional)
+## Step 3. Notifications (optional)
 
 The third step when you create a new monitor is to configure notifications.
 
@@ -328,7 +328,7 @@ To add notifications, click the **Add Notification** button. You can add more 
    * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-## Step 5. Playbook (optional)
+## Step 4. Playbook (optional)
 
 The fourth step when you create a new monitor is to add playbooks.
 
@@ -341,7 +341,7 @@ In this step, you can add a **Playbook** to run in response to an alert.
 1. **Add Playbook**. If desired, you can add more automated playbooks to run sequentially.
 1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service.
 
-## Step 6. Monitor details
+## Step 5. Monitor details
 
 In this step, you'll configure monitor details.
 
