@@ -183,7 +183,7 @@ A filter node filters results from the preceding action based on the condition y
 1. [Add an action node](#add-an-action-node-to-a-playbook). 
 1. Hover your mouse over an action node and click the **+** button. The available nodes are displayed. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node-conditions.png')} alt="Add filter node conditions" style={{border:'1px solid gray'}} width="500"/>
-1. (Optional) You can use **Split by** to select an output if it is a list (array) and you want each item in the list to be evaluated separately. Each item in the list is checked against the filter condition, and if the condition is true, the playbook proceeds to the next node. (If you do not use the **Split by** field on an output that is a list, then if the condition is true for only one item in the list, then all the data in the list moves forward to the next node.)
+1. (Optional) Use **Split by** to select an output if it is a list (array) and you want to evaluate each item separately. Each item in the list is checked against the filter condition. If the condition is true for any item, the playbook proceeds to the next node. (If you do not use the **Split by** field on an output that is a list, then if the condition is true for any item in the list, the entire list moves forward to the next node.)
 1. Configure the conditions you want to use for filtering. 
 1. Click **Create**.
 
