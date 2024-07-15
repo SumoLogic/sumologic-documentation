@@ -877,6 +877,7 @@ module.exports = {
           items: [
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
+            'manage/security/audit-indexes/system-event-index',
             'manage/security/audit-indexes/search-audit-index',
           ]
         },
