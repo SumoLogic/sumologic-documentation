@@ -5,6 +5,7 @@ description: For Sumo Logic Service Providers, Sumo Orgs eases the process of pr
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 ## Availability
 
