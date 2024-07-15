@@ -25,7 +25,7 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 - `deployment.environment`. User configured. This is the deployment environment where the Tomcat cluster resides. For example: `dev`, `prod` or `qa`.
 - `webengine.cluster.name`. User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo Logic.
 - `webengine.system`. Has a fixed value of `tomcat`.
-- `webengine.node.name`. This has the value of the FQDN of the machine where the OpenTelemetry collector is collecting logs and metrics from.
+- `webengine.node.name`. Holds the value of the Fully Qualified Domain Name (FQDN) of the machine from which the OpenTelemetry collector is collecting logs and metrics.
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 
 JMX receiver collects Tomcat metrics from Tomcat server as part of the OpenTelemetry Collector (OTC).
 
-  1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md) used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+  1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
   2. Set the JMX port by setting it as part of `JAVA_OPTS` for Tomcat startup. Usually it is set in the `/etc/systemd/system/tomcat.service` or `C:\Program Files\apache-tomcat\bin\tomcat.bat` file.
 
@@ -195,7 +195,39 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 
 ## Sample metrics
 ```
-{"queryId":"A","_source":"apache-tomcat-otel","_metricId":"9kcuMkQW4hfMv_0DLpjnBg","webengine.node.name":"ip-54-163-207-30.ec2.internal","_sourceName":"Http Input","host.id":"i-071ade72d03650657","host.group":"tomcatHostGrp","telemetry.sdk.version":"1.38.0","os.type":"linux","sumo.datasource":"tomcat","_sourceCategory":"Labs/apache-tomcat-otel","deployment.environment":"dev","_contentType":"Carbon2","host.name":"ip-54-163-207-30.ec2.internal","metric":"tomcat.request_count","_collectorId":"000000000FAB6E04","_sourceId":"000000005A1D5A65","webengine.system":"tomcat","webengine.cluster.name":"tomcat_cluster","unit":"requests","telemetry.sdk.language":"java","telemetry.sdk.name":"opentelemetry","service.name":"unknown_service:java","_collector":"Labs - apache-tomcat-otel","proto_handler":"\"http-nio-8080\"","max":391,"min":144,"avg":213.86,"sum":2994,"latest":265,"count":14}
+{
+  "queryId":"A",
+  "_source":"apache-tomcat-otel",
+  "_metricId":"9kcuMkQW4hfMv_0DLpjnBg",
+  "webengine.node.name":"ip-54-163-207-30.ec2.internal",
+  "_sourceName":"Http Input",
+  "host.id":"i-071ade72d03650657",
+  "host.group":"tomcatHostGrp",
+  "telemetry.sdk.version":"1.38.0",
+  "os.type":"linux",
+  "sumo.datasource":"tomcat",
+  "_sourceCategory":"Labs/apache-tomcat-otel",
+  "deployment.environment":"dev",
+  "_contentType":"Carbon2",
+  "host.name":"ip-54-163-207-30.ec2.internal",
+  "metric":"tomcat.request_count",
+  "_collectorId":"000000000FAB6E04",
+  "_sourceId":"000000005A1D5A65",
+  "webengine.system":"tomcat",
+  "webengine.cluster.name":"tomcat_cluster",
+  "unit":"requests",
+  "telemetry.sdk.language":"java",
+  "telemetry.sdk.name":"opentelemetry",
+  "service.name":"unknown_service:java",
+  "_collector":"Labs - apache-tomcat-otel",
+  "proto_handler":"\"http-nio-8080\"",
+  "max":391,
+  "min":144,
+  "avg":213.86,
+  "sum":2994,
+  "latest":265,
+  "count":14
+}
 ```
 
 ## Sample metrics query
@@ -208,7 +240,7 @@ sumo.datasource=tomcat deployment.environment=* webengine.cluster.name=* webengi
 
 ### Overview
 
-The **Apache Tomcat - Overview** dashboard provides a high-level view of information on visitor geographic locations, responses over time, and number of error codes and top urls causing error. In addition to this, you can monitor requests, error count and their rates, along with busy and idle threads for your Tomcat instance.
+The **Apache Tomcat - Overview** dashboard offers a high-level view of visitor geographic locations, responses over time, error codes, and the top URLs causing errors. Additionally, it allows you to monitor requests, error counts and rates, as well as busy and idle threads for your Tomcat instance.
 
 Use this dashboard to:
 
@@ -220,7 +252,7 @@ Use this dashboard to:
 
 #### Visitor Locations
 
-The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by U.S. region over time.
+The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the U.S. Dashboard panels also show graphic trends for visits by country over time and visits by U.S. region over time.
 
 - Worldwide. Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 - Visits by Country Over Time. Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
@@ -249,7 +281,7 @@ Top 10 Search Terms from Popular Search Engines. Displays a list of the top 10 s
 
 ### Web Server Operations
 
-The **Apache Tomcat - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
+The **Apache Tomcat - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200-response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
 
 Non 200 Response Status Codes. Displays the number of non-200 response status codes in a bar chart for the past hour.
 

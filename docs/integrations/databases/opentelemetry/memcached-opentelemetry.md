@@ -15,7 +15,7 @@ The [Memcached](https://memcached.org/about) app is a logs-based app that helps 
 
 The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
-Memcached logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through [memcached](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/memcachedreceiver) metric receiver.
+Memcached logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). Memcached metrics are sent through the [Memcached](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/memcachedreceiver) metrics receiver.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Schematics.png' alt="Schematics" />
 
