@@ -160,6 +160,20 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 
 ## Update an org's credits allocation
 
+:::sumo Micro Lesson
+Manage a Child Org
+<Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
+
 :::info
 If the org has already depleted its credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.
 :::
