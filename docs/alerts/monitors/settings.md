@@ -124,11 +124,11 @@ Tags will appear on all future alerts triggered by the same monitor. Tags will *
 
 To view and edit tags, go to your alerts list page at **Manage Data > Monitoring > Monitors**, where you'll see a tags column. This page allows filtering by tags.
 
-<img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" />
+<img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800"  />
 
 You will also find your tags on the Alert Response page. Here's an example:
 
-<img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" />
+<img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
 
 ## Folder permissions
 
