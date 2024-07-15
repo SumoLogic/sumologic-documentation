@@ -32,14 +32,14 @@ The following are [fields](/docs/manage/fields/) that will be created as part of
 * **`db.cluster.name`**. User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`db.system`**. Has fixed value of redis.
 * **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
-* **`db.node.name`**. Has the value of host name of the machine which is being monitored
+* **`db.node.name`**. Has the value of host name of the machine which is being monitored.
 * **`sumo.datasource`**. Has fixed value of redis.
 
 ## Prerequisites
 
 ### For metrics collection
 
-The Redis INFO command returns information and statistics about a Redis server (see Redis [INFO](https://redis.io/commands/info) for details). The Redis receiver extracts values from the result and converts them to open telemetry metrics.
+The Redis INFO command returns information and statistics about a Redis server (see Redis [INFO](https://redis.io/commands/info) for details). The Redis receiver extracts values from the result and converts them to OpenTelemetry metrics.
 
 ### For logs collection
 
@@ -91,7 +91,7 @@ You can add any custom fields which you want to tag along with the data ingested
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
 :::note
-  Each Redis replica requires an independent sumo opentelemetry collector to be installed for effective log and metric monitoring.
+  Each Redis replica requires an independent Sumo Logic OpenTelemetry collector to be installed for effective logs and metrics monitoring.
 :::
 
 ### Step 3: Send logs to Sumo Logic
