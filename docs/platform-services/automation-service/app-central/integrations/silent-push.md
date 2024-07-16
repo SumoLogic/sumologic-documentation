@@ -5,12 +5,13 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/silent-push.png')} alt="crowdstrike-falcon" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/silent-push.png')} alt="
+crowdstrike-falcon" width="100"/>
 
 ***Version: 1.0  
 Updated: July 15, 2024***
 
-The Silent Push integration identifies emerging threats before they launch by deploying Indicators of Future Attack. 
+The Silent Push integration identifies emerging threats before they launch by deploying Indicators of Future Attack.
 
 ## Actions
 
@@ -23,8 +24,6 @@ The Silent Push integration identifies emerging threats before they launch by de
 * **IP Risk Score** *(Enrichment)* - Get the risk score of IP.
 * **Search Domain** *(Enrichment)* - Search the domain and get the info.
 
-
 ## Change Log
 
-* July 8, 2024 - First upload
-* July 15, 2024 - Updated date and resolved spell mistake
+* July 15, 2024 - First upload
