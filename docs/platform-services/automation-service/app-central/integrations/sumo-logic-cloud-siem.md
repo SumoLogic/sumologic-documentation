@@ -122,4 +122,4 @@ SIEM
 * April 8, 2024 (v1.13)
   * Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
 * July 3, 2024 (v1.14)
-  * update check_not_null_field in Close Insight Trigger
+  * Update `check_not_null_field` in Close Insight Trigger
