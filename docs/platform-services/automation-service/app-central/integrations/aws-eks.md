@@ -27,8 +27,8 @@ This integration provides comprehensive Kubernetes cluster insights, node and po
 * **List Clusters** _(Enrichment)_ - Lists the Amazon EKS clusters in your AWS account in the specified AWS Region.
 * **List Deployment** _(Enrichment)_ - List objects of kind Deployment.
 * **List Insights** _(Enrichment)_ - Returns a list of all insights checked for against the specified cluster.
-* **List Namespaces** _(Enrichment)_ - list objects of kind Namespace.
-* **List Network Policy** _(Enrichment)_ - list objects of kind Network Policy.
+* **List Namespaces** _(Enrichment)_ - List objects of kind Namespace.
+* **List Network Policy** _(Enrichment)_ - List objects of kind Network Policy.
 * **List Nodes** _(Enrichment)_ - Returns a list of all Nodes.
 * **List Persistent Volumes** _(Enrichment)_ - Returns a list of Persistent Volumes.
 * **List Pods** _(Enrichment)_ - Returns a list of Pods for all namespaces.
