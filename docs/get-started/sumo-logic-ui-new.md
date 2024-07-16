@@ -113,7 +113,7 @@ With the Sumo Logic Administrator role, you can manage your organization's data 
 
 ### Administration
 
-With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="300"/>
+With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="Administration icon" width="300"/>
 
 * **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
 * **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
@@ -129,7 +129,7 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo account preferences:
 
-1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="300"/>
+1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Access Keys**. Add, edit, and remove access keys.
@@ -199,7 +199,7 @@ To add a dashboard to your Favorites:
 To add a log search to your Favorites:
 1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**. Then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
 1. Click **Save**.
-1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="img/get-started/favorite-saved-search.png" width="200"/>
+1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
 
 ### Share a dashboard, search, or folder
 
@@ -214,7 +214,7 @@ For walkthrough instructions, go to the [Share Content](/docs/manage/content-sh
 
 To see dashboards, searches, and folders that have been shared with you, do the following:
 
-1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="img/get-started/recent.png" width="400"/>
+1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="recent.png" width="400"/>
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/> ![Dash3.png](/img/get-started/Dash3.png)
 
 ### Pin and manage searches

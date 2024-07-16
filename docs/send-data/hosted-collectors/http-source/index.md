@@ -13,7 +13,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics"><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="60"/><h4>HTTP Logs and Metrics</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics"><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="50"/><h4>HTTP Logs and Metrics</h4></a>
   <p>An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source.</p>
   </div>
 </div>

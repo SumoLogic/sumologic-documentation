@@ -48,7 +48,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
 
 1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Entities** select **Groups**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  Kanso-->
 1. On the **Entity Groups** page, click **Create**.
-1. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="Create an Entityu Group based on attributes" style={{border: '1px solid gray'}} width="500" />
+1. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="Create an Entity Group based on attributes" style={{border: '1px solid gray'}} width="500" />
 1. **Name**. Enter a name for the Entity Group.
 1. **Description**. (Optional.)
 1. **Group Entities matching the following**. Select **Values**.

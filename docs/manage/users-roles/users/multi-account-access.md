@@ -4,6 +4,7 @@ title: Multi-Account Access
 description: Multi-account Access allows you to log into multiple Sumo Logic accounts using one username (email address) and password.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
 Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings.md).
@@ -41,7 +42,7 @@ When an admin invites a new user to a Sumo Logic organization for the first time
 
 If that admin invites the same user to a second organization, the user will receive an email that includes their username, and directs them to use their existing (multi-account) password, as shown.
 
-![Multi account email](/img/users-roles/welcome.png)
+<img src={useBaseUrl('img/users-roles/welcome.png')} alt="Welcome message" style={{border: '1px solid gray'}} width="400" />
 
 ## Multi-account and SAML
 

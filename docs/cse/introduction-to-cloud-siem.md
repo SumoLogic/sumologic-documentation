@@ -335,7 +335,7 @@ When you click into a Signal, you’ll have the option to see the full details o
 
 The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score reaches at least 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="500"/>
 
 ### Bring it back to Sumo Logic search
 
