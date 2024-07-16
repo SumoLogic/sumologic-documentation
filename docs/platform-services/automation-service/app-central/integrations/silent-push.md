@@ -27,4 +27,4 @@ The Silent Push integration identifies emerging threats before they launch by de
 ## Change Log
 
 * July 8, 2024 - First upload
-* July 16, 2024 - updated date and resolved spell mistake
+* July 16, 2024 - Updated date and resolved spell mistake
