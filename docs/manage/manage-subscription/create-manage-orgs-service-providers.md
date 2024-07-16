@@ -5,6 +5,7 @@ description: For Sumo Logic Service Providers, Sumo Orgs eases the process of pr
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 ## Availability
 
@@ -131,7 +132,7 @@ After you create a child org, you can’t delete it.
           Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
-1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contact, and the days remaining in your contract.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
 1. Click **Done** after adding the baseline.
 1. Click **Save** to save the changes.
 
@@ -154,11 +155,25 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
           Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
-1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contact, and the days remaining in your contract.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
 1. Click **Done** after adding the baseline.
 1. Click **Save** to save the changes.
 
 ## Update an org's credits allocation
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn more about managing a child org.
+<Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
 
 :::info
 If the org has already depleted its credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.

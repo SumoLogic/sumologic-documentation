@@ -39,7 +39,7 @@ To create the Lookup Table schema:
 
 1. Go to the Sumo Logic Library.
 1. Navigate to the folder where you want to create the Lookup Table.
-1. Click **Add New** and then select **New Lookup**. <br/><img src={useBaseUrl('img/cse/new-lookup.png')} alt="New lookup" width="600"/>
+1. Click **Add New** and then select **New Lookup**. <br/><img src={useBaseUrl('img/cse/new-lookup.png')} alt="New lookup link" width="600"/>
 1. The **Create Lookup Table** page appears. <br/><img src={useBaseUrl('img/cse/create-in-cip.png')} alt="Create lookup table" width="600"/>
 1. **Name**. Enter a name for the Lookup Table.
 1. **Description**. (Optional)
@@ -75,7 +75,7 @@ Where:
 * `_collector` identifies the collector where the Active Directory source runs. 
 * `PATH` is the path of the lookup table, in this format:   `path://"/Library/Admin Recommended/userIdToUsername"` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.
 
-   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="three-dot menu" width="600"/>
+   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab menu button" width="600"/>
 
 ## Step 3: Save and schedule the search
 
@@ -85,13 +85,13 @@ Be sure to choose “Email” as the **Alert type**. (*Don’t* select **Save to
 
 To save and schedule the search:
 
-1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as" width="600"/>
+1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as on dropdown list" width="600"/>
 1. On the **Save Item** popup:
    * **Name**. Enter a name for the query.
    * **Time range**. Select a time range for the query.
    * **Search By**. Select *Receipt Time*.  
    * **Location to save to**. Choose a folder location.
-   * Click **Schedule this search**.     <br/><img src={useBaseUrl('img/cse/save-item.png')} alt="Save item" width="400"/>
+   * Click **Schedule this search**.     <br/><img src={useBaseUrl('img/cse/save-item.png')} alt="Save item dialog" width="400"/>
 1. On the **Save Item** popup:
    * **Run frequency**. Select *Daily*, unless you have another preference.
    * **Send Notification**. Choose *If the following condition is met*.
@@ -99,7 +99,7 @@ To save and schedule the search:
    * **Alert type**. Select *Email*.
    * **Number of results**. Enter *5*, or another value if you prefer.
    * **Recipients.** Enter the email addresses of one or more users to receive email alerts.
-   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/><img src={useBaseUrl('img/cse/save-item-2.png')} alt="Save item" width="400"/>
+   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/><img src={useBaseUrl('img/cse/save-item-2.png')} alt="Save item dialog" width="400"/>
 1. Click **Save.**
 
 ## Step 4: Configure the Lookup Table in Cloud SIEM

@@ -19,7 +19,7 @@ You can use Sumo Logic for:
 
 The Sumo Logic data pipeline makes collected data available for security analysis. At a high level, it follows four steps:
 
-<img src={useBaseUrl('img/csa/data-pipeline.png')} alt="Sumo Logic data pipeline" width="700"/>
+<img src={useBaseUrl('img/csa/data-pipeline.png')} alt="A diagram showing the data flow in Sumo Logic: Data collection, to searching and analyzing, to visualizing and monitoring, ending with sharing the findings." width="700"/>
 
 1. **Data collection**. First, you must set up an [OpenTelemetry collector](/docs/send-data/opentelemetry-collector), [installed collector](/docs/send-data/installed-collectors), or a [hosted collector](/docs/send-data/hosted-collectors) and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
 2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search) to search events in real-time from the analytics platform UI.
