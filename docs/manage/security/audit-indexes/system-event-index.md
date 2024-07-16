@@ -20,7 +20,11 @@ This index is separate from the [Audit Event Index](/docs/manage/security/audit-
 
 ## Documentation 
 
-All available system events are documented for your reference. See [Documentation for Audit Event Log Definitions](/docs/manage/security/audit-indexes/documentation-audit-event-log-definitions/).
+All available system events are documented for your reference. See [Documentation for Audit Log Definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/).
+
+:::important
+To see documentation for system events, when you access the Audit Log Definitions, in the left margin scroll down to the **SUMOLOGIC_SYSTEM_EVENTS** section. 
+:::
 
 ## Search the System Event Index
 
@@ -47,25 +51,9 @@ _index=sumologic_system_events _sourceCategory=alerts
 | :-- | :-- |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Apps](/docs/integrations/) | `apps` |
-| [Automation Service actions](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) and [Cloud SOAR actions](/docs/cloud-soar/automation/#action) | `oarAutomationActions` |
-| [Automation Service playbook executions](/docs/platform-services/automation-service/automation-service-playbooks) and [Cloud SOAR playbook executions](/docs/cloud-soar/automation/#playbook-execution) | `oarPlaybookExecutions` |
-| [Automation Service tasks](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-task-node-to-a-playbook) and [Cloud SOAR tasks](/docs/cloud-soar/automation/#task) | `oarTasks` |
-| [Cloud SIEM automation](/docs/cse/automation/) | `cseAutomation` |
-| [Cloud SIEM Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/) | `cseEntity` |
-| [Cloud SIEM Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) | `cseInsight` |
-| [Cloud SIEM log mapping](/docs/cse/schema/create-structured-log-mapping/) | `cseLogMapping` |
-| [Cloud SIEM Mitre Att&ck Threat Coverage](/docs/cse/administration/mitre-coverage/) | `cseMitreAttackCoverage` |
-| [Cloud SIEM rules](/docs/cse/rules/) | `cseRule` |
-| [Cloud SIEM threat intel source](/docs/cse/administration/create-custom-threat-intel-source/) | `cseThreatIntelSource` |
-| [Cloud SIEM Yara rules](/docs/cse/rules/import-yara-rules/) | `cseYara` | 
-| [Cloud SOAR action configuration](/docs/cloud-soar/automation/#action) | `oarAutomationActionConfigurations` |
-| [Cloud SOAR entities](/docs/cloud-soar/incidents-triage/#entities) | `oarEntities` |
-| [Cloud SOAR incidents](/docs/cloud-soar/incidents-triage/#working-with-incidents) | `oarIncidents` |
-| [Cloud SOAR integrations](/docs/cloud-soar/automation/#integrations) | `oarIntegrations` |
-| [Cloud SOAR playbook revisions](/docs/cloud-soar/automation/#playbook) | `oarPlaybookRevisions` |
-| [Cloud SOAR reports](/docs/cloud-soar/incidents-triage/#report) | `oarReports` |
-| [Cloud SOAR triage](/docs/cloud-soar/incidents-triage/#triage) | `oarTriage` |
-| [Cloud SOAR triggers](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-action-definitions) | `oarTriggers` |
+| [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar*` |
+| [Cloud SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
+| [Fields](/docs/manage/fields) | `fieldManagement` |
 | [Health Events](/docs/manage/health-events/) | `Collection` |
 | [Monitors](/docs/alerts/monitors) | `monitors` |
 | [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |

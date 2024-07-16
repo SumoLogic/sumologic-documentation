@@ -1,8 +1,8 @@
 ---
-id: documentation-audit-event-log-definitions
-title: Documentation for Audit Event Log Definitions
+id: documentation-audit-log-definitions
+title: Documentation for Audit Log Definitions
 sidebar_label: Documentation
-description: Audit Event Log Definitions is documentation of audited events, and is hosted on each deployment.
+description: Audit Log Definitions are documentation of audited events, and are hosted on each deployment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ All available audit log events are documented for your reference on each deploym
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 :::important
-To see documentation for system events, in the left margin of the documentation scroll down to the **SUMOLOGIC_SYSTEM_EVENTS** section. For more information about system events, see [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
+To see documentation for system events, when you click one of the links below, in the left margin scroll down to the **SUMOLOGIC_SYSTEM_EVENTS** section. For more information about system events, see [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
 :::
 
 ### General audit log definitions

@@ -49,7 +49,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/documentation-audit-event-log-definitions"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Documentation for Audit Event Log Definitions</h4></a>
+  <a href="/docs/manage/security/audit-indexes/documentation-audit-log-definitions"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Documentation for Audit Log Definitions</h4></a>
   <p>See Audit Event Log Definitions documentation for audited events.</p>
   </div>
 </div>

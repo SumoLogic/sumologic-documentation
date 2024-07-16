@@ -19,7 +19,7 @@ This index is improved and different from the [Audit Index](/docs/manage/securit
 
 ## Documentation 
 
-All available audited events are documented for your reference. See [Documentation for Audit Event Log Definitions](/docs/manage/security/audit-indexes/documentation-audit-event-log-definitions/).
+All available audited events are documented for your reference. See [Documentation for Audit Log Definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/).
 
 ## Search the Audit Event Index
 
@@ -47,6 +47,7 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | [Access Keys](/docs/manage/security/access-keys/) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar*` |
+| [Cloud SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
 | [Collection](/docs/send-data/collection) | `collection` |
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
@@ -65,7 +66,6 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
 | [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |
-| [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](/docs/metrics/metrics-transformation-rules) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |

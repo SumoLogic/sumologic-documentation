@@ -15,7 +15,7 @@ Audit logging for the Automation Service uses the same logging as Cloud SOAR, si
 
 ## Where to find documentation
 
-For documentation of the Cloud SOAR audit log definitions, see [Automation Service and Cloud SOAR audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-event-log-definitions/#automation-service-and-cloud-soar-audit-log-definitions).
+For documentation of the Cloud SOAR audit log definitions, see [Automation Service and Cloud SOAR audit log definitions](/docs/manage/security/audit-indexes/documentation-event-log-definitions/#automation-service-and-cloud-soar-audit-log-definitions).
 
 ## Search the Audit Event Index and System Event Index
 
