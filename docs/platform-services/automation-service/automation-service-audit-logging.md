@@ -13,9 +13,13 @@ The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) 
 Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. See [Cloud SOAR Audit Logging](/docs/cloud-soar/audit-event-index/).
 :::
 
-## Search the Audit Event Index
+## Where to find documentation
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
+For documentation of the Automation Service audit log definitions, see [Automation Service and Cloud SOAR audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-event-log-definitions/#automation-service-and-cloud-soar-audit-log-definitions).
+
+## Search the Audit Event Index and System Event Index
+
+Searching the Audit Event Index and System Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
@@ -76,7 +80,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 | `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
-## Search the Audit Event Index for Automation Service events
+## Search for Automation Service events
 
 To search the Audit Event Index for logs that describe Automation Service events:
 
@@ -128,4 +132,4 @@ Here is an example `PlaybookExecutionStarted` event log.
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
+By default, the retention period of the Audit Event Index and System Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
