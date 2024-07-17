@@ -138,6 +138,8 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ```
 
 ## Sample metric message
+
+```json
 {
     "queryId": "A",
     "_source": "cassandra-otel",
@@ -170,6 +172,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
     "latest": 67,
     "count": 4
 }
+```
 
 ## Sample Log queries 
 
