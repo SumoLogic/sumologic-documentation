@@ -13,7 +13,7 @@ authors:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
-* Automation Audit: Logs now contain information about action and section detail (playbooks, rules, observables, triage, incidents...).
+* Automation Audit: Logs now contain information about action and section detail (for playbooks, rules, observables, triage, incidents, and so on).
 * Playbooks: Added option “Split By” for Filter node.
 
 #### Cloud SOAR
@@ -23,5 +23,5 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug fixes
 * Playbooks: 
-  * Fixed send mail action error with unicode characters.
+  * Fixed send mail action error with Unicode characters.
   * Fixed export.
