@@ -15,7 +15,7 @@ This page describes functionality that is available to users whose Cloud SIEM UR
 
 ## Where to find documentation  
 
-For documentation of the Cloud SIEM audit log definitions, see [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
+To learn more, see [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
 
 
 ## Scoping your search
