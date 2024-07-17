@@ -7,7 +7,7 @@ description: Learn how to search the Audit Event Index for Cloud SOAR log events
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) and [System Event Index](/docs/manage/security/audit-indexes/system-event-index/)provide event logs in JSON format on your account activity allowing you to monitor and audit changes. By default, the Audit Event Index and System Event Index are enabled for Cloud SOAR and Enterprise accounts.
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) and [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) provide event logs in JSON format on your account activity allowing you to monitor and audit changes. By default, the Audit Event Index and System Event Index are enabled for Cloud SOAR and Enterprise accounts.
 
 :::note
 Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. See [Automation Service Audit Logging](/docs/platform-services/automation-service/automation-service-audit-logging/).
