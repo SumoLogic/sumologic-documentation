@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex   | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Index** provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
+The Audit Index provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
 
 This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
