@@ -876,8 +876,10 @@ module.exports = {
           link: {type: 'doc', id: 'manage/security/audit-indexes/index'},
           items: [
             'manage/security/audit-indexes/audit-index',
-            'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
+            'manage/security/audit-indexes/audit-event-index',
+            'manage/security/audit-indexes/system-event-index',
+            'manage/security/audit-indexes/documentation-audit-log-definitions',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
