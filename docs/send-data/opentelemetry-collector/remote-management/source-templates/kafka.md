@@ -45,7 +45,7 @@ Ensure that the otelcol has adequate permissions to access all log file paths. E
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
 ```
 
-import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 		
