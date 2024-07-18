@@ -272,7 +272,7 @@ service:
         - sumologic
 ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sysmon_windows.yaml`.
 2. Paste the above content into the file.
 3. Restart collector with following command:
    ```bash title="Windows"
