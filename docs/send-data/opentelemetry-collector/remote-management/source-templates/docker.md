@@ -24,7 +24,7 @@ Docker source template creates an OpenTelemetry configuration that can be pushed
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
 
 - **`sumo.datasource`**. Fixed value of **docker**. 
-(TBD)
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the docker env resides, such as `dev`, `prod`, or `qa`.
 
 ## Prerequisites
 

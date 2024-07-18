@@ -33,7 +33,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 		
 ### For metrics collection
 		
-The receiver gets stats from an nginx Web Server instance using the `/status` endpoint. This receiver supports Nginx Web Server version 2.4+.(TODO :- TBD)
+The receiver gets stats from an nginx Web Server instance using the `/status` endpoint. This receiver supports Nginx Web Server version 1.26.1+.
 
 Receive server statistics, by configuring the server's `nginx.conf` file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
 		

@@ -33,7 +33,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ### For metrics collection
 
-Kafka metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) collects Kafka metrics (brokers, topics, partitions, and consumer groups) from the Kafka server. This app has been tested with following Kafka versions: 2.6.0, 2.7.0, and 3.1.2.
+Kafka metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) collects Kafka metrics (brokers, topics, partitions, and consumer groups) from the Kafka server. This app has been tested with following Kafka versions: 2.X and 3.X
 
 ### For logs collection
 
