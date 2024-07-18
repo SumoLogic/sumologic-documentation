@@ -7,7 +7,7 @@ description: You can generate a Cloud SIEM Signal with a scheduled search.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about creating a scheduled search that will trigger a Cloud SIEM Signal. Before you start using scheduled searches to create Cloud SIEM Signals, it is helpful to understand what Signals are, and how they relate to the generation of Cloud SIEM Insights. For information about how it all works see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). 
+This page has information about creating a scheduled search that will trigger a Cloud SIEM Signal. Before you start using Scheduled Searches to create Cloud SIEM Signals, it is helpful to understand what Signals are, and how they relate to the generation of Cloud SIEM Insights. For information about how it all works see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). 
 
 :::note
 For a more detailed description of the options you can configure for a scheduled search, see [Schedule a Search](schedule-search.md).

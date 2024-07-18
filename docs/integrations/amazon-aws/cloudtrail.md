@@ -64,7 +64,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket in y
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 
-## Collecting Logs for the AWS CloudTrail App
+## Collecting logs for the AWS CloudTrail App
 
 This section has instructions for configuring log collection for the AWS CloudTrail app. If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#configuring-the-aws-cloudtrail-app-in-multiple-environments).
 

@@ -49,7 +49,7 @@ The Sumo Logic app for MySQL assumes the default MySQL Error log file format for
 
 The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see [http://dev.mysql.com/doc/refman/5.5/en/server-logs.html](http://dev.mysql.com/doc/refman/5.5/en/server-logs.html).
 
-### Sample Logs
+### Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -136,7 +136,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for MySQL
+## Collecting logs and metrics for MySQL
 
 Configuring log and metric collection for the MySQL app includes the following tasks.
 

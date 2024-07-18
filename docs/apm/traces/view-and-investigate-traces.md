@@ -12,7 +12,7 @@ You can visualize your Traces data through filtered trace lists and icicle chart
 
  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**. 
  <!--Kanso 
- [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
+ [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
   Kanso-->
 
 Here, you can run a Trace query, view your **Trace Duration Breakdown Chart**, and explore your **Traces matching queries** table.

@@ -116,7 +116,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log
+## Sample log messages
 
 ```sql
   INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates

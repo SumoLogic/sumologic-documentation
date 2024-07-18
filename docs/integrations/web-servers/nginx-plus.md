@@ -90,7 +90,7 @@ _sourceCategory=Labs/Nginx/Logs
 | sort by _timeslice asc
 ```
 
-## Collecting Logs and Metrics for Nginx Plus
+## Collecting logs and metrics for Nginx Plus
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
 
