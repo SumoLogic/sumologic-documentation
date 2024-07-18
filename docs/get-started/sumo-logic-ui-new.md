@@ -6,7 +6,7 @@ description: Get to know the Sumo Logic platform user interface.
 
 <!--
 When Open Beta'd (est. Aug 2024):
-remove no-indexß
+remove no-index
 place doc in sidebars.ts
 rename the old UI "Classic"
 add announcement banner.
