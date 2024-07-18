@@ -26,7 +26,7 @@ Alert grouping works for both logs and metrics monitors.
 4. Enter your metrics query, then select your desired alert grouping option.
    * **One alert per monitor**. If you only want to receive a single alert for the entire monitor.
    * **One alert per time series**. To receive a single alert for each time-series that is present in the metric query
-   * **One alert per [group]**. allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="setup-metrics.png" />
+   * **One alert per [group]**. Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="setup-metrics.png" />
 5. Configure the rest of your alert condition per standard procedure. Refer to [Monitors](/docs/alerts/monitors) for more details.
 
 
