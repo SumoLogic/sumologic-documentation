@@ -37,7 +37,7 @@ For each JFrog service, you will find its active log files in the `$JFROG_HOME/<
 For more information, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/JFROG/Logging) and [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log) documentation.
 
 
-### Sample logs
+### Sample log messages
 
 ```json title="Traffic"
 20201322001341|d29f485ce89ehh3i|0|DOWNLOAD|167.208.229.190

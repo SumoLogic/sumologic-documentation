@@ -36,7 +36,7 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 ```
 
 
-## Collecting Logs for Google Cloud Storage
+## Collecting logs for Google Cloud Storage
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Storage.
 

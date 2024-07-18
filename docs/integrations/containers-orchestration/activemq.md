@@ -46,7 +46,7 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for ActiveMQ
+## Collecting logs and metrics for ActiveMQ
 
 This App has been tested with following ActiveMQ versions:
 * 5.16.2.

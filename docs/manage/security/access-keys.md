@@ -40,13 +40,13 @@ Managing Access Keys (how to).
 ### From the Preferences page
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
-1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Add Access Key" style={{border: '1px solid gray'}} width="800"/>
-1. When the **Create an Access Key** window appears, enter a name for your access key. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, proceed to the step. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" style={{border: '1px solid gray'}} width="500"/>
+1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Sumo Logic interface showing access keys with statuses, names, access IDs, creation dates, allowed domains, and last used dates. Add Access Key button at bottom." style={{border: '1px solid gray'}} width="800"/>
+1. When the **Create an Access Key** window appears, enter a name for your access key. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, proceed to the step. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key form in Sumo Logic with fields for Access Key Name, Allowed CORS Domains, and options to add domains." style={{border: '1px solid gray'}} width="500"/>
 1. Optionally, you can add [**Allowlisted CORS Domains**](#cors-support), which will allow you to use this newly created access key to access Sumo APIs.
     :::note
     Enter the domains in the [Origin format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name. A port is optional.
     :::
-1. Click **Create Key** to generate the key. Be sure to copy both the generated Access ID and Access Key before clicking **Done**.<br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" style={{border: '1px solid gray'}} width="450"/>
+1. Click **Create Key** to generate the key. Be sure to copy both the generated Access ID and Access Key before clicking **Done**.<br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created message in Sumo Logic for creating an access key, showing the Access ID and Access Key with options to copy them, and a Done button." style={{border: '1px solid gray'}} width="450"/>
    :::warning
    After you click **Done**, you will not be able to recover this Access ID and Access Key.
    :::
@@ -56,7 +56,7 @@ Managing Access Keys (how to).
 Administrators can create access keys under **Access Keys** as an alternative to doing it from the [Preferences page](#from-the-preferences-page).
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. Kanso-->
-1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="700"/>
+1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." width="700"/>
 1. Follow the steps from [the previous section](#from-the-preferences-page), starting with step 3.
 
 #### CORS support
@@ -88,7 +88,7 @@ an Access-Control-Allow-Origin header.
 Anyone, regardless of role, can edit, activate, deactivate, and delete access keys you've created.
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
-1. Hover your mouse over an access key and click the three-dot kebab icon to reveal the modification options:<br/><img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="My Access Keys" style={{border: '1px solid gray'}} width="800"/>
+1. Hover your mouse over an access key and click the three-dot kebab icon to reveal the modification options:<br/><img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="User profile in Sumo Logic displaying username, security settings, and a list of access keys with options to deactivate, edit, or delete them." style={{border: '1px solid gray'}} width="800"/>
    * **Edit**. Opens up a window where you can modify the allowlist for your access key.
    * **Deactivate/Reactivate**. Depending on the current status of your access key, you'll see either a **Deactivate** or **Reactivate** option. If you deactivate an access key, Sumo Logic will retain the key credentials, but render the key useless. By default, Sumo Logic will deactivate an access key if it has gone unused for more than 30 days, though the [Access Keys Deactivation policy](#access-keys-deactivation-policy) can be updated by a Sumo Logic administrator. You can reactivate a key at any time to begin using it again.
   :::note
@@ -115,4 +115,4 @@ An administrator can adjust the limit to the number of days an Access Key can go
 
 To configure the Access Keys Deactivation policy:
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. Kanso-->
-1. Under the **Access Keys Deactivation** policy section, select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="400"/>
+1. Under the **Access Keys Deactivation** policy section, select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation settings in Sumo Logic, allowing automatic deactivation of unused or unmodified API access keys after a specified number of days." width="400"/>

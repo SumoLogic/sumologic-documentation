@@ -212,7 +212,7 @@ To deploy an AWS Security Hub App collector:
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
-### Sample Log
+### Sample log messages
 
 ```json title="AWS Security Hub log"
 {

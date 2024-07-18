@@ -16,7 +16,7 @@ Postman is an API development tool that streamlines API building, testing, modif
 
 The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an outgoing webhook available in the Postman. For more information on supported events that are ingested through the Postman webhook, see the [Postman Documentation](https://learning.postman.com/docs/integrations/webhooks/).
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -67,7 +67,7 @@ The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/postman "collection" "_postman_id"

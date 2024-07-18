@@ -30,9 +30,9 @@ The following table has details on the Document Load metrics collected from Java
 | `browser_time_to_interactive` | domComplete - span start time (fetch start) |
 | `browser_time_to_processing_end` | loadEventEnd - span start time (fetch start) |
 
-The above metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
+The above metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Diagram showing various navigation metrics from user clicks to a fully loaded document, including DNS resolution, SSL connection, TCP establishment, request end, first byte, response end, interactive time, and processing end](/img/rum/Navigation-metrics.png)
 
-<a name="ttfb"><strong>*</strong> Time to first byte</a> (<code>browser_time_to_fb</code>): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the Navigation Timings chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
+<a name="ttfb"><strong>*</strong> Time to first byte</a> (<code>browser_time_to_fb</code>): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the Navigation Timings chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Screenshot of the Real User Monitoring interface showing detailed metrics and performance data for web applications" />
 
 Timing metrics are not calculated if the visibility state of the document was "hidden" at any point during the load.
 
@@ -71,9 +71,9 @@ CWV focuses on three aspects of the user experience: document loading, interacti
 
 * [First Input Delay (FID)](https://web.dev/fid/): measures interactivity. To provide a good user experience, pages should have a FID of **100 milliseconds** or less.
 * [Largest Contentful Paint (LCP)](https://web.dev/lcp/): measures loading performance. To provide a good user experience, LCP should occur within **2.5 seconds** of when the page first starts loading.
-* [Cumulative Layout Shift (CLS)](https://web.dev/cls/): measures visual stability. To provide a good user experience, pages should maintain a CLS of **0.1** or less.<br/><img src={useBaseUrl('img/rum/core-web-vitals.png')} alt="Real User Monitoring" />
+* [Cumulative Layout Shift (CLS)](https://web.dev/cls/): measures visual stability. To provide a good user experience, pages should maintain a CLS of **0.1** or less.<br/><img src={useBaseUrl('img/rum/core-web-vitals.png')} alt="Visual representation of Core Web Vitals metrics within the Real User Monitoring dashboard, highlighting key performance indicators like FID, LCP, and CLS" />
 
-The above three CWV KPIs are captured and displayed on Overview dashboards for Document Load action types. Detailed metrics are available in span metadata for every transaction trace.<br/><img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Real User Monitoring" />
+The above three CWV KPIs are captured and displayed on Overview dashboards for Document Load action types. Detailed metrics are available in span metadata for every transaction trace.<br/><img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Example of span metadata for transaction traces displayed in the Real User Monitoring dashboard, providing detailed performance insights" />
 
 ## XHR Monitoring Metrics
 
@@ -94,7 +94,7 @@ Pages can generate one or more XHR requests, typically in the form of HTTP Posts
 * Measure how many XHR requests have been generated
 * Identify the user action that triggered the XHRs by blending UI interaction (e.g., `“click on Pay”`) with the page name (e.g., `http://www.acme.com/checkout`) results in following action name `"Click on Pay on http://www.acme.com/checkout"`
 * Measure any erroneous HTTP response to XHR POST calls and count them as XHR errors
-* Allow to drill-down via EI to specific traces that explain full process of loading and execution of each such transaction<br/><img src={useBaseUrl('img/rum/xhr-action.png')} alt="Real User Monitoring" />
+* Allow to drill-down via EI to specific traces that explain full process of loading and execution of each such transaction<br/><img src={useBaseUrl('img/rum/xhr-action.png')} alt="Interface for monitoring XHR interactions, displaying performance timings and metrics for XMLHttpRequests within a web application" />
 
 <!--
 ### Navigation (Route Change) Metrics
@@ -112,7 +112,7 @@ Every time we open a new tab in Sumo, we do a route change (but we are not loadi
 This section describes how to trace and measure [Longtask delays](https://github.com/w3c/longtasks), which is when the main browser UI thread becomes locked for extended periods (greater than 50 milliseconds) and blocks other critical tasks (including user input) from being executed.
 
 This impacts the user's experience. They can perceive this as a "frozen browser”, even if the communication with the backend has long been completed. RUM automatically captures such events and:
-* Displays them as individual spans marking how long the browser was frozen<br/><img src={useBaseUrl('img/rum/prada-nav.png')} alt="Real User Monitoring" />
+* Displays them as individual spans marking how long the browser was frozen<br/><img src={useBaseUrl('img/rum/prada-nav.png')} alt="Graphical representation of longtask delays in the browser UI, showing how these delays impact user experience and are captured in individual spans" />
 * Aggregates the above data into two metrics:
    * Longtask delay: average duration of longtask span
-   * Time in longtasks: total time spent in longtasks per user action/trace<br/><img src={useBaseUrl('img/rum/longtask.png')} alt="Real User Monitoring" />
+   * Time in longtasks: total time spent in longtasks per user action/trace<br/><img src={useBaseUrl('img/rum/longtask.png')} alt="Aggregated data metrics for longtask delays in the Real User Monitoring dashboard, displaying average duration and total time spent in longtasks per user action or trace." />

@@ -495,7 +495,7 @@ Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
-1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
+1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="static/files folder" width="250"/>
 1. Go to your doc in progress and use the following syntax to link the file:
 
 <Tabs
