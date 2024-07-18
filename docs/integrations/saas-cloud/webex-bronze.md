@@ -80,7 +80,7 @@ _sourceCategory="cisco_webex"
 
 ## Set up collection
 
-To set up [Webex Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/) for the Webex Bronze app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Webex Bronze Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Webex Bronze app is properly integrated and configured to collect and analyze your Webex Bronze data.
+To set up the Webex Cloud-to-Cloud Integration for the Webex Bronze app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/). These instructions will guide you through the process of creating a source using the Webex Bronze Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Webex Bronze app is properly integrated and configured to collect and analyze your Webex Bronze data.
 
 ## Installing the Webex Bronze app
 
