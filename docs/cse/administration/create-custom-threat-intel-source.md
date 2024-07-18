@@ -57,8 +57,8 @@ Your new source should now appear on the **Threat Intelligence** page.
 
 ### Enter indicators manually
 
-1. On the **Threat Intelligence** page, click the name of the source you want to update.  <br/><img src={useBaseUrl('img/cse/click-name.png')} alt="Click name" width="800"/>
-1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**. <br/><img src={useBaseUrl('img/cse/threat-details.png')} alt="Threat details" width="800"/>
+1. On the **Threat Intelligence** page, click the name of the source you want to update.  <br/><img src={useBaseUrl('img/cse/click-name.png')} alt="List of sources" width="800"/>
+1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**. <br/><img src={useBaseUrl('img/cse/threat-details.png')} alt="List of indicators" width="800"/>
 1. On the **New Threat Intelligence Indicator** popup.
     1. **Value**. Enter an IP address, hostname, URL, or file hash.
         Your entry must be one of:
@@ -78,7 +78,7 @@ Your new source should now appear on the **Threat Intelligence** page.
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="Import indicators" width="400"/>
+save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="'Import Indicators from CSV' dialog" width="400"/>
 
 #### Create a CSV file
 

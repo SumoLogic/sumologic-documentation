@@ -24,7 +24,7 @@ All multi-tenant installations offer:
 - Individual administrators otherwise segregated to each tenant
 - Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
-<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multi-tenancy" width="600"/>
+<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multiple database symbols" width="600"/>
 
 ## Automated Responder Knowledge (DF-ARK)
 

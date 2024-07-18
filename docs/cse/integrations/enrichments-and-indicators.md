@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can view the results of enrichments in Cloud SIEM by navigating to the **Enrichments** tab (which will appear on the Entity, Signal, and Insight details pages if there are any enrichments to display):
 
-<img src={useBaseUrl('img/cse/enrichments.png')} alt="Enrichments" width="800"/>
+<img src={useBaseUrl('img/cse/enrichments.png')} alt="Examples of enrichments" width="800"/>
 
 The enhancements include:
 * Enrichments are grouped by Entity, not by enrichment source.
