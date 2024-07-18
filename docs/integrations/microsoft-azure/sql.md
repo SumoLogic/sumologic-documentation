@@ -83,7 +83,7 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | top 10 message by eventCount, message asc
 ```
 
-## Collecting Logs and Metrics
+## Collecting logs and metrics
 
 This section has instructions for collecting logs and metrics for the Azure SQL app, as well as a sample log message and a query sample.
 

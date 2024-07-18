@@ -262,7 +262,7 @@ The Jenkins app uses the following log types:
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 

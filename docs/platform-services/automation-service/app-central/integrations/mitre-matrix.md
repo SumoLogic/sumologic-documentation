@@ -1,7 +1,6 @@
 ---
 title: Mitre Matrix
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

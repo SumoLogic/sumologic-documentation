@@ -289,7 +289,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'getstarted',
-                label: 'Start Here',
+                label: 'Get Started',
                 icon: 'rocket',
               },
               {
@@ -306,15 +306,21 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'apps',
+                sidebarId: 'security',
+                label: 'Security',
+                icon: 'security',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'manage',
                 label: 'Manage Account',
                 icon: 'manage_accounts',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'apps',
               },
               {
                 type: 'docSidebar',
@@ -330,21 +336,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'apm',
-                label: 'Traces, RUM, APM',
-                icon: 'account_tree',
-              },
-              {
-                type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'query_stats',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'security',
-                label: 'Security',
-                icon: 'security',
               },
               {
                 type: 'docSidebar',
@@ -357,6 +351,12 @@ module.exports = {
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
                 icon: 'swap_horiz',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'apm',
+                label: 'Traces, RUM, APM',
+                icon: 'account_tree',
               },
             ]
           },
@@ -425,11 +425,13 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
           },
           {
             to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
+            alt: 'Contact Sumo Logic support',
           },
           {
             position: 'right',
@@ -518,7 +520,7 @@ module.exports = {
               },
               {
                 label: 'X (Twitter)',
-                href: 'https://twitter.com/SumoLogic',
+                href: 'https://x.com/SumoLogic',
               },
             ],
             title: 'Social',

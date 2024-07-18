@@ -53,7 +53,7 @@ If necessary, you can use the binary package to install a Collector on MacOS. S
 This method does not support all advanced settings.
 :::
 
-Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
+Run the installer on your server with root or Administrator privileges. For Windows, right-click the installer file and select **Run as Administrator**. If you're not logged in as root or Administrator, you may be prompted to reauthenticate when you start the UI Installer.
 
 1. Open the downloaded installer file.
 1. If prompted, enter the root or Administrator user name and password for the system.

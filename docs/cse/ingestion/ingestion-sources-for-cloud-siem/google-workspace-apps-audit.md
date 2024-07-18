@@ -7,7 +7,7 @@ description: Configure an Workspace Apps Audit Source to collect Google Workspac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="35"/>
+<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="Google Workspace icon" width="35"/>
 
 ## Step 1: Configure collection
 

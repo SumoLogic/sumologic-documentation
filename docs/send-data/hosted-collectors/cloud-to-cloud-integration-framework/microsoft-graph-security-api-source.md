@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/microsoft-graph-security-api/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
@@ -22,8 +23,7 @@ The Microsoft Graph Security API Source provides a secure endpoint to receive a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
@@ -74,7 +74,7 @@ To configure a Microsoft Graph Security API Source:
 1. Search for and select **Microsoft Graph Security API**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -130,13 +130,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.json)
+<a href="/files/c2c/microsoft-graph-security-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.tf)
+<a href="/files/c2c/microsoft-graph-security-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

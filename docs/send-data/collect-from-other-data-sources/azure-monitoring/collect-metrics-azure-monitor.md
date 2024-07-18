@@ -1,7 +1,7 @@
 ---
 id: collect-metrics-azure-monitor
 title: Collect Metrics from Azure Monitor
-sidebar_label: Collecting Metrics 
+sidebar_label: Collecting Metrics using ARM
 description: Instructions for configuring a pipeline for shipping metrics available from Azure Monitor to  Sumo Logic.
 ---
 
@@ -135,3 +135,8 @@ To verify that events are appearing in your event hub:
 1. In the left panel under **Investigate** click on **Failures**. Click on **Count** column on the rightmost panel, it will take you to the trace, select any trace and see the exception message.
 
     ![application-insights.png](/img/send-data/azure-metrics/smappinsightfailures.png)
+
+### Common errors
+
+For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
+

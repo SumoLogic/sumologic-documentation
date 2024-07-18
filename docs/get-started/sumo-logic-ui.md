@@ -7,13 +7,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
-## Using the Left Navigation Bar
+## Using the left navigation bar
 
-When you first log in, you'll land on the Sumo Logic Home page. The **left nav bar** menu bar is a one-stop location where you can access the following:
+When you first log in, you'll land on the Sumo Logic Home page. The left navigation (nav) menu bar is a one-stop location where you can access the following:
 
 ### Access dashboards and searches
 
-The **left nav bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
+The left nav bar provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
 
 * **Recent** dashboards and searches
 * A list of your **Favorites** (dashboards and searches)
@@ -22,7 +22,7 @@ The **left nav bar** provides easy access to libraries, personal collections of
 
 ### Search and switch browsing modes
 
-The top of the **left nav bar** is where you can search for content and
+The top of the left nav bar is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
@@ -30,7 +30,7 @@ users and easily switch browsing modes. 
 
 ### Hide and show the left nav bar
 
-You can easily hide the **left nav bar** to enlarge the working area. Then, just as easily show it again.
+You can easily hide the left nav bar to enlarge the working area. Then, just as easily show it again.
 
 * To hide the left nav bar, click the **Arrow** in the top right corner.<br/>![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
 * To show a hidden left nav bar, click the **Menu** icon.<br/>![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
@@ -171,7 +171,7 @@ It's easy to view dashboards, searches, and folders that have been shared with y
 To see content that has been shared with you, do the following:
 
 1. Click the **Clock** icon at the top of the left nav bar.
-1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="img/get-started/ui/Dash3.png" width="200"/>
+1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="Dropdown menu with Recently Opened By and Recently Shared With Me options" width="200"/>
 
 ### Pin and manage searches
 
@@ -232,7 +232,7 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **left nav bar** and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/manage-data.png')} alt="Manage Data menu options" style={{border: '1px solid gray'}} width="300" />
+1. Go to the left nav bar and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/manage-data.png')} alt="Manage Data menu options" style={{border: '1px solid gray'}} width="300" />
 1. Choose from the following, as needed:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
@@ -245,7 +245,7 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the **left nav bar** and click **Administration**. <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Administration_menu-options.png')} alt="Administration menu options" style={{border: '1px solid gray'}} width="300" />
+1. Go to the left nav bar and click **Administration**. <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Administration_menu-options.png')} alt="Administration menu options" style={{border: '1px solid gray'}} width="300" />
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).

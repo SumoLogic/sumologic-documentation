@@ -1,7 +1,6 @@
 ---
 title: VMWare vSphere
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

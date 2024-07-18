@@ -1,7 +1,6 @@
 ---
 title: AWS CloudFront
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

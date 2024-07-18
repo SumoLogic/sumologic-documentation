@@ -36,7 +36,7 @@ You can also customize the prefix for a query by specifying an alias. See the [A
 
 Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the menu.
 
-<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="img/search/timecompare/time-compare-UI-option-aug-24-2021.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="Time Compare button" width="400"/>
 
 The comparison results appear in a new column titled with the timeshift.
 
@@ -73,7 +73,7 @@ Do not alias `timeslice`, as we will use the `compare` operator.
 
 Then, from the **Time Compare** button, select **Custom**, and set the **Custom Time Compare** dialog settings to:
 
-<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="img/search/timecompare/7TimePeriod.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="Custom Time Compare dialog settings" width="400"/>
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
