@@ -13,7 +13,7 @@ The Sumo Logic app for Webex provides comprehensive monitoring and analysis of W
 
 ## Log type
 
-This app uses Sumo Logic’s [Webex Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/) to collect [Admin Audit events](https://developer.webex.com/docs/api/v1/admin-audit-events/list-admin-audit-events) from Webex platform.
+This app uses Sumo Logic’s [Webex Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/) to collect [Admin Audit events](https://developer.webex.com/docs/api/v1/admin-audit-events/list-admin-audit-events) from the Webex platform.
 
 ### Sample log messages
 
