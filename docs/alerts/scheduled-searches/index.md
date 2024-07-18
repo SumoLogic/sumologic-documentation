@@ -1,7 +1,7 @@
 ---
 slug: /alerts/scheduled-searches
 title: Scheduled Searches
-description: You can schedule log searches to send alerts.
+description: Learn how to schedule log searches to send alerts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
