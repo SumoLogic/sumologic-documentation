@@ -28,7 +28,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 | sort by count
 ```
 
-## Collecting Logs for the Amazon CloudFront app
+## Collecting logs for the Amazon CloudFront app
 
 ### Prerequisites
 
@@ -65,6 +65,18 @@ Now that you have set up collection for CloudFront, install the Sumo Logic app f
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Amazon CloudFront app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon CloudFront app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Amazon CloudFront dashboards
 

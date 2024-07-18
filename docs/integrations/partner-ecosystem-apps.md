@@ -21,6 +21,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
 * [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
+* [Endace](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Endace)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
 * [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
 * [Keeper Security](https://docs.keeper.io/en/v/enterprise-guide/event-reporting/sumo-logic)
@@ -32,6 +33,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
-* <a href="https://help.sumologic.com/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
+* <a href="/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 
 For any questions on these applications, contact our partners.

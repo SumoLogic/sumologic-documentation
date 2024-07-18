@@ -1,7 +1,6 @@
 ---
 title: Intelligence X
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

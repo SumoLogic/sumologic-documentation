@@ -2,10 +2,13 @@
 slug: /search
 title: Log Search
 description: Learn about the Sumo Logic search language, operators, and search features.
-tags: [log search, search]
+keywords:
+  - search
+  - log search
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Log Search allows you to query and analyze log data sent to Sumo Logic. There are many features to help you use our robust Search Query Language, such as LogCompare, LogReduce, LogExplain, Lookup Tables, Subqueries, and Time Compare. See [Get Started with Search](/docs/search/get-started-with-search) to begin exploring your data in Sumo Logic.
 
@@ -75,6 +78,21 @@ In this section, we'll introduce the following concepts:
 :::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Search & Query Forum](https://support.sumologic.com/support/s/).
 :::
+
+## Journey of a log
+
+In this micro lesson, learn about the ingestion pipeline and the journey that a log message takes from collection into the Sumo Logic platform. The video covers key considerations for administrators around the ingestion pipeline and demonstrates how this process translates into a search, turning a raw event into a schema and then into actionable insights.
+
+<Iframe url="https://www.youtube.com/embed/ycaoBEAF8hk?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Partitions and Views
 

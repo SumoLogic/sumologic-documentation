@@ -1,7 +1,6 @@
 ---
 title: Symantec WebPulse
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

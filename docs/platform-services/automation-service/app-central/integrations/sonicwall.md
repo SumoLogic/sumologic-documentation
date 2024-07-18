@@ -1,7 +1,6 @@
 ---
 title: SonicWall
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

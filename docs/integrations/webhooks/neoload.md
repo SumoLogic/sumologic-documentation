@@ -42,7 +42,7 @@ The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic throug
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/neoload"
@@ -123,6 +123,18 @@ Follow the steps to configure the NeoLoad webhook.
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the NeoLoad app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the NeoLoad app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing NeoLoad dashboards
 

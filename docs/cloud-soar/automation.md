@@ -10,17 +10,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Automation** section contains the configuration tools for Cloud SOAR's automation and orchestration features. These tools include Cloud SOAR's Open Integration Framework (OIF), automation rules sets, and playbook editor as well as incoming event details.
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. 
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**. 
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**.
  Kanso-->
 ## App Central
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access App Central, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **App Central** in the left nav bar.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.
  Kanso-->
 ### App Central UI
 
@@ -57,7 +57,7 @@ Integrations in App Central display a version number. The version indicates when
 
 As soon as you click **UPDATE**, the new version is present inside the Integration section.
 
-Following is an example of integration code before updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-before.png')} alt="Before update>" width="800"/>
+Following is an example of integration code before updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-before.png')} alt="Before update" width="800"/>
 
 Following is an example of integration code after updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-after.png')} alt="After update" width="800"/>
 
@@ -90,10 +90,10 @@ If there are two different versions between the integration installed and that i
 
 ### Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. 
+Certified integrations are those that are provided by Sumo Logic.
 
 :::note
-Only certified integrations can be executed in the cloud, while custom integrations must be executed through the Automation Bridge. For more information, see [Cloud or Bridge execution](#cloud-or-bridge-execution). 
+Only certified integrations can be executed in the cloud, while custom integrations must be executed through the Automation Bridge. For more information, see [Cloud or Bridge execution](#cloud-or-bridge-execution).
 :::
 
 After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
@@ -122,13 +122,13 @@ Following is an example of selecting the action’s resource while building a pl
 
 If you create a custom integration that you would like to make available for others to use, you can submit it to Sumo Logic for review and publication in App Central. This will allow everyone to install and run the integration in the cloud without having to use the Cloud SOAR Bridge.
 
-The integration should be for a commercial product for which no integration exists in App Central, or be a general purpose integration. Sumo Logic will not add integrations to App Central that can only be used by one customer. 
+The integration should be for a commercial product for which no integration exists in App Central, or be a general purpose integration. Sumo Logic will not add integrations to App Central that can only be used by one customer.
 
-1. Ask your Sumo Logic account representative to engage the Professional Services team. The Professional Services team member will guide you through the process of submitting an integration for publication in App Central. 
+1. Ask your Sumo Logic account representative to engage the Professional Services team. The Professional Services team member will guide you through the process of submitting an integration for publication in App Central.
 1. Select **Integrations** from the navigation menu at the left of the screen.
 1. Select your custom integration.
 1. Hover the mouse over your custom integration and click the **Export** button that appears to the right. This exports the integration's YAML files to a tar.gz archive file.<br/><img src={useBaseUrl('img/cloud-soar/export-button.png')} alt="Export button" width="100"/>
-1. Provide the tar.gz archive file containing your custom integration's YAML files to the Professional Services team member. 
+1. Provide the tar.gz archive file containing your custom integration's YAML files to the Professional Services team member.
 
 Sumo Logic will validate the integration, and work with you to make any updates if needed. If the integration is approved, Sumo Logic will add it to App Central.  
 
@@ -139,8 +139,8 @@ A **Playbook** is a predefined set of actions or tasks to respond to a certain e
 Playbooks are automated workflows which can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access playbooks, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access playbooks, in the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access playbooks, in the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
  Kanso-->
 Watch this micro lesson to learn how to create custom playbooks.
 
@@ -158,9 +158,9 @@ Watch this micro lesson to learn how to create custom playbooks.
 ### Configure a new playbook
 
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
-1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed. 
-1. Name your new playbook, select the **Type** to associate with it, and click **Create**. 
-1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen. 
+1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed.
+1. Name your new playbook, select the **Type** to associate with it, and click **Create**.
+1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
 1. Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.<br/><img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
 1. To begin to add the first node within the new playbook, hover your mouse over the **Start** node and click the **+** button that appears. <br/><img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/> <br/>The Add Node dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-node-dialog.png')} alt="Add node dialog" width="500"/>
 1. Click one of the following types to add a node to the playbook:
@@ -175,11 +175,11 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 Select **Action** from the node types.
 
-<img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Node Adding" width="500"/>
+<img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Add Node dialog showing node types" width="500"/>
 
 A new screen will be displayed showing all actions a user has to choose from.
 
-<img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Node Adding" width="500"/>
+<img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Add Node dialog showing the Type dropdown menu" width="500"/>
 
 These action types will directly interact with Cloud SOAR's integrations to either gather data or initiate actions automatically. Select the **Type** of action:
    * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
@@ -220,9 +220,9 @@ For playbook entities which support user-defined text input, such as email notif
 
 From the node's menu, choose **Condition**. A new configuration screen will be displayed which will enable a user to define a conditional statement to be met before the next node type can be executed. Under **Condition 1,** click on **Select a value** to define the first condition.
 
-<img src={useBaseUrl('img/cloud-soar/image81.png')} alt="Condition Node" width="600"/>    
+<img src={useBaseUrl('img/cloud-soar/image81.png')} alt="Add Node dialog showing a new condition" width="600"/>    
 
-<img src={useBaseUrl('img/cloud-soar/image82.png')} alt="Condition Node" width="600"/>   
+<img src={useBaseUrl('img/cloud-soar/image82.png')} alt="Add node dialog showing the Get Value field" width="600"/>   
 
 When developing the first condition, users have multiple options to choose from:
 
@@ -235,7 +235,7 @@ From our earlier example, we are going to choose to evaluate the output from our
 
 A list of available results or outputs from the previously selected integration will be displayed in JSON format. Select which output type (e.g., hashes, IP addresses, domains) to evaluate and add it to the condition.
 
-<img src={useBaseUrl('img/cloud-soar/image83.png')} alt="Node Placeholder Function" width="600"/>   
+<img src={useBaseUrl('img/cloud-soar/image83.png')} alt="List of outputs" width="600"/>   
 
 The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the
 condition.
@@ -274,14 +274,15 @@ Define the question to be answered and the authorizer of the user choice selecti
 
 #### Filter
 
-A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. 
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node.
 
 For example:
-* The action node feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering. 
+* The action node feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
 * You want to pass specific output to another action node. Define the output in the filter, and define the corresponding input in the receiving action node. You could also use a filter like this to pass input to a nested playbook.
 
 1. Hover your mouse over an action node and click the **+** button. <br/><img src={useBaseUrl('img/cloud-soar/add-node-button.png')} alt="Add node button" style={{border:'1px solid gray'}} width="200"/> <br/>The available nodes are displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/cloud-soar/configure-filter-node.png')} alt="Configure filter node conditions" style={{border:'1px solid gray'}} width="500"/>
+1. (Optional) Use **Split by** to select an output if it is a list (array) and you want to evaluate each item separately. Each item in the list is checked against the filter condition. If the condition is true for an item, the item is passed to the next node. (If you do not use the **Split by** field on an output that is a list, then if the condition is true for any item in the list, the entire list moves forward to the next node.)
 1. Configure the conditions you want to use for filtering. These are similar to the conditions you can configure on the [condition node](#condition).
 1. Click **Create**.
 
@@ -318,7 +319,7 @@ To run a playbook inside another playbook:
 When you nest a child playbook within a parent playbook, you must pass parameters from the parent to the child to be utilized within the child playbook actions.
 
 1. Select the playbook (the child) you want to nest within another playbook.
-1. Click the three-dot kebab menu icon in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/> 
+1. Click the three-dot kebab menu icon in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/>
 1. Click the **Edit** button at the bottom of the screen, then the **Edit** button on the **Start** node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-start-node.png')} alt="Start node" width="100"/>
 1. Add the parameters you would like your child playbook to receive from the parent. These can be arbitrary names and do not need to be aligned to any field schema. They will be mapped from the parent nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parameters.png')} alt="Add parameters" width="500"/>
 1. It’s important that your child nodes make use of these parameters. These will be accessible by editing your relevant child nodes, selecting the cog wheel, and selecting the relevant playbook input. In the example below, we use the playbook ID input parameter that will come from the parent. <br/><img src={useBaseUrl('img/cloud-soar/playbook-edit-parameters.png')} alt="Edit parameters" width="500"/>
@@ -372,11 +373,11 @@ Cloud SOAR can ingest, parse, and process incident data from email, syslog and b
 
 ## Integrations
 
-Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. 
+Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors.
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access integrations, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. 
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access integrations, in the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access integrations, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access integrations, in the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.
  Kanso-->
 <img src={useBaseUrl('img/cloud-soar/image62.png')} alt="Integrations" width="800"/>
 
@@ -389,7 +390,7 @@ A product overview screen will be displayed with what actions a product can perf
 
 To add a new integration resource, click the **+ Resources** button in the upper left-hand corner of the integrations screen. To edit an existing integration resource, hover over the resource and click the pencil icon to the far right of the resource name in the resource list.          
 
-<img src={useBaseUrl('img/cloud-soar/image64.png')} alt="image64" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/image64.png')} alt="Resources modal" width="400"/>
 
 Each Integration's configuration screen may be different, but in most cases, administrators will need information such as IP addresses, API tokens, usernames and passwords for their network/security products.
 
@@ -452,21 +453,21 @@ You can build basic integrations without having to provide custom YAML files.
    1. Click **Create**. The action file is created for the integration.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-action-file.png')} alt="Create action" width="600"/><br/>The new action displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration.png')} alt="Example integration" width="600"/>
 1. Add the resource information:
    1. Click the **+** button to the left of **Resources**.
-   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Example integration" width="400"/>
-   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
-1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
+   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
+   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
+1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
 
 ### Configure a webhook for Cloud SOAR
 
 You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR.
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
-1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/> 
+1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/>
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
 1. In **Authorization Header**, enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/getting-started#basic-access-base64-encoded).
-1. Click **Save**. After save, the **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment. 
-1. Select a **Template**. 
+1. Click **Save**. After save, the **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment.
+1. Select a **Template**.
 1. The default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection:
 
     ```
@@ -477,7 +478,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
       }
     }
     ```
-    
+
     You can add additional variables. For example:
 
     ```
@@ -485,7 +486,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
       "fields": {
         "description": "string",
         "additional_info": "string",
-        "starttime": "ISO-8601 datetime string", 
+        "starttime": "ISO-8601 datetime string",
         "incident_kind": <ID incident kind>,
         "incident_category": <ID incident category>,
         "status": <ID incident status>,
@@ -494,8 +495,8 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
     }
     ```
     :::note
-    * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
-    * For information on additional fields, please refer to the [Cloud SOAR APIs](https://help.sumologic.com/docs/api/cloud-soar/) documentation. 
+    * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
+    * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
 1. Click **Save**.
@@ -604,16 +605,16 @@ You can manage Slack communication channels directly by creating/editing various
 * Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" width="800"/>
 * Adding / removing users from the incident <br/>When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.
 * Close / delete an incident <br/>When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" width="400"/>
-* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Archived Slack channel" width="800"/>
+* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Slack message in the war room" width="800"/>
 
 ## Rules
 
-Automation rules allow specific data to be parsed from the incoming data sources and then acted upon automatically or through manual actions. You can establish any daemonized integration rules to define what occurs when data is received from each of these sources. 
+Automation rules allow specific data to be parsed from the incoming data sources and then acted upon automatically or through manual actions. You can establish any daemonized integration rules to define what occurs when data is received from each of these sources.
 
 ### Creating a rule
 
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
-1. Click **+** to the left of **Rules**. 
+1. Click **+** to the left of **Rules**.
 1. Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters. <br/><img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
 1. In the detail section of the rule you can define filters to be used in the rule and the action to be performed.
 1. The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:

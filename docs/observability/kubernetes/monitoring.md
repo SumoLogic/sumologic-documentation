@@ -19,44 +19,41 @@ We currently provide four hierarchical Views of the Kubernetes system: Node, Dep
 
 ![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
 
-These intuitive hierarchies can be accessed from the [Explore](/docs/dashboards/explore-view) tab.
+These intuitive hierarchies can be accessed from the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views).
 
 
-### Open Explore
+### Open Kubernetes views
 
 :::info prerequisites
 To start monitoring your Kubernetes environment, you'll need to set up data collection and core dashboards installation ([learn more](/docs/observability/kubernetes/quickstart)).
 :::
 
-Sumo Logic [Explore](/docs/dashboards/explore-view) is an out-of-the-box view that provides a visual representation of your Kubernetes stack.
+Kubernetes views provide a visual representation of your Kubernetes stack.
 
 To navigate and analyze your Kubernetes environment, do the following:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Infrastructure Monitoring > Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  Kanso-->
 1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
 1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
 1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)
 1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/> ![Explore_Drill-Down.png](/img/kubernetes/Explore_Drill-Down.png)
 1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/>![Explore_Drill-Down_Dashboard_options.png](/img/kubernetes/Explore_Drill-Down_Dashboard_options.png)
 
-
 <!--
-
-    The Explore navigation panel appears on the left with a collapsed view of your Kubernetes stack.
+    The navigation panel appears on the left with a collapsed view of your Kubernetes stack.
 
     ![Explore_Collapsed_view.png](/img/kubernetes/Explore_Collapsed_view.png)
 
-    * If this is your first time using Explore, the window at the right will be empty.
+    * If this is your first time using the view, the window at the right will be empty.
     * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](collection-setup.md). 
 
 1. Now you can navigate your Kubernetes environment and analyze the landscape.
 
 ### Analyzing the Kubernetes landscape 
 
-Explore provides a framework of Views that allow you to quickly navigate through your Kubernetes environment and assess the landscape of the hierarchy. The navigation panel on the left shows a list of all your clusters with the namespaces, containers, and pods nested underneath each cluster.
+The views allow you to quickly navigate through your Kubernetes environment and assess the landscape of the hierarchy. The navigation panel on the left shows a list of all your clusters with the namespaces, containers, and pods nested underneath each cluster.
 
 -->
-
 
 ### Drilling into related content 
 
@@ -73,24 +70,13 @@ Select links from the **Summary** tab, to go directly to:
 * [Linked Dashboards](/docs/dashboards/panels/modify-chart#Modify-general-settings)
 * Recommended Dashboards - Currently, only dashboards from the Kubernetes App are supported.
 
-#### Infrastructure tab
+### Custom dashboards
 
-The **Infrastructure** tab provides the following **Troubleshooting Links** for related Entities and Environments. To investigate, click an icon to launch another feature against the entity or environment. An icon is not available if it's irrelevant. 
+You can make your own custom dashboards to show up in the view by using the stack linking capability within Dashboards (New).
 
-* ![explore-icon-small](/img/kubernetes/explore-icon-small.png) Explore
-* ![raw-logs-icon](/img/kubernetes/raw-logs-icon.png) Logs
-* ![traces-icon](/img/kubernetes/traces-icon.png) Traces
-* ![metrics-icon](/img/kubernetes/metrics-icon.png) Metrics
+In order to link a dashboard to an existing Kubernetes hierarchy, your entity key in Stack Linking must be the same as the explored entity on the view.
 
-![infrastructure](/img/kubernetes/infrastructure.png)
-
-### Custom dashboards in Explore View
-
-You can make your own custom dashboards to show up in the Explore view by using the stack linking capability within Dashboards (New).
-
-In order to link a dashboard to an existing Kubernetes hierarchy, your entity key in Stack Linking must be the same as the explored entity on the Explorer View.
-
-For example, if you want you custom Kubernetes deployment dashboard to show up in explorer, you will have to add the following entities in the stack linking (as shown below), since those entities are used as filters on the Explore View:
+For example, if you want you custom Kubernetes deployment dashboard to show up in explorer, you will have to add the following entities in the stack linking (as shown below), since those entities are used as filters on the view:
 
 * Cluster
 * Namespace

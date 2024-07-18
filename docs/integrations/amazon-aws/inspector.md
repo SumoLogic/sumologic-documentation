@@ -119,6 +119,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
+## Upgrading the Amazon Inspector app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing the Amazon Inspector Overview dashboard
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

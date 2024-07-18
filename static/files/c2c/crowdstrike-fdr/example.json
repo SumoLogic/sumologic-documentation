@@ -13,9 +13,6 @@
         "SqsQueueURL":"https://sqs.us-west-1.amazonaws.com/***/***",
         "multilineEnabled":false,
         "accessKeyId":"********",
-        "fields":{
-          "_siemForward":false
-        },
         "category":"Sumo/FDR",
         "timestampFormatAutoDetection":false,
         "s3Region":"us-west-1",

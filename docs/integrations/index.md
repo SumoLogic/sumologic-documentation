@@ -2,7 +2,10 @@
 slug: /integrations
 title: Apps and Integrations
 description: Documentation for Sumo Logic apps and integrations.
-tags: [app, apps, app catalog, integrations]
+keywords:
+  - apps
+  - app catalog
+  - integrations
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,6 +15,8 @@ import Iframe from 'react-iframe';
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
 
 In this section, you'll find documentation for our **App Catalog**, encompassing Sumo Logic apps, webhooks, and other integrations.
+
+To access the App Catalog, in the main Sumo Logic menu select **App Catalog**.
 
 When you install our apps, they will be tailored to your source configurations and placed in your preferred folder. This setup allows you to start gaining insights from your data sources through [Dashboards](/docs/dashboards) and example searches designed for common use cases.
 

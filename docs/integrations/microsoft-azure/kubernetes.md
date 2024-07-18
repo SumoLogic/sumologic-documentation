@@ -128,7 +128,7 @@ _sourceCategory="azure/aks" "kube-scheduler"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs for the Kubernetes and AKS - Control Plane
+## Collecting logs for the Kubernetes and AKS - Control Plane
 
 The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
@@ -165,7 +165,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 Now that you have set up collection for AKS, you can install the Sumo Logic app for AKS and access the pre-configured Kubernetes dashboards for visibility into your AKS environment from a single-pane-of-glass.
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
+All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 

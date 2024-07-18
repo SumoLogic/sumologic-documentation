@@ -183,7 +183,7 @@ _sourceCategory=ArmisDashboards id
 | count_distinct(id)
 ```
 
-## Collecting Logs for Armis API
+## Collecting logs for Armis API
 
 This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
 
@@ -192,6 +192,18 @@ This section explains how to collect logs from Armis API and ingest them into Su
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Armis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Armis app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing the Armis dashboards
 

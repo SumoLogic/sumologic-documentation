@@ -1,7 +1,6 @@
 ---
 title: Qualys WAS
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

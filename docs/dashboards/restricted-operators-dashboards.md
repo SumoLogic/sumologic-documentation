@@ -17,7 +17,6 @@ The following operators cannot be used with dashboards:
 * [`Parse multi`](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex/#parse-multi)
 * `Sample` (internal-use operator)
 * [`Save`](/docs/search/search-query-language/search-operators/save)
-* [`Transaction`](/docs/search/search-query-language/transaction-analytics/transaction-operator/)
 
 ## Auto refresh restrictions
 

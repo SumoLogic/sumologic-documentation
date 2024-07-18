@@ -41,7 +41,7 @@ For example: `username,IPAddress,region`
 1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Merge Data**.
-1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="img/search/lookup-tables/merge-lookup-data.png" width="350"/>
+1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="Merge Lookup Data popup" width="350"/>
 1. Click **Upload**.
 1. Navigate to the .csv file and click **Open**.
 1. Click **Done**.

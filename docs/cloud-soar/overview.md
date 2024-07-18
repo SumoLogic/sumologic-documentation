@@ -85,7 +85,6 @@ Use the top menu to access:
 
 * <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/help-icon.png')} alt="Help icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
-* <img src={useBaseUrl('img/get-started/app-catalog-icon.png')} alt="App Catalog icon" style={{border: '1px solid gray'}} width="30"/> [**App Catalog**](/docs/integrations/). Open the App Catalog.
 * <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu). Configure Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/administration-icon.png')} alt="Administration icon" style={{border: '1px solid gray'}} width="30"/> [**Administration**](#administration-menu).  Administer Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/profile-icon-new.png')} alt="Profile icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your notification and [preference](/docs/get-started/account-settings-preferences/) settings.
@@ -159,7 +158,7 @@ Cloud SOAR provides automated investigation of indicators of compromise (IoCs) f
 
 ### War Room
 
-The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](http://localhost:3000/docs/cloud-soar/incidents-triage/#war-room).
+The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
 
 <img src={useBaseUrl('img/cloud-soar/overview-case-management.png')} alt="Case Management" style={{border: '1px solid gray'}} width="800" />
 
@@ -224,11 +223,11 @@ French language is now enabled in Cloud SOAR. It can be enabled under user profi
 
 Instant Messaging integration can be enabled from here.
 
-<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="550"/>
+<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="Instant Messaging dialog" style={{border: '1px solid gray'}} width="550"/>
 
 The same integration has to be updated under the user profile configuration.
 
-<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="750"/>
+<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="User profile dialog" style={{border: '1px solid gray'}} width="750"/>
 
 #### Incidents
 
@@ -262,11 +261,11 @@ In addition to the phase name, administrators can determine whether the phase is
 
 One or more queues may be configured which can be used to assign incidents to until they are ready to be assigned to users. Queues can be managed at the bottom of the General settings page.
 
-<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="650"/>
+<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="New Queue dialog" style={{border: '1px solid gray'}} width="650"/>
 
 Click the **+** button in the upper right-hand corner of the queue settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
 
-<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings dialog" style={{border: '1px solid gray'}} width="800"/>
 
 #### Internet Connection Settings
 

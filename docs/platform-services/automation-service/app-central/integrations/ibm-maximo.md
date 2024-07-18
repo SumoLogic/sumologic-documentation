@@ -1,7 +1,6 @@
 ---
 title: IBM Maximo
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -42,7 +42,7 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 - SLO-Violating Incident spent error budget
 - StatusPage updated
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>
@@ -147,7 +147,7 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/squadcast type "incident.triggered"
@@ -202,10 +202,21 @@ Follow the below steps to configure the Squadcast webhook.
 
 ### Installing the Squadcast app
 
-
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Squadcast app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Squadcast app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Squadcast dashboards
 

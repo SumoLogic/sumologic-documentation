@@ -63,7 +63,7 @@ Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
 
 
-## Collecting Logs and Metrics for the AWS Classic Load Balancer
+## Collecting logs and metrics for the AWS Classic Load Balancer
 
 ### Collect Metrics for AWS Classic Load Balancer
 
@@ -73,7 +73,7 @@ Sumo Logic supports collecting metrics using two source types
 
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 
-* ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account field”.
 
 
 ### Collecting Access Logs for AWS Classic Load Balancer
@@ -100,7 +100,9 @@ import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **loadbalancername** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the **loadbalancername** field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Field Extraction Rule(s)

@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
@@ -634,6 +634,18 @@ Exception: Invalid config
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+## Upgrading the MongoDB Atlas app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the MongoDB Atlas app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing MongoDB Atlas dashboards
 

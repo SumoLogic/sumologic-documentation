@@ -4,7 +4,7 @@
   <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
   <a href="https://help.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
-  <a href="https://twitter.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
+  <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
   <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
 </p>
 
@@ -14,9 +14,9 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For detailed guidelines, see [Contributor Guidelines](/docs/contributing).
+For detailed instructions, including our style guide, see [Contributor Guidelines](https://help.sumologic.com/docs/contributing).
 
-We recommend forking the repo, creating all content changes in branches, and submitting pull requests. We will work with you to get this content reviewed, tested, and merged for publishing.
+We recommend forking our repo, creating a new branch for your content changes, and submitting a pull request. We will help review, test, and merge the content for publishing.
 
 ## Building Locally
 

@@ -1,7 +1,6 @@
 ---
 title: Sumo Logic Notifications
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -35,7 +34,7 @@ Integration with Sumo Logic platform for monitors and Slack Notification.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
 1. Populate all the required fields (\*) and then click Save.
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the instance (more info on the URL here: [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs)).
+    * **Sumo Logic API URL**. URL to the API of the instance ([learn more](/docs/api)).
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
     * **Slack Bot/User OAuth Token**. To set up the Slack App, please refer to the documentation on configuring Slack integration within App Central. You'll require a Slack Bot/User OAuth Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>

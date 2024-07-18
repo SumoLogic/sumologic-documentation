@@ -31,7 +31,7 @@ This solution is currently supported for the following apps only:
 To use the Application Components Solution, you'll need to install a Terraform automation script.
 
 The Terraform script performs the following actions:
-* Creates Application Components View hierarchy in Explore.
+* Creates Application Components View hierarchy in [monitoring dashboards](/docs/dashboards/explore-view/).
 * Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/field-extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
 * Creates [Fields](/docs/manage/fields).
@@ -255,15 +255,15 @@ Sometimes if the fields are used in other resources like FERs, other collection 
 
 ## View Application Components Dashboards and Alerts
 
-This section shows how to use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This section shows how to use the [monitoring dashboards](/docs/dashboards/explore-view/) to navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 
 ### Navigate Application Components View
 
 To open the Application Components View:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Application Monitoring > Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  Kanso-->
-1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
-1. With the Application Components view selected in Explore, select an environment to view a list of its components.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  Kanso-->
+1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the panel.
+1. Select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.
 The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.

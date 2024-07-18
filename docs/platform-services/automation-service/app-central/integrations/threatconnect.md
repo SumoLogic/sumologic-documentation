@@ -1,7 +1,6 @@
 ---
 title: ThreatConnect
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -94,7 +94,7 @@ if (agent matches "Dolphin*","Dolphin", Browser) as Browser
 ```
 
 
-## Collecting Logs for IIS 7
+## Collecting logs for IIS 7
 
 This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
 
