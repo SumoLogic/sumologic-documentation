@@ -137,7 +137,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
-## Collecting Logs for the AWS Lambda App
+## Collecting logs for the AWS Lambda App
 
 This section provides instructions for setting up log and metric collection.
 

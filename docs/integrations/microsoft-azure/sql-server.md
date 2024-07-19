@@ -17,7 +17,7 @@ This App has been tested with following SQL Server versions:
 * Microsoft SQL Server 2012
 
 
-## Collecting Logs and Metrics for the Microsoft SQL Server App
+## Collecting logs and metrics for the Microsoft SQL Server App
 
 This section provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 

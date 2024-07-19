@@ -270,7 +270,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error 
 | sort by _timeslice
 ```
 
-## Collecting Logs and Metrics for the Amazon RDS app
+## Collecting logs and metrics for the Amazon RDS app
 
 Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or

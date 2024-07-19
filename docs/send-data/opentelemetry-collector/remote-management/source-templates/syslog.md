@@ -1,6 +1,6 @@
 ---
 id: syslog
-title: Syslog Source Template (Beta)
+title: Syslog Source Template
 sidebar_label: Syslog
 description: Learn about the Sumo Logic Syslog source template for OpenTelemetry.
 ---
@@ -24,8 +24,8 @@ The Syslog source template creates an OpenTelemetry configuration that can be pu
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
-- **`deployment.environment`**. User configured field at the time of collector installation. This identifies the environment where the host resides. For example: dev, prod, or qa.
-- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the group of host are identified.
+- **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). This identifies the group of hosts.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
 
 ## Prerequisite
@@ -43,17 +43,15 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 		
 ### Step 2: Configure the source template
 		
-In this step, you will configure the yaml required for Syslog Collection.
-		
-Below are the inputs required:
+In this step, you will configure the yaml required for Syslog Collection. Below are the inputs required for configuration:
 		
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags _sourceCategory with the value otel/localfile
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/syslog.
 - **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, **UDP** or **TCP**. 
 - **Port**. Enter the port number for agent to listen to. Make sure the devices are sending to the same port.
 
-You can add processing rules for logs collected. More details can be found [here](../processing-rules/index.md).
+**Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

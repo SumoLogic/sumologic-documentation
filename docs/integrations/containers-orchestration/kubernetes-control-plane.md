@@ -93,7 +93,7 @@ _sourceCategory = *controller*
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for the Kubernetes Control Plane app
+## Collecting logs and metrics for the Kubernetes Control Plane app
 
 See [Sumo Logic Kubernetes Collection](/docs/observability/kubernetes/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
 

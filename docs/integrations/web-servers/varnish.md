@@ -50,7 +50,7 @@ This app is tested with the following versions:
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for Varnish
+## Collecting logs and metrics for Varnish
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Varnish.
 
@@ -344,7 +344,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
    * For alerts applicable only to a specific cluster, your custom filter would be `cache_cluster=dev-varnish01`
    * For alerts applicable to all clusters that start with `varnish`-prod, your custom filter would be `cache_cluster=varnish-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `cache_cluster=dev-varnish01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click **Import.**
 6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.

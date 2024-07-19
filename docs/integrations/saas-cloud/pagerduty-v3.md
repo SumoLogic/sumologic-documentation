@@ -23,14 +23,14 @@ This section provides instructions for configuring a Sumo Logic Hosted Collector
 * [Create a PagerDuty V3 Webhook](#create-a-pagerduty-v3-webhook)
 
 
-### Event Types
+### Event types
 
 The Sumo Logic App for PagerDuty V3 ingests PagerDuty incident Webhooks V3 messages, that are triggered by events that occur in your PagerDuty account and Services.
 
 For more information on the incident messages supported in Webhooks V3, see the [PagerDuty documentation](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview).
 
 
-### Sample logs
+### Sample log messages
 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 

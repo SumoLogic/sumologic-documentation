@@ -99,9 +99,9 @@ More configuration examples (i.e. OpenShift) can found seen in [this document](h
 
 ## Viewing Data In Sumo Logic
 
-Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards]/docs/integrations/containers-orchestration/kubernetes#installing-the-kubernetes-app or [open Kubernetes view](/docs/observability/kubernetes/monitoring#open-kubernetes-views) in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
+Once you have completed installation, you can [install the Kubernetes App and view the dashboards](/docs/integrations/containers-orchestration/kubernetes#installing-the-kubernetes-app) or [open Kubernetes view](/docs/observability/kubernetes/monitoring#open-kubernetes-views) in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
-<img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} />
+<img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} alt="A Kubernetes Cluster Overview dashboard in Sumo Logic showing CPU utilization (12.27%), memory utilization (45.19%), disk space usage (21.06%), dropped network traffic (0%), total CPUs (4), total memory (74,964.75 MB), errors by namespace (2,443 in 'sumologic'), and pod status in various namespaces with green for running pods and red for issues."/>
 
 ## Customizing Installation
 
@@ -232,8 +232,7 @@ See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-colle
 The daemonset/statefulset fails to create the pods in Openshift environment due to the request of elevated privileges, like HostPath mounts,
 privileged: true, etc.
 
-If you wish to install the chart in the Openshift Platform, it requires a SCC resource which is only created in Openshift (detected via API
-capabilities in the chart), you can add the following configuration to `user-values.yaml`:
+If you wish to install the chart in the Openshift Platform, it requires a SCC resource which is only created in Openshift (detected via API capabilities in the chart), you can add the following configuration to `user-values.yaml`:
 
 ```yaml title=user-values.yaml
 sumologic:

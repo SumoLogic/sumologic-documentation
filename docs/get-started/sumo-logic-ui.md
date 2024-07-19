@@ -171,7 +171,7 @@ It's easy to view dashboards, searches, and folders that have been shared with y
 To see content that has been shared with you, do the following:
 
 1. Click the **Clock** icon at the top of the left nav bar.
-1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="img/get-started/ui/Dash3.png" width="200"/>
+1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="Dropdown menu with Recently Opened By and Recently Shared With Me options" width="200"/>
 
 ### Pin and manage searches
 
