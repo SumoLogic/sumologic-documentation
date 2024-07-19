@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [RabbitMQ](https://www.rabbitmq.com/getstarted.html) app is a unified log app. Preconfigured dashboards provide insight into error logs. RabbitMQ logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The [RabbitMQ](https://www.rabbitmq.com/getstarted.html) app is a unified log app. Preconfigured dashboards provide insight into error logs and metrics. RabbitMQ logs and metrics are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
 
@@ -19,17 +19,27 @@ The [RabbitMQ](https://www.rabbitmq.com/getstarted.html) app is a unified log ap
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of RabbitMQ App install if not already present.
 
-* `messaging.cluster.name`. User configured. Specify the user-friendly cluster name which RabbitMQ belongs to.
-* `sumo.datasource`. Has fixed value of **rabbitmq**.
+* **`sumo.datasource`**. Fixed value of **rabbitmq**.
+* **`messaging.system`**. Fixed value of **rabbitmq**.
+* **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the rabbitmq env resides, such as `dev`, `prod`, or `qa`.
+* **`messaging.cluster.name`**. User configured. Enter a name to uniquely identify your Rabbitmq cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 
 ## Prerequisites
+
+### For metrics collection
+
+This RabbitMQ receiver fetches stats from a RabbitMQ node using the [RabbitMQ Management Plugin](https://www.rabbitmq.com/docs/management) and converts them to OpenTelemetry metrics
+
+### For logs collection
 
 This section provides instructions for configuring log collection for RabbitMQ running on a non-Kubernetes environment for the Sumo Logic App for RabbitMQ. By default, RabbitMQ logs are stored in a log file.
 
 Follow the instructions to set up log collection:
 
-1. **Configure logging in RabbitMQ**. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
-2. **Configure RabbitMQ to write log lines to a local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the `RabbitMQ.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
+
+1. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
+2. Configure RabbitMQ to write log lines to a local file. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the `RabbitMQ.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
   ```
   log.dir = /var/log/rabbitmq
   log.file = rabbitmq.log
@@ -74,9 +84,18 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for RabbitMQ Collection. Path of the log file configured to capture RabbitMQ logs is needed to be given here.
+OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+In this step, you will configure the yaml file required for RabbitMQ Collection.
+
+Below are the inputs required:
+
+- **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
+- **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
+
+The log file path configured to capture rabbitmq logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
+
+You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -164,6 +183,8 @@ Here's a sample log message you'd find in Non-Kubernetes environments.
 
 ## Sample queries
 
+### Logs
+
 This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
 
 ```sql title="Query String"
@@ -173,10 +194,26 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 | parse "* * [*]" as date,time,severity | count by severity
 ```
 
+### Metrics
+
+This sample query is from the **RabbitMQ - Metrics dashboard** > **Average Number of Consumers**  panel.
+
+```sql sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
+| avg by messaging.cluster.name 
+| sum
+```
+
+
 ## Viewing RabbitMQ Dashboards
 
-### Overview
+### Logs
 
-The **RabbitMQ - Overview** dashboard gives you an at-a-glance view of Error messages, error by severity, top and last 10 errors, Broker and Event Start/Add log messages.
+The **RabbitMQ - Logs** dashboard gives you an at-a-glance view of Error messages, error by severity, top and last 10 errors, Broker and Event Start/Add log messages.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Logs.png' alt="RabbitMQ Logs dashboards" />
+
+### Metrics
+
+The **RabbitMQ - Metrics** dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queue, exchange, consumer, messages.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Metrics.png' alt="RabbitMQ Metrics dashboards" />
