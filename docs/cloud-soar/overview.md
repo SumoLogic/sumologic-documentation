@@ -223,11 +223,11 @@ French language is now enabled in Cloud SOAR. It can be enabled under user profi
 
 Instant Messaging integration can be enabled from here.
 
-<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="550"/>
+<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="Instant Messaging dialog" style={{border: '1px solid gray'}} width="550"/>
 
 The same integration has to be updated under the user profile configuration.
 
-<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="750"/>
+<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="User profile dialog" style={{border: '1px solid gray'}} width="750"/>
 
 #### Incidents
 
@@ -261,11 +261,11 @@ In addition to the phase name, administrators can determine whether the phase is
 
 One or more queues may be configured which can be used to assign incidents to until they are ready to be assigned to users. Queues can be managed at the bottom of the General settings page.
 
-<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="650"/>
+<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="New Queue dialog" style={{border: '1px solid gray'}} width="650"/>
 
 Click the **+** button in the upper right-hand corner of the queue settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
 
-<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings dialog" style={{border: '1px solid gray'}} width="800"/>
 
 #### Internet Connection Settings
 
