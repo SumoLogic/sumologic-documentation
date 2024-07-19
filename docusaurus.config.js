@@ -251,6 +251,12 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
+    announcementBar: {
+      id: 'announcementBar',
+      content: '<b>Temporary Search Disruption</b>: Our site search may be intermittently down for maintenance. We appreciate your patience.',
+      backgroundColor: '#FFECB3',
+      textColor: '#000000',
+    },
     colorMode: {
       defaultMode: 'light',
     },
