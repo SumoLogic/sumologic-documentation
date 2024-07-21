@@ -33,11 +33,11 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
-1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" style={{border: '1px solid gray'}} width="800" />
-4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" style={{border: '1px solid gray'}} width="800" />
-5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" style={{border: '1px solid gray'}} width="800" />
+3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="Add Source link on the Collection tab" style={{border: '1px solid gray'}} width="800" />
+4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="TTP Logs & Metrics tile on the Collection tag" style={{border: '1px solid gray'}} width="800" />
+5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="Source configuration page" style={{border: '1px solid gray'}} width="800" />
 6. **Name**. Enter a name for the source.
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
@@ -51,14 +51,14 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 In this step, you create a webhook that points to the HTTP source.
 
-1. Go to **Manage Data > Monitoring** and select the **Connections** tab. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="connections.png" style={{border: '1px solid gray'}} width="800" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso--> <br/><img src={useBaseUrl('img/cse/connections.png')} alt="Connections" style={{border: '1px solid gray'}} width="800" />
 2. Click the plus sign (+) icon.
 3. On the **Select Connection Type** page, click **Webhook.**
 4. Give it a name and input the URL from the HTTP Endpoint as your URL.
 5. On the **Create New Webhook** page:
     1. **Name**. Enter a name for the Webhook.
     2. **URL**. Enter the URL of the HTTP Source you created above.
-    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" style={{border: '1px solid gray'}} width="500"/>
+    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="Create New Webhook page" style={{border: '1px solid gray'}} width="500"/>
 
 ## Step 3: Create search query
 
@@ -73,13 +73,13 @@ In this step, you schedule the search you created above to send results to the W
 2. On the Save Item popup:
     1. **Name**. Enter a name for your search,
     2. **Time range**. Select a time range.
-    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="save-item-inv.png" style={{border: '1px solid gray'}} width="450"/>
+    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="Save Item dialog" style={{border: '1px solid gray'}} width="450"/>
     4. The popup refreshes.
     5. **Run Frequency**.
     6. **Time range for scheduled search**.
     7. **Timezone for scheduled search**.
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
-    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" style={{border: '1px solid gray'}} width="450"/>
+    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="Refreshed Save Item dialog" style={{border: '1px solid gray'}} width="450"/>
 
 ## Cloud SIEM inventory schema
 

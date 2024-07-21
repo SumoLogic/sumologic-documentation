@@ -94,6 +94,43 @@ Get the logs from that pod:
 kubectl logs POD_NAME -f
 ```
 
+### Error: values don't meet the specifications of the schema(s)
+
+If you see `Error: values don't meet the specifications of the schema(s) in the following chart(s): opentelemetry-operator...` from the logs, it means that your configuration for `opentelemetry-operator` keys in values.yaml file is not correct.
+
+To fix this issue, please see the changes listed below:
+
+#### Moved:
+* From `opentelemetry-operator.instrumentationJobImage` to `instrumentation.instrumentationJobImage`
+* From `opentelemetry-operator.createDefaultInstrumentation` to `instrumentation.createDefaultInstrumentation`
+* From `opentelemetry-operator.instrumentationNamespaces` to `instrumentation.instrumentationNamespaces`
+* From `opentelemetry-operator.instrumentation.dotnet.traces` to `instrumentation.dotnet.traces`
+* From `opentelemetry-operator.instrumentation.dotnet.metrics` to `instrumentation.dotnet.metrics`
+* From `opentelemetry-operator.instrumentation.dotnet.extraEnvVars` to `instrumentation.dotnet.extraEnvVars`
+* From `opentelemetry-operator.instrumentation.java.traces` to `instrumentation.java.traces`
+* From `opentelemetry-operator.instrumentation.java.metrics` to `instrumentation.java.metrics`
+* From `opentelemetry-operator.instrumentation.java.extraEnvVars` to `instrumentation.java.extraEnvVars`
+* From `opentelemetry-operator.instrumentation.nodejs` to `instrumentation.nodejs`
+* From `opentelemetry-operator.instrumentation.python.traces` to `instrumentation.python.traces`
+* From `opentelemetry-operator.instrumentation.python.metrics` to `instrumentation.python.metrics`
+* From `opentelemetry-operator.instrumentation.python.extraEnvVars` to `instrumentation.python.extraEnvVars`
+
+#### Changed:
+* From `opentelemetry-operator.instrumentation.dotnet.repository` to `opentelemetry-operator.autoInstrumentationImage.dotnet.repository`
+* From `opentelemetry-operator.instrumentation.dotnet.tag` to `opentelemetry-operator.autoInstrumentationImage.dotnet.tag`
+* From `opentelemetry-operator.instrumentation.java.repository` to `opentelemetry-operator.autoInstrumentationImage.java.repository`
+* From `opentelemetry-operator.instrumentation.java.tag` to `opentelemetry-operator.autoInstrumentationImage.java.tag`
+* From `opentelemetry-operator.instrumentation.nodejs.repository` to `opentelemetry-operator.autoInstrumentationImage.nodejs.repository`
+* From `opentelemetry-operator.instrumentation.nodejs.tag` to `opentelemetry-operator.autoInstrumentationImage.nodejs.tag`
+* From `opentelemetry-operator.instrumentation.python.repository` to `opentelemetry-operator.autoInstrumentationImage.python.repository`
+* From `opentelemetry-operator.instrumentation.python.tag` to `opentelemetry-operator.autoInstrumentationImage.python.tag`
+
+#### Deleted:
+* `opentelemetry-operator.instrumentation.dotnet.image`
+* `opentelemetry-operator.instrumentation.java.image`
+* `opentelemetry-operator.instrumentation.nodejs.image`
+* `opentelemetry-operator.instrumentation.python.image`
+
 ## Namespace configuration
 
 The following `kubectl` commands assume you are in the correct namespace `sumologic`. By default, these commands will use the namespace
@@ -986,7 +1023,7 @@ Add the following configuration to your `user-values.yaml`:
 debug:
   sumologicMock:
     enabled: true
-  enableLocalMode: tru
+  enableLocalMode: true
 ```
 
 And then, you can see throughput in the Sumo Logic Mock logs:

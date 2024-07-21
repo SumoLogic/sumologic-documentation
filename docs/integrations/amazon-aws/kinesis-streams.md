@@ -64,7 +64,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | count by error_code, error_msg, eventName, userName, sourceIPAddress
 ```
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams app
+## Collecting logs and metrics for the Amazon Kinesis - Streams app
 
 ### Collecting Metrics
 
@@ -103,6 +103,18 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Amazon Kinesis - Streams app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Kinesis - Streams app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Amazon Kinesis - Streams dashboards​
 

@@ -1,7 +1,6 @@
 ---
 title: Fidelis Elevate Network
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

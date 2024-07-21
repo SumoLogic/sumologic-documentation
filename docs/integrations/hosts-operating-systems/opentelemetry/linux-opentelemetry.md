@@ -23,9 +23,10 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
 
-### Across apps
-
-- **`sumo.datasource`** - has a fixed value of **linux**.
+- **`sumo.datasource`**. Has a fixed value of `linux`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed.
 
 ## Prereqisites
 This app is based on the following log files from the Ubuntu Linux machine.

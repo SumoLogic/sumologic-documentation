@@ -46,7 +46,7 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for ActiveMQ
+## Collecting logs and metrics for ActiveMQ
 
 This App has been tested with following ActiveMQ versions:
 * 5.16.2.
@@ -271,7 +271,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
 3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear. Enter the following options:
     * **Rule Name**. Enter the name as **App Observability - Messaging**.

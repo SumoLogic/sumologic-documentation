@@ -17,7 +17,8 @@ The list of supported platforms can be found [here](https://github.com/SumoLogic
 
 ## Log types
 
-Amazon EKS utilizes the following log types:
+The Amazon EKS - Control Plane app utilizes the following CloudWatch Logs:
+
 * **Kubernetes API server component logs (api)**. The cluster API server is the control plane component that exposes the Kubernetes API.
 * **Audit (audit)**. Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
 * **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (RBAC) authentication using IAM credentials.
@@ -123,7 +124,7 @@ and _sourceName = kube-apiserver-audit*
 | limit 10
 ```
 
-## Collecting Logs and Metrics for the Amazon EKS - Control Plane app
+## Collecting logs and metrics for the Amazon EKS - Control Plane app
 
 This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
 * Setting up collection and installing the Sumo Logic Kubernetes app.
@@ -154,7 +155,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by going to the **Explore** tab side navigation and clicking **Cluster**.
+All the dashboards are linked to the [monitoring dashboards](/docs/dashboards/explore-view/) so they can be easily accessed.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane

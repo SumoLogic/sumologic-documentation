@@ -24,9 +24,11 @@ import Theme from '../reuse/dark-light-theme.md';
 
 ### Cloud SOAR menus
 
-<!-- Kanso. Remove comment tags at GA. Make "Cloud SOAR menus" an H2.
+<!--Kanso 
 ### Classic UI
--->
+
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
+ Kanso-->
 
 #### Top menu
 
@@ -47,8 +49,10 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
-<!-- Kanso. Remove comment tags at GA.
+<!--Kanso 
 ### New UI
+
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
 
 #### Cloud SOAR sidebar menu
 
@@ -81,7 +85,6 @@ Use the top menu to access:
 
 * <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/help-icon.png')} alt="Help icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
-* <img src={useBaseUrl('img/get-started/app-catalog-icon.png')} alt="App Catalog icon" style={{border: '1px solid gray'}} width="30"/> [**App Catalog**](/docs/integrations/). Open the App Catalog.
 * <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu). Configure Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/administration-icon.png')} alt="Administration icon" style={{border: '1px solid gray'}} width="30"/> [**Administration**](#administration-menu).  Administer Sumo Logic features, including for Cloud SOAR.
 * <img src={useBaseUrl('img/get-started/profile-icon-new.png')} alt="Profile icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your notification and [preference](/docs/get-started/account-settings-preferences/) settings.
@@ -120,8 +123,8 @@ Use the **Administration** menu to access:
 * [**General**](#general-settings). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
--->
-
+ Kanso-->
+ 
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
@@ -155,7 +158,7 @@ Cloud SOAR provides automated investigation of indicators of compromise (IoCs) f
 
 ### War Room
 
-The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](http://localhost:3000/docs/cloud-soar/incidents-triage/#war-room).
+The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
 
 <img src={useBaseUrl('img/cloud-soar/overview-case-management.png')} alt="Case Management" style={{border: '1px solid gray'}} width="800" />
 
@@ -195,8 +198,10 @@ The following sections detail the various setup and configuration options for th
 
 ### General settings
 
-To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/> in the top right and select **Settings**.
-
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. 
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access General settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
+ Kanso-->
 The following sections describe available settings.
 
 #### System
@@ -218,11 +223,11 @@ French language is now enabled in Cloud SOAR. It can be enabled under user profi
 
 Instant Messaging integration can be enabled from here.
 
-<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="550"/>
+<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="Instant Messaging dialog" style={{border: '1px solid gray'}} width="550"/>
 
 The same integration has to be updated under the user profile configuration.
 
-<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="messaging integration" style={{border: '1px solid gray'}} width="750"/>
+<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="User profile dialog" style={{border: '1px solid gray'}} width="750"/>
 
 #### Incidents
 
@@ -256,11 +261,11 @@ In addition to the phase name, administrators can determine whether the phase is
 
 One or more queues may be configured which can be used to assign incidents to until they are ready to be assigned to users. Queues can be managed at the bottom of the General settings page.
 
-<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="650"/>
+<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="New Queue dialog" style={{border: '1px solid gray'}} width="650"/>
 
 Click the **+** button in the upper right-hand corner of the queue settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
 
-<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings dialog" style={{border: '1px solid gray'}} width="800"/>
 
 #### Internet Connection Settings
 
@@ -277,7 +282,7 @@ Access to a specific incident with restricted privileges needs to be granted to 
 
 ##### Create a group
 
-1. In the upper-right corner of the Cloud SOAR UI, click the cog icon <img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" style={{border: '1px solid gray'}} width="20"/> and select  **Automation**.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  Kanso-->
 1. On the left navigation bar, select **User Management** > **Groups**. The **Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 1. Click the **+** icon next to **Groups**. The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.

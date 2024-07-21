@@ -7,7 +7,7 @@ description: Connects to your GitHub repository at the Organization or Repositor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="55"/>
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
@@ -22,7 +22,7 @@ Make sure not to select the same webhook event type at multiple levels (i.e., en
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
-## Event Types
+## Event types
 
 The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 * Fork
@@ -116,7 +116,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-## Collecting Logs for GitHub
+## Collecting logs for GitHub
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
@@ -159,7 +159,7 @@ To configure a GitHub Webhook:
 
 Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
-1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 2. Add Field ‎**x-github-event**‎.<br/><img src={useBaseUrl('img/integrations/app-development/Field_x-github-event.png')} alt="Field_GitHub" />
 
 
@@ -174,7 +174,8 @@ import AppInstall from '../../reuse/apps/app-install.md';
 #### Troubleshooting
 
 If you are getting the following error after installing the app - `Field x-github-event not found, please check the spelling and try again` - do the following to resolve:
-1. In Sumo Logic, click **Manage Data** > **Logs** > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Delete your **x-github-event**.
 2. Add it again using the **Dropped Fields** option.
 
 

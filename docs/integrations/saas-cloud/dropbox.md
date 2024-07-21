@@ -92,7 +92,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Active Team Members"
 _sourceCategory="dropboxSource"
@@ -112,7 +112,7 @@ _sourceCategory="dropboxSource"
 | sort by _timeslice
 ```
 
-## Collecting Logs for Dropbox app
+## Collecting logs for Dropbox app
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app.
 
@@ -121,6 +121,18 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Dropbox app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Dropbox app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Dropbox dashboards
 

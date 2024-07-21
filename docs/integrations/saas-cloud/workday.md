@@ -58,7 +58,7 @@ Workday app logs are all in JSON format. The Workday app uses two types of logs 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
@@ -213,6 +213,18 @@ This section provides instructions on how to install the Workday app, as well as
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+## Upgrading the Workday app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Workday app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Workday dashboards
 

@@ -1,7 +1,6 @@
 ---
 title: VMware Carbon Black Cloud Enterprise EDR
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -34,8 +33,7 @@ VMware Carbon Black Cloud Enterprise EDR Integration Interact with watchlists, f
 
 ## VMware Carbon Black Cloud Enterprise EDR in Automation Service and Cloud SOAR
 
-1. For configuring VMware Carbon Black Cloud Enterprise EDR integration in the Sumo Logic Cloud SOAR, login into the application, expand the configuration menu in the top right corner by hovering over the gear icon, and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-6.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-7.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Enterprise EDR integration and click on it. The integration details will appear. Click on the "+" button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-8.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="700"/>
 1. Populate all the required fields (\*) and then click **SAVE**.
    * **Label**. The name of the resource.

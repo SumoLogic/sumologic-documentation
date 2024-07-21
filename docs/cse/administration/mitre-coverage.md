@@ -35,10 +35,12 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      allowfullscreen
      />
 
-## MITRE ATT&CK Threat Coverage Explorer
+## User interface 
 
-To open the MITRE ATT&CK Threat Coverage Explorer, select **Content** in the top menu and select **MITRE ATT&CK Coverage**.
-
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
+ Kanso-->
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" style={{border: '1px solid gray'}} width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. Coverage data is updated on the page once a day.
@@ -62,7 +64,7 @@ To open the MITRE ATT&CK Threat Coverage Explorer, select **Content** in the top
    * Filter not applied
 1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
 
-### Benefits
+## Benefits
 
 * Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions.
 * Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
@@ -72,7 +74,7 @@ To open the MITRE ATT&CK Threat Coverage Explorer, select **Content** in the top
 * Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage.
 * Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment.
 
-### Technique details
+## Technique details
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
@@ -83,7 +85,7 @@ Select the following for details:
 * **Sub-Techniques**. See the sub-techniques for that technique.
 * **Rules**. See a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule.
 
-### Visual Settings
+## Visual Settings
 
 Click this button <img src={useBaseUrl('img/cse/mitre-visual-settings-button.png')} alt="Visual settings button" style={{border: '1px solid gray'}} width="30"/> to launch the **Visual Settings** dialog. 
 
@@ -176,7 +178,7 @@ Select the values to filter:
 
 ## Audit logging for MITRE ATT&CK coverage
 
-MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
 ```
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage

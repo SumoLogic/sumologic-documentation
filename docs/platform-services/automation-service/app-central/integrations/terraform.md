@@ -1,7 +1,6 @@
 ---
 title: Terraform
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -41,8 +40,7 @@ Terraform is an open-source infrastructure as code software tool that provides a
 
 ## Terraform in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-3.png')} style={{border:'1px solid gray'}} alt="terraform" width="300"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-4.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
 1. Populate all the required fields (\*) then click **SAVE SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>

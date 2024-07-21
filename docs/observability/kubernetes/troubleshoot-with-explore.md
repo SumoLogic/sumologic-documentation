@@ -1,11 +1,11 @@
 ---
 id: troubleshoot-with-explore
-title: Troubleshoot Kubernetes with Explore
+title: Troubleshoot with Kubernetes Views
 sidebar_label: Troubleshooting
-description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
+description: Kubernetes views allow you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
-[Explore navigation](/docs/dashboards/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+[Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
@@ -46,7 +46,8 @@ In this troubleshooting scenario, we detect a problem with a cluster while nav
 
 To troubleshoot a problem with our cluster, we performed the following steps:
 
-1. At the top of the navigation panel, we clicked **Explore By**, selected **Kubernetes Service View**, then chose the cluster we wanted to explore, and selected the Dashboards **Kubernetes - Cluster Overview** option on the upper right menu bar.<br/> ![TSS_Cluster_Overview_dialog.png](/img/kubernetes/TSS_Cluster_Overview_dialog.png)<br/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  We clicked the **+ New** button at the top of the screen and selected **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, we selected **Observability**, and then under **Infrastructure Monitoring** we selected **Kubernetes**. Kanso-->
+1. In the upper-left corner of the screen, we selected **Kubernetes Service View**, then chose the cluster we wanted to explore, and selected the Dashboards **Kubernetes - Cluster Overview** option on the upper right menu bar.<br/> ![TSS_Cluster_Overview_dialog.png](/img/kubernetes/TSS_Cluster_Overview_dialog.png)<br/>
 The Dashboards view on the right displays panels that show the statuses of the clusters.
 1. In our scenario, we selected the **prod-loggen** namespace in the **Pods Running** panel and discovered 2 pods that were not functioning (shown in Red). <br/>![TSS_Cluster_Pods-Running_panel.png](/img/kubernetes/TSS_Cluster_Pods-Running_panel.png)
 1. We hovered our cursor over one of the failed pods for a detailed view of the failed services.<br/> ![TSS_Failed_Pod_details.png](/img/kubernetes/TSS_Failed_Pod_details.png)<br/> In our scenario, we focused on PagerDuty pod and made a note of the pod name, including the last 5 characters that follow the hyphen (in this example we are looking at **pagerduty-84d685f79f-4wjln**). Pods are ephemeral and the characters after **pagerduty-** constantly change, so it's important to make a note of them for further investigation. 
@@ -72,4 +73,4 @@ After further investigation, we discovered that Kenneth left the company and wa
 
 ## More Information
 
-* [Explore navigation](/docs/dashboards/explore-view)
+* [Explore Monitoring Dashboards](/docs/dashboards/explore-view/#kubernetes-views)

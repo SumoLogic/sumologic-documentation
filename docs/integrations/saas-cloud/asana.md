@@ -53,7 +53,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Events by App Authorization"
 _sourceCategory="asana-app"
@@ -72,6 +72,18 @@ To set up [Cloud-to-Cloud Integration Asana Source](/docs/send-data/hosted-colle
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Asana app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Asana app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Asana dashboards
 

@@ -53,7 +53,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 | limit 5
 ```
 
-## Collecting Logs for Barracuda WAF app
+## Collecting logs for Barracuda WAF app
 
 This section shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
 
@@ -155,6 +155,18 @@ Now that you have configured log collection for Barracuda WAF, install the Sumo 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Barracuda WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Barracuda WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Barracuda WAF dashboards
 

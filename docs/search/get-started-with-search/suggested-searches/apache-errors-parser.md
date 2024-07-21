@@ -7,7 +7,7 @@ description: The following searches were built for use with the Apache Access Pa
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.
 
-You can also set up [threshold alerts](../../../alerts/scheduled-searches/receive-email-alerts.md) for the Critical Operations Errors to be notified in the event critical errors occur.
+You can also set up [threshold alerts](../../../alerts/scheduled-searches/create-email-alert.md) for the Critical Operations Errors to be notified in the event critical errors occur.
 
 To obtain the best results possible, be sure to make the following modifications to the example queries:
 

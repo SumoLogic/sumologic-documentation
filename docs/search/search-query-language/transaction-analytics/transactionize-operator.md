@@ -48,7 +48,7 @@ Syntax section. For example, 
 | `maxLogs = [n]` | The transaction ends if the number of log messages in the transaction exceeds the specified number.
 | `startsWith = [string] [;strict]` | Log messages that match the string start a new transaction. Example: `startsWith="foo"`<br/>By default, this is not strictly enforced and results could include groups that do not start with the specified string. The `;strict` option ensures any non-matching groups are not included. |
 | `endsWith = [string] [;strict]` | Log messages that match the string end the current transaction. Example: `endsWith="foo";strict`<br/>By default, this is not strictly enforced and results could include groups that do not end with the specified string. The `;strict` option ensures any non-matching groups are not included. |
-| `keepOrphans = [true or false]` | true by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​|
+| `keepOrphans = [true or false]` | false by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​|
 
 ## Limitations
 

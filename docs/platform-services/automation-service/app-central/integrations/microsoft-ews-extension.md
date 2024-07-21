@@ -1,7 +1,6 @@
 ---
 title: Microsoft EWS Extension
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

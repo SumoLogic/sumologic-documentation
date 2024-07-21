@@ -146,11 +146,10 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 
 ## Find a lookup table path
 
-When you run search operators that work with Lookup Tables (described in the following section), you need to know the path to the Lookup Table in the Sumo Logic Library. The path can be determined in several ways:
+When you run search operators that work with Lookup Tables (described in the following section), you need to know the path to the Lookup Table in the Sumo Logic Library. The path can be determined in a couple of ways:
 
 * From the **Actions** menu on the Lookup Table page. <br/>  ![copy-path-actions-menu.png](/img/search/lookup-tables/copy-path-actions-menu.png)
 * From the three-dot kebab menu for a Lookup Table in the Sumo Logic Library.  <br/>  ![copy-path-lib.png](/img/search/lookup-tables/copy-path-lib.png)
-* From the left-hand navigation menu  <br/>  ![copy-path-left-nav.png](/img/search/lookup-tables/copy-path-left-nav.png)
 
 ## Operators you use with Lookup Tables
 

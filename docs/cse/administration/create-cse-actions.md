@@ -53,7 +53,7 @@ What gets sent to the target system depends on the Action type. For some types�
 
 * The Entity the Insight fired on.
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
-* A link to the Insight in Cloud SIEM. <br/><img src={useBaseUrl('img/cse/received-email.png')} alt="Received email.png" width="600" />
+* A link to the Insight in Cloud SIEM. <br/><img src={useBaseUrl('img/cse/received-email.png')} alt="Example notification" width="600" />
 
 For the other Action types—AWS Simple Notification Service (SNS), Demisto (Cortex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
 
@@ -72,7 +72,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 
 ## Create an Action
 
-1. In the top menu click **Configuration**, and then under **Integrations** select **Actions**. 
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. Kanso-->
 1. On the **Actions** page, click **Create**.
 1. The **Create Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create Action dialog" style={{border: '1px solid gray'}} width="500" />
 1. **Name**. Enter a name that communicates what the Action does.
@@ -115,14 +115,14 @@ When you run this Action type for an Insight, Cloud SIEM sends the full Insight 
 1. **Create Incident API Endpoint**. Select `/incident/json`.
 1. **Extra Headers**. Enter any additional headers you want to send, as line-delimited key:value pairs.
 1. **Exclude Records**. Move the slider to the right if you don’t want to include Records in the notification.
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/demisto-action.png')} alt="Demisto action.png" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. <br/><img src={useBaseUrl('img/cse/demisto-action.png')} alt="Example Demisto action" style={{border: '1px solid gray'}} width="500" />
 
 ### Email
 
 This Action type sends an email notification.
 
 1. **Recipients**. Enter a comma-separated list of the email addresses to send the notification to.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/email-action.png')} alt="Email notification action.png" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/email-action.png')} alt="Example email action" style={{border: '1px solid gray'}} width="500" />
 
 When this Action runs on an Insight, the email notification contains:
 
@@ -149,7 +149,7 @@ in Cloud SIEM.
 1. **Include Signals**. Move the slider to the right to send the Signals associated with the Insight in the POST. 
 1. **Include Records**. Move the slider to the right to send the Records associated with the Signal in the POST. 
 1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected Record fields to include (instead of all Record fields).
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/http-post-v2.png')} alt="HTTP Post V2 action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. <br/><img src={useBaseUrl('img/cse/http-post-v2.png')} alt="Example HTTP Post V2 action" style={{border: '1px solid gray'}} width="500" />
 
 ### Microsoft Teams
 
@@ -162,7 +162,7 @@ Create a Webhook connection for the Microsoft Teams channel to which emails shou
 #### Configure Action in Cloud SIEM
 
 1. **URL**. Enter the URL for the Webhook connection you created above. 
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/microsoft-teams.png')} alt="Microsoft Teams action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. <br/><img src={useBaseUrl('img/cse/microsoft-teams.png')} alt="Example Microsoft Teams action" style={{border: '1px solid gray'}} width="500" />
 
 ### PagerDuty
 
@@ -170,7 +170,7 @@ This Action types sends a notification to PagerDuty.
 
 1. **Service Key**. Enter your PagerDuty service key.
 1. **Subdomain**. Enter your PagerDuty account subdomain.
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/pagerduty.png')} alt="PagerDuty action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. <br/><img src={useBaseUrl('img/cse/pagerduty.png')} alt="Example PagerDuty action" style={{border: '1px solid gray'}} width="500" />
 
 The notification contains:
 
@@ -192,7 +192,7 @@ Lookups will consume RF API credits.
 1. On the **Generate New Token** page:
     1. **Name**. Enter a name for the token. 
     1. **Integration**. Select “Sumologic” from the list of integrations.
-1. Click **Generate**.  <br/><img src={useBaseUrl('img/cse/rf-api-token.png')} alt="Recorded Future API token" style={{border: '1px solid gray'}} width="400" />
+1. Click **Generate**.  <br/><img src={useBaseUrl('img/cse/rf-api-token.png')} alt="Generate New API token dialog" style={{border: '1px solid gray'}} width="400" />
 1. Copy and save the token.
 
 #### Create Action in Cloud SIEM
@@ -200,13 +200,13 @@ Lookups will consume RF API credits.
 1. **API Key**. Enter the Recorded Future API token you generated for the Sumo Logic integration. 
 1. **Enrich Insights**. Move the slider to the right to enrich Insights.
 1. **Enrich Signals of Insights**. Move the slider to the right to enrich Signals.
-1. Click **Create**.<br/><img src={useBaseUrl('img/cse/recorded-future.png')} alt="Recorded Future action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.<br/><img src={useBaseUrl('img/cse/recorded-future.png')} alt="Example recorded Future action" style={{border: '1px solid gray'}} width="500" />
 
 ####  View Recorded Future Enrichments
 
 To view an Enrichment that’s been added to an Insight or Signal, navigate to the item and select the **Enrichments** tab.
 
-<img src={useBaseUrl('img/cse/rf-enrichments.png')} alt="Recorded Future enrichments" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/cse/rf-enrichments.png')} alt="Example recorded Future enrichments" style={{border: '1px solid gray'}} width="600" />
 
 ### Slack
 
@@ -214,7 +214,7 @@ This Action type sends a message to a Slack channel.
 
 1. **API Key**. Enter your Slack API key.
 1. **Channel**. Enter the Slack Channel that messages should go to.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack.png')} alt="Slack action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack.png')} alt="Example Slack action" style={{border: '1px solid gray'}} width="500" />
 
 If the Action was run on an Insight, the message contains:
 
@@ -233,4 +233,4 @@ Create a Webhook connection for the Slack channel to which Insights should be se
 #### Configure Action in Cloud SIEM
 
 1. **Webhook URL**. Enter the URL of the Webhook you created above.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack-webhook.png')} alt="Slack webhook action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack-webhook.png')} alt="Example Slack webhook action" style={{border: '1px solid gray'}} width="500" />

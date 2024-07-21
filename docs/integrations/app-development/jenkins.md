@@ -262,7 +262,7 @@ The Jenkins app uses the following log types:
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
@@ -412,6 +412,18 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Jenkins app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jenkins app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Jenkins dashboards​
 

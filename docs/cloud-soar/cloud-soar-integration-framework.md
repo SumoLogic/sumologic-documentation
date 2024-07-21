@@ -492,12 +492,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text
@@ -644,7 +644,7 @@ opt_11: <value>
 
 Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
-* `incidentCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
 * `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
 
@@ -694,6 +694,7 @@ When users interact with the custom action trigger button, they can provide a te
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
+show_modal: true        
 script:
  code: |
    import json
@@ -736,10 +737,56 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
+```json
+integration: 'Incident Tools'
+name: 'Custom trigger button'
+type: Trigger
+show_modal: false        
+script:
+ code: |
+   import json
+   import argparse
+   import requests
+   import sys
+   parser = argparse.ArgumentParser()
+   parser.add_argument('--incidentsDetail', help='incident before update', required=False) #param inherited by
+ hook defined in the yaml
+   parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
+   parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
+   args, unknown = parser.parse_known_args()
+   inc_det_after = json.loads(args.incidentsDetail)
+   incidentID = inc_det_after.get('id')
+   headers = {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer ' + args.token
+   }
+   end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl, incidentid=incidentID)
+   session = requests.Session()
+   session.verify = False
+   additional_info = inc_det_after.get('additional_info')
+   payload = {
+      "additional_info": additional_info,
+   }
+   incident = session.put(end_point, headers=headers, data=payload, proxies=None, timeout=(5, 60))
+   try:
+   incident.raise_for_status()
+   except Exception as e:
+   sys.stderr.write(str(e))
+   exit(0)
 
+check_not_null_field: 'opt_92' #specify that the custom field with internal id “opt_92” should be populated in
+order to display this button in the GUI.
+hook:
+ - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
+null
+```
 For other example YAML files, see:
 * [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
 * [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+#### show_modal
+
+Specifies whether to display the textual input. Default value is `true`. 
 
 #### check_not_null_field
 
@@ -1498,12 +1545,12 @@ fields:
     label: 'scheduler rate'
     type: text
     required: true
-    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: scheduler_expire
-    label: 'schedul expiration'
+    label: 'schedule expiration'
     type: text
     required: true
-    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+    hint: "schedule expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
   - id: exit_condition_path
     label: 'output path'
     type: text
@@ -1802,7 +1849,7 @@ output:
 ```
 And if you use that output into `textarea` as placeholder:
 
-<img src={useBaseUrl('img/cloud-soar/integration-framework-app-d-image-1.png')} alt="Textarea" width="600"/>
+<img src={useBaseUrl('img/cloud-soar/integration-framework-app-d-image-1.png')} alt="Text area" width="600"/>
 
 You will get a print HTML of aggregated elements
 
@@ -1835,4 +1882,4 @@ output:
 
 The array will be populated with not duplicated element:
 
-<img src={useBaseUrl('img/cloud-soar/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/integration-framework-app-e-image-4.png')} alt="Pipe function specified" width="800"/>

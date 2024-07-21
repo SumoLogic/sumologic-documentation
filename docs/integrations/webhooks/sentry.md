@@ -22,7 +22,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 - Comments
 - Errors
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>
@@ -511,7 +511,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/sentry" "project_slug"
@@ -564,6 +564,18 @@ Follow the below steps to configure the Sentry Webhook.
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Sentry app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sentry app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Sentry dashboards
 

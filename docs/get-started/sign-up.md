@@ -37,7 +37,7 @@ Next, you'll be taken to a brief two-step data collector installation process, w
 
 ### Set up Collector
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="icon" width="400" />
+1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" width="400" />
 1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
 1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
 
@@ -104,7 +104,7 @@ To sign up through AWS Marketplace:
     - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
 1. Click **Sign Up**.
 
-Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
+Sumo Logic sends you an email to activate your account.
 
 ### Activate your account
 
@@ -120,9 +120,7 @@ To activate your Sumo Logic Trial account:
 1. Fill out the **Activate Your Account** form.
 1. Click **Activate**.
 
-In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
-
-Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
+In a few minutes, your account is activated.
 
 ### Upgrade your account
 
