@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic app for [RabbitMQ](https://www.rabbitmq.com/getstarted.html) is a unified log solution that includes preconfigured dashboards offering insights into error logs and metrics. RabbitMQ logs and metrics are transmitted to Sumo Logic via the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+RabbitMQ logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). RabbitMQ metrics are sent through the [RabbitMQ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver) metrics receiver.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
 
@@ -29,7 +29,10 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-This RabbitMQ receiver fetches stats from a RabbitMQ node using the [RabbitMQ Management Plugin](https://www.rabbitmq.com/docs/management) and converts them to OpenTelemetry metrics.
+The RabbitMQ receiver supports RabbitMQ versions `3.8` and `3.9`.
+The RabbitMQ Management Plugin must be enabled by following the [official instructions](https://www.rabbitmq.com/management.html#getting-started).
+
+Also, a user with at least [monitoring](https://www.rabbitmq.com/management.html#permissions) level permissions must be used for monitoring.
 
 ### For logs collection
 
@@ -92,10 +95,14 @@ Below are the inputs required:
 
 - **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
 - **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
+- **username**. enter the RabbitMQ username.
+- **password**. enter the RabbitMQ password.
 
 The log file path configured to capture RabbitMQ logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
 
 You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+
+For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
