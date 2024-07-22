@@ -7,7 +7,7 @@ description: The owner of a Sumo Logic Free or Trial account may delete their Or
 This topic covers how to delete your organization from a Sumo Logic Free or Trial account and permanently close the account. It also provides instructions for cancelling a Sumo Logic licensed account. 
 
 :::info
-Accounts, if cancelled or closed, do not cancel any financial responsibilities outlined in the contract.
+Any financial obligations specified in the contract remain in effect even if an account is cancelled or closed.
 :::
 
 ## Close a Sumo Logic Free or Trial account
