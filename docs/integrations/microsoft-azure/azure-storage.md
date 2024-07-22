@@ -138,6 +138,12 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 ## View Azure Storage dashboards
 We highly recommend you view these dashboards in the [Azure Storage view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
+## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
