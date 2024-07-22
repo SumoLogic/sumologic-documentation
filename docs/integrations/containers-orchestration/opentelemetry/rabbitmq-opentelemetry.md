@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [RabbitMQ](https://www.rabbitmq.com/getstarted.html) app is a unified log app. Preconfigured dashboards provide insight into error logs and metrics. RabbitMQ logs and metrics are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The Sumo Logic app for [RabbitMQ](https://www.rabbitmq.com/getstarted.html) is a unified log solution that includes preconfigured dashboards offering insights into error logs and metrics. RabbitMQ logs and metrics are transmitted to Sumo Logic via the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
 
@@ -22,14 +22,14 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * **`sumo.datasource`**. Fixed value of **rabbitmq**.
 * **`messaging.system`**. Fixed value of **rabbitmq**.
 * **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the rabbitmq env resides, such as `dev`, `prod`, or `qa`.
-* **`messaging.cluster.name`**. User configured. Enter a name to uniquely identify your Rabbitmq cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* **`messaging.cluster.name`**. User configured. Enter a name to uniquely identify your RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 
 ## Prerequisites
 
 ### For metrics collection
 
-This RabbitMQ receiver fetches stats from a RabbitMQ node using the [RabbitMQ Management Plugin](https://www.rabbitmq.com/docs/management) and converts them to OpenTelemetry metrics
+This RabbitMQ receiver fetches stats from a RabbitMQ node using the [RabbitMQ Management Plugin](https://www.rabbitmq.com/docs/management) and converts them to OpenTelemetry metrics.
 
 ### For logs collection
 
@@ -38,7 +38,7 @@ This section provides instructions for configuring log collection for RabbitMQ r
 Follow the instructions to set up log collection:
 
 
-1. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
+1. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, and none. For details, visit the [RabbitMQ documentation](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, the log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
 2. Configure RabbitMQ to write log lines to a local file. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the `RabbitMQ.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
   ```
   log.dir = /var/log/rabbitmq
@@ -93,7 +93,7 @@ Below are the inputs required:
 - **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
 - **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
 
-The log file path configured to capture rabbitmq logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
+The log file path configured to capture RabbitMQ logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
 
 You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
 
