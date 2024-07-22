@@ -95,8 +95,8 @@ Below are the inputs required:
 
 - **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
 - **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
-- **username**. enter the RabbitMQ username.
-- **password**. enter the RabbitMQ password.
+- **username**. Enter the RabbitMQ username.
+- **password**. Enter the RabbitMQ password.
 
 The log file path configured to capture RabbitMQ logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
 
