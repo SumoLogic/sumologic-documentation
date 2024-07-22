@@ -118,22 +118,28 @@ Using OTLP HTTP is recommended:
 
 Alternatively, if required, you can use other supported formats as well:
 
+* OTLP gRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
+* OpenCensus: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:55678`
 * Jaeger GRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
 * Jaeger Thrift HTTP: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
 * Jaeger Thrift Compact (UDP): `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:6831`
+* Jaeger Thrift Binary: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:6832`
 * Zipkin: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:9411/api/v2/spans`
-* OTLP gRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
-* OTLP HTTP/**deprecated:** `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
 For example, when the default release name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
 * OTLP HTTP: `collection-sumologic-otelagent.sumologic:4318`
+* OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
+* OpenCensus: `collection-sumologic-otelagent.sumologic:55678`
 * Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`
 * Jaeger Thrift HTTP: `collection-sumologic-otelagent.sumologic:14268`
 * Jaeger Thrift Compact (UDP): `collection-sumologic-otelagent.sumologic:6831`
+* Jaeger Thrift Binary: `collection-sumologic-otelagent.sumologic:6832`
 * Zipkin: `collection-sumologic-otelagent.sumologic:9411/api/v2/spans`
-* OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
-* OTLP HTTP/deprecated: `collection-sumologic-otelagent.sumologic:55681`
+
+:::note
+`<RELEASE_NAME>-sumologic-otelagent` could be truncated. We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec). To avoid this please use short `<RELEASE_NAME>`. To check final endpoint name, list all services from `<NAMESPACE>` and look for service with configured ports from list above.
+:::
 
 ## Troubleshooting
 
