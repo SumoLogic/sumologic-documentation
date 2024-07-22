@@ -9,26 +9,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-The VMware app uses unified metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
+The VMware - OpenTelemetry app uses metrics from the VMware cloud computing virtualisation platform to enable monitoring of vCenter, datacenter, resource pool, cluster, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
-The dashboards provide insight into key metrics such as VM and hosts CPU, memory, disk utilization. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
+The dashboards provide insight into key metrics such as CPU, memory, disk utilization at different infrastructure level like vm, host, datacenter, resource pool and clusters. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
+
+VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
 See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for more information on VMware hybrid cloud.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
-
-## Fields creation in Sumo Logic for RabbitMQ
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-Schematics.png' alt="Schematics" />
 
 ## Prerequisites
+VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
-This section provides instructions for configuring metrics for the Sumo Logic app for VMWare.
+This receiver has been built to support ESXi and vCenter versions:
 
-#### Metric collection
+- 8
+- 7.0
 
-Metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry. A “Read Only” user assigned to a vSphere with permissions to the vCenter server, cluster and all subsequent resources being monitored must be specified in order for the receiver to retrieve information about them.
+A “Read Only” user assigned to a vSphere with permissions to the vCenter server, cluster and all subsequent resources being monitored must be specified in order for the receiver to retrieve information about them.
 
 ## Collection configuration and app installation
 
@@ -42,15 +43,24 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for RabbitMQ Collection. Path of the log file configured to capture RabbitMQ logs is needed to be given here.
+In this step, we will be configuring the yaml file required for VMWare Collection. Here are the list of parameters which are required:
 
-The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+- **Endpoint** to the vCenter Server or ESXi host that has the sdk path enabled. This is a required parameter. The expected format is `<protocol>://<hostname>`
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+i.e: `https://vcsa.hostname.localnet`
+- **Username** of User which has access to vcenter server
+- **Password** of User which has access to vcenter server
+- **collection_interval** this receiver collects metrics on an interval. If the vCenter is fairly large, this value may need to be increased. Valid time units are `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h` 
+
+You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+
+For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -72,7 +82,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Linux">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the VMWare instance which has access to vCenter or the vCenter itself.
 2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
@@ -81,7 +91,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the VMWare instance which has access to vCenter or the vCenter itself.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -90,7 +100,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the RabbitMq instance which needs to be monitored.
+1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the VMWare instance which has access to vCenter or the vCenter itself.
 2. Restart the otelcol-sumo process using the below command 
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
@@ -126,24 +136,6 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log messages
-
-Here's a sample log message you'd find in Non-Kubernetes environments.
-
-```
-2023-01-16 05:53:44.858 [info] <0.44.0> Application cowboy exited with reason: stopped
-```
-
-## Sample queries
-
-This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
-
-```sql title="Query String"
- %"sumo.datasource"="rabbitmq" %"messaging.cluster.name"=* host.name=*
-| json "log" as _rawlog nodrop
-| if(isEmpty(_rawlog),_raw,_rawlog) as _raw
-| parse "* * [*]" as date,time,severity | count by severity
-```
 
 ## Sample queries
 
@@ -165,11 +157,11 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
   "_source": "WIN-U8TUICHO2JM",
   "_metricId": "-nHlUFTEN-e35PT8M0bW4Q",
   "_sourceName": "vmware",
-  "host.group": "anemavmware",
+  "host.group": "sumovmware",
   "os.type": "windows",
   "sumo.datasource": "vmware",
   "_sourceCategory": "otel/vmware",
-  "deployment.environment": "anemavmware",
+  "deployment.environment": "sumovmware",
   "_contentType": "OpenTelemetry",
   "host.name": "WIN-U8TUICHO2JM",
   "metric": "vcenter.host.cpu.utilization",
