@@ -36,7 +36,7 @@ Tracing data from your services is sent through multiple local OpenTelemetry Col
 
 ### Installing or upgrading to the latest version
 
-Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v3.0.0/docs/installation.md) for the current version. Tracing is enabled by default.
+Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v4.9.0/docs/installation.md) for the current version. Tracing is enabled by default.
 
 If you plan to [auto-instrument your Java, Python, and JS applications in K8s environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
 
