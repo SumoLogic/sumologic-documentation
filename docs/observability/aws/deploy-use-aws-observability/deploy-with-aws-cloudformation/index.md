@@ -171,18 +171,18 @@ The below tables displays the response for each text box in this section.
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.  This indicates that all the resources have been created successfully in both Sumo Logic and AWS.
 1. If the AWS CloudFormation template has not run successfully, identify and fix any permission errors till the stack completes with a CREATE_COMPLETE status. See [Troubleshooting](#troubleshooting) for assistance with how to resolve these errors.
 
-## Modify the collector name and source categories
+## Modify the source categories
 
-The AWS Observability CloudFormation template creates collector and sources with pre-configured names and source categories. The capability to update the collector name and source categories has been added from version v2.1.0 and above.
+The AWS Observability CloudFormation template creates collector and sources with pre-configured names and source categories. The capability to update the source categories has been added from version v2.1.0 and above.
 
 :::note
 Do not update the source names as created by CloudFormation template in Sumo Logic. Updating the source name will break the FERs and impact the AWS Observability dashboards.
 :::
 
-Follow the steps below to change the default collector name and source categories
+Follow the steps below to change the default source categories
 
 1. Download the template version 2.1.0 or later from the [changelog](../changelog.md) page.
-1. Modify the collector name and source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
+1. Modify the source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
 ## Troubleshooting
