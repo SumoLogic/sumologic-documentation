@@ -86,7 +86,10 @@ To configure a Netskope Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 1. Enter your Netskope customer specific **Tenant ID**. Do not provide the entire URL, just the Tenant ID.
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
-1. **Event Types** (Optional). By default, all event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
+1. **Event Types** (Optional). By default, *all* event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
+    :::note
+    Add only the Event Types that you provided permissions to in step 3 of the Vendor configuration. For example, if you have added permission to `/api/v2/events/dataexport/events/application` during Netskope configuration, enter `Application` in the **Event Types** section. Inconsistencies will throw an error, so ensure you do not miss out on adding any of the permissions given in the Netskope configuration to the Sumo Logic **Event Types** section.
+    :::
 1. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata fields
