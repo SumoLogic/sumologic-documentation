@@ -30,11 +30,11 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
 
-#### For metric collection
+#### For metrics collection
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-#### For log collection
+#### For logs collection
 
 To collect the Docker container event logs, the following command needs to be executed on the host machine and needs to be kept running, for monitoring all the Docker container-related events. The following command also needs a JSON file path where these container events can be dumped.
 
