@@ -128,32 +128,15 @@ To collect activity logs follow the instruction in [azure audit app docs](https:
 
 
 ## Installing the Azure Storage app
-## Install the Enterprise Audit - Cloud SIEM app
+
+Now that you have set up a collection for **Azure Storage**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
 
-## View Cloud SIEM dashboards
-
-## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
-## Viewing the Enterprise Audit - Cloud SIEM app dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
+## View Azure Storage dashboards
+We highly recommend you view these dashboards in the [Azure Storage view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 ## Troubleshooting
 
