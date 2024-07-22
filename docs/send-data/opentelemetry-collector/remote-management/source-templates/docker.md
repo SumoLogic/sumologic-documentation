@@ -30,18 +30,18 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
 
-#### For Metric collection
+#### For metric collection
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-#### For Log collection
+#### For log collection
 
 To collect the Docker container event logs, the following command needs to be executed on the host machine and needs to be kept running, for monitoring all the Docker container-related events. The following command also needs a JSON file path where these container events can be dumped.
 
 ```
 docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
 ```
-Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
+The path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
 		
@@ -63,7 +63,7 @@ import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collecto
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Docker Collection. Below are the inputs required for configuration :
+In this step, you will configure the yaml required for Docker Collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.	
