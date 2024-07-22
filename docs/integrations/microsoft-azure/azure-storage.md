@@ -52,6 +52,7 @@ Capacity metrics are currently not supported via Diagnostic Settings.
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).  It is recommended to create a separate source for activity logs. In case you are already collecting these logs previously you can skip this step.
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
 You must explicitly enable diagnostic settings for each storage service (blob,queue,table and file) and each storage account that you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
@@ -59,6 +60,47 @@ You must explicitly enable diagnostic settings for each storage service (blob,qu
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Storage/Logs`, `Azure/Storage/Metrics`.
 
 Metrics and logs in Azure Monitor support only Azure Resource Manager storage accounts. Azure Monitor doesn't support classic storage accounts. If you want to use metrics or logs on a classic storage account, you need to migrate to an Azure Resource Manager storage account. For more information, see [Migrate to Azure Resource Manager](https://learn.microsoft.com/en-us/azure/virtual-machines/migration-classic-resource-manager-overview).
+
+## Configure Field in Field Schema
+In the main Sumo Logic menu, select Manage Data > Logs > Fields.
+Search for the “functionname” field.
+If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/docs/manage/fields/#manage-fields).
+
+## Configure FER
+Create a Field Extraction Rule for Azure Storage. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/).
+**ActivityLogsLocationExtraction**
+```sql
+Rule Name: AzureLocationExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
+
+```sql title="Parse Expression"
+json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+| replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+| if (!isBlank(resourceLocation), resourceLocation, location) as location
+| if (!isBlank(service_region), service_region, location) as location 
+| if (isBlank(location), "global", location) as location
+| fields location
+```
+
+```sql
+Rule Name: AzureResourceIdExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
+
+```sql title="Parse Expression"
+json "resourceId"
+| toUpperCase(resourceId) as resourceId
+| parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+| parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+| parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+| parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+| parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<child_service_name>.+)" nodrop
+| if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
+```
 
 ### Configure metrics collection
 
@@ -72,7 +114,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure logs collection
-
+**Diagnostic Logs**
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -80,6 +122,38 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+
+**Activity Logs**
+To collect activity logs follow the instruction in [azure audit app docs](https://help.sumologic.com/docs/integrations/microsoft-azure/audit/#collecting-logs-for-the-azure-audit-app-from-event-hub)
+
+
+## Installing the Azure Storage app
+## Install the Enterprise Audit - Cloud SIEM app
+
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+
+<AppInstallNoDataSourceV2/>
+
+## View Cloud SIEM dashboards
+
+## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing the Enterprise Audit - Cloud SIEM app dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
 
 ## Troubleshooting
 
