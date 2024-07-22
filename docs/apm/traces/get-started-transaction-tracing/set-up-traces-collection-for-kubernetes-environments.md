@@ -11,7 +11,7 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 ## Prerequisites
 
-* Kubernetes 1.24+
+* Kubernetes 1.25+
 * Helm 3.5+
 
 | Account Type | Account Level         |
