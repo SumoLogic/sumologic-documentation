@@ -661,7 +661,7 @@ Options available are:
 **Default JSON:**
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 ```
 
 #### cloudwatch_metrics_source_details
