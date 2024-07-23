@@ -135,14 +135,109 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## View Azure Storage dashboards
-We highly recommend you view these dashboards in the [Azure Storage view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
-
 ## Upgrading the Azure Storage app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
+
+## Uninstalling the Azure Storage app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing the Azure Storage app dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+We highly recommend you view these dashboards in the Azure Storage.
+
+### Azure Storage - Overview
+
+The **Azure Storage Overview** dashboard provides insights into transactions by storage account, storage type and api name.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Overview.png')} alt="Azure Storage Overview dashboard" />
+
+### Azure Storage - Access
+
+The **Azure Storage Access** dashboard provides insights into transactions by location, TLS version also it shows distribution by user agent and identity type.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Access.png')} alt="Azure Storage Overview Access" />
+
+### Azure Storage - Operations
+
+The **Azure Storage Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, total egress by storage account.
+Also it gives storage account statistic insights like total read count, read bytes, max/avg read latency, total write count, write bytes, max/avg write latency etc., Along with this it shows status code trend
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Operations.png')} alt="Azure Storage Overview Operations" />
+
+### Azure Storage - Blob Service
+
+The **Azure Storage Blob Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Blob-Service.png')} alt="Azure Storage Blob Service dashboard" />
+
+### Azure Storage - File Service
+
+The **Azure Storage File Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-File-Service.png')} alt="Azure Storage File Service dashboard" />
+
+### Azure Storage - Queue Service
+
+The **Azure Storage Queue Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Queue-Service.png')} alt="Azure Storage Queue Service dashboard" />
+
+### Azure Storage - Table Service
+
+The **Azure Storage Table Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Table-Service.png')} alt="Azure Storage Table Service dashboard" />
+
+### Azure Storage - Audit control plane operations
+
+The **Azure Storage Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, top 10 operations that caused most errors and most common errors etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" />
+
+
+### Azure Storage - Security and policy
+
+The **Azure Storage Security and policy** dashboard provides details -
+    1. Security: Recent security events, total security events.
+    2. Policy: Recent failed policy events, recent success policy events
+    3. Recommendation: Total recommendation events, Recent recommendation events
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" />
+
+
+### Azure Storage - health
+
+The **Azure Storage health** dashboard provides details -
+    1. Service Health: Recent service health incidents, service health by event type.
+    2. Alerts: Recent alerts, total alerts, alerts over time
+    3. Resource Health: Recent resource health incidents, resource health by event type
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-health.png')} alt="Azure Storage health dashboard" />
+
+
+### Azure Storage - Availability
+
+The **Azure Storage Availability** metrics dashboard provides details like availability in percentage, availability by API name and trend by api name, by storage type etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Availability.png')} alt="Azure storage availability dashboard" />
+
+
+### Azure Storage - Failures
+
+The **Azure Storage Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account and by storage type etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Failures.png')} alt="Azure Storage Failures dashboard" />
+
 
 ## Troubleshooting
 
