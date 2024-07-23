@@ -51,7 +51,7 @@ Capacity metrics are currently not supported via Diagnostic Settings.
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
-* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). It is recommended to create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
 * Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).  It is recommended to create a separate source for activity logs. In case you are already collecting these logs previously you can skip this step.
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
@@ -62,14 +62,15 @@ When you configure the event hubs source or HTTP source, plan your source catego
 Metrics and logs in Azure Monitor support only Azure Resource Manager storage accounts. Azure Monitor doesn't support classic storage accounts. If you want to use metrics or logs on a classic storage account, you need to migrate to an Azure Resource Manager storage account. For more information, see [Migrate to Azure Resource Manager](https://learn.microsoft.com/en-us/azure/virtual-machines/migration-classic-resource-manager-overview).
 
 ## Configure Field in Field Schema
-In the main Sumo Logic menu, select Manage Data > Logs > Fields.
-Search for the “functionname” field.
-If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/docs/manage/fields/#manage-fields).
+1. In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Fields**.
+2. Search for the `functionname` field.
+3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
-## Configure FER
-Create a Field Extraction Rule for Azure Storage. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/).
-**ActivityLogsLocationExtraction**
-```sql
+
+## Configure Field Extraction Rules
+Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
+
+```sql title="Activity Logs Location Extraction"
 Rule Name: AzureLocationExtractionFER
 Applied at: Ingest Time
 Scope (Specific Data): tenant_name=*
@@ -84,7 +85,7 @@ json "location", "properties.resourceLocation", "properties.region" as location,
 | fields location
 ```
 
-```sql
+```sql title="Resource Id Extraction"
 Rule Name: AzureResourceIdExtractionFER
 Applied at: Ingest Time
 Scope (Specific Data): tenant_name=*
@@ -114,7 +115,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure logs collection
-**Diagnostic Logs**
+#### Diagnostic Logs
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -123,25 +124,26 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
-**Activity Logs**
-To collect activity logs follow the instruction in [azure audit app docs](https://help.sumologic.com/docs/integrations/microsoft-azure/audit/#collecting-logs-for-the-azure-audit-app-from-event-hub)
+#### Activity Logs
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit).
 
 
 ## Installing the Azure Storage app
 
-Now that you have set up a collection for **Azure Storage**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up data collection, install the Azure Storage Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-storage-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
 
-## Upgrading the Azure Storage app (Optional)
+## Upgrading the Azure Storage app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Storage app (Optional)
+## Uninstalling the Azure Storage app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
@@ -153,7 +155,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-We highly recommend you view these dashboards in the Azure Storage.
+We highly recommend viewing these dashboards in the [Azure Storage view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 ### Azure Storage - Overview
 
