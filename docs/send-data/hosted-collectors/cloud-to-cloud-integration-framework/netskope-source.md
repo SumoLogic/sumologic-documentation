@@ -88,7 +88,7 @@ To configure a Netskope Source:
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
 1. **Event Types** (Optional). By default, *all* event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
     :::note
-    Add only the Event Types that you provided permissions to in step 3 of the Vendor configuration. For example, if you have added permission to `/api/v2/events/dataexport/events/application` during Netskope configuration, enter `Application` in the **Event Types** section. Inconsistencies will throw an error, so ensure that all permissions given in the Netskope configuration are added to the Sumo Logic **Event Types** section.
+    Add only the Event Types that you provided permissions to in step 3 of the Vendor configuration. For example, if you have added permission to `/api/v2/events/dataexport/events/application` during Netskope configuration, enter `Application` in the **Event Types** section. Inconsistencies will throw an error, so ensure that all specified permissions given in the Netskope configuration are added to the Sumo Logic **Event Types** section.
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
