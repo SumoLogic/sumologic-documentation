@@ -32,8 +32,8 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 
 * The time range of a real-time alerts must be between 5 and 15 minutes. 
 * Searching by receipt time is not supported.
-* If your search query result is a subset of your previous run's result, a real-time alerts will not trigger. It will trigger only when there are new results compared to the previous run.
-* A maximum of 120 emails are sent per day per real-time alerts.
+* If your search query result is a subset of your previous run's result, a real-time alert will not trigger. It will trigger only when there are new results compared to the previous run.
+* A maximum of 120 emails are sent per day from real-time alerts.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-aggregate real-time scheduled searches evaluate the first 100 results per search. For example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
 * The [`_dataTier`](/docs/manage/partitions/data-tiers) search modifier is not supported in real-time alert searches.
