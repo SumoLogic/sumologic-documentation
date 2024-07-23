@@ -40,7 +40,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 
 ### Operator limitations
 
-* Some queries can not be used in real-time alerts searches. Other operators can be used in real-time search, but in the search, they must be included after the first "group-by" phrase:
+* Some queries cannot be used in real-time alerts searches. Other operators can be used in real-time search, but in the search, they must be included after the first "group-by" phrase:
 
  | Not supported for real-time alerts | Must be added after a "group by" phrase |
  | :-- | :-- |
