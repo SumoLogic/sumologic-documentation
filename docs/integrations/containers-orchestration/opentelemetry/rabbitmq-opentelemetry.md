@@ -205,7 +205,7 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 
 ### Metrics
 
-This sample query is from the **RabbitMQ - Metrics dashboard** > **Average Number of Consumers**  panel.
+This sample query is from the **Average Number of Consumers** panel in **RabbitMQ - Metrics** dashboard.
 
 ```sql sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
 | avg by messaging.cluster.name 
@@ -217,12 +217,12 @@ This sample query is from the **RabbitMQ - Metrics dashboard** > **Average Numbe
 
 ### Logs
 
-The **RabbitMQ - Logs** dashboard gives you an at-a-glance view of Error messages, error by severity, top and last 10 errors, Broker and Event Start/Add log messages.
+The **RabbitMQ - Logs** dashboard gives you an at-a-glance view of error messages, error by severity, top and last 10 errors, broker, and Event Start/Add log messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Logs.png' alt="RabbitMQ Logs dashboards" />
 
 ### Metrics
 
-The **RabbitMQ - Metrics** dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queue, exchange, consumer, messages.
+The **RabbitMQ - Metrics** dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queue, exchange, consumer, and messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Metrics.png' alt="RabbitMQ Metrics dashboards" />
