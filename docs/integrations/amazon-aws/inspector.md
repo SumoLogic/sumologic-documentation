@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Inspector is an automated vulnerability management service that continually scans Amazon EC2 and container images for software vulnerabilities and network exposures. The Sumo Logic Inspector App helps reveal trends and identify anomalies from these findings.
+Amazon Inspector is an automated vulnerability management service that continually scans Amazon EC2 and container images for software vulnerabilities and network exposures. The Sumo Logic Inspector app helps reveal trends and identify anomalies from these findings.
 
 :::note
 For information about integrating Amazon Inspector with Security Hub, see [Integration with AWS Security Hub](https://docs.aws.amazon.com/inspector/latest/user/securityhub-integration.html) in Amazon help.
@@ -25,13 +25,13 @@ You can collect Security Hub logs using two methods:
 - [Method 1: Collect Security Hub logs using Sumo Logic HTTP endpoint](#method-1-collect-security-hub-logs-using-sumo-logic-http-endpoint)
 - [Method 2: Collect Security Hub logs using Amazon S3 source](#method-2-collect-security-hub-logs-using-amazon-s3-source)
 
-You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector) for HTTP endpoint and [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector-1) for Amazon S3 source.
+You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector) for HTTP endpoint and [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector-1) for Amazon S3 source.
 
 ### Method 1: Collect Security Hub logs using Sumo Logic HTTP endpoint
 
 #### Step 1: Add a hosted collector and Sumo Logic HTTP source
 
-This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub App.
+This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub app.
 
 **Prerequisites**
 
@@ -47,7 +47,7 @@ To add a hosted collector and HTTP source:
 
 #### Step 2: Deploy an AWS Security Hub app collector
 
-The **AWS Security Hub App collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub App displays the results in pre-defined visual dashboards for you to analyze.
+The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
 
 To deploy an AWS Security Hub app collector:
 1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
@@ -78,9 +78,9 @@ To add a hosted collector and Amazon S3 source:
 
 #### Step 2: Deploy an AWS Security Hub app collector
 
-The **AWS Security Hub App collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub App displays the results in pre-defined visual dashboards for you to analyze.
+The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
 
-To deploy an AWS Security Hub App collector:
+To deploy an AWS Security Hub app collector:
 1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
 2. In the Serverless Application Repository, search for **sumologic**.
 3. Select **Show apps that create custom IAM roles or resource policies** check box.
