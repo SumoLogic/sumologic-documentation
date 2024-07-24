@@ -11,7 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="60"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) - OpenTelemetry app is a log and metric based app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. Preconfigured dashboards provide insight into resource utilization, cache/Gossip/Memtable statistics and Error and warnings along with the request served and latency, storage and compaction related metrics. Cassandra logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and cassandra metrics are sent to Sumo Logic using [JMX opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) with the `target_system` set as [`cassandra`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/cassandra.md)
+The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) app is a log and metrics-based app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. The pre-configured dashboards provide insight into resource utilization, cache/Gossip/Memtable statistics, error and warnings, request served and latency, storage, and compaction.
+
+Cassandra logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and cassandra metrics are sent to Sumo Logic using [JMX opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) with the `target_system` set as [`cassandra`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/cassandra.md).
 
 The app supports Logs from the open-source version of Cassandra. The App is tested on the 4.0.0 version of Cassandra.
 
@@ -21,7 +23,7 @@ The app supports Logs from the open-source version of Cassandra. The App is test
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
 
-- `deployment.environment`. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
+- `deployment.environment`. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod, or qa.
 - `db.cluster.name`. User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system`. Has fixed value of **cassandra**.
 - `db.node.name`. Holds the value of the Fully Qualified Domain Name (FQDN) of the machine from which the OpenTelemetry collector is collecting logs and metrics.
@@ -35,7 +37,7 @@ JMX receiver collects Cassandra metrics from Cassandra server as part of the Ope
 
   1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
-  2. Set the JMX port by setting it as part of `JAVA_OPTS` for Tomcat startup. Usually it is set in the `/etc/systemd/system/cassandra.service` or `C:\Program Files\apache-tomcat\bin\tomcat.bat` file.
+  2. Set the JMX port as part of `JAVA_OPTS` for Tomcat startup. Usually, it is set in the `/etc/systemd/system/cassandra.service` or `C:\Program Files\apache-tomcat\bin\tomcat.bat` file.
 
       ```json
       JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=${CASSANDRA_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${CASSANDRA_CONF_DIR}/jmx.access"
@@ -137,7 +139,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
 ```
 
-## Sample metric message
+## Sample metrics message
 
 ```json
 {
@@ -174,7 +176,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample Log queries 
+## Sample log queries 
 
 Following is the query from Cassandra App's overview Dashboard's Nodes Up Panel:
 
@@ -188,14 +190,14 @@ Following is the query from Cassandra App's overview Dashboard's Nodes Up Panel:
 | sort by _timeslice asc
 ```
 
-## Sample Metrics queries 
+## Sample metrics query
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
 ```sql
 sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum 
 ```
 
-## Viewing Cassandra Dashboards
+## Viewing Cassandra dashboards
 
 ### Overview
 
@@ -264,14 +266,16 @@ Use this dashboard to:
 
 ### Compaction
 
-The Cassandra - Compactions dashboard provides a insight into the completed and pending compaction tasks.
+The **Cassandra - Compactions** dashboard provides insight into the completed and pending compaction tasks.
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Compaction.jpg' alt="Compaction" />
 
 ### Requests
-The Cassandra - Requests dashboard gives insight into the number of request served, number of error request and their distribution by status and operation. Also you can monitor the read and write latency of the cluster instance using this dashboard.
+
+The **Cassandra - Requests** dashboard provides insight into the number of request served, number of error request, and their distribution by status and operation. Also you can monitor the read and write latency of the cluster instance using this dashboard.
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Requests.jpg' alt="Requests" />
 
 ### Storage
-The Cassandra - Storage dashboard provides insight into the current value of total hints of your cassandra cluster along with storage managed by the cluster.
+
+The **Cassandra - Storage** dashboard provides insight into the current value of total hints of your Cassandra cluster along with storage managed by the cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Storage.jpg' alt="Storage" />
