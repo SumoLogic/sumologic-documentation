@@ -29,10 +29,12 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
+:::note
 The RabbitMQ receiver supports RabbitMQ versions `3.8` and `3.9`.
-The RabbitMQ Management Plugin must be enabled by following the [official instructions](https://www.rabbitmq.com/management.html#getting-started).
+:::
 
-Also, a user with at least [monitoring](https://www.rabbitmq.com/management.html#permissions) level permissions must be used for monitoring.
+Enable the RabbitMQ management plugin by following the instructions in the [RabbitMQ documentation](https://www.rabbitmq.com/management.html#getting-started). Also, make sure you at least have the [monitoring](https://www.rabbitmq.com/management.html#permissions) level permissions to monitor the metrics.
+
 
 ### For logs collection
 
@@ -41,7 +43,7 @@ This section provides instructions for configuring log collection for RabbitMQ r
 Follow the instructions to set up log collection:
 
 
-1. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, and none. For details, visit the [RabbitMQ documentation](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, the log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
+1. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, and none. For more information, refer to the [RabbitMQ documentation](https://www.rabbitmq.com/logging.html#log-levels). To make sure the dashboard work properly, the log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
 2. Configure RabbitMQ to write log lines to a local file. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the `RabbitMQ.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
   ```
   log.dir = /var/log/rabbitmq
@@ -89,7 +91,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-In this step, you will configure the yaml file required for RabbitMQ Collection.
+In this step, you will configure the yaml file required for RabbitMQ collection.
 
 Below are the inputs required:
 
