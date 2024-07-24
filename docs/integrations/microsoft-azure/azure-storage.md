@@ -62,56 +62,58 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 Metrics and logs in Azure Monitor support only Azure Resource Manager storage accounts. Azure Monitor doesn't support classic storage accounts. If you want to use metrics or logs on a classic storage account, you need to migrate to an Azure Resource Manager storage account. For more information, see [Migrate to Azure Resource Manager](https://learn.microsoft.com/en-us/azure/virtual-machines/migration-classic-resource-manager-overview).
 
-## Configure Field in Field Schema
-1. In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Fields**.
-2. Search for following fields
-   * tenant_name
-   * location
-   * subscription_id
-   * resource_group
-   * provider_name
-   * resource_type
-   * resource_name
-   * service_type
+## Configure field in field schema
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+2. Search for following fields:
+   * `tenant_name`
+   * `location`
+   * `subscription_id`
+   * `resource_group`
+   * `provider_name`
+   * `resource_type`
+   * `resource_name`
+   * `service_type`
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
 ## Configure Field Extraction Rules
 Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 * **Activity Logs Location Extraction FER**
-```sql
-Rule Name: AzureLocationExtractionFER
-Applied at: Ingest Time
-Scope (Specific Data): tenant_name=*
-```
 
-```sql title="Parse Expression"
-json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-| replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-| if (!isBlank(resourceLocation), resourceLocation, location) as location
-| if (!isBlank(service_region), service_region, location) as location 
-| if (isBlank(location), "global", location) as location
-| fields location
-```
+   ```sql
+   Rule Name: AzureLocationExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
 
-* **Resource Id Extraction FER**
-```sql
-Rule Name: AzureResourceIdExtractionFER
-Applied at: Ingest Time
-Scope (Specific Data): tenant_name=*
-```
+   ```sql title="Parse Expression"
+   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+   | if (!isBlank(resourceLocation), resourceLocation, location) as location
+   | if (!isBlank(service_region), service_region, location) as location 
+   | if (isBlank(location), "global", location) as location
+   | fields location
+   ```
 
-```sql title="Parse Expression"
-json "resourceId"
-| toUpperCase(resourceId) as resourceId
-| parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-| parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-| parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-| parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-| parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<child_service_name>.+)" nodrop
-| if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
-```
+* **Resource ID Extraction FER**
+
+   ```sql
+   Rule Name: AzureResourceIdExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
+
+   ```sql title="Parse Expression"
+   json "resourceId"
+   | toUpperCase(resourceId) as resourceId
+   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<child_service_name>.+)" nodrop
+   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
+   ```
 
 ### Configure metrics collection
 
@@ -125,7 +127,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure logs collection
-#### Diagnostic Logs
+
+#### Diagnostic logs
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -168,14 +171,14 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Azure Storage - Overview
 
-The **Azure Storage Overview** dashboard provides insights into transactions by storage account, storage type and api name.
+The **Azure Storage Overview** dashboard provides insights into transactions by storage account, storage type, and API name.
 
 Use this dashboard to:
-    * View transactions by storage account
-    * Monitor transactions by storage type
-    * Monitor transactions by api name
+    * View transactions by storage account.
+    * Monitor transactions by storage type.
+    * Monitor transactions by API name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Overview.png')} alt="Azure Storage Overview dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Overview.png')} alt="Azure Storage Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Access
 
@@ -187,12 +190,12 @@ Use this dashboard to:
     * View distribution by user agent.
     * View distribution by identity type.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Access.png')} alt="Azure Storage Overview Access" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Access.png')} alt="Azure Storage Overview Access" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Operations
 
 The **Azure Storage Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, total egress by storage account.
-Also it gives storage account statistic insights like total read count, read bytes, max/avg read latency, total write count, write bytes, max/avg write latency etc., Along with this it shows status code trend
+Also it gives storage account statistic insights like total read count, read bytes, max/avg read latency, total write count, write bytes, and max/avg write latency. It also shows status code trend.
 
 Use this dashboard to:
     * View amount of write data in MB.
@@ -202,11 +205,11 @@ Use this dashboard to:
     * View storage account statistics.
     * View status code trend.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Operations.png')} alt="Azure Storage Overview Operations" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Operations.png')} alt="Azure Storage Overview Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Blob Service
 
-The **Azure Storage Blob Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+The **Azure Storage Blob Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
@@ -217,11 +220,11 @@ Use this dashboard to:
     * View top 10 read by resource name.
     * View top 10 write by resource name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Blob-Service.png')} alt="Azure Storage Blob Service dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Blob-Service.png')} alt="Azure Storage Blob Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - File Service
 
-The **Azure Storage File Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+The **Azure Storage File Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
@@ -232,11 +235,11 @@ Use this dashboard to:
     * View top 10 read by resource name.
     * View top 10 write by resource name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-File-Service.png')} alt="Azure Storage File Service dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-File-Service.png')} alt="Azure Storage File Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Queue Service
 
-The **Azure Storage Queue Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+The **Azure Storage Queue Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
@@ -247,11 +250,11 @@ Use this dashboard to:
     * View top 10 read by resource name.
     * View top 10 write by resource name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Queue-Service.png')} alt="Azure Storage Queue Service dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Queue-Service.png')} alt="Azure Storage Queue Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Table Service
 
-The **Azure Storage Table Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type etc., top 10 read/write by resource name etc.
+The **Azure Storage Table Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
@@ -262,11 +265,11 @@ Use this dashboard to:
     * View top 10 read by resource name.
     * View top 10 write by resource name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Table-Service.png')} alt="Azure Storage Table Service dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Table-Service.png')} alt="Azure Storage Table Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Audit control plane operations
 
-The **Azure Storage Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, top 10 operations that caused most errors and most common errors etc.
+The **Azure Storage Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, and top 10 operations that caused most errors and most common errors.
 
 Use this dashboard to:
     * View last 24 hours changes.
@@ -277,7 +280,7 @@ Use this dashboard to:
     * View requests with anonymous access.
     * view Operations that caused server-side throttling errors.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Security and policy
 
@@ -292,7 +295,7 @@ Use this dashboard to:
     * View total recommendation events
     * View recent recommendation events
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - health
 
@@ -307,11 +310,11 @@ Use this dashboard to:
     * View recent resource health incidents
     * Monitor resource health by event type
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-health.png')} alt="Azure Storage health dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Availability
 
-The **Azure Storage Availability** metrics dashboard provides details like availability in percentage, availability by API name and trend by api name, by storage type etc.
+The **Azure Storage Availability** metrics dashboard provides details like availability in percentage, availability by API name, and trend by API name and by storage type.
 
 Use this dashboard to:
     * Monitor availability percentage
@@ -319,11 +322,11 @@ Use this dashboard to:
     * Monitor availability trend by API name
     * Monitor availability trend by API storage type
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Availability.png')} alt="Azure storage availability dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Availability.png')} alt="Azure storage availability dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Failures
 
-The **Azure Storage Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account and by storage type etc.
+The **Azure Storage Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
     * Monitor failing transactions by API name
@@ -332,11 +335,11 @@ Use this dashboard to:
     * Monitor failing transactions by service type
     * Monitor failing transactions by authentication
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Failures.png')} alt="Azure Storage Failures dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Failures.png')} alt="Azure Storage Failures dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Performance
 
-The **Azure Storage Performance** metrics dashboard provides details like failing transactions by API name, by response type, by storage account and by storage type etc.
+The **Azure Storage Performance** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
     * Monitor average success server latency
@@ -344,7 +347,7 @@ Use this dashboard to:
     * Monitor top success server latency by operation
     * Monitor top success E2E latency by operation
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Troubleshooting
