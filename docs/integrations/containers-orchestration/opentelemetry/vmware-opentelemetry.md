@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-The VMware - OpenTelemetry app uses metrics from the VMware cloud computing virtualisation platform to enable monitoring of vCenter, datacenter, resource pool, cluster, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
+The VMware - OpenTelemetry app uses metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, datacenter, resource pool, cluster, ESXi hosts, and individual virtual machine metrics with real-time data displayed in predefined dashboards.
 
-The dashboards provide insight into key metrics such as CPU, memory, disk utilization at different infrastructure level like vm, host, datacenter, resource pool and clusters. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
+The dashboards provide insight into key metrics such as CPU, memory, disk utilization at different infrastructure levels like VM, host, datacenter, resource pool, and clusters. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
 
 VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
@@ -29,7 +29,7 @@ This receiver has been built to support ESXi and vCenter versions:
 - 8
 - 7.0
 
-A “Read Only” user assigned to a vSphere with permissions to the vCenter server, cluster and all subsequent resources being monitored must be specified in order for the receiver to retrieve information about them.
+A “Read Only” user assigned to a vSphere with permissions to the vCenter server, cluster, and all subsequent resources being monitored must be specified in order for the receiver to retrieve information about them.
 
 ## Collection configuration and app installation
 
@@ -47,16 +47,14 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for VMWare Collection. Here are the list of parameters which are required:
+In this step, we will be configuring the YAML file required for VMWare Collection. Here is the list of parameters which are required:
 
-- **Endpoint** to the vCenter Server or ESXi host that has the sdk path enabled. This is a required parameter. The expected format is `<protocol>://<hostname>`
-
-i.e: `https://vcsa.hostname.localnet`
-- **Username** of User which has access to vcenter server
-- **Password** of User which has access to vcenter server
+- **Endpoint** to the vCenter Server or ESXi host that has the SDK path enabled. This is a required parameter. The expected format is `<protocol>://<hostname>`. For example, `https://vcsa.hostname.localnet`.
+- **Username** of User which has access to vCenter server
+- **Password** of User which has access to vCenter server
 - **collection_interval** this receiver collects metrics on an interval. If the vCenter is fairly large, this value may need to be increased. Valid time units are `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h` 
 
-You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
 For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
@@ -91,7 +89,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the VMWare instance which has access to vCenter or the vCenter itself.
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the VMWare instance which has access to vCenter or the vCenter itself.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -100,7 +98,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the VMWare instance which has access to vCenter or the vCenter itself.
+1. Copy the YAML file to /etc/otelcol-sumo/conf.d/ folder in the VMWare instance which has access to vCenter or the vCenter itself.
 2. Restart the otelcol-sumo process using the below command 
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
@@ -191,13 +189,13 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
 - **Available Cluster Memory**. Percentage of memory available in the cluster.
-- **Available Cluster CPU**. Percentage of cpu available in the cluster.
+- **Available Cluster CPU**. Percentage of CPU available in the cluster.
 - **Datastore Disk Utilization**. The disk utilization of the datastore.
 - **VM Disk Usage**. The disk usage of VM.
-- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts cpu utilization.
+- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU utilization.
 - **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts memory utilization.
 - **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts usage.
-- **Top 25 VMs CPU Utilization**. Top 25 VMs cpu utilization.
+- **Top 25 VMs CPU Utilization**. Top 25 VMs CPU utilization.
 - **Top 25 VMs Memory Utilization**. Top 25 VMs memory utilization.
 - **Top 25 VMs Network Usage**. Top 25 VMs network usage.
 - **Top 25 VMs Memory Ballooning**. Top 25 VMs memory ballooning.
@@ -224,11 +222,11 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="VMWare-Host-Overview-Details"/>
 
-- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts cpu utilization.
+- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU utilization.
 - **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts memory utilization.
 - **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts disk read/ write latency.
-- **Top 25 ESXi Hosts CPU Usage**. Top 25 ESXi Hosts cpu usage.
+- **Top 25 ESXi Hosts CPU Usage**. Top 25 ESXi Hosts CPU usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Rate**. Top 25 ESXi Hosts disk read/ write rate.
 - **Top 25 ESXi Hosts Network Throughput**. Top 25 ESXi Hosts network throughput.
 - **Top 25 ESXi Hosts Network Packet Rate**. Top 25 ESXi Hosts network transmitted/ received packet rate.
@@ -238,17 +236,17 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="VMWare-VM-Overview-Details"/>
 
-- **Top 25 VMs CPU Utilization**. Top 25 VMs cpu utilization.
+- **Top 25 VMs CPU Utilization**. Top 25 VMs CPU utilization.
 - **Top 25 VMs Memory Utilization**. Top 25 VMs memory utilization.
 - **Top 25 VMs Disk Utilization**. Top 25 VMs disk utilization.
 - **Top 25 VMs Network Usage**. Top 25 VMs network usage.
 - **Top 25 VMs Disk Usage**. Top 25 VMs disk usage.
-- **Top 25 VMs CPU Usage**. Top 25 VMs cpu usage.
+- **Top 25 VMs CPU Usage**. Top 25 VMs CPU usage.
 - **Top 25 VMs Memory Usage**. Top 25 VMs memory usage.
 - **Top 25 VMs Memory Ballooning**. Top 25 VMs memory ballooning.
-- **Top 25 VMs Disk Read/ Write Latency**. Top 25 VMs disk read/ write latency.
-- **Top 25 VMs Disk Read/ Write Rate**. Top 25 VMs disk read/ write rate.
+- **Top 25 VMs Disk Read/ Write Latency**. Top 25 VMs disk read/write latency.
+- **Top 25 VMs Disk Read/ Write Rate**. Top 25 VMs disk read/write rate.
 - **Top 25 VMs Network Throughput**. Top 25 VMs network throughput.
-- **Top 25 VMs Network Packet Rate**. Top 25 VMs network transmitted/ received packet rate.
-- **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs network transmitted/ received packet drop rate.
+- **Top 25 VMs Network Packet Rate**. Top 25 VMs network transmitted/received packet rate.
+- **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs memory swapped.
