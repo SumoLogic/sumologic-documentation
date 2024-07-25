@@ -39,7 +39,7 @@ An HTTP source must be associated with a Sumo Logic Hosted collector. Before cre
 
 To add a hosted collector and HTTP source:
 
-1. To create a new Sumo Logic Hosted collector perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. To create a new Sumo Logic Hosted collector perform the steps in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source) to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
