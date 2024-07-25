@@ -1828,8 +1828,18 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
-      'integrations/product-list',
-    {
+      {
+        type: 'category',
+        label: 'Product List',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/product-list/index'},
+        items: [
+          'integrations/product-list/product-list-a-l',
+          'integrations/product-list/product-list-m-z',
+        ],
+      },
+      {
       type: 'category',
       label: 'Amazon and AWS',
       collapsible: true,
