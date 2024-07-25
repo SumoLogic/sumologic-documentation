@@ -182,7 +182,11 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ## Viewing VMWare dashboards
 
+**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables/).
+
 ### VMWare - Overview
+
+The **VMWare - Overview** dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs. It also provides data for datastore disk utilisation, VM disk usage, CPU Utilisation, Memory Utilisation, Network Usage for VM and Hosts.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMWare-Overview"/>
 
@@ -202,6 +206,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - Clusters
 
+The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare cluster metrics like Hosts count, VM count, available CPU and Memory percentage.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMWare-Clusters"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
@@ -210,6 +216,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 - **Available Cluster Memory**. Percentage of Memory available in the cluster.
 
 ### VMWare - Resource Pools
+
+The **VMWare - Resource Pools** dashboard provides at-a-glance analysis of Resource Pool metrics like Memory Usage, CPU Usage, Shares of CPU and Memory.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMWare-Resource-Pools"/>
 
@@ -220,6 +228,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - Host Overview
 
+The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi Hosts metrics lke CPU Utilisation, Memory Utilisation, Read/ Write Latency, Network Usage.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMWare-Host-Overview-Details"/>
 
 - **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU Utilization.
@@ -228,6 +238,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 - **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts Disk read/ write latency.
 
 ### VMWare - Host Details
+
+The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts metrics like CPU Usage, Memory Usage, Disk Read/ Write Rate, Network Usage, Network Packet Rate, Network Packet Error Rate.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMWare-Host-Overview-Details"/>
 
@@ -238,6 +250,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 - **Top 25 ESXi Hosts Network Packet Error Rate**. Top 25 ESXi Hosts Network transmitted/ received packet error rate.
 
 ### VMWare - VM Overview
+
+The **VMWare - VM Overview** dashboard provides at-a-glance analysis of VM metrics like CPU Utilisation, Memory Utilisation, Disk Utilisation, Network Usage, Disk Usage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMWare-VM-Overview-Details"/>
 
@@ -250,6 +264,8 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - VM Details
 
+The **VMWare - VM Details** dashboard provides detailed analysis of VM metrics like CPU Usage, Memory Usage, Read/Write Latency, Network Packet Rate, Memory Swapped.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMWare-VM-Overview-Details"/>
 
 - **Top 25 VMs CPU Usage**. Top 25 VMs CPU usage.
@@ -260,5 +276,3 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 - **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
 - **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
-
-s3://sumologic-app-data-v2/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png
