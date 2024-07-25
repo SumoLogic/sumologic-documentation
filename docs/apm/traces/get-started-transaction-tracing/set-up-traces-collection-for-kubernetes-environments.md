@@ -138,7 +138,7 @@ For example, when the default release name (`collection`) and namespace (`sumolo
 * Zipkin: `collection-sumologic-otelagent.sumologic:9411/api/v2/spans`
 
 :::note
-`<RELEASE_NAME>-sumologic-otelagent` could be truncated. We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec). To avoid this, keep your `<RELEASE_NAME>` short. To check final endpoint name, list all services from `<NAMESPACE>` and look for service with configured ports from list above.
+`<RELEASE_NAME>-sumologic-otelagent` could be truncated. We truncate at 63 characters because some Kubernetes name fields are limited to this (by the DNS naming spec). To avoid this, keep your `<RELEASE_NAME>` short. To check the final endpoint name, list all services from `<NAMESPACE>` and look for services with configured ports from the list above.
 :::
 
 ## Troubleshooting
