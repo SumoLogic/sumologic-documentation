@@ -26,7 +26,7 @@ VMWare metrics are collected through the [vCenter Receiver](https://github.com/o
 
 This receiver has been built to support ESXi and vCenter versions:
 
-- 8
+- 8.0
 - 7.0
 
 A “Read Only” user assigned to a vSphere with permissions to the vCenter server, cluster, and all subsequent resources being monitored must be specified in order for the receiver to retrieve information about them.
@@ -228,7 +228,7 @@ The **VMWare - Resource Pools** dashboard provides at-a-glance analysis of Resou
 
 ### VMWare - Host Overview
 
-The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi Hosts metrics lke CPU Utilisation, Memory Utilisation, Read/ Write Latency, Network Usage.
+The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi Hosts metrics like CPU Utilisation, Memory Utilisation, Read/ Write Latency, Network Usage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMWare-Host-Overview-Details"/>
 
