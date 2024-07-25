@@ -184,7 +184,7 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - Overview
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Overview-Otel.png')} alt="VMWare-Overview"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMWare-Overview"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -202,7 +202,7 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - Clusters
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-CPU-Usage-Otel.png')} alt="VMWare-Clusters"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMWare-Clusters"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -211,42 +211,54 @@ sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.n
 
 ### VMWare - Resource Pools
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Memory-Usage-Otel.png')} alt="VMWare-Resource-Pools"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMWare-Resource-Pools"/>
 
 - **Cluster CPU Usage**. CPU usage of the resource pool.
 - **Cluster Memory Usage**. Memory usage of the resource pool.
 - **Shares of CPU**. Shares of CPU in the resource pool.
 - **Shares of Memory**. Shares of Memory in the resource pool.
 
-### VMWare - Host Overview/ Details
+### VMWare - Host Overview
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="VMWare-Host-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMWare-Host-Overview-Details"/>
 
-- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU utilization.
-- **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts memory utilization.
-- **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts usage.
-- **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts disk read/ write latency.
+- **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU Utilization.
+- **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts Memory Utilization.
+- **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts Network Usage.
+- **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts Disk read/ write latency.
+
+### VMWare - Host Details
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMWare-Host-Overview-Details"/>
+
 - **Top 25 ESXi Hosts CPU Usage**. Top 25 ESXi Hosts CPU usage.
-- **Top 25 ESXi Hosts Disk Read/ Write Rate**. Top 25 ESXi Hosts disk read/ write rate.
-- **Top 25 ESXi Hosts Network Throughput**. Top 25 ESXi Hosts network throughput.
-- **Top 25 ESXi Hosts Network Packet Rate**. Top 25 ESXi Hosts network transmitted/ received packet rate.
-- **Top 25 ESXi Hosts Network Packet Error Rate**. Top 25 ESXi Hosts network transmitted/ received packet error rate.
+- **Top 25 ESXi Hosts Disk Read/ Write Rate**. Top 25 ESXi Hosts Disk read/ write rate.
+- **Top 25 ESXi Hosts Network Throughput**. Top 25 ESXi Hosts Network throughput.
+- **Top 25 ESXi Hosts Network Packet Rate**. Top 25 ESXi Hosts Network transmitted/ received packet rate.
+- **Top 25 ESXi Hosts Network Packet Error Rate**. Top 25 ESXi Hosts Network transmitted/ received packet error rate.
 
-### VMWare - VM Overview/ Details
+### VMWare - VM Overview
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="VMWare-VM-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMWare-VM-Overview-Details"/>
 
 - **Top 25 VMs CPU Utilization**. Top 25 VMs CPU utilization.
-- **Top 25 VMs Memory Utilization**. Top 25 VMs memory utilization.
-- **Top 25 VMs Disk Utilization**. Top 25 VMs disk utilization.
-- **Top 25 VMs Network Usage**. Top 25 VMs network usage.
-- **Top 25 VMs Disk Usage**. Top 25 VMs disk usage.
+- **Top 25 VMs Memory Utilization**. Top 25 VMs Memory utilization.
+- **Top 25 VMs Disk Utilization**. Top 25 VMs Disk utilization.
+- **Top 25 VMs Network Usage**. Top 25 VMs Network usage.
+- **Top 25 VMs Disk Usage**. Top 25 VMs Disk usage.
+- **Top 25 VMs Memory Ballooning**. Top 25 VMs Memory Ballooning.
+
+### VMWare - VM Details
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMWare-VM-Overview-Details"/>
+
 - **Top 25 VMs CPU Usage**. Top 25 VMs CPU usage.
-- **Top 25 VMs Memory Usage**. Top 25 VMs memory usage.
-- **Top 25 VMs Memory Ballooning**. Top 25 VMs memory ballooning.
-- **Top 25 VMs Disk Read/ Write Latency**. Top 25 VMs disk read/write latency.
-- **Top 25 VMs Disk Read/ Write Rate**. Top 25 VMs disk read/write rate.
-- **Top 25 VMs Network Throughput**. Top 25 VMs network throughput.
-- **Top 25 VMs Network Packet Rate**. Top 25 VMs network transmitted/received packet rate.
-- **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs network transmitted/received packet drop rate.
-- **Top 25 VMs Memory Swapped**. Top 25 VMs memory swapped.
+- **Top 25 VMs Memory Usage**. Top 25 VMs Memory usage.
+- **Top 25 VMs Disk Read/ Write Latency**. Top 25 VMs Disk read/write latency.
+- **Top 25 VMs Disk Read/ Write Rate**. Top 25 VMs Disk read/write rate.
+- **Top 25 VMs Network Throughput**. Top 25 VMs Network throughput.
+- **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
+- **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
+- **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
+
+s3://sumologic-app-data-v2/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png
