@@ -131,7 +131,7 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Gi
     * Click **+Add Field** and provide the following:
         * **Field Name**. `_convertHeadersToFields`
         * **Value**. `true`
-    * Expand **Advanced Options for Logs (Optional)** section, then **uncheck (disable)** option, then **Extract timestamp information from log file entries** in **Timestamp Parsing**
+    * Expand **Advanced Options for Logs (Optional)** section and check **Extract timestamp information from log file entries** in **Timestamp Parsing** is enabled
     * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
 
 ### Configure a GitHub Webhook
