@@ -47,12 +47,12 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the YAML file required for VMWare Collection. Here is the list of parameters which are required:
+In this step, we will configure the YAML file required for VMWare Collection. Here is a list of required parameters:
 
 - **Endpoint** to the vCenter Server or ESXi host that has the SDK path enabled. This is a required parameter. The expected format is `<protocol>://<hostname>`. For example, `https://vcsa.hostname.localnet`.
-- **Username** of User which has access to vCenter server
-- **Password** of User which has access to vCenter server
-- **collection_interval** this receiver collects metrics on an interval. If the vCenter is fairly large, this value may need to be increased. Valid time units are `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h` 
+- **Username** of User which has access to vCenter server.
+- **Password** of User which has access to vCenter server.
+- **collection_interval** this receiver collects metrics on an interval. If the vCenter is fairly large, this value may need to be increased. Valid time units are `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
@@ -80,7 +80,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Linux">
 
-1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the VMWare instance which has access to vCenter or the vCenter itself.
+1. Copy the YAML file to the `/etc/otelcol-sumo/conf.d/` folder on the VMware instance that has access to vCenter or to vCenter itself.
 2. Restart the collector using:
    ```sh
    sudo systemctl restart otelcol-sumo
@@ -98,8 +98,8 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the YAML file to /etc/otelcol-sumo/conf.d/ folder in the VMWare instance which has access to vCenter or the vCenter itself.
-2. Restart the otelcol-sumo process using the below command 
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder on the VMware instance that has access to vCenter or to vCenter itself.
+2. Restart the otelcol-sumo process using the below command:
    ```sh
    otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
    ```
@@ -139,7 +139,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ### Metrics query
 
-This sample Query is from the **VMWare - Overview** > **Top 25 ESXi Hosts - CPU Utilization** panel.
+This sample query is from the **VMWare - Overview** > **Top 25 ESXi Hosts - CPU Utilization** panel.
 
 ```sql title="Metric query"
 sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.name=* vcenter.cluster.name=* vcenter.host.name=* | topk(25,avg)
@@ -217,7 +217,7 @@ The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare clus
 
 ### VMWare - Resource Pools
 
-The **VMWare - Resource Pools** dashboard provides at-a-glance analysis of Resource Pool metrics like Memory Usage, CPU Usage, Shares of CPU, and Memory.
+The **VMWare - Resource Pools** dashboard provides an at-a-glance analysis of Resource Pool metrics like Memory Usage, CPU Usage, Shares of CPU, and Memory.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMWare-Resource-Pools"/>
 
@@ -251,7 +251,7 @@ The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts
 
 ### VMWare - VM Overview
 
-The **VMWare - VM Overview** dashboard provides at-a-glance analysis of VM metrics like CPU Utilisation, Memory Utilization, Disk Utilization, Network Usage, and Disk Usage.
+The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM metrics like CPU Utilization, Memory Utilization, Disk Utilization, Network Usage, and Disk Usage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMWare-VM-Overview-Details"/>
 
@@ -264,7 +264,7 @@ The **VMWare - VM Overview** dashboard provides at-a-glance analysis of VM metri
 
 ### VMWare - VM Details
 
-The **VMWare - VM Details** dashboard provides detailed analysis of VM metrics like CPU Usage, Memory Usage, Read/Write Latency, Network Packet Rate, and Memory Swapped.
+The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics like CPU Usage, Memory Usage, Read/Write Latency, Network Packet Rate, and Memory Swapped.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMWare-VM-Overview-Details"/>
 
