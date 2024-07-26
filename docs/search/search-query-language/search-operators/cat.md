@@ -19,7 +19,8 @@ Where:
 
 ## Example
 
-For example: 
+For example: 
+
 ```sql
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
