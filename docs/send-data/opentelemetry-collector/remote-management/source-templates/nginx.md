@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-Nginx source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of logs and metrics of Nginx to Sumo Logic.
+The Nginx source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Nginx logs and metrics in Sumo Logic.
 		
 ## Fields creation in Sumo Logic for Nginx
 
@@ -40,7 +40,7 @@ Receive server statistics, by configuring the server's `nginx.conf` file to [ena
 ### For logs collection
 		
 Configure the Nginx access and error log files:
-1. Configure the logging of access logs and error logs via the instructions described in their [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
+1. Configure the logging of access logs and error logs by following the instructions in their [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 1. Locate your local `nginx.conf` configuration file in the Nginx directory. After determining the location of the conf file, modify the `nginx.conf` configuration file logging parameters if required.
    * For access logs, the following directive is to be noted:
       - **Setting Up the Access Log**. Access log file path and format (standard common and combined).

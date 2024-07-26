@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-icon.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-Docker source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of logs and metrics of Docker to Sumo Logic.
+The Docker source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of Docker logs and metrics to Sumo Logic.
 
 ## Fields creation in Sumo Logic for Docker
 
@@ -28,7 +28,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ## Prerequisites
 
-This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
+This section provides instructions for configuring metrics and log collection for the Sumo Logic Docker app.
 
 #### For metrics collection
 
@@ -36,7 +36,7 @@ Metrics are collected through the [Docker Stats Receiver](https://github.com/ope
 
 #### For logs collection
 
-To collect the Docker container event logs, the following command needs to be executed on the host machine and needs to be kept running, for monitoring all the Docker container-related events. The following command also needs a JSON file path where these container events can be dumped.
+To collect Docker container event logs, execute the following command on the host machine and keep it running to monitor all Docker container-related events. The command requires a JSON file path where these container events will be stored.
 
 ```
 docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
@@ -70,7 +70,7 @@ In this step, you will configure the yaml required for Docker Collection. Below 
 - **Docker Event log location**. Enter the path of the JSON file generated through the command in the prerequisite section.
 - **Endpoint**. Address to reach the desired Docker daemon (default: `unix:///var/run/docker.sock`).
 - **Excluded Image List**. A list of strings, [regexes](https://golang.org/pkg/regexp/), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers for scrapping metrics. Learn more about [*excluded_images*](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md#configuration).
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags `_sourceCategory` with the value otel/docker.
+- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/docker.
 
 import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 
