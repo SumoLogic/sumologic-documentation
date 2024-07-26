@@ -41,7 +41,7 @@ To collect Docker container event logs, execute the following command on the hos
 ```
 docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
 ```
-The path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
+The path to this JSON file will be required in the next step, where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
 		
