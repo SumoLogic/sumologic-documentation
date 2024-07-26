@@ -178,7 +178,7 @@ Select the values to filter:
 
 ## Audit logging for MITRE ATT&CK coverage
 
-MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
 ```
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage

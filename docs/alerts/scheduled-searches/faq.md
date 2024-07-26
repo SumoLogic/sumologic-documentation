@@ -163,7 +163,7 @@ If you have received an Alert Email stating that an issue has been detected with
 
 First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](#why-would-a-scheduled-search-fail).
 
-### Why was my Scheduled Search suspended?
+### Why was my scheduled search suspended?
 
 Scheduled Searches must run within the limits of a [timeout period](#how-to-prevent-your-scheduled-search-from-timing-out), which can be 20 minutes to an hour, depending on the time range set for the query. If for some reason, a Scheduled Search cannot complete within the confines of the timeout period, such as connectivity problems or heavy load, the query will timeout and fail.
 
@@ -171,9 +171,9 @@ When a Scheduled Search query fails Sumo Logic attempts to run the query again 
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events.
 
-### Is there a limit on number of scheduled searches?
+### Is there a limit on number of Scheduled Searches?
 
-A maximum of 6000 scheduled searches are allowed per account.
+A maximum of 6000 Scheduled Searches are allowed per account.
 
 ### Examples of Scheduled Search suspensions
 
@@ -201,7 +201,7 @@ The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores even
 
 The suspended state of the Scheduled Search lasts for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day).
 
-Once the suspension period is over, the Scheduled Search will resume normal operation after four hours (for non-daily scheduled searches) or on the fourth day for a daily Scheduled Search.
+Once the suspension period is over, the Scheduled Search will resume normal operation after four hours (for non-daily Scheduled Searches) or on the fourth day for a daily Scheduled Search.
 
 Permanent suspensions last forever. You need to create a new scheduled search. 
 
