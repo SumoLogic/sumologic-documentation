@@ -129,7 +129,7 @@ Additional consideration for performance tests:
 * If there are plans to add more data to your account in the near future, keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.
 
 
-## How do I set a Real-Time Alert with more than 1,000 results?
+## How do I set a real-time alert with more than 1,000 results?
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows.
 
