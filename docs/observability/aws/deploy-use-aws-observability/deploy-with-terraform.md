@@ -1588,7 +1588,7 @@ Module Not Found Error: No Module named ‘sumologic’
 #### Solution
 Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf#L1).
 
-### Field or FER not found
+### Field or FER already exists
 #### Error Message
 
 ```
@@ -1599,12 +1599,28 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumolog
 #### Solution
 Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-2-configure-the-terraform-script).
 
+### waiting for S3 Bucket Policy (bucket-name) delete
+#### Error Message
+
+```
+Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
+```
+#### Solution
+Run `terraform destroy` again. 
+
+### Field with the given id can't be deleted because it is in use
+#### Error Message
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+#### Solution
+Run `terraform destroy` again. 
+
+
 ### Hierarchy named 'AWS Observability' already exist
 #### Error Message
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
