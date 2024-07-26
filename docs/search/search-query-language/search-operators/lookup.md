@@ -15,7 +15,7 @@ This section describes requirements and limitations for the `lookup` operator an
 ### Requirements 
 
 * The size limit for a lookup table is 100 MB.
-* The size limit for a lookup field value is not more than 1024 Bytes.
+* The size limit for a lookup field value is less than 1024 Bytes.
 * The `lookup` operator matches event field names and values to lookup table field names and values in a case-insensitive manner. 
 * The columns you specify in the join condition for the lookup must be of the same data type. For example, if the event field on the left side of the join is an integer, the lookup field on the right side must also be integer. You can cast data to a string or numeric value. For more information, see [Casting Data to a Number or String](/docs/search/search-query-language/search-operators/manually-cast-data-string-number).
 
