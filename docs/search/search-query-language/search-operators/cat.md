@@ -20,7 +20,6 @@ Where:
 ## Example
 
 For example: 
- 
 ```sql
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
