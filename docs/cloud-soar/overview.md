@@ -196,103 +196,73 @@ Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Log
 The following sections detail the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the following sections are ordered in the suggested order for initial configuration.
 
 
-### General settings
+### General
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. 
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 <!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access General settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
  Kanso-->
-The following sections describe available settings.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/> 
 
 #### System
-- Display Notification __ Number of seconds
-- Display Session Timeout __ The Session timeout in minutes will be applied to the next user login. 
 
-<img src={useBaseUrl('img/cloud-soar/image184.png')} alt="General Settings" style={{border: '1px solid gray'}} width="300"/> 
-
-#### International Settings
-
-<img src={useBaseUrl('img/cloud-soar/image187.png')} alt="International Settings" style={{border: '1px solid gray'}} width="600"/> 
-
-#### Language Settings
-French language is now enabled in Cloud SOAR. It can be enabled under user profile section.
-
-<img src={useBaseUrl('img/cloud-soar/image999.png')} alt="Language Settings" style={{border: '1px solid gray'}} width="600"/> 
-
-#### Instant Messaging
-
-Instant Messaging integration can be enabled from here.
-
-<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="Instant Messaging dialog" style={{border: '1px solid gray'}} width="550"/>
-
-The same integration has to be updated under the user profile configuration.
-
-<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="User profile dialog" style={{border: '1px solid gray'}} width="750"/>
+* **Use Proxy**. Enter settings if you need to use a proxy for Internet access.
+* **Sticky Alert**. Set the number of seconds to display an alert in the Cloud SOAR UI when an incident generates an alert.
+* **Date/Time Format**. Set the date and time format.
 
 #### Incidents
 
-There are several Incident settings that you should consider when configuring Cloud SOAR.
+Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-soar/incidents-triage/#incidents-screen).
 
-Cloud SOAR's Automatic Observables Harvesting feature examines free text areas of Cloud SOAR to gather observables, such as IP addresses, domains and email addresses. When enabled, Cloud SOAR will automatically harvest these observables and add them to the appropriate observables section within the incident. Checking the boxes under Automatically extract Observables elements from will cause Cloud SOAR to perform Automatic Observables Harvesting on the checked sections.
+* **Duplicates**.
+    * **Prohibit duplicate naming**. Select this checkbox to prevent incidents from being named identically.
+    * **Default suffix for duplicated incident name**. Select the suffix to add to the end of incident names to differentiate incidents that are named the same.
+    * **Use suffix on non-duplicate**. Use the selected suffix on all incidents, regardless of whether they are named the same.
+* **Objects**. Gather objects, such as IP addresses, domains and email addresses, and add them to the appropriate object's section within the incident. 
+    * **Extract from**:
+       * **Incident field**. Gather objects from [incident properties](/docs/cloud-soar/incidents-triage/#incident-properties).
+       * **Task field**. Gather objects from the [Tasks](/docs/cloud-soar/incidents-triage/#tasks) field.
+       * **Note field**. Gather objects from the [Notes](/docs/cloud-soar/incidents-triage/#notes) field. 
+    * **Filename extension whitelist**. Enter filename extensions to allow when gathering objects. 
+* **Process Phase**. Configure phases for monitoring progress of incidents as they progress. Determine whether the phase is **Mandatory**, and the **Status** of the incident when the phase is reached. Select **Show Deleted** to show phases on deleted incidents.
+* **Mandatory Closing Note**. Make a final incident note mandatory before the incident can be closed. 
 
-Under the Incident settings, it is also possible to make a final incident note mandatory before the incident can be closed. This can be used to enforce the policy of recording the final disposition of an incident before it is closed.
+#### Instant Messaging
 
-<img src={useBaseUrl('img/cloud-soar/image31.png')} alt="Incident Settings" style={{border: '1px solid gray'}} width="500"/>
+Use these settings to configure authentication for an instant messaging service such as Slack. 
 
-<img src={useBaseUrl('img/cloud-soar/image188.png')} alt="Incident General Settings" style={{border: '1px solid gray'}} width="800"/>
+* **Integration**. Enter the name of the instant messaging service to integrate with Cloud SOAR.
+* **Bot Oauth**. Enter the authorization token for the instant messaging service. 
+* **Signing secret for verify requests**. Enter the signing secret for the instant messaging service.
+* **Workspace**. Displays success or failure of the workspace connection to Cloud SOAR.
 
-:::tip Incidents Documentation
-For more information, refer to [Incidents and Triage](/docs/cloud-soar/incidents-triage).
-:::
+For additional setup needed for Slack, see [Configure Slack for Cloud SOAR](/docs/cloud-soar/automation/#configure-slack-for-cloud-soar).
 
+### Groups
 
-#### Incident Process Phases
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+ Kanso-->
 
-Cloud SOAR allows managers to monitor the progress of incident phases as the incident progresses. These phases and their properties can be configured by administrators in the General settings page.
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 
-<img src={useBaseUrl('img/cloud-soar/image32.png')} alt="Incident Phases" style={{border: '1px solid gray'}} width="600"/>
-
-In addition to the phase name, administrators can determine whether the phase is mandatory and the status of the incident when the new phase is reached. Administrators may also disable phase management at the top of the Incident Process Phase section or choose not to show the phase management section in the Incident Details screen.
-
-<img src={useBaseUrl('img/cloud-soar/image189.png')} alt="Incident Process Phase Settings" style={{border: '1px solid gray'}} width="600"/>
-
-
-#### Queue Settings
-
-One or more queues may be configured which can be used to assign incidents to until they are ready to be assigned to users. Queues can be managed at the bottom of the General settings page.
-
-<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="New Queue dialog" style={{border: '1px solid gray'}} width="650"/>
-
-Click the **+** button in the upper right-hand corner of the queue settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
-
-<img src={useBaseUrl('img/cloud-soar/image199.png')} alt="Queue Settings dialog" style={{border: '1px solid gray'}} width="800"/>
-
-#### Internet Connection Settings
-
-<img src={useBaseUrl('img/cloud-soar/image186.png')} alt="Internet Connection Settings" style={{border: '1px solid gray'}} width="600"/>
-
-### User Management
-
-#### Groups
+#### Create a group
 
 You can create a group of users and assign a role to all the users in the group. This makes it easy to assign a specialized role to multiple users at once rather than adding the users individually to the role.
 
-For example, say there is a group of users with different roles responsible for customer support.
-Access to a specific incident with restricted privileges needs to be granted to all investigators of the incident. You can create a role with just the needed [Cloud SOAR role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar) and select it as the role (also known as a profile) for members of the group. Then when you [add investigators](/docs/cloud-soar/incidents-triage/#add-investigators) for the incident, you can select the group rather than individual users.
+For example, say there is a group of users with different roles responsible for customer support. Access to a specific incident with restricted privileges needs to be granted to all investigators of the incident. You can create a role with just the needed [Cloud SOAR role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar) and select it as the role (also known as a profile) for members of the group. Then when you [add investigators](/docs/cloud-soar/incidents-triage/#add-investigators) for the incident, you can select the group rather than individual users.
 
-##### Create a group
-
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  Kanso-->
-1. On the left navigation bar, select **User Management** > **Groups**. The **Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 1. Click the **+** icon next to **Groups**. The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.
-1. In **Profile** select the role to use for members of the group. These are roles already created in the system. To see role capabilities assigned to these roles, in the Sumo Logic Log Analytics Platform select **Administration** > **Users and Roles** and click the **Roles** tab. For more information about roles, see [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles/).
+1. In **Profile** select the role to use for members of the group. These are [roles](/docs/manage/users-roles/roles/) already created in the system. 
 1. Click **Create**. The empty group is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-example-group.png')} alt="Example group" style={{border: '1px solid gray'}} width="600"/>
 1. Click the **+** icon next to **Members**. 
 1. Select the users to add to the group.
 1. Click **Apply**. 
 
-##### Group role assignments
+#### Group role assignments
 
 The role specified in an assigned group profile supersedes the user's [role assignments in the Sumo Logic Log Analytics Platform](/docs/manage/users-roles/roles/add-remove-users-role/). The group permissions are persistent until the user leaves the group, the profile is removed from the group, or the group is deleted. 
 
@@ -303,26 +273,16 @@ The role specified in an assigned group profile supersedes the user's [role assi
 | Not in a group | Has role assignments as assigned in the core platform |
 | In group without a role (profile) | Has role assignments as assigned in the core platform |
 
-
 ### Notifications
 
-Cloud SOAR allows administrators to configure notifications to Cloud SOAR users as well as other external users. These notifications can be sent via Cloud SOAR's internal messaging platform, as well as email and SMS. **Watcher Groups** can also be created, which allows Cloud SOAR to send notifications to those who are not necessarily assigned to an incident when certain conditions are met, such as notifying managers when a high severity incident is created.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access notification settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+ Kanso-->
 
-The Notifications selection enables you to configure outbound email (SMTP) settings, and set up text messaging for incident notifications. Notifications can be configured by clicking on Notifications from the Settings menu.
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
 
-#### Email Server Configuration
-
-Under the Email Server Configuration tab, users configure outbound mail and confirm privacy settings to fit their organization's needs. Once these options are set, Administrators can configure which types of events should trigger notifications to which users and by what means.
-
-<img src={useBaseUrl('img/cloud-soar/image42.png')} alt="Email Configuration Settings" style={{border: '1px solid gray'}} width="800"/>
-
-#### Mail Notification Queue
-
-The **Mail Notification Queue** shows the status of all email notifications sent by Cloud SOAR.                                   
-
-<img src={useBaseUrl('img/cloud-soar/image21.png')} alt="Mail Notification Queue" style={{border: '1px solid gray'}} width="800"/>
-
-By navigating to the Mail Notification Queue, you can view any delivery failures, the details of the original notification, as well as have the options to resend or delete the notification.
+Select the icon to the right of an event to trigger a notification to be sent when that event occurs. 
 
 ### Customization
 
