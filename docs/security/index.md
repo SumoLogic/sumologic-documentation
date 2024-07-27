@@ -5,7 +5,7 @@ title: Sumo Logic Security Solutions
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="60"/>
 
 Sumo Logic's security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR:
 

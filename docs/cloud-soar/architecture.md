@@ -6,7 +6,7 @@ sidebar_label: Architecture
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/multi-tenant.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/cloud/multi-tenant.png')} alt="Cloud icon" width="50"/>
 
 Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
 
@@ -30,7 +30,7 @@ Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module
 
 Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
 
-<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="Cloud SOAR architecture" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="Cloud SOAR architecture diagram" style={{border: '1px solid gray'}} width="800"/>
 
 ## Automation Bridge
 
