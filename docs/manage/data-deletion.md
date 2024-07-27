@@ -23,7 +23,6 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
-
 ## Create a Data Deletion Request
 
 :::warning
@@ -39,12 +38,10 @@ Deletion requests result in the permanent deletion of data. Once deleted, the da
 1. When you're done, click **Save**.
 1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-status.png')} alt="data-deletion-status" width="400"/>
 
-
 ### From a Log Search
 
 1. From any **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-request.png')} alt="data-deletion-status" width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
-
 
 ## Cancel a Data Deletion Request
 
@@ -69,11 +66,3 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 ### Deletion request limit
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
-
-<!-- Are these features this available?
-
-Auditing of the following activities:
--Number of Logs that have been masked/redacted/deleted
--Daily Summary of Statistics, indicating number of queries matching each rule to make it easy for Admins to understand which rule still has data that is being hit
-
--->
