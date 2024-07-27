@@ -71,7 +71,7 @@ Running a query like:
 
 uses the `isNull` operator to check the field value of `country_code` and if it returns `true`, has the [`if` operator](/docs/search/search-query-language/search-operators/if) replace the value with the string `unknown`:
 
-![isNull](/img/search/searchquerylanguage/search-operators/isNull.png)
+![Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message](/img/search/searchquerylanguage/search-operators/isNull.png)
 
 ### Use the where operator to check for null values
 

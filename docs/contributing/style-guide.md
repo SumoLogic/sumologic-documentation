@@ -495,7 +495,7 @@ Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
-1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
+1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="static/files folder" width="250"/>
 1. Go to your doc in progress and use the following syntax to link the file:
 
 <Tabs
@@ -1410,14 +1410,14 @@ See the following tabbed code examples:
 
 <TabItem value="kinesis">
 
-Setup a Source in Sumo Logic:
+Set up a Source in Sumo Logic:
 
-Navigate to Collection management (Manage Data > Collection)
-Use an existing Hosted Collector, or create a new one.
-Next to the collector, select “Add Source”.
-Select “AWS Kinesis Firehose for Logs”
-Enter a Name to identify the source.
-Enter a Source Category following the best practices found in “Good Source Category, Bad Source Category”
+1. Navigate to Collection management.
+1. Use an existing Hosted Collector, or create a new one.
+1. Next to the collector, select **Add Source**.
+1. Select **AWS Kinesis Firehose for Logs**.
+1. Enter a **Name** to identify the source.
+1. Enter a **Source Category** following the best practices found in “Good Source Category, Bad Source Category”.
 
 Deploy the Cloudformation Template to Create a Kinesis Firehose Delivery Stream:
 
@@ -1426,7 +1426,7 @@ Deploy the Cloudformation Template to Create a Kinesis Firehose Delivery Stream:
 1. Create a new stack using the CloudFormation template you downloaded.
 1. Provide the URL you created from your Sumo source.
 1. Select an S3 bucket to deliver failed logs, or create a new one.
-1. Click next.
+1. Click **Next**.
 
 Accept the IAM permissions, and create the stack.
 

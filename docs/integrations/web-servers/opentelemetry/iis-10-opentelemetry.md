@@ -188,18 +188,6 @@ The **IIS - Overview** dashboard provides a high-level view of the integrity of 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Overview.png' alt="Overview" />
 
-### Performance Snapshot
-
-The **IIS - Performance Snapshot** dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Performance-Snapshot.png' alt="Performance Snapshot" />
-
-### Performance Trends
-
-The **IIS - Performance Trends** dashboard provides details on ISS infrastructure trends for requests, active connections, bytes received and sent, files received and sent, queue size, arrival rate, and cache hit rate.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Performance-Trends.png' alt="Performance Trends" />
-
 ### HTTP Error
 
 The **IIS - HTTP Error** dashboard provides detailed information on IIS error logging in HTTP. Dashboard panels show details on error events, top client and server IP addresses, top protocol versions and protocol status. Panels also show information on top reason phrases and verbs associated with HTTP errors, as well as top request details by reason.

@@ -22,7 +22,7 @@ If the default tags are not providing enough relevant data you can add custom t
 
 ## Step 1: Satisfy project dependencies
 
-Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.32.0) library.
+Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.40.0) library.
 
 * Maven projects
 
@@ -31,7 +31,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
     <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-sdk</artifactId>
-        <version>1.32.0</version>
+        <version>1.40.0</version>
     </dependency>
     ```
 
@@ -39,7 +39,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
 
     ```gradle
     dependencies {
-        compile 'io.opentelemetry:opentelemetry-sdk:1.32.0'
+        compile 'io.opentelemetry:opentelemetry-sdk:1.40.0'
     }
     ```
 
