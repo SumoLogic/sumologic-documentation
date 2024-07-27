@@ -18,7 +18,7 @@ import DocPrereq from '../reuse/doc-prerequisites.md';
 
 ## Step 1: Create a 301 redirect
 
-As an example, let's say there are two docs called **Nginx app** and **Nginx (Legacy) app**, and we need to deprecate the legacy version.
+As an example, let's say there are two docs called **Nginx App** and **Nginx (Legacy) App**, and we need to deprecate the latter.
 
 1. In your GitHub authoring tool (like VS Code), open the [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
 1. Add a redirect from the old URL you're removing to the new URL containing the equivalent content.
