@@ -448,7 +448,6 @@ You can include markdown content in expanders including code samples, embedded v
 
 Add a title for the expander between the `<summary>` tags. Then, add all content after `<summary>` tags and before the closing `<details>` tags.
 
-
 <Tabs
   className="unique-tabs"
   defaultValue="Markdown"
@@ -459,7 +458,7 @@ Add a title for the expander between the `<summary>` tags. Then, add all content
 
 <TabItem value="Markdown">
 
-<img src={useBaseUrl('img/contributing/highlight-codeblock.png')} alt="SQL code snippet with highlighted lines" />
+<img src={useBaseUrl('img/contributing/collapsible-text.png')} alt="SQL code snippet with highlighted lines" />
 
 </TabItem>
 <TabItem value="Result">

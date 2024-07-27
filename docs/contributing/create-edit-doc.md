@@ -1,6 +1,6 @@
 ---
 id: create-edit-doc
-title: Create or Edit Documentation
+title: Create or Edit a Doc
 description: Learn how to create or edit a doc, write content in markdown, and submit your changes to our GitHub repository.
 ---
 
@@ -91,9 +91,9 @@ In your new branch, edit the doc markdown file. See our [Style Guide](/docs/cont
 
 To submit more extensive edits, such as creating a new doc, we recommend forking our repo, making changes in a new branch, and submitting a PR for review.
 
-Feel free to [reach out to the Documentation Team](#contact-us) to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
+Feel free to [reach out to the Docs Team](#contact-us) to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
 
-### Step 1: Fork the Sumo Logic Documentation repository
+### Step 1: Fork the Sumo Docs repository
 
 import ForkRepo from '../reuse/contributing/fork-repo.md';
 
@@ -121,7 +121,7 @@ Refer to our [Style Guide](/docs/contributing/style-guide) for instructions on c
 To add your new doc to the left-nav menu, you'll need to add its name and file path to the [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts).
 
 :::note Doc Team Support
-The Sumo Logic Documentation Team can help you add your doc to the sidebar and top navigation. If you have suggestions, include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
+The Sumo Logic Doc Team can help you add your doc to the sidebar and top navigation. If you have suggestions, include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
 :::
 
 ### Step 5: Add doc to the hub page
@@ -165,7 +165,7 @@ import Submit from '../reuse/contributing/submit.md';
 
 ## What happens next?
 
-Documentation Team members will review contributions, provide feedback, and approve. When approved, we will merge and update staging. We'll also handle any post-production future updates.
+Docs Team members will review contributions, provide feedback, and approve. When approved, the Docs Team will merge and update staging. Updates to production will be handled by the Docs Team.
 
 ## Contact us
 

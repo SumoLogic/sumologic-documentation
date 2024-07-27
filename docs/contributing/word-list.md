@@ -133,7 +133,6 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
-
 ## P
 
 **Page**. When referring to a page in the UI, such as the Search page, use page. Don't use pane or tab. A tab appears inside a page. (Example: The Messages tab appears on the Search page.)
