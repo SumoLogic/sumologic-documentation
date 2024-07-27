@@ -6,7 +6,7 @@ description: Learn how to properly remove a Sumo Logic doc.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you delete a document, its URL is also deleted. Visiting the old URL will return a `404 - Page Not Found` error, which negatively impacts customer experience and can damage our SEO.
+When you delete a doc, its URL is also deleted. Visiting the old URL will return a `404 - Page Not Found` error, which negatively impacts customer experience and can damage our SEO.
 
 To prevent this, create a 301 redirect. Follow these steps to ensure a smooth transition and maintain the health of our docs site.
 
