@@ -40,7 +40,7 @@ In this step, we'll install the collector on 50 servers and add a uniquely ident
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. For our use case, we will select Apache Source Template.
 
-If you choose to close this Source template creation screen, you can navigate back. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  Kanso-->
+If you choose to close this Source template creation screen, you can navigate back. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  Kanso--> 
 
 ### Step 2: Data configuration
 
