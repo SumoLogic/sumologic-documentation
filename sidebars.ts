@@ -117,6 +117,32 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
+            {
+              type: 'category',
+              label: 'Remote Management',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
+              items:[
+                {
+                  type: 'category',
+                  label: 'Source Templates',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/source-templates/apache',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/linux',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/localfile',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/mac',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/redis',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/syslog',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/windows',
+                  ]
+                },
+              ]
+            },
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',

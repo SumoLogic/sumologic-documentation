@@ -5,14 +5,6 @@ title: Source Templates
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-
 Source templates in Sumo Logic enable efficient and scalable data collection configuration management. By using source templates, you can apply consistent data collection setups across multiple collectors, reducing redundancy and simplifying configuration management. This powerful tool streamlines and enhances your data collection strategy, ensuring you can efficiently manage and scale your data collection efforts.
 
 ## Benefits of source templates

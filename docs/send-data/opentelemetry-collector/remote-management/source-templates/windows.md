@@ -15,10 +15,10 @@ import TabItem from '@theme/TabItem';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="30"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
 The Windows source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of windows event log and metrics of Windows to Sumo Logic.
-		
+
 ## Fields creation in Sumo Logic for Windows
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
@@ -27,26 +27,26 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 - **`deployment.environment`** User configured field at the time of collector installation. This identifies the environment where the Windows system resides. For example: `dev`, `prod`, or `qa`.
 - **`host.group`**. This is a collector-level field that is user configured at the time of collector installation. It identifies the Windows host group.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
-		
+
 ## Prerequisites
-		
+
 ### For logs collection
 Ensure that the channel for collecting Windows event logs is installed and enabled on the monitored Windows machine.
-		
+
 ## Source template configuration
-		
+
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
-		
+
 ### Step 1: Set up remotely managed OpenTelemetry collector
-		
+
 import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
-		
+
 <CollectorInstallation/>
-		
+
 ### Step 2: Configure the source template
-		
+
 In this step, you will configure the yaml required for Windows Collection. Below are the inputs required for configuration:
-		
+
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
 
@@ -63,7 +63,7 @@ In this step, you will configure the yaml required for Windows Collection. Below
 import ProcMetrics from '../../../../reuse/apps/opentelemetry/process-metric-collection.md';
 
 <ProcMetrics/>
-		
+
 - **Scan Interval**. The frequency at which the source is scanned.
 - **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
 
