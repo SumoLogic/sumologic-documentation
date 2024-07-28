@@ -200,8 +200,8 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
 3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. Go to Manage Data > Logs > Field Extraction Rules.
-   2. Click the + Add button on the top right of the table.
+   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+   2. Click the **+ Add Rule** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
       * **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -401,7 +401,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
    1. For alerts applicable only to a specific cluster, your custom filter would be `'db_cluster=couchbase-standalone.01'`.
    2. For alerts applicable to all cluster that start with couchbase-standalone, your custom filter would be,`db_cluster=couchbase-standalone*`.
    3. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=couchbase-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
-3. Go to Manage Data > Alerts > Monitors.
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**:
 5. Click **Import** and then copy-paste the above JSON to import monitors.
 6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings) to learn how to enable monitors to send notifications to teams or connections. See the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
@@ -485,7 +485,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
    Version selection is not available for all apps.
    :::
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom Couchbase cluster filter. Examples:
             1. For all Couchbase clusters `db_cluster=*`
