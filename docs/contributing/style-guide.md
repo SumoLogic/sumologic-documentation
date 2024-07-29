@@ -1208,7 +1208,7 @@ Colons are used to introduce lists or to separate titles from subtitles. Only in
 
 We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "[I had eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 
-### Exclamation Points
+### Exclamation points
 
 Use exclamation points to express excitement or encourage the user. Don't use them for errors, warnings, or confirmation of basic actions as they are usually unnecessary and can distract from important details.
 
