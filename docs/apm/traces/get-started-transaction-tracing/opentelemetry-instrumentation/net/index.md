@@ -116,7 +116,7 @@ Internal OpenTelemetry DotNet auto-instrumentation logs are available in:
 * Linux: `/var/log/opentelemetry/dotnet`
 * macOS: `/var/log/opentelemetry/dotnet`
 
-For more information please see the [documentation](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md#internal-logs).
+For more information see the [documentation](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md#internal-logs).
 
 ## How to instrument your ASP.NET Core application (library instrumentation)
 
