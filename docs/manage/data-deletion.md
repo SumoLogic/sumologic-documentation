@@ -51,7 +51,7 @@ To cancel a deletion request:
 1. Select your request.
 1. Click **Cancel Request**.
 
-<img src={useBaseUrl('img/search/get-started-search/data-deletion-cancel.png')} alt="data-deletion-cancel" width="800"/>
+<img src={useBaseUrl('img/search/get-started-search/data-deletion-cancel.png')} alt="data-deletion-cancel" style={{border: '1px solid gray'}} width="800"/>
 
 ## Limitations
 
