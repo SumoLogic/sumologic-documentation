@@ -25,6 +25,7 @@ Updates:
 * Integrated the latest SAM versions with AWSO v2.9.0 (CF + TF) to address CVEs and updated Lambda runtimes from Node.js v18.x to v20.x.
 * Upgraded to Sumo Logic Terraform provider v2.31.0 for CVE fixes.
 * Updated Terraform test code written in Go language from v1.18 to v1.22, addressing CVEs associated with the gRPC module.
+* Enhanced log group subscriptions limit in the updated SAM app sumologic-loggroup-connector v1.0.12 .
 
 Bug Fixes:
 * Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0 without needing to go through v2.8.0.
