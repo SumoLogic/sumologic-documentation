@@ -1212,7 +1212,7 @@ We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orang
 
 Use exclamation points to express excitement or encourage the user. Don't use them for errors, warnings, or confirmation of basic actions as they are usually unnecessary and can distract from important details.
 
-### Ellipses and Truncation
+### Ellipses and truncation
 
 Use ellipses for truncation. Don’t use ellipses for placeholders or trailing off a sentence unless it is getting cut off. When truncating, think about which part of the string is most essential for the user. This may require truncating in the beginning, middle, or end of a string.
 
