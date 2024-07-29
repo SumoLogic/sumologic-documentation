@@ -106,7 +106,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     The Sumo Logic Distribution for OpenTelemetry Collector can receive data from various receivers - these ports should be configured in the Security Group:
      * OTLP - ports: 4317/tcp, 4318/tcp
     :::
-   * SUBNETS - same as Security Groups, Subnets have to be configured for AWS Fargate. To find Subnets used on the cluster, use the VPC ID from Security Group and search for it on the list [here](https://console.aws.amazon.com/vpc/home#subnets:). In the case of multiple Subnets use a comma as a separator, such as, `subnet-xyz,subnet-xyz`.
+   * SUBNETS - same as Security Groups, Subnets have to be configured for AWS Fargate. To find Subnets used on the cluster, use the VPC ID from Security Group and search for it on the list [here](https://console.aws.amazon.com/vpc/home#subnets:). In the case of multiple Subnets use a comma as a separator, such as: `subnet-xyz,subnet-xyz`.
 
 1. It is necessary to provide the configuration to the Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:
 
@@ -139,7 +139,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
    * `TEMPLATE_PATH`. Path to the template file from the first step
    * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
    * `SSH_KEY_NAME`. [Amazon EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) needed to ssh to the EC2 instance
-   * `AMI_ID`. an Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as, `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
+   * `AMI_ID`. an Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as: `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
 
 1. Execute the command below to create the [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that will create an EC2 instance and install collector on it:
 
