@@ -463,7 +463,7 @@ This section demonstrates how to install the RabbitMQ App.
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
       1. For all RabbitMQ clusters: `messaging_cluster=*`
       2. For a specific cluster: `messaging_cluster=rabbitmq.dev.01`
