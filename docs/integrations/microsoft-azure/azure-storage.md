@@ -36,6 +36,9 @@ Requests made by the Blob storage service itself, such as log creation or deleti
   * [Microsoft.Storage/storageAccounts/queueServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-queueservices-metrics)
   * [Microsoft.Storage/storageAccounts/tableServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-tableservices-metrics)
 
+**NOTE**
+Only metrics with category=Transaction can be exported from diagnostic settings export feature.
+
 Click on the above namespaces to learn more about the supported metrics. For a complete list of the dimensions that Azure Storage supports, refer to the below documentation.
 
 * [Azure Blob Storage Metrics dimensions](https://learn.microsoft.com/en-us/azure/storage/blobs/monitor-blob-storage-reference#metrics-dimensions)
@@ -114,6 +117,24 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
    | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
    ```
+
+* **Azure Observability Metadata Extraction Metric Rule Service Level**
+```sql
+Rule Name: AzureObservabilityMetadataExtractionMetricRuleServiceLevel
+```
+
+```sql title="Metric match expression"
+resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
+```
+
+* **Azure Observability Metadata Extraction Storage Account Level**
+```sql
+Rule Name: AzureObservabilityMetadataExtractionStorageAccountLevel
+```
+
+```sql title="Metric match expression"
+resourceId=*/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/* tenant_name=* accountresourceid=*
+```
 
 ### Configure metrics collection
 
