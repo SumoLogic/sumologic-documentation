@@ -70,7 +70,7 @@ After you build the dashboard to find and monitor security events, we'll show yo
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso--> 
-1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid gray'}} width="600"/>
+1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="A screenshot showing Time Series selected" style={{border: '1px solid gray'}} width="600"/>
 1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
@@ -84,11 +84,11 @@ We are going to create a dashboard to look at our security activity in several d
      | transpose row actor column event_type
      ```
      <br/>Notice how this query searches AWS CloudTrail logs to extract the user, event, IP addresses, and event names as metadata using a parse json command, so you can use the extracted values to monitor user activity.
-   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="Twenty-four hours" style={{border: '1px solid gray'}} width="300"/>
+   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="A screenshot showing 24 hours selected" style={{border: '1px solid gray'}} width="300"/>
    1. Press Enter or click the magnifying glass icon to run the search.
-1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Bar chart setting" style={{border: '1px solid gray'}} width="800"/>
-1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Rename dashboard panel" style={{border: '1px solid gray'}} width="400"/>
-1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="Example dashboard" style={{border: '1px solid gray'}} width="800"/>
+1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Chart tab showing the Bar chart type selected" style={{border: '1px solid gray'}} width="800"/>
+1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Chart type showing the name changed to 'Top 10 User Activity'" style={{border: '1px solid gray'}} width="400"/>
+1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="The example dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Step 2: Create dashboard template variables
 

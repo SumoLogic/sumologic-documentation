@@ -156,7 +156,7 @@ Another common reason to set up a local configuration is to pre-parse the conten
 To create a local configuration:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  Kanso-->
-1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" width="800"/>
+1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="Three-dot kebab menu" width="800"/>
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/><img src={useBaseUrl('img/cse/system-parser-edit-button.png')} alt="System parser edit button" width="800"/>
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
@@ -171,12 +171,12 @@ You can export a parser as JSON, and import it to another Sumo Logic
 org.
 
 1. Navigate to the parser you want to export and choose **Export** from the three-dot kebab menu.
-1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export" width="600"/>
+1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export dialog" width="600"/>
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data > Logs > Parsers**.
 1. Navigate to the folder where you want to store the parser.
 1. Choose **Import** from the three-dot kebab menu.
-1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
+1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
 ## Setting Cloud SIEM log mapping information
 

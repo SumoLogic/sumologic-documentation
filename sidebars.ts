@@ -876,8 +876,10 @@ module.exports = {
           link: {type: 'doc', id: 'manage/security/audit-indexes/index'},
           items: [
             'manage/security/audit-indexes/audit-index',
-            'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
+            'manage/security/audit-indexes/audit-event-index',
+            'manage/security/audit-indexes/system-event-index',
+            'manage/security/audit-indexes/documentation-audit-log-definitions',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
@@ -1826,8 +1828,18 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
-      'integrations/product-list',
-    {
+      {
+        type: 'category',
+        label: 'Product List',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/product-list/index'},
+        items: [
+          'integrations/product-list/product-list-a-l',
+          'integrations/product-list/product-list-m-z',
+        ],
+      },
+      {
       type: 'category',
       label: 'Amazon and AWS',
       collapsible: true,
@@ -2108,6 +2120,7 @@ integrations: [
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/activemq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/vmware-opentelemetry'
             ],
           },
           'integrations/containers-orchestration/activemq',
