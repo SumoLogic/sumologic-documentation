@@ -57,7 +57,7 @@ To cancel a deletion request:
 
 ### Handling future ingestion of sensitive data
 
-Customers must manage the future ingestion of sensitive data using [Processing Rules](/docs/send-data/collection/processing-rules). Deletion requests will only apply to data that has already been indexed, not to data that will be ingested in the future.
+Customers must manage the future ingestion of sensitive data using [processing rules](/docs/send-data/collection/processing-rules). Deletion requests will only apply to data that has already been indexed, not to data that will be ingested in the future.
 
 ### Deletion scope
 
