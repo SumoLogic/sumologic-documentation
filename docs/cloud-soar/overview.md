@@ -284,37 +284,54 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 Select the icon to the right of an event to trigger a notification to be sent when that event occurs. 
 
-### Customization
+### Configurations
 
-Under the **Customization** dropdown, you will find an arsenal of tools at their disposal. These tools will assist in the creation of reports, custom fields, and incident elements, just to name a few. The full list of features is listed below.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Cloud SOAR configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select the setting you want to update: Fields, Incident Labels, or Triage. 
+ Kanso-->
 
-#### Incident Reports
+#### Fields
 
-Report Templates allow you to build their own reports by selecting various components of an incident they wish to include in the report.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom field settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
+ Kanso-->
 
-#### Custom Fields
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
 
-**Custom Fields** allows administrators to edit existing fields as well as add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections which permit custom fields are displayed on the left-hand side of the page. Clicking on any one of these sections will display all current fields for that section on the right-hand side of the page. Any existing field may be edited, to include changing the name or adding list values. The only attribute which cannot be changed is the type of the field, such as text or date. New fields may also be added from this page.
+The **Custom Fields** page allows you to edit existing fields as well as add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections that permit custom fields are displayed. Clicking a section displays all current fields. To add a field, click **+** at the top of the page next to the section name. You may edit any existing field listed, including changing the name or adding list values. The only attribute that you cannot change is the type of the field, such as text or date. 
 
-#### Logo
+#### Incident labels
 
-The **Logo** section allows administrators to customize both their Cloud SOAR user interface and reports with the logo of their company or the logo of their clients. This can be done by simply uploading their image in the specified .PNG file format size.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access incident label settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access incident label settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
+ Kanso-->
 
-<img src={useBaseUrl('img/cloud-soar/image18b.png')} alt="Logo Settings" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
 
-
-#### Incident Label
-
-The Incident labels section allows an administrator to define labels for the different types of incidents that will be investigated. These labels can also be created during the automation rule and incident template creation process which will be explained in later sections.
+The **Incident label** page allows you to define labels for the different types of incidents that will be investigated. You can also create these labels during the automation rule and incident template creation process.
 
 #### Triage
 
-Cloud SOAR's Triage module ingests events via the Cloud SOAR API and can be used to triage events which may be unverified or have a low confidence level before they are converted to incidents. The Triage module can be completely customized for use cases from financial fraud to network IDS
-alerts.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access triage configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Triage**. 
+ Kanso-->
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-triage-configuration.png')} alt="Cloud SOAR triage configuration page" style={{border: '1px solid gray'}} width="700"/>
+
+Cloud SOAR's [Triage](/docs/cloud-soar/incidents-triage/#triage) module ingests events via the Cloud SOAR API and can be used to triage events which may be unverified or have a low confidence level before they are converted to incidents. 
+
+You can customize triage display preferences on the **Triage** configuration page. You can color-code triage events based on status to easily distinguish them from each other when viewing the list of triage events. You can also modify the name of the module from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.
+
+* **Section Name**. The name you want to use for the [triage section of the user interface](/docs/cloud-soar/incidents-triage/#working-with-events). 
+* **Disable background cache generation**. Prevent cache from being generated for triage events. Selecting this box may speed up page load, but slow triage event retrieval.
+* **Set event row style**. Set the colors to display for triage events.
+* **Reassign Mail Configuration**. Customize the content of emails sent to analysts when triage events are reassigned.
 
 ## Data retention
-
-This section lists the retention period for each type of data generated. 
 
 ### Default retention periods by data type
 

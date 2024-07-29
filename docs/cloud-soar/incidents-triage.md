@@ -423,20 +423,11 @@ to the `/opt/automation-bridge/` directory.
 The Cloud SOAR Triage module ingests events via the Cloud SOAR API. You can use it
 to triage events which may be unverified or have a low confidence level before they are converted to incidents. The Triage module can be completely customized for use cases from financial fraud to network IDS alerts.
 
-### Display Settings
-
-Triage display preferences can be customized. Triage events can be color coded based on status to easily distinguish them from each other when viewing the list of Triage events.
-
-The name of the module can also be modified from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.
-
-<img src={useBaseUrl('img/cloud-soar/image57.png')} alt="Triage section" style={{border: '1px solid gray'}} width="800"/>
-
-
 ### Field Settings
 
 By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the Incident Type field and cannot be modified directly. New types must be added from the Incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case.
 
-To add additional fields:
+To add additional custom fields:
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 1. Select **Triage Events** (or the name of the module if you have renamed it from the default of **Triage**).
 1. To add a new field, click **Add** from the upper right-hand corner and configure the field as desired. Note that to be able to filter events in the Triage module based on the values of a field, **Use as filter** must be checked in the Visualization tab when adding or modifying a field.
