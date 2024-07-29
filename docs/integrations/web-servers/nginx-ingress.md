@@ -106,7 +106,7 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
    * For alerts applicable only to a specific farm, your custom filter would be: `webserver_farm=nginx-ingress.01`
    * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
    * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1` AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
-3. Go to Manage Data > Alerts > Monitors.
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 
@@ -189,7 +189,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.**
    3. Choose **Enter a Custom Data Filter**, and enter a custom Nginx Ingress farm filter. Examples:
       1. For all Nginx Ingress farms: `webserver_farm=*`.
