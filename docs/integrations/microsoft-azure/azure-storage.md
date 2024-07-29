@@ -36,8 +36,9 @@ Requests made by the Blob storage service itself, such as log creation or deleti
   * [Microsoft.Storage/storageAccounts/queueServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-queueservices-metrics)
   * [Microsoft.Storage/storageAccounts/tableServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-tableservices-metrics)
 
-**NOTE**
+:::note
 Only metrics with category=Transaction can be exported from diagnostic settings export feature.
+:::
 
 Click on the above namespaces to learn more about the supported metrics. For a complete list of the dimensions that Azure Storage supports, refer to the below documentation.
 
@@ -63,22 +64,23 @@ You must explicitly enable diagnostic settings for each storage service (blob,qu
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Storage/Logs`, `Azure/Storage/Metrics`.
 
-Metrics and logs in Azure Monitor support only Azure Resource Manager storage accounts. Azure Monitor doesn't support classic storage accounts. If you want to use metrics or logs on a classic storage account, you need to migrate to an Azure Resource Manager storage account. For more information, see [Migrate to Azure Resource Manager](https://learn.microsoft.com/en-us/azure/virtual-machines/migration-classic-resource-manager-overview).
-
-## Configure field in field schema
+### Configure field in field schema
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 2. Search for following fields:
-   * `tenant_name`
-   * `location`
-   * `subscription_id`
-   * `resource_group`
-   * `provider_name`
-   * `resource_type`
-   * `resource_name`
-   * `service_type`
+    ||
+    | --------------- |
+    | tenant_name     |
+    | location        |
+    | subscription_id |
+    | resource_group  |
+    | provider_name   |
+    | resource_type   |
+    | resource_name   |
+    | service_type    |
+
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
-## Configure Field Extraction Rules
+### Configure Field Extraction Rules
 Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 * **Activity Logs Location Extraction FER**
@@ -117,7 +119,7 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
    | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
    ```
-
+### Configure metric rules
 * **Azure Observability Metadata Extraction Metric Rule Service Level**
 ```sql
 Rule Name: AzureObservabilityMetadataExtractionMetricRuleServiceLevel
@@ -126,6 +128,13 @@ Rule Name: AzureObservabilityMetadataExtractionMetricRuleServiceLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 ```
+| Fields extracted |
+|------------------|
+| subscription_id  |
+| resource_group   |
+| provider_name    |
+| resource_type    |
+| resource_name    |
 
 * **Azure Observability Metadata Extraction Storage Account Level**
 ```sql
@@ -135,6 +144,13 @@ Rule Name: AzureObservabilityMetadataExtractionStorageAccountLevel
 ```sql title="Metric match expression"
 resourceId=*/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/* tenant_name=* accountresourceid=*
 ```
+| Fields extracted |
+|------------------|
+| subscription_id  |
+| resource_group   |
+| provider_name    |
+| resource_type    |
+| resource_name    |
 
 ### Configure metrics collection
 
@@ -331,7 +347,7 @@ Use this dashboard to:
     * View recent resource health incidents
     * Monitor resource health by event type
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Azure Storage - Availability
 
