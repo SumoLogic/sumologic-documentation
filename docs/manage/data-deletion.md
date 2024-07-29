@@ -36,7 +36,7 @@ Deletion requests result in the permanent deletion of data. Once deleted, the da
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-status.png')} alt="data-deletion-status" width="400"/>
+1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-status.png')} alt="data-deletion-status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
