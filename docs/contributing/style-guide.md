@@ -1506,7 +1506,7 @@ For clarity and search engine discoverability:
 
 
 
-## UI Elements
+## UI elements
 
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
