@@ -109,6 +109,15 @@ The final step is to configure the exporter endpoint, service and application na
 
 More extensive description of the installation process is available on the following [page](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/iis-instrumentation.md). Advanced configuration methods are described  [here](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md#configuration-methods).
 
+#### Instrumentation logs
+
+Internal OpenTelemetry DotNet auto-instrumentation logs are available in:
+* Windows: `%ProgramData%\OpenTelemetry .NET AutoInstrumentation\logs`
+* Linux: `/var/log/opentelemetry/dotnet`
+* macOS: `/var/log/opentelemetry/dotnet`
+
+For more information please see the [documentation](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md#internal-logs).
+
 ## How to instrument your ASP.NET Core application (library instrumentation)
 
 There are a few simple steps to instrument the application and obtain telemetry data.
