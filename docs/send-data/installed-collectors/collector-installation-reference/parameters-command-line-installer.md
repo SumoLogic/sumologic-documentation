@@ -73,7 +73,7 @@ Many operating systems allow a user to list information about processes that are
 
 ## Authentication parameters
 
-The following table shows parameters that relate to authenticating the Collector.
+Following are parameters that relate to authenticating the Collector.
 
 ---
 ### `-VskipRegistration=[boolean]`
