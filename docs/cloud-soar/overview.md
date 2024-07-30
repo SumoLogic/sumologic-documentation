@@ -160,7 +160,7 @@ Cloud SOAR provides automated investigation of indicators of compromise (IoCs) f
 
 The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
 
-<img src={useBaseUrl('img/cloud-soar/overview-case-management.png')} alt="Case Management" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-war-room.png')} alt="War Room" style={{border: '1px solid gray'}} width="800" />
 
 ### Playbooks
 
