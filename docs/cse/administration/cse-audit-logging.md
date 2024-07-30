@@ -7,29 +7,20 @@ description: Learn how to search the Audit Event Index for Cloud SIEM log events
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Audit Event Index provides event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index is enabled for Cloud SIEM and Enterprise accounts. 
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) and [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) provide event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index and System Event Index are enabled for Cloud SIEM and Enterprise accounts.
 
 :::note
 This page describes functionality that is available to users whose Cloud SIEM URL ends in `sumologic.com`.
 :::
 
-## Where to find the documentation  
+## Where to find documentation  
 
-The audit logging documentation is hosted on each Sumo Logic deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. If you're not sure what what your deployment is, see how to determine which endpoint to use.
+To learn more, see [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
 
-Select the documentation link for your deployment:
 
-| Deployment | Location      | Documentation URL                                   |
-|:------------|:---------------|:-----------------------------------------------------|
-| AU         | Australia     |https://service.au.sumologic.com/audit/docs/sec  |
-| JP         | Japan         |https://service.jp.sumologic.com/audit/docs/sec  |
-| IN         | India         |https://service.in.sumologic.com/audit/docs/sec  |
-| US1        | United States |https://service.sumologic.com/audit/docs/sec     |
-| US2        | United States |https://service.us2.sumologic.com/audit/docs/sec |
+## Scoping your search
 
-## Scoping your Audit Index search
-
-This section explains how to scope a search of the Audit Event Index to return Cloud SIEM events.
+This section explains how to scope a search of the Audit Event Index and System Event Index to return Cloud SIEM events.
 
 ## Limit search to user or system events
 
@@ -122,9 +113,9 @@ area and provide details of the event.
 | `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
-## Search the Audit Event Index 
+## Search for Cloud SIEM events 
 
-To search the Audit Event Index for logs that describe Cloud SIEM events:
+To search the Audit Event Index or System Event Index for logs that describe Cloud SIEM events:
 
 1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  

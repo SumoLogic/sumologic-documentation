@@ -44,7 +44,7 @@ the following parameters are for local file source. 
 | `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
 
-Local File Source JSON example with `cutoffTimestamp`: 
+Local File Source JSON example with `cutoffTimestamp`:
 
 ```json
 {
@@ -595,7 +595,7 @@ Graphite contentType JSON example: 
 }
 ```
 
-## Additional Information
+## Additional information
 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
