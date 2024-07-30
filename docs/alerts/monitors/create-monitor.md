@@ -19,29 +19,29 @@ This topic shows you how to create a monitor.
 
 ## Open the New Monitor window
 
-#### From your Monitors page
+### From your Monitors page
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  Kanso-->
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The **New Monitor** dialog box will appear.
 
-#### From your Dashboard
+### From your Dashboard
 
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
-#### From your App Catalog
+### From your App Catalog
 
 1. In the **App Catalog > Search Apps** field, search for and then select your app.
 1. Navigate to **What's Included** tab and scroll down to the **Monitors** section.
 1. Click **Create** next to the pre-configured monitors.
 
-#### From your Log Search
+### From your Log Search
 
 Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 <AlertsTimeslice/>
 
-#### From your Metrics Explorer
+### From your Metrics Explorer
 
 Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.
 
@@ -62,7 +62,7 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 Note that the same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
-## Step 1: Set trigger conditions
+## Step 1. Set trigger conditions
 
 The first step when you create a new monitor is to set the trigger conditions.
 
@@ -70,13 +70,13 @@ The first step when you create a new monitor is to set the trigger conditions.
 
 ### Select monitor type and detection method
 
-1. Select a **Monitor Type**: <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
+1. Select a **Monitor Type**. <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
    * **Logs**. Creates alerts based on a [log search](/docs/search/).
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
 1. Select a **Detection Method**. The methods available depend on whether you choose **Logs** or **Metrics** as the monitor type (there is no detection type for **SLO**): <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="425"/> <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-metrics.png')} alt="Logs detection methods" width="425"/>
-   * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-   * **Anomaly** lets you uncover unusual behavior identified by anomaly detection, which applies machine learning techniques to detect anomalies and identifies suspicious patterns of activity. It works by establishing baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. AI-driven alerting overcomes monitoring limitations through:
+   * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
+   * **Anomaly** lets you uncover unusual behavior identified by anomaly detection, which applies machine learning techniques to detect anomalies and identifies suspicious patterns of activity. This type of detection, also called [*AI-Driven Alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg), works by establishing baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. AI-driven alerting overcomes monitoring limitations through:
       * **Model-driven anomaly detection**. Utilizing historical data, ML models establish accurate baselines, eliminating guesswork and noise in alerts.
       * **AutoML**. The system self-tunes, including seasonality detection, minimizing user intervention for a simpler experience.
       * **User context**. Users set alert sensitivity and incident thresholds, adding context to anomaly detection to mitigate noise.
@@ -199,6 +199,29 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     `Recover automatically when data becomes available for the affected time span.`
 
+**Trigger Evaluation Frequency**
+
+Log monitor triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
+
+* For static logs monitors, triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
+   | When detection window (Y) is | Evaluate trigger every |
+   |:-----------------------------|:-----------------------|
+   | 30m or less  | 1m  |
+   | 30m to 3h    | 2m |
+   | 3hr to 12h   | 10m  |
+   | Greater than 12h  | 20m |
+* For outlier logs monitors, triggers are evaluated every 5 minutes.
+* For anomaly logs monitors, triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
+   ```
+   _sourceCategory=Labs/Apache/Access
+   | timeslice 2m
+   | parse "HTTP/1.1\" * " as status_code
+   | if (status_code = "200", 1, 0) as successes
+   | if (status_code = "404", 1, 0) as fails
+   | sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
+   | (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
+   ```
+
 
 </details>
 
@@ -296,20 +319,21 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 </details>
 
-## Step 2: Advanced settings (optional)
+## Step 2. Advanced settings (optional)
 
 The second step when you create a new monitor is to configure advanced settings.
 
 <img src={useBaseUrl('img/monitors/new-monitor-advanced-settings.png')} alt="Screenshot of the Advanced Settings section in Sumo Logic's 'New Monitor' setup page. It includes options to use the monitor name or customize the alert name, and an evaluation delay slider set to 0 seconds with a maximum of 120 minutes." style={{border: '1px solid gray'}} width="800"/>
 
 ### Alert Name
-Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
+
+Alert Name allows you to customize the name that appears on the Alert page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
    * Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with the name like PROD - High CPU. Here we are assuming that there is a field name Env in underlying data that has a value of "PROD".
 
 ### Evaluation Delay
 Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)<br/>If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
-## Step 3: Notifications (optional)
+## Step 3. Notifications (optional)
 
 The third step when you create a new monitor is to configure notifications.
 
@@ -321,13 +345,13 @@ To add notifications, click the **Add Notification** button. You can add more 
 
 1. Set your **Preferred Notification Time Zone** for your monitor's alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/alerts/webhook-connections) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
-   * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
-   * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
+   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body.
+   * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 1. Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification.  You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
    * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-## Step 4: Playbook (optional)
+## Step 4. Playbook (optional)
 
 The fourth step when you create a new monitor is to add playbooks.
 
@@ -340,9 +364,9 @@ In this step, you can add a **Playbook** to run in response to an alert.
 1. **Add Playbook**. If desired, you can add more automated playbooks to run sequentially.
 1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service.
 
-## Step 5: Monitor details
+## Step 5. Monitor details
 
-The fifth step when you create a new monitor is to configure monitor details.
+In this step, you'll configure monitor details.
 
 <img src={useBaseUrl('img/monitors/new-monitor-details.png')} alt="Monitor details modal" style={{border: '1px solid gray'}} width="800"/>
 
@@ -351,7 +375,7 @@ The fifth step when you create a new monitor is to configure monitor details.
 1. (Optional) Add a **Description**.
 1. When you're done creating the monitor, click **Save**.
 
-## Other Configurations
+## Other configurations
 
 ### Using Terraform
 

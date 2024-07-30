@@ -64,7 +64,7 @@ The following table provides a summary list of key features by Flex package acco
 | Entity Timeline |  |  | ![check](/img/reuse/check.png) |
 | Entity Relationship Graph |  | | ![check](/img/reuse/check.png) |
 | Insight Global Confidence Scores |  |  | ![check](/img/reuse/check.png) |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) |  |  | ![check](/img/reuse/check.png) |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | MITRE ATT&CK Coverage Explorer |  | | ![check](/img/reuse/check.png) |
 | Insight Trainer |  |  | ![check](/img/reuse/check.png) |
 | Cloud SOAR |  |  | Activation required* |
