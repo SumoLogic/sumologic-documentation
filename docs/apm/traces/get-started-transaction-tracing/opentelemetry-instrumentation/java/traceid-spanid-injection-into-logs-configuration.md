@@ -1,16 +1,16 @@
 ---
 id: traceid-spanid-injection-into-logs-configuration
-title: TraceId and SpanId injection into logs configuration
-sidebar_label: TraceId and SpanId injection into logs configuration
-description: It is simple to configure traceId and spanId data injection into user logs in Java applications.
+title: Java TraceId and SpanId Injection into Logs Configuration
+sidebar_label: TraceId and SpanId Injection into Logs Configuration
+description: Learn how to configure traceId and spanId data injection into user logs in Java applications.
 ---
+
+This page describes how to configure **spanId** and **traceId** data injection into user logs in Java applications.
 
 ## Log4j instrumentation
 
 1. Add instrumented **Log4j2** and **OpenTelemetry-api** libraries into the project dependencies:
-
-   * Maven projects  
-
+   * Maven projects
         ```xml
         <dependencies>
             <dependency>
@@ -21,17 +21,13 @@ description: It is simple to configure traceId and spanId data injection into us
             </dependency>
         </dependencies>
         ```
-
    * Gradle projects  
-
         ```gradle
         dependencies {
             runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-context-data-2.17-autoconfigure:2.6.0-alpha")
         }
         ```
-
-1. Update the **log4j2.xml** configuration file, typically stored in **resources** directory, with `traceId`, `spanId`, `and sampled` keys. The following is an example configuration.
-
+1. Update the **log4j2.xml** configuration file, typically stored in **resources** directory, with `traceId`, `spanId`, and `sampled` keys. The following is an example configuration.
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <Configuration status="WARN">
@@ -51,9 +47,7 @@ description: It is simple to configure traceId and spanId data injection into us
 ## Logback instrumentation
 
 1. Add instrumented **logback** library into the project dependencies:
-
    * Maven projects  
-
         ```xml
         <dependencies>
             <dependency>
@@ -64,17 +58,13 @@ description: It is simple to configure traceId and spanId data injection into us
             </dependency>
         </dependencies>
         ```
-
-   * Gradle projects  
-
+   * Gradle projects
         ```gradle
         dependencies {
             runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-logback-mdc-1.0:2.6.0-alpha")
         }
         ```
-
-1. Update the **logback.xml** configuration file, typically stored in the **resources** directory, with `traceId`, `spanId`, `and sampled` keys. The following is an example configuration.
-
+1. Update the **logback.xml** configuration file, typically stored in the **resources** directory, with `traceId`, `spanId`, and `sampled` keys. The following is an example configuration.
     ```xml
     <?xml version="1.0" encoding="UTF-8" ?>
     <configuration>
