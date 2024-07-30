@@ -11,7 +11,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
   * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
-  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
+  * [Collect from Custom channels (PowerShell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -236,7 +236,7 @@ Configuration details:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 
-### Collect from Custom channels (Powershell, Sysmon)
+### Collect from Custom channels (PowerShell, Sysmon)
 
 Following configuration demonstrates:
 
