@@ -252,10 +252,10 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'support_us',
-      content: '<html><p style="font-size: 13px; padding-top: 20px">We are aware of the recent CrowdStrike and Microsoft outages. Our operations remain unaffected, and service continues uninterrupted. Thank you for your continued trust in Sumo Logic.</p>',
-      backgroundColor: '#fafbfc',
-      textColor: '#091E42',
+      id: 'announcementBar',
+      content: '<b>Temporary Search Disruption</b>: Our site search may be intermittently down for maintenance. We appreciate your patience.',
+      backgroundColor: '#FFECB3',
+      textColor: '#000000',
     },
     colorMode: {
       defaultMode: 'light',
