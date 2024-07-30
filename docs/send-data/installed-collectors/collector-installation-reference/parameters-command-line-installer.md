@@ -10,7 +10,7 @@ This page provides the available parameters for Collector installation using th
 Collector versions 19.253-26+ support wrapper configuration parameters.
 :::
 
-For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md).
+For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on macOS](../macos.md), and [Install a Collector on Windows](../windows.md).
 
 ## Unique parameters
 
