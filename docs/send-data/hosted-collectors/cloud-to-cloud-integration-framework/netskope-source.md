@@ -99,7 +99,7 @@ To configure a Netskope Source:
 | `_siemVendor` | `Netskope` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Security Cloud` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as, audit-logon or audit-logoff. |
+| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as: audit-logon or audit-logoff. |
 
 ## JSON schema
 
