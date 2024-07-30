@@ -52,7 +52,7 @@ See [Alert Variables](/docs/alerts/monitors/alert-variables) for more informatio
 A maximum of 100 emails are sent per day per scheduled search.
 :::
 
-There are three ways to receive the results of scheduled searches in email:
+There are three ways to receive the results of Scheduled Searches in email:
 
 ### Scheduled email
 
@@ -84,12 +84,12 @@ If you're a new user and someone has forwarded you an alert email, the links to 
 ### Real-time alerts
 
 :::warning Solution Deprecated
-Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require Real-Time Alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
+Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require real-time alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
 :::
 
-Real-Time Alerts continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met. You can learn more in [Create a Real Time Alert](create-real-time-alert.md).
+[Real-time alerts](create-real-time-alert.md) continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met.
 
-Scheduled searches run according to the time zone of an individual's computer and browser, not according to the time zone of logs.
+Scheduled Searches run according to the time zone of an individual's computer and browser, not according to the time zone of logs.
 
 ## Customize your email alert subject and content
 
