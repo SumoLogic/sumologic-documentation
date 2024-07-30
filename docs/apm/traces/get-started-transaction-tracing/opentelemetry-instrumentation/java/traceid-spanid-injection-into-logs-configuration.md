@@ -16,7 +16,7 @@ description: It is simple to configure traceId and spanId data injection into us
             <dependency>
                 <groupId>io.opentelemetry.instrumentation</groupId>
                 <artifactId>opentelemetry-log4j-context-data-2.17-autoconfigure</artifactId>
-                <version>1.32.1-alpha</version>
+                <version>2.6.0-alpha</version>
                 <scope>runtime</scope>
             </dependency>
         </dependencies>
@@ -26,7 +26,7 @@ description: It is simple to configure traceId and spanId data injection into us
 
         ```gradle
         dependencies {
-            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-context-data-2.17-autoconfigure:1.32.1-alpha")
+            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-context-data-2.17-autoconfigure:2.6.0-alpha")
         }
         ```
 
@@ -59,7 +59,7 @@ description: It is simple to configure traceId and spanId data injection into us
             <dependency>
                 <groupId>io.opentelemetry.instrumentation</groupId>
                 <artifactId>opentelemetry-logback-mdc-1.0</artifactId>
-                <version>1.32.1-alpha</version>
+                <version>2.6.0-alpha</version>
                 <scope>runtime</scope>
             </dependency>
         </dependencies>
@@ -69,7 +69,7 @@ description: It is simple to configure traceId and spanId data injection into us
 
         ```gradle
         dependencies {
-            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-logback-mdc-1.0:1.32.1-alpha")
+            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-logback-mdc-1.0:2.6.0-alpha")
         }
         ```
 
@@ -97,5 +97,5 @@ description: It is simple to configure traceId and spanId data injection into us
     ```
 
 :::note
-For more details, refer to the [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/release/v1.32.x/docs/logger-mdc-instrumentation.md).
+For more details, refer to the [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/release/v2.6.x/docs/logger-mdc-instrumentation.md).
 :::
