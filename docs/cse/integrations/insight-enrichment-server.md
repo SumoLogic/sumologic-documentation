@@ -245,10 +245,10 @@ command_args = dsquery user -name ${USERNAME}
 cache_time = 5m
 ```
 
-## Passing parameters to Powershell scripts
+## Passing parameters to PowerShell scripts
 
 You can configure the Insight Enrichment Server to pass parameters to a
-Powershell script, as shown in the examples below.
+PowerShell script, as shown in the examples below.
 
 ### CarbonBlack enrichment
 
@@ -385,7 +385,7 @@ The example provided below is not guaranteed to work with all versions of the ap
     ```
 1. Restart the enrichment server.
 
-**Powershell Scripts**
+**PowerShell Scripts**
 
 **S1hostname.ps1**
 ```
