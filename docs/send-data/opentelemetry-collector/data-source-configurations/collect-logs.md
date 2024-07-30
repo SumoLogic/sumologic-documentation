@@ -468,11 +468,11 @@ receivers:
     datasource: oracle://user:password@host:port/servicename
     storage: file_storage
     queries:
-      - sql: select log_id, log_text from logs_table where log_id > :id order by log_id
+      - sql: SELECT log_id, log_text, (log_id || ';' || log_text) AS concatenated_fields FROM logs_table WHERE log_id > :id ORDER BY log_id
         tracking_column: LOG_ID
         tracking_start_value: 1
         logs:
-          - body_column: LOG_TEXT
+          - body_column: concatenated_fields
 service:
   pipelines:
     logs/oracle:
