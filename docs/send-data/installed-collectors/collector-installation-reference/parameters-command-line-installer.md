@@ -32,7 +32,7 @@ Sets a different installation directory than the default.
 
 ---
 ### `-q`
-Causes the installer to run silently, which means you won't be prompted to supply installation parameters. For any installation parameter that you do not define at the command line, Sumo will use a default value. No output is sent to the console during installation, unless you also use the `-console` parameter.
+Causes the installer to run silently, which means you won't be prompted to supply installation parameters. For any installation parameter that you do not define at the command line, Sumo Logic will use a default value. No output is sent to the console during installation, unless you also use the `-console` parameter.
 
 Note that for a new Collector installation, even during a silent installation, you will be prompted to provide an authorization token, or an Access ID and Access Key.
 
