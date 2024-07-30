@@ -57,7 +57,7 @@ Parameters for `-q` and `-dir` must be passed in the command line and cannot be 
 ---
 ### `-Vcollector.secureFiles=[true|false]`
 
-By default, new Collector installations will use [Enhanced File System Security](enhanced-file-system-security-installed-collectors.md). To disable this feature during installation, use the command line argument: `-Vcollector.secureFiles=false`
+By default, new Collector installations will use [enhanced file system security](enhanced-file-system-security-installed-collectors.md). To disable this feature during installation, use the command line argument: `-Vcollector.secureFiles=false`.
 
 ---
 ### `-VrunAs.username=[username]`
