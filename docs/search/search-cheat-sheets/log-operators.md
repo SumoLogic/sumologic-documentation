@@ -175,7 +175,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.</td>
    <td></td>
    <td></td>
-   <td><code>_sourceCategory=stream "remote_ip="<br/>| parse regex "(?&lt;ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"<br/>| lookup organization, asn from asn://default on ip = ip</code></td>
+<td><code>_sourceCategory=stream "remote_ip="<br/>| parse regex "(?&lt;ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"<br/>| lookup organization, asn from asn://default on ip = ip</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/backshift">backshift</a></td>
