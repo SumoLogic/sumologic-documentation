@@ -13,7 +13,7 @@ For example, you can create a scheduled search that triggers an Azure function w
 
 First, create an HTTP-triggered Azure function. For more information, see [Azure Functions HTTP triggers and bindings overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook?tabs=in-process%2Cfunctionsv2&pivots=programming-language-csharp).
 
-1. Create an Azure function using the template **HttpTrigger-Powershell**.
+1. Create an Azure function using the template **HttpTrigger-PowerShell**.
 1. Copy and paste code of the Azure function into the code field. The following example is an HTTP-triggered PowerShell function:
     ```
     $requestBody = Get-Content $req -Raw | ConvertFrom-Json
