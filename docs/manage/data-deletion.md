@@ -23,7 +23,7 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
-## Create a Data Deletion Request
+## Create a data deletion request
 
 :::warning
 Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
