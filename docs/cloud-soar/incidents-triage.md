@@ -16,13 +16,24 @@ The SecOps screen is where all your current tasks reside. Here you can approve, 
 
 In the upper left corner you can select **Dashboard** to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
 
-## Incidents screen
+## Incidents
+
+### Incident generation process
+
+ [Incidents](/docs/cloud-soar/incidents-triage/) are at the heart of Cloud SOAR. Incidents are events that require investigation and remediation. Cloud SOAR generates incidents with an automated process:
+ 1. An alert is received by Cloud SOAR via an integration.
+ 1. [Automation rules](/docs/cloud-soar/automation/#creating-incidents-from-automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
+ 1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
+ 1. [Playbooks](/docs/cloud-soar/automation/#playbook) run against the data.
+ 1. Cloud SOAR generates an [incident](#incident-generation-process)).
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid gray'}} width="800" />
+
+### Incidents screen
 
 The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the incident IDs in the Incident section will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
 
-
 <img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
-
 
 Watch this micro lesson to learn more about Incidents in Cloud SOAR.
 
@@ -37,7 +48,7 @@ Watch this micro lesson to learn more about Incidents in Cloud SOAR.
         allowfullscreen
         />
 
-## Filtering Incidents
+### Filtering Incidents
 
 You can also manipulate what data is to be displayed from the Incident section by adjusting which columns are viewable. The adjust these columns, click on the cogwheel on the top right-side of the screen. This will display a configuration screen that allows you to choose which data is displayed and where on the screen it should be displayed by clicking the + sign next to the selection and then dragging and dropping the selection in the order to be viewed.
 
@@ -101,14 +112,14 @@ To allow users to access incidents without being added as investigators, assign 
 :::
 
 
-## Working with Incidents
+### Incident details
 
 Opening an incident from any section of Cloud SOAR will display the Incident Details page. The Incident Details page is composed of three sections: The Incident VIP Section, on the left side of the screen, the Incident Properties section in the center, and the Incident Widgets section to the right side of the screen.
 
 <img src={useBaseUrl('img/cloud-soar/image147.png')} alt="Incident details page" style={{border: '1px solid gray'}} width="800"/>
 
 
-### Incident VIP section
+#### Incident VIP section
 
 <img src={useBaseUrl('img/cloud-soar/image148.png')} alt="Incident VIP section" style={{border: '1px solid gray'}} width="300"/>
 
@@ -117,29 +128,29 @@ The Incident VIP Section displays high-level details about a specific incident. 
 
 To customize the details displayed in the Incident VIP Section, click the cogwheel at the top-right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
 
-### Incident Properties
+#### Incident Properties
 
 The Incident Details section contains all the important information that makes up the incident, such as executed Playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
 
 <img src={useBaseUrl('img/cloud-soar/image149.png')} alt="Incident Overview" style={{border: '1px solid gray'}} width="600"/>
 
-#### Overview
+##### Overview
 
-The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom Fields](#custom-fields).
+The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom fields](/docs/cloud-soar/overview/#custom-fields).
 
-#### Operations
+##### Operations
 
 The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
 Watch this micro lesson to learn more about security automation with playbooks.
 
-#### War Room
+##### War Room
 
 All the information related to the incident ongoing are visible in one place in the War Room section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
 
 <img src={useBaseUrl('img/cloud-soar/war_room.png')} alt="War room" style={{border: '1px solid gray'}} width="800"/>
 
-#### Playbooks
+##### Playbooks
 
 Any playbook that has been applied to an incident can be found under the playbook section. You can quickly view and make any necessary adjustments to the incident's Playbooks as well as add any additional Playbooks that may be required during an incident's investigation.
 
@@ -223,12 +234,12 @@ Closing incident will result in asking a note for incident closing as below:
 
 <img src={useBaseUrl('img/cloud-soar/image57c.png')} alt="Closing Note" width="800"/>
 
-### Documentation
+#### Documentation
 
 The **Documentation** section provides investigators with an area to
 document all steps taken during an incident's investigation.
 
-### Attachments
+#### Attachments
 
 The **Attachments** section is a repository for investigators to use to
 house attachments related to an incident's investigation. The source of
@@ -246,7 +257,7 @@ a timeline event and associated with a knowledge base article.
 
 <img src={useBaseUrl('img/cloud-soar/image172.png')} alt="New Attachment Screen" width="600"/>
 
-## Create a new incident manually
+### Create a new incident manually
 
 To create an Incident manually, click the **+ Incident** button on the top right-side of the screen.
 
@@ -265,158 +276,19 @@ Once the details page is completed, you will want to assign appropriate Playbook
 
 <img src={useBaseUrl('img/cloud-soar/image128.png')} alt="New Incident Editor" style={{border: '1px solid gray'}} width="800"/>
 
-### Incident Artifacts
+#### Incident Artifacts
 
 When creating an incident manually, the investigator may already have artifacts that they would like to add to the incident. The Incident Artifact section allows for the manual entry of new artifacts. To add a new artifact click **Add Artifact** and choose what target field to append the data and add its value. Once completed, click **Next**.
 
 <img src={useBaseUrl('img/cloud-soar/image129.png')} alt="Add artifact" style={{border: '1px solid gray'}} width="800"/>
 
-### Parent/Child Relationships
+#### Parent/Child Relationships
 
 You have the option to create manual Parent/Child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together.
 
 <img src={useBaseUrl('img/cloud-soar/image130.png')} alt="Incident Relationships" style={{border: '1px solid gray'}} width="800"/>
 
 The final step in manual incident creation is to add an investigator or a group of investigators to the incident. Select an investigator or group from the left side of the screen by double-clicking on their name and the investigator will be added to the investigators pane. Once finished, click **Create**.
-
-### Custom Fields
-
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**.
-<!--Kanso
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom fields, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
- Kanso-->
-<img src={useBaseUrl('img/cloud-soar/image46.png')} alt="Fields Configuration Settings" style={{border: '1px solid gray'}} width="800"/>
-
-The Custom Fields section allows you to customize all fields within the Cloud SOAR platform to better suit your environment. All fields are pre-populated by default and can be revised with environment-specific variables by manually creating or updating the fields or by importing a file which is formatted with entries for each line.
-
-To begin defining Cloud SOAR's custom fields, select a Cloud SOAR section from the list on the left-side of the screen to view all available fields. To edit an existing field, select the <img src={useBaseUrl('img/cloud-soar/image47.png')} alt="Edit icon" width="30"/> icon next to the field to be updated, or to add a new field select **+ADD** at the bottom right-side of the screen. A new configuration box will be displayed.
-
-The only attribute of an existing field which cannot be modified once
-the field is created is the field Type, such as Text or Date. You can rename internal values but only personal values, which are denoted by having a trash can symbol next to the entry, can be deleted from the section's custom fields.
-
-Each section of Cloud SOAR supports different numbers of custom fields. The Incidents section, for example, supports up to 100 custom fields. The number of custom fields remaining will be displayed next to the section name at the top of the page.
-
-Custom fields added by a user can be renamed or deleted. However, default fields can only be renamed, they cannot be deleted. Although a custom field may be deleted, it will not increase the number of custom fields available. Since the deleted field may contain data that was entered prior to the deletion of the field, the custom field remains reserved.
-
-For each field, a name and a type will always be required. A complete list of field types is listed below. Additional fields will be required or optional depending on the type selected. For example, a text field allows an optional default value to be specified, while a list field provides many additional options.
-
-The Visualization tab allows you to disable the field, specify if the field is used within Incident notifications, and set conditions under which the field is visible. For example, a field can be made visible only if the incident is of a certain type.
-
-The Additional Info tab allows you to provide additional information or context to the field, such as how the field should be used or where the data can be located.
-
-Fields may be reorder in the Custom Fields section to change the order in which they appear on the Cloud SOAR screen. To change the order of the fields, click and hold on the six dots to the far left of the field name, then drag the field to its desired location.
-
-#### Custom Field Types
-
-| Field Type        | Description                                                                                       |
-|:------------------|:--------------------------------------------------------------------------------------------------|
-| Calculation  | Perform a calculation between two fields or between a field and a static value. |
-| Checkbox   | Checkbox. |
-| Color Picker  | Interactive color picker to select a color. |
-| Date | Date only picker. |
-| Date & Time   | Date and time picker. |
-| Email Address | Email address available to use in actions which require a email input.    |
-| Filename | Filename available to use in actions which require a filename input.   |
-| Hash | Hash value available to use in actions which require a hash input.  |
-| IP Address    | IP address available to use in actions which require a IP address input.    |
-| List   | Dropdown list.  |
-| Multi Select List | Multiselect list box.  |
-| Numeric Textbox   | Accepting numeric values only.  |
-| Tags | One or more user defined tags.  |
-| Text | Free text. |
-| Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
-| Timezone   | Timezone list dropdown. |
-| URL | URL available to use in actions which require a URL input. |
-| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
-
-#### Using Custom Fields for SLAs
-
-Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of Date, Date & Time and Time Interval fields.
-
-In the following example, five custom fields have been added to provide information on the status of an organizations Notification SLA. Two of the custom fields require user input:
-
-<img src={useBaseUrl('img/cloud-soar/image50.png')} alt="SLA User Input" style={{border: '1px solid gray'}} width="800"/>
-
-
-* **Notification SLA Requirement** will be used to store the SLA time interval, such as 5 minutes.
-* **Customer Notified** will allow you to enter the date & time the customer was notified.
-
-The remaining three custom fields require no user input and are calculation fields only:
-
-<img src={useBaseUrl('img/cloud-soar/image51.png')} alt="SLA Calculated Fields" style={{border: '1px solid gray'}} width="800"/>
-
-* **Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA Requirement field to the Start Time.
-* **Notification Time Remaining** will calculate and display time remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
-* **Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
-
-These Custom Field settings will appear in the Cloud SOAR Incident screen as follows:           
-
-<img src={useBaseUrl('img/cloud-soar/image52.png')} alt="SLA View" style={{border: '1px solid gray'}} width="400"/>
-
-
-### Credential Manager - CyberArk Configuration
-
-You can use CyberArk Credential Manager to manage data that will be used in integration resources.
-
-<img src={useBaseUrl('img/cloud-soar/cyberArk1.png')} alt="Integrations" style={{border: '1px solid gray'}} width="600"/>
-
-Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk2.png')} alt="CyberArk configuration" style={{border: '1px solid gray'}} width="400"/>
-
-Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
-
-If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk3.png')} alt="Enable CyberArk fields" style={{border: '1px solid gray'}} width="800"/>
-
-If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
-* **Account Name** > userName in CyberArk
-* **Platform ID** > platformId in CyberArk
-
-Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
-
-In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
-
-Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
-
-:::note Case sensitive
-Pay attention to uppercase and lowercase letters.
-:::
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid gray'}} width="400"/>
-
-Through the name of the Properties, (in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
-
-In the fields enabled for CyberArk, in addition to the account properties, you can also recall the value of the CyberArk Account password, to do this, write the word **Password** in the field.
-
-:::important
-If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, and more.
-:::
-
-**The only property that will be retained is the mandatory nature of the field**.
-
-Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
-
-If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk6.png')} alt="CyberArk fields" style={{border: '1px solid gray'}} width="400"/>
-
-
-#### Configuring the automation bridge for CyberArk
-
-If you are using CyberArk, you will need to add the following certificates given by CyberArk:
-```
-**RootCA**new.crt**
-**client**new.crt**
-**client**new.pem**
-```
-to the `/opt/automation-bridge/` directory.
-
-**The names must be exactly the same**.
-
 
 ## Triage
 
@@ -633,3 +505,66 @@ entity, such as adding a file or its file hash. Once the entity is
 created, click **Create** to continue.
 
 <img src={useBaseUrl('img/cloud-soar/image166.png')} alt="Adding a new Entity" width="400"/>
+
+## Credential Manager - CyberArk Configuration
+
+You can use CyberArk Credential Manager to manage data that will be used in integration resources.
+
+<img src={useBaseUrl('img/cloud-soar/cyberArk1.png')} alt="Integrations" style={{border: '1px solid gray'}} width="600"/>
+
+Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk2.png')} alt="CyberArk configuration" style={{border: '1px solid gray'}} width="400"/>
+
+Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
+
+If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk3.png')} alt="Enable CyberArk fields" style={{border: '1px solid gray'}} width="800"/>
+
+If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
+* **Account Name** > userName in CyberArk
+* **Platform ID** > platformId in CyberArk
+
+Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
+
+In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
+
+Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
+
+:::note Case sensitive
+Pay attention to uppercase and lowercase letters.
+:::
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid gray'}} width="400"/>
+
+Through the name of the Properties, (in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
+
+In the fields enabled for CyberArk, in addition to the account properties, you can also recall the value of the CyberArk Account password, to do this, write the word **Password** in the field.
+
+:::important
+If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, and more.
+:::
+
+**The only property that will be retained is the mandatory nature of the field**.
+
+Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
+
+If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk6.png')} alt="CyberArk fields" style={{border: '1px solid gray'}} width="400"/>
+
+### Configuring the automation bridge for CyberArk
+
+If you are using CyberArk, you will need to add the following certificates given by CyberArk:
+```
+**RootCA**new.crt**
+**client**new.crt**
+**client**new.pem**
+```
+to the `/opt/automation-bridge/` directory.
+
+**The names must be exactly the same**.
+

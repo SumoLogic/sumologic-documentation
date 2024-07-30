@@ -4,23 +4,72 @@ title: Cloud SOAR Overview
 sidebar_label: Overview
 ---
 
-Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Cloud SOAR user interface
+Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
+
+## Why Cloud SOAR?
+
+Cloud SOAR is a security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
+
+* **All-in-one platform for minimizing the response time**
+   * Integrates disparate technologies focusing analysts on real threats.
+   * Makes the most of automation, orchestrating several tools in Standard Operating Procedures (SOPs).
+   * Measures success and improves communication.
+* **Better collaboration**
+<br/>Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response. Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
+* **Customizable reports**
+<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
+* **Speed incident response**
+<br/>Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
+* **Connect disparate tools**
+<br/>Cloud SOAR acts as the connective tissue between your existing tools to automate processes across the SOC and derive relevant insights throughout your security portfolio.
+* **Close the skill gap**
+<br/>Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
+* **Comprehensive security portfolio**
+<br/>Cloud SOAR comprises both the Automation Service, which allows Sumo Logic to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
+
+## Cloud SOAR highlights
+
+Cloud SOAR helps secure operations and automate incident response through integrations with leading third-party threat intelligence vendors. Following are some of the highlights. 
+
+### Triage
+
+Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
+
+<img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid gray'}} width="800" />
+
+### War Room
+
+The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-war-room.png')} alt="War Room" style={{border: '1px solid gray'}} width="800" />
+
+### Playbooks
+
+Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbooks](/docs/cloud-soar/automation/#playbook).
+
+<img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid gray'}} width="800" />
+
+### Dashboards and reports
+
+Gain complete insight into incident response performance with customizable dashboards and reports. Keep track of your most important KPIs with real-time data on each phase of the incident response life cycle. For more information, see [Dashboards](/docs/cloud-soar/incidents-triage/#dashboards).
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-dashboard.png')} alt="Example dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Open Integration Framework (OIF)
+
+Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](/docs/cloud-soar/automation/#integrations) and [Cloud SOAR Integration Framework](/docs/cloud-soar/cloud-soar-integration-framework/). 
+
+<img src={useBaseUrl('img/cloud-soar/overview-openI-itegration.png')} alt="Integrations" style={{border: '1px solid gray'}} width="800" />
+
+## User interface
 
 ### Access Cloud SOAR
 
 To access Cloud SOAR, click **Cloud SOAR** in the Sumo Logic navigation menu. 
 
 Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in your organization. If you would like to use Cloud SOAR in your organization, contact your Sumo Logic account representative.
-
-### Theme
-
-import Theme from '../reuse/dark-light-theme.md';
-
-<Theme/>
 
 ### Cloud SOAR menus
 
@@ -124,77 +173,16 @@ Use the **Administration** menu to access:
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
  Kanso-->
- 
-## Why Cloud SOAR?
 
-Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
+### Theme
 
-* **All-in-one platform for minimizing the response time**
-   * Integrates disparate technologies focusing analysts on real threats.
-   * Makes the most of automation, orchestrating several tools in Standard Operating Procedures (SOPs).
-   * Measures success and improves communication.
-* **Better collaboration**
-<br/>Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response. Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
-* **Customizable reports**
-<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
-* **Speed incident response**
-<br/>Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
-* **Connect disparate tools**
-<br/>Cloud SOAR acts as the connective tissue between your existing tools to automate processes across the SOC and derive relevant insights throughout your security portfolio.
-* **Close the skill gap**
-<br/>Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
-* **Comprehensive security portfolio**
-<br/>Cloud SOAR comprises both the Automation Service, which allows Sumo Logic to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
+import Theme from '../reuse/dark-light-theme.md';
 
-## Cloud SOAR highlights
-
-Cloud SOAR helps secure operations and automate incident response through integrations with leading third-party threat intelligence vendors. Following are some of the highlights. 
-
-### Triage
-
-Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
-
-<img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid gray'}} width="800" />
-
-### War Room
-
-The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
-
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-war-room.png')} alt="War Room" style={{border: '1px solid gray'}} width="800" />
-
-### Playbooks
-
-Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbooks](/docs/cloud-soar/automation/#playbook).
-
-<img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid gray'}} width="800" />
-
-### Dashboards and reports
-
-Gain complete insight into incident response performance with customizable dashboards and reports. Keep track of your most important KPIs with real-time data on each phase of the incident response life cycle. For more information, see [Dashboards](/docs/cloud-soar/incidents-triage/#dashboards).
-
-<img src={useBaseUrl('img/cloud-soar/overview-customized-reports.png')} alt="KPI dashboards" style={{border: '1px solid gray'}} width="800" />
-
-### Open Integration Framework (OIF)
-
-Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](//docs/cloud-soar/automation/#integrations). 
-
-<img src={useBaseUrl('img/cloud-soar/overview-openI-itegration.png')} alt="Integrations" style={{border: '1px solid gray'}} width="800" />
-
-## Incident generation process
-
- [Incidents](/docs/cloud-soar/incidents-triage/) are at the heart of Cloud SOAR. Incidents are events that require investigation and remediation. Cloud SOAR generates incidents with an automated process:
- 1. An alert is received by Cloud SOAR via an integration.
- 1. [Automation rules](/docs/cloud-soar/automation/#creating-incidents-from-automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
- 1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
- 1. [Playbooks](/docs/cloud-soar/automation/#playbook) run against the data.
- 1. Cloud SOAR generates an [incident](/docs/cloud-soar/incidents-triage/#working-with-incidents).
-
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid gray'}} width="800" />
+<Theme/>
 
 ## Settings
 
 The following sections detail the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the following sections are ordered in the suggested order for initial configuration.
-
 
 ### General
 
@@ -284,14 +272,14 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 Select the icon to the right of an event to trigger a notification to be sent when that event occurs. 
 
-### Configurations
+### Configuration
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Cloud SOAR configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization**.
 <!--Kanso 
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select the setting you want to update: Fields, Incident Labels, or Triage. 
  Kanso-->
 
-#### Fields
+#### Custom fields
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
 <!--Kanso 
@@ -300,7 +288,62 @@ Select the icon to the right of an event to trigger a notification to be sent wh
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
 
-The **Custom Fields** page allows you to edit existing fields as well as add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections that permit custom fields are displayed. Clicking a section displays all current fields. To add a field, click **+** at the top of the page next to the section name. You may edit any existing field listed, including changing the name or adding list values. The only attribute that you cannot change is the type of the field, such as text or date. 
+The **Custom Fields** page allows you to customize all fields within the Cloud SOAR platform to better suit your environment. All fields are pre-populated by default and can be revised with environment-specific variables by manually creating or updating the fields. To begin defining Cloud SOAR's custom fields, select a Cloud SOAR section from the list on the left-side of the screen to view all available fields. To edit an existing field, hover your mouse over the field and select the <img src={useBaseUrl('img/cloud-soar/image47.png')} alt="Edit icon" width="30"/> icon that appears next to the field. To add a new field, click the **+** button at the top of the panel.  
+
+Tips for working with custom fields:
+* You can rename or delete custom fields that you add. However, you can only rename default fields; you cannot delete them. Although you may delete a custom field, it will not increase the number of custom fields available. Since the deleted field may contain data that was entered prior to the deletion of the field, the custom field remains reserved. You can rename internal values, but only personal values (denoted by having a trash can symbol next to the entry), can be deleted from the section's custom fields.
+* For each field, a name and a type will always be required. The only attribute of an existing field that cannot be modified once the field is created is the field Type, such as Text or Date.  
+* Each section of Cloud SOAR supports different numbers of custom fields. The **Incidents** section, for example, supports up to 100 custom fields. The number of custom fields remaining will be displayed next to the section name at the top of the page.
+* When you edit a field, the **Additional info** section allows you to provide additional information or context to the field, such as how the field should be used or where the data can be located.
+* You can reorder fields in the **Custom Fields** section to change the order they appear on the Cloud SOAR screen. To change the order of the fields, click and hold on the six dots to the far left of the field name, then drag the field to its desired location.
+
+A complete list of field types is listed below. Additional fields are required or optional depending on the type selected. For example, a text field allows an optional default value to be specified, while a list field provides many additional options. 
+
+#### Custom field types
+
+| Field Type        | Description                                                                                       |
+|:--|:--|
+| Calculation  | Perform a calculation between two fields or between a field and a static value. |
+| Checkbox   | Checkbox. |
+| Color Picker  | Interactive color picker to select a color. |
+| Date | Date only picker. |
+| Date & Time   | Date and time picker. |
+| Email Address | Email address available to use in actions which require a email input.    |
+| Filename | Filename available to use in actions which require a filename input.   |
+| Hash | Hash value available to use in actions which require a hash input.  |
+| IP Address    | IP address available to use in actions which require a IP address input.    |
+| List   | Dropdown list.  |
+| Multi Select List | Multiselect list box.  |
+| Numeric Textbox   | Accepting numeric values only.  |
+| Tags | One or more user defined tags.  |
+| Text | Free text. |
+| Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
+| Timezone   | Timezone list dropdown. |
+| URL | URL available to use in actions which require a URL input. |
+| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
+
+#### Using custom fields for SLAs
+
+Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of Date, Date & Time and Time Interval fields.
+
+In the following example, five custom fields have been added to provide information on the status of an organization's Notification SLA. Two of the custom fields require user input:
+
+<img src={useBaseUrl('img/cloud-soar/image50.png')} alt="SLA User Input" style={{border: '1px solid gray'}} width="800"/>
+
+* **Notification SLA Requirement** will be used to store the SLA time interval, such as 5 minutes.
+* **Customer Notified** will allow you to enter the date & time the customer was notified.
+
+The remaining three custom fields require no user input and are calculation fields only:
+
+<img src={useBaseUrl('img/cloud-soar/image51.png')} alt="SLA Calculated Fields" style={{border: '1px solid gray'}} width="800"/>
+
+* **Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA Requirement field to the Start Time.
+* **Notification Time Remaining** will calculate and display time remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
+* **Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
+
+These custom field settings will appear in the Cloud SOAR Incident screen as follows:           
+
+<img src={useBaseUrl('img/cloud-soar/image52.png')} alt="SLA View" style={{border: '1px solid gray'}} width="400"/>
 
 #### Incident labels
 
@@ -330,6 +373,38 @@ You can customize triage display preferences on the **Triage** configuration pag
 * **Disable background cache generation**. Prevent cache from being generated for triage events. Selecting this box may speed up page load, but slow triage event retrieval.
 * **Set event row style**. Set the colors to display for triage events.
 * **Reassign Mail Configuration**. Customize the content of emails sent to analysts when triage events are reassigned.
+
+## Architecture
+
+Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
+
+This solution additionally provides capabilities to support incident
+responders during the process of assessment, Investigation, data collection and correlation to help inference additional information and metrics analytics to see repetitive patterns when doing analysis. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
+
+Cloud SOAR Automation and Orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security
+operations tasks including incident qualification, triage and
+escalation, threat hunting, analysis, threat containment and
+remediation. The gathering of information from different data sources
+and correlating this information expedites the capabilities and augments
+human analyst available resources.
+
+The Cloud SOAR tool offers standard management of Incident response events across different teams in the organization with the help of the R3 Rapid response playbook engine. R3 Playbooks are created using a Visual editor supporting granular, stateful and conditional workflows to orchestrate, automate and standardize best practices on a case by case incident response events activities like incident triage, stakeholder notification, data and context enrichment, remediation and threat containment.
+
+Cloud SOAR has been designed with Interoperability for Cybersecurity Industry standards regulatory frameworks to be able to receive data from a wide assortment of Cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
+
+Cloud SOAR design and architecture follows Cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet best Cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
+
+Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses and threats. It recommends relevant Playbooks, paths of action to expedite the process, and responses to manage and mitigate similar incidents with better response time.
+
+Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
+
+<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="Cloud SOAR architecture diagram" style={{border: '1px solid gray'}} width="800"/>
+
+## Automation Bridge
+
+Cloud SOAR interacts with the platforms in your environment using a module called Automation Bridge.
+
+Automation Bridge is a process running on a Linux-based VM (deployed inside the Customer environment) that interacts with your Cloud SOAR Instance and allows you to execute Playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. For more information, see [Cloud SOAR Automation Bridge](/docs/cloud-soar/cloud-soar-bridge/).
 
 ## Data retention
 
