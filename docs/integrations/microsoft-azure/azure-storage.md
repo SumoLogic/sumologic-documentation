@@ -128,13 +128,14 @@ Rule Name: AzureObservabilityMetadataExtractionMetricRuleServiceLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 ```
-| Fields extracted |
-|------------------|
-| subscription_id  |
-| resource_group   |
-| provider_name    |
-| resource_type    |
-| resource_name    |
+| Fields extracted | metric rule    |
+|------------------|----------------|
+| subscription_id  | $resourceId._1 |
+| resource_group   | $resourceId._2 |
+| provider_name    | $resourceId._3 |
+| resource_type    | $resourceId._4 |
+| resource_name    | $resourceId._5 |
+| service_type     | $resourceId._6 |
 
 * **Azure Observability Metadata Extraction Storage Account Level**
 ```sql
@@ -144,13 +145,13 @@ Rule Name: AzureObservabilityMetadataExtractionStorageAccountLevel
 ```sql title="Metric match expression"
 resourceId=*/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/* tenant_name=* accountresourceid=*
 ```
-| Fields extracted |
-|------------------|
-| subscription_id  |
-| resource_group   |
-| provider_name    |
-| resource_type    |
-| resource_name    |
+| Fields extracted | metric rule    |
+|------------------|----------------|
+| subscription_id  | $resourceId._1 |
+| resource_group   | $resourceId._2 |
+| provider_name    | $resourceId._3 |
+| resource_type    | $resourceId._4 |
+| resource_name    | $resourceId._5 |
 
 ### Configure metrics collection
 
