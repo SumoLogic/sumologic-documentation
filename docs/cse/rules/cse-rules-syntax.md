@@ -624,6 +624,55 @@ The following expression returns "10.10.1.0":
 
 `getCIDRPrefix("10.10.1.35", "24")`
 
+### hasThreatMatch
+
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
+
+**Syntax**
+
+`hasThreatMatch([<fields>], <filters>, <indicators>)`
+
+Parameters:
+* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
+* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
+* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only (default).
+   * `expired_indicators`. Match expired indicators only.
+   * `all_indicators`. Match all indicators.
+
+**Examples**
+
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" AND confidence > 50))`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50, expired_indicators)`
+
+#### Best practice
+
+As a best practice, always include filtering to narrow your search to just the types desired (that is, `type=`). This will ensure that your search results are not overly broad.
+
+For example:
+* `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type ='ipv4-addr:value' OR type='ipv6-addr:value'))` 
+* `hasThreatMatch([file_hash_imphash,file_hash_md5,file_hash_pehash,file_hash_ssdeep,file_hash_sha1,file_hash_sha256], confidence > 1 AND type = 'file:hashes')` 
+* `hasThreatMatch([device_hostname, srcDevice_hostname, dstDevice_hostname, http_hostname, http_referrerHostname, bro_ssl_serverName, bro_ntlm_domainame, bro_ssl_serverName_rootDomain, dns_queryDomain, dns_replyDomain, fromUser_authDomain, http_referrerDomain, http_url_rootDomain, http_url_fqdn], confidence > 1 AND (type='domain-name:value' OR type='url'))` 
+* `hasThreatMatch([http_url], confidence > 1 AND type='url')` 
+* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type ='ipv4-addr:value' OR type='ipv6-addr:value'))`
+
+Following are the standard indicator types you can filter on:
+* `domain-name:value`. Domain name. 
+* `email-addr:value`. Email address. 
+* `file:hashes`. File hash. 
+* `file:name`. File name. 
+* `ipv4-addr:value`. IPv4 IP address. 
+* `ipv6-addr:value`. IPv6 IP address. 
+* `mac-addr:value`. Mac address name. 
+* `process:name`. Process name. 
+* `url:value`. URL. 
+* `user-account:user-id`. User ID. 
+* `user-account:login`. Login name. 
+
+For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
+
 ### haversine
 
 Returns the distance between latitude and longitude values of two coordinates in kilometers.
