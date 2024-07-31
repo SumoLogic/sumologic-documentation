@@ -17,7 +17,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | :-- | :-- | :-- | :-- |
 | Abilities - Platform | [Alert response](/docs/alerts/monitors/alert-response/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Platform  | [App catalog](/docs/get-started/apps-integrations/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Application observability](/docs/observability/monitoring/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/> *Logs, Events, Metrics included. Tracing not included.* |
 | Abilities - Solutions | [AWS observability](/docs/observability/aws/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Root Cause Explorer not included.*|
 | Abilities - Solutions | [Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

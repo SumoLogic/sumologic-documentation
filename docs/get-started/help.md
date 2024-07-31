@@ -48,7 +48,7 @@ For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms
 ## Training and Certification
 
 Sumo Logic provides free training. With our Self-Paced program, you can take Sumo Logic courses at your own pace, anywhere, without time constraints. For more information, see:
-* [Training and Certification](/docs/get-started/training-certification-faq)
+* [Training and Certification](/docs/get-started/training-certification)
 * [Upcoming training classes](https://www.sumologic.com/training/)
 
 ## Community
