@@ -8,13 +8,18 @@ description: Automated real-time incident management and threat response.
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## SecOps and dashboard
+## SecOps and Dashboard
 
-The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group.
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the SecOps and Dashboard screens, in the main Sumo Logic menu select **Cloud SOAR**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the SecOps and Dashboard screens, in the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.
+ Kanso-->
 
-<img src={useBaseUrl('img/cloud-soar/image26.png')} alt="Home page" width="800"/>
+The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group. 
 
 In the upper left corner you can select **Dashboard** to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-secops.png')} alt="Home page" width="800"/>
 
 ## Incidents
 
