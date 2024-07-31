@@ -1,7 +1,7 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Managing your Library
+sidebar_label: Managing Your Library
 description: Managing your Library in Sumo Logic.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic content in the Library. The Library also allows you to launch searches and Dashboards with a single click—speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
-Open the **Library** page to expose additional search options and to organize and manage Library contents. 
+Open the **Library** page to expose additional search options and to organize and manage Library contents.
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
 1. You'll see two **View as** options:
@@ -79,7 +79,7 @@ When your content is moved, you’ll need to click the new folder location to vi
 To add a folder to the Library:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
-1. Click **Add New > New Folder**. 
+1. Click **Add New > New Folder**.
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
 
@@ -226,7 +226,7 @@ To rename a pinned search:
 To remove a search from the pinned search List:
 
 1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
-1. Click **Unpin**. 
+1. Click **Unpin**.
 1. In the **Confirm** dialog, click **OK**.
 
 The search is removed from the list of Pinned Searches.
