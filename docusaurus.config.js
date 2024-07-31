@@ -492,7 +492,6 @@ module.exports = {
             title: 'Help',
           },
           {
-            title: 'Open Source',
             items: [
               {
                 label: 'Docs GitHub',
@@ -507,6 +506,7 @@ module.exports = {
                 href: 'https://github.com/SumoLogic-Labs',
               },
             ],
+            title: 'Open Source',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
