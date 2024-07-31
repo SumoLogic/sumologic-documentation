@@ -324,26 +324,21 @@ A complete list of field types is listed below. Additional fields are required o
 
 #### Using custom fields for SLAs
 
-Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of Date, Date & Time and Time Interval fields.
+Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of `Date`, `Date & Time`, and `Time Interval` type fields.
 
-In the following example, five custom fields have been added to provide information on the status of an organization's Notification SLA. Two of the custom fields require user input:
+In the following example, custom fields provide information on the status of an organization's notification SLA. Two of the custom fields require user input:
+* **Notification SLA Requirement** is used to store the SLA time interval, such as 30 minutes.
+* **Customer Notified** allows you to enter the date and time the customer was notified.
 
-<img src={useBaseUrl('img/cloud-soar/image50.png')} alt="SLA User Input" style={{border: '1px solid gray'}} width="800"/>
+The remaining custom fields require no user input and are calculation fields only:
+* **Notification Due By** will calculate and display the date and time the notification must be conducted by adding the Notification SLA Requirement field to the start time.
+* **Actual Notification Time** will calculate and display the actual time taken to notify the customer by subtracting the start time from the Customer Notified time.
 
-* **Notification SLA Requirement** will be used to store the SLA time interval, such as 5 minutes.
-* **Customer Notified** will allow you to enter the date & time the customer was notified.
-
-The remaining three custom fields require no user input and are calculation fields only:
-
-<img src={useBaseUrl('img/cloud-soar/image51.png')} alt="SLA Calculated Fields" style={{border: '1px solid gray'}} width="800"/>
-
-* **Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA Requirement field to the Start Time.
-* **Notification Time Remaining** will calculate and display time remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
-* **Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
+<img src={useBaseUrl('img/cloud-soar/sla-custom-fields.png')} alt="SLA custom fields" style={{border: '1px solid gray'}} width="800"/>
 
 These custom field settings will appear in the Cloud SOAR Incident screen as follows:           
 
-<img src={useBaseUrl('img/cloud-soar/image52.png')} alt="SLA View" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cloud-soar/sla-fields-on-incident.png')} alt="SLA fields on an incident" style={{border: '1px solid gray'}} width="800"/>
 
 #### Incident labels
 
