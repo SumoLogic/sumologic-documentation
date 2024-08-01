@@ -14,7 +14,7 @@ Metadata typically originates from your system or environment. It provides conte
 
 ### Log metadata
 
-Enhances query operations by providing additional data for reference, allowing for a more specific scope of data in search expressions and improving search performance. It also enables the use of more specific search filters in Roles and routing expressions in Partitions.
+Log metadata enhances query operations by providing additional data for reference, allowing for a more specific scope of data in search expressions and improving search performance. It also enables the use of more specific search filters in Roles and routing expressions in Partitions.
 
 Log metadata is configured in Sumo Logic as [fields](/docs/manage/fields) consisting of key-value pairs that are tagged to logs during collection.
 
