@@ -158,60 +158,42 @@ The **Operations** section contains all the investigative information for a spec
 
 #### War Room
 
-All the information related to the incident ongoing are visible in one place in the **War Room** section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
+All the information related to the ongoing incident is  visible in one place in the **War Room** section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed, and notes added during the incident's investigation. Information can be filtered out for the different categories, and you can add new notes by clicking the **+** button.
 
-<img src={useBaseUrl('img/cloud-soar/war_room.png')} alt="War room" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/war_room.png')} alt="War room" style={{border: '1px solid gray'}} width="700"/>
 
 #### Playbooks
 
-Any playbook that has been applied to an incident can be found under the **Playbooks** section. You can quickly view and make any necessary adjustments to the incident's playbooks as well as add any additional playbooks that may be required during an incident's investigation.
+Any playbook that has been applied to an incident can be found under the **Playbooks** section. You can quickly view and make any necessary adjustments to the incident's playbooks, as well as add any additional playbooks that may be required during an incident's investigation.
 
-<img src={useBaseUrl('img/cloud-soar/image150.png')} alt="Playbook option menu" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/operations-playbooks-tab.png')} alt="Playbooks displayed in the Playbooks tab" style={{border: '1px solid gray'}} width="700"/>
 
-The playbook option menu can be found at the bottom of the playbook screen. From here, you can re-execute a playbook, export, edit, or expand the existing playbook. If during an incident's investigation it is determined that the type of incident has changed (i.e. phishing incident turns into a ransomware incident) another type of playbook may be needed to correctly remediate an incident. You can add additional Playbooks to the incident by clicking the **+** sign at the top of the playbook screen.
+If during an incident's investigation it is determined that the type of incident has changed (for example, a phishing incident turns into a ransomware incident) another type of playbook may be needed to correctly remediate an incident. You can add additional playbooks to the incident by clicking **+** at the top of the screen to the left of the **Graph View** and **List View** buttons. This will open a new screen that lists all available playbooks. Either type in the playbook name to use, or manually search through all available options and click **Add** when finished.
 
-<img src={useBaseUrl('img/cloud-soar/image151.png')} alt="Add playbook" style={{border: '1px solid gray'}} width="800"/>
+To explore the playbooks:
 
-This will open a new screen that lists all available Playbooks. Either type in the playbook name to use or manually search through all available options and click **Add** when finished.
-
-##### Viewing playbook results
-
-The results of a Playbook, either while it is executing or after execution has completed, can be viewed from the playbook section. By clicking the expansion button on the bottom left of the screen will expand the playbook and will display the execution results.
-
-<img src={useBaseUrl('img/cloud-soar/image152.png')} alt="Playbook results" style={{border: '1px solid gray'}} width="800"/>
-
-The results of the playbook can also be viewed as a list by clicking the **List** button next the **+** at the top of the page. The execution path of the playbook will be shown, along with the status of the execution of each action. The execution history of the playbook will be displayed in a tab on the right-hand side of the screen, which can be minimized.
-
-<img src={useBaseUrl('img/cloud-soar/image153.png')} alt="Action details" style={{border: '1px solid gray'}} width="800"/>
-
-To view the details of any individual action, including the results, click on the action node. A new window displaying the action details will be displayed on the left-hand side of the screen. From this view, you can see the status of the action, its configuration, and have the choice to download the JSON results of the action.
-
-<img src={useBaseUrl('img/cloud-soar/image154.png')} alt="Action details" style={{border: '1px solid gray'}} width="500"/>
-
-To view the details of the result, click on the magnifying glass and the action's details window will be displayed. The details section displays the results of the action in table view which you can also filter through by using the details search bar at the top of the screen. For more detailed information, you can switch to the action's JSON results
-screen by clicking the **View JSON Results** button next to the action's search bar. The JSON results view displays the full results of the executed action. Because some integrations return large data sets, the table view is designed to show only a select set of attributes. To view the complete results of verbose integrations, the JSON tab should be
-used.
-
-<img src={useBaseUrl('img/cloud-soar/image155.png')} alt="Action result" style={{border: '1px solid gray'}} width="500"/>
-
-<img src={useBaseUrl('img/cloud-soar/image156.png')} alt="Action result JSON" style={{border: '1px solid gray'}} width="800"/>
+1. Click the clock icon to see playbook history. <br/><img src={useBaseUrl('img/cloud-soar/playbook-history.png')} alt="Playbook history" style={{border: '1px solid gray'}} width="700"/>
+1. To view individual playbooks for the incident, click **Graph View** at the top of the panel. In the graph view, the playbook options menu can be found at the bottom of the playbook screen to re-run a playbook, download playbook results, edit the playbook, or expand the playbook. <br/><img src={useBaseUrl('img/cloud-soar/operations-playbooks-graph-view.png')} alt="Playbook displayed in the graph view" style={{border: '1px solid gray'}} width="700"/>
+1. To view the details of any individual action, click on the action node. A new window displaying the action details will be displayed on the left-hand side of the screen. From this view, you can see the status of the action, its configuration, and have the choice to download the JSON results of the action. <br/><img src={useBaseUrl('img/cloud-soar/action-details.png')} alt="Action details" style={{border: '1px solid gray'}} width="700"/>
+1. To view the details of the result, click the magnifying glass icon at the bottom of the action details, and the action's result window will be displayed. You can use the search bar at the top of the table to search the results.<br/><img src={useBaseUrl('img/cloud-soar/action-result.png')} alt="Action result" style={{border: '1px solid gray'}} width="500"/>
+1. Because some integrations return large data sets, the table view is designed to show only a select set of attributes. For more detailed information, you can switch to the action's JSON results screen by clicking the **JSON Details** icon <img src={useBaseUrl('img/cloud-soar/json-details-icon.png')} alt="JSON Details icon" style={{border: '1px solid gray'}} width="25"/> next to the action's search bar. The JSON results view displays the full results of the executed action.  <br/><img src={useBaseUrl('img/cloud-soar/action-result-json-details.png')} alt="Action result JSON details" style={{border: '1px solid gray'}} width="500"/>
 
 #### Tasks
 
-Cloud SOAR's Tasks section allows incident managers to assign and track tasks which must be completed during an investigation. Tasks may be added from Playbooks or Playbooks, as discussed in previous sections, or manually from the incident's Tasks section.
+The **Tasks** section allows incident managers to assign and track tasks which must be completed during an investigation. You can add tasks manually here, or add them from playbooks.
 
-<img src={useBaseUrl('img/cloud-soar/image157.png')} alt="Tasks" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cloud-soar/task-list.png')} alt="Tasks section" style={{border: '1px solid gray'}} width="700"/>
 
+To explore tasks:
 
-##### Adding a task
-
-To add a new Task, click the **+** button at the top-left of the Task list screen. Fill in all required fields and add any additional information necessary under the **Description section** if desired.
+1. Click a task to open it. From the resulting window you can not only view information about the task, but take actions such as approve, decline, or close the task, as well as launch the associated playbook.<br/><img src={useBaseUrl('img/cloud-soar/tasks-screen.png')} alt="Task details" style={{border: '1px solid gray'}} width="700"/>
+1. To add a new Task, click the **+** button at the top-left of the Task list screen. Fill in all required fields and add any additional information necessary under the **Description** section if desired. <br/><img src={useBaseUrl('img/cloud-soar/new-task.png')} alt="New task dialog" style={{border: '1px solid gray'}} width="600"/>
 
 The user listed in the **Assigned to** field will be the user responsible for completing the task.
 
 The field titled **Effort** should be the number of hours estimated to complete the Task. As the Task is updated by the Assignee, this field should be changed to reflect the actual number of hours that were required to complete the Task. This number will be used to provide Task Assessment information, discussed in more detail in the Documentation section of this manual.
 
-<img src={useBaseUrl('img/cloud-soar/image158.png')} alt="New task" style={{border: '1px solid gray'}} width="800"/>
+
 
 ##### Working with tasks
 
@@ -219,7 +201,7 @@ Once a task has been created and assigned, it will appear in the **Home** sectio
 
 <img src={useBaseUrl('img/cloud-soar/image159.png')} alt="View tasks" style={{border: '1px solid gray'}} width="800"/>
 
-Selecting a task will open the incident where the task was created. This will allow you to review the details of the task and access any automated Playbooks and notes from the incident investigation. Once the incident data has been reviewed investigators can choose to approve, approve and close, or decline a task by clicking the thumbs up, thumbs
+Selecting a task will open the incident where the task was created. This will allow you to review the details of the task and access any automated playbooks and notes from the incident investigation. Once the incident data has been reviewed investigators can choose to approve, approve and close, or decline a task by clicking the thumbs up, thumbs
 down or check mark buttons next to the task's title.
 
 <img src={useBaseUrl('img/cloud-soar/image160.png')} alt="Task selected" style={{border: '1px solid gray'}} width="800"/>
@@ -325,13 +307,13 @@ The list of events can be filtered by any of the fields listed in the filter sec
 
 To view the details of a Triage event, click on the box and arrow icon in the Actions column for the event. If additional information is available, it will be displayed in this Event Details screen.
 
-To begin triaging an event, click on the person icon in the Actions column for the event to **grab** the event. Once an event is grabbed by an analyst, any Playbooks defined for that incident type will be automatically executed and the results will be displayed in the Results section of the Event Details screen. Because all Playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and Playbooks be created for Triage events.
+To begin triaging an event, click on the person icon in the Actions column for the event to **grab** the event. Once an event is grabbed by an analyst, any playbooks defined for that incident type will be automatically executed and the results will be displayed in the Results section of the Event Details screen. Because all playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and playbooks be created for Triage events.
 
 After triaging the event, the event may be reassigned to another user for further analysis, discarded or converted to an incident. To reassign the event to another user, click on the circular arrow icon in the **Actions** column for the event. To discard the event, click on the trash can icon in the **Actions** column for the event.        
 
 <img src={useBaseUrl('img/cloud-soar/image182.png')} alt="Discard events" style={{border: '1px solid gray'}} width="100"/>
 
-To convert the event to an incident, click **Convert to Incident** in the far right-hand corner of the Event in question. Select the appropriate incident template, owner and label, then click **Save**. The event, including all enrichment information gathered from any Playbooks, will be automatically converted to an incident.
+To convert the event to an incident, click **Convert to Incident** in the far right-hand corner of the Event in question. Select the appropriate incident template, owner and label, then click **Save**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident.
 
 <img src={useBaseUrl('img/cloud-soar/image183.png')} alt="Convert to incident" style={{border: '1px solid gray'}} width="400"/>
 
