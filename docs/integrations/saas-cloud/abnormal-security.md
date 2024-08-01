@@ -114,7 +114,7 @@ _sourceCategory="Labs/AbnormalSecurity" sourcetype case_log
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration Abnormal Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) for the Abnormal Security app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Abnormal Security Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
+To set up the Cloud-to-Cloud Integration Abnormal Security Source for the Abnormal Security app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/). These instructions will guide you through the process of creating a source using the Abnormal Security Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
 
 ## Installing the Abnormal Security app
 
