@@ -508,23 +508,6 @@ module.exports = {
             ],
             title: 'Open Source',
           },
-          {
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@sumologic/videos',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/sumo-logic',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://x.com/SumoLogic',
-              },
-            ],
-            title: 'Social',
-          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
       },
