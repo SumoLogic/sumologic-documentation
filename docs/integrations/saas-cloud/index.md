@@ -11,6 +11,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/abnormal-security"><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="icon" width="120"/><h4>Abnormal Security</h4></a>
+  <p>Gain robust monitoring of email security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/acquia"><img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
   <p>Gain visibility into your key Acquia platform components.</p>
   </div>
@@ -235,6 +241,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
   <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/webex-bronze/"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="icon" width="70"/><h4>Webex Bronze</h4></a>
+  <p>Monitor and analyse Webex Bronze security events, user activities, and system health.</p>
   </div>
 </div>
 <div className="box smallbox card">
