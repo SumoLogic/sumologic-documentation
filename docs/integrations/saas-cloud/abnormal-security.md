@@ -6,9 +6,10 @@ description: The Sumo Logic app for the Abnormal Security offers robust monitori
 ---
 
 
-
-<!-- Remove the below tag prior to publishing the doc (PR #4312)-->
+<!-- Remove the below text prior to publishing the doc (PR #4312)-->
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
+
+This is a placeholder page.
