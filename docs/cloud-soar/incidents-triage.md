@@ -45,7 +45,7 @@ The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the 
 
 <img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
 
-Watch this micro lesson to learn more about Incidents in Cloud SOAR.
+Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
 <Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA?rel=0"
         width="854px"
@@ -60,13 +60,13 @@ Watch this micro lesson to learn more about Incidents in Cloud SOAR.
 
 ### Filter incidents
 
-You can configure what data is to be displayed on the Incidents screen by adjusting which columns are viewable. To adjust these columns, click the filter icon <img src={useBaseUrl('img/cloud-soar/filter-icon.png')} alt="Filter icon" width="25"/> in the top right corner of the screen. This displays a configuration screen that allows you to choose which data is displayed. To change where on the screen it should be displayed, click the **+** next to the selection and  drag and drop it in the order to be viewed. Once you have added and organized the columns, click **Apply**.
+You can configure what data is to be displayed on the **Incidents** screen by adjusting which columns are viewable. To adjust these columns, click the filter icon <img src={useBaseUrl('img/cloud-soar/filter-icon.png')} alt="Filter icon" width="25"/> in the top right corner of the screen. This displays a configuration screen that allows you to choose which data is displayed. To change where on the screen it should be displayed, click the **+** next to the selection and  drag and drop it in the order to be viewed. Once you have added and organized the columns, click **Apply**.
 
 <img src={useBaseUrl('img/cloud-soar/filter-incidents.png')} alt="Filter incidents" width="800"/>
 
 #### Search incidents
 
-From the Incidents screen you can search, build, and issue queries against existing incidents by typing in the search bar at the top of the screen.
+From the **Incidents** screen you can search, build, and issue queries against existing incidents by typing in the search bar at the top of the screen.
 
 Cloud SOAR also provides you with a command cheat sheet to help build incident filtering queries. To access the cheat sheet, click on the information icon <img src={useBaseUrl('img/cloud-soar/commands-cheat-sheet.png')} alt="Commands cheat sheet icon" width="25"/> in the search bar to display the query options.
 
@@ -80,7 +80,7 @@ Once a query or a search is committed, they can be saved for future use by click
 
 #### Bulk actions
 
-Bulk actions may be performed on any incidents in the Incident Overview list. To perform bulk actions on incidents, check the incidents you wish to perform the bulk actions on, then click the three-dot kebab menu in the upper left-hand corner of the screen and select the appropriate bulk action from the dropdown menu.
+Bulk actions may be performed on any incidents in the incidents list. To perform bulk actions on incidents, check the incidents you wish to perform the bulk actions on, then click the three-dot kebab menu in the upper left-hand corner of the screen and select the appropriate bulk action from the dropdown menu.
 
 <img src={useBaseUrl('img/cloud-soar/bulk-actions.png')} alt="Bulk actions" width="200"/>
 
@@ -121,7 +121,7 @@ To allow users to access incidents without being added as investigators, assign 
 
 ### Create a new incident manually
 
-1. To create an Incident manually, click the **+ Incidents** button at the top of the Incidents screen. <br/><img src={useBaseUrl('img/cloud-soar/create-incident-button.png')} alt="Create incident button" style={{border: '1px solid gray'}} width="100"/>
+1. To create an incident manually, click the **+ Incidents** button at the top of the **Incidents** screen. <br/><img src={useBaseUrl('img/cloud-soar/create-incident-button.png')} alt="Create incident button" style={{border: '1px solid gray'}} width="100"/>
 1. A new configuration box will be displayed that contains fields an investigator can utilize to develop their incident. Not all these fields are mandatory. The ones that are required will have an asterisk (`*`) marked next to them which indicates the field has a dependency within the Cloud SOAR platform. These required fields can have their dependencies and requirements adjusted with [custom fields](/docs/cloud-soar/overview/#custom-fields). <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-screen.png')} alt="Incident Creation screen" style={{border: '1px solid gray'}} width="700"/>
 1. One of the most important fields is the **Type** field. This field will dictate which playbooks will be recommended later on in the configuration process. See [custom fields](/docs/cloud-soar/overview/#custom-fields) to modify the variables displayed in the **Type** field. <br/><img src={useBaseUrl('img/cloud-soar/type-field.png')} alt="Type field" style={{border: '1px solid gray'}} width="200"/>
 1. Click **Next**. 
@@ -140,37 +140,31 @@ Opening an incident from any section of Cloud SOAR will display the incident det
 
 <img src={useBaseUrl('img/cloud-soar/incident-details.png')} alt="Incident details page" style={{border: '1px solid gray'}} width="800"/>
 
-### Incident VIP section
+The incident VIP section displays high-level details about a specific incident. You can also take actions such as add additional investigators or close the incident from this section. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the incident details via PDF, DOC, or [custom report](/docs/cloud-soar/legacy/legacy-cloud-soar-main-menu/#custom-reports), and clone or permanently delete the incident. To customize the details displayed in the incident VIP section, click the cogwheel <img src={useBaseUrl('img/cloud-soar/cogwheel-icon.png')} alt="Cogwheel icon" width="25"/> at the top right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
 
 <img src={useBaseUrl('img/cloud-soar/incident-vip-section.png')} alt="Incident VIP section" style={{border: '1px solid gray'}} width="200"/>
 
-The incident VIP section displays high-level details about a specific incident. You can also take actions such as add additional investigators or close the incident from this section. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the incident details via PDF, DOC, or [custom report](/docs/cloud-soar/legacy/legacy-cloud-soar-main-menu/#custom-reports), and clone or permanently delete the incident.
-
-To customize the details displayed in the incident VIP section, click the cogwheel <img src={useBaseUrl('img/cloud-soar/cogwheel-icon.png')} alt="Cogwheel icon" width="25"/> at the top right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
-
-### Incident properties
-
-The Incident Details section contains all the important information that makes up the incident, such as executed Playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
+The incident properties section in the center contains all the important information that makes up the incident, such as executed playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
 
 <img src={useBaseUrl('img/cloud-soar/incident-properties.png')} alt="Incident properties" style={{border: '1px solid gray'}} width="700"/>
 
 ### Overview
 
-The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom fields](/docs/cloud-soar/overview/#custom-fields).
+The incident **Overview** section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in **Custom Fields**. For more information, see [Configuration](/docs/cloud-soar/overview/#configuration).
 
 ### Operations
 
-The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **Playbook**, **Tasks**, and **Notes**.
+The **Operations** section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **Playbook**, **Tasks**, and **Notes**.
 
 #### War Room
 
-All the information related to the incident ongoing are visible in one place in the War Room section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
+All the information related to the incident ongoing are visible in one place in the **War Room** section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
 
 <img src={useBaseUrl('img/cloud-soar/war_room.png')} alt="War room" style={{border: '1px solid gray'}} width="800"/>
 
 #### Playbooks
 
-Any playbook that has been applied to an incident can be found under the Playbooks section. You can quickly view and make any necessary adjustments to the incident's Playbooks as well as add any additional Playbooks that may be required during an incident's investigation.
+Any playbook that has been applied to an incident can be found under the **Playbooks** section. You can quickly view and make any necessary adjustments to the incident's playbooks as well as add any additional playbooks that may be required during an incident's investigation.
 
 <img src={useBaseUrl('img/cloud-soar/image150.png')} alt="Playbook option menu" style={{border: '1px solid gray'}} width="800"/>
 
@@ -246,9 +240,15 @@ To manually add a note, click the **+** symbol to the left of the search bar and
 
 Closing incident will result in asking a note for incident closing as below:
 
-<img src={useBaseUrl('img/cloud-soar/image57b.png')} alt="Close Incident" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/image57b.png')} alt="Close incident" width="400"/>
 
-<img src={useBaseUrl('img/cloud-soar/image57c.png')} alt="Closing Note" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image57c.png')} alt="Closing note" width="800"/>
+
+### Entities
+
+The Entities tab shows the entities associated with the incident.
+
+To see entities for all incidents, open the **Entities** page. See [Entities](/docs/cloud-soar/incidents-triage/#entities-1). 
 
 ### Documentation
 
@@ -279,7 +279,7 @@ to triage events which may be unverified or have a low confidence level before t
 
 ### Field settings
 
-By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the Incident Type field and cannot be modified directly. New types must be added from the Incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case.
+By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the incident Type field and cannot be modified directly. New types must be added from the incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case.
 
 To add additional custom fields:
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
@@ -314,7 +314,7 @@ When creating incidents from Insights, adding additional required attributes to 
 
 ### Working with events
 
-The Triage module is accessible from the Incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an Incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
+The Triage module is accessible from the incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
 
 <img src={useBaseUrl('img/cloud-soar/image58.png')} alt="Events" style={{border: '1px solid gray'}} width="800"/>
 
@@ -407,7 +407,7 @@ To change how the widgets appear in a section, you can drag and drop into the de
 
 <img src={useBaseUrl('img/cloud-soar/image135.png')} alt="Cloud Soar Dashboard Carousel" width="500"/>
 
-Most widgets inside of the Cloud SOAR dashboard are drillable. To drill down into a specific statistic, click on either an Incident ID or a section of a pie chart to limit the information shown to the areas of concern.
+Most widgets inside of the Cloud SOAR dashboard are drillable. To drill down into a specific statistic, click on either an incident ID or a section of a pie chart to limit the information shown to the areas of concern.
 
 :::note
 Make sure to allow popups from the Cloud SOAR site to drill into dashboard statistics.
@@ -457,7 +457,7 @@ You can create widgets as needed to help analysts and administrators quickly get
 
 ## Entities
 
-The **Entities** tab provides access to data from across all incidents, as well as other information which can be stored within Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" width="600"/>
+The **Entities** screen provides access to data from across all incidents, as well as other information which can be stored within Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" width="600"/>
 
 Observables from every incident can be found in this section, along with any enrichment data associated with these data types and the incidents they were reported in. You'll find all variables including artifacts related to an incident. Clicking on an entity in the entity list will display the results of any previous actions taken on the entity, or where in the incident the entity was extracted.
 
