@@ -1,6 +1,6 @@
 ---
 id: deletion-requests
-title: Data Deletion Requests
+title: Deletion Requests
 description: Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.
 ---
 
