@@ -40,7 +40,7 @@ Deletion requests result in the permanent deletion of data. Once deleted, the da
 
 ### From a Log Search
 
-1. From any **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-request.png')} alt="data-deletion-status" width="400"/>
+1. From any **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-request.png')} alt="data-deletion-status" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
 
 ## Cancel a Data Deletion Request
