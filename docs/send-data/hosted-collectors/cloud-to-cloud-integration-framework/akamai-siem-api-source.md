@@ -311,6 +311,16 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 <a href="/files/c2c/akamai-siem-api/example.tf" target="_blank">Download example</a>
 
+## Troubleshooting
+
+### Invalid URL escape Error
+
+The "**invalid URL escape**" error occurs when the Akamai API returns a URL-encoded string with improper `%` padding. For example, the string `%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3bQm90X0FBNDY4OThENDg4MUY4OEIwNUEzMzA0RTA1QzAzREQw%3bODUgbWVzc2FnZSB1bml0cyBwZXIgc2Vjb25k%b` will result in the error "**invalid URL escape "%b"**". This is expected due to the improper `%` padding. To resolve this issue, contact [Akamai Support](https://www.akamai.com/global-services/support) and inform them about the improper `%` padding in the URL-encoded strings returned by their API.
+
+### Illegal base64 data error
+
+The "**illegal base64 data**" error occurs when the Akamai API returns base64-encoded strings containing invalid characters, such as spaces (` `). For example, the string `anNfcDdnXzYnIigpJiU8enp6PjxTY1JpUHQ UGxtQig5NTcxKTwvU2NSaVB0Pi5qcw==` will result in the error **illegal base64 data at input byte 35** due to the space character at the 35th byte. To resolve this issue, contact [Akamai Support](https://www.akamai.com/global-services/support) and inform them about the invalid characters in the base64-encoded strings returned by their API.
+
 ## FAQ
 
 :::info

@@ -251,12 +251,6 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
-    announcementBar: {
-      id: 'support_us',
-      content: '<html><p style="font-size: 13px; padding-top: 20px">We are aware of the recent CrowdStrike and Microsoft outages. Our operations remain unaffected, and service continues uninterrupted. Thank you for your continued trust in Sumo Logic.</p>',
-      backgroundColor: '#fafbfc',
-      textColor: '#091E42',
-    },
     colorMode: {
       defaultMode: 'light',
     },
@@ -513,23 +507,6 @@ module.exports = {
               },
             ],
             title: 'Open Source',
-          },
-          {
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@sumologic/videos',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/sumo-logic',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://x.com/SumoLogic',
-              },
-            ],
-            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

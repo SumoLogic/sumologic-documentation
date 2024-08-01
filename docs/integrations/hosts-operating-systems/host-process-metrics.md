@@ -137,7 +137,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 ### Troubleshooting
 
 * To identify the operating system version and name.
-   * For Windows machines, run the command in Powershell to get the OS Version.
+   * For Windows machines, run the command in PowerShell to get the OS Version.
      ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
