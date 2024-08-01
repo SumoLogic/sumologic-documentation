@@ -2316,7 +2316,7 @@ integrations: [
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
-          'integrations/saas-cloud/webex-bronze',
+          'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
         ],
