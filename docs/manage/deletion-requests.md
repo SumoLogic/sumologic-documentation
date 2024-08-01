@@ -42,7 +42,7 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From a Log Search
 
-1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" width="400"/>
+1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
 
 ## Cancel a deletion request
