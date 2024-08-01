@@ -75,10 +75,10 @@ This topic describes features and options that give you administration over acco
   <p>Learn how to manage the ingestion of data by Sumo Logic.</p>
   </div>
 </div>
-<!-- Unhide this when Data Deletion goes GA
+<!-- Unhide this when it goes GA
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/data-deletion"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Data Deletion</h4></a>
+  <a href="/docs/manage/deletion-requests"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Deletion Requests</h4></a>
   <p>Remove sensitive or inadvertently ingested data from your account.</p>
   </div>
 </div>

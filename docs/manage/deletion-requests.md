@@ -38,11 +38,11 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-status.png')} alt="data-deletion-status" style={{border: '1px solid gray'}} width="400"/>
+1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
-1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/data-deletion-request.png')} alt="data-deletion-status" width="400"/>
+1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
 
 ## Cancel a deletion request
@@ -53,7 +53,7 @@ To cancel a data deletion request:
 1. Select your request.
 1. Click **Cancel Request**.
 
-<img src={useBaseUrl('img/search/get-started-search/data-deletion-cancel.png')} alt="data-deletion-cancel" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/search/get-started-search/deletion-request-cancel.png')} alt="screenshot showing how to cancel a deletion request" style={{border: '1px solid gray'}} width="800"/>
 
 ## Limitations
 
