@@ -74,8 +74,8 @@ To configure a Kaltura source:
 1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **App Token**. Enter the **App Token** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **Select Base Entry Types for Base Entry Logs**. You have the option to **Collect all types** or **Select types**, where you can specify the exact event categories you would like to collect from the base entry logs. Must select from the pre-defined list.
-1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 24 hours.
-1. **Base Entry Init Lookback** You have option to configure from when the integration should collect Kaltura **Base Entry** events. Default is 1 day.
+1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 24 hours.
+1. **Base Entry Init Lookback**. You have option to configure from when the integration should collect Kaltura **Base Entry** events. Default is 1 day.
 1. When you are finished configuring the Source, click **Save**.
 
 ## Metadata fields
