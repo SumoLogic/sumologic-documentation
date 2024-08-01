@@ -13,7 +13,7 @@ The Sumo Logic app for Abnormal Security offers robust monitoring of email secur
 
 ## Log type
 
-This app uses Abnormal Security Source to collect [threat logs](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats__threatId_) and [case logs](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Cases/get_cases) from the Abnormal Security platform.
+This app uses the Abnormal Security Source to collect [threat logs](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats__threatId_) and [case logs](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Cases/get_cases) from the Abnormal Security platform.
 
 ### Sample log messages
 
