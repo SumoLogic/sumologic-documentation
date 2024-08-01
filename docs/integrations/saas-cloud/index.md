@@ -239,6 +239,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/webex-bronze/"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="icon" width="70"/><h4>Webex Bronze</h4></a>
+  <p>Monitor and analyse Webex Bronze security events, user activities, and system health.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/workday"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="icon" width="50"/><h4>Workday</h4></a>
   <p>Monitor Workday login activity, user activity, and admin activity.</p>
   </div>

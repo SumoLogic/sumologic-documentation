@@ -1791,6 +1791,7 @@
   "/cid/1980": "/docs/observability/kubernetes",
   "/cid/1981": "/docs/integrations/saas-cloud/slack",
   "/cid/1982": "/docs/integrations/saas-cloud/istio",
+  "/cid/1387": "/docs/integrations/saas-cloud/webex-bronze",
   "/cid/1983": "/docs/integrations/pci-compliance/palo-alto-networks-9",
   "/cid/10216": "/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry",
   "/cid/1984": "/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection",
