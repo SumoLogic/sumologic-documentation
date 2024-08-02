@@ -4,7 +4,7 @@ title: How to Use the Search Page
 description: Understand the basic components of the Search window and how they can help you investigate your issues.
 ---
 
-On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data. 
+On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data.
 
 You can also save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
@@ -66,7 +66,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
+  <a href="/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
   <p>Explore specific fields of interest in a search by displaying or hiding selected fields without having to parse them.</p>
   </div>
 </div>
