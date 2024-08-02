@@ -28,7 +28,7 @@ Updates:
 * Enhanced log group subscriptions limit in the updated SAM app sumologic-loggroup-connector v1.0.12 .
 
 Bug Fixes:
-* Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0 without needing to go through v2.8.0.
+* Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0, bypassing v2.8.0.
 
 ## v2.8.0, 17-May-2024 - Yanked
 
