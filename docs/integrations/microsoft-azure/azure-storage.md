@@ -326,11 +326,11 @@ The **Azure Storage Security and policy** dashboard provides details -
 Use this dashboard to:
     * View recent security events.
     * View total security events.
-    * View total denied policy events
-    * View recent failed policy events
-    * View recent success policy events
-    * View total recommendation events
-    * View recent recommendation events
+    * View total denied policy events.
+    * View recent failed policy events.
+    * View recent success policy events.
+    * View total recommendation events.
+    * View recent recommendation events.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -339,13 +339,13 @@ Use this dashboard to:
 The **Azure Storage health** dashboard provides details -
     
 Use this dashboard to:
-    * View recent service health incidents
-    * Monitor service health by event type
-    * View recent alerts
-    * View total alerts
-    * View alerts over time
-    * View recent resource health incidents
-    * Monitor resource health by event type
+    * View recent service health incidents.
+    * Monitor service health by event type.
+    * View recent alerts.
+    * View total alerts.
+    * View alerts over time.
+    * View recent resource health incidents.
+    * Monitor resource health by event type.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -354,10 +354,10 @@ Use this dashboard to:
 The **Azure Storage Availability** metrics dashboard provides details like availability in percentage, availability by API name, and trend by API name and by storage type.
 
 Use this dashboard to:
-    * Monitor availability percentage
-    * Monitor availability percentage by API name
-    * Monitor availability trend by API name
-    * Monitor availability trend by API storage type
+    * Monitor availability percentage.
+    * Monitor availability percentage by API name.
+    * Monitor availability trend by API name.
+    * Monitor availability trend by API storage type.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Availability.png')} alt="Azure storage availability dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -366,11 +366,11 @@ Use this dashboard to:
 The **Azure Storage Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
-    * Monitor failing transactions by API name
-    * Monitor failing transactions by response type
-    * Monitor failing transactions by storage account
-    * Monitor failing transactions by service type
-    * Monitor failing transactions by authentication
+    * Monitor failing transactions by API name.
+    * Monitor failing transactions by response type.
+    * Monitor failing transactions by storage account.
+    * Monitor failing transactions by service type.
+    * Monitor failing transactions by authentication.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Failures.png')} alt="Azure Storage Failures dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -379,10 +379,10 @@ Use this dashboard to:
 The **Azure Storage Performance** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
-    * Monitor average success server latency
-    * Monitor average success E2E latency
-    * Monitor top success server latency by operation
-    * Monitor top success E2E latency by operation
+    * Monitor average success server latency.
+    * Monitor average success E2E latency.
+    * Monitor top success server latency by operation.
+    * Monitor top success E2E latency by operation.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
