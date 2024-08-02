@@ -17,7 +17,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 
 New Feature:
 * Amazon RDS app - Added support to analyze and monitor RDS MS SQL CloudWatch logs.
-* Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out of box monitors.
+* Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out-of-box monitors.
 * By default, the solution now sends CloudFormation deployment telemetry to Sumo Logic. Users have the option to opt out of this telemetry.
 
 Updates:
