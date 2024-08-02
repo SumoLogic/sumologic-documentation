@@ -17,13 +17,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group. 
 
-In the upper left corner you can select **Dashboard** to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
+Select **Dashboard** in the upper left corner to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-secops.png')} alt="Home page" width="800"/>
 
 ## Incidents
 
-[Incidents](/docs/cloud-soar/incidents-triage/) are at the heart of Cloud SOAR. Incidents are events that require investigation and remediation. 
+Incidents are events that require investigation and remediation. Incidents are at the heart of Cloud SOAR. 
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access incidents, in the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
 <!--Kanso 
@@ -227,19 +227,38 @@ To add an attachment, click **+** to the left of the search bar and provide a de
 
 ## Triage
 
-The Cloud SOAR Triage module ingests events via the Cloud SOAR API. You can use it
-to triage events which may be unverified or have a low confidence level before they are converted to incidents. The Triage module can be completely customized for use cases from financial fraud to network IDS alerts.
+The **Triage** screen shows events that have been recorded but not yet converted to incidents. 
 
-### Field settings
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR > Triage**. 
+ Kanso-->
 
-By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the incident Type field and cannot be modified directly. New types must be added from the incidents section of the Custom Fields page. Up to 100 custom fields and be created for the Triage module, allowing customization for any use case.
+<img src={useBaseUrl('img/cloud-soar/triage.png')} alt="Triage screen" style={{border: '1px solid gray'}} width="800"/>
 
-To add additional custom fields:
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Select **Triage Events** (or the name of the module if you have renamed it from the default of **Triage**).
-1. To add a new field, click **Add** from the upper right-hand corner and configure the field as desired. Note that to be able to filter events in the Triage module based on the values of a field, **Use as filter** must be checked in the Visualization tab when adding or modifying a field.
+The Cloud SOAR triage module ingests events via the Cloud SOAR API. You can use it
+to triage events which may be unverified or have a low confidence level before they are converted to incidents. The triage module can be completely customized for use cases from financial fraud to network IDS alerts.
 
-As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
+Triage events can be pending (not assigned yet), grabbed (assigned to an analyst), or converted to an incident (either automatically or manually).
+
+Let's suppose you want to look at a pending event to determine if it needs investigation:
+
+1. Click a pending event. The event opens.
+1. You determine that you want to investigate the event. Click the three-dot kebab button and select **Grab**. <br/><img src={useBaseUrl('img/cloud-soar/grab-an-event.png')} alt="Grab on the dropdown menu" style={{border: '1px solid gray'}} width="600"/>
+1. Once an event is grabbed by an analyst, any playbooks defined for that incident type will be automatically executed and the results will be displayed in the **Filtered Results** section of the event details screen. Because all playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and playbooks be created for triage events.
+1. After you triage the event, you may reassign it to another user for further analysis, discard it, or convert it to an incident:
+   * To reassign the event, click **Reassign**. 
+   * To discard it, click the three-dot kebab button and select **Discard**. 
+   * To convert it an incident, click the three-dot kebab button and select **Convert to Incident**. <br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>      
+1. When you click **Convert to Incident**, a dialog appears for you to select the conversion settings. Select the appropriate incident template, owner, and ID, then click **Apply**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident. <br/><img src={useBaseUrl('img/cloud-soar/convert-to-incident-dialog.png')} alt="Convert to incident dialog" style={{border: '1px solid gray'}} width="300"/>
+
+### Triage field settings
+
+By default, the triage module contains two fields, `Status` and `Type`. Additional values may be added to the `Status` field; however, the `Type` field is directly linked to the incident type field and cannot be modified directly. 
+
+New types must be added from the incidents section of the **Custom Fields** page. Up to 100 custom fields and be created for the triage module, allowing customization for any use case. To add additional custom fields for triage, see [Custom fields](/docs/cloud-soar/overview/#custom-fields). 
+
+Note that to be able to filter events in the triage module based on the values of a field, **Use as filter** must be checked when adding or modifying a field. As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
 
 #### Attributes sent from Cloud SIEM
 
@@ -265,38 +284,15 @@ When you create an incident from an Insight, you can map the Insight attributes 
 When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template.
 :::
 
-### Working with events
-
-The Triage module is accessible from the incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
-
-<img src={useBaseUrl('img/cloud-soar/image58.png')} alt="Events" style={{border: '1px solid gray'}} width="800"/>
-
-The list of events can be filtered by any of the fields listed in the filter section at the top of the Triage main screen.
-
-<img src={useBaseUrl('img/cloud-soar/image181.png')} alt="Filter events" style={{border: '1px solid gray'}} width="100"/>
-
-
-To view the details of a Triage event, click on the box and arrow icon in the Actions column for the event. If additional information is available, it will be displayed in this Event Details screen.
-
-To begin triaging an event, click on the person icon in the Actions column for the event to **grab** the event. Once an event is grabbed by an analyst, any playbooks defined for that incident type will be automatically executed and the results will be displayed in the Results section of the Event Details screen. Because all playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and playbooks be created for Triage events.
-
-After triaging the event, the event may be reassigned to another user for further analysis, discarded or converted to an incident. To reassign the event to another user, click on the circular arrow icon in the **Actions** column for the event. To discard the event, click on the trash can icon in the **Actions** column for the event.        
-
-<img src={useBaseUrl('img/cloud-soar/image182.png')} alt="Discard events" style={{border: '1px solid gray'}} width="100"/>
-
-To convert the event to an incident, click **Convert to Incident** in the far right-hand corner of the Event in question. Select the appropriate incident template, owner and label, then click **Save**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident.
-
-<img src={useBaseUrl('img/cloud-soar/image183.png')} alt="Convert to incident" style={{border: '1px solid gray'}} width="400"/>
-
 ## Report
 
 With the **Report** option, you can create incident reports to share with others as well as [widgets](#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
 <!--Kanso
  Kanso-->
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" style={{border: '1px solid gray'}} width="600"/>
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" style={{border: '1px solid gray'}} width="700"/>
 1. Click the **+** icon in the upper left corner.
 1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
-1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" style={{border: '1px solid gray'}} width="600"/>
+1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" style={{border: '1px solid gray'}} width="700"/>
 1. Click **Save**. In the dialog:
     1. Provide a **Report name** and a **Description**.
     1. Click **Schedule** to schedule the report to run on a regular basis.
