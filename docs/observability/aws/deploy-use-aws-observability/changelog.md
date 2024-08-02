@@ -32,7 +32,7 @@ Bug Fixes:
 
 ## v2.8.0, 17-May-2024 - Yanked
 
-### This version has been Yanked. Please deploy/ update to AWS Observabilty v2.9.0 or latest version.
+### This version has been Yanked. Please deploy/update to AWS Observabilty v2.9.0 or latest version.
 
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml`
 
