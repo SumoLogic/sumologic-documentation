@@ -17,7 +17,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 
 New Feature:
 * Amazon RDS app - Added support to analyze and monitor RDS MS SQL CloudWatch logs.
-* Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out of box monitors.
+* Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out-of-box monitors.
 * By default, the solution now sends CloudFormation deployment telemetry to Sumo Logic. Users have the option to opt out of this telemetry.
 
 Updates:
@@ -28,11 +28,11 @@ Updates:
 * Enhanced log group subscriptions limit in the updated SAM app sumologic-loggroup-connector v1.0.12 .
 
 Bug Fixes:
-* Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0 without needing to go through v2.8.0.
+* Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0, bypassing v2.8.0.
 
 ## v2.8.0, 17-May-2024 - Yanked
 
-### This version has been Yanked. Please deploy/ update to AWS Observabilty v2.9.0 or latest version.
+### This version has been Yanked. Please deploy/update to AWS Observabilty v2.9.0 or latest version.
 
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml`
 
