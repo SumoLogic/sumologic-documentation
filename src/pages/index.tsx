@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import { Box, Button, Container, Grid, Stack, Tabs, Tab, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import bgImage from '../../static/img/hero-secondary-background.webp';
 import heroImage from '../../static/img/hero-secondary-graphic.webp';
@@ -317,7 +317,7 @@ export const Home = () => {
         </Stack>
 
       </Container>
-    </Layout>
+    </Layout >
   );
 };
 
