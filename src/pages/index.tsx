@@ -13,7 +13,7 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
 import CustomHit from '../components/CustomHit'; // import the custom hit component
 
-const searchClient = algoliasearch('YourAppID', 'YourSearchAPIKey');
+const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb365549');
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -120,7 +120,7 @@ export const Home = () => {
                   Get started quickly with our search, visualization, analytics, and security capabilities.
                 </Typography>
 
-                <InstantSearch searchClient={searchClient} indexName="YourIndexName">
+                <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
                   <SearchBox translations={{ placeholder: 'Search for documentation...' }} />
                   <Hits hitComponent={CustomHit} /> {/* Use the custom hit component */}
                 </InstantSearch>
