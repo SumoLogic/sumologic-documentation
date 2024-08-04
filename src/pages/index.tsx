@@ -317,7 +317,7 @@ export const Home = () => {
         </Stack>
 
       </Container>
-    </Layout>
+    </Layout >
   );
 };
 
