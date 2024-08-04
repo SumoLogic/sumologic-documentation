@@ -4,16 +4,10 @@ import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui
 import { TabContext, TabPanel } from '@mui/lab';
 import bgImage from '../../static/img/hero-secondary-background.webp';
 import heroImage from '../../static/img/hero-secondary-graphic.webp';
-import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
+import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg'
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
-
-// Algolia imports
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
-import algoliasearch from 'algoliasearch/lite';
-import CustomHit from '../components/CustomHit'; // import the custom hit component
-
-const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb365549');
+import SearchBar from '../theme/SearchBar';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -110,6 +104,7 @@ export const Home = () => {
                 >
                   New to Sumo?
                 </Typography>
+                <SearchBar />
                 <Typography
                   color='#e3e3e3'
                   fontFamily='Lab Grotesque'
@@ -119,12 +114,6 @@ export const Home = () => {
                 >
                   Get started quickly with our search, visualization, analytics, and security capabilities.
                 </Typography>
-
-                <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
-                  <SearchBox translations={{ placeholder: 'Search for documentation...' }} />
-                  <Hits hitComponent={CustomHit} /> {/* Use the custom hit component */}
-                </InstantSearch>
-
                 {[
                   {
                     children: '1. Set up collector and source',
