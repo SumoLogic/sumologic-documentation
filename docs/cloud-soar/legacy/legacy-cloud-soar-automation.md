@@ -26,7 +26,7 @@ Using the cogwheel icon on the right in the integrations section, the main secti
 
 <img src={useBaseUrl('img/cloud-soar/CyberArk2.png')} alt="CyberArk configuration" style={{border: '1px solid gray'}} width="400"/>
 
-Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
+Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The **Enable** checkbox can be enabled or disabled later.
 
 If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.
 
