@@ -33,7 +33,7 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
-        'get-started/training-certification',
+        'get-started/training-certification-faq',
         'get-started/help',
         'get-started/faq',
       ],
