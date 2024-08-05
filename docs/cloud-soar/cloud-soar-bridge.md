@@ -1,6 +1,6 @@
 ---
 id: cloud-soar-bridge
-title: Cloud SOAR Bridge
+title: Cloud SOAR Automation Bridge
 sidebar_label: Automation Bridge
 description: Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.   
 ---

@@ -22,12 +22,6 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/architecture"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Architecture</h4></a>
-  <p>Cloud SOAR Security ops supports multi-tenant architecture.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/compared-to-automation-service"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Cloud SOAR Compared to the Automation Service</h4></a>
   <p>Compare the features of Cloud SOAR with the Automation Service.</p>
   </div>
