@@ -27,3 +27,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/tokensLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/tokensLibraryManagement |
+| KR        | https://api.kr.sumologic.com/docs/#tag/tokensLibraryManagementV1 |

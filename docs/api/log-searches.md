@@ -29,3 +29,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/logSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement |
+| KR        | https://api.kr.sumologic.com/docs/#tag/logSearchesManagementV1 |

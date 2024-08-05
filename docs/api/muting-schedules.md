@@ -27,3 +27,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
+| KR        | https://api.kr.sumologic.com/docs/#tag/mutingSchedulesLibraryManagementV1 |

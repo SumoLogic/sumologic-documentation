@@ -107,6 +107,12 @@ https://endpoint9.collection.us2.sumologic.com</td>
     <td>https://open-collectors.us2.sumologic.com</td>
     <td>us-west-2</td>
   </tr>
+  <tr>
+    <td>KR</td>
+    <td>https://collectors.kr.sumologic.com<br/>
+    <td>https://open-collectors.kr.sumologic.com</td>
+   <td>ap-northeast-2</td>
+  </tr>
 </small></table>
 
 ### Create an endpoint to connect with the Sumo Logic endpoint service

@@ -54,3 +54,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
+| KR        | https://api.kr.sumologic.com/docs/#tag/metricsQueryV1 |

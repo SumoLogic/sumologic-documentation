@@ -26,3 +26,4 @@ The Account Management API allows you to manage the custom subdomain for the URL
 | JP         | https://api.jp.sumologic.com/docs/#tag/accountManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/accountManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accountManagement |
+| KR         | https://api.kr.sumologic.com/docs/#tag/accountManagementV1|

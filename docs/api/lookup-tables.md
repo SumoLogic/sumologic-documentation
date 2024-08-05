@@ -27,3 +27,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/lookupManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/lookupManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/lookupManagement |
+| KR        | https://api.us2.sumologic.com/docs/#tag/lookupManagementV1 |
