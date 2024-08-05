@@ -36,7 +36,7 @@ If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields wil
 * **Account Name** > userName in CyberArk
 * **Platform ID** > platformId in CyberArk
 
-Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.
+Near these fields, there will be the relative toggle that will enable the related field for use on CyberArk.
 
 <img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
 
