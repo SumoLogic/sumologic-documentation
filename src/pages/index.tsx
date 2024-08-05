@@ -7,7 +7,7 @@ import heroImage from '../../static/img/hero-secondary-graphic.webp';
 import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg'
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
-import SearchBar from '../theme/SearchBar';
+import SearchBar from '../../src/theme/SearchBar/index.js';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
