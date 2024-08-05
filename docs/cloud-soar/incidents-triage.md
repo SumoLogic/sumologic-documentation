@@ -284,22 +284,27 @@ When you create an incident from an Insight, you can map the Insight attributes 
 When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template.
 :::
 
-## Report
+## Entities
 
-With the **Report** option, you can create incident reports to share with others as well as [widgets](#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
-<!--Kanso
+The **Entities** screen shows information about entities, unique actors encountered in incoming messages, such as a user, IP address, or host. Entities displayed here are from all incidents. To see entities associated with a specific incident, see [Entities tab](#entities-tab). 
+
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR > Entities**.
  Kanso-->
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" style={{border: '1px solid gray'}} width="700"/>
-1. Click the **+** icon in the upper left corner.
-1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
-1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" style={{border: '1px solid gray'}} width="700"/>
-1. Click **Save**. In the dialog:
-    1. Provide a **Report name** and a **Description**.
-    1. Click **Schedule** to schedule the report to run on a regular basis.
-    1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
-    1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" style={{border: '1px solid gray'}} width="300"/>
-1. Click **Export** to export the report to PDF.
-1. Click **Open** to open available reports.
+
+<img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity section" style={{border: '1px solid gray'}} width="700"/>
+
+To explore entities:
+
+1. Click an entity in the list to display the results of any previous actions taken on the entity, or where in the incident the entity was extracted. <br/><img src={useBaseUrl('img/cloud-soar/entity-details.png')} alt="Entity details" style={{border: '1px solid gray'}} width="700"/>
+1. Click the stopwatch icon to see the entity's history timeline. Click the date tabs to see additional information about the actions taken on each date. <br/><img src={useBaseUrl('img/cloud-soar/entity-history.png')} alt="History tab" style={{border: '1px solid gray'}} width="700"/>
+1. Hover your mouse over an entity to:
+   * **Lock**: Lock the entity to prevent any actions from being taken on it. This may be useful if you want to ensure that no enrichment actions are taken on attacker-controlled infrastructure or that an entity is not accidentally blocked.
+   * **Delete**: Delete the entity record.
+   * **Favorite**: Mark the entity as a favorite and move it to the top of the entity list. <br/><img src={useBaseUrl('img/cloud-soar/entity-actions-on-hover.png')} alt="Entity actions" style={{border: '1px solid gray'}} width="400"/>
+1. To manually add an entity, click **+** at the top of the screen to the left of **Entity**. <br/><img src={useBaseUrl('img/cloud-soar/add-entity-button.png')} alt="Button to add an entity" style={{border: '1px solid gray'}} width="100"/>
+1. In the **New Object** dialog, select an entity type from the **Object Type** dropdown menu. Enter information about the entity and then click **Create**. <br/><img src={useBaseUrl('img/cloud-soar/create-entity.png')} alt="New Object dialog to create a new entity" style={{border: '1px solid gray'}} width="600"/>
 
 ## Dashboards
 
@@ -353,92 +358,19 @@ You can create widgets as needed to help analysts and administrators quickly get
 1. Click **Public** if you want to make the widget available for others to use.
 1. Click **Save** when done.
 
-## Entities
+## Report
 
-The **Entities** screen shows information about entities, unique actors encountered in incoming messages, such as a user, IP address, or host. Entities displayed here are from all incidents. To see entities associated with a specific incident, see [Entities tab](#entities-tab). 
-
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR > Entities**.
+With the **Report** option, you can create incident reports to share with others as well as [widgets](#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
+<!--Kanso
  Kanso-->
-
-<img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity section" style={{border: '1px solid gray'}} width="700"/>
-
-To explore entities:
-
-1. Click an entity in the list to display the results of any previous actions taken on the entity, or where in the incident the entity was extracted. <br/><img src={useBaseUrl('img/cloud-soar/entity-details.png')} alt="Entity details" style={{border: '1px solid gray'}} width="700"/>
-1. Click the stopwatch icon to see the entity's history timeline. Click the date tabs to see additional information about the actions taken on each date. <br/><img src={useBaseUrl('img/cloud-soar/entity-history.png')} alt="History tab" style={{border: '1px solid gray'}} width="700"/>
-1. Hover your mouse over an entity to:
-   * **Lock**: Lock the entity to prevent any actions from being taken on it. This may be useful if you want to ensure that no enrichment actions are taken on attacker-controlled infrastructure or that an entity is not accidentally blocked.
-   * **Delete**: Delete the entity record.
-   * **Favorite**: Mark the entity as a favorite and move it to the top of the entity list. <br/><img src={useBaseUrl('img/cloud-soar/entity-actions-on-hover.png')} alt="Entity actions" style={{border: '1px solid gray'}} width="400"/>
-
-### Adding a new entity
-
-To add a new entity, click the **+** sign at the top of the screen and a new configuration box will be displayed. Select an entity type from the dropdown menu and an additional configuration box will be displayed. This configuration box allows the user to input information about the entity, such as adding a file or its file hash. Once the entity is
-created, click **Create** to continue.
-
-<img src={useBaseUrl('img/cloud-soar/image166.png')} alt="Adding a new Entity" style={{border: '1px solid gray'}} width="400"/>
-
-## Credential Manager - CyberArk Configuration
-
-You can use CyberArk Credential Manager to manage data that will be used in integration resources.
-
-<img src={useBaseUrl('img/cloud-soar/cyberArk1.png')} alt="Integrations" style={{border: '1px solid gray'}} width="600"/>
-
-Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk2.png')} alt="CyberArk configuration" style={{border: '1px solid gray'}} width="400"/>
-
-Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
-
-If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk3.png')} alt="Enable CyberArk fields" style={{border: '1px solid gray'}} width="800"/>
-
-If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
-* **Account Name** > userName in CyberArk
-* **Platform ID** > platformId in CyberArk
-
-Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
-
-In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
-
-Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
-
-:::note Case sensitive
-Pay attention to uppercase and lowercase letters.
-:::
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid gray'}} width="400"/>
-
-Through the name of the Properties, (in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
-
-In the fields enabled for CyberArk, in addition to the account properties, you can also recall the value of the CyberArk Account password, to do this, write the word **Password** in the field.
-
-:::important
-If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, and more.
-:::
-
-**The only property that will be retained is the mandatory nature of the field**.
-
-Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
-
-If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.
-
-<img src={useBaseUrl('img/cloud-soar/CyberArk6.png')} alt="CyberArk fields" style={{border: '1px solid gray'}} width="400"/>
-
-### Configuring the automation bridge for CyberArk
-
-If you are using CyberArk, you will need to add the following certificates given by CyberArk:
-```
-**RootCA**new.crt**
-**client**new.crt**
-**client**new.pem**
-```
-to the `/opt/automation-bridge/` directory.
-
-**The names must be exactly the same**.
-
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. Kanso--> <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" style={{border: '1px solid gray'}} width="700"/>
+1. Click the **+** icon in the upper left corner.
+1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
+1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" style={{border: '1px solid gray'}} width="700"/>
+1. Click **Save**. In the dialog:
+    1. Provide a **Report name** and a **Description**.
+    1. Click **Schedule** to schedule the report to run on a regular basis.
+    1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
+    1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" style={{border: '1px solid gray'}} width="300"/>
+1. Click **Export** to export the report to PDF.
+1. Click **Open** to open available reports.
