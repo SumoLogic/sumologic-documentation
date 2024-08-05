@@ -747,6 +747,7 @@
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Threat_Intel_for_AWS/01Collect-Logs-for-the-Threat-Intel-for-AWS-App": "/docs/integrations/amazon-aws/threat-intel",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Threat_Intel_for_AWS/Threat-Intel-for-AWS-App-Dashboard": "/docs/integrations/amazon-aws/threat-intel",
   "/07Sumo-Logic-Apps/04Infrastructure-and-Operations/NIST_CSF": "/docs/cloud-soar/overview",
+  "/docs/cloud-soar/architecture": "/docs/cloud-soar/overview",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure": "/docs/integrations/microsoft-azure",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory/01Collect-Log-Files-for-the-Active-Directory-App": "/docs/integrations/microsoft-azure/active-directory-json",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_JSON": "/docs/integrations/microsoft-azure/active-directory-json",
