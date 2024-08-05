@@ -362,25 +362,16 @@ The **Entities** screen shows information about entities, unique actors encounte
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR > Entities**.
  Kanso-->
 
-<img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity section" style={{border: '1px solid gray'}} width="700"/>
 
 To explore entities:
 
-Observables from every incident can be found in this section, along with any enrichment data associated with these data types and the incidents they were reported in. You'll find all variables including artifacts related to an incident. Clicking on an entity in the entity list will display the results of any previous actions taken on the entity, or where in the incident the entity was extracted.
-
-<img src={useBaseUrl('img/cloud-soar/image163.png')} alt="Entity Details" style={{border: '1px solid gray'}} width="800"/>
-
-A timeline of actions taken on the entity can be displayed on the far right-hand corner of the screen by clicking on the stopwatch symbol. Hover over the date tabs to expand the timeline and see additional information about the actions taken on each date.
-
-<img src={useBaseUrl('img/cloud-soar/image164.png')} alt="Latest actions" style={{border: '1px solid gray'}} width="300"/>
-
-While any observable is selected, a menu bar will be available in the top right-hand corner of the screen which allows users to perform certain actions on the observable.
-
-<img src={useBaseUrl('img/cloud-soar/image165.png')} alt="Observables Menu Bar" style={{border: '1px solid gray'}} width="400"/>
-
-- **Lock**: Lock the observable to prevent any actions from being taken on it. This may be useful if you want to ensure that no enrichment actions are taken on attacker-controlled infrastructure or that an observable is not accidentally blocked.
-- **Delete**: Delete the observable.
-- **Mark as Favorite**: Mark the observable as a favorite and move it to the top of the observables list.
+1. Click an entity in the list to display the results of any previous actions taken on the entity, or where in the incident the entity was extracted. <br/><img src={useBaseUrl('img/cloud-soar/entity-details.png')} alt="Entity details" style={{border: '1px solid gray'}} width="700"/>
+1. Click the stopwatch icon to see the entity's history timeline. Click the date tabs to see additional information about the actions taken on each date. <br/><img src={useBaseUrl('img/cloud-soar/entity-history.png')} alt="History tab" style={{border: '1px solid gray'}} width="700"/>
+1. Hover your mouse over an entity to:
+   * **Lock**: Lock the entity to prevent any actions from being taken on it. This may be useful if you want to ensure that no enrichment actions are taken on attacker-controlled infrastructure or that an entity is not accidentally blocked.
+   * **Delete**: Delete the entity record.
+   * **Favorite**: Mark the entity as a favorite and move it to the top of the entity list. <br/><img src={useBaseUrl('img/cloud-soar/entity-actions-on-hover.png')} alt="Entity actions" style={{border: '1px solid gray'}} width="400"/>
 
 ### Adding a new entity
 
