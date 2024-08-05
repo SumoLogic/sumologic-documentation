@@ -47,7 +47,7 @@ The War Room provides a complete, chronological, and detailed picture of a speci
 
 ### Playbooks
 
-Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbooks](/docs/cloud-soar/automation/#playbook).
+Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbook](/docs/cloud-soar/automation/#playbook).
 
 <img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid gray'}} width="800" />
 
@@ -84,7 +84,7 @@ The classic UI is the traditional way to navigate in Sumo Logic. For more inform
 This menu appears at the top of the Cloud SOAR screen: <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-top-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="600"/>
 
 Use the top menu to access:
-* [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents-screen). Manage security incidents that require investigation and action. 
+* [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action. 
 * [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents. 
 * <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
 * <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](#settings-menu). Configure Cloud SOAR settings.
@@ -201,7 +201,7 @@ The following sections detail the various setup and configuration options for th
 
 #### Incidents
 
-Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-soar/incidents-triage/#incidents-screen).
+Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-soar/incidents-triage/#incidents).
 
 * **Duplicates**.
     * **Prohibit duplicate naming**. Select this checkbox to prevent incidents from being named identically.
@@ -209,9 +209,9 @@ Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-s
     * **Use suffix on non-duplicate**. Use the selected suffix on all incidents, regardless of whether they are named the same.
 * **Objects**. Gather objects, such as IP addresses, domains and email addresses, and add them to the appropriate object's section within the incident. 
     * **Extract from**:
-       * **Incident field**. Gather objects from [incident properties](/docs/cloud-soar/incidents-triage/#incident-properties).
-       * **Task field**. Gather objects from the [Tasks](/docs/cloud-soar/incidents-triage/#tasks) field.
-       * **Note field**. Gather objects from the [Notes](/docs/cloud-soar/incidents-triage/#notes) field. 
+       * **Incident field**. Gather objects from the incident properties.
+       * **Task field**. Gather objects from the incident tasks.
+       * **Note field**. Gather objects from the the incident notes. 
     * **Filename extension whitelist**. Enter filename extensions to allow when gathering objects. 
 * **Process Phase**. Configure phases for monitoring progress of incidents as they progress. Determine whether the phase is **Mandatory**, and the **Status** of the incident when the phase is reached. Select **Show Deleted** to show phases on deleted incidents.
 * **Mandatory Closing Note**. Make a final incident note mandatory before the incident can be closed. 
@@ -365,7 +365,7 @@ Cloud SOAR's [Triage](/docs/cloud-soar/incidents-triage/#triage) module ingests 
 
 You can customize triage display preferences on the **Triage** configuration page. You can color-code triage events based on status to easily distinguish them from each other when viewing the list of triage events. You can also modify the name of the module from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.
 
-* **Section Name**. The name you want to use for the [triage section of the user interface](/docs/cloud-soar/incidents-triage/#working-with-events). 
+* **Section Name**. The name you want to use for the **Triage** section of the user interface.
 * **Disable background cache generation**. Prevent cache from being generated for triage events. Selecting this box may speed up page load, but slow triage event retrieval.
 * **Set event row style**. Set the colors to display for triage events.
 * **Reassign Mail Configuration**. Customize the content of emails sent to analysts when triage events are reassigned.
