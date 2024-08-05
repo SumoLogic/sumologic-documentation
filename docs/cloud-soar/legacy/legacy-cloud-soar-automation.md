@@ -40,7 +40,7 @@ Near these fields, there will be the relative toggle that will enable the relate
 
 <img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
 
-In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
+In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second one hasn't.
 
 Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
 
