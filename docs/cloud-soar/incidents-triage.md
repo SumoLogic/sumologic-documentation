@@ -148,13 +148,13 @@ The incident properties section in the center contains all the important informa
 
 <img src={useBaseUrl('img/cloud-soar/incident-properties.png')} alt="Incident properties" style={{border: '1px solid gray'}} width="700"/>
 
-### Overview
+### Overview tab
 
-The incident **Overview** section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in **Custom Fields**. For more information, see [Configuration](/docs/cloud-soar/overview/#configuration).
+The incident **Overview** tab contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in **Custom Fields**. For more information, see [Configuration](/docs/cloud-soar/overview/#configuration).
 
-### Operations
+### Operations tab
 
-The **Operations** section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **Playbook**, **Tasks**, and **Notes**.
+The **Operations** tab contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **Playbook**, **Tasks**, and **Notes**.
 
 #### War Room
 
@@ -207,17 +207,17 @@ To explore notes:
 1. When you close an incident, the system will prompt you for a note describing the reason. <br/><img src={useBaseUrl('img/cloud-soar/close-incident.png')} alt="Close Incident button" width="800"/>
 1. In the **Closing Note** field, enter a note explaining the reason for incident closure and click **Apply**. <br/><img src={useBaseUrl('img/cloud-soar/close-incident-note.png')} alt="Closing note dialog" width="800"/>
 
-### Entities
+### Entities tab
 
-The **Entities** tab shows the entities associated with the incident.
+The **Entities** tab shows the entities associated with the incident. Entities are unique actors encountered in incoming messages, such as a user, IP address, or host.
 
 To see entities for all incidents, open the **Entities** page. For more information, see [Entities](/docs/cloud-soar/incidents-triage/#entities-1). 
 
 <img src={useBaseUrl('img/cloud-soar/entities-panel.png')} alt="Entities tab" width="700"/>
 
-### Documentation
+### Documentation tab
 
-The **Documentation** section provides investigators with an area to document all steps taken during an incident's investigation.
+The **Documentation** tab provides investigators with an area to document all steps taken during an incident's investigation.
 
 <img src={useBaseUrl('img/cloud-soar/documentation.png')} alt="Documentation tab" width="700"/>
 
@@ -303,7 +303,9 @@ With the **Report** option, you can create incident reports to share with others
 
 ## Dashboards
 
-Watch the following micro lesson to learn about dashboards and KPI reports.
+Cloud SOAR's **Dashboards** section highlights the most important pieces of data to the user or investigator who is logged into the platform. This data is presented through the use of multiple widgets that you can add, remove, and customize to include all data relevant to your job functions and duties.
+
+Watch the following micro lesson to learn about dashboards.
 
 <Iframe url="https://www.youtube.com/embed/NRdtAvxhuOY?rel=0"
      width="854px"
@@ -316,60 +318,14 @@ Watch the following micro lesson to learn about dashboards and KPI reports.
      allowfullscreen
      />
 
-The Cloud SOAR Dashboard layout renders data for quick comprehension
-using a combination of graphics (e.g., charts, tables, graphs, and
-visual indicators) called Widgets. The data is helpful to security
-analysts tasked with incident handling and operational activities and
-provides supervisors and stakeholders a summary overview from which to derive strategic information.
-
-<img src={useBaseUrl('img/cloud-soar/image27.png')} alt="Dashboards" style={{border: '1px solid gray'}} width="800"/>
-
-Cloud SOAR's dashboards section is used to highlight the most important
-pieces of data to the user or investigator who is logged into the
-platform. This data is presented through the use of multiple widgets
-that you can add, remove, and customize to include all data relevant
-to your job functions and duties.
-
-<img src={useBaseUrl('img/cloud-soar/image131.png')} alt="Cloud Soar Dashboard" style={{border: '1px solid gray'}} width="800"/>
-
-To begin customizing the dashboard select the **Customize** button on the top of the screen. Once selected, a new configuration box will be displayed.
-
-<img src={useBaseUrl('img/cloud-soar/image132.png')} alt="Dashboard Widget Editor" style={{border: '1px solid gray'}} width="800"/>  
-
-<img src={useBaseUrl('img/cloud-soar/image133.png')} alt="Dashboard Widget Configurator" style={{border: '1px solid gray'}} width="300"/>
-
-
-The widgets section on the left-side of the screen displays how the dashboard is structured. To begin adding widgets to the dashboard, click **+** on the desired section.
-
-A new popup will be displayed with a list of all widget choices for the selected section. To add a new widget, click **+**.
-
-Once a widget is added to a section, they will be displayed on the right-side of the screen. To configure, click the cogwheel next to the widget to be customized. A new configuration screen will be displayed. These configuration screens will vary depending on the information it utilizes. Users have the option to add or remove filters and values, rename the section, as well as choose what data they would like to have displayed.
-
-To change how the widgets appear in a section, you can drag and drop into the desired positions by clicking and holding the left-side of selection and dragging to a new location. Users can utilize Cloud SOAR's Carousel feature to cycle through different Dashboard displays on a SOC board to ensure constant visibility within the Cloud SOAR platform. Once the desired widgets have been added and configured, click save to commit.
-
-<img src={useBaseUrl('img/cloud-soar/image135.png')} alt="Cloud Soar Dashboard Carousel" style={{border: '1px solid gray'}} width="500"/>
-
-Most widgets inside of the Cloud SOAR dashboard are drillable. To drill down into a specific statistic, click on either an incident ID or a section of a pie chart to limit the information shown to the areas of concern.
-
-:::note
-Make sure to allow popups from the Cloud SOAR site to drill into dashboard statistics.
-:::
-
-<img src={useBaseUrl('img/cloud-soar/image136.png')} alt="Dashboard Pie Chart" style={{border: '1px solid gray'}} width="600"/>
-
-
-You can also export Dashboards to an Excel spreadsheet or PDF document to include in reporting. To export a dashboard, select **Export** from the top of the dashboard screen and select which format to use. A new window will open with the requested document, which can either be saved to your machine or printed.
-
-<img src={useBaseUrl('img/cloud-soar/image137.png')} alt="Dashboard Menu" style={{border: '1px solid gray'}} width="800"/>
-
 ### Create a dashboard
 
 You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Go to the home screen. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **ecOps & Dashboard**.  Kanso-->
-1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="300"/>
-1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" style={{border: '1px solid gray'}} width="200"/><br/>A blank dashboard appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="700"/>
-1. Click on the name of the blank dashboard (such as **Dashboard 1** in the example), and give the dashboard a name. Click **No description available** and type a description.
+1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="150"/>
+1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" style={{border: '1px solid gray'}} width="200"/><br/>A blank dashboard screen appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="700"/>
+1. Click on the name of the blank dashboard (such as **Dashboard 2** in the example), and give the dashboard a name. Click **No description available** and type a description.
 1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="150"/><br/>The widgets panel displays to the right of the dashboard.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard-example.png')} alt="Widgets panel on the dashboard" style={{border: '1px solid gray'}} width="700"/>
 1. Under **My Widgets** or **Public**, select widgets you'd like to add to the dashboard. These are the same widgets that are available to use in [reports](/docs/cloud-soar/incidents-triage/#report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.
 1. Rearrange the widgets in the dashboard as desired.
@@ -382,14 +338,14 @@ You can create widgets as needed to help analysts and administrators quickly get
 
 1. Open the widgets panel:
       1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Go to the home screen. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **ecOps & Dashboard**.  Kanso-->
-      1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="300"/>
+      1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="150"/>
       1. Select a dashboard.
       1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="150"/><br/>
       :::note
       Widgets are shared between **Dashboards** and [**Reports**](#report).
       :::
-1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" style={{border: '1px solid gray'}} width="250"/>
-1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" style={{border: '1px solid gray'}} width="600"/>
+1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" style={{border: '1px solid gray'}} width="200"/>
+1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" style={{border: '1px solid gray'}} width="700"/>
 1. In **Name**, provide a name that clearly explains the widget's purpose.
 1. In **Group by**, select whether you want incidents listed in the widget to be grouped by **Status**, **Incident ID**, or **Start time**.
 1. On the left, select the type of widget to create (pie chart, bar chart, graph, table, or text).
@@ -399,7 +355,16 @@ You can create widgets as needed to help analysts and administrators quickly get
 
 ## Entities
 
-The **Entities** screen provides access to data from across all incidents, as well as other information which can be stored within Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" style={{border: '1px solid gray'}} width="600"/>
+The **Entities** screen shows information about entities, unique actors encountered in incoming messages, such as a user, IP address, or host. Entities displayed here are from all incidents. To see entities associated with a specific incident, see [Entities tab](#entities-tab). 
+
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR > Entities**.
+ Kanso-->
+
+<img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" style={{border: '1px solid gray'}} width="700"/>
+
+To explore entities:
 
 Observables from every incident can be found in this section, along with any enrichment data associated with these data types and the incidents they were reported in. You'll find all variables including artifacts related to an incident. Clicking on an entity in the entity list will display the results of any previous actions taken on the entity, or where in the incident the entity was extracted.
 
@@ -409,9 +374,7 @@ A timeline of actions taken on the entity can be displayed on the far right-hand
 
 <img src={useBaseUrl('img/cloud-soar/image164.png')} alt="Latest actions" style={{border: '1px solid gray'}} width="300"/>
 
-While any observable is selected, a menu bar will be available in the
-top right-hand corner of the screen which allows users to perform
-certain actions on the observable.
+While any observable is selected, a menu bar will be available in the top right-hand corner of the screen which allows users to perform certain actions on the observable.
 
 <img src={useBaseUrl('img/cloud-soar/image165.png')} alt="Observables Menu Bar" style={{border: '1px solid gray'}} width="400"/>
 
@@ -421,11 +384,7 @@ certain actions on the observable.
 
 ### Adding a new entity
 
-To add a new entity, click the **+** sign at the top of the screen and a
-new configuration box will be displayed. Select an entity type from the
-dropdown menu and an additional configuration box will be displayed.
-This configuration box allows the user to input information about the
-entity, such as adding a file or its file hash. Once the entity is
+To add a new entity, click the **+** sign at the top of the screen and a new configuration box will be displayed. Select an entity type from the dropdown menu and an additional configuration box will be displayed. This configuration box allows the user to input information about the entity, such as adding a file or its file hash. Once the entity is
 created, click **Create** to continue.
 
 <img src={useBaseUrl('img/cloud-soar/image166.png')} alt="Adding a new Entity" style={{border: '1px solid gray'}} width="400"/>
