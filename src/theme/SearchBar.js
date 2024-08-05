@@ -35,6 +35,7 @@ import { Configure } from 'react-instantsearch';
   userToken={'user-1'}
 />
 
+import { Hits } from 'react-instantsearch';
 
 const indexName = crawler_sumodocs;
 
