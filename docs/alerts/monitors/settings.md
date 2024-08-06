@@ -94,7 +94,7 @@ Adding a **Tag** to a monitor can help you categorize, search, filter, and corre
 ### Syntax
 
 - Tag keys cannot start with the prefixes `sumo.` or `_`
-- Tag keys can only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
+- Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
 - Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
 - You can associate a maximum of 50 tags per monitor
 
