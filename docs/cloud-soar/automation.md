@@ -27,29 +27,33 @@ Since Cloud SOAR provides automation features to the Automation Service, many fe
 
 ## Incident templates
 
-Incident templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (e.g., incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, Playbooks, knowledge base articles, or any other incident attribute. As rules are created for generating incidents based on syslog messages, email, SIEM integrations or other data sources, it is the Incident Templates that will define how the initial incident will be created.
+Incident templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (for example, incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, knowledge base articles, or any other incident attribute. Since rules are created for generating incidents based on syslog messages, email, SIEM integrations, or other data sources, it is the incident templates that will define how the initial incident will be created.
 
 ### Create a new incident template
 
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  Kanso-->
-1. From the Incident Templates page, you'll find all previously created templates on the left-side of the screen. To add a new Incident Template, click **+** to proceed.<br/><img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/>
-1. A new configuration box is displayed. <br/><img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/>
-1. As seen in our previous configurations, you will need to name your template. Make sure it is something easily identifiable and related to the activity it is developed for. The next section is asking for a **Category**. This field, as well as all other fields within the Cloud SOAR platform, can be customized to fit the user's environment (see [Custom Fields](#custom-fields)).
-1. In our example, we're building an Incident Template for a DLP incident. The category we chose is titled **Data Theft** but can be called anything in which we choose to identify it as. Users also have the option to add **Tags** which can be used to further categorize of define the incident, and can be used when searching for or correlating events. Once our template is named and categorized, click **Next** to continue.
-1. Under the **Incident** tab administrators may define any incident parameters they wish to set by default when an incident is creating using the template. This often includes parameters such as type, kind and severity. All variables marked with an asterisk (*) are required to complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the **Custom Fields** section. Once all required variables have been defined, click **Next** to continue. <br/><img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/>
-    <br/>The remaining tabs in the Incident Template dialogue are as follows:
-    - **Incident details**: To set up details for a specific incident type.
-    - **Description**: Free text area to describe details of the template.
-    - **Playbook**: Playbook which should be automatically assigned to an incident. For each playbook, user can choose to have the Playbook automatically execute immediately upon incident creation or assigned and wait for manual execution.
-    - **Investigators**: Investigators who should be automatically assigned to the incident.
-    - **Notes**: Notes which should be created for the incident.
+1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
+1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
+   1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for. 
+   1. **Category**. Enter a category for this template. For example, suppose we're building a template for a DLP incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/overview/#custom-fields)).
+   1. **Tags**. Enter any tags to further categorize or define the incident. You can use these tags later when searching for or correlating events. 
+1. Click **Incident** at the top of the dialog. 
+1. Define any incident parameters you want to set by default when an incident is creating using the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template-2.png')} alt="Create incident template dialog to define the incident type" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Apply**. The new template is displayed.  <br/><img src={useBaseUrl('img/cloud-soar/new-incident-template.png')} alt="New template" style={{border: '1px solid gray'}} width="700"/>
+1. Scroll down and enter the following:
+   1. **Incident details**. Click the **Edit** toggle to set up details for a specific incident type.
+   1. **Description**. Describe details of the template.
+   1. **Playbook**. Select the playbooks that should be automatically assigned to an incident. For each playbook, you can choose to have the playbook automatically execute immediately upon incident creation, or assigned and wait for manual execution.
+   1. **Investigators**. Select the investigators who should be automatically assigned to the incident.
+   1. **Notes**. Enter notes which should be created for the incident.
+   1. **Mapping**. Select the daemon field mapping for the template.
 
 ### Configure a webhook for Cloud SOAR
 
 You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
-1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/>
+1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid gray'}} width="600"/>
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
 1. In **Authorization Header**, enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/getting-started#basic-access-base64-encoded).
@@ -98,7 +102,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
 1. Click **+** to the left of **Rules**.
-1. Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters. <br/><img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
+1. Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters. <br/><img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  style={{border: '1px solid gray'}} width="400"/>
 1. In the detail section of the rule you can define filters to be used in the rule and the action to be performed.
 1. The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
     - **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
@@ -108,7 +112,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
     - **Set task progress**. Set task progress based on parameters from the parsed message
     - **Close task**. Close a task based on parameters from the parsed message
     - **Add to Triage**. Create a new triage event based on parameters from the parsed message
-1.To add a new mapping setting, click on the plus button near Mapping if enable for that action. <br/><img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  width="400"/>
+1.To add a new mapping setting, click on the plus button near Mapping if enable for that action. <br/><img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  style={{border: '1px solid gray'}} width="400"/>
 
 
 ## Configure Slack for Cloud SOAR
@@ -126,8 +130,8 @@ To configure Slack for use inside Cloud SOAR, you must first create a public or 
 Before you can use the Slack integration in Cloud SOAR, you need to create a Slack app on the user or company workspace.
 
 1. Navigate to the [Slack API page](https://api.slack.com/apps).
-1. Click **Create an App**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="Create a Slack app" width="800"/>
-1. Select **From scratch**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="Create a Slack app from scratch" width="400"/>
+1. Click **Create an App**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="Create a Slack app" style={{border: '1px solid gray'}} width="800"/>
+1. Select **From scratch**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="Create a Slack app from scratch" style={{border: '1px solid gray'}} width="400"/>
 1. Enter "CSOAR Bot" as the app name and select the workspace where you wish to install it.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace-delivery2.png')} alt="Insert name and workspace for Slack app" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Create App**.
 
@@ -174,16 +178,16 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
 1. Add resources for the tokens:
    1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
-   1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" width="800"/>
-   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/>
+   1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" style={{border: '1px solid gray'}} width="800"/>
+   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" style={{border: '1px solid gray'}} width="600"/>
    1. Name the resource "Bot User OAuth Access Token".
    1. Click **Edit**.
    1. Copy the Bot Oauth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field.
    1. Once you have filled in all the required fields, click **Save**.
-   1. Click **TEST SAVED SETTINGS** to verify configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
+   1. Click **TEST SAVED SETTINGS** to verify configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" style={{border: '1px solid gray'}} width="400"/>
 1. Configure instant messaging:
     1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. Kanso-->
-    1. Scroll down and open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Successful configuration" width="600"/>
+    1. Scroll down and open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Successful configuration" style={{border: '1px solid gray'}} width="600"/>
     1. For **Integration** select Slack.
     1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
     1. Paste your previously saved Signing Secret to the **Signing Secret for verify requests** field. If configuration is successful, **Workspace** displays "Success".
@@ -194,16 +198,16 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [User Choice](/docs/cloud-soar/automation/#user-choice) to be answered by Slack.
 
-1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" width="600"/>
+1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" style={{border: '1px solid gray'}} width="600"/>
 <br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.
-1. When the playbook flow reaches the **User Choice**, the user will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" width="600"/>
-1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" width="600"/>
+1. When the playbook flow reaches the **User Choice**, the user will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" style={{border: '1px solid gray'}} width="600"/>
+1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" style={{border: '1px solid gray'}} width="600"/>
 
 ### Bidirectional use cases between Slack and incident management
 
 You can manage Slack communication channels directly by creating/editing various incidents within Cloud SOAR. Here are some use cases:
 
-* Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" width="800"/>
+* Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" style={{border: '1px solid gray'}} width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" style={{border: '1px solid gray'}} width="800"/>
 * Adding / removing users from the incident <br/>When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.
-* Close / delete an incident <br/>When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" width="400"/>
-* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Slack message in the war room" width="800"/>
+* Close / delete an incident <br/>When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" style={{border: '1px solid gray'}} width="400"/>
+* Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Slack message in the war room" style={{border: '1px solid gray'}} width="800"/>
