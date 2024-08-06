@@ -117,9 +117,11 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
    ```
 ### Configure metric rules
-* **Azure Observability Metadata Extraction Metric Rule Service Level**
+  * **Azure Observability Metadata Extraction Metric Rule Service Level**
+
+      In case this rule is already exists then no need to create again.
 ```sql
-Rule Name: AzureObservabilityMetadataExtractionMetricRuleServiceLevel
+Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
 ```
 
 ```sql title="Metric match expression"
@@ -154,7 +156,9 @@ resourceId=*/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/* tenant_name=* acco
 
 In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+1. Create hosted collector and tag tenant_name field
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
+2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
    * Choose `Stream to an event hub` as destination.
@@ -171,9 +175,16 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-
+3. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
 #### Activity Logs
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit).
+
+In case you are already collecting activity logs for a subscription then no need to perform this step again.
+
+Also please note, you should not tag this source with location tag since this source will contain logs from multiple regions
+
+
 
 
 ## Installing the Azure Storage app
