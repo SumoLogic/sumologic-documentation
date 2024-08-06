@@ -206,24 +206,24 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <ViewDashboards/>
 
 
-### Azure Storage - Overview
+### Overview
 
-The **Azure Storage Overview** dashboard provides insights into transactions by storage account, storage type, and API name.
+The **Azure Storage - Overview** dashboard provides insights into transactions by storage account, storage type, and API name.
 
 Use this dashboard to:
-    * Monitor Availability by storage account
-    * Monitor Errors by storage account
-    * View Total Ingress by storage account
-    * View Total Egress by storage account
-    * View Max Success E2E Latency
-    * View Max Success Server Latency
+    * Monitor Availability by storage account.
+    * Monitor Errors by storage account.
+    * View Total Ingress by storage account.
+    * View Total Egress by storage account.
+    * View Max Success E2E Latency.
+    * View Max Success Server Latency.
     * View transactions by storage account.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Overview.png')} alt="Azure Storage Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Access
+### Access
 
-The **Azure Storage Access** dashboard provides insights into transactions by location, TLS version also it shows distribution by user agent and identity type.
+The **Azure Storage - Access** dashboard provides insights into transactions by location, TLS version also it shows distribution by user agent and identity type.
 
 Use this dashboard to:
     * View transactions by location.
@@ -233,115 +233,115 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Access.png')} alt="Azure Storage Overview Access" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Operations
+### Operations
 
-The **Azure Storage Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, total egress by storage account.
+The **Azure Storage - Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, total egress by storage account.
 Also it gives storage account statistic insights like total read count, read bytes, max/avg read latency, total write count, write bytes, and max/avg write latency. It also shows status code trend.
 
 Use this dashboard to:
     * View amount of write data in MB.
     * View amount of read data in MB.
-    * Non 200 status code by Service Type
-    * Transactions by Service Type
-    * Storage Account Write Statistics
-    * Storage Account Read Statistics
-    * Total Ingress by Service Type
-    * Total Egress by Service Type
-    * Total Ingress by API name
-    * Total Egress by API name
+    * View Non 200 status code by Service Type.
+    * View Transactions by Service Type.
+    * View Storage Account Write Statistics.
+    * View Storage Account Read Statistics.
+    * Monitor Total Ingress by Service Type.
+    * Monitor Total Egress by Service Type.
+    * Monitor Total Ingress by API name.
+    * Monitor Total Egress by API name.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Operations.png')} alt="Azure Storage Overview Operations" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Blob Service
+### Blob Service
 
-The **Azure Storage Blob Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
+The **Azure Storage - Blob Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
     * View amount of write data in MB.
-    * Read vs Write
-    * Reads by Container Name
-    * Writes by Container Name
-    * Container Name by Failed Operations
-    * Top 10 Resources by Failures
-    * Top 10 Resources by Latency
-    * Top 10 Resources by Reads(MB)
-    * Top 10 Resources by Writes(MB)
+    * View Read vs Write.
+    * View Reads by Container Name.
+    * View Writes by Container Name.
+    * View Container Name by Failed Operations.
+    * View Top 10 Resources by Failures.
+    * View Top 10 Resources by Latency.
+    * View Top 10 Resources by Reads(MB).
+    * View Top 10 Resources by Writes(MB).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Blob-Service.png')} alt="Azure Storage Blob Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - File Service
+### File Service
 
-The **Azure Storage File Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
+The **Azure Storage - File Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
     * View amount of write data in MB.
-    * Read vs Write
-    * Reads by File Share
-    * Writes by File Share
-    * File Share by Failed Operations
-    * Top 10 Resources by Failures
-    * Top 10 Resources by Latency
-    * Top 10 Resources by Reads(MB)
-    * Top 10 Resources by Writes(MB)
+    * View Read vs Write.
+    * View Reads by File Share.
+    * View Writes by File Share.
+    * View File Share by Failed Operations.
+    * View Top 10 Resources by Failures.
+    * View Top 10 Resources by Latency.
+    * View Top 10 Resources by Reads(MB).
+    * View Top 10 Resources by Writes(MB).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-File-Service.png')} alt="Azure Storage File Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Queue Service
+### Queue Service
 
-The **Azure Storage Queue Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
+The **Azure Storage - Queue Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
     * View amount of write data in MB.
-    * Read vs Write
-    * Reads by Queue Service
-    * Writes by Queue Service
-    * Queue Service by Failed Operations
-    * Top 10 Resources by Failures
-    * Top 10 Resources by Latency
-    * Top 10 Resources by Reads(MB)
-    * Top 10 Resources by Writes(MB)
+    * View Read vs Write.
+    * View Reads by Queue Service.
+    * View Writes by Queue Service.
+    * View Queue Service by Failed Operations.
+    * View Top 10 Resources by Failures.
+    * View Top 10 Resources by Latency.
+    * View Top 10 Resources by Reads(MB).
+    * View Top 10 Resources by Writes(MB).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Queue-Service.png')} alt="Azure Storage Queue Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Table Service
+### Table Service
 
-The **Azure Storage Table Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
+The **Azure Storage - Table Service** dashboard provides details like read bytes, write bytes, last 10 operations, read/write trend by service type, and top 10 read/write by resource name.
 
 Use this dashboard to:
     * View amount of read data in MB.
     * View amount of write data in MB.
-    * Read vs Write
-    * Reads by Table Service
-    * Writes by Table Service
-    * Table Service by Failed Operations
-    * Top 10 Resources by Failures
-    * Top 10 Resources by Latency
-    * Top 10 Resources by Reads(MB)
-    * Top 10 Resources by Writes(MB)
+    * View Read vs Write.
+    * View Reads by Table Service.
+    * View Writes by Table Service.
+    * View Table Service by Failed Operations.
+    * View Top 10 Resources by Failures.
+    * View Top 10 Resources by Latency.
+    * View Top 10 Resources by Reads(MB).
+    * View Top 10 Resources by Writes(MB).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Table-Service.png')} alt="Azure Storage Table Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Audit control plane operations
+### Audit control plane operations
 
-The **Azure Storage Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, and top 10 operations that caused most errors and most common errors.
+The **Azure Storage - Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, and top 10 operations that caused most errors and most common errors.
 
 Use this dashboard to:
     * View last 24 hours changes.
     * View changes - read, write and delete.
     * View operations used.
-    * Top 10 operations that caused the most errors.
-    * Top 10 most common errors.
+    * View Top 10 operations that caused the most errors.
+    * View Top 10 most common errors.
     * View requests with anonymous access.
     * view Operations that caused server-side throttling errors.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Security and policy
+### Security and policy
 
-The **Azure Storage Security and policy** dashboard provides details -
+The **Azure Storage - Security and policy** dashboard provides security, policy and recommendation details.
     
 Use this dashboard to:
     * View recent security events.
@@ -354,68 +354,68 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - health
+### Health
 
-The **Azure Storage health** dashboard provides details -
-    
+The Azure Storage health dashboard provides service health, alerts resource health related details.
+
 Use this dashboard to:
-    * View recent service health incidents
-    * Monitor service health by event type
-    * service health by event type-Time chart
-    * View recent alerts
-    * View total alerts
-    * View alerts over time
-    * View recent resource health incidents
-    * Monitor resource health by event type
+    * View recent service health incidents.
+    * Monitor service health by event type.
+    * View service health by event type-Time chart.
+    * View recent alerts.
+    * View total alerts.
+    * View alerts over time.
+    * View recent resource health incidents.
+    * Monitor resource health by event type.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Availability
+### Availability
 
-The **Azure Storage Availability** metrics dashboard provides details like availability in percentage, availability by API name, and trend by API name and by storage type.
+The **Azure Storage - Availability** metrics dashboard provides details like availability in percentage, availability by API name, and trend by API name and by storage type.
 
 Use this dashboard to:
-    * Monitor availability percentage
-    * Monitor availability percentage trend by Storage Type
-    * View API with < 100 availability
-    * Monitor availability percentage by API name
-    * Monitor availability percentage trend by Storage Account
+    * Monitor availability percentage.
+    * Monitor availability percentage trend by Storage Type.
+    * View API with < 100 availability.
+    * Monitor availability percentage by API name.
+    * Monitor availability percentage trend by Storage Account.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Availability.png')} alt="Azure storage availability dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Failures
+### Failures
 
-The **Azure Storage Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
+The **Azure Storage - Failures** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
-    * Monitor Failed transactions by authentication
-    * Monitor Failed transactions by response type
-    * Monitor Failed request count by status text
-    * Monitor Failed Transactions
-    * Monitor Failed Transaction by Category
-    * Monitor Non-zero status code by storage account
-    * Monitor Failed transactions by API name
-    * Monitor Failed transactions by service type
-    * Monitor Failed transactions by authentication
-    * Monitor Failed transactions by response type
-    * Monitor Recent failed request
+    * Monitor Failed transactions by authentication.
+    * Monitor Failed transactions by response type.
+    * Monitor Failed request count by status text.
+    * Monitor Failed Transactions.
+    * Monitor Failed Transaction by Category.
+    * Monitor Non-zero status code by storage account.
+    * Monitor Failed transactions by API name.
+    * Monitor Failed transactions by service type.
+    * Monitor Failed transactions by authentication.
+    * Monitor Failed transactions by response type.
+    * Monitor Recent failed request.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Failures.png')} alt="Azure Storage Failures dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure Storage - Performance
+### Performance
 
-The **Azure Storage Performance** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
+The **Azure Storage - Performance** metrics dashboard provides details like failing transactions by API name, by response type, by storage account, and by storage type.
 
 Use this dashboard to:
-    * Monitor Average Success Server Latency
-    * Monitor average success E2E latency
-    * Average Latency(ms) of successful calls by API name
-    * Success E2E Latency vs. Success Server Latency (ms)
-    * Success E2E Latency vs. Success Server Latency (ms) by Service Type
-    * Top 10 Success Server Latency by API name
-    * SuccessE2ELatency(ms)
-    * SuccessServerLatency(ms)
-    * Top 10 high latency transactions
+    * Monitor Average Success Server Latency.
+    * Monitor average success E2E latency.
+    * View Average Latency(ms) of successful calls by API name.
+    * View Success E2E Latency vs. Success Server Latency (ms).
+    * View Success E2E Latency vs. Success Server Latency (ms) by Service Type.
+    * View Top 10 Success Server Latency by API name.
+    * View SuccessE2ELatency(ms).
+    * View SuccessServerLatency(ms).
+    * View Top 10 high latency transactions.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
