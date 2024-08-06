@@ -103,7 +103,7 @@ Learning and mastering Sumo skills is important, but so is having fun. Enjoy the
 
 ## Training and Certification
 
-Knowledge is power, and Sumo Logic provides tools for you to empower yourself. Within Sumo Logic, you have easy access to training, help, and a community of other Sumo Logic users. [Learn more](/docs/get-started/training-certification-faq).
+Knowledge is power, and Sumo Logic provides tools for you to empower yourself. Within Sumo Logic, you have easy access to training, help, and a community of other Sumo Logic users. [Learn more](/docs/get-started/training-certification).
 
 From the Sumo Logic Home page, click the **Learn** tab to access:
 
@@ -113,7 +113,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 
 <img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 
-Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
+Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
 
 ## More Resources
@@ -127,4 +127,4 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a su
 * [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
 * [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/daily-volume/quickstart). Learn how to create and use Ingest Budgets.
 
-See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
+See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification/#how-do-i-access-the-training-portal).
