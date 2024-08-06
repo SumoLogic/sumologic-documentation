@@ -122,7 +122,7 @@ HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 ```
 
-You can do it using the following Powershell command:
+You can do it using the following PowerShell command:
 
 ```powershell
 Set-ItemProperty `

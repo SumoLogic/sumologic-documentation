@@ -137,7 +137,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 ### Troubleshooting
 
 * To identify the operating system version and name.
-   * For Windows machines, run the command in Powershell to get the OS Version.
+   * For Windows machines, run the command in PowerShell to get the OS Version.
      ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
@@ -190,9 +190,9 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
    * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `'_sourceCategory=yourclustername/metrics'`.
    * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
-2. Go to Manage Data > Alerts > Monitors.
-3. Click Add.
-4. Click Import to import monitors from the JSON above.
+2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. Click **Add**.
+4. Click **Import** to import monitors from the JSON above.
 
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/settings) document to enable monitors, to configure each monitor, to send notifications to teams or connections, see the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
 

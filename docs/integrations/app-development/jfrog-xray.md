@@ -99,7 +99,7 @@ This section explains how to collect logs from JFrog Xray and ingest them into S
 In this step you collect details for your JFrog Xray instance that you will use in the following tasks.
 
 Collect the following details:
-* HostName and Port for your JFrog Xray instance — such as, JFrog instance URL **http://host-example:8000/web/#/login**
+* HostName and Port for your JFrog Xray instance — such as: JFrog instance URL **http://host-example:8000/web/#/login**
     * HostName = **host-example**
     * Port = **8000**
 * Your Username and Password for your JFrog Xray instance

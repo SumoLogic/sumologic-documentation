@@ -15,7 +15,10 @@ The Sumo Logic Integration for Datadog allows you to send events and alerts from
 3. Copy the URL that you get after creating the source in the previous step.
 4. In Datadog, go to the **Sumo Logic Integration** settings screen.
 5. Enter the **Collector Name** you want to assign to the collector and the **Collector URL** from step 3.<br/><img src={useBaseUrl('img/integrations/saas-cloud/datadog.png')} alt="Thumbnail icon" />
+    :::note
+    Ensure that the collector name on the Datadog configuration page matches the collector name you entered when creating the collector in the Sumo Logic configuration screen in Step 1.
+    :::
 
-Next time you'd like to send a message from Datadog to Sumo Logic, use `@sumologic-{YOUR COLLECTOR NAME}`.
+Next time, when you like to send a message from Datadog to Sumo Logic, use `@sumologic-{YOUR COLLECTOR NAME}`.
 
 To send Sumo Logic alerts to your Datadog account, see [Sumo Logic Webhook Connection for Datadog](/docs/alerts/webhook-connections/datadog).
