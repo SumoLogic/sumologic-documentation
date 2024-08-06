@@ -118,17 +118,15 @@ To add a tag while creating a new monitor:
 1. Click **Save**.
 
 
-### What happens next?
+### Using tags
 
-Tags will appear on all future alerts triggered by the same monitor. Tags will *not* be applied to any past alerts triggered by this monitor. If tags on a monitor are edited, they will not be reflected on previous alerts that were triggered by this monitor. The alert will still have its previous tags.
+Tags will appear on all future alerts triggered by the same monitor but will not be applied to past alerts.
 
-To view and edit tags, go to your alerts list page. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
-
-Here you'll see a tags column. This page allows filtering by tags.
+To view your tags, go to your alerts list page. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->Here, you'll see a **Tags** column. On, this page, you can filter by tags.
 
 <img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800"  />
 
-You will also find your tags on the Alert Response page. Here's an example:
+You can also see your tags on Alert Response pages. Here's an example:
 
 <img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
 
@@ -146,7 +144,7 @@ Access to folders that contain monitors is controlled by permissions. If you hav
 
 To set permissions for a monitors folder:
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
-2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions.**
+2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions**.
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  
 4. You can make the following edits:
