@@ -122,7 +122,7 @@ To add a tag while creating a new monitor:
 
 Tags will appear on all future alerts triggered by the same monitor. Tags will *not* be applied to any past alerts triggered by this monitor. If tags on a monitor are edited, they will not be reflected on previous alerts that were triggered by this monitor. The alert will still have its previous tags.
 
-To view and edit tags, go to your alerts list page. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+To view the tags, go to your alerts list page. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> You can click on the tab with bell icon to visit the alert list page. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**. Kanso-->
 
 Here you'll see a tags column. This page allows filtering by tags.
 
