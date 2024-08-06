@@ -37,7 +37,7 @@ Requests made by the Blob storage service itself, such as log creation or deleti
   * [Microsoft.Storage/storageAccounts/tableServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-tableservices-metrics)
 
 :::note
-Only metrics with category=Transaction can be exported from diagnostic settings export feature.
+Only metrics with `category=Transaction` can be exported from diagnostic settings export feature.
 :::
 
 Click on the above namespaces to learn more about the supported metrics. For a complete list of the dimensions that Azure Storage supports, refer to the below documentation.
@@ -66,18 +66,19 @@ When you configure the event hubs source or HTTP source, plan your source catego
 ### Configure field in field schema
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 2. Search for following fields:
-   - `tenant_name` - This field is tagged at the collector level and users can get the tenant name using the instructions here https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name
-   - `location` - The region which the resource name belongs to
-   - `subscription_id` - Id associated with a subscription where resource is present
-   - `resource_group` - The resource group name where the Azure resource is present.
-   - `provider_name` - Azure resource provider name (for  ex Microsoft.Storage)
-   - `resource_type` - Azure resource type (for ex storageaccounts)
-   - `resource_name` - The name of the resource (for ex storage account name)
-   - `service_type` - Services that can be accessed from within a azure resource (Ex table service in storage account) 
+   - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions here https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name
+   - `location`. The region to which the resource name belongs to.
+   - `subscription_id`. Id associated with a subscription where resource is present.
+   - `resource_group`. The resource group name where the Azure resource is present.
+   - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
+   - `resource_type`. Azure resource type (for ex storageaccounts).
+   - `resource_name`. The name of the resource (for ex storage account name).
+   - `service_type`. Services that can be accessed from within a azure resource (Ex table service in storage account).
 
-3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
+3. Create the fileds if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
 ### Configure Field Extraction Rules
+
 Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 * **Activity Logs Location Extraction FER**
@@ -117,6 +118,7 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
    ```
 ### Configure metric rules
+
   * **Azure Observability Metadata Extraction Metric Rule Service Level**
 
       In case this rule is already exists then no need to create again.
@@ -127,7 +129,7 @@ Rule Name: AzureObservabilityMetadataExtractionServiceLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 ```
-| Fields extracted | metric rule    |
+| Fields extracted | Metric rule    |
 |------------------|----------------|
 | subscription_id  | $resourceId._1 |
 | resource_group   | $resourceId._2 |
@@ -144,7 +146,7 @@ Rule Name: AzureObservabilityMetadataExtractionStorageAccountLevel
 ```sql title="Metric match expression"
 resourceId=*/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/* tenant_name=* accountresourceid=*
 ```
-| Fields extracted | metric rule    |
+| Fields extracted | Metric rule    |
 |------------------|----------------|
 | subscription_id  | $resourceId._1 |
 | resource_group   | $resourceId._2 |
@@ -168,6 +170,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 ### Configure logs collection
 
 #### Diagnostic logs
+
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -177,20 +180,18 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 3. Tag the location field in the source with right location value.
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+   
 #### Activity Logs
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit).
 
-In case you are already collecting activity logs for a subscription then no need to perform this step again.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perfrom this step in case you are already collecting activity logs for a subscription.
 
-Also please note, you should not tag this source with location tag since this source will contain logs from multiple regions
-
-
-
+:::note
+Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
+:::
 
 ## Installing the Azure Storage app
 
 Now that you have set up data collection, install the Azure Storage Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-storage-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
-
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -213,7 +214,6 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
-
 
 ### Overview
 
@@ -244,8 +244,7 @@ Use this dashboard to:
 
 ### Operations
 
-The **Azure Storage - Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, total egress by storage account.
-Also it gives storage account statistic insights like total read count, read bytes, max/avg read latency, total write count, write bytes, and max/avg write latency. It also shows status code trend.
+The **Azure Storage - Operations** dashboard provides details like total write in bytes, total read, total ingress by storage account, and total egress by storage account. It also provides storage account statistic insights such as total read count, read bytes, max/avg read latency, total write count, write bytes, and max/avg write latency. In addition, it also displays the status code trend.
 
 Use this dashboard to:
     * View amount of write data in MB.
@@ -335,11 +334,11 @@ Use this dashboard to:
 
 ### Audit control plane operations
 
-The **Azure Storage - Audit control plane operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, and top 10 operations that caused most errors and most common errors.
+The **Azure Storage - Audit control plane operations** dashboard provides details like changes, read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and most common errors.
 
 Use this dashboard to:
     * View last 24 hours changes.
-    * View changes - read, write and delete.
+    * View changes - read, write, and delete.
     * View operations used.
     * View Top 10 operations that caused the most errors.
     * View Top 10 most common errors.
@@ -350,7 +349,7 @@ Use this dashboard to:
 
 ### Security and policy
 
-The **Azure Storage - Security and policy** dashboard provides security, policy and recommendation details.
+The **Azure Storage - Security and policy** dashboard provides security, policy, and recommendation details.
     
 Use this dashboard to:
     * View recent security events.
@@ -365,7 +364,7 @@ Use this dashboard to:
 
 ### Health
 
-The Azure Storage health dashboard provides service health, alerts resource health related details.
+The Azure Storage health dashboard provides information about the service health and alerts.
 
 Use this dashboard to:
     * View recent service health incidents.
