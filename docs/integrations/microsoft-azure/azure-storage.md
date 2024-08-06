@@ -66,16 +66,14 @@ When you configure the event hubs source or HTTP source, plan your source catego
 ### Configure field in field schema
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 2. Search for following fields:
-    ||
-    | --------------- |
-    | tenant_name     |
-    | location        |
-    | subscription_id |
-    | resource_group  |
-    | provider_name   |
-    | resource_type   |
-    | resource_name   |
-    | service_type    |
+   - `tenant_name` - This field is tagged at the collector level and users can get the tenant name using the instructions here https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name
+   - `location` - The region which the resource name belongs to
+   - `subscription_id` - Id associated with a subscription where resource is present
+   - `resource_group` - The resource group name where the Azure resource is present.
+   - `provider_name` - Azure resource provider name (for  ex Microsoft.Storage)
+   - `resource_type` - Azure resource type (for ex storageaccounts)
+   - `resource_name` - The name of the resource (for ex storage account name)
+   - `service_type` - The service type
 
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
