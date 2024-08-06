@@ -284,6 +284,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
+  <p>Collect inventory data from the Jamf platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source"><img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="icon" width="60"/><h4>JFrog Xray</h4></a>
   <p>Collect violation events from JFrog Xray.</p>
   </div>
