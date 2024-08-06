@@ -12,10 +12,72 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This article only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to [Cloud SOAR Automation](/docs/cloud-soar/automation/) for documentation of our latest Cloud SOAR SaaS version.
 :::
 
-
 ## Report template
 
 **Report Templates** allow users to build their own reports by selecting various components of an incident they wish to include in the report. These components can include incident details, evidence, hosts, observables and many others.
+
+## Credential Manager - CyberArk Configuration
+
+You can use CyberArk Credential Manager to manage data that will be used in integration resources.
+
+<img src={useBaseUrl('img/cloud-soar/cyberArk1.png')} alt="Integrations" style={{border: '1px solid gray'}} width="600"/>
+
+Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk2.png')} alt="CyberArk configuration" style={{border: '1px solid gray'}} width="400"/>
+
+Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The **Enable** checkbox can be enabled or disabled later.
+
+If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk3.png')} alt="Enable CyberArk fields" style={{border: '1px solid gray'}} width="800"/>
+
+If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
+* **Account Name** > userName in CyberArk
+* **Platform ID** > platformId in CyberArk
+
+Near these fields, there will be the relative toggle that will enable the related field for use on CyberArk.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk5.png')} alt="CyberArk fields enabled" style={{border: '1px solid gray'}} width="400"/>
+
+In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second one hasn't.
+
+Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
+
+:::note Case sensitive
+Pay attention to uppercase and lowercase letters.
+:::
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid gray'}} width="400"/>
+
+Through the name of the Properties, (in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
+
+In the fields enabled for CyberArk, in addition to the account properties, you can also recall the value of the CyberArk Account password, to do this, write the word **Password** in the field.
+
+:::important
+If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, and more.
+:::
+
+**The only property that will be retained is the mandatory nature of the field**.
+
+Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
+
+If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.
+
+<img src={useBaseUrl('img/cloud-soar/CyberArk6.png')} alt="CyberArk fields" style={{border: '1px solid gray'}} width="400"/>
+
+### Configuring the automation bridge for CyberArk
+
+If you are using CyberArk, you will need to add the following certificates given by CyberArk:
+```
+**RootCA**new.crt**
+**client**new.crt**
+**client**new.pem**
+```
+to the `/opt/automation-bridge/` directory.
+
+**The names must be exactly the same**.
+
 
 <!--
 Directions in the following section describe how to configure Slack in the Delivery 1 version of Cloud SOAR. Keeping these hidden here in case they need to be placed back into the documentation.
