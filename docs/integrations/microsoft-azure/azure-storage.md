@@ -75,7 +75,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `resource_name`. The name of the resource (for ex storage account name).
    - `service_type`. Services that can be accessed from within a azure resource (Ex table service in storage account).
 
-3. Create the fileds if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
+3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
 ### Configure Field Extraction Rules
 
@@ -183,7 +183,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perfrom this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
 
 :::note
 Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
