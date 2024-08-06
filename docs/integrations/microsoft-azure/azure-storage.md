@@ -346,11 +346,11 @@ The **Azure Storage Security and policy** dashboard provides details -
 Use this dashboard to:
     * View recent security events.
     * View total security events.
-    * View total denied policy events
-    * View recent failed policy events
-    * View recent success policy events
-    * View total recommendation events
-    * View recent recommendation events
+    * View total denied policy events.
+    * View recent failed policy events.
+    * View recent success policy events.
+    * View total recommendation events.
+    * View recent recommendation events.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
 
