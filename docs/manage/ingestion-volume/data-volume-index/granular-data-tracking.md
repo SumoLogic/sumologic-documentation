@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-Granular Data Tracking is a part of usage management that allows you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. This should be manually enabled by an administrator if you are a user of Credits package accounts and this will be enabled by default for flex package accounts. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
+Granular Data Tracking is a part of usage management that allows you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. This should be manually enabled by an administrator if you are a user of Credits package accounts and this will be enabled by default for Flex package accounts. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
 
 ## Enable/Disable Granular Data Tracking
 
