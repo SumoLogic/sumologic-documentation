@@ -57,4 +57,8 @@ import ApiIntro from '../reuse/api-intro.md';
    <td>US2</td>
    <td><a href="https://api.us2.sumologic.com/docs/#tag/contentPermissions">https://api.us2.sumologic.com/docs/#tag/contentPermissions</a></td>
   </tr>
+    <tr>
+   <td>KR</td>
+   <td><a href="https://api.kr.sumologic.com/docs/#tag/contentPermissionsv1">https://api.us2.sumologic.com/docs/#tag/contentPermissionsv1</a></td>
+  </tr>
 </table>

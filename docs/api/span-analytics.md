@@ -54,3 +54,4 @@ Select the documentation link for your deployment:
 | JP         | https://api.jp.sumologic.com/docs/#tag/spanAnalytics  |
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
+| KR        | https://api.kr.sumologic.com/docs/#tag/spanAnalyticsV1 |

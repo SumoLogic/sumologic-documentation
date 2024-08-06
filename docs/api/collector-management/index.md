@@ -39,6 +39,7 @@ import ApiIntro from '../../reuse/api-intro.md';
 | JP | https://api.jp.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | US1 | https://api.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | US2 | https://api.us2.sumologic.com/docs/#tag/otCollectorManagementExternal |
+| KR | https://api.kr.sumologic.com/docs/#tag/otCollectorManagementExternalV1 |
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

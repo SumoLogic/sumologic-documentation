@@ -29,6 +29,7 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102        |
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
 | US2    | 54.149.79.97, 54.218.43.134, 44.239.32.230, 35.161.2.93    |
+| KR    |     |
 
 For the Federal environments, a different set of Static IPs is available for each C2C deployment.
 

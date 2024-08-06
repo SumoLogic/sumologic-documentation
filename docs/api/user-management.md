@@ -27,3 +27,4 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/userManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/userManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/userManagement |
+| KR        | https://api.kr.sumologic.com/docs/#tag/userManagementV1 |

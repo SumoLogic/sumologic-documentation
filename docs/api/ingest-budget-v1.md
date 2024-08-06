@@ -36,6 +36,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/ingestBudgetManagementV1  |
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV1     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV1 |
+| KR        | https://api.kr.sumologic.com/docs/#tag/ingestBudgetManagementV1 |
 
 :::note
 V1 budgets will be deprecated September 16, 2024.
