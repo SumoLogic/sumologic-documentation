@@ -1,6 +1,6 @@
 ---
 id: automation-service-playbooks
-title: Playbooks in the Automation Service
+title: Playbooks
 sidebar_label: Playbooks
 description: Learn about playbooks. A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.   
 ---
@@ -186,6 +186,16 @@ A filter node filters results from the preceding action based on the condition y
 1. (Optional) Use **Split by** to select an output if it is a list (array) and you want to evaluate each item separately. Each item in the list is checked against the filter condition. If the condition is true for an item, the item is passed to the next node.  (If you do not use the **Split by** field on an output that is a list, then if the condition is true for any item in the list, the entire list moves forward to the next node.)
 1. Configure the conditions you want to use for filtering. 
 1. Click **Create**.
+
+## Import and export playbooks
+
+With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+
+1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Upon clicking, the tar.gz archive download will be initiated.
+1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon, select the desired file, and click Import.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="500"/><br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="500"/>
+
+It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
 ## Test a playbook
 

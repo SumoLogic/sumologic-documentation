@@ -1,6 +1,6 @@
 ---
 id: automation-service-app-central
-title: About App Central in the Automation Service
+title: About App Central
 sidebar_label: About App Central
 description: Learn how to use App Central to get new applications and tools.
 ---
@@ -79,7 +79,21 @@ If there are two different versions between the integration installed and that i
 1. Go to App Central and search for the same integration. Click **UPDATE**. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-version.png')} alt="Integration update version" style={{border:'1px solid gray'}} width="300"/>
 1. On the dialog that appears, click **Update**.  <br/><img src={useBaseUrl('img/cloud-soar/integration-update-2.png')} style={{border:'1px solid gray'}} alt="Integration update" width="400"/>
 1. Go back to the Integrations section at the end of the update operation. Open the integration and check the if the version of that integration updated. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-complete.png')} style={{border:'1px solid gray'}} alt="Integration update complete" width="700"/>
-1. Check in the integration detail to see if it shows all the types of actions we expect. <br/><img src={useBaseUrl('img/cloud-soar/integration-all-actions.png')} style={{border:'1px solid gray'}} alt="Integration with all actions" width="600"/>
+1. Check in the integration detail to see if it shows all the types of actions we expect. <br/><img src={useBaseUrl('img/cloud-soar/integration-all-actions.png')} style={{border:'1px solid gray'}} alt="Integration with all actions" width="600"/> 
+
+### Publish an integration to App Central
+
+If you create a custom integration that you would like to make available for others to use, you can submit it to Sumo Logic for review and publication in App Central. This will allow everyone to install and run the integration in the cloud without having to use the Bridge.
+
+The integration should be for a commercial product for which no integration exists in App Central, or be a general purpose integration. Sumo Logic will not add integrations to App Central that can only be used by one customer.
+
+1. Ask your Sumo Logic account representative to engage the Professional Services team. The Professional Services team member will guide you through the process of submitting an integration for publication in App Central.
+1. Select **Integrations** from the navigation menu at the left of the screen.
+1. Select your custom integration.
+1. Hover the mouse over your custom integration and click the **Export** button that appears to the right. This exports the integration's YAML files to a tar.gz archive file.<br/><img src={useBaseUrl('img/cloud-soar/export-button.png')} alt="Export button" width="100"/>
+1. Provide the tar.gz archive file containing your custom integration's YAML files to the Professional Services team member.
+
+Sumo Logic will validate the integration, and work with you to make any updates if needed. If the integration is approved, Sumo Logic will add it to App Central. 
 
 ## Playbooks in App Central
 

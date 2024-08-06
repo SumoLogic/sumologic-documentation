@@ -40,12 +40,6 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/cloud-soar-bridge"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Bridge</h4></a>
-  <p>Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/cloud-soar-integration-framework"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Integration Framework</h4></a>
   <p>Learn about the framework used for integrations.</p>
   </div>
