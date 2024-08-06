@@ -35,7 +35,7 @@ The following event types are available to collect:
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 sec |  [Event data](https://docs.netskope.com/en/get-events-data.html) |
+| 5 sec |  [Event data](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints/) |
 
 ## Setup
 

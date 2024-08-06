@@ -2275,6 +2275,7 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/saas-cloud/index'},
         items: [
+          'integrations/saas-cloud/abnormal-security',
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
@@ -2315,6 +2316,7 @@ integrations: [
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
         ],
@@ -2719,7 +2721,6 @@ integrations: [
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
         'cloud-soar/overview',
-        'cloud-soar/architecture',
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
