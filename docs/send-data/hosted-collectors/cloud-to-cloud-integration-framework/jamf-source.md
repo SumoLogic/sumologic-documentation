@@ -1,6 +1,6 @@
 ---
 id: jamf-source
-title: Jamf Source (Beta)
+title: Jamf Source
 sidebar_label: Jamf
 tags:
   - cloud-to-cloud
