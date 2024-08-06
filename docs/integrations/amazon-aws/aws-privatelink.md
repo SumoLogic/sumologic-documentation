@@ -109,7 +109,7 @@ https://endpoint9.collection.us2.sumologic.com</td>
   </tr>
   <tr>
     <td>KR</td>
-    <td>https://collectors.kr.sumologic.com<br/>
+    <td>https://collectors.kr.sumologic.com<br/></td>
     <td>https://open-collectors.kr.sumologic.com</td>
    <td>ap-northeast-2</td>
   </tr>
