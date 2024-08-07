@@ -4,11 +4,9 @@ title: sumo.conf for Legacy Collectors
 description: This file passes Collector configuration parameters during installation if the Debian or RPM option is used.
 ---
 
-
-
 For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
 
-To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/docs/manage/security/access-keys.md for information on generating and managing access keys.
+To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/docs/manage/security/access-keys) for information on generating and managing access keys.
 
 ## Creating sumo.conf
 
@@ -32,7 +30,7 @@ You can comment out lines in sumo.conf, use the `#` character at the beginning o
 
 The following parameters can be passed to Sumo Logic using `sumo.conf`.
 
-You cannot have blank values, like `name=` .
+You cannot have blank values, like `name=`.
 
 | Parameter | Description | Example | Required/Optional |
 |:--|:--|:--|:--|

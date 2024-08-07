@@ -321,24 +321,40 @@ html[data-theme='light'] {
   display: inline-flex;
 }
 
-
 .markdown {
   h1 {
     font-size: 2rem !important;
+    margin-top: 2rem;  /* More space above h1 */
+    margin-bottom: 1.5rem;  /* Less space below h1 */
   }
   h2 {
     font-size: 1.6rem !important;
+    margin-top: 1.8rem;
+    margin-bottom: 1.3rem;
   }
   h3 {
     font-size: 1.3rem !important;
+    margin-top: 1.6rem;
+    margin-bottom: 1.2rem;
   }
   h4 {
     font-size: 1.1rem !important;
+    margin-top: 1.4rem;
+    margin-bottom: 1.1rem;
   }
   h5 {
     font-size: .9rem !important;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  // CLI only!! //
+  h6 {
+    font-size: 1.3rem !important;
+    margin-top: 1.6rem;
+    margin-bottom: .3rem;
   }
 }
+
 
 // SIDEBAR Links
 .menu__list-item {

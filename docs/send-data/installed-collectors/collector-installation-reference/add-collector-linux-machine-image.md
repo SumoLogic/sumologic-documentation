@@ -6,11 +6,7 @@ description: You can build a Sumo Logic Collector into a Linux machine image suc
 
 You can build a Sumo Logic Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
-Collectors will normally register with Sumo Logic during the
-installation process, but you can pass the `‑VskipRegistration=true`
-flag to skip registration. This way, the collector is installed as a
-service that will start and register automatically when the image is
-launched.
+Collectors will normally register with Sumo Logic during the installation process, but you can pass the `‑VskipRegistration=true` flag to skip registration. This way, the collector is installed as a service that will start and register automatically when the image is launched.
 
 ## Initial Collector installation
 
@@ -83,7 +79,7 @@ Download the appropriate collector from the Sumo Logic **Collection** page, or 
    * `-Vsumo.accessid=<access_id>` to specify access id generated above  
    * `-Vsumo.accesskey=<access_key>` to specify access key generated above  
    * `-Vsources=<filepath>` to specify the path to your source JSON file created above  
-   * (Optional) `-dir` to install into a non-standard installation directory. By default, Linux will install in `/opt/SumoCollector`.
+   * (Optional) `-dir` to install into a non-standard installation directory. By default, Linux will install in `/opt/SumoCollector`
 
     Example:
 

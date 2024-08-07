@@ -32,11 +32,11 @@ When a Collector starts it reads the `syncSources` parameter from the `user.pr
 
 Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
 
-|  Parameter |  Type |  Description |
-|:--|:--|:--|
-| syncSources   | String   | Sets the path to the JSON describing Sources to configure on registration, which will be continuously monitored and synchronized with the Collector configuration. |
+### `syncSources`
+<p><small>| String | </small></p>
+* Description. Sets the path to the JSON describing Sources to configure on registration, which will be continuously monitored and synchronized with the Collector configuration. |
 
-To add the syncSources parameter:
+To add the `syncSources` parameter:
 
 1. Open or create the `user.properties` file located at `<CollectorInstallationFolder>/config`.
 1. Add the `syncSources` parameter and set the path to the JSON. Like these example  
