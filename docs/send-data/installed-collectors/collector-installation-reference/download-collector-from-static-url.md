@@ -6,7 +6,7 @@ description: Static URLs provide download links to the most recent version of a 
 
 To download the latest version of our [Installed Collector](/docs/send-data/installed-collectors) agent, use our static URL as described below. Collector versions are updated each time there is a release or patch.
 
-:::note not for otel collectors
+:::note not for opentelemetry collectors
 This document provides static URLs to download our [Installed Collector](/docs/send-data/installed-collectors) agent. If you're looking for our OpenTelemetry distribution, go to our [Sumo Logic Distribution for OpenTelemetry](/docs/send-data/opentelemetry-collector/) for more details.
 :::
 

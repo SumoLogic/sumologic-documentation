@@ -1,10 +1,10 @@
 ---
 id: parameters-command-line-installer
-title: Parameters for the Command Line Installer
-description: This topic lists the parameters that are available when installing a Sumo Logic collector using the command line installer.
+title: Parameters for the Command-Line Installer
+description: This topic lists the parameters that are available when installing a Sumo Logic collector using the command-line installer.
 ---
 
-This page provides the available parameters for Collector installation using the command line installer.
+This page provides the available parameters for Collector installation using the command-line installer.
 
 :::important
 Collector versions 19.253-26+ support wrapper configuration parameters.
@@ -14,99 +14,99 @@ For details and example commands on Collector installation, see [Install a Coll
 
 ## Unique parameters
 
-Here are the parameters unique to the command line installer:
+Here are the parameters unique to the command-line installer.
 
----
 ### `-console`
 
-Only has an effect when used with `-q`. Causes the installer to send progress messages to the console (whether you are running the installer in UI or command-line mode.)
+Must be used with `-q`. Sends progress messages from the installer to the console, whether you're running the installer in command-line mode or through the UI.
 
-On Windows, for this option to take effect, you must run the installer with start `/wait`. For example:
+On Windows, for this option to take effect, run the installer with `start /wait`. For example:
 
-`start /wait installer.exe -q -console`
+```sh
+start /wait installer.exe -q -console
+```
 
----
-### `-dir [directory]`
+### `-q`
+
+Runs the installer silently, meaning you won't be prompted to supply installation parameters.
+
+For any installation parameter that you do not define at the command line, Sumo Logic will use a default value. No output is sent to the console during installation unless you use the `-console` parameter in conjunction with this option.
+
+Note that for a new Collector installation, even during a silent installation, you will be prompted to provide an authorization token, or an access ID and access key.
+
+### `-dir <directory>`
 
 Sets a different installation directory than the default.
 
----
-### `-q`
-Causes the installer to run silently, which means you won't be prompted to supply installation parameters. For any installation parameter that you do not define at the command line, Sumo Logic will use a default value. No output is sent to the console during installation, unless you also use the `-console` parameter.
 
-Note that for a new Collector installation, even during a silent installation, you will be prompted to provide an authorization token, or an Access ID and Access Key.
+### `-varfile <fileName>`
 
----
-### `-varfile [fileName]`
+Instead of passing arguments via the command line, `-varfile` lets you specify a file that contains the arguments (without the `-V` flag). Since many operating systems allow you to list information about processes that are owned by other users, we recommend using the `-varfile` option to specify Sumo Logic credentials.
 
-Instead of passing arguments via the command line, you can specify a file that contains the arguments (without the `-V` flag). Since many operating systems allow a user to list information about processes that are owned by other users, we recommend using the `-varfile` option to specify Sumo Logic credentials.
-
-Example: To pass credentials when installing the Collector, you can create a file called **sumo_credentials.txt** with the following contents:
-
-`sumo.accessid=<access id>
-sumo.accesskey=<access key>
-proxy.host=<proxy host>
-proxy.port=<proxy port>`
-
-and pass this file via the command line:
-
-`sudo ./SumoCollector.sh -q -varfile /path/to/sumo_credentials.txt`
+Example: 
+1. To pass credentials when installing the Collector, create a file called **sumo_credentials.txt** with the following contents:
+  ```txt title="sumo_credentials.txt"
+  sumo.accessid=<access id>
+  sumo.accesskey=<access key>
+  proxy.host=<proxy host>
+  proxy.port=<proxy port>
+  ```
+2. Pass this file via the command line:
+  ```
+  sudo ./SumoCollector.sh -q -varfile /path/to/sumo_credentials.txt
+  ```
 
 Parameters for `-q` and `-dir` must be passed in the command line and cannot be used within a varfile.
 
----
-### `-Vcollector.secureFiles=[true|false]`
 
-By default, new Collector installations will use [enhanced file system security](enhanced-file-system-security-installed-collectors.md). To disable this feature during installation, use the command line argument: `-Vcollector.secureFiles=false`.
+### `-Vcollector.secureFiles=<true|false>`
 
----
-### `-VrunAs.username=[username]`
+By default, new Collector installations will use [enhanced file system security](enhanced-file-system-security-installed-collectors.md). To disable this feature during installation, set this to `false`.
 
-When set, the Collector will run as the specified user (Windows and Linux). For Windows, the user account needs `Log on as a Service` permission.
 
----
-### `-VwinRunAs.password=[password]`
+### `-VrunAs.username=<username>`
+
+(Windows and Linux) When set, the Collector will run as the specified user. For Windows, the user account needs `Log on as a Service` permission.
+
+
+### `-VwinRunAs.password=<password>`
 
 (Windows only) When set in conjunction with `-VrunAs.username`, the Collector will run as the specified user with the specified password.
 
-Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the `-varfile` option to specify Windows RunAs password.
+Many operating systems allow you to list information about processes that are owned by other users. This information could include command-line arguments. For enhanced security, we recommend using the `-varfile` option to specify Windows RunAs password.
 
 ## Authentication parameters
 
 Following are parameters that relate to authenticating the Collector.
 
----
-### `-VskipRegistration=[boolean]`
+### `-Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey>`
 
-When specified as `true`, the installer will skip registration.
+An authentication option is required, either by specifying a access ID/access key combination or a [token](#-vsumotoken_and_urltoken). If you have a Sumo Logic access ID and access key, include both `-Vsumo.accessid` and `-Vsumo.accesskey`. 
 
-Collectors will normally register with Sumo Logic during the installation process, but you can pass the `‑VskipRegistration=true` flag to skip registration. This way, the Collector is installed as a service that will start and register automatically when the instance is launched.
+Admins can generate an access ID/access key pair on the **Preferences** page. See [access keys](/docs/manage/security/access-keys.md).
 
----
-### `-Vsumo.accessid=[accessId] -Vsumo.accesskey=[accessKey]`
+Many operating systems allow you to list information about processes that are owned by other users. This information could include command-line arguments. For enhanced security, we recommend using the `-varfile` option to specify Sumo Logic credentials.
 
-An authentication option is required, either this option or the token option (see next entry).
+### `-Vsumo.token_and_url=<token>`
+An authentication option is required, either by specifying a token or an [access ID/access key combination](#-vsumoaccessidaccessid--vsumoaccesskeyaccesskey). The token can be an [Installation Token](/docs/manage/security/installation-tokens.md).
 
-If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the **Preferences** page. See [Access Keys](/docs/manage/security/access-keys.md).
+### `-VskipRegistration=<true|false>`
 
-Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the `-varfile` option to specify Sumo Logic credentials.
+When specified as `true`, the Collector installer will skip registration with Sumo Logic during the installation process. This way, the Collector is installed as a service that will start and register automatically when the instance is launched.
 
----
-### `-Vsumo.token_and_url=[token]`
-An authentication option is required, either this option or the access ID/access key option (see the above entry). Token can be an [Installation Token](/docs/manage/security/installation-tokens.md).
 
 ## user.properties parameters
 
-The command line installer can use all of the parameters available in the [user.properties](user-properties.md) file. To use parameters from user.properties, just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter you would specify it as `-Vsources`.  
+You can use any [user.properties parameters](user-properties.md) with the command line installer.
 
-For reference, see the available [user.properties parameters](user-properties.md).
+To use parameters from user.properties, just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter, you would specify it as `-Vsources`.  
 
 ### Parameters with a different format
 
-There are a few parameters from user.properties that require specific formatting when used with the command line installer.
+There are a few parameters from user.properties that require specific formatting when used with the command-line installer.
 
-| user.properties parameter format | Command line installer format |
-| :------------------------------- | :---------------------------- |
+| user.properties parameter format | Command-line installer format |
+| :- | :- |
 | `name` | `-Vcollector.name ` |
 | `url` | `-Vcollector.url` |
 | `proxyHost` | `-Vproxy.host ` |
@@ -117,11 +117,9 @@ There are a few parameters from user.properties that require specific formattin
 
 ## collector.properties parameters
 
-The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file.
+You can use any of the [collector.properties parameters](collector-properties.md) with the command-line installer.
 
 To use parameters from collector.properties, just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter, you would specify it as `-Vsource.max.threads.num`.
-
-For reference, see the available [collector.properties parameters](collector-properties.md).
 
 <!-- Hidden table
 
