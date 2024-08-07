@@ -6,10 +6,10 @@ description: This topic describes JSON Source parameters for Hosted Collectors.
 
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 
- * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
- * Source API Methods and Examples for information on creating Sources.
- * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources).
- * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration) from Sumo Logic.
+* [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
+* Source API Methods and Examples for information on creating Sources.
+* [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources).
+* [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration) from Sumo Logic.
 
 :::note
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
@@ -98,16 +98,25 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 
 In addition to the common parameters, the following parameters are for an HTTP Source.
 
-#### `fields`
-| JSON Object | No | modifiable |
-* Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`.
+###### `fields`
+| JSON Object | OPTIONAL | modifiable |
+* **Default**. N/A. <!-- null instead of N/A? -->
+* **Description**. Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`.
 
-| Parameter | Type | Required? | Default | Description | Access |
-|:--|:--|:--|:--|:--|:--|
-| `fields` | JSON Object | No |  | Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`. | modifiable |
-| `sourceType` | String | Yes |  | HTTP | not modifiable |
-| `messagePerRequest` | Boolean | Yes |  | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. <br/>You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | modifiable |
-| `url` | String | No | URL assigned by Sumo for Source | The Source's unique HTTP endpoint web address. | not modifiable |
+###### `sourceType`
+| String | REQUIRED | not modifiable |
+* **Default**. N/A. <!-- null instead of N/A? -->
+* **Description**. HTTP.
+
+###### `messagePerRequest`
+| Boolean | REQUIRED | modifiable |
+* **Default**. N/A. <!-- null instead of N/A? -->
+* **Description**. When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`.
+
+###### `url`
+| String | OPTIONAL | Not modifiable |
+* **Default**. URL assigned by Sumo for Source.
+* **Description**. The Source's unique HTTP endpoint web address.
 
 ```json title="HTTP Source JSON example"
 {
@@ -128,13 +137,12 @@ In addition to the common parameters, the following parameters are for an HTTP 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Cloud Syslog Source.
 
-| Parameter | Type |  Required? | Default | Description | Access |
-|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
-| sourceType    | String   | Yes           |             | Cloudsyslog     | not modifiable |
+###### `sourceType`
+| String   | Yes  | not modifiable |
+* **Default**. N/A. <!-- null instead of N/A? -->
+* **Description**. Cloudsyslog. 
 
-Cloud Syslog Source JSON example: 
-
-```json
+```json title="Cloud Syslog Source JSON example"
 {
    "api.version":"v1",
    "source":{
@@ -149,10 +157,11 @@ Cloud Syslog Source JSON example: 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources),
 the following parameters are for a Google Cloud Platform Source.
 
-| Parameter | Type |  Required? | Default | Description | Access |
-|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
-| `sourceType` | String | Yes | 	HTTP | not modifiable |
-| `thirdPartyRef` | Nested | JSON | Yes |  | Specify the the serviceType as GoogleCloudLogs. | not modifiable |
+###### `sourceType`
+| String | Yes | 	HTTP | not modifiable |
+
+###### `thirdPartyRef`
+| Nested | JSON | Yes |  | Specify the the serviceType as GoogleCloudLogs. | not modifiable |
 
 Google Cloud Platform Source JSON example: 
 
@@ -176,22 +185,34 @@ Google Cloud Platform Source JSON example: 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for all AWS log Sources except Kinesis.
 
-| Parameter | Type |  Required? | Default | Description | Access |
-|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
-| `sourceType` | String | Yes |  | Polling | not modifiable |
-| `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#aws-cloudfront-source): AwsCloudFrontBucket<br/>[CloudTrail](#aws-cloudtrail-source): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
-| `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
-| `paused` | Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
-| `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
-| `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
-| `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
-| `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
-| `pathExpression`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildcard pattern that matches the S3 objects you'd like to collect. | Modifiable |
+###### `sourceType`
+| String | Yes |  | Polling | not modifiable |
+###### `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#aws-cloudfront-source): AwsCloudFrontBucket<br/>[CloudTrail](#aws-cloudtrail-source): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
+
+###### `scanInterval`
+| Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
 
 
-**IAM User authentication example:**
+###### `paused`
+| Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
 
-```json
+
+###### `url`
+| String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
+
+###### `thirdPartyRef`
+| Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
+
+###### `snsTopicOrSubscriptionArn`
+This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
+
+###### `bucketName`
+This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
+
+###### `pathExpression`
+This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildcard pattern that matches the S3 objects you'd like to collect. | Modifiable |
+
+```json title="IAM User authentication example"
 "authentication": {
   "type": "S3BucketAuthentication",
   "awsId": "AKIAIOSFODNN7EXAMPLE",
@@ -199,18 +220,14 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 }
 ```
 
-**IAM Role authentication example:**
-
-```json
+```json title="IAM Role authentication example"
 "authentication": {
   "type": "AWSRoleBasedAuthentication",
   "roleARN": "arn:aws:iam::123456789012:role/myrole"
 }
 ```
 
-**snsTopicOrSubscriptionArn example**
-
-```json
+```json title="snsTopicOrSubscriptionArn example"
 "thirdPartyRef": {
         "resources": [{
             "serviceType": "#",
@@ -231,9 +248,9 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 #### AWS S3 Archive Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Archive Source JSON example:
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS S3 Archive Source JSON example"
 {
   "api.version":"v1",
   "source":{
@@ -272,9 +289,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### Amazon S3 Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources)  section. This is an Amazon S3 Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources)  section.
 
-```json
+```json title="Amazon S3 Source JSON example"
 {
   "api.version":"v1",
   "source":{
@@ -305,9 +322,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Elastic Load Balancing Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Elastic Load Balancing Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS Elastic Load Balancing Source JSON example"
 {
     "api.version": "v1",
     "source": {
@@ -336,9 +353,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS CloudFront Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudFront Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS CloudFront Source JSON example"
 {
     "api.version": "v1",
     "source": {
@@ -367,9 +384,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS CloudTrail Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudTrail Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS CloudTrail Source JSON example"
 {
     "api.version": "v1",
     "source": {
@@ -398,9 +415,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### Amazon S3 Audit Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Audit Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS S3 Audit Source JSON example"
 {
     "api.version": "v1",
     "source": {
@@ -429,9 +446,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Metadata (Tag) Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Metadata Source JSON example: 
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section.
 
-```json
+```json title="AWS Metadata Source JSON example"
 {
     "api.version": "v1",
     "source": {
@@ -472,9 +489,9 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Kinesis Firehose for Logs Source
 
-This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**.
+This example uses the `thirdPartyRef` parameter to enable **S3 Replay**.
 
-```json
+```json title="AWS Kinesis Firehose for Logs Source JSON example"
 {
   "source":
      {
@@ -511,7 +528,7 @@ This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `t
 }
 ```
 
-To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `authentication`, for example:
+To disable S3 Replay, use the `NoPathExpression` placeholder for `path` and `authentication`, for example:
 
 ```json
 {
@@ -597,9 +614,7 @@ AWS CloudWatch Source JSON example: 
 
 ### AWS Kinesis Firehose for Metrics Source
 
-This is an AWS Kinesis Firehose for Metrics Source JSON example:
-
-```json
+```json title="AWS Kinesis Firehose for Metrics Source JSON example"
 {
   "api.version": "v1",
   "source": {

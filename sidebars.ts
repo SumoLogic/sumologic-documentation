@@ -439,7 +439,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Use JSON to Configure Sources',
+          label: 'Using JSON to Configure Sources',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'send-data/use-json-configure-sources/index'},

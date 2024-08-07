@@ -14,7 +14,6 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to configure sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-
 ## Log source parameters for installed collectors
 
 |Field Type | Type Value |
@@ -32,17 +31,17 @@ Each Source can have its own unique fields in addition to the generic fields lis
 | [Docker Stats Source](#docker-statssource) | DockerStats |
 
 
-### Local file source
+## Local file source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the local file source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. N/A. <!-- null instead of N/A? -->
 * **Description**. LocalFile.
 
-#### `pathExpression`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `pathExpression`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A. <!-- null instead of N/A? -->
 * **Description**. A valid path expression (full path) of the file to collect. For files on Windows systems (excluding [Windows Events](https://www.tutorialspoint.com/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source/)), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (`\`). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Windows Log Collection](/docs/send-data/installed-collectors/sources/remote-file-source/prerequisites-windows-remote-file-collection).
 * **Example**.
@@ -55,8 +54,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
      [var/**/*.log]
      ```
 
-#### `denylist`
-<p><small>| String, Array | Optional | Modifiable |</small></p>
+###### `denylist`
+<small>| STRING, Array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `[]`.
 * **Description**. Comma-separated list of valid path expressions from which logs will not be collected.
 * **Example**.
@@ -64,8 +63,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
   "denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]
   ```
 
-#### `encoding`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `encoding`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `"UTF-8"`.
 * **Description**. Defines the encoding form.
 * **Example**. Options include `"UTF-16"`, `"UTF-16BE"`, and `"UTF-16LE"`.
@@ -95,17 +94,17 @@ Local file source JSON example with `cutoffTimestamp`:
 }
 ```
 
-### Remote file source
+## Remote file source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the remote file source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | Not modifiable |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. RemoteFileV2
 
-#### `remoteHosts`
-<p><small>| Array | Required | Modifiable |</small></p>
+###### `remoteHosts`
+<small>| Array | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Host name of remote machine. Make sure to enclose IP addresses in brackets.
 * **Example**.
@@ -113,45 +112,44 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
   ["192.168.0.1", "10.0.1.16", "192.168.1.234"]
   ```
 
-#### `remotePort`
-<p><small>| Int | Required | Modifiable |</small></p>
+###### `remotePort`
+<small>| Int | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Port of remote machine (SSH).
 
-#### `remoteUser`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `remoteUser`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. User account to connect to the remote machine.
 
-#### `remotePassword`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `remotePassword`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Password used to connect to remote machine. Required only when authMethod is set to `"password"`.
 
-
-#### `keyPath`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `keyPath`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Path to SSH key used to connect to the remote machine. Required only when `authMethod` is set to `"key"`.
 
-#### `keyPassword`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `keyPassword`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null.
 * **Description**. Password to SSH key to connect to the remote machine. Required only with `authMethod` is set to `"password"`.
 
-#### `pathExpression`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `pathExpression`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Path expression of the files to collect.
 
-#### `authMethod`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `authMethod`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Authentication method used to connect to the remote machine.
 * **Example**. Options are `"password"` to connect with a password or `"key"` to connect with an SSH key.
 
-#### `denylist`
-<p><small>| List | Optional | Modifiable |</small></p>
+###### `denylist`
+<small>| LIST | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `[]`.
 * **Description**. List of valid path expression to skip.
 
@@ -185,35 +183,35 @@ Remote file source JSON example:
 }
 ```
 
-### Local Windows event log source
+## Local Windows event log source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are specific to the local Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
-#### `sourceType`     
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`     
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. LocalWindowsEventLog.
 
-#### `logNames`       
-<p><small>| List | Required | Modifiable |</small></p>
+###### `logNames`       
+<small>| LIST | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. List of Windows log types to collect. For example, `"Security"` or  `"Application"`. To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs.
 
-#### `renderMessages`
-<p><small>| Boolean | Optional | Modifiable |</small></p>
+###### `renderMessages`
+<small>| BOOLEAN | OPTIONAL | MODIFIABLE |</small>
 * **Default**. true
 * **Description**. Optional, only applicable to the legacy format. When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) (`false`).
 
-#### `eventFormat`    
-<p><small>| Integer | Optional | Modifiable |</small></p>
+###### `eventFormat`    
+<small>| INTEGER | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `0`
 * **Description**. Sets how you want your event logs formatted.
 * **Example**.
    * Use `0` for the legacy format. Where events retain their default XML format from Windows.
    * Use `1` for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
 
-#### `eventMessage`   
-<p><small>| Integer | Modifiable |</small></p>
+###### `eventMessage`   
+<small>| INTEGER | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Required if eventFormat is 0.
 * **Example**.
@@ -221,13 +219,13 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
    * Use `1` for the message title. It will ingest the first line of event messages along with all of the metadata.
    * Use `2` for metadata only. It will ingest metadata fields from each event, including event ID and timestamp.
 
-#### `allowlist`      
-<p><small>| String array | Optional | Modifiable |</small></p>
+###### `allowlist`      
+<small>| STRING array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Available in Collector versions 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
 
-#### `denylist`       
-<p><small>| String array | Optional | Modifiable |</small></p>
+###### `denylist`       
+<small>| STRING array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Available in Collector versions 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
 
@@ -251,75 +249,76 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 }
 ```
 
-### Remote Windows event log source
+## Remote Windows event log source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are specific to the remote Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. null
 * **Description**. RemoteWindowsEventLog.
 
-#### `domain`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `domain`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Windows domain from which logs will be created.
 
-#### `username`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `username`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Username needed to connect to the remote machine.
 
-#### `password`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `password`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Password needed to connect to the remote machine.
 
-#### `hosts`
-<p><small>| List | Required | Modifiable |</small></p>
+###### `hosts`
+<small>| LIST | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. List of hosts to collect from.
 
-#### `logNames`
-<p><small>| List | Required | Modifiable |</small></p>
+###### `logNames`
+<small>| LIST | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. List of Windows log types collected.
 
-#### `logNames`
-<p><small>| List | Required | Modifiable |</small></p>
+###### `logNames`
+<small>| LIST | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. List of Windows log types to collect.To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs.
 * **Example**. `"Security"` or `"Application"`.
 
-#### `renderMessages`
-<p><small>| Boolean | Optional, only applicable to the legacy format. | Modifiable |</small></p>
+###### `renderMessages`
+<small>| BOOLEAN | OPTIONAL, only applicable to the legacy format. | MODIFIABLE |</small>
 * **Default**. `true`.
 * **Description**. When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) (`false`).
 
-#### `eventFormat`
-<p><small>| Integer | Optional | Modifiable |</small></p>
+###### `eventFormat`
+<small>| INTEGER | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `0`.
 * **Description**. Sets how you want your event logs formatted.
    * Use `0` for the legacy format. Where events retain their default XML format from Windows.
    * Use `1` for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
 
-#### `eventMessage`
-<p><small>| Integer | Required if eventFormat is `0`. | Modifiable |</small></p>
+###### `eventMessage`
+<small>| INTEGER | REQUIRED if eventFormat is `0`. | MODIFIABLE |</small>
 * **Default**. null
 * **Description**.
    * Use `0` for the complete message. It will ingest the entire event content along with metadata.
    * Use `1` for the message title. It will ingest the first line of event messages along with all of the metadata.
    * Use `2` for metadata only. It will ingest metadata fields from each event, including event ID and timestamp.
 
-#### `allowlist`
-<p><small>| String array | Optional | Modifiable |</small></p>
-* **Default**. null
-* **Description**. Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
+###### `allowlist`
+<small>| STRING array | OPTIONAL | MODIFIABLE |</small>
 
-#### `denylist`
-<p><small>| String array | Optional | Modifiable |</small></p> 
-* **Default**. null
-* **Description**. Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
+**Default**. null<br/>
+**Description**. Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
+
+###### `denylist`
+<small>| STRING array | OPTIONAL | MODIFIABLE |</small>
+**Default**. null<br/>
+**Description**. Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
 
 ```json title="Remote Windows event log source JSON example"
 {
@@ -343,17 +342,17 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 }
 ```
 
-### Local Windows performance source 
+## Local Windows performance source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the local Windows performance source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. null
 * **Description**. LocalWindowsPerfMon
 
-#### `wmiQueries`    
-<p><small>| List | Required | Modifiable  |</small></p>
+###### `wmiQueries`    
+<small>| LIST | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. List of queries to be executed. Each query is an object with two fields: name and query.
 
@@ -379,43 +378,41 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 }
 ```
 
-### Remote Windows performance source 
+## Remote Windows performance source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the remote Windows performance source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. RemoteWindowsPerformance
 
-#### `domain`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `domain`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Windows domain from which logs will be created. |
 
-#### `remoteUser`
-<p><small>| String | Required | ? |</small></p>
+###### `remoteUser`
+<small>| STRING | REQUIRED | ? |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Username needed to connect to the remote machine.
 
-#### `remotePassword`
-<p><small>| String | Required | ? |</small></p>
+###### `remotePassword`
+<small>| STRING | REQUIRED | ? |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Password needed to connect to the remote machine.
 
-#### `remoteHosts`
-<p><small>| List | Required | ? | </small></p>
+###### `remoteHosts`
+<small>| LIST | REQUIRED | ? | </small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. List of hosts to collect from.
 
-#### `wmiQueries`
-<p><small>| List | Required | ? |</small></p>
+###### `wmiQueries`
+<small>| LIST | REQUIRED | ? |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. List of queries to be executed. Each query in an object with two fields: name and query.
 
-Remote Windows performance source JSON example:
-
-```json
+```json title="Remote Windows performance source JSON example"
 {
    "api.version": "v1",
    "sources":[
@@ -444,7 +441,7 @@ Remote Windows performance source JSON example:
 }
 ```
 
-#### Windows performance metric example
+## Windows performance metric example
 
 This example shows how to use WMI queries to collect performance metrics from Windows systems.
 
@@ -490,43 +487,41 @@ This example shows how to use WMI queries to collect performance metrics from W
 }
 ```
 
-### Windows Active Directory Source 
+## Windows Active Directory Source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the Windows Active Directory Inventory Source.
 
-#### `sourceType`     
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`     
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. ActiveDirectory.
 
-#### `nameSuffixes`   
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `nameSuffixes`   
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Semi-colon separated list of Distinguished Name suffixes. When set, the source won't ingest any records that contain the Distinguished Name suffixes specified.
 
-#### `filter`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `filter`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Specifies a filter to use when searching for Domain Objects in Active Directory.
 
-#### `additionalAttr`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `additionalAttr`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Semi-colon separated list of the LDAP Names of Active Directory attributes to report, in addition to the default list.
 
-#### `excludedAttr`   
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `excludedAttr`   
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Semi-colon separated list of the LDAP Names of Active Directory attributes to be excluded from the report.
 
-#### `interval`
-<p><small>| Integer | Optional | Modifiable |</small></p>
+###### `interval`
+<small>| INTEGER | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Seconds to check for new data. By default, Active Directory is queried for data every 24 hours. You can select a more frequent interval down to every minute.
 
-Windows Active Directory Inventory Source JSON example:
-
-```json
+```json title="Windows Active Directory Inventory Source JSON example"
 {
   "api.version": "v1",
   "source": {
@@ -552,7 +547,7 @@ Windows Active Directory Inventory Source JSON example:
 }
 ```
 
-### Syslog source
+## Syslog source
 
 Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types) `multilineProcessingEnabled`, `useAutolineMatching`, and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
 
@@ -560,25 +555,23 @@ Syslog Sources do not support Multiline Detection, which means the [common param
 Syslog sources break a syslog message on each newline character and send each line as individual messages to the service.
 :::
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Syslog.
 
-#### `protocol`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `protocol`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Protocol that syslog should use. Both UDP and `TCP` are supported.
 
-#### `port`
-<p><small>| Integer | Required | Modifiable |</small></p>
+###### `port`
+<small>| INTEGER | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Port that syslog should use to connect to the machine. 
-* **Example**. Recommended ports: `514` or `1514`
- 
-Syslog source JSON example: 
+* **Example**. Recommended ports: `514` or `1514`.
 
-```json
+```json title="Syslog source JSON example"
 {
   "api.version": "v1",
   "sources": [
@@ -592,48 +585,46 @@ Syslog source JSON example: 
 }
 ```
 
-### Script source
+## Script source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the script source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Script
 
-#### `commands`
-<p><small>| List | Required | `[ ]` | Modifiable |</small></p>
+###### `commands`
+<small>| LIST | REQUIRED | `[ ]` | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. List of command line arguments.
 
-#### `file`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `file`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Path to script file to run.
 
-#### `workingDir`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `workingDir`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Working directory for commands/script.
 
-#### `timeout`
-<p><small>| Long | Optional | Modifiable |</small></p>
+###### `timeout`
+<small>| Long | OPTIONAL | MODIFIABLE |</small>
 * **Default**. `0` null?
 * **Description**. Script timeout (in milliseconds). By default, this is set to `0`.
 
-#### `script`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `script`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Script contents (if no file is provided).
 
-#### `cronExpression`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `cronExpression`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Schedule for running the script. Must be a valid Quartz cron expression.
 
-Script source JSON example: 
-
-```json
+```json title="Script source JSON example"
 {
    "api.version": "v1",
    "sources":[
@@ -653,38 +644,38 @@ Script source JSON example: 
 }
 ```
 
-### Docker log source
+## Docker log source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the Docker log source.
 
 
-#### `sourceType`
-<p><small>| String | Required | Modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. DockerLog
 
-#### `uri`
-<p><small>| String | Required | Modifiable |</small></p>  
+###### `uri`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>  
 * **Default**. null
 * **Description**. URI of the Docker daemon.
 
-#### `specifiedContainers`
-<p><small>| List| Modifiable |</small></p>  
+###### `specifiedContainers`
+<small>| LIST| MODIFIABLE |</small>  
 * **Default**. null
 * **Description**. Comma-separated list of Docker containers. Collection will be only from running containers. If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources).
 
-#### `allContainers`
-<p><small>| Boolean| Required | Modifiable |</small></p>
+###### `allContainers`
+<small>| BOOLEAN| REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`).
 
-#### `certPath`
-<p><small>| String | `*` | Modifiable |</small></p>
+###### `certPath`
+<small>| STRING | `*` | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS.
 
-#### `collectEvents`
-<p><small>| Boolean| Required | </small></p>  
+###### `collectEvents`
+<small>| BOOLEAN| REQUIRED | </small>  
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Must be set to `true` to collect the Docker logs.
 
@@ -725,47 +716,47 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 }
 ```
 
-### Docker stats source
+## Docker stats source
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the Docker stats source.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. null
 * **Description**. DockerStats
 
-#### `contentType`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `contentType`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. If value is empty or does not exist, it’s a json-based source, if value is “DockerMetrics”, it’s a metrics source.
 
-#### `metrics`
-<p><small>| String | Array | Optional | Modifiable |</small></p>
+###### `metrics`
+<small>| STRING | Array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. All metrics. List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see [Docker metrics definitions](/docs/send-data/installed-collectors/sources/docker-sources/#docker-metrics-definitions). When omitted, all available host metrics will be collected.
 
-#### `uri`
-<p><small>| String | Required | Modifiable |</small></p>  
+###### `uri`
+<small>| STRING | REQUIRED | MODIFIABLE |</small>  
 * **Default**. null
 * **Description**. URI of the Docker daemon.
 
-#### `specifiedContainers`
-<p><small>| List | Modifiable |</small></p>
+###### `specifiedContainers`
+<small>| LIST | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Comma-separated list of Docker containers. Collection will be only from running containers. If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources/#more-about-defining-container-filters).
 
-#### `allContainers`
-<p><small>| Boolean | Required | Modifiable |</small></p>
+###### `allContainers`
+<small>| BOOLEAN | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Flag indicating whether the Source includes all running containers (true) or only the containers listed in `specifiedContainers` (`false`).
 
-#### `certPath`
-<p><small>| String | * | Modifiable |</small></p>  
+###### `certPath`
+<small>| STRING | * | MODIFIABLE |</small>  
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS.
 
-#### `pollInterval`
-<p><small>| Long | Optional | Modifiable |</small></p>
+###### `pollInterval`
+<small>| Long | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Continuous (By default, polling occurs continuously, rather than on a periodic basis.) The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second.
 
@@ -830,39 +821,42 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 
 the following parameters are specific to the our host metrics source. 
 
-#### `name`
-<p><small>| String | Required | Modifiable |</small></p> 
+###### `name`
+<small>| STRING | REQUIRED | MODIFIABLE |</small> 
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.
 
-#### `description`
-<p><small>| String | Optional | Modifiable |</small></p> 
+###### `description`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small> 
 * **Default**. null
 * **Description**. Type a description of the Source.
 
-#### `category`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `category`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. null
 * **Description**. Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [Best practices](/docs/send-data/best-practices) for details.
 
-#### `sourceType`
-<p><small>| String | Required | Not modifiable |</small></p>
+###### `sourceType`
+<small>| STRING | REQUIRED | NOT MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. SystemStats.
 
-#### `metrics`
-<p><small>| String Array | Optional | Modifiable |</small></p>
+###### `metrics`
+<small>| STRING Array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. For a full list of available metrics, see [Host Metrics Source for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources). When omitted, all available host metrics will be collected. all metrics. Comma-separated list of metrics to collect.
-* **Example**. "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]`
+* **Example**.
+   ```
+   "metrics": ["CPU_User", "CPU_Sys", "Mem_Used"]
+   ```
 
-#### `interval` (ms)
-<p><small>| Integer | Required | Modifiable |</small></p>
+###### `interval` (ms)
+<small>| INTEGER | REQUIRED | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Time interval in milliseconds of the metrics collection. We recommend 60-second granularity (`60000`). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m).
 
-#### `hostName`
-<p><small>| String | Optional | Modifiable |</small></p>
+###### `hostName`
+<small>| STRING | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
 * **Description**. Host from which the metrics are collected. 
 
