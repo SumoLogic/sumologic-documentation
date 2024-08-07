@@ -1828,8 +1828,18 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
-      'integrations/product-list',
-    {
+      {
+        type: 'category',
+        label: 'Product List',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/product-list/index'},
+        items: [
+          'integrations/product-list/product-list-a-l',
+          'integrations/product-list/product-list-m-z',
+        ],
+      },
+      {
       type: 'category',
       label: 'Amazon and AWS',
       collapsible: true,
@@ -2110,6 +2120,7 @@ integrations: [
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/activemq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/vmware-opentelemetry'
             ],
           },
           'integrations/containers-orchestration/activemq',
@@ -2264,6 +2275,7 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/saas-cloud/index'},
         items: [
+          'integrations/saas-cloud/abnormal-security',
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
@@ -2304,6 +2316,7 @@ integrations: [
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
         ],
@@ -2708,7 +2721,6 @@ integrations: [
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
         'cloud-soar/overview',
-        'cloud-soar/architecture',
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
