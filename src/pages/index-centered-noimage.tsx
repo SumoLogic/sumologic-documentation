@@ -9,6 +9,7 @@ import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import SearchBar from '../../src/theme/SearchBar/index.js';
 
+
 export const Home = () => {
   const [tab, setTab] = useState('0');
 
@@ -70,115 +71,73 @@ export const Home = () => {
         textAlign='center'
       >
         <Container maxWidth='lg'>
-          <Grid
+          <Stack
             alignItems='center'
-            container
-            direction={{
-              md: 'row',
-              xs: 'column-reverse',
-            }}
-            justifyContent={{
-              md: 'center',
-              xs: 'flex-end',
-            }}
-            height='100%'
+            justifyContent='center'
+            spacing={2}
           >
-            <Grid
-              item
-              md={6}
+            <Typography
+              color='white'
+              fontFamily='Lab Grotesque'
+              fontSize={32}
+              fontWeight={700}
+              variant='h2'
             >
-              <Stack
-                alignItems={{
-                  md: 'flex-start',
-                  xs: 'center',
+              New to Sumo?
+            </Typography>
+            <SearchBar />
+            <Typography
+              color='#e3e3e3'
+              fontFamily='Lab Grotesque'
+              pb={2}
+              textAlign='left'
+              variant='p'
+            >
+              Get started quickly with our search, visualization, analytics, and security capabilities.
+            </Typography>
+            {[
+              {
+                children: '1. Set up collector and source',
+                description: 'Set up a Sumo Logic collector and source',
+                href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
+              },
+              {
+                children: '2. Explore your data insights',
+                description: 'Explore your insights',
+                href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
+              },
+              {
+                children: '3. Monitor and secure your environment',
+                description: 'Monitor, troubleshoot, and secure your environment',
+                href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
+              },
+            ].map(({ children, ...rest }) => (
+              <Button
+                key={rest.href}
+                sx={{
+                  bgcolor: 'transparent',
+                  border: '.5px solid',
+                  borderColor: '#e3e3e3',
+                  borderRadius: 2,
+                  fontFamily: 'Lab Grotesque',
+                  textTransform: 'none',
+                  width: {
+                    md: 'auto',
+                    xs: '100%',
+                  },
+                  '&:hover': {
+                    bgcolor: '#0045BE',
+                    borderColor: '#0045BE',
+                    color: '#e3e3e3',
+                  },
                 }}
-                justifyContent='center'
-                spacing={2}
+                variant='contained'
+                {...rest}
               >
-                <Typography
-                  color='white'
-                  fontFamily='Lab Grotesque'
-                  fontSize={32}
-                  fontWeight={700}
-                  variant='h2'
-                >
-                  New to Sumo?
-                </Typography>
-                <SearchBar />
-                <Typography
-                  color='#e3e3e3'
-                  fontFamily='Lab Grotesque'
-                  pb={2}
-                  textAlign='left'
-                  variant='p'
-                >
-                  Get started quickly with our search, visualization, analytics, and security capabilities.
-                </Typography>
-                {[
-                  {
-                    children: '1. Set up collector and source',
-                    description: 'Set up a Sumo Logic collector and source',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
-                  },
-                  {
-                    children: '2. Explore your data insights',
-                    description: 'Explore your insights',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
-                  },
-                  {
-                    children: '3. Monitor and secure your environment',
-                    description: 'Monitor, troubleshoot, and secure your environment',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
-                  },
-                ].map(({ children, ...rest }) => (
-                  <Button
-                    key={rest.href}
-                    sx={{
-                      bgcolor: 'transparent',
-                      border: '.5px solid',
-                      borderColor: '#e3e3e3',
-                      borderRadius: 2,
-                      fontFamily: 'Lab Grotesque',
-                      textTransform: 'none',
-                      width: {
-                        md: 'auto',
-                        xs: '100%',
-                      },
-                      '&:hover': {
-                        bgcolor: '#0045BE',
-                        borderColor: '#0045BE',
-                        color: '#e3e3e3',
-                      },
-                    }}
-                    variant='contained'
-                    {...rest}
-                  >
-                    {children}
-                  </Button>
-                ))}
-              </Stack>
-            </Grid>
-            <Grid
-              item
-              md={6}
-              pl={{
-                md: 13,
-              }}
-            >
-              <Box
-                component='img'
-                alt='hero background image'
-                loading='lazy'
-                aria-hidden='true'
-                src={heroImage}
-                width={{
-                  lg: 450,
-                  md: 300,
-                  xs: '85%',
-                }}
-              />
-            </Grid>
-          </Grid>
+                {children}
+              </Button>
+            ))}
+          </Stack>
         </Container>
       </Stack>
 
@@ -276,9 +235,8 @@ export const Home = () => {
               ))}
             </Tabs>
             {features.map((feature, index) => tab === String(index) && (
-              <Grid
+              <Stack
                 component={TabPanel}
-                container
                 direction='row'
                 justifyContent='center'
                 key={index}
@@ -287,7 +245,7 @@ export const Home = () => {
                 value={String(index)}
               >
                 {feature.map((config) => (
-                  <Grid
+                  <Stack
                     item
                     key={config.link}
                     lg={4}
@@ -298,9 +256,9 @@ export const Home = () => {
                       length={feature.length}
                       {...config}
                     />
-                  </Grid>
+                  </Stack>
                 ))}
-              </Grid>
+              </Stack>
             ))}
           </TabContext>
         </Stack>
