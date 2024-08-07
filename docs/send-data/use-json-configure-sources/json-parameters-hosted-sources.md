@@ -1,7 +1,7 @@
 ---
 id: json-parameters-hosted-sources
 title: JSON Parameters for Hosted Sources
-description: This topic describes JSON Source parameters for hosted Collectors.
+description: This topic describes JSON Source parameters for Hosted Collectors.
 ---
 
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
@@ -97,6 +97,10 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 ### HTTP Source
 
 In addition to the common parameters, the following parameters are for an HTTP Source.
+
+#### `fields`
+| JSON Object | No | modifiable |
+* Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
