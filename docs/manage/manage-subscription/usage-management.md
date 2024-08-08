@@ -22,6 +22,10 @@ To manage the query size limit:
     - **Size Limit**. Enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.<br/><img src={useBaseUrl('/img/account/usage-management-click-here.png')} alt="usage-management-click-here" style={{border:'1px solid gray'}} width="300"/>
 1. Click **Save Limit**.
 
+:::note
+It may take up to 5 minutes for a newly created budget to become active and enforceable in the system.
+:::
+
 After setting the limit, you can click on the **View violations** button to see any breaches that have occurred. Each breach above the set audit limit will generate an audit log, and you can view the details in the log search using the Sumo Logic's pre-built queries.
 
 When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. If there is still an overlap, the budget with the most restrictive action takes precedence. For example, if you are a part of multiple groups with different query size budgets, the one with the largest capacity will be applied.
