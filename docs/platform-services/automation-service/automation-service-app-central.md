@@ -42,15 +42,12 @@ Integrations are connectors to applications from industry-leading network and se
 
 ### Install an integration from App Central
 
-1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
-1. Click **Install** in the lower left corner of the integration box. After installation is complete, **Installed** replaces the **Install** link in the corner of the integration box.
+1. Use the **INSTALL** in the lower left corner of the integration box. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
 1. **IMPORTANT**: Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 
-Integrations in App Central display a version number. The version indicates when there is a change to the integration. If a newer version of an installed integration is available, you can update the integration from App Central by clicking **Update**.
-
-<img src={useBaseUrl('img/cse/automation-service-app-central-update-integration.png')} style={{border:'1px solid gray'}} alt="Version number" width="400"/>
+ If a newer version of an installed integration is available, you can update the integration from App Central by clicking **UPDATE** in the lower left corner of the integration box.
 
 ### Update integrations to include all available actions
 

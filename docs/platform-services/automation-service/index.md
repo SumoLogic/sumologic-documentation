@@ -44,7 +44,7 @@ In this section, we'll introduce the following concepts:
 </div>  
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-bridge/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Bridge for the Automation Service</h4></a>
+  <a href="/docs/platform-services/automation-service/automation-service-bridge/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Automation Bridge</h4></a>
   <p>Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment. </p>
   </div>
 </div>
