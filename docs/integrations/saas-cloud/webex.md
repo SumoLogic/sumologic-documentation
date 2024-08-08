@@ -1,8 +1,8 @@
 ---
-id: webex-bronze
-title: Webex Bronze
-sidebar_label: Webex Bronze
-description: The Sumo Logic app for the Webex Bronze provides comprehensive monitoring and analysis of Webex environments, offering real-time visibility into security events, user activities, and system health.
+id: webex
+title: Webex
+sidebar_label: Webex
+description: The Sumo Logic app for the Webex provides comprehensive monitoring and analysis of Webex environments, offering real-time visibility into security events, user activities, and system health.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -80,29 +80,29 @@ _sourceCategory="cisco_webex"
 
 ## Set up collection
 
-To set up the Webex Cloud-to-Cloud Integration for the Webex Bronze app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/). These instructions will guide you through the process of creating a source using the Webex Bronze Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Webex Bronze app is properly integrated and configured to collect and analyze your Webex Bronze data.
+To set up the Webex Cloud-to-Cloud Integration for the Webex app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/). These instructions will guide you through the process of creating a source using the Webex Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Webex app is properly integrated and configured to collect and analyze your Webex data.
 
-## Installing the Webex Bronze app
+## Installing the Webex app
 
-This section has instructions for installing the Webex Bronze app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Webex app for Sumo Logic and descriptions of each of the dashboards.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Webex Bronze app (Optional)
+## Upgrading the Webex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Webex Bronze app (Optional)
+## Uninstalling the Webex app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-## Viewing Webex Bronze dashboards​
+## Viewing Webex dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
