@@ -40,12 +40,6 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/audit-event-index"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Audit Logging</h4></a>
-  <p>Learn how to search the Audit Event Index for CSOAR log events.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/legacy"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Legacy Cloud SOAR</h4></a>
   <p>Learn about our legacy Cloud SOAR product offering.</p>
   </div>

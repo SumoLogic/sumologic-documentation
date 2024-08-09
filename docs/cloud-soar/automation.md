@@ -15,12 +15,13 @@ The **Automation** section contains configuration tools for Cloud SOAR's automat
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**.
  Kanso-->
 
-Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR automation features, see the Automation Service articles:
+Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
 * [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
-* [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)
-* [Integration Framework](/docs/platform-services/automation-service/automation-service-integration-framework/)
+* [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
+* [Integration framework](/docs/platform-services/automation-service/automation-service-integration-framework/)
+* [Audit logging](docs/platform-services/automation-service/automation-service-audit-logging)
 
 The following sections describe automation features only used in Cloud SOAR. 
 

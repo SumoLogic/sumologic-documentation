@@ -38,8 +38,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-audit-logging/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Automation Service Audit Logging</h4></a>
-  <p>Learn how to search the Audit Event Index for Automation Service log events. </p>
+  <a href="/docs/platform-services/automation-service/automation-service-audit-logging/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Audit Logging</h4></a>
+  <p>Learn how to search the Audit Event Index for log events in the Automation Service and Cloud SOAR. </p>
   </div>
 </div>  
 <div className="box smallbox card">
@@ -50,7 +50,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-integration-framework/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework for the Automation Service</h4></a>
+  <a href="/docs/platform-services/automation-service/automation-service-integration-framework/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework</h4></a>
   <p>Learn about the framework used for integrations. </p>
   </div>
 </div>

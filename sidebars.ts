@@ -2724,7 +2724,6 @@ integrations: [
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
-        'cloud-soar/audit-event-index',
         {
           type: 'category',
           label: 'Legacy Cloud SOAR',
