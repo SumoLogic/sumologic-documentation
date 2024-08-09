@@ -33,7 +33,7 @@ Both the integration definition file and the action definition file are YAML fil
 `*` Required fields
 
 * **name** `*` [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
-* **official_name** `*` [String]: To modify the display name of an integration in the Cloud SOAR UI while ensuring the actions YAML remains valid, set `official_name=OLD-NAME` and `name=NEW-NAME`.
+* **official_name** `*` [String]: To modify the display name of an integration in the Cloud SOAR UI while ensuring the actions YAML remains valid, set `official_name=OLD-NAME` and `name=NEW-NAME`. 
 * **version** `*` [String]: File version number.
 * **icon** `*` [Base64 String]: Integration logo.
 * **script** `*`:
@@ -421,7 +421,7 @@ All available actions are:
 * Close task
 * Add to Triage
 
-#### Scheduled action definitions
+### Scheduled action definitions
 
 A _Scheduled action_ represents a particular type of action when the execution is iterated until a specific exit condition is met. This type of action permits you to create loops in a playbook.
 

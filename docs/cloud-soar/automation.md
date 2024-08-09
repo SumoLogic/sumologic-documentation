@@ -19,7 +19,7 @@ Because Cloud SOAR provides automation functionality to the [Automation Service]
 * [App Central](/docs/platform-services/automation-service/app-central/)
 * [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
-* [Bridge](/docs/platform-services/automation-service/automation-service-bridge)
+* [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)
 
 The following sections describe automation features only used in Cloud SOAR. 
 
