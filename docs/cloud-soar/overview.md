@@ -59,7 +59,7 @@ Gain complete insight into incident response performance with customizable dashb
 
 ### Open Integration Framework (OIF)
 
-Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](/docs/cloud-soar/automation/#integrations) and [Cloud SOAR Integration Framework](/docs/cloud-soar/cloud-soar-integration-framework/). 
+Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](/docs/cloud-soar/automation/#integrations) and [Integration Framework](/docs/platform-services/automation-service/automation-service-integration-framework). 
 
 <img src={useBaseUrl('img/cloud-soar/overview-openI-itegration.png')} alt="Integrations" style={{border: '1px solid gray'}} width="800" />
 

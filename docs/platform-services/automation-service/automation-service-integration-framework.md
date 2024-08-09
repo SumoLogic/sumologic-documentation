@@ -559,14 +559,14 @@ Triggers function as individual actions, executed in the backend, without the ca
 ##### Examples of trigger definition files
 
 See the following examples of trigger definition files:
-* [Trigger definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-definition-file-incident-tools)
-* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
-* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
-* [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file)
+* [Trigger definition file (Incident Tools)](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-definition-file-incident-tools)
+* [Trigger taskCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
+* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+* [Trigger webhook definition file](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-webhook-definition-file)
 
 ##### Trigger hooks
 
-Specify `hook` values in a `Trigger` type [action definition file](/docs/cloud-soar/cloud-soar-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook.
+Specify `hook` values in a `Trigger` type [action definition file](/docs/platform-services/automation-service/automation-service-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook.
 
 The following sections describe the valid hook values to use in a trigger definition file.
 
@@ -587,7 +587,7 @@ Following are the hooks for [task](/docs/cloud-soar/incidents-triage/#tasks) eve
 * `closeTask`. When task is closed. Param passed to script `tasksDetail`.
 * `createTask`. When task is created. Param passed to script `tasksDetail`.
 * `reassignTask`. When task is reassigned. Param passed to script `tasksDetail`.
-* `taskCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `taskCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`.
 
 Params `tasksDetail`, `tasksBeforeUpdate`, and `tasksAfterUpdate` are JSON strings with the form:
