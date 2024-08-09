@@ -7,9 +7,9 @@ description: Learn about the framework used for integrations.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Automation Service allows you to develop and extend integrations using a common, open, and easy-to-use framework. This article describes the framework and provides examples.
+The Automation Service allows you to develop and extend integrations using a common and open framework. This article describes the framework and provides examples.
 
-Because the Automation Service is a subset of automation capabilities adapted from Cloud SOAR, some of the functionality documented below is unique to Cloud SOAR.
+Because the Automation Service is a subset of automation capabilities adapted from Cloud SOAR, some of the functionality documented below is unique to [Cloud SOAR automation](/docs/cloud-soar/automation/).
 
 ## Integration file hierarchy
 
