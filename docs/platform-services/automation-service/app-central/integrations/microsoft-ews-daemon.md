@@ -124,6 +124,10 @@ full\_access\_as\_app Use Exchange Web Services with full access to all mailboxe
 
 Once API permission are added then Admin must consent to a grant these permissions, [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
 
+## Important Note
+
+When using the Microsoft EWS Daemon Action within an automation rule, please keep in mind that it will only pull in emails that are marked "Unread" within the respective mailbox scope. It is important to keep this mailbox a dedicated entity and not have any additional stakeholders reviewing the mailbox manually as to ensure all relevant alerts are processed as expected.
+
 ## Category
 
 Email Gateway
