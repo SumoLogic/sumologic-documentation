@@ -642,7 +642,7 @@ opt_11: <value>
 
 Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
-* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
 * `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
 
@@ -780,8 +780,8 @@ hook:
 null
 ```
 For other example YAML files, see:
-* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
-* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+* [Trigger taskCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
+* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
 
 #### show_modal
 
@@ -850,7 +850,7 @@ hook:
  - webhook
 ```
 
-For another example YAML file of a webhook trigger, see [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file).
+For another example YAML file of a webhook trigger, see [Trigger webhook definition file](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-webhook-definition-file).
 
 ##  Example files
 
