@@ -124,6 +124,7 @@ module.exports = {
           onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -165,6 +166,7 @@ module.exports = {
          onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -188,6 +190,7 @@ module.exports = {
          onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SOAR Release Notes',
            description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -211,6 +214,7 @@ module.exports = {
           onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -234,6 +238,7 @@ module.exports = {
           onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt:
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -472,7 +477,6 @@ module.exports = {
         style: 'dark',
         links: [
           {
-            title: 'Learn',
             items: [
               {
                 label: 'Training & Certifications',
@@ -487,9 +491,9 @@ module.exports = {
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
+            title: 'Learn',
           },
           {
-            title: 'Help',
             items: [
               {
                 label: 'Contact Support',
@@ -504,9 +508,9 @@ module.exports = {
                 href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
+            title: 'Help',
           },
           {
-            title: 'Open Source',
             items: [
               {
                 label: 'Docs GitHub',
@@ -521,6 +525,7 @@ module.exports = {
                 href: 'https://github.com/SumoLogic-Labs',
               },
             ],
+            title: 'Open Source',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
