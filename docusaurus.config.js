@@ -119,6 +119,9 @@ module.exports = {
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
             title: 'Sumo Logic Service Release Notes',
@@ -157,6 +160,9 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
            title: 'Sumo Logic Cloud SIEM Release Notes',
@@ -177,6 +183,9 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
            title: 'Sumo Logic Cloud SOAR Release Notes',
@@ -197,6 +206,9 @@ module.exports = {
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
             title: 'Sumo Logic Developer Release Notes',
@@ -217,6 +229,9 @@ module.exports = {
           postsPerPage: 'ALL',
           blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
             title: 'Sumo Logic Collector Release Notes',
@@ -271,7 +286,6 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
-        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
