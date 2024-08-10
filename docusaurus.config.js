@@ -238,7 +238,7 @@ module.exports = {
           onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
-            xslt:
+            xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
