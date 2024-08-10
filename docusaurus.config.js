@@ -472,6 +472,7 @@ module.exports = {
         style: 'dark',
         links: [
           {
+            title: 'Learn',
             items: [
               {
                 label: 'Training & Certifications',
@@ -486,9 +487,9 @@ module.exports = {
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
-            title: 'Learn',
           },
           {
+            title: 'Help',
             items: [
               {
                 label: 'Contact Support',
@@ -503,9 +504,9 @@ module.exports = {
                 href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
-            title: 'Help',
           },
           {
+            title: 'Open Source',
             items: [
               {
                 label: 'Docs GitHub',
@@ -520,7 +521,6 @@ module.exports = {
                 href: 'https://github.com/SumoLogic-Labs',
               },
             ],
-            title: 'Open Source',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
