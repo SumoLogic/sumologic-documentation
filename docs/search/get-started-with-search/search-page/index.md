@@ -4,7 +4,7 @@ title: How to Use the Search Page
 description: Understand the basic components of the Search window and how they can help you investigate your issues.
 ---
 
-On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data. 
+On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data.
 
 You can also save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
@@ -22,7 +22,7 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 | F | [Save or schedule](../search-basics/save-search.md) a search. |
 | G | Click the three-dot kebab icon to open a menu with the following options:<ul><li>Select between Basic or Advanced search mode.</li><li>Link to [search cheat sheets](/docs/search/search-cheat-sheets).</li><li>Edit the search, if it has already been saved.</li><li>[Save or schedule](../search-basics/save-search.md) a search.</li><li>[Share a link](../search-basics/share-link-to-search.md) for the currently running search.</li><li>Info provides detailed information about the search.</li><li>[Pin](/docs/get-started/library#search-the-library) the search to run in the background independent of the browser session.</li><li>[Favorite](add-saved-search-to-favorites.md) a saved search.</li><li>[Add a new monitor](/docs/alerts/monitors) based on the existing query in the search text box.</li><li>Use [Live Tail](/docs/search/live-tail) to see a real-time live feed of log events.</li></ul>The menu options are dynamically provided so depending on if you have run or saved the search or conducted aggregation some options will be grayed out and unclickable. |
 | H | [Histogram](navigate-through-search-results.md) of the messages. |
-| I | Search Details such as session, status, elapsed time, results, raw count, search expression, and [load](search-load-indicator.md). When searching an [Infrequent Partition](/docs/manage/partitions-data-tiers) the estimated and actual amount of data scanned is displayed. |
+| I | Search Details such as session, status, elapsed time, results, raw count, search expression, and [load](search-load-indicator.md). When searching an [Infrequent Partition](/docs/manage/partitions/data-tiers) the estimated and actual amount of data scanned is displayed. |
 | J | Search results as messages. |
 | K | [Aggregate](/docs/search/search-query-language/group-aggregate-operators) search results. |
 | L | Download and export search results (up to 100,000 records) as a CSV file. |
@@ -66,7 +66,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
+  <a href="/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
   <p>Explore specific fields of interest in a search by displaying or hiding selected fields without having to parse them.</p>
   </div>
 </div>

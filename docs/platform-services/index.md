@@ -2,12 +2,11 @@
 slug: /platform-services
 title: Platform Services
 description: Learn about services available to all Sumo Logic applications.
-tags: [platform service]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Platform services are services that are available to use across the entire Sumo Logic platform. 
+Platform services are services that are available to use across the entire Sumo Logic platform.
 
 <div className="box-wrapper">
 <div className="box smallbox card">

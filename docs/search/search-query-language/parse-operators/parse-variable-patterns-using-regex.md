@@ -25,7 +25,7 @@ You can use the alternate term `extract`:
 ## Options
 
 * `field=<field_name>`. This option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
-* `nodrop`. This option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md).
+* `nodrop`. This option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md).
 * `multi`. This option allows you to parse multiple values *within* a single log message.
 
 :::note
@@ -35,13 +35,13 @@ You can use the alternate term `extract`:
 ## Rules
 
 * Regex must be a valid JAVA or RE2 regular expression enclosed within quotes.
-* Matching is case sensitive. If any of the text segments can't be matched, then none of the variables will be assigned.
+* Matching is case sensitive. If any of the text segments cannot be matched, then none of the variables will be assigned.
 * If no **field** is specified, then the entire text of incoming messages is used.
 * Multiple parse expressions are processed in the order they are specified. Each expression always starts matching from the beginning of the message string.
 * Multiple parse expressions can be written with shorthand using comma-separated terms.
 * Can be used with the [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) operator.
 * Nesting named capture groups is not supported.
-* The parse regex operator only supports regular expressions that contain at least one named capturing group. We don't support regular expressions that either don't have any capturing groups or contain unnamed/numbered capturing group. See [Named Capturing Groups](https://www.regular-expressions.info/named.html) for further details.
+* The parse regex operator only supports regular expressions that contain at least one named capturing group. We do not support regular expressions that either do not have any capturing groups or contain unnamed/numbered capturing group. See [Named Capturing Groups](https://www.regular-expressions.info/named.html) for further details.
 
 You can convert your normal regular expressions into named capturing groups with the following steps:  
 
@@ -132,7 +132,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-![ParseRegexMulti.png](/img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png)
+![Screenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group.](/img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png)
 
 ### Case insensitive parse regex
 

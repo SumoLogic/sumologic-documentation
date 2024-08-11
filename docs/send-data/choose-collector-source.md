@@ -10,6 +10,12 @@ import Iframe from 'react-iframe';
 
 To send your data to Sumo Logic, you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
 
+:::info
+You cannot delete the individual log lines once they are ingested and stored in the service. Hosted services are designed to protect logs from being changed because they are supposed to be immutable. However, data sets for a specific time range within a data partition can be deleted. If you need surgical removal of log lines from view, you can use the keyword searches as [Role Filters](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
+
+An administrator can set up a role filter, but other administrators in the your environment with the appropriate rights can reverse it. Alternatively, the Sumo Logic engineering team can implement a role filter that is invisible and unchangeable by any users, including admins.
+:::
+
 ## Sumo Logic Collectors
 
 ### OpenTelemetry Distribution (Installed Agent)
@@ -139,7 +145,7 @@ The following table shows the comparison between the Installed Collector and Ope
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) do not require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 

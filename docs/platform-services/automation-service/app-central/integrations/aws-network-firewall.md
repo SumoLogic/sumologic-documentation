@@ -1,7 +1,6 @@
 ---
 title: AWS Network Firewall
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

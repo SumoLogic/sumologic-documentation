@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex | Professional, Enterprise |
 | Cloud Flex Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab of the **Administration** > **Accounts** page. The options are at the top of the page under the details icon.
+This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
 
 For Cloud Flex Credits:
 
@@ -29,7 +29,7 @@ For Cloud Flex:
 
 ## Change organization name
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
 1. Access the appropriate menu for your [account type](#availability):
      * Cloud Flex Credits: From the kebab menu at the top, select **Change Organization Name**.
      * Cloud Flex: At the top, select **Manage Organization > Change Organization Name**.
@@ -42,7 +42,7 @@ For Cloud Flex:
 After you make this change, you will not be able to edit the account owner.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 1. Access the appropriate menu for your [account type](#availability):
      * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Owner**.
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
@@ -50,7 +50,7 @@ After you make this change, you will not be able to edit the account owner.
 1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" width="450"/>
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ## Delete an organization
@@ -59,7 +59,7 @@ If the account owner leaves your organization and you cannot transfer the accoun
 You can only delete an organization for Free and Trial accounts.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 1. From the details icon at the top, click **Delete Org.**
 1. In the prompt dialog, enter **DELETE** in the text field to confirm the action.
 1. Click **Delete**. <br/><img src={useBaseUrl('img/subscriptions/Delete_Organization_prompt.png')} alt="Delete_Organization_prompt.png" width="450"/>
@@ -103,7 +103,8 @@ Before changing your account subdomain, consider the following:  
 You must be the account owner of the Sumo Logic account to change the account subdomain.
 :::
 
-1. Go to **Administration** > **Account** and select the details icon at the top.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
+1. Select the details icon at the top.
 1. Access the appropriate menu for your [account type](#availability):
      * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Subdomain**.
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.

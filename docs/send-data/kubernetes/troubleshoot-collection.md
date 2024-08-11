@@ -30,7 +30,7 @@ Sumo Logic apps for Kubernetes and Explore require the below listed fields to be
 
 This is normally done in the setup job when `sumologic.setupEnabled` is set to `true` (default behavior).
 
-In the unlikely scenario that this fails, you can create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
+In the unlikely scenario that this fails, you can create them manually by visiting [Fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
 
 This is to ensure your logs are tagged with relevant metadata.
 
@@ -93,6 +93,43 @@ Get the logs from that pod:
 ```sh
 kubectl logs POD_NAME -f
 ```
+
+### Error: values don't meet the specifications of the schema(s)
+
+If you see `Error: values don't meet the specifications of the schema(s) in the following chart(s): opentelemetry-operator...` from the logs, it means that your configuration for `opentelemetry-operator` keys in values.yaml file is not correct.
+
+To fix this issue, please see the changes listed below:
+
+#### Moved:
+* From `opentelemetry-operator.instrumentationJobImage` to `instrumentation.instrumentationJobImage`
+* From `opentelemetry-operator.createDefaultInstrumentation` to `instrumentation.createDefaultInstrumentation`
+* From `opentelemetry-operator.instrumentationNamespaces` to `instrumentation.instrumentationNamespaces`
+* From `opentelemetry-operator.instrumentation.dotnet.traces` to `instrumentation.dotnet.traces`
+* From `opentelemetry-operator.instrumentation.dotnet.metrics` to `instrumentation.dotnet.metrics`
+* From `opentelemetry-operator.instrumentation.dotnet.extraEnvVars` to `instrumentation.dotnet.extraEnvVars`
+* From `opentelemetry-operator.instrumentation.java.traces` to `instrumentation.java.traces`
+* From `opentelemetry-operator.instrumentation.java.metrics` to `instrumentation.java.metrics`
+* From `opentelemetry-operator.instrumentation.java.extraEnvVars` to `instrumentation.java.extraEnvVars`
+* From `opentelemetry-operator.instrumentation.nodejs` to `instrumentation.nodejs`
+* From `opentelemetry-operator.instrumentation.python.traces` to `instrumentation.python.traces`
+* From `opentelemetry-operator.instrumentation.python.metrics` to `instrumentation.python.metrics`
+* From `opentelemetry-operator.instrumentation.python.extraEnvVars` to `instrumentation.python.extraEnvVars`
+
+#### Changed:
+* From `opentelemetry-operator.instrumentation.dotnet.repository` to `opentelemetry-operator.autoInstrumentationImage.dotnet.repository`
+* From `opentelemetry-operator.instrumentation.dotnet.tag` to `opentelemetry-operator.autoInstrumentationImage.dotnet.tag`
+* From `opentelemetry-operator.instrumentation.java.repository` to `opentelemetry-operator.autoInstrumentationImage.java.repository`
+* From `opentelemetry-operator.instrumentation.java.tag` to `opentelemetry-operator.autoInstrumentationImage.java.tag`
+* From `opentelemetry-operator.instrumentation.nodejs.repository` to `opentelemetry-operator.autoInstrumentationImage.nodejs.repository`
+* From `opentelemetry-operator.instrumentation.nodejs.tag` to `opentelemetry-operator.autoInstrumentationImage.nodejs.tag`
+* From `opentelemetry-operator.instrumentation.python.repository` to `opentelemetry-operator.autoInstrumentationImage.python.repository`
+* From `opentelemetry-operator.instrumentation.python.tag` to `opentelemetry-operator.autoInstrumentationImage.python.tag`
+
+#### Deleted:
+* `opentelemetry-operator.instrumentation.dotnet.image`
+* `opentelemetry-operator.instrumentation.java.image`
+* `opentelemetry-operator.instrumentation.nodejs.image`
+* `opentelemetry-operator.instrumentation.python.image`
 
 ## Namespace configuration
 
@@ -359,7 +396,7 @@ Then, in your browser, go to `localhost:8080`. You should be in the Prometheus U
 
 From here you can start typing the expected name of a metric to see if Prometheus auto-completes the entry.
 
-If you can't find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section `Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
+If you cannot find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section `Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
 
 Next, you can check if Prometheus is successfully scraping the `/metrics` endpoints. In the top menu, navigate to section `Status > Targets` or go to the `http://localhost:8080/targets`. Check if any targets are down or have errors.
 
@@ -986,7 +1023,7 @@ Add the following configuration to your `user-values.yaml`:
 debug:
   sumologicMock:
     enabled: true
-  enableLocalMode: tru
+  enableLocalMode: true
 ```
 
 And then, you can see throughput in the Sumo Logic Mock logs:

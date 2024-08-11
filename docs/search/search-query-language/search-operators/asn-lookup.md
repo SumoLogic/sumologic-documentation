@@ -4,7 +4,7 @@ title: ASN Lookup Search Operator
 sidebar_label: ASN lookup
 ---
 
-Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that don't have an ASN will return null values.
+Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.
 
 ## Syntax
 

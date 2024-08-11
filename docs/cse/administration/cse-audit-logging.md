@@ -7,29 +7,20 @@ description: Learn how to search the Audit Event Index for Cloud SIEM log events
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Audit Event Index provides event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index is enabled for Cloud SIEM and Enterprise accounts. 
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) and [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) provide event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index and System Event Index are enabled for Cloud SIEM and Enterprise accounts.
 
 :::note
 This page describes functionality that is available to users whose Cloud SIEM URL ends in `sumologic.com`.
 :::
 
-## Where to find the documentation  
+## Where to find documentation  
 
-The audit logging documentation is hosted on each Sumo Logic deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. If you're not sure what what your deployment is, see how to determine which endpoint to use.
+To learn more, see [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
 
-Select the documentation link for your deployment:
 
-| Deployment | Location      | Documentation URL                                   |
-|:------------|:---------------|:-----------------------------------------------------|
-| AU         | Australia     |https://service.au.sumologic.com/audit/docs/sec  |
-| JP         | Japan         |https://service.jp.sumologic.com/audit/docs/sec  |
-| IN         | India         |https://service.in.sumologic.com/audit/docs/sec  |
-| US1        | United States |https://service.sumologic.com/audit/docs/sec     |
-| US2        | United States |https://service.us2.sumologic.com/audit/docs/sec |
+## Scoping your search
 
-## Scoping your Audit Index search
-
-This section explains how to scope a search of the Audit Event Index to return Cloud SIEM events.
+This section explains how to scope a search of the Audit Event Index and System Event Index to return Cloud SIEM events.
 
 ## Limit search to user or system events
 
@@ -59,6 +50,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Action](/docs/cse/administration/create-cse-actions) | `cseAction` |
 | [Aggregation Rule](/docs/cse/rules/write-aggregation-rule) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them.) | `cseConfiguration` |
+| [Automation](/docs/cse/automation/) | `cseAutomation` |
 | [Chain Rule](/docs/cse/rules/write-chain-rule) | `cseRule` |
 | [Cloud SOAR Incident](/docs/cloud-soar/incidents-triage) | `cseCloudSoar` |
 | [Context Action](/docs/cse/administration/create-cse-context-actions)  | `cseContextAction` |
@@ -67,21 +59,30 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Custom Match List Column](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](/docs/cse/administration/create-a-custom-tag-schema) | `cseCustomTagSchema` |
 | [Customer Sourced Entity Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table) | `cseCustomerSourcedEntityLookupTable` |
+| [Enrichment](/docs/cse/integrations/enrichments-and-indicators/) | `cseEnrichment` |
 | [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)  | `cseEntity` |
 | [Entity Criticality Config](/docs/cse/records-signals-entities-insights/entity-criticality) | `cseEntityCriticalityConfig` |
 | [Entity Domain Configuration](/docs/cse/schema/username-and-hostname-normalization)  | `cseEntityNormalization` |
+| [Entity Group Configuration](/docs/cse/records-signals-entities-insights/create-an-entity-group/) | `cseEntityGroupConfiguration` |
+| Entity Note | `cseEntityNote` |
 | Favorite Field | `cseFavoriteField` |
+| [First Seen Rule](/docs/cse/rules/write-first-seen-rule/) | `cseRule` |
 | [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui) | `cseInsight` |
+| Insight Comment | `cseInsightComment` |
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
 | [Log Mapping](/docs/cse/schema/create-structured-log-mapping)  | `cseLogMapping` |
 | [Match List](/docs/cse/match-lists-suppressed-lists/create-match-list) | `cseMatchList` |
 | [Match Rule](/docs/cse/rules/write-match-rule) | `cseRule` |
+| [MITRE ATT&CK Coverage](/docs/cse/administration/mitre-coverage) | `cseMitreAttackCoverage` |
 | [Network Block](/docs/cse/administration/create-use-network-blocks) | `cseNetworkBlock` |
+| [Outlier Rule](/docs/cse/rules/write-outlier-rule/) | `cseRule` |
+| [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions/) | `cseRuleTuningExpression` |
 | Streaming Export Configuration  | `cseStreamingExportConfiguration` |
 | [Sumo Mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping)  | `cseSumoMapping` |
 | [Suppressed List](/docs/cse/match-lists-suppressed-lists)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
-| [Threat Intel Sources](/docs/cse/administration/create-custom-threat-intel-source)<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
+| [Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source)<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
+| Threat Intel Source Poll | `cseThreatIntelSource`  |
 | [Threshold Rule](/docs/cse/rules/write-threshold-rule) | `cseRule` |
 | Virus Total Configuration | `cseConfiguration` |
 | [Yara Rule](/docs/cse/rules/import-yara-rules) | `cseYara` |
@@ -112,12 +113,11 @@ area and provide details of the event.
 | `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
-## Search the Audit Event Index 
+## Search for Cloud SIEM events 
 
-To search the Audit Event Index for logs that describe Cloud SIEM events:
+To search the Audit Event Index or System Event Index for logs that describe Cloud SIEM events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
-   <img src={useBaseUrl('img/cse/new-log-search.png')} alt="new-log-search.png" />
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  
     ```sql
     _index=sumologic_system_events
@@ -129,10 +129,10 @@ To search the Audit Event Index for logs that describe Cloud SIEM events:
 
 ## Example event log
 
-Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" />
+Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="Example event log" style={{border: '1px solid gray'}} width="600" />
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
    
  

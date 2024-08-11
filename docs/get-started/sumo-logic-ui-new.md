@@ -27,9 +27,9 @@ import Iframe from 'react-iframe';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-This page provides an overview of Sumo Logic **New UI**, currently in beta (slated for general availability in late 2024).
+This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
 
-<Iframe url="https://www.youtube.com/embed/shtEqnPL-sc?si=sR26VYLt9NnqqghL?rel=0"
+<Iframe url="https://www.youtube.com/embed/0F57XGXChfM?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -40,28 +40,40 @@ This page provides an overview of Sumo Logic **New UI**, currently in beta (slat
         allowfullscreen
         />
 
+
+## Benefits
+
+With the New UI, you can expect:
+
+* Unified experience across Operational and Security analytics products.
+* Accelerated performance, reduced load time, and enhanced caching.
+* Stateful URLs to preserve page states upon re-login.
+* Use-case-based navigation for streamlined feature discovery.
+
+[Learn more](/release-notes-service/2024/02/23/ui/)
+
 ## Prerequisites
 
-You'll need request access by contacting your Sumo Logic sales representative.
+As this is a Closed Beta, you'll need to obtain access by contacting your Sumo Logic sales representative.
 
 ## Getting to the New UI
 
-Once you're logged in to Sumo Logic, go to the left navigation panel and click **Switch to New UI**.
+Once you're logged in to Sumo Logic, go to the left navigation (nav) panel and click **Switch to New UI**.
 
 <img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
 
-## Using the left navigation panel
-
-From the left-side navigation (nav) panel, you can access your dashboards library as well as our main functions and features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM Enterprise, and Cloud SOAR.
-
-### Home
+## Home
 
 When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab, which provides an at-a-glance view of the following:
 
 * Recently Opened Dashboards
 * Recently Run Searches
 * Recommended Dashboards 
-* Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
+* Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" style={{border: '1px solid gray'}} width="800" />
+
+## Using the left navigation panel
+
+In the left nav panel, you can access all of our features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM, and more. You'll also find your dashboards library here.
 
 ### Access dashboards and searches
 
@@ -70,25 +82,46 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 * Your **Library**, which contains:
    * Your **Personal** dashboards and searches.
    * Your own **Installed Apps** from the App Catalog.
-   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" width="500"/>
-* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
-* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
-
-Use the **Library** search bar to find the above quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" width="550"/>
-
-If you're an admin, you can view the Library in [Content Administrator](#content-administrator-library) mode.
+   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" style={{border: '1px solid gray'}} width="400"/> <br/>Click **Open library page** to use the **Library** search bar to find items quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" style={{border: '1px solid gray'}} width="700"/> <br/>If you're an admin, you can view the Library in [Content Administrator](#content-administrator-library) mode.
+* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="400"/>
+* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" style={{border: '1px solid gray'}} width="400"/>
 
 :::tip
-Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
+Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="300"/>
 :::
 
 ## Using the top navigation bar
 
-### Access Apps, Admin settings
+### Access settings
 
-The global toolbar (top nav bar) provides you access to (from left to right): [Help](help.md), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
+The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-all-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
 
-<img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
+<img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="350"/>
+
+#### Go To... menu options
+
+The **Go To...** button in the top menu lets you quickly access any menu. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
+
+### Configuration
+
+With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="300"/>
+
+* **Collection**. [Collection](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Source Template](/docs/send-data), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets/), [Health Events](/docs/manage/health-events/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](/docs/manage/data-archiving/).
+* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Partitions](/docs/manage/partitions/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
+* **Metrics**. [Metrics Rules](/docs/metrics/metric-rules-editor/), [Logs-to-Metrics](/docs/metrics/logs-to-metrics/), [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
+* **Monitoring**. [Connections](/docs/alerts/webhook-connections).
+
+### Administration
+
+With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="Administration icon" width="300"/>
+
+* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
+* **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
+* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Policies](/docs/manage/security/audit-indexes/audit-index), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), [SAML](/docs/manage/security/saml).
+
+#### Content Administrator Library
+
+The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
 
 ### Manage your personal account preferences
 
@@ -96,13 +129,31 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo account preferences:
 
-1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="350"/>
+1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
+
+## Customize your environment with tabs
+
+If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
+
+<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
+
+This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
+
+<!--
+
+## Become a Sumo Logic Pro user
+
+Now that you're familiar with the layout and features in the Sumo Logic UI, you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
+
+You do not have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/training-certification-faq) for more information.
+
+-->
 
 <!--
 This section is on hold pending finalization of UI.
@@ -148,7 +199,7 @@ To add a dashboard to your Favorites:
 To add a log search to your Favorites:
 1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**. Then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
 1. Click **Save**.
-1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="img/get-started/favorite-saved-search.png" width="200"/>
+1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
 
 ### Share a dashboard, search, or folder
 
@@ -163,7 +214,7 @@ For walkthrough instructions, go to the [Share Content](/docs/manage/content-sh
 
 To see dashboards, searches, and folders that have been shared with you, do the following:
 
-1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="img/get-started/recent.png" width="400"/>
+1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="recent.png" width="400"/>
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/> ![Dash3.png](/img/get-started/Dash3.png)
 
 ### Pin and manage searches
@@ -191,53 +242,14 @@ You'll need Sumo Logic Administrator role privileges to perform most of these t
 
 -->
 
-### Configuration
-
-With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="400"/>
-
-* **Collection**. [Collection](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Source Template](/docs/send-data), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](/docs/manage/data-archiving/).
-* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Partitions](/docs/manage/partitions-data-tiers/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
-* **Metrics**. [Metrics Rules](/docs/metrics/metric-rules-editor/), [Logs-to-Metrics](/docs/metrics/logs-to-metrics/), [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
-* **Monitoring**. [Connections](/docs/alerts/webhook-connections).
-
-### Administration
-
-With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
-
-* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
-* **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
-* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Policies](/docs/manage/security/audit-indexes/audit-index), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), [SAML](/docs/manage/security/saml).
-
-#### Content Administrator Library
-
-The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
-
-## Customize your environment with tabs
-
-If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
-
-<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
-
-This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
-
-<!--
-
-## Become a Sumo Logic Pro user
-
-Now that you're familiar with the layout and features in the Sumo Logic UI, you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
-
-You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
-
--->
-
 ## FAQ
 
 This guide offers responses to frequently asked questions regarding the Sumo Logic UI redesign project, which involves transitioning from the current Classic UI to the upcoming New UI.
 
 <details>
-<summary><strong>Q:</strong> What's being launched?</summary>
+<summary><strong>Q:</strong> What is being launched?</summary>
 
-We are excited to introduce the Sumo Logic Unified Experience, also known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
+We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
 </details>
 
 
@@ -246,26 +258,25 @@ We are excited to introduce the Sumo Logic Unified Experience, also known as Pro
 
 The disparate user interface and varying navigation patterns among Log Analytics, Cloud SIEM, and Cloud SOAR have made it challenging for users to effectively utilize these tools together for monitoring and troubleshooting.
 
-The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Explore, Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
+The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
 
 In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The **New UI** navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
 </details>
 
 
 <details>
-<summary><strong>Q:</strong> What changes have been implemented and how do they enhance my Sumo experience?</summary>
+<summary><strong>Q:</strong> What changes have been implemented that enhance my Sumo experience?</summary>
 
 * **Unified Navigation**. You'll now notice a uniform navigation system across Log Analytics, Cloud SIEM, and Cloud SOAR products, ensuring a consistent experience for Sumo Logic users engaged in both observability and security use cases.
-* **Improved Product Discoverability**. The left navigation bar now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
+* **Improved Product Discoverability**. The left nav panel now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
 * **Enhanced Browsing Experience and Accelerated Performance**. In-app tabs will be replaced with native browser tabs, significantly improving _First Contentful Paint_ (FCP) and _Time to Interactive_ (TTI) metrics. With this change, you'll experience faster page load times and ability to organize tabs the way you are used to with other applications.
 * **Stateful URLs**. Most of the page URLs will now be stateful, allowing you to easily share content with your team members. Any changes made in the UI will be reflected in the URL parameters, making it simple for you to copy and share URLs. Additionally, this feature enables users to navigate back to previous states effortlessly by using the browser.
 </details>
 
-
 <details>
-<summary><strong>Q:</strong> I have some concerns regarding unfamiliar experiences and potential issues arising from them. How is Sumo Logic addressing these concerns to ensure a seamless transition?</summary>
+<summary><strong>Q:</strong> What if I encounter issues due to unfamiliar UI experiences?</summary>
 
-Understanding the challenges that come with change, we are confident that the **New UI** will offer our customers a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a smooth transition, we have taken the following steps:
+Understanding the challenges that come with change, we are confident that the **New UI** will offer you a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a seamless transition, we have taken the following steps:
 
 * **Dogfooding**. We at Sumo Logic are the biggest customer of our own platform. Through extensive dogfooding, we've gained a deep understanding of workflows and addressed any issues that arose.
 * **Beta Testing**. We're conducting extensive beta testing with a large group of our customers. This allows us to gather feedback and address any pain points that may have been overlooked. If you'd like to participate, reach out to your Sumo Logic account executive.
@@ -274,18 +285,22 @@ Understanding the challenges that come with change, we are confident that the **
 
 
 <details>
-<summary><strong>Q:</strong> I like that all Sumo Logic tabs are grouped together in one browser tab. With this change, will I have an excessive amount of Sumo Logic tabs in my browser?</summary>
+<summary><strong>Q:</strong> With all Sumo Logic tabs being grouped together in one browser tab, how can I prevent an excessive amount of tabs in my browser? </summary>
 
-We're aware that the removal of in-app tabs may be the most significant change in our user workflow. We've received feedback from users, both positive and negative, regarding our tabs. While some users appreciate the convenience of having all the tabs within the app, others have questioned why we're trying to reinvent the tabs.
+We understand that the removal of in-app tabs in the New UI is a significant change in our user workflow, eliciting mixed feedback. While some users appreciate the convenience of consolidated tabs within the app, others question the need for this change. Addressing performance concerns, consolidating tabs aims to reduce browser clutter, albeit potentially complicating session management. For users who prefer centralized Sumo Logic tabs, we recommend utilizing [tab grouping functionality](#customize-your-environment-withtabs) for a seamless experience.
 
-Having in-app tabs has caused performance issues, which has been a complaint about the Sumo Logic UI. On one hand, consolidating all the tabs together reduces the number of browser tabs, but on the other hand, it can make it difficult to manage multiple sessions.
+| Classic UI | New UI |
+|:---|:---|
+| In-house tabs solution. Always trying to keep up with browser tab improvements. | Utilizes browser’s native tab capability like tab grouping and coloring. |
+| User needs to learn new way of organizing tabs. Managing multiple Sumo instances is difficult. | User utilizes what they already know. Managing multiple Sumo instances is easier. |
+| Performance degrades over long usage because user is using one browser tab. | Memory usage is distributed over different tabs. |
+| Tab switches reload the tab. | Tab switches won’t reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
 
-If you prefer having all Sumo Logic tabs in one place - without getting mixed with other browser tabs - we suggest utilizing the [tab grouping functionality](#customize-your-environment-withtabs) offered by most browsers. By adding your Sumo Logic tab to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. You can also collapse the tab group to reclaim valuable real estate in the browser's tab bar.
 </details>
 
 
 <details>
-<summary><strong>Q:</strong> Will the New UI continue the functionality of remembering the tabs I had opened in my previous session, similar to the Classic UI?</summary>
+<summary><strong>Q:</strong> Will the New UI retain the Classic UI feature of remembering previously opened tabs from my previous session?</summary>
 
 After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the **New UI** experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
@@ -311,16 +326,7 @@ You have the flexibility to opt out whenever you choose. Just go to left navigat
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
 
-If you enter the **New UI** URL in your browser, it will still direct you to the **New UI**. We have implemented a translation from the **Classic UI** to the **New UI**, but not the other way around.
 </details>
-
-
-<details>
-<summary><strong>Q:</strong> When is Sumo Logic planning to remove access to the Classic UI?</summary>
-
-Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
-</details>
-
 
 <details>
 <summary><strong>Q:</strong> Will there be any limitations on capabilities during the beta phase?</summary>
@@ -334,6 +340,12 @@ Additionally, there are a few functionalities that are still in the process of b
 * **Rich Tooltip in Navigation**. Similar to the Classic UI, future releases of the New UI will include rich tooltips when hovering over navigation content items, providing details such as owner and data access level.
 * **URL Parameters**. URL parameters have been added to most pages to maintain page state. Currently, queries in the URL are plain text. We are working on compressing and encoding them. If your query exceeds ~10000 characters, you may encounter a "URI Too Large" error. In such cases, we recommend switching back to the old UI.
 * **Content Admin Mode**. Recents and favorites will not load in content admin mode. We are actively enhancing the user experience for recents and favorites in this mode.
+</details>
+
+<details>
+<summary><strong>Q:</strong> When will Sumo Logic remove access to the Classic UI?</summary>
+
+Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
 </details>
 
 ## Get support

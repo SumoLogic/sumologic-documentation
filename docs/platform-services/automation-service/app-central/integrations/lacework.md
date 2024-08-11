@@ -1,14 +1,13 @@
 ---
 title: Lacework
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lacework.png')} alt="lacework" width="100"/>
 
-***Version: 1.4  
-Updated: Jan 26, 2024***
+***Version: 1.5  
+Updated: May 2, 2024***
 
 Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP with a comprehensive view of risks across cloud workloads and containers.
 
@@ -16,6 +15,7 @@ Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP w
 
 * **Close Alert** *(Containment)* - Change the status of an alert to closed.
 * **Cloud Activities** *(Enrichment)* - List the cloud activities for the integrated AWS cloud accounts in your Lacework instance.
+* **Execute Query** *(Enrichment)* - Execute a query in Lacework.
 * **Get Alert Details** *(Enrichment)* - Get details about an alert.
 * **List All Report Rules** *(Enrichment)* - List all the report rules in the Lacework instance.
 * **Search Alerts** *(Enrichment)* - Search alerts with filter options.
@@ -39,3 +39,5 @@ Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP w
 * January 26, 2024 (v1.4)
     + Added 2 new actions: Get Alert Details, Search Alerts
     + Fixed endpoint in Close Alert action
+* May 2, 2024 (v1.5)
+    + New action: Execute Query

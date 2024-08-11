@@ -84,7 +84,7 @@ type you select. A field whose name does not match a Cloud SIEM attribute will n
 
     ![options.png](/img/alerts/options.png)
 
-1. **Timezone for scheduled search**. Select the time zone you would like your scheduled search to use. The schedule's time is based on this time zone. This time zone is not related to the time zone of your data. If you don't make a selection, the scheduled search will use the time zone from your browser, which is the default selection
+1. **Timezone for scheduled search**. Select the time zone you would like your scheduled search to use. The schedule's time is based on this time zone. This time zone is not related to the time zone of your data. If you do not make a selection, the scheduled search will use the time zone from your browser, which is the default selection
 1. **Send notification**. Select **If the following condition is met**, and enter an alert condition and the number of results that should trigger the alert.
 1. **Alert Type**. Select Cloud SIEM Signal.
 1. The popup refreshes.

@@ -23,7 +23,7 @@ Sumo Logic analyzes the following required VMware Carbon Black events for more e
 * VMware Carbon Black EDR Events
 * VMware Carbon Black Endpoint Standard Events
 
-Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black#Collect-logs-for-VMware-Carbon-Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
+Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](#collect-logs-for-vmware-carbon-black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
 
 
 ## Collect Logs for VMware Carbon Black

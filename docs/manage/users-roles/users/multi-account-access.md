@@ -4,6 +4,7 @@ title: Multi-Account Access
 description: Multi-account Access allows you to log into multiple Sumo Logic accounts using one username (email address) and password.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
 Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings.md).
@@ -41,7 +42,7 @@ When an admin invites a new user to a Sumo Logic organization for the first time
 
 If that admin invites the same user to a second organization, the user will receive an email that includes their username, and directs them to use their existing (multi-account) password, as shown.
 
-![Multi account email](/img/users-roles/welcome.png)
+<img src={useBaseUrl('img/users-roles/welcome.png')} alt="Welcome message" style={{border: '1px solid gray'}} width="400" />
 
 ## Multi-account and SAML
 
@@ -55,7 +56,12 @@ As an administrator using SAML, if you have users that need to view and switch t
 
 Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
 
-There you can set the following account settings in **Administration > Security > Password Policy**:
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
+ Kanso-->
+
+In the Password Policy page, you can set the following account settings:
 
 * **Passwords expire in** (days)
 * **Password reuse after** (number of unique passwords you must use before you can reuse an old password)

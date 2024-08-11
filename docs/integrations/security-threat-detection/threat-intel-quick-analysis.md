@@ -130,7 +130,7 @@ Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time usi
 Yes, you can search any log data that is still retained and searchable using the Sumo Logic Platform. However, we suggest customers break up historical searches into smaller and more manageable chunks based on time range and/or source category for performance reasons.
 
 
-#### If I don't see any results in any Dashboard, is that a bad thing?
+#### If I do not see any results in any Dashboard, is that a bad thing?
 
 No. No results in your Dashboards can mean that nothing has been identified by CrowdStrike as a threat, verified or unverified.
 
@@ -639,7 +639,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
-* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#02_Threat-Intel-Optimization) and [FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) on working with the Threat Intel database.
+* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#02_Threat-Intel-Optimization) and [FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) on working with the Threat Intel database.
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
 * **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
 * **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  

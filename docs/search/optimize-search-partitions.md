@@ -6,7 +6,7 @@ sidebar_label: Optimize Search with Partitions
 
 ## What is a Partition?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
@@ -66,9 +66,13 @@ The following example shows the routing expression for the three custom Partitio
 
 ![routing-expression.png](/img/search/optimize/routing-expression.png)
 
-Here are simple steps to create the Dev Partition:
-
-![dev-partition](/img/search/optimize/dev-partition.gif)
+Here are simple steps to [create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition/) named Dev:
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> 
+1. Click **Add Partition**.
+1. In the **Name** field, enter `Dev`.
+1. In the **Routing Expression** field enter `_sourceCategory=Dev`.
+1. Select **Apply the retention period of sumologic_default**.
+1. Click **Save**.
 
 ## How can my team use Partitions?
 
@@ -76,9 +80,6 @@ Once created, Partitions can be used by anyone in your account, helping you redu
 
 ![reduce scope](/img/search/optimize/reduce-scope.png)
 
-Here's an example of a search using the Prod Partition to narrow the search scope:
-
-![prod partition](/img/search/optimize/prod-partition.gif)
 
 ## Best Practices when using Partitions
 
@@ -116,4 +117,4 @@ In the example above, we used prod/QA/Dev environment, as you will most often be
 
 ## More information
 
-See [Manage Partitions](/docs/manage/partitions-data-tiers).
+See [Manage Partitions](/docs/manage/partitions).

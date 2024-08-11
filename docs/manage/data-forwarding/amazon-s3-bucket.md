@@ -12,7 +12,7 @@ This topic has instructions for forwarding data from Sumo Logic to an S3 bucket.
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
-You can forward log data from a [Partition](/docs/manage/partitions-data-tiers) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
+You can forward log data from a [Partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
 
 After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
@@ -65,6 +65,8 @@ These file objects will contain the messages received as well as the system met
 
 ### Example
 
+When forwarding data from Sumo Logic, the system will write structured logs that include the original message being forwarded, as well as additional metadata and quotation marks as seen in a structured JSON file.
+
 **Metadata fields**
 
 `messageId,sourceName,sourceHost,sourceCategory,messageTime,receiptTime,sourceId,collectorId,count,format,view,encoding,message,aggregatefield1,aggregatefield2`
@@ -89,7 +91,7 @@ Where:
 
 ## Configure an S3 data forwarding destination
 
-1. In Sumo Logic, select **Manage Data** > **Logs** > **Data Forwarding**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso-->
 1. Click **+ Destination** to add a new destination.
 1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="create-S3-destination.png" width="450"/>
 1. **Destination Name**. Enter a name to identify the destination.
@@ -116,7 +118,9 @@ This section has instructions for enabling data forwarding for an existing Parti
 You can also enable Data Forwarding when you first create a Partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
 :::
 
-1. In Sumo Logic, go to **Manage Data** > **Logs** > **Partitions**, or **Manage Data** > **Logs** > **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
+1. Depending on whether you want to forward data from a Partition or a Scheduled View:
+    * Partition: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+    * Scheduled View: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso-->
 1. Click on the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="enable-option.png" width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specifiy-destination.png')} alt="specify-destination.png'" width="450"/>

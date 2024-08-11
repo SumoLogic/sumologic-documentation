@@ -4,7 +4,7 @@ title: join Search Operator
 sidebar_label: join
 ---
 
-The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
+The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The `join` operator in Sumo Logic works much like an [inner SQL join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join).
 
 ## Syntax
 
@@ -56,7 +56,7 @@ on t1.a = t2.c
     `The number of output messages exceeds 10,000,000. Please refine your search or shorten the time range to reduce the number of output messages.`
 
 * Only conjunctive conditions (AND) are allowed. Using NOT or OR conditions is not supported.
-* [Real Time Alerts](/docs/alerts/scheduled-searches/create-real-time-alert.md) don't support the join operator.
+* [Real Time Alerts](/docs/alerts/scheduled-searches/create-real-time-alert.md) do not support the join operator.
 * The join operator uses sliding windows to store candidates for joins in order to prevent unbounded memory usage when joining between two large relations. Because of this, the result of the join could be incomplete and inconsistent from run-to-run.
 * The following conditions are not currently supported in the ON clause:
 
@@ -180,9 +180,17 @@ on t1.taskId = t2.taskId
 | fields t1_taskId, t1_delay, delay_diff, t2_duration
 ```
 
-Produces results in the **Aggregate** tab like:
+Produces results like this in the Log Search **Aggregates** tab:
 
-![NewAggregation.png](/img/search/searchquerylanguage/search-operators/NewAggregation.png)
+| #  | t1_taskid          | t1_delay | delay_diff | t2_duration |
+|:----|:--------------------|:----------|:------------|:-------------|
+| 1  | 000000000009AD10A  | 54658    | 5          | 5           |
+| 2  | 000000000009AD109  | 54152    | 506        | 5           |
+| 3  | 000000000009AC152  | 54049    | 103        | 8           |
+| 4  | 000000000009ABE49  | 53503    | 546        | 5           |
+| 5  | 000000000009ABE48  | 53105    | 398        | 5           |
+| 6  | 000000000009ABE47  | 52925    | 180        | 5           |
+
 
 ### Operate on fields after the ON clause
 

@@ -27,7 +27,7 @@ The `{AppName}` App uses...
 
 \Enter a list of log types, usually hyperlinked to vendor docs.\
 
-## Sample Log and Metrics messages
+## Sample log and metrics messages
 
 ### Log message
 
@@ -61,7 +61,7 @@ The `{AppName}` App uses...
 
 ## Collection configuration and app installation
 
-\This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#Collection_process_for_GCP_services).\
+\This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#collection-process-for-gcp-services).\
 
 ### Step 1.
 

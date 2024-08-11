@@ -36,7 +36,7 @@ You can also customize the prefix for a query by specifying an alias. See the [A
 
 Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the menu.
 
-<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="img/search/timecompare/time-compare-UI-option-aug-24-2021.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="Time Compare button" width="400"/>
 
 The comparison results appear in a new column titled with the timeshift.
 
@@ -46,7 +46,7 @@ The comparison results appear in a new column titled with the timeshift.
 
 To create a custom Time Compare, select **Custom** from the menu, then make your selections in the Custom Time Compare query builder dialog.
 
-You can retrieve time-shifted data up to the last 40 days. We don't support going back further in time.
+You can retrieve time-shifted data up to the last 40 days. We do not support going back further in time.
 
 <img src={useBaseUrl('img/search/timecompare/CustomTimeCompare.png')} alt="CustomTimeCompare.png" width="400"/>
 
@@ -73,7 +73,7 @@ Do not alias `timeslice`, as we will use the `compare` operator.
 
 Then, from the **Time Compare** button, select **Custom**, and set the **Custom Time Compare** dialog settings to:
 
-<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="img/search/timecompare/7TimePeriod.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="Custom Time Compare dialog settings" width="400"/>
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
@@ -85,12 +85,12 @@ For more compare operator examples, see [Examples](./time-compare.md).
 
 The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
 
-* `compare` is used for aggregated numeric data (such as, for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
+* `compare` is used for aggregated numeric data (such as: for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
 * `logcompare` is used for log signature counts (used right after the first pipe).
 
 ## Compare Operator
 
-The `compare` operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](/docs/search/search-query-language/group-aggregate-operators). It will also work with `outlier`, `timeslice`, and `transpose`. If you want to use compare with timeslice, don't alias timeslice.
+The `compare` operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](/docs/search/search-query-language/group-aggregate-operators). It will also work with `outlier`, `timeslice`, and `transpose`. If you want to use compare with timeslice, do not alias timeslice.
 
 ### Syntax
 
@@ -194,11 +194,11 @@ For example:
 ### Rules
 
 * The `compare` operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
-* If you want to use `timeslice` with `compare`, don't alias `timeslice`.
+* If you want to use `timeslice` with `compare`, do not alias `timeslice`.
 
 ### Limitations
 
-* Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
+* Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
     ```sql
     ... | compare timeshift 1d 14

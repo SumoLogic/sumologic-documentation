@@ -36,7 +36,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 ### UI Installation
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -48,7 +48,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 #### 1. Get the Installation token
 
-Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
+Get your [installation token](/docs/manage/security/installation-tokens) if you do not have it already and assign it to an environment variable:
 
 ```bash
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
@@ -60,11 +60,11 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
+   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
+   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh
    ```
 
@@ -195,7 +195,7 @@ To run OpenTelemetry Collector as Systemd Service, follow the steps below:
    ```bash
    sudo useradd -mrUs /bin/false -d /var/lib/otelcol-sumo otelcol-sumo
    ```
-   * This command will create a home directory for the user. By default, the `sumologic` extension stores the credentials in a subdirectory of the home directory. However, if the user with name `otelcol-sumo` already exists, it won't be overwritten, so you should make sure that a home directory has been created for this user. If you don't want the user to have a home directory, use `useradd` with the `M` flag instead of `m` (`sudo useradd -MrUs ...`) and explicitly change the directory for saving the credentials. For example:
+   * This command will create a home directory for the user. By default, the `sumologic` extension stores the credentials in a subdirectory of the home directory. However, if the user with name `otelcol-sumo` already exists, it won't be overwritten, so you should make sure that a home directory has been created for this user. If you do not want the user to have a home directory, use `useradd` with the `M` flag instead of `m` (`sudo useradd -MrUs ...`) and explicitly change the directory for saving the credentials. For example:
     ```yaml
     extensions:
     sumologic:
@@ -267,7 +267,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
 
 #### Running Binary Manually
 
-If your system does not support `Systemd`, or you don't want to create a service, you can run Collector manually.
+If your system does not support `Systemd`, or you do not want to create a service, you can run Collector manually.
 
 ```bash
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
@@ -317,7 +317,7 @@ Service need to be restarted in order to apply the changes.
 To install FIPS compliant binary, you should add `--fips` switch to installation command, so it will look like the following:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
 
 Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
@@ -331,13 +331,13 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 If you installed the Collector with the install script, you can this command to uninstall the Collector:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
 You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
 ### Manual step-by-step Uninstall
@@ -359,7 +359,7 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 Running install script will simply upgrade collector to the latest version:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo bash
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo bash
 ```
 
 :::note

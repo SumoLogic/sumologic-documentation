@@ -14,7 +14,7 @@ The CloudPassage Halo app helps you detect security violations and look for thre
 You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This app enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 
 
-## Collecting Logs for the CloudPassage Halo app
+## Collecting logs for the CloudPassage Halo app
 
 The CloudPassage Halo app uses the Halo REST API and AWS Lambda to collect Halo events.  
 
@@ -28,12 +28,12 @@ To collect CloudPassage Halo logs for Sumo Logic you need to configure:
 
 ### Sumo Logic Collector Configuration
 
-If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Then, follow the instructions on how to [create a collector](#Create-the-collector).
+If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Then, follow the instructions on how to [create a collector](#create-the-collector).
 
 
 #### Create the collector
 
-1. Click **Manage** **Data** > **Collection** > **Add Collector**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Click **Hosted Collector.**
 3. In **Add Hosted Collector** enter:
    * **Name.** Halo_Lambda_Ingestor.
@@ -148,12 +148,23 @@ Sample policy: Be sure to use the proper permission level.
 21. A successfully configured trigger will have a success message and appear similar to the trigger below.
 22. You are done for the first Lambda code! You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
-
 ## Installing the CloudPassage Halo app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the CloudPassage Halo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CloudPassage Halo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing CloudPassage Halo dashboards​
 

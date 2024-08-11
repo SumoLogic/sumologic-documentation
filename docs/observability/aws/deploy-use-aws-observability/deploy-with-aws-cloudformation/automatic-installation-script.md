@@ -37,8 +37,8 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 
 The script takes two inputs:
 
-1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#Create-an-access-key) in the _Access Keys_ topic for more information.
-2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#Create-an-access-key) in the _Access Keys_ topic for more information.
+1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#from-the-preferences-page) for more information.
+2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/security/access-keys#from-the-preferences-page) for more information.
 
 **AWS_PROFILE** can be set as an environment variable from the command line before executing the script. If it is not set, the “default” aws profile will be used.
 
@@ -48,7 +48,7 @@ The script takes two inputs:
 The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
 
 
-### Powershell Script Command Execution
+### PowerShell Script Command Execution
 
 Below is an example to run the powershell script with the required parameters
 

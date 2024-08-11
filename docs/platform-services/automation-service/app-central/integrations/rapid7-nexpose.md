@@ -1,7 +1,6 @@
 ---
 title: Rapid7 Nexpose
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

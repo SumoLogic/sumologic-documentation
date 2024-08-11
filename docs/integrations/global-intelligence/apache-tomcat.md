@@ -41,11 +41,11 @@ The following sample query is from the **Average Requests Per Second: My Server 
 | sort by date asc
 ```
 
-## Collecting Logs for the Global Intelligence for Tomcat app
+## Collecting logs for the Global Intelligence for Tomcat app
 
 The Sumo Global Intelligence for Tomcat app provides insights into your key Tomcat infrastructure indicators. 
 
-Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat app.
+Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure the collection for Global Intelligence for Tomcat app.
 
 ## Concepts
 
@@ -67,6 +67,18 @@ For each Apache Tomcat server, hourly signals for the past 7 days are used to co
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Global Intelligence for Apache Tomcat app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Global Intelligence for Apache Tomcat app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Global Intelligence for Apache Tomcat dashboards​
 

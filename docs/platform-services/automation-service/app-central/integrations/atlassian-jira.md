@@ -1,14 +1,13 @@
 ---
 title: Atlassian Jira
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira.png')} alt="atlassian-jira" width="80"/>
 
-***Version: 1.6  
-Updated: Feb 14, 2024***
+***Version: 1.7  
+Updated: Mar 29, 2024***
 
 This integration is built specifically for Jira OnPrem (Server and Data Center) and provides a range of issue management capabilities.
 
@@ -64,3 +63,5 @@ Ticketing System
     + Please note that this update introduces BREAKING CHANGES: both the output mapping and some input fields have been revised and updated.
 * February 14, 2024 (v1.6)
     * Enhanced "Create Issue" and "Update Issue" actions to support Jira custom fields
+* March 29, 2024 (v1.7)
+    * Create Issue Action updated to allow new lines in the description field

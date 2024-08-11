@@ -25,8 +25,8 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1. Go to the **Administration** > **Security** > **Policies** page.
-1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index" style={{border: '1px solid gray'}} width="600" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. Kanso-->
+1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 :::note
 * Users with a role that grants the [**Manage audit data feed**](/docs/manage/users-roles/roles/role-capabilities#security) capability are allowed to enable the Search Audit Index.
@@ -46,7 +46,7 @@ Querying the index returns results only if the index is enabled.
 
 ## Index retention period
 
-By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
+By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
 
 ## Log Search Audit Index message fields
 
@@ -55,7 +55,7 @@ The following table provides details on the fields returned by the index:
 | Field  | Description |
 |:--|:--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers). |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions/data-tiers). |
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |

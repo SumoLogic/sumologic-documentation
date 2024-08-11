@@ -47,8 +47,8 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 ## Configure and test a custom parser
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" width="800"/>
-1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  Kanso-->
+1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" width="800"/>
 1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" width="800"/>
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
@@ -149,14 +149,14 @@ The system configuration and local configuration are separate, so your customiza
 
 You can use a local configuration to override any statement in a system parser, and add additional logic to the parser using any of the statements supported by the parsing language.
 
-One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](/docs/cse/schema/parsing-language-reference-guide#start_time_field) = `_messagetime`. This causes the Sumo Logic core platform message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](/docs/cse/schema/parsing-language-reference-guide#time_parser) setting.
+One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](/docs/cse/schema/parsing-language-reference-guide#start_time_field) = `_messagetime`. This causes the Sumo Logic core platform message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed do not exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](/docs/cse/schema/parsing-language-reference-guide#time_parser) setting.
 
 Another common reason to set up a local configuration is to pre-parse the content of a JSON object. If your parser is going to process an encapsulated JSON object, you can use a local configuration to pre-parse the original log message from the object.
 
 To create a local configuration:
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.
-1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  Kanso-->
+1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="Three-dot kebab menu" width="800"/>
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/><img src={useBaseUrl('img/cse/system-parser-edit-button.png')} alt="System parser edit button" width="800"/>
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
@@ -171,12 +171,12 @@ You can export a parser as JSON, and import it to another Sumo Logic
 org.
 
 1. Navigate to the parser you want to export and choose **Export** from the three-dot kebab menu.
-1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export" width="600"/>
+1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export dialog" width="600"/>
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data > Logs > Parsers**.
 1. Navigate to the folder where you want to store the parser.
 1. Choose **Import** from the three-dot kebab menu.
-1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
+1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
 ## Setting Cloud SIEM log mapping information
 
@@ -207,8 +207,7 @@ We provide a number of parsers to extract data for normalization (see [Parsers](
 
 ### Access parser templates
 
-1. Go to **Manage Data > Logs**.
-1. Select the **Parsers** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  Kanso-->
 1. Open the **System** folder.
 1. Scroll down to the **Parser Templates** folder and open it.
 1. Browse the templates. Available formats include:

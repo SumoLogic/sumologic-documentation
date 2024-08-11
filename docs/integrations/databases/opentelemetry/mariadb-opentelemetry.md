@@ -49,7 +49,7 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
   ```
    - [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
    - [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
-   - [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
+   - [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We do not recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
 

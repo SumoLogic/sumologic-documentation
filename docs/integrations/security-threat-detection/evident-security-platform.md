@@ -19,7 +19,7 @@ The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -181,7 +181,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample query
+### Sample queries
 
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident
@@ -195,7 +195,7 @@ _sourceCategory=security_evident
 | count by status
 ```
 
-## Collecting Logs for the Evident.io ESP app
+## Collecting logs for the Evident.io ESP app
 
 This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
 
@@ -264,6 +264,18 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Evident.io ESP app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Evident.io ESP app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Evident.io ESP dashboards
 

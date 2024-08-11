@@ -1,14 +1,13 @@
 ---
 title: IBM X-Force Exchange
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-x-force-exchange.png')} alt="ibm-x-force-exchange" width="100"/>
 
-***Version: 1.4  
-Updated: Jul 12, 2023***
+***Version: 1.5  
+Updated: June 26, 2024***
 
 IBM X-Force Exchange is a cloud-based threat intelligence platform that allows you to consume, share and act on threat intelligence. It enables you to rapidly research the latest global security threats, aggregate actionable intelligence, consult with experts and collaborate with peers.
 
@@ -43,3 +42,5 @@ Threat Intelligence-Reputation
 	+ Added new actions:
 		- Passive DNS V2
 		- Whois Lookup V2
+* June 26, 2024 (v1.5)
+	+ Updated Whois Lookup and Passive DNS actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.

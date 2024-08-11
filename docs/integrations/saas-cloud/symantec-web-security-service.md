@@ -51,7 +51,7 @@ This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
@@ -70,6 +70,18 @@ To set up [Cloud-to-Cloud Integration Symantec Web Security Service Source](/doc
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Symantec Web Security Service app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Symantec Web Security Service app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Symantec Web Security Service dashboards
 

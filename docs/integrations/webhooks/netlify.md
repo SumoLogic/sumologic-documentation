@@ -15,7 +15,7 @@ Netlify is a web development platform for building fast and dynamic websites, e-
 
 The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic through an outgoing webhook available in Netlify. For more information on supported events that are ingested through the Netlify webhook, see the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/)
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>
@@ -114,7 +114,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/netlify" "name"
@@ -145,7 +145,7 @@ Follow the below steps to configure the Netlify webhook.
 2. Go to **Sites**, and select a site for which you want to send notifications to Sumo Logic.
 3. Go to **Site configuration**, and select **Build & deploy**.
 4. Go to **Deploy notifications**.
-5. Click **Add notification**, and select **Outgoing webhook**, the webhook form appears.
+5. Click **Add notification** and select **HTTP Post Request**. The webhook form appears.
 6. Enter webhook form data as follows:
     - **Event to listen for**. Select the type of events that will cause this webhook to execute.
     - **URL to notify**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
@@ -156,7 +156,7 @@ Follow the below steps to configure the Netlify webhook.
 ```
 
 :::info
-- For detailed information about webhook creation, refer to the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/#outgoing-webhooks).
+- For detailed information about webhook creation, refer to the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/#http-post-request).
 - For support, [contact Netlify](https://www.netlify.com/support/).
 :::
 
@@ -165,6 +165,18 @@ Follow the below steps to configure the Netlify webhook.
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Netlify app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Netlify app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Netlify dashboards
 

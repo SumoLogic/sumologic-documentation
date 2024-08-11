@@ -100,7 +100,7 @@ To change chart axes displays, do the following:
    * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from. 
    * **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 9.
 
-    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#override-dashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
+    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#overridedashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
 
     To display the right Y-axis you need to select the **show axis** checkbox.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/show-right-y-axis.png')} style={{border: '1px solid gray'}} alt="show right y-axis" width="400"/>
 
@@ -145,7 +145,7 @@ To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/
 
 ### Values in chart
 
-To view values inside the chart so you don't have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
+To view values inside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
 
 use the following JSON:
 
@@ -201,7 +201,7 @@ use the following JSON:
 
 ### Outside values
 
-To place values outside the chart so you don't have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
+To place values outside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
 
 use the following JSON:
 
@@ -226,3 +226,16 @@ use the following JSON:
 ]
 ```  
  
+### Resize data label font size
+
+To resize the font size of data labels in a pie chart: <br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-label-font-size.png')} style={{border: '1px solid gray'}} alt="Data label font size" width="600"/>
+
+add this line under the general section:
+
+```json
+"general": {
+...
+"indexLabelFontSize": 8
+},
+
+```

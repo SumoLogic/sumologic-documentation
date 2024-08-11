@@ -17,7 +17,7 @@ description: This page describes how to upgrade Kubernetes Collection to v4.
 
 ## Metrics migration
 
-If you don't have metrics collection enabled, skip straight to the
+If you do not have metrics collection enabled, skip straight to the
 [next major section](#remove-remaining-fluent-bit-and-fluentd-configuration).
 
 ### Convert Prometheus remote writes to otel metrics filters
@@ -36,7 +36,7 @@ There are several scenarios here, depending on the exact use case:
 
    You'll need to either move the relabelling rules into the ServiceMonitor itself, or [add an equivalent filter processor][otel_metrics_filter] rule to OTel.
 
-1. You're collecting custom application metrics by adding a [`prometheus.io/scrape` annotation][application_metrics_annotation]. You don't need to filter these metrics.
+1. You're collecting custom application metrics by adding a [`prometheus.io/scrape` annotation][application_metrics_annotation]. You do not need to filter these metrics.
 
    No action is needed.
 
@@ -173,7 +173,7 @@ Once you've taken care of any manual steps necessary for your configuration, run
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=4.0.0 -f new-values.yaml
 ```
 
-After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they don't require additional action.
+After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they do not require additional action.
 
 [application_metrics_annotation]: /docs/send-data/kubernetes/collecting-metrics#application-metrics-are-exposed-one-endpoint-scenario
 [kubernetes_metrics_v3]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v3/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics

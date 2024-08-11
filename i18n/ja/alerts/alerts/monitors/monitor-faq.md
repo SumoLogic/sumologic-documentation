@@ -17,7 +17,7 @@ For example, instead of creating one monitor to alert on CPU utilization, break 
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
+Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason:  
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -57,7 +57,7 @@ Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to ref
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [**Test Connection** feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
@@ -85,6 +85,6 @@ The Monitors page allows you to disable a Monitor so you're not alerted during 
 
 1. Click the three-dot kebab icon to view the menu options. You can select to Enable or Disable the monitor.
 
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
+Currently, you can only manually disable or enable a Monitor. You cannot disable and enable based on a schedule.
 
  

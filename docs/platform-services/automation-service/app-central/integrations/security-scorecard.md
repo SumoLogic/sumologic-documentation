@@ -1,7 +1,6 @@
 ---
 title: Security Scorecard
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

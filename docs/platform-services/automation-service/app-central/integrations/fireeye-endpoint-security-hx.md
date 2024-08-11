@@ -1,7 +1,6 @@
 ---
 title: FireEye Endpoint Security (HX)
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

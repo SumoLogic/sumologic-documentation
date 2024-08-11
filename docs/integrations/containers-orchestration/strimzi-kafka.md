@@ -22,7 +22,7 @@ This App has been tested with following Kafka versions:
 * 3.4.0
 
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {
@@ -49,9 +49,9 @@ messaging_cluster=* messaging_system="kafka" \
 The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
 
-## Collecting Logs and Metrics for Strimzi Kafka Pods
+## Collecting logs and metrics for Strimzi Kafka Pods
 
-Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#configure-collection-for-kafka).
+Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Strimzi Kafka.
 
@@ -183,7 +183,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 4. **Adding FER for normalizing fields**
 
   Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-    1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
     2. Click the **+ Add** button on the top right of the table.
     3. The **Add Field Extraction Rule** form will appear. Enter the following options:
         * **Rule Name**. Enter the name as **App Component Observability - Messaging.**

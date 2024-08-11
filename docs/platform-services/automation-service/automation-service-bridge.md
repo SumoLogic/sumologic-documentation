@@ -1,7 +1,7 @@
 ---
 id: automation-service-bridge
 title: Bridge for the Automation Service
-sidebar_label: Bridge
+sidebar_label: Automation Bridge
 description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
@@ -88,8 +88,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
-1. Click **?** in the upper-right corner of the UI.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  Kanso--> <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -100,8 +99,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
-1. Click **?** in the upper-right  corner of the UI.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).. Kanso--> In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  Kanso--> <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
@@ -125,10 +123,13 @@ An example of a configuration file would be:
 {
   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-  "SIEM_URL":"https://YOUR_CLOUD_SIEM_URL/sec",
+  "SIEM_URL":"The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector",
   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
+To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
+
+By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
 
 ### Bridge ALIAS
 
@@ -246,9 +247,9 @@ The automation bridge needs to be able to communicate with the Docker API to wor
 
 |Environment Variable |Description |Default   |
 |:------------------------------------|:---------------|:----------|
-|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
-|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
-|`SIEM_URL_HERE` | The HTTP Sumo Logic collector to send the bridge logs. | NONE |
+|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
+|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
+|`SIEM_URL_HERE` | The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector. | NONE |
 |`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 
 ### Methodologies
@@ -271,7 +272,7 @@ docker run -d \
 public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 ```
 
-In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves don't have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages, including simplicity in managing the containers and resource efficiency, as containers don't need to run their own Docker daemon.
+In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves do not have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages, including simplicity in managing the containers and resource efficiency, as containers do not need to run their own Docker daemon.
 
 This way, the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 

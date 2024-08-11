@@ -11,8 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
-:::tip
-Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
+:::tip newer version available
+We recommend using the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
 ## Supported AWS metrics
@@ -35,7 +35,7 @@ Tag filtering is only supported for user-defined AWS tags, not for AWS-generated
 
 Here’s how tag filtering works:
 
-* If you don't specify a tag filter for a namespace, the source will collect all metrics for the namespace.
+* If you do not specify a tag filter for a namespace, the source will collect all metrics for the namespace.
 * If you specify a single `tag = value` pair for a namespace, the source will collect metrics from resources with that tag value.  
 * If you specify multiple values for a specific tag for a namespace, as shown below, the filters are OR’ed. For example, with the following setting, the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is *either* “Veronica” or “Bryan”.   
 
@@ -95,7 +95,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 ## Set up an Amazon CloudWatch source
 
 1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. Click **Add Source** next to a Hosted Collector.
 1. Select **AWS CloudWatch Metrics**. 
 

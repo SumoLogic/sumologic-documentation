@@ -26,11 +26,11 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 ### List Sources
 
+<details>
+<summary><span className="api get">GET</span><code>/collectors/&#123;collectorId&#125;/sources</code></summary>
+<p/>
+
 Gets information about all Sources for a specified Collector.
-
-**Method:** `GET`
-
-**Path:** `/collectors/[collectorId]/sources`
 
 | Parameter   | Type    | Required? | Default | Description           |
 | :---------- | :------ | :-------- | :------ | :-------------------- |
@@ -97,14 +97,15 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
   ]
 }
 ```
+</details>
 
 ### Get Source by ID
 
+<details>
+<summary><span className="api get">GET</span><code>/collectors/[collectorId]/sources/&#123;sourceId&#125;</code></summary>
+<p/>
+
 Gets information about a specified Collector and Source.
-
-**Method:** `GET`
-
-**Path:** `/collectors/[collectorId]/sources/[sourceId]`
 
 | Parameter   | Type    | Required? | Default | Description   |
 | :---------- | :------ | :-------- | :------ | :------------ |
@@ -168,23 +169,23 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
   }
 }
 ```
+</details>
 
 ## POST methods
 
-### Create Source
+### Create a Source
+
+<details>
+<summary><span className="api post">POST</span><code>/collectors/&#123;collectorId&#125;/sources</code></summary>
+<p/>
 
 Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for required fields for the request JSON file.
-
-**Method**: `POST`
-
-**Path**: `/collectors/[collectorId]/sources`
 
 | Parameter   | Type    | Required? | Default | Description                  |
 | :---------- | :------ | :-------- | :------ | :--------------------------- |
 | `collectorId` | integer | Yes       | NA      | Unique Collector identifier. |
 
 POST creates a single Source per request.
-
 
 #### Example
 
@@ -208,8 +209,6 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
   }
 }
 ```
-
-
 
 ```json title="Response"
 {
@@ -244,19 +243,21 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
 
 Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
+</details>
+
 ## PUT methods
 
-### Update Source
+### Update a Source
+
+<details>
+<summary><span className="api put">PUT</span><code>/collectors/&#123;collectorId&#125;/sources/&#123;sourceId&#125;</code></summary>
+<p/>
 
 Updates an existing source. All modifiable fields must be provided, and all not modifiable fields must match those existing in the system.
 
 You need to include the `id` parameter in your JSON file.
 
 Updating a Source also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
-
-**Method**: `PUT`
-
-**Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
 | Parameter   | Type    | Required? | Default | Description                  |
 | :---------- | :------ | :-------- | :------ | :--------------------------- |
@@ -354,18 +355,19 @@ Note that the filter value shown above is an example for excluding a keyword. Fi
    }
 }
 ```
+</details>
 
 ## DELETE methods
 
-### Delete Source
+### Delete a Source
+
+<details>
+<summary><span className="api delete">DELETE</span><code>/collectors/&#123;collectorId&#125;/sources/&#123;sourceId&#125;</code></summary>
+<p/>
 
 Deletes the specified Source from the specified Collector.
 
 Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
-
-**Method**: `DELETE`
-
-**Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
 #### Example
 
@@ -376,6 +378,8 @@ curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/coll
 ```
 
 Response: There will be no response body, only a `200 OK` response code.
+
+</details>
 
 ## Error Codes and Messages
 

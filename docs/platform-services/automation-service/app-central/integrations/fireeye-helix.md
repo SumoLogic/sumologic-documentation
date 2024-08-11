@@ -1,7 +1,6 @@
 ---
 title: FireEye Helix
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

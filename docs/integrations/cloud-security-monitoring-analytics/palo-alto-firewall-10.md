@@ -43,7 +43,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 
 You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
-## Collecting Logs for Palo Alto Firewall 10
+## Collecting logs for Palo Alto Firewall 10
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
 
@@ -52,7 +52,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
+1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
    * Enter a Source Name.
    * Provide a Source Category: **NW/PAN/V10**
@@ -112,6 +112,18 @@ To verify the logs in Palo Alto Networks, do the following:
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the PAN Firewall 10 Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PAN Firewall 10 Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing PAN Firewall 10 Security dashboards​
 

@@ -15,26 +15,11 @@ App Central provides apps to help you be more productive in the Automation Servi
 Cloud SOAR has its own App Central. For more information, see [App Central](/docs/cloud-soar/automation/#app-central) in *Cloud SOAR Automation*.
 :::
 
-<!-- Micro lesson is commented out until it is adjusted to show that App Central is no longer under Cloud SIEM but is part of the Automation Service.
-
-Watch this micro lesson to learn how to use App Central.
-
-<Iframe url="https://www.youtube.com/embed/cfJtReLrMFg?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
--->
-
 ## View App Central
 
-To view App Central, [access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service) and click **App Central** in the left navigation bar.
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
+
+<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  Kanso-->
 
 Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
@@ -49,7 +34,7 @@ Before you can access App Central, you must have the App Central Access role cap
    :::note
    <ActionsLimit/>
    :::
-1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central).
+1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central).
 
 ## Work with integrations in App Central
 
@@ -58,8 +43,7 @@ Integrations are connectors to applications from industry-leading network and se
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
-1. Click **Download** in the lower left corner of the integration box.
-1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
+1. Click **Install** in the lower left corner of the integration box. After installation is complete, **Installed** replaces the **Install** link in the corner of the integration box.
 1. **IMPORTANT**: Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
@@ -70,13 +54,13 @@ Integrations in App Central display a version number. The version indicates when
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you do not have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" style={{border:'1px solid gray'}} width="300"/>
 * **INSTALLED**: Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" style={{border:'1px solid gray'}} width="300"/>
-* **DOWNLOAD**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} style={{border:'1px solid gray'}} alt="Download" width="300"/>
+* **INSTALL**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} style={{border:'1px solid gray'}} alt="Download" width="300"/>
 
 #### Update an installed integration to show all actions
 
@@ -106,10 +90,10 @@ While [Playbooks](/docs/platform-services/automation-service/automation-service-
 ### Install a playbook from App Central
 
 1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
-1. Click **Download** in the corner of the playbook box.
+1. Click **Install** in the corner of the playbook box.
 1. Click **Next**.
 1. Click **Install** to install the playbook.
-1. Click **Close**. After installation is complete, **Installed** replaces the **Download** link in the corner of the playbook box.
+1. Click **Close**. After installation is complete, **Installed** replaces the **Install** link in the corner of the playbook box.
 1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
 
 <!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back.

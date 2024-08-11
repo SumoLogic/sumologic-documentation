@@ -62,7 +62,7 @@ account="account" region="region" namespace="AWS/ApplicationELB"
 account="account" region="region" Namespace="AWS/ApplicationELB" loadbalancer="loadbalancer" AvailabilityZone=* TargetGroup=* metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
 ```
 
-## Collecting Logs and Metrics for the AWS Application Load Balancer
+## Collecting logs and metrics for the AWS Application Load Balancer
 
 ### Collecting Metrics
 
@@ -76,7 +76,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 :::
 
-* **Metadata**. Add an **account** field to the source and assign it a value which is a friendly name or alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the “account field”.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
+* **Metadata**. Add an **account** field to the source and assign it a value which is a friendly name or alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried through the “account field”.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
 ### Collecting Access Logs
 
@@ -99,7 +99,9 @@ import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
 
 ### Field in Field Schema
 
-Login to Sumo Logic, goto **Manage Data > Logs > Fields**. Search for the `loadbalancer` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the `loadbalancer` field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 ### Field Extraction Rule(s)
 
@@ -135,7 +137,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4XX, and 5XX errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers through active connections, new connections, target connection errors, and rejected connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-Overview.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-Overview.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Response Analysis
 
@@ -145,7 +147,7 @@ Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX, and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Response_Analysis.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Target Group Response Analysis
 
@@ -155,7 +157,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your target groups by LoadBalancer, Target Group, and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Target_Group_Response_Analysis.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Target_Group_Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Latency Overview
 
@@ -165,7 +167,7 @@ Use this dashboard to:
 * Monitor response times by load balancer, target group, and availability zone.
 * Monitor client latency and processing times for target groups.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Latency_Overview.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Latency_Overview.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Latency Details
 
@@ -174,7 +176,7 @@ The **AWS Application Load Balancer - Latency Details** dashboard provides insig
 Use this dashboard to:
 * Troubleshoot load balancer performance through detailed views across client, request processing, and response time latencies.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Latency_Details.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Latency_Details.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Connection and Host Status
 
@@ -184,7 +186,7 @@ Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for the load balancer.
 * Monitor healthy and unhealthy host counts by the load balancer, target group, and availability zone across your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Connections_and_Host_Status.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Connections_and_Host_Status.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Requests and Processed Bytes
 
@@ -194,14 +196,14 @@ Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to best configure load balancers for optimal performance.
 * Determine how to best allocate backend resources and target groups based on load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Requests_and_Processed_Bytes.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Requests_and_Processed_Bytes.png')} alt="AWS Application Load Balancer dashboard" />
 
 ### Threat Intel
 
-The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined through [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined through [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" />

@@ -71,7 +71,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort _count
 ```
 
-## Collecting Logs for the AWS Config App
+## Collecting logs for the AWS Config App
 
 ### Prerequisites
 
@@ -104,7 +104,7 @@ In Sumo Logic, create a [Hosted Collector](/docs/send-data/hosted-collectors/con
 
 ### Configure a Source
 
-Next, configure an [HTTP Source](/#Collect-logs-for-the-AWS-Config-App).
+Next, configure an [HTTP Source](#collecting-logs-for-the-aws-config-app).
 
 1. Configure the Source fields:
     1. Name. (Required) Eg. AWS Config
@@ -148,7 +148,7 @@ This section is optional, but recommended for better search performance.
 
 Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
 
-To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
+To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
 
 ## Installing the AWS Config App
 
@@ -190,7 +190,7 @@ The AWS Config Overview dashboard runs in Live mode. Live mode dashboards automa
 
 ### AWS Overview - Interactive
 
-This dashboard is identical to the [AWS Config Overview](#AWS_Config_Overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
+This dashboard is identical to the [AWS Config Overview](#aws-config-overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
 
 
 ### Resource Modifications Details - Interactive

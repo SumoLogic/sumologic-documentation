@@ -1,7 +1,6 @@
 ---
 title: McAfee Web Gateway
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

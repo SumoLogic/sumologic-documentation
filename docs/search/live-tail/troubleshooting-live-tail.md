@@ -6,7 +6,7 @@ description: Troubleshooting tips for Sumo Logic Live Tail.
 ---
 
 :::note
-Data ingested from Amazon S3 can't be tailed.
+Data ingested from Amazon S3 cannot be tailed.
 :::
 
 ## No messages appear in a Live Tail session
@@ -17,7 +17,7 @@ If you start a Live Tail session, and no messages appear in 30 seconds, check to
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 * A Live Tail session expires after one hour of inactivity to give your system the best performance possible. If your Live Tail session expires, you can restart it at any time.
 * If you navigate away from the Live Tail tab, your session will run for five more minutes and then time out.
-* There is a message limit of about 1000 messages per second. Keyword filters don't affect the message rate.
+* There is a message limit of about 1000 messages per second. Keyword filters do not affect the message rate.
 * There currently is a limit of 10 concurrent Live Tail sessions per organization.
 * There is a limit of four Live Tail sessions per user.
 * There is a limit of two Live Tail "pop out" windows per user.
@@ -38,6 +38,6 @@ The error `"Your query is producing too many results. Please add additional met
 
 Modify your query to add additional metadata fields, in order to focus your search into a smaller area, and produce fewer log messages. If not, your session may be ended.
 
-If you do make your filter more specific, and you still don't see many messages, this may be caused by the underlying metadata fields being too big.
+If you do make your filter more specific, and you still do not see many messages, this may be caused by the underlying metadata fields being too big.
 
 For more information, see [Filter Live Tail](filter-live-tail.md).
