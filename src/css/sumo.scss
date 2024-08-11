@@ -1380,15 +1380,15 @@ html[data-theme='dark'] .featureImage {
   border-radius: 10px;
 }
 
-//.rss {
-// background: #CD7E0E;
-// color: white;
-//  font-weight: 600;
-//  font-size: 14px;
-//  padding: 8px 10px;
-//  border-radius: 4px;
-//  text-decoration: none;
-}
+.rss1 {
+  background: #CD7E0E;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+ }
 
 
 .rss {
@@ -1408,7 +1408,7 @@ html[data-theme='dark'] .featureImage {
   margin-right: 0px !important;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
-  margin-left: 0px !important;      
+  margin-left: 0px !important;
 }
 
 .docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Authors-styles-module {
@@ -1431,9 +1431,6 @@ html[data-theme='dark'] .featureImage {
   height: 100%;
   border: none;
 }
-
-
-
 
 /* The container */
 .label-container {
