@@ -1,17 +1,12 @@
 ---
 id: jamf-source
-title: Jamf Source (Beta)
+title: Jamf Source
 sidebar_label: Jamf
 tags:
   - cloud-to-cloud
   - jamf
 description: Learn how to collect data from the Jamf platform.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/jamf/example.json';
