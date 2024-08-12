@@ -514,18 +514,18 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 
 **Timeouts Details**. A table that lists information about timeouts that have occurred over the last 7 days.
 
-### Azure Storage - Health
+### Health
 
-The **Azure Storage - Health** dashboard provides information of any service health incidents or resource health events associated with SQL database service or resource in your azure account.
+The **Azure SQL - Health** dashboard provides information of any service health incidents or resource health events associated with SQL database service or resource in your azure account.
 
 Use this dashboard to:
     * View recent resource and service health incidents.
     * View distribution of service and resource health by incident type.
 
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure SQL - Policy and Recommendations
+### Policy and Recommendations
 
 The **Azure SQL - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure Policy and recommendations events from Azure Advisor.
 
@@ -536,10 +536,10 @@ Use this dashboard to:
     * Identify High Impact recommendations.
     * View recent recommendation events and navigate to the affected resource.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-policy-and-recommendation.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-### Azure SQL - Administrative Operations
+### Administrative Operations
 
 The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
@@ -548,9 +548,9 @@ Use this dashboard to:
     * View Top 10 operations that caused the most errors.
     * View recent read, write and delete operations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Admin-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure SQL - SQL Security Audit
+### SQL Security Audit
 
 The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events, and database level events including DML and DDL statements executed.
 
@@ -560,9 +560,9 @@ Use this dashboard to:
     * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
 
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Security-Audit.png')} alt="Azure SQL Security Audit dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Azure SQL - Automated Tuning
+### Automated Tuning
 
 The **Azure SQL - Automated Tuning** dashboard provides information about automatic tuning recommendations for a database.
 
@@ -571,4 +571,4 @@ Use this dashboard to:
     * View create index recommendations.
     * View drop index recommendations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automate-Tuning-dashboard.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
