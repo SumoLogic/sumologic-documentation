@@ -179,7 +179,7 @@ Create a Field Extraction Rule (FER) by following the instructions [here](/docs/
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline to send metrics from Azure Monitor to an Event Hub, then to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
 1. Create hosted collector and tag tenant_name field
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
