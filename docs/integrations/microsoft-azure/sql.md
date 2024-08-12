@@ -115,7 +115,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure Field Extraction Rules
 
-Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER alredy exists with same name then skip this step.
+Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
 
 * **Azure Location Extraction FER**
 
