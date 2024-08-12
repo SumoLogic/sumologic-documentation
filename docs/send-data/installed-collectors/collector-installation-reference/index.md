@@ -1,6 +1,6 @@
 ---
 slug: /send-data/installed-collectors/collector-installation-reference
-title: Reference Information for Installed Collectors
+title: Installed Collectors
 description: These topics provide supporting information about Installed Collector configuration parameters and options.
 ---
 

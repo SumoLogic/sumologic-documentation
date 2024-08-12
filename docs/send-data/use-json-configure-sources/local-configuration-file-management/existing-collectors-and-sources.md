@@ -28,7 +28,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 ## Step 2. Update user.properties
 
-When a Collector starts it reads the `syncSources` parameter from the `user.properties` configuration file to determine the path of the JSON file or folder with the Source configurations. The `user.properties` file is located in the Collector's `config` folder.  
+When a Collector starts it reads the `syncSources` parameter from the user.properties configuration file to determine the path of the JSON file or folder with the Source configurations. The user.properties file is located in the Collector's `config` folder.  
 
 Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
 
@@ -38,7 +38,7 @@ Prior to version 19.137, the Collector used the `sumo.conf` file for Source c
 
 To add the `syncSources` parameter:
 
-1. Open or create the `user.properties` file located at `<CollectorInstallationFolder>/config`.
+1. Open or create the user.properties file located at `<CollectorInstallationFolder>/config`.
 1. Add the `syncSources` parameter and set the path to the JSON. Like these example  
    * On `*nix`, to point to a JSON **file** that defines Sources for a Collector:
      ```sh

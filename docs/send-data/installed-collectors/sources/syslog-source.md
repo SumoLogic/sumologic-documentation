@@ -101,7 +101,7 @@ collector.syslog.udp.readBufferSize = 65535
 
 ## Specify the network interface
 
-When configuring a Syslog Source on a computer that has more than one network interface you can specify which network interface the Collector should bind to. This option is set in the `collector.properties` file.
+When configuring a Syslog Source on a computer that has more than one network interface you can specify which network interface the Collector should bind to. This option is set in the **collector.properties** file.
 
 To specify the network interface:
 

@@ -4,23 +4,25 @@ title: sumo.conf for Legacy Collectors
 description: This file passes Collector configuration parameters during installation if the Debian or RPM option is used.
 ---
 
-For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
+:::warning legacy documentation
+These instructions pertain to legacy Installed Collector versions 19.136 and below.
+:::
 
-To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/docs/manage/security/access-keys) for information on generating and managing access keys.
+For Installed Collector releases prior to 19.137, you can use the `sumo.conf` file to pass Collector configuration parameters to Sumo during installation.
 
-## Creating sumo.conf
+## Prerequisites
 
-After downloading the Collector installer, you'll create the `sumo.conf` file in a specific directory.
+You'll need to authenticate using an access ID and [access key](/docs/manage/security/access-keys).
 
-To create sumo.conf:
+## Create a sumo.conf file
 
+1. Download the Collector installer.
 1. Using a text editor (or any similar program) create a new file.
 1. Add all of the required parameters and any optional parameters listed in the table in this topic.
 1. Save the file in UTF-8 encoding to `/etc/sumo.conf` (Mac or Linux) or `C:\\sumo\\sumo.conf` (Windows).
-
-:::note
-Some scripting utilities, such as PowerShell, default to ANSI. Make sure that the file is saved in UTF-8 encoding.
-:::
+   :::note
+   Make sure that the file is saved in UTF-8 encoding. Some scripting utilities, such as PowerShell, default to ANSI.
+   :::
 
 :::tip
 You can comment out lines in sumo.conf, use the `#` character at the beginning of line.
@@ -28,9 +30,11 @@ You can comment out lines in sumo.conf, use the `#` character at the beginning o
 
 ## sumo.conf parameters
 
-The following parameters can be passed to Sumo Logic using `sumo.conf`.
+You can pass the following parameters to Sumo Logic using `sumo.conf`.
 
-You cannot have blank values, like `name=`.
+:::note
+Do not leave blank values (for example, `name=`).
+:::
 
 | Parameter | Description | Example | Required/Optional |
 |:--|:--|:--|:--|

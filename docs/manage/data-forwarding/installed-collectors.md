@@ -115,7 +115,7 @@ There are several methods you can use to configure processing rules: 
 
 ## Configuring the size of forwarded syslog messages
 
-In accordance with RFC 3164, by default the Collector forwards syslog messages in 1024-byte segments, sending each segment as a separate message. To change the segment size, add the `forwarding.syslog.maxMessageSize` property to the Collector's `collector.properties` file (in the Collector's config directory) and restart the Collector. Specify the desired size in bytes. For example:
+In accordance with RFC 3164, by default the Collector forwards syslog messages in 1024-byte segments, sending each segment as a separate message. To change the segment size, add the `forwarding.syslog.maxMessageSize` property to the Collector's **collector.properties** file (in the Collector's config directory) and restart the Collector. Specify the desired size in bytes. For example:
 
 ```
 forwarding.syslog.maxMessageSize = 2048

@@ -28,7 +28,7 @@ Follow the steps in this topic to install or uninstallÂ a collector on Windows.Â
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the Collector to begin the download.
@@ -80,7 +80,7 @@ When using quiet mode installation on Windows with Microsoft PowerShell, paramet
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"
 ```
 
-Or, if you're using -varfile:
+Or, if you're using `-varfile`:
 ```
 Start-Process C:\<path to collector executable>\SumoCollector.exe -Wait -ArgumentList "-q","-console","-varfile `"C:\<path to varfile>\sumo_credentials.txt`""
 ```

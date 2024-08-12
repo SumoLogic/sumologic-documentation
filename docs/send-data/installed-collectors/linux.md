@@ -106,7 +106,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    Replace _XXX-XX_ in the command above with the version number of the package you downloaded.
    :::
    The RPM and Debian packages install the collector in the `/opt/SumoCollector` directory. By default, the Collector is installed as a system service, but not yet started.
-1. Configure the Collector `user.properties` file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in `user.properties` to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
+1. Configure the Collector user.properties file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in user.properties to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
 
    To use an [access key](/docs/manage/security/access-keys.md), provide the `accessid` and `accesskey` parameters. For example:
 
@@ -131,7 +131,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    ```
 
    :::note
-   Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying `user.properties` may require sudo privileges. For more information see [Enhanced File System Security for Installed Collectors](collector-installation-reference/enhanced-file-system-security-installed-collectors.md).
+   Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying user.properties may require sudo privileges. For more information see [Enhanced File System Security for Installed Collectors](collector-installation-reference/enhanced-file-system-security-installed-collectors.md).
    :::
 
 1. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/choose-collector-source).
@@ -166,7 +166,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    chmod ug+x collector
    chmod ug+x script/*
    ```
-1. Configure the Collector `user.properties` file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in `user.properties` to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
+1. Configure the Collector user.properties file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in user.properties to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
 
    To use an access key, provide the `accessid` and `accesskey` parameters. For example:
    ```sh

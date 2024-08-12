@@ -100,16 +100,16 @@ installing and configuring Collectors and Sources.
 
 Sumo provides multiple methods for installing a Collector:
 
-* UI installers. You provide configuration settings during the installation dialog. The installer writes these settings to `user.properties` in the collector’s `/config` directory. 
-* Command-line installer. You supply configuration settings on the command line, or using a varfile. the installer writes these settings to `user.properties` in the collector’s  `/config` directory.   
-* RPM, for Linux. You supply configuration settings in a `user.properties` file that you create.
+* UI installers. You provide configuration settings during the installation dialog. The installer writes these settings to user.properties in the collector’s `/config` directory. 
+* Command-line installer. You supply configuration settings on the command line, or using a varfile. the installer writes these settings to user.properties in the collector’s  `/config` directory.   
+* RPM, for Linux. You supply configuration settings in a user.properties file that you create.
 * Binary package, for Linux. The binary package can also be used on MacOS.
 
 For details on Collector installation, see [Install a Collector on Linux](linux.md), [Install a Collector on MacOS](macos.md), and [Install a Collector on Windows](windows.md).
 
-After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).
+After a Collector is up and running, you can change some Installed Collector configuration settings by editing user.properties and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).
 
-A few Installed Collector behaviors, such as caching, are configured in the `collector.properties` file in the Collector’s `config` directory.  
+A few Installed Collector behaviors, such as caching, are configured in the **collector.properties** file in the Collector’s `config` directory.  
 
 You can update the configuration of an Installed Collector using the Collector Management API. For more information, see Collector API Methods and Examples.
 

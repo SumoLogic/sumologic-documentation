@@ -52,7 +52,7 @@ When configuring a streaming metrics source on a computer that has more than one
 To specify the network interface:
 
 1. Navigate to `collector/config/collector.properties`. Open the file in a text editor.
-1. Add the following line to the `collector.properties` file, where `your_host_name` identifies the network interface you'd like to use.
+1. Add the following line to the **collector.properties** file, where `your_host_name` identifies the network interface you'd like to use.
 
     `streaming.metrics.hostname=your_host_name`
 

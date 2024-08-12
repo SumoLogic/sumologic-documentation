@@ -1,36 +1,34 @@
 ---
 id: collector-properties
-title: collector.properties
+title: collector.properties Config File
 description: This file allows you to tune the internal processes of Installed Collectors to fit your needs.
 ---
 
-
-For Collector versions 19.182-25 and later the `collector.properties` file can be modified on existing Collectors allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.
-
 :::note
-Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group. Modifying `collector.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
+For optimal performance and to ensure proper functionality, install or update to the latest version of the Installed Collector.
 :::
+
+The **collector.properties** file can be modified on existing Collectors, allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.
+
+The installation directory is secured to users belonging to the sumologic_collector group. Modifying **collector.properties** may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
 
 ## Configure collector.properties
 
 1. Stop the Sumo Logic Collector service.
-
     * On Windows: `net stop sumo-collector`      
     * On Linux: `sudo ./collector stop`    
-1. Navigate to the installation directory of an existing Installed Collector and open the `collector.properties` file in the **config** directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
+1. Navigate to the installation directory of an existing Installed Collector and open the **collector.properties** file in the /config directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
 1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below.
-
     :::important
     Keep all of the existing parameters already in the file. If you remove any, the Collector will not be able to restore them and could result in collection issues.
     :::
-
 1. Save the file in the same location. Maintain UTF-8 format.
 1. Start the Sumo Logic Collector service.
-
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
 ## Default Collector installation location
+
 The default collector installation locations are:
 
 Linux:
@@ -63,8 +61,8 @@ collector.localfile.inputType = nonblocking
 
 The table below has parameters that you can manage.
 
-:::important
-Do not modify any other parameters found in the collector.properties file, it could result in collection issues.
+:::warning
+Do not modify any other parameters found in the collector.properties file, as it could result in collection issues.
 
 Collector versions 19.253-26+ support **wrapper** configuration parameters.
 :::

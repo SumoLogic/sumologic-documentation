@@ -4,9 +4,7 @@ title: Add a Collector to a Windows Machine Image
 description: You can build a Sumo Logic Collector into a Windows machine image such as an Amazon AMI, a VMware image, or Azure virtual machine.
 ---
 
-
-
-Use the information in this topic to build a Sumo Logic Collector into a Windows machine image such as an Amazon AMI, a VMware image, or Azure virtual machine.
+Use the information in this topic to build a Sumo Logic Collector into a Windows machine image such as an Amazon AMI, a VMware image, or an Azure virtual machine.
 
 Collectors normally register with Sumo Logic during the installation process, but users can pass the `‑VskipRegistration=true` flag to skip registration. This way, the collector is installed as a service that will start and register automatically when the image is launched.
 
@@ -72,7 +70,7 @@ Download the appropriate collector from the [**Collection**](/docs/send-data/col
 
     When you see the `Finishing installation...` message you can close the command prompt window. The installation is complete.
 
-1. (For Windows hosts launched on Amazon EC2 instances) There can be a delay on Amazon EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties:**
+1. (For Windows hosts launched on Amazon EC2 instances) There can be a delay on Amazon EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties**:
 
     ```bash
     collector.registration.delay.ms = 30000

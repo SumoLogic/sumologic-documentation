@@ -21,8 +21,7 @@ These options appear if you click **Advanced Settings** on the Confirmation dial
 Follow the below steps to provide **Full Control** privileges for the Custom User (Non Admin/System user) with existing collector.
 
 1. Open the registry editor from the start menu.
-1. Navigate to the below path and search for **sumo-collector** folder.
-    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
+1. Navigate to the following path and search for **sumo-collector** folder: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`.
 1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid gray'}} />
 1. In the **Permissions for sumo-collector** pop-up:
     1. Click **Add**.
@@ -33,17 +32,20 @@ Follow the below steps to provide **Full Control** privileges for the Custom Use
 Follow the below steps to provide **Full Control** privileges for the Custom User (Non Admin/System user) with newly installed collector.
 
 1. After the collector is installed, open the registry editor from the start menu.
-1. Navigate to the below path and search for **sumo-collector** folder.
-    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
+1. Navigate to this path and search for **sumo-collector** folder: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
 1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid gray'}} />
 1. In the **Permissions for sumo-collector** pop-up:
     1. Click **Add**.
     1. Select the **Full Control** **Allow** checkbox.
-    1. Click on **Apply**.
-    <br/><img src={useBaseUrl('img/send-data/permissions.png')} alt="permissions" style={{border: '1px solid gray'}} width="300" />
+    1. Click on **Apply**.<br/><img src={useBaseUrl('img/send-data/permissions.png')} alt="permissions" style={{border: '1px solid gray'}} width="300" />
 1. Restart the collector by using following commands.
-    1. ```net stop sumo-collector```
-    1. ```net start sumo-collector```
+   ```sh
+   net stop sumo-collector
+   ```
+
+   ```sh
+   net start sumo-collector
+   ```
 
 :::note
 You can also configure the permissions by Microsoft Group Policy.

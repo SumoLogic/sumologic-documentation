@@ -338,7 +338,7 @@ _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap spac
 
 #### Increase memory for collectors upgraded from versions before 19.137
 
-If the `user.properties` file contains these lines:
+If the user.properties file contains these lines:
 
 ```
 wrapper.app.parameter.2=-b
@@ -353,7 +353,7 @@ you must append the following to the end of the `Sumo_install_dir/config/wrappe
 #include ./config/user.properties
 ```
 
-Then update `user.properties` as follows:
+Then update the user.properties file as follows:
 
 * Delete the above-mentioned three lines (the lines that begin with `wrapper.`)
 * Add the following line: `wrapper.java.maxmemory=<some_value>`
@@ -404,7 +404,7 @@ On Windows servers where the generated number of events is much higher than appr
     localWindowsEventLog.batchSize=1024
     ```
 
-1. Save the new `collector.properties` file.
+1. Save the new **collector.properties** file.
 1. Restart the Collector service.
 
 

@@ -9,7 +9,7 @@ Deploying an upgrade to one or more collectors can be done through Sumo Logic. W
 
 You can also downgrade a collector to a previous version, as described in this topic.
 
-When upgrading an installed collector, the Java Runtime Environment (JRE) will be automatically downloaded. If the JRE that the collector is bundled with is newer than the JRE installed with the collector, the bundled JRE will be downloaded and installed. However, if you have manually specified a newer JRE in the `user.properties` file (or sumo.conf in older installations), the newer version will be used.
+When upgrading an installed collector, the Java Runtime Environment (JRE) will be automatically downloaded. If the JRE that the collector is bundled with is newer than the JRE installed with the collector, the bundled JRE will be downloaded and installed. However, if you have manually specified a newer JRE in the user.properties file (or sumo.conf in older installations), the newer version will be used.
 
 An upgrade requested through the web application uses HTTPS (port 443) to upgrade files and instruct the Collector to restart.
 
