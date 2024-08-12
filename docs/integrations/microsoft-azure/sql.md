@@ -105,7 +105,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `location`. The region to which the resource name belongs to.
    - `subscription_id`. Id associated with a subscription where resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
+   - `provider_name`. Azure resource provider name (for example, Microsoft.Storage).
    - `resource_type`. Azure resource type (for ex storageaccounts).
    - `resource_name`. The name of the resource (for ex Azure SQL Server name).
    - `service_type`. Type of the service that can be accessed from with a azure resource.
