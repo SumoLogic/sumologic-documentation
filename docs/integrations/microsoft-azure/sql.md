@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
-## Log types
+## Log and metric types
 
 The Sumo Logic app for Azure SQL app uses the following log types:
 
-* Metric
+* Basic Metric
 * QueryStoreRuntimeStatisticsEvent
 * QueryStoreWaitStatisticsEvent
 * DatabaseWaitStatisticsEvent
@@ -23,8 +23,11 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 * ErrorEvent
 * Insight
 * TimeoutEvent
+* Automated Tuning
+* SQL Security Audit
+* Activity Logs
 
-For details on Azure SQL logs and metrics, see [Enable logging](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#enable-logging) in Azure help.
+For details on Azure SQL logs and metrics, see [Metrics and logs available](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available) in Azure help.
 
 
 ### Sample log messages
@@ -75,7 +78,7 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 ### Sample queries
 
 ```sql title="Top 10 Errors"
-_sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
+_sourceCategory=Azure/DB/SQL/Logs ErrorEvent
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"
 | where operationName="ErrorEvent"
@@ -83,43 +86,172 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | top 10 message by eventCount, message asc
 ```
 
-## Collecting logs and metrics
+## Setup
 
-This section has instructions for collecting logs and metrics for the Azure SQL app, as well as a sample log message and a query sample.
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
-### Collect diagnostic logs from Azure Monitor by streaming to EventHub
+* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). It is recommended to create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
+* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
+You must explicitly enable diagnostic settings for each Azure SQL database that you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs` `Azure/SQL/Metrics`.
 
-	 When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
+### Configure field in field schema
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+2. Search for following fields:
+   - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions here https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name
+   - `location`. The region to which the resource name belongs to.
+   - `subscription_id`. Id associated with a subscription where resource is present.
+   - `resource_group`. The resource group name where the Azure resource is present.
+   - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
+   - `resource_type`. Azure resource type (for ex storageaccounts).
+   - `resource_name`. The name of the resource (for ex Azure SQL Server name).
+   - `service_type`. Type of the service that can be accessed from with a azure resource.
+   - `service_name`. Services that can be accessed from within a azure resource (Ex Azure SQL databases in Azure SQL Server).
 
-2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
-	1. Sign in to [Azure Portal](https://portal.azure.com/).
-	2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
-	3. In the Monitoring Section, the **Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
-	4. Enter a name.
-	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
-	6. Select an Azure subscription.
-	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
-	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
-	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
-	10. Select the **Audit** label under **Logs**.
-	11. Click **Save**.
+3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
-### Collect metrics from Azure Monitor by streaming to EventHub
+### Configure Field Extraction Rules
 
-In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
+Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER alredy exists with same name then skip this step.
 
-1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source). Plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Metrics`
+* **Azure Location Extraction FER**
+
+   ```sql
+   Rule Name: AzureLocationExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
+
+   ```sql title="Parse Expression"
+   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+   | if (!isBlank(resourceLocation), resourceLocation, location) as location
+   | if (!isBlank(service_region), service_region, location) as location
+   | if (isBlank(location), "global", location) as location
+   | fields location
+   ```
+
+* **Resource ID Extraction FER**
+
+   ```sql
+   Rule Name: AzureResourceIdExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
+
+   ```sql title="Parse Expression"
+   json "resourceId"
+   | toUpperCase(resourceId) as resourceId
+   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
+   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
+   ```
+### Configure metric rules
+
+  * **Azure Observability Metadata Extraction Metric Rule Service Level**
+
+      In case this rule is already exists then no need to create again.
+
+      ```sql
+      Rule Name: AzureObservabilityMetadataExtractionServiceLevel
+      ```
+
+      ```sql title="Metric match expression"
+      resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
+      ```
+      | Fields extracted | Metric rule    |
+      |------------------|----------------|
+      | subscription_id  | $resourceId._1 |
+      | resource_group   | $resourceId._2 |
+      | provider_name    | $resourceId._3 |
+      | resource_type    | $resourceId._4 |
+      | resource_name    | $resourceId._5 |
+      | service_type     | $resourceId._6 |
+      | service_name     | $resourceId._7 |
+
+
+### Configure metrics collection
+
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+
+1. Create hosted collector and tag tenant_name field
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
+2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL Database that you want to monitor.
+3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select all the metric types under `Metrics` section.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. This should be same as configured in the Sumo Logic Function App **Integration** > **Trigger** settings.
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
    ![diagnosticsetting.png](/img/send-data/azuresqldatabasediagnosticsetting.png)
+
+### Configure logs collection
+
+
+#### Diagnostic logs
+
+In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
+
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
+   * Choose `Stream to an event hub` as the destination.
+   * Select all the log types except `SQL Security Audit Event`.
+   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+
+3. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+
+#### Enable SQL Security Audit logs
+In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
+
+1. To enable the Audit logs in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#configure-auditing-for-your-server). Perform below steps for each Azure SQL database that you want to monitor.
+   * Choose `Event Hub` as the destination. Refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#audit-to-event-hubs-destination).
+   * Use the same Event hub namespace and Event hub name as configured in `Diagnostic logs` in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Auditing.png')} alt="Configure Auditing" style={{border: '1px solid gray'}} width="800" />
+
+1. By default, auditing is enabled only for below action groups. Refer [Azure help](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions) for more details on supported action groups and actions.
+   * "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP"
+   * "FAILED_DATABASE_AUTHENTICATION_GROUP"
+   * "BATCH_COMPLETED_GROUP"
+
+   Below command updates the audit policy with new actions using azure cli. If you want to use any other mechanism refer [docs](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16
+).
+
+  ```sql title="Command to enable audit logs"
+  az sql db audit-policy update --ids "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Sql/servers/<server name>/databases/<database name>" --actions DATABASE_PERMISSION_CHANGE_GROUP DATABASE_OWNERSHIP_CHANGE_GROUP DATABASE_ROLE_MEMBER_CHANGE_GROUP USER_CHANGE_PASSWORD_GROUP SCHEMA_OBJECT_PERMISSION_CHANGE_GROUP SCHEMA_OBJECT_OWNERSHIP_CHANGE_GROUP SCHEMA_OBJECT_CHANGE_GROUP DATABASE_CHANGE_GROUP DATABASE_OBJECT_CHANGE_GROUP  'SELECT, INSERT, UPDATE, DELETE on database::<database name> by public'  --ehari /subscriptions/<subscription_id>/resourcegroups/<resource group where event hub is present>/providers/microsoft.eventhub/namespaces/<event hub namespace>/authorizationrules/rootmanagesharedaccesskey --ehts Enabled  --state Enabled
+  ```
+
+#### Enable Automated Tuning logs
+
+By default all the tuning options are not enabled, you can enable it at server or database level by following the instructions in [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
+
+#### Activity Logs
+
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+
+:::note
+Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
+:::
+
+:::note
+For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings click on Edit Settings.
+:::
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure SQL app
 

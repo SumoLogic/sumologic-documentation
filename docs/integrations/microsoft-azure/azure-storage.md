@@ -33,8 +33,8 @@ Requests made by the Blob storage service itself, such as log creation or deleti
 * [Microsoft.Storage/storageAccounts](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-metrics)
 * [Microsoft.Storage/storageAccounts/blobServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-blobservices-metrics)
 * [Microsoft.Storage/storageAccounts/fileServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-fileservices-metrics)
-  * [Microsoft.Storage/storageAccounts/queueServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-queueservices-metrics)
-  * [Microsoft.Storage/storageAccounts/tableServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-tableservices-metrics)
+* [Microsoft.Storage/storageAccounts/queueServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-queueservices-metrics)
+* [Microsoft.Storage/storageAccounts/tableServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-storage-storageaccounts-tableservices-metrics)
 
 :::note
 Only metrics with `category=Transaction` can be exported from diagnostic settings export feature.
@@ -81,7 +81,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
-* **Activity Logs Location Extraction FER**
+* **Azure Location Extraction FER**
 
    ```sql
    Rule Name: AzureLocationExtractionFER
@@ -113,9 +113,9 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
    | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
    | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<child_service_name>.+)" nodrop
+   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
    | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type
+   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
    ```
 ### Configure metric rules
 
@@ -137,6 +137,7 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 | resource_type    | $resourceId._4 |
 | resource_name    | $resourceId._5 |
 | service_type     | $resourceId._6 |
+| service_name     | $resourceId._7 |
 
 * **Azure Observability Metadata Extraction Storage Account Level**
 ```sql
