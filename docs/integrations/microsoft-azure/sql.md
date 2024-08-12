@@ -224,7 +224,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * "FAILED_DATABASE_AUTHENTICATION_GROUP"
    * "BATCH_COMPLETED_GROUP"
 
-   Below command updates the audit policy with new actions using azure cli. If you want to use any other mechanism refer [docs](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16
+   Below command updates the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to these [docs](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
 ).
 
   ```sql title="Command to enable audit logs"
