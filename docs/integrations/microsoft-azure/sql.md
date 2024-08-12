@@ -544,7 +544,7 @@ Use this dashboard to:
 The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
 Use this dashboard to:
-    * Identify top users peforming adminstrative operations.
+    * Identify top users performing administrative operations.
     * View Top 10 operations that caused the most errors.
     * View recent read, write and delete operations.
 
