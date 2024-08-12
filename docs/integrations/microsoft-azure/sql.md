@@ -96,7 +96,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 You must explicitly enable diagnostic settings for each Azure SQL database that you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs` `Azure/SQL/Metrics`.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs`, and `Azure/SQL/Metrics`.
 
 ### Configure field in field schema
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
@@ -198,7 +198,7 @@ In this section, you will configure a pipeline to send metrics from Azure Monito
 
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
-1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select all the log types except `SQL Security Audit Event`.
@@ -219,7 +219,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * "FAILED_DATABASE_AUTHENTICATION_GROUP"
    * "BATCH_COMPLETED_GROUP"
 
-   Below command updates the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to these [docs](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
+Follow the below command to update the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
 ).
 
   ```sql title="Command to enable audit logs"
@@ -228,7 +228,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Enable Automated Tuning logs
 
-By default, all the tuning options are not enabled, You can enable them at the server or database level by following the instructions in [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
+By default, all the tuning options are not enabled, you can enable them at the server or database level by following the instructions in the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
 
@@ -546,17 +546,17 @@ The **Azure SQL - Administrative Operations** dashboard provides details on read
 Use this dashboard to:
     * Identify top users performing administrative operations.
     * View Top 10 operations that caused the most errors.
-    * View recent read, write and delete operations.
+    * View recent read, write, and delete operations.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Admin-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SQL Security Audit
 
-The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events, and database level events including DML and DDL statements executed.
+The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events and database level events including DML and DDL statements executed.
 
 Use this dashboard to:
     * Identify failed login and their geo locations.
-    * View recent DDL, DML, DQL and TCL statements.
+    * View recent DDL, DML, DQL, and TCL statements.
     * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
 
 
