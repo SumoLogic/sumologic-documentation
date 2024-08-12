@@ -226,7 +226,7 @@ Follow the below command to update the audit policy with new actions using Azure
   az sql db audit-policy update --ids "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Sql/servers/<server name>/databases/<database name>" --actions DATABASE_PERMISSION_CHANGE_GROUP DATABASE_OWNERSHIP_CHANGE_GROUP DATABASE_ROLE_MEMBER_CHANGE_GROUP USER_CHANGE_PASSWORD_GROUP SCHEMA_OBJECT_PERMISSION_CHANGE_GROUP SCHEMA_OBJECT_OWNERSHIP_CHANGE_GROUP SCHEMA_OBJECT_CHANGE_GROUP DATABASE_CHANGE_GROUP DATABASE_OBJECT_CHANGE_GROUP  'SELECT, INSERT, UPDATE, DELETE on database::<database name> by public'  --ehari /subscriptions/<subscription_id>/resourcegroups/<resource group where event hub is present>/providers/microsoft.eventhub/namespaces/<event hub namespace>/authorizationrules/rootmanagesharedaccesskey --ehts Enabled  --state Enabled
   ```
 
-#### Enable Automated Tuning logs
+#### Enable Automatic Tuning logs
 
 By default, all the tuning options are not enabled, you can enable them at the server or database level by following the instructions in the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
 
@@ -278,7 +278,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 See the count of logical servers, databases, errors; and the “top 10” active servers, resource groups, subscriptions, resources, databases, operations, and categories.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-overview.png')} alt="Overview" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Overview.png')} alt="Overview" />
 
 **Logical Servers**. The count of logical servers over the last 24 hours.
 
@@ -316,7 +316,7 @@ See the count of logical servers, databases, errors; and the “top 10” active
 
 See information about blocking queries in Azure SQL, including lock mode usage, lock duration, and details about block events.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-blocking-stats.png')} alt="Blocking Stats" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Blocking-Stats.png')} alt="Blocking Stats" />
 
 **Lock Mode Used by Query**. A donut chart that shows the breakdown of lock modes for blocked queries over the last 7 days.
 
@@ -344,7 +344,7 @@ See information about blocking queries in Azure SQL, including lock mode usage, 
 
 See information about errors in Azure SQL, including total error count, top 10 error numbers and error messages, errors by severity and database, error trend and comparison analyzes, and error details.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-errors.png')} alt="Errors" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Errors.png')} alt="Errors" />
 
 **Errors**. Count of errors over the last 24 hours.
 
@@ -370,7 +370,7 @@ See metrics for connections attempts; Database Transaction Unit (DTUs), CPU and 
 
 For information about the metrics presented in the Metrics dashboards, see [All metrics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#all-metrics) and **Microsoft.Sql/servers/databases** in Azure help.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-metrics.png')} alt="Metrics" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Metrics.png')} alt="Metrics" />
 
 **Blocked by Firewall**. A line chart showing the count of connections blocked by a firewall over the last 24 hours.
 
@@ -419,7 +419,7 @@ See query runtime execution statistics such as CPU usage and query duration.
 
 For more information about the statistics presented on the QueryStoreRuntime Stats dashboard, see [Query Store runtime statistics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#query-store-runtime-statistics) in Azure help.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-querystoreruntime-stats.png')} alt="QueryStoreRuntime Stats" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-QueryStoreRuntime-Stats.png')} alt="QueryStoreRuntime Stats" />
 
 **Unique QueryId's**. The count of unique queryIDs over the last 24 hours.
 
@@ -461,7 +461,7 @@ See information about how much time a database spent waiting on different wait t
 
 For more information about the statistics presented on the QueryStoreWaitStats dashboard, see [Query Store wait statistics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#query-store-wait-statistics) in Azure help.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-querystorewait-stats.png')} alt="QueryStoreWait Stats" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-QueryStoreWait-Stats.png')} alt="QueryStoreWait Stats" />
 
 **Wait Category**. A donut chart that shows the breakdown of wait events by database over the last 24 hours.
 
@@ -482,7 +482,7 @@ See database performance analytics obtained from Azure SQL Database Intelligent 
 
 For more information about the data presented on the SQLInsights dashboard, see [Use the Intelligent Insights Azure SQL Database performance diagnostics log](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-intelligent-insights-use-diagnostics-log) in Azure help.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-sqlinsights.png')} alt="SQLInsights" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-SQLInsights.png')} alt="SQLInsights" />
 
 **Active SQLInsights**.  Count of active SQL Insights issues as of the current time.
 
@@ -504,7 +504,7 @@ See information about timeouts in Azure SQL.
 
 For more information about the data presented on the Timeouts dashboard, see [Time-outs dataset](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#time-outs-dataset) in Azure help.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-timeouts.png')} alt="Timeouts" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Timeouts.png')} alt="Timeouts" />
 
 **Timeouts**. The count of timeouts over the last 7 days.  
 
@@ -523,7 +523,7 @@ Use this dashboard to:
     * View distribution of service and resource health by incident type.
 
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
@@ -536,7 +536,7 @@ Use this dashboard to:
     * Identify High Impact recommendations.
     * View recent recommendation events and navigate to the affected resource.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-policy-and-recommendation.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Policy-and-Recommendations.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Administrative Operations
@@ -548,7 +548,7 @@ Use this dashboard to:
     * View Top 10 operations that caused the most errors.
     * View recent read, write, and delete operations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Admin-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Administrative-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SQL Security Audit
 
@@ -560,15 +560,15 @@ Use this dashboard to:
     * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
 
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Security-Audit.png')} alt="Azure SQL Security Audit dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-SQL-Security-Audit.png')} alt="Azure SQL Security Audit dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Automated Tuning
+### Automatic Tuning
 
-The **Azure SQL - Automated Tuning** dashboard provides information about automatic tuning recommendations for a database.
+The **Azure SQL - Automatic Tuning** dashboard provides information about automatic tuning recommendations for a database.
 
 Use this dashboard to:
     * View recent changes in tuning configuration.
     * View create index recommendations.
     * View drop index recommendations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automate-Tuning-dashboard.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Automatic-Tuning.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
