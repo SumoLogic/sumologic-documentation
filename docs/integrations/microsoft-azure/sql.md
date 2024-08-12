@@ -167,7 +167,7 @@ Create a Field Extraction Rule (FER) by following the instructions [here](/docs/
       resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
       ```
       | Fields extracted | Metric rule    |
-      |------------------|----------------|
+      |:------------------|:----------------|
       | subscription_id  | $resourceId._1 |
       | resource_group   | $resourceId._2 |
       | provider_name    | $resourceId._3 |
