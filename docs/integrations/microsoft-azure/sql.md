@@ -234,7 +234,7 @@ By default all the tuning options are not enabled, you can enable it at server o
 
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
 
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
