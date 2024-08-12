@@ -228,7 +228,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Enable Automated Tuning logs
 
-By default all the tuning options are not enabled, you can enable it at server or database level by following the instructions in [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
+By default, all the tuning options are not enabled, You can enable them at the server or database level by following the instructions in [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql#azure-portal-1).
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
 
@@ -514,3 +514,61 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 
 **Timeouts Details**. A table that lists information about timeouts that have occurred over the last 7 days.
 
+### Azure Storage - Health
+
+The **Azure Storage - Health** dashboard provides information of any service health incidents or resource health events associated with SQL database service or resource in your azure account.
+
+Use this dashboard to:
+    * View recent resource and service health incidents.
+    * View distribution of service and resource health by incident type.
+
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Azure SQL - Policy and Recommendations
+
+The **Azure SQL - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure Policy and recommendations events from Azure Advisor.
+
+Use this dashboard to:
+    * Monitor policy events with warnings and errors.
+    * View recent failed policy events.
+    * View total recommendation events.
+    * Identify High Impact recommendations.
+    * View recent recommendation events and navigate to the affected resource.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
+
+
+### Azure SQL - Administrative Operations
+
+The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
+
+Use this dashboard to:
+    * Identify top users peforming adminstrative operations.
+    * View Top 10 operations that caused the most errors.
+    * View recent read, write and delete operations.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Audit-control-plane-operations.png')} alt="Azure Storage audit control plane operations dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Azure SQL - SQL Security Audit
+
+The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events, and database level events including DML and DDL statements executed.
+
+Use this dashboard to:
+    * Identify failed login and their geo locations.
+    * View recent DDL, DML, DQL and TCL statements.
+    * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
+
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Azure SQL - Automated Tuning
+
+The **Azure SQL - Automated Tuning** dashboard provides information about automatic tuning recommendations for a database.
+
+Use this dashboard to:
+    * View recent changes in tuning configuration.
+    * View create index recommendations.
+    * View drop index recommendations.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Security-and-policy.png')} alt="Azure Storage Security and policy dashboard" style={{border: '1px solid gray'}} width="800" />

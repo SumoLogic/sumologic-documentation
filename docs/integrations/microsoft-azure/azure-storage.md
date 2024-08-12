@@ -73,7 +73,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
    - `resource_type`. Azure resource type (for ex storageaccounts).
    - `resource_name`. The name of the resource (for ex storage account name).
-   - `service_type`. Services that can be accessed from within a azure resource (Ex table service in storage account).
+   - `service_type`. Type of the service that can be accessed from with a azure resource. (for example, blobservices)
+   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL databases in Azure SQL Server).
+
 
 3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
