@@ -105,11 +105,11 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `location`. The region to which the resource name belongs to.
    - `subscription_id`. Id associated with a subscription where resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Storage).
-   - `resource_type`. Azure resource type (for ex storageaccounts).
+   - `provider_name`. Azure resource provider name (for example, Microsoft.SQL).
+   - `resource_type`. Azure resource type (for example, SERVERS).
    - `resource_name`. The name of the resource (for example, Azure SQL Server name).
-   - `service_type`. Type of the service that can be accessed from with a azure resource.
-   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL databases in Azure SQL Server).
+   - `service_type`. Type of the service that can be accessed from with a azure resource (for example, DATABASES).
+   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL database name in Azure SQL Server).
 
 3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
@@ -184,7 +184,7 @@ In this section, you will configure a pipeline to send metrics from Azure Monito
 1. Create hosted collector and tag `tenant_name` field.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL database that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select all the metric types under `Metrics` section.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
