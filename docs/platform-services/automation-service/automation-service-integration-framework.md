@@ -640,7 +640,7 @@ opt_11: <value>
 
 ##### Incident hooks
 
-Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
+Following are hooks for [incident](/docs/cloud-soar/incidents-triage/#incidents) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
 * `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.

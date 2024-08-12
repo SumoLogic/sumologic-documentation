@@ -123,7 +123,7 @@ The table below shows the `_sourceCategory` that is assigned to System Event Ind
 |:--|:--|
 | [Entity](/docs/cloud-soar/incidents-triage/#entities)  | `oarEntities` |
 | [Investigators](/docs/cloud-soar/incidents-triage/#add-investigators) | `oarIncidentInvestigators` |
-| [Incident](/docs/cloud-soar/incidents-triage)  | `oarIncidents`   |
+| [Incident](/docs/cloud-soar/incidents-triage/#incidents)  | `oarIncidents`   |
 | [Triage](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriage` |
 
 ## _sourceName and _sourceHost assignment
