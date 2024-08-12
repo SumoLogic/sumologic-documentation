@@ -107,7 +107,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `resource_group`. The resource group name where the Azure resource is present.
    - `provider_name`. Azure resource provider name (for example, Microsoft.Storage).
    - `resource_type`. Azure resource type (for ex storageaccounts).
-   - `resource_name`. The name of the resource (for ex Azure SQL Server name).
+   - `resource_name`. The name of the resource (for example, Azure SQL Server name).
    - `service_type`. Type of the service that can be accessed from with a azure resource.
    - `service_name`. Services that can be accessed from within a azure resource (Ex Azure SQL databases in Azure SQL Server).
 
