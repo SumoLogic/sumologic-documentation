@@ -155,7 +155,7 @@ Create a Field Extraction Rule (FER) by following the instructions [here](/docs/
    ```
 ### Configure metric rules
 
-  * **Azure Observability Metadata Extraction Metric Rule Service Level**
+  * **Azure Observability Metadata Extraction Service Level**
 
       If this rule already exists, there's no need to create it again.
 
@@ -181,10 +181,11 @@ Create a Field Extraction Rule (FER) by following the instructions [here](/docs/
 
 In this section, you will configure a pipeline to send metrics from Azure Monitor to an Event Hub, then to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
+<<<<<<< Updated upstream
 1. Create hosted collector and tag `tenant_name` field.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
+1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select all the metric types under `Metrics` section.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
@@ -199,14 +200,14 @@ In this section, you will configure a pipeline to send metrics from Azure Monito
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
+1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select all the log types except `SQL Security Audit Event`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
 
-3. Tag the location field in the source with right location value.
+1. Tag the location field in the source with right location value.
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
 
 #### Enable SQL Security Audit logs
@@ -517,3 +518,4 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 **Timeouts by Database**. A table that lists the count of timeouts by database over the last 7 days.
 
 **Timeouts Details**. A table that lists information about timeouts that have occurred over the last 7 days.
+
