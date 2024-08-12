@@ -157,7 +157,7 @@ Create a Field Extraction Rule (FER) by following the instructions [here](/docs/
 
   * **Azure Observability Metadata Extraction Metric Rule Service Level**
 
-      In case this rule is already exists then no need to create again.
+      If this rule already exists, there's no need to create it again.
 
       ```sql
       Rule Name: AzureObservabilityMetadataExtractionServiceLevel
