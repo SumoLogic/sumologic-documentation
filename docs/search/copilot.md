@@ -112,7 +112,7 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home page.
 
-<img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+<img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
 
 ### Step 2: Select a source category
 

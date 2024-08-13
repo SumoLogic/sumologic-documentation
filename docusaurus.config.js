@@ -119,8 +119,12 @@ module.exports = {
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -157,8 +161,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -177,8 +185,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SOAR Release Notes',
            description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -197,8 +209,12 @@ module.exports = {
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -217,8 +233,12 @@ module.exports = {
           postsPerPage: 'ALL',
           blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -271,7 +291,6 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
-        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -507,23 +526,6 @@ module.exports = {
               },
             ],
             title: 'Open Source',
-          },
-          {
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@sumologic/videos',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/sumo-logic',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://x.com/SumoLogic',
-              },
-            ],
-            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
