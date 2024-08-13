@@ -31,7 +31,7 @@ Download the collector in either of the following ways:
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the collector to begin the download.
-* Browser 
+* Browser
     1. Open a browser.
     1. Enter the static URL for your pod. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url/) for a list of URLs for your deployment pod. The download begins immediately.
 
@@ -66,7 +66,7 @@ Run the installer on your server with root or Administrator privileges. If you a
  ```bash
  chmod +x SumoCollector.sh
  ```
-2. Run the script with the parameters that you want to configure. See Parameters for the Command Line Installer for a description of the parameters. By default, the Collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
+2. Run the script with the parameters that you want to configure. See [Installed Collector CLI Parameters](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer) for a description of the parameters. By default, the Collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
 
 **Examples**
 

@@ -1,6 +1,6 @@
 ---
-id: configuration
-title: Configure an Installed Collector
+id: overview
+title: Installed Collector Overview
 description: Learn how to install and configure an Installed Collector to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 
@@ -131,7 +131,7 @@ This section is an overview of how Installed Collectors and their Sources operat
 
 ### Installed Collector startup
 
-When you start up an Installed Collector for the first time it registers with Sumo and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
+When you start up an Installed Collector for the first time, it registers with Sumo and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
 
 When the collector tries to register with Sumo it first sends the request to the US1 deployment. If your organization is in another deployment Sumo will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](collector-installation-reference/user-properties.md) file with the `url` parameter.
 
@@ -189,6 +189,6 @@ A Collector enters flushing mode when less than 10% of free disk space remains o
 ## Collector monitoring and logging
 
 An Installed Collector sends a heartbeat to the Sumo service every 15 seconds. If the Sumo service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo web app. The heartbeat is linked to the [`alive` parameter](/docs/send-data/use-json-configure-sources)in the JSON object. If an Installed Collector
-appears offline try restarting the service and [testing connectivity](collector-installation-reference/test-connectivity-sumo-collectors.md).
+appears offline try restarting the service and [testing connectivity](collector-installation-reference/troubleshooting.md).
 
 The Collector uses the log4j2 framework. You can tailor log rotation behavior for `collector.log` by editing the `log4j2.xml` file in the collector’s `/config` directory. For more information, see Log Rotation Settings.

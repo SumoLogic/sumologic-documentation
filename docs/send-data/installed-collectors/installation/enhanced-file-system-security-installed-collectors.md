@@ -1,6 +1,7 @@
 ---
 id: enhanced-file-system-security-installed-collectors
 title: Enhanced File System Security for Installed Collectors
+sidebar_label: Enhanced File System Security
 description: Enhanced file system security protects the log cache and configuration files for installed Collectors.
 ---
 

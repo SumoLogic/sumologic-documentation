@@ -1,6 +1,7 @@
 ---
 id: add-collector-linux-machine-image
 title: Add a Collector to a Linux Machine Image
+sidebar_label: Add Collector to Linux Machine Image
 description: You can build a Sumo Logic Collector into a Linux machine image such as an Amazon AMI or VMware image.
 ---
 

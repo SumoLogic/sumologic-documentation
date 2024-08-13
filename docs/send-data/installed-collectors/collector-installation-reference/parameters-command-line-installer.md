@@ -60,23 +60,19 @@ For example:
 
 Parameters for `-q` and `-dir` must be passed in the command line and cannot be used within a varfile.
 
-
 ### `-Vcollector.secureFiles=<true|false>`
 
 By default, new Collector installations will use [enhanced file system security](enhanced-file-system-security-installed-collectors.md). To disable this feature during installation, set this to `false`.
 
-
 ### `-VrunAs.username=<username>`
 
 (Windows and Linux) When set, the Collector will run as the specified user. For Windows, the user account needs `Log on as a Service` permission.
-
 
 ### `-VwinRunAs.password=<password>`
 
 (Windows only) When set in conjunction with `-VrunAs.username`, the Collector will run as the specified user with the specified password.
 
 Many operating systems allow you to list information about processes that are owned by other users. This information could include command-line arguments. For enhanced security, we recommend using the `-varfile` option to specify Windows RunAs password.
-
 
 ## user.properties file parameters
 

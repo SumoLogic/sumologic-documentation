@@ -1,6 +1,7 @@
 ---
 id: download-collector-from-static-url
 title: Download an Installed Collector from a Static URL
+sidebar_label: Download Collector from Static URL
 description: Static URLs provide download links to the most recent version of a Collector.
 ---
 

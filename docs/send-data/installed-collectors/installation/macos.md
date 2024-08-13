@@ -22,7 +22,7 @@ If your machine has already had an Installed Collector installed in the past and
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the Collector to begin the download.
@@ -57,13 +57,13 @@ This method does not support all advanced settings.
    * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
    * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/troubleshooting.md) list to help troubleshoot.
 
 ### Using the command line installer 
 
 Quiet mode performs the same installation steps as the UI installer, but runs in the background and doesn’t require any user interaction while it is running. It is useful for scripting an automated installation of multiple Collectors.
 
-Specify the installation parameters on the command line, or create a variables file (varfile) to call from the command line. See [Parameters for the Command Line Installer](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
+Specify the installation parameters on the command line, or create a variables file (varfile) to call from the command line. See [Installed Collector CLI Parameters](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
 
 1. Open the downloaded installer file to mount it.   
     ```sh
@@ -73,7 +73,7 @@ Specify the installation parameters on the command line, or create a variables f
     ```sh
     cd /Volumes/SumoCollector/Sumo\ Logic\ Collector\ Installer.app/Contents/MacOS/
     ```
-1. Run the JavaApplicationStub binary with the parameters that you want to configure. See [Parameters for the Command Line Installer](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
+1. Run the JavaApplicationStub binary with the parameters that you want to configure. See [Installed Collector CLI Parameters](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
 
 **Examples**
 

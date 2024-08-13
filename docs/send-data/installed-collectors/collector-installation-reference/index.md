@@ -25,7 +25,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Test Collector Connectivity</h4></a>
+  <a href="/docs/send-data/installed-collectors/collector-installation-reference/troubleshooting"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Test Collector Connectivity</h4></a>
   <p>Test access and connectivity from an installed Collector to the Sumo Logic service.</p>
   </div>
 </div>
@@ -43,7 +43,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/installed-collectors/collector-installation-reference/collector-installation-error-messages/"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector Installation Error Messages</h4></a>
+  <a href="/docs/send-data/installed-collectors/collector-installation-reference/troubleshooting/"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector Installation Error Messages</h4></a>
   <p>Troubleshoot issues that arise during collector installation.</p>
   </div>
 </div>

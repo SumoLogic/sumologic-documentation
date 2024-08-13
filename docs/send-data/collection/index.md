@@ -55,7 +55,7 @@ You'll need the Manage or View Collectors [role capability](/docs/manage/users-r
   * **Open in Search**. Hover over the Name of the Collector or Source and click the Open in Search icon to start a search in the Search page.
   * **Tooltip**. Hover over a Collector or Source name to display an informational tool tip. The Collector's version is provided in the tooltip.      <br/>![Collector version in tooltip.png](/img/collector/collector-version-in-tooltip.png)
 * **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](/docs/manage/health-events.md).
-  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors).
+  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](/docs/send-data/installed-collectors/collector-installation-reference/troubleshooting).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.
 * **Status**. Shows the status of Sources manually paused by users.
 * **Source Category**. Displays the name of the configured Source Category for this Collector or Source.

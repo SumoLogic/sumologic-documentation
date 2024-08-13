@@ -193,7 +193,7 @@ You can also determine which deployment pod your account is using by creating an
 
 See the [static IP addresses for Cloud-to-Cloud Integration Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#static-ip-addresses).
 
-For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors) for instructions on allowing outbound traffic over port 443.
+For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/troubleshooting) for instructions on allowing outbound traffic over port 443.
 
 * If your firewall allows DNS entries, add the following to the allowlist in your firewall to allow outbound traffic to sumologic.com:
    ```

@@ -1,6 +1,7 @@
 ---
 id: add-collector-windows-machine-image
 title: Add a Collector to a Windows Machine Image
+sidebar_label: Add Collector to Windows Machine Image
 description: You can build a Sumo Logic Collector into a Windows machine image such as an Amazon AMI, a VMware image, or Azure virtual machine.
 ---
 
