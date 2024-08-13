@@ -47,7 +47,7 @@ The War Room provides a complete, chronological, and detailed picture of a speci
 
 ### Playbooks
 
-Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbook](/docs/cloud-soar/automation/#playbook).
+Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbook](/docs/cloud-soar/incidents-triage/#playbooks).
 
 <img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid gray'}} width="800" />
 
@@ -59,7 +59,7 @@ Gain complete insight into incident response performance with customizable dashb
 
 ### Open Integration Framework (OIF)
 
-Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](/docs/cloud-soar/automation/#integrations) and [Integration Framework](/docs/platform-services/automation-service/automation-service-integration-framework). 
+Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) and [Integration Framework](/docs/platform-services/automation-service/automation-service-integration-framework/). 
 
 <img src={useBaseUrl('img/cloud-soar/overview-openI-itegration.png')} alt="Integrations" style={{border: '1px solid gray'}} width="800" />
 
@@ -272,14 +272,7 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 Select the icon to the right of an event to trigger a notification to be sent when that event occurs. 
 
-### Configuration
-
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Cloud SOAR configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization**.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select the setting you want to update: Fields, Incident Labels, or Triage. 
- Kanso-->
-
-#### Custom fields
+### Custom fields
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
 <!--Kanso 
@@ -341,7 +334,7 @@ These custom field settings will appear in the Cloud SOAR Incident screen as fol
 
 <img src={useBaseUrl('img/cloud-soar/sla-fields-on-incident.png')} alt="SLA fields on an incident" style={{border: '1px solid gray'}} width="800"/>
 
-#### Incident labels
+### Incident labels
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access incident label settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**.
 <!--Kanso 
@@ -352,7 +345,7 @@ These custom field settings will appear in the Cloud SOAR Incident screen as fol
 
 The **Incident label** page allows you to define labels for the different types of incidents that will be investigated. You can also create these labels during the automation rule and incident template creation process.
 
-#### Triage
+### Triage
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
 <!--Kanso 
