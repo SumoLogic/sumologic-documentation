@@ -10,7 +10,7 @@ on:
       base_url:
         description: Base url for the deployed environment. Should start and end with a slash.
         required: false
-        default: "/"
+        default: "/help/"
         type: string
       environment:
         description: GHA environment name

@@ -1,4 +1,8 @@
-name: deploy-to-production
+name: staging
+
+# What it does / why we have it:
+#  -
+#  -
 
 on:
   push:
@@ -9,10 +13,10 @@ jobs:
   deploy-to-staging:
     uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
     with:
-      hostname: https://www.sumologic.com
-      environment: production
+      hostname: https://d10g313yy2pc88.cloudfront.net
+      environment: staging
     secrets:
-      S3_BUCKET_NAME: ${{ secrets.PRODUCTION_S3_BUCKET_NAME }}
-      CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID }}
+      S3_BUCKET_NAME: ${{ secrets.STAGING_S3_BUCKET_NAME }}
+      CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

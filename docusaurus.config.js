@@ -16,14 +16,14 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: process.env.HOSTNAME || "http://localhost:3000",
+  url: process.env.HOSTNAME || "https://www.sumologic.com", // why did this say "http://localhost:3000" before?
   trailingSlash: true,
-  baseUrl: process.env.BASE_URL || "/",
+  baseUrl: process.env.BASE_URL || "/help/",
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://www.sumologic.com/favicon.ico',
-  organizationName: 'sumologic', // Usually your GitHub org/user name.
-  projectName: 'sumologic-documentation', // Usually your repo name.
+  organizationName: 'sumologic',
+  projectName: 'sumologic-documentation',
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
@@ -113,7 +113,7 @@ module.exports = {
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
-          routeBasePath: 'release-notes-service',
+          routeBasePath: 'help/release-notes-service',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
@@ -152,7 +152,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
-         routeBasePath: 'release-notes-cse',
+         routeBasePath: 'help/release-notes-cse',
          path: './blog-cse',
          archiveBasePath: 'archive',
          blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
@@ -176,7 +176,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-csoar',
-         routeBasePath: 'release-notes-csoar',
+         routeBasePath: 'help/release-notes-csoar',
          path: './blog-csoar',
          archiveBasePath: 'archive',
          blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
@@ -200,7 +200,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-developer',
-          routeBasePath: 'release-notes-developer',
+          routeBasePath: 'help/release-notes-developer',
           path: './blog-developer',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Developer Release Notes',
@@ -224,7 +224,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-collector',
-          routeBasePath: 'release-notes-collector',
+          routeBasePath: 'help/release-notes-collector',
           path: './blog-collector',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Collector Release Notes',
@@ -406,27 +406,27 @@ module.exports = {
             items:[
               {
                 label: 'Service',
-                to: 'release-notes-service',
+                to: 'help/release-notes-service',
                 icon: 'rss_feed',
               },
               {
                 label: 'Cloud SIEM',
-                to: 'release-notes-cse',
+                to: 'help/release-notes-cse',
                 icon: 'rss_feed',
               },
               {
                 label: 'Cloud SOAR',
-                to: 'release-notes-csoar',
+                to: 'help/release-notes-csoar',
                 icon: 'rss_feed',
               },
               {
                 label: 'Collector',
-                to: 'release-notes-collector',
+                to: 'help/release-notes-collector',
                 icon: 'rss_feed',
               },
               {
                 label: 'Developer',
-                to: 'release-notes-developer',
+                to: 'help/release-notes-developer',
                 icon: 'rss_feed',
               },
             ]
