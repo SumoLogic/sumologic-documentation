@@ -356,24 +356,6 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
 
-      <!--<details>
-       <summary>CloudQuery</summary>
-
-       This section demonstrates how you can optionally create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. 
-       
-       If fields are missing, or you need to change them, do the following:
-       * **8.1 Configure CloudQuery C2C Source**
-          * **Setup CloudQuery Source at Org Level**. Select **Yes** to set up the CloudQuery source in the Sumo Logic platform at the organization level, which collects the data of multiple AWS services.
-          * **CloudQuery logs source category name**. The source category name to be created (for example, `aws/cis/cloudquery/logs`).
-          * **AWS Access Key**. Enter your AWS access key. Retrieve this from your AWS account. (See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).)
-          * **AWS Secret Key**. Enter your AWS secret key. Retrieve this from your AWS account. (See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).)
-          * **AWS Role ARN**. Enter the AWS Role ARN of the admin account. (See [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org).)
-          * **AWS Member Role Name**. Enter AWS Member Role name created in all org accounts. (See [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org).)
-          * **CloudQuery Regions**. Select the AWS regions to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS regions as follows: `eu-north-1,eu-west-3,eu-west-2,eu-west-1,ap-northeast-2,ap-northeast-1,sa-east-1,ca-central-1,ap-southeast-1,ap-southeast-2,eu-central-1,us-east-1,us-east-2,us-west-1,us-west-2`.
-          * **CloudQuery Services**. Select the AWS services to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS services as follows: `apigateway,ecs,ec2,lambda,autoscaling,s3,elb,rds,dynamodb,elasticache,redshift,sns,sqs,cloudfront,elasticbeanstalk,eks,accessanalyzer,account,acm,backup,cloudtrail,cloudwatch,codebuild,config,directconnect,dms,ecr,efs,elasticsearch,emr,guardduty,iam,kms,lightsail,route53,sagemaker,secretsmanager,securityhub,ssm,waf,wafv2`.
-          * **How Frequently to Poll AWS Service(s)**. Set how frequently to poll AWS Services inventory in hours. The default is **12**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-query-config.png')} alt="CloudQuery configuration" style={{border: '1px solid gray'}} width="700"/>
-       </details> -->
-
 1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see [Step 2: Check AWS role permission](#step-2-check-aws-role-permission). <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
 1. Under **Capabilities and transforms**, select the acknowledgement boxes.
 1. Click **Create Stack**. The stack is created, and the solution is installed.
@@ -507,17 +489,6 @@ The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (C
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-siem-insights.png')} alt="Cloud SIEM Insights dashboard" style={{border: '1px solid gray'}} width="600"/>
 
-<!-- 
-### Infrastructure Overview
-
-The **Infrastructure Overview** dashboard helps you identify all accounts, services, and resources within your cloud environment. It helps you get deep visibility into your cloud infrastructure to understand how many cloud resources are running and their configurations.
-
-:::note
-To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). 
-:::
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
--->
 
 ### Security Control Failures dashboards
 
@@ -528,29 +499,6 @@ The Security Control Failures dashboards identify misconfigurations in your envi
 The **Security Control Failures - AWS Security Hub** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-aws-security-hub.png')} alt="Security Control Failures - AWS Security Hub dashboard" style={{border: '1px solid gray'}} width="600"/>
-
-<!--
-#### Security Control Failures Overview
-
-The **Security Control Failures Overview** dashboard shows you misconfigurations in your environment that may leave you vulnerable to attackers. These checks are run natively by Sumo Logic to find blind spots in your AWS infrastructure. 
-
-:::note
-To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). 
-::: 
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-overview.png')} alt="Security Control Failures Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
-
-#### Security Control Failures Investigation
-
-The **Security Control Failures Investigation** dashboard provides a detailed view for the [**Security Control Failures Overview**](#security-control-failures-overview) dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
-
-:::note
-To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws).  
-:::
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" style={{border: '1px solid gray'}} width="600"/>
-
--->
 
 ### Suspicious Activity dashboards
 
