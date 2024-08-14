@@ -289,6 +289,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
@@ -2721,13 +2722,9 @@ integrations: [
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
         'cloud-soar/overview',
-        'cloud-soar/architecture',
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
-        'cloud-soar/cloud-soar-bridge',
-        'cloud-soar/cloud-soar-integration-framework',
-        'cloud-soar/audit-event-index',
         {
           type: 'category',
           label: 'Legacy Cloud SOAR',
