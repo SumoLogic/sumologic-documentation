@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## SecOps and Dashboard
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the SecOps and Dashboard screens, in the main Sumo Logic menu select **Cloud SOAR**.
-<!--Kanso 
+<!--Kanso
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access the SecOps and Dashboard screens, in the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.
  Kanso-->
 
-The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group. 
+The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group.
 
 Select **Dashboard** in the upper left corner to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
 
@@ -23,10 +23,10 @@ Select **Dashboard** in the upper left corner to see dashboards showing your tas
 
 ## Incidents
 
-Incidents are events that require investigation and remediation. Incidents are at the heart of Cloud SOAR. 
+Incidents are events that require investigation and remediation. Incidents are at the heart of Cloud SOAR.
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access incidents, in the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
-<!--Kanso 
+<!--Kanso
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access incidents, in the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
  Kanso-->
 
@@ -124,9 +124,9 @@ To allow users to access incidents without being added as investigators, assign 
 1. To create an incident manually, click the **+** button at the top of the **Incidents** screen. <br/><img src={useBaseUrl('img/cloud-soar/create-incident-button.png')} alt="Create incident button" style={{border: '1px solid gray'}} width="100"/>
 1. A new configuration box will be displayed that contains fields an investigator can utilize to develop their incident. Not all these fields are mandatory. The ones that are required will have an asterisk (`*`) marked next to them which indicates the field has a dependency within the Cloud SOAR platform. These required fields can have their dependencies and requirements adjusted with [custom fields](/docs/cloud-soar/overview/#custom-fields). <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-screen.png')} alt="Incident Creation screen" style={{border: '1px solid gray'}} width="700"/>
 1. One of the most important fields is the **Type** field. This field will dictate which playbooks will be recommended later on in the configuration process. See [custom fields](/docs/cloud-soar/overview/#custom-fields) to modify the variables displayed in the **Type** field. <br/><img src={useBaseUrl('img/cloud-soar/type-field.png')} alt="Type field" style={{border: '1px solid gray'}} width="200"/>
-1. Click **Next**. 
+1. Click **Next**.
 1. Once you complete the **Details** page, you will want to assign appropriate playbooks to be associated with the incident. In addition to adding playbooks to the incident, you can also decide whether you want the playbook to automatically execute upon incident creation by sliding the **Autorun** button to **On**. <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-automation.png')} alt="Incident Creation - Automation screen" style={{border: '1px solid gray'}} width="700"/>
-1. Click **Next**. 
+1. Click **Next**.
 1. The investigator may already have artifacts that they would like to add to the incident. The **Artifacts** section allows for the manual entry of new artifacts. To add a new artifact, click **Add Artifact** and choose what target field to append the data and add its value. Once completed, click **Next**. <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-artifacts.png')} alt="Incident Creation - Artifacts screen" style={{border: '1px solid gray'}} width="700"/>
 1. Click **Next**.
 1. You have the option to create manual parent/child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together. <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-relationship.png')} alt="Incident Creation - Relationships screen" style={{border: '1px solid gray'}} width="700"/>
@@ -150,7 +150,7 @@ The incident properties section in the center contains all the important informa
 
 ### Overview tab
 
-The incident **Overview** tab contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in [custom fields](/docs/cloud-soar/overview/#custom-fields). 
+The incident **Overview** tab contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in [custom fields](/docs/cloud-soar/overview/#custom-fields).
 
 ### Operations tab
 
@@ -211,7 +211,7 @@ To explore notes:
 
 The **Entities** tab shows the entities associated with the incident. Entities are unique actors encountered in incoming messages, such as a user, IP address, or host.
 
-To see entities for all incidents, open the **Entities** page. For more information, see [Entities](/docs/cloud-soar/incidents-triage/#entities). 
+To see entities for all incidents, open the **Entities** page. For more information, see [Entities](/docs/cloud-soar/incidents-triage/#entities).
 
 <img src={useBaseUrl('img/cloud-soar/entities-panel.png')} alt="Entities tab" width="700"/>
 
@@ -221,17 +221,17 @@ The **Documentation** tab provides investigators with an area to document all st
 
 <img src={useBaseUrl('img/cloud-soar/documentation.png')} alt="Documentation tab" width="700"/>
 
-The **Attachments** section is a repository for investigators to house attachments related to an incident's investigation. The source of this data can vary, but will often be the output of monitoring tools and supporting documents. 
+The **Attachments** section is a repository for investigators to house attachments related to an incident's investigation. The source of this data can vary, but will often be the output of monitoring tools and supporting documents.
 
-To add an attachment, click **+** to the left of the search bar and provide a description for the attachment. When an attachment is added, the date and the name of the person who added it are recorded with the attachment. 
+To add an attachment, click **+** to the left of the search bar and provide a description for the attachment. When an attachment is added, the date and the name of the person who added it are recorded with the attachment.
 
 ## Triage
 
-The **Triage** screen shows events that have been recorded but not yet converted to incidents. 
+The **Triage** screen shows events that have been recorded but not yet converted to incidents.
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR > Triage**. 
+<!--Kanso
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR > Triage**.
  Kanso-->
 
 <img src={useBaseUrl('img/cloud-soar/triage.png')} alt="Triage screen" style={{border: '1px solid gray'}} width="800"/>
@@ -247,16 +247,16 @@ Let's suppose you want to look at a pending event to determine if it needs inves
 1. You determine that you want to investigate the event. Click the three-dot kebab button and select **Grab**. <br/><img src={useBaseUrl('img/cloud-soar/grab-an-event.png')} alt="Grab on the dropdown menu" style={{border: '1px solid gray'}} width="600"/>
 1. Once an event is grabbed by an analyst, any playbooks defined for that incident type will be automatically executed and the results will be displayed in the **Filtered Results** section of the event details screen. Because all playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and playbooks be created for triage events.
 1. After you triage the event, you may reassign it to another user for further analysis, discard it, or convert it to an incident:
-   * To reassign the event, click **Reassign**. 
-   * To discard it, click the three-dot kebab button and select **Discard**. 
+   * To reassign the event, click **Reassign**.
+   * To discard it, click the three-dot kebab button and select **Discard**.
    * To convert it an incident, click the three-dot kebab button and select **Convert to Incident**. <br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>      
 1. When you click **Convert to Incident**, a dialog appears for you to select the conversion settings. Select the appropriate incident template, owner, and ID, then click **Apply**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident. <br/><img src={useBaseUrl('img/cloud-soar/convert-to-incident-dialog.png')} alt="Convert to incident dialog" style={{border: '1px solid gray'}} width="300"/>
 
 ### Triage field settings
 
-By default, the triage module contains two fields, `Status` and `Type`. Additional values may be added to the `Status` field; however, the `Type` field is directly linked to the incident type field and cannot be modified directly. 
+By default, the triage module contains two fields, `Status` and `Type`. Additional values may be added to the `Status` field; however, the `Type` field is directly linked to the incident type field and cannot be modified directly.
 
-New types must be added from the incidents section of the **Custom Fields** page. Up to 100 custom fields and be created for the triage module, allowing customization for any use case. To add additional custom fields for triage, see [Custom fields](/docs/cloud-soar/overview/#custom-fields). 
+New types must be added from the incidents section of the **Custom Fields** page. Up to 100 custom fields and be created for the triage module, allowing customization for any use case. To add additional custom fields for triage, see [Custom fields](/docs/cloud-soar/overview/#custom-fields).
 
 Note that to be able to filter events in the triage module based on the values of a field, **Use as filter** must be checked when adding or modifying a field. As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
 
@@ -286,10 +286,10 @@ When creating incidents from Insights, adding additional required attributes to 
 
 ## Entities
 
-The **Entities** screen shows information about entities, unique actors encountered in incoming messages, such as a user, IP address, or host. Entities displayed here are from all incidents. To see entities associated with a specific incident, see [Entities tab](#entities-tab). 
+The **Entities** screen shows information about entities, unique actors encountered in incoming messages, such as a user, IP address, or host. Entities displayed here are from all incidents. To see entities associated with a specific incident, see [Entities tab](#entities-tab).
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.
-<!--Kanso 
+<!--Kanso
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Entities** screen, in the main Sumo Logic menu select **Cloud SOAR > Entities**.
  Kanso-->
 

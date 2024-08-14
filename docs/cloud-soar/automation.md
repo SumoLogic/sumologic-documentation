@@ -8,7 +8,7 @@ description: Configuration tools for Cloud SOAR automation and orchestration fea
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Automation** section contains configuration tools for Cloud SOAR's automation and orchestration features. 
+The **Automation** section contains configuration tools for Cloud SOAR's automation and orchestration features.
 
 <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
 <!--Kanso
@@ -23,7 +23,7 @@ Because Cloud SOAR provides automation functionality to the [Automation Service]
 * [Integration framework](/docs/platform-services/automation-service/automation-service-integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
 
-The following sections describe automation features only used in Cloud SOAR. 
+The following sections describe automation features only used in Cloud SOAR.
 
 ## Incident templates
 
@@ -34,10 +34,10 @@ Incident templates define the way in which incidents will be created for a speci
 1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  Kanso-->
 1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
 1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
-   1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for. 
+   1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for.
    1. **Category**. Enter a category for this template. For example, suppose we're building a template for a DLP incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/overview/#custom-fields)).
-   1. **Tags**. Enter any tags to further categorize or define the incident. You can use these tags later when searching for or correlating events. 
-1. Click **Incident** at the top of the dialog. 
+   1. **Tags**. Enter any tags to further categorize or define the incident. You can use these tags later when searching for or correlating events.
+1. Click **Incident** at the top of the dialog.
 1. Define any incident parameters you want to set by default when an incident is creating using the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template-2.png')} alt="Create incident template dialog to define the incident type" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Apply**. The new template is displayed.  <br/><img src={useBaseUrl('img/cloud-soar/new-incident-template.png')} alt="New template" style={{border: '1px solid gray'}} width="700"/>
 1. Scroll down and enter the following:
@@ -105,7 +105,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 1. Select a name for the rule, then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters. <br/><img src={useBaseUrl('img/cloud-soar/add-automation-rule.png')} alt="Add automation rule"  style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save**. The new rule is displayed. <br/><img src={useBaseUrl('img/cloud-soar/sample-automation-rule.png')} alt="Sample automation rule"  style={{border: '1px solid gray'}} width="700"/>
 1. Add a **Filter** if desired.
-1. Click **+** to the left of **Actions**. 
+1. Click **+** to the left of **Actions**.
 1. Click **Action type**. <br/><img src={useBaseUrl('img/cloud-soar/automation-rule-action-types.png')} alt="Automation rule Action type dropdown menu" style={{border: '1px solid gray'}} width="400"/>
 1. Select the action Cloud SOAR will can take when the specified activity is observed:
     * **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
