@@ -1,11 +1,11 @@
 ---
 id: collector-properties
-title: collector.properties Config File
+title: collector.properties Config File Parameters
 description: This file allows you to tune the internal processes of Installed Collectors to fit your needs.
 ---
 
 :::note
-For optimal performance and to ensure proper functionality, install or update to the latest version of the Installed Collector.
+To ensure proper functionality, install or update to the latest version of the Installed Collector.
 :::
 
 The **collector.properties** file can be modified on existing Collectors, allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.

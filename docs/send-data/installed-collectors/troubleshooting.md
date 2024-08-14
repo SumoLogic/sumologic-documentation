@@ -6,7 +6,7 @@ description: Learn how to test Installed Collector connectivity and troubleshoot
 
 On this page, you'll learn how to test connectivity and troubleshoot errors that might arise during Installed Collector setup.
 
-## Test Installed Collector Connectivity
+## Test Installed Collector connectivity
 
 Learn how to test access and connectivity from an Installed Collector to the Sumo Logic service.
 
@@ -55,7 +55,7 @@ To create a new outbound rule for the Windows firewall:
 1. Click **Next**.
 1. Enter a name and a description for your new rule, and then click **Finish**.
 
-## Collector Installation Error Messages
+## Resolving Collector installation error messages
 
 During the installation of the collector, you may encounter various issues or error messages. Here are some common error messages along with troubleshooting steps and their corresponding solutions.
 

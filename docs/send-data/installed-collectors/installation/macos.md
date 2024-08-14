@@ -22,10 +22,11 @@ If your machine has already had an Installed Collector installed in the past and
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
-    1. Click **Add Collector**.
-    1. Click **Installed Collector**.
-    1. Click the link for the Collector to begin the download.
+
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. Click **Add Collector**.
+1. Click **Installed Collector**.
+1. Click the link for the Collector to begin the download.
 
 ### Via browser
 
@@ -95,6 +96,13 @@ Using access ID and access key with proxy settings:
 sudo ./JavaApplicationStub -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vproxy.host=<proxyHost> -Vproxy.port=<proxyPort>
 ```
 
+## Install using the Binary Package
+
+import binarypackageinstall from '../../../reuse/binary-package-install.md';
+
+<binarypackageinstall/>
+
+
 ## Uninstall Collector
 
 If you uninstall a Collector, no more data is sent to Sumo Logic from that machine. Uninstalling a Collector doesn't cancel your Sumo Logic account or delete any data from Sumo Logic.
@@ -133,20 +141,3 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 1. When the Confirm dialog displays, click **OK**.
 
 A success message is displayed and the Collector is removed from the list.
-
-## Troubleshooting
-
-:::note
-This issue only applies to Collector versions prior to 19.361-8.
-:::
-
-When you try to install a Sumo Logic Collector on a Mac running OS X Mountain Lion or later, you may see the error message "App cannot be opened because it is from an unidentified developer". This message appears to prevent installing applications from developers that aren't verified through the Mac App Store:
-
-![install](/img/send-data/Mac_OSX_Gatekeeper.png)
-
-This doesn't mean that you cannot install a Sumo Logic Collector. The Sumo Logic Collector app is a legitimate and safe download. It just takes an extra step.
-
-To install a Sumo Logic Collector:
-
-1. **Control + click** (or right-click) the Sumo Logic application icon and choose **Open**.<br/>![install](/img/send-data/Mac_OSX_Gatekeeper_workaround1.png)
-1. In the next dialog, click **Open**. This will allow the Collector to install.  <br/> ![install](/img/send-data/Mac_OSX_Gatekeeper_workaround2.png)

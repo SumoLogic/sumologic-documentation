@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Installed Collector Overview
+sidebar_label: Overview
 description: Learn how to install and configure an Installed Collector to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 

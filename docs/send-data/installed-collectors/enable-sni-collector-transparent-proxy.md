@@ -1,7 +1,7 @@
 ---
 id: enable-sni-collector-transparent-proxy
 title: Enabling SNI in a Collector to Support Transparent Proxy
-sidebar_label: Enabling SNI
+sidebar_label: Enable SNI in a Collector
 description: You can enable Server Name Indication (SNI) on a Collector to support some third-party transparent proxy services, such as Squid.
 ---
 

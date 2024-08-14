@@ -1,10 +1,14 @@
 ---
 id: user-properties
-title: user.properties Config File
+title: user.properties Config File Parameters
 description: The user.properties file is used to pass Collector parameters for some installation methods.
 ---
 
-For collector versions 19.137 and later, the user.properties file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties) below.
+:::note
+To ensure proper functionality, install or update to the latest version of the Installed Collector.
+:::
+
+The user.properties file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties) below.
 
 When using the shell script (command line) installer, you'll need to pass configuration parameters via command-line arguments or a varfile, and the installer will create a user.properties file during installation. See [Installed Collector CLI Parameters](parameters-command-line-installer.md) for more information.
 
@@ -12,7 +16,7 @@ When using the shell script (command line) installer, you'll need to pass confi
 Effective with collector version 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying user.properties may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
 :::
 
-## Creating user.properties
+## Create a user.properties file
 
 After downloading the collector binary package (e.g., tarball), create the user.properties file in a specific directory.
 
@@ -38,7 +42,7 @@ Windows:
 * `:\Program Files (x86)\Sumo Logic Collector`
 * `:\Program Files\Sumo Logic Collector`
 
-## user.properties examples
+### user.properties configuration examples
 
 The example below sets the access ID and access key. When installing a binary package, you must specify the command to run the JRE, or the JRE path if it does not exist on your `$PATH`:
 
@@ -83,7 +87,7 @@ Sets access ID used when logging in with access ID and key. Cannot be modified a
 
 ### `accesskey=<accessKey>`
 
-Sets access key used when logging in with access ID and Key. Note that, as of Collector v19.182-17, `accesskey` is automatically removed from user.properties following successful installation. (This behavior can be disabled with the `skipAccessKeyRemoval` property, described below.) If you configure a collector to be ephemeral, in the event that the collector is de-registered after 12 hours offline, you will need to re-add the `accesskey` to user.properties. Cannot be modified after installation.
+Sets access key used when logging in with access ID and Key. `accesskey` is automatically removed from user.properties following successful installation. (This behavior can be disabled with the `skipAccessKeyRemoval` property, described below.) If you configure a collector to be ephemeral, in the event that the collector is de-registered after 12 hours offline, you will need to re-add the `accesskey` to user.properties. Cannot be modified after installation.
 
 ### `category=<category>`
 

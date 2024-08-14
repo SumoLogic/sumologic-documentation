@@ -125,7 +125,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 
 3. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. Alternatively, you can configure Sources at any time by using the Sumo web app. See Sources.
 4. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
-5. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script `configureFipsMode.sh` contained in Collector's installation directory under `/script`:
+5. (Optional on Collectors in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script `configureFipsMode.sh` contained in Collector's installation directory under `/script`:
  ```bash
  $ sh ./script/configureFipsMode.sh
  ```

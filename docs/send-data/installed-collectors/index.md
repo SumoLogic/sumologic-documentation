@@ -8,7 +8,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Our *Installed Collector* is installed and operates on your local environment, as opposed to our Hosted Collector, which resides on the Sumo Logic service infrastructure. After installing a Collector, the next step involves adding Sources. These Sources serve as endpoints that the Collector connects to, facilitating the retrieval and transmission of data to the Sumo Logic service.
+When you download our Installed Collector, operates on your local environment, whereas our Hosted Collectors resides on the Sumo Logic service infrastructure. After installing a Collector, the next step involves adding Sources. These Sources serve as endpoints that the Collector connects to, facilitating the retrieval and transmission of data to the Sumo Logic service.
 
 In this section, we'll introduce the following concepts:
 

@@ -5,7 +5,7 @@ description: This topic lists the parameters that are available when installing 
 ---
 
 :::note
-For optimal performance and to ensure proper functionality, install or update to the latest version of the Installed Collector.
+To ensure proper functionality, install or update to the latest version of the Installed Collector.
 :::
 
 This page provides the available parameters for Collector installation using the command-line installer. Wrapper-configuration parameters are supported.

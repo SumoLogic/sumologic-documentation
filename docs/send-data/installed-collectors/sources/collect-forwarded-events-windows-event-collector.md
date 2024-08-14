@@ -1,6 +1,7 @@
 ---
 id: collect-forwarded-events-windows-event-collector
 title: Collect Forwarded Events from a Windows Event Collector
+sidebar_label: Windows Forwarded Event Log Source
 description: Use a Windows Event Source to collect forwarded events from a Windows Event Collector.
 ---
 
