@@ -27,24 +27,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  scripts: [
-    {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
-      async: true,
-    },
-    {
-      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
-      async: true,
-    },
-    {
-      src: './src/helper/google-tag-manager.js',
-      async: true,
-    },
-    {
-      src: './src/helper/google-analytics.js',
-      async: true,
-    },
-  ],
   staticDirectories: ['static'],
   webpack: {
     jsLoader: (isServer) => ({
@@ -95,9 +77,6 @@ module.exports = {
             ],
           },
         },
-        gtag: {
-          trackingID: 'G-CVH19TBVSL',
-        },
         googleTagManager: {
           containerId: 'GTM-58ZK7D',
         },
@@ -140,6 +119,16 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    ['@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-12345',
+      },
+    ],
+    ['@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-CVH19TBVSL',
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
