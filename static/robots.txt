@@ -7,4 +7,4 @@ Disallow: /ja/docs/
 Disallow: /cid-redirects.json/
 Disallow: /files/
 
-Sitemap: https://help.sumologic.com/sitemap.xml
+Sitemap: https://www.sumologic.com/help/sitemap.xml

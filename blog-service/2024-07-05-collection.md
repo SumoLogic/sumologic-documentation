@@ -1,12 +1,12 @@
 ---
 title: Upgrade Salesforce Source to Version 3.X.X (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 keywords:
   - collection
   - salesforce
 hide_table_of_contents: true
 authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-service/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 

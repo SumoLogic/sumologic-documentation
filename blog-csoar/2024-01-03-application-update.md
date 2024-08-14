@@ -4,16 +4,16 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 authors:
-  - url: https://help.sumologic.com/release-notes-csoar/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
-* Playbooks: UserChoice nodes can be handled now from Slack workspace (see [documentation](https://help.sumologic.com/docs/cloud-soar/cloud-soar-delivery-2/#configure-slack-for-cloud-soar)).
+* Playbooks: UserChoice nodes can be handled now from Slack workspace (see [documentation](https://www.sumologic.com/help/docs/cloud-soar/cloud-soar-delivery-2/#configure-slack-for-cloud-soar)).
 
 #### Cloud SOAR
 * New privilege "Api Admin": Enabling this privilege in Log Analytics Platform will allow user to handle incident operations without being involved directly as investigator.

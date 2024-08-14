@@ -4,16 +4,16 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 authors:
-  - url: https://help.sumologic.com/release-notes-csoar/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
-* Added public help document for supported integrations. See [Integrations in App Central](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
+* Added public help document for supported integrations. See [Integrations in App Central](https://www.sumologic.com/help/docs/platform-services/automation-service/app-central/integrations/).
 * Integrations: Added possibility to rename an integration keeping original reference in YAML.
 * Playbooks:
   * List view set as default. View changes are saved in user preferences.

@@ -5,10 +5,10 @@ keywords:
   - mitre
   - light mode
   - dark mode
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 hide_table_of_contents: true
 authors:
-  - url: https://help.sumologic.com/release-notes-cse/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-cse/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 

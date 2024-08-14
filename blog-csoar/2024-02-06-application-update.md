@@ -1,9 +1,9 @@
 ---
 title: February 6, 2024 - Application Update
 hide_table_of_contents: true
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 authors:
-  - url: https://help.sumologic.com/release-notes-csoar/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 

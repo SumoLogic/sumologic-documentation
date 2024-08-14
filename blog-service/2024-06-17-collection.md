@@ -1,13 +1,13 @@
 ---
 title: Sumo Logic AWS Lambda Extension v8 (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: /img/sumo-square.png
 keywords:
   - collection
   - lambda
   - environmental-variable
 hide_table_of_contents: true
 authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-service/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 

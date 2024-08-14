@@ -1,11 +1,11 @@
-<img src="https://help.sumologic.com/img/sumo-docs-readme.png" width="400"/>
+<img src="https://www.sumologic.com/help/img/sumo-docs-readme.png" width="400"/>
 
 <p>
   <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
-  <a href="https://help.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="https://www.sumologic.com/help/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
   <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
-  <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
+  <a href="https://www.sumologic.com/help/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
 </p>
 
 Share your knowledge with the Sumo Logic community by contributing to our docs! You can contribute by creating an issue or pull request (PR) on our GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics.
@@ -14,7 +14,7 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For detailed instructions, including our style guide, see [Contributor Guidelines](https://help.sumologic.com/docs/contributing).
+For detailed instructions, including our style guide, see [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing).
 
 We recommend forking our repo, creating a new branch for your content changes, and submitting a pull request. We will help review, test, and merge the content for publishing.
 

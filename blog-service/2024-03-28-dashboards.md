@@ -6,7 +6,7 @@ keywords:
   - crosshair
 hide_table_of_contents: true
 authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
+  - url: https://www.sumologic.com/help/release-notes-service/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
 We are excited to announce a new set of changes to enhance the readability within the dashboard panels. With these updates, you'll have more control over time ranges, making it easier to investigate specific periods of interest and analyze data effectively. Here's what's included in this update:

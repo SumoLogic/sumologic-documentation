@@ -116,17 +116,17 @@ export const Home = () => {
                   {
                     children: '1. Set up collector and source',
                     description: 'Set up a Sumo Logic collector and source',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
+                    href: 'https://www.sumologic.com/help/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
                   },
                   {
                     children: '2. Explore your data insights',
                     description: 'Explore your insights',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
+                    href: 'https://www.sumologic.com/help/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
                   },
                   {
                     children: '3. Monitor and secure your environment',
                     description: 'Monitor, troubleshoot, and secure your environment',
-                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
+                    href: 'https://www.sumologic.com/help/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
                   },
                 ].map(({ children, ...rest }) => (
                   <Button
