@@ -77,9 +77,6 @@ module.exports = {
             ],
           },
         },
-        googleTagManager: {
-          containerId: 'GTM-58ZK7D',
-        },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
@@ -121,7 +118,7 @@ module.exports = {
     'docusaurus-plugin-sass',
     ['@docusaurus/plugin-google-tag-manager',
       {
-        containerId: 'GTM-12345',
+        containerId: 'GTM-58ZK7D',
       },
     ],
     ['@docusaurus/plugin-google-gtag',
