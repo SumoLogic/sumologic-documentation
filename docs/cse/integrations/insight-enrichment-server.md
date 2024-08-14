@@ -101,9 +101,9 @@ You can skip this step if you already have Java 11 or later installed.
 1. Download any Java 11 or later, for Windows, from [here](https://jdk.java.net/archive/).
 1. Extract the zip file to `C:\Program Files\Java`.
 1. Right-click the **Start** button and select **Search** to open the Windows search box.
-1. Enter “advanced system settings” in the search box, and click **View advanced system settings**.<br/><img src={useBaseUrl('img/cse/search-1.png')} alt="search" width="400" />
-1. Select the **Advanced** tab and click **Environment Variables**.<br/><img src={useBaseUrl('img/cse/system-properties.png')} alt="search" width="400" />
-1. In the **Environment Variables** popup, click **New** under the list of system variables.<br/><img src={useBaseUrl('img/cse/environment-variables.png')} alt="search" width="400" />   
+1. Enter “advanced system settings” in the search box, and click **View advanced system settings**.<br/><img src={useBaseUrl('img/cse/search-1.png')} alt="View advanced system settings selection" width="400" />
+1. Select the **Advanced** tab and click **Environment Variables**.<br/><img src={useBaseUrl('img/cse/system-properties.png')} alt="Environment Variables button" width="400" />
+1. In the **Environment Variables** popup, click **New** under the list of system variables.<br/><img src={useBaseUrl('img/cse/environment-variables.png')} alt="New button" width="400" />   
 1. In the **New System Variable** popup:
     1. **Variable name**. Enter:
      ```sh
@@ -113,14 +113,14 @@ You can skip this step if you already have Java 11 or later installed.
      ```sh
      C:\Program Files\Java\jdk-X.X.X
      ```
-    1. Click **OK**.<br/><img src={useBaseUrl('img/cse/new-system-variable.png')} alt="search" width="600" />
-1. In the **System variables** area, select **Path**, and click **Edit**.<br/><img src={useBaseUrl('img/cse/edit-path.png')} alt="search" width="500" />
-1.  On the **Edit environment variable** popup, click **New**.<br/><img src={useBaseUrl('img/cse/new.png')} alt="search" width="500" />
+    1. Click **OK**.<br/><img src={useBaseUrl('img/cse/new-system-variable.png')} alt="OK button" width="600" />
+1. In the **System variables** area, select **Path**, and click **Edit**.<br/><img src={useBaseUrl('img/cse/edit-path.png')} alt="Edit button" width="500" />
+1.  On the **Edit environment variable** popup, click **New**.<br/><img src={useBaseUrl('img/cse/new.png')} alt="New button" width="500" />
 1. Add the following path and click **OK**.
     ```sh
     %JAVA_HOME%\bin
     ```
-    <img src={useBaseUrl('img/cse/java-path.png')} alt="search" width="500" />
+    <img src={useBaseUrl('img/cse/java-path.png')} alt="OK button" width="500" />
 1. To verify that Java was successfully installed successfully, open a command prompt and run:
     ```sh
     java --version
@@ -245,10 +245,10 @@ command_args = dsquery user -name ${USERNAME}
 cache_time = 5m
 ```
 
-## Passing parameters to Powershell scripts
+## Passing parameters to PowerShell scripts
 
 You can configure the Insight Enrichment Server to pass parameters to a
-Powershell script, as shown in the examples below.
+PowerShell script, as shown in the examples below.
 
 ### CarbonBlack enrichment
 
@@ -280,7 +280,7 @@ command_args = -file c:\scripts\cb.ps1 ${IP}
 
 **Enrichment in the UI**
 
-<img src={useBaseUrl('img/cse/carbon-black.png')} alt="Carbon Black" width="600"/>
+<img src={useBaseUrl('img/cse/carbon-black.png')} alt="Example Carbon Black enrichment" width="600"/>
 
 ### CrowdStrike enrichment
 
@@ -321,7 +321,7 @@ ip_range = 192.168.38.104-192.168.38.105
 
 **Enrichment in the UI**
 
-<img src={useBaseUrl('img/cse/crowdstrike.png')} alt="CrowdStrike" width="600"/>
+<img src={useBaseUrl('img/cse/crowdstrike.png')} alt="Example CrowdStrike enrichment" width="600"/>
 
 ### GreyNoise enrichment
 
@@ -385,7 +385,7 @@ The example provided below is not guaranteed to work with all versions of the ap
     ```
 1. Restart the enrichment server.
 
-**Powershell Scripts**
+**PowerShell Scripts**
 
 **S1hostname.ps1**
 ```
@@ -405,4 +405,4 @@ Invoke-RestMethod -Uri $uri -Method Get -Headers $headers | ConvertTo-Json
 
 **Sample enrichment**
 
-<img src={useBaseUrl('img/cse/sentinel-enrichment.png')} alt="SentinelOne" width="600"/>
+<img src={useBaseUrl('img/cse/sentinel-enrichment.png')} alt="Example SentinelOne enrichment" width="600"/>

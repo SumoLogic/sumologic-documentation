@@ -1,6 +1,6 @@
 ---
 id: automation-service-bridge
-title: Bridge for the Automation Service
+title: Automation Bridge
 sidebar_label: Automation Bridge
 description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
@@ -123,10 +123,13 @@ An example of a configuration file would be:
 {
   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-  "SIEM_URL":"https://YOUR_CLOUD_SIEM_URL/sec",
+  "SIEM_URL":"The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector",
   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
+To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
+
+By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
 
 ### Bridge ALIAS
 
@@ -246,7 +249,7 @@ The automation bridge needs to be able to communicate with the Docker API to wor
 |:------------------------------------|:---------------|:----------|
 |`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
 |`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
-|`SIEM_URL_HERE` | The HTTP Sumo Logic collector to send the bridge logs. | NONE |
+|`SIEM_URL_HERE` | The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector. | NONE |
 |`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 
 ### Methodologies

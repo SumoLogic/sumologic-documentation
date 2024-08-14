@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
-The Sumo Logic Distribution for OpenTelemetry Collector supports remote management of data collection configuration. You can set up data collection configuration from the Sumo UI and push the configuration to one or more collectors.  
+The Sumo Logic Distribution for OpenTelemetry Collector facilitates remote management of data collection configurations, enabling seamless setup from the Sumo UI and deployment to one or more collectors.
 
 ## Remote Management features
 
@@ -24,15 +24,15 @@ With OpenTelemetry (OTel) remote management, you can tag your [OpenTelemetry Col
 
 ### Source templates
 
-With remote management, data configuration setup for OTel collectors is done using Source templates. This is an extension of our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, with the addition of this new capability to be attached to multiple collectors.
+With remote management, data configuration setup for OTel collectors is done using Source templates. This feature extends our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, allowing attachment to multiple collectors.
 
-You can use collector tags to group your collectors, as described in the previous section, and associate the Source template to these groups of collectors. This reduces redundancy in your data collection setup. This additional step for Source template is called *Collector Linking*.
+Utilize collector tags for grouping collectors, and associate Source templates to these collector groups, reducing redundancy in data collection setup. This process, termed *Collector Linking*, streamlines configuration management.
 
 ## How it works
 
 To get started with using this feature, we will provide a scenario that can be replicated in your environment.
 
-Goal: *As a user, I have 50 Linux servers where I'm running Apache servers and would like to monitor the Apache error logs from all these servers.*
+Scenario: As a user, you aim to monitor Apache error logs from 50 Linux servers running Apache servers.
 
 ### Step 1: Collector installation
 
