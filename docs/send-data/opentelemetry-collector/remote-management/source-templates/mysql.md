@@ -32,7 +32,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ### For metrics collection
 
-The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlmetricsreceiver) collects metrics by quering MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
+The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlmetricsreceiver) collects metrics by querying MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
 
 ### For logs collection
 
@@ -80,7 +80,7 @@ In this step, you will configure the yaml required for MySQL collection. Below a
 - **Description**. Description for the source template.	
 - **Error log path**. Location where the SQL Errors are logged. Please refer to your my.cnf file.
 - **Slow Transaction log file path (optional)**. Location where the Slow SQL transactions are logged. Please refer to your my.cnf file.
-- **Endpoint**. The URL of the broker endpoint (default: `localhost:3306`).
+- **Endpoint**. The URL of the MySQL endpoint (default: `localhost:3306`).
 - **Username**. Enter the MySQL username.
 - **Password Env Name**. Enter the MySQL password environment variable name.
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/mysql user needs to provide the value for `db.cluster.name`.
