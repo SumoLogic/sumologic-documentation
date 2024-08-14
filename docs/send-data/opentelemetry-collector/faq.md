@@ -93,6 +93,10 @@ sudo lsof -i :8888
 You can either stop the process using the port, or change the metrics port that your collector uses.
 See [Accessing the collector's metrics](#accessing-the-collectors-metrics) section above.
 
+#### When I change the name of the collector in the configuration file and redeploy I see a new collector in the Sumo UI
+
+Changing the collector's name will result in re-registering the collector with Sumo Logic. The original collector will turn "inactive" soon after the change and will allow you to delete the collector in the Sumo UI.
+
 
 
 #### How do I uninstall the Sumo OpenTelemetry Collector?
