@@ -138,6 +138,7 @@ module.exports = {
               label: 'Download and Install',
               collapsible: true,
               collapsed: true,
+              link: {type: 'doc', id: 'send-data/installed-collectors/installation/index'},
               items: [
                 'send-data/installed-collectors/installation/download-collector-from-static-url',
                 'send-data/installed-collectors/installation/macos',

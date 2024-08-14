@@ -33,7 +33,7 @@ Open a browser and enter the static URL for your Sumo deployment. See [Which 
 
 Install the Collector on Linux using any of the four methods below.
 
-You can build a Collector into a [Linux machine image](collector-installation-reference/add-collector-linux-machine-image.md) such as an Amazon AMI or VMware image. After installing Collectors, you can configure Sources from Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+You can build a Collector into a [Linux machine image](#add-a-collector-to-a-linux-machine-image) such as an Amazon AMI or VMware image. After installing Collectors, you can configure Sources from Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 ### Using the UI installer 
 

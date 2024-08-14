@@ -116,7 +116,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>Boolean</td>
    <td>Yes</td>
    <td></td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.</td>
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/installation/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.</td>
    <td>Modifiable</td>
   </tr>
   <tr>

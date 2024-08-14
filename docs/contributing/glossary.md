@@ -52,7 +52,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Cardinality](/docs/metrics/logs-to-metrics/#manage-metric-cardinality)**. Refers to the uniqueness of values in a database column or metric dimension. High cardinality metrics are metrics with dimensions that have many different values, which can result in a high volume of unique time series. In Sumo Logic, you can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time.
 
-**[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
+**[Clobber](/docs/send-data/installed-collectors/installation/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
 
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
@@ -100,7 +100,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## E
 
-**[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
+**[Ephemeral](/docs/send-data/installed-collectors/installation/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
 **[Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 

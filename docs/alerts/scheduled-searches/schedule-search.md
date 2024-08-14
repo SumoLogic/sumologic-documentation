@@ -30,7 +30,7 @@ Choose the frequency with which the search should run from the available options
 * **Every 2, 4, 6, 8, or 12 Hours**. Runs the search at intervals at the top of the hour you specify.
 * **Daily**. Covers a 24-hour period. Be aware that a Scheduled Search will run according to the time zone set on your computer at the time you configure the search. For example, if you are in San Francisco and set a search to run at 7:00 AM, it will run at 7:00 AM PST. If you then fly to New York, and your computer resets to EST, when you schedule a new search at 7:00 AM, it will run at 7:00 AM EST. These two searches will run at different times.
 * **Weekly**. Runs once a week, allowing you to select the day and time. Schedule may be delayed up to 10 minutes past the selected time or interval but will maintain the selected run frequency.
-* **Custom Cron**. Enables you to enter a custom CRON expression. The run frequency for a CRON expression needs to be every 15 minutes or more. For details, see [Cron Examples and Reference](/docs/send-data/installed-collectors/sources/script-source/cron-examples-reference). 
+* **Custom Cron**. Enables you to enter a custom CRON expression. The run frequency for a CRON expression needs to be every 15 minutes or more. For details, see [Cron Examples and Reference](/docs/send-data/installed-collectors/sources/script-source). 
 
 After you select a run frequency, allow the popup to refresh. <br/><img src={useBaseUrl('img/alerts/save-item-after-run-frequency.png')} alt="Sumo Logic thumbnail logo" width="500"/>
 
