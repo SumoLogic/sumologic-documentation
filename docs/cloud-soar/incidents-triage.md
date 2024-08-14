@@ -51,9 +51,9 @@ Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
 Cloud SOAR generates incidents with an automated process:
  1. An alert is received by Cloud SOAR via an integration.
- 1. [Automation rules](/docs/cloud-soar/automation/#creating-incidents-from-automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
+ 1. [Automation rules](/docs/cloud-soar/automation/#automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
  1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
- 1. [Playbooks](/docs/cloud-soar/automation/#playbook) run against the data.
+ 1. [Playbooks](#playbooks) run against the data.
  1. Cloud SOAR generates an incident.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid gray'}} width="800" />
