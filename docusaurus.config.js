@@ -89,7 +89,7 @@ module.exports = {
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
           path: 'blog-service',
-          routeBasePath: '/release-notes-service',
+          routeBasePath: 'release-notes-service',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
@@ -138,7 +138,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
-         routeBasePath: '/release-notes-cse',
+         routeBasePath: 'release-notes-cse',
          path: './blog-cse',
          archiveBasePath: 'archive',
          blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
@@ -162,7 +162,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-csoar',
-         routeBasePath: '/release-notes-csoar',
+         routeBasePath: 'release-notes-csoar',
          path: './blog-csoar',
          archiveBasePath: 'archive',
          blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
@@ -186,7 +186,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-developer',
-          routeBasePath: '/release-notes-developer',
+          routeBasePath: 'release-notes-developer',
           path: './blog-developer',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Developer Release Notes',
@@ -210,7 +210,7 @@ module.exports = {
     ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-collector',
-          routeBasePath: '/release-notes-collector',
+          routeBasePath: 'release-notes-collector',
           path: './blog-collector',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Collector Release Notes',
@@ -392,27 +392,27 @@ module.exports = {
             items:[
               {
                 label: 'Service',
-                to: '/release-notes-service',
+                to: 'release-notes-service',
                 icon: 'rss_feed',
               },
               {
                 label: 'Cloud SIEM',
-                to: '/release-notes-cse',
+                to: 'release-notes-cse',
                 icon: 'rss_feed',
               },
               {
                 label: 'Cloud SOAR',
-                to: '/release-notes-csoar',
+                to: 'release-notes-csoar',
                 icon: 'rss_feed',
               },
               {
                 label: 'Collector',
-                to: '/release-notes-collector',
+                to: 'release-notes-collector',
                 icon: 'rss_feed',
               },
               {
                 label: 'Developer',
-                to: '/release-notes-developer',
+                to: 'release-notes-developer',
                 icon: 'rss_feed',
               },
             ]
