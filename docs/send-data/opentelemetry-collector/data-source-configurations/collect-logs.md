@@ -212,7 +212,7 @@ Following configuration demonstrates:
            - sumologic
    ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sample_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sample_windows.yaml`.
 1. Paste the above content into the file.
 1. Restart collector with following command:
    ```bash title="Windows"
