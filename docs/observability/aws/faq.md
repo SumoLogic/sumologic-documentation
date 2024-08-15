@@ -168,6 +168,11 @@ metadata sources need to be added for that account and will be mapped to
 Host metrics. Custom EC2 tags will be available through the metadata
 source.
 
+### What output formats do you support for CloudWatch metrics streams?
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams.
+
+
 ### Are instance metrics collected from CloudWatch metrics or as Host metrics?
 
 EC2 dashboards are based on Host Metrics. 
