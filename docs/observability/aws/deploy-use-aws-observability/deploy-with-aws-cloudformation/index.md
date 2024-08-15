@@ -261,3 +261,8 @@ AWS Observability hierarchy is auto-populated based on the metrics ingested into
     :::note
     Removing the account tag will not stop the metrics ingestion.
     :::
+
+### Redeploying the AWS Observability CloudFormation template with existing Sumo Logic resources from a previous deployment
+
+**Please ensure that you delete the Sumo Logic resources completely, prior to redeployment.** If you have **Delete Sumo Logic Resources when stack is deleted** set to "True", then the Sumo Logic resources will automatically be removed while deleting the AWS Observability CloudFormation template. If you have **Delete Sumo Logic Resources when stack is deleted** set to "False", then the Sumo Logic resources **will not** be removed while deleting the AWS Observability CloudFormation template. If you do not delete the Sumo Logic resources prior to redeployment (i.e. collectors and sources), then subsequent deployments may attempt to use the existing resources, which can result in collection issues. This is not recommended.
+
