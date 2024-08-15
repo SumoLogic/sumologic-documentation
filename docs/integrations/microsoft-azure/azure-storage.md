@@ -379,7 +379,7 @@ Use this dashboard to:
     * View recent resource health incidents.
     * Monitor resource health by event type.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Health.png')} alt="Azure Storage health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Availability
 
