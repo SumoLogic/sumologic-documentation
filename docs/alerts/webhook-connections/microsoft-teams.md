@@ -37,7 +37,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. (Optional) Customize the alert and resolution payloads to include just the information you need.
    One helpful tool to preview changes is [Microsoft's Adaptive Card Designer](https://adaptivecards.io/designer/). The best way to use the tool is to copy the contents of the `"content"` field (including the enclosing curly braces) from the below default payload and work from there.
-1. The following JSON is the default **Alert Payload**, which you can customize as needed.  For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
+1. The following JSON is the default **Alert Payload**, which you can customize as needed.  For details on variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
     ```json
     {
       "type": "message",
@@ -231,7 +231,7 @@ Microsoft has announced that using Connectors for integration is on the path to 
 The suggested way to integrate is by using Workflows.
 If you still require integration using a Connector, follow the directions above but substitute the following default payloads:
 
-1. The following JSON is the default **Alert Payload**, which you can customize as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
+1. The following JSON is the default **Alert Payload**, which you can customize as needed. For details on variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
     ```json
    {
     "@type": "MessageCard",
