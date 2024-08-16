@@ -22,7 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon" width="40" />
 
-The Atlassian Organizations API provides resources for managing an Atlassian organization, with this API, you can get an [audit log of events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events) from organization. This integration collects that data from the Atlassian Organizations API and ingests them into Sumo Logic.
+The Atlassian Organizations API provides resources for managing an Atlassian organization, with this API, you can get an [audit log of events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events) from organizations. This integration collects that data from the Atlassian Organizations API and ingests them into Sumo Logic.
 
 ## Data collected
 
@@ -37,7 +37,7 @@ The Atlassian Organizations API provides resources for managing an Atlassian org
 Follow the below steps to generate a Bearer access for user configuration:
 
 1. Log in to your [Atlassian admin console](http://admin.atlassian.com/).
-1. After logging in, navigate to **Organizations** tab with your admin console.
+1. After logging in, navigate to the **Organizations** tab.
 1. Go to **Settings** and select **API keys**.
 1. Click on **Create API key** in the top right.
 1. Enter a name for the API key.
@@ -48,7 +48,7 @@ Follow the below steps to generate a Bearer access for user configuration:
 
 ### Source configuration
 
-When you create an Atlassian Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Atlassian Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Atlassian Source:
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
@@ -66,7 +66,7 @@ To configure an Atlassian Source:
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
