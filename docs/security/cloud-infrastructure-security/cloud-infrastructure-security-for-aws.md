@@ -187,7 +187,11 @@ In the sections of the CloudFormation template that relate to creating Sumo Logi
 You can install Cloud Infrastructure Security for AWS from the App Catalog to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage.
 
 1. From the **App Catalog**, search for and select **Cloud Infrastructure Security for AWS**.
-1. Click **Install App**. The following screen is displayed. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
+1. Click **Install App**. The following screen is displayed. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0.png')} alt="Configure Sources screen" style={{border: '1px solid gray'}} width="700"/>
+1. For each of the data source types listed, select whether to use an existing source, create a new source, or do not collect data for that source type.
+    * If you select **Use Existing Source**, select the source from the dropdown. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0a.png')} alt="Use Existing Source selection" style={{border: '1px solid gray'}} width="400"/>
+    * If you select **Create New Source**, type the name you want to use for the source. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0b.png')} alt="Create New Source selection" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Next**. The following screen is displayed. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
 
 Perform the steps in the following sections:
 * [Step 1: Select region](#step-1-select-region)
@@ -246,12 +250,16 @@ In the **Check AWS Role Permission** section, you can ensure the user performing
 
 ### Step 3: Deploy AWS
 
-In this step, you perform the steps needed to deploy the Cloud Infrastructure Security for AWS solution.
+In this step, you perform the configuration needed to deploy the Cloud Infrastructure Security for AWS solution.
 
-1. Under **Deploy AWS**, click the **Deploy AWS Security** button. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-3.png')} alt="Deploy AWS Security" style={{border: '1px solid gray'}} width="700"/> 
-1. A CloudFormation template screen is displayed. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/>
+1. Under **Deploy AWS**, click the **Deploy AWS Security** button and select from the dropdown:
+    * **Deploy to single account**. Deploy the solution only to the account of the user installing the application. 
+    * **Deploy to all acounts**. Deploy the solution to all accounts in your AWS organization. All users in the organization will have access to the application. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-3.png')} alt="Deploy AWS Security" style={{border: '1px solid gray'}} width="700"/> 
+1. Click **Next**. A CloudFormation template screen is displayed. 
+1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/>
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
+      * **Deploy to Organization (All Account)**. Select **Yes** to deploy to all accounts in your AWS organization, or select **No** to deploy only to your account.
       * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
@@ -268,8 +276,8 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           :::note
           You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
           :::
-1. In **3. AWS Service configuration**, select **Yes** for each of the following sources you want to install for Sumo Logic, or **No** if you already have the source installed:
-      * **Publish AWS GuardDuty data to Sumo**
+1. In **3. AWS Service configuration**, select **Yes** for each of the following sources you want to install for Sumo Logic, or **No** if you already have the source installed. The values shown should match what you picked in [Configure Sources](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#install-cloud-infrastructure-security-for-aws) above.
+      * **Publish Amazon GuardDuty data to Sumo**
       * **Publish AWS CloudTrail data to Sumo** 
       * **Publish AWS Security Hub data to Sumo** 
       * **Publish AWS WAF data to Sumo** 
@@ -364,10 +372,9 @@ If any errors occur, see [Troubleshoot installation](#troubleshoot-installation)
 
 ### Step 4: Start using the solution
 
-After the solution is installed, a new step is displayed at the bottom of the **Deploy Cloud Infrastructure Security** screen.
+After the solution is installed, you can view monitors, dashboards, and saved searches.
 
-1. Click **Start Using Sumo**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-start-using-sumo.png')} alt="Start Using Sumo button" style={{border: '1px solid gray'}} width="400"/>
-1. Select an option to start using the solution. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-installed.png')} alt="The screen of the installed solution" style={{border: '1px solid gray'}} width="600"/>
 
 ## Troubleshoot installation
 
