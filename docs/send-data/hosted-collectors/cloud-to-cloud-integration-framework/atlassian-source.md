@@ -22,7 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon" width="40" />
 
-The Atlassian Organizations API provides resources for managing an Atlassian organization, with this API, you can get an [audit log of events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events) from organization. This integration collects that data from the Atlassian Organizations API and ingests them into Sumo Logic.
+The Atlassian Organizations API provides resources for managing an Atlassian organization, with this API, you can get an [audit log of events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events) from organizations. This integration collects that data from the Atlassian Organizations API and ingests them into Sumo Logic.
 
 ## Data collected
 
