@@ -88,6 +88,10 @@ To add a folder to the Library:
 1. Create a subfolder by clicking **Add New > New Folder** in your Personal folder.
 1. In the **Add Folder** dialog, enter a folder name, for example **My Apps**, and click **Add**. The new subfolder is added to the folder list.
 
+:::note
+You can only nest subfolders to six levels. If you add any more beyond that, you will receive this error message: **You’ve reached the depth limit on the number of nested items that can be created/moved.**
+:::
+
 ### Share Subfolders
 
 If want to share the apps you have installed in order to share them with your organization, you can share your entire **My Apps** folder that you created in the previous section. This way, any app that you install in the future to this subfolder would be automatically published and shared with your team.
