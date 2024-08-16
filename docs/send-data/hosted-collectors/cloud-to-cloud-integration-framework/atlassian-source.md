@@ -28,7 +28,7 @@ The Atlassian Organizations API provides resources for managing an Atlassian org
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hour |  [Events](https://api.atlassian.com/admin/v1/orgs/%7BorgId%7D/events)|
+| 1 hour |  [Events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events)|
 
 ## Setup
 
@@ -61,7 +61,6 @@ To configure an Atlassian Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Organizations**. Click the **+Add** button to enter the Organizations you want to associate. Each Organizations needs a API Key value. This is the value that you generated from the [Atlassian platform](#vendor-configuration).
 1. (Optional) The **Polling Interval** is set for 1 hour by default. You can adjust it based on your needs.
-1. (Optional) In **Initial LookBack Time**, enter the first collection start time. Default is 1 day.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
@@ -83,7 +82,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| initialLookback | Integer | No | 1 day | First collection start time. |  |
 | pollingInterval | String | No | 1 hour | This sets how often the Source checks for data. | `1 Hour` |
 | orgID | String | Yes | `null` | ID of the organisation. |  |
 | token | String | Yes | `null` | Client authentication Bearer token per organization. |  |

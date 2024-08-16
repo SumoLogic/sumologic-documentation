@@ -5,7 +5,6 @@ resource "sumologic_cloud_to_cloud_source" "Atlassian_source" {
   }
   config = jsonencode({
             "name": "Atlassian Test",
-            "initialLookback": "1d",
             "fields": {
                 "_siemForward": true
             },

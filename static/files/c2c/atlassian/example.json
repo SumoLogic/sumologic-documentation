@@ -3,7 +3,6 @@
     "source": {
         "config": {
             "name": "Atlassian Test",
-            "initialLookback": "1d",
             "fields": {
                 "_siemForward": true
             },
