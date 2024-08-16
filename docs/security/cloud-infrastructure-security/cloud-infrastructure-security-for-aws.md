@@ -254,7 +254,7 @@ In this step, you perform the configuration needed to deploy the Cloud Infrastru
 
 1. Under **Deploy AWS**, click the **Deploy AWS Security** button and select from the dropdown:
     * **Deploy to single account**. Deploy the solution only to the account of the user installing the application. 
-    * **Deploy to all acounts**. Deploy the solution to all accounts in your AWS organization. All users in the organization will have access to the application. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-3.png')} alt="Deploy AWS Security" style={{border: '1px solid gray'}} width="700"/> 
+    * **Deploy to all accounts**. Deploy the solution to all accounts in your AWS organization. All users in the organization will have access to the application. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-3.png')} alt="Deploy AWS Security" style={{border: '1px solid gray'}} width="700"/> 
 1. Click **Next**. A CloudFormation template screen is displayed. 
 1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/>
 1. Scroll down to the **Parameters** section.
