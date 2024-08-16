@@ -37,7 +37,7 @@ The Atlassian Organizations API provides resources for managing an Atlassian org
 Follow the below steps to generate a Bearer access for user configuration:
 
 1. Log in to your [Atlassian admin console](http://admin.atlassian.com/).
-1. After logging in, navigate to **Organizations** tab with your admin console.
+1. After logging in, navigate to the **Organizations** tab.
 1. Go to **Settings** and select **API keys**.
 1. Click on **Create API key** in the top right.
 1. Enter a name for the API key.
