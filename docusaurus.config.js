@@ -422,11 +422,6 @@ module.exports = {
             position: 'left',
           },
           {
-            type: 'html',
-            position: 'right',
-            value: '<div id="google_translate_element"></div>',
-          },
-          {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',

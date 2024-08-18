@@ -7,7 +7,8 @@ import heroImage from '../../static/img/hero-secondary-graphic.webp';
 import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
-import ErrorBoundary from '../components/ErrorBoundary'; // Import the ErrorBoundary component
+import ErrorBoundary from '../components/ErrorBoundary';
+import GoogleTranslate from '../helper/google-translate';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -18,6 +19,9 @@ export const Home = () => {
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
+        {/* Google Translate Widget */}
+        <GoogleTranslate />
+
         {/* Header */}
         <Typography
           bgcolor='#0045BE'
@@ -183,7 +187,6 @@ export const Home = () => {
 
         {/* Main */}
         <Container maxWidth='xl'>
-
           {/* Product Guides */}
           <Stack
             alignItems='center'
@@ -303,7 +306,6 @@ export const Home = () => {
               ))}
             </TabContext>
           </Stack>
-
         </Container>
       </Layout>
     </ErrorBoundary>
