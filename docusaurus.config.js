@@ -271,6 +271,12 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
+    announcementBar: {
+      id: 'contributing',
+      content: '📝 Join our open source community! Contribute, collaborate, and make an impact with Sumo Logic. <a target="_blank" rel="noopener noreferrer" href="/docs/contributing">Learn more</a>.',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -427,35 +433,22 @@ module.exports = {
             value: '<div id="google_translate_element"></div>',
           },
           {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
             to: 'https://support.sumologic.com/support/s',
             position: 'right',
             className: 'header-support',
             alt: 'Contact Sumo Logic support',
           },
           {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
+          },
+          {
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
             position: 'right',
             className: 'header-github-link',
-            type: 'dropdown',
-            'aria-label': 'GitHub repository',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            items:[
-              {
-                label: 'Send Feedback',
-                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'rate_review',
-              },
-              {
-                label: 'Contribute to Docs',
-                href: '/docs/contributing',
-                icon: 'edit_note',
-              },
-            ]
+            alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
       },

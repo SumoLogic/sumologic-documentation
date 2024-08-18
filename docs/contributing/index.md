@@ -1,6 +1,6 @@
 ---
 slug: /contributing
-title: Contribute to Sumo Docs
+title: Contributing to Sumo Logic Docs
 description: Learn how to provide feedback and contribute to Sumo Logic Docs, an open source project.
 ---
 
@@ -8,11 +8,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-We're a developer/practitioner community building reliable and secure modern apps. We welcome all contributions, from minor typo fixes to new docs/topics. Your expertise and sharing can help fellow users learn and expand their knowledge of Sumo Logic.
+Welcome to Sumo Logic Open Source!
 
-Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content. Here you'll find information on creating files, writing in markdown, using our templates, submitting pull requests (PRs), and more.
+We're a community of developers and practitioners dedicated to building reliable and secure modern apps. At Sumo Logic, we believe in the power of collaboration and community-driven innovation. Our open-source projects go beyond code—they're about fostering a vibrant, inclusive community where every contribution, big or small, makes an impact.
 
-There are many ways to contribute to Sumo Docs, beyond writing code. Here's how you can get involved.
+Whether you’re fixing bugs, adding features, writing documentation, or sharing feedback, your contributions help others learn and grow within the Sumo Logic ecosystem. From typo fixes to new docs, we welcome all forms of participation.
+
+Our open-source [documentation](https://github.com/SumoLogic/sumologic-documentation) project is hosted on GitHub, where you’ll find everything you need to get started — guidelines on creating files, writing in Markdown, using templates, and submitting pull requests.
+
+Whether you’re a seasoned developer or just starting, join us in building tools that help everyone better understand and optimize their systems. Ready to contribute? Explore our [contributing guide](https://help.sumologic.com/docs/contributing/) and get involved today!
+
+You can also explore more Sumo Logic open-source projects on our [GitHub repository](https://github.com/SumoLogic).
+
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">

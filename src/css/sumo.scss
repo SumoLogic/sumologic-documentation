@@ -258,16 +258,15 @@ html[data-theme='light'] {
 }
 
 .header-trial::before {
-  content: 'START FREE TRIAL';
-  border: 1px solid #2aa1e6;
+  content: 'Start Free Trial';
+  border: 1px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
   font-size: 13px;
   font-weight: 600;
   display: inline-flex;
-  background: #2aa1e6;
-  margin-right: -20px;
+  background: linear-gradient(35deg,#0466FF 0%,#0800FF 100%);
 }
 
 .header-trial::after {
@@ -277,15 +276,14 @@ html[data-theme='light'] {
 
 [data-theme='dark'] .header-trial::before {
   background: transparent;
-  border: 1px solid #2aa1e6;
+  border: 0px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 300;
   display: inline-flex;
-  background: #2aa1e6;
-  margin-right: -20px;
+  background: linear-gradient(35deg, #0466FF 0%, #0800FF 30%, #000099 100%);
 }
 
 //Contact Support nav button
@@ -294,31 +292,33 @@ html[data-theme='light'] {
 }
 
 .header-support::before {
-  content: 'CONTACT SUPPORT';
+  content: 'Contact Support';
   background: transparent;
-  border: 1px solid #000;
+  border: 1px solid var(--ifm-navbar-link-color);
   color: var(--ifm-navbar-link-color);
   border-radius: 3px;
   padding: 5px 15px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 300;
   display: inline-flex;
+  margin-right: -20px;
 }
 
 .header-support::after {
-    display: none !important;
-    content: none !important;
+  display: none !important;
+  content: none !important;
 }
 
 [data-theme='dark'] .header-support::before {
   background: transparent;
-  border: 1px solid #E5F4FA;
+  border: 1px solid var(--ifm-navbar-link-color);
   color: var(--ifm-navbar-link-color);
   border-radius: 3px;
-  padding: 4px 15px;
+  padding: 5px 15px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 300;
   display: inline-flex;
+  margin-right: -20px;
 }
 
 
