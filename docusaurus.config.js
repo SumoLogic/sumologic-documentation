@@ -424,7 +424,7 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: 'google_translate', // This triggers the GoogleTranslateNavbarItem
+            value: 'google_translate',
           },
           {
             to: 'https://www.sumologic.com/sign-up',
