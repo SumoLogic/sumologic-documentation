@@ -1,7 +1,7 @@
 ---
 id: lastpass-source
-title: Lastpass Source
-sidebar_label: Lastpass
+title: LastPass Source
+sidebar_label: LastPass
 keywords:
   - lastpass
 description: Learn how to collect audit reporting events from LastPass platform.
