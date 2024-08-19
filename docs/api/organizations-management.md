@@ -27,3 +27,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement |
+
+:::info
+Check out our additional [Organizations Management API endpoints](https://organizations.sumologic.com/docs/#tag/organizationsManagement), currently in beta.
+:::
