@@ -257,6 +257,9 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
+    scripts: [
+      '/custom.js',
+    ],
     colorMode: {
       defaultMode: 'light',
     },
