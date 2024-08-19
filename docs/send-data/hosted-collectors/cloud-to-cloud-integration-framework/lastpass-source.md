@@ -32,7 +32,7 @@ LastPass is a password manager tool that allows you to store, secure, and autofi
 
 ### Vendor configuration
 
-To collect audit reporting data from Lastpass, you must have an authorized Lastpass account. Also, follow the [Lastpass documentation](https://support.lastpass.com/s/document-item?bundleId=lastpass&topicId=LastPass/t_cid_and_hash_locate.html&_LANG=enus) to generate the CID (Account Number) and API secret ID.
+To collect audit reporting data from LastPass, you must have an authorized LastPass account. Also, follow the [LastPass documentation](https://support.lastpass.com/s/document-item?bundleId=lastpass&topicId=LastPass/t_cid_and_hash_locate.html&_LANG=enus) to generate the CID (Account Number) and API secret ID.
 
 ### Source configuration
 
