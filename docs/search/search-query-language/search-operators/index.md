@@ -219,7 +219,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/isvalidip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isValidIP, isValidIPv4, isValidIPv6</h4></a>
-      <p>The `isValidIP` operator checks if the value is a valid IP address. The `isValidIPv4` and `isValidIPv6` operators check if the value is a valid IPv4 or IPv6 address respectively. </p>
+      <p>The `isValidIP` operator checks if the value is a valid IP address. The `isValidIPv4` and `isValidIPv6` operators check if the value is a valid IPv4 or IPv6 address, respectively. </p>
       </div>
     </div>
     <div className="box smallbox card">
