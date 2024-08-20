@@ -336,7 +336,7 @@ These custom field settings will appear in the Cloud SOAR Incident screen as fol
 
 ### Incident labels
 
-The **Incident label** page allows you to define labels for the different types of incidents that will be investigated. You can also create these labels when you create [automation rules](/docs/cloud-soar/automation/#automation-rules) and [incident templates](/docs/cloud-soar/automation/#incident-templates).
+The **Incident label** page allows you to define labels for different types of [incidents](/docs/cloud-soar/incidents-triage/#incidents). When incidents are created by the system, incident labels are automatically applied to the incidents. You specify the incident label to be used for each incident type when you create [incident templates](/docs/cloud-soar/automation/#incident-templates) and [automation rules](/docs/cloud-soar/automation/#automation-rules). 
 
 To create an incident label:
 
