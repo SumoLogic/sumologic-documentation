@@ -15,12 +15,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/snowflake-sql-api/example
 import TerraformExample from '!!raw-loader!/files/c2c/snowflake-sql-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.

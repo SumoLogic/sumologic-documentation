@@ -23,7 +23,7 @@ Check out the following overview video. It reviews a search provided in the Goo
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
