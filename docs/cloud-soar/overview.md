@@ -336,14 +336,26 @@ These custom field settings will appear in the Cloud SOAR Incident screen as fol
 
 ### Incident labels
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access incident label settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**.
-<!--Kanso 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access incident label settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
- Kanso-->
+The **Incident label** page allows you to define labels for the different types of incidents that will be investigated. You can also create these labels when you create [automation rules](/docs/cloud-soar/automation/#automation-rules) and [incident templates](/docs/cloud-soar/automation/#incident-templates).
 
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
+To create an incident label:
 
-The **Incident label** page allows you to define labels for the different types of incidents that will be investigated. You can also create these labels during the automation rule and incident template creation process.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. Kanso--> 
+1. Click **+** to the left of **Incident label**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
+1. Enter the following on the **New label** dialog:
+    1. **Name**. Enter a name for the label. This name will not appear in the label itself.
+    1. **Description**. Enter a description for what the label will be used for.
+    1. **Value**. Enter a value for the label. The fields below will be appended to this label.
+    1. **ADD FIELD**. Double-click the following fields you want to append to the label. They will automatically generate values:
+        * **Day**. The day of the month.
+        * **Month**. The month of the year.
+        * **Year**. The year.
+        * **Roman numeral month**. The month represented as Roman numerals. For example, I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XII.
+        * **Counter**. A counter beginning at 1.
+        * **Counter from**. A counter beginning at the number you specify. Replace the `X` in the field with the number to start from.
+        * **Counter year based**. A counter based on the year.
+        * **Counter day based**. A counter based on the day.
+        * **Random six digit number**. A randomly-generated number.<br/><img src={useBaseUrl('img/cloud-soar/new-label.png')} alt="New label dialog" style={{border: '1px solid gray'}} width="400"/>
 
 ### Triage
 
