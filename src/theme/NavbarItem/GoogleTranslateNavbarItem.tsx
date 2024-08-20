@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const GoogleTranslate = () => {
+const GoogleTranslateNavbarItem = () => {
   useEffect(() => {
     if (!window.googleTranslateElementInit) {
       window.googleTranslateElementInit = function () {
@@ -9,14 +9,15 @@ const GoogleTranslate = () => {
           'google_translate_element'
         );
       };
+
+      const script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
     }
-    const script = document.createElement('script');
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    document.body.appendChild(script);
   }, []);
 
   return <div id="google_translate_element"></div>;
 };
 
-export default GoogleTranslate;
+export default GoogleTranslateNavbarItem;
