@@ -200,7 +200,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
     * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
        * [Create new source: Select region](#create-new-source-select-region)
-       * [Create new source: Check AWS role permission](#create-new-source-check-aws-role-permission)
+       * [Create new source: Check AWS Role Permission](#create-new-source-check-aws-role-permission)
        * [Create new source: Deploy AWS](#create-new-source-deploy-aws) <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure Security for AWS screen" style={{border: '1px solid gray'}} width="700"/>
 
 ### Create new source: Select region
