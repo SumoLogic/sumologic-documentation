@@ -16,7 +16,7 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: process.env.HOSTNAME || "https://www.sumologic.com", // why did this say "http://localhost:3000" before?
+  url: process.env.HOSTNAME || "https://www.sumologic.com",
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/help/",
   onBrokenLinks: 'throw',
