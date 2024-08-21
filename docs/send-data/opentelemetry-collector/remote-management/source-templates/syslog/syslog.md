@@ -37,7 +37,7 @@ You can follow the below steps to set a remotely managed OpenTelemetry collector
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
-import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
 <CollectorInstallation/>
 		
@@ -51,10 +51,10 @@ In this step, you will configure the yaml required for Syslog Collection. Below 
 - **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, **UDP** or **TCP**. 
 - **Port**. Enter the port number for agent to listen to. Make sure the devices are sending to the same port.
 
-**Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+**Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
-import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>

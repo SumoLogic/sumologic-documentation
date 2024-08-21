@@ -43,7 +43,7 @@ This app is based on the following log files from the Ubuntu Linux machine.
 - messages
 - yum.log
 
-import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 		
@@ -53,7 +53,7 @@ Follow the below steps to set a remotely managed OpenTelemetry collector and pus
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
-import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
 <CollectorInstallation/>
 		
@@ -74,15 +74,15 @@ In this step, you will configure the yaml required for Linux Collection. Below a
 
 ##### Enable process metric collection (Optional)
 
-import ProcMetrics from '../../../../reuse/apps/opentelemetry/process-metric-collection.md';
+import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
 
 <ProcMetrics/>
 		
 - **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+- **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
-import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>
