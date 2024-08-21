@@ -2292,7 +2292,7 @@ integrations: [
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
-          'integrations/saas-cloud/crowdStrike-fdr-host-inventory',
+          'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
