@@ -148,18 +148,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Cloud SQL app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Cloud SQL app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Cloud SQL dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -201,3 +189,15 @@ The **Google Cloud SQL - MySQL Performance** dashboard works with Google Cloud S
 The **Google Cloud SQL - Performance Overview** dashboard works with Google Cloud SQL metrics. This dashboard provides an overview of the average disk/CPU/memory utilization across all Cloud SQL instances, the number of connections, disk input/output operations count, and memory used along with the database status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - Performance Overview" width="800"/>
+
+## Upgrading the Google Cloud SQL app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud SQL app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
