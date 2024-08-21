@@ -382,7 +382,7 @@ The following Cloud SIEM rules refer to this Match List:
 
 **Target column:** Hostname (`Hostname`)
 
-**Description:** Domain controller hosts.
+**Description:** Domain controller hostnames.
 
 The following Cloud SIEM rules refer to this Match List:
 
