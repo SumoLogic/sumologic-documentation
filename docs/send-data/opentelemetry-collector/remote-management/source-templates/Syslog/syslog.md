@@ -37,7 +37,7 @@ You can follow the below steps to set a remotely managed OpenTelemetry collector
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
-import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
 <CollectorInstallation/>
 		
@@ -55,6 +55,6 @@ In this step, you will configure the yaml required for Syslog Collection. Below 
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
-import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>

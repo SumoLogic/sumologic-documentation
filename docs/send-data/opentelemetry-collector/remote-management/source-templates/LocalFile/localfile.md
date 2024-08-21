@@ -31,11 +31,11 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 ## Prerequisites
 		
 ### For logs collection
-import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 
-import OtelWindowsLogPrereq from '../../../../reuse/apps/opentelemetry/log-collection-prerequisite-windows.md';
+import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-collection-prerequisite-windows.md';
 
 <OtelWindowsLogPrereq/>
 
@@ -45,7 +45,7 @@ You can follow the below steps to set a remotely managed OpenTelemetry collector
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
-import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
 <CollectorInstallation/>
 		
@@ -61,7 +61,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **Collection should begin from**. Defines where will the collection of the logs start from. Possible values are "End of File" and "Beginning of File".
 - **Detect messages spanning multiple lines**. You can enable this option when dealing with logs which span over multiple lines. On enabling this option you will need to specify **Boundary regex location** where you can specify if the expression defines end or start of the log line and **Expression to match message boundary** where you will define the expression. 
 
-import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 
 <OtelLogAdvanceOption/>
 
@@ -69,6 +69,6 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
-import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>

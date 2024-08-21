@@ -31,7 +31,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 ## Prerequisites
 		
 ### For logs collection
-import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 		
@@ -41,7 +41,7 @@ Follow the below steps to set a remotely managed OpenTelemetry collector and pus
 		
 ### Step 1: Set up remotely managed OpenTelemetry collector
 		
-import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
 		
 <CollectorInstallation/>
 		
@@ -55,7 +55,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
 
-import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 
 <OtelLogAdvanceOption/>
 
@@ -63,6 +63,6 @@ import OtelLogAdvanceOption from '../../../../reuse/apps/opentelemetry/logs-adva
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
-import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>
