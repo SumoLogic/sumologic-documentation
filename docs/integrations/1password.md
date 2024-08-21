@@ -167,7 +167,7 @@ import CreateMonitors from '../reuse/apps/create-monitors.md';
 | `Privileged vault and group access control changes` | This alert is fired when there are changes to privileged vault and group access control. | Critical | Count > 0 | 
 | `Login Exceeds Set Parameters` | This alert is fired when the user tries login activities from more than one location. | Critical | Count > 1|
 | `Grant User Vault Access` | This alert is fired when the user is granted access to a vault. | Critical | Count > 0 |
-| `Changes to a User's MFA settings` | This alert is fired when user makes changes in the MFA settings. | Critical | Count > 5 |
+| `Changes to a User's MFA settings` | This alert is fired when a user makes changes in the MFA settings. | Critical | Count > 5 |
 | `Audit Events from Risky Locations` | This alert is fired when an audit event is registered from an embargo location (Afghanistan, China, Cuba, North Korea, Iran, Libya, Nigeria, Sudan, Syria, and Yemen). | Critical | Count > 0 |
 | `1Password tenant-level Changes` | This alert is fired when changes are made to firewall rules, SSO settings, or a user sets up their 1Password account to unlock with SSO. | Critical | Count > 0 |
 
