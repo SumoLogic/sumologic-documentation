@@ -164,7 +164,7 @@ import CreateMonitors from '../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Privileged vault and group access control changes` | This alert is fired when there is changes to privileged vault and group access control. | Critical | Count > 0 | 
+| `Privileged vault and group access control changes` | This alert is fired when there are changes to privileged vault and group access control. | Critical | Count > 0 | 
 | `Login Exceeds Set Parameters` | This alert is fired when the user tries login activities from more than one location. | Critical | Count > 1|
 | `Grant User Vault Access` | This alert is fired when the user is granted access to a vault. | Critical | Count > 0 |
 | `Changes to a User's MFA settings` | This alert is fired when user makes changes in the MFA settings. | Critical | Count > 5 |
