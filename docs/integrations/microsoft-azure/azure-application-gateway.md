@@ -45,6 +45,8 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `provider_name`. Azure resource provider name (for  ex Microsoft.Network).
    - `resource_type`. Azure resource type (for ex storageaccounts).
    - `resource_name`. The name of the resource (for ex storage account name).
+   - `service_type`. Type of the service that can be accessed from with a azure resource.
+   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL databases in Azure SQL Server).
 
 
 3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
@@ -101,15 +103,15 @@ Rule Name: AzureObservabilityMetadataExtractionServiceLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 ```
-| Fields extracted | Metric rule    |
-|------------------|----------------|
-| subscription_id  | $resourceId._1 |
-| resource_group   | $resourceId._2 |
-| provider_name    | $resourceId._3 |
-| resource_type    | $resourceId._4 |
-| resource_name    | $resourceId._5 |
-| service_type     | $resourceId._6 |
-| service_name     | $resourceId._7 |
+| Fields extracted  | Metric rule     |
+|:------------------|:----------------|
+| subscription_id   | $resourceId._1  |
+| resource_group    | $resourceId._2  |
+| provider_name     | $resourceId._3  |
+| resource_type     | $resourceId._4  |
+| resource_name     | $resourceId._5  |
+| service_type      | $resourceId._6  |
+| service_name      | $resourceId._7  |
 
 * **Azure Observability Metadata Extraction Application Gateway Level**
 ```sql
@@ -119,19 +121,19 @@ Rule Name: AzureObservabilityMetadataExtractionAppGatewayLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/APPLICATIONGATEWAYS/* tenant_name=*
 ```
-| Fields extracted | Metric rule         |
-|------------------|---------------------|
-| subscription_id  | $resourceId._1      |
-| resource_group   | $resourceId._2      |
-| provider_name    | $resourceId._3      |
-| resource_type    | APPLICATIONGATEWAYS |
-| resource_name    | $resourceId._4      |
+| Fields extracted  | Metric rule          |
+|:------------------|:---------------------|
+| subscription_id   | $resourceId._1       |
+| resource_group    | $resourceId._2       |
+| provider_name     | $resourceId._3       |
+| resource_type     | APPLICATIONGATEWAYS  |
+| resource_name     | $resourceId._4       |
 
 ### Configure metrics collection
 
 In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. 1. Create hosted collector and tag tenant_name field
+1. Create hosted collector and tag tenant_name field
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
@@ -139,6 +141,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Choose `Stream to an event hub` as destination.
    * Select `AllMetrics`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+![azureapplicationgateway-metrics.png](/img/send-data/azureapplicationgateway-metrics.png)
 
 ### Configure logs collection
 
@@ -153,7 +156,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 3. Tag the location field in the source with right location value.
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="800" />
-   
+ ![azureapplicationgateway-logs.png](/img/send-data/azureapplicationgateway-logs.png)
+
 #### Activity Logs
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
