@@ -1,5 +1,5 @@
 ---
-id: linux
+slug: /send-data/opentelemetry-collector/remote-management/source-templates/linux
 title: Linux Source Template
 sidebar_label: Linux
 description: Learn about the Sumo Logic Linux source template for OpenTelemetry.
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
 The Linux source template generates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Linux logs and host metrics for Sumo Logic.
-		
+
 ## Fields creation in Sumo Logic for Linux
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
@@ -26,9 +26,9 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the Linux system resides, such as `dev`, `prod`, or `qa`.
 - **`host.group`**. This is a collector-level field that is user-configured at the time of collector installation. It identifies the Linux host group.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
-		
+
 ## Prerequisites
-		
+
 ### For logs collection
 This app is based on the following log files from the Ubuntu Linux machine.
 
@@ -46,22 +46,22 @@ This app is based on the following log files from the Ubuntu Linux machine.
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
-		
+
 ## Source template configuration
-		
+
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
-		
+
 ### Step 1: Set up remotely managed OpenTelemetry collector
-		
+
 import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
-		
+
 <CollectorInstallation/>
-		
+
 ### Step 2: Configure the source template
-		
+
 In this step, you will configure the yaml required for Linux Collection. Below are the inputs required for configuration:
-		
-		
+
+
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
 
@@ -77,7 +77,7 @@ In this step, you will configure the yaml required for Linux Collection. Below a
 import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
 
 <ProcMetrics/>
-		
+
 - **Scan Interval**. The frequency at which the source is scanned.
 - **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

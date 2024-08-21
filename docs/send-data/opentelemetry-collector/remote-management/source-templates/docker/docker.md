@@ -1,5 +1,5 @@
 ---
-id: docker
+slug: /send-data/opentelemetry-collector/remote-management/source-templates/docker
 title: Docker Source Template
 sidebar_label: Docker
 description: Learn about the Sumo Logic Docker source template for OpenTelemetry.
@@ -23,7 +23,7 @@ The Docker source template creates an OpenTelemetry configuration that can be pu
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
 
-- **`sumo.datasource`**. Fixed value of **docker**. 
+- **`sumo.datasource`**. Fixed value of **docker**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the docker env resides, such as `dev`, `prod`, or `qa`.
 
 ## Prerequisites
@@ -34,11 +34,11 @@ This section provides instructions for configuring metrics and log collection fo
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-After installing Sumo OpenTelemetry collector to docker host machine, you need to make sure that `otelcol-sumo` user (created during Sumo OpenTelemetry collector installation) has permission to access docker.sock before pushing Docker ST to the collector. The command for this may vary depending on the linux OS which is being used. Here are commands which can help do that : 
+After installing Sumo OpenTelemetry collector to docker host machine, you need to make sure that `otelcol-sumo` user (created during Sumo OpenTelemetry collector installation) has permission to access docker.sock before pushing Docker ST to the collector. The command for this may vary depending on the linux OS which is being used. Here are commands which can help do that :
 
-- You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command : 
+- You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command :
 `sudo setfacl -m user:otelcol-sumo:rw /var/run/docker.sock`
-- If docker.sock has docker group as the owner you can add otelcol-sumo user to this docker group using command : 
+- If docker.sock has docker group as the owner you can add otelcol-sumo user to this docker group using command :
 `sudo usermod -aG docker otelcol-sumo`
 
 
@@ -52,21 +52,21 @@ docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disow
 The path to this JSON file will be required in the next step, where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
-		
+
 ```
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
 ```
 
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
-		
+
 ## Source template configuration
-		
+
 You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
-		
+
 ### Step 1: Set up remotely managed OpenTelemetry collector
-		
+
 import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/collector-installation.md';
-		
+
 <CollectorInstallation/>
 
 ### Step 2: Configure the source template
@@ -74,7 +74,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 In this step, you will configure the yaml required for Docker Collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
-- **Description**. Description for the source template.	
+- **Description**. Description for the source template.
 - **Docker Event log location**. Enter the path of the JSON file generated through the command in the prerequisite section.
 - **Endpoint**. Address to reach the desired Docker daemon (default: `unix:///var/run/docker.sock`).
 - **Excluded Image List**. A list of strings, [regexes](https://golang.org/pkg/regexp/), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers for scrapping metrics. Learn more about [*excluded_images*](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md#configuration).

@@ -1,5 +1,5 @@
 ---
-id: kafka
+slug: /send-data/opentelemetry-collector/remote-management/source-templates/kafka
 title: Kafka Source Template
 sidebar_label: Kafka
 description: Learn about the Sumo Logic Kafka source template for OpenTelemetry.
@@ -48,7 +48,7 @@ sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <P
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
-		
+
 import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-collection-prerequisite-windows.md';
 
 <OtelWindowsLogPrereq/>
@@ -68,7 +68,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 In this step, you will configure the yaml required for Kafka collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
-- **Description**. Description for the source template.	
+- **Description**. Description for the source template.
 - **Server file log path**. Enter the path to the server log file for your Kafka instance.
 - **Controller file log path**. Enter the path to the controller log file for your Kafka instance.
 - **Endpoint**. The URL of the broker endpoint (default: `localhost:9092`).
