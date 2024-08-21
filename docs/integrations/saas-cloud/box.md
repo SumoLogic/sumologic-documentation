@@ -313,18 +313,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
-## Upgrading the Box app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Box app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Box dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -374,3 +362,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Recent Login Devices Added.** Reports details on recently added login devices such as message time, source login, source user, and source IP address in an aggregation table for the last 24 hours.
 
 **Top 10 Automated Users.** Displays information on top automated users by user and event count in a column chart for the last 24 hours. Automated users are devices or applications that login through a user account.
+
+## Upgrading the Box app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Box app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

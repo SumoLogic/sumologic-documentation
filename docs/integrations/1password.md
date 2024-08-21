@@ -106,18 +106,6 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the 1Password app (Optional)
-
-import AppUpdate from '../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the 1Password app (Optional)
-
-import AppUninstall from '../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing 1Password dashboards
 
 import ViewDashboards from '../reuse/apps/view-dashboards.md';
@@ -153,3 +141,15 @@ The **1Password - Threat Intel** dashboard provides high-level views of threats 
 The **1Password - Item Usage** dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />
+
+## Upgrading the 1Password app (Optional)
+
+import AppUpdate from '../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the 1Password app (Optional)
+
+import AppUninstall from '../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

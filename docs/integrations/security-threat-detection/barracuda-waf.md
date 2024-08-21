@@ -156,18 +156,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Barracuda WAF app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Barracuda WAF app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Barracuda WAF dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -276,3 +264,15 @@ Use this dashboard to:
 * Determine top clients accessing your web applications and optimize WAF configurations as needed.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Client_Traffic.png')} alt="Barracuda WAF dashboards" />
+
+## Upgrading the Barracuda WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Barracuda WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

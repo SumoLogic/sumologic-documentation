@@ -36,26 +36,25 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 
 ### Configure field in field schema
+
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for following fields:
-   - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions here https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name
+1. Search for the following fields:
+   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
    - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. Id associated with a subscription where resource is present.
+   - `subscription_id`. ID associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for  ex Microsoft.Network).
-   - `resource_type`. Azure resource type (for ex storageaccounts).
-   - `resource_name`. The name of the resource (for ex storage account name).
+   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+   - `resource_type`. Azure resource type (for example, storage accounts).
+   - `resource_name`. The name of the resource (for example, storage account name).
    - `service_type`. Type of the service that can be accessed from with a azure resource.
    - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL databases in Azure SQL Server).
+1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
+### Configure field extraction rules
 
-3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
+Create the following field extraction rules (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
-### Configure Field Extraction Rules
-
-Create a Field Extraction Rule (FER) for Azure Storage by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-* **Azure Location Extraction FER**
+#### Azure location extraction FER
 
    ```sql
    Rule Name: AzureLocationExtractionFER
@@ -72,7 +71,7 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    | fields location
    ```
 
-* **Resource ID Extraction FER**
+#### Resource ID extraction FER
 
    ```sql
    Rule Name: AzureResourceIdExtractionFER
@@ -93,9 +92,12 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    ```
 ### Configure metric rules
 
-  * **Azure Observability Metadata Extraction Service Level**
+Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule). 
 
-      In case this rule is already exists then no need to create again.
+#### Azure observability metadata extraction service level
+
+If this rule already exists, there is no need to create it again.
+
 ```sql
 Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
 ```
@@ -113,7 +115,8 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
 | service_type      | $resourceId._6  |
 | service_name      | $resourceId._7  |
 
-* **Azure Observability Metadata Extraction Application Gateway Level**
+#### Azure observability metadata extraction application gateway level
+
 ```sql
 Rule Name: AzureObservabilityMetadataExtractionAppGatewayLevel
 ```
@@ -133,10 +136,9 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/APPLICATIONGATEWAYS/* t
 
 In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. Create hosted collector and tag tenant_name field
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
+1. Create hosted collector and tag tenant_name field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+3. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Application Gateway that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select `AllMetrics`.
@@ -150,26 +152,25 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each azure application gateway account that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
+2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure application gateway account that you want to monitor.
+   * Choose **Stream to an event hub** as the destination.
    * Select `allLogs`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-3. Tag the location field in the source with right location value.
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="800" />
- ![azureapplicationgateway-logs.png](/img/send-data/azureapplicationgateway-logs.png)
+   * Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+3. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" />
+    ![azureapplicationgateway-logs.png](/img/send-data/azureapplicationgateway-logs.png)
 
 #### Activity Logs
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
 
 :::note
-Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
+Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
 
 ## Installing the Azure Application Gateway app
 
-Now that you have set up data collection, install the Azure Application Gateway Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-application-gateway-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up data collection, install the Azure Application Gateway Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
