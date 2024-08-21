@@ -1,5 +1,5 @@
 ---
-id: crowdStrike-fdr-host-inventory
+id: crowdstrike-fdr-host-inventory
 title: CrowdStrike FDR Host Inventory
 sidebar_label: CrowdStrike FDR Host Inventory
 description: Monitor and analyze the CrowdStrike-FDR Host Inventory data to detect potential security threats related to user activity.
