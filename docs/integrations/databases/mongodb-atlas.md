@@ -458,6 +458,9 @@ This task makes the following assumptions:
 
     Collection:
       DBNAME: "newmongodbatlas"
+      Clusters: 
+        - "clusters1.mongodb.net"
+        - "clusters2.mongodb.net"
     ```
 
 ```sh title="Example execution of second yaml file"
