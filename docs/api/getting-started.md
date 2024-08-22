@@ -149,6 +149,14 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://open-collectors.jp.sumologic.com</td>
   </tr>
   <tr>
+   <td>KR</td>
+   <td>https://service.kr.sumologic.com</td>
+   <td>https://api.kr.sumologic.com/api/</td>
+   <td>https://collectors.kr.sumologic.com</td>
+   <td>syslog.collection.kr.sumologic.com</td>
+   <td>https://open-collectors.kr.sumologic.com</td>
+  </tr>
+  <tr>
    <td>US1</td>
    <td>https://service.sumologic.com/</td>
    <td>https://api.sumologic.com/api/</td>
@@ -178,16 +186,8 @@ https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
   </tr>
-    <tr>
-   <td>KR</td>
-   <td>https://service.kr.sumologic.com</td>
-   <td>https://api.kr.sumologic.com/api/</td>
-   <td>https://collectors.kr.sumologic.com</td>
-   <td>syslog.collection.kr.sumologic.com</td>
-   <td>https://open-collectors.kr.sumologic.com</td>
-  </tr></small>
-</table>
-
+  </small>
+  </table>
 
 ### Which endpoint should I should use?
 
