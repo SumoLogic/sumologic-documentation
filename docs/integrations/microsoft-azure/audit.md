@@ -44,18 +44,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Azure Audit app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure Audit app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Azure Audit dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -134,3 +122,15 @@ Use this dashboard to see the details on events, resources, and users.
 **Events by User.** Provides details on events per user in an area chart on a timeline for the last seven days.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
+
+## Upgrading the Azure Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

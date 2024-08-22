@@ -708,12 +708,12 @@ html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     background-color: #000099;
     padding: 5px 5px 0px 5px;
   }
-  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
    // font-weight: bold;
     color: #2f5fff;
@@ -730,13 +730,13 @@ html[data-theme='light'] .theme-admonition-sumo {
   --ifm-alert-color: #000099;
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #000099;
   .admonition-icon {
     background-color: #001799;
     padding: 5px 5px 0px 5px;
   }
-  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
     //font-weight: bold;
     color: #2f5fff;

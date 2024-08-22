@@ -27,24 +27,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  scripts: [
-    {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
-      async: true,
-    },
-    {
-      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
-      async: true,
-    },
-    {
-      src: './src/helper/google-tag-manager.js',
-      async: true,
-    },
-    {
-      src: './src/helper/google-analytics.js',
-      async: true,
-    },
-  ],
   staticDirectories: ['static'],
   webpack: {
     jsLoader: (isServer) => ({
@@ -95,12 +77,6 @@ module.exports = {
             ],
           },
         },
-        gtag: {
-          trackingID: 'G-CVH19TBVSL',
-        },
-        googleTagManager: {
-          containerId: 'GTM-58ZK7D',
-        },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
@@ -119,8 +95,12 @@ module.exports = {
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -136,6 +116,16 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    ['@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-58ZK7D',
+      },
+    ],
+    ['@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-CVH19TBVSL',
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -157,8 +147,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -177,8 +171,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SOAR Release Notes',
            description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -197,8 +195,12 @@ module.exports = {
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -217,8 +219,12 @@ module.exports = {
           postsPerPage: 'ALL',
           blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -271,7 +277,6 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
-        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -419,7 +424,7 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: '<div id="google_translate_element"></div>',
+            value: 'google_translate',
           },
           {
             to: 'https://www.sumologic.com/sign-up',

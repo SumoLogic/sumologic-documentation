@@ -106,18 +106,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the PCI for Palo Alto Networks 9 app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the PCI for Palo Alto Networks 9 app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing PCI for Palo Alto Networks 9 dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -159,3 +147,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Use case:** You can use this dashboard to identify systems and hosts involved in insecure data transit. You can identify insecure connections and port protocols like ftp, telnet, http, rlogin, and so on. You can also identify successful and rejected network connections for insecure connections.
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-9-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 9 dashboards" />
+
+## Upgrading the PCI for Palo Alto Networks 9 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI for Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
