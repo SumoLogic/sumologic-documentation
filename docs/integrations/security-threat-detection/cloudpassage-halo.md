@@ -154,18 +154,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the CloudPassage Halo app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the CloudPassage Halo app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing CloudPassage Halo dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -198,3 +186,15 @@ View critical issues for the last 24 hours, outliers for the critical issues thr
 * **Outlier on Delta (today - yesterday) of Critical Issues.** View the outlier difference between the count of issues today and yesterday
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_CriticalEvents_Dashboard.png')} alt="cloudpassage dashboards" />
+
+## Upgrading the CloudPassage Halo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CloudPassage Halo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

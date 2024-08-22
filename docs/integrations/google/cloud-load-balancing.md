@@ -138,18 +138,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Cloud Load Balancing app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Cloud Load Balancing app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Cloud Load Balancing dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -222,3 +210,15 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 **4xx Status Codes Locations**. A world map that shows the locations of 4xx status codes over the last 24 hours.
 
 **4xx Status Code Per Load Balancer**.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.
+
+## Upgrading the Google Cloud Load Balancing app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Load Balancing app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
