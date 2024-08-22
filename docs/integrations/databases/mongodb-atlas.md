@@ -399,8 +399,8 @@ This task makes the following assumptions:
     MongoDBAtlas:
       ORGANIZATION_ID: <Paste the Organization ID from step 1.>
       PROJECT_ID: <Paste the Project ID from step 1.>
-      PRIVATE_KEY: <Paste the Private Key from step 1.>
-      PUBLIC_KEY: <Paste the Public Key from step 1.>
+      PRIVATE_API_KEY: <Paste the Private Key from step 1.>
+      PUBLIC_API_KEY: <Paste the Public Key from step 1.>
       LOG_TYPES:
         DATABASE
         AUDIT
@@ -458,7 +458,9 @@ This task makes the following assumptions:
 
     Collection:
       DBNAME: "newmongodbatlas"
-      Clusters: 
+      MIN_REQUEST_WINDOW_LENGTH: 60
+      MAX_REQUEST_WINDOW_LENGTH: 900
+      Clusters:
         - "clusters1.mongodb.net"
         - "clusters2.mongodb.net"
     ```
@@ -587,6 +589,18 @@ between retries. </td>
   <tr>
    <td>TIMEOUT<br/>in Collection Section   </td>
    <td>Request time out used by the requests library.   </td>
+  </tr>
+  <tr>
+   <td>MIN_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
+   <td>Minimum window length for the request window, default 60 seconds.   </td>
+  </tr>
+  <tr>
+   <td>MAX_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
+   <td>Maximum window length for the request window, default 900 seconds.   </td>
+  </tr>
+  <tr>
+   <td>Clusters<br/>in Collection Section   </td>
+   <td>User Provided list of clusters for selecting specific clusters, by default selects all the clusters.   </td>
   </tr>
   <tr>
    <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
