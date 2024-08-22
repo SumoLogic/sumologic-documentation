@@ -96,8 +96,8 @@ In this step, you will configure the yaml required for Apache Collection.
 Below are the inputs required:
 
 - **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8080/server-status?auto`).
-- **Access File log Path**. Enter the path to the Access log file for your mysql instance.
-- **Error file log path**. Enter the path to the error log file for your mysql instance.
+- **Access File log Path**. Enter the path to the Access log file for your Apache instance.
+- **Error file log path**. Enter the path to the error log file for your Apache instance.
 - **Fields**. `webengine.cluster.name`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.

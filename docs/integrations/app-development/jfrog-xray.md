@@ -73,7 +73,7 @@ The JFrog Xray app uses the following log types:
 
 
 
-### Query Sample
+### Sample queries
 
 The sample query is from Watches Invoked panel of the **JFrog Xray - Overview** dashboard.
 
@@ -90,7 +90,7 @@ _sourceCategory = Labs/jfrog/xray
 | count_distinct(WatchName) as %"Number of Watches"
 ```
 
-## Collecting Logs for JFrog Xray
+## Collecting logs for JFrog Xray
 
 This section explains how to collect logs from JFrog Xray and ingest them into Sumo Logic for use with the JFrog Xray pre-defined dashboards and searches. To get the most of out this app, we recommend you also collect logs from Artifactory as well as Kubernetes.
 
@@ -99,7 +99,7 @@ This section explains how to collect logs from JFrog Xray and ingest them into S
 In this step you collect details for your JFrog Xray instance that you will use in the following tasks.
 
 Collect the following details:
-* HostName and Port for your JFrog Xray instance — such as, JFrog instance URL **http://host-example:8000/web/#/login**
+* HostName and Port for your JFrog Xray instance — such as: JFrog instance URL **http://host-example:8000/web/#/login**
     * HostName = **host-example**
     * Port = **8000**
 * Your Username and Password for your JFrog Xray instance
@@ -298,34 +298,17 @@ sudo yum -y install gcc
 sudo yum install python-devel
 ```
 
+## Installing the JFrog Xray app
 
-## Installing the JFrog Xray App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section has instructions for installing the JFrog Xray app.
+<AppInstall2/>
 
-To install the app, do the following:
+## Viewing JFrog Xray dashboards
 
-1. In the App Catalog, search for and select the **JFrog Xray** app. To see a preview of the dashboards included with the app before installing, click Preview Dashboards.
-2. Click **Add to Library**. The **Add JFrog Xray to Library** dialog appears.
-3. Specify the following:
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   * **JFrog Xray log data source**. Click in the **Source Category** entry field, and select the source category you assigned to the HTTP source you created in [Step 4: Add a hosted collector and HTTP source](#step-4-add-hosted-collector-and-http-source).
-   * Artifactory log data source. Enter a string that matches the source categories you assigned to the local file sources that you set up to receive Artifactory logs in [Step 2: Collect Artifactory logs](#step-2-collect-artifactory-logs). If you followed the instructions for setting the source categories, enter `_sourceCategory=*artifactory*`
-   * **Kubernetes log data source**. Select the log source for the HTTP source that receives Kubernetes Events logs.
-   * **Advanced**. (Optional) If desired, specify the location in Library where the app will be installed (the default is the Personal folder in the library), or click **New Folder** to add a new folder in which to place the app.
-4. Click **Add to Library**. Once an app is installed, it appears in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Panels start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing JFrog Xray Dashboards
-
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level
-
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### Overview
 
@@ -385,3 +368,15 @@ Use this dashboard to:
 * Monitor recent uploaded and downloaded artifacts.
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
+
+## Upgrading the JFrog Xray app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the JFrog Xray app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

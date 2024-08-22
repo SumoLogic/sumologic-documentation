@@ -49,7 +49,7 @@ The Sumo Logic app for MySQL assumes the default MySQL Error log file format for
 
 The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see [http://dev.mysql.com/doc/refman/5.5/en/server-logs.html](http://dev.mysql.com/doc/refman/5.5/en/server-logs.html).
 
-### Sample Logs
+### Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -136,7 +136,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for MySQL
+## Collecting logs and metrics for MySQL
 
 Configuring log and metric collection for the MySQL app includes the following tasks.
 
@@ -346,7 +346,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 </details>
 
 2. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
    2. Click the **+ Add**.
    3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
@@ -574,7 +574,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
 2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
-3. Go to **Manage Data > Alerts > Monitors**.
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click **Import.**
 6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  

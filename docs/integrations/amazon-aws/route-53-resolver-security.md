@@ -166,3 +166,15 @@ Panels include:
 * Threat Table
 * Malicious URIs
 * Malicious IPs
+
+## Upgrading the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

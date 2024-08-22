@@ -51,7 +51,7 @@ The hub has the following pages:
 
 ### Can we monitor other AWS services?
 
-AWS Observability provides a view across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow. You can add additional services to the AWS hierarchy as dashboards based on logs and metrics data to the AWS Observability Explore views, expanding as you add new services.
+AWS Observability provides a view across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow. You can add additional services to the AWS hierarchy as dashboards based on logs and metrics data to the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), expanding as you add new services.
 
 Adding a service requires:
 
@@ -59,7 +59,7 @@ Adding a service requires:
 * Collect metrics for your service using a [Sumo Logic AWS CloudWatch metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
-See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
+See [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
 
 ### Does AWS Observability require logs and metrics?
 
@@ -80,7 +80,7 @@ See the Sumo Logic AWS Observability video below for a demo of the solution.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
@@ -152,10 +152,10 @@ There are two ways EC2 can be monitored. One way is to use the [CloudWatch metri
 The two types of metrics collected are not comparable thus can have different values for the same metrics.
 
 
-### Will new Lambdas or services get automatically added to the AWS Observability explore tab?
+### Will new Lambdas or services get automatically added to the AWS Observability view?
 
 New Lambda functions and new Application ELBs will automatically be
-added if you have selected the auto-subscribe options during the
+added to the [AWS Observability views](/docs/dashboards/explore-view/#aws-observability) if you have selected the auto-subscribe options during the
 CloudFormation stack deployment. 
 
 ### What type of tagging is used for AWS resources?
@@ -167,6 +167,11 @@ All tags are collected by the AWS Cloud Watch Metrics source. For EC2,
 metadata sources need to be added for that account and will be mapped to
 Host metrics. Custom EC2 tags will be available through the metadata
 source.
+
+### What output formats do you support for CloudWatch metrics streams?
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams.
+
 
 ### Are instance metrics collected from CloudWatch metrics or as Host metrics?
 
@@ -183,7 +188,7 @@ generically as Host Metrics.
 
 ### Why are all entities or functions not available in Sumo Logic?
 
-AWS Observability integrates with Explore by populating metadata and
+AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and
 only shows entities with metrics coming in. If you do not see expected
 entities, make sure configurations are correct to collect and receive
 metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
@@ -191,7 +196,7 @@ for CloudFormation Template. You can configure metadata through
 deployment configuration or manually.
 
 For example, metrics for Lambda functions must be coming in for those
-entities to show in the Explore view. If you do not see Lambda
+entities to show in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). If you do not see Lambda
 functions, verify the CloudFormation stack is correctly configured
 including the AWS/Lambda namespace to collect metrics. For information,
 see 

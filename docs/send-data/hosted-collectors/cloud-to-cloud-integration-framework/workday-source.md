@@ -13,6 +13,7 @@ import ExampleJSON from '/files/c2c/workday/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/workday/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/workday/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
@@ -20,10 +21,6 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 Workday is a cloud-based enterprise resource planning (ERP) system that enables organizations to manage their financial, human resources, payroll, and procurement processes in one central platform. It offers a range of features such as analytics, reporting, and workflow automation to help businesses make informed decisions and streamline their operations. Workday is a comprehensive solution for businesses looking to improve their efficiency, productivity, and financial management.
 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
-
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
 
 ## Data collected
 
@@ -44,12 +41,12 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 
 To configure a Workday Source, follow the steps below:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection page**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -110,13 +107,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/workday/example.json)
+<a href="/files/c2c/workday/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/workday/example.tf)
+<a href="/files/c2c/workday/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

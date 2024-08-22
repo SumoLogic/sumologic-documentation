@@ -7,7 +7,7 @@ description: Learn more about the Sumo Logic Training and Certification Program.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/training.png')} alt="training icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="certification icon" width="50"/>
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
@@ -47,7 +47,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 To activate/verify your account:
 
-1. Go to **Help** > **Community**.<br/> ![verify-email](/img/get-started/verify-email.gif)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help**, and then select **Community**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help**, and then select either **Community**.  Kanso-->
 1. You will be prompted to activate your account.
 1. Click **Send Activation/Verification Email**.
 1. Open the email and click **Verify Your Email**.
@@ -132,7 +132,7 @@ Make sure to complete all sections of the course.
 
 If you're seeing the following error when starting a new lesson, this is typically due to a browser setting.
 
-<img src={useBaseUrl('img/get-started/error.png')} alt="error" />
+<img src={useBaseUrl('img/get-started/error.png')} alt="Screenshot showing Sumo Logic data pipeline error regarding missing authentication cookie" />
 
 Here are some fixes:
 

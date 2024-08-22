@@ -6,9 +6,10 @@ description: Onboarding Checklists for Analysts and Administrators.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator, go to the left nav, then click your name > **Preferences**.
+This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator:
 
-<img src={useBaseUrl('img/get-started/check-role.png')} alt="icon" width="500"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. In your profile, view the roles you are assigned. <br/><img src={useBaseUrl('img/get-started/check-role.png')} alt="Check role" width="500" style={{border: '1px solid gray'}} width="300" />
 
 
 ## Onboarding Checklist for Analysts
@@ -57,14 +58,14 @@ Once you have created search queries, you can visualize your data using charts, 
 
 * [Save a Search](/docs/search/get-started-with-search/search-basics/save-search). Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 * [Schedule a Search](/docs/alerts/scheduled-searches) When you save a search, you have the option to set up the saved search to run at a scheduled interval with an automated notification by email of the search results. You can edit a saved search at any time.
-* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts.md). ​There are three ways to receive scheduled search results email notifications: scheduled email, alert email, and real-time alerts. 
+* [Create Email Alerts from Scheduled Searches](../alerts/scheduled-searches/create-email-alert.md). ​There are three ways to receive scheduled search results email notifications: scheduled email, alert email, and real-time alerts. 
 
 ### Working with metrics
 
 Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metrics-queries). You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metrics-operators). 
-* [Metric charts](/docs/metrics/metric-charts). You can create line charts, area charts, and single value charts.
+* Metric charts. You can create [map charts](/docs/metrics/metrics-queries/map-charts), [heat maps](/docs/metrics/metrics-queries/heat-map), and [funnel charts](/docs/metrics/metrics-queries/funnel-chart).
 
 ### Sumo Logic Apps
 
@@ -72,7 +73,7 @@ Sumo Logic apps deliver out-of-the box Dashboards, reports, saved searches, and 
 
 * [Run Searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps). Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in an App against your data before you decide to install it. Or you can view the searches to see how good example queries are written.
 * [Install Sumo Logic Apps](/docs/get-started/apps-integrations#installing-apps-to-your-library).  Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
-* [Log Analysis QuickStart App](/docs/get-started/apps-integrations#log-analysis-quickstart-app). The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
+* [Log Analysis QuickStart App](/docs/integrations/sumo-apps/log-analysis-quickstart). The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume). The Sumo Logic App for Data Volume allows you to view at a glance your account's data usage volume by category, Collector, Source name, and hosts. The app uses predefined searches and a Dashboard that provide visibility into your environment for real-time analysis of overall usage.
 
  

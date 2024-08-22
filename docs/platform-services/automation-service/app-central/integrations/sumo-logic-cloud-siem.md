@@ -1,15 +1,14 @@
 ---
 title: Sumo Logic Cloud SIEM
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.13  
-Updated: Apr 8, 2024***
+***Version: 1.14  
+Updated: Jul 3, 2024***
 
 Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
@@ -49,7 +48,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Sumo Logic Cloud SIEM configuration
 
-1. To configure the Sumo Logic Cloud SIEM, log into the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
 1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
@@ -57,8 +56,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-5.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
-1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-6.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="500"/>
 1. Populate the resource fields as indicated.
@@ -71,7 +69,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-9.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 
-For detailed API documentation visit [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs).
+For detailed API documentation visit [Sumo Logic APIs](/docs/api/).
 
 ## Category
 
@@ -121,4 +119,7 @@ SIEM
         - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
         - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
         - Closure Comments (This field is only used within the Close Insight Trigger as a closure comment for Insight)
-* April 8, 2024 (v1.13) - Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* April 8, 2024 (v1.13)
+  * Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* July 3, 2024 (v1.14)
+  * Update `check_not_null_field` in Close Insight Trigger

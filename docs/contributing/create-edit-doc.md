@@ -38,7 +38,7 @@ Check out this brief tutorial on how to submit a basic change to our docs.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -136,7 +136,7 @@ Once you decide on placement, use the card HTML code in that doc to create a new
 
 We often encounter changes in links, so we assign each document a permanent URL, which includes a Content ID (CID) number. This permanent URL performs a 301 redirect to the canonical URL. This approach ensures that future modifications to the canonical URL, such as product name changes, do not affect the 'Learn More' links for users. Additionally, it reduces the need for code changes to the user interface, offering greater flexibility for making quick updates.
 
-This URL is then placed in the UI in the appropriate place. For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the product in the **Metrics** section as a help link.
+This URL is then placed in the UI in the appropriate place. For example, `cid=0071` links to a metrics page, which appears in the product in the **Metrics** section as a help link.
 
 To create a CID:
 1. In your GitHub authoring tool (like Atom or VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.

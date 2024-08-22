@@ -1,8 +1,8 @@
 ---
 id: mitre-coverage
-title: MITRE ATT&CK Coverage
+title: MITRE ATT&CK Threat Coverage Explorer
 sidebar_label: MITRE ATT&CK Coverage
-description: MITRE ATT&CK Coverage shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
+description: The MITRE ATT&CK Threat Coverage Explorer shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
 keywords:
   - MITRE ATT&CK
   - tactics
@@ -13,16 +13,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Iframe from 'react-iframe';
 
-The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
+The MITRE ATT&CK Threat Coverage Explorer shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
-Coverage data is updated on the page once a day. To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
+Coverage data is updated on the page once a day. To determine your coverage, the MITRE ATT&CK Threat Coverage Explorer collects data from rules that have fired in the last 180 days. 
 
 :::note
-* To view the MITRE ATT&CK Coverage page, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem). 
+* To view the MITRE ATT&CK Threat Coverage Explorer, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem). 
 * To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
-Watch this micro lesson to learn about MITRE ATT&CK Coverage.
+Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 
 <Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
      width="854px"
@@ -31,14 +31,16 @@ Watch this micro lesson to learn about MITRE ATT&CK Coverage.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
-## MITRE ATT&CK Coverage page
+## User interface 
 
-To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage**.
-
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
+ Kanso-->
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" style={{border: '1px solid gray'}} width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. Coverage data is updated on the page once a day.
@@ -62,7 +64,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
    * Filter not applied
 1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
 
-### Benefits
+## Benefits
 
 * Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions.
 * Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
@@ -72,7 +74,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 * Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage.
 * Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment.
 
-### Technique details
+## Technique details
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
@@ -83,7 +85,7 @@ Select the following for details:
 * **Sub-Techniques**. See the sub-techniques for that technique.
 * **Rules**. See a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule.
 
-### Visual Settings
+## Visual Settings
 
 Click this button <img src={useBaseUrl('img/cse/mitre-visual-settings-button.png')} alt="Visual settings button" style={{border: '1px solid gray'}} width="30"/> to launch the **Visual Settings** dialog. 
 
@@ -176,7 +178,7 @@ Select the values to filter:
 
 ## Audit logging for MITRE ATT&CK coverage
 
-MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
 ```
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage

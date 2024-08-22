@@ -163,13 +163,14 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ### Fields in field schema
 
-Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search for the below fields. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields):
-
-* apiname
-* account
-* namespace
-* region
-* accountid
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the below fields:
+    * `apiname`
+    * `account`
+    * `namespace`
+    * `region`
+    * `accountid`
+1. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
 
 ### Field extraction rules
 
@@ -234,7 +235,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
 ```sql
-Rule name: AwsObservabilityApiGatewayApiNameEntityRule
+Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
 Metric match expression: Namespace=AWS/ApiGateway apiid=*
 Variable name: apiname
 Tag sequence: $apiid._1
@@ -256,7 +257,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
 :::
 
-For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
+For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account” field.
 
 #### Enable cache metrics
 
@@ -313,7 +314,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    3. **Enable S3 Replay**. Do not check this option.
    4. **Source Category**. Enter `aws/apigateway/accesslogs`.
    5. **Fields**. Add below fields in it:
-      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account` field.
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Logs can be queried via the `account` field.
       2. Add **region** and **accountid** fields and assign their respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
@@ -322,8 +323,12 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    10. Click **Save**.
    11. Save the given URL of the source for next step.
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
-3. Follow below steps for enabling access logs for each respective API type:
-   * Enable Access logs for REST APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html#set-up-kinesis-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
+3. Create a log group in CloudWatch Logs by referring to the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html). Make sure to set your log group name convention as `/aws/apigateway/<apiid>/<stagename>`.
+4. Follow the below steps to enable access logs for each respective API type:
+   :::note
+   Make sure to remove `:*` from the end while adding Access log destination ARN.
+   :::
+   * Enable Access logs for REST APIs by referring to the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console). When you specify the `Log format` field, use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
@@ -515,7 +520,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    }
    ```
 
-4. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
+5. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 ### Collect AWS API Gateway CloudTrail logs
 
@@ -528,7 +533,7 @@ To configure a CloudTrail Source, perform these steps:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html). For more information on what events are logged, refer to the [API Gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic. While configuring the source, add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account` field.
+4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic. While configuring the source, add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Logs can be queried via the `account` field.
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="400" />
 

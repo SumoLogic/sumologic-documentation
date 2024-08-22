@@ -378,7 +378,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira app
+## Collecting logs for the Jira app
 
 This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
@@ -549,3 +549,15 @@ Use this dashboard to:
 * Identify unusual user activity and closely monitor those users.
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
+
+## Upgrading the Jira app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jira app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

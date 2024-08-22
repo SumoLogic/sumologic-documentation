@@ -25,7 +25,7 @@ Watch this micro lesson to learn more about Entities.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -54,13 +54,14 @@ When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for t
 
 ## About the Entities list page
 
-To view the **Entities** page, click **Entities** at the top of the Cloud SIEM UI.
-
-<img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Entities, click **Entities** at the top of the screen. 
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+Kanso-->
 
 Here’s a screenshot of the Entities page.
 
-<img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" width="800"/>
+<img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
 
 | Letter | Description |
@@ -80,7 +81,7 @@ Here’s a screenshot of the Entities page.
 When you click an Entity on the **Entities** page, a details page for
 the Entity appears.
 
-<img src={useBaseUrl('img/cse/entity-details-new-host.png')} alt="Entity details page" width="800"/>
+<img src={useBaseUrl('img/cse/entity-details-new-host.png')} alt="Entity details page" style={{border: '1px solid gray'}} width="800"/>
 
 | Letter | Description |
 |:--|:--|
@@ -107,22 +108,22 @@ The right side of the tab organizes Records by Record Type and vendor, with a Re
 
 Similarly, a red icon indicates that the Record set contains an Insight, and the link below the summary is a link to the Insight.
 
-<img src={useBaseUrl('img/cse/entity-timeline.png')} alt="Entity timeline" width="800"/>
+<img src={useBaseUrl('img/cse/entity-timeline.png')} alt="Entity timeline" style={{border: '1px solid gray'}} width="800"/>
 
 You can view a summary of the Records in a Record set by clicking on it. The Records are listed on the right side of the **Entity Timeline** tab. To view the complete Record, click the link in the upper right corner of the card for a Record.
 
-<img src={useBaseUrl('img/cse/timeline-records.png')} alt="Timeline records" width="800"/>
+<img src={useBaseUrl('img/cse/timeline-records.png')} alt="Timeline records" style={{border: '1px solid gray'}} width="800"/>
 
 ## Create an Insight
 
 You can create an Insight for an Entity based on one or more Signals on the Entity. To do so, checkmark each Signal you want to include in the Insight, and click **Create Insight**.
 
-<img src={useBaseUrl('img/cse/create-insight.png')} alt="Create Insight" width="800"/>
+<img src={useBaseUrl('img/cse/create-insight.png')} alt="Create Insight" style={{border: '1px solid gray'}} width="800"/>
 
 
 The page refreshes and shows the selected Signals grouped in a new Insight.
 
-<img src={useBaseUrl('img/cse/insight-created.png')} alt="Signals grouped in Insight" width="800"/>
+<img src={useBaseUrl('img/cse/insight-created.png')} alt="Signals grouped in Insight" style={{border: '1px solid gray'}} width="800"/>
 
 ## Update multiple Entities
 
@@ -131,9 +132,9 @@ or Criticality for one or more Entities.
 
 ### Update Entities from the UI
 
-1. Click **Entities** at the top of the Cloud SIEM UI.
-1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" width="800"/>
-1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" width="800"/> 
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> Click **Entities** at the top of the screen. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  Kanso-->
+1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
+1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
 1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:
    * [Update Tags](#update-tags)
    * [Update Suppression](#update-suppression)
@@ -142,26 +143,26 @@ or Criticality for one or more Entities.
 #### Update tags
 
 1. After selecting the Entities you want to update, click **Update Tags**. 
-2. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" width="400"/>
+2. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
    * **Add.** Select this option to add one or more tags to the Entity, without affecting any tags already assigned to the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
    * **Remove**. Select his option to remove one or more tags from the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected Entity doesn't have the specified tags, no change will be made to the Entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the Entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
     When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.
     :::
-3. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to Entities" width="400"/>
+3. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to Entities" style={{border: '1px solid gray'}} width="400"/>
 4. When you are done selecting tags, click **Update Entity Tags**.
 
 #### Update suppression
 
 1. After selecting the Entities you want to update, click **Update Suppression**. 
-2. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" width="400"/>
+2. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
 3. If you want to unsuppress the selected Entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the Entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
 
 #### Update Criticalities
 
 1. After selecting the Entities you want to update, click **Update Criticalities**. 
-2. The **Update Criticalities** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" width="400"/>
+2. The **Update Criticalities** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
 3. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticalities**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticalities**.
 
 ### Import Entity updates from a CSV file

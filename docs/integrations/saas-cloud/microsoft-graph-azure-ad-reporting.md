@@ -297,17 +297,15 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Microsoft Graph Azure AD Reporting dashboards​​
+## Viewing Microsoft Graph Azure AD Reporting dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Microsoft Graph Azure AD Reporting - Audits
 
@@ -320,3 +318,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 ### Microsoft Graph Azure AD Reporting - Provisioning Activities
 
 **Microsoft Graph Azure AD Reporting - Provisioning Activities** dashboard provides valuable insights into all provisioning activities occurring in your account. It displays the average time for each provisioning activity and provides a distribution of provisioning activities by status, actions, and initiators. Additionally, you can view the most frequently used service principal during provisioning. The dashboard also gives you visibility into recent provisioning activities, making it a useful tool for monitoring and managing your organization's provisioning processes.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities" width="750"/>
+
+## Upgrading the Microsoft Graph Azure AD Reporting app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Azure AD Reporting app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

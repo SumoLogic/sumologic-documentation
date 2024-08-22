@@ -97,7 +97,7 @@ Before you run the Terraform script, perform the following actions on a server m
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
-   * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
+   * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the metrics and and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
     :::note
     See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and README in that folder for configuration information with permissible values for these variables. 
     :::
@@ -661,7 +661,7 @@ Options available are:
 **Default JSON:**
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 ```
 
 #### cloudwatch_metrics_source_details
@@ -749,7 +749,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
-#### Configure collection of Application Load Balancer Access Logs
+### Configure collection of Application Load Balancer Access Logs
 
 Amazon Elastic load balancers have various [load balancers](https://aws.amazon.com/elasticloadbalancing/?whats-new-cards-elb.sort-by=item.additionalFields.postDateTime&whats-new-cards-elb.sort-order=desc). AWS Observability supports access log collection for Application Load Balancers only.
 
@@ -1241,7 +1241,7 @@ auto_enable_logs_subscription="New"
 
 ```json
 {
- "filter": "lambda|rds"
+ "filter": "apigateway|lambda|rds"
 }
 ```
 
@@ -1456,7 +1456,7 @@ If the AWS IAM role is created outside of the module, the value can be decreased
 wait_for_seconds = 180
 ```
 
-## Override App Content Parameters
+### Override App Content Parameters
 
 As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the **sumologic-solution-templates/aws-observability-terraform/main.tf**
 file. 
@@ -1586,14 +1586,41 @@ Local-exec provisioner error
 Module Not Found Error: No Module named ‘sumologic’
 ```
 #### Solution
-Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/providers.tf#L1).
+Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf#L1).
+
+### Field or FER already exists
+#### Error Message
+
+```
+"errors":[{"code":"field:already_exists","message":"Field with the given name already exists"}]
+
+"errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
+```
+#### Solution
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-2-configure-the-terraform-script).
+
+### waiting for S3 Bucket Policy (bucket-name) delete
+#### Error Message
+
+```
+Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
+```
+#### Solution
+Run `terraform destroy` again. 
+
+### Field with the given id can't be deleted because it is in use
+#### Error Message
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+#### Solution
+Run `terraform destroy` again. 
+
 
 ### Hierarchy named 'AWS Observability' already exist
 #### Error Message
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```

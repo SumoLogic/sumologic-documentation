@@ -17,7 +17,7 @@ Watch this micro lesson to learn more about Global Intelligence for Insights.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
@@ -26,7 +26,7 @@ import Iframe from 'react-iframe';
 ## What is a Global Confidence score?
 An Insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the Insight is actionable. 
 
-<img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" width="400"/>
+<img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" style={{border: '1px solid gray'}} width="400"/>
 
 The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the Cloud SIEM installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
 

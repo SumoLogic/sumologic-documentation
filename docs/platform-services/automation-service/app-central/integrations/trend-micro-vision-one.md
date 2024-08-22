@@ -1,7 +1,6 @@
 ---
 title: Trend Micro Vision ONE
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

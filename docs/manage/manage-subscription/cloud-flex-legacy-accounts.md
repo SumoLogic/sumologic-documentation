@@ -94,7 +94,7 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
 * Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
 * Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
-* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/get-started/apps-integrations#log-analysis-quickstart-app).
+* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/integrations/sumo-apps/log-analysis-quickstart).
 * The limitations of a Free account cannot be changed, but you can upgrade to a Professional account at any time.
 * For information on throttling and account caps, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
 
@@ -130,7 +130,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 To view the Account page, do the following:
 
 1. Log in to your account.
-1. In the left navigation bar of the UI, select **Administration** > **Account**. The Account Overview tab of the Account page is shown by default.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> <br/>The Account Overview tab of the Account page is shown by default.
 :::note
 You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.
 :::
@@ -165,7 +165,8 @@ The following visual indicators apply:
 
 To switch between views and time interval displays, do the following:
 
-1. Log in to Sumo Logic. From the left navigation pane, select **Administration** > **Account**. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
+1. Log in to Sumo Logic. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> <br/>The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
 1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
 <br/>The data display changes accordingly. 

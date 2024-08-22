@@ -20,10 +20,6 @@ DocuSign pioneered the development of e-signature technology, and today DocuSign
 
 The DocuSign provides a secure endpoint to receive customer event data from the [DocuSign Monitor API](https://developers.docusign.com/docs/monitor-api/reference/monitor/dataset/getstream/). DocuSign Monitor helps organizations protect their agreements with round-the-clock activity tracking. The Monitor API delivers this activity tracking information directly to existing security stacks or data visualization tools—enabling teams to detect unauthorized activity, investigate incidents, and quickly respond to verified threats.
 
-import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
-
-<FedDeploymentNote/>
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -92,7 +88,7 @@ Once your app is created, you need consent to make API calls. To request applica
 When you create a DocuSign Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the DocuSign source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Search for and select **DocuSign**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -137,13 +133,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/docusign/example.json)
+<a href="/files/c2c/docusign/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/docusign/example.tf)
+<a href="/files/c2c/docusign/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

@@ -161,16 +161,17 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
-1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source**.
-2. Select **Syslog** for the Source type.
-3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
-4. For **Protocol** choose **TCP**.
-5. Enter the **Port** number for the Source to listen to (for example, 1514, but choose the correct port for your Collector).
-6. For **Source Category**, we recommend using **vcenter_log**.
-7. Under **Advanced**, set the following options:
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. Click **Add Source**.
+1. Select **Syslog** for the Source type.
+1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
+1. For **Protocol** choose **TCP**.
+1. Enter the **Port** number for the Source to listen to (for example, 1514, but choose the correct port for your Collector).
+1. For **Source Category**, we recommend using **vcenter_log**.
+1. Under **Advanced**, set the following options:
     * Select **Extract timestamp information from log file entries**.
     * Select **Ignore time zone from log file and instead use** and then choose **UTC** from the menu (as shown below).
-8. Click **Save**.
+1. Click **Save**.
 
 
 ### Step 2: Configure Logs to be Collected
@@ -198,13 +199,14 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source** for your vCenter Server Collector.
-2. Select **Local File** for the Source type.
-3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
-4. For File Path, enter **/var/log/vmware/*.perf.out.**
-5. For **Source Category**, enter **esx_perf**.
-6. Under **Advanced**, make sure that **Timestamp Parsing** is selected. Then for **Time Zone** choose the time zone of the vMA virtual machine.
-7. Click **Save**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. Click **Add Source** for your vCenter Server Collector.
+1. Select **Local File** for the Source type.
+1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
+1. For File Path, enter **/var/log/vmware/*.perf.out.**
+1. For **Source Category**, enter **esx_perf**.
+1. Under **Advanced**, make sure that **Timestamp Parsing** is selected. Then for **Time Zone** choose the time zone of the vMA virtual machine.
+1. Click **Save**.
 
 
 ### Step 2: Configure Performance Logs for Collection

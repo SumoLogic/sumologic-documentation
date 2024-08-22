@@ -123,20 +123,30 @@ Follow the instructions for setting up the [Cloud-to-Cloud Integration for Micro
 
 This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Microsoft Graph Security dashboards​​
+## Upgrading the Microsoft Graph Security app (Optional)
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppUpdate/>
 
 ### Alerts Overview
 
 The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
 
 The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Microsoft Graph Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>

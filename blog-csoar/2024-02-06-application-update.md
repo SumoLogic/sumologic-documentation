@@ -11,8 +11,8 @@ authors:
 
 We are excited to announce the following new documentation for features in our Cloud SOAR SaaS version:
 * Features:
-   * [Dashboards](/docs/cloud-soar/main-menu/#create-a-dashboard)
-   * [Create widgets for dashboards](/docs/cloud-soar/main-menu#create-widgets)
+   * [Dashboards](/docs/cloud-soar/incidents-triage/#create-a-dashboard)
+   * [Create widgets for dashboards](/docs/cloud-soar/incidents-triage/#create-widgets)
    * Directly manage User Choice actions within the playbooks from your [Slack workspace](/docs/cloud-soar/automation/#configure-slack-for-cloud-soar).
  * Open Integration Framework:
     * [Integration Builder](/docs/cloud-soar/automation#integration-builder) allows you to build integrations without needing to provide code

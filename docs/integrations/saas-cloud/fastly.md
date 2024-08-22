@@ -34,7 +34,7 @@ _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as de
 ```
 
 
-## Collecting Logs for Fastly
+## Collecting logs for Fastly
 
 This section has instructions for setting up log collection for the Fastly app.  
 
@@ -361,28 +361,17 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 
 
-## Installing the Fastly App
+## Installing the Fastly app
 
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and dashboards to analyze your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-To install the app:
+## Viewing Fastly dashboards
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
-3. Supply the following information.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
-    4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-## Dashboards
-
-There are four dashboards for Fastly that you can configure to accommodate your individual reporting needs.
-
+<ViewDashboards/>
 
 ### CDN - Overview
 
@@ -511,3 +500,15 @@ See the overall Open Web Application Security Project (OWASP) anomaly score quar
     * **XSS (Cross-site Scripting)**
     * **SQL Injections.**
     * **Session Fixations.**
+
+## Upgrading the Fastly app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Fastly app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

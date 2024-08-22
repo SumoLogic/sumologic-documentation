@@ -4,7 +4,6 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-tags: [cloud soar release notes, automation service, application update]
 image: https://help.sumologic.com/img/sumo-square.png
 authors:
   - url: https://help.sumologic.com/release-notes-csoar/rss.xml
@@ -20,10 +19,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Playbooks: Test feature now permits you to use internal Incident ID.
 
 ### Bug fixes
-* Playbooks: 
+* Playbooks:
   * Fixed test playbook broken functionality.
   * Fixed scheduled actions issue.
-* Integrations: Fixed Docker Image build issue that resulted in an internal error. 
+* Integrations: Fixed Docker Image build issue that resulted in an internal error.
 
 #### Cloud SOAR
 * Incidents: Fixed column reordering causing the table to disappear.

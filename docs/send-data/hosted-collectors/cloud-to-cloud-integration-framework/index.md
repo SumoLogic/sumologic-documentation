@@ -176,6 +176,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="100"/><h4>CloudQuery</h4></a>
+  <p>Provides a secure endpoint to receive data from CloudQuery.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
@@ -274,6 +280,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source"><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="180"/><h4>Google Workspace</h4></a>
   <p>Collects a list of users from the Google Workspace Users API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
+  <p>Collect inventory data from the Jamf platform.</p>
   </div>
 </div>
 <div className="box smallbox card">

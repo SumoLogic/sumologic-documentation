@@ -1,7 +1,6 @@
 ---
 title: Cisco ISE
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

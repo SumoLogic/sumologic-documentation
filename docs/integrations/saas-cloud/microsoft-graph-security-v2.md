@@ -191,13 +191,15 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for Microsoft
 
 This section has instructions for installing the Microsoft Graph Security app for Sumo Logic and a description of the dashboard. Configure Microsoft Graph Security app using the steps described in the [Microsoft Graph Security Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/).
 
-Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboard included with the app before installing, click **Preview Dashboards**.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Upgrading the Microsoft Graph Security app (Optional)
 
-## Viewing Microsoft Graph Security Dashboards​
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
 
 ### Microsoft Graph Security - Alerts Overview
 
@@ -214,3 +216,15 @@ The **Alerts Security Overview** dashboard allows you to have a high-level overv
 The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Security/Microsoft-Graph-Security-Alerts-Security-Overview.png' alt="Microsoft-Graph-Security-Alerts-Overview" />
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Microsoft Graph Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>

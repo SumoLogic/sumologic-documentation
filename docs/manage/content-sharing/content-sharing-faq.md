@@ -12,10 +12,7 @@ Welcome to Content Sharing. We've provided this FAQ to answer your basic questio
 When you share something directly with a user (or to their role) they will receive an email notification that they can click on to guide them to the item in Sumo.
 
 * The object will also be available in their Library view.
-* They can also toggle to the **Recently Shared with Me** section in the **Recents** tab on the left-nav to see what has been recently shared.
-
-    ![image1.gif](/img/content-sharing/recent-shared.gif)
-
+* They can also look in **Recent** in the left-nav to see what has been recently shared.
 * The share dialog associated with the item will reflect who the item is shared with and what level of access they have.
 
 ## Can I delete someone else's alerts?

@@ -19,11 +19,11 @@ The screenshots in this section show how Cloud SIEM presents inventory data in t
 
 This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Cloud SIEM image" width="400" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Cloud SIEM image" width="400"/>
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Example inventory data on an entity" style={{border: '1px solid gray'}} width="400"/>
 
 ## About inventory data sources
 

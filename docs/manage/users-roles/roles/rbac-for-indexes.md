@@ -1,6 +1,6 @@
 ---
 id: rbac-for-indexes
-title: Index Access and Advanced Search Filters
+title: Index Access and Advanced Search Filters (Beta)
 description: Index access search filtering allows you to use rule permissions to determine who gets access to certain indexes.
 ---
 
@@ -21,7 +21,7 @@ Follow this process to restrict access using advanced filters and indexes:
 
 When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), an advanced filter allows access only to the logs that match the search filter.
 
-1. Go to **Administration > Users and Roles > Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane displays.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. You can create only one filter for each.
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [Live Tail](/docs/search/live-tail/).
@@ -53,9 +53,22 @@ An index filter allows or denies access to [search indexes](/docs/manage/partiti
 
 For example, let’s say you want to deny access to partition and security indexes. In our example environment, the `accessLogs` and `authenticationLogs` indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes.
 
+### Index Access behavior when a user has multiple roles
+
+A role can have one of the following Index Access settings:
+   * **All indexes**. Allows access to all indexes.
+   * **Allow few indexes**. Allows access to only the selected indexes. 
+   * **Deny few indexes**. Denies access to the selected indexes. 
+
+However, if a user is assigned multiple roles that each have different Index Access settings, following is how they are evaluated:
+* **All indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, and all other indexes are allowed.
+* **All indexes** + **Deny few indexes**. Indexes in the deny list are denied, but all other indexes are allowed.
+* **Allow few indexes** + **Deny few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and all other indexes are denied.
+* **All indexes** + **Deny few indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and the rest of the indexes are allowed.
+
 ## Test search filters
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Select a role with search filtering defined.
 1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid gray'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid gray'}} width="800"/>

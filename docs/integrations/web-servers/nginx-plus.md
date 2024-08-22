@@ -90,7 +90,7 @@ _sourceCategory=Labs/Nginx/Logs
 | sort by _timeslice asc
 ```
 
-## Collecting Logs and Metrics for Nginx Plus
+## Collecting logs and metrics for Nginx Plus
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
 
@@ -120,7 +120,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 
 Nginx Plus app supports the default access logs and error logs format.
 
-1. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the [Ngnix Plus Configuring Logging documentation](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
+1. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in both Nginx Open Source and Nginx Plus. For instructions, refer to the [Configuring Logging documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information, [visit](/docs/observability/kubernetes/collection-setup).
 3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source `_sourceCategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
 4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
@@ -300,7 +300,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus/nginxplus.json) describing all the monitors.
 2. Replace **$$logs_data_source** and **$$metric_data_source** with logs and metrics data sources respectively. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`.
-3. Go to Manage Data > Alerts > Monitors.
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
 
@@ -366,7 +366,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts).
 
 
-## Installing the Ngnix Plus app
+## Installing the Nginx Plus app
 
 This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
 

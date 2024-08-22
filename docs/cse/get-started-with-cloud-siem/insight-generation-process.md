@@ -20,7 +20,7 @@ Watch this micro lesson to learn how Insights are created.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -53,7 +53,7 @@ to `srcDevice_ip`. 
 
 When you write a rule, you select one or more *On Entity* attributes in the **Then Create a Signal** area of the **Rules Editor**. Here is an example of an existing rule that has two On Entity attributes: `srcDevice_ip` and `dstDevice_ip`.
 
-<img src={useBaseUrl('img/cse/on-entity-example.png')} alt="On Entity example" width="300"/>
+<img src={useBaseUrl('img/cse/on-entity-example.png')} alt="On Entity example" style={{border: '1px solid gray'}} width="300"/>
 
 ## Entities are created when rules fire
 
@@ -61,13 +61,13 @@ Cloud SIEM creates an Entity when a Rule generates a Signal, unless the Entity a
 
 The **Signals** page shows the Entity associated with each Signal.
 
-<img src={useBaseUrl('img/cse/signal-llist.png')} alt="Signals" width="800"/>
+<img src={useBaseUrl('img/cse/signal-list.png')} alt="Signals" style={{border: '1px solid gray'}} width="800"/>
 
 ## Viewing entities in Cloud SIEM UI
 
 You can view the entities that have been extracted from messages on the **Entities** page in the Cloud SIEM UI.
 
-<img src={useBaseUrl('img/cse/entity-list-page.png')} alt="Entities page" width="800"/>
+<img src={useBaseUrl('img/cse/entity-list-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
 Note that the screenshot above shows an *Activity Score* for each entity. The following section explains what an Activity Score is and how it relates to the Insight creation process.
 
@@ -95,7 +95,7 @@ In the screenshot below, the **Details** pane on the left shows that the Insight
 
 The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
-<img src={useBaseUrl('img/cse/insight.png')} alt="Insight" width="800"/>
+<img src={useBaseUrl('img/cse/insight.png')} alt="Insight" style={{border: '1px solid gray'}} width="800"/>
 
 ### Redundant Signal suppression
 

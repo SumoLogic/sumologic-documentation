@@ -43,7 +43,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 
 You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
-## Collecting Logs for Palo Alto Firewall 10
+## Collecting logs for Palo Alto Firewall 10
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
 
@@ -168,3 +168,15 @@ The **Security Monitoring - TRAFFIC Log Overview** dashboard helps you to monito
 **Use case:** You can use this dashboard to monitor allowed and denied traffic through the firewall. Analysis is provided over time and in lists of top 10 sources, destinations, and hosts.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
+
+## Upgrading the PAN Firewall 10 Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PAN Firewall 10 Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
