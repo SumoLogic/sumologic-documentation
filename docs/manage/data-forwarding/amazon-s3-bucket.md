@@ -125,8 +125,8 @@ You can also enable data forwarding when you first create a partition or Schedul
 1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. **Forwarding Destination**. You can either choose an existing data forwarding destination or create a new one.  
-   * If you want to create a new destination, choose new *Amazon S3 Destination*, and follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above.
-   * If you want to use an existing destination, leave *Forwarding Destination* set to *Existing Amazon S3 Destination*, and click the pull-down to the right of **Amazon S3 Destination**, and pick a destination.
+   * If you want to create a new destination, choose **New Amazon S3 Destination**, and follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above.
+   * If you want to use an existing destination, leave **Forwarding Destination** set to **Existing Amazon S3 Destination**, and click the pull-down to the right of **Amazon S3 Destination**, and pick a destination.
 1. **Data Forwarding Configuration**. Set the configuration for data forwarded to the S3 bucket. 
    1. **Included Data**. Select the kind of data to forward:
       * **Raw**. Raw logs only.
