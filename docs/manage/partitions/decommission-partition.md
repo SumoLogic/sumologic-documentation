@@ -4,6 +4,8 @@ title: Decommission a Partition
 description: Decommissioning a Partition keeps it from being started, although the data in the Partition remains in your account.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 After creation, partitions within our system are permanent and cannot be deleted, nor can their names be reused. This safeguard is in place because partitions may contain log messages exclusive to that partition; deleting it would result in the loss of these logs.
 
 Only active partitions count toward your 50 partition limit. If you've reached this limit, you can decommission unused or unwanted partitions to free up space.
@@ -12,9 +14,9 @@ Should you no longer require a partition, you have the option to decommission it
 
 To decommission a partition:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> <br/>  ![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> <br/> <img src={useBaseUrl('img/partitions-data-tiers/partitions-page.png')} alt="Partitions page" style={{border: '1px solid gray'}} width="800" /> 
 1. Click the row for the partition you want to decommission.  
-1. The partition details appear on the right side of the page.<br/>  ![decommision-button.png](/img/partitions-data-tiers/decommision-button.png)
+1. The partition details appear on the right side of the page.<br/> <img src={useBaseUrl('img/partitions-data-tiers/decommision-button.png')} alt="Decommission button" style={{border: '1px solid gray'}} width="400" />
 1. Click **Decommission**.
 1. In the Confirm dialog, click **OK**.
 1. The partition is decommissioned.

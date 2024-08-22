@@ -105,22 +105,8 @@ Where:
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
 1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
-1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3))](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
+1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
 1. **Active**. Select this check box to enable data forwarding for the entire S3 bucket. To start data forwarding you will also need to enable forwarding for the desired indexes, as described below.
-1. **Default Forwarding Configuration**. Set the default configuration for data forwarded to the S3 bucket. You can override these settings as needed when you select a data forwarding destination from a partition or scheduled view (see [Forward data to S3](#forward-datato-s3) below).
-   1. **Included Data**. Select the kind of data to forward:
-      * **Raw data**. Raw logs.
-      * **Raw data & Built-in Metadata Fields**. Raw logs and the metadata fields assigned to log entries.
-      * **Raw data & Built-in Metadata + Enriched Fields (from FERs)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
-   1. **Forwarded Data Format**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
-   1. For **File Prefix**, you can enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
-      * `{index}` will be replaced by the name of the partition or scheduled view.
-      * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
-      * `{hour}` will be replaced by the hour of the day (0-23).
-      * `{minute}` will be replaced by the minute of the hour.
-      * `{second}` will be replaced by the second of the minute.
-      * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
-         If you leave this field blank, the default format `{index}_{day}_{hour}_{minute}_{second}` is used. For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}`
 1. Click **Save**.
 
 If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start data forwarding for specific partitions or Scheduled Views, as described in the following section. See [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur.
@@ -136,25 +122,27 @@ You can also enable data forwarding when you first create a partition or Schedul
 1. Depending on whether you want to forward data from a partition or a Scheduled View:
     * Partition: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
     * Scheduled View: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso-->
-1. Click on the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button.  <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
+1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. **Forwarding Destination**. You can either choose an existing data forwarding destination or create a new one.  
    * If you want to create a new destination, choose new *Amazon S3 Destination*, and follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above.
-   * If you want to use an existing destination, leave *Forwarding Destination* set to *Existing Amazon S3 Destination*, and click the pull-down to the right of **Amazon S3 Destination**, and pick a destination
+   * If you want to use an existing destination, leave *Forwarding Destination* set to *Existing Amazon S3 Destination*, and click the pull-down to the right of **Amazon S3 Destination**, and pick a destination.
 1. **Data Forwarding Configuration**. Set the configuration for data forwarded to the S3 bucket. 
    1. **Included Data**. Select the kind of data to forward:
-      * **Raw data**. Raw logs.
-       * **Raw data & Built-in Metadata Fields**. Raw logs and the metadata fields assigned to log entries.
-       * **Raw data & Built-in Metadata + Enriched Fields (from FERs)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
-   1. **Forwarded Data Format**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
-   1. For **File Prefix**, you can enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
+      * **Raw**. Raw logs only.
+       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. 
+       * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
+   1. **Forwarded data type**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
+   1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
       * `{index}` will be replaced by the name of the partition or scheduled view.
       * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
       * `{hour}` will be replaced by the hour of the day (0-23).
       * `{minute}` will be replaced by the minute of the hour.
-     * `{second}` will be replaced by the second of the minute.
-     * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
-         If you leave this field blank, the default format `{index}_{day}_{hour}_{minute}_{second}` is used. For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}`
+      * `{second}` will be replaced by the second of the minute.
+      * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
+      :::note
+      For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
+      :::
 1. Click **Save** to save your changes and start forwarding data. 
 
 ## Error and alert conditions
