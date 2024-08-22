@@ -93,3 +93,7 @@ import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-a
 import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>
+
+:::info
+To know about the periodic changes for this source template, refer to the [changelog](changelog.md).
+:::

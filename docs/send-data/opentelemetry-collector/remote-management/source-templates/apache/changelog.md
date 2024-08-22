@@ -1,4 +1,9 @@
-# Changelog
+---
+id: changelog
+title: Changelog
+sidebar_label: Changelog
+description: Changelog for Apache source template for OpenTelemetry.
+---
 
 ## [2.0.0] - 2024-08-08
 ### Fixed

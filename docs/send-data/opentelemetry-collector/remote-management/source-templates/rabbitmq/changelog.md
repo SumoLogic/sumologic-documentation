@@ -1,4 +1,9 @@
-# Changelog
+---
+id: changelog
+title: Changelog
+sidebar_label: Changelog
+description: Changelog for RabbitMQ source template for OpenTelemetry.
+---
 
 ## [1.1.0] - 2024-07-05
 ### Added

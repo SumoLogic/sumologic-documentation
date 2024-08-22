@@ -58,3 +58,7 @@ In this step, you will configure the yaml required for Syslog Collection. Below 
 import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>
+
+:::info
+To know about the periodic changes for this source template, refer to the [changelog](changelog.md).
+:::
