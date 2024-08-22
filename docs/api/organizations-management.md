@@ -25,9 +25,10 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/orgsManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/orgsManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/orgsManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement |
-| KR        | https://api.kr.sumologic.com/docs/#tag/orgsManagementV1 |
+
 
 :::info
 Check out our additional [Organizations Management API endpoints](https://organizations.sumologic.com/docs/#tag/organizationsManagement), currently in beta.

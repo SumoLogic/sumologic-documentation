@@ -25,6 +25,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/dynamicParsingRuleManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/dynamicParsingRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/dynamicParsingRuleManagement |
-| KR        | https://api.kr.sumologic.com/docs/#tag/dynamicParsingRuleManagementV1 |
+

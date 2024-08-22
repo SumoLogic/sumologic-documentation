@@ -25,6 +25,6 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/contentPermissions |
 | IN         | https://api.in.sumologic.com/docs/#tag/contentPermissions  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/contentPermissions  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/contentPermissions  |
 | US1        | https://api.sumologic.com/docs/#tag/contentPermissions     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/contentPermissions |
-| KR        | https://api.kr.sumologic.com/docs/#tag/contentPermissionsv1 |

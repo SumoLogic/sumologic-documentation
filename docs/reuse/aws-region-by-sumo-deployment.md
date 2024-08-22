@@ -9,10 +9,9 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 | FED | US East (N. Virginia) | us-east-1 |
 | IN | Asia Pacific (Mumbai) | ap-south-1 |
 | JP | Asia Pacific (Tokyo) | ap-northeast-1 |
+| KR | Asia Pacific (Seoul) | ap-northeast-2 |
 | US1 | US East (N. Virginia) | us-east-1 |
 | US2 | US West (Oregon) | us-west-2 |
-| US2 | US West (Oregon) | us-west-2 |
-| KR | Asia Pacific (Seoul) | ap-northeast-2 |
 
 [This link](https://ip-ranges.amazonaws.com/ip-ranges.json) provides the complete current list of AWS IP ranges or subnets or prefixes. You can limit the number of entries in a firewall by using just the IP prefixes against the AWS region that your account's Sumo deployment uses, as shown in the table.
 

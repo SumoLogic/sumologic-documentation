@@ -25,6 +25,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/samlConfigurationManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/samlConfigurationManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/samlConfigurationManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/samlConfigurationManagement |
-| KR        | https://api.kr.sumologic.com/docs/#tag/samlConfigurationManagementV1 |
+
