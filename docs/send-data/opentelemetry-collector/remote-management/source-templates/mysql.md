@@ -32,7 +32,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ### For metrics collection
 
-The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlmetricsreceiver) collects metrics by querying MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
+The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver) collects metrics by querying MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
 
 ### For logs collection
 
