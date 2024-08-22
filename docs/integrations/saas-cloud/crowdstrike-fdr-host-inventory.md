@@ -120,7 +120,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **CrowdStrike - FDR Host Inventory Overview** dashboard offers a comprehensive view of the devices monitored by CrowdStrike Falcon Data Replicator (FDR) to enhance the environment’s security posture. It provides key insights into the total number of devices categorized by platform, status, and manufacturer. This dashboard also highlights the geographical distribution of devices and risky devices. Additionally, it provides critical information on device operating systems, latest-seen devices, software details, network configurations, and policy details. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>
+The **CrowdStrike - FDR Host Inventory Overview** dashboard offers a comprehensive view of the devices monitored by CrowdStrike Falcon Data Replicator (FDR) to enhance the environment’s security posture. It provides key insights into the total number of devices categorized by platform, status, and manufacturer. This dashboard also highlights the geographical distribution of devices and risky devices. Additionally, it provides critical information on device operating systems, latest-seen devices, software details, network configurations, and policy details.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/CrowdStrike-FDR-Host-Inventory/CrowdStrike-FDR-Host-Inventory-Overview.png')} alt="CrowdStrike - FDR Host Inventory Overview" />
 
 ## Upgrading the CrowdStrike FDR Host Inventory app (Optional)
 
