@@ -106,7 +106,7 @@ Where:
       * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
 1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
-1. **Active**. Select this check box to enable data forwarding for the entire S3 bucket. To start data forwarding you will also need to enable forwarding for the desired indexes, as described below.
+1. **Active**. Select this check box to enable data forwarding for the entire S3 bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
 1. Click **Save**.
 
 If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start data forwarding for specific partitions or Scheduled Views, as described in the following section. See [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur.
