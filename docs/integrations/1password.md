@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="75"/>
 
-1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events. The dashboards provide insight into failed and successful authentications, events breakdown by client applications, type, category, users, geo-location of events, outliers, and threat analysis of sign-in events. This app helps your secure 1Password vault access by providing insights into user actions and threat intel analysis on clients accessing items in shared vaults.
+1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic app for 1Password enables you to monitor sign-in and item usage events within your 1Password account. It offers insights into failed and successful authentications, breaking down events by client applications, type, category, users, and geo-location, while also identifying outliers and analyzing threats related to sign-ins. Furthermore, the app provides in-depth tracking of critical security activities such as account activations, deletions, email changes, and group creations. It visualizes audit events by geographic location, highlights risky areas, and offers detailed logs of recent access activities and role changes. This app helps secure your 1Password vault by delivering comprehensive insights into user actions and threat intelligence on clients accessing shared vaults.
 
 ## Log types  
 
