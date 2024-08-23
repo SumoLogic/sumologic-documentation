@@ -187,6 +187,12 @@ A filter node filters results from the preceding action based on the condition y
 1. Configure the conditions you want to use for filtering. 
 1. Click **Create**.
 
+## Playbook versioning
+
+Every time you edit a playbook, a new version of the playbook is saved. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained. 
+
+<img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
+
 ## Import and export playbooks
 
 With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
