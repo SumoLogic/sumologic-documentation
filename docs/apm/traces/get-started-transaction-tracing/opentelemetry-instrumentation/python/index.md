@@ -180,5 +180,5 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ### Sample Flask App Instrumentation
 
-[This article](https://opentelemetry.io/docs/languages/python/getting-started/) will walk you through deploying your own simple Flask app and configuring instrumentation on that app. The example will log the traces to the console for simple testing.
+[This article](https://opentelemetry.io/docs/languages/python/getting-started/) walks you through deploying a simple Flask app and configuring instrumentation for it. The example demonstrates how to log traces to the console for basic testing.
 
