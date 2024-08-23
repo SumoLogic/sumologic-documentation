@@ -130,7 +130,7 @@ You can also enable data forwarding when you first create a partition or Schedul
 1. **Data Forwarding Configuration**. Set the configuration for data forwarded to the S3 bucket. 
    1. **Included Data**. Select the kind of data to forward:
       * **Raw**. Raw logs only.
-       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. 
+       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
        * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
    1. **Forwarded data type**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
    1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
