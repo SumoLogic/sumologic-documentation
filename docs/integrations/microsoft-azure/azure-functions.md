@@ -176,7 +176,6 @@ For getting health check metric, make sure you enable health check by going to M
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
-
 ## Installing the Azure Functions app
 
 This section provides instructions on how to install the Azure Functions app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
@@ -184,18 +183,6 @@ This section provides instructions on how to install the Azure Functions app, an
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Azure Functions app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure Functions app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing the Azure Functions dashboards
 
@@ -208,12 +195,10 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Azure Functions - Overview** dashboard provides information of any service health incidents or resource health events associated with Azure Functions in your azure account.
 
 Use this dashboard to:
-    * View recent resource and service health incidents.
-    * View distribution of service and resource health by incident type.
-
+* View recent resource and service health incidents.
+* View distribution of service and resource health by incident type.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Cost
 
@@ -224,7 +209,6 @@ Use this dashboard to:
 * Review cost trends and identify areas where you can optimize spending.
 * Access detailed billing information and cost breakdowns.
 
-
 ### Error
 
 The **Azure Functions - Error** dashboard provides insights into errors encountered by your Azure Functions. This includes error rates, types of errors, and patterns over time.
@@ -233,7 +217,6 @@ Use this dashboard to:
 * Track and investigate error occurrences in your Azure Functions.
 * Identify and diagnose recurring error patterns.
 * Review error logs and detailed reports to improve function reliability.
-
 
 ### Memory
 
@@ -244,7 +227,6 @@ Use this dashboard to:
 * Identify and address memory-related performance issues.
 * Analyze trends in memory usage to optimize function performance.
 
-
 ### Network
 
 The **Azure Functions - Network** dashboard provides details on network traffic and connectivity related to your Azure Functions. This includes data on inbound and outbound traffic, network latency, and potential network issues.
@@ -253,7 +235,6 @@ Use this dashboard to:
 * Track network activity and performance of your Azure Functions.
 * Diagnose network-related issues and connectivity problems.
 * Monitor network usage and optimize network configuration.
-
 
 ### Operations
 
@@ -264,7 +245,6 @@ Use this dashboard to:
 * Review deployment activities and execution metrics.
 * Analyze operational trends and optimize function management.
 
-
 ### OS Statistics
 
 The **Azure Functions - OS Statistics** dashboard provides information on operating system metrics and statistics relevant to your Azure Functions. This includes details on CPU usage, disk I/O, and other OS-level performance indicators.
@@ -273,7 +253,6 @@ Use this dashboard to:
 * Track OS-level performance metrics impacting your Azure Functions.
 * Monitor CPU, memory, and disk usage for optimal performance.
 * Identify and address OS-related performance issues.
-
 
 ### Performance
 
@@ -284,39 +263,48 @@ Use this dashboard to:
 * Identify performance bottlenecks and optimize function execution.
 * Review performance metrics and trends to ensure optimal function performance.
 
-
 ### Health
 
 The **Azure Functions - Health** dashboard provides information of any service health incidents or resource health events associated with Azure Functions in your azure account.
 
 Use this dashboard to:
-    * View recent resource and service health incidents.
-    * View distribution of service and resource health by incident type.
-
+* View recent resource and service health incidents.
+* View distribution of service and resource health by incident type.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
-The **Azure Functions - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure Policy and recommendations events from Azure Advisor.
+The **Azure Functions - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure policy and recommendations events from Azure Advisor.
 
 Use this dashboard to:
-    * Monitor policy events with warnings and errors.
-    * View recent failed policy events.
-    * View total recommendation events.
-    * Identify High Impact recommendations.
-    * View recent recommendation events and navigate to the affected resource.
+* Monitor policy events with warnings and errors.
+* View recent failed policy events.
+* View total recommendation events.
+* Identify High Impact recommendations.
+* View recent recommendation events and navigate to the affected resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Policy-and-Recommendations.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Administrative Operations
 
 The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
 Use this dashboard to:
-    * Identify top users performing administrative operations.
-    * View Top 10 operations that caused the most errors.
-    * View recent read, write, and delete operations.
+* Identify top users performing administrative operations.
+* View Top 10 operations that caused the most errors.
+* View recent read, write, and delete operations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Administrative-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrading the Azure Functions app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Functions app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
