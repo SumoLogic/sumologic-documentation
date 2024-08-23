@@ -51,7 +51,8 @@ These file objects will contain the messages received as well as the system met
 * **sourceID**: The unique ID of the Source configured to send the message to the service.
 * **collectorId**: The unique ID of the Collector configured to send the message to the service.
 * **count**: The message number from the specific log Source Name. These should be sequential for a specific Source file.
-* **format**: The timestamp format used to parse the message time from the log message
+* **format**: The timestamp format used to parse the message time from the log message.
+* **view**: The scheduled view or partition that the message is forwarded from.
 * **encoding**: The encoding of the original file contents.
 * **message**: The raw log message as read from the original Source.
 * **field**: Aggregate fields are added based on your query.

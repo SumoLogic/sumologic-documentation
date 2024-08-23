@@ -661,7 +661,7 @@ Options available are:
 **Default JSON:**
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 ```
 
 #### cloudwatch_metrics_source_details
@@ -749,7 +749,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
-#### Configure collection of Application Load Balancer Access Logs
+### Configure collection of Application Load Balancer Access Logs
 
 Amazon Elastic load balancers have various [load balancers](https://aws.amazon.com/elasticloadbalancing/?whats-new-cards-elb.sort-by=item.additionalFields.postDateTime&whats-new-cards-elb.sort-order=desc). AWS Observability supports access log collection for Application Load Balancers only.
 
@@ -1586,14 +1586,41 @@ Local-exec provisioner error
 Module Not Found Error: No Module named ‘sumologic’
 ```
 #### Solution
-Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/providers.tf#L1).
+Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf#L1).
+
+### Field or FER already exists
+#### Error Message
+
+```
+"errors":[{"code":"field:already_exists","message":"Field with the given name already exists"}]
+
+"errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
+```
+#### Solution
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-2-configure-the-terraform-script).
+
+### waiting for S3 Bucket Policy (bucket-name) delete
+#### Error Message
+
+```
+Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
+```
+#### Solution
+Run `terraform destroy` again. 
+
+### Field with the given id can't be deleted because it is in use
+#### Error Message
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+#### Solution
+Run `terraform destroy` again. 
+
 
 ### Hierarchy named 'AWS Observability' already exist
 #### Error Message
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
