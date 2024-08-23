@@ -592,15 +592,15 @@ between retries. </td>
   </tr>
   <tr>
    <td>MIN_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
-   <td>Minimum window length for the request window, default 60 seconds.   </td>
+   <td>Minimum window length for the request window. The default is 60 seconds.   </td>
   </tr>
   <tr>
    <td>MAX_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
-   <td>Maximum window length for the request window, default 900 seconds.   </td>
+   <td>Maximum window length for the request window. The default is 900 seconds.   </td>
   </tr>
   <tr>
    <td>Clusters<br/>in Collection Section   </td>
-   <td>User Provided list of clusters for selecting specific clusters, by default selects all the clusters.   </td>
+   <td>User provided list of clusters for selecting specific clusters. By default, it selects all the clusters.   </td>
   </tr>
   <tr>
    <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
