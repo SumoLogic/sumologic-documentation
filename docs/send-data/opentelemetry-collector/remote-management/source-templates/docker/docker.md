@@ -38,7 +38,7 @@ After installing Sumo OpenTelemetry collector to docker host machine, you need t
 
 - You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command :
 `sudo setfacl -m user:otelcol-sumo:rw /var/run/docker.sock`
-- If docker.sock has docker group as the owner you can add otelcol-sumo user to this docker group using command :
+- If docker.sock has docker group as the owner you can add otelcol-sumo user to this docker group using command:
 `sudo usermod -aG docker otelcol-sumo`
 
 
