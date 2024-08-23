@@ -123,17 +123,11 @@ You can also enable data forwarding when you first create a partition or Schedul
     * Partition: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
     * Scheduled View: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso-->
 1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
-1. Click the **Enable Data Forwarding** checkbox.
-1. **Forwarding Destination**. You can either choose an existing data forwarding destination or create a new one.  
-   * If you want to create a new destination, choose **New Amazon S3 Destination**, and follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above.
-   * If you want to use an existing destination, leave **Forwarding Destination** set to **Existing Amazon S3 Destination**. Then, click the drop-down menu next to **Amazon S3 Destination** select your desired destination.
-1. **Data Forwarding Configuration**. Set the configuration for data forwarded to the S3 bucket. 
-   1. **Included Data**. Select the kind of data to forward:
-      * **Raw**. Raw logs only.
-       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
-       * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
-   1. **Forwarded data type**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
-   1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
+1. Click the **Enable Data Forwarding** checkbox. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
+1. **Forward Destination**. Choose one of the following:  
+   * **Existing Amazon S3 Destination**. Click the drop-down menu next to **Amazon S3 Destination** to select an existing S3 destination.
+   * **New Amazon S3 Destination**. Follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above to create a new S3 destination.
+1. **File Format**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
       * `{index}` will be replaced by the name of the partition or scheduled view.
       * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
       * `{hour}` will be replaced by the hour of the day (0-23).
@@ -143,7 +137,14 @@ You can also enable data forwarding when you first create a partition or Schedul
       :::note
       For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
       :::
-1. Click **Save** to save your changes and start forwarding data. 
+1. ([Closed Beta participants only]((/release-notes-service/2024/08/30/manage/))). Participants in the Closed Beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
+   1. **Included Data**. Select the kind of data to forward:
+      * **Raw**. Raw logs only.
+       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
+       * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
+   1. **Forwarded data type**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
+   1. **File Prefix**. Follow the directions for **File Format** in the preceding step.
+1. Click **Save** at the top of the panel to save your changes and start forwarding data. 
 
 ## Error and alert conditions
 
