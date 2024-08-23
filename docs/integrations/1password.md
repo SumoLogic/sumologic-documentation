@@ -106,18 +106,6 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the 1Password app (Optional)
-
-import AppUpdate from '../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the 1Password app (Optional)
-
-import AppUninstall from '../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing 1Password dashboards
 
 import ViewDashboards from '../reuse/apps/view-dashboards.md';
@@ -171,3 +159,14 @@ import CreateMonitors from '../reuse/apps/create-monitors.md';
 | `Audit Events from Risky Locations` | This alert is fired when an audit event is registered from an embargo location (Afghanistan, China, Cuba, North Korea, Iran, Libya, Nigeria, Sudan, Syria, and Yemen). | Critical | Count > 0 |
 | `1Password tenant-level Changes` | This alert is fired when changes are made to firewall rules, SSO settings, or a user sets up their 1Password account to unlock with SSO. | Critical | Count > 0 |
 
+## Upgrading the 1Password app (Optional)
+
+import AppUpdate from '../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the 1Password app (Optional)
+
+import AppUninstall from '../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

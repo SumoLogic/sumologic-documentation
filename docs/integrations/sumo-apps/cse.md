@@ -64,21 +64,6 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## View Cloud SIEM dashboards
-
-
-## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing the Enterprise Audit - Cloud SIEM app dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -216,3 +201,15 @@ The **Cloud SIEM - Signal Standup Overview** dashboard provides an overview of t
 The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM user telemetry.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM User Telemetry"/>
+
+## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

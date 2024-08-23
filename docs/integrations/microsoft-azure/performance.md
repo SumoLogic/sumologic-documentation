@@ -154,18 +154,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Windows Performance app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Windows Performance app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Windows Performance dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -245,3 +233,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Average Current Bandwidth by Interface per Host.** Shows the average current network bandwidth by interface for each host as a stacked column chart for the last 15 minutes. The legend lists the interface.
 
 **Average Output Queue Length.** Displays the average length of the output queue as a line chart on a timeline using timeslices of one minute for the last 15 minutes.
+
+## Upgrading the Windows Performance app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Windows Performance app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
