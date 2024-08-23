@@ -36,7 +36,7 @@ Metrics are collected through the [Docker Stats Receiver](https://github.com/ope
 
 After installing Sumo OpenTelemetry collector to docker host machine, you need to make sure that `otelcol-sumo` user (created during Sumo OpenTelemetry collector installation) has permission to access docker.sock before pushing Docker ST to the collector. The command for this may vary depending on the linux OS which is being used. Here are commands which can help do that:
 
-- You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command :
+- You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command:
 `sudo setfacl -m user:otelcol-sumo:rw /var/run/docker.sock`
 - If docker.sock has docker group as the owner you can add otelcol-sumo user to this docker group using command:
 `sudo usermod -aG docker otelcol-sumo`
