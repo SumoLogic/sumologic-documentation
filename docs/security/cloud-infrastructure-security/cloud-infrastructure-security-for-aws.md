@@ -153,7 +153,6 @@ The Sumo Logic Cloud Infrastructure Security solution supports the following [AW
 * Asia Pacific (Mumbai)
 * Asia Pacific (Singapore)
 * Asia Pacific (Sydney)
-* Asia Pacific (Seoul)
 * Canada (Central)
 * Europe (Frankfurt)
 * Europe (Stockholm)
