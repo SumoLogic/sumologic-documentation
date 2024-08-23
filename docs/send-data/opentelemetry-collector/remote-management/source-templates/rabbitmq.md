@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('/img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your RabbitMQ logs to Sumo Logic.
+The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your RabbitMQ logs and metrics to Sumo Logic.
 		
 ## Fields creation in Sumo Logic for Local File
 
@@ -29,8 +29,30 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 - **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.
 		
 ## Prerequisites
+
+### For metrics collection
+
+The RabbitMQ [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver) fetches stats from a RabbitMQ node using the [RabbitMQ Management Plugin](https://www.rabbitmq.com/management.html). The RabbitMQ Management Plugin must be enabled by following the [official instructions](https://www.rabbitmq.com/management.html#getting-started).
+
+This receiver supports RabbitMQ versions `3.8` and `3.9`
 		
 ### For logs collection
+
+By default, RabbitMQ logs are stored in a log file.
+
+Follow the instructions to set up log collection:
+
+1. **Configure logging in RabbitMQ**. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, must set log level = debug. Default, log level is info. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
+2. **Configure RabbitMQ log to a Local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the RabbitMQ.conf file.
+To configure the log output destination to a log file, use one of the following settings, either in the[ configuration file](https://www.rabbitmq.com/logging.html).
+
+Edit or create file config: /etc/rabbitmq/rabbitmq.conf following below:
+```sql
+log.dir = /var/log/rabbitmq
+log.file = rabbitmq.log
+log.file.level = debug
+```
+
 import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
