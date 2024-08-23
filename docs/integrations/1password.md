@@ -114,7 +114,7 @@ import ViewDashboards from '../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **1Password - Overview** provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
+The **1Password - Overview** provides an overview of 1Password events including events breakdown by type, category, geographic location, one-day time comparison of events, audit logs by audit type, and failed sign-in activity.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password-Overview" />
 
@@ -141,6 +141,12 @@ The **1Password - Threat Intel** dashboard provides high-level views of threats 
 The **1Password - Item Usage** dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />
+
+### Audit Security
+
+The **1Password - Audit Security** dashboard provides a comprehensive view of security-related activities and monitors critical user activities by tracking key metrics such as account activations, deletions, email changes, and group creations. This dashboard helps you visualize the geographical distribution of audit events and highlights top actions, risky locations, and changes to security configurations like MFA and SSO. It includes detailed logs of recent access activities, role changes, and service account token events, ensuring comprehensive oversight of security events. This dashboard is essential for quick identification and rectification of potential security threats in 1Password.
+
+<img src={useBaseUrl('img/integrations/1password/1Password-Audit-Security.png')} alt="1Password-Audit-Security" />
 
 ## Create monitors for 1Password app
 
