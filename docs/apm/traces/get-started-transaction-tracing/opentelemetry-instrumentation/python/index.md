@@ -92,7 +92,7 @@ When everything is configured it is very simple to run an instrumented applicat
 opentelemetry-instrument python3 SCRIPT_NAME.py
 ```
 
-For Auto-instrumentation to work, you will need to include `opentelemetry-instrument` at the beginning of your application execution. If this is not an option for you, then you will need to follow the usage steps for each instrumentation library you install. For example, for Django instrumentation, you will need to add the following two lines to your code (outlined in the [Usage section](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/django/django.html#id1) of the library documentation):
+To enable auto-instrumentation, you will need to include `opentelemetry-instrument` at the beginning of your application execution. If this is not an option for you, you will need to follow the usage instructions for each instrumentation library you install. For example, for Django instrumentation, you will need to add the following two lines to your code (outlined in the [Usage section](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/django/django.html#id1) of the library documentation):
 
 ```
 from opentelemetry.instrumentation.django import DjangoInstrumentor
