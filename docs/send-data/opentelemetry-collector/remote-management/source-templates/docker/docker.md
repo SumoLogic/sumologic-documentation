@@ -34,7 +34,7 @@ This section provides instructions for configuring metrics and log collection fo
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-After installing Sumo OpenTelemetry collector to docker host machine, you need to make sure that `otelcol-sumo` user (created during Sumo OpenTelemetry collector installation) has permission to access docker.sock before pushing Docker ST to the collector. The command for this may vary depending on the linux OS which is being used. Here are commands which can help do that :
+After installing Sumo OpenTelemetry collector to docker host machine, you need to make sure that `otelcol-sumo` user (created during Sumo OpenTelemetry collector installation) has permission to access docker.sock before pushing Docker ST to the collector. The command for this may vary depending on the linux OS which is being used. Here are commands which can help do that:
 
 - You can grant read and write access to the user otelcol-sumo for the docker.sock file using the command :
 `sudo setfacl -m user:otelcol-sumo:rw /var/run/docker.sock`
