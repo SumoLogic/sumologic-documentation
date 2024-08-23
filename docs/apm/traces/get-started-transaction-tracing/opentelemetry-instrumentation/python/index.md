@@ -100,7 +100,7 @@ from opentelemetry.instrumentation.django import DjangoInstrumentor
 DjangoInstrumentor().instrument()     ##This goes inside of main
 ```
 
-Adding these lines prevents you from having to use the `opentelemetry-instrument` command in the execution of your app.
+Adding these lines eliminates the need to use the `opentelemetry-instrument` command in the execution of your app.
 
 ## Context propagation
 
