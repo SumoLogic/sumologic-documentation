@@ -6,5 +6,6 @@ description: Changelog for Nginx source template for OpenTelemetry.
 ---
 
 ## [1.0.0] - 2024-08-08
+
 ### Added
-- Initial version of Nginx ST
+- Initial version of Nginx source template.
