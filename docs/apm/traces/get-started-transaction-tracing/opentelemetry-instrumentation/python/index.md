@@ -176,7 +176,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ### Django Instrumentation
 
-[This article](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#django-instrumentation) will show you how to use the `opentelemetry-instrumentation-django` library to automatically instrument a Django app. It will show you how to reference the library manually within your code, as well as how to use [Auto-instrumentation](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#auto-instrumentation) without having to edit your code.
+[This article](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#django-instrumentation) will show you how to use the `opentelemetry-instrumentation-django` library to automatically instrument a Django app. It covers how to reference the library manually within your code, as well as how to use [Auto-instrumentation](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#auto-instrumentation) without having to edit your code.
 
 ### Sample Flask App Instrumentation
 
