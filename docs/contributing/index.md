@@ -1,6 +1,6 @@
 ---
 slug: /contributing
-title: Contributing to Sumo Logic Docs
+title: Contribute to Sumo Docs
 description: Learn how to provide feedback and contribute to Sumo Logic Docs, an open source project.
 ---
 
