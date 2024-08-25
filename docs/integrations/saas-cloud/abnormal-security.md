@@ -124,18 +124,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Abnormal Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Abnormal Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Abnormal Security dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -153,3 +141,15 @@ The **Abnormal Security - Emails** dashboard provides insights into email threat
 ### Cases
 
 The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Abnormal-Security-Cases" />
+
+## Upgrading the Abnormal Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Abnormal Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

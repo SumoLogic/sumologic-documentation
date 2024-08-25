@@ -430,7 +430,7 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: '<div id="google_translate_element"></div>',
+            value: 'google_translate',
           },
           {
             to: 'https://support.sumologic.com/support/s',
