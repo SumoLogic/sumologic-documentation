@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure Functions helps you monitor activity i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="thumbnail icon" width="45"/>
 
 [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview) is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. This integration helps in monitoring the health, tracking executions, and estimating cost of your function apps.
 
@@ -62,64 +62,65 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
 
-* **Azure Location Extraction FER**
-
- ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-* **Resource ID Extraction FER**
+#### Azure Location Extraction FER
 
 ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
+Rule Name: AzureLocationExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
 
-   ```sql title="Parse Expression"
-   json "resourceId"
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
-   ```
+```sql title="Parse Expression"
+json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+| replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+| if (!isBlank(resourceLocation), resourceLocation, location) as location
+| if (!isBlank(service_region), service_region, location) as location
+| if (isBlank(location), "global", location) as location
+| fields location
+```
+
+#### Resource ID Extraction FER
+
+```sql
+Rule Name: AzureResourceIdExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
+
+```sql title="Parse Expression"
+json "resourceId"
+| toUpperCase(resourceId) as resourceId
+| parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+| parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+| parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+| parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+| parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
+| if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
+```
 
 
 ### Configure metric rules
 
-  * **Azure Observability Metadata Extraction Service Level**
+#### Azure Observability Metadata Extraction Service Level
 
-      If this rule already exists, there's no need to create it again.
+If this rule already exists, there's no need to create it again.
 
-      ```sql
-      Rule Name: AzureObservabilityMetadataExtractionFunctionAppLevel
-      ```
+```sql
+Rule Name: AzureObservabilityMetadataExtractionFunctionAppLevel
+```
 
-      ```sql title="Metric match expression"
-      resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/SITES/* tenant_name=*
-      ```
-      | Fields extracted | Metric rule    |
-      |:------------------|:----------------|
-      | subscription_id  | $resourceId._1 |
-      | resource_group   | $resourceId._2 |
-      | provider_name    | $resourceId._3 |
-      | resource_type    | SITES |
-      | resource_name    | $resourceId._4 |
+```sql title="Metric match expression"
+resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/SITES/* tenant_name=*
+```
+
+| Fields extracted | Metric rule    |
+|:-----------------|:---------------|
+| `subscription_id`  | $resourceId._1 |
+| `resource_group`   | $resourceId._2 |
+| `provider_name`    | $resourceId._3 |
+| `resource_type`    | SITES |
+| `resource_name`    | $resourceId._4 |
 
 
 ### Configure metrics collection
@@ -144,10 +145,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure Functions that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `AllMetrics`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
-
+   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
 1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
