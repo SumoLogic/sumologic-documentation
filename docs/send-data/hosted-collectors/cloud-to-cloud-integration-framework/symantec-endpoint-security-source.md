@@ -1,17 +1,12 @@
 ---
 id: symantec-endpoint-security-source
-title: Symantec Endpoint Security Source (Beta)
+title: Symantec Endpoint Security Source
 sidebar_label: Symantec Endpoint Security
 tags:
   - cloud-to-cloud
   - symantec-endpoint-security
-description: Learn how to collect incident and incident events from the Symantec Endpoint Security source.
+description: Learn how to collect incident and incident events from the Symantec Endpoint Security platform.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import MyComponentSource from '!!raw-loader!/files/c2c/symantec-endpoint-security/example.json';
