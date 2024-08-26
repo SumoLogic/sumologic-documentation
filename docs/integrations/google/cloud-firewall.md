@@ -158,18 +158,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Cloud Firewall app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Cloud Firewall app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Cloud Firewall dashboards
 
 This section provides examples of the Google Cloud Firewall App accompanied with descriptions.
@@ -277,3 +265,15 @@ Presents information about egress traffic; including allowed and denied traffic 
 **Top Denied Egress Rules**. A table that lists the egress rules that were invoked the most, resulting in denied requests over the last 24 hours.
 
 **Top Denied Destination IPs**. A table that lists the IP addresses to which the most requests were denied.
+
+## Upgrading the Google Cloud Firewall app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Firewall app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

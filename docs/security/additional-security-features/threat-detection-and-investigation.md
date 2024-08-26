@@ -298,7 +298,7 @@ We need a way to see if any of the IP addresses we have logged are known threats
      | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
      | outlier _count window=5,threshold=3,consecutive=1,direction=+-
      ```
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.)
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. 
 1. Under **Chart Type**, select **Line Chart**.
 1. Rename this panel **CrowdStrike Data**.
 1. Click the **Add to Dashboard** button.

@@ -84,7 +84,7 @@ To manually install the Debian package from a .deb file:
 Telegraf has native support for running as a Windows service. For additional information, see the Influx blog post [Using Telegraf on Windows](https://www.influxdata.com/blog/using-telegraf-on-windows/).
 
 :::note
-You must have administrative permissions to install a Windows service. Be sure to launch Powershell as administrator.
+You must have administrative permissions to install a Windows service. Be sure to launch PowerShell as administrator.
 :::
 
 1. Launch PowerShell as an administrator.
