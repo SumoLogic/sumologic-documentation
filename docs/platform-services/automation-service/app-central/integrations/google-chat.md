@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 80"/>
 
 **Version: 2.0  
-Updated: August 21, 2024**
+Updated: August 26, 2024**
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams
 
@@ -59,4 +59,4 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 
 ## Change Log
 
-* August 21, 2024 (v2.0) - First upload
+* August 26, 2024 (v2.0) - First upload
