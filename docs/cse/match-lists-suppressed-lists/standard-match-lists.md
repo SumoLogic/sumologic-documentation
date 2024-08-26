@@ -364,7 +364,7 @@ The following Cloud SIEM rules refer to this Match List:
 
 **Target column:** IP Address (`Ip`)
 
-**Description:** Domain controllers.
+**Description:** Domain controller IPs.
 
 The following Cloud SIEM rules refer to this Match List:
 
@@ -372,12 +372,21 @@ The following Cloud SIEM rules refer to this Match List:
 * Domain Brute Force Attempt
 * Domain Password Attack
 * First Seen Anonymous Logon Change Activity to Domain Controller
-* Interactive Logon to Domain Controller
 * Outlier in Data Outbound Per Day by Admin or Sensitive Device
 * Outlier in Data Outbound Per Hour by Admin or Sensitive Device
 * Password Attack
 * Spike in Login Failures from a User
 * Successful Brute Force
+
+### domain_controller_hostnames
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** Domain controller hostnames.
+
+The following Cloud SIEM rules refer to this Match List:
+
+* Interactive Logon to Domain Controller
 * Suspicious DC Logon
 
 ### downgrade_krb5_etype_authorized_users
