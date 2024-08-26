@@ -14,14 +14,14 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 
 ## Actions
 
-* **Create Message** (*Containment*) - Send messages privately to a specific Chat user.
-* **Delete Message** (*Enrichment*) - Delete a message that the Chat app sent.
-* **Get Member** (*Containment*) - Get details about a membership in a space.
-* **Get Message** *(Containment)* - Get details about a message.
+* **Create Message** (*Notification*) - Send messages privately to a specific Chat user.
+* **Delete Message** (*Containment*) - Delete a message that the Chat app sent.
+* **Get Member** (*Enrichment*) - Get details about a membership in a space.
+* **Get Message** (*Enrichment*) - Get details about a message.
 * **Get Space** (*Enrichment*) - Get details about a space.
 * **List Members** (*Enrichment*) - Lists memberships in spaces that the Chat app has access to.
 * **List Spaces** (*Enrichment*) - Lists spaces that the Chat app has access to.
-* **Update Message** (*Daemon*) - Update the message.
+* **Update Message** (*Containment*) - Update the message.
 
 ## Google Chat configuration
 
