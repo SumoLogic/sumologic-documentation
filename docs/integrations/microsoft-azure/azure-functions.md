@@ -15,9 +15,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Azure Functions app uses the following log types:
 
-* FunctionApplicationLogs
-* AppServiceAuthenticationLogs
-* AllMetrics
+* `FunctionApplicationLogs`
+* `AppServiceAuthenticationLogs`
+* `AllMetrics`
 
 For Azure Functions, you can collect the following logs and metrics:
 
@@ -55,7 +55,6 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `provider_name`. Azure resource provider name (for example, Microsoft.WEB).
    - `resource_type`. Azure resource type (for example, SITES).
    - `resource_name`. The name of the resource (for example, Azure Function App name).
-
 3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
 ### Configure Field Extraction Rules
@@ -130,9 +129,9 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Functions that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
-   * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   1. Choose `Stream to an event hub` as destination.
+   2. Select `AllMetrics`.
+   3. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure logs collection
 
@@ -142,13 +141,13 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure Functions that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `AllMetrics`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+2. 1. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure Functions that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
+   2. Select `AllMetrics`.
+   3. Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-#### Activity Logs
+#### Activity Logs (Optional)
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
 
@@ -158,9 +157,7 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ##### Enabling Microsoft Defender for Cloud
 
-:::note
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
-:::
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
 
@@ -168,9 +165,7 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 ##### Enabling Health Check Metric
 
-:::note
-For getting health check metric, make sure you enable health check by going to Monitoring tab.
-:::
+For getting health check metric, make sure you enable health check in the Monitoring tab.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
@@ -190,7 +185,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Azure Functions - Overview** dashboard provides information of any service health incidents or resource health events associated with Azure Functions in your azure account.
+The **Azure Functions - Overview** dashboard provides a comprehensive information of all the service health incidents or resource health events associated with Azure Functions in your azure account.
 
 Use this dashboard to:
 * View recent resource and service health incidents.
@@ -200,7 +195,7 @@ Use this dashboard to:
 
 ### Cost
 
-The **Azure Functions - Cost** dashboard provides information on the expenses associated with your Azure Functions. This includes details on the cost of resources, usage trends, and cost management insights.
+The **Azure Functions - Cost** dashboard provides information about the expenses associated with your Azure Functions. This includes details on the cost of resources, usage trends, and cost management insights.
 
 Use this dashboard to:
 * Monitor and analyze your spending on Azure Functions.
