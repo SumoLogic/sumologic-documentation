@@ -139,10 +139,13 @@ You can also enable data forwarding when you first create a partition or Schedul
       :::
 1. (Closed Beta participants only). Participants in the Closed Beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
    1. **Included Data**. Select the kind of data to forward:
-      * **Raw**. Raw logs only.
+       * **Raw**. Raw logs only.
        * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
        * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
-   1. **Forwarded data type**. Select the format as **CSV** (comma-separated values) or **JSON** (Java Script Object Notation). Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
+   1. **Forwarded data type**. Select the format for the forwarded data:
+       * **Text**. If you choose **Raw** above, the data will be sent in text format.
+       * **CSV**. Comma-separated values.
+       * **JSON**. Java Script Object Notation. Select **JSON** if you want to ensure that forwarded data can be re-ingested easily. 
    1. **File Prefix**. Follow the directions for **File Format** in the preceding step.
 1. Click **Save** at the top of the panel to save your changes and start forwarding data. 
 
