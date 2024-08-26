@@ -16,6 +16,6 @@ We are excited to introduce the **Multiple Scheduled Reports** feature to Sumo L
 - **Custom Variable Values**. Assign different variable values to each report, tailoring the data to meet specific reporting needs.
 - **Custom Time Ranges**. Define distinct time ranges for each report, ensuring you capture the data most relevant to your analysis.
 - **Run Frequencies**. Schedule reports to run at varying frequencies, from daily snapshots to monthly summaries.
-- **Email Addresses**. Specify different email addresses for each report, ensuring the right information reaches the right stakeholders.
+- **Email Addresses**. Specify one or more email addresses for each report, ensuring the right information reaches the right stakeholders.
 
 Learn more [here](/docs/dashboards/scheduled-report/#create-a-scheduled-report).
