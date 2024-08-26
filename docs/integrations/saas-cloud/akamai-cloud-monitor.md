@@ -188,18 +188,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Akamai Cloud Monitor app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Akamai Cloud Monitor app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Akamai Cloud Monitor dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -300,3 +288,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
+
+## Upgrading the Akamai Cloud Monitor app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai Cloud Monitor app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

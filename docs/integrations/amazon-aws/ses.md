@@ -236,18 +236,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Amazon SES app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon SES app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Amazon SES dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -402,3 +390,15 @@ See information about complaints (a complaint occurs when a recipient reports th
 **Sending SourceIP.** See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
 
 **Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+
+## Upgrading the Amazon SES app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon SES app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
