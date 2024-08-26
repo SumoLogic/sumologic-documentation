@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 **Version: 2.0  
-Updated: August 26, 2024**
+Updated: August 27, 2024**
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams
 
@@ -46,4 +46,4 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 
 ## Change Log
 
-* August 26, 2024 (v2.0) - First upload
+* August 27, 2024 (v2.0) - First upload
