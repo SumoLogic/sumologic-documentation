@@ -137,3 +137,18 @@ The status of an update can be one of the following:
 * **Completed**. The update operation was successfully completed.
 * **Completed with Warning**. The update operation was successful, but there were some warnings.  
 * **Error**. There was an issue in completing the update operation. 
+
+
+## FAQ
+
+### Upgrade the lookup table to avoid negative count results
+
+:::info
+Lookup schema matching is relaxed to allow Int-Long type mismatch to support the new behavioural change of the `count` operator.
+:::
+
+If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To migrate the schema type, create a new lookup table with `long` data type and run the below query:
+
+```
+cat path://"/Library/Users/pyeole@sumologic.com/IntegerOverFlow-BeforeFF-count" | save path://"/Library/Users/pyeole@sumologic.com/IntegerOverFlowBeforeFFWithLong"
+```
