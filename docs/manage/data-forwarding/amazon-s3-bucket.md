@@ -137,7 +137,7 @@ You can also enable data forwarding when you first create a partition or Schedul
       :::note
       For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
       :::
-1. ([Closed Beta participants only]((/release-notes-service/2024/08/30/manage/))). Participants in the Closed Beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
+1. (Closed Beta participants only). Participants in the Closed Beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
    1. **Included Data**. Select the kind of data to forward:
       * **Raw**. Raw logs only.
        * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
