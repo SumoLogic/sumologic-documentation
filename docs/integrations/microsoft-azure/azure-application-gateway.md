@@ -188,6 +188,154 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+## Viewing the Azure Application Gateway dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+
+### Audit Control Plane Operations
+
+The **Azure Application Gateway - Audit Control Plane Operations** dashboard provides details like changes, changes by operations, top 10 operations that caused the most errors, count by user operations etc.
+Use this dashboard to:
+   * Changes
+   * Changes by operations
+   * Top 10 Operations that caused the  most errors
+   * Count - user operations
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Audit-Control-Plane-Operations.png')} alt="Azure Application Gateway Audit Control Plane Operations" style={{border: '1px solid gray'}} width="800" />
+
+### Backend
+
+The **Azure Application Gateway - Backend** dashboard provides insights like unhealthy host count, server response, backend pool details, healthy host count trend, unhealthy host count trend, chart by backend status code, backend response status 2xx, 3xx, 4xx, 5xx
+Use this dashboard to:
+   * View UnHealthy host count
+   * View Server response
+   * View Healthy host count
+   * View UnHealthy host count trend
+   * View Backend pool details
+   * View Chart by backend status code
+   * View Backend response status trends for 2xx, 3xx, 4xx, 5xx
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Backend.png')} alt="Azure Application Gateway Backend" style={{border: '1px solid gray'}} width="800" />
+
+### Billing
+
+The **Azure Application Gateway - Billing** dashboard provides insights like current capacity units, fixed capacity units, variable capacity units, estimated billed capacity units trend, current capacity units trend, fixed billable capacity units trend, variable capacity units trend
+
+Use this dashboard to:
+   * View Current capacity units
+   * View Fixed capacity units
+   * View Variable capacity units
+   * View Estimated billed capacity units trend
+   * View Current capacity units trend
+   * View Fixed billable capacity units trend
+   * View Variable capacity units trend
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Billing.png')} alt="Azure Application Gateway Billing" style={{border: '1px solid gray'}} width="800" />
+
+
+### Connections
+
+The **Azure Application Gateway - Connections** dashboard provides insights like connections per second and current connections
+
+Use this dashboard to:
+   * View Connections per second
+   * View Current connections
+
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Connections.png')} alt="Azure Application Gateway Connections" style={{border: '1px solid gray'}} width="800" />
+
+### Failures
+
+The **Azure Application Gateway - Failures** dashboard provides insights like top 10 application gateways with error, top 10 backend pool names with errors, top 10 rule names with error, top 10 errors by error info, chart by error code & error info and failed requests by user agent & http method
+
+Use this dashboard to:
+   * View Top 10 application gateways with error
+   * View Top 10 backend pool names with errors
+   * View Top 10 rule names with error
+   * View Top 10 errors by error info
+   * View Chart by error code & error info
+   * View Failed requests by user agent & http method
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Failures.png')} alt="Azure Application Gateway Failures" style={{border: '1px solid gray'}} width="800" />
+
+
+### Health
+
+The **Azure Application Gateway - Health** dashboard provides details like recent alerts, resource health incidents, recent resource health status by resource name, trend by event type, downtime by causes, trend of unavailable, degraded,  available etc.
+Use this dashboard to:
+* View Recent alerts
+* View Resource health incidents
+* View Recent resource health status by resource name
+* View Trend by event type
+* View Downtime by causes
+* View Trend of unavailable, degraded,  available etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Health.png')} alt="Azure Application Gateway Health" style={{border: '1px solid gray'}} width="800" />
+
+### Latency
+The **Azure Application Gateway - Latency** dashboard provides insights like application gateway total time, application gateway total Time vs backend last byte response time, backend connect time vs backend first byte response time and backend first byte response time vs backend last byte response time
+Use this dashboard to:
+   * View Application gateway total time
+   * View Application gateway total Time vs backend last byte response time
+   * View Backend connect time vs backend first byte response time 
+   * View Backend first byte response time vs backend last byte response time
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Latency.png')} alt="Azure Application Gateway Latency" style={{border: '1px solid gray'}} width="800" />
+
+### Overview
+The **Azure Application Gateway - Overview** dashboard provides details like requests by location, current capacity units, failed requests count, average new connections per second, throughput - average bytes per second, unhealthy host count and current connections trend
+Use this dashboard to:
+   * View Requests by location
+   * View Current capacity units
+   * View Failed requests count
+   * View Average new connections per second
+   * View Throughput - average bytes per second
+   * View Unhealthy host count
+   * View Current connections trend
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Overview.png')} alt="Azure Application Gateway Overview" style={{border: '1px solid gray'}} width="800" />
+
+### Performance
+The **Azure Application Gateway - Performance** dashboard provides insights like total request rate, failed request rate, application gateway details, average active connections, capacity units, capacity unit utilization, current connections trend, throughput trend, sent bytes, received bytes
+Use this dashboard to:
+   * View Total request rate
+   * View Failed request rate
+   * View Application gateway details
+   * View Average active connections
+   * View Capacity units
+   * View Capacity unit utilization
+   * View Current connections trend
+   * View Throughput trend
+   * View Sent bytes, received bytes
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Performance.png')} alt="Azure Application Gateway Performance" style={{border: '1px solid gray'}} width="800" />
+
+### Security and Policy
+The **Azure Application Gateway - Security and Policy** and Policy dashboard provides details like total security events, recent security events, total denied policy events, total success policy events, total failed policy events, total recommendation events and recent recommendation events etc.
+Use this dashboard to:
+   * View Total security events
+   * View Recent security events
+   * View Total denied policy events
+   * View Total success policy events
+   * View Total failed policy events
+   * View Total recommendation events
+   * View Recent recommendation events etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Security-and-Policy.png')} alt="Azure Application Gateway Security and Policy" style={{border: '1px solid gray'}} width="800" />
+
+### Traffic
+The **Azure Application Gateway - Traffic** dashboard provides insights like
+* View Requests by client ip location
+* View Total requests
+* View Failed requests
+* View Requests by TLS version
+* View Chart by HTTP status code
+* View  Response status trends for 2xx, 3xx, 4xx, 5xx etc.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting
 
