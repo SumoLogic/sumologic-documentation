@@ -150,18 +150,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Compute Engine app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Compute Engine app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Compute Engine dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -215,3 +203,15 @@ The **Google Cloud Compute Engine - Platform Logs** dashboard is based on Comput
 The **Google Cloud Compute Engine - Quota Overview** dashboard is based on significant quota-related metrics for the Compute engine. This dashboard provides insights into VPC-related quotas like instance usage, IP aliases, subnet range, and static route per VPC as well as aggregated. You can also monitor other quotas like regional concurrent operation, global concurrent operation, and inter-region egress bandwidth.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Quota-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Quota Overview" width="800"/>
+
+## Upgrading the Google Compute Engine app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Compute Engine app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
