@@ -5,7 +5,7 @@ sidebar_label: Symantec Endpoint Security
 tags:
   - cloud-to-cloud
   - symantec-endpoint-security
-description: Learn how to collect incident and incident events from the Symantec Endpoint Security platform.
+description: Learn how to collect incident and incident events using the Symantec Endpoint Security source.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
