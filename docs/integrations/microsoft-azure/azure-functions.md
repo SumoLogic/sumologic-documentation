@@ -202,6 +202,8 @@ Use this dashboard to:
 * Review cost trends and identify areas where you can optimize spending.
 * Access detailed billing information and cost breakdowns.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+
 ### Error
 
 The **Azure Functions - Error** dashboard provides insights into errors encountered by your Azure Functions. This includes error rates, types of errors, and patterns over time.
@@ -210,6 +212,8 @@ Use this dashboard to:
 * Track and investigate error occurrences in your Azure Functions.
 * Identify and diagnose recurring error patterns.
 * Review error logs and detailed reports to improve function reliability.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Memory
 
@@ -220,6 +224,8 @@ Use this dashboard to:
 * Identify and address memory-related performance issues.
 * Analyze trends in memory usage to optimize function performance.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+
 ### Network
 
 The **Azure Functions - Network** dashboard provides details on network traffic and connectivity related to your Azure Functions. This includes data on inbound and outbound traffic, network latency, and potential network issues.
@@ -229,23 +235,29 @@ Use this dashboard to:
 * Diagnose network-related issues and connectivity problems.
 * Monitor network usage and optimize network configuration.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+
 ### Operations
 
-The **Azure Functions - Operations** dashboard provides an overview of operational metrics and activities related to your Azure Functions. This includes operational health, deployment status, and function execution details.
+The **Azure Functions - Operations** dashboard provides an overview of operational metrics and activities related to your Azure Functions. This includes I/O Read, Write bytes/second and I/O Read, Write operations/second.
 
 Use this dashboard to:
 * Monitor the operational status and health of your Azure Functions.
 * Review deployment activities and execution metrics.
 * Analyze operational trends and optimize function management.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+
 ### OS Statistics
 
-The **Azure Functions - OS Statistics** dashboard provides information on operating system metrics and statistics relevant to your Azure Functions. This includes details on CPU usage, disk I/O, and other OS-level performance indicators.
+The **Azure Functions - OS Statistics** dashboard provides information on operating system metrics and statistics relevant to your Azure Functions. This includes details on current assemblies, number of processor threads and other OS-level performance indicators.
 
 Use this dashboard to:
 * Track OS-level performance metrics impacting your Azure Functions.
-* Monitor CPU, memory, and disk usage for optimal performance.
+* Monitor Current assemblies, threads, and handles for optimal performance.
 * Identify and address OS-related performance issues.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 
@@ -255,6 +267,8 @@ Use this dashboard to:
 * Monitor and analyze the performance of your Azure Functions.
 * Identify performance bottlenecks and optimize function execution.
 * Review performance metrics and trends to ensure optimal function performance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
