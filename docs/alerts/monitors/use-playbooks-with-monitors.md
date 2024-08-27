@@ -144,12 +144,12 @@ To create a playbook so you can add it to a monitor, see [Create a new playbook]
 To use an integration's actions in a playbook, [install the integration from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
 
 Some integrations that have useful actions for monitors include:
-* **Sumo Logic**. Integration with Sumo Logic platform for logs, metrics, and monitors. <br/>Actions include:
+* [**Sumo Logic Log Analytics**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:
    * **Resolve Alert**. Resolve the alert.
    * **Search Metrics**. Query metrics from Sumo Logic.
    * **Search Output Mapping**. Parse the output of a Search Sumo Logic action.
    * **Search Sumo Logic**. Query logs data from Sumo Logic.
-* **Sumo Logic Notifications**. Integration with the Sumo Logic platform for monitors and Slack notifications. <br/>Actions include:
+* [**Sumo Logic Notifications**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/). Integration with the Sumo Logic platform for monitors and Slack notifications. Actions include:
    * **Assess Alert Status**. Periodically monitor status of a Sumo Logic alert and notify a Slack user if the alert is unresolved.
 
 ### Pass custom fields from a monitor to playbooks
