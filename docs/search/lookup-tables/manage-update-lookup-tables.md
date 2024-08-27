@@ -147,8 +147,10 @@ The status of an update can be one of the following:
 Lookup schema matching is relaxed to allow Int-Long type mismatch to support the new behavioural change of the `count` operator.
 :::
 
-If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To migrate the schema type, create a new lookup table with `long` data type and run the below query:
+If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new lookup table with `long` data type and run the below query:
 
 ```
-cat path://"/Library/Users/pyeole@sumologic.com/IntegerOverFlow-BeforeFF-count" | save path://"/Library/Users/pyeole@sumologic.com/IntegerOverFlowBeforeFFWithLong"
+cat path://"<Lookup file Path>" | save path://"<New Lookup File Path>"
 ```
+
+By doing so, the query will read the data from the existing lookup table in old file and migrate it to the new file.
