@@ -435,7 +435,7 @@ In this section, we'll introduce the following concepts:
       <div className="box smallbox card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
-        <p>Learn to collect incident and incident events from the Symantec Endpoint Security platform.</p>
+        <p>Learn to collect incidents and incident events from the Symantec Endpoint Security platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
