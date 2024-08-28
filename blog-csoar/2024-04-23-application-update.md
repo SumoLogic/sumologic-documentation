@@ -4,7 +4,7 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-image: /img/sumo-square.png
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
 authors:
   - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
     image_url: /img/release-notes/rss-orange.png

@@ -1,6 +1,6 @@
 ---
 title: Active Directory App Update (Apps)
-image: /img/sumo-square.png
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
 keywords:
   - apps
   - release notes
