@@ -195,16 +195,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <ViewDashboards/>
 
 
-### Audit Control Plane Operations
+### Administrative Operations
 
-The **Azure Application Gateway - Audit Control Plane Operations** dashboard provides details like changes, changes by operations, top 10 operations that caused the most errors, count by user operations etc.
+The **Azure Application Gateway Administrative Operations** dashboard provides details like Changes, Read/Write/Delete specific changes, different operations used, top 10 operations that caused most errors and most common errors etc.
 Use this dashboard to:
-   * Changes
-   * Changes by operations
-   * Top 10 Operations that caused the  most errors
-   * Count - user operations
+   * Changes, Read/Write/Delete specific changes
+   * different operations used
+   * most common errors
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Audit-Control-Plane-Operations.png')} alt="Azure Application Gateway Audit Control Plane Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Administrative-Operations.png')} alt="Azure Application Gateway Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Backend
 
@@ -234,18 +233,6 @@ Use this dashboard to:
    * View Variable capacity units trend
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Billing.png')} alt="Azure Application Gateway Billing" style={{border: '1px solid gray'}} width="800" />
-
-
-### Connections
-
-The **Azure Application Gateway - Connections** dashboard provides insights like connections per second and current connections
-
-Use this dashboard to:
-   * View Connections per second
-   * View Current connections
-
-
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Connections.png')} alt="Azure Application Gateway Connections" style={{border: '1px solid gray'}} width="800" />
 
 ### Failures
 
@@ -286,7 +273,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Latency.png')} alt="Azure Application Gateway Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
-The **Azure Application Gateway - Overview** dashboard provides details like requests by location, current capacity units, failed requests count, average new connections per second, throughput - average bytes per second, unhealthy host count and current connections trend
+The **Azure Application Gateway - Overview** dashboard provides details like requests by location, current capacity units, failed requests count, average new connections per second, throughput - average bytes per second, unhealthy host count, current connections and connections/sec trends etc.
 Use this dashboard to:
    * View Requests by location
    * View Current capacity units
@@ -295,6 +282,7 @@ Use this dashboard to:
    * View Throughput - average bytes per second
    * View Unhealthy host count
    * View Current connections trend
+   * View Current connections/sec trend
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Overview.png')} alt="Azure Application Gateway Overview" style={{border: '1px solid gray'}} width="800" />
 
