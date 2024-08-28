@@ -93,28 +93,7 @@ Create the following field extraction rules (FER) for Azure Storage by following
 
 ### Configure metric rules
 
-Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule). 
-
-#### Azure observability metadata extraction service level
-
-If this rule already exists, there is no need to create it again.
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
-```
-
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
-```
-| Fields extracted  | Metric rule     |
-|:------------------|:----------------|
-| subscription_id   | $resourceId._1  |
-| resource_group    | $resourceId._2  |
-| provider_name     | $resourceId._3  |
-| resource_type     | $resourceId._4  |
-| resource_name     | $resourceId._5  |
-| service_type      | $resourceId._6  |
-| service_name      | $resourceId._7  |
+Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
 #### Azure observability metadata extraction application gateway level
 
