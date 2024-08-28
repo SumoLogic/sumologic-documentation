@@ -1,17 +1,12 @@
 ---
 id: symantec-endpoint-security-source
-title: Symantec Endpoint Security Source (Beta)
+title: Symantec Endpoint Security Source
 sidebar_label: Symantec Endpoint Security
 tags:
   - cloud-to-cloud
   - symantec-endpoint-security
-description: Learn how to collect incident and incident events from the Symantec Endpoint Security source.
+description: Learn how to collect incident and incident events using the Symantec Endpoint Security source.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import MyComponentSource from '!!raw-loader!/files/c2c/symantec-endpoint-security/example.json';
@@ -26,8 +21,8 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 
 | Polling Interval | Data Source | Description |
 | :--- | :--- |  :--- |
-| 5 min |  [Incidents](https://api.sep.securitycloud.symantec.com/v1/incidents)| Used to retrieve incidents and incident events. |
-| 5 min |  [Incident Events](https://api.sep.securitycloud.symantec.com/v1/incidents/events)| Used to retrieve incident related events based on time range filter. |
+| 5 min |  Incidents | Used to retrieve incidents and incident events. |
+| 5 min |  Incident Events | Used to retrieve incident related events based on time range filter. |
 
 ## Setup
 
