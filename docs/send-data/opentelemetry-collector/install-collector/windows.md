@@ -40,6 +40,9 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Copy the command.
 1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
+1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
+
+If you choose to close this Source template creation screen, you can navigate back. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  Kanso--> 
 
 ### Install Script
 
