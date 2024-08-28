@@ -361,18 +361,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Docker CE app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Docker CE app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Docker CE dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -451,3 +439,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Total Network Error Count.** Provides details on the total number of network errors in a line chart on a timeline for the last hour.
 
 **Receive Errors by Container.** Displays the number of received errors by container in a bar chart for the last hour.
+
+## Upgrading the Docker CE app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Docker CE app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
