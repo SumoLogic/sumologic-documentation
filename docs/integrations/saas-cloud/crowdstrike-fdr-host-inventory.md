@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for CrowdStrike - FDR Host Inventory offers deep visibility into your organization's host inventory managed by CrowdStrike Falcon. This app enables you to monitor critical aspects of your infrastructure, including device status, operating systems, and manufacturers. The app also provides you with insights into the geographical distribution of devices and highlights potential risks by identifying abnormal device statuses. With detailed logs on software details, network configurations, and policy applications, this app helps you to maintain an up-to-date and secure host inventory, ensuring a robust security posture across your environment.
 
+:::info
+This app includes built-in monitors. For details on creating custom monitors, refer to [Create monitors for CrowdStrike FDR Host Inventory app](#create-monitors-for-crowddtrike-fdr-host-inventory-app).
+:::
+
 ## Log types
 
 This app uses Sumo Logic’s CrowdStrike-FDR Host Inventory Source to collect [inventory logs](https://falcon.crowdstrike.com/login/?next=%2Fdocumentation%2F84%2Fhost-and-host-group-management-apis#managing-hosts) from CrowdStrike-FDR Host Inventory.
