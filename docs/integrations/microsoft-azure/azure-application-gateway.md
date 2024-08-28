@@ -46,8 +46,8 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
    - `resource_type`. Azure resource type (for example, storage accounts).
    - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed from with a azure resource.
-   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL databases in Azure SQL Server).
+   - `service_type`. Type of the service that can be accessed with a Azure resource.
+   - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
 ### Configure field extraction rules
@@ -140,10 +140,9 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 3. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Application Gateway that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
-   * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-![azureapplicationgateway-metrics.png](/img/send-data/azureapplicationgateway-metrics.png)
+   1. Choose `Stream to an event hub` as destination.
+   1. Select `AllMetrics`.
+   1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-metrics.png')} alt="Azure application gateway metrics" style={{border: '1px solid gray'}} width="800" />
 
 ### Configure logs collection
 
@@ -152,12 +151,11 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure application gateway account that you want to monitor.
-   * Choose **Stream to an event hub** as the destination.
-   * Select `allLogs`.
-   * Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-3. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" />
-    ![azureapplicationgateway-logs.png](/img/send-data/azureapplicationgateway-logs.png)
+1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure application gateway account that you want to monitor.
+   1. Choose **Stream to an event hub** as the destination.
+   1. Select `allLogs`.
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-logs.png')} alt="Azure Application Gateway logs" style={{border: '1px solid gray'}} width="800" /> 
 
 #### Activity Logs
 
@@ -207,121 +205,130 @@ Use this dashboard to:
 
 ### Backend
 
-The **Azure Application Gateway - Backend** dashboard provides insights like unhealthy host count, server response, backend pool details, healthy host count trend, unhealthy host count trend, chart by backend status code, backend response status 2xx, 3xx, 4xx, 5xx
-Use this dashboard to:
-   * View UnHealthy host count
-   * View Server response
-   * View Healthy host count
-   * View UnHealthy host count trend
-   * View Backend pool details
-   * View Chart by backend status code
-   * View Backend response status trends for 2xx, 3xx, 4xx, 5xx
+The **Azure Application Gateway - Backend** dashboard provides insights like unhealthy host count, server response, backend pool details, healthy host count trend, unhealthy host count trend, chart by backend status code, and backend response status for 2xx, 3xx, 4xx, 5xx.
+
+Use this dashboard to view:
+   * Unhealthy host count
+   * Server response
+   * Healthy host count
+   * Unhealthy host count trend
+   * Backend pool details
+   * Chart by backend status code
+   * Backend response status trends for 2xx, 3xx, 4xx, 5xx
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Backend.png')} alt="Azure Application Gateway Backend" style={{border: '1px solid gray'}} width="800" />
 
 ### Billing
 
-The **Azure Application Gateway - Billing** dashboard provides insights like current capacity units, fixed capacity units, variable capacity units, estimated billed capacity units trend, current capacity units trend, fixed billable capacity units trend, variable capacity units trend
+The **Azure Application Gateway - Billing** dashboard provides insights like current capacity units, fixed capacity units, variable capacity units, estimated billed capacity units trend, current capacity units trend, fixed billable capacity units trend, and variable capacity units trend.
 
-Use this dashboard to:
-   * View Current capacity units
-   * View Fixed capacity units
-   * View Variable capacity units
-   * View Estimated billed capacity units trend
-   * View Current capacity units trend
-   * View Fixed billable capacity units trend
-   * View Variable capacity units trend
+Use this dashboard to view:
+   * Current capacity units
+   * Fixed capacity units
+   * Variable capacity units
+   * Estimated billed capacity units trend
+   * Current capacity units trend
+   * Fixed billable capacity units trend
+   * Variable capacity units trend
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Billing.png')} alt="Azure Application Gateway Billing" style={{border: '1px solid gray'}} width="800" />
 
+
 ### Failures
 
-The **Azure Application Gateway - Failures** dashboard provides insights like top 10 application gateways with error, top 10 backend pool names with errors, top 10 rule names with error, top 10 errors by error info, chart by error code & error info and failed requests by user agent & http method
+The **Azure Application Gateway - Failures** dashboard provides insights like top 10 application gateways with error, top 10 backend pool names with errors, top 10 rule names with error, top 10 errors by error info, chart by error code and error info, and failed requests by user agent and HTTP method.
 
-Use this dashboard to:
-   * View Top 10 application gateways with error
-   * View Top 10 backend pool names with errors
-   * View Top 10 rule names with error
-   * View Top 10 errors by error info
-   * View Chart by error code & error info
-   * View Failed requests by user agent & http method
+Use this dashboard to view:
+   * Top 10 application gateways with error
+   * Top 10 backend pool names with errors
+   * Top 10 rule names with error
+   * Top 10 errors by error info
+   * Chart by error code and error info
+   * Failed requests by user agent and HTTP method
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Failures.png')} alt="Azure Application Gateway Failures" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Health
 
-The **Azure Application Gateway - Health** dashboard provides details like recent alerts, resource health incidents, recent resource health status by resource name, trend by event type, downtime by causes, trend of unavailable, degraded,  available etc.
-Use this dashboard to:
-* View Recent alerts
-* View Resource health incidents
-* View Recent resource health status by resource name
-* View Trend by event type
-* View Downtime by causes
-* View Trend of unavailable, degraded,  available etc.
+The **Azure Application Gateway - Health** dashboard provides details like recent alerts, resource health incidents, recent resource health status by resource name, trend by event type, downtime by causes, trend of unavailable, degraded, and available.
+
+Use this dashboard to view:
+* Recent alerts
+* Resource health incidents
+* Recent resource health status by resource name
+* Trend by event type
+* Downtime by causes
+* Trend of unavailable, degraded, available, and so on
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Health.png')} alt="Azure Application Gateway Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency
-The **Azure Application Gateway - Latency** dashboard provides insights like application gateway total time, application gateway total Time vs backend last byte response time, backend connect time vs backend first byte response time and backend first byte response time vs backend last byte response time
-Use this dashboard to:
-   * View Application gateway total time
-   * View Application gateway total Time vs backend last byte response time
-   * View Backend connect time vs backend first byte response time 
-   * View Backend first byte response time vs backend last byte response time
+The **Azure Application Gateway - Latency** dashboard provides insights like application gateway total time, application gateway total time versus backend last byte response time, backend connect time versus backend first byte response time, and backend first byte response time versus backend last byte response time.
+
+Use this dashboard to view:
+   * Application gateway total time
+   * Application gateway total Time versus backend last byte response time
+   * Backend connect time versus backend first byte response time 
+   * Backend first byte response time versus backend last byte response time
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Latency.png')} alt="Azure Application Gateway Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
+
 The **Azure Application Gateway - Overview** dashboard provides details like requests by location, current capacity units, failed requests count, average new connections per second, throughput - average bytes per second, unhealthy host count, current connections and connections/sec trends etc.
-Use this dashboard to:
-   * View Requests by location
-   * View Current capacity units
-   * View Failed requests count
-   * View Average new connections per second
-   * View Throughput - average bytes per second
-   * View Unhealthy host count
-   * View Current connections trend
+
+Use this dashboard to view:
+   * Requests by location
+   * Current capacity units
+   * Failed requests count
+   * Average new connections per second
+   * Throughput - average bytes per second
+   * Unhealthy host count
    * View Current connections/sec trend
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Overview.png')} alt="Azure Application Gateway Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
-The **Azure Application Gateway - Performance** dashboard provides insights like total request rate, failed request rate, application gateway details, average active connections, capacity units, capacity unit utilization, current connections trend, throughput trend, sent bytes, received bytes
-Use this dashboard to:
-   * View Total request rate
-   * View Failed request rate
-   * View Application gateway details
-   * View Average active connections
-   * View Capacity units
-   * View Capacity unit utilization
-   * View Current connections trend
-   * View Throughput trend
-   * View Sent bytes, received bytes
+The **Azure Application Gateway - Performance** dashboard provides insights like total request rate, failed request rate, application gateway details, average active connections, capacity units, capacity unit utilization, current connections trend, throughput trend, sent bytes and received bytes.
+
+Use this dashboard to view:
+   * Total request rate
+   * Failed request rate
+   * Application gateway details
+   * Average active connections
+   * Capacity units
+   * Capacity unit utilization
+   * Current connections trend
+   * Throughput trend
+   * Sent bytes and received bytes
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Performance.png')} alt="Azure Application Gateway Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Security and Policy
-The **Azure Application Gateway - Security and Policy** and Policy dashboard provides details like total security events, recent security events, total denied policy events, total success policy events, total failed policy events, total recommendation events and recent recommendation events etc.
-Use this dashboard to:
-   * View Total security events
-   * View Recent security events
-   * View Total denied policy events
-   * View Total success policy events
-   * View Total failed policy events
-   * View Total recommendation events
-   * View Recent recommendation events etc.
+The **Azure Application Gateway - Security and Policy** and Policy dashboard provides details like total security events, recent security events, total denied policy events, total success policy events, total failed policy events, total recommendation events, and recent recommendation events.
+
+Use this dashboard to view:
+   * Total security events
+   * Recent security events
+   * Total denied policy events
+   * Total success policy events
+   * Total failed policy events
+   * Total recommendation events
+   * Recent recommendation events
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Security-and-Policy.png')} alt="Azure Application Gateway Security and Policy" style={{border: '1px solid gray'}} width="800" />
 
 ### Traffic
-The **Azure Application Gateway - Traffic** dashboard provides insights like
-* View Requests by client ip location
-* View Total requests
-* View Failed requests
-* View Requests by TLS version
-* View Chart by HTTP status code
-* View  Response status trends for 2xx, 3xx, 4xx, 5xx etc.
+The **Azure Application Gateway - Traffic** dashboard provides insights on traffic. 
+
+Use this dashboard to view: 
+* Requests by client IP location
+* Total requests
+* Failed requests
+* Requests by TLS version
+* Chart by HTTP status code
+* Response status trends for 2xx, 3xx, 4xx, 5xx, and so on
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
