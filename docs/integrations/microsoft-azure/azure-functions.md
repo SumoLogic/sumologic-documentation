@@ -2,7 +2,7 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-description: The Sumo Logic app for Azure Functions helps you monitor activity in Azure Functions.
+description: The Sumo Logic app for Azure Functions enables seamless integration and monitoring of Azure Functions, providing insights and analytics to optimize serverless application performance and security.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
