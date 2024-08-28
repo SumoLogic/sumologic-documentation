@@ -1,6 +1,6 @@
 ---
 title: Improved Data Handling for Window and Threshold-Based SLOs (Observability)
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 keywords:
   - slo
   - observability

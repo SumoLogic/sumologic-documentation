@@ -2,7 +2,7 @@
 title: May 30, 2024 - Application Update
 keywords:
   - cloud siem
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 hide_table_of_contents: true
 authors:
   - url: https://www.sumologic.com/help/release-notes-cse/rss.xml

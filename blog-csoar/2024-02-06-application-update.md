@@ -1,7 +1,7 @@
 ---
 title: February 6, 2024 - Application Update
 hide_table_of_contents: true
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 authors:
   - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
     image_url: /img/release-notes/rss-orange.png

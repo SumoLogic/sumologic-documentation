@@ -1,6 +1,6 @@
 ---
 title: Symantec Endpoint Security C2C Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 keywords:
   - collection
   - symantec-endpoint-security

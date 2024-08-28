@@ -1235,7 +1235,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
+    image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
     authors:
       - url: https://www.sumologic.com/help/release-notes-service/rss.xml
         image_url: /img/release-notes/rss-orange.png
@@ -1266,7 +1266,7 @@ To add release notes with images:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg
+    image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
     authors:
       - url: https://www.sumologic.com/help/release-notes-service/rss.xml
         image_url: /img/release-notes/rss-orange.png
