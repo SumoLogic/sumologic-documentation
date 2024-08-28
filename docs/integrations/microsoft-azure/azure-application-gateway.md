@@ -166,6 +166,12 @@ Since this source contains logs from multiple regions, make sure that you do not
 :::
 
 
+##### Enabling Microsoft Defender for Cloud
+For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans-AppService.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
+
+
 ## Installing the Azure Application Gateway app
 
 Now that you have set up data collection, install the Azure Application Gateway Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -201,7 +207,7 @@ Use this dashboard to:
    * different operations used
    * most common errors
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Administrative-Operations.png')} alt="Azure Application Gateway Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Administrative-Operations.png')} alt="Azure Application Gateway Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Backend
 
@@ -216,7 +222,7 @@ Use this dashboard to view:
    * Chart by backend status code
    * Backend response status trends for 2xx, 3xx, 4xx, 5xx
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Backend.png')} alt="Azure Application Gateway Backend" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Backend.png')} alt="Azure Application Gateway Backend" style={{border: '1px solid gray'}} width="800" />
 
 ### Billing
 
@@ -231,7 +237,7 @@ Use this dashboard to view:
    * Fixed billable capacity units trend
    * Variable capacity units trend
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Billing.png')} alt="Azure Application Gateway Billing" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Billing.png')} alt="Azure Application Gateway Billing" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Failures
@@ -246,7 +252,7 @@ Use this dashboard to view:
    * Chart by error code and error info
    * Failed requests by user agent and HTTP method
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Failures.png')} alt="Azure Application Gateway Failures" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Failures.png')} alt="Azure Application Gateway Failures" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Health
@@ -261,7 +267,7 @@ Use this dashboard to view:
 * Downtime by causes
 * Trend of unavailable, degraded, available, and so on
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Health.png')} alt="Azure Application Gateway Health" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Health.png')} alt="Azure Application Gateway Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency
 The **Azure Application Gateway - Latency** dashboard provides insights like application gateway total time, application gateway total time versus backend last byte response time, backend connect time versus backend first byte response time, and backend first byte response time versus backend last byte response time.
@@ -272,7 +278,7 @@ Use this dashboard to view:
    * Backend connect time versus backend first byte response time 
    * Backend first byte response time versus backend last byte response time
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Latency.png')} alt="Azure Application Gateway Latency" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Latency.png')} alt="Azure Application Gateway Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
 
@@ -287,7 +293,7 @@ Use this dashboard to view:
    * Unhealthy host count
    * View Current connections/sec trend
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Overview.png')} alt="Azure Application Gateway Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Overview.png')} alt="Azure Application Gateway Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 The **Azure Application Gateway - Performance** dashboard provides insights like total request rate, failed request rate, application gateway details, average active connections, capacity units, capacity unit utilization, current connections trend, throughput trend, sent bytes and received bytes.
@@ -303,7 +309,7 @@ Use this dashboard to view:
    * Throughput trend
    * Sent bytes and received bytes
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Performance.png')} alt="Azure Application Gateway Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Performance.png')} alt="Azure Application Gateway Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Security and Policy
 The **Azure Application Gateway - Security and Policy** and Policy dashboard provides details like total security events, recent security events, total denied policy events, total success policy events, total failed policy events, total recommendation events, and recent recommendation events.
@@ -317,7 +323,7 @@ Use this dashboard to view:
    * Total recommendation events
    * Recent recommendation events
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Security-and-Policy.png')} alt="Azure Application Gateway Security and Policy" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Security-and-Policy.png')} alt="Azure Application Gateway Security and Policy" style={{border: '1px solid gray'}} width="800" />
 
 ### Traffic
 The **Azure Application Gateway - Traffic** dashboard provides insights on traffic. 
@@ -330,7 +336,7 @@ Use this dashboard to view:
 * Chart by HTTP status code
 * Response status trends for 2xx, 3xx, 4xx, 5xx, and so on
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-gateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting
 
