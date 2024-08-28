@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for CrowdStrike - FDR Host Inventory offers deep visibility into your organization's host inventory managed by CrowdStrike Falcon. This app enables you to monitor critical aspects of your infrastructure, including device status, operating systems, and manufacturers. The app also provides you with insights into the geographical distribution of devices and highlights potential risks by identifying abnormal device statuses. With detailed logs on software details, network configurations, and policy applications, this app helps you to maintain an up-to-date and secure host inventory, ensuring a robust security posture across your environment.
 
+:::info
+This app includes [built-in monitors](#crowdstrike-fdr-host-inventory-alerts). For details on creating custom monitors, refer to [Create monitors for CrowdStrike FDR Host Inventory app](#create-monitors-for-crowdstrike-fdr-host-inventory-app).
+:::
+
 ## Log types
 
 This app uses Sumo Logic’s CrowdStrike-FDR Host Inventory Source to collect [inventory logs](https://falcon.crowdstrike.com/login/?next=%2Fdocumentation%2F84%2Fhost-and-host-group-management-apis#managing-hosts) from CrowdStrike-FDR Host Inventory.
@@ -122,18 +126,6 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **CrowdStrike - FDR Host Inventory Overview** dashboard offers a comprehensive view of the devices monitored by CrowdStrike Falcon Data Replicator (FDR) to enhance the environment’s security posture. It provides key insights into the total number of devices categorized by platform, status, and manufacturer. This dashboard also highlights the geographical distribution of devices and risky devices. Additionally, it provides critical information on device operating systems, latest-seen devices, software details, network configurations, and policy details.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/CrowdStrike-FDR-Host-Inventory/CrowdStrike-FDR-Host-Inventory-Overview.png')} alt="CrowdStrike - FDR Host Inventory Overview" />
 
-## Upgrading the CrowdStrike FDR Host Inventory app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the CrowdStrike FDR Host Inventory app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Create monitors for CrowdStrike FDR Host Inventory app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
@@ -146,3 +138,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:--|:--|:--|:--|
 | `Device Prevention Policy Not Applied` | This alert is fired when the user has not applied the device prevention policy. CrowdStrike prevention policies are rules that determine how the CrowdStrike agent detects and prevents malware on endpoints. They are organized by operating system in the CrowdStrike console, and each operating system has its own set of policies. | Critical | Count > 0 | 
 | `Device Sensor Update Policy Not Applied` | This alert is fired when the user has not applied the device sensor update policy. CrowdStrike's Device Sensor Update Policy allows customers to choose which parts of their fleet should install the latest sensor release, or an older version. This policy is part of the Falcon platform's protection mechanisms, which use AI and machine learning to identify and address advanced threats. | Critical | Count > 0|
+
+## Upgrading the CrowdStrike FDR Host Inventory app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CrowdStrike FDR Host Inventory app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
