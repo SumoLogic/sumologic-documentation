@@ -439,18 +439,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Jira app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Jira app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Jira dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -561,3 +549,15 @@ Use this dashboard to:
 * Identify unusual user activity and closely monitor those users.
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
+
+## Upgrading the Jira app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jira app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
