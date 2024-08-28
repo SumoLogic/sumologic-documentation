@@ -551,7 +551,7 @@ The following parameters are for a host metrics source. 
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `sourceType` | String | Yes |  | SystemStats | not modifiable |
-| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source/). When omitted, all available host metrics will be collected. | modifiable |
+| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/). When omitted, all available host metrics will be collected. | modifiable |
 | `interval` (ms) | Integer | Yes |  | Time interval in milliseconds of the metrics collection. We recommend 60 second granularity (60000). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m). | modifiable |
 | `hostName` | String | No |  | Host from which the metrics are collected. | modifiable |
 
