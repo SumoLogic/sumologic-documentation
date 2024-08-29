@@ -192,6 +192,12 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
 :::
 
+##### Enabling Microsoft Defender for Cloud
+For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-azure-portal-enablement?tabs=enable-storage-account). If you have an existing settings, click **Edit Settings**.
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans-AppService.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
+
+
 ## Installing the Azure Storage app
 
 Now that you have set up data collection, install the Azure Storage Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-storage-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.

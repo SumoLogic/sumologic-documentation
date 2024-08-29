@@ -25,6 +25,10 @@ For more information on supported metrics in Azure Application Gateway v1 and Az
 
 ## Setup
 
+:::note
+This app support only Application Gateway v2 as  Application Gateway V1 will soon be deprecated
+:::
+
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -137,6 +141,12 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-logs.png')} alt="Azure Application Gateway logs" style={{border: '1px solid gray'}} width="800" /> 
 
+:::note
+WAF logs and metrics will be available for WAF V2 tier and only after a WAF Policy has been associated with application gateway. Refer to the azure docs for more information.
+Go to **Settings -> Configuration** to check your application gateway tier
+<img src={useBaseUrl('img/integrations/microsoft-azure/appgatway-tier-setting.png')} alt="Application Gateway Tier Settings" width="750"/>
+:::
+
 #### Activity Logs
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
@@ -144,11 +154,6 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
-
-##### Enabling Microsoft Defender for Cloud
-For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
-<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
-<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans-AppService.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure Application Gateway app
 
