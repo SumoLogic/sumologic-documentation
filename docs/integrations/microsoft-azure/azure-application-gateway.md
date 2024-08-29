@@ -26,7 +26,7 @@ For more information on supported metrics in Azure Application Gateway v1 and Az
 ## Setup
 
 :::note
-This app support only Application Gateway v2 as  Application Gateway V1 will soon be deprecated
+This app supports only Application Gateway V2 since Application Gateway V1 will soon be deprecated.
 :::
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
