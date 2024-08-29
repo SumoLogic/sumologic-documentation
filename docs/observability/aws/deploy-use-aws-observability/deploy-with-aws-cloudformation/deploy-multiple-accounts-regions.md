@@ -20,7 +20,7 @@ Given that we use an account alias, we recommend you use StackSets to automati
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
     * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
+    * Download the AWS Observability Solution template (S3 link for Cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
     :::note
     If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
     :::
