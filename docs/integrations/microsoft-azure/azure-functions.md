@@ -164,7 +164,7 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 ##### Enabling health check metric
 
-For getting health check metric, make sure you enable health check in the Monitoring tab.
+For getting health check metric, make sure you enable **Health check** under the **Monitoring** dropdown.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric.png')} alt="Enable Health Check Metric" style={{border: '1px solid gray'}} width="800" />
 
