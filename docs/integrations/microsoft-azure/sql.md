@@ -16,18 +16,18 @@ Azure SQL Database is a managed relational cloud database service. The Sumo Logi
 The Sumo Logic app for Azure SQL app uses the following log types:
 
 * Basic Metric
-* QueryStoreRuntimeStatisticsEvent
-* QueryStoreWaitStatisticsEvent
-* DatabaseWaitStatisticsEvent
-* BlockEvent
-* ErrorEvent
+* Query Store Runtime Statistics Event
+* Query Store Wait Statistics Event
+* Database Wait Statistics Event
+* Block Event
+* Error Event
 * Insight
 * TimeoutEvent
 * Automated Tuning
 * SQL Security Audit
 * Activity Logs
 
-For details on Azure SQL logs and metrics, see [Metrics and logs available](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available) in Azure help.
+For details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
 
 
 ### Sample log messages
