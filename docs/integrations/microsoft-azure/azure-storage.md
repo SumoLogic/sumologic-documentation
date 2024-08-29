@@ -195,7 +195,7 @@ Since this source contains logs from multiple regions make sure that you do not 
 ##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-azure-portal-enablement?tabs=enable-storage-account). If you have an existing settings, click **Edit Settings**.
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
-In **Defender Plans** Settings page toggle the **Azure Storage** status under **Cloud Workload Protection** section.
+In **Defender Plans** settings page turn on the **Azure Storage** status under **Cloud Workload Protection** section.
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans-Storage.png')} alt="Cloud Defender Plans Storage" style={{border: '1px solid gray'}} width="800" />
 
 
