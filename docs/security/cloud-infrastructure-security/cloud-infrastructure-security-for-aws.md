@@ -507,7 +507,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 To most efficiently use the solution to address security concerns, we recommend using the dashboards in the following workflow:
 1. Look at the [Risk Overview](#risk-overview) dashboard to get an overall picture of the security posture of your environment. Pivot or browse to other dashboards to see details in each area.
 1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention.
-1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
+1. View the [Security Control Failures](#security-control-failures---aws-security-hub) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
 1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation.
 1. Pivot into the [Risk Overview](#risk-overview) dashboard for specific resources that have issues to see any related activity. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
 
@@ -554,12 +554,7 @@ The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (C
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-siem-insights.png')} alt="Cloud SIEM Insights dashboard" style={{border: '1px solid gray'}} width="600"/>
 
-
-### Security Control Failures dashboards
-
-The Security Control Failures dashboards identify misconfigurations in your environment that may leave you vulnerable to attackers.
-
-#### Security Control Failures - AWS Security Hub
+### Security Control Failures - AWS Security Hub
 
 The **Security Control Failures - AWS Security Hub** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
 
