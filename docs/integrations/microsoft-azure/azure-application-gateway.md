@@ -54,7 +54,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
-### Configure field extraction rules
+### Configure Field Extraction Rules
 
 Create the following field extraction rules (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
