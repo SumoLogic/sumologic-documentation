@@ -205,7 +205,7 @@ Select this authentication option if the vendor API does not require any form of
         },
         {
             "id": 45346,
-            "ts": "024-02-01T16:07:57Z",
+            "ts": "2024-02-01T16:07:57Z",
             "type": "security",
             "msg": "some other security event details"
         }
