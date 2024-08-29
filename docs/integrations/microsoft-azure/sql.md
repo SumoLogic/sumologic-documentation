@@ -240,13 +240,13 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
-:::note
+
+##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
-:::
-
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
-
+In **Defender Plans** settings page turn on the **Databases** status under **Cloud Workload Protection** section.
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
+
 
 ## Installing the Azure SQL app
 
