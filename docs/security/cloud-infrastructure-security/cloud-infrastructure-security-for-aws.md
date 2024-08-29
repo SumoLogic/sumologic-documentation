@@ -216,7 +216,7 @@ For information about where your Sumo Logic data is stored in AWS, see [Where is
 
 #### Multi-region enablement 
 
-Cloud Infrastructure Security supports collecting data from multiple regions if you have any of following services running in multiple regions in your AWS infrastructure. You can enable multiple regions when you perform the steps in the [Create new source: Deploy AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#create-new-source-deploy-aws) section below.
+Cloud Infrastructure Security supports collecting data from multiple regions if you have any of the following services running in multiple regions in your AWS infrastructure. You can enable multiple regions when you perform the steps in the [Create new source: Deploy AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#create-new-source-deploy-aws) section below.
 
 ##### GuardDuty
 
