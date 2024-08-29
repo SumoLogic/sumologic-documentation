@@ -214,6 +214,56 @@ For information about where your Sumo Logic data is stored in AWS, see [Where is
    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
    :::
 
+#### Multi-region enablement 
+
+Cloud Infrastructure Security supports collecting data from multiple regions if you have any of following services running in multiple regions in your AWS infrastructure. You can enable multiple regions when you perform the steps in the [Create new source: Deploy AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#create-new-source-deploy-aws) section below.
+
+##### GuardDuty
+
+While deploying, enter comma-separated values for regions in the following section:
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-guardduty-multi-regions.png')} alt="GuardDuty regions" style={{border: '1px solid gray'}} width="700"/>
+
+##### SecurityHub
+
+While deploying, enter comma-separated values for regions in the following section:
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-hub-multi-regions.png')} alt="Security Hub regions" style={{border: '1px solid gray'}} width="700"/>
+
+##### CloudTrail
+
+On the AWS side, [configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) to deliver log files from multiple regions to a single S3 bucket for a single account, and use that S3 bucket in the following section:
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloudtrail-multi-regions.png')} alt="CloudTrail S3 bucket configuration" style={{border: '1px solid gray'}} width="700"/>
+
+:::note
+If an S3 bucket is created by the Cloud Infrastructure Security solution, then make sure on the AWS side that it is a central bucket for CloudTrail logs for all regions from the AWS side.
+:::
+
+##### AWS Firewall Manager
+
+On the AWS side, [configure Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) to deliver log files from multiple regions to a single S3 bucket for a single account, and use that S3 bucket in the following section: 
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-network-firewall-multi-regions.png')} alt="Network Firewall S3 bucket configuration" style={{border: '1px solid gray'}} width="700"/>
+
+:::note
+If the S3 bucket is created by the Cloud Infrastructure Security solution, then make sure on the AWS side that it is a central bucket for Network Firewall for all regions.
+:::
+
+##### AWS WAF
+
+Configure WAF in each region to send logs to [Kinesis data firehose destination](https://docs.aws.amazon.com/waf/latest/developerguide/logging-destinations.html), and from there, use the same [Sumo Logic’s Kinesis HTTP URL](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) in Firehose configuration to send logs to Sumo Logic.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-waf-multi-regions-1.png')} alt="Firehose destination settings" style={{border: '1px solid gray'}} width="700"/>
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-waf-multi-regions-2.png')} alt="Sumo Logic destination settings in Firehose" style={{border: '1px solid gray'}} width="700"/>
+
+:::note
+If Sumo Logic’s Kinesis Firehose source is created by the Cloud Infrastructure Security solution, then make sure on the AWS side that the same Sumo Logic Kinesis HTTP URL is used while configuring the WAF Logging Kinesis destination.
+:::
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-waf-multi-regions-3.png')} alt="Network Firewall S3 bucket configuration" style={{border: '1px solid gray'}} width="700"/>
+
 ### Create new source: Check AWS role permission
 
 If you selected **Create New Source** for any source on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws), perform the steps below.
@@ -296,7 +346,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 
        In this section, you configure Amazon GuardDuty. If fields are missing, or you need to change them, do the following:
        * **4.1 GuardDuty service configuration**
-          * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent.
+          * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
        * **4.2 GuardDuty Sumo log source configuration**
           * **Create Sumo Logic HTTP logs source**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, enter your existing source category name for the GuardDuty logs. 
@@ -311,7 +361,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        * **5.1 CloudTrail service configuration** 
           * **CloudTrail Regions**. The region from which CloudTrail Data should be sent. 
              :::note
-             If you have multiple regions, on the AWS side [configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) to deliver log files from the regions to a single S3 bucket for a single account, and use that S3 bucket in **5.3 CloudTrail S3 bucket configuration** below.
+             If you have multiple regions, on the AWS side [configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) to deliver log files from the regions to a single S3 bucket for a single account, and use that S3 bucket in **5.3 CloudTrail S3 bucket configuration** below. For more information, see [Multi-region enablement](#multi-region-enablement) above.
              :::
        * **5.2 CloudTrail Sumo log source configuration**. 
           * **Create Sumo Logic S3 logs source for CloudTrail**. **Yes** is the default value. Select **No** if you already have a source.
@@ -328,7 +378,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 
        In this section, you configure AWS Security Hub. If fields are missing, or you need to change them, do the following:
        * **6.1 Security Hub Service Configuration**. 
-          * **Security Hub Regions**. The regions from which Security Hub data should be sent.
+          * **Security Hub Regions**. The regions from which Security Hub data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
        * **6.2 Security Hub Sumo Log Source configuration**.
           * **Create Sumo Logic HTTP logs source**. **Yes** is the default value. Select **No** if you already have a logs source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, provide an existing source category name from the Security Hub logs.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid gray'}} width="700"/>
@@ -341,7 +391,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        * **7.1 AWS Firewall Manager Policy Regions Configuration**.
           * **AWS WAF Policy Regions**. The region from which AWS WAF data should be sent. 
              :::note
-             If you have multiple regions, on the AWS side [configure Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) to deliver log files from multiple Regions to a single S3 bucket for a single account, and use that S3 bucket in section **7.4 Firewall Manager - S3 Bucket Configuration** above.
+             If you have multiple regions, on the AWS side [configure Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) to deliver log files from multiple Regions to a single S3 bucket for a single account, and use that S3 bucket in section **7.4 Firewall Manager - S3 Bucket Configuration** above. For more information, see [Multi-region enablement](#multi-region-enablement) above.
              :::
           * **AWS Network Firewall Policy Regions**. The regions from which AWS Network Firewall data should be sent.
        *  **7.2 Firewall Manager Details - Kinesis Firehose Delivery Stream Source WAF Configuration**. 
@@ -362,9 +412,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
           * **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. The source category name to be created. If you selected **No** in the previous field, enter an existing source category name. 
        * **7.4 Firewall Manager - S3 Bucket Configuration**.
-          * **Create AWS S3 Bucket**. **Yes** is the default value. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs. 
+          * **Create AWS S3 Bucket**. **Yes** is the default value. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs.
              :::note
-             If the S3 bucket is created by the Cloud Infrastructure Security solution, then make sure on the AWS side that it's a central [S3 bucket for Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) for all regions.
+             If the S3 bucket is created by the Cloud Infrastructure Security solution, then make sure on the AWS side that it's a central [S3 bucket for Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) for all regions. For more information, see [Multi-region enablement](#multi-region-enablement) above.
              :::
           * **Network Firewall Delivery Bucket Prefix**. The Network Firewall Log Delivery S3 bucket prefix.
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
