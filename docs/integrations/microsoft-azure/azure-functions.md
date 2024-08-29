@@ -135,7 +135,6 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 ### Configure logs collection
 
-
 #### Diagnostic logs
 
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
