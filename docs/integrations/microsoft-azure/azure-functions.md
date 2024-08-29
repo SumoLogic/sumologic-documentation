@@ -191,7 +191,7 @@ Use this dashboard to:
 * View recent resource and service health incidents.
 * View distribution of service and resource health by incident type.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Overview.png')} alt="Azure Functions Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cost
 
@@ -202,7 +202,7 @@ Use this dashboard to:
 * Review cost trends and identify areas where you can optimize spending.
 * Access detailed billing information and cost breakdowns.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Cost.png')} alt="Azure Functions Cost dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Error
 
@@ -213,7 +213,7 @@ Use this dashboard to:
 * Identify and diagnose recurring error patterns.
 * Review error logs and detailed reports to improve function reliability.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Error.png')} alt="Azure Functions Error dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Memory
 
@@ -224,7 +224,7 @@ Use this dashboard to:
 * Identify and address memory-related performance issues.
 * Analyze trends in memory usage to optimize function performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Memory.png')} alt="Azure Functions Memory dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
@@ -235,7 +235,7 @@ Use this dashboard to:
 * Diagnose network-related issues and connectivity problems.
 * Monitor network usage and optimize network configuration.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Network.png')} alt="Azure Functions Network dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations
 
@@ -246,7 +246,7 @@ Use this dashboard to:
 * Review deployment activities and execution metrics.
 * Analyze operational trends and optimize function management.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Operations.png')} alt="Azure Functions Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS Statistics
 
@@ -257,7 +257,7 @@ Use this dashboard to:
 * Monitor Current assemblies, threads, and handles for optimal performance.
 * Identify and address OS-related performance issues.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-OS-Statistics.png')} alt="Azure Functions OS Statistics dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 
@@ -268,7 +268,7 @@ Use this dashboard to:
 * Identify performance bottlenecks and optimize function execution.
 * Review performance metrics and trends to ensure optimal function performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Performance.png')} alt="Azure Functions Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
@@ -278,7 +278,7 @@ Use this dashboard to:
 * View recent resource and service health incidents.
 * View distribution of service and resource health by incident type.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Health.png')} alt="Azure Functions health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
@@ -291,7 +291,7 @@ Use this dashboard to:
 * Identify High Impact recommendations.
 * View recent recommendation events and navigate to the affected resource.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Policy-and-Recommendations.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Policy-and-Recommendations.png')} alt="Azure Functions - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -302,7 +302,7 @@ Use this dashboard to:
 * View Top 10 operations that caused the most errors.
 * View recent read, write, and delete operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Administrative-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Administrative-Operations.png')} alt="Azure Functions Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrading the Azure Functions app (Optional)
 
