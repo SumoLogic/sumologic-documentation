@@ -46,7 +46,7 @@ Follow the below steps to install the collector and add uniquely identifiable ta
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
-< Add the auto-discovery page screenshot >
+<!-- Add the auto-discovery page screenshot -->
 
 ### Step 2: Data configuration
 
