@@ -51,7 +51,7 @@ Follow the below steps to install the collector and add uniquely identifiable ta
 ### Step 2: Data configuration
 
 :::info
-A new source template will always be created with the latest verion of the source template.
+A new source template will always be created with the latest version of the source template.
 :::
 
 Follow the below steps to create a data collection configuration to collect the required logs and link them to all the collectors with the help of tags:
