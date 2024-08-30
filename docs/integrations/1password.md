@@ -17,9 +17,11 @@ This app includes [built-in monitors](#1password-alerts). For details on creatin
 
 ## Log types  
 
-The 1Password App uses following logs:
+The 1Password app uses following logs:
+
 * [Sign-in Events](https://support.1password.com/events-api-reference/#signinattemptitems-object)
 * [Item Usage](https://support.1password.com/events-api-reference/#itemusage-object)
+* [Audit Events Logs](https://developer.1password.com/docs/events-api/audit-events)
 
 ### Sample log messages
 
@@ -76,6 +78,43 @@ The 1Password App uses following logs:
     }
 ```
 
+```json title="Audit Events Log"
+{
+  "uuid": "56YE2TYN2VFYRLNSHKPW5NVT5E",
+  "timestamp": "2023-03-15T16:33:50-03:00",
+  "actor_uuid": "4HCGRGYCTRQFBMGVEGTABYDU2V",
+  "actor_details": {
+    "uuid:": "4HCGRGYCTRQFBMGVEGTABYDU2V",
+    "name": "Jeff Shiner",
+    "email": "jeff_shiner@agilebits.com"
+  },
+  "action": "join",
+  "object_type": "gm",
+  "object_uuid": "pf8soyakgngrphytsyjed4ae3u",
+  "aux_id": 9277034,
+  "aux_uuid": "K6VFYDCJKHGGDI7QFAXX65LCDY",
+  "aux_details": {
+    "uuid": "K6VFYDCJKHGGDI7QFAXX65LCDY",
+    "name": "Wendy Appleseed",
+    "email": "wendy_appleseed@agilebits.com"
+  },
+  "aux_info": "A",
+  "session": {
+    "uuid": "A5K6COGVRVEJXJW3XQZGS7VAMM",
+    "login_time": "2023-03-15T16:33:50-03:00",
+    "device_uuid": "lc5fqgbrcm4plajd8mwncv2b3u",
+    "ip": "192.0.2.254"
+  },
+  "location": {
+    "country": "Canada",
+    "region": "Ontario",
+    "city": "Toronto",
+    "latitude": 43.5991,
+    "longitude": -79.4988
+  }
+}
+```
+
 ### Sample queries
 
 ```sql title="Successful Sign-in"
@@ -98,6 +137,22 @@ _sourceCategory="1pw"
 _sourceCategory=1pw action
 | json "timestamp", "user.name", "client.app_name", "client.platform_name", "client.platform_version", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city", "action", "vault_uuid", "item_uuid" as timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 | count by timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
+```
+
+```sql title="Recent Access Activities"
+_sourceCategory="app/"
+| json "uuid", "object_type", "action", "actor_details.email", "aux_details.name", "aux_details.email", "aux_info" as uuid, object_type, action, actor_email, aux_name, aux_email, aux_info nodrop
+
+//global filter
+| where action matches "*"
+| where object_type matches "*"
+
+| where object_type in ("uva", "gva")
+| count as frequency by _messageTime, actor_email, object_type, action, aux_name, aux_email, aux_info
+| sort by _messageTime
+| formatDate(_messageTime, "dd-MM-yyyy HH:mm:ss") as time
+| fields time, actor_email, object_type, action, aux_name, aux_email, aux_info
+| fields -_messageTime
 ```
 
 ## Collecting logs for 1Password
