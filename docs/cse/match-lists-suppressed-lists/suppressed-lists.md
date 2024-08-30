@@ -50,24 +50,18 @@ Match Lists are for when you want to use the existence or absence of an indicato
 
 ## How are Suppressed Lists used? 
 
-Cloud SIEM uses Suppressed Lists the same way it uses [Match Lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, Cloud SIEM will compare items on that list only to Record fields that contain domains.
+Cloud SIEM uses Suppressed Lists similar to how it uses [Match Lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, Cloud SIEM will compare items on that list only to Record fields that contain domains.
 
 When a Record contains a value that matches one or more Suppressed Lists, two fields in the Record get populated:
 
 * `listMatches`. Cloud SIEM adds the names of the Suppressed Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the SourceIP address in the “vuln_scanners” Suppressed List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
 * `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s SourceIp is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” Suppressed List, the `matchedItems` field would look like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
-Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search. 
+Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.
 
-In a rule, you look for matches by extending  a rule expression with an `array_contains` function, for example:
+**If any of the entities within the Record match one of the items listed in a suppressed list, then suppressed Signals will be created for that entity across all rules.** This means that these Signals will not contribute to the Activity Score of an entity, nor will the Signals contribute to Insight generation.
 
-`... AND NOT array_contains(listMatches, "vuln_scanners")`
-
-If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
-
-If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of \['vuln_scanners'\]. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
-
-For more information about referring to Suppressed List data in rules, see [Match Lists](/docs/cse/match-lists-suppressed-lists) in the *About Cloud SIEM Rules* topic.
+For more information about Signal Suppression mechanims, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
 
 
 ## Suppressed List limitations 
