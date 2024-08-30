@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. To participate, contact your Sumo Logic account executive.
 :::
 
-The Sumo Logic distribution for OpenTelemetry Collector facilitates remote management of data collection configurations, enabling seamless setup from the Sumo Logic UI and deployment to one or more collectors.
+The Sumo Logic Distribution for OpenTelemetry Collector facilitates remote management of data collection configurations, enabling seamless setup from the Sumo Logic UI and deployment to one or more collectors.
 
 ## Remote Management features
 
