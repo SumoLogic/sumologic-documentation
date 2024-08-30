@@ -87,7 +87,7 @@ Follow the below steps to upgrade the source template, if all the collectors ass
 
 To upgrade the source template with incompatible collectors:
 
-There will be incompatible collectors if the collectors associated with the selected source template is not supported for the upgrade. Follow the below steps to upgrade the source template if there are incompatible collectors:
+There will be incompatible collectors if the collectors associated with the selected source template are not supported for the upgrade. Follow the below steps to upgrade the source template if there are incompatible collectors:
 
 :::note
 You cannot upgrade your source template until all your linked collectors are compatible with the version upgrade.
@@ -96,9 +96,9 @@ You cannot upgrade your source template until all your linked collectors are com
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the Source Template that you need to upgrade, and click **Upgrade** button.
 1. If required, change the required configuration in the Source Template configuration page, and click **Next**.
-1. Navigate to **Preview Collector(s)** section to view the list of collectors that are compatible and incompatible to the new version of the source template. Follow the either of the below steps if you have incompatbe collectors:
+1. Navigate to **Preview Collector(s)** section to view the list of collectors that are compatible and incompatible to the new version of the source template. Follow the either of the below steps if you have incompatible collectors:
     - Upgrade the collector version to the supported version. Or,
-    - Create a new source template and link the required collectors by collector name and collector tags. Also, delink the collectors added in the new source template in the exisiting source template.
+    - Create a new source template and link the required collectors by collector name and collector tags. Also, delink the collectors added in the new source template to the existing source template.
 
 ## Delete a Source Template
 
