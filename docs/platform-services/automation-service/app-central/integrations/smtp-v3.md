@@ -30,8 +30,8 @@ However, for optimal results with HTML templates, we recommend clicking on the t
 
 ## Summary
 
-* **Raw Text Message** - Avoid clicking on the text field after writing to prevent formatting issues.
-* **HTML Template** - Clicking on the text field after writing is recommended for the best formatting, though your email should still display correctly without this step.
+* **Raw Text Message**. Avoid clicking on the text field after writing to prevent formatting issues.
+* **HTML Template**. Clicking on the text field after writing is recommended for the best formatting, though your email should still display correctly without this step.
 
 ## Category
 
