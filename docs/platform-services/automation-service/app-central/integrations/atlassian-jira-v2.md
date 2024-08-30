@@ -34,38 +34,40 @@ Jira is a proprietary issue tracking product developed by Atlassian that allows 
 
 ## Atlassian Jira V2 configuration
 
-1. Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="400"/>
+Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
 
 ## Create an API token
 
-1. Create an API token from your Atlassian account.
-1. Log in to (https://id.atlassian.com/manage-profile/security/api-tokens)
-1. Click Create API token.
-2. From the dialog that appears, enter a memorable and concise Label for your token and click Create.
-3. Click Copy to clipboard, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="400"/>
+Create an API token from your Atlassian account:
+1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
+1. Click **Create API token**.
+1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
+1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
 
 ## Revoke an API token
 
-1. A revoked token no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token.
-2. To revoke an API token:
-3. Log in to (https://id.atlassian.com/manage-profile/security/api-tokens).
-4. Select Revoke next to the API token that you want to revoke.
-5. To revoke all API tokens for your account, select Revoke all API tokens.
+A revoked token no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
+1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
+1. Select **Revoke** next to the API token that you want to revoke.
+1. To revoke all API tokens for your account, select **Revoke all API tokens**.
 
 ## Atlassian Jira V2 in Automation Service and Cloud SOAR
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-4" width="200"/>
-1. Label and Populate all the required fields (\*).
-    * **URL API**. https://your-atlassian-site.atlassian.net/
-    * **Username**. Your email address.
-    * **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
+1. After the list of the integrations appears, search for the integration and click on the row.
+1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-4" width="100"/>
+1. Label and populate all the required fields (\*).
+    1. **Label**. Add a name for the resource.
+    1. **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`.
+    1. **Username**. Enter your email address.
+    1. **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
 1. Optional fields in the resource are used for actions.
-    * Populate Jira Project Name when using 'Issues Jira Daemon' action.
-    * Populate Cloud SOAR URL and Cloud SOAR JWT (token) when using '**Add Issue Attachment To Incident**' action.
+    * Populate **Jira Project Name** when using the Issues **Jira Daemon** action.
+    * Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.
 1. Click **SAVE**.
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-7" width="250"/>
+1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-7" width="150"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-6" width="250"/>
 
 ## Category
