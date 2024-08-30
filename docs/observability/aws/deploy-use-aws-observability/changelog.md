@@ -16,6 +16,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 
 Updates:
 * Added support for new sumo korea (kr) deployment.
+* All python lambda runtimes have been updated to python3.12 along with libraries updated.
 
 ## v2.9.0, 02-Aug-2024
 
