@@ -2,14 +2,20 @@
 id: sophos
 title: Sophos
 sidebar_label: Sophos
-description: The Sumo Logic app for Sophos offers robust security monitoring and threat detection capabilities by analyzing your organization's Sophos Alerts and Events.
+description: The Sumo Logic app for Sophos offers robust security monitoring and threat detection capabilities by analyzing your organization's Sophos alerts and events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="40"/>
 
-The Sumo Logic app for Sophos provides robust security monitoring and threat detection capabilities, leveraging detailed data from Sophos security solutions. This app includes pre-configured dashboards that offer deep insights into security events and alerts, enabling security teams to quickly identify, analyze, and respond to potential threats. This app provides a comprehensive view of all security events, categorized by severity and type, with visual tools such as geo-location mapping and event timelines to help prioritize incident response. Additionally, it focuses on alert severity, sources, and affected products, highlighting trends and common issues that may require immediate attention. By analyzing the frequency and type of alerts, security teams can track evolving threats and enhance their defence strategies. This app also includes a real-time recent alerts section, allowing for quick assessment and response to active threats. Overall, the Sumo Logic app for Sophos equips organizations with the necessary tools to strengthen their security posture and protect against sophisticated cyber threats. 
+The Sumo Logic app for Sophos delivers robust security monitoring and threat detection capabilities by harnessing detailed data from Sophos security solutions. This app features pre-configured dashboards that provide deep insights into security events and alerts, enabling security teams to quickly identify, analyze, and respond to potential threats.
+
+With a comprehensive view of all security events, categorized by severity and type, the app offers visual tools such as geo-location mapping and event timelines to help prioritize incident response. It also emphasizes alert severity, sources, and affected products, highlighting trends and common issues that may require immediate attention.
+
+By analyzing the frequency and types of alerts, security teams can track evolving threats and refine their defense strategies. The app also includes a real-time recent alerts section, allowing for rapid assessment and response to active threats.
+
+Overall, the Sumo Logic app for Sophos equips organizations with the essential tools to strengthen their security posture and defend against sophisticated cyber threats.
 
 :::info
 This app includes [built-in monitors](#sophos-alerts). For details on creating custom monitors, refer to [Create monitors for Sophos app](#create-monitors-for-sophos-app).
