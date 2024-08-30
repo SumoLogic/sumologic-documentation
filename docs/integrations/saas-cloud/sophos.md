@@ -2,7 +2,7 @@
 id: sophos
 title: Sophos
 sidebar_label: Sophos
-description: The Sumo Logic app for Sophos offers robust security monitoring and threat detection capabilities by analyzing your organization's Sophos Alerts and Events.
+description: The Sumo Logic app for Sophos offers robust security monitoring and threat detection capabilities by analyzing your organization's Sophos alerts and events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
