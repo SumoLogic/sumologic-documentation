@@ -124,12 +124,9 @@ The Sumo Logic app for Sophos includes a comprehensive set of monitors designed 
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Sophos - Blocklisted Alerts` | This alert is fired when blocklisted alerts are generated, signaling a critical security event.
- | Critical | Count > 0 |
-| `Sophos - High Severity Alerts` | This alert is fired upon generation of high-severity alerts, indicating significant security threats.
- | Critical | Count > 0 | 
-| `Sophos - High Severity Events` | This alert is fired when high-severity events occur, highlighting major incidents that require immediate attention.
-| Critical | Count > 0 | 
+| `Sophos - Blocklisted Alerts` | This alert is fired when blocklisted alerts are generated, signaling a critical security event.| Critical | Count > 0 |
+| `Sophos - High Severity Alerts` | This alert is fired upon generation of high-severity alerts, indicating significant security threats. | Critical | Count > 0 | 
+| `Sophos - High Severity Events` | This alert is fired when high-severity events occur, highlighting major incidents that require immediate attention.|Critical | Count > 0 | 
 | `Sophos - Malicious Traffic Detected` | This alert is fired when suspicious network traffic, possibly linked to a botnet or malware attack, is detected, ensuring proactive threat mitigation. | Critical | Count > 0 | 
 | `Sophos - Malware Not Cleaned-Up` | This alert is fired when some detected malware remains unresolved for over 24 hours, indicating a potential persistence of the threat. | Critical | Count > 0 | 
 | `Sophos - Manual Cleanup Required` | This alert is fired when malware cannot be automatically removed, requiring manual intervention to eliminate the threat. | Critical | Count > 0 | 
