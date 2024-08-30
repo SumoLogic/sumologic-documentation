@@ -30,7 +30,7 @@ Deletion requests result in the permanent deletion of data. Once deleted, the da
 :::
 
 :::note
-Existing messages which are not marked for deletion might be seen duplicated for couple of seconds when the data deletion is running over the range of messages. These duplicated messages will automatically disappear once the data deletion is completed.
+During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
 :::
 
 You can create a data deletion request from either the **Logs** tab or any **Log Search**.
