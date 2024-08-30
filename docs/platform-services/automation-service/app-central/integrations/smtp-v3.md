@@ -19,7 +19,7 @@ Allows you to connect your mailbox with Cloud SOAR and send emails via SMTP prot
 
 * **Send Email** (*Notification*) - Send an email.
 
-## Guidelines for Composing the Email Body in the "Send Email" Action
+## Guidelines for composing the email body in the "Send Email" action
 
 1. Raw Text Message:
 When sending a plain text message in the email body, it's important to avoid clicking on the text field after you've written your message. If you do click on the text field, the formatting of your text may become distorted or "munged" together. To ensure your text retains its original formatting when delivered in the email, avoid interacting with the text field after composing your message.
