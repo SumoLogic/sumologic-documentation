@@ -98,7 +98,7 @@ You cannot upgrade your source template until all your linked collectors are com
 1. If required, change the required configuration in the Source Template configuration page, and click **Next**.
 1. Navigate to **Preview Collector(s)** section to view the list of collectors that are compatible and incompatible to the new version of the source template. Follow the either of the below steps if you have incompatible collectors:
     - Upgrade the collector version to the supported version. Or,
-    - Create a new source template and link the required collectors by collector name and collector tags. Also, delink the collectors added in the new source template to the existing source template.
+    - Create a new source template and link the required collectors by collector name and collector tags. Also, unlink the collectors added in the new source template to the existing source template.
 
 ## Delete a Source Template
 
