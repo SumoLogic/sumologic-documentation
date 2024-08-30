@@ -34,7 +34,7 @@ Utilize collector tags for grouping collectors, and associate Source templates t
 
 ### Step 1: Collector installation
 
-Follow the below steps to instal the collector and add uniquely identifiable tags:
+Follow the below steps to install the collector and add uniquely identifiable tags:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
 1. On the **OpenTelemetry Collection** page, click **Add Collector**.
