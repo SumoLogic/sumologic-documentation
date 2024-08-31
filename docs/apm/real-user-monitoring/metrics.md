@@ -42,6 +42,7 @@ See [W3C navigation timing](https://www.w3.org/TR/navigation-timing/) for detai
 **Calculation**. if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start) else connectionEnd - span start time (fetch start).
 
 ### `browser_time_to_request_end`  
+
 **Calculation**. responseStart - span start time (fetch start).
 
 ### `browser_time_to_fb`
