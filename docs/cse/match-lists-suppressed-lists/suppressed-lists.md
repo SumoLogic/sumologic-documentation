@@ -59,7 +59,7 @@ When a Record contains a value that matches one or more Suppressed Lists, two fi
 
 Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.
 
-**If any of the entities within the Record match one of the items listed in a suppressed list, then suppressed Signals will be created for that entity across all rules.** This means that these Signals will not contribute to the Activity Score of an entity, nor will the Signals contribute to Insight generation.
+**If any entities within the Record match items listed in a suppressed list, suppressed Signals will be generated for those entities across all rules**. Consequently, these Signals will not affect the entity's Activity Score or contribute to Insight generation.
 
 For more information about Signal Suppression mechanisms, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
 
