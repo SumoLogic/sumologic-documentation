@@ -17,7 +17,7 @@ This app includes [built-in monitors](#1password-alerts). For details on creatin
 
 ## Log types  
 
-The 1Password app uses following logs:
+The 1Password app uses the following logs:
 
 * [Sign-in Events](https://support.1password.com/events-api-reference/#signinattemptitems-object)
 * [Item Usage](https://support.1password.com/events-api-reference/#itemusage-object)
