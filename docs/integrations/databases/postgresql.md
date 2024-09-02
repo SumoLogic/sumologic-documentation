@@ -20,7 +20,7 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
 
-## Sample Logs and Queries
+## Sample log messages
 
 ```json title="Sample Kubernetes log message"
 {
@@ -35,7 +35,9 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
-This sample Query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
+## Sample queries
+
+This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
 ```txt title="Query String"
 _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
@@ -46,7 +48,7 @@ _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
 | count by date, time, severity, db, user, msg
 ```
 
-## Collecting Logs and Metrics from PostgreSQL
+## Collecting logs and metrics from PostgreSQL
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
 

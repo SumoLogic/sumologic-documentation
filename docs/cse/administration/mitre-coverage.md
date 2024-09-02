@@ -31,7 +31,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
@@ -178,7 +178,7 @@ Select the values to filter:
 
 ## Audit logging for MITRE ATT&CK coverage
 
-MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
 ```
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage

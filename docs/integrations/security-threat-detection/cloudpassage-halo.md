@@ -14,7 +14,7 @@ The CloudPassage Halo app helps you detect security violations and look for thre
 You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This app enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 
 
-## Collecting Logs for the CloudPassage Halo app
+## Collecting logs for the CloudPassage Halo app
 
 The CloudPassage Halo app uses the Halo REST API and AWS Lambda to collect Halo events.  
 
@@ -154,18 +154,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the CloudPassage Halo app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the CloudPassage Halo app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing CloudPassage Halo dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -198,3 +186,15 @@ View critical issues for the last 24 hours, outliers for the critical issues thr
 * **Outlier on Delta (today - yesterday) of Critical Issues.** View the outlier difference between the count of issues today and yesterday
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_CriticalEvents_Dashboard.png')} alt="cloudpassage dashboards" />
+
+## Upgrading the CloudPassage Halo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CloudPassage Halo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

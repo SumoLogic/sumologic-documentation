@@ -128,7 +128,7 @@ _sourceCategory="azure/aks" "kube-scheduler"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs for the Kubernetes and AKS - Control Plane
+## Collecting logs for the Kubernetes and AKS - Control Plane
 
 The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 

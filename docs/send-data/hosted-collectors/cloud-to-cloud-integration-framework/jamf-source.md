@@ -7,6 +7,7 @@ tags:
   - jamf
 description: Learn how to collect data from the Jamf platform.
 ---
+
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/jamf/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/jamf/example.json';

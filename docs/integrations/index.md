@@ -16,10 +16,7 @@ import Iframe from 'react-iframe';
 
 In this section, you'll find documentation for our **App Catalog**, encompassing Sumo Logic apps, webhooks, and other integrations.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the App Catalog, in the main Sumo Logic menu select **App Catalog**.
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the App Catalog, in the Sumo Logic top menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**.
- Kanso-->
+To access the App Catalog, in the main Sumo Logic menu select **App Catalog**.
 
 When you install our apps, they will be tailored to your source configurations and placed in your preferred folder. This setup allows you to start gaining insights from your data sources through [Dashboards](/docs/dashboards) and example searches designed for common use cases.
 
@@ -41,7 +38,7 @@ Watch this tutorial to learn how to use our **App Catalog**.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 :::

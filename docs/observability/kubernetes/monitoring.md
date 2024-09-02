@@ -32,7 +32,7 @@ Kubernetes views provide a visual representation of your Kubernetes stack.
 
 To navigate and analyze your Kubernetes environment, do the following:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Infrastructure Monitoring > Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  Kanso-->
 1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
 1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
 1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)

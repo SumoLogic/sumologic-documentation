@@ -17,7 +17,7 @@ The Sumo Logic app for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimiz
 
 The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
 
-### Sample log message 
+### Sample log messages
 
 ```json title="LTM Request Log"
 {
@@ -35,7 +35,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, a
 }
 ```
 
-### Sample query
+### Sample queries
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 
@@ -101,7 +101,7 @@ curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
-Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1. 
+Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
 
 Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`
@@ -118,18 +118,6 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the F5 - BIG-IP LTM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the F5 - BIG-IP LTM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing F5 - BIG-IP LTM dashboards
 
@@ -189,3 +177,15 @@ Use this dashboard to:
 * Review user requests and application access by users.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
+
+## Upgrading the F5 - BIG-IP LTM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the F5 - BIG-IP LTM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -47,7 +47,7 @@ _sourceCategory=elb*
 ```
 
 
-## Collecting Logs for the AWS Elastic Load Balancing App
+## Collecting logs for the AWS Elastic Load Balancing App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 

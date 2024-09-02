@@ -36,7 +36,7 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 ```
 
 
-## Collecting Logs for Google Cloud Storage
+## Collecting logs for Google Cloud Storage
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Storage.
 
@@ -137,18 +137,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Cloud Storage app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Cloud Storage app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Cloud Storage dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -221,3 +209,15 @@ See information about buckets in Google Cloud Storage, including operations by b
 **Operations by Bucket - Outlier.** Shows the trends in operations by buckets based on outliers in the last 24 hours on a line graph.
 
 **Operations Over Time.** Shows number of operations over time in the last 24 hours on a column graph.
+
+## Upgrading the Google Cloud Storage app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Storage app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

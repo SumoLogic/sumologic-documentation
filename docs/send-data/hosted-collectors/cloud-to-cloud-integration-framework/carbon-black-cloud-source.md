@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
 
-The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
+The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Observations Search, Processes Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
 The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black).
@@ -41,11 +41,11 @@ To grant access to your data you'll need to provide credentials from Carbon Blac
 * **livequery.manage** - create, read
 * **org.search.events** - create, read
 
-See the following Carbon Black documents for details on how to
-authenticate to each API:
+See the following Carbon Black documents for details on how to authenticate to each API:
 
-* [Carbon Black Cloud API](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/)
-* [Enriched Events Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/cb-defense/latest/platform-search-api-enriched-events/#authentication)
+* [Carbon Black Cloud API](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#creating-an-api-key)
+* [Observations Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/observations-api/)
+* [Processes Search API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/platform-search-api-processes/)
 * [Alerts API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/alerts-api/)
 
 ### Source configuration
@@ -70,6 +70,15 @@ To configure a Carbon Black Cloud Source:
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.
 
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `CarbonBlack` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `Cloud` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
+| `_siemEventID` | `event_type` | For Alerts API, enter the value of field `id`. For Searches API, enter the value of any of these fields `event_id`, `alert_id`, `process`, `unknown`. Set when **Forward To SIEM** is checked. |
+
 ## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
@@ -88,7 +97,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| domain | String | Yes | `null` | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. |  |
+| domain | String | Yes | `null` | Enter your Carbon Black Cloud domain, such as: `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. |  |
 | api_key | String | Yes | `null` | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Vendor configuration](#vendor-configuration) section. |  |
 | api_id | String | Yes | `null` | The Carbon Black Cloud API ID correlated to your API key. |  |
 | org_key | String | Yes | `null` | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. |  |

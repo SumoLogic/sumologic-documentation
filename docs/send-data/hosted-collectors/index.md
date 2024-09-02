@@ -16,7 +16,7 @@ With a single Hosted Collector, you can create and configure Sources to collect 
 * Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
 * Send data directly to a Sumo endpoint using your custom collection method
 
-Data collection flow for S3 buckets and HTTP requests:<br/>![team built hosted diagram.png](/img/send-data/team-built-hosted-diagram.png)
+Data collection flow for S3 buckets and HTTP requests:<br/>![Diagram illustrating data flow in Sumo Logic. Data flows from an S3 Bucket to Sumo S3 Sources, then to a Hosted Collector. From the Hosted Collector, data moves to Sumo HTTP Sources and finally to IaaS or PaaS Providers represented by cloud icons.](/img/send-data/team-built-hosted-diagram.png)
 
 Just as Installed Collectors, you can monitor the activity of Hosted Collectors using the Status tab.
 
@@ -34,7 +34,7 @@ The maximum number of Collectors allowed per organization is 10,000.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

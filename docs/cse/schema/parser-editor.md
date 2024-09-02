@@ -30,7 +30,7 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
@@ -171,12 +171,12 @@ You can export a parser as JSON, and import it to another Sumo Logic
 org.
 
 1. Navigate to the parser you want to export and choose **Export** from the three-dot kebab menu.
-1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export" width="600"/>
+1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export dialog" width="600"/>
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data > Logs > Parsers**.
 1. Navigate to the folder where you want to store the parser.
 1. Choose **Import** from the three-dot kebab menu.
-1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
+1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
 ## Setting Cloud SIEM log mapping information
 
@@ -235,6 +235,6 @@ Watch the following video for a walkthrough of the parser templates.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />

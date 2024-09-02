@@ -73,7 +73,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-## Collecting Logs and Metrics for the Amazon SNS app
+## Collecting logs and metrics for the Amazon SNS app
 
 ### Collecting Metrics for Amazon SNS  
 

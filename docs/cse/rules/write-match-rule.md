@@ -37,7 +37,7 @@ Watch this micro lesson to learn how to create a Match rule.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -67,7 +67,7 @@ import Iframe from 'react-iframe'; 
 1. **using the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
     :::note
     * When you're configuring a Threshold and Chain rule, you do not supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
-    * For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.
+    * For extracted fields, you can specify a token for an extracted field using the format `{{fields[<field_name>]}}`.
     :::
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal the same way you did the Signal name, using text and Record fields. The Signal description should be a good indication of what the rule looks for.
@@ -77,15 +77,15 @@ import Iframe from 'react-iframe'; 
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" style={{border: '1px solid gray'}} width="325"/>
+1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Match Rule dialog" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" style={{border: '1px solid gray'}} width="450"/>
+   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="Dynamic Severity field" style={{border: '1px solid gray'}} width="450"/>
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
-   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" style={{border: '1px solid gray'}} width="450"/>
+   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>
    1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" style={{border: '1px solid gray'}} width="450"/>
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value is Option.png" style={{border: '1px solid gray'}} width="450"/>
    1. Select one of the following options:
       * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
       * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.

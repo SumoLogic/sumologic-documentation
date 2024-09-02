@@ -33,7 +33,7 @@ See Real User Monitoring in action.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -49,7 +49,7 @@ Access Traces to confirm that your Sumo Logic service package has been upgraded 
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**.
 <!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
  Kanso-->
 
 ## Guides
