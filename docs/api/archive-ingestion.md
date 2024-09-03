@@ -3,10 +3,12 @@ id: archive-ingestion
 title: Archive Ingestion Management APIs
 sidebar_label: Archive Ingestion
 description: Use HTTP endpoints to manage Archive ingestion jobs.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/>
 
@@ -16,7 +18,7 @@ The Archive Ingestion Management API allows you to ingest data from Archive dest
 You need the [Manage or View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to manage or view ingestion jobs. For more information, see [Archive](/docs/manage/data-archiving/archive).
 :::
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -31,3 +33,11 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/archiveManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/archiveManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/archiveManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Collectors
+    * View Collectors

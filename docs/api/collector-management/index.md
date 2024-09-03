@@ -6,6 +6,10 @@ description: The Collector Management API gives you the ability to manage Collec
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../../reuse/api-intro.md';
+import ApiRoles from '../../reuse/api-roles.md';
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Thumbnail icon" width="50"/>
 
@@ -24,7 +28,7 @@ Collector Management APIs for Installed and Hosted collectors are not yet built 
 
 This API manages your OpenTelemetry collectors.
 
-import ApiIntro from '../../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -40,7 +44,18 @@ import ApiIntro from '../../reuse/api-intro.md';
 | US1 | https://api.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | US2 | https://api.us2.sumologic.com/docs/#tag/otCollectorManagementExternal |
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Collectors
+    * View Collectors
+
+## Guide contents
+
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+
+

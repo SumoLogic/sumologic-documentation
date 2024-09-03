@@ -3,16 +3,18 @@ id: health-events
 title: Health Events Management APIs
 sidebar_label: Health Events
 description: Use HTTP endpoints to view your account's health events.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/company-value/heart-wellness.png')} alt="Thumbnail icon" width="50"/>
 
 The [Health Events](/docs/manage/health-events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,12 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/healthEvents  |
 | US1        | https://api.sumologic.com/docs/#tag/healthEvents     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/healthEvents |
+
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Collectors
+    * View Collectors

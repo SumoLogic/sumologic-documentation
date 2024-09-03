@@ -3,7 +3,7 @@ id: access-keys
 title: Access Keys Management APIs
 sidebar_label: Access Keys
 description: Use HTTP endpoints to manage access keys.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,6 +13,8 @@ import ApiRoles from '../reuse/api-roles.md';
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
 
 The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs. 
+
+## Documentation
 
 <ApiIntro/>
 

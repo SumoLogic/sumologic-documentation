@@ -3,16 +3,18 @@ id: connections-management
 title: Connections Management APIs
 sidebar_label: Connections
 description: Use our Connections Management APIs to set up connections to send alerts to third-party tools.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/alerts/webhooks.png')} alt="icon" width="40"/>
 
 Connections Management APIs let you set up connections to send alerts to third-party tools via webhook. For more information, see [Webhook Connections](/docs/alerts/webhook-connections).
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,12 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/connectionManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/connectionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/connectionManagement |
+
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * View Connections
+    * Manage Connections
