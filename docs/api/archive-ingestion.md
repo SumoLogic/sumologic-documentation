@@ -1,7 +1,7 @@
 ---
 id: archive-ingestion
 title: Archive Ingestion Management APIs
-sidebar_label: Archive Ingestion Management
+sidebar_label: Archive Ingestion
 description: Use HTTP endpoints to manage Archive ingestion jobs.
 hide_table_of_contents: true
 ---

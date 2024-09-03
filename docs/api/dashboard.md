@@ -1,7 +1,7 @@
 ---
 id: dashboard
 title: Dashboard Management APIs
-sidebar_label: Dashboard Management
+sidebar_label: Dashboards
 description: Dashboard Management APIs allow you to create, retrieve, update, and delete dashboards
 hide_table_of_contents: true
 ---

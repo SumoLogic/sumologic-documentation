@@ -1,7 +1,7 @@
 ---
 slug: /api/collector-management
 title: Collector Management APIs
-sidebar_label: Collector Management
+sidebar_label: Collectors
 description: The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 ---
 

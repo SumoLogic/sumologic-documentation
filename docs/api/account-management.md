@@ -1,7 +1,7 @@
 ---
 id: account-management
 title: Account Management APIs
-sidebar_label: Account
+sidebar_label: Accounts
 description: Use HTTP endpoints to manage subdomains.
 hide_table_of_contents: true
 ---

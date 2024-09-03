@@ -1,8 +1,8 @@
 ---
 id: metrics-searches-v2
-title: Metrics Search Management APIs (New)
-sidebar_label: Metrics Searches (New)
-description: Use Metrics Search Management APIs (New) endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
+title: Metrics Search Management APIs (V2)
+sidebar_label: Metrics Searches (V2)
+description: Use Metrics Search Management APIs (V2) endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
 hide_table_of_contents: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: user-management
 title: User Management APIs
-sidebar_label: User Management
+sidebar_label: Users
 description: User Management APIs allow you to manage user accounts from HTTP endpoints.
 hide_table_of_contents: true
 ---

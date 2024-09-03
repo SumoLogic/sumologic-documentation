@@ -1,7 +1,7 @@
 ---
 id: organizations-management
 title: Organizations Management APIs
-sidebar_label: Organizations Management
+sidebar_label: Organizations
 description: With the Organizations Management API, you can get the credits usage details of the child organizations.
 hide_table_of_contents: true
 ---
