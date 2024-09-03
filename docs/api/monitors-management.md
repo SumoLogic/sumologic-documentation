@@ -3,16 +3,18 @@ id: monitors-management
 title: Monitor Management APIs
 sidebar_label: Monitors
 description: Use HTTP endpoints to manage your account's Monitors.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/>
 
 The Monitor Management API allows you to manage Monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information, see [Monitors](/docs/alerts/monitors/).
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,9 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/monitorsLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/monitorsLibraryManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Alerting (all role capabilities)

@@ -3,15 +3,18 @@ id: metrics-transformation-rules
 title: Metrics Transformation Rules APIs (Beta)
 sidebar_label: Metrics Transformation Rules (Beta)
 description: Metrics Transformation Rules APIs allow you control how long raw metrics are retained, aggregate metrics at collection time, and specify a separate retention period for the aggregated metrics.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 Metrics Transformation Rules APIs allow you control how long raw metrics are retained, aggregate metrics at collection time, and specify a separate retention period for the aggregated metrics. For more information, see [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
+
+## Documentation
 
 <ApiIntro/>
 
@@ -26,3 +29,9 @@ Metrics Transformation Rules APIs allow you control how long raw metrics are ret
 | JP         | https://api.jp.sumologic.com/docs/#tag/transformationRuleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/transformationRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/transformationRuleManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Metrics (all role capabilities)

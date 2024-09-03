@@ -3,16 +3,18 @@ id: saml-configuration
 title: SAML Configuration Management APIs
 sidebar_label: SAML Configuration
 description: Use HTTP endpoints to manage your SAML configuration.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/security/get-valuable-security.png')} alt="Thumbnail icon" width="50"/>
 
 The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API allows you to provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,10 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/samlConfigurationManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/samlConfigurationManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Security
+    * Manage SAML

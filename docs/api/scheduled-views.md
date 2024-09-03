@@ -3,16 +3,18 @@ id: scheduled-views
 title: Scheduled Views Management APIs
 sidebar_label: Scheduled Views
 description: Use HTTP endpoints to manage Scheduled Views.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/>
 
 The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,11 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/scheduledViewManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/scheduledViewManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/scheduledViewManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Scheduled Views
+    * View Scheduled Views

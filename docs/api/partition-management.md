@@ -3,16 +3,18 @@ id: partition-management
 title: Partitions Management APIs
 sidebar_label: Partitions
 description: Use HTTP endpoints to manage Partitions.
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Thumbnail icon" width="50"/>
 
 The Partitions Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Partitions](/docs/manage/partitions/).
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -27,3 +29,11 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/partitionManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/partitionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/partitionManagement |
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Partitions
+    * View Partitions

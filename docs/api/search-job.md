@@ -7,6 +7,8 @@ description: Search Job APIs provides access to resources and log data from thir
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiEndpoints from '../reuse/api-endpoints.md';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
 
@@ -16,29 +18,28 @@ The Search Job API provides third-party scripts and applications access to your 
 Search Job APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs). Instead, refer to the below documentation.
 :::
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
-
 ## Prerequisites
 
 The Search Job API is available to Enterprise accounts.
 
-<table>
-  <tr>
-   <td>Account Type</td>
-   <td>Account Level </td>
-  </tr>
-  <tr>
-   <td>Cloud Flex Legacy</td>
-   <td>Enterprise </td>
-  </tr>
-  <tr>
-   <td>Sumo Logic Credits</td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite</td>
-  </tr>
-</table>
+| Account Type | Account Level |
+|:--|:--|
+| Cloud Flex Legacy | Enterprise |
+| Sumo Logic Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
+## Documentation
+
+<ApiIntro/>
+
+## Required roles
+
+<ApiRoles/>
+
+* Data Management
+    * Download Search Results
+    * View Collectors
+* Security
+    * Manage Access Keys
 
 ## Endpoints for API access
 

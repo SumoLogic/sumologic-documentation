@@ -20,7 +20,7 @@ You can use [V2 APIs](/docs/api/ingest-budget-v2) to manage metadata-based inges
 V1 budgets will be deprecated September 16, 2024.
 :::
 
-## Account types
+## Prerequisites
 
 | Account Type | Account Level          |
 |:--------------|:--------------|

@@ -6,6 +6,9 @@ description: Service Map APIs allow you to fetch a graph representation of the S
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiErrors from '../reuse/api-errors.md';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/traces/servicemap.png')} alt="Thumbnail icon" width="50"/>
 
@@ -17,26 +20,9 @@ See also: [Span Analytics APIs](/docs/api/span-analytics) and [Traces APIs](/doc
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::
 
-## Endpoints for API access  
-
-Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
-
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
-
-An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
-
-
-## Errors  
-
-import ApiErrors from '../reuse/api-errors.md';
-
-<ApiErrors/>
-
 ## Documentation   
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
-
-Select the documentation link for your deployment:
+<ApiIntro/> 
 
 | Deployment | Documentation URL                                  |
 |:------------|:----------------------------------------------------|
@@ -49,3 +35,22 @@ Select the documentation link for your deployment:
 | JP         | https://api.jp.sumologic.com/docs/#tag/serviceMap  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceMap     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/serviceMap |
+
+## Required roles
+
+<ApiRoles/>
+
+* Security
+    * Allowlist IP Addresses
+
+## Endpoints for API access  
+
+Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
+
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+
+An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
+
+## Errors  
+
+<ApiErrors/>

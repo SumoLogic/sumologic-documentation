@@ -20,7 +20,7 @@ You can use [V1 APIs](/docs/api/ingest-budget-v1) to manage ingest budgets with 
 [V1 budgets](/docs/api/ingest-budget-v1) will be deprecated September 16, 2024.
 :::
 
-## Account types
+## Prerequisites
 
 | Account Type | Account Level          |
 |:--------------|:--------------|
