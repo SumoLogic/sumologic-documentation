@@ -4,6 +4,7 @@ title: LastPass Source
 sidebar_label: LastPass
 keywords:
   - lastpass
+  - cloud-to-cloud
 description: Learn how to collect audit reporting events from LastPass platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
@@ -18,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
 
 LastPass is a password manager tool that allows you to store, secure, and autofill your passwords. LastPass' users get a password vault, which is the encrypted part of the LastPass password manager where passwords, secure notes, and sensitive information are safely stored. The LastPass source collects audit reporting events data and sends it to Sumo Logic.
 
@@ -49,7 +50,7 @@ To configure the LastPass Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **CID (Account Number)**, enter your CID account number collected from the LastPass platfrorm.
 1. In **API Secret**, enter your API Secret ID collected from the LastPass platfrorm.
-1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 5 minutes.
+1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 5 minutes.
 1. When you are finished configuring the source, click **Save**.
 
 ## JSON schema
@@ -72,7 +73,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | cid | Integer | Yes | `null` | The CID account number collected from the LastPass platform. |  |
 | apiSecret | String | Yes | `null` | The API Secret ID collected from the LastPass platform. |  |
-| pollingIntervalMinutes | Integer | No | 10 | How frequently the integration should poll to LastPass. <br /> Options: 10m, 15m, 30m, 1h, 24h. |  |
+| pollingIntervalMinutes | Integer | No | 5 | How frequently the integration should poll to LastPass. <br /> **Options**: 5m, 10m, 15m, 30m, 1h, or 24h. |  |
 
 ### JSON example
 
