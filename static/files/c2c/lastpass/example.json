@@ -2,7 +2,7 @@
     "api.version": "v1",
     "source": {
         "schemaRef": {
-            "type": "Microsoft Azure AD Inventory"
+            "type": "LastPass"
         },
         "config": {
                 "name": "lastpass",

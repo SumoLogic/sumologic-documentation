@@ -1,7 +1,7 @@
-resource "sumologic_cloud_to_cloud_source" "microsoft-azure-ad-inventory-source" {
+resource "sumologic_cloud_to_cloud_source" "lastpass-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Microsoft Azure AD Inventory"
+    type = "LastPass"
   }
   config = jsonencode({
           "name": "lastpass",
