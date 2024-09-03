@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
-The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/get-events-data.html). It securely stores the required authentication, scheduling, and state tracking information.
+The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints). It securely stores the required authentication, scheduling, and state tracking information.
 
 The following event types are available to collect:
 
@@ -35,7 +35,7 @@ The following event types are available to collect:
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 sec |  [Event data](https://docs.netskope.com/en/get-events-data.html) |
+| 5 sec |  [Event data](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints/) |
 
 ## Setup
 
@@ -86,7 +86,10 @@ To configure a Netskope Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 1. Enter your Netskope customer specific **Tenant ID**. Do not provide the entire URL, just the Tenant ID.
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
-1. **Event Types** (Optional). By default, all event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
+1. **Event Types** (Optional). By default, *all* event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
+    :::note
+    Add only the Event Types that you provided permissions to in step 3 of the Vendor configuration. For example, if you have added permission to `/api/v2/events/dataexport/events/application` during Netskope configuration, enter `Application` in the **Event Types** section. Inconsistencies will throw an error, so ensure that all specified permissions given in the Netskope configuration are added to the Sumo Logic **Event Types** section.
+    :::
 1. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata fields
@@ -96,7 +99,7 @@ To configure a Netskope Source:
 | `_siemVendor` | `Netskope` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Security Cloud` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as, audit-logon or audit-logoff. |
+| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as: audit-logon or audit-logoff. |
 
 ## JSON schema
 

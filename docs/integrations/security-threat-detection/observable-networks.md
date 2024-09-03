@@ -161,18 +161,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Observable Networks app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Observable Networks app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Observable Networks dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -204,3 +192,15 @@ The Observable Networks Overview dashboard is intended to provide a high level a
 **Role History.** This multi-line graph shows the population of each role type on the network. Here you can track how the population of your network has changed over time. For example, the number of iOS devices and printers.
 
 **Top Observation Hosts.** This is simple query shows the hosts (sources) with the most observation counts.
+
+## Upgrading the Observable Networks app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Observable Networks app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

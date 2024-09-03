@@ -202,18 +202,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Cloud IAM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Cloud IAM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Cloud IAM dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -259,3 +247,15 @@ See the details of IAM policy changes, user operations, role assignments, and ro
 **Added Roles Over Time**. See the count and trend of the different roles added in the last 24 hours on a stacked column chart.
 
 **Removed Roles Over Time**. See the count and trend of the different roles removed in the last 24 hours on a stacked column chart.
+
+## Upgrading the Google Cloud IAM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud IAM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

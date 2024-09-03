@@ -38,7 +38,7 @@ This micro lesson provides an overview of Span Analytics, and describes the term
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -68,7 +68,7 @@ Aggregating raw spans can produce better insights by selecting the subject you 
 
 **Visualize** sets the metric to aggregate the filtered data by. The two default options are:
 
-* **count**. Counts the field you set. Typically you want to count spans, such as, to show how many of them are in any particular category. However, you can count distinct occurrences of any other field, such as IP addresses or pods.
+* **count**. Counts the field you set. Typically you want to count spans, such as: to show how many of them are in any particular category. However, you can count distinct occurrences of any other field, such as IP addresses or pods.
 * **duration**. Conducts the sum, avg, min, max, or pct of the span duration metric.
 
 :::tip
