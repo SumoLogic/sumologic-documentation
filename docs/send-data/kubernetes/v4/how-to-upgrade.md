@@ -78,7 +78,7 @@ kube-prometheus-stack:
             sourceLabels: [__name__]
 ```
 
-#### Install/Update Custom Resource Definition for OpenTelemetry Operator
+#### Update custom resource definition for OpenTelemetry operator
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml

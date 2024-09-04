@@ -21,27 +21,35 @@ OpenTelemetry cannot collect Prometheus recording rule metrics. The new version 
 
 ### Drop Histogram metrics
 
-Histogram metrics are not collected as of any version > 4.9.0. One can collect these metrics with an allowlist (regex) using the following key: `sumologic.metrics.allowHistogramRegex`
+Histogram metrics are not collected for any version later than 4.9.0. You can collect these metrics with an allowlist (regex) using the following key: `sumologic.metrics.allowHistogramRegex`
 
-Note: Histogram metrics could still be collected via auto or manual instrumentation.
+:::note
+Histogram metrics could still be collected via auto or manual instrumentation.
+:::
 
 ### OpenTelemetry Collector for metrics collection
 
 By default, the OpenTelemetry Collector is now used for metrics collection instead of Prometheus. For the majority of use cases, this will be a transparent change without any need for manual configuration changes. OpenTelemetry Collector will continue to collect the same default metrics as Prometheus did previously, and will support the same mechanisms for collecting custom application metrics. Any exceptions will be called out in the migration guide below.
 
-Please ensure that the following CRDs from the Opentelemetry operator are installed and updated using the following commands
+Ensure that the following CRDs from the OpenTelemetry operator are installed and updated using the following commands.
 
 ##### Instrumentation CRD (relevant for metrics and traces)
 
-`kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetryinstrumentation.yaml`
+```
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetryinstrumentation.yaml
+```
 
 ##### OpenTelemetry collector CRD
 
-`kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetrycollector.yaml`
+```
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetrycollector.yaml
+```
 
 ##### OpAMP Bridge CRD
 
-`kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml`
+```
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+```
 
 ### Use OTLP sources by default
 
