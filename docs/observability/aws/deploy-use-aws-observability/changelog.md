@@ -15,8 +15,8 @@ AWS Observability Solution (S3 Link for CloudFormation template): `https://sumol
 AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 Updates:
-* Added support for new Sumo Logic South Korea (kr) deployment.
-* All python Lambda runtimes have been updated to python3.12 along with the required libraries.
+
+* All python Lambda runtimes have been updated to version 3.12 along with the required libraries.
 
 ## v2.9.0, 02-Aug-2024
 
