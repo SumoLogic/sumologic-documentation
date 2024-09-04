@@ -144,7 +144,7 @@ An error or alert condition can occur with an S3 data forwarding destination fo
 
 * If Sumo Logic is not able to verify the S3 credentials when the destination is saved, an error message indicates that the credentials were rejected by Amazon. If this occurs, verify **Access Key ID**, **Secret Access Key**, and the bucket configuration, re-select the **Active** check box, and save again. <br/><img src={useBaseUrl('img/data-forwarding/bad-cred.png')} alt="bad-cred.png" width="450"/>
 
-* Errors and alerts that are generated after the destination has been successfully saved and started are shown on the **Partitions** page. <br/><img src={useBaseUrl('img/data-forwarding/data-forwarding-status-icons.png')} alt="status-icons.png"/>
+* Errors and alerts that are generated after the destination has been successfully saved and started are shown on the **Partitions** page. <br/><img src={useBaseUrl('img/data-forwarding/data-forwarding-status-icons.png')} alt="status-icons.png" style={{border:'1px solid gray'}} width="800"/>
 
 * Hover over the icon to display the message.<br/><img src={useBaseUrl('img/data-forwarding/data-forwarding-icon-message.png')} alt="icon-message.png" width="300"/>
 
