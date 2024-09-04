@@ -80,4 +80,3 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
 
-@Jagadish - Can we please add the other limits called out at this confluence page - https://sumologic.atlassian.net/wiki/spaces/PS/pages/2003730879/Data+Deletion+Limits
