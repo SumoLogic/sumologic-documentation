@@ -76,8 +76,9 @@ The table below should give you a sense of how the number of partitions you use 
 | 1/2 day          | 2                            | 2 TB         |
 | 2 days           | 2                            | 8 TB         |
 
-< add this as a note > 
-Given all partition definitions and the user query, SUMO performs automatic query rewriting optimizations by rewriting the query by including _view/_index clauses and tries to use the minimal list of views the system has to go through to serve the query. This list of views is what is eventually considered as part of scanned volume (actual or estimated).
+:::note 
+Given all partition definitions and the user's query, Sumo Logic automatically optimizes query execution by rewriting the query to include `_view` and `_index` clauses. The system then identifies the minimal list of views required to serve the query, which ultimately contributes to the scanned volume, whether actual or estimated.
+:::
 
 ## What is an ideal size for a partition for Flex?
 
