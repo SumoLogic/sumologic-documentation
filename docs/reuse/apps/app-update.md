@@ -22,5 +22,5 @@ See our [**Release Notes** changelog](/release-notes-service) for new updates in
 To version down the app, do the following:
 
 1. Select **App Catalog**.
-1. In the **Search Apps** field, search for and then select your app. <br/>Optionally, you can identify apps that can be upgraded in the **Upgrade available** section.
+1. In the **Search Apps** field, search for and then select your app.
 1. To version down the app, select **Revert to < previous version of your app >** from the **Manage** dropdown.
