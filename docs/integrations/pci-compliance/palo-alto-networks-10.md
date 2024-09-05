@@ -199,7 +199,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 10 dashboards" />
 
-## Upgrading the PCI for Palo Alto Networks 10 app (Optional)
+## Upgrade/Downgrade the PCI for Palo Alto Networks 10 app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

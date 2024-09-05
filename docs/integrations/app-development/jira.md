@@ -550,7 +550,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
 
-## Upgrading the Jira app (Optional)
+## Upgrade/Downgrade the Jira app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

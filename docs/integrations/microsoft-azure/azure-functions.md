@@ -301,7 +301,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Administrative-Operations.png')} alt="Azure Functions Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Functions app (Optional)
+## Upgrade/Downgrade the Azure Functions app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

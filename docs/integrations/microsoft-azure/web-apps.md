@@ -174,7 +174,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Top 10 Slowest Pages by Country.** Lists the 10 slowest pages by country in a table chart including details on URI, country name, and average time in seconds for the last three hours.
 
-## Upgrading the Azure Web Apps app (Optional)
+## Upgrade/Downgrade the Azure Web Apps app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

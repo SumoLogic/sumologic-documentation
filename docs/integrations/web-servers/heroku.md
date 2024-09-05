@@ -361,7 +361,7 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
 
-## Upgrading the Heroku app (Optional)
+## Upgrade/Downgrade the Heroku app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

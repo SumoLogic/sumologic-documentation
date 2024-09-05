@@ -187,7 +187,7 @@ View critical issues for the last 24 hours, outliers for the critical issues thr
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_CriticalEvents_Dashboard.png')} alt="cloudpassage dashboards" />
 
-## Upgrading the CloudPassage Halo app (Optional)
+## Upgrade/Downgrade the CloudPassage Halo app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
