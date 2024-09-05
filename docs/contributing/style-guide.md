@@ -706,13 +706,11 @@ You can use a link to a file embedding the entire file, or embed a range of code
    * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
-1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
-   <details>
-   <summary>More about <code>alt text</code></summary>
-
-   Alt text, required under [US Government GSA Section 508](https://www.section508.gov/) regulations, is used by readers who cannot see images well or have software that reads the text aloud. It's also used by readers with slow internet connections who do not want to wait for images to download.
-
-   </details>
+1. Add alt text, which provides a brief description of an image, ensuring accessibility for users who rely on screen readers or have slow internet connections. It also complies with US Government GSA Section 508 regulations. Here are some best practices:
+   - **Be concise and specific**. Describe the core purpose of the image (e.g., `alt="Screenshot showing the image properties dialog box"` or `alt="Sumo Logic logo"`).
+   - **Focus on function**. Convey the image's key message without unnecessary details.
+   - **Skip decorative images**. Use an empty alt attribute (`alt=""`) for images that are purely decorative.
+   - **Check for missing alt text**. Always ensure that every image has appropriate alt text. If you encounter an image without it, add it.
 1. Use the `width` to resize oversized and/or pixelated images, if needed.
 
   <Tabs
@@ -1552,7 +1550,7 @@ To embed a YouTube video on a doc:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -1579,7 +1577,7 @@ To embed a YouTube video on a doc:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -1596,7 +1594,7 @@ import Iframe from 'react-iframe';
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

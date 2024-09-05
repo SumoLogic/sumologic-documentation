@@ -89,6 +89,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike FDR Host Inventory</h4></a>
+  <p>Monitor and manage your device security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/docusign"><img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/><h4>DocuSign</h4></a>
   <p>Monitor and secure your DocuSign account.</p>
   </div>
@@ -231,6 +237,13 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Monitor analytics for your Slack users, channels, and access logs for workspaces.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/sophos"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos</h4></a>
+  <p>Identify security threats by analyzing alerts and events logs.</p>
+  </div>
+</div>
+
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-web-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Web Security Service</h4></a>
