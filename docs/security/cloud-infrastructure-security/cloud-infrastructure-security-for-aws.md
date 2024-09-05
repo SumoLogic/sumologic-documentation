@@ -446,9 +446,7 @@ If any errors occur, see [Troubleshoot installation](#troubleshoot-installation)
 
 ### Start using the solution
 
-After the solution is installed, you can view its monitors, dashboards, and saved searches.
-
-Many of the monitors contain automated playbooks built specifically for Cloud Infrastructure Security for AWS that you can use for alert remediation. For more information about automated playbooks, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). 
+After the solution is installed, you can view its [monitors](#cloud-infrastructure-security-for-aws-monitors), [dashboards](#cloud-infrastructure-security-for-aws-dashboards), and saved searches.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-installed.png')} alt="The screen of the installed solution" style={{border: '1px solid gray'}} width="600"/>
 
@@ -513,6 +511,24 @@ To uninstall the Cloud Infrastructure Security solution:
 1. Log in to your AWS account and go to [CloudFormation](https://console.aws.amazon.com/cloudformation/home).
 1. Select the main stack you want to delete.
 1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete button in the upper right part of the screen" style={{border: '1px solid gray'}} width="800"/>
+
+## Cloud Infrastructure Security for AWS monitors
+
+Following are monitors included with the solution:
+
+* **Admin Privileges Granted**. Detects when administrative privileges are granted to a user or role. This is crucial for monitoring and controlling access to sensitive resources and ensuring that only authorized personnel have administrative capabilities.
+* **Amazon GuardDuty BruteForce finding**. Alerts on brute force attacks detected by Amazon GuardDuty. These attacks typically involve repeated attempts to gain unauthorized access to a system using various password combinations.
+* **Amazon GuardDuty InstanceCredentialExfiltration finding**. Triggers when GuardDuty detects potential exfiltration of instance credentials. This could indicate that an attacker is attempting to steal and use the credentials outside of the AWS environment.
+* **CloudTrail Changes**. Monitors changes in AWS CloudTrail configurations, which track API calls and activities in your AWS account. Changes to CloudTrail could indicate attempts to hide malicious activities.
+* **Config Changes**. Tracks changes to AWS Config settings. AWS Config monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.
+* **Critical GuardDuty Alerts**. Alerts on critical severity findings from Amazon GuardDuty. These findings typically indicate severe security threats that require immediate attention and remediation.
+* **EC2 instance accessed from malicious IP**. Alerts when an EC2 instance is accessed from an IP address identified as malicious by threat intelligence feeds. This could signify a potential breach or unauthorized access attempt.
+* **High Severity GuardDuty Alerts**. Triggers on high severity findings from Amazon GuardDuty, indicating significant security threats that need prompt investigation and action.
+* **Important GuardDuty Alerts**. Alerts on important severity findings from Amazon GuardDuty. 
+
+:::note
+Monitors can contain automated playbooks built specifically for Cloud Infrastructure Security for AWS that you can use for alert remediation. For more information about automated playbooks, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). 
+:::
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
