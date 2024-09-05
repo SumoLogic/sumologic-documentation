@@ -35,8 +35,8 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.9.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.9.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
@@ -261,3 +261,8 @@ AWS Observability hierarchy is auto-populated based on the metrics ingested into
     :::note
     Removing the account tag will not stop the metrics ingestion.
     :::
+
+### Redeploying the AWS Observability CloudFormation template with existing Sumo Logic resources from a previous deployment
+
+**Ensure that you delete the Sumo Logic resources completely prior to redeployment.** If you have **Delete Sumo Logic Resources when stack is deleted** set to "True", then the Sumo Logic resources will automatically be removed while deleting the AWS Observability CloudFormation template. If you have **Delete Sumo Logic Resources when stack is deleted** set to "False", then the Sumo Logic resources **will not** be removed while deleting the AWS Observability CloudFormation template. If you do not delete the Sumo Logic resources prior to redeployment (that is, collectors and sources), then subsequent deployments may attempt to use the existing resources, which can result in collection issues. This is not recommended.
+

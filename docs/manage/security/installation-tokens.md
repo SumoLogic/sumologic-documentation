@@ -12,6 +12,10 @@ Installation Tokens register [Installed Collectors](/docs/send-data/installed-c
 
 Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating Access Keys in installation scripts since Installation Tokens are associated with your account instead of users.
 
+:::note
+Multiple collectors can use the installation token. Additionally, installation tokens are only used to initially register the collectors to the account, and are not used by the collector after that point. 
+:::
+
 ## Limitations
 
 * Your account can have up to 100 Installation Tokens, active and inactive.

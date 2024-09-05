@@ -27,7 +27,7 @@ Learn how to use Alert Response.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -132,11 +132,12 @@ The top of the page provides several details and buttons.
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook).  
    * Text playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/> ![playbook example.png](/img/monitors/playbook-example.png)
    * [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
-* **G**. Opens the monitor that generated this alert.
-* **H**. Resolves the Alert. This will also resolve the monitor that generated the alert. The monitor will fire again when the alert condition is met. <br/>
-:::note
-Sumo Logic will resolve the alert automatically when the recovery condition defined on the monitor is met. This behavior is not configurable - that is, you cannot prevent Sumo Logic from resolving a monitor. Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
-::: <br/>![alert page sep 23.png](/img/monitors/alert-page.png)
+* **G**. Opens the Monitor that generated this alert.
+* **H**. Resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.
+   :::note
+   Sumo Logic automatically resolves alerts when the recovery condition defined on the monitor is met. This behavior is not configurable; you cannot prevent Sumo Logic from resolving a monitor. While it is technically possible to set a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended. Doing so may suppress unrelated alerts from being fired.
+   :::
+   ![alert page sep 23.png](/img/monitors/alert-page.png)
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/monitors/k-label.png')} alt="labels" width="300"/>
   * **Related Alerts**. A panel with Related Alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/monitors/related-alerts.png')} alt="related alerts" width="200"/>
     * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.

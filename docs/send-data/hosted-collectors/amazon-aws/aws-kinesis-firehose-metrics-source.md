@@ -104,3 +104,13 @@ Inclusive and exclusive filters can’t be combined. You can choose namespaces t
 1. Click **All metrics** and select the **Exclude metric namespaces** option.
 1. From the list of AWS namespaces, select the namespaces whose metrics you do not want to receive.
 1. Click **Save changes** at the bottom of the page.
+
+## Troubleshooting
+
+### Metric streams output format
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams. If you see an error similar to the below:
+
+```HTTP ERROR 400 Could not parse firehose input json```
+
+Then it's likely that you have the incorrect output format selected in your CloudWatch metric stream.
