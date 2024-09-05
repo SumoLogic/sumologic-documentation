@@ -120,7 +120,6 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
 
 ### Prerequisites
 
-* **AWS Organizations**. You must be using [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html).
 * **AWS data**. You must have access to data from the following AWS products, since Cloud Infrastructure Security for AWS uses data from these sources in its dashboards:
    * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html)
    * [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
@@ -133,6 +132,7 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
      * View Collectors
      * Manage Collectors
      * Manage Content
+     * Manage Apps
   * Security
      * Create access keys
   * Alerting
@@ -172,7 +172,7 @@ When you deploy the solution, consider the following.
 
 #### Do you already have the required sources? 
 
-When you deploy, you are given the option to create the Sumo Logic sources that the solution applications rely upon. If you have already configured those sources, you do not have to create new ones. You can just provide the URLs of the relevant Sumo Logic sources as part of the configuration.
+When you deploy, you are given the option to create the Sumo Logic sources that the solution applications rely upon. If you have already configured those sources, you do not have to create new ones. You can just provide the URLs of the relevant Sumo Logic sources as part of the configuration. See [Install Cloud Infrastructure Security for AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#install-cloud-infrastructure-security-for-aws) below.
 
 :::note
 If you use existing sources rather than create new ones, it is not necessary to modify the existing metadata and source categories associated with the sources. The metadata that the solution depends on will be added to the sources at deployment time. 
@@ -180,39 +180,11 @@ If you use existing sources rather than create new ones, it is not necessary to 
 
 #### Bucket considerations
 
-In the sections of the CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don’t supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. 
+In the sections of the CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don’t supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. See [Create new source: Deploy AWS](#create-new-source-deploy-aws) below.
 
-## Install Cloud Infrastructure Security for AWS
+#### Account or organization deployment
 
-You can install Cloud Infrastructure Security for AWS from the App Catalog to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage.
-
-1. From the **App Catalog**, search for and select **Cloud Infrastructure Security for AWS**.
-1. Click **Install App**. <br/>The **Configure Sources** screen is displayed: <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0.png')} alt="Configure Sources screen" style={{border: '1px solid gray'}} width="700"/>
-1. For each of the data source types listed, select whether to use an existing source, create a new source, or do not collect data for that source type.
-    * If you select **Use Existing Source**, select the source from the dropdown. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0a.png')} alt="Use Existing Source selection" style={{border: '1px solid gray'}} width="400"/>
-    * If you select **Create New Source**, type the name you want to use for the source. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0b.png')} alt="Create New Source selection" style={{border: '1px solid gray'}} width="400"/>
-1. Click **Next**. <br/>Depending on what you selected, one of the following occurs:
-    * If you selected only **Use Existing Source** or **Do Not Collect**, the solution is installed. Proceed to [Start using the solution](#start-using-the-solution).
-
-       :::tip
-       Using only existing sources is the easiest way to install, since it means you don't have to create any new sources.
-       :::
-
-    * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
-       * [Create new source: Select region](#create-new-source-select-region)
-       * [Create new source: Check AWS Role Permission](#create-new-source-check-aws-role-permission)
-       * [Create new source: Deploy AWS](#create-new-source-deploy-aws) <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure Security for AWS screen" style={{border: '1px solid gray'}} width="700"/>
-
-### Create new source: Select region
-
-If you selected **Create New Source** for any source on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws), in the **Select Region** section select the [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Regions) where you want to deploy the solution. 
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-1.png')} alt="Select region" style={{border: '1px solid gray'}} width="700"/>
-
-For information about where your Sumo Logic data is stored in AWS, see [Where is My Data Stored?](/docs/get-started/faq/#where-is-my-data-stored)
-   :::info
-   This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
-   :::
+You can deploy Cloud Infrastructure Security to a single account or all accounts in your AWS organization. See [Create new source: Deploy AWS](#create-new-source-deploy-aws) below.
 
 #### Multi-region enablement 
 
@@ -264,6 +236,42 @@ If Sumo Logic’s Kinesis Firehose source is created by the Cloud Infrastructure
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-waf-multi-regions-3.png')} alt="Network Firewall S3 bucket configuration" style={{border: '1px solid gray'}} width="700"/>
 
+## Install Cloud Infrastructure Security for AWS
+
+You can install Cloud Infrastructure Security for AWS from the App Catalog to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage.
+
+1. From the **App Catalog**, search for and select **Cloud Infrastructure Security for AWS**.
+1. Click **Install App**. <br/>The **Configure Sources** screen is displayed: <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0.png')} alt="Configure Sources screen" style={{border: '1px solid gray'}} width="700"/>
+1. For each of the data source types listed, select whether to use an existing source, create a new source, or do not collect data for that source type:
+    * **Use Existing Source**. Select this option if collection is already set up for that particular service and data is coming into Sumo Logic under a specific _sourceCategory. Select the _sourceCategory from the dropdown menu.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0a.png')} alt="Use Existing Source selection" style={{border: '1px solid gray'}} width="400"/>
+    * **Create New Source**. Select this option when you want to set up Sumo Logic collection for that particular service. Type the name you want to use for the source. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-0b.png')} alt="Create New Source selection" style={{border: '1px solid gray'}} width="400"/>
+    * **Do Not Collect**. Select this option if you do not want to collect data from that particular service. If you choose this option, then collection for the service will not be set up and the corresponding dashboards in the Cloud Infrastructure Security  solution will not contain data. 
+1. Click **Next**. <br/>Depending on what you selected, one of the following occurs:
+    * If you selected only **Use Existing Source** or **Do Not Collect**, the solution is installed. Proceed to [Start using the solution](#start-using-the-solution).
+
+       :::tip
+       Using only existing sources is the easiest way to install, since it means you don't have to create any new sources.
+       :::
+
+    * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
+       * [Create new source: Select region](#create-new-source-select-region)
+       * [Create new source: Check AWS Role Permission](#create-new-source-check-aws-role-permission)
+       * [Create new source: Deploy AWS](#create-new-source-deploy-aws) <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure Security for AWS screen" style={{border: '1px solid gray'}} width="700"/>
+
+### Create new source: Select region
+
+If you selected **Create New Source** for any source on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws), in the **Select Region** section select the [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Regions) where you want to deploy the solution. 
+
+For information about where your Sumo Logic data is stored in AWS, see [Where is My Data Stored?](/docs/get-started/faq/#where-is-my-data-stored)
+
+To collect data from multiple regions, see [Multi-region enablement](#multi-region-enablement).
+
+:::info
+This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+:::
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-step-1.png')} alt="Select region" style={{border: '1px solid gray'}} width="700"/>
+
 ### Create new source: Check AWS role permission
 
 If you selected **Create New Source** for any source on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws), perform the steps below.
@@ -279,7 +287,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
    * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
    * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
    * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
-1. In **2. AWS Organization configuration**, enter the following:
+1. In **2. AWS Organization configuration**, enter the following. (This step is required only if you are installing the solution to all accounts in your AWS organization.)
     * **Security-tooling account ID**. Enter your Security Tooling account ID. This is used to set up the AWS CloudWatch, Lambda, Kinesis, S3 bucket, and SNS topic for collecting AWS GuardDuty, Security Hub, WAF, and Network Firewall data.
     * **Log-archiving account ID**. Enter your log-archiving account ID. This is used to set up an S3 bucket and SNS topic for collecting the AWS CloudTrail data. 
          :::note
@@ -332,7 +340,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
           :::note
           You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
           :::
-1. In **3. AWS Service configuration**, select **Yes** for each of the following sources you want to install for Sumo Logic, or **No** if you already have the source installed. The values shown should match what you picked in [Configure Sources](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#install-cloud-infrastructure-security-for-aws) above.
+1. In **3. AWS Service configuration**, fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
       * **Publish Amazon GuardDuty data to Sumo**
       * **Publish AWS CloudTrail data to Sumo** 
       * **Publish AWS Security Hub data to Sumo** 
