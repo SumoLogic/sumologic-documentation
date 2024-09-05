@@ -352,7 +352,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        <details>
        <summary>GuardDuty</summary>
 
-       In this section, you configure Amazon GuardDuty. If fields are missing, or you need to change them, do the following:
+       In this section, you configure Amazon GuardDuty. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
+       
+       If fields are missing, or you need to change them, do the following:
        * **4.1 GuardDuty service configuration**
           * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
        * **4.2 GuardDuty Sumo log source configuration**
@@ -365,7 +367,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        <details>
        <summary>CloudTrail</summary>
        
-       In this section, you configure AWS CloudTrail. If fields are missing, or you need to change them, do the following:
+       In this section, you configure AWS CloudTrail. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
+       
+       If fields are missing, or you need to change them, do the following:
        * **5.1 CloudTrail service configuration** 
           * **CloudTrail Regions**. The region from which CloudTrail Data should be sent. 
              :::note
@@ -384,7 +388,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        <details>
        <summary>Security Hub</summary>
 
-       In this section, you configure AWS Security Hub. If fields are missing, or you need to change them, do the following:
+       In this section, you configure AWS Security Hub. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
+       
+       If fields are missing, or you need to change them, do the following:
        * **6.1 Security Hub Service Configuration**. 
           * **Security Hub Regions**. The regions from which Security Hub data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
        * **6.2 Security Hub Sumo Log Source configuration**.
@@ -395,7 +401,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        <details>
        <summary>WAF</summary>
 
-       In this section, you configure the AWS Web Application Firewall (WAF). If fields are missing, or you need to change them, do the following:
+       In this section, you configure the AWS Web Application Firewall (WAF). Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
+       
+       If fields are missing, or you need to change them, do the following:
        * **7.1 AWS Firewall Manager Policy Regions Configuration**.
           * **AWS WAF Policy Regions**. The region from which AWS WAF data should be sent. 
              :::note
@@ -415,7 +423,9 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        <details>
        <summary>Network Firewall</summary>
 
-       In this section, you configure AWS Network Firewall. If fields are missing, or you need to change them, do the following:
+       In this section, you configure AWS Network Firewall. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
+       
+       If fields are missing, or you need to change them, do the following:
        * **7.3 Firewall Manager Details - S3 Source Network Firewall Configuration**.
           * **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. The source category name to be created. If you selected **No** in the previous field, enter an existing source category name. 
