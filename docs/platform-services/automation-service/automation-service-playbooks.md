@@ -222,3 +222,11 @@ With the mechanism to import and export playbooks, you can move a playbook, alon
 1. Select the desired file and click Import. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
 
 It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+
+<!-- DOCS-56
+
+## Troubleshoot playbooks
+
+If a playbook fails, you can investigate the reasons in the playbook messaging. 
+
+-->
