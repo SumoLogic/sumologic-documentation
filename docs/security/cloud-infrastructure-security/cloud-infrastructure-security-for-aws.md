@@ -524,11 +524,35 @@ Following are monitors included with the solution:
 * **Critical GuardDuty Alerts**. Alerts on critical severity findings from Amazon GuardDuty. These findings typically indicate severe security threats that require immediate attention and remediation.
 * **EC2 instance accessed from malicious IP**. Alerts when an EC2 instance is accessed from an IP address identified as malicious by threat intelligence feeds. This could signify a potential breach or unauthorized access attempt.
 * **High Severity GuardDuty Alerts**. Triggers on high severity findings from Amazon GuardDuty, indicating significant security threats that need prompt investigation and action.
-* **Important GuardDuty Alerts**. Alerts on important severity findings from Amazon GuardDuty. 
+* **Important GuardDuty Alerts**. Alerts on important severity findings from Amazon GuardDuty. These findings are notable and should be investigated to ensure they do not escalate into more severe issues.
+* **Landspeed Violations**. Detects landspeed violations, which generally refer to unusual and rapid movements of data or activities across different regions that could indicate data exfiltration or unauthorized operations.
+* **Low Severity GuardDuty Alerts**. Monitors low severity findings from Amazon GuardDuty. While these findings may not require immediate action, they should be reviewed to ensure they do not evolve into more significant threats.
+* **Medium Severity GuardDuty Alerts**. Alerts on medium severity findings from Amazon GuardDuty. These findings indicate moderate security threats that should be investigated and addressed appropriately.
+* **Root Account Login**. Triggers when there is a login to the AWS root account. Root account access should be highly restricted and monitored due to its unrestricted access to all resources in the account.
 
 :::note
-Monitors can contain automated playbooks built specifically for Cloud Infrastructure Security for AWS that you can use for alert remediation. For more information about automated playbooks, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). 
+Monitors can contain automated playbooks that you can use for alert remediation. For information about automated playbooks, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). 
 :::
+
+## Cloud Infrastructure Security for AWS saved searches
+
+Following are saved searches included with the solution:
+
+* **Admin Privileges Granted**. Detects when administrative privileges are granted to a user or role, helping to monitor and control access to sensitive resources.
+* **Control Failure Findings Details by Severity**. Provides detailed information on control failures categorized by their severity levels, aiding in prioritizing remediation efforts.
+* **Creation of IAM Role**. Monitors the creation of new IAM roles, which can grant permissions to users, applications, or services within AWS.
+* **Deleted Resources Over Time**. Tracks resources that have been deleted over time, which can help in understanding changes to the environment and identifying potential issues.
+* **Exposed S3 Bucket Created**. Alerts when an S3 bucket is created with permissions that make it publicly accessible, which can lead to data leaks.
+* **Gateway Changes**. Monitors changes to internet gateways, NAT gateways, and other related configurations that can affect network traffic flow.
+* **IAM Policy Changes**. Tracks changes to IAM policies, which define permissions for users and roles, helping to ensure security policies are enforced properly.
+* **Least Common Out of Compliance Findings**. Identifies the least common compliance issues, which may highlight rare but potentially severe misconfigurations or vulnerabilities.
+* **Most Common Out of Compliance Findings**. Identifies the most frequent compliance issues, helping to prioritize common problems that need attention.
+* **Network ACL Changes**. Monitors changes to Network Access Control Lists (ACLs), which control inbound and outbound traffic at the subnet level.
+* **New Admins Added**. Alerts when new administrative users are added, ensuring that administrative access is appropriately monitored and controlled.
+* **Route Table Changes**. Tracks changes to route tables, which control the traffic routing in VPCs, ensuring network routes are configured as intended.
+* **S3 Bucket Changes**. Monitors changes to S3 bucket configurations, which can affect data security and accessibility.
+* **Security Group Changes**. Tracks changes to security groups, which act as virtual firewalls for controlling inbound and outbound traffic to AWS resources.
+* **VPC Changes**. Monitors changes to Virtual Private Cloud (VPC) settings, which can impact the overall network architecture and security.
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
