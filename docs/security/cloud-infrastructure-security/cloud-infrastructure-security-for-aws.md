@@ -530,10 +530,6 @@ Following are monitors included with the solution:
 * **Medium Severity GuardDuty Alerts**. Alerts on medium severity findings from Amazon GuardDuty. These findings indicate moderate security threats that should be investigated and addressed appropriately.
 * **Root Account Login**. Triggers when there is a login to the AWS root account. Root account access should be highly restricted and monitored due to its unrestricted access to all resources in the account.
 
-:::note
-Monitors can contain automated playbooks that you can use for alert remediation. For information about automated playbooks, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). 
-:::
-
 ## Cloud Infrastructure Security for AWS saved searches
 
 Following are saved searches included with the solution:
