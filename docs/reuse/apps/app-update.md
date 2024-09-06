@@ -19,7 +19,7 @@ Your upgraded app will be installed in the **Installed Apps** folder, and dashbo
 See our [**Release Notes** changelog](/release-notes-service) for new updates in the app.
 :::
 
-To version down the app, do the following:
+To revert the app to a previous version, do the following:
 
 1. Select **App Catalog**.
 1. In the **Search Apps** field, search for and then select your app.
