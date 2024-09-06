@@ -25,5 +25,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/slosLibraryManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/slosLibraryManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/slosLibraryManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/slosLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/slosLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/slosLibraryManagement |
+
