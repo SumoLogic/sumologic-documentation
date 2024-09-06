@@ -41,7 +41,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
   <tr>
     <td><strong>Deployment</strong></td>
     <td><strong>Collection Endpoint</strong></td>
-    <td><string>OpenTelemetry Collector Endpoint</string></td>
+    <td><strong>OpenTelemetry Collector Endpoint</strong></td>
     <td><strong>AWS Region of Sumo PrivateLink Endpoint Service</strong></td>
   </tr>
   <tr>
@@ -86,6 +86,12 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
     <td>https://collectors.kr.sumologic.com<br/></td>
     <td>https://open-collectors.kr.sumologic.com</td>
    <td>ap-northeast-2</td>
+  </tr>
+  <tr>
+    <td>KR</td>
+    <td>https://collectors.kr.sumologic.com</td>
+    <td>https://open-collectors.kr.sumologic.com</td>
+    <td>ap-northeast-2</td>
   </tr>
   <tr>
     <td>US1</td>

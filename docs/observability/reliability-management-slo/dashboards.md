@@ -131,9 +131,10 @@ _view=sumologic_slo_output
 | concat (sloname, " (", sloId, ")") as sloUniqueName
 | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
 | totalEvents - goodEvents as badEvents
-| if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+| if (evaluationType = "Window", queryTimeRange() / sliwindowsize, totalEvents) as denominator
 | 100 * (1 - badEvents / denominator) as sli
 | 100 * (sli - target) / (100 - target) as budgetRemaining
+| if(budgetRemaining < 0, 0, budgetRemaining) as budgetRemaining
 | fields sloUniqueName, budgetRemaining
 ```
 
