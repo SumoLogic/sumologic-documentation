@@ -223,10 +223,39 @@ With the mechanism to import and export playbooks, you can move a playbook, alon
 
 It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
-<!-- DOCS-56
-
 ## Troubleshoot playbooks
 
-If a playbook fails, you can investigate the reasons in the playbook messaging. 
+If you encounter problems running a playbook, you can investigate by using guidance provided in the playbook itself.
 
--->
+### Open playbooks that require investigation
+
+#### Open a playbook from an alert
+
+1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alerts-list).
+1. Open an alert.
+1. Click the **Playbooks** button on the alert details page to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. 
+1. Hover your mouse over the icon to the right of the playbook to see its status. In the example below, the playbook completed with errors. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
+1. Click the playbook name. The playbook opens in the Automation Service. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+
+#### Open a playbook from Cloud SIEM
+
+1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/).
+1. Click the **Automations** button at the top of the page to [view automations on the Insight or Entity](/docs/cse/automation/automations-in-cloud-siem/#view-automations-on-insights-and-entities).  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** for a playbook you want to investigate. The playbook opens in the Automation Service.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+
+#### Open a playbook from Cloud SOAR
+
+1. Open an [Incident](/docs/cloud-soar/incidents-triage/#incidents).
+1. On the [incident details](/docs/cloud-soar/incidents-triage/#incident-details) page, select **Operations > Playbooks**. Playbooks appear that have run for the incident. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbooks-in-cloud-soar.png')} alt="Playbooks on an incident in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Graph View** in the upper-right and click **>** to page through the playbooks. <br/><img src={useBaseUrl('img/platform-services/automation-service/cloud-soar-playbooks-graph-view.png')} alt="Playbook in graph view in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
+1. Click a node on the playbook that displays an error.
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+
+### Investigate playbook problems
+
+1. 
