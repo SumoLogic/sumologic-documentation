@@ -131,6 +131,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Operators**. When referring to a search operator, capitalize the operator's name only if it begins a sentence.
 
+**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
 ## P
 

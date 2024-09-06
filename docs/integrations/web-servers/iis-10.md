@@ -526,7 +526,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
   Version selection is not available for all apps.
   :::
 3. To install the app, complete the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
      * For all IIS Server farms, `webserver_farm=*`.
      * For a specific farm, `webserver_farm=iis.dev.01`.

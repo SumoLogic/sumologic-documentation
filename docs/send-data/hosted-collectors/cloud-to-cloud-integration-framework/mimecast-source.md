@@ -32,9 +32,11 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 ### Vendor configuration
 
-The integration must be configured with the Client ID and Secret Key. Also, the user account associated with your Mimecast credentials needs to have `basic administrator` access.
+The user account associated with your Mimecast credentials needs to have `basic administrator` access. The integration must be configured with the Base URL, Application key, Secret key, and Access key.
 
-Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
+- The base URL parameter changes depending on the your global region. Refer to the [Mimecast documentation](https://integrations.mimecast.com/documentation/api-overview/global-base-urls/) for guidance as to which base URL should be used.
+
+- To create the Application key, Secret key, and Access key, refer to the [Mimecast documentation](https://community.mimecast.com/s/article/api-integrations-managing-api-1-0-for-cloud-gateway).
 
 :::note
 Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation. 
@@ -54,9 +56,12 @@ To configure a Mimecast Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Client ID**. Enter the Client ID of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID.
-1. **Client Secret**. Enter the Client Secret key of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client Secret.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+1. **Base URL**. Enter the [Base URL](#vendor-configuration).
+1. **Application Key**. Enter the [Application Key](#vendor-configuration).
+1. **Application ID**. Enter the [Application ID](#vendor-configuration).
+1. **Access Key**. Enter the [Access Key](#vendor-configuration).
+1. **Secret Key**. Enter the [Secret Key](#vendor-configuration).
 1. **Supported API to collect**. Select the type of Mimecast data source that you want to collect.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
