@@ -27,6 +27,7 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
 | FED        | https://api.fed.sumologic.com/docs/#tag/lookupManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/lookupManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/lookupManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/lookupManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/lookupManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/lookupManagement |
 

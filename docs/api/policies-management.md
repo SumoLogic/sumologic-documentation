@@ -27,6 +27,7 @@ The Policies Management API allows you to control the security and share setting
 | FED        | https://api.fed.sumologic.com/docs/#tag/policiesManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/policiesManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/policiesManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/policiesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/policiesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/policiesManagement |
 

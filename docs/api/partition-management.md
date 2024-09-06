@@ -27,6 +27,7 @@ The Partitions Management API allows you to improve search performance by search
 | FED        | https://api.fed.sumologic.com/docs/#tag/partitionManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/partitionManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/partitionManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/partitionManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/partitionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/partitionManagement |
 

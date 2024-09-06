@@ -52,6 +52,7 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 | FED        | https://api.fed.sumologic.com/docs/#tag/metricsQuery |
 | IN         | https://api.in.sumologic.com/docs/#tag/metricsQuery  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
 

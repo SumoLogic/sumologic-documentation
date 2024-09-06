@@ -27,6 +27,7 @@ The User Management API allows you to [manage user accounts](/docs/manage/users-
 | FED        | https://api.fed.sumologic.com/docs/#tag/userManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/userManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/userManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/userManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/userManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/userManagement |
 

@@ -26,6 +26,7 @@ To view our main docs, click the link below corresponding to your deployment. If
 | FED        | https://api.fed.sumologic.com/docs/ |
 | IN         | https://api.in.sumologic.com/docs/  |
 | JP         | https://api.jp.sumologic.com/docs/  |
+| KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
 

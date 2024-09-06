@@ -27,6 +27,7 @@ With the Organizations Management API, you can get the credits usage details of 
 | FED        | https://api.fed.sumologic.com/docs/#tag/orgsManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/orgsManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/orgsManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement |
 
