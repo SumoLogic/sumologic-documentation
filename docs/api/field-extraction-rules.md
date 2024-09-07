@@ -28,6 +28,7 @@ The Field Extraction Rules (FER) Management API allows you to configure FERs fro
 | IN         | https://api.in.sumologic.com/docs/#tag/extractionRuleManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/extractionRuleManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/extractionRuleManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/extractionRuleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/extractionRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/extractionRuleManagement |
 

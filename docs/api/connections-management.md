@@ -28,6 +28,7 @@ Connections Management APIs let you set up connections to send alerts to third-p
 | IN         | https://api.in.sumologic.com/docs/#tag/connectionManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/connectionManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/connectionManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/connectionManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/connectionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/connectionManagement |
 

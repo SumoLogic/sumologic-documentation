@@ -28,6 +28,7 @@ The Monitor Management API allows you to manage Monitors from HTTP endpoints. Mo
 | IN         | https://api.in.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/monitorsLibraryManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/monitorsLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/monitorsLibraryManagement |
 
