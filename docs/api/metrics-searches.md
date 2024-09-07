@@ -30,7 +30,6 @@ Use Metrics Search Management APIs to save metrics searches in your content libr
 | IN         | https://api.in.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagement |
 

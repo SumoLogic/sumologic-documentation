@@ -30,7 +30,6 @@ To manage roles, you must have an administrator role or your role must have been
 | IN         | https://api.in.sumologic.com/docs/#tag/roleManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/roleManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/roleManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/roleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/roleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/roleManagement |
 
