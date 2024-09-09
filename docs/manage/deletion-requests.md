@@ -23,12 +23,10 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
-After the data deletion, data will be removed from your view in the indexes that powers search. Sumo Logic retains the copy of the last 14 days of ingested data to allow for data replay/recovery for certain exceptional situations and will eventually delete it. This copy is inaccessible to the users within your account. Any data replay will include your communication, after which the deletion request could be reapplied.
-
 ## Create a deletion request
 
 :::warning
-Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
+After the data deletion, data will be removed from your view in the indexes that powers search. Sumo Logic retains the copy of the last 14 days of ingested data to allow for data replay/recovery for certain exceptional situations and will eventually delete it. This copy is inaccessible to the users within your account. Any data replay will include your communication, after which the deletion request could be reapplied.
 :::
 
 :::note
@@ -39,7 +37,7 @@ During the data deletion process, existing messages may temporarily appear dupli
 To create or view data deletion requests, you must have the **Manage Deletion Rules** capability. But to only view the data deletion requests, you must have either `viewDeletionRules` or `manageDeletionRules` capability.
 :::
 
-You can create a data deletion request from either the **Logs** tab or any **Log Search**.
+Data cannot be recovered once it gets deleted. Ensure that you have appropriately backed up any necessary data before submitting a deletion request. You can create a data deletion request from either the **Logs** tab or any **Log Search**.
 
 ### From the Logs tab
 
