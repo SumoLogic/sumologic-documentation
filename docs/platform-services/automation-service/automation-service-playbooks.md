@@ -227,7 +227,7 @@ You can test a playbook to verify that it works properly. The test results show 
 
 ## Troubleshoot playbooks
 
-You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has problems when run in an automation, you can investigate by using guidance provided by the playbook itself.
+You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.
 
 :::tip
 To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). 
@@ -241,17 +241,17 @@ To test a playbook before using it in an automation, see [Test a playbook](/docs
 1. Open an alert that uses a playbook.
 1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
 1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors. 
-1. To investigate the errors, click the playbook name. The playbook opens in the Automation Service and the errors display in the results section.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+1. To investigate the problem, click the playbook name. The playbook opens in the Automation Service and any issues display in the results section.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
-Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 
 #### Open a playbook from Cloud SIEM
 
 1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
 1. Click the **Automations** button at the top of the page to view the automations on the Insight or Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
-1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the errors display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the issues display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
-Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 
 #### Open a playbook from Cloud SOAR
 
@@ -260,15 +260,28 @@ Proceed to [Investigate playbook problems](#investigate-playbook-problems) below
 1. Click **Graph View** in the upper-right and click **>** to page through the playbooks. <br/><img src={useBaseUrl('img/platform-services/automation-service/cloud-soar-playbooks-graph-view.png')} alt="Playbook in graph view in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
 1. Click a node on the playbook that displays an error.
 
-Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 
 ### Investigate playbook problems
 
-After you have [opened a playbook that requires investigation](/docs/platform-services/automation-service/automation-service-playbooks/#open-playbooks-that-require-investigation), follow the steps below to examine the playbook.
+After you have [opened a playbook that requires investigation](/docs/platform-services/automation-service/automation-service-playbooks/#open-playbooks-that-require-investigation), follow the steps below to investigate problems with the playbook.
 
 1. The **Filtered Results** section shows the status of actions that ran on the playbook. The example below shows two failed actions that require investigation. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-actions-in-filtered-results.png')} alt="Failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
 1. Click a failed action for an explanation of the failure. <br/><img src={useBaseUrl('img/platform-services/automation-service/reason-for-failed-action.png')} alt="Reasons for failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
-1. Click the **Graph View** in the upper right and then click on the failed action. A pane opens that displays information about the action. Scroll to the bottom of the pane to see the explanation for the failure. In this example, it says "Error: Unexpected error during automatic action execution: Required field 'IP or HostName' is empty". <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/> <br/>Notice that the **Configuration** section of the pane says "IP or HostName: Playbook input.value". This gives us a clue why the playbook failed. Evidently, the action requires an IP and HostName as an input to the playbook. Since this is a playbook that ran on a Cloud SIEM Insight, perhaps the Insight didn't supply an IP or HostName.
-1. To investigate why the "Required field 'IP or HostName' is empty", let's click the **>** on the playbook name to see its payload. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/> <br/>The payload displays. Notice how `hostname` is `NULL`. This might be why the action failed. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. For more detailed information about the failed action, click the **Graph View** in the upper right and then click on the action. A pane opens that displays more information about the action. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/>
+1. Sometimes the playbook's payload will provide more information about why an action failed. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. Examine the payload for information that might help you resolve the problem. For example, the payload may be able to tell you if a field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. Based on what you uncover during investigation, you may need to make changes to the playbook and then [test the playbook](#test-a-playbook) to ensure it works correctly. 
 
-Usually by examining the error message and the playbook payload you can uncover the reasons why an action failed.
+
+### Common playbook problems
+
+Following are some common problems that can occur with playbooks:
+* **No response from the bridge**<br/>The [automation bridge](/docs/platform-services/automation-service/automation-service-bridge/) is offline, or the bridge does not have the egress firewall settings to handle the outbound request.
+* **API rate limiting issues** <br/>The vendor has capped the number of requests that can be made to their API in a certain time frame.
+* **HTTPS connection pool issues** <br/>There are no available connections at the vendor, usually indicative of a vendor API health issue.
+* **A required field is empty that the action is looking for** <br/>A field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires. 
+* **Permission denied** <br/>The API key is incorrect on the [integration resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource), or the account running the playbook has invalid credentials or insufficient permissions.
+* **You have reached the actions limit** <br/>The number of actions that your organization can run per hour is limited to a certain threshold. Any actions that are launched beyond this [actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) will not run.
+* **Alert surges** <br/>The playbook is not optimized properly and actions are stuck in a loop.
+* **Cartesian flag issues** <br/>There are too many nested elements to process as part of the returned API result.

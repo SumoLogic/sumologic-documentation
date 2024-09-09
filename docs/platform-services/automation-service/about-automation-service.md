@@ -16,7 +16,7 @@ To use the Automation Service, execute playbooks to run actions in a workflow. A
 You can use the Automation Service to run automations for the following:
 * **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
 * **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
-* **Cloud SOAR**. Automation is run as part of [incident management and triage](/docs/cloud-soar/incidents-triage). 
+* **Cloud SOAR**. Use [automation](/docs/cloud-soar/automation/) for incident management and triage. 
 
 ## Differences compared to Cloud SOAR
 
