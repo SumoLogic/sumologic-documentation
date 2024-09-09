@@ -23,6 +23,8 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
+After the data deletion, data will be removed from your view in the indexes that powers search. Sumo Logic retains the copy of the last 14 days of ingested data to allow for data replay/recovery for certain exceptional situations and will eventually delete it. This copy is inaccessible to the users within your account. Any data replay will include your communication, after which the deletion request could be reapplied.
+
 ## Create a deletion request
 
 :::warning
