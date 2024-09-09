@@ -15,9 +15,9 @@ Query data from MSSQL Database.
 
 * **Query MSSQL** (*Enrichment*) - Query data from MSSQL Database.
 
-## Note
-
+:::note
 This Integration does not support client-side encryption.
+:::
 
 ## Change Log
 
