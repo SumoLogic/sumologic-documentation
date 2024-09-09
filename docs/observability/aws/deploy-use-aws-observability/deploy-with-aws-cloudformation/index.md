@@ -35,8 +35,8 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.9.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.9.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
@@ -55,7 +55,7 @@ The below tables displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys.md) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |

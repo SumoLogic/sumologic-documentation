@@ -27,5 +27,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
 | IN         | https://api.in.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 | JP         | https://api.jp.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| KR         | https://api.kr.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 | US1        | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType     |
 | US2        | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
+
