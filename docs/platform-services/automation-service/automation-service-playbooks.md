@@ -232,18 +232,18 @@ If you encounter problems running a playbook, you can investigate by using guida
 #### Open a playbook from an alert
 
 1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alerts-list).
-1. Open an alert.
-1. Click the **Playbooks** button on the alert details page to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. 
-1. Hover your mouse over the icon to the right of the playbook to see its status. In the example below, the playbook completed with errors. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
-1. Click the playbook name. The playbook opens in the Automation Service. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+1. Open an alert that uses a playbook.
+1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
+1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors. 
+1. To investigate the errors, click the playbook name. The playbook opens in the Automation Service and the errors display in the results section.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
 
 #### Open a playbook from Cloud SIEM
 
-1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/).
-1. Click the **Automations** button at the top of the page to [view automations on the Insight or Entity](/docs/cse/automation/automations-in-cloud-siem/#view-automations-on-insights-and-entities).  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
-1. Click **View Playbook** for a playbook you want to investigate. The playbook opens in the Automation Service.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Click the **Automations** button at the top of the page to view the automations on the Insight or Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the errors display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into the playbook errors.
 
@@ -258,4 +258,9 @@ Proceed to [Investigate playbook problems](#investigate-playbook-problems) below
 
 ### Investigate playbook problems
 
-1. 
+After you have [opened a playbook that requires investigation](/docs/platform-services/automation-service/automation-service-playbooks/#open-playbooks-that-require-investigation), follow the steps below to examine the playbook.
+
+1. The **Filtered Results** section shows the status of actions that ran on the playbook. The example below shows two failed actions that require investigation. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-actions-in-filtered-results.png')} alt="Failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
+1. Click a failed action for an explanation of the failure. <br/><img src={useBaseUrl('img/platform-services/automation-service/reason-for-failed-action.png')} alt="Reasons for failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
+1. Click the **Graph View** in the upper right and then click on the failed action. A pane opens that displays information about the action. Scroll to the bottom of the pane to see the explanation for the failure. In this example, it says "Error: Unexpected error during automatic action execution: Required field 'IP or HostName' is empty". <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/> <br/>Notice that the **Configuration** section of the pane says "IP or HostName: Playbook input.value". This gives us a clue why the playbook failed. Evidently, the action requires an IP and HostName as an input to the playbook. Since this is a playbook that ran on a Cloud SIEM Insight, perhaps the Insight didn't supply an IP or HostName.
+1. To investigate why the "Required field 'IP or HostName' is empty", let's click the **>** on the playbook name to see its payload. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/> <br/>The payload displays. Notice how `hostname` is `NULL`. This might be why the action failed. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
