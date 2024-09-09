@@ -130,7 +130,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
   4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with `"http_load_balancer"`.
   5. Click **Create Sync**.
 
-## Install the Google Cloud Load Balancing App
+## Install the Google Cloud Load Balancing app
 
 Now that you have set up collection for Google Cloud Load Balancing, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -210,3 +210,15 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 **4xx Status Codes Locations**. A world map that shows the locations of 4xx status codes over the last 24 hours.
 
 **4xx Status Code Per Load Balancer**.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.
+
+## Upgrading the Google Cloud Load Balancing app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Load Balancing app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

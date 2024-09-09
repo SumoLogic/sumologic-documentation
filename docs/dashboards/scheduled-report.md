@@ -7,15 +7,15 @@ description: Learn how to create, update, delete and export a scheduled dashboar
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Scheduled Report** feature enables you to receive an emailed copy of a dashboard (PDF or PNG format) at the frequency of your choice, allowing you to get your dashboard insights without logging into the Sumo Logic platform.
+The scheduled report feature enables you to receive an emailed copy of a dashboard (PDF or PNG format) at the frequency of your choice, allowing you to get your dashboard insights without logging into the Sumo Logic platform.
 
-You can distribute the dashboard to folks in your Sumo organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
+You can distribute the dashboard to people in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
 If a .pdf and/or .png export fails, an error email will be sent to your email ID.
 :::
 
-## Create a Scheduled Report
+## Create a scheduled report
 
 :::note
 To create a scheduled report, ensure you have dashboard **Edit** permissions. While with dashboard **View** permissions, you can only subscribe/unsubscribe to the scheduled report.
@@ -55,9 +55,9 @@ Scheduled reports are allowed to run for a maximum of five minutes. Any panel th
 * You can enter up to 10 email addresses to which you want to send the dashboard.
 * You can create a maximum of 20 scheduled reports for a dashboard.
 
-## Edit a Scheduled Report
+## Edit a scheduled report
 
-To update an existing a Scheduled Report dashboard email:
+To update an existing a scheduled report dashboard email:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Edit** against the required report. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report_1.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
@@ -67,9 +67,9 @@ To update an existing a Scheduled Report dashboard email:
 - Toggle ON or OFF the status button to activate or deactivate the scheduled report.
 :::
 
-## Delete a Scheduled Report
+## Delete a scheduled report
 
-To cancel a Scheduled Report:
+To cancel a scheduled report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Delete** against the required report.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report_1.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="600"/>

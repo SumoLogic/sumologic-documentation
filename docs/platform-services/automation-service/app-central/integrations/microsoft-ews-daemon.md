@@ -1,15 +1,14 @@
 ---
 title: Microsoft EWS Daemon
 description: ''
-tags: [ cloud soar integrations ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="microsoft-defender-atp" width="100"/>
 
-***Version: 2.4  
-Updated: Mar 21, 2024***
+***Version: 2.5  
+Updated: May 9, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -125,6 +124,10 @@ full\_access\_as\_app Use Exchange Web Services with full access to all mailboxe
 
 Once API permission are added then Admin must consent to a grant these permissions, [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
 
+:::info Important Note
+When using the Microsoft EWS Daemon action within an automation rule, note that it will only pull in emails that are marked "Unread" within the respective mailbox scope. To ensure all relevant alerts are processed correctly, keep this mailbox a dedicated entity and avoid any manual reviews by other stakeholders.
+:::
+
 ## Category
 
 Email Gateway
@@ -136,3 +139,4 @@ Email Gateway
 * October 6, 2023 (v2.2) - Integration Updated
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
 * March 21, 2024 (v2.4) - Resolved an issue related to the Email Body
+* May 9, 2024 (v2.5) - A new field has been added to the integration resource for specifying the folder or path to search within 

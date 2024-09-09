@@ -252,3 +252,15 @@ See information about users  in Google BigQuery, including query operations, bil
 **Errors by User Over Time.** Shows trends in errors based on users over time in the last 24 hours on a line graph.
 
 **Location of Users with Errors.** Shows the number of users with errors in the last 24 hours and their location on a map.
+
+## Upgrading the Google BigQuery app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google BigQuery app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

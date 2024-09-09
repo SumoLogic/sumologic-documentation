@@ -83,7 +83,7 @@ You will now be able to see Heroku logs flowing into that HTTP source in Sumo Lo
 You can also run `heroku drains` or `heroku drains --json` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app, which can be attached to a new app.
 :::
 
-### Collecting Logs via Sumo Logic add-on
+### Collecting logs via Sumo Logic add-on
 
 The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
@@ -360,3 +360,15 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Error Details**. Shows the count of different types of error messages for different Heroku components.
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
+
+## Upgrading the Heroku app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Heroku app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

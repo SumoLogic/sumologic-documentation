@@ -13,7 +13,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/cato-networks/example.jso
 import TerraformExample from '!!raw-loader!/files/c2c/cato-networks/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cato-logo.png')} alt="img/send-data/cato-logo.png" width="50"/>
+<img src={useBaseUrl('img/send-data/cato-logo.png')} alt="cato logo" width="50"/>
 
 Cato Networks is a cloud-native, global SD-WAN provider that delivers a secure, optimized, and agile global network for businesses of all sizes. Cato's cloud-based platform converges multiple network and security functions into a unified solution that includes SD-WAN, network security, cloud security, and secure access service edge (SASE) capabilities.
 
@@ -40,7 +40,7 @@ In this configuration, you will set up the Cato Networks API Key and Account ID 
 All access to Cato networks require an API Key. Follow the below instructions to set up an API Key.
 
 1. In the navigation menu, click **Administration > API Management**. <br/><img src={useBaseUrl('img/send-data/cato-networks-administration.png')} alt="cato-networks-administration.png" width="700" />
-1. On the **API Keys** tab, click **New**. The **Create API Key** panel opens. 
+1. On the **API Keys** tab, click **New**. The **Create API Key** panel opens.
 1. Enter a **Key Name**. <br/><img src={useBaseUrl('img/send-data/cato-networks-new-api-key.png')} alt="cato-networks-new-api-key.png" width="250" />
 1. Select **View** in the **API Permission**.
 1. Select **Any IP** to allow this API key for any IP address under the **Allow Access from IPs** section.
@@ -109,13 +109,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/cato-networks/example.json)
+<a href="/files/c2c/cato-networks/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/cato-networks/example.tf)
+<a href="/files/c2c/cato-networks/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

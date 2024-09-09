@@ -29,14 +29,14 @@ Tutorial: Set up NGINX for non-Kubernetes Sources.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
 :::
 
 
-## Collecting Logs for the Nginx app
+## Collecting logs for the Nginx app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
@@ -382,7 +382,7 @@ To view the full list, see [Nginx](#nginx-alerts). There are limits to how many 
    * For alerts applicable only to a specific farm, your custom filter would be `webserver_farm=nginx-standalone.01`.
    * For alerts applicable to all farms that start with nginx-standalone, your custom filter would be `webserver_system=nginx-standalone*`.
    * For alerts applicable to a specific farm within a production environment, your custom filter would be,`webserver_farm=nginx-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
-3. Go to Manage Data > Alerts > Monitors.
+3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 
@@ -466,7 +466,7 @@ This section demonstrates how to install the Nginx app.
    Version selection is not available for all apps.
    :::
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Nginx farm filter. Examples:
        1. For all Nginx farms, `webserver_farm=*`.
        2. For a specific farm, `webserver_farm=nginx.dev.01`.

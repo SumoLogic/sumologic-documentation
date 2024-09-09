@@ -86,6 +86,10 @@ Before changing the routing expression for a partition, consider the impact of t
 ### How to edit a partition
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  :::note 
+  You can see the suggestions only if there are two or more responses for the same column or section. 
+  :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
@@ -96,7 +100,7 @@ Before changing the routing expression for a partition, consider the impact of t
 ### Audit logging for routing expression changes
 
 If you change the routing expression for a partition, an event is
-written to the Audit Event Index with the following details:
+written to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) with the following details:
 
 * `EventName` is "PartitionUpdated"
 * `Subsystem` is "Partition"

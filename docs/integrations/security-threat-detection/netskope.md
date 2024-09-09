@@ -83,7 +83,7 @@ To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integrat
 
 </details>
 
-### Sample query
+### Sample queries
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
@@ -213,3 +213,15 @@ Use this dashboard to:
 * Track anomalies with high risk levels.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
+
+## Upgrading the Netskope app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Netskope app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

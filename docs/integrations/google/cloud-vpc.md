@@ -102,7 +102,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 ```
 
 
-## Collecting Logs for Google Cloud VPC
+## Collecting logs for Google Cloud VPC
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
 
@@ -196,7 +196,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-## Installing the Google Cloud VPC App
+## Installing the Google Cloud VPC app
 
 Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -308,3 +308,15 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 **Average Latency (ms) per Minute - Trend.** Shows the trend in average latency per minute in the last hour on a scatter plot graph.
 
 **Latency (ms) Box Plot.** Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
+
+## Upgrading the Google Cloud VPC app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud VPC app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -258,12 +258,13 @@ html[data-theme='light'] {
 }
 
 .header-trial::before {
-  content: 'Start free trial';
+  content: 'START FREE TRIAL';
   border: 1px solid #2aa1e6;
   color: #FFF;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
   margin-right: -20px;
@@ -278,9 +279,10 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   background: #2aa1e6;
   margin-right: -20px;
@@ -292,13 +294,14 @@ html[data-theme='light'] {
 }
 
 .header-support::before {
-  content: 'Contact Support';
+  content: 'CONTACT SUPPORT';
   background: transparent;
   border: 1px solid #000;
   color: var(--ifm-navbar-link-color);
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -311,9 +314,10 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #E5F4FA;
   color: var(--ifm-navbar-link-color);
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 4px 15px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -704,12 +708,12 @@ html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     background-color: #000099;
     padding: 5px 5px 0px 5px;
   }
-  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
    // font-weight: bold;
     color: #2f5fff;
@@ -726,13 +730,13 @@ html[data-theme='light'] .theme-admonition-sumo {
   --ifm-alert-color: #000099;
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #000099;
   .admonition-icon {
     background-color: #001799;
     padding: 5px 5px 0px 5px;
   }
-  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
     //font-weight: bold;
     color: #2f5fff;
@@ -1461,58 +1465,4 @@ html[data-theme='dark'] .featureImage {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-//Style Guide Dos and Don'ts
-
-.container-boxes {
-  overflow: hidden; /* Clear the floats */
-}
-
-.dos-box {
-  background-color: #91CF91;
-  color: #212121;
-  border-top: 8px solid #12863a;
-  padding: 10px;
-  border-radius: 1px;
-  width: 40%;
-  margin-left: 10px;
-  margin-right: 1px;
-  margin-bottom: 2px;
-  float: left;
-  box-sizing: border-box;
-  line-height: 26pt;
-}
-
-.donts-box {
-  background-color: #E59FA1;
-  color: #000000;
-  border-top: 8px solid #e60e0e;
-  padding: 10px;
-  border-radius: 1px;
-  width: 40%;
-  margin-bottom: 2px;
-  float: left;
-  box-sizing: border-box;
-  line-height: 26pt;
-}
-
-
-
-.yes-box {
-  background-color: #91CF91;
-  color: #212121;
-  border-left: 8px solid #12863a;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 4px;
-}
-
-.no-box {
-  background-color: #E59FA1;
-  color: #000000;
-  border-left: 8px solid #e60e0e;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 4px;
 }

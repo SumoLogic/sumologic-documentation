@@ -28,7 +28,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 | sort by count
 ```
 
-## Collecting Logs for the Amazon CloudFront app
+## Collecting logs for the Amazon CloudFront app
 
 ### Prerequisites
 
@@ -116,6 +116,18 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 - **Cache Hit and Miss Over Time.** Displays the cache's hits and misses over time in timeslices of five minutes for the last three hours in a stacked column chart.
 - **HTTP Status Codes Over Time.** Shows HTTP status codes over time in timeslices of five minutes for the last three hours in a timeline.
 - **Traffic and Megabytes Served.** Provides information on site traffic hits and Megabytes served in timeslices of one hour over the last 24 hours in a combination column and line chart.
+
+## Upgrading the Amazon CloudFront app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon CloudFront app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Additional logs and metrics collection (Optional)
 

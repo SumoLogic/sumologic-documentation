@@ -383,3 +383,15 @@ See the details of App Engine requests including the location, request methods, 
 **Average Latency**. See the average and trend of latency in the last hour on a line chart.
 
 **Average Response Time**. See the average and trend of response time in the last hour on a line chart.
+
+## Upgrading the Google App Engine app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google App Engine app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -71,7 +71,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Code42Incydr"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"Code42 Incydr"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -92,13 +92,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/code42-incydr/example.json)
+<a href="/files/c2c/code42-incydr/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/code42-incydr/example.tf)
+<a href="/files/c2c/code42-incydr/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

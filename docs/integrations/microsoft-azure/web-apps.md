@@ -39,7 +39,7 @@ _sourceCategory=Azure/Web-app
 | outlier _count
 ```
 
-## Collecting Logs for Azure Web Apps
+## Collecting logs for Azure Web Apps
 
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
@@ -82,11 +82,15 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 
 This section provides instructions on how to install the Azure Web Apps app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Azure Web Apps dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -169,3 +173,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 **Top Requested Documents by Country.** Lists the top requested documents in a table chart including details on URI, country name, and number of requests for the last three hours.
 
 **Top 10 Slowest Pages by Country.** Lists the 10 slowest pages by country in a table chart including details on URI, country name, and average time in seconds for the last three hours.
+
+## Upgrading the Azure Web Apps app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Web Apps app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

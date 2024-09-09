@@ -15,12 +15,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/snowflake-sql-api/example
 import TerraformExample from '!!raw-loader!/files/c2c/snowflake-sql-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.
@@ -103,10 +97,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/snowflake-sql-api/example.json)
+<a href="/files/c2c/snowflake-sql-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/snowflake-sql-api/example.tf)
+<a href="/files/c2c/snowflake-sql-api/example.tf" target="_blank">Download example</a>
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

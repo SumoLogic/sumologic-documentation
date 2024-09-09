@@ -137,7 +137,7 @@ request_id
 ```
 
 
-## Collecting Logs for the Acquia App
+## Collecting logs for the Acquia App
 
 This section provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
@@ -303,3 +303,15 @@ Use this dashboard to:
 * Monitor response time latency
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Acquia_Drupal_Requests_Overview.png')} alt="Dashboard" />
+
+## Upgrading the Acquia app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Acquia app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

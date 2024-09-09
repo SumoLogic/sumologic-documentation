@@ -1,32 +1,34 @@
 ---
 title: CrowdStrike Falcon
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.9  
-Updated: Mar 4, 2024***
+***Version: 1.10
+Updated: July 8, 2024***
 
-CrowdStrike Falcon integration allows to pull Detections, Incidents, searching Incidents/Devices/Detections, and updating Detections/Incidents.
+The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
 ## Actions
 
-* **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
-* **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
-* **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
-* **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging details.
-* **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
-* **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
-* **Get Endpoint** *(Enrichment)* - Get details on one or more hosts by providing agent IDs.
-* **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
-* **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
+* **Create Indicators** *(Containment)* - Create the Indicators.
+* **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
 * **Device Actions** *(Containment)* - Take various actions on the hosts in your environment.
 * **Get Browser History** *(Enrichment)* - Get user Browser history.
+* **Get Endpoint** *(Enrichment)* - Get details on one or more hosts by providing agent IDs.
+* **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
+* **Get Indicators** *(Containment)* - Get Indicators By IDs.
+* **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
+* **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
+* **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
+* **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
+  details.
+* **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 
 ## Category
 
@@ -51,3 +53,6 @@ EDR
 * March 21, 2023 (v1.5) - Logo updated
 * July 12, 2023 (v1.8) - Changed fields visibility
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
+* July 8, 2024 (v1.10) - Added new actions
+    + Create Indicators
+    + Get Indicators

@@ -657,3 +657,15 @@ See information about network usage over the last three hours.
 **Rate of Tx Packets**. A line chart that shows the rate at which packets were transmitted per timeslice by each container over the last three hours.
 
 **Count of Tx Error Packets**. A line chart that shows the count of error packets transmitted per timeslice by each container over the last three hours.   
+
+## Upgrading the Docker ULM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Docker ULM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

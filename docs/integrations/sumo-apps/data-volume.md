@@ -35,7 +35,7 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Viewing Data Volume dashboards
+## Viewing Data Volume Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -120,3 +120,15 @@ Use this dashboard to:
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
+
+## Upgrading the Data Volume app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Data Volume app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

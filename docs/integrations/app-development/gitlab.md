@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 
 
-## Event Types
+## Event types
 
 The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 
@@ -26,7 +26,7 @@ The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic 
 For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html). For troubleshooting, see the [GitLab Troubleshooting](#troubleshooting) section.
 
 
-### Sample Logs
+### Sample log messages
 
 For more information about log messages, see [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
@@ -47,7 +47,7 @@ _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge R
 ```
 
 
-## Collecting Logs for the GitLab App
+## Collecting logs for the GitLab App
 
 This guide provides instructions for collecting logs for the Sumo Logic App for GitLab.
 

@@ -210,7 +210,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample logs
+## Sample log messages
 
 ```json
 {

@@ -175,3 +175,15 @@ The **Google Cloud Functions - Performance Details** dashboard is based on cloud
 The **Google Cloud Functions - Platform Logs** dashboard uses Google Cloud platform logs of cloud function, which writes logs to the stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs, we have panels giving insights into - execution status, listing top functions with a number of executions, average latency, error status, and recent failures.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Platform-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Platform Logs" width="800"/>
+
+## Upgrading the Google Cloud Functions app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Functions app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -365,3 +365,15 @@ See an analysis of errors in Puppet Master and nodes.
 See an analysis of puppet runs on nodes, including resources analysis, average time to apply, node puppet activity.
 
 <img src={useBaseUrl('img/integrations/app-development/puppet-node-puppet-runs-analysis.png')} alt="puppet" />
+
+## Upgrading the Puppet app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Puppet app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
