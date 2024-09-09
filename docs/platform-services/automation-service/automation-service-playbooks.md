@@ -195,16 +195,7 @@ A filter node filters results from the preceding action based on the condition y
 1. Configure the conditions you want to use for filtering. 
 1. Click **Create**.
 
-## Test a playbook
 
-You can test a playbook to verify that it works properly. The test results show the outcome as if the playbook actually ran.
-
-1. Select a playbook.
-1. Click the kebab button in the upper-right corner of the UI. 
-1. Select **Run Test**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-run-test.png')} alt="Run a playbook test" style={{border:'1px solid gray'}} width="600"/>
-1. In the **Test playbook** dialog, enter the requested information and click **Run**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-playbook.png')} alt="Test playbook" style={{border:'1px solid gray'}} width="600"/>
-1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
-1. Click the clock icon in the upper-right corner to see the testing history. Select **Latest actions** to see test results for all the actions on the playbook, or select items on the list to see results for individual actions. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results-filtered.png')} alt="Filtered test results" style={{border:'1px solid gray'}} width="600"/>
 
 ## Playbook versioning
 
@@ -223,9 +214,24 @@ With the mechanism to import and export playbooks, you can move a playbook, alon
 
 It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
+## Test a playbook
+
+You can test a playbook to verify that it works properly. The test results show the outcome as if the playbook actually ran.
+
+1. Select a playbook.
+1. Click the kebab button in the upper-right corner of the UI. 
+1. Select **Run Test**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-run-test.png')} alt="Run a playbook test" style={{border:'1px solid gray'}} width="600"/>
+1. In the **Test playbook** dialog, enter the requested information and click **Run**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-playbook.png')} alt="Test playbook" style={{border:'1px solid gray'}} width="600"/>
+1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
+1. Click the clock icon in the upper-right corner to see the testing history. Select **Latest actions** to see test results for all the actions on the playbook, or select items on the list to see results for individual actions. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results-filtered.png')} alt="Filtered test results" style={{border:'1px solid gray'}} width="600"/>
+
 ## Troubleshoot playbooks
 
-If you encounter problems running a playbook, you can investigate by using guidance provided in the playbook itself.
+You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has problems when run in an automation, you can investigate by using guidance provided by the playbook itself.
+
+:::tip
+To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). 
+:::
 
 ### Open playbooks that require investigation
 
@@ -264,3 +270,5 @@ After you have [opened a playbook that requires investigation](/docs/platform-se
 1. Click a failed action for an explanation of the failure. <br/><img src={useBaseUrl('img/platform-services/automation-service/reason-for-failed-action.png')} alt="Reasons for failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Graph View** in the upper right and then click on the failed action. A pane opens that displays information about the action. Scroll to the bottom of the pane to see the explanation for the failure. In this example, it says "Error: Unexpected error during automatic action execution: Required field 'IP or HostName' is empty". <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/> <br/>Notice that the **Configuration** section of the pane says "IP or HostName: Playbook input.value". This gives us a clue why the playbook failed. Evidently, the action requires an IP and HostName as an input to the playbook. Since this is a playbook that ran on a Cloud SIEM Insight, perhaps the Insight didn't supply an IP or HostName.
 1. To investigate why the "Required field 'IP or HostName' is empty", let's click the **>** on the playbook name to see its payload. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/> <br/>The payload displays. Notice how `hostname` is `NULL`. This might be why the action failed. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
+
+Usually by examining the error message and the playbook payload you can uncover the reasons why an action failed.
