@@ -99,6 +99,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source"><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="icon" width="40"/><h4>Atlassian Source</h4></a>
+  <p>Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source"><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="icon" width="50"/><h4>AWS Cost Explorer</h4></a>
   <p>Learn to collect cost and usage reports from AWS Cost Explorer Source.</p>
   </div>
