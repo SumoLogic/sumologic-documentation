@@ -137,6 +137,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/microsoft-azure-ad-inventory"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
+  <p>Identify security threats by analyzing users and devices logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="50"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Monitor Delivered, Failed, Quarantined, Pending, and Spam messages.</p>
   </div>
