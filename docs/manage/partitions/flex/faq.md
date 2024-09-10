@@ -76,6 +76,10 @@ The table below should give you a sense of how the number of partitions you use 
 | 1/2 day          | 2                            | 2 TB         |
 | 2 days           | 2                            | 8 TB         |
 
+:::note 
+Given all partition definitions and the user's query, Sumo Logic automatically optimizes query execution by rewriting the query to include `_view` and `_index` clauses. The system then identifies the minimal list of views required to serve the query, which ultimately contributes to the scanned volume, whether actual or estimated.
+:::
+
 ## What is an ideal size for a partition for Flex?
 
 We recommend you configure partitions to have less than 5 TB per day flowing into them. This practice:
