@@ -55,6 +55,7 @@ Account Owner selected when establishing your Sumo Logic account. 
 * India. Mumbai. Your data is stored in the AWS ap-south-1 (Mumbai) region.
 * Japan. Your data is stored in the AWS ap-northeast-1 (Tokyo) region.
 * North America. Your data is stored in the AWS us-east-1 (Northern Virginia) or us-west-2 (Oregon) region.
+* South Korea. Your data is stored in the AWS ap-northeast-12 (Seoul) region.
 * Federal. Your data is stored in the AWS us-east-1 (Northern Virginia) region.
 
 Your data is stored only in your region. 

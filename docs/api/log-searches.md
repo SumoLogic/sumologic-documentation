@@ -27,5 +27,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/logSearchesManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/logSearchesManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/logSearchesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/logSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement |
+

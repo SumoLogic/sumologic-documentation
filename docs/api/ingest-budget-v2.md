@@ -34,6 +34,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 | IN         | https://api.in.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
+| KR        | https://api.kr.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 

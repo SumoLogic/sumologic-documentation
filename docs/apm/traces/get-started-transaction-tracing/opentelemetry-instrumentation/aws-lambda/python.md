@@ -17,7 +17,7 @@ Sumo Logic OTel Python Lambda layer supports:
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda Layer
 
-[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.17.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.17.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.20.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.20.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
 ### Lambda function requirements
 

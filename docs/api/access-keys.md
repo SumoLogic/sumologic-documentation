@@ -24,5 +24,6 @@ The [Access Keys](/docs/manage/security/access-keys) Management API allows you t
 | FED        | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/accessKeyManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |

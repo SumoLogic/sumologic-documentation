@@ -24,6 +24,7 @@ To view our main docs, click the link below corresponding to your deployment. If
 | FED        | https://api.fed.sumologic.com/docs/ |
 | IN         | https://api.in.sumologic.com/docs/  |
 | JP         | https://api.jp.sumologic.com/docs/  |
+| KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
 
@@ -148,6 +149,14 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://open-collectors.jp.sumologic.com</td>
   </tr>
   <tr>
+   <td>KR</td>
+   <td>https://service.kr.sumologic.com</td>
+   <td>https://api.kr.sumologic.com/api/</td>
+   <td>https://collectors.kr.sumologic.com</td>
+   <td>syslog.collection.kr.sumologic.com</td>
+   <td>https://open-collectors.kr.sumologic.com</td>
+  </tr>
+  <tr>
    <td>US1</td>
    <td>https://service.sumologic.com/</td>
    <td>https://api.sumologic.com/api/</td>
@@ -176,13 +185,13 @@ https://endpoint8.collection.us2.sumologic.com<br/>
 https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
-  </tr></small>
-</table>
-
+  </tr>
+  </small>
+  </table>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`,`kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 

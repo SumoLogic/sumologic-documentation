@@ -50,6 +50,10 @@ import ApiIntro from '../reuse/api-intro.md';
    <td><a href="https://api.jp.sumologic.com/docs/#tag/contentPermissions">https://api.jp.sumologic.com/docs/#tag/contentPermissions</a></td>
   </tr>
   <tr>
+   <td>KR</td>
+   <td><a href="https://api.kr.sumologic.com/docs/#tag/contentPermissions">https://api.kr.sumologic.com/docs/#tag/contentPermissions</a></td>
+  </tr>
+  <tr>
    <td>US1</td>
    <td><a href="https://api.sumologic.com/docs/#tag/contentPermissions">https://api.sumologic.com/docs/#tag/contentPermissions</a></td>
   </tr>
