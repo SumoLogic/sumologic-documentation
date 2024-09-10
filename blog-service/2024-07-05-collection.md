@@ -4,13 +4,12 @@ image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
   - salesforce
-hide_table_of_contents: true
-authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+hide_table_of_contents: true    
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We're excited to announce the release of our new Salesforce Version 3.X.X source, which provides an upgraded authorization method to client credentials flow.
 
