@@ -383,11 +383,6 @@ module.exports = {
                 label: 'API Docs',
                 icon: 'hub',
               },
-              {
-                label: 'API Reference',
-                href: 'https://api.sumologic.com/docs/',
-                icon: 'code',
-              },
             ]
           },
           {
@@ -439,10 +434,20 @@ module.exports = {
             alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s',
             position: 'right',
-            className: 'header-support',
-            alt: 'Contact Sumo Logic support',
+            className: 'slr-global-nav_demo-menu-trigger',
+            to: '#',
+            type: 'dropdown',
+            items: [
+              {
+                label: 'Contact support',
+                href: 'https://support.sumologic.com/support/s',
+              },
+              {
+                label: 'Get a demo',
+                href: 'https://www.sumologic.com/demos',
+              },
+            ],
           },
           {
             to: 'https://github.com/SumoLogic/sumologic-documentation',
