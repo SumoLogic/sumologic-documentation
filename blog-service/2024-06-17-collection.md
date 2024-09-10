@@ -6,9 +6,9 @@ keywords:
   - lambda
   - environmental-variable
 hide_table_of_contents: true
-authors:
+
   - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+    
 ---
 
 We're excited to announce the release of Sumo Logic AWS Lambda Extension version 8. Here are the key features that this upgrade provides:

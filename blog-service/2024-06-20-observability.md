@@ -5,9 +5,9 @@ keywords:
   - slo
   - observability
 hide_table_of_contents: true
-authors:
+
   - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+    
 ---
 
 We are happy to introduce a new update for handling missing data in window and threshold-based Service Level Objectives (SLOs). Previously, any window without data was treated as successful, and the threshold condition check was skipped. With this update, for windows without data, the threshold will be compared against **zero** to determine their success or failure. 

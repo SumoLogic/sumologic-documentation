@@ -2,10 +2,11 @@
 title: February 6, 2024 - Application Update
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
-authors:
-  - url: https://help.sumologic.com/release-notes-csoar/rss.xml
-    image_url: /img/release-notes/rss-orange.png
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 ### New Documentation for the Cloud SOAR SaaS version​
 

@@ -6,9 +6,9 @@ keywords:
   - azure-blob-storage
   - azure-logs
 hide_table_of_contents: true
-authors:
+
   - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+    
 ---
 
 We're excited to announce the release of our new Azure Blob Storage Collection for append blobs. This integration with Azure Blob Storage enables you to ingest custom application logs and azure service logs stored as append blob type from a storage account to Sumo Logic. 

@@ -5,9 +5,9 @@ keywords:
   - collection
   - salesforce
 hide_table_of_contents: true
-authors:
+
   - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+    
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

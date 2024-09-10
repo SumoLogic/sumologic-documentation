@@ -5,9 +5,9 @@ keywords:
   - collection
   - azure-metrics
 hide_table_of_contents: true
-authors:
+
   - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+    
 ---
 
 We're happy to announce an update of the Azure metric collection framework. Here are some of the key features that this update offers:
