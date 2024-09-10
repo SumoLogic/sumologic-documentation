@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+<a href="https://www.sumologic.com/help/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We're excited to announce an update for the [Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) application to enhance efficiency and data collection. We are updating the `sumo.datasource` value from Active Directory to Windows. This change addresses the double data ingestion issue that occurs for customers who have installed both Active Directory and Windows apps and set up separate OpenTelemetry collections for each.
 

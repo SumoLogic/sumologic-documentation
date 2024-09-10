@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+<a href="https://www.sumologic.com/help/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We are excited to announce a new set of changes to enhance the readability within the dashboard panels. With these updates, you'll have more control over time ranges, making it easier to investigate specific periods of interest and analyze data effectively. Here's what's included in this update:
 
