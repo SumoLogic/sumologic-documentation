@@ -2,14 +2,14 @@
 title: May 30, 2024 - Application Update
 keywords:
   - cloud siem
-image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
-hide_table_of_contents: true
-
-
-
+image: https://help.sumologic.com/img/sumo-square.png
+hide_table_of_contents: true  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-cse/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+
 
 #### Minor Changes and Enhancements
 

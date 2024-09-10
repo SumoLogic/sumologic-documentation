@@ -1,15 +1,16 @@
 ---
 title: Sumo Logic AWS Lambda Extension v8 (Collection)
-image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
   - lambda
   - environmental-variable
-hide_table_of_contents: true
-
-
-
+hide_table_of_contents: true    
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We're excited to announce the release of Sumo Logic AWS Lambda Extension version 8. Here are the key features that this upgrade provides:
 

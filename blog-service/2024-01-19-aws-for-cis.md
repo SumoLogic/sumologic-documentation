@@ -1,12 +1,16 @@
 ---
 title: Cloud Infrastructure Security for AWS (Apps)
-image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - apps
   - app catalog
   - cloud infrastructure security
-hide_table_of_contents: true
+hide_table_of_contents: true  
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We’re excited to announce the general availability of Cloud Infrastructure Security for AWS. This solution unifies views of active threats, security control failures, and suspicious activity across your AWS environment to give you security posture visibility at a glance.  
 
