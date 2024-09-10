@@ -31,7 +31,7 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

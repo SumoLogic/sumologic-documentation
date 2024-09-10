@@ -31,7 +31,7 @@ The Dynamic Parsing Management API allows you to configure Run Time Field Extrac
 | US1        | https://api.sumologic.com/docs/#tag/dynamicParsingRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/dynamicParsingRuleManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

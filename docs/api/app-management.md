@@ -31,7 +31,7 @@ View and install Sumo Logic applications that deliver out-of-the-box dashboards,
 | US1        | https://api.sumologic.com/docs/#tag/appManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/appManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

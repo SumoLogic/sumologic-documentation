@@ -31,7 +31,7 @@ The Field Extraction Rules (FER) Management API allows you to configure FERs fro
 | US1        | https://api.sumologic.com/docs/#tag/extractionRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/extractionRuleManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

@@ -44,7 +44,7 @@ You can use [V1 APIs](/docs/api/ingest-budget-v1) to manage ingest budgets with 
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

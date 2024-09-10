@@ -31,7 +31,7 @@ With the SLO Management API, you can monitor and set up alerts on KPIs for your 
 | US1        | https://api.sumologic.com/docs/#tag/slosLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/slosLibraryManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

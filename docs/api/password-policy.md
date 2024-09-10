@@ -31,7 +31,7 @@ The Password Policy Management API allows you to manage the [password policy](/d
 | US1        | https://api.sumologic.com/docs/#tag/passwordPolicy     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/passwordPolicy |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

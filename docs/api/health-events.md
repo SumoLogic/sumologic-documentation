@@ -32,7 +32,7 @@ The [Health Events](/docs/manage/health-events) Management API allows you to vie
 | US2        | https://api.us2.sumologic.com/docs/#tag/healthEvents |
 
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

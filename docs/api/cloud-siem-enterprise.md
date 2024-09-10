@@ -21,7 +21,7 @@ The [Cloud SIEM](/docs/cse) API allows you to create and manage Entities, Custom
 
 <CseTable/>
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

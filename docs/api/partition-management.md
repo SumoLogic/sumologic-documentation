@@ -31,7 +31,7 @@ The Partitions Management API allows you to improve search performance by search
 | US1        | https://api.sumologic.com/docs/#tag/partitionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/partitionManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

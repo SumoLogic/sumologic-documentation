@@ -56,7 +56,7 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

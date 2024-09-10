@@ -31,7 +31,7 @@ The Content Management API allows you to manage content in your organization’s
 | US1        | https://api.sumologic.com/docs/#tag/contentManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/contentManagement |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

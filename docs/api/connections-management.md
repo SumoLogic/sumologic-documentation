@@ -32,7 +32,7 @@ Connections Management APIs let you set up connections to send alerts to third-p
 | US2        | https://api.us2.sumologic.com/docs/#tag/connectionManagement |
 
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

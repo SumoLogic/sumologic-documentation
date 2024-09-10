@@ -44,7 +44,7 @@ V1 budgets will be deprecated September 16, 2024.
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV1     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV1 |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 

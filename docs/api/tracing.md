@@ -36,7 +36,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 | US1        | https://api.sumologic.com/docs/#tag/traces     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/traces |
 
-## Required roles
+## Required role capabilities
 
 <ApiRoles/>
 
