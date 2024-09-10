@@ -44,7 +44,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "EXAMPLE"
+  "result": "EXAMPLE"
 }
 ```
 2. **Strip Whitespace** - Strips whitespace from the beginning and end of a string.
@@ -57,7 +57,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "EXAMPLE STRING"
+  "result": "EXAMPLE STRING"
 }
 ```
 3. **Trim Leading Whitespace** - Trims leading whitespace from a string.
@@ -69,7 +69,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY EXAMPLE STRING"
+  "result": "MY EXAMPLE STRING"
 }
 ```
 4. **Trim Trailing Whitespace** - Trims trailing whitespace from a string.
@@ -81,7 +81,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY EXAMPLE STRING"
+  "result": "MY EXAMPLE STRING"
 }
 ```
 5. **Replace Text** - Replaces all occurrences of a string with another string.
@@ -95,7 +95,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY REPLACED STRING"
+  "result": "MY REPLACED STRING"
 }
 ```
 6. **Regex-Based Replacement** - Replaces all occurrences of a regex pattern with another string.
@@ -109,7 +109,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY REPLACED STRING"
+  "result": "MY REPLACED STRING"
 }
 ```
 7. **Add Prefix and/or Suffix** - Adds a prefix and/or suffix to a string.
@@ -123,7 +123,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY EXAMPLE STRING"
+  "result": "MY EXAMPLE STRING"
 }
 ```
 8. **Regex Match** - Matches a string against a regex pattern and returns the specified element.
@@ -137,7 +137,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "EXAMPLE"
+  "result": "EXAMPLE"
 }
 ```
 9. **Convert to Uppercase** - Converts a string to uppercase.
@@ -149,7 +149,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "MY EXAMPLE STRING"
+  "result": "MY EXAMPLE STRING"
 }
 ```
 10. **Convert to Lowercase** - Converts a string to lowercase.
@@ -161,7 +161,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "my example string"
+  "result": "my example string"
 }
 ```
 11. **Convert to Title Case** - Converts a string to title case.
@@ -173,7 +173,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "My Example String"
+  "result": "My Example String"
 }
 ```
 12. **Capitalize First Letter** - Capitalizes the first letter of a string.
@@ -185,7 +185,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "My example string"
+  "result": "My example string"
 }
 ```
 13. **Encode as UTF-8** - Encodes a string as UTF-8.
@@ -197,7 +197,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "Caf%C3%A9"
+  "result": "b'Cafe\\xcc\\x81'"
 }
 ```
 14. **Encode as ASCII** - Encodes a string as ASCII.
@@ -209,7 +209,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "a%2Bb%2Ac%28d%29e%5Bf%5D"
+  "result": "b'a+b*c(d)e[f]'"
 }
 ```
 15. **Escape Special Characters** - Escapes special characters in a string.
@@ -221,7 +221,7 @@ INPUT = {
 ```
 ```css
 OUTPUT = {
-  "data": "a\\+b\\*c\\(d\\)e\\[f\\]"
+  "result": "a\\+b\\*c\\(d\\)e\\[f\\]"
 }
 ```
 
