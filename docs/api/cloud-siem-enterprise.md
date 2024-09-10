@@ -3,7 +3,6 @@ id: cloud-siem-enterprise
 title: Cloud SIEM APIs
 sidebar_label: Cloud SIEM
 description: The Cloud SIEM API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks, and other Cloud SIEM features.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

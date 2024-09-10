@@ -3,7 +3,6 @@ id: field-extraction-rules
 title: Field Extraction Rules Management APIs
 sidebar_label: Field Extraction Rules
 description: Use Field Extraction Rules Management APIs to configure Field Extraction Rules.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -3,7 +3,6 @@ id: log-searches
 title: Log Searches Management API
 sidebar_label: Log Searches
 description: With Log Searches Management APIs, you can list, save, update, and delete your log searches.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

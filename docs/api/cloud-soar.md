@@ -3,7 +3,6 @@ id: cloud-soar
 title: Cloud SOAR APIs
 sidebar_label: Cloud SOAR
 description: The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

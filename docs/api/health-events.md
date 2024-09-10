@@ -3,7 +3,6 @@ id: health-events
 title: Health Events Management APIs
 sidebar_label: Health Events
 description: Use HTTP endpoints to view your account's health events.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

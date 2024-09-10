@@ -3,7 +3,6 @@ id: app-management
 title: App Management APIs
 sidebar_label: Apps (Beta)
 description: Use HTTP endpoints to view and install Sumo Logic applications that deliver out-of-the-box dashboards, saved searches, and field extraction for popular data sources.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

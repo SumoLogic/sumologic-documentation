@@ -3,7 +3,6 @@ id: metrics-searches
 title: Metrics Search Management APIs
 sidebar_label: Metrics Searches (Beta)
 description: Use Metrics Searches (Beta) API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

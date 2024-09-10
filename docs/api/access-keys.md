@@ -3,7 +3,6 @@ id: access-keys
 title: Access Keys Management APIs
 sidebar_label: Access Keys
 description: Use HTTP endpoints to manage access keys.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

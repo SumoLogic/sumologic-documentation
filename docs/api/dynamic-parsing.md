@@ -3,7 +3,6 @@ id: dynamic-parsing
 title: Dynamic Parsing Management APIs
 sidebar_label: Dynamic Parsing
 description: The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

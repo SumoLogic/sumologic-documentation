@@ -3,7 +3,6 @@ id: service-allowlist
 title: Service Allowlist Management APIs
 sidebar_label: Service Allowlist
 description: Use HTTP endpoints to manage service allowlist settings.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

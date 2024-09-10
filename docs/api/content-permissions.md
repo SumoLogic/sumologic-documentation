@@ -2,7 +2,6 @@
 id: content-permissions
 title: Content Permissions APIs
 sidebar_label: Content Permissions
-hide_table_of_contents: false
 description: Use HTTP endpoints to manage content permissions.
 ---
 

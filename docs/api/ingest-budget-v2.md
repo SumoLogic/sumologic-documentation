@@ -3,7 +3,6 @@ id: ingest-budget-v2
 title: Ingest Budgets Management V2 APIs
 sidebar_label: Ingest Budgets V2
 description: Ingest Budgets Management V2 APIs allow you to manage metadata-based ingest budgets (V2) from HTTP endpoints.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

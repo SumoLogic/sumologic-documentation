@@ -3,7 +3,6 @@ id: scheduled-views
 title: Scheduled Views Management APIs
 sidebar_label: Scheduled Views
 description: Use HTTP endpoints to manage Scheduled Views.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

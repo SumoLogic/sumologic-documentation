@@ -3,7 +3,6 @@ id: saml-configuration
 title: SAML Configuration Management APIs
 sidebar_label: SAML Configuration
 description: Use HTTP endpoints to manage your SAML configuration.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

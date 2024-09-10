@@ -3,7 +3,6 @@ id: role-management
 title: Role Management APIs
 sidebar_label: Roles
 description: Role Management APIs allow you to manage roles from HTTP endpoints.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

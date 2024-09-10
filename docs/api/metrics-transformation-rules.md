@@ -3,7 +3,6 @@ id: metrics-transformation-rules
 title: Metrics Transformation Rules APIs (Beta)
 sidebar_label: Metrics Transformation Rules (Beta)
 description: Metrics Transformation Rules APIs allow you control how long raw metrics are retained, aggregate metrics at collection time, and specify a separate retention period for the aggregated metrics.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

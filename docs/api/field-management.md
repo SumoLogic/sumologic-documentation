@@ -3,7 +3,6 @@ id: field-management
 title: Field Management APIs
 sidebar_label: Fields
 description: Use Field Management APIs to manage your account's field table schema.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

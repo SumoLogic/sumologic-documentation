@@ -3,7 +3,6 @@ id: user-management
 title: User Management APIs
 sidebar_label: Users
 description: User Management APIs allow you to manage user accounts from HTTP endpoints.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

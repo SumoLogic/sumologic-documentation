@@ -3,7 +3,6 @@ id: monitors-management
 title: Monitor Management APIs
 sidebar_label: Monitors
 description: Use HTTP endpoints to manage your account's Monitors.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

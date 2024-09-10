@@ -3,7 +3,6 @@ id: logs-data-forwarding
 title: Logs Data Forwarding Management APIs
 sidebar_label: Logs Data Forwarding
 description: Use HTTP endpoints to manage Data Forwarding to S3.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

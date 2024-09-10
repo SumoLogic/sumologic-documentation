@@ -3,7 +3,6 @@ id: partition-management
 title: Partitions Management APIs
 sidebar_label: Partitions
 description: Use HTTP endpoints to manage Partitions.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

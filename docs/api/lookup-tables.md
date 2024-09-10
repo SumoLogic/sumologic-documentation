@@ -2,7 +2,6 @@
 id: lookup-tables
 title: Lookup Tables Management APIs
 sidebar_label: Lookup Tables
-hide_table_of_contents: false
 description: Use HTTP endpoints to manage Lookup Tables.
 ---
 

@@ -3,7 +3,6 @@ id: content-management
 title: Content Management APIs
 sidebar_label: Content
 description: Content Management APIs allow you to manage content in your organization’s Library from HTTP endpoints.
-hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

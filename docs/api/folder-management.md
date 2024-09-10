@@ -2,7 +2,6 @@
 id: folder-management
 title: Folder Management APIs
 sidebar_label: Folders
-hide_table_of_contents: false
 description: Use Folder Management APIs to manage folders in your Library.
 ---
 
