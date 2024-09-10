@@ -447,6 +447,14 @@ module.exports = {
                 label: 'Get a demo',
                 href: 'https://www.sumologic.com/demos',
               },
+              {
+                label: 'Feedback',
+                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+              },
+              {
+                label: 'Contribute to Docs',
+                href: 'https://help.sumologic.com/docs/contributing',
+              },
             ],
           },
           {
