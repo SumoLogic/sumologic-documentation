@@ -1,11 +1,11 @@
 ---
 id: atlassian-source
-title: Atlassian Source (Beta)
+title: Atlassian Source
 sidebar_label: Atlassian
 tags:
   - cloud-to-cloud
   - atlassian
-description: Learn how to retrieve Asana audit logs into the Sumo Logic environment.
+description: Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
