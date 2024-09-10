@@ -283,5 +283,6 @@ Following are some common problems that can occur with playbooks:
 * **A required field is empty that the action is looking for** <br/>A field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires. 
 * **Permission denied** <br/>The API key is incorrect on the [integration resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource), or the account running the playbook has invalid credentials or insufficient permissions.
 * **You have reached the actions limit** <br/>The number of actions that your organization can run per hour is limited to a certain threshold. Any actions that are launched beyond this [actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) will not run.
-* **Alert surges** <br/>The playbook is not optimized properly and actions are stuck in a loop.
+* **Alert surges** <br/>
+* **The playbook** is not optimized properly and actions are stuck in a loop.
 * **Cartesian flag issues** <br/>There are too many nested elements to process as part of the returned API result.
