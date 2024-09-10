@@ -31,8 +31,10 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 | US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
 
-## Required role capabilities
+<!-- ## Required role capabilities
 
 <ApiRoles/>
 
 * Metrics (all role capabilities)
+
+-->

@@ -35,8 +35,10 @@ https://<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_docume
 
 For more information, see [Legacy Cloud SOAR APIs](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/).
 
-## Required role capabilities
+<!-- ## Required role capabilities
 
 <ApiRoles/>
 
 * Cloud SOAR (all role capabilities)
+
+-->

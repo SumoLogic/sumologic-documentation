@@ -36,8 +36,10 @@ With the Organizations Management API, you can get the credits usage details of 
 Check out our additional [Organizations Management API endpoints](https://organizations.sumologic.com/docs/#tag/organizationsManagement), currently in beta.
 :::
 
-## Required role capabilities
+<!-- ## Required role capabilities
 
 <ApiRoles/>
 
 * Organizations (all role capabilities)
+
+-->

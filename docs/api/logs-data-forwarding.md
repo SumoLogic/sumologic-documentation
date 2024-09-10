@@ -31,7 +31,7 @@ The Logs Data Forwarding Management API allows you to forward log data from a Pa
 | US1        | https://api.sumologic.com/docs/#tag/logsDataForwardingManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/logsDataForwardingManagement |
 
-## Required role capabilities
+<!-- ## Required role capabilities
 
 <ApiRoles/>
 
@@ -41,3 +41,5 @@ The Logs Data Forwarding Management API allows you to forward log data from a Pa
     * Manage Scheduled Views
     * View Partitions
     * View Scheduled Views
+
+-->
