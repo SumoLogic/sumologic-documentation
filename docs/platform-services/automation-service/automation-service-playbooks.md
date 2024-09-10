@@ -285,4 +285,4 @@ Following are some common problems that can occur with playbooks:
 * **You have exceeded the actions limit** <br/>The number of actions that your organization can run per hour is limited to a certain threshold. Any actions that are launched beyond this [actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) will not run. You might exceed the limit if:
     * There are alert surges. <br/>
     * The playbook is not optimized properly and actions are stuck in a loop.
-    * There are cartesian flag issues (too many nested elements to process as part of the returned API result).
+    * There are Cartesian flag issues (too many nested elements to process as part of the returned API result).
