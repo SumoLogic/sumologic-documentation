@@ -74,8 +74,8 @@ Note that the same threshold translating functionality supports to [Creating Mon
 
 ## Edit, Disable, More Actions
 
-* **Edit** button: Use this to make changes to the selected monitor.
-* **Disable** button: Puts the monitor in a disabled state so it will not fire any notifications.
+* **Edit** button. Use this to make changes to the selected monitor.
+* **Disable** button. Puts the monitor in a disabled state so it will not fire any notifications.
 * **More Actions** menu:
   * **Disable** and **Enable**. A monitor that is in a disabled state will not fire any notifications.
   * **Copy Path**. Copy the path of the monitor to your computer clipboard.
@@ -84,19 +84,21 @@ Note that the same threshold translating functionality supports to [Creating Mon
   * **Export**. Provides JSON of the monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
   * **Edit Permissions**.
   * **Delete**.
-  * **Subscribe**
+  * **Subscribe**.
   * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
 ## Tags
 
 Adding a **Tag** to a monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your monitors beyond their name and description. Example tag: `team=alerting`, where key is `team` and value is `alerting`.
 
-:::note Limitations
+### Syntax
+
 - Tag keys cannot start with the prefixes `sumo.` or `_`
 - Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
 - Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
 - You can associate a maximum of 50 tags per monitor
-:::
+
+### Create a tag
 
 To add a tag to an existing monitor:
 
@@ -115,6 +117,19 @@ To add a tag while creating a new monitor:
    * Apply an existing tag by selecting the key and its possible values from the dropdown.
 1. Click **Save**.
 
+
+### Using tags
+
+Tags will appear on all future alerts triggered by the same monitor but will not be applied to past alerts.
+
+To view your tags, go to your alerts list page. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->Here, you'll see a **Tags** column. On, this page, you can filter by tags.
+
+<img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800"  />
+
+You can also see your tags on Alert Response pages. Here's an example:
+
+<img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
+
 ## Folder permissions
 
 This section describes permissions for folders that contain monitors. This feature is not enabled by default in all accounts. If you would like access to this feature please contact Sumo Logic Support for assistance.
@@ -129,7 +144,7 @@ Access to folders that contain monitors is controlled by permissions. If you hav
 
 To set permissions for a monitors folder:
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
-2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions.**
+2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions**.
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  
 4. You can make the following edits:

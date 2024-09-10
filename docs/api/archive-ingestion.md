@@ -29,5 +29,6 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/archiveManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/archiveManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/archiveManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/archiveManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/archiveManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/archiveManagement |
