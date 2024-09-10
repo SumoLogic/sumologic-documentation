@@ -2,9 +2,6 @@
 title: February 6, 2024 - Application Update
 hide_table_of_contents: true
 image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
-authors:
-  - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
-    image_url: /img/release-notes/rss-orange.png
 ---
 
 ### New Documentation for the Cloud SOAR SaaS version​

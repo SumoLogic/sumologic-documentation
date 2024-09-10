@@ -6,9 +6,9 @@ keywords:
   - MITRE explorer
 image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 hide_table_of_contents: true
-authors:
-  - url: https://www.sumologic.com/help/release-notes-cse/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+
+
+
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

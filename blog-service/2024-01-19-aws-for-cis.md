@@ -6,9 +6,6 @@ keywords:
   - app catalog
   - cloud infrastructure security
 hide_table_of_contents: true
-authors:
-  - url: https://www.sumologic.com/help/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
 ---
 
 We’re excited to announce the general availability of Cloud Infrastructure Security for AWS. This solution unifies views of active threats, security control failures, and suspicious activity across your AWS environment to give you security posture visibility at a glance.  

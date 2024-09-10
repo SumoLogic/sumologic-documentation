@@ -5,14 +5,11 @@ keywords:
   - collection
   - azure-metrics
 hide_table_of_contents: true
-authors:
-  - url: https://www.sumologic.com/help/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
 ---
 
 We're happy to announce an update of the Azure metric collection framework. Here are some of the key features that this update offers:
 
-- Aligns all the components to the latest version of Azure Functions runtime and libraries. 
+- Aligns all the components to the latest version of Azure Functions runtime and libraries.
 - Replaces the soon-to-be deprecated classic Application insights resource with new workspace-based Application insights.
 - Provides necessary security updates.
 

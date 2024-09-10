@@ -5,9 +5,6 @@ keywords:
   - cloud soar
   - automation service
 image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
-authors:
-  - url: https://www.sumologic.com/help/release-notes-csoar/rss.xml
-    image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
