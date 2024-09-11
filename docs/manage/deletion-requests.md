@@ -74,7 +74,7 @@ Customers must manage the future ingestion of sensitive data using [processing r
 
 ### Deletion scope
 
-Deletion is restricted to partitions and the default view (sumologic_default) in Sumo Logic. Deletion is currently not supported for other view types, such as [Scheduled Views](/docs/manage/scheduled-views) or ad hoc views created using the save view operator. Sensitive data may still be present in these unsupported views.
+Deletion is restricted to partitions and the default view (sumologic_default) in Sumo Logic. Deletion is currently not supported for other view types, such as [Views](/docs/manage/views) or ad hoc views created using the save view operator. Sensitive data may still be present in these unsupported views.
 
 ### Deletion request limit
 

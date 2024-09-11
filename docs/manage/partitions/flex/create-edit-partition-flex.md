@@ -11,7 +11,7 @@ Partitions provide three primary functions:
 * Enhance searches
 * Enhance retention options
 
-Partitions ingest your messages in real time, and differ from [Scheduled Views](/docs/manage/scheduled-views), which backfill with aggregate data. Partitions begin building a non-aggregate index from the time the Partition is created and only index data moving forward (from the time of creation).
+Partitions ingest your messages in real time, and differ from [Views](/docs/manage/views), which backfill with aggregate data. Partitions begin building a non-aggregate index from the time the Partition is created and only index data moving forward (from the time of creation).
 
 See [Partitions](/docs/manage/partitions) for limitations.
 
