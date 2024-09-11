@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="120"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-[MongoDB](https://www.mongodb.com/why-use-mongodb#:~:text=MongoDB%20is%20a%20document%20database,development%20teams%20using%20agile%20methodologies.) is a source-available cross-platform document-oriented database program. The Sumo Logic app for MongoDB supports logs and metrics from the open source version of MongoDB.
+[MongoDB](https://www.mongodb.com/why-use-mongodb#:~:text=MongoDB%20is%20a%20document%20database,development%20teams%20using%20agile%20methodologies.) is a source-available cross-platform document-oriented database program. The Sumo Logic app for MongoDB supports logs and metrics from the open source version of MongoDB.The App is tested on the 7.0.14 version of MongoDB.
 
 MongoDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The OpenTelemetry collector runs on the same host as MongoDB and uses the [MongoDB Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mongodbreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.
 
@@ -95,9 +95,9 @@ In this step, you will configure the yaml file required for MongoDB collection.
 Below are the inputs required:
 
 - **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. (For example: `localhost:27017`.)
-- **Logs Path**. Enter the path to the log file for your MognoDB instance.
-- **username**. Enter the MognoDB username.
-- **password**. Enter the MognoDB password.
+- **`Logs Path`**. Enter the path to the log file for your MognoDB instance.
+- **`username (optional)`**. Enter the MognoDB username.
+- **`password (optional)`**. Enter the MognoDB password.
 
 User needs to provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 
@@ -290,7 +290,7 @@ Use this dashboard to:
 
 ### Replication Logs
 
-The **MongoDB - Replication Logs** dashboard shows replication events, errors, warnings, and nodes.
+The **MongoDB - Replication Logs** dashboard shows replica deletes/updates/inserts trend and replica state.
 
 Use this dashboard to:
 
