@@ -5,13 +5,14 @@ sidebar_label: Flex
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="55"/>
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
 <details>
-<summary>Micro Lesson: Viewing the Flex App Dashboards</summary>
+<summary><strong>Micro Lesson</strong>: Viewing the Flex App Dashboards</summary>
 <Iframe url="https://www.youtube.com/embed/kn3SVhAIwDk?si=nMQBWvp5Ruo-nOaB"
         width="854px"
         height="480px"
