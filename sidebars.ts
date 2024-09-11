@@ -849,21 +849,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Scheduled Views',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/scheduled-views/index'},
-      items: [
-        'manage/scheduled-views/add-scheduled-view',
-        'manage/scheduled-views/pause-disable-scheduled-views',
-        'manage/scheduled-views/run-search-against-scheduled-view',
-        'manage/scheduled-views/scheduled-view-lag-time',
-        'manage/scheduled-views/scheduled-views-best-practices',
-        'manage/scheduled-views/view-list-scheduled-views',
-      ]
-    },
-    {
-      type: 'category',
       label: 'Security',
       collapsible: true,
       collapsed: true,
@@ -915,6 +900,21 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
        ]
      },
+     {
+      type: 'category',
+      label: 'Views',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/scheduled-views/index'},
+      items: [
+        'manage/scheduled-views/add-scheduled-view',
+        'manage/scheduled-views/pause-disable-scheduled-views',
+        'manage/scheduled-views/run-search-against-scheduled-view',
+        'manage/scheduled-views/scheduled-view-lag-time',
+        'manage/scheduled-views/scheduled-views-best-practices',
+        'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
    ],
   },
 ],

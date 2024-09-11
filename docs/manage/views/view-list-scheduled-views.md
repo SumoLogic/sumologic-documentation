@@ -1,6 +1,6 @@
 ---
 id: view-list-scheduled-views
-title: View Information About Scheduled Views
+title: View Information About Views
 description: Learn how to view a list of scheduled views configured for your organization and view the details of a scheduled view.
 ---
 
