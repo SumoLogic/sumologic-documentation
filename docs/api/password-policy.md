@@ -25,5 +25,6 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/passwordPolicy |
 | IN         | https://api.in.sumologic.com/docs/#tag/passwordPolicy  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/passwordPolicy  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/passwordPolicy  |
 | US1        | https://api.sumologic.com/docs/#tag/passwordPolicy     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/passwordPolicy |

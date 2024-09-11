@@ -113,18 +113,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the PAN Firewall 10 Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the PAN Firewall 10 Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing PAN Firewall 10 Security dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -180,3 +168,15 @@ The **Security Monitoring - TRAFFIC Log Overview** dashboard helps you to monito
 **Use case:** You can use this dashboard to monitor allowed and denied traffic through the firewall. Analysis is provided over time and in lists of top 10 sources, destinations, and hosts.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
+
+## Upgrading the PAN Firewall 10 Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PAN Firewall 10 Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

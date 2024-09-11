@@ -60,7 +60,7 @@ In the scenario depicted in the video, Copilot is leveraged to investigate a sec
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -89,7 +89,7 @@ This video demonstrates how to use Copilot to analyze AWS CloudTrail data by rev
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -112,7 +112,7 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home page.
 
-<img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+<img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
 
 ### Step 2: Select a source category
 

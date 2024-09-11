@@ -27,6 +27,7 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182         |
 | IN         | 65.0.114.18, 3.7.177.71, 3.6.131.26      |
 | JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102        |
+| KR    | 13.209.100.246, 3.37.181.174, 3.38.126.107  |
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
 | US2    | 54.149.79.97, 54.218.43.134, 44.239.32.230, 35.161.2.93    |
 
@@ -284,6 +285,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
+  <p>Collect inventory data from the Jamf platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source"><img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="icon" width="60"/><h4>JFrog Xray</h4></a>
   <p>Collect violation events from JFrog Xray.</p>
   </div>
@@ -424,6 +431,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
+        <p>Learn to collect incidents and incident events from the Symantec Endpoint Security platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

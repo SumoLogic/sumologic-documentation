@@ -298,31 +298,17 @@ sudo yum -y install gcc
 sudo yum install python-devel
 ```
 
-
 ## Installing the JFrog Xray app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the JFrog Xray app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the JFrog Xray app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing JFrog Xray dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
-
 
 ### Overview
 
@@ -382,3 +368,15 @@ Use this dashboard to:
 * Monitor recent uploaded and downloaded artifacts.
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
+
+## Upgrading the JFrog Xray app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the JFrog Xray app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
