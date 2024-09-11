@@ -6,15 +6,17 @@ description: Learn about how to forward data from Sumo Logic to S3.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for forwarding data from Sumo Logic to an S3 bucket.
+You can forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
+
+To forward data to an S3 bucket:
+1. [Configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination).
+1. [Forward data to the S3 forwarding destination](#forward-datato-an-s3-forwarding-destination) from a partition or Schedule View.
+
+After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
-
-You can forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a partition once it is set to forward data. 
-
-After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 ## Prerequisites
 
@@ -36,7 +38,7 @@ It takes approximately five minutes to propagate a new or changed S3 data forwar
 
 After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo Logic. You can choose to forward only log data, log data and metadata, or log data with metadata and enriched fields, in either CSV or JSON format.
 
-The log messages are saved in CSV or JSON files in compressed gzip files and named according to the convention you specified when you configured Sumo Logic to start data forwarding, as described in [Forward data to S3](#forward-datato-s3). The file naming convention for legacy data forwarding is described below in [Legacy file naming format](#legacy-file-naming-format). 
+The log messages are saved in CSV or JSON files in compressed gzip files and named according to the convention you specified when you configured Sumo Logic to start data forwarding, as described in [Forward data to an an S3 forwarding destination](#forward-datato-an-s3-forwarding-destination). The file naming convention for legacy data forwarding is described below in [Legacy file naming format](#legacy-file-naming-format). 
 
 Messages are buffered during data ingest for either approximately five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV or JSON file and forwarded. 
 
@@ -92,6 +94,8 @@ Where:
 
 ## Configure an S3 data forwarding destination
 
+Before you can [forward data](#forward-datato-an-s3-forwarding-destination) from a partition or Scheduled View, you must configure an S3 bucket be a destination that can receive forwarded data.
+
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso-->
 1. Click **+ Destination** to add a new destination.
 1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="Create S3 Destination popup" style={{border: '1px solid gray'}} width="450"/>
@@ -109,14 +113,16 @@ Where:
 1. **Active**. Select this check box to enable data forwarding for the entire S3 bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
 1. Click **Save**.
 
-If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start data forwarding for specific partitions or Scheduled Views, as described in the following section. See [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur.
+If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations. If the destination is not added successfully, see [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur. 
 
-## Forward data to S3 
+Once the destination is added, you can start data forwarding for specific partitions or Scheduled Views as described in [Forward data to an S3 forwarding destination](#forward-datato-an-s3-forwarding-destination) below. 
 
-This section has instructions for enabling data forwarding for an existing partition or Scheduled View.
+## Forward data to an S3 forwarding destination
+
+Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination), you can forward data to it from partitions and Scheduled Views. 
 
 :::tip
-You can also enable data forwarding when you first create a partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
+In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding when you first create a partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
 :::
 
 1. Depending on whether you want to forward data from a partition or a Scheduled View:
