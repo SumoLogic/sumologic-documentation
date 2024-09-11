@@ -1,7 +1,7 @@
 ---
 slug: /manage/views
 title: Views
-descriptio: Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated index.
+description: Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated index.
 ---
 
 Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated/pre-compute index.
