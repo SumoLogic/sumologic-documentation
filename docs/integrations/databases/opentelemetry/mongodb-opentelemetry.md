@@ -97,13 +97,17 @@ In this step, you will configure the yaml file required for MongoDB collection.
 Below are the inputs required:
 
 - **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. (For example: `localhost:27017`.)
-- **`Logs Path`**. Enter the path to the log file for your MognoDB instance.
-- **`username (optional)`**. Enter the MognoDB username.
-- **`password (optional)`**. Enter the MognoDB password.
+- **`Logs Path`**. Provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
+- **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
+- **`password (optional)`**. If authentication is required, the password can be provided here.
 
 User needs to provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+
+Click on the **Download YAML File** button to get the yaml file.
+
+For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
