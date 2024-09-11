@@ -1235,10 +1235,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
-    authors:
-      - url: https://help.sumologic.com/release-notes-service/rss.xml
-        image_url: /img/release-notes/rss-orange.png
+    image: https://help.sumologic.com/img/sumo-square.png    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1267,9 +1264,6 @@ To add release notes with images:
     keywords:
       - alerts
     image: https://help.sumologic.com/img/sumo-square.png
-    authors:
-      - url: https://help.sumologic.com/release-notes-service/rss.xml
-        image_url: /img/release-notes/rss-orange.png
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.

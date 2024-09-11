@@ -33,27 +33,29 @@ Cloud SOAR is a security operations technology platform that empowers MSSPs, SOC
 
 Cloud SOAR helps secure operations and automate incident response through integrations with leading third-party threat intelligence vendors. Following are some of the highlights. 
 
+For more information about these features, see [Cloud SOAR Incident Management and Triage](/docs/cloud-soar/incidents-triage/).
+
 ### Triage
 
-Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
+Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. 
 
 <img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid gray'}} width="800" />
 
 ### War Room
 
-The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](/docs/cloud-soar/incidents-triage/#war-room).
+The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-war-room.png')} alt="War Room" style={{border: '1px solid gray'}} width="800" />
 
 ### Playbooks
 
-Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbook](/docs/cloud-soar/incidents-triage/#playbooks).
+Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. 
 
 <img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid gray'}} width="800" />
 
 ### Dashboards and reports
 
-Gain complete insight into incident response performance with customizable dashboards and reports. Keep track of your most important KPIs with real-time data on each phase of the incident response life cycle. For more information, see [Dashboards](/docs/cloud-soar/incidents-triage/#dashboards).
+Gain complete insight into incident response performance with customizable dashboards and reports. Keep track of your most important KPIs with real-time data on each phase of the incident response life cycle. 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-dashboard.png')} alt="Example dashboard" style={{border: '1px solid gray'}} width="800" />
 
