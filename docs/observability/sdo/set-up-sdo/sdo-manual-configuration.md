@@ -101,7 +101,7 @@ If you're using CircleCI for Build and Deploy, do the following:
    * `CIRCLE_TOKEN = <API personal token created in CircleCi>`
    * `JOB_HTTP_SOURCE = <url of job-collector source created above in step 3>`
    * `WORKFLOW_HTTP_SOURCE = <url of workflow-collector source created above in step 3>`
-1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://github.com/SumoLogic/sumologic-orb/blob/main/src/examples/workflow-collector.yml).
+1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo Logic. You can find a sample config.yml file [here](https://github.com/SumoLogic/sumologic-orb/blob/main/src/examples/workflow-collector.yml).
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
 
 ### Other Tools for build and deploy
