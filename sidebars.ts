@@ -2803,6 +2803,7 @@ integrations: [
         {
           type: 'category',
           label: 'Collectors',
+          label: 'Collectors',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'api/collector-management/index'},
@@ -2842,7 +2843,6 @@ integrations: [
         'api/saml-configuration',
         'api/scheduled-views',
         'api/search-job',
-        'api/service-allowlist',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',
