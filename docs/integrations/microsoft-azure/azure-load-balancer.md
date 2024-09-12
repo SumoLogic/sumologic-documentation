@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Log and metric types
 For Azure Load Balancer, you can collect the following logs and metrics:
-* **Load Balancer Health Event.** No healthy backends log describes your load balancer’s frontend has no healthy backend instances to distribute traffic to.
+* **Load Balancer Health Event.** These health event logs are emitted when any issues affecting your load balancer’s health and availability are detected. [Learn more](https://techcommunity.microsoft.com/t5/azure-networking-blog/introducing-azure-load-balancer-health-event-logs/ba-p/4154362).```
 
 For Azure Load Balancer, you can collect the following metrics:
 
