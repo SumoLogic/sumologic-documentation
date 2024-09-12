@@ -172,11 +172,22 @@ The **Azure Load Balancer - Overview** dashboard provides a collective informati
 
 The **Azure Load Balancer - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors, and users/applications by operation type.
 
+Use this dashboard to:
+
+- Identify top users performing administrative operations.
+- View top 10 operations that caused the most errors.
+- View recent read, write, and delete operations.
+
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
 The **Azure Load Balancer - Health** dashboard provides details like total failed requests, failures by operation, health probe status trend, and unhealthy backends.
+
+Use this dashboard to:
+
+- Identify failed requests and operations.
+- Detect when all backend instances in a pool are not responding to the configured health probes.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
 
@@ -194,6 +205,10 @@ Use this dashboard to:
 ### Policy
 
 The **Azure Load Balancer - Policy** dashboard provides details like total success policy events, success policy events, total failed policy events, and failed policy events.
+
+Use this dashbaord to: 
+- Monitor policy events with warnings and errors.
+- View recent failed policy events.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
 
