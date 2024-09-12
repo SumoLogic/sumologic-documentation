@@ -60,7 +60,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 1.  <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  Kanso-->
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 1. On the **Create Sumo Logic Mapping** popup:
-    * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
+    * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configurecollection). 
     * **Format**. Enter *JSON.*
     * **Vendor**. Enter *SignalSciences*.
     * **Product**. Enter *WAF*. 

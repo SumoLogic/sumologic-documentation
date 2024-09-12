@@ -74,7 +74,7 @@ Failures could be related to the Scheduled Search query. Check the following:
 * Test the Scheduled Search query to reproduce the failure.
 * Make sure your query is written correctly. See [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
 * Optimize your query performance using [Partitions](/docs/manage/partitions) or [Scheduled Views](/docs/manage/scheduled-views).  
-* Taking too long to complete. See [How to Prevent Your Scheduled Search from Timing Out](#how-to-prevent-your-scheduled-search-from-timing-out). 
+* Taking too long to complete. See [How do I prevent my Scheduled Search from timing out?](/docs/alerts/scheduled-searches/faq/#how-do-i-prevent-my-scheduled-search-from-timing-out)
 
 ### Sumo Logic back-end issues
 
