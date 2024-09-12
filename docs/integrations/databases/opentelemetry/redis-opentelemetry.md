@@ -114,7 +114,11 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 <TabItem value="Linux">
 
 1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance that needs to be monitored.
-2. Restart the otelcol-sumo process using:
+2. Place Env file in the following directory:
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
+3. Restart the otelcol-sumo process using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```

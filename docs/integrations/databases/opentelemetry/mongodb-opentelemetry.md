@@ -101,8 +101,6 @@ Below are the inputs required:
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
 - **`password (optional)`**. If authentication is required, the password can be provided here.
 
-User needs to provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
-
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 Click on the **Download YAML File** button to get the yaml file.
@@ -132,7 +130,11 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
-2. restart the collector using:
+2. Place Env file in the following directory:
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
+3. restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```

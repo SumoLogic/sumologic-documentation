@@ -134,7 +134,11 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
-2. Restart the collector using:
+2. Place Env file in the following directory:
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
+3. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
