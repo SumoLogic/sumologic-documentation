@@ -53,7 +53,7 @@ Watch this micro lesson to learn more about First Seen rules.
 import Iframe from 'react-iframe';
 
 ## Example rule
-The screenshot below shows a First Seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
+The screenshot below shows a First Seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create a First Seen rule](#create-a-first-seen-rule), below.
 <img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition" style={{border: '1px solid gray'}} width="700"/>
 
 
