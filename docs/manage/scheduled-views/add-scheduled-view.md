@@ -5,8 +5,6 @@ description: Learn how to add a Scheduled View.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 :::important
 To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-roles/users/multi-account-access.md).
 :::
