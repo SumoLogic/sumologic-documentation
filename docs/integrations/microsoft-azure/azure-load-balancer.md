@@ -23,7 +23,7 @@ For more information on supported metrics, refer to [Azure documentation](https:
 ## Setup
 
 :::note
-This app supports only load balancers of type **Standard** and **Gateway**.
+This app supports only load balancers of **Standard** and **Gateway** SKU.
 :::
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
