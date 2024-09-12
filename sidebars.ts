@@ -2803,6 +2803,7 @@ integrations: [
         {
           type: 'category',
           label: 'Collectors',
+          label: 'Collectors',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'api/collector-management/index'},
