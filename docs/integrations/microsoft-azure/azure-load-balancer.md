@@ -123,6 +123,10 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Select `AllMetrics`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-metrics.png')} alt="Azure load balancer metrics" style={{border: '1px solid gray'}} width="800" />
 
+:::note
+SNAT related metrics will only come when a outbound rule is configured
+:::
+
 ### Configure logs collection
 
 #### Diagnostic logs
@@ -183,6 +187,11 @@ The **Azure Load Balancer - Health** dashboard provides details like total faile
 ### Network
 
 The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by Load Balancer, TCP SYN packets by Load Balancer, Bytes Transmitted by Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilizatio, Allocated SnatPorts and Used SnatPorts etc.
+Use this dashboard to
+
+   1. Detect high utilization of allocated ports.
+   2. Detect when the Data Path Availability is less than expected due to platform issues.
+   3. Monitor data transmission (packets and bytes) through your load balancers
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
 
