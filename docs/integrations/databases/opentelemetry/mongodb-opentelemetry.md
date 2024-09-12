@@ -247,9 +247,9 @@ The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB hea
 
 Use this dashboard to:
 
--   Identify slow CRUD and DB commands.
--   Gain insights into errors logs by component and context.
--   To know the number of up servers.
+- Identify slow CRUD and DB commands.
+- Gain insights into errors logs by component and context.
+- To know the number of up servers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Overview.png' alt="Overview" />
 
@@ -259,7 +259,7 @@ The **MongoDB - Errors and Warnings** dashboard shows errors and warnings by the
 
 Use this dashboard to:
 
--   Determine components producing multiple errors or warnings.
+- Determine components producing multiple errors or warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Errors-and-Warnings.png' alt="Access" />
 
@@ -269,8 +269,8 @@ The **MongoDB - Logins and Connections** dashboard shows geo location of client 
 
 Use this dashboard to:
 
--   Determine potential hacking attempts.
--   Determine location of attacks.
+- Determine potential hacking attempts.
+- Determine location of attacks.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Logins-and-Connections.png' alt="Logins and Connections" />
 
@@ -280,8 +280,8 @@ The **MongoDB - Query Logs** dashboard shows read and write query trends.
 
 Use this dashboard to:
 
--   Monitor abnormal spikes in query volume.
--   Identify read versus write ratio of your application queries. This helps you to adjust indexes to improve query performance.
+- Monitor abnormal spikes in query volume.
+- Identify read versus write ratio of your application queries. This helps you to adjust indexes to improve query performance.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Query-Logs.png' alt="Query Logs" />
 
