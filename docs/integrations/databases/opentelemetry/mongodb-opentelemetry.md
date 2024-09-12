@@ -189,7 +189,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log messages
 
-```sql
+```json
 {
    "t":{
        "$date":"2021-05-21T10:22:57.373+00:00"
@@ -223,9 +223,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-Dashboard: MongoDB - Errors and Warnings, Panel: Errors by Component
-
-```sql
+```sql title="Errors by Component( MongoDB - Errors and Warnings)"
 deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log"  as _rawlog nodrop
 | if  (isEmpty(_rawlog), _raw, _rawlog)  as _raw
 | json field=_raw "t.$date"  as  timestamp
@@ -239,17 +237,19 @@ deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log
 
 ## Viewing MongoDB dashboards
 
-If no relevant data was received within the time range of the Panel, the Panel will be empty.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB health, performance and problems causing errors.
+The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB health, performance, and problems causing errors.
 
 Use this dashboard to:
 
--   Identify Slow CRUD and DB commands.
--   Gain insights into Errors logs by component and context.
--   Number of up servers.
+-   Identify slow CRUD and DB commands.
+-   Gain insights into errors logs by component and context.
+-   To know the number of up servers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Overview.png' alt="Overview" />
 
@@ -280,19 +280,19 @@ The **MongoDB - Query Logs** dashboard shows read and write query trends.
 
 Use this dashboard to:
 
--   Monitor abnormal spikes in Query volume.
--   Identify the read versus write ratio of your application queries. Adjusting indexes to improve query performance.
+-   Monitor abnormal spikes in query volume.
+-   Identify read versus write ratio of your application queries. This helps you to adjust indexes to improve query performance.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Query-Logs.png' alt="Query Logs" />
 
 ### Sharding
 
-The **MongoDB - Sharding** dashboard shows sharding related errors, events, failures and number of chunks moving between shards.
+The **MongoDB - Sharding** dashboard shows sharding related errors, events, failures, and number of chunks moving between shards.
 
 Use this dashboard to:
 
--   Identify Sharding errors and warnings.
--   Gain insights into Chunk operations.
+-   Identify sharding errors and warnings.
+-   Gain insights into chunk operations.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Sharding.png' alt="Sharding" />
 
@@ -302,8 +302,8 @@ The **MongoDB - Replication Logs** dashboard shows replica deletes/updates/inser
 
 Use this dashboard to:
 
--   Identify Replication errors and warnings.
--   Gain insights into Replication operations.
+- Identify replication errors and warnings.
+- Gain insights into replication operations.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication-Logs.png' alt="Replication Logs" />
 
@@ -312,7 +312,7 @@ Use this dashboard to:
 The **MongoDB - Resource** dashboard shows resource utilization by the MongoDB component.
 
 Use this dashboard to:
-* Determine Memory and Disk Usage.
+* Determine memory and disk usage.
 * Identify potential resource constraints and issues.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Resource.png' alt="Resource" />
@@ -322,17 +322,17 @@ Use this dashboard to:
 The **MongoDB - Operations** dashboard shows MongoDB queries analytics using metrics.
 
 Use this dashboard to:
-* Get to know different kind of operation count like Query,Insert & Delete etc.
-* Determine Operation time taken by different queries.
+* Know different kind of operation count like query, insert, and delete.
+* Determine the operation time taken by different queries.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Operations.png' alt="Operations" />
 
 ### Replication
 
-The **MongoDB - Replication** dashboard shows replication events, errors, warnings, and nodes.
+The **MongoDB - Replication** dashboard displays the replication events, errors, warnings, and nodes information.
 
 Use this dashboard to:
-* Get to know different kind of operation count getting executed on Replicas.
-* Operation count like Query,Insert & Delete etc.
+* Know different kind of operation count executed on replicas.
+* Operation count like query, insert, and delete.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication.png' alt="Replication" />
