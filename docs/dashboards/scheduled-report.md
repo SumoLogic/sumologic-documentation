@@ -17,10 +17,6 @@ If a .pdf and/or .png export fails, an error email will be sent to your email ID
 
 ## Create a scheduled report
 
-:::note
-To create a scheduled report, ensure you have dashboard **Edit** permissions. While with dashboard **View** permissions, you can only subscribe/unsubscribe to the scheduled report.
-:::
-
 To schedule a dashboard email report, do the following:
 
 1. Navigate to the dashboard for which you want to create a schedule.
