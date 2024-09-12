@@ -43,7 +43,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
     :::note
     Enterprise and Enterprise Suite users can create a maximum of 400 fields.
     :::
-  <img src={useBaseUrl('/img/send-data/fields-capacity.png')} alt="fields-capacity" style={{border:'1px solid gray'}} width="800"/>
+  <img src={useBaseUrl('/img/fields/fields-capacity.png')} alt="fields-capacity" style={{border:'1px solid gray'}} height= "50" width="700"/>
 * It can take up to 10 minutes for fields to start being assigned to your data.
 * A Collector can have up to 10 fields.
 * A Source can have up to 10 fields.
