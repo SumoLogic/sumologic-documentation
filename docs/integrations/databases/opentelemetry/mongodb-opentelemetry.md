@@ -43,16 +43,16 @@ The MongoDB receiver fetches stats from a MongoDB instance using the [golang mon
 
 By default, MongoDB logs are stored in a log file.
 
-1. Configure logging verbosity in MongoDB : MongoDB logs have six levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set loglevel to one of:
+1. Configure logging verbosity in MongoDB.<br/>MongoDB logs have six levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set loglevel to one of:
    - 0 is the MongoDB's default log verbosity level, to include [Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
    - 1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
-2. You need to set the [profiling_level](https://www.mongodb.com/docs/manual/reference/method/db.setProfilingLevel/) to a value of 1. But by default it is set to 0. You can also configure the value of [slowms](https://www.mongodb.com/docs/manual/reference/method/db.setProfilingLevel/#std-label-set-profiling-level-options-slowms) to a value greater than or equal to 100. Thus can be done using the below command in mongosh:
+2. You need to set the [profiling_level](https://www.mongodb.com/docs/manual/reference/method/db.setProfilingLevel/) to a value of 1. <br/>But by default it is set to 0. You can also configure the value of [slowms](https://www.mongodb.com/docs/manual/reference/method/db.setProfilingLevel/#std-label-set-profiling-level-options-slowms) to a value greater than or equal to 100. Thus can be done using the below command in mongosh:
 `db.setProfilingLevel(1,100)`
-3. Configure MongoDB to log to a Local file: Configuring MongoDB logs to go to log files. By default, MongoDB logs are stored in `/var/log/mongodb/mongodb.log`. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+3. Configure MongoDB to log to a local file. <br/>By default, MongoDB logs are stored in `/var/log/mongodb/mongodb.log`. The default directory for log files is listed in the `MongoDB.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
    - Configuration file: The [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for file.
-      - Command-line:
-         - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
-         - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
+   - Command-line:
+       - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
+       - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
@@ -90,9 +90,9 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
+OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) YAML file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-In this step, you will configure the yaml file required for MongoDB collection.
+In this step, you will configure the YAML file required for MongoDB collection.
 
 Below are the inputs required:
 
@@ -101,9 +101,9 @@ Below are the inputs required:
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
 - **`password (optional)`**. If authentication is required, the password can be provided here.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
 
-Click on the **Download YAML File** button to get the yaml file.
+Click on the **Download YAML File** button to get the YAML file.
 
 For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
@@ -129,7 +129,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Linux">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
 2. Place Env file in the following directory:
   ```sh
   /etc/otelcol-sumo/env/
@@ -142,7 +142,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using: 
 ```sh
 Restart-Service -Name OtelcolSumo
@@ -151,7 +151,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
 2. Restart the otelcol-sumo process using:
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
@@ -249,7 +249,7 @@ Use this dashboard to:
 
 - Identify slow CRUD and DB commands.
 - Gain insights into errors logs by component and context.
-- To know the number of up servers.
+- Know the number of up servers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Overview.png' alt="Overview" />
 
