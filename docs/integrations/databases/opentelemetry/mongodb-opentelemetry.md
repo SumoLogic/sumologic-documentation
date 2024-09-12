@@ -291,7 +291,7 @@ The **MongoDB - Sharding** dashboard shows sharding related errors, events, fail
 
 Use this dashboard to:
 
--   Identify sharding errors and warnings.
+- Identify sharding errors and warnings.
 -   Gain insights into chunk operations.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Sharding.png' alt="Sharding" />
