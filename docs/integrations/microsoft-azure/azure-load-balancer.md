@@ -185,9 +185,9 @@ The **Azure Load Balancer - Health** dashboard provides details like total faile
 The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by Load Balancer, TCP SYN packets by Load Balancer, Bytes Transmitted by Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilizatio, Allocated SnatPorts, and Used SnatPorts.
 
 Use this dashboard to:
-   1. Detect high utilization of allocated ports.
-   2. Detect when there is less data path availability than expected due to platform issues.
-   3. Monitor data transmission (packets and bytes) through your load balancers.
+- Detect high utilization of allocated ports.
+- Detect when there is less data path availability than expected due to platform issues.
+- Monitor data transmission (packets and bytes) through your load balancers.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
 
