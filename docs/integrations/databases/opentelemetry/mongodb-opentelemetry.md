@@ -237,7 +237,7 @@ deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log
 
 ## Viewing MongoDB dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
