@@ -3,16 +3,17 @@ id: token-management
 title: Token Management APIs
 sidebar_label: Tokens
 description: Use HTTP endpoints to manage Installation Tokens.
-hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
 
 The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/security/installation-tokens) from HTTP endpoints to organize your content.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -29,3 +30,11 @@ import ApiIntro from '../reuse/api-intro.md';
 | US1        | https://api.sumologic.com/docs/#tag/tokensLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/tokensLibraryManagement |
 
+<!-- ## Required role capabilities
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Tokens
+
+-->
