@@ -25,5 +25,6 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/healthEvents |
 | IN         | https://api.in.sumologic.com/docs/#tag/healthEvents  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/healthEvents  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/healthEvents  |
 | US1        | https://api.sumologic.com/docs/#tag/healthEvents     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/healthEvents |
