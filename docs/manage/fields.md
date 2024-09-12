@@ -310,9 +310,9 @@ If the field is not used by those features you will see the following prompt.
 
 #### View dropped fields
 
-Dropped fields are fields being sent to Sumo, but are being ignored since they are not defined in your Fields schema. Use the dropdown option to the left of the **+ Add** button to select and view dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="dropped-fields-table" style={{border:'1px solid gray'}} width="800"/>
+Dropped fields are fields being sent to Sumo Logic, but are being ignored since they are not defined in your fields schema. Use the fields dropdown to view the dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="dropped-fields-table" style={{border:'1px solid gray'}} width="800"/>
 
-Select a dropped field from the table to open a details pane. There is a convenient button provided to create the field if needed.
+Click on any dropped field of your choice from the table to open a details pane. There is a convenient button provided to create the field if needed.
 
 :::note
 It can take a few minutes for a created field to be removed from the **Dropped Fields** table.
