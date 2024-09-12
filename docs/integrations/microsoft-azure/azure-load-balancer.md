@@ -11,11 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 [Azure Load Balancer](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) is an Azure service that allows you to evenly distribute incoming network traffic across a group of Azure VMs or instances in a Virtual Machine Scale Set. This integration helps in monitoring inbound and outbound data throughput, outbound flows, and application endpoint's health  of your Load Balancers.
 
 ## Log and metric types
+
 For Azure Load Balancer, you can collect the following logs and metrics:
-* **Load Balancer Health Event.** These health event logs are emitted when any issues affecting your load balancer’s health and availability are detected. [Learn more](https://techcommunity.microsoft.com/t5/azure-networking-blog/introducing-azure-load-balancer-health-event-logs/ba-p/4154362).```
 
-For Azure Load Balancer, you can collect the following metrics:
-
+* **Load Balancer Health Event.** These health event logs are emitted when any issues affecting your load balancer’s health and availability are detected. [Learn more](https://techcommunity.microsoft.com/t5/azure-networking-blog/introducing-azure-load-balancer-health-event-logs/ba-p/4154362).
 * **Load Balancer Metrics**. These metrics are available in [Microsoft.Network/loadBalancers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-loadbalancers-metrics) namespace.
 
 For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/load-balancer/monitor-load-balancer-reference#metrics).
@@ -23,7 +22,7 @@ For more information on supported metrics, refer to [Azure documentation](https:
 ## Setup
 
 :::note
-This app supports only load balancers of **Standard** and **Gateway** SKU.
+This app only supports load balancers of **Standard** and **Gateway** SKU.
 :::
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
@@ -32,13 +31,13 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 You must explicitly enable diagnostic settings for each Load Balancer you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/LoadBalancer/Logs`, `Azure/LoadBalancer/Metrics`.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/LoadBalancer/Logs` and `Azure/LoadBalancer/Metrics`.
 
 ### Configure field in field schema
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
 1. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions in the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
    - `location`. The region to which the resource name belongs to.
    - `subscription_id`. ID associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
@@ -51,7 +50,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure Field Extraction Rules
 
-Create the following field extraction rules (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
+Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 #### Azure location extraction FER
 
@@ -103,6 +102,7 @@ Rule Name: AzureObservabilityMetadataExtractionLoadBalancerLevel
 ```sql title="Metric match expression"
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/LOADBALANCERS/* tenant_name=*
 ```
+
 | Fields extracted  | Metric rule    |
 |:------------------|:---------------|
 | subscription_id   | $resourceId._1 |
@@ -124,7 +124,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-metrics.png')} alt="Azure load balancer metrics" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-SNAT related metrics will only come when a outbound rule is configured
+SNAT related metrics will appear only when a outbound rule is configured.
 :::
 
 ### Configure logs collection
@@ -142,10 +142,10 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step if you are already collecting activity logs for a subscription.
 
 :::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
+Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
 :::
 
 ## Installing the Azure Load Balancer app
@@ -162,46 +162,40 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-
 ### Overview
 
-The **Azure Load Balancer - Overview** dashboard provides details like Health Probe Status, Average Data Path Availability, Transmission Details, Connection Details and SNAT Ports Utilization(%) etc.
+The **Azure Load Balancer - Overview** dashboard provides a collective information on Health Probe Status, Average Data Path Availability, Transmission Details, Connection Details, and SNAT Ports Utilization(%).
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Overview.png')} alt="Azure Load Balancer Overview" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Administrative Operations
 
-The **Azure Load Balancer - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors and users / applications by operation type etc.
+The **Azure Load Balancer - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors, and users/applications by operation type.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Health
 
-The **Azure Load Balancer - Health** dashboard provides details like total failed requests, failures by operation, health probe status trend and unhealthy backends etc.
+The **Azure Load Balancer - Health** dashboard provides details like total failed requests, failures by operation, health probe status trend, and unhealthy backends.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Network
 
-The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by Load Balancer, TCP SYN packets by Load Balancer, Bytes Transmitted by Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilizatio, Allocated SnatPorts and Used SnatPorts etc.
-Use this dashboard to
+The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by Load Balancer, TCP SYN packets by Load Balancer, Bytes Transmitted by Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilizatio, Allocated SnatPorts, and Used SnatPorts.
 
+Use this dashboard to:
    1. Detect high utilization of allocated ports.
-   2. Detect when the Data Path Availability is less than expected due to platform issues.
-   3. Monitor data transmission (packets and bytes) through your load balancers
+   2. Detect when there is less data path availability than expected due to platform issues.
+   3. Monitor data transmission (packets and bytes) through your load balancers.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Policy
 
-The **Azure Load Balancer - Policy** dashboard provides details like total success policy events, success policy events, total failed policy events and failed policy events etc.
+The **Azure Load Balancer - Policy** dashboard provides details like total success policy events, success policy events, total failed policy events, and failed policy events.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
-
 
 ## Troubleshooting
 
