@@ -27,7 +27,7 @@ Zendesk is widely used across various industries, including technology, retail, 
 
 ### Vendor configuration
 
-The Zendesk source requires you to provide the API Token. To generate the API token, refer to the [Zendesk Documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_tcb_fk1_2yb). 
+The Zendesk source requires you to provide the API Token. To generate the API token, refer to the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_tcb_fk1_2yb). 
 
 ### Source configuration
 
