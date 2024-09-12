@@ -2802,8 +2802,7 @@ integrations: [
         'api/cloud-soar',
         {
           type: 'category',
-          label: 'Collectors',
-          label: 'Collectors',
+          label: 'Collector Management',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'api/collector-management/index'},
