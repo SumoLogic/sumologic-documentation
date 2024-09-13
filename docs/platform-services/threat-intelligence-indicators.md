@@ -57,7 +57,7 @@ See [Upload formats](#upload-formats) for the format to use when uploading indic
 Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up services to obtain indicators from Federal, vendor, and open services. Then ingest them using the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs. You can manually add more indicators as needed, such as your own private indicators, using the [Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or the APIs.
-1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#find-threats-using-cloud-siem-rules), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
+1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#threat-indicators-in-cloud-siem), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
 1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
 
 ## Threat Intelligence tab
@@ -119,7 +119,7 @@ When you remove indicators, the event is recorded in the Audit Event Index. See 
 
 ### Change the retention period for expired indicators
 
-Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](#normalized-json-format) and [CSV](#csv-format), and `valid_until` for [STIX](#stix-21-json-format)). After that date, they are considered expired.
+Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](#normalized-json-format) and [CSV](#csv-format), and `valid_until` for [STIX](#stix-2x-json-format)). After that date, they are considered expired.
 
 Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, the indicators are still in the system, and you can search against them if you want.
 
@@ -374,7 +374,7 @@ The following attributes are required:
        * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
