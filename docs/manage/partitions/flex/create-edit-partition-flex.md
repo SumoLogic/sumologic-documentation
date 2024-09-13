@@ -52,7 +52,7 @@ When designing partitions, keep the following in mind:
   * Partition1: `_sourceCategory=prod`
   * Partition2: `_sourceCategory=*/Apache`
 
-Scan cost will be increased if there is overlapping data between two or more partitions while querying. To avoid this, ensure to always design the partition to hold a single instance of data and don't replicate data in other partitions.
+The best practice for cost optimization is to ensure that data from a source category is maintained in a single partition rather than multiple partitions to minimize multiple partitions from being included in the scope of the query. If data from a single source category is maintained in multiple partitions, it could potentially increase scan costs, as the query may need to consider data from multiple partitions.
 
 ## Edit a partition
 
