@@ -55,7 +55,7 @@ Scheduled reports are allowed to run for a maximum of five minutes. Any panel th
 
 To update an existing a scheduled report dashboard email:
 
-1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
+1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports**.
 1. Click the kebab menu and select **Edit** against the required report. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report_1.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. Make your desired changes. When you're done, click **Update**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 
