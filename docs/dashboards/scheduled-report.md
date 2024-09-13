@@ -80,7 +80,7 @@ To duplicate to an existing a Scheduled Report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports** to open the scheduled reports list.
 1. Click the kebab menu and select **Save As...** against the required report.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/duplicate_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
-1. Make your desired changes. When you're done, click **Schedule**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
+1. Make your desired changes. When you're done, click **Schedule**. <br/><img src={useBaseUrl('/img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 
 ## Subscribe/Unsubscribe to a Scheduled Report
 
