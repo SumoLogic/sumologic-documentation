@@ -75,13 +75,13 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
    * **Roles Attribute**. See [Configure on-demand roles provisioning](#configure-on-demand-roles-provisioning).
    * **On Demand Provisioning**. See [Configure on-demand roles provisioning](#configure-on-demand-user-account-provisioning).
    * **Logout Page**. [Configure logout page](#configure-logout-page).
-1. Click **Import Metadata XML** to import the metadata XML file you previously downloaded from your identity provider (IdP). (If you need to export the metadata XML from your SAML configuration later, see [Export Metadata XML](#view-metadata-xml) below.)
+1. Click **Import Metadata XML** to import the metadata XML file you previously downloaded from your identity provider (IdP). (If you need to export the metadata XML from your SAML configuration later, see [Download metadata XML](#download-metadata-xml) below.)
 1. If you are done configuring SAML, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
 ## Review SAML configuration
 
 1. To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Entity ID**. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Configuration list" style={{border: '1px solid gray'}} width="800" />
-1. Click **View Metadata XML** to see the metadata XML file for the configuration. You can also use this button to [export the metadata XML](/docs/manage/security/saml/set-up-saml/#export-metadata-xml).
+1. Click **View Metadata XML** to see the metadata XML file for the configuration. You can also use this button to [download the metadata XML](#download-metadata-xml).
 1. Click the pencil icon to modify the configuration settings. Otherwise, click **X** to close the dialog box. 
 
 ## Optional configurations

@@ -389,7 +389,7 @@ Use this dashboard to:
 
 ### 07. Amazon RDS - MySQL Logs - Error Logs Analysis
 
-The **Amazon RDS - MySQL Logs - Error Logs Analysis** dashboard provides details for error logs, including failed authentications, error outliers, top and recent warnings, log levels, and aborted connections. This dashboard relies on MySQL error logs, which are by [default enabled](#collect-amazon-rds-cloudwatch-logs) for Amazon MySQL. To view the data on the panels you need to first ingest MySQL logs into Sumo Logic.
+The **Amazon RDS - MySQL Logs - Error Logs Analysis** dashboard provides details for error logs, including failed authentications, error outliers, top and recent warnings, log levels, and aborted connections. This dashboard relies on MySQL error logs, which are by [default enabled](#log-and-metrics-types) for Amazon MySQL. To view the data on the panels you need to first ingest MySQL logs into Sumo Logic.
 
 Use this dashboard to:
 * Track diagnostic messages like Errors, Warnings, and Notes to decide the next step.
