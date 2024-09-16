@@ -99,6 +99,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source"><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="icon" width="40"/><h4>Atlassian Source</h4></a>
+  <p>Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source"><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="icon" width="50"/><h4>AWS Cost Explorer</h4></a>
   <p>Learn to collect cost and usage reports from AWS Cost Explorer Source.</p>
   </div>
@@ -447,19 +453,19 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="190"/><h4>Tenable</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="120"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="100"/><h4>Trellix mVision ePO</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="80"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="250"/><h4>Webex</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="100"/><h4>Webex</h4></a>
         <p>Learn to collect admin audit events using Webex API.</p>
         </div>
       </div>
@@ -471,7 +477,13 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="50"/><h4>Zero Networks Segment</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Thumbnail icon" width="80"/><h4>Zendesk</h4></a>
+        <p>Learn to collect audit logs from the Zendesk platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="45"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
         </div>
       </div>
