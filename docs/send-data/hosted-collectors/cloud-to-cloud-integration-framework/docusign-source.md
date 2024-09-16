@@ -48,7 +48,7 @@ To get the User ID, follow the steps below:
 2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
 3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="800" />
 :::note
-You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#source-configuration).
 :::
 
 #### App

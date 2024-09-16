@@ -51,9 +51,9 @@ To configure a CrowdStrike FDR Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **AWS Access Key ID**: Provide your AWS Access Key ID you copied from CrowdStrike, see the [Prerequisite](#prerequisite).
-1. **AWS Secret Access Key**: Provide your AWS Secret Access Key you copied from CrowdStrike, see the [Prerequisite](#prerequisite).
-1. **SQS Queue URL**. Provide your SQS Queue URL you copied from CrowdStrike, see the [Prerequisite](#prerequisite).
+1. **AWS Access Key ID**: Provide your AWS Access Key ID you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
+1. **AWS Secret Access Key**: Provide your AWS Secret Access Key you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
+1. **SQS Queue URL**. Provide your SQS Queue URL you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
 1. **S3 Region**. Select the S3 Region your data is in, this normally is the same region specified in the **SQS Queue**.
 1. (Optional) **Historical Data Collection**. Select the specified time range to ingest only the desired data. By default, it is seven days.
     - By default, all messages are ingested into Sumo Logic without any filtering. However, with the appropriate configuration, customers can ensure that only the desired data within the specified time range is ingested. For instance, if you want to ingest data from the last three days only, then you should configure the source by selecting `3 Days` as the value.
