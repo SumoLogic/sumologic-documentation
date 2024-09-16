@@ -46,7 +46,7 @@ _sourceCategory=foo
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specificwith-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specificwith-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-thewhere-operator).
 
 **Best approach:**
 
