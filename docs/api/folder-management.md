@@ -2,17 +2,18 @@
 id: folder-management
 title: Folder Management APIs
 sidebar_label: Folders
-hide_table_of_contents: true
 description: Use Folder Management APIs to manage folders in your Library.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/>
 
 The Folder Management API allows you to add folders and subfolders to the [Library](/docs/get-started/library) from HTTP endpoints to organize your content.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -29,3 +30,11 @@ import ApiIntro from '../reuse/api-intro.md';
 | US1        | https://api.sumologic.com/docs/#tag/folderManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/folderManagement |
 
+<!-- ## Required role capabilities
+
+<ApiRoles/>
+
+* Data Management
+    * Manage Content
+
+-->
