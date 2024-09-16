@@ -478,7 +478,7 @@ This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `t
            "automaticDateParsing":true,
            "multilineProcessingEnabled":true,
            "useAutolineMatching":true,
-           "contentType":"AwsS3Bucket",
+           "contentType":"KinesisLog",
            "forceTimeZone":false,
            "filters":[],
            "cutoffTimestamp":1634972400000,

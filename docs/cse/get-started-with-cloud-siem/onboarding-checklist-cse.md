@@ -100,7 +100,9 @@ Cloud SIEM Insights are stored within two audit partitions. These partitions als
 * `_index=sumologic_audit_events`
 * `_index=sumologic_system_events`
 
-See: The [Search the Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index#search-the-audit-event-index) section of the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) article
+See: 
+* [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/#index-retention-period)
+* [System Event Index](/docs/manage/security/audit-indexes/system-event-index/#index-retention-period)
 
 #### Create parsers
 

@@ -35,7 +35,7 @@ Watch the following micro lesson to learn about Cloud Infrastructure Security fo
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
@@ -218,7 +218,7 @@ In the **Check AWS Role Permission** section, you can ensure the user performing
 1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
-   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
    * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
    * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
 1. In **2. AWS Organization configuration**, enter the following:
@@ -252,7 +252,7 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
 1. A CloudFormation template screen is displayed. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/>
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
@@ -397,11 +397,11 @@ This section walks you through the process of troubleshooting an AWS CloudForma
 
 To debug an AWS CloudFormation installation failure, do the following:
 
-1. After the stack rollback is complete and the status is `ROLLBACK_COMPLETE`, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid gray'}} width="800"/>
-1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="Troubleshooting 2" style={{border: '1px solid gray'}} width="800"/>
-1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Troubleshooting 3" style={{border: '1px solid gray'}} width="800"/>
-1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid gray'}} width="400"/>
-1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Troubleshooting 5" style={{border: '1px solid gray'}} width="800"/>
+1. After the stack rollback is complete and the status is `ROLLBACK_COMPLETE`, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="A screenshot of the stack with the words circled 'Rollback complete'" style={{border: '1px solid gray'}} width="800"/>
+1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="A screenshot of the stack with the words circled 'Failed to create resource. 401 client error.'" style={{border: '1px solid gray'}} width="800"/>
+1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Screenshot with the words circled 'Embedded stack'" style={{border: '1px solid gray'}} width="800"/>
+1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Deleted selected from the dropdown menu" style={{border: '1px solid gray'}} width="400"/>
+1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Screenshot showing a line saying 'Failed to create resource. 401 client error. Credential could not be verified.'" style={{border: '1px solid gray'}} width="800"/>
 
 #### Optimize CloudTrail log ingest
 
@@ -447,7 +447,7 @@ To uninstall the Cloud Infrastructure Security solution:
 
 1. Log in to your AWS account and go to [CloudFormation](https://console.aws.amazon.com/cloudformation/home).
 1. Select the main stack you want to delete.
-1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete stack" style={{border: '1px solid gray'}} width="800"/>
+1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete button in the upper right part of the screen" style={{border: '1px solid gray'}} width="800"/>
 
 ## Cloud Infrastructure Security for AWS dashboards​
 

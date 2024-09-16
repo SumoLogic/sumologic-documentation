@@ -5,6 +5,7 @@ description: Learn how to create and manage multiple Sumo Logic orgs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::note
 If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).
@@ -46,7 +47,21 @@ There are several role capabilities that are required to work with orgs:
 
 ## Create a new child organization
 
-This section has instructions for creating a new org. 
+This section has instructions for creating a new org.
+
+:::sumo Micro Lesson
+Creating a New Child Org
+<Iframe url="https://www.youtube.com/embed/omTHPAJ9dIg?si=m5dVp5oXu29wq4Pu"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
 
 :::note
 After you create a new org, you can’t delete it.
@@ -79,7 +94,7 @@ After you create a new org, you can’t delete it.
           Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
-1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contact, and the days remaining in your contract.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
 1. Throttling limits displays the rate of ingestion. To learn more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 1. Once you're finished adding the baseline, click **Done**.
 1. **Credits to be allocated**. The recommended credits for this child org will be displayed once you set the baseline. You can add or reduce the credit based on your requirement.
@@ -93,6 +108,20 @@ After you create a new org, you can’t delete it.
 1. **Account Owner Last Name**. Enter the account owner’s last name.<br/> <img src={useBaseUrl('img/subscriptions/basic-details.png')} alt="basic-details" style={{border:'1px solid gray'}} width="450" />
 
 ## Update an org's credits allocation
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn more about managing a child org.
+<Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
 
 :::info
 If the org has already depleted its credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.
