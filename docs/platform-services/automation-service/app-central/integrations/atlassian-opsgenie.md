@@ -11,8 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Updated: Sep 16, 2024***
 
 OpsGenie, a service powered by Atlassian in the cloud, provides operational teams with robust alert management capabilities. It ensures efficient tracking of notifications triggered by various monitoring systems. The primary goal is to guarantee that alerts reach the appropriate team members and that issues are resolved swiftly. This service has been successfully incorporated and rigorously vetted in combination with OpsGenie's platform.
-## Actions
 
+## Actions
 
 * **Acknowledge Alert** *(Notification)* - Confirm receipt of alerts with OpsGenie.
 * **Add Note to Alert** *(Notification)* -  Append a remark to an alert within the OpsGenie system
@@ -35,46 +35,45 @@ OpsGenie, a service powered by Atlassian in the cloud, provides operational team
 * **List Teams** *(Enrichment)* - Retrieve a list of teams from OpsGenie.
 * **List Users** *(Enrichment)* - Retrieve a list of users from OpsGenie.
 
-## Atlassian Opsgenie Configuration
+## Atlassian Opsgenie configuration
 
-Steps to Create an API Key
+Follow the steps below to create an API key. 
 
-### Subscriptions Account:
-
-1. Navigate to the **Settings** page.
-2. Go to **Integrations** >> **Integrations**.
-3. Click on **Default API**.
-4. Copy the **API key**.
-
-### Trial Accounts:
+### Subscriptions account
 
 1. Navigate to the **Settings** page.
-2. Go to **App Settings** >> **API Key Management**.
-3. Click **Add New API Key**.
-4. Enter a name for the API key and select the access rights to give to this API key. You can regenerate the shown API
-   key **before saving**, if you would like to.
-5. Click **Add API Key** to save the new API key.
+1. Go to **Integrations** > **Integrations**.
+1. Click on **Default API**.
+1. Copy the **API key**.
+
+### Trial accounts
+
+1. Navigate to the **Settings** page.
+1. Go to **App Settings** > **API Key Management**.
+1. Click **Add New API Key**.
+1. Enter a name for the API key and select the access rights to give to this API key. You can regenerate the shown API key *before saving*, if you would like to.
+1. Click **Add API Key** to save the new API key.
 
 :::info
-The main purpose of usage for these API keys is configuration based API requests. They can be used for configuration
-actions, *List Teams, List Users, Get Team*.
+The main purpose of usage for these API keys is configuration based API requests. They can be used for configuration actions, *List Teams, List Users, Get Team*.
 :::
 
-To Run the Other Actions, you need to have an API from **Team Integrations**:
+To run the other actions, you need to have an API from **Team Integrations**:
 
 1. Navigate to the **Teams** page.
-2. Click on the team you want to integrate with.
-3. Go to **Integrations**
-4. Click on **Add Integration**.
-5. Select **API**.
-6. Enter a name **Integration Name** and **Assign the Team**.
-7. Click **Continue**.
-8. Copy the **API key**.
-9. Click **Turn On Integration**.
+1. Click on the team you want to integrate with.
+1. Go to **Integrations**
+1. Click on **Add Integration**.
+1. Select **API**.
+1. Enter a name **Integration Name** and **Assign the Team**.
+1. Click **Continue**.
+1. Copy the **API key**.
+1. Click **Turn On Integration**.
 
 :::warning
 Please keep in mind that the API keys of the team integrations can only be used for the alerts/incidents of the specific team and the team-based configurations, whereas the API keys of the global integrations can be used for all of the API requests, including account-based configurations.
 :::
+
 ## Change Log
 
 * March 22, 2024 - First upload
