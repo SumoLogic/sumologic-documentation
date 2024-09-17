@@ -1,5 +1,5 @@
 ---
-id: add-scheduled-view
+id: add-view
 title: Add a Scheduled View
 description: Learn how to add a Scheduled View.
 ---

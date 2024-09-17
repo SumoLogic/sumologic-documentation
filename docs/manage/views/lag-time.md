@@ -1,5 +1,5 @@
 ---
-id: scheduled-view-lag-time
+id: lag-time
 title: Scheduled View Lag Time
 description: In the View Details dialog, lag time is represented in hours, minutes, and seconds.
 ---

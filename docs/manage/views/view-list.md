@@ -1,5 +1,5 @@
 ---
-id: view-list-scheduled-views
+id: view-list
 title: View Information About Views
 description: Learn how to view a list of scheduled views configured for your organization and view the details of a scheduled view.
 ---
@@ -14,8 +14,8 @@ You must have a role that grants you the View Scheduled Views [role capability
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso--><br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
     * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
-        :::note 
-        You can see the suggestions only if there are two or more responses for the same column or section. 
+        :::note
+        You can see the suggestions only if there are two or more responses for the same column or section.
         :::
     * **Status**. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
@@ -35,5 +35,3 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
     * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid gray'}} alt="sched-view-details" width="400"/>
-
-

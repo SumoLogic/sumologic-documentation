@@ -1,7 +1,7 @@
 ---
-id: pause-disable-scheduled-views
-title: Pause or Disable Scheduled Views
-description: Management tools are built in to the Scheduled Views page.
+id: pause-disable-view
+title: Pause or Disable a View
+description: Management tools are built in to the Views page.
 ---
 
 Pausing a view stops new data from being indexed. You can resume indexing at any time.

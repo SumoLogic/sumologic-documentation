@@ -1,5 +1,5 @@
 ---
-id: scheduled-views-best-practices
+id: best-practices
 title: Scheduled Views Best Practices and Examples
 description: A Scheduled View is a query that runs on a schedule. This topic has some tips for setting up Scheduled View queries.
 ---
