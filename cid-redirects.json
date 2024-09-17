@@ -4039,10 +4039,10 @@
   "/docs/integrations/amazon-aws/elastic-load-balancer-app": "/docs/integrations/amazon-aws/application-load-balancer",
   "/docs/integrations/amazon-aws/elastic-load-balancing-classic": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/manage/scheduled-views": "/docs/manage/views",
-  "/docs/manage/scheduled-views/add-scheduled-view": "/docs/manage/views/add-scheduled-view",
-  "/docs/manage/scheduled-views/pause-disable-scheduled-views": "/docs/manage/views/pause-disable-scheduled-views",
-  "/docs/manage/scheduled-views/run-search-against-scheduled-view": "/docs/manage/views/run-search-against-scheduled-view",
-  "/docs/manage/scheduled-views/scheduled-view-lag-time": "/docs/manage/views/scheduled-view-lag-time",
-  "/docs/manage/scheduled-views/scheduled-views-best-practices": "/docs/manage/views/scheduled-views-best-practices",
-  "/docs/manage/scheduled-views/view-list-scheduled-views": "/docs/manage/views/view-list-scheduled-views"
+  "/docs/manage/scheduled-views/add-scheduled-view": "/docs/manage/views/add-view",
+  "/docs/manage/scheduled-views/pause-disable-scheduled-views": "/docs/manage/views/pause-disable-view",
+  "/docs/manage/scheduled-views/run-search-against-scheduled-view": "/docs/manage/views/run-search-against-view",
+  "/docs/manage/scheduled-views/scheduled-view-lag-time": "/docs/manage/views/view-lag-time",
+  "/docs/manage/scheduled-views/scheduled-views-best-practices": "/docs/manage/views/best-practices",
+  "/docs/manage/scheduled-views/view-list-scheduled-views": "/docs/manage/views/view-list"
 }
