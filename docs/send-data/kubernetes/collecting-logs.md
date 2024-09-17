@@ -641,7 +641,7 @@ For the example above, the `sumologic-secrets` secret with the `endpoint-product
 
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
-[source_name]: /docs/send-data/reference-information/metadata-naming-conventions.md#Source_Name
+[source_name]: /docs/send-data/reference-information/metadata-naming-conventions/#source-name
 [opentelemetry_processors]: https://opentelemetry.io/docs/collector/configuration/#processors
 [attributes_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/attributesprocessor/README.md
 [resource_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourceprocessor/README.md

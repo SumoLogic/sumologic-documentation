@@ -49,24 +49,24 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |:--|:--|
-| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-file-source) | LocalFile |
-| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-file-source) | RemoteFileV2 |
-| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-log-source) | LocalWindowsEventLog |
+| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-filesource) | LocalFile |
+| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-filesource) | RemoteFileV2 |
+| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-logsource) | LocalWindowsEventLog |
 | [Remote Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-performance-source) | RemoteWindowsPerfMon |
 | [Windows Active Directory Inventory Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#windows-active-directory-inventory-source) | ActiveDirectory |
-| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslog-source)	 | Syslog |
+| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslogsource)	 | Syslog |
 | [Script Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#script-source) | Script |
-| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-log-source) | DockerLog |
+| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-logsource) | DockerLog |
 
 ### Metrics Sources
 
 | Field Type | Type Value |
 |:--|:--|
-| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metrics-source)  | SystemStats |
+| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metricssource)  | SystemStats |
 | [Streaming Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#streaming-metrics-source) | StreamingMetrics |
-| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-stats-source) | DockerStats |
+| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-statssource) | DockerStats |
 
 ## Hosted Collectors
 
@@ -76,9 +76,9 @@ Each source can have its own unique fields in addition to the generic fields lis
 |:--|:--|
 | [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
-| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
-| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudfront-source) | Polling |
-| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
+| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awss3-archive-source) | Polling |
+| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudfrontsource) | Polling |
+| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudtrailsource) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
@@ -112,7 +112,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |:--|:--|
-| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudwatch-source) | Polling |
+| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
 | [AWS Kinesis Firehose for Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources/#aws-kinesis-firehose-for-metricssource) | HTTP |
 | [OLTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) | HTTP |
 

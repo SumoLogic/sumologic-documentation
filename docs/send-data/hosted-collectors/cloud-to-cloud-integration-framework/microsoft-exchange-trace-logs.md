@@ -121,7 +121,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 |:--|:--|:--|:--|:--|
 | schemaRef | JSON Object  | `{"type":"Microsoft Exchange Trace Logs"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| config | JSON Object | Configuration object | Yes | Source type specific values. |
 
 ### JSON example
 

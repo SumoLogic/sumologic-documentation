@@ -86,7 +86,7 @@ By default, all other parameters are set up to automatically collect logs and me
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-your-access-key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-an-access-key">Create an access key</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>
