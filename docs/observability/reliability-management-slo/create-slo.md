@@ -48,7 +48,7 @@ The following table lists the available options for an SLO:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" />
 
-    Select the **Query Type** to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#query-recommendations) before building.
+    Select the **Query Type** to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. 
 
     Follow the instructions below based on the query type:
 
@@ -97,12 +97,12 @@ The following table lists the available options for an SLO:
 6. Enter SLO Details:
    * **Name**. Name of the SLO.
    * **Description**. Short explanation of your SLO.
-   * **Tags**. Tags are key/value pairs that allow you to apply additional metadata to your SLOs beyond the name and description. [Learn more here](#slo-tags-and-filters). Tags can help you categorize, search, and filter your SLOs. They also enable you to correlate your other content items and data with SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
+   * **Tags**. Tags are key/value pairs that allow you to apply additional metadata to your SLOs beyond the name and description. [Learn more here](#tags-and-filters). Tags can help you categorize, search, and filter your SLOs. They also enable you to correlate your other content items and data with SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
      :::info
      You can associate multiple tags with your SLO.
      :::
     <img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
-7. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
+7. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-from-monitors-list-page).
 
 ## Create an SLO from Log Search page
 

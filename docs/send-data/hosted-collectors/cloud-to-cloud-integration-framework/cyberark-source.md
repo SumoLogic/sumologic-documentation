@@ -54,8 +54,8 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-1. **EPM Username**. Enter your EPM username from the [Setup and Configuration](#setup-and-configuration) section.
-1. **EPM User Password**. Enter your EPM password from the [Setup and Configuration](#setup-and-configuration) section.
+1. **EPM Username**. Enter your EPM username from the [Vendor configuration](#vendor-configuration) section.
+1. **EPM User Password**. Enter your EPM password from the [Vendor configuration](#vendor-configuration) section.
 1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL, it is the dispatch server for your region. Following are some examples of dispatch server URLs:
     * For the US datacenter, the dispatch server URL is `https://login.epm.cyberark.com`.
     * For the EU datacenter, the dispatch server URL is `https://eu.epm.cyberark.com`.

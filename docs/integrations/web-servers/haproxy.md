@@ -435,7 +435,7 @@ Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monito
 To install these monitors, you must have the **Manage Monitors** role capability. You can install by importing a JSON file or using a Terraform script.
 
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
 :::
 
 ### Method A: Import a JSON file
@@ -455,7 +455,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 
 ### Method 2: Use a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).

@@ -55,7 +55,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 1. **Issuer**. Paste in the **Issuer URL** you copied from the OneLogin **SSO** page, as described above.
 1. **X.509 Certificate**. Paste in the certificate you downloaded from the OneLogin **SSO** page, as described above. 
 1. **Attribute mapping**. Select "Use SAML subject".
-1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configure-sp-initiated-login).
+1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configuresp-initiated-login).
 1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](#configure-on-demand-role-provisioning).
 1. **On Demand Provisioning**. (Optional). See [Configure on demand provisioning](#configure-on-demand-account-provisioning) below.
 v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
