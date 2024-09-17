@@ -2847,7 +2847,6 @@ integrations: [
         'api/service-map',
         'api/slo-management',
         'api/span-analytics',
-        'api/service-allowlist',
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
