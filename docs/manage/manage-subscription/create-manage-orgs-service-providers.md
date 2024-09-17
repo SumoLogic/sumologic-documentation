@@ -224,7 +224,7 @@ This section has information about how you can monitor credit allocations and co
 
 ### View overall credit usage by category
 
-You can view the aggreagte usage for all child orgs across usage category in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
+You can view the aggregate usage for all child orgs across usage category in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous Tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent Tier.
@@ -249,7 +249,7 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 * The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
 * The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
 * The **Forecast** column indicates the percentage of total consumption of the credits by the end of contract period according to the current consumption rate for a selected child org.
-* The **Usage % Change** column indicates the difference in credit usage by your child organisations over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each child organisation.
+* The **Usage % Change** column indicates the difference in credit usage by your child organizations over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each child organization.
 
 By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
 
