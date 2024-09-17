@@ -5,8 +5,6 @@ sidebar_label: AWS ECS Fargate
 description: This page describes how to collect application container logs from AWS ECS Fargate and EC2 using AWS Firelens.
 ---
 
-
-
 This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  
 
@@ -33,7 +31,7 @@ This section show you how to create AWS resources and Sumo Logic resources for
 
 ### Step 1: Add a hosted collector and HTTP source
 
-A  hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
+A hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
 
 :::note
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this URL to configure the task definition.
@@ -50,8 +48,8 @@ A task definition is required to run Docker containers in Amazon ECS. You can d
 
 ECS allows for two launch types, Fargate and EC2. Create the launch type that best suits your environment.
 
-* [Fargate](#collect-fargate-container-logs) - ECS manages your clusters.
-* [EC2](#collect-ec2-container-logs) - you manage your clusters.
+* [Fargate](#collectfargatecontainer-logs). ECS manages your clusters.
+* [EC2](#collectec2container-logs). You manage your own clusters.
 
 :::important
 The [AWS CLI](https://aws.amazon.com/cli/) and [ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html) must be installed and [configured](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-configure.html) before you create the task definition.
