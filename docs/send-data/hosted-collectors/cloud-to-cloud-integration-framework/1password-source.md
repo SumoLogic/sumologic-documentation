@@ -56,7 +56,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
-1. **API Token**. Enter the [1Password API token](#APIToken).
+1. **API Token**. Enter the [1Password API token](#vendor-configuration).
 1. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
@@ -72,7 +72,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | base_url | String | Yes | `null` | Provide your 1Password customer-specific domain, such as: <code>events.1password.com</code> |  `"events.1password.com"` |
-| api_token | String | Yes | `null` | Provide the [1Password API token](#APIToken) you want to use to authenticate collection requests. |  `"acsac25$"` |
+| api_token | String | Yes | `null` | Provide the [1Password API token](#vendor-configuration) you want to use to authenticate collection requests. |  `"acsac25$"` |
 | supported_apis | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
 

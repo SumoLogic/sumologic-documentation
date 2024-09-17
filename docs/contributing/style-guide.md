@@ -1235,10 +1235,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
-    authors:
-      - url: https://help.sumologic.com/release-notes-service/rss.xml
-        image_url: /img/release-notes/rss-orange.png
+    image: https://help.sumologic.com/img/sumo-square.png    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1267,9 +1264,6 @@ To add release notes with images:
     keywords:
       - alerts
     image: https://help.sumologic.com/img/sumo-square.png
-    authors:
-      - url: https://help.sumologic.com/release-notes-service/rss.xml
-        image_url: /img/release-notes/rss-orange.png
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.
@@ -1289,7 +1283,7 @@ For repeatable content - an identical section that appears in one or more docs -
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
 
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
 
 <Tabs
   className="unique-tabs"
