@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-roles/users/multi-account-access.md).
 :::
 
-For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
+For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](best-practices.md). 
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso--><br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} alt="scheduled-view-page" style={{border:'1px solid gray'}} width="800"/>
 1. Click **+ Add Scheduled View**.<br/><img src={useBaseUrl('/img/scheduled-views/add-view.png')} alt="add-view" style={{border:'1px solid gray'}} width="400"/>
