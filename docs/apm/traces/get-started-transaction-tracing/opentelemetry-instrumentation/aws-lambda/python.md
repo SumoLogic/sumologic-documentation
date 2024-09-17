@@ -12,7 +12,7 @@ This document covers how to install and configure OpenTelemetry distributed tr
 
 Sumo Logic OTel Python Lambda layer supports:
 
-* Python version between 3.7 and 3.10
+* Python version between 3.7 and 3.11
 * x86_64 and arm64 architectures
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda Layer

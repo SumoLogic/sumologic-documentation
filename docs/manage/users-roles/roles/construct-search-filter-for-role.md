@@ -77,10 +77,6 @@ _collector=HR_Tools AND <user-query>
 
 ### Using AND and OR in a search filter
 
-:::note
-For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
-:::
-
 You can use AND and OR in a search filter. For example, this role filter uses OR to grant access to log data from two source categories:
 
 ```sql
