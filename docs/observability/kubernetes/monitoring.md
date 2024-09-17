@@ -67,8 +67,8 @@ To discover and view related content, select the graph data point you are inte
 
 Select links from the **Summary** tab, to go directly to:
 
-* [Linked Dashboards](/docs/dashboards/panels/modify-chart#Modify-general-settings)
-* Recommended Dashboards - Currently, only dashboards from the Kubernetes App are supported.
+* [Linked dashboards](/docs/dashboards/panels/modify-chart#link-dashboards)
+* Recommended dashboards - Currently, only dashboards from the Kubernetes App are supported.
 
 ### Custom dashboards
 

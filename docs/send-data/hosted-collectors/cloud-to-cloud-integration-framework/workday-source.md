@@ -53,11 +53,11 @@ To configure a Workday Source, follow the steps below:
 8. **SignOn Report URL**. Paste the SignOn Report URL from [Step 1.5](/docs/integrations/saas-cloud/workday.md#step-15-create-a-custom-sign-on-report).
 9. **Integration System User Name**. Name of the account (SumoLogic_ISU) created in [Step 1.1](/docs/integrations/saas-cloud/workday.md#step-11-create-an-integration-system-user).
 10. **Integration System User Password**. The password of the account created in [Step 1.1](/docs/integrations/saas-cloud/workday.md#step-11-create-an-integration-system-user).
-11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
+11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 16. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
   :::note
   <CollBegin/>
@@ -187,7 +187,7 @@ To resolve this:
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly. 
+To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly.
 
 ## FAQ
 

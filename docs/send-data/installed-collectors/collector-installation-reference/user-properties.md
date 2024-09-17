@@ -4,7 +4,7 @@ title: user.properties
 description: The user.properties file is used to pass Collector parameters for some installation methods.
 ---
 
-For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties) below.
+For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties-parameters) below.
 
 When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation. See [Parameters for the Command Line Installer](parameters-command-line-installer.md) for more information.
 
@@ -19,7 +19,7 @@ After downloading the collector binary package (e.g., tarball), create the `us
 To create `user.properties` manually:
 
 1. Use a text editor (or any similar program) to create a new file.
-1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties) below. Parameters are case sensitive.
+1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties-parameters) below. Parameters are case sensitive.
 1. Save the file to `CollectorInstallationDirectory/config/user.properties`.
 
 :::important
