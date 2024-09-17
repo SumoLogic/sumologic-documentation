@@ -7,7 +7,7 @@
 | <img src="/img/content-sharing/icon-more-actions-kebab-three-dot.png" alt="more-actions-kebab" width="20%" /> | More Actions <!-- Kebab menu? Three-dot kebab icon? More Actions? -->  | Click to reveal a menu with additional options. |
 | <img src="/img/content-sharing/nav-menu.png" alt="nav-menu.png" /> | Navigation Menu  | Main Sumo Logic menu containing your collectors, sources, library, help, and more. |
 
-<!-- Kanso
+<!-- Use this after Kanso GA
 
 | Icon | Tab Name | Definition |
 | :-- | :-- | :-- |
@@ -19,4 +19,4 @@
 | <img src="/img/content-sharing/left-nav.png" alt="Sumo Logic left nav menu" width="90%" /> | Left Navigation Menu (Panel?) | Access all Sumo Logic features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, and Cloud SIEM, as well as your dashboards library. |
 | <img src="/img/get-started/admin-config.png" alt="Sumo Logic top nav menu" /> | Top Navigation Menu (Bar?) | Main Sumo Logic menu containing your collectors, sources, library, help, and more. |
 
-Kanso-->
+-->
