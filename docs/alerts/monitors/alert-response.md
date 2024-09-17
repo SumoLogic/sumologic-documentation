@@ -129,7 +129,7 @@ The top of the page provides several details and buttons.
 * **C**. The type of monitor trigger condition that triggered the alert, either Critical, Warning, or MissingData.
 * **D**. The status of the Alert, either **Active** or **Resolved**.
 * **E**. Refreshes the Alert page.
-* **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook).  
+* **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
    * Text playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/> ![playbook example.png](/img/monitors/playbook-example.png)
    * [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
 * **G**. Opens the Monitor that generated this alert.

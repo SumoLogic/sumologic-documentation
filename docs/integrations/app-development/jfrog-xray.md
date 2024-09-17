@@ -109,12 +109,12 @@ Collect the following details:
 
 We recommend collecting data from JFrog Artifactory so as to investigate sources of vulnerable artifacts and who is using them. This is done by correlating Xray logs with Artifactory logs.
 
-To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
+To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs).
 
 
 ### Step 3: Collect Kubernetes logs
 
-If you have set up a Docker repository in Aritfactory and are running containers in a Kubernetes cluster, we recommend collecting data from your Kubernetes cluster so as to understand all vulnerable containers running in production.
+If you have set up a Docker repository in Artifactory and are running containers in a Kubernetes cluster, we recommend collecting data from your Kubernetes cluster so as to understand all vulnerable containers running in production.
 
 To perform this setup, follow the instructions in [Collect Logs for Kubernetes](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 

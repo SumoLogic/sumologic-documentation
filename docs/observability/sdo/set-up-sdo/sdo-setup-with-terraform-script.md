@@ -385,12 +385,12 @@ Configure these parameters in **webhooks.auto.tfvars**.
 Configure these parameters in **atlassian.auto.tfvars**.
 
 :::note
-This script configures Jira Server webhooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable `jira_server_access_logs_sourceCategory` in **atlassian.auto.tfvars** with the selected source category.
+This script configures Jira Server webhooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained [here](/docs/integrations/app-development/jira#step-1-set-up-local-file-sources-on-an-installed-collector). Configure the log collection and update the variable `jira_server_access_logs_sourceCategory` in **atlassian.auto.tfvars** with the selected source category.
 :::
 
 | Parameter | Description |
 |:--|:--|
-| jira_server_access_logs_sourceCategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App) link. |
+| jira_server_access_logs_sourceCategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this](/docs/integrations/app-development/jira#collecting-logs-for-the-jira-app) link. |
 | jira_server_url | Jira Server URL |
 | jira_server_user | Jira Server Username |
 | jira_server_password | Needs to be the password. API Key is not supported on Jira Server yet. |

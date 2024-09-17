@@ -72,7 +72,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | base_url | String | Yes | `null` | Provide your 1Password customer-specific domain, such as: <code>events.1password.com</code> |  `"events.1password.com"` |
-| api_token | String | Yes | `null` | Provide the [1Password API token](#APIToken) you want to use to authenticate collection requests. |  `"acsac25$"` |
+| api_token | String | Yes | `null` | Provide the [1Password API token](#vendor-configuration) you want to use to authenticate collection requests. |  `"acsac25$"` |
 | supported_apis | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
 

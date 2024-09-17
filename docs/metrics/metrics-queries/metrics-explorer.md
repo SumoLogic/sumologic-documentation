@@ -66,7 +66,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
     ![query-visualization.png](/img/metrics/query-visualization.png)
 
-1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui) syntax and a description of the operator.
+1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](#switch-betweenbasic-and-advancedmode) syntax and a description of the operator.
 
     ![delta-hover.png](/img/metrics/delta-hover.png)
 
@@ -119,7 +119,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 ![pre-join.png](/img/metrics/pre-join.png)
 
-To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot kebab menu in that row.
+To join the queries, add a third query row, and then switch to advanced mode by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
 ![advanced.png](/img/metrics/advanced.png)
 
