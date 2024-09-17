@@ -61,13 +61,13 @@ You must first create an app to get integration key and configure RSA Key Pair a
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
 5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="700" />
   :::note
-  You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+  You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#setup).
   :::
 6. Leave **Authentication** settings as default as shown in below image. <br/> <img src={useBaseUrl('img/send-data/docusign-authetication.png')} alt="<docusign-integration-key.png>" width="400" />
 7. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="450" />
 8. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="400" />  
   :::note
-  You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+  You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#setup).
   :::
 9. Under **Redirect URIs**, click **ADD URI**, then enter `http://localhost` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
   :::note
