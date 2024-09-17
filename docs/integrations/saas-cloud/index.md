@@ -11,6 +11,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/1password/"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="70"/><h4>1Password</h4></a>
+  <p>1Password helps you monitor your 1Password account’s sign-in and item usage events.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/abnormal-security"><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="icon" width="120"/><h4>Abnormal Security</h4></a>
   <p>Gain robust monitoring of email security threats.</p>
   </div>

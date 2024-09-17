@@ -1,11 +1,11 @@
 ---
 id: atlassian-source
-title: Atlassian Source (Beta)
+title: Atlassian Source
 sidebar_label: Atlassian
 tags:
   - cloud-to-cloud
   - atlassian
-description: Learn how to retrieve Asana audit logs into the Sumo Logic environment.
+description: Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -13,12 +13,6 @@ import ExampleJSON from '/files/c2c/atlassian/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/atlassian/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/atlassian/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon" width="40" />
 

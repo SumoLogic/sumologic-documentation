@@ -13,6 +13,8 @@ This guide describes API authentication and the Sumo Logic endpoints to use for 
 
 Sumo Logic APIs follow Representational State Transfer (REST) patterns and are optimized for ease of use and consistency. Our interactive API docs have been developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated. The API docs on this site serve as supplemental information.
 
+## Documentation
+
 To view our main docs, click the link below corresponding to your deployment. If you're not sure, see [How to determine your endpoint](#which-endpoint-should-i-should-use).
 
 | Deployment | API Docs URL                       |

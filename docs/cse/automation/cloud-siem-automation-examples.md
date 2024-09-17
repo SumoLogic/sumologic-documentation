@@ -98,7 +98,7 @@ The following example shows how to configure a notification that sends an email 
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
    1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-   1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
+   1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" style={{border: '1px solid gray'}} width="400"/>
@@ -293,7 +293,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
    1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-   1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
+   1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="400"/>

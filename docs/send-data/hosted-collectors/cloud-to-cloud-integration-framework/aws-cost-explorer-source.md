@@ -85,7 +85,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 |:--|:--|:--|:--|:--|
 | schemaRef | JSON Object  | `{"type":"AWS Cost Explorer"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| config | JSON Object | [Configuration object](#config-parameters) | Yes | Source type specific values. |
 
 ### Config Parameters
 
