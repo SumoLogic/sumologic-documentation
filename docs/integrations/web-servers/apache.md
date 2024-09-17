@@ -15,7 +15,7 @@ The Apache app is a unified logs and metrics app that helps you monitor the avai
 
 ## Log types and Metrics
 The Sumo Logic app for Apache assumes:
-* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#Apache-Metrics).
+* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#apache-metrics).
 
 * The **Apache - Overview** dashboard is based on both Apache logs and metrics.
 * Dashboards in the Metrics folder are based on Apache metrics alone.
@@ -542,7 +542,7 @@ To install the app, do the following:
    * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
 5. Click **Next**.
 
-For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#installing-apps-to-your-library).
+For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations).
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

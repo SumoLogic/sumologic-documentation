@@ -30,7 +30,7 @@ You need to manually delete resources (starting with the prefix Sumo) and cannot
 
 ### Strategy B. Creating new event hub namespaces
 
-If you want to create a new event hub namespace, see steps 1 to step 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
+If you want to create a new event hub namespace, see steps 1 to 3 in the [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
 
 :::note
 You need to first find out what all log types are exported to your event hub and recreate the diagnostic settings for the Azure services. Thus, we recommend creating new diagnostic settings for newer namespaces so that we can delete the older ones after verifying the new collection works without any latency.
@@ -48,7 +48,7 @@ After choosing one of the above two strategies, you will now have an event hub n
    4. Click **Create**.
 
 :::note
-Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-1-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
+Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-a-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
 :::
 
 ![consumer-groups.png](/img/send-data/consumer-groups.png)
@@ -69,7 +69,7 @@ After verifying that all the log types are ingesting in your new source, follow 
 
 ### Option A. By creating a new namespace
 
-If your resource group contains only resources created by the older ARM template, as shown below, and you have created a new namespace in a different resource group, see [Creating new event hub namespace](#strategy-2-creating-new-event-hub-namespaces) section in step 1.
+If your resource group contains only resources created by the older ARM template, as shown below, and you have created a new namespace in a different resource group, see [Creating new event hub namespace](#strategy-b-creating-new-event-hub-namespaces) section in step 1.
 
  ![resource-groups.png](/img/send-data/resource-groups.png)
 

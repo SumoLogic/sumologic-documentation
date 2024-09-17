@@ -74,7 +74,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source categories](#audit-index-source-categories). |
 | `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
