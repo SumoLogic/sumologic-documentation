@@ -29,7 +29,7 @@ import Iframe from 'react-iframe';
 
 This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
 
-<Iframe url="https://www.youtube.com/embed/0F57XGXChfM?rel=0"
+<Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -94,7 +94,7 @@ Enlarge your working area by hiding the left-side nav panel. Just click the ham
 
 ### Access settings
 
-The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-all-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
+The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="350"/>
 

@@ -32,7 +32,7 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 
 ### Vendor configuration
 
-**Prerequisites**
+#### Prerequisites
 
 - The System logs are obtained using the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis).
    - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account.
@@ -68,7 +68,7 @@ To get the **Citrix Cloud API token**, follow the steps below:
     :::
 1. Select the **API Access** tab.<br/><img src={useBaseUrl('img/send-data/api-access.png')} alt="<api-access.png>" width="650" />
 1. Give a name to your Secure Client, and click **Create Client**.<br/><img src={useBaseUrl('img/send-data/create-client.png')} alt="<create-client.png>" width="650" />
-1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#set-up-citrix-cloud-source). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
+1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#source-configuration). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
 1. After closing the previous dialogue box, copy and paste the **Customer Id**, which is written straight above the **Create Client** button, into a folder. Look at the red highlighted box.<br/><img src={useBaseUrl('img/send-data/customer-id.png')} alt="<customer-id.png>" width="650" />
 
 ### Source configuration
@@ -203,7 +203,7 @@ Make sure that you have used the correct `customerId` is used to configure the s
 #### Solution
 
 - Make sure that you have used the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure that the provided `customerId` has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that the provided `customerId` has the DaaS Service enabled. Refer to the [Prerequisites](#prerequisites) section.
 
 ### Session Logs API error
 
@@ -214,7 +214,7 @@ Make sure that you have used the correct `customerId` is used to configure the s
 #### Solution
 
 - Make sure that the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure that the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that the provided customerId has the DaaS Service enabled. Refer to the [Prerequisites](#prerequisites) section.
 
 ## FAQ
 

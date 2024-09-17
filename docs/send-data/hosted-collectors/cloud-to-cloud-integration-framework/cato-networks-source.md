@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
+| `config` | JSON Object  | Yes | Contains the [configuration parameters](#configuration-object) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Cato Networks"}` for Cato Networks Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Cato Networks Source. | not modifiable |
 

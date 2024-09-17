@@ -1,18 +1,19 @@
 ---
 id: dashboard
 title: Dashboard Management APIs
-sidebar_label: Dashboard Management
+sidebar_label: Dashboards
 description: Dashboard Management APIs allow you to create, retrieve, update, and delete dashboards
-hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
 The Dashboard Management APIs allow you to create, retrieve, update, and delete dashboards created with the [Dashboard](/docs/dashboards) platform from HTTP endpoints to organize your content.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -28,3 +29,11 @@ import ApiIntro from '../reuse/api-intro.md';
 |KR        |https://api.kr.sumologic.com/docs/#tag/dashboardManagement   |
 |US1       |https://api.sumologic.com/docs/#tag/dashboardManagement      |
 |US2       |https://api.us2.sumologic.com/docs/#tag/dashboardManagement  |
+
+<!-- ## Required role capabilities
+
+<ApiRoles/>
+
+* Dashboards (all capabilities)
+
+-->
