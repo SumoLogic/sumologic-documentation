@@ -440,15 +440,15 @@ module.exports = {
             type: 'dropdown',
             items: [
               {
-                label: 'Contact support',
+                label: 'Contact Support',
                 href: 'https://support.sumologic.com/support/s',
               },
               {
-                label: 'Get a demo',
+                label: 'Request a Demo',
                 href: 'https://www.sumologic.com/demos',
               },
               {
-                label: 'Feedback',
+                label: 'Submit Feedback',
                 href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
               },
               {
