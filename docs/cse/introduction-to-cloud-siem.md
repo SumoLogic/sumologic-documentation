@@ -45,7 +45,7 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 
-### Cloud SIEM menus
+## Cloud SIEM menus
 
 <!--Kanso 
 ### Classic UI
