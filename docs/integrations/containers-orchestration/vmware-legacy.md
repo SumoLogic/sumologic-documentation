@@ -215,7 +215,7 @@ Before collecting can begin, you'll need to invoke scripts to transform the perf
 
 1. On the vMA, create a directory to hold all scripts (for example, **/var/log/vmware**).
 2. Extract all files from the Zip bundle provided by Sumo Logic to the directory you just created. Edit the **vcenter.info** file so one vCenter Server and one username is on each line.
-For example: 
+For example:
 ```bash
 vcenter01.company.com "domain_name\user_name"
 ```
@@ -229,12 +229,12 @@ vcenter03.company.com "domain_name\user_name"
 ```
 
 3. Make sure there are no blank lines or header lines in the **vcenter.info** file.
-4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication. 
+4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication.
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
     * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
 
-Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing).
+Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing).
 ```bash
 $SCRIPT_PATH/getserver_perf.pl -type=vcenter -path=$SCRIPT_PATH -server_file=$SCRIPT_PATH/vcenter.info
 ```
