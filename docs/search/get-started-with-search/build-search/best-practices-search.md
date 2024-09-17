@@ -67,7 +67,7 @@ _sourceCategory=Prod/User/Eventlog
 
 ## Use parse anchor instead of parse regex for structured messages
 
-According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) and place it in a Field Extraction Rule.
+According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-thewhere-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) and place it in a Field Extraction Rule.
 
 ## When using parse regex avoid expensive tokens
 

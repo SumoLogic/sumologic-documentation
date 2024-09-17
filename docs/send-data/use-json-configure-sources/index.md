@@ -56,7 +56,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Local Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-performance-source) | RemoteWindowsPerfMon |
 | [Windows Active Directory Inventory Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#windows-active-directory-inventory-source) | ActiveDirectory |
-| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslog-source)	 | Syslog |
+| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslogsource)	 | Syslog |
 | [Script Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#script-source) | Script |
 | [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-logsource) | DockerLog |
 
