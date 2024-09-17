@@ -110,7 +110,7 @@ By default, the Collector will complete writing logs to an archive file once th
 
 ## Ingest data from Archive
 
-You can ingest a specific time range of data from your Archive at any time with an **AWS S3 Archive Source**. First, [create an AWS S3 Archive Source](#create-an-aws-archive-destination), then [create an ingestion job](#create-an-ingestion-job).
+You can ingest a specific time range of data from your Archive at any time with an **AWS S3 Archive Source**. First, [create an AWS S3 Archive Source](#create-an-aws-s3-archivesource), then [create an ingestion job](#create-an-ingestion-job).
 
 ### Rules
 
@@ -168,11 +168,11 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 You need the Manage or View Collectors role capability to manage or view Archive.
 :::
 
-The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archive-source) in your account and ingestion jobs. 
+The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archivesource) in your account and ingestion jobs.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Archive page, in the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
+<!--Kanso
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Archive page, in the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
  Kanso-->
 
 <img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>

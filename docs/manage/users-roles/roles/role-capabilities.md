@@ -157,7 +157,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Triage | Edit | Create, edit,and delete triage events. |
 | Triage | Bulk physical delete | Perform bulk deletion of triage events. |
 | Folders | Edit | Create, edit, and delete folders. |
-| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#attachments). |
+| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#documentation-tab). |
 | Attachments | Edit | Create, edit, and delete attachments. |
 | Incident Playbook | Access | Access all [incident playbooks](/docs/cloud-soar/incidents-triage/#playbooks). |
 | Incident Playbook | Edit | Create, edit, and delete incident playbooks. |
@@ -165,10 +165,10 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#general-settings). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#settings). |
 | User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
 | Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
-| Customization | Logo | Customize the [logo](/docs/cloud-soar/overview/#logo). |
+| Customization | Logo | Customize the logo. |
 | Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
@@ -181,7 +181,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | API | Email Edit | Create, edit, and delete emails. |
 | Incident Templates | Access | Access all [incident templates](/docs/cloud-soar/automation/#incident-templates). |
 | Incident Templates | Configure | Configure templates. |
-| Automation Rules | Access | Access automation [rules](/docs/cloud-soar/automation/#rules). |
+| Automation Rules | Access | Access [automation rules](/docs/cloud-soar/automation/#automation-rules). |
 | Automation Rules | Configure | Configure automation rules. |
 | Entities | Access | Access all [entities](/docs/cloud-soar/incidents-triage/#entities). |
 | Entities | Manage | Manage entities. |
