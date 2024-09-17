@@ -2282,6 +2282,7 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/saas-cloud/index'},
         items: [
+          'integrations/saas-cloud/1password',
           'integrations/saas-cloud/abnormal-security',
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/airtable',
@@ -2469,7 +2470,6 @@ integrations: [
           'integrations/web-servers/varnish',
         ],
       },
-    'integrations/1password',
     'integrations/account-plans',
     'integrations/community-ecosystem-apps',
     'integrations/partner-ecosystem-apps',
