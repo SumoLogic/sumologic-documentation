@@ -58,7 +58,7 @@ To configure an Airtable Source:
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 1. In **Account ID**, enter an account ID that will be a unique identifier for your enterprise account.
-1. In **Personal Access Token**, enter the access token that you have generated in the [authentication](#authentication) section.
+1. In **Personal Access Token**, enter the access token that you have generated in the [Vendor configuration](#vendor-configuration) section.
 1. When you are finished configuring the Source, click **Save**.
 
 

@@ -312,7 +312,7 @@ This example shows how to use WMI queries to collect performance metrics from W
 }
 ```
 
-### Windows Active Directory Source 
+### Windows Active Directory Inventory Source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for a Windows Active Directory Inventory Source.
 
@@ -538,7 +538,7 @@ Example source JSON to collect metrics:
 
 |  Field Type |  Type Value |
 |:--|:--|
-| [Host metrics Source](#host-metrics-source) | SystemStats |
+| [Host metrics Source](#host-metricssource) | SystemStats |
 | [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
 
 ### Host metrics source 

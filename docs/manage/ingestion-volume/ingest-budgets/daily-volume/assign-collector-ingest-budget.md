@@ -14,7 +14,7 @@ description: Learn how to assign a Collector to an ingest budget.
 
 Once you have created an ingest budget you can assign a Collector to it. You can assign a Collector to an ingest budget by:
 
-* Using the [Collection](#assign-collector-to-ingest-budget) page.
+* Using the [Collection](#collection-page) page.
 * Using the `fields` parameter at any time with the [Collector Management API](#collector-management-api) or when first registering a Collector with Sumo with the [command line installer](#command-line-installation) or [user.properties](#userproperties) file.
 
 The UI installer for Installed Collectors does not support assigning ingest budgets, use another method.

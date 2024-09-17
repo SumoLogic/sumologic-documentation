@@ -29,23 +29,23 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 
 | Field Type | Type Value |
 |:--|:--|
-| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-file-source) | LocalFile |
-| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-file-source) | RemoteFileV2 |
-| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-log-source) | LocalWindowsEventLog |
+| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-filesource) | LocalFile |
+| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-filesource) | RemoteFileV2 |
+| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-logsource) | LocalWindowsEventLog |
 | [Remote Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-performance-source) | RemoteWindowsPerfMon |
 | [Windows Active Directory Inventory Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#windows-active-directory-inventory-source) | ActiveDirectory |
-| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslog-source)	 | Syslog |
+| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslogsource)	 | Syslog |
 | [Script Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#script-source) | Script |
-| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-log-source) | DockerLog |
-| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-stats-source) | DockerStats |
+| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-logsource) | DockerLog |
+| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-statssource) | DockerStats |
 
 ## Metric Sources for Installed Collectors
 
 | Field Type | Type Value |
 |:--|:--|
-| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metrics-source)  | SystemStats |
+| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metricssource)  | SystemStats |
 | [Streaming Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#streaming-metrics-source) | StreamingMetrics |
 
 
@@ -55,9 +55,9 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 |:--|:--|
 | [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
-| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
-| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudfront-source) | Polling |
-| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
+| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awss3-archive-source) | Polling |
+| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudfrontsource) | Polling |
+| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudtrailsource) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
@@ -90,7 +90,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 
 | Field Type | Type Value |
 |:--|:--|
-| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudwatch-source) | Polling |
+| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
 
 ## Log Source parameters for Hosted Collectors
 
@@ -175,7 +175,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | Parameter | Type |  Required? | Default | Description | Access |
 |:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `sourceType` | String | Yes |  | Polling | not modifiable |
-| `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#aws-cloudfront-source): AwsCloudFrontBucket<br/>[CloudTrail](#aws-cloudtrail-source): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
+| `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
 | `paused` | Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
 | `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
@@ -478,7 +478,7 @@ This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `t
            "automaticDateParsing":true,
            "multilineProcessingEnabled":true,
            "useAutolineMatching":true,
-           "contentType":"AwsS3Bucket",
+           "contentType":"KinesisLog",
            "forceTimeZone":false,
            "filters":[],
            "cutoffTimestamp":1634972400000,
