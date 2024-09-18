@@ -29,7 +29,7 @@ import Iframe from 'react-iframe';
 
 This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
 
-<Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
+<Iframe url="https://www.youtube.com/embed/0F57XGXChfM?rel=0"
         width="854px"
         height="480px"
         id="myId"
