@@ -73,7 +73,7 @@ To access Cloud SOAR, click **Cloud SOAR** in the Sumo Logic navigation menu.
 
 Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in your organization. If you would like to use Cloud SOAR in your organization, contact your Sumo Logic account representative.
 
-### Cloud SOAR menus
+## Cloud SOAR menus
 
 <!--Kanso 
 ### Classic UI
