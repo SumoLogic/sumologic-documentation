@@ -67,7 +67,8 @@ Another difference between Match Lists and Threat Intel lists is the **Target Co
 A Match List can contain up to 100,000 items.
 
 ## Matching behavior
-When comparing a field value to items on a Match List, Cloud SIEM generally requires an exact match. There are two exceptions to that rule.
+
+When comparing a field value to items on a Match List, Cloud SIEM generally requires an exact match (case insensitive). There are two exceptions to that rule.
 
 *  Match Lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
 * Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t match `google.com`.
