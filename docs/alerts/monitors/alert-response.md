@@ -65,7 +65,7 @@ The following is an example Slack payload with the variable:
 
 The Alerts list shows all of your Alerts from monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
 <!--Kanso
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
  Kanso-->
@@ -315,7 +315,7 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. Kanso-->
 2. Click on any of the following checkboxes to enable your desired preferences:
    * **Display alert badge when my subscribed monitors are triggered**. the bell icon is displayed in the top nav
    * **Notify about only subscribed monitors**. the bell icon will only push notifications for monitors you're subscribed to

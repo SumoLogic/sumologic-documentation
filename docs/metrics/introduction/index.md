@@ -86,7 +86,7 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 
 ## Metrics queries
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access Metrics Explorer, click the **+ New** button at the top of the screen and select **Metrics**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso-->  To access Metrics Explorer, click the **+ New** button at the top of the screen and select **Metrics**. 
 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Metrics Explorer, in the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 

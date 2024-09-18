@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The page talks about viewing information about the data forwarding configured for your organization.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" style={{border:'1px solid gray'}} width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" style={{border:'1px solid gray'}} width="800"/>
 1. Once you're in the **Data Forwarding** tab, apply the following settings:
     * **Add a filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
         :::note

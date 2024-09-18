@@ -18,7 +18,7 @@ Administrators can [unlock a user's account](/docs/manage/users-roles/roles/role
 
 You can always contact your administrator to determine the lockout period configured for your account if it has been customized. Lockout settings are configured by your Sumo Logic administrator via the Password Policy page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
  Kanso-->

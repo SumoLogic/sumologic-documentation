@@ -14,7 +14,7 @@ add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
+This page provides an overview of the Sumo Logic **New UI**.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"

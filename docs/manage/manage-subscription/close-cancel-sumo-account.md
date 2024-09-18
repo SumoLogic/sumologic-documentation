@@ -20,7 +20,7 @@ This task deletes your Sumo Logic Organization, all users and data. **This acti
 
 To delete a Sumo Logic organization and close the account:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 1. At the top of the page, select the details icon.
 1. Select **Delete this Organization from Sumo Logic?**, click **Delete Org**.
 1. In the dialog **Delete This Organization from Sumo Logic?**, enter **DELETE** to confirm.

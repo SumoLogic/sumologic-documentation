@@ -24,6 +24,7 @@ module.exports = {
       items: [
         'get-started/overview',
         'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-classic',
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',

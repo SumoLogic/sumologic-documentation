@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
  Kanso-->

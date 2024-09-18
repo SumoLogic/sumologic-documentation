@@ -133,7 +133,7 @@ To enable Cloud SIEM to successfully process the log, we need to create the foll
 
 Perform these steps for each of the FERs.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
    1. **Rule Name**. Enter a meaningful name for the rule.

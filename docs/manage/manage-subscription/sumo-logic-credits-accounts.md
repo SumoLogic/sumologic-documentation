@@ -22,7 +22,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
   :::note
   [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts (Trial and paid accounts only).
 
-     <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
+     <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
      <!--Kanso 
      [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Data Management page, in the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. Kanso-->
   :::
@@ -86,7 +86,7 @@ The following table provides a summary list of key features by Credits package a
 
 The **Account Overview** tab of the **Account** page for Credits displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 
@@ -142,7 +142,7 @@ For example, if your contract period is licensed for 100,000 credits and 10,00
 
 To view the Account page, do the following:
 1. Log in to your Credits account.
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
 
 :::note
 You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
@@ -201,7 +201,7 @@ The Sumo Logic Account page allows you to easily monitor your data usage over se
 
 To switch between views and time interval displays:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
 
     The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 

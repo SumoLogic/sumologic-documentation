@@ -13,7 +13,7 @@ App Central provides apps to help you be more productive in the Automation Servi
 
 ## View App Central
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
 
 <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  Kanso-->
 

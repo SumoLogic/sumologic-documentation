@@ -7,7 +7,7 @@ description: Learn how to use Debug Mode to troubleshoot SAML issues.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the SAML page, in the main Sumo Logic menu select **Administration > Security > SAML**. <!--Kanso 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the SAML page, in the main Sumo Logic menu select **Administration > Security > SAML**. <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the SAML page, in the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
  Kanso-->
 

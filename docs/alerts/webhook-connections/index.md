@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our webhook connections send Sumo Logic alerts to third-party applications. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access webhook connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access webhook connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access webhook connections, in the top menu select **Configuration** and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 Kanso-->

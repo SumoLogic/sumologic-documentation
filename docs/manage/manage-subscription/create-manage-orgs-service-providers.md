@@ -83,7 +83,7 @@ This section has instructions for creating a POV Trial org. 
 After you create a child org, you can’t delete it.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click **+ Add Organization**. <br/> <img src={useBaseUrl('img/subscriptions/orgs-page.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="800"/>
 1. The **Create New Organization** pane appears.<br/> <img src={useBaseUrl('/img/subscriptions/sp-create-new-org.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="400"/>
 
@@ -115,7 +115,7 @@ After you create a child org, you can’t delete it.
 
 ## Upgrade a POV Trial org 
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the trial org you want to upgrade.<br/> <img src={useBaseUrl('/img/subscriptions/org-to-update.png')} alt="modify" style={{border:'1px solid gray'}} width="800"/>
 1. The right pane appears with information about the org. Click **Edit**.<br/> <img src={useBaseUrl('/img/subscriptions/edit-option.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. In the edit pane, choose the **Enterprise plan** that appears as an option in the **Plan Type** dropdown.<br/> <img src={useBaseUrl('/img/subscriptions/upgrade-plan.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
@@ -140,7 +140,7 @@ After you create a child org, you can’t delete it.
 
 If a POV trial org is not upgraded to Enterprise plan after 45 days, the org will be downgraded to the **CF Credit - Free** plan. If you need to upgrade this plan to Enterprise, follow the below steps:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the org with the **CF Credit - Free** plan that you want to upgrade to.
 1. The right pane appears with information about the org. Click **Upgrade**.<br/> <img src={useBaseUrl('/img/subscriptions/upgrade.png')} alt="upgrade" style={{border: '1px solid gray'}} width="400" />
 1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/subscriptions/free-org-set-baseline.png')} alt="free-org-set-baseline" style={{border: '1px solid gray'}} width="400" />
@@ -180,7 +180,7 @@ If the org has already depleted its credits, you can see a red color warning ico
 :::
 
 To change an org's credits allocation:
-1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. Under **Modify Credit Allocation**, you can increase or decrease the credits based on your requirement.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
@@ -204,7 +204,7 @@ To change an org's credits allocation:
 
 To deactivate a POV Trial org
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot kebab menu and choose **Deactivate**.<img src={useBaseUrl('/img/subscriptions/deactivate.png')} alt="deactivate" style={{border:'1px solid gray'}} />
 
@@ -275,7 +275,7 @@ By clicking the **Download Report** button, you can download the selected child 
 
 If a [custom subdomain](create-manage-orgs.md) has been configured for a child org, and you have an account in the org, you can access it from the Organizations UI.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" style={{border:'1px solid gray'}} width="400"/>
 
@@ -283,7 +283,7 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 
 You can access the child credits usage for a selected organization from the **Organizations** UI. 
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to access the credits usage.
 1. You can see the total percentage of credits consumed out of the total number of credits allocated in the **Allocation & usage** section.
 1. Click **Open in Account Overview** for a detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
@@ -292,7 +292,7 @@ You can access the child credits usage for a selected organization from the **Or
 
 Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
 
-1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
+1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Organizations**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. Kanso-->
 1. Click the row for the org you want to check the baselines.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>

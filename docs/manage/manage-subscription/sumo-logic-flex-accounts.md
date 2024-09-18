@@ -17,7 +17,7 @@ You can select from Free, Trial, or Enterprise Suite Flex accounts.
    :::note
    [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts (Trial and paid accounts only).
 
-   <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
+   <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
    <!--Kanso 
    [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Data Management page, in the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. Kanso-->
    :::
@@ -104,7 +104,7 @@ The following table provides a summary list of key features by Flex package acco
 
 The **Account Overview** tab of the **Account** page displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 
@@ -154,7 +154,7 @@ For example, if your contract period is licensed for 100,000 credits and 10,000 
 
 You can view you account information on the Account Overview tab. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 
@@ -213,7 +213,7 @@ The Sumo Logic **Account** page allows you to easily monitor your data usage ove
 
 To switch between views and time interval displays:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
 1. From the Account Overview tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/account/account-details-credit-usage-flex.png)
 1. To toggle an analytic data type back on, click the blank icon next to the data type name. The analytic data type reappears in the graph and the credit usage for the data type is once again included.

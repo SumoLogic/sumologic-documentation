@@ -16,6 +16,6 @@ Granular Data Tracking is a part of usage management that allows you to proactiv
 
 ## Enable/Disable Granular Data Tracking
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
 1. Click the gear icon <img src={useBaseUrl('/img/account/gear-icon-accounts-page.png')} alt="gear-icon-accounts-page" width="40"/> in the top left panel of the **Account Overview** page.
 1. Click **Enable Granular Data Tracking** or **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/> 

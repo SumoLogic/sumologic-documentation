@@ -26,7 +26,7 @@ Multiple collectors can use the installation token. Additionally, installation t
 
 Installation Tokens in your account are manageable on the Installation Tokens page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
 <!--Kanso 
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Installation Tokens page, in the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
  Kanso-->

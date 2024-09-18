@@ -7,7 +7,7 @@ description: Sumo Logic keyboard shortcuts.
 
 Sumo Logic keyboard shortcuts are enabled by default. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
 <!--Kanso
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access keyboard shortcuts, in the Sumo Logic top menu select **Help > Keyboard Shortcuts**.
  Kanso-->
