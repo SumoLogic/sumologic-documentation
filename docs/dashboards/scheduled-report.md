@@ -25,7 +25,7 @@ To schedule a dashboard email report, do the following:
   :::info
     The **Scheduled Reports** option appears only if you have edit permissions for the dashboard. You have edit permissions for all dashboards you create, and any dashboards have been [shared](/docs/dashboards/share-dashboard-new/) with you with edit permissions granted.
   :::
-1. Enter your preferences in the **Schedule Reports** popup.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report" style={{border: '1px solid gray'}} width="600"/>
+1. Enter your preferences in the **Scheduled Reports** popup.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report" style={{border: '1px solid gray'}} width="600"/>
    * **Select report type**. Choose the format in which you would like to see the report (PDF or PNG).
    * **Select variables**. If the dashboard supports template variables, select the values which you need for the scheduled report for the dashboard.
    * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a drop-down list or by choosing a recently used time range.
