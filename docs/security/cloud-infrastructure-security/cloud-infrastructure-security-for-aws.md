@@ -324,7 +324,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
       * **Deploy to Organization (All Accounts)**. Select **Yes** to deploy to all accounts in your AWS organization, or select **No** to deploy only to your account.
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
@@ -438,7 +438,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
 
-1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see [Create new source: Check AWS role permission](#create-new-source-check-aws-role-permission). <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
+1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kinesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see [Create new source: Check AWS role permission](#create-new-source-check-aws-role-permission). <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
 1. Under **Capabilities and transforms**, select the acknowledgement boxes.
 1. Click **Create Stack**. The stack is created, and the solution is installed.
 
