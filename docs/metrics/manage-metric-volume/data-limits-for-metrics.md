@@ -18,7 +18,7 @@ For billing and reporting purposes, data volume for metrics is measured in Data 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso-->  To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration > Account**. 
 
 <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the **Account Overview** tab, in the top menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Account Overview** tab, in the top menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
  Kanso-->
 
 The calculation of DPM varies according to the type of metric Source.

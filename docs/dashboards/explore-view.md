@@ -11,7 +11,7 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the monitoring dashboards, click the **+ New** button at the top of the screen and select **Explore**. Then in the upper-left corner of the screen, select from the dropdown menu under **Explore By**.
 
-<!--Kanso [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the monitoring dashboards, in the main Sumo Logic menu select **Observability**, and then select from the following menu options:
+<!--Kanso [**New UI**](/docs/get-started/sumo-logic-ui/). To access the monitoring dashboards, in the main Sumo Logic menu select **Observability**, and then select from the following menu options:
 * **Infrastructure Monitoring**
 * **Application Monitoring**
 * **Real User Monitoring**

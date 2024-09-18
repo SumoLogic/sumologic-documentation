@@ -103,7 +103,7 @@ Use the **Settings** menu to access:
 <!--Kanso 
 ### New UI
 
-The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui).
 
 #### Cloud SOAR sidebar menu
 

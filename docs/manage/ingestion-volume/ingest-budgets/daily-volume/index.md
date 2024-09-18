@@ -82,7 +82,7 @@ Use the **Ingest Budgets** page to manage your ingest budgets.
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**. 
 <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Ingest Budgets page, in the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Ingest Budgets page, in the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
  Kanso-->
 
 ![metadata ingest budgetspage.png](/img/ingestion-volume/metadata-ingest-budgets-page.png)

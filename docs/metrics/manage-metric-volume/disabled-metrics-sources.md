@@ -98,7 +98,7 @@ For other dimensions that exceed the cardinality limit, Sumo generates a metric 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso-->  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
 <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access **Metrics Transformation Rules**, in the top menu select **Configuration** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access **Metrics Transformation Rules**, in the top menu select **Configuration** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
  Kanso-->
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 

@@ -12,7 +12,7 @@ This page provides an overview of the Sumo Logic **Collection** page UI, where y
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Collection page, in the main Sumo Logic menu select **Manage Data > Collection > Collection**. 
 <!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Collection page, in the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Collection page, in the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
  Kanso-->
 
 ![Collection page June 2021.png](/img/collector/collection-page.png)

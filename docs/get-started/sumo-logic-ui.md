@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-ui
-title: Tour the Sumo Logic New UI
-sidebar_label: Sumo Logic New UI
+title: Tour the Sumo Logic UI
+sidebar_label: Sumo Logic UI
 description: Get to know the Sumo Logic platform user interface.
 ---
 
@@ -14,7 +14,7 @@ add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This page provides an overview of the Sumo Logic **New UI**.
+This page provides an overview of the new Sumo Logic.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
@@ -315,3 +315,7 @@ Our goal is to turn off access to the Classic UI in the first half of 2025. Howe
 Contact [Support](https://support.sumologic.com/) or head to our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
 
 Have feedback? Send it to [our UX Team](mailto:sumologic-ux-research@sumologic.com).
+
+## Legacy UI
+
+If you're looking for information on our legacy UI, which will be deprecated in early 2025, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).

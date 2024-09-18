@@ -14,7 +14,7 @@ For best practices on naming your fields, see [Field Naming Convention](field-na
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
 <!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
  Kanso-->
 
 To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.

@@ -67,7 +67,7 @@ The Alerts list shows all of your Alerts from monitors triggered within the pas
 
 <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
 <!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
  Kanso-->
 
 To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
