@@ -52,7 +52,7 @@ When designing partitions, keep the following in mind:
   * Partition1: `_sourceCategory=prod`
   * Partition2: `_sourceCategory=*/Apache`
 
-Overlapping data between two or more Partitions will count as additional ingest toward your account's quota. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index).
+The best practice for cost optimization is to ensure that data from a source category is maintained in a single partition rather than multiple partitions to minimize multiple partitions from being included in the scope of the query. If data from a single source category is maintained in multiple partitions, it could potentially increase scan costs, as the query may need to consider data from multiple partitions.
 
 ## Edit a partition
 
@@ -76,6 +76,10 @@ You can make some changes to an existing partition:  
 ### How to edit a partition
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  :::note 
+  You can see the suggestions only if there are two or more responses for the same column or section. 
+  :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>

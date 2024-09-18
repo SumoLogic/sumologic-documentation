@@ -1,7 +1,7 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python
-title: Python OpenTelemetry auto-instrumentation
-sidebar_label: Python OpenTelemetry auto-instrumentation
+title: Python OpenTelemetry Auto-Instrumentation
+sidebar_label: OpenTelemetry Auto-Instrumentation
 description: Learn how to configure OpenTelemetry Python instrumentation to capture data from the python written code applications.
 ---
 
@@ -40,7 +40,7 @@ The next step is related to the installation of the instrumented packages used i
 opentelemetry-bootstrap --action=install
 ```
 
-It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.47b0/instrumentation) (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.47b0/instrumentation/opentelemetry-instrumentation-flask)).
+If you prefer not to use the bootstrap command above to auto-identify which packages are needed, then it is also possible to install the application specific instrumentation packages individually. This will require you to identify which libraries are used in your code today and install the [instrumented library counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.47b0/instrumentation) (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.47b0/instrumentation/opentelemetry-instrumentation-flask)).
 
 ## Instrumentation configuration
 
@@ -91,6 +91,16 @@ When everything is configured it is very simple to run an instrumented applicat
 ```bash
 opentelemetry-instrument python3 SCRIPT_NAME.py
 ```
+
+To enable auto-instrumentation, you will need to include `opentelemetry-instrument` at the beginning of your application execution. If this is not an option for you, you will need to follow the usage instructions for each instrumentation library you install. For example, for Django instrumentation, you will need to add the following two lines to your code (outlined in the [Usage section](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/django/django.html#id1) of the library documentation):
+
+```
+from opentelemetry.instrumentation.django import DjangoInstrumentor
+
+DjangoInstrumentor().instrument()     ##This goes inside of main
+```
+
+Adding these lines eliminates the need to use the `opentelemetry-instrument` command in the execution of your app.
 
 ## Context propagation
 
@@ -160,3 +170,15 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 ## Log correlation
 
 * To enable trace context injection into logs, set the `OTEL_PYTHON_LOG_CORRELATION` environment variable to `true` ([learn more](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/logging/logging.html#enable-trace-context-injection))
+
+
+## Examples
+
+### Django Instrumentation
+
+[This article](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#django-instrumentation) will show you how to use the `opentelemetry-instrumentation-django` library to automatically instrument a Django app. It covers how to reference the library manually within your code, as well as how to use [Auto-instrumentation](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#auto-instrumentation) without having to edit your code.
+
+### Sample Flask App Instrumentation
+
+[This article](https://opentelemetry.io/docs/languages/python/getting-started/) walks you through deploying a simple Flask app and configuring instrumentation for it. The example demonstrates how to log traces to the console for basic testing.
+

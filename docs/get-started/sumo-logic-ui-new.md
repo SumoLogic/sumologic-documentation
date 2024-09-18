@@ -29,14 +29,14 @@ import Iframe from 'react-iframe';
 
 This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
 
-<Iframe url="https://www.youtube.com/embed/0F57XGXChfM?rel=0"
+<Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
         id="myId"
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -73,15 +73,15 @@ When you first log in, you'll land on the Sumo Logic **Home** page > **Home** ta
 
 ## Using the left navigation panel
 
-In the left nav panel, you can access all of our features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM, and more. You'll also find your dashboards library here.
+In the left nav panel, you can access all of our features, such as Logs, Observability, Cloud SIEM, and more. You'll also find your dashboards library here.
 
 ### Access dashboards and searches
 
 The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side nav panel to view:
 
 * Your **Library**, which contains:
-   * Your **Personal** dashboards and searches.
    * Your own **Installed Apps** from the App Catalog.
+   * Your **Personal** dashboards and searches.
    * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" style={{border: '1px solid gray'}} width="400"/> <br/>Click **Open library page** to use the **Library** search bar to find items quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" style={{border: '1px solid gray'}} width="700"/> <br/>If you're an admin, you can view the Library in [Content Administrator](#content-administrator-library) mode.
 * **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="400"/>
 * Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" style={{border: '1px solid gray'}} width="400"/>
@@ -94,7 +94,7 @@ Enlarge your working area by hiding the left-side nav panel. Just click the ham
 
 ### Access settings
 
-The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-all-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
+The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="350"/>
 

@@ -137,7 +137,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 ### Troubleshooting
 
 * To identify the operating system version and name.
-   * For Windows machines, run the command in Powershell to get the OS Version.
+   * For Windows machines, run the command in PowerShell to get the OS Version.
      ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
@@ -261,18 +261,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Host and Process Metrics app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Host and Process Metrics app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Host and Process Metrics dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -377,6 +365,17 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
 
+## Upgrading the Host and Process Metrics app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host and Process Metrics app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 
 ## Host and Process Metrics Alerts

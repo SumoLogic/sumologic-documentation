@@ -15,12 +15,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/snowflake-sql-api/example
 import TerraformExample from '!!raw-loader!/files/c2c/snowflake-sql-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.
@@ -63,7 +57,11 @@ To configure the Snowflake SQL API Source:
 1. When you are finished configuring the source, click **Save**.
 
 ### Metrics JSON Configuration
-This source requires you upload a JSON configuration containing the details for which SQL queries to execute, the polling interval for how often to execute each query, and additional configuration for translating the results into metrics using the Prometheus format.
+This source requires you upload a JSON configuration containing the details for which SQL queries to execute, the polling interval for how often to execute each query, and additional configuration for translating the results into metrics using the Prometheus format. 
+
+:::note
+This metrics JSON file is not the entire source configuration. It is a separate JSON config file that specifically directs the C2C which queries should be executed, how often, and how to translate the results into metric data. You can use the JSON schema provided below to validate the file you upload matches the structure the C2C expects with any JSON schema validator website such as [https://jsonschema.dev](https://jsonschema.dev/).
+:::
 
 :::note
 The metric format used by this source is Prometheus. All metric and labels must follow the [Prometheus naming convention](https://prometheus.io/docs/concepts/data_model/). The source will validate this on start up and will stop if validation fails.

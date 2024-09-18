@@ -53,7 +53,7 @@ Watch this micro lesson to learn more about Outlier rules.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -61,7 +61,7 @@ import Iframe from 'react-iframe'; 
 
 ## Example rule
 
-The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
+The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create an Outlier rule](#create-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition" style={{border: '1px solid gray'}} width="800" />
 

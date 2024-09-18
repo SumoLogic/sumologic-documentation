@@ -75,7 +75,7 @@ Before configuring the collection you will require below items
 
 2. Download [sumologic_values_eks.yaml](https://drive.google.com/file/d/1YYBmf2akxgfCjWSOdpO2nqf3KmpRc9y0/view?usp=sharing) file. This file contains the remote write configuration for metrics which the app uses. You can add or remove metrics depending upon your use case.
 
-3. Generate the Sumo Logic access ids and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#generate-an-access-key).
+3. Generate the Sumo Logic access IDs and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#create-an-access-key).
 
 4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](/docs/send-data/kubernetes/install-helm-chart). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
 

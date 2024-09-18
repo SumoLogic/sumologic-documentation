@@ -28,7 +28,7 @@ Tutorial: Set up an AWS CloudTrail Source.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -50,7 +50,7 @@ Tutorial: Set up an AWS CloudTrail Source.
 1. **Bucket Name**. The name of your organizations S3 bucket as it appears in AWS.
 1. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-cloudtrail-logs))  is a prerequisite for role-based access
+1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in step 1)  is a prerequisite for role-based access
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
         ![role-arn.png](/img/cse/role-arn.png)
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.

@@ -8,12 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about how you can identify specific Entities or indicators that should be treated differently during Cloud SIEM rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new Entities once they come into Cloud SIEM. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
+* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new Entities once they come into Cloud SIEM. Then in a rule, you look for matches by extending  a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(fieldTags["user_username"], "schema-key:schema-value")`. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
    :::tip
    The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), and allow Cloud SIEM to automatically apply tags based on group membership.
    :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [Cloud SIEM REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
-
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Then in a rule, you look for matches by extending a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(listMatches, 'match_list_name')`. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [Cloud SIEM REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 ## Schema tag keys for Entities
 
@@ -365,7 +364,7 @@ The following Cloud SIEM rules refer to this Match List:
 
 **Target column:** IP Address (`Ip`)
 
-**Description:** Domain controllers.
+**Description:** Domain controller IPs.
 
 The following Cloud SIEM rules refer to this Match List:
 
@@ -373,12 +372,21 @@ The following Cloud SIEM rules refer to this Match List:
 * Domain Brute Force Attempt
 * Domain Password Attack
 * First Seen Anonymous Logon Change Activity to Domain Controller
-* Interactive Logon to Domain Controller
 * Outlier in Data Outbound Per Day by Admin or Sensitive Device
 * Outlier in Data Outbound Per Hour by Admin or Sensitive Device
 * Password Attack
 * Spike in Login Failures from a User
 * Successful Brute Force
+
+### domain_controller_hostnames
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** Domain controller hostnames.
+
+The following Cloud SIEM rules refer to this Match List:
+
+* Interactive Logon to Domain Controller
 * Suspicious DC Logon
 
 ### downgrade_krb5_etype_authorized_users

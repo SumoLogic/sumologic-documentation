@@ -23,7 +23,7 @@ In this step, you configure an Okta Source to collect Okta log messages. You can
 
 ### Create an Okta Source
 
-1. To create an Okta source, see [Create an Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/#create-an-oktasource).
+1. To create an Okta source, see [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/).
 1. **SIEM Processing**. Click the checkbox to configure the source to forward log messages to Cloud SIEM.
 1. **Fields.** If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value  */Parsers/System/Okta/Okta*.
 1. Click **Save**. 
