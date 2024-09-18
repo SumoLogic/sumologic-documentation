@@ -190,7 +190,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
    * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `'_sourceCategory=yourclustername/metrics'`.
    * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
-2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
 3. Click **Add**.
 4. Click **Import** to import monitors from the JSON above.
 

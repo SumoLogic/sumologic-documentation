@@ -92,7 +92,7 @@ Where:
 
 ## Configure an S3 data forwarding destination
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso-->
 1. Click **+ Destination** to add a new destination.
 1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="create-S3-destination.png" width="450"/>
 1. **Destination Name**. Enter a name to identify the destination.
@@ -120,8 +120,8 @@ You can also enable Data Forwarding when you first create a Partition or Schedul
 :::
 
 1. Depending on whether you want to forward data from a Partition or a Scheduled View:
-    * Partition: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
-    * Scheduled View: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso-->
+    * Partition: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+    * Scheduled View: <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso-->
 1. Click on the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="enable-option.png" width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specifiy-destination.png')} alt="specify-destination.png'" width="450"/>
