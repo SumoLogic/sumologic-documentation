@@ -146,6 +146,6 @@ Currently, you cannot use [Scheduled Searches](/docs/alerts/scheduled-searches) 
 Users will continue to have support for the `_dataTier` modifier while still migrating to Flex pricing.
 :::
 
-Queries with the `_dataTier` modifier will not break the queries in Flex pricing. The definition of `_dataTier=Continuous or Frequent or Infrequent` is a snapshot of the partitions that were part of the tier at the time of pricing change, this is done to ensure that you do not face any challenges while migrating to Flex.
+Queries with the `_dataTier` modifier will not break the queries in Flex pricing. The definition of `_dataTier=Continuous or Frequent or Infrequent` is a snapshot of the partitions that were part of the tier at the time of pricing change. This is done to ensure that you do not face any challenges while migrating to Flex.
 
 You can move away from using the `_dataTier` modifier at your convenience. Currently, there is no concrete time to deprecate the support of `_dataTier` modifier for Flex users.
