@@ -80,10 +80,10 @@ A few Sources on Hosted Collectors behave differently when instructed to stop co
 
 Use the **Ingest Budgets** page to manage your ingest budgets. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**. 
-<!--Kanso 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**. 
+
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Ingest Budgets page, in the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
- Kanso-->
+ 
 
 ![metadata ingest budgetspage.png](/img/ingestion-volume/metadata-ingest-budgets-page.png)
 
@@ -117,7 +117,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 #### Create ingest budget
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
 1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table.
 1. Provide the following information, all fields are required except Description.
 
@@ -146,19 +146,19 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 You can manually reset a budget at any time to set its capacity utilization tracking to zero. This won't affect the next scheduled reset time and can be done as many times as needed.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
 1. In the table find the ingest budget you want to reset and click the row to open its details pane.
 1. Click the **Reset** button.
 
 #### Edit ingest budget
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
 1. In the table find the ingest budget you want to edit and click the edit icon ![pencil edit icon.png](/img/ingestion-volume/pencil-edit-icon.png) on the right of the row or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 #### Delete ingest budget
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
 1. In the table find the ingest budget you want to delete and click the delete icon ![delete trash icon.png](/img/ingestion-volume/delete-trash-icon.png) on the right of the row or click the row and then click the delete icon in the details panel.
 1. You will get a confirmation prompt, ensure that you are deleting the desired ingest budget and then click **Delete**.
 

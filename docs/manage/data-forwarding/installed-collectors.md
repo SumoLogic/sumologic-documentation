@@ -29,7 +29,7 @@ You need the [Manage Collectors role capability](../users-roles/roles/role-capa
 
 To set up a data forwarding destination:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. 
 1. Click **+ Destination** to add a new destination.
 1. Select one of these options for **Destination Type**. 
    * Hitachi
@@ -101,7 +101,7 @@ There are several methods you can use to configure processing rules: 
 
 **To configure processing rules for data forwarding using the web application**
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Search for the source that you want to configure, and click the **Edit** link for the source. The source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
