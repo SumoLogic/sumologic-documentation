@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
-<!--Kanso 
+
 :::warning
 Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui/). We recommend using other [Observability](/docs/observability/) tools instead.
 :::
- Kanso-->
+ 
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
