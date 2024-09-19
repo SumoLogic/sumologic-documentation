@@ -21,7 +21,7 @@ This topic shows you how to create a monitor.
 
 ### From your Monitors page
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The **New Monitor** dialog box will appear.
 
 ### From your Dashboard
