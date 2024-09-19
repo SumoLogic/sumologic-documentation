@@ -14,7 +14,7 @@ add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This page provides an overview of the new Sumo Logic.
+This guide introduces you to the new, faster Sumo Logic UI.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
@@ -28,24 +28,24 @@ This page provides an overview of the new Sumo Logic.
         />
 
 :::tip
-The [Quickstart](/docs/get-started/quickstart) introduces you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. 
+New to Sumo Logic? Start with our [Quickstart Guide](/docs/get-started/quickstart) to get up and running fast. You'll be introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. 
 :::
 
 ## Benefits
 
 With the New UI, you can expect:
 
-* Unified experience across Operational and Security analytics products.
-* Accelerated performance, reduced load time, and enhanced caching.
-* Stateful URLs to preserve page states upon re-login.
+* Unified experience across operational and security analytics products.
+* Faster load times with enhanced caching.
+* Stateful URLs that save your place upon re-login.
 * Use-case-based navigation for streamlined feature discovery.
 
-[Learn more](/release-notes-service/2024/02/23/ui/)
+You can view the full list of updates [here](/release-notes-service/2024/02/23/ui/).
 
 
-## Getting to the New UI
+## Switching to the New UI
 
-Once you're logged in to Sumo Logic, go to the left navigation (nav) panel and click **Switch to New UI**.
+To opt into the new UI, go to the left navigation panel and click **Switch to New UI**.
 
 <img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
 
@@ -58,13 +58,13 @@ When you first log in, you'll land on the Sumo Logic **Home** page > **Home** ta
 * Recommended Dashboards 
 * Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" style={{border: '1px solid gray'}} width="800" />
 
-## Using the left navigation panel
+## Left navigation panel
 
-In the left nav panel, you can access all of our features, such as Logs, Observability, Cloud SIEM, and more. You'll also find your dashboards library here.
+The left nav panel lets you access all Sumo Logic features, such as Logs, Observability, Cloud SIEM, and more.
 
-### Access dashboards and searches
+### Dashboards and searches
 
-The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side nav panel to view:
+Access your dashboard libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side nav panel to view:
 
 * Your **Library**, which contains:
    * Your own **Installed Apps** from the App Catalog.
@@ -77,17 +77,15 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="300"/>
 :::
 
-## Using the top navigation bar
+## Top navigation bar
 
-### Access settings
-
-The global toolbar (top nav bar) provides access to various functions in the following order: [Go To...](#go-to-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
+The global toolbar (top nav bar) provides access to critical functions and settings, in the following order: [Go To...](#go-to-menu-options), [Help](/docs/get-started/help), [Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="350"/>
 
-#### Go To... menu options
+### Go To... menu options
 
-The **Go To...** button in the top menu lets you quickly access any menu. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
+Use the **Go To...** menu for quick access to settings and features. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
 
 ### Configuration
 
@@ -110,7 +108,7 @@ With the Sumo Logic Administrator role, you can manage user accounts, user roles
 
 The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open Library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
 
-### Manage your personal account preferences
+### Preferences
 
 You can manage your personal account settings from the **Preferences** page. These settings apply only to your account. Changes you make to your preferences take effect the next time you sign in, not during the current session.
 
@@ -126,11 +124,11 @@ For more information, see [Account Preferences and Credentials](account-settings
 
 ## Customize your environment with tabs
 
-If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
+To enhance multitasking, you can now keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences) using your web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
 
 <img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
 
-This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
+This also allows you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
 
 <!--
 
@@ -231,14 +229,13 @@ You'll need Sumo Logic Administrator role privileges to perform most of these t
 
 ## FAQ
 
-This guide offers responses to frequently asked questions regarding the Sumo Logic UI redesign project, which involves transitioning from the current Classic UI to the upcoming New UI.
+This FAQ provides answers to common questions about the Sumo Logic UI redesign, which involves transitioning from the legacy Classic UI to the New UI.
 
 <details>
 <summary><strong>Q:</strong> What is being launched?</summary>
 
 We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
 </details>
-
 
 <details>
 <summary><strong>Q:</strong> What issues does the New UI resolve?</summary>
@@ -249,7 +246,6 @@ The current information architecture and navigation system have not effectively 
 
 In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The **New UI** navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
 </details>
-
 
 <details>
 <summary><strong>Q:</strong> What changes have been implemented that enhance my Sumo experience?</summary>
@@ -274,7 +270,6 @@ We understand that the removal of in-app tabs in the New UI is a significant cha
 
 </details>
 
-
 <details>
 <summary><strong>Q:</strong> Will the New UI retain the Classic UI feature of remembering previously opened tabs from my previous session?</summary>
 
@@ -285,7 +280,6 @@ After analyzing tab usage data, we've found that a minimal portion of previously
 Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
 </details>
 
-
 <details>
 <summary><strong>Q:</strong> If I opt in to the New UI, will I lose access to the Classic UI?</summary>
 
@@ -294,13 +288,14 @@ No, opting for the **New UI** won't lock you out of the old interface. You'll ha
 Once the feature flag is enabled, all organization users will see a **Switch to New UI** option in the left navigation menu. Clicking on this button allows users to opt into the **New UI**. Once opted in, the system will remember the preference, redirecting old URLs to their corresponding new ones. Consequently, subsequent logins will automatically direct users to the **New UI**.
 </details>
 
-
 <details>
 <summary><strong>Q:</strong> How do I opt out of the New UI?</summary>
 
 You have the flexibility to opt out whenever you choose. Just go to left navigation menu of the **New UI** and click the **Return to Classic UI** option. Once you've switched back to the **Classic UI**, all subsequent sessions will default to the **Classic UI** experience.
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
+
+We highly encourage you to begin transitioning to the New UI for the latest features and updates.
 
 </details>
 

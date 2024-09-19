@@ -8,7 +8,7 @@ description: Get to know the Sumo Logic platform user interface.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::danger Classic UI Deprecation
-Use the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui). This Classic UI will be deprecated in early 2025.
+The Classic UI will be deprecated in early 2025. We highly encourage you to begin transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) for the latest features and updates.
 :::
 
 This page will help you get to know the Sumo Logic Classic UI.
