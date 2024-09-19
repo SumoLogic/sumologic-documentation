@@ -23,13 +23,14 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
+        'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-classic',
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
         'get-started/apps-integrations',
         'get-started/library',
-        'get-started/sumo-logic-ui',
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
@@ -2846,7 +2847,6 @@ integrations: [
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
-        'get-started/sumo-logic-ui-new',
       ],
     },
   ],
