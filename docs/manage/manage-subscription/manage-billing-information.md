@@ -13,7 +13,7 @@ Once changes are submitted, Sumo Logic will begin applies the new credit card f
 
 To change the billing information, do the following:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Billing**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Billing**. You can also click the **Go To...** menu at the top of the screen and select **Billing**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Billing**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Billing**. You can also click the **Go To...** menu at the top of the screen and select **Billing**. Kanso-->
 1. Click **Use a New Credit Card**.
 1. Enter the new credit card information, or edit any of the billing address/contact information.
 1. Click **Submit**.

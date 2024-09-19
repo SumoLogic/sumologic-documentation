@@ -20,7 +20,7 @@ You must be an admin to upgrade your Credits free or trial account.
 
 1. To initiate your account upgrade: 
      * Click the **Upgrade** link at the top of the Sumo Logic UI in your account, or
-     * <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. Kanso--> 
+     * <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. Kanso--> 
 2. The **Manage Plan** page appears.
     ![step-1.png](/img/subscriptions/manage-plan-upgrade-to-essentials.png)
 3. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
@@ -53,7 +53,7 @@ When you update the product variables for a monthly plan (without changing to an
 
 **To update your Essentials plan**
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. Kanso--> <br/>The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. Kanso--> <br/>The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
     ![current-plan.png](/img/subscriptions/current-plan.png)
 2. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![current-levels.png](/img/subscriptions/current-levels.png)

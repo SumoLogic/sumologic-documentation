@@ -10,9 +10,9 @@ You can visualize your Traces data through filtered trace lists and icicle chart
 
 ## Traces page
 
- <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**.
+ <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**.
  <!--Kanso
- [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
+ [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
   Kanso-->
 
 Here, you can run a Trace query, view your **Trace Duration Breakdown Chart**, and explore your **Traces matching queries** table.
@@ -127,7 +127,7 @@ To view the Trace Query Visualization charts:
 
 You can add Trace Duration Breakdown Chart as a dashboard panel to a new or existing dashboard. From a new dashboard:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso-->
 1. Click the **Traces** panel type.
 1. Add the required trace query filters representing similar traces of the same transaction.
 1. Under **Visual Settings** > **Chart type**, select **Trace Query Visualizations**.
