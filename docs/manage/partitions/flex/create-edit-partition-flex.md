@@ -52,7 +52,7 @@ When designing partitions, keep the following in mind:
   * Partition1: `_sourceCategory=prod`
   * Partition2: `_sourceCategory=*/Apache`
 
-Overlapping data between two or more Partitions will count as additional ingest toward your account's quota. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index).
+The best practice for cost optimization is to ensure that data from a source category is maintained in a single partition rather than multiple partitions to minimize multiple partitions from being included in the scope of the query. If data from a single source category is maintained in multiple partitions, it could potentially increase scan costs, as the query may need to consider data from multiple partitions.
 
 ## Edit a partition
 
