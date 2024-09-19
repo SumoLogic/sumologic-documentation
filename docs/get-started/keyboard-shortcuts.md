@@ -80,7 +80,6 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 
 
 ### Classic UI
--->
 
 | Shortcut | Description |
 |:-- |:-- |
