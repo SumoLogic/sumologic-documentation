@@ -7,10 +7,10 @@ description: Sumo Logic keyboard shortcuts.
 
 Sumo Logic keyboard shortcuts are enabled by default. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
-<!--Kanso
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
+
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access keyboard shortcuts, in the Sumo Logic top menu select **Help > Keyboard Shortcuts**.
- Kanso-->
+ 
 
 :::tip
 You can also press the **?** key to display the list of keyboard shortcuts.
@@ -26,9 +26,9 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 
 ## Keyboard shortcuts on Windows
 
-<!--Kanso 
+
 ### Classic UI
-Kanso-->
+
 
 | Shortcut | Description |
 |:-- |:-- |
@@ -59,7 +59,7 @@ Kanso-->
 | Alt + Z | Open the Setup Wizard |
 | ? | Show this screen |
 
-<!--Kanso
+
 ### New UI
 
 | Shortcut | Description |
@@ -74,11 +74,11 @@ Kanso-->
 | Alt + Shift + Q | Duplicate a query in a new tab (Search/Metrics only) |
 | Ctrl + K | Toggle Go To... |
 
-Kanso-->
+
 
 ## Keyboard shortcuts on macOS
 
-<!--Kanso 
+
 ### Classic UI
 -->
 
@@ -116,7 +116,7 @@ Kanso-->
 | Command + J | Share search |
 | ? | Show this screen |
 
-<!--Kanso
+
 ### New UI
 
 | Shortcut | Description |
@@ -131,5 +131,5 @@ Kanso-->
 | Option + Shift + Q | Duplicate a query in a new tab (Search/Metrics only) |
 | Command + K | Toggle Go To... |
 
-Kanso-->
+
 
