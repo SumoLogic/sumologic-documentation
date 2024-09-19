@@ -271,12 +271,6 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
-    announcementBar: {
-      id: 'contributing',
-      content: '📝 Join our open source community! Contribute, collaborate, and make an impact with Sumo Logic. <a target="_blank" rel="noopener noreferrer" href="/docs/contributing">Learn more</a>.',
-      backgroundColor: '#fafbfc',
-      textColor: '#091E42',
-    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -383,6 +377,11 @@ module.exports = {
                 label: 'API Docs',
                 icon: 'hub',
               },
+              {
+                label: 'API Reference',
+                href: 'https://api.sumologic.com/docs/',
+                icon: 'code',
+              },
             ]
           },
           {
@@ -435,32 +434,36 @@ module.exports = {
           },
           {
             position: 'right',
-            className: 'slr-global-nav_demo-menu-trigger',
+            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
               {
                 label: 'Contact Support',
-                href: 'https://support.sumologic.com/support/s',
+                to: 'https://support.sumologic.com/support/s',
+                icon: 'support',
               },
               {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/demos',
+                label: 'Request Demo',
+                to: 'https://www.sumologic.com/demos',
+                icon: 'co_present',
               },
               {
                 label: 'Submit Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                icon: 'thumbs_up_down',
               },
               {
                 label: 'Contribute to Docs',
-                href: 'https://help.sumologic.com/docs/contributing',
+                to: '/docs/contributing',
+                icon: 'edit_note',
               },
             ],
           },
           {
+            className: 'header-github-link',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
             position: 'right',
-            className: 'header-github-link',
             alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
