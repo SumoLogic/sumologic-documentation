@@ -208,7 +208,7 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
 ### Manage fields
 
-Fields in your account are manageable in the Fields page
+Fields in your account are manageable in the Fields page.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
 
