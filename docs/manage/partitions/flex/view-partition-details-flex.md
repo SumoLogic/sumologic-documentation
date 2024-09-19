@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To view details about a Partition:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--><br/> <img src={useBaseUrl('/img/partitions-data-tiers/partitions-page-flex.png')} alt="partitions-page" style={{border:'1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/> <img src={useBaseUrl('/img/partitions-data-tiers/partitions-page-flex.png')} alt="partitions-page" style={{border:'1px solid gray'}} width="800"/>
 1. Click the row for a Partition to view its details.<br/><img src={useBaseUrl('img/partitions-data-tiers/view-edit-partition-pane-flex.png')} alt="view-edit-partition-pane.png" style={{border:'1px solid gray'}} width="350"/>
 
     :::note

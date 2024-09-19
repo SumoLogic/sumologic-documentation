@@ -41,7 +41,7 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From the Logs tab
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Kanso--> Go to **Manage Data** > **Logs** > **Deletion Requests**.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note
