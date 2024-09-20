@@ -41,7 +41,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
 1. Click **+ Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/add-config-icon.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="600" />
 1. The **Add Configuration** page appears. <br/><img src={useBaseUrl('img/security/saml-configuration-page.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name.** Google Apps Auth (or, you can enter any name you like).

@@ -33,7 +33,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="Add Source link on the Collection tab" style={{border: '1px solid gray'}} width="800" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="TTP Logs & Metrics tile on the Collection tag" style={{border: '1px solid gray'}} width="800" />
@@ -51,7 +51,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 In this step, you create a webhook that points to the HTTP source.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso--> <br/><img src={useBaseUrl('img/cse/connections.png')} alt="Connections" style={{border: '1px solid gray'}} width="800" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="Connections" style={{border: '1px solid gray'}} width="800" />
 2. Click the plus sign (+) icon.
 3. On the **Select Connection Type** page, click **Webhook.**
 4. Give it a name and input the URL from the HTTP Endpoint as your URL.

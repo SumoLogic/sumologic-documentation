@@ -381,7 +381,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
    * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=dev-rabbitmq01`
    * For alerts applicable to all clusters that start with RabbitMQ-prod, your custom filter would be: `messaging_cluster=RabbitMQ-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=dev-rabbitmq01 AND environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click **Import**.
 6. On the **Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.

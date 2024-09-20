@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Automation** section contains configuration tools for Cloud SOAR's automation and orchestration features.
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
-<!--Kanso
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**.
- Kanso-->
+ 
 
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
@@ -31,7 +31,7 @@ Incident templates define the way in which incidents will be created for a speci
 
 ### Create a new incident template
 
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  Kanso-->
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  
 1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
 1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
    1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for.
@@ -52,7 +52,7 @@ Incident templates define the way in which incidents will be created for a speci
 
 You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid gray'}} width="600"/>
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
@@ -100,7 +100,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 ### Create an automation rule
 
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  
 1. Click **+** to the left of **Rules**.
 1. Select a name for the rule, then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters. <br/><img src={useBaseUrl('img/cloud-soar/add-automation-rule.png')} alt="Add automation rule"  style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save**. The new rule is displayed. <br/><img src={useBaseUrl('img/cloud-soar/sample-automation-rule.png')} alt="Sample automation rule"  style={{border: '1px solid gray'}} width="700"/>
@@ -180,7 +180,7 @@ After you create a Slack app, you must add the appropriate permissions for use w
 Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth Token and Signing Secret you saved in the previous step. These tokens will give the Slack integration the permissions it needs to perform the tasks in the scopes you set up.
 
 1. Add resources for the tokens:
-   1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
+   1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
    1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" style={{border: '1px solid gray'}} width="800"/>
    1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" style={{border: '1px solid gray'}} width="500"/>
    1. Name the resource "Bot User OAuth Access Token".
@@ -188,7 +188,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Click **TEST** to verify configuration.
    1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" style={{border: '1px solid gray'}} width="400"/>
 1. Configure instant messaging:
-    1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. Kanso-->
+    1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
     1. Scroll down and open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Instant Messaging configuration dialog" style={{border: '1px solid gray'}} width="400"/>
     1. For **Integration** select Slack.
     1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
