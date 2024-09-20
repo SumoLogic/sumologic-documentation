@@ -92,9 +92,9 @@ For full details, refer to the Kryterion’s [Online Testing Requirements](https
 
 Kryterion support is available anytime during the test. You can use the Live Chat or web form at [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US).
 
-<!--
-### Will I see my preliminary exam results pass/fail, on the screen upon completing my test?
--->
+### Will I see preliminary exam results on the screen upon completing my test?
+
+Yes, a Pass/Fail result will show on the screen after results have been submitted and the secure proctored exam environment has been left.
 
 ### What is the retake policy? Will I have to pay again?
 
