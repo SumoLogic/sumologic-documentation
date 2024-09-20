@@ -42,7 +42,7 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
-If you choose to close this Source template creation screen, you can navigate back. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  Kanso--> 
+If you choose to close this Source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  
 
 ### Install Script
 
