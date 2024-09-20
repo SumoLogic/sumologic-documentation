@@ -69,7 +69,7 @@ However, if a user is assigned multiple roles that each have different Index Acc
 
 ### Test a role with Search Filter and Index Access defined
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Select a role with **Search Filter** and/or **Index Access** defined. 
 1. Click **Emulate log search**. The search will be emulated for the filtering defined in the role. (In the example below, an index access filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by filtering defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
