@@ -70,27 +70,14 @@ You can start requesting results asynchronously while the job is running and pag
 
 ## Search Job Result Limits
 
-<table>
-  <tr>
-   <td>Data Tier</td>
-   <td>Non-aggregate Search (messages)</td>
-  </tr>
-  <tr>
-   <td>Continuous</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-  <tr>
-   <td>Frequent</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-  <tr>
-   <td>Infrequent</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-</table>
+| Data Tier | Non-aggregate Search (messages) |
+| :- | :- |
+| Continuous | Can return up to 100K records per search. |
+| Frequent  | Can return up to 100K records per search. |
+| Infrequent  | Can return up to 100K records per search. |
 
 :::info
-Flex Licensing model can return up to 10 million records per search.
+Flex Licensing model can return up to 100K records per search.
 :::
 
 If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records, consider breaking it into at least seven searches, each spanning a day.
