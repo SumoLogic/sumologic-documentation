@@ -18,7 +18,7 @@ Starting with collector 19.170+, the installation directory is secured to users 
     * On Windows: `net stop sumo-collector`      
     * On Linux: `sudo ./collector stop`    
 1. Navigate to the installation directory of an existing Installed Collector and open the `collector.properties` file in the **config** directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
-1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below.
+1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties-parameters) table below.
 
     :::important
     Keep all of the existing parameters already in the file. If you remove any, the Collector will not be able to restore them and could result in collection issues.
@@ -45,9 +45,9 @@ Windows:
 
 ### collector.properties example
 
-The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](user-properties.md) file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](#collectorproperties) below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
+The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](user-properties.md) file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](#collectorproperties-parameters) below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
 
-The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](/docs/send-data/collector-faq#file-locking-problems). That is the only collector.properties parameter in this example.
+The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](/docs/send-data/collector-faq#file-locking-problems-when-using-windows-unc-with-local-file-sources). That is the only collector.properties parameter in this example.
 
 ```
 receiver.url = https://collectors.sumologic.com

@@ -144,12 +144,6 @@ Watch this tutorial to learn how to use our **App Catalog**.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/1password/"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="70"/><h4>1Password</h4></a>
-  <p>1Password helps you monitor your 1Password account’s sign-in and item usage events.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/integrations/account-plans/"><img src={useBaseUrl('img/icons/business/flexible-licensing.png')} alt="Thumbnail icon" width="70"/><h4>Apps for Sumo Logic Account Plans</h4></a>
   <p>Apps for various Sumo Logic account plans.</p>
   </div>

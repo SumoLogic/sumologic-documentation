@@ -44,7 +44,7 @@ To set up a CyberArk account, follow the steps below:
 When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk EPM Source, follow the steps below:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CyberArk EPM**. 
 1. **Name**. Enter a name to display for the Source in the Sumo Logic web application.
@@ -54,8 +54,8 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-1. **EPM Username**. Enter your EPM username from the [Setup and Configuration](#setup-and-configuration) section.
-1. **EPM User Password**. Enter your EPM password from the [Setup and Configuration](#setup-and-configuration) section.
+1. **EPM Username**. Enter your EPM username from the [Vendor configuration](#vendor-configuration) section.
+1. **EPM User Password**. Enter your EPM password from the [Vendor configuration](#vendor-configuration) section.
 1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL, it is the dispatch server for your region. Following are some examples of dispatch server URLs:
     * For the US datacenter, the dispatch server URL is `https://login.epm.cyberark.com`.
     * For the EU datacenter, the dispatch server URL is `https://eu.epm.cyberark.com`.
