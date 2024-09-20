@@ -1,5 +1,5 @@
 ---
-id: Intellisense
+id: intellisense
 title: Intellisense for Logs Search
 sidebar_label: Intellisense
 description: Overview of the upcoming Intellisense enhancements for log search functionality, outlining how these features can improve the querying experience for both novice and advanced users.
