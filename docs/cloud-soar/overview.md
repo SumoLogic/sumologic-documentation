@@ -73,13 +73,17 @@ To access Cloud SOAR, click **Cloud SOAR** in the Sumo Logic navigation menu.
 
 Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in your organization. If you would like to use Cloud SOAR in your organization, contact your Sumo Logic account representative.
 
-### Cloud SOAR menus
+### Theme
 
-<!--Kanso 
+import Theme from '../reuse/dark-light-theme.md';
+
+<Theme/>
+
+## Cloud SOAR menus
+
 ### Classic UI
 
-The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
- Kanso-->
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).
 
 #### Top menu
 
@@ -100,10 +104,9 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
-<!--Kanso 
 ### New UI
 
-The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic UI](/docs/get-started/sumo-logic-ui).
 
 #### Cloud SOAR sidebar menu
 
@@ -174,13 +177,7 @@ Use the **Administration** menu to access:
 * [**General**](#general-settings). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
- Kanso-->
 
-### Theme
-
-import Theme from '../reuse/dark-light-theme.md';
-
-<Theme/>
 
 ## Settings
 
@@ -188,10 +185,10 @@ The following sections detail the various setup and configuration options for th
 
 ### General
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
-<!--Kanso 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
- Kanso-->
+ 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/> 
 
@@ -231,10 +228,10 @@ For additional setup needed for Slack, see [Configure Slack for Cloud SOAR](/doc
 
 ### Groups
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
-<!--Kanso 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
- Kanso-->
+ 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -265,10 +262,10 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 ### Notifications
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
-<!--Kanso 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access notification settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
- Kanso-->
+ 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -276,10 +273,10 @@ Select the icon to the right of an event to trigger a notification to be sent wh
 
 ### Custom fields
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
-<!--Kanso 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access custom field settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
- Kanso-->
+ 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
 
@@ -342,7 +339,7 @@ The **Incident label** page allows you to define labels for different types of [
 
 To create an incident label:
 
-1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. Kanso--> 
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
 1. Click **+** to the left of **Incident label**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
 1. Enter the following on the **New label** dialog:
     1. **Name**. Enter a name for the label. This name will not appear in the label itself.
@@ -361,10 +358,10 @@ To create an incident label:
 
 ### Triage
 
-<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
-<!--Kanso 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
+
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access triage configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Triage**. 
- Kanso-->
+ 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-triage-configuration.png')} alt="Cloud SOAR triage configuration page" style={{border: '1px solid gray'}} width="700"/>
 

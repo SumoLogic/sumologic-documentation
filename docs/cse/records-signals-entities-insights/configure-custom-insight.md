@@ -34,7 +34,7 @@ This example Custom Insight configuration will generate an Insight as a result o
 
 To create a Custom Insight:
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu, select **Content > Custom Insights**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  
 2. Click **Create** on the **Custom Insights** page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
 3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" style={{border: '1px solid gray'}} width="600"/>
 4. In the **Name** field, enter a name for the Custom Insight.
