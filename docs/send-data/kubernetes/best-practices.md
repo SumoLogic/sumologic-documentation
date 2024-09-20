@@ -465,9 +465,23 @@ If you want to disable the collection of logs, metrics, or falco, make the below
 | `sumologic.metrics.enabled` | false | disable metrics collection |
 | `falco.enabled`             | false | disable falco              |
 
-## Changing scrape interval for Prometheus
+## Changing scrape interval for OpenTelemetry metrics collection
 
-Default scrapeInterval for collection is `30s`. This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
+You can adjust the default metric scrapeInterval (`30s`) if you are using OpenTelemetry for collection (default). This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
+
+To change it, you can use following configuration:
+
+```yaml
+sumologic:
+  metrics: 
+    collector:
+      otelcol:
+        scrapeInterval: 30s
+```
+
+## Changing scrape interval for Prometheus metrics collection
+
+You can adjust the default metric scrapeInterval (`30s`) if you are using Prometheus for collection instead of OpenTelemetry (default). This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
 
 To change it, you can use following configuration:
 
