@@ -277,6 +277,12 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
+    announcementBar: {
+      id: 'opt-in-ga',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the Sumo Logic New UI!</a>',
+      backgroundColor: '#f2ecc9',
+      textColor: '#091E42',
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,

@@ -33,7 +33,7 @@ If you have the Salesforce source set up and choose to upgrade it, follow the in
 
 ### Source configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Search for the required source and click the **Upgrade** button.<img src={useBaseUrl('img/release-notes/service/upgrade-source.png')} alt="upgrade-source" style={{border:'1px solid gray'}} width="800"/>
 1. You will be directed to the configuration page. Ensure you do not change any of the configurations set.
 1. Click **Upgrade** at the bottom of the configuration page.
