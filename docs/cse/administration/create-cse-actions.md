@@ -38,7 +38,7 @@ Watch this micro lesson to learn how to configure an Action.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -72,7 +72,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 
 ## Create an Action
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
 1. On the **Actions** page, click **Create**.
 1. The **Create Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create Action dialog" style={{border: '1px solid gray'}} width="500" />
 1. **Name**. Enter a name that communicates what the Action does.

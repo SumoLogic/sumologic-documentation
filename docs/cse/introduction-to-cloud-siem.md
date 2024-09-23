@@ -18,7 +18,7 @@ Watch the following micro lesson to learn how to get started using Cloud SIEM fo
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -45,14 +45,12 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 
-### Cloud SIEM menus
+## Cloud SIEM menus
 
-<!--Kanso 
 ### Classic UI
 
-The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
- Kanso-->
-
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).
+ 
 #### Top menu
 
 This menu appears at the top of the Cloud SIEM screen: <br/><img src={useBaseUrl('img/cse/cloud-siem-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="800"/>
@@ -107,10 +105,9 @@ Use the **Configuration** menu to access:
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
-<!--Kanso 
 ### New UI
 
-The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic UI](/docs/get-started/sumo-logic-ui).
 
 #### Sidebar menu
 
@@ -202,7 +199,7 @@ Use the **Configuration** menu to access:
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
- Kanso-->
+ 
 
 ## Getting your data into Cloud SIEM
 
@@ -305,7 +302,7 @@ The [timeline](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#signal
 
 The [entities within each Signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#entities-tab) can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
 
-Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#8-insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#9-recent-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
+Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#5-insight-radar), under the [Recent Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#6-recent-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
 
 Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
 

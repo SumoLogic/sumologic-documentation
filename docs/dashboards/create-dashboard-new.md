@@ -20,7 +20,7 @@ Rather watch a short micro lesson video?
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -33,7 +33,7 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 
 There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
 
-1.  <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso-->
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
 1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.<br/>
 
 ## Add a panel  

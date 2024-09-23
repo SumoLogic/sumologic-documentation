@@ -27,7 +27,7 @@ Reliability Management Using SLOs.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -122,16 +122,16 @@ Availability indicates if a service is working and handling valid requests. Othe
 
 ## Data Retention
 
-SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#slo-as-log-messages).
+SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#create-an-slo-from-log-search-page).
 
 
 ## Accessing SLOs
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
 
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
+ 
 
 In the SLO screen, you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
 

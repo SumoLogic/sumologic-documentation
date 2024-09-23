@@ -19,7 +19,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Collecting logs from a MySQL database](#collecting-logs-from-a-mysql-database)
   * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
   * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
-  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-a-mssql-database)
+  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-an-mssql-database)
   * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
 * [Collecting logs from other sources](#collecting-logs-from-other-sources)
 
@@ -212,7 +212,7 @@ Following configuration demonstrates:
            - sumologic
    ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sample_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sample_windows.yaml`.
 1. Paste the above content into the file.
 1. Restart collector with following command:
    ```bash title="Windows"

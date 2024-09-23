@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud SOAR is a full-featured security orchestration, automation, and response (SOAR) application. The [Automation Service](/docs/platform-services/automation-service/about-automation-service/) is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. 
 
-The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the [Cloud SOAR action types](/docs/cloud-soar/automation/#action), the [Automation Service action types](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) can perform automated responses to events, including run containment actions and manual user interaction steps. 
+The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the [Automation Service action types](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) can perform automated responses to events, including run containment actions and manual user interaction steps. 
 
 ## Main differences
 
@@ -21,7 +21,7 @@ The Automation Service doesn't include any of Cloud SOAR’s case management or 
 
 ### Daemon and trigger action types
 
-The Automation Service does not support [daemon](/docs/cloud-soar/cloud-soar-integration-framework/#daemon-action-definitions) and [trigger](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-action-definitions) action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. So you can’t configure a playbook in the Automation Service to monitor an external process or file and fire a trigger in response like you can with Cloud SOAR. A trigger can only fire in the Automation Service for limited events, such as when an Insight is created in Cloud SIEM.
+The Automation Service does not support [daemon](/docs/platform-services/automation-service/automation-service-integration-framework/#daemon-action-definitions) and [trigger](/docs/platform-services/automation-service/automation-service-integration-framework/#trigger-action-definitions) action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. So you can’t configure a playbook in the Automation Service to monitor an external process or file and fire a trigger in response like you can with Cloud SOAR. A trigger can only fire in the Automation Service for limited events, such as when an Insight is created in Cloud SIEM.
 
 ### Additional features
 

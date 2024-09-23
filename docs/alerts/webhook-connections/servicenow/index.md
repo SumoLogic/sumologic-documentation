@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Your org can use collected data to investigate issues across your deployment and then upload it to ServiceNow through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad hoc ServiceNow investigations using search results in Sumo Logic.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access ServiceNow connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access ServiceNow connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**. 
 
-<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access ServiceNow connections, in the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access ServiceNow connections, in the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 
 From here, you can search, edit, delete, and view of the details of [ServiceNow connections](/docs/alerts/webhook-connections/servicenow/).
 

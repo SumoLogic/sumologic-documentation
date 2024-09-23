@@ -8,10 +8,10 @@ The **Spans** page allows you to filter and aggregate your trace data at the raw
 
 ## Spans page
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Spans, click the **+ New** button at the top of the screen and select **Spans**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Spans, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Spans, click the **+ New** button at the top of the screen and select **Spans**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Spans, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**. 
+ 
 
 A new Spans page opens. Data is displayed once you run a query.
 
@@ -38,7 +38,7 @@ This micro lesson provides an overview of Span Analytics, and describes the term
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
