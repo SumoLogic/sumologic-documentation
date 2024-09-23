@@ -1,7 +1,7 @@
 ---
 slug: /integrations/app-development/opentelemetry
 title: OpenTelemetry
-description: Learn about our Sumo Logic OpenTelemetry apps.
+description: Integrate with Sumo Logic using our OpenTelemetry apps for software development tools, enabling streamlined observability and monitoring.
 ---
 
 This guide has documentation for Sumo Logic OpenTelemetry apps.
