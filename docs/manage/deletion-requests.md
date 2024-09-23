@@ -79,3 +79,4 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 ### Deletion request limit
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
+
