@@ -100,17 +100,17 @@ In addition to the common parameters, the following parameters are for an HTTP 
 
 ###### `fields`
 | JSON Object | OPTIONAL | modifiable |
-* **Default**. N/A. <!-- null instead of N/A? -->
+* **Default**. none.
 * **Description**. Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`.
 
 ###### `sourceType`
 | String | REQUIRED | not modifiable |
-* **Default**. N/A. <!-- null instead of N/A? -->
+* **Default**. none.
 * **Description**. HTTP.
 
 ###### `messagePerRequest`
 | Boolean | REQUIRED | modifiable |
-* **Default**. N/A. <!-- null instead of N/A? -->
+* **Default**. none.
 * **Description**. When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`.
 
 ###### `url`
@@ -139,7 +139,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 ###### `sourceType`
 | String   | Yes  | not modifiable |
-* **Default**. N/A. <!-- null instead of N/A? -->
+* **Default**. none.
 * **Description**. Cloudsyslog. 
 
 ```json title="Cloud Syslog Source JSON example"
