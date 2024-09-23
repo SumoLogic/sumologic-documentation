@@ -37,7 +37,7 @@ Each Source can have its own unique fields in addition to the generic fields lis
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for local file source. 
 
 | Parameter   | Type         | Required? | Default | Description     | Access   |
-|:----------|:--------------|:-----------|:---------|:--------|:----------------|
+|:------------|:-----------|:-----------|:--------|:--------------|:---------|
 | `sourceType`    | String    | Yes       |      | LocalFile   | not modifiable |
 | `pathExpression` | String        | Yes       |      | A valid path expression (full path) of the file to collect. For files on Windows systems (not including [Windows Events](/docs/send-data/installed-collectors/sources/local-windows-event-log-source), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash [`\`]. If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Windows Log Collection](/docs/send-data/installed-collectors/sources/remote-file-source/prerequisites-windows-remote-file-collection). Use a single asterisk wildcard [`*`] for file or folder names. Example: `[var/foo/*.log]`. Use two asterisks [`**`] to recurse within directories and subdirectories. Example: `[var/**/*.log]`. | modifiable     |
 | `denylist`      | String Array  | No     | [ ]     | Comma-separated list of valid path expressions from which logs will not be collected. Example: `["/var/log/**/*.bak","/var/oldlog/*.log"]`    | modifiable     |
