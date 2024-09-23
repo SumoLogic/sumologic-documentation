@@ -1,0 +1,31 @@
+---
+title: AI-Driven Alerts for Metrics Anomalies (Monitors)
+image: https://help.sumologic.com/img/sumo-square.png
+keywords:
+  - metrics
+  - monitors
+  - alerts
+  - anomalies
+  - ai
+hide_table_of_contents: true  
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+
+We are excited to announce the general availability of AI-driven alerts for metrics anomalies. This release extends our AI-driven alerting capabilities, previously available for logs-based monitors, to metrics-based monitors, enabling you to respond to critical incidents more effectively.
+
+## Benefits
+
+- **Reduces alert fatigue**. AI-driven anomaly detection minimizes irrelevant alerts, allowing customers to focus on critical incidents.
+- **Faster incident resolution**. Automated playbooks enable customers to reduce the mean time to resolution by automating repetitive tasks and gathering key diagnostic information.
+
+## Key features
+
+- **Advanced anomaly detection**. A built-in machine learning model analyzes at least 30 days of historical data to establish baseline behavior, detect seasonality, and automatically tune detection parameters. This helps reduce noise from expected spikes while isolating critical issues.
+- **Customizable detection framework**. The "Cluster anomalies" detector allows users to specify custom conditions for incident detection, such as marking an anomaly when a defined number of data points within a time window exceed thresholds.
+- **Playbook integration**. Customers can automate incident resolution workflows by associating playbooks with metrics monitors. Playbooks streamline responses by gathering diagnostic data, notifying collaborators, and automating recovery tasks.
+
+
+<!-- learn more link -->
