@@ -47,7 +47,7 @@ The following steps show you how to create a service application:
 1. Copy the Client Secret value, you'll need it when creating the Source in Sumo Logic.
     <img src={useBaseUrl('/img/send-data/5_ms_graph_app_client_secret_created.png')} alt="5_ms_graph_app_client_secret_created" width="800"style={{border: '1px solid gray'}} />
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
-    You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
+    You need to find and select the **SecurityAlert.Read.All**, **SecurityIncident.Read.All**, and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
     :::
@@ -69,7 +69,7 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Graph Security API**.
 1. Enter a **Name** for the Source. The description is optional.

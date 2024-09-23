@@ -40,7 +40,7 @@ While the components at the beginning of the value do not add any obvious value,
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
      />
 
 import Iframe from 'react-iframe';

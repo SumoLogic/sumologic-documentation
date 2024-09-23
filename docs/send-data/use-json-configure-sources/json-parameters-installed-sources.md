@@ -487,7 +487,7 @@ This example shows how to use WMI queries to collect performance metrics from W
 }
 ```
 
-## Windows Active Directory Source 
+### Windows Active Directory Inventory Source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are specific to the Windows Active Directory Inventory Source.
 
@@ -814,7 +814,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 
 | Field Type | Type Value |
 |:--|:--|
-| [Host metrics Source](#host-metrics-source) | SystemStats |
+| [Host metrics Source](#host-metricssource) | SystemStats |
 | [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
 
 ### Host metrics source 
@@ -844,7 +844,7 @@ the following parameters are specific to the our host metrics source. 
 ###### `metrics`
 <small>| STRING Array | OPTIONAL | MODIFIABLE |</small>
 * **Default**. N/A.<!-- null instead of N/A? -->
-* **Description**. For a full list of available metrics, see [Host Metrics Source for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources). When omitted, all available host metrics will be collected. all metrics. Comma-separated list of metrics to collect.
+* **Description**. For a full list of available metrics, see [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/). When omitted, all available host metrics will be collected. all metrics. Comma-separated list of metrics to collect.
 * **Example**.
    ```
    "metrics": ["CPU_User", "CPU_Sys", "Mem_Used"]

@@ -27,7 +27,7 @@ Learn how to use Alert Response.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -65,10 +65,10 @@ The following is an example Slack payload with the variable:
 
 The Alerts list shows all of your Alerts from monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+ 
 
 To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
 
@@ -129,14 +129,15 @@ The top of the page provides several details and buttons.
 * **C**. The type of monitor trigger condition that triggered the alert, either Critical, Warning, or MissingData.
 * **D**. The status of the Alert, either **Active** or **Resolved**.
 * **E**. Refreshes the Alert page.
-* **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook).  
+* **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
    * Text playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/> ![playbook example.png](/img/monitors/playbook-example.png)
    * [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
-* **G**. Opens the monitor that generated this alert.
-* **H**. Resolves the Alert. This will also resolve the monitor that generated the alert. The monitor will fire again when the alert condition is met. <br/>
-:::note
-Sumo Logic will resolve the alert automatically when the recovery condition defined on the monitor is met. This behavior is not configurable - that is, you cannot prevent Sumo Logic from resolving a monitor. Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
-::: <br/>![alert page sep 23.png](/img/monitors/alert-page.png)
+* **G**. Opens the Monitor that generated this alert.
+* **H**. Resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.
+   :::note
+   Sumo Logic automatically resolves alerts when the recovery condition defined on the monitor is met. This behavior is not configurable; you cannot prevent Sumo Logic from resolving a monitor. While it is technically possible to set a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended. Doing so may suppress unrelated alerts from being fired.
+   :::
+   ![alert page sep 23.png](/img/monitors/alert-page.png)
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/monitors/k-label.png')} alt="labels" width="300"/>
   * **Related Alerts**. A panel with Related Alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/monitors/related-alerts.png')} alt="related alerts" width="200"/>
     * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
@@ -314,7 +315,7 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 2. Click on any of the following checkboxes to enable your desired preferences:
    * **Display alert badge when my subscribed monitors are triggered**. the bell icon is displayed in the top nav
    * **Notify about only subscribed monitors**. the bell icon will only push notifications for monitors you're subscribed to

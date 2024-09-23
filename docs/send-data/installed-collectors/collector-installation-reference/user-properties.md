@@ -23,7 +23,7 @@ After downloading the collector binary package (e.g., tarball), create the use
 To create user.properties manually:
 
 1. Use a text editor (or any similar program) to create a new file.
-1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties) below. Parameters are case sensitive.
+1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties-parameters) below. Parameters are case sensitive.
 1. Save the file to `CollectorInstallationDirectory/config/user.properties`.
 
 :::important

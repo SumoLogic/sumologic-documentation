@@ -16,18 +16,18 @@ Azure SQL Database is a managed relational cloud database service. The Sumo Logi
 The Sumo Logic app for Azure SQL app uses the following log types:
 
 * Basic Metric
-* QueryStoreRuntimeStatisticsEvent
-* QueryStoreWaitStatisticsEvent
-* DatabaseWaitStatisticsEvent
-* BlockEvent
-* ErrorEvent
+* Query Store Runtime Statistics Event
+* Query Store Wait Statistics Event
+* Database Wait Statistics Event
+* Block Event
+* Error Event
 * Insight
 * TimeoutEvent
 * Automated Tuning
 * SQL Security Audit
 * Activity Logs
 
-For details on Azure SQL logs and metrics, see [Metrics and logs available](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available) in Azure help.
+For details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
 
 
 ### Sample log messages
@@ -99,7 +99,7 @@ You must explicitly enable diagnostic settings for each Azure SQL database that 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs`, and `Azure/SQL/Metrics`.
 
 ### Configure field in field schema
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 2. Search for following fields:
    - `tenant_name`. This field is tagged at the collector level and you can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
    - `location`. The region to which the resource name belongs to.
@@ -240,13 +240,13 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
-:::note
+
+##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
-:::
-
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
-
+In **Defender Plans** settings page turn on the **Databases** status under **Cloud Workload Protection** section.
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Plans.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
+
 
 ## Installing the Azure SQL app
 
@@ -255,18 +255,6 @@ This section provides instructions on how to install the Azure SQL app, and show
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Azure SQL app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure SQL app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing the Azure SQL dashboards
 
@@ -572,3 +560,15 @@ Use this dashboard to:
     * View drop index recommendations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Automatic-Tuning.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrading the Azure SQL app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure SQL app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

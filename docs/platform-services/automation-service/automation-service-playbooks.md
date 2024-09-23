@@ -22,7 +22,7 @@ To run a playbook, add it to an automation. For places in Sumo Logic where you c
 
 The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso--> <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
 1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/platform-services/automation-service/automation-service-integrations/) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} style={{border:'1px solid gray'}} alt="Action example" width="700"/>
 
@@ -34,15 +34,23 @@ Before you create your own playbook, first [view playbooks](#view-playbooks) to 
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso--> <br/>Previously-created playbooks display.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>Previously-created playbooks display.
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
-1. Click **Save**. The new playbook appears in the list of available playbooks.
-1. To configure the new playbook, select
-it from the list and click the **Edit** button at the bottom of the
-screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/><br/>Opening the playbook will present a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Enter a **Description** of the playbook to help others understand how to use it.
+1. Click **Create**. The new playbook appears in the list of available playbooks.
+1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
+1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
+1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook: 
+    * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/). 
+    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.) 
+    * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
+1. When you select one of these options, standard parameters for the trigger type are displayed. (If you select **Parse from json**, a box appears for you to enter the JSON payload.) Click the **Remove** icon to remove any parameters you don't want passed into the playbook, and if you want to add more parameters, click **Add New Param** at the bottom of the dialog.
+1. Click **Update**. The playbook will display a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. You can drag and drop them anywhere on the screen to allow you space to add multiple nodes between them.
+1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="500"/>
 
 See [Add nodes to a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-nodes-to-a-playbook) for next steps.
 
@@ -187,6 +195,14 @@ A filter node filters results from the preceding action based on the condition y
 1. Configure the conditions you want to use for filtering. 
 1. Click **Create**.
 
+
+
+## Playbook versioning
+
+Every time you edit a playbook, a new version of the playbook is saved. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained. 
+
+<img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
+
 ## Import and export playbooks
 
 With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
@@ -208,3 +224,65 @@ You can test a playbook to verify that it works properly. The test results show 
 1. In the **Test playbook** dialog, enter the requested information and click **Run**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-playbook.png')} alt="Test playbook" style={{border:'1px solid gray'}} width="600"/>
 1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
 1. Click the clock icon in the upper-right corner to see the testing history. Select **Latest actions** to see test results for all the actions on the playbook, or select items on the list to see results for individual actions. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results-filtered.png')} alt="Filtered test results" style={{border:'1px solid gray'}} width="600"/>
+
+## Troubleshoot playbooks
+
+You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.
+
+:::tip
+To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). 
+:::
+
+### Open playbooks that require investigation
+
+#### Open a playbook from an alert
+
+1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alerts-list).
+1. Open an alert that uses a playbook.
+1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
+1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors. 
+1. To investigate the problem, click the playbook name. The playbook opens in the Automation Service and any issues display in the results section.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
+
+#### Open a playbook from Cloud SIEM
+
+1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Click the **Automations** button at the top of the page to view the automations on the Insight or Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the issues display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
+
+#### Open a playbook from Cloud SOAR
+
+1. Open an [Incident](/docs/cloud-soar/incidents-triage/#incidents).
+1. On the [incident details](/docs/cloud-soar/incidents-triage/#incident-details) page, select **Operations > Playbooks**. Playbooks appear that have run for the incident. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbooks-in-cloud-soar.png')} alt="Playbooks on an incident in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Graph View** in the upper-right and click **>** to page through the playbooks. <br/><img src={useBaseUrl('img/platform-services/automation-service/cloud-soar-playbooks-graph-view.png')} alt="Playbook in graph view in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
+1. Click a node on the playbook that displays an error.
+
+Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
+
+### Investigate playbook problems
+
+After you have [opened a playbook that requires investigation](/docs/platform-services/automation-service/automation-service-playbooks/#open-playbooks-that-require-investigation), follow the steps below to investigate problems with the playbook.
+
+1. The **Filtered Results** section shows the status of actions that ran on the playbook. The example below shows two failed actions that require investigation. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-actions-in-filtered-results.png')} alt="Failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
+1. Click an action for an explanation of the problem. <br/><img src={useBaseUrl('img/platform-services/automation-service/reason-for-failed-action.png')} alt="Reasons for failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
+1. For more detailed information about the action, click the **Graph View** in the upper right and then click on the action. A pane opens that displays more information about the action. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/>
+1. Sometimes the playbook's payload will provide more information about why an action has a problem. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. Examine the payload for information that might help you resolve the problem. For example, the payload may be able to tell you if a field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. Based on what you uncover during investigation, you may need to make changes to the playbook and then [test the playbook](#test-a-playbook) to ensure it works correctly. 
+
+
+### Common playbook problems
+
+Following are some common problems that can occur with playbooks:
+* **No response from the bridge**<br/>The [automation bridge](/docs/platform-services/automation-service/automation-service-bridge/) is offline, or the bridge does not have the egress firewall settings to handle the outbound request.
+* **API rate limiting issues** <br/>The vendor has capped the number of requests that can be made to their API in a certain time frame.
+* **HTTPS connection pool issues** <br/>There are no available connections at the vendor, usually indicative of a vendor API health issue.
+* **A required field is empty that the action is looking for** <br/>A field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires. 
+* **Permission denied** <br/>The API key is incorrect on the [integration resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource), or the account running the playbook has invalid credentials or insufficient permissions.
+* **You have exceeded the actions limit** <br/>The number of actions that your organization can run per hour is limited to a certain threshold. Any actions that are launched beyond this [actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) will not run. You might exceed the limit if:
+    * There are alert surges. <br/>
+    * The playbook is not optimized properly and actions are stuck in a loop.
+    * There are Cartesian flag issues (too many nested elements to process as part of the returned API result).

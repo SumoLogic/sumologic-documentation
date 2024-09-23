@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+ 
 
 A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
 
@@ -39,7 +39,7 @@ You define the data that will reside in a partition by defining a routing expres
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

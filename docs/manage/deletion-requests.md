@@ -29,11 +29,19 @@ Key features:
 Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
 :::
 
+:::note
+During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
+:::
+
+:::info
+To create or view data deletion requests, you must have the **Manage Deletion Rules** capability. But to only view the data deletion requests, you must have either `viewDeletionRules` or `manageDeletionRules` capability.
+:::
+
 You can create a data deletion request from either the **Logs** tab or any **Log Search**.
 
 ### From the Logs tab
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).Kanso--> Go to **Manage Data** > **Logs** > **Deletion Requests**.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note

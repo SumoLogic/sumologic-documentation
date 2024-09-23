@@ -20,30 +20,12 @@ module.exports = {
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
-  ],
-  scripts: [
-    {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
-      async: true,
-    },
-    {
-      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
-      async: true,
-    },
-    {
-      src: './src/helper/google-tag-manager.js',
-      async: true,
-    },
-    {
-      src: './src/helper/google-analytics.js',
-      async: true,
-    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -95,12 +77,6 @@ module.exports = {
             ],
           },
         },
-        gtag: {
-          trackingID: 'G-CVH19TBVSL',
-        },
-        googleTagManager: {
-          containerId: 'GTM-58ZK7D',
-        },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
@@ -140,6 +116,16 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    ['@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-58ZK7D',
+      },
+    ],
+    ['@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-CVH19TBVSL',
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -284,6 +270,12 @@ module.exports = {
       getMissingResultsUrl({ query }) {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
+    },
+    announcementBar: {
+      id: 'opt-in-ga',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the Sumo Logic New UI!</a>',
+      backgroundColor: '#f2ecc9',
+      textColor: '#091E42',
     },
     prism: {
       theme: lightCodeTheme,
@@ -438,7 +430,7 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: '<div id="google_translate_element"></div>',
+            value: 'google_translate',
           },
           {
             to: 'https://www.sumologic.com/sign-up',
