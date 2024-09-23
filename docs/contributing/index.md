@@ -12,7 +12,7 @@ Welcome to Sumo Logic Open Source!
 
 We're a community of developers and practitioners dedicated to building reliable and secure modern apps. At Sumo Logic, we believe in the power of collaboration and community-driven innovation. Our open-source projects go beyond code—they're about fostering a vibrant, inclusive community where every contribution, big or small, makes an impact.
 
-Whether you’re fixing bugs, adding features, writing documentation, or sharing feedback, your contributions help others learn and grow within the Sumo Logic ecosystem. From typo fixes to new docs, we welcome all forms of participation.
+Whether you’re fixing bugs, adding features, writing documentation, or sharing feedback, your contributions help others to learn and grow within the Sumo Logic ecosystem. From typo fixes to new docs, we welcome all forms of participation.
 
 Our open-source [documentation](https://github.com/SumoLogic/sumologic-documentation) project is hosted on GitHub, where you’ll find everything you need to get started — guidelines on creating files, writing in Markdown, using templates, and submitting pull requests.
 
