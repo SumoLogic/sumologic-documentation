@@ -4,11 +4,12 @@ image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - search
   - scheduled_reports
-hide_table_of_contents: true
-authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+hide_table_of_contents: true  
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We are excited to introduce the **Multiple Scheduled Reports** feature to Sumo Logic dashboards. This powerful new capability allows you to configure multiple reports against a dashboard, providing enhanced flexibility and control over your reporting needs. Key features include:
 
