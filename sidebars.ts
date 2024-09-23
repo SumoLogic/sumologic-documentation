@@ -1947,6 +1947,7 @@ integrations: [
            label: 'OpenTelemetry',
            collapsible: true,
            collapsed: true,
+           link: {type: 'doc', id: 'integrations/microsoft-azure/opentelemetry/index'},
            items: [
              'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
              'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
@@ -2092,6 +2093,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/app-development/opentelemetry/index'},
             items: [
               'integrations/app-development/opentelemetry/puppet-opentelemetry',
               'integrations/app-development/opentelemetry/jira-opentelemetry',
@@ -2157,6 +2159,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/opentelemetry/index'},
             items: [
               'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
               'integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry',
@@ -2185,6 +2188,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/databases/opentelemetry/index'},
             items: [
               'integrations/databases/opentelemetry/cassandra-opentelemetry',
               'integrations/databases/opentelemetry/couchbase-opentelemetry',
@@ -2240,6 +2244,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/hosts-operating-systems/opentelemetry/index'},
             items: [
               'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
               'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
@@ -2264,6 +2269,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/pci-compliance/opentelemetry/index'},
             items: [
               'integrations/pci-compliance/opentelemetry/linux-opentelemetry',
               'integrations/pci-compliance/opentelemetry/windows-json-opentelemetry',
@@ -2449,6 +2455,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/web-servers/opentelemetry/index'},
             items: [
               'integrations/web-servers/opentelemetry/apache-opentelemetry',
               'integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry',

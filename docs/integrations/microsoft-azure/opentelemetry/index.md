@@ -1,7 +1,7 @@
 ---
-slug: /integrations/containers-orchestration/opentelemetry
+slug: /integrations/microsoft-azure/opentelemetry
 title: OpenTelemetry
-description: Integrate with Sumo Logic using our OpenTelemetry apps for container management and orchestration tools, enabling streamlined observability and monitoring.
+description: Integrate with Sumo Logic using our OpenTelemetry apps for Microsoft and Azure tools, enabling streamlined observability and monitoring.
 ---
 
 This guide has documentation for Sumo Logic OpenTelemetry apps.

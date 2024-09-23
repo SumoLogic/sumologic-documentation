@@ -1,7 +1,7 @@
 ---
-slug: /integrations/containers-orchestration/opentelemetry
+slug: /integrations/hosts-operating-systems/opentelemetry
 title: OpenTelemetry
-description: Integrate with Sumo Logic using our OpenTelemetry apps for container management and orchestration tools, enabling streamlined observability and monitoring.
+description: Learn about our Sumo Logic OpenTelemetry apps that you can use to monitor host metrics and Linux.
 ---
 
 This guide has documentation for Sumo Logic OpenTelemetry apps.
