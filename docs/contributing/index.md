@@ -12,7 +12,7 @@ We're a community of developers and practitioners dedicated to building reliable
 
 Whether you’re fixing bugs, adding features, writing documentation, or sharing feedback, your contributions help others to learn and grow within the Sumo Logic ecosystem. From typo fixes to new docs, we welcome all forms of participation.
 
-Our open-source [documentation](https://github.com/SumoLogic/sumologic-documentation) project is hosted on GitHub, where you can find all the resources to get started — guidelines on creating files, writing in Markdown, using templates, and submitting pull requests.
+Our open-source [documentation](https://github.com/SumoLogic/sumologic-documentation) project is hosted on GitHub, where you can find all the resources to get started—guidelines on creating files, writing in Markdown, using templates, and submitting pull requests.
 
 Whether you’re a seasoned developer or just starting, join us in building tools that help everyone better understand and optimize their systems. Ready to contribute? Explore our [contributing guide](https://help.sumologic.com/docs/contributing/) and get involved today!
 
