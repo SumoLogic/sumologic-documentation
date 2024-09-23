@@ -38,7 +38,7 @@ To collect metric data from the Snowflake SQL API, you must have an authorized S
 When you create a Snowflake SQL API source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Snowflake SQL API Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Snowflake SQL API** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
@@ -57,7 +57,11 @@ To configure the Snowflake SQL API Source:
 1. When you are finished configuring the source, click **Save**.
 
 ### Metrics JSON Configuration
-This source requires you upload a JSON configuration containing the details for which SQL queries to execute, the polling interval for how often to execute each query, and additional configuration for translating the results into metrics using the Prometheus format.
+This source requires you upload a JSON configuration containing the details for which SQL queries to execute, the polling interval for how often to execute each query, and additional configuration for translating the results into metrics using the Prometheus format. 
+
+:::note
+This metrics JSON file is not the entire source configuration. It is a separate JSON config file that specifically directs the C2C which queries should be executed, how often, and how to translate the results into metric data. You can use the JSON schema provided below to validate the file you upload matches the structure the C2C expects with any JSON schema validator website such as [https://jsonschema.dev](https://jsonschema.dev/).
+:::
 
 :::note
 The metric format used by this source is Prometheus. All metric and labels must follow the [Prometheus naming convention](https://prometheus.io/docs/concepts/data_model/). The source will validate this on start up and will stop if validation fails.

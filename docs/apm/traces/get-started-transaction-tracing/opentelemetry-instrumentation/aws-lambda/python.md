@@ -12,7 +12,7 @@ This document covers how to install and configure OpenTelemetry distributed tr
 
 Sumo Logic OTel Python Lambda layer supports:
 
-* Python version between 3.7 and 3.10
+* Python version between 3.7 and 3.11
 * x86_64 and arm64 architectures
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda Layer
@@ -117,7 +117,7 @@ The instructions below support only [AWS Base Images for Lambda](https://docs.aw
 Instrumentation of container based AWS Lambda function requires some changes in the Dockerfile and image rebuild. You'll need the following:
 
 * Docker
-* Python version between 3.7 and 3.10
+* Python version between 3.7 and 3.11
 * Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Lambda function image changes
