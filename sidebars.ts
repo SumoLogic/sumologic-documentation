@@ -2123,6 +2123,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/containers-orchestration/opentelemetry/index'},
             items: [
               'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
