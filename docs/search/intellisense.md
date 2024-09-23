@@ -11,7 +11,7 @@ description: Overview of the upcoming Intellisense enhancements for log search f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Is this in Beta?]
+<!-- Is this in Beta? -->
 
 Intellisense enhances log search functionality with syntax-driven autocompletion, next-operator prediction, and improved key-value pair support. These features streamline query creation and enable you to quickly navigate through large datasets, particularly JSON logs. A revamped log assist UI makes the query-writing process more intuitive and user-friendly.
 
@@ -79,7 +79,7 @@ Stores operator usage history, providing more accurate predictions for the next 
 
 ### Example walkthrough
 
-1. Open **Logs Search** → **New Code Editor**.
+1. Open **Logs Search** > **New Code Editor**.
 2. Type `parse` to start a query, and Intellisense will suggest options.
 3. For JSON logs, type a key (e.g., `status`). Select the suggested facet (e.g., `timestamp`) for more precise filtering.
 4. Add a filtering clause like `where status="error"` and group results using `group by`.
