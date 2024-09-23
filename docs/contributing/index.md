@@ -16,7 +16,7 @@ Our open-source [documentation](https://github.com/SumoLogic/sumologic-documenta
 
 Whether you’re a seasoned developer or just starting, join us in building tools that help everyone better understand and optimize their systems. Ready to contribute? Explore our [contributing guide](https://help.sumologic.com/docs/contributing/) and get involved today!
 
-You can also explore more Sumo Logic open-source projects on our [GitHub repository](https://github.com/SumoLogic).
+You can also explore more Sumo Logic open-source projects on our [GitHub site](https://github.com/SumoLogic).
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
