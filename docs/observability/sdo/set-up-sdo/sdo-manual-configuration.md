@@ -67,7 +67,7 @@ Complete the configuration for the build and deploy tool you use.
 
 ### Bitbucket for build and deploy
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
    * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/bitbucket#collecting-logs-for-bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
@@ -75,7 +75,7 @@ Complete the configuration for the build and deploy tool you use.
 ### Jenkins for build and deploy
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins).
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
     * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) and optionally [Optional - Advance Configuration](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) to configure the Jenkins Sumo Logic plugin.
@@ -86,7 +86,7 @@ Complete the configuration for the build and deploy tool you use.
 
 If you're using CircleCI for Build and Deploy, do the following:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. [Configure a hosted collector](/docs/send-data/hosted-collectors) to ingest CircleCI data into Sumo Logic and call it `Software Development Optimization`.
 1. Under this collector, create the following two [HTTP sources](/docs/send-data/hosted-collectors/http-source/logs-metrics):
    * `_sourceCategory=circleci/job-collector`
@@ -94,7 +94,7 @@ If you're using CircleCI for Build and Deploy, do the following:
 <br/>Sumo Logic sources, by default, have [multiline processing](/docs/send-data/reference-information/collect-multiline-logs/) enabled. You'll need to disable it here in order to collect structured logs for CircleCI.
 1. Copy and save the displayed URLs associated with the sources. You will use this information to upload data.
 1. Create Field Extraction Rules:
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
     1. [Create two FERs](/docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the are available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 1. (Optional) In order to use uncertified orbs (partner or community), navigate to your CircleCI platform and perform the below steps:
    1. Go to **Organization Settings > Security** page.

@@ -13,7 +13,7 @@ Changes to metadata are applied to messages going forward from this point in tim
 
 ## Edit an Installed Collector
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click the Installed Collector name, or click **Edit** on the right of the table row.
 1. Make your changes. Note that updated metadata is only be applied to newly ingested data; previously uploaded data retains its original metadata.
     * The Collector version is provided for reference and can be changed.
@@ -30,7 +30,7 @@ Changes to metadata are applied to messages going forward from this point in tim
 
 ## Edit a Hosted Collector
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click the Hosted Collector name, or click **Edit** to the right of the Collector name.<br/>  ![edit hosted collector.png](/img/collector/edit-hosted-collector.png)
 1. Change the name or change the metadata fields as needed. Note that updated metadata is only be applied to newly ingested data; previously uploaded data retains its original metadata.
    * If you set **Category** at the collector level, then all sources belonging to this collector are tagged with that value. If you later specify metadata at the source level, the collector metadata will be overwritten.
