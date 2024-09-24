@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/traces/servicemap.png')} alt="icon" width="45"/>
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Services, click the **+ New** button at the top of the screen and select **Services**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Services, go to your **Home** dashboard and select **Services**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Services, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**. 
  
@@ -121,7 +121,7 @@ The **Services Map** and **Services List** panels, available out of the box, ena
 
 To add a Services panel to your Dashboard:
 
-1. Open an existing Dashboard or create a new Dashboard. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
+1. Open an existing Dashboard or create a new Dashboard. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Go to your **Home** dashboard and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
 1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/><img src={useBaseUrl('img/traces/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="800"/>
 1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> <img src={useBaseUrl('img/traces/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="500"/>
 1. (Optional) Select from the dropdown menus to filter by the following:<br/> <img src={useBaseUrl('img/traces/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/> 
