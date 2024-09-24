@@ -100,4 +100,4 @@ To prevent abuse of system resources or runaway processes, the Automation Servic
 
 <ActionsLimitQuery/>
 
-Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
+Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions counts toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
