@@ -4,97 +4,71 @@ title: AI-Driven Alerts for Metrics Anomalies
 description: Learn about AI-Driven Alerts for metrics-based monitors, which includes advanced anomaly detection and automated incident resolution through playbooks.
 ---
 
-<!-- Move this content to /monitors/alerts docs -->
+<!-- Move entire doc to /monitors/alerts docs -->
 
-AI-driven alerts for metrics-based monitors leverage machine learning-powered anomaly detection and automated playbooks to help you reduce alert fatigue and improve incident response times. By analyzing historical data and identifying significant deviations, the system isolates critical issues while filtering out irrelevant alerts.
+AI-driven alerts for metrics-based monitors use machine learning to analyze historical data, detect significant deviations, and filter out irrelevant alerts, reducing alert fatigue and allowing teams to focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution.
 
-These capabilities extend across both logs and metrics data, providing a comprehensive solution for monitoring modern applications. With integrated playbooks, you can automate incident resolution workflows, streamlining the response process and enhancing operational efficiency.
+Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, streamlining workflows, and improving response times. The customizable "Cluster anomalies" detector allows users to set specific triggers for spiky systems, further reducing false positives and enabling faster issue resolution.
 
+<details>
+<summary>What are AI-driven alerts?</summary>
+
+AI-driven alerts use machine learning to analyze historical data, establish baselines, and detect significant deviations in metrics signals. Seasonality detection reduces false positives, and integrated playbooks automate incident response, helping teams resolve issues faster.
+
+</details>
 
 ## Key features
 
 ### Advanced anomaly detection
 
-- **Machine Learning-Based Models**. Utilize 30 days of historical data to establish a baseline for system behavior, identifying deviations that warrant investigation.
-- **Seasonality Detection**. Automatically detects recurring patterns (e.g., hourly or weekly cycles), reducing false positives from expected periodic spikes.
-- **Auto-Tuning of Detection Parameters**. Minimizes the need for manual configuration by automatically tuning parameters to balance noise and relevance.
-- **Extensible Detection Framework**. Allows users to customize detection rules, such as the "Cluster anomalies" feature, which can detect incidents based on multiple data points exceeding thresholds within a defined time window.
+- **Machine learning models**. Use 30 days of historical data to establish baseline behavior and detect deviations.
+- **Seasonality detection**. Identify recurring patterns, minimizing false positives from periodic spikes.
+- **Auto-tuning**. Automatically adjust detection parameters to balance noise and relevance.
+- **Extensible detection framework**. Customizable rules, such as "Cluster anomalies," allow for advanced incident detection based on multiple data points exceeding thresholds within a defined time window.
 
-### Playbook Integration
+### Playbook integration
 
-- **Automation Service**. Users can link playbooks to metrics-based monitors, allowing automated responses to anomalies. Playbooks can be configured to gather diagnostics, notify relevant teams, and execute recovery tasks like restarting services or scaling infrastructure.
-
+Automate responses to anomalies, including diagnostics, team notifications, and recovery tasks like restarting services or scaling infrastructure by linking playbooks to metrics-based monitors.
 
 ## Prerequisites
 
-To fully leverage AI-driven alerts for metrics monitors, the following conditions must be met:
+To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 - **Automation Service**. Required for linking playbooks to metrics-based monitors.
-- **Metrics Data**. Metrics data must be sent to Sumo Logic for anomaly detection.
-- **Metrics Aggregation**. Queries that return multiple time series should be aggregated (e.g., using `sum` or `avg` operators) before applying anomaly detection.
+- **Metrics data**. Metrics data must be sent to Sumo Logic for anomaly detection.
+- **Metrics aggregation**. Queries that return multiple time series should be aggregated (e.g., using `sum` or `avg` operators) before applying anomaly detection.
 
 
-## How AI-Driven Alerts work
 
-AI-driven alerts use a machine learning model to analyze historical data and establish a baseline for expected behavior in metrics signals. The model continuously monitors metrics data and detects significant deviations, triggering alerts for critical issues while ignoring minor, expected fluctuations.
+## Create a metrics anomaly monitor
 
-Seasonality detection ensures that recurring patterns, such as daily traffic spikes, do not cause unnecessary alerts. Users can also fine-tune anomaly detection through the **extensible detection framework**, enabling advanced configurations like clustering anomalies over a specified time window.
-
-When an anomaly is detected, associated **playbooks** are automatically triggered. These playbooks can handle diagnostic steps, escalate issues to relevant team members, and even automate recovery actions, significantly reducing the time to resolution.
-
-
-## Business impact
-
-AI-driven alerts help you manage the growing volume of data and complexity in modern applications by reducing irrelevant alerts and streamlining the resolution process.
-
-- **Alert Reduction**. AI-driven anomaly detection reduces the number of irrelevant alerts by focusing on significant deviations, allowing teams to address the most critical issues.
-- **Time Savings**. By automating incident response tasks, including diagnostics and recovery, teams can resolve incidents more quickly and efficiently.
-- **Operational Efficiency**. Reducing alert fatigue and automating repetitive tasks frees up resources for higher-value activities.
-
-For example, high-traffic systems often generate frequent alerts due to predictable spikes in activity. AI-driven alerts can differentiate between expected behavior and true anomalies, significantly reducing alert noise.
-
-
-## Use Cases
-
-### Reducing alert fatigue in high-traffic environments
-
-A user with a high-volume application experiences frequent CPU spikes. AI-driven anomaly detection identifies expected traffic patterns and filters out predictable noise, allowing the team to focus on genuine issues.
-
-### Automating incident response in complex infrastructure
-
-A user managing a large-scale, multi-service infrastructure uses AI-driven alerts and playbooks to automate incident response. When an anomaly is detected, the playbook automatically gathers diagnostics, escalates the issue to the appropriate teams, and initiates a recovery action such as restarting affected services.
-
-### Customizing anomaly detection for systems with frequent spikes
-
-For systems with inherently spiky behavior, the **Cluster anomalies** detector allows you to configure the system to trigger alerts only when a specific number of anomalies occur within a defined time window. This reduces false positives while ensuring critical incidents are captured.
-
+1. Go to **Alerts** > **Monitors**, then click **Add** > **New Monitor**.
+1. Under **Trigger Conditions**:
+   * For **Monitor Type**, select **Metrics**.
+   * For **Detection Method**, select **Anomaly**.
+1. Enter your alert conditions, notification settings by going to [Create a Monitor](docs/alerts/monitors/create-monitor.md) and following steps 2 to the end.
 
 ## Examples
 
-### Configuring a cluster anomaly detector
-
-A user configures a **Cluster anomalies** detector that triggers alerts when 5 out of 10 data points in a 10-minute window exceed the baseline threshold. This allows for detection of incidents in environments with frequent spikes, without triggering unnecessary alerts.
-
-### Automating Incident Resolution with Playbooks
-
-A user sets up a playbook for handling CPU usage anomalies. When the system detects that CPU usage has exceeded the baseline for five consecutive minutes, the playbook automatically gathers diagnostic data (such as CPU and memory logs), notifies the on-call team, and attempts to restart the affected server.
-
+* **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in spiky environments.
+* **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
 
 ## Limitations
 
-There are a few considerations to keep in mind when using AI-driven alerts for metrics monitors:
+Anomaly detection applies to one time series at a time. Multi-time series queries must be aggregated before detection.
 
-- **Single time series limitation**. Anomaly detection is restricted to one time series at a time. For multi-time series queries, data must be aggregated before anomaly detection can be applied.
-- **Automation service requirement**. Playbook functionality requires the Automation Service.
+## Getting started with playbooks
 
+1. Visit **Automation Service App Central**.
+2. Browse over 500 pre-built playbooks.
+3. Clone and customize a playbook based on your requirements.
 
-## Getting Started with Playbooks
+By leveraging pre-built playbooks, you can quickly automate incident responses, reducing time to resolution.
 
-To create a playbook for automating incident responses:
+## More information
 
-1. Visit the **Automation Service App Central**.
-2. Browse through over 500 pre-built playbooks.
-3. Clone an existing playbook that fits your needs.
-4. Customize the playbook based on your specific monitoring and automation requirements.
-
-By leveraging pre-existing playbooks, you can quickly deploy automated workflows for incident response, significantly reducing time to resolution.
+* [Automation Service](/docs/platform-services/automation-service)
+* [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/)
+* [Create a Monitor](/docs/alerts/monitors/create-monitor)
+* [App Central](/docs/platform-services/automation-service/app-central)
+* [Metrics Operators](/docs/metrics/metrics-operators)
