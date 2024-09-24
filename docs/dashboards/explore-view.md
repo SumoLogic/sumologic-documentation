@@ -21,7 +21,7 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 
 To navigate, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Go to your **Home** dashboard and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to your **Home** dashboard and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
 3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. 
 
 ### Stack linking

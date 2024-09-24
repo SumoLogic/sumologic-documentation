@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 :::warning
 Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
 :::
- 
+
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
@@ -195,12 +195,10 @@ This section describes the Root Cause Explorer UI and how to interact with it.
 
 ### Accessing Root Cause Explorer
 
-You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI, and by selecting Root Cause Explorer in the AWS Observability UI from an Events of Interest dashboard panel as shown below.
-
 To open the Root Cause Explorer:
 
-1. Click **+ New** and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
-2. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.![rce](/img/rce/rce1.png)
+1. Go to your **Home** dashboard and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
+2. Root Cause Explorer opens, displaying Events of Interest (EOIs) for the currently selected filters and time range.![rce](/img/rce/rce1.png)
 
     If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.
 
