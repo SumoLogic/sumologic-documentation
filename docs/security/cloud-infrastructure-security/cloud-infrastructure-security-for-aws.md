@@ -561,7 +561,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 To most efficiently use the solution to address security concerns, we recommend using the dashboards in the following workflow:
 1. Look at the [Risk Overview](#risk-overview) dashboard to get an overall picture of the security posture of your environment. Pivot or browse to other dashboards to see details in each area.
 1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention.
-1. View the [Security Control Failures](#security-control-failures-dashboards) dashboards to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
+1. View the [Security Control Failures](#security-control-failures---aws-security-hub) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
 1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation.
 1. Pivot into the [Risk Overview](#risk-overview) dashboard for specific resources that have issues to see any related activity. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
 
