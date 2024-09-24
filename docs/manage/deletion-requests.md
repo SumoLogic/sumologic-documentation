@@ -63,7 +63,7 @@ The Audit Event Index has detailed JSON logs. To search for audit events for dat
 
 #### Delete system events
 
-This System Event Index has detailed JSON logs. To search for system events for a data deletion logs use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+The System Event Index has detailed JSON logs. To search for system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
 
 ```
 (_index=sumologic_system_events) AND _sourceCategory=deletionRule
