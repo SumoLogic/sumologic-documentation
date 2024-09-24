@@ -127,20 +127,11 @@ Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwardi
     In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/scheduled-views/add-scheduled-view/).
     :::
 1. Click the **Enable Data Forwarding** checkbox. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
-1. **Forward Destination**. Choose one of the following:  
-   * **Existing Amazon S3 Destination**. Click the drop-down menu next to **Amazon S3 Destination** to select an existing S3 destination.
+1. **Forwarding Destination**. Choose one of the following:  
+   * **Existing Amazon S3 Destination**. If you select this option, select the destination in the **Amazon S3 Destination** field below.
    * **New Amazon S3 Destination**. Follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above to create a new S3 destination.
-1. **File Format**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
-      * `{index}` will be replaced by the name of the partition or scheduled view.
-      * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
-      * `{hour}` will be replaced by the hour of the day (0-23).
-      * `{minute}` will be replaced by the minute of the hour.
-      * `{second}` will be replaced by the second of the minute.
-      * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
-      :::note
-      For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
-      :::
-1. ([Closed beta participants only](/release-notes-service/2024/09/26/manage)). Participants in the closed beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
+1. **Amazon S3 Destination**. If you chose **Existing Amazon S3 Destination** for the forwarding destination, select the destination here.
+1. Click **Data Forwarding Configuration**. Options appear for forwarding the data. <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
    1. **Included Data**. Select the kind of data to forward:
        * **Raw**. Raw logs only.
        * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
@@ -149,7 +140,16 @@ Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwardi
        * **Text**. Plain text. (Available only if you choose **Raw** above.)
        * **CSV**. Comma-separated values. (Available if you choose **Raw + Metadata** or **All** above.)
        * **JSON**. Java Script Object Notation. (Available if you choose **Raw + Metadata** or **All** above.) Select **JSON** if you want to ensure that forwarded data can be re-ingested easily.
-   1. **File Prefix**. Follow the directions for **File Format** in the preceding step.
+   1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
+      * `{index}` will be replaced by the name of the partition or scheduled view.
+      * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
+      * `{hour}` will be replaced by the hour of the day (0-23).
+      * `{minute}` will be replaced by the minute of the hour.
+      * `{second}` will be replaced by the second of the minute.
+      * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
+      :::note
+      For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Prefix** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
+      :::
 1. Click **Save** at the top of the panel to save your changes and start forwarding data. 
 
 For information about how the data is forwarded, see [Forwarding interval](#forwarding-interval) and [File format of forwarded data](#file-format-of-forwarded-data).
@@ -160,16 +160,13 @@ Let's say you want to take data from Sumo Logic and run additional analysis on i
 
 Let's suppose you have an S3 bucket named `amzn-s3-demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
 
-1. [Create a destination](/docs/manage/data-forwarding/amazon-s3-bucket/#configure-an-s3-data-forwarding-destination) that points to the `amzn-s3-demo-bucket1` bucket. For example, name the destination **Test destination**. 
+1. [Create a destination](/docs/manage/data-forwarding/amazon-s3-bucket/#configure-an-s3-data-forwarding-destination) that points to the `amzn-s3-demo-bucket1` bucket. For example, name it **Test destination**. 
 1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/amazon-s3-bucket/#configure-an-s3-data-forwarding-destination).
 1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
     1. In **Forwarding Destination** select **Existing Amazon S3 Destination**.
     1. In **Amazon S3 Destination** select the name of the destination you created earlier, for example, **Test destination**. 
-1. Click **Save** on the partition or Scheduled view. The data will start forwarding to the S3 bucket specified in the destination.
-
-:::note
-[Closed beta participants](/release-notes-service/2024/09/26/manage) will see an additional  **Data Forwarding Configuration** section that will allow them to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
-:::
+1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
+1. Click **Save** on the partition or Scheduled View. The data will start forwarding to the S3 bucket specified in the destination.
 
 ## Error and alert conditions
 
