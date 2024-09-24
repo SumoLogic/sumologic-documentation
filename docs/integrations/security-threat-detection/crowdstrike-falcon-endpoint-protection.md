@@ -184,7 +184,7 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration CrowdStrike Falcon Endpoint Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) for the CrowdStrike Falcon Endpoint Protection app, follow the instructions provided. These instructions will guide you through the process of creating a source using the CrowdStrike Falcon Endpoint Protection source category, which you will need to use when installing the app. By following these steps, you can ensure that your CrowdStrike Falcon Endpoint Protection app is properly integrated and configured to collect and analyze your CrowdStrike Falcon Endpoint Protection data.
+To set up the [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) for the CrowdStrike Falcon Endpoint Protection app, follow the instructions provided. These instructions will guide you through the process of creating a source using the CrowdStrike Falcon Endpoint Protection source category, which you will need to use when installing the app. By following these steps, you can ensure that your CrowdStrike Falcon Endpoint Protection app is properly integrated and configured to collect and analyze your CrowdStrike Falcon Endpoint Protection data.
 
 ## Installing the CrowdStrike Falcon Endpoint Protection app
 
