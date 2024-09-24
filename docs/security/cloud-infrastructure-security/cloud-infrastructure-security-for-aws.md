@@ -355,11 +355,11 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure Amazon GuardDuty. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **4.1 GuardDuty service configuration**
-          * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
-       * **4.2 GuardDuty Sumo log source configuration**
+       * **4.1 GuardDuty Sumo log source configuration**
           * **Create Sumo Logic HTTP logs source**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, enter your existing source category name for the GuardDuty logs. 
+       * **4.2 GuardDuty service configuration**
+          * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent. To enable multiple regions, enter regions in a comma-separated list. See [Multi-region enablement](#multi-region-enablement) above.
           
           <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-4.png')} alt="GuardDuty configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
