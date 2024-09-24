@@ -42,7 +42,7 @@ To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 ## Create a metrics anomaly monitor
 
-1. Go to **Alerts** > **Monitors**, then click **Add** > **New Monitor**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 1. Under **Trigger Conditions**:
    * For **Monitor Type**, select **Metrics**.
    * For **Detection Method**, select **Anomaly**.
