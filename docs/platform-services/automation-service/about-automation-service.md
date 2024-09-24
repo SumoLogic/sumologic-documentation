@@ -101,5 +101,4 @@ import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
 
 <ActionsLimitQuery/>
 
-Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward the action count
-User Choice, IF, and Task actions do not count toward the action count.
+Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
