@@ -55,7 +55,7 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 #### Delete audit events
 
-This Audit Event Index has detailed JSON logs. To search for audit events for a data deletion logs use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+The Audit Event Index has detailed JSON logs. To search for audit events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
 
 ```
 (_index=sumologic_audit_events) AND _sourceCategory=deletionRule
