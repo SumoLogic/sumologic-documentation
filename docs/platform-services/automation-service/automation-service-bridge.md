@@ -88,7 +88,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  Kanso--> <!-- There is no option to install a bridge in the new UI. -->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -99,7 +99,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).. Kanso--> In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  Kanso--> <!-- There is no option to install a bridge in the new UI. -->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
