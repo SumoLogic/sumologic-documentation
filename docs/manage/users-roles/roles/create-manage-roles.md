@@ -28,7 +28,7 @@ To create a role:
 1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. For examples, see [Search Filter and Index Access examples](#search-filter-and-index-access-examples) below. (For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
-   * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
+   * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partition-for-cloud-siem-signals).
 1. **Index Access**. Allows or denies access to [search indexes](/docs/manage/partitions/data-tiers/). Select one of the following and choose the indexes in the **Select Indexes** box that appears:
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
@@ -42,7 +42,7 @@ Follow this process to restrict access using the **Search Filter** and **Index A
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
 2. Create the role using the **Search Filter** and/or **Index Access** sections.   
-3. Verify the dataset access is correct using [emulation](#test-search-filters).
+3. Verify the dataset access is correct using [emulation](#test-a-role-with-search-filter-and-index-access-defined).
 4. [Assign the role](#add-a-user-to-a-role) to the relevant users.
 
 ### Search Filter and Index Access examples
