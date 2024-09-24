@@ -104,7 +104,7 @@ json "resourceId"
 If this rule already exists, there's no need to create it again.
 
 ```sql
-Rule Name: AzureObservabilityMetadataExtractionFunctionAppLevel
+Rule Name: AzureObservabilityMetadataExtractionAppServiceLevel
 ```
 
 ```sql title="Metric match expression"
