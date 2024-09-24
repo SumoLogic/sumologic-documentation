@@ -93,7 +93,7 @@ Use the top menu to access:
 * [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
 * [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
 * <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
-* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](#settings-menu). Configure Cloud SOAR settings.
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](#settngs-menu). Configure Cloud SOAR settings.
 
 #### Settings menu
 
