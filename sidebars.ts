@@ -23,13 +23,14 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
+        'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-classic',
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
         'get-started/apps-integrations',
         'get-started/library',
-        'get-started/sumo-logic-ui',
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
@@ -1946,6 +1947,7 @@ integrations: [
            label: 'OpenTelemetry',
            collapsible: true,
            collapsed: true,
+           link: {type: 'doc', id: 'integrations/microsoft-azure/opentelemetry/index'},
            items: [
              'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
              'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
@@ -2091,6 +2093,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/app-development/opentelemetry/index'},
             items: [
               'integrations/app-development/opentelemetry/puppet-opentelemetry',
               'integrations/app-development/opentelemetry/jira-opentelemetry',
@@ -2122,6 +2125,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/containers-orchestration/opentelemetry/index'},
             items: [
               'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
@@ -2155,6 +2159,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/opentelemetry/index'},
             items: [
               'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
               'integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry',
@@ -2183,6 +2188,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/databases/opentelemetry/index'},
             items: [
               'integrations/databases/opentelemetry/cassandra-opentelemetry',
               'integrations/databases/opentelemetry/couchbase-opentelemetry',
@@ -2238,6 +2244,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/hosts-operating-systems/opentelemetry/index'},
             items: [
               'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
               'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
@@ -2262,6 +2269,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/pci-compliance/opentelemetry/index'},
             items: [
               'integrations/pci-compliance/opentelemetry/linux-opentelemetry',
               'integrations/pci-compliance/opentelemetry/windows-json-opentelemetry',
@@ -2447,6 +2455,7 @@ integrations: [
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
+            link: {type: 'doc', id: 'integrations/web-servers/opentelemetry/index'},
             items: [
               'integrations/web-servers/opentelemetry/apache-opentelemetry',
               'integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry',
@@ -2845,7 +2854,6 @@ integrations: [
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
-        'get-started/sumo-logic-ui-new',
       ],
     },
   ],
