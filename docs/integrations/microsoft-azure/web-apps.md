@@ -14,11 +14,20 @@ The Azure Web Apps app allows you to collect Azure web server and application di
 For more information, see [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/).
 
 ## Log types
-<!-- TODO 9 types of logs -->
-<!-- Add activity logs -->
+
 The Azure Web Apps app supports:
 * **Web Server Logging.** Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
 * **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
+* **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
+* **AppServiceConsoleLogs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceconsolelogs).
+* **AppServiceHTTPLogs**, provides detailed records of all HTTP requests made to your Azure services, helping you analyze traffic patterns and diagnose issues. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicehttplogs).
+* **AppServiceEnvironmentPlatformLogs**, offers insights into the underlying platform environment of your Azure App Service, allowing you to monitor the health and performance of your app's infrastructure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceenvironmentplatformlogs).
+* **AppServiceAuditLogs**, captures administrative actions taken on your Azure App Service resources, enabling you to track changes and maintain compliance. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceauditlogs).
+* **AppServiceFileAuditLogs**, records actions taken on files within your Azure App Service, assisting in the auditing of file access and modifications. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicefileauditlogs).
+* **AppServiceAppLogs**, provides application-specific logging information, giving developers insights into application behavior and issues. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceapplogs).
+* **AppServiceIPSecAuditLogs**, details the use of IPsec policies within your Azure App Service, helping to ensure secure network configurations. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceipsecauditlogs).
+* **AppServicePlatformLogs**, gives an overview of the platform-level events that occur within your Azure App Service, helping you monitor service reliability and performance. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceplatformlogs).
+* **AppServiceAntivirusScanAuditLogs**, provides records of antivirus scan activities within your Azure App Service, ensuring that your applications remain secure from malicious threats. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceantivirusscanauditlogs).
 
 ### Sample log messages
 
@@ -41,7 +50,7 @@ _sourceCategory=Azure/Web-app
 ```
 
 ## Collecting logs for Azure Web Apps
-<!-- Add all types of logs here -->
+
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
@@ -119,9 +128,10 @@ Rule Name: AzureResourceIdExtractionFER
 Applied at: Ingest Time
 Scope (Specific Data): tenant_name=*
 ```
-<!-- Update this -->
+
 ```sql title="Parse Expression"
-json "resourceId"
+json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+| if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
 | toUpperCase(resourceId) as resourceId
 | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
 | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -129,7 +139,7 @@ json "resourceId"
 | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
 | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
 | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
 ```
 
 
@@ -226,82 +236,125 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Overview.png')} alt="Azure WebApps Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
+### Antivirus Scan Audit
+
+The **Azure WebApps - Antivirus Scan Audit** dashboard provides detailed insights into the antivirus scan results and audit logs associated with your Azure WebApps.
+
+Use this dashboard to:
+*  View recent antivirus scan results and their statuses.
+*  Analyze audit logs for compliance and security checks.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Content and Client Platform
+
+The **Azure WebApps - Content and Client Platform** dashboard offers an overview of the content delivery performance and client platform statistics for your Azure WebApps.
+
+Use this dashboard to:
+*  Monitor content delivery metrics and client platform usage.
+*  Identify trends in client platform access and performance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+
 ### Cost
 
-The **Azure WebApps - Cost** dashboard provides information about the expenses associated with your Azure WebApps. This includes details on the cost of resources, usage trends, and cost management insights.
+The **Azure WebApps - Cost** dashboard presents an overview of the costs associated with your Azure WebApps services.
 
 Use this dashboard to:
-* Monitor and analyze your spending on Azure WebApps.
-* Review cost trends and identify areas where you can optimize spending.
-* Access detailed billing information and cost breakdowns.
+*  Analyze cost trends and breakdowns for your Azure WebApps usage.
+*  Review budget forecasts and optimize spending.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Cost.png')} alt="Azure WebApps Cost dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Error
+### IP Restrictions
 
-The **Azure WebApps - Error** dashboard provides insights into errors encountered by your Azure WebApps. This includes error rates, types of errors, and patterns over time.
+The **Azure WebApps - IP Restrictions** dashboard provides insights into the IP address restrictions configured for your Azure WebApps.
 
 Use this dashboard to:
-* Track and investigate error occurrences in your Azure WebApps.
-* Identify and diagnose recurring error patterns.
-* Review error logs and detailed reports to improve function reliability.
+*  View configured IP restrictions and their statuses.
+*  Monitor access attempts based on IP restrictions.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Error.png')} alt="Azure WebApps Error dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Memory
 
-The **Azure WebApps - Memory** dashboard provides information on memory usage and consumption by your Azure WebApps. This includes metrics on memory allocation, usage patterns, and any potential memory issues.
+The **Azure WebApps - Memory** dashboard tracks memory usage and performance metrics for your Azure WebApps.
 
 Use this dashboard to:
-* Monitor memory consumption and efficiency of your Azure WebApps.
-* Identify and address memory-related performance issues.
-* Analyze trends in memory usage to optimize function performance.
+*  Monitor real-time memory utilization and trends.
+*  Identify memory-related performance issues and bottlenecks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Memory.png')} alt="Azure WebApps Memory dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
-The **Azure WebApps - Network** dashboard provides details on network traffic and connectivity related to your Azure WebApps. This includes data on inbound and outbound traffic, network latency, and potential network issues.
+The **Azure WebApps - Network** dashboard offers comprehensive insights into the network performance and traffic for your Azure WebApps.
 
 Use this dashboard to:
-* Track network activity and performance of your Azure WebApps.
-* Diagnose network-related issues and connectivity problems.
-* Monitor network usage and optimize network configuration.
+*  Analyze network traffic patterns and performance metrics.
+*  Identify potential network issues affecting your applications.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Network.png')} alt="Azure WebApps Network dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations
 
-The **Azure WebApps - Operations** dashboard provides an overview of operational metrics and activities related to your Azure WebApps. This includes I/O Read, Write bytes/second and I/O Read, Write operations/second.
+The **Azure WebApps - Operations** dashboard provides a comprehensive view of the operational metrics and activities associated with your Azure WebApps.
 
 Use this dashboard to:
-* Monitor the operational status and health of your Azure WebApps.
-* Review deployment activities and execution metrics.
-* Analyze operational trends and optimize function management.
+*  Monitor operational events and their impact on service availability.
+*  Analyze trends in operational performance over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Operations.png')} alt="Azure WebApps Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS Statistics
 
-The **Azure WebApps - OS Statistics** dashboard provides information on operating system metrics and statistics relevant to your Azure WebApps. This includes details on current assemblies, number of processor threads and other OS-level performance indicators.
+The **Azure WebApps - OS Statistics** dashboard presents an overview of operating system metrics related to your Azure WebApps.
 
 Use this dashboard to:
-* Track OS-level performance metrics impacting your Azure WebApps.
-* Monitor Current assemblies, threads, and handles for optimal performance.
-* Identify and address OS-related performance issues.
+*  Monitor key OS performance indicators and health metrics.
+*  Identify potential issues at the operating system level.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-OS-Statistics.png')} alt="Azure WebApps OS Statistics dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Performance
+### Platform
 
-The **Azure WebApps - Performance** dashboard provides insights into the performance of your Azure WebApps. This includes metrics on execution times, throughput, and overall function efficiency.
+The **Azure WebApps - Platform** dashboard provides insights into the underlying platform performance and configurations of your Azure WebApps.
 
 Use this dashboard to:
-* Monitor and analyze the performance of your Azure WebApps.
-* Identify performance bottlenecks and optimize function execution.
-* Review performance metrics and trends to ensure optimal function performance.
+*  Monitor platform health metrics and configurations.
+*  Identify trends and issues related to platform performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Performance.png')} alt="Azure WebApps Performance dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Server Operations - Errors and Response Codes
+
+The **Azure WebApps - Server Operations - Errors and Response Codes** dashboard details the error rates and response codes generated by your Azure WebApps.
+
+Use this dashboard to:
+*  Analyze error trends and response code distribution.
+*  Identify common issues affecting application performance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Server Operations - Request and Response Time
+
+The **Azure WebApps - Server Operations - Request and Response Time** dashboard tracks request and response times for your Azure WebApps.
+
+Use this dashboard to:
+*  Monitor performance metrics related to request and response times.
+*  Identify latency issues and optimize response performance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Traffic Insights - Apps and Requests
+
+The **Azure WebApps - Traffic Insights - Apps and Requests** dashboard provides a comprehensive view of traffic patterns for your Azure WebApps.
+
+Use this dashboard to:
+*  Analyze traffic metrics for different applications and requests.
+*  Identify usage trends and optimize application performance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
