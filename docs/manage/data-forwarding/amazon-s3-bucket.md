@@ -120,8 +120,8 @@ Once the destination is created, you can start data forwarding for specific part
 Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination) that indicates the S3 bucket to receive the data, you can forward data to the destination from partitions and Scheduled Views.
 
 1. Depending on whether you want to forward data from a partition or a Scheduled View:
-    * Partition: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
-    * Scheduled View: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. 
+    * **Partition**: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+    * **Scheduled View**: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. 
 1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
     :::tip
     In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/scheduled-views/add-scheduled-view/).
@@ -140,7 +140,7 @@ Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwardi
       :::note
       For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
       :::
-1. ([Closed beta participants only](/release-notes-service/2024/09/30/manage)). Participants in the closed beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
+1. ([Closed beta participants only](/release-notes-service/2024/09/26/manage)). Participants in the closed beta will see a new **Data Forwarding Configuration** section: <br/><img src={useBaseUrl('img/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
    1. **Included Data**. Select the kind of data to forward:
        * **Raw**. Raw logs only.
        * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
@@ -168,7 +168,7 @@ Let's suppose you have an S3 bucket named `amzn-s3-demo-bucket1` where you want 
 1. Click **Save** on the partition or Scheduled view. The data will start forwarding to the S3 bucket specified in the destination.
 
 :::note
-[Closed beta participants](/release-notes-service/2024/09/30/manage) will see an additional  **Data Forwarding Configuration** section that will allow them to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
+[Closed beta participants](/release-notes-service/2024/09/26/manage) will see an additional  **Data Forwarding Configuration** section that will allow them to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
 :::
 
 ## Error and alert conditions
