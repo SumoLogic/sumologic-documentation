@@ -306,8 +306,8 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'senddata',
-                label: 'Send Data (Collectors)',
-                icon: 'cloud_upload',
+                label: 'Collectors, Sources',
+                icon: 'settings',
               },
               {
                 type: 'docSidebar',
@@ -331,7 +331,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
                 label: 'Apps and Integrations',
-                icon: 'apps',
+                icon: 'grid_view',
               },
               {
                 type: 'docSidebar',
@@ -349,7 +349,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
-                icon: 'query_stats',
+                icon: 'speed',
               },
               {
                 type: 'docSidebar',
@@ -361,7 +361,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
-                icon: 'swap_horiz',
+                icon: 'settings_suggest',
               },
               {
                 type: 'docSidebar',
