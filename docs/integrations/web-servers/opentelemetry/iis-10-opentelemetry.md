@@ -308,7 +308,7 @@ The **IIS - ASP.NET Applications** dashboard provides a high-level view of the A
 
 ### Cache Performance
 
-The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cahce, cache memory, file cache, and URI cache.
+The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cache, cache memory, file cache, and URI cache.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS-Cache-Performance" />
 
