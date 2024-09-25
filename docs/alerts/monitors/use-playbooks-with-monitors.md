@@ -39,7 +39,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  
 1. The Automation Service screen opens on the **Playbook** tab.
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/).
@@ -66,6 +66,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/monitors/playbook-running-icon.png')} alt="Playbook running icon" width="30" /> | Running |
    | <img src={useBaseUrl('img/monitors/playbook-user-interaction-icon.png')} alt="Waiting for user interaction icon" width="30" /> | Waiting for user interaction |
    | <img src={useBaseUrl('img/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
+   | <img src={useBaseUrl('img/monitors/playbook-completed-with-errors-icon.png')} alt="Completed icon" width="30" /> | Completed with errors |
 
 1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
 1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />

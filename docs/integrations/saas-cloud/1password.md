@@ -161,13 +161,13 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for 1Password
 
 ## Installing the 1Password app
 
-import AppInstall from '../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing 1Password dashboards
 
-import ViewDashboards from '../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
@@ -209,7 +209,7 @@ The **1Password - Audit Security** dashboard provides a comprehensive view of se
 
 ## Create monitors for 1Password app
 
-import CreateMonitors from '../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
@@ -226,12 +226,12 @@ import CreateMonitors from '../reuse/apps/create-monitors.md';
 
 ## Upgrading the 1Password app (Optional)
 
-import AppUpdate from '../reuse/apps/app-update.md';
+import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
 ## Uninstalling the 1Password app (Optional)
 
-import AppUninstall from '../reuse/apps/app-uninstall.md';
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>

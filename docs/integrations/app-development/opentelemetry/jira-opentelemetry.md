@@ -87,7 +87,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     - started (sprint_started)
     - closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the [HTTP source you created](#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Collection configuration and app installation
 
