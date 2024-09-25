@@ -29,7 +29,7 @@ When installing the Collector, specify the `syncSources` parameter. See the to
 
 | Parameter | Type | Description |
 |:--|:--|:--|
-| syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
+| `syncSources`   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
 
 For example, for command-line installation, supplying the Access ID and
 Access Key, `syncSources`, and the Collector name:

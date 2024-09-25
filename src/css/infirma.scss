@@ -1,6 +1,6 @@
 :root {
     --ifm-color-scheme: light;
-  
+
     /* Colors. */
     --ifm-dark-value: 10%;
     --ifm-darker-value: 15%;
@@ -8,7 +8,7 @@
     --ifm-light-value: 15%;
     --ifm-lighter-value: 30%;
     --ifm-lightest-value: 50%;
-  
+
     /*
     This seems like a lot, but we want to ensure enough contrast.
     Goal is to have a min score of 3 on https://www.myndex.com/APCA/fullmatrix
@@ -20,7 +20,7 @@
     /* Using slightly different values for dark mode */
     --ifm-contrast-background-dark-value: 70%;
     --ifm-contrast-foreground-dark-value: 90%;
-  
+
     --ifm-color-primary: #3578e5;
     --ifm-color-secondary: #ebedf0;
     --ifm-color-success: #00a400;
@@ -75,10 +75,10 @@
       --ifm-color-danger-lightest: rgb(253, 156, 159);
       --ifm-color-danger-contrast-background: rgb(255, 235, 236);
       --ifm-color-danger-contrast-foreground: rgb(75, 17, 19);
-  
+
     --ifm-color-white: #fff;
     --ifm-color-black: #000;
-  
+
     --ifm-color-gray-0: var(--ifm-color-white);
     --ifm-color-gray-100: #f5f6f7;
     --ifm-color-gray-200: #ebedf0;
@@ -90,7 +90,7 @@
     --ifm-color-gray-800: #444950;
     --ifm-color-gray-900: #1c1e21;
     --ifm-color-gray-1000: var(--ifm-color-black);
-  
+
     --ifm-color-emphasis-0: var(--ifm-color-gray-0);
     --ifm-color-emphasis-100: var(--ifm-color-gray-100);
     --ifm-color-emphasis-200: var(--ifm-color-gray-200);
@@ -102,19 +102,19 @@
     --ifm-color-emphasis-800: var(--ifm-color-gray-800);
     --ifm-color-emphasis-900: var(--ifm-color-gray-900);
     --ifm-color-emphasis-1000: var(--ifm-color-gray-1000);
-  
+
     /* Base. */
     --ifm-color-content: var(--ifm-color-emphasis-900);
     --ifm-color-content-inverse: var(--ifm-color-emphasis-0);
     --ifm-color-content-secondary: #525860;
-  
+
     --ifm-background-color: transparent; /* Body's background. */
     --ifm-background-surface-color: var(--ifm-color-content-inverse);
     --ifm-global-border-width: 1px;
     --ifm-global-radius: 0.4rem;
-  
+
     --ifm-hover-overlay: rgba(0, 0, 0, 0.05);
-  
+
     /* Typography. */
     --ifm-font-color-base: var(--ifm-color-content);
     --ifm-font-color-base-inverse: var(--ifm-color-content-inverse);
@@ -125,31 +125,31 @@
     --ifm-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
       'Liberation Mono', 'Courier New', monospace;
     --ifm-font-size-base: 100%;
-  
+
     --ifm-font-weight-light: 300;
     --ifm-font-weight-normal: 400;
     --ifm-font-weight-semibold: 500;
     --ifm-font-weight-bold: 700;
-  
+
     --ifm-font-weight-base: var(--ifm-font-weight-normal);
     --ifm-line-height-base: 1.65;
-  
+
     /* Spacing. */
     --ifm-global-spacing: 1rem;
     --ifm-spacing-vertical: var(--ifm-global-spacing);
     --ifm-spacing-horizontal: var(--ifm-global-spacing);
-  
+
     /* Transitions. */
     --ifm-transition-fast: 200ms;
     --ifm-transition-slow: 400ms;
     --ifm-transition-timing-default: cubic-bezier(0.08, 0.52, 0.52, 1);
-  
+
     /* Shadows. */
     --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     --ifm-global-shadow-md: 0 5px 40px rgba(0, 0, 0, 0.2);
     --ifm-global-shadow-tl: 0 12px 28px 0 rgba(0, 0, 0, 0.2),
       0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  
+
     /* Z-index. */
     --ifm-z-index-dropdown: 100;
     --ifm-z-index-fixed: 200;
@@ -161,7 +161,7 @@
     --ifm-code-font-size: 90%;
     --ifm-code-padding-horizontal: 0.1rem;
     --ifm-code-padding-vertical: 0.1rem;
-  
+
     --ifm-pre-background: var(--ifm-color-emphasis-100);
     --ifm-pre-border-radius: var(--ifm-code-border-radius);
     --ifm-pre-color: inherit;
@@ -173,7 +173,7 @@
     --ifm-heading-font-family: var(--ifm-font-family-base);
     --ifm-heading-font-weight: var(--ifm-font-weight-bold);
     --ifm-heading-line-height: 1.25;
-  
+
     --ifm-h1-font-size: 2rem;
     --ifm-h2-font-size: 1.5rem;
     --ifm-h3-font-size: 1.25rem;
@@ -190,27 +190,27 @@
     --ifm-list-item-margin: 0.25rem;
     --ifm-list-paragraph-margin: 1rem;
     --ifm-table-cell-padding: 0.75rem;
-  
+
     --ifm-table-background: transparent;
     --ifm-table-stripe-background: var(--ifm-color-emphasis-100);
-  
+
     --ifm-table-border-width: 1px;
     --ifm-table-border-color: var(--ifm-color-emphasis-300);
-  
+
     --ifm-table-head-background: inherit;
     --ifm-table-head-color: inherit;
     --ifm-table-head-font-weight: var(--ifm-font-weight-bold);
-  
+
     --ifm-table-cell-color: inherit;
     /* Links. */
     --ifm-link-color: var(--ifm-color-primary);
     --ifm-link-decoration: none;
     --ifm-link-hover-color: var(--ifm-link-color);
     --ifm-link-hover-decoration: underline;
-  
+
     /* Paragraphs. */
     --ifm-paragraph-margin-bottom: var(--ifm-leading);
-  
+
     /* Blockquotes. */
     --ifm-blockquote-font-size: var(--ifm-font-size-base);
     --ifm-blockquote-border-left-width: 2px;
@@ -219,7 +219,7 @@
     --ifm-blockquote-shadow: none;
     --ifm-blockquote-color: var(--ifm-color-emphasis-800);
     --ifm-blockquote-border-color: var(--ifm-color-emphasis-300);
-  
+
     /* Horizontal Rules. */
     --ifm-hr-border-color: var(--ifm-color-emphasis-500);
     --ifm-hr-border-width: 1px;
