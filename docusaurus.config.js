@@ -20,7 +20,7 @@ module.exports = {
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/help/",
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
@@ -271,6 +271,12 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
+    announcementBar: {
+      id: 'opt-in-ga',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the Sumo Logic New UI!</a>',
+      backgroundColor: '#f2ecc9',
+      textColor: '#091E42',
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -300,8 +306,8 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'senddata',
-                label: 'Send Data (Collectors)',
-                icon: 'cloud_upload',
+                label: 'Collectors, Sources',
+                icon: 'settings',
               },
               {
                 type: 'docSidebar',
@@ -325,7 +331,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
                 label: 'Apps and Integrations',
-                icon: 'apps',
+                icon: 'grid_view',
               },
               {
                 type: 'docSidebar',
@@ -343,7 +349,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
-                icon: 'query_stats',
+                icon: 'speed',
               },
               {
                 type: 'docSidebar',
@@ -355,7 +361,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
-                icon: 'swap_horiz',
+                icon: 'settings_suggest',
               },
               {
                 type: 'docSidebar',

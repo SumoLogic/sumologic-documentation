@@ -41,7 +41,7 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From the Logs tab
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).Kanso--> Go to **Manage Data** > **Logs** > **Deletion Requests**.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note
@@ -53,7 +53,25 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From a Log Search
 
-1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
+#### Delete audit events
+
+The Audit Event Index has detailed JSON logs. To search for audit events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+
+```
+(_index=sumologic_audit_events) AND _sourceCategory=deletionRule
+```
+
+#### Delete system events
+
+The System Event Index has detailed JSON logs. To search for system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+
+```
+(_index=sumologic_system_events) AND _sourceCategory=deletionRule
+
+```
+
+1. In the **Log Search**, search for the required logs that needs to be deleted.
+1. Click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
 
 ## Cancel a deletion request

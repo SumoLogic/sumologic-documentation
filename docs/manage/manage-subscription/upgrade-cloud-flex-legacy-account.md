@@ -26,7 +26,7 @@ It depends on your current account type:
 
 ## Upgrade an account
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. Kanso--> <br/>  ![manage-plan-cloudflex.png](/img/subscriptions/manage-plan-cloudflex.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. <br/>  ![manage-plan-cloudflex.png](/img/subscriptions/manage-plan-cloudflex.png)
 1. The left side of the page displays your current account type.
 1. **Choose a New Plan**. Click the radio button next to **Professional** or **Enterprise**. If you just want to increase product variable levels for your current account type, do not select a new plan type.
 1. **Select New Log and Metric Data Volume**. As you change the values, the upgrade cost shown to the right will adjust.
