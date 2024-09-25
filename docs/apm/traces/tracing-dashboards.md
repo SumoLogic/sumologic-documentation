@@ -8,7 +8,7 @@ description: Explore and create Tracing dashboards, install apps, and more.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To access APM hierarchies:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to your **Home** dashboard and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
 1. In the upper-left corner of the screen, select an **APM:** hierarchy from the dropdown menu. An expandable list of your hierarchy appears in the panel.
 
 Out-of-the-box dashboards are available as three hierarchies. 

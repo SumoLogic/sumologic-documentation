@@ -197,7 +197,7 @@ This section describes the Root Cause Explorer UI and how to interact with it.
 
 To open the Root Cause Explorer:
 
-1. Go to your **Home** dashboard and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
+1. go to the **Home** screen and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
 2. Root Cause Explorer opens, displaying Events of Interest (EOIs) for the currently selected filters and time range.![rce](/img/rce/rce1.png)
 
     If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of your environment to facilitate successful monitoring, managing, and troubleshooting.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the monitoring dashboards, go to your **Home** dashboard and select **Explore**. Then in the upper-left corner of the screen, select from the dropdown menu under **Explore By**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the monitoring dashboards, go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select from the dropdown menu under **Explore By**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the monitoring dashboards, in the main Sumo Logic menu select **Observability**, and then select from the following menu options:
 * **Infrastructure Monitoring**
@@ -21,7 +21,7 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 
 To navigate, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to your **Home** dashboard and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
 3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. 
 
 ### Stack linking

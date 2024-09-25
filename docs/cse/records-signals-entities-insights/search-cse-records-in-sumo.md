@@ -82,7 +82,7 @@ To  search a Sumo Logic partition, you specify the name of the partition using
 
 ## Open a log search tab
 
-To open a log search tab in Sumo Logic, go to your **Home** dashboard and select **Log Search**.
+To open a log search tab in Sumo Logic, go to the **Home** screen and select **Log Search**.
 
 ## Search all Records or Signals in a partition 
 
