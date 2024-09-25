@@ -15,11 +15,7 @@ The [Internet Information Services](https://learn.microsoft.com/en-gb/iis/get-st
 
 IIS logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-IIS metrics are sent to Sumo Logic through OpenTelemetry through [windowsperfcountersreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowsperfcountersreceiver). This receiver, captures the configured system, application, or
-custom performance counter data from the Windows registry using the [PDH
-interface](https://docs.microsoft.com/en-us/windows/win32/perfctrs/using-the-pdh-functions-to-consume-counter-data).
-It is based on the [Telegraf Windows Performance Counters Input
-Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters).
+IIS metrics are sent to Sumo Logic through OpenTelemetry through [windowsperfcountersreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowsperfcountersreceiver). This receiver, captures the configured system, application, or custom performance counter data from the Windows registry using the [PDH interface](https://docs.microsoft.com/en-us/windows/win32/perfctrs/using-the-pdh-functions-to-consume-counter-data). It is based on the [Telegraf Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Schematics.png' alt="Schematics" />
 
@@ -28,9 +24,9 @@ Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_pe
 Following are the [Fields](/docs/manage/fields/) which will be created as part of IIS App install if not already present.
 
 - `sumo.datasource`. Has fixed value of **iis**.
-- `deployment.environment`. User configured. This is the deployment environment where the IIS cluster resides. For example: `dev`, `prod` or `qa`.
-- `webengine.cluster.name`. User configured.Enter a name to uniquely identify your IIS web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
-- `webengine.system`. Has fixed value of **iis**
+- `deployment.environment`. User configured. This is the deployment environment where the IIS cluster resides. For example: `dev`, `prod`, or `qa`.
+- `webengine.cluster.name`. User configured. Enter a name to uniquely identify your IIS web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.system`. Has fixed value of **iis**.
 - `webengine.node.name`. Holds the value of the Fully Qualified Domain Name (FQDN) of the machine from which the OpenTelemetry collector is collecting logs and metrics.
 
 ## Prerequisites
@@ -112,11 +108,9 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 In this step, you will configure the yaml required for IIS Collection.
 
-Path of the different log file configured to capture IIS logs is needed to be given here (see [Prerequisites](#prerequisites)).
+The path of the log file configured to capture IIS logs is needed to be given here, refer to [Prerequisites](#prerequisites).
 
-Metrics for IIS are collected through windows perf counters. You can specify the **Collection Interval** to specify at what interval should the metrics be scrapped. 
-
-You can add any custom fields which you want to tag along with the data ingested in Sumo. 
+Metrics for IIS app are collected through windows perf counters. You can specify the **Collection Interval** to specify at what interval should the metrics be scrapped. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. 
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -179,7 +173,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 <LogsOutro/>
 
 :::note
-If one of the specified performance counters cannot be loaded on startup, a warning will be printed, but the application will not fail fast. It is expected that some performance counters may not exist on some systems due to different OS configuration.
+A warning message will be printed if any one of the specified performance counters cannot be loaded on startup. The application will not fail fast with this warning. It is expected that some performance counters may not exist on some systems due to different OS configuration.
 :::
 
 ## Sample log messages
@@ -188,7 +182,7 @@ If one of the specified performance counters cannot be loaded on startup, a warn
 2023-01-13 10:56:55 10.0.0.111 GET / ProgramID=236 443 - 207.235.176.5 Mozilla/5.0+(compatible;+Nimbostratus-Bot/v1.3.2;+http://cloudsystemnetworks.com) http://www.google.com/url?sa=t&rct=j&q=anomaly%20detection&source=web&cd=4 304 11 1236 70
 ```
 
-## Sample Metric
+## Sample metrics
 ```
 {
     "queryId": "A",
@@ -302,58 +296,25 @@ The **IIS - Application Pool** dashboard provides a high-level view of Applicati
 
 ### ASP.NET
 
-The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters.
-
-Use this dashboard to:
-
-* Analyze State Server Sessions.
-* Monitor Applications Information.
-* Understand Request execution and wait time.
+The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters. This dashboard helps you to analyse the state server sessions, monitor applications information, and understand the request execution and wait time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS-ASP.NET" />
 
 ### ASP.NET Applications
 
-The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters.
-
-Use this dashboard to monitor the following key metrics:
-
-* Compilations
-* Errors
-* Cache
-* Requests Executing
-* Requests in Application Queue
-* Pipeline Instance Count
-* Output Cache
+The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters. This dashboard helps you to monitor compilations, errors, cache, requests executing, requests in application queue, pipeline instance count, and output cache.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS-ASP.NET-Applications" />
 
-
 ### Cache Performance
 
-The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service.
-
-Use this dashboard to monitor the following key metrics:
-
-* Output Cache
-* Cache Memory
-* File Cache
-* URI Cache
+The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cahce, cache memory, file cache, and URI cache.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS-Cache-Performance" />
 
-
 ### Web Service
 
-The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service.
-
-Use this dashboard to monitor the following key metrics:
-
-* Total Site
-* Connections
-* Site Uptime
-* Method
-* Miscellaneous
+The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the total site, connections, site uptime, method, and miscellaneous.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS-Web-Service" />
 
