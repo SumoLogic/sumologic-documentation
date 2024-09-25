@@ -4,7 +4,7 @@ title: Assign Collector to Ingest Budget
 description: Learn how to assign a Collector to an ingest budget.
 ---
 
-
+ <!-- What content is impacted by v1 deprecation? -->
 ## Availability
 
 | Account Type | Account Level |
@@ -19,13 +19,9 @@ Once you have created an ingest budget you can assign a Collector to it. You ca
 
 The UI installer for Installed Collectors does not support assigning ingest budgets, use another method.
 
-:::note
-Assigning an Ingest Budget to a Collector is only relevant for V1 Ingest Budgets. V2 Ingest Budgets assign budgets to your log data by **Fields** or built-in metadata fields, and do not use the reserved **`_budget`** field.
-:::
-
 ## Collection page
 
-On the [Collection page](/docs/send-data/collection) when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
+On the [Collection page](/docs/send-data/collection), when editing an existing Collector or creating a new Hosted Collector, there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
 
@@ -55,15 +51,13 @@ Use the [Collector Management API](/docs/api/collector-management) to assign an 
 
 The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management/collector-api-methods-examples). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 
-First make a GET request to get the Collector's JSON configuration:
+First, make a `GET` request to get the Collector's JSON configuration:
 
 ```bash
 curl -v -u 'accessid:accesskey' https://api.sumologic.com/api/v1/collectors/15
 ```
 
-GET response:
-
-```
+```json title="GET response"
 ...
 < ETag: "acd8c6f11f5100b047e6320f231c4f6f"
 ...
@@ -131,7 +125,7 @@ Updating a Collector also requires the "If-Match" header to be specified with th
 curl -u 'accessid:accesskey' -X PUT -H "Content-Type: application/json" -H "If-Match: \"acd8c6f11f5100b047e6320f231c4f6f\"" -T updated_collector.json https://api.sumologic.com/api/v1/collectors/15
 ```
 
-The response has the updated JSON and the Collector is now assigned to the ingest budget with a Field Value of `sumo_budget` :
+The response has the updated JSON and the Collector is now assigned to the ingest budget with a Field Value of `sumo_budget`:
 
 ```json
 {
@@ -161,7 +155,7 @@ The response has the updated JSON and the Collector is now assigned to the inge
 
 ## user.properties
 
-When registering a new Collector you can specify the parameter `fields` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
+When registering a new Collector, you can specify the parameter `fields` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
 
 | Parameter | Description | Can be changed after installation? |
 |:--|:--|:--|

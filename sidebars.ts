@@ -2812,7 +2812,6 @@ integrations: [
         'api/field-management',
         'api/folder-management',
         'api/health-events',
-        'api/ingest-budget-v1',
         'api/ingest-budget-v2',
         'api/log-searches',
         'api/log-search-estimated-usage',
