@@ -122,7 +122,11 @@ To add a tag while creating a new monitor:
 
 Tags will appear on all future alerts triggered by the same monitor but will not be applied to past alerts.
 
-To view your tags, go to your alerts list page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Here, you'll see a **Tags** column. On, this page, you can filter by tags.
+To view your tags, go to your alerts list page. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Here, you'll see a **Tags** column. On, this page, you can filter by tags.
 
 <img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800"  />
 
