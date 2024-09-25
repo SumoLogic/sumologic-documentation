@@ -4,10 +4,26 @@ title: Views
 description: Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated index.
 ---
 
-Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated/pre-compute index.
+Views allows you to track all user created indexes and system created indexes which thereby helps you to configure data forwarding, retention period, and data tier for these indexes. Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated/pre-compute index. 
+
+* Visibility of all indexes will be based on admin created roles/permissions.
+* As a user you will be able to delete or decommission the user created indexes.
+* As a user you will be able to see the schema of each view and see the views in search autocomplete to which you have the access.
+* As a admin you will be able to view the existing system limits for each type and amount of consumed quota. 
+* Only admin can define the access control on these indexes.
+* Scheduled searches only with **Save to Index** alert type will be visible in Views.
+
+## Limitations
+
+- Default limit for views per org is 1000.
+- Default limit for partitions per org is 50.
+- Default limit for optimizits per org is 100.
+- Default limit for Scheduled Views per org is 500.
+- Default limit for all other views per org is 50.
+
+## Scheduled Views 
 
 * Due to the way data is indexed not all operators are supported in Scheduled Views. See our [list of supported operators](best-practices.md).
-* There is a limit of 500 Scheduled Views per account.
 * Scheduled View queries run once per minute.
 * Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. 
 * Creating a Scheduled View for a query can vastly reduce the amount of data scanned at search time.
@@ -17,7 +33,8 @@ Views speed the process for small and historical subsets of your data by functio
 * Scheduled Views are assigned to the **InternalCollector** index.
 * Account Admins and users whose role grants the "Manage Scheduled Views" [role capability](../users-roles/roles/role-capabilities.md) can set up Scheduled Views, but anyone in an organization can run searches against them. Other users' data access to a Scheduled View is governed by the search filters associated with their roles; they will only be able to see data to which their roles allow them access. For more information, see [Construct a Search Filter for a Role](../users-roles/roles/construct-search-filter-for-role.md).
 
-## How could my organization use Scheduled Views?
+
+### How could my organization use Scheduled Views?
 
 **Web access trends.** Creating a Scheduled View allows you to isolate logs related to your site, making it easy to report on web traffic patterns.
 
