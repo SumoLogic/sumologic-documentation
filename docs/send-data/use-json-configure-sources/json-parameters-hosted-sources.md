@@ -99,22 +99,26 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 In addition to the common parameters, the following parameters are for an HTTP Source.
 
 ###### `fields`
-| JSON Object | OPTIONAL | modifiable |
+
+<small>| JSON Object | Optional | Modifiable |</small>
 * **Default**. none.
 * **Description**. Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`.
 
 ###### `sourceType`
-| String | REQUIRED | not modifiable |
+
+<small>| String | Required | Optionalt modifiable |</small>
 * **Default**. none.
 * **Description**. HTTP.
 
 ###### `messagePerRequest`
-| Boolean | REQUIRED | modifiable |
+
+<small>| Boolean | Required | Modifiable |</small>
 * **Default**. none.
 * **Description**. When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`.
 
 ###### `url`
-| String | OPTIONAL | Not modifiable |
+
+<small>| String | Optional | Optionalt modifiable |</small>
 * **Default**. URL assigned by Sumo for Source.
 * **Description**. The Source's unique HTTP endpoint web address.
 
@@ -137,8 +141,8 @@ In addition to the common parameters, the following parameters are for an HTTP 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Cloud Syslog Source.
 
-###### `sourceType`
-| String   | Yes  | not modifiable |
+### `sourceType`
+<small>| String | Required | Not modifiable |</small>
 * **Default**. none.
 * **Description**. Cloudsyslog. 
 
@@ -154,14 +158,17 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 ### Google Cloud Platform Source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources),
-the following parameters are for a Google Cloud Platform Source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Google Cloud Platform Source.
 
 ###### `sourceType`
-| String | Yes | 	HTTP | not modifiable |
+<small>| String | Required |	Not modifiable |</small>
+* **Default**. HTTP.
+* **Description**. n/a.
 
 ###### `thirdPartyRef`
-| Nested | JSON | Yes |  | Specify the the serviceType as GoogleCloudLogs. | not modifiable |
+<small>| Nested JSON | Required | Not modifiable |</small>
+* **Default**. none.
+* **Description**. Specify the the `serviceType` as `GoogleCloudLogs`.
 
 Google Cloud Platform Source JSON example: 
 
@@ -186,31 +193,52 @@ Google Cloud Platform Source JSON example: 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for all AWS log Sources except Kinesis.
 
 ###### `sourceType`
-| String | Yes |  | Polling | not modifiable |
-###### `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
+<small>| String | Required | Not modifiable |</small>
+* **Default**. none.
+* **Description**. Polling.
+
+###### `contentType`
+<small>| String | Optional | Not modifiable | </small>
+* **Default**. none.
+* **Description**. Define based on the AWS Source you are creating:
+   * [Archive](#awss3-archive-source): AwsS3ArchiveBucket
+   * [S3](#amazon-s3-source): AwsS3Bucket
+   * [S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket
+   * [CloudFront](#awscloudfrontsource): AwsCloudFrontBucket
+   * [CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket
+   * [ELB](#aws-elastic-load-balancing-source): AwsElbBucket
+   * [Metadata](#aws-metadata-tag-source): AwsMetadata
+   * [Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog
 
 ###### `scanInterval`
-| Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
+<small>| Long | Required | Modifiable |  </small>
+* **Default**. `300000`.
+* **Description**. Time interval of S3 bucket scans for new data, in milliseconds. Minimum value: `1000`. For Automatic, assign to: `-1`.
 
-
-###### `paused`
-| Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
-
+##### `paused`
+<small>| Boolean | Required | Modifiable |  </small>
+* **Default**. `false`.
+* **Description**. When set to `true`, the scanner for S3 bucket items is paused. To disable, set to `false`.
 
 ###### `url`
-| String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
+<small>| String | Optional | Not modifiable |  </small>
+* **Default**. Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created.
+* **Description**. Assigned by Sumo for Source.
 
 ###### `thirdPartyRef`
-| Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
-
-###### `snsTopicOrSubscriptionArn`
-This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
-
-###### `bucketName`
-This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
-
-###### `pathExpression`
-This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildcard pattern that matches the S3 objects you'd like to collect. | Modifiable |
+<small>| Nested JSON | Required | Modifiable |</small>
+* **Default**. none.
+* **Description**. Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.
+* **Example parameters**:
+   * `snsTopicOrSubscriptionArn` | String | Optional | Not modifiable |
+      * **Default**. none.
+      * **Description**. SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request, `isSuccess` will be `true`.
+   * `bucketName` | String | Required | Modifiable |
+      * **Default**. none.
+      * **Description**. Name of your Amazon S3 bucket.
+   * `pathExpression` | String | Required | Modifiable |
+      * **Default**. none.
+      * **Description**. Wildcard pattern that matches the S3 objects you'd like to collect.
 
 ```json title="IAM User authentication example"
 "authentication": {
@@ -228,22 +256,27 @@ This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildca
 ```
 
 ```json title="snsTopicOrSubscriptionArn example"
-"thirdPartyRef": {
-        "resources": [{
-            "serviceType": "#",
-            "path": {
-                "type": "#",
-                "bucketName": "#",
-                "pathExpression": "*",
-                "snsTopicOrSubscriptionArn": {
-                    "isSuccess": true,
-                    "arn": "arn:aws:sns:#:#:SumoSNSTopic-#:#"
-                }
-            },
-            "authentication": {...
-            }
-        }]
-    }
+{
+  "thirdPartyRef": {
+    "resources": [
+      {
+        "serviceType": "#",
+        "path": {
+          "type": "#",
+          "bucketName": "#",
+          "pathExpression": "*",
+          "snsTopicOrSubscriptionArn": {
+            "isSuccess": true,
+            "arn": "arn:aws:sns:#:#:SumoSNSTopic-#:#"
+          }
+        },
+        "authentication": {
+          // Add authentication details here
+        }
+      }
+    ]
+  }
+}
 ```
 
 #### AWS S3 Archive Source
@@ -493,37 +526,40 @@ This example uses the `thirdPartyRef` parameter to enable **S3 Replay**.
 
 ```json title="AWS Kinesis Firehose for Logs Source JSON example"
 {
-  "source":
-     {
-           "name":"test-source",
-           "automaticDateParsing":true,
-           "multilineProcessingEnabled":true,
-           "useAutolineMatching":true,
-           "contentType":"KinesisLog",
-           "forceTimeZone":false,
-           "filters":[],
-           "cutoffTimestamp":1634972400000,
-           "encoding":"UTF-8",
-           "fields":{},
-           "thirdPartyRef":{   
-               "resources":[
-                   {     
-                        "serviceType":"AwsS3Bucket",
-                        "path":{       
-                            "type":"S3BucketPathExpression",       
-                            "bucketName":"test-kinesis-bucket-name",       
-                            "pathExpression":"http-endpoint-failed/*",       
-                            "useVersionedApi":true     
-                        },     
-                        "authentication":{       
-                            "type":"S3BucketAuthentication",
-                            "awsId":"XXX",
-                            "awsKey":"XXX"
-                        }   
-                    }
-                ]
-            },
-            "sourceType":"HTTP"
+  "source":{
+    "name":"test-source",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":true,
+    "useAutolineMatching":true,
+    "contentType":"KinesisLog",
+    "forceTimeZone":false,
+    "filters":[
+
+    ],
+    "cutoffTimestamp":1634972400000,
+    "encoding":"UTF-8",
+    "fields":{
+
+    },
+    "thirdPartyRef":{
+      "resources":[
+        {
+          "serviceType":"AwsS3Bucket",
+          "path":{
+            "type":"S3BucketPathExpression",
+            "bucketName":"test-kinesis-bucket-name",
+            "pathExpression":"http-endpoint-failed/*",
+            "useVersionedApi":true
+          },
+          "authentication":{
+            "type":"S3BucketAuthentication",
+            "awsId":"XXX",
+            "awsKey":"XXX"
+          }
+        }
+      ]
+    },
+    "sourceType":"HTTP"
   }
 }
 ```
@@ -569,20 +605,47 @@ To disable S3 Replay, use the `NoPathExpression` placeholder for `path` and `
 
 The following parameters are for an AWS CloudWatch Source.
 
-| Parameter | Type |  Required? | Default | Description | Access |
-|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See best practices for details. | modifiable |
-| `sourceType` | String | Yes |  | Polling | not modifiable |
-| `contentType` | String | No |  | AwsCloudWatch | not modifiable |
-| `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds.<br/>Minimum value:  1000 | modifiable |
-| `paused` | Boolean | Yes | false | When set to `true`, the scanner for metrics is paused. To disable, set to `false`. | modifiable |
-| `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the relevant Amazon regions, namespaces, and access credentials. | 	modifiable |
+###### `name`
+<small>| String | Required | Modifiable |</small>
+* **Default**. none.
+* **Description**. Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`.
 
-AWS CloudWatch Source JSON example: 
+###### `description`
+<small>| String | Optional | Modifiable |</small>
+* **Default**. null.
+* **Description**. Type a description of the Source.
 
-```json
+###### `category`
+<small>| String | Optional | Modifiable |</small>
+* **Default**. null.
+* **Description**. Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [Best practices](/docs/send-data/best-practices) for details.
+
+###### `sourceType`
+<small>| String | Required |  Not modifiable |</small>
+* **Default**. none.
+* **Description**. Polling.
+
+###### `contentType`
+<small>| String | Optional | Not modifiable |</small>
+* **Default**. none.
+* **Description**. AwsCloudWatch.
+
+###### `scanInterval`
+<small>| Long | Required | Modifiable |</small>
+* **Default**. `300000`.
+* **Description**. Time interval of S3 bucket scans for new data, in milliseconds. Minimum value: `1000`.
+
+###### `paused`
+<small>| Boolean | Required | Modifiable |</small>
+* **Default**. `false`.
+* **Description**. When set to `true`, the scanner for metrics is paused. To disable, set to `false`.
+
+###### `thirdPartyRef`
+<small>| Nested JSON | Required | Modifiable |</small>
+* **Default**. none.
+* **Description**. Includes all required information for third-party integration, including the relevant Amazon regions, namespaces, and access credentials.
+
+```json title="AWS CloudWatch Source JSON example"
 {
    "api.version":"v1",
    "source":{

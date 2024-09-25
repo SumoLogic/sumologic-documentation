@@ -83,7 +83,7 @@
   --ifm-h3-font-size: 1.25rem;
   --ifm-h4-font-size: 1rem;
   --ifm-h5-font-size: 0.875rem;
-  --ifm-h6-font-size: 0.85rem;
+  --ifm-h6-font-size: 0.875rem;
   --ifm-navbar-link-hover-color: #06bcee;
   --ifm-code-font-size: .85rem;
   --ifm-font-family-base: "Lab Grotesque",sans-serif;
@@ -335,10 +335,11 @@ html[data-theme='light'] {
   h4 {
     font-size: 1.1rem !important;
   }
-  h5 {
-    font-size: .9rem !important;
+  h6 {
+    margin-bottom: 5px !important; // h6 is for CLI parameters
   }
 }
+
 
 // SIDEBAR Links
 .menu__list-item {
