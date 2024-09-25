@@ -10,7 +10,7 @@ You can visualize your Traces data through filtered trace lists and icicle chart
 
 ## Traces page
 
- [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, Go to the **Home** screen and select **Traces**.
+ [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
 
  [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
 
