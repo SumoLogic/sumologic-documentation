@@ -1,6 +1,6 @@
 ---
 title: Azure Monitor Metrics Collection (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 keywords:
   - collection
   - azure-metrics
@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+<a href="https://www.sumologic.com/help/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We're happy to announce an update of the Azure metric collection framework. Here are some of the key features that this update offers:
 

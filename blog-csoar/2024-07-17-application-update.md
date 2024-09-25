@@ -4,13 +4,13 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/help/img/sumologic-rss-preview.jpg
 hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+<a href="https://www.sumologic.com/help/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 ### Changes and Enhancements
 * Automation Audit: Logs now contain information about action and section detail (for playbooks, rules, observables, triage, incidents, and so on).
