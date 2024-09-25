@@ -10,7 +10,7 @@ You can visualize your Traces data through filtered trace lists and icicle chart
 
 ## Traces page
 
- [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
+ [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, Go to the **Home** screen and select **Traces**.
 
  [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
 
@@ -127,7 +127,7 @@ To view the Trace Query Visualization charts:
 
 You can add Trace Duration Breakdown Chart as a dashboard panel to a new or existing dashboard. From a new dashboard:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
 1. Click the **Traces** panel type.
 1. Add the required trace query filters representing similar traces of the same transaction.
 1. Under **Visual Settings** > **Chart type**, select **Trace Query Visualizations**.

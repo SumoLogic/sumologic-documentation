@@ -8,7 +8,7 @@ The **Spans** page allows you to filter and aggregate your trace data at the raw
 
 ## Spans page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Spans, go to the **Home** screen and select **Spans**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Spans, Go to the **Home** screen and select **Spans**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Spans, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**. 
  
