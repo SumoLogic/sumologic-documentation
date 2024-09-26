@@ -25,8 +25,8 @@ Key features:
 
 ## Create a deletion request
 
-:::warning
-After the data deletion, data will be removed from your view in the indexes that powers search. Sumo Logic retains the copy of the last 14 days of ingested data to allow for data replay/recovery for certain exceptional situations and will eventually delete it. This copy is inaccessible to the users within your account. Any data replay will include your communication, after which the deletion request could be reapplied.
+:::caution
+After data deletion request is approved, data will be deleted from the customer org and no users within the customer org (admin or otherwise) will be able to access the data. Reiterating the data deletion requests should not be raised frivolously and any data deletion approvals should be given sufficient consideration.
 :::
 
 :::note
