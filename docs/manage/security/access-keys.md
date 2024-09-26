@@ -37,11 +37,11 @@ Managing Access Keys (how to).
 
 ## Create an access key
 
-### From the Preferences page
+### From the Personal Access Keys page
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
-1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Sumo Logic interface showing access keys with statuses, names, access IDs, creation dates, allowed domains, and last used dates. Add Access Key button at bottom." style={{border: '1px solid gray'}} width="800"/>
-1. When the **Create an Access Key** window appears, enter a name for your access key. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, proceed to the step. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key form in Sumo Logic with fields for Access Key Name, Allowed CORS Domains, and options to add domains." style={{border: '1px solid gray'}} width="500"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Personal Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. 
+1. On the **Personal Access Keys** tab, click **+ Add**.<img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Sumo Logic interface showing access keys with statuses, names, access IDs, creation dates, allowed domains, and last used dates. Add Access Key button at bottom." style={{border: '1px solid gray'}} width="800"/>
+1. When the **Add a New Access Key** window appears, enter a name for your access key. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, proceed to the step. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key form in Sumo Logic with fields for Access Key Name, Allowed CORS Domains, and options to add domains." style={{border: '1px solid gray'}} width="500"/>
 1. Optionally, you can add [**Allowlisted CORS Domains**](#cors-support), which will allow you to use this newly created access key to access Sumo APIs.
     :::note
     Enter the domains in the [Origin format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name. A port is optional.
@@ -53,11 +53,11 @@ Managing Access Keys (how to).
 
 ### From the Access Keys page
 
-Administrators can create access keys under **Access Keys** as an alternative to doing it from the [Preferences page](#from-the-preferences-page).
+Administrators can create access keys under **Access Keys** as an alternative to doing it from the [Personal Access Keys page](#from-the-personal-access-keys-page).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. 
 1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." width="700"/>
-1. Follow the steps from [the previous section](#from-the-preferences-page), starting with step 3.
+1. Follow the steps from [the previous section](#from-the-personal-access-keys-page), starting with step 3.
 
 #### CORS support
 

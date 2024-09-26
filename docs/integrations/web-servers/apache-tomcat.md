@@ -625,7 +625,7 @@ Custom filter examples:
 
 Step 1: Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
 
 Step 2: Download and install Terraform
 
@@ -737,11 +737,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.**
      * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
      * For all Apache Tomcat webserver farms webserver_farm=*
-     * For a specific webserver farms: webserver_farm=tomcat.dev.01. 
+     * For a specific webserver farms: webserver_farm=tomcat.dev.01.
      * Clusters within a specific environment: `webserver_farm=tomcat-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)  
 4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
