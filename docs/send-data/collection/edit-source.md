@@ -14,7 +14,7 @@ If [local file configuration management](/docs/send-data/use-json-configure-sou
 
 To edit a Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click the **Source** name, or click the **Edit** link to the right of the Source name.
 1. Change the name or change the metadata fields as needed. For details on configuration options, refer to your source type in [Sources](/docs/send-data/choose-collector-source).
 1. Click **Save** to apply your changes.<br/>  ![Edit local file source.png](/img/collector/edit-local-file-source.png) 

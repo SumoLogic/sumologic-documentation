@@ -95,11 +95,11 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 
 For other dimensions that exceed the cardinality limit, Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI in **Metrics Transformation Rules**.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access **Metrics Transformation Rules**, in the top menu select **Configuration** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access **Metrics Transformation Rules**, in the top menu select **Configuration** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
+ 
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 
 
