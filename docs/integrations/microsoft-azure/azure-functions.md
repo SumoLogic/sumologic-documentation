@@ -85,7 +85,8 @@ Scope (Specific Data): tenant_name=*
 ```
 
 ```sql title="Parse Expression"
-json "resourceId"
+json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+| if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
 | toUpperCase(resourceId) as resourceId
 | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
 | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -93,7 +94,7 @@ json "resourceId"
 | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
 | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
 | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
 ```
 
 
