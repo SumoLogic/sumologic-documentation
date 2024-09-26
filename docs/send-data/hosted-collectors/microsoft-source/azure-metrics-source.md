@@ -31,7 +31,7 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/> 
     1. Select service principal type as **Create new** to create a new app.
     1. Click **Change selection**, to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/> 
-1. In the re-directed **Certificates & secrets** page, under **Clinet sectrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
+1. In the re-directed **Certificates & secrets** page, under **Client sectrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
         1. **Description**. Enter the description of your choice.
         1. **Expires**. From the dropdown select the expiry time period to the secret value. 
 1. Navigate to **Overview**, copy and save the **Application (client) ID** and **Directory (tenant) ID**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/overview.png')} alt="overview" style={{border:'1px solid gray'}} width="600"/>  
@@ -57,7 +57,7 @@ To configure the Azure Metrics Source:
 1. **Tenant Id**. Enter the Tenant ID collected from [Azure platform](#vendor-configuration).
 1. **Client Id**. Enter the Client Id collected from [Azure platform](#vendor-configuration).
 1. **Client Secret**. Enter the Client Secret collected from [Azure platform](#vendor-configuration).
-1. **View Subscriptions**. Click View Subscriptions to verify the authentcation credentials entered to get Azure access.
+1. **View Subscriptions**. Click View Subscriptions to verify the authentication credentials entered to get Azure access.
 1. **Environment**. Select the environment from the dropdown from which you would like to collect metrics.
 1. **Azure Regions**. Select **All Regions**, if you want to collect metrics from all regions. Or, click **Select Regions** to select the region of your choice from the dropdown to collect metrics.
 1. **Azure Namespaces**. Select **All Namespaces**, if you want to collect metrics with all namespaces. Or, click **Select Namespaces** to select the namespaces of your choice from the dropdown to collect metrics.
@@ -83,7 +83,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| environment | String | No | `null` | Tye of environment from which you would like to collect metrics. | |
+| environment | String | No | `null` | Type of environment from which you would like to collect metrics. | |
 | limitToRegions | Array | No | `null` | Enter the region or select all regions from which you want to collect metrics. | |
 | limitToNamespaces | Array | No | `null` | Enter the namespace or select all namespace with which you want to collect metrics.| |
 | tagFilters | JSON Object | No | `null` | Enter tag filter of your choice to enforce it with the each namespace.| |
