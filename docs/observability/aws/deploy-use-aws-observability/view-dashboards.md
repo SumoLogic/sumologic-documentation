@@ -28,7 +28,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 To to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  
 1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
 
 ## Navigate the AWS Observability Hierarchy
