@@ -2,7 +2,7 @@
 id: azure-metrics-source
 title: Azure Metrics Source
 sidebar_label: Azure Metrics Source
-description: Learn to collect Azure Metrics source.
+description: Learn how to collect Azure metrics.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
