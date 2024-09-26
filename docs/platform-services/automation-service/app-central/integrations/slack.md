@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/slack.png')} alt="slack" width="80"/>
 
 ***Version: 1.10  
-Updated: Sept 17, 2024***
+Updated: Sept 27, 2024***
 
 Create a public or private channel, Send messages or Files to channels or Users directly. This Slack integration keeps teams connected. Organize conversations, and quickly find what you need to get work done.
 
@@ -123,3 +123,5 @@ Create a public or private channel, Send messages or Files to channels or Users 
 * March 22, 2024 (v1.9) - New action: Rename Channel
 * Sept 17, 2024 (v1.10)
     * Updated action: Ask Question (Added Allow Custom Text feature)
+* Sept 27, 2024 (v1.10)
+    * Updated action: Ask Question, Ask For User Email (Made changes for timeout)
