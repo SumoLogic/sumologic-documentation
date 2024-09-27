@@ -86,7 +86,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | environment | String | No | `null` | Type of environment from which you would like to collect metrics. | |
 | limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
 | limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
-| tagFilters | JSON Object | No | `null` | Enter tag filter of your choice to enforce it with the each namespace.| |
+| tagFilters | JSON Object | No | `null` | For each namespace, if defined, the source will only collect metrics for resources that match the tag filter. | |
 | tenantId | String | No | `null` | Enter the tenant ID collected from the Azure platform. | |
 | clientId | String | No | `null` | Enter the client ID collected from the Azure platform.| |
 | clientSecret | String | No | `null` | Enter the client secret collected from the Azure platform.| |
