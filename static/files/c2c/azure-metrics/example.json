@@ -1,6 +1,7 @@
 {
     "api.version":"v1",
-    "source":{
+    "source":
+    {
        "sourceType": "Polling",
        "name": "azure-metrics-example",
        "contentType": "AzureMetrics",
