@@ -26,17 +26,18 @@ Azure Metrics Source is used to collect all available metrics from Azure Monitor
 
 The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**, and **Client Secret** while configuring. To obtain these values, follow the below steps:
 
-1. Sign in to the [Azure portal](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Navigate to Sumo Logic's [Custom Deployment wizard]](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
 1. In the **Custom Deployment** page, under **Basics** tab, select the **Subscription**, **Resource Group**, and **Region** in which to deploy the Application, then click **Next**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/basics.png')} alt="basics" style={{border:'1px solid gray'}} width="500"/>
 1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/> 
     1. Select service principal type as **Create new** to create a new app.
     1. Click **Change selection**, to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/> 
 1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
         1. **Description**. Enter the description of your choice.
-        1. **Expires**. From the dropdown select the expiry time period to the secret value. 
+        1. **Expires**. From the dropdown select the expiry time period to the secret value.
+        1. Copy and save the **Value**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/client-secrets.png')} alt="client-secrets" style={{border:'1px solid gray'}} width="600"/>   
 1. Navigate to **Overview**, copy and save the **Application (client) ID** and **Directory (tenant) ID**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/overview.png')} alt="overview" style={{border:'1px solid gray'}} width="600"/>  
-1. Under **Manage**, navigate to **Certificates & secrets** page, copy and save the **Value**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/client-secrets.png')} alt="client-secrets" style={{border:'1px solid gray'}} width="600"/>   
-1. Close the **Certificates & secrets** page to go back to the **Custom Deployment** page.
+1. Close the **Overviews** page to go back to the **Custom Deployment** page.
 1. Enter the copied **Value** in the **Client secret** section, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/add-client-secret.png')} alt="add-client-secret" style={{border:'1px solid gray'}} width="500"/>  
 1. Under **Subscription** tab, select the subscriptions from which you would like to collect metrics, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/subscriptions.png')} alt="subscriptions" style={{border:'1px solid gray'}} width="500"/>  
 1. Click **Review + Create**, you will be navigated to **Review + Create** tab. Review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/> 
@@ -54,7 +55,7 @@ To configure the Azure Metrics Source:
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Tenant Id**. Enter the Tenant ID collected from [Azure platform](#vendor-configuration).
+1. **Tenant Id**. Enter the Tenant Id collected from [Azure platform](#vendor-configuration).
 1. **Client Id**. Enter the Client Id collected from [Azure platform](#vendor-configuration).
 1. **Client Secret**. Enter the Client Secret collected from [Azure platform](#vendor-configuration).
 1. **View Subscriptions**. Click View Subscriptions to verify the authentication credentials entered to get Azure access.
@@ -65,15 +66,7 @@ To configure the Azure Metrics Source:
 1. **Scan Interval**.  This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
 1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
 
-## JSON Configuration
-
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
-
-| Parameter | Type | Value | Required | Description |
-|:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Azure Metrics"}` | Yes | Define the specific schema type. |
-| sourceType | String | `"Polling"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+## JSON configuration
 
 ### Configuration Object
 
@@ -83,13 +76,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| environment | String | No | `null` | Type of environment from which you would like to collect metrics. | |
+| environment | String | Yes | `null` | Type of environment from which you would like to collect metrics. | |
 | limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
 | limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
 | tagFilters | JSON Object | No | `null` | For each namespace, if defined, the source will only collect metrics for resources that match the tag filter. | |
-| tenantId | String | No | `null` | Enter the tenant ID collected from the Azure platform. | |
-| clientId | String | No | `null` | Enter the client ID collected from the Azure platform.| |
-| clientSecret | String | No | `null` | Enter the client secret collected from the Azure platform.| |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| |
 | scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br /> **Options**: 1m or 5m. |  |
 
 ### JSON example
