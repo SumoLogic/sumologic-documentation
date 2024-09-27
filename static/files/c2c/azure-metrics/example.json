@@ -48,6 +48,6 @@
              }
           ]
        },
-       "scanInterval": 300000,
+       "scanInterval": "300000"
     }
  }
