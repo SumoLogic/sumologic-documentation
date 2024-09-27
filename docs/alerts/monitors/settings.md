@@ -12,7 +12,7 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the **Monitors** page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
-
+ 
 
 The page displays the following information:
 * **Name**. Name of the monitor.
