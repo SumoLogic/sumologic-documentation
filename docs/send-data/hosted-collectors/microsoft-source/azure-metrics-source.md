@@ -85,7 +85,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | environment | String | No | `null` | Type of environment from which you would like to collect metrics. | |
 | limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
-| limitToNamespaces | Array | No | `null` | Enter the namespace or select all namespace with which you want to collect metrics.| |
+| limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
 | tagFilters | JSON Object | No | `null` | Enter tag filter of your choice to enforce it with the each namespace.| |
 | tenantId | String | No | `null` | Enter the tenant ID collected from the Azure platform. | |
 | clientId | String | No | `null` | Enter the client ID collected from the Azure platform.| |
