@@ -139,7 +139,7 @@ In this step, you'll create a source to collect Task and Container level perform
 
 1.  Configure an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source). Add the fields account, region and namespace as shown below. <br/><img src={useBaseUrl('img/integrations/amazon-aws/ecs2.png')} alt="ECS" />
 2.  Copy the `KinesisLogsRoleARN` and `KinesisLogsDeliveryStreamARN` values from the outputs tab of Cloudformation. <br/><img src={useBaseUrl('img/integrations/amazon-aws/ecs3.png')} alt="ECS" />
-3.  Go to your CloudWatch > Log Groups and click on your CloudWatch log group `/aws/ecs/containerinsights/<cluster>/performance`. <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs4.png')} alt="ECS" />
+3. Go to your CloudWatch > Log Groups and click on your CloudWatch log group `/aws/ecs/containerinsights/<cluster>/performance`. <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs4.png')} alt="ECS" />
 4.  Click on Create and in opened window fill in the below parameters
     1.  Get the delivery stream name from the arn copied in step 2 and fill in the KinesisLogsDeliverStream  field.
     2.  Get the role name from the arn copied in step 2 and fill in the role.

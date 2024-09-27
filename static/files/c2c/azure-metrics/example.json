@@ -49,6 +49,5 @@
           ]
        },
        "scanInterval": 300000,
-       "paused": false
     }
  }
