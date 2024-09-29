@@ -21,18 +21,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-powered assistant that simplifies log analysis by allowing users to ask questions in plain English and get intelligent search suggestions, eliminating the need to manually write complex log queries.
+Sumo Logic Copilot is an AI-powered assistant that simplifies log analysis by allowing you to ask questions in plain English and get intelligent search suggestions—eliminating the need to manually write complex log queries.
 
-With its intuitive interface, Copilot automatically generates searches from natural language queries, helping you quickly detect performance issues, anomalies, and security threats. It guides you through AI-generated prompts, accelerating the identification of root causes and empowering quick, informed decisions.
-
-By removing the trial-and-error common in many AI tools, Copilot delivers precise answers and faster resolutions, providing expert-level insights and enhancing your log analysis process.
+With its intuitive interface, Copilot automatically generates log searches from natural language prompts, helping you quickly detect performance issues, anomalies, and security threats. It guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. By providing precise answers and faster resolutions, Copilot enhances your log analysis process with expert-level insights to accelerate root cause identification and empower informed decisions.
 
 ### Key features
 
+Copilot reduces manual effort by combining prebuilt insights with natural language query analysis.
+
 * **AI-curated insights**. Get customized insights tailored to your data.
-* **Natural language queries**. Ask questions in plain English without needing to learn query syntax.
-* **Pre-built insights**. Utilize pre-built insights to accelerate your workflow.
+* **Natural language queries**. Ask questions in plain English—no need to enter query syntax.
+* **Prebuilt insights**. Utilize prebuilt insights to accelerate your workflow.
 * **Root cause analysis**. Quickly identify the root cause of issues with AI assistance.
+* **Increased efficiency**. Streamline the log analysis process, minimizing manual tasks.
 
 ### Who benefits from Copilot?
 
@@ -40,13 +41,6 @@ Copilot is ideal for:
 
 * **On-call engineers**. Accelerate time to resolution by surfacing key application insights.
 * **Security engineers**. Obtain security insights rapidly for faster threat detection.
-
-### How Copilot helps
-
-Copilot combines pre-built insights with the ability to analyze logs using natural language queries, helping you:
-
-* **Find root causes faster**. Use AI to quickly pinpoint underlying issues.
-* **Enhance efficiency**. Streamline the log analysis process, reducing manual effort.
 
 ## How to use Copilot
 
@@ -68,7 +62,7 @@ Click **Select Source Category** - the source expression box - and type/select t
 
 ### Step 3: Execute a Suggestions prompt
 
-Under **Suggestions** > **Explore**, click on any of the prebuilt, AI-suggested suggested prompts to start your investigation. These AI-curated natural language insights are customized for the specific data source chosen.
+Under **Suggestions** > **Explore**, click on any of the prebuilt, AI-suggested prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
@@ -90,13 +84,15 @@ Express your chain of thought to the AI by breaking up your prompt into smaller 
 
 ### Step 4: Refine your investigation
 
-After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations. Quickly review AI-driven recommendations to identify attacker Tactics, Techniques, and Procedures (TTPs).
+After running a prompt, your current investigation will be summarized in plain text in the **Ask Something...** field. Under **Suggestions** > **Refine**, you'll find AI-driven natural language prompt ideas to further narrow your investigation so you can quickly identify attacker tactics, techniques, and procedures (TTPs).
 
-As a best practice, start with a simple prompt, verify the query translation, and refine it gradually using the **Suggestions** > **Refine** prompts to apply suggested refinements to your existing investigation. We'll build on the prompt from the previous step, `Count the number of log entries by the collector ID`.
+For best results, start with a simple prompt, verify the query translation, and then gradually refine your investigation by applying the **Refine** suggestions.
+
+We'll build on the prompt from the previous step, `Count the number of log entries by the collector ID`.
 
 1. To refine your search for log anomalies, click the **Refine** option outlined in red, `Count the number of log entries by the collector ID. Sum _collectorid by _count`.<br/><img src={useBaseUrl('img/search/copilot/refine1.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
 1. After the first refinement, you'll see both the prompt and query code updated. Continue to narrow down your results by clicking option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine2.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
-1. You'll see the prompt and query code updated again. Next, click the **Refine** option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine3.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
+1. The prompt and query code are updated with the second refinement. Next, click the **Refine** option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine3.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
 1. After the third refinement, the prompt now reads `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine4.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" /><br/>You can continue to refine and/or configure further settings below.
 
 #### Time range
@@ -112,7 +108,7 @@ Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **L
 
 #### Edit query code
 
-If needed, you can edit your log search query code.
+Optionally, you can edit your log search query code.
 
 1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
    <!-- These two notes conflict. I've asked for clarity.
@@ -218,6 +214,10 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 ## Feedback
 
-We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information. You can also leave feedback on errors you run into.
+We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon and entering the context of your query.
 
-<img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+You can also leave feedback on errors.
+
+<img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
