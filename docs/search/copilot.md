@@ -175,7 +175,7 @@ If needed, you can edit your log search query code.
    :::
 
    :::warning Limitations
-   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query:
+   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query: 
    ```
    _sourceCategory=* "{" "}"
    | limit 10000 | logreduce keys noaggregate
@@ -194,7 +194,7 @@ To save space, you can use the **Hide Log Query** icon to collapse your current 
 
 ### Step 5: Open in Log Search
 
-Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
+Click the **Open in Log Search** icon, which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
 
