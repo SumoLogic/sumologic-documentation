@@ -21,12 +21,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
+Sumo Logic Copilot is an AI-powered assistant that simplifies log analysis by allowing users to ask questions in plain English and get intelligent search suggestions, eliminating the need to manually write complex log queries.
+
+With its intuitive interface, Copilot automatically generates searches from natural language queries, helping you quickly detect performance issues, anomalies, and security threats. It guides you through AI-generated prompts, accelerating the identification of root causes and empowering quick, informed decisions.
+
+By removing the trial-and-error common in many AI tools, Copilot delivers precise answers and faster resolutions, providing expert-level insights and enhancing your log analysis process.
 
 ### Key features
 
 * **AI-curated insights**. Get customized insights tailored to your data.
-* **Natural language queries**. Ask questions in plain English.
+* **Natural language queries**. Ask questions in plain English without needing to learn query syntax.
 * **Pre-built insights**. Utilize pre-built insights to accelerate your workflow.
 * **Root cause analysis**. Quickly identify the root cause of issues with AI assistance.
 
@@ -34,75 +38,15 @@ Sumo Logic Copilot is an AI-based assistant designed to simplify log analysis by
 
 Copilot is ideal for:
 
-* **On-call engineers**. Accelerate time to resolution for application insights.
-* **Security engineers**. Quickly obtain security insights.
+* **On-call engineers**. Accelerate time to resolution by surfacing key application insights.
+* **Security engineers**. Obtain security insights rapidly for faster threat detection.
 
 ### How Copilot helps
 
-Copilot combines pre-built insights with the ability to ask questions of your logs in natural English, helping you to:
+Copilot combines pre-built insights with the ability to analyze logs using natural language queries, helping you:
 
-* **Find root causes faster**. Use AI to quickly pinpoint issues.
-* **Enhance efficiency**. Streamline the log analysis process.
-
-
-## Sample Copilot queries
-
-<!-- add micro lesson video when published-->
-<!-- replace with https://www.youtube.com/watch?v=QrRvN2Bg4NY ? -->
-
-In the scenario depicted in the video, Copilot is leveraged to investigate a security issue where it appears AWS CloudTrail access keys were leaked outside an organization.
-
-<Iframe url="https://player.vimeo.com/video/939372059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-        width="854px"
-        height="480px"
-        title="Copilot Demo"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-To recap the steps taken:
-
-1. First, the data source is selected for AWS CloudTrail audit logs.
-1. Launch the log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
-1. The query is refined by applying the suggestion `Count logs by eventname, access key and sourceIp`.
-1. The filter is applied for Create and Authorize events; attackers often create new resources during a breach. You'll then see an anomaly with `AuthoritySecurityGroupIngress` events.
-1. Feedback is provided back to Sumo Logic to enhance the AI's accuracy stating that the queries have been accurate so far.  
-1. The security `groupid` is added to the prompt to tabulate events containing that data.
-1. Focus on a specific access key, `ABCDEFGOYCM3PIKNOVRA`, noting `PutRolePolicy` events indicating permission elevation. Multiple AWS accounts are impacted.
-
-You can conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
-
-<!--
-### Security example
-
-This video demonstrates how to use Copilot to analyze AWS CloudTrail data by reviewing AI-curated suggestions, refining searches with natural language prompts, and launching an AI-generated dashboard for root cause analysis and sharing.
-
-<Iframe url="https://www.youtube.com/embed/QrRvN2Bg4NY?si=Bsc2mRbqMPq8bsqg"
-        width="854px"
-        height="480px"
-        title="Copilot Demo"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-Here's a recap:
-
-1. **Select AWS CloudTrail**. Start by selecting AWS CloudTrail as the data source.
-1. **Review Suggestions**. Look at the **Suggestions** section where AI-curated natural language insights are provided, customized for the specific AWS CloudTrail data.
-1. **Select a Suggestion**. Choose the suggestion `Count logs by eventname`.
-1. **Refine Search**. Enhance your search for log anomalies by adding `access key and sourceIp` to the prompt. No need to edit the query code.
-1. **Filter Results**. Narrow down the results by adding `eventname contains Create` to the prompt.
-1. **Review Recommendations**. Quickly review AI-driven recommendations to identify attacker TTPs (Tactics, Techniques, and Procedures).
-1. **Launch Dashboard**. Launch an AI-generated dashboard directly from the UI for root cause analysis.
--->
+* **Find root causes faster**. Use AI to quickly pinpoint underlying issues.
+* **Enhance efficiency**. Streamline the log analysis process, reducing manual effort.
 
 ## How to use Copilot
 
@@ -118,13 +62,15 @@ From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the
 
 ### Step 2: Select a source category
 
-Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate.
+Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate. In this example, we'll do AWS WAF.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
 ### Step 3: Execute a Suggestions prompt
 
-Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
+Under **Suggestions** > **Explore**, click on any of the prebuilt, AI-suggested suggested prompts to start your investigation. These AI-curated natural language insights are customized for the specific data source chosen.
+
+In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
 <img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
@@ -144,14 +90,14 @@ Express your chain of thought to the AI by breaking up your prompt into smaller 
 
 ### Step 4: Refine your investigation
 
-After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations.
+After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations. Quickly review AI-driven recommendations to identify attacker Tactics, Techniques, and Procedures (TTPs).
 
-As a best practice, start with a simple prompt, verify the query translation, and refine it gradually using the **Suggestions** > **Refine** prompts to apply suggested refinements to your existing investigation. For example:
+As a best practice, start with a simple prompt, verify the query translation, and refine it gradually using the **Suggestions** > **Refine** prompts to apply suggested refinements to your existing investigation. We'll build on the prompt from the previous step, `Count the number of log entries by the collector ID`.
 
-1. We start with the initial prompt, `Count the number of log entries by the collector ID`, and then click the **Refine** option outlined in red.<br/><img src={useBaseUrl('img/search/copilot/refine1.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
-1. After the first refinement, the prompt becomes `Count the number of log entries by the collector ID. Sum _collectorid by _count`, and then click the **Refine** option outlined in red.<br/><img src={useBaseUrl('img/search/copilot/refine2.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
-1. After the second refinement, the prompt becomes `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum`.  And then click the **Refine** option outlined in red.<br/><img src={useBaseUrl('img/search/copilot/refine3.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
-1. After the third refinement, the prompt now reads `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`. You can continue to refine as needed.<br/><img src={useBaseUrl('img/search/copilot/refine4.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+1. To refine your search for log anomalies, click the **Refine** option outlined in red, `Count the number of log entries by the collector ID. Sum _collectorid by _count`.<br/><img src={useBaseUrl('img/search/copilot/refine1.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
+1. After the first refinement, you'll see both the prompt and query code updated. Continue to narrow down your results by clicking option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine2.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
+1. You'll see the prompt and query code updated again. Next, click the **Refine** option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine3.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
+1. After the third refinement, the prompt now reads `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine4.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" /><br/>You can continue to refine and/or configure further settings below.
 
 #### Time range
 
@@ -160,7 +106,7 @@ As a best practice, start with a simple prompt, verify the query translation, an
 
 #### Chart type
 
-Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also add it to an existing dashboard.
+Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
 <img src={useBaseUrl('img/search/copilot/chart-types.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="500" />
 
@@ -188,8 +134,21 @@ If needed, you can edit your log search query code.
 1. When you're done, press Enter or click the search button.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
-To save space, you can use the **Hide Log Query** icon to collapse your current investigation's log query code.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
+To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 :::
+
+#### Recent history
+
+To view your recent prompts from your current session, click the recent history icon.<br/><img src={useBaseUrl('img/search/copilot/recent-history.png')} alt="recent-history.png" style={{border: '1px solid gray'}} width="700" />
+
+
+#### History
+
+To view your entire prompt history across all conversations, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+
+#### New Conversation
+
+To start over and begin a new investigation, click **New Conversation**. <br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
 ### Step 5: Open in Log Search
@@ -198,16 +157,31 @@ Click the **Open in Log Search** icon, which will copy your query from Copilot o
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
 
-### Additional options
-
-To view your recent prompts, click the recent history icon.<br/><img src={useBaseUrl('img/search/copilot/recent-history.png')} alt="recent-history.png" style={{border: '1px solid gray'}} width="600" />
-
-To start over and begin a new investigation, click **New Conversation**.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="600" />
-
-To view your entire prompt history across all conversations, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
 
 
-## Copilot example for Cloud SIEM
+## Example queries
+
+### Observability
+
+<!-- add micro lesson when published-->
+
+In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization.
+
+The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review AI-curated suggestions, refine searches using natural language prompts, and generate an AI-driven dashboard for root cause analysis and sharing.
+
+<Iframe url="https://www.youtube.com/embed/QrRvN2Bg4NY?si=FTbUeCI-xaJrglmm?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+
+### Cloud SIEM
 
 You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
 
