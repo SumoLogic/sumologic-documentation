@@ -133,7 +133,7 @@ Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prom
 <details>
 <summary>Manual entry (not recommended)</summary>
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the ones under **Suggestions** > **Explore**. Because manually typing an AI prompt requires careful precision for optimal performance, we recommend sticking with the prebuilt [Suggestions](#suggestions-recommended) prompts.
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions** > **Explore**. Because manually typing an AI prompt requires careful precision for optimal performance, we recommend sticking with the prebuilt prompts.
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
@@ -175,7 +175,7 @@ If needed, you can edit your log search query code.
    :::
 
    :::warning Limitations
-   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query: 
+   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query:
    ```
    _sourceCategory=* "{" "}"
    | limit 10000 | logreduce keys noaggregate
