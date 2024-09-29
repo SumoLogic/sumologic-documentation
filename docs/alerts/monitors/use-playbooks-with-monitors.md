@@ -1,7 +1,7 @@
 ---
 id: use-playbooks-with-monitors
 title: Automated Playbooks in Monitors
-sidebar_label: Automated Playbooks in Monitors
+sidebar_label: Using Automated Playbooks
 description: Learn how to use Automation Service playbooks with monitors.
 ---
 
