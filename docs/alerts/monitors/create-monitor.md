@@ -63,7 +63,7 @@ Note that the same threshold translating functionality supports to [Opening Aler
 :::
 
 
-<!-- This will be consolidated and moved to the appropriate parts of the doc after
+<!-- This will be consolidated and moved to the appropriate parts of the doc after https://github.com/SumoLogic/sumologic-documentation/pull/4593
 
 AI-Driven Alerts for metrics-based monitors, which includes advanced anomaly detection and automated incident resolution through playbooks.
 
