@@ -63,7 +63,7 @@ LogCompare simplifies log analysis by enabling easy comparison of log data from 
 
 #### Anomaly Detection
 
-[Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method), powered by machine learning, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response.
+Anomaly Detection, powered by machine learning, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response. [Learn more](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
 #### Automated playbooks
 

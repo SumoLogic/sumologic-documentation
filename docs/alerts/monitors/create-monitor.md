@@ -133,7 +133,7 @@ If you're using the outlier or anomaly detection method, you'll need to select t
 
 ### Trigger Type (Logs)
 
-Next, you'll need to configure the **Trigger Type** for logs or [metrics](#metrics-trigger-type). rigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
+Next, you'll need to configure the **Trigger Type** for logs or [metrics](#trigger-type-metrics). rigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
 You can set the trigger based on the following:
 * A **returned row count** (default), which is the number of rows returned from the log search.
