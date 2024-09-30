@@ -28,7 +28,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 You must explicitly enable diagnostic settings for each Azure Cache for Redis you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/RedisCache/Logs`, `Azure/RedisCache/Metrics`.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/RedisCache/Logs` and `Azure/RedisCache/Metrics`.
 
 ### Configure field in field schema
 
@@ -169,55 +169,57 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 ### Administrative Operations
 
-The **Azure Cache for Redis - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors and users / applications by operation type etc.
+The **Azure Cache for Redis - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors, and users/applications by operation type.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Administrative-Operations.png')} alt="Azure Cache for Redis - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Connections(Enterprise)
 
-The **Azure Cache for Redis - Connections(Enterprise)** provides details like connections by location, total unique connected clients, total connections, event types, disconnection events, failure by operations, connected clients, cache read vs write and hit vs misses etc.
+The **Azure Cache for Redis - Connections(Enterprise)** provides details like connections by location, total unique connected clients, total connections, event types, disconnection events, failure by operations, connected clients, cache read vs write, and hit vs misses.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Connections-Enterprise.png')} alt="Azure Cache for Redis - Connections(Enterprise" style={{border: '1px solid gray'}} width="800" />
 
 ### Connections(Non-Enterprise)
-The **Azure Cache for Redis - Connections(Non-Enterprise)** dashboard provides details like connections by location, total unique connected clients, total connections, top 10 ip's by connection count, connections by resource name, connected clients (instance based), connected clients, cache read vs write and hit vs misses etc.
+
+The **Azure Cache for Redis - Connections(Non-Enterprise)** dashboard provides details like connections by location, total unique connected clients, total connections, top 10 ip's by connection count, connections by resource name, connected clients (instance based), connected clients, cache read vs write, and hit vs misses.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Connections-Non-Enterprise.png')} alt="Azure Cache for Redis - Connections(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Geo Replication
-The **Azure Cache for Redis - Geo Replication** dashboard provides details like geo-replication healthy - fetched from geo-secondary cache, geo-replication full sync events - fetched from geo-secondary cache, geo-replication data sync offset - fetched from geo-primary cache and geo-replication connectivity lag - fetched from geo-secondary cache
+
+The **Azure Cache for Redis - Geo Replication** dashboard provides details like geo-replication healthy - fetched from geo-secondary cache, geo-replication full sync events - fetched from geo-secondary cache, geo-replication data sync offset - fetched from geo-primary cache, and geo-replication connectivity lag - fetched from geo-secondary cache.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Geo-Replication.png')} alt="Azure Cache for Redis - Geo Replication" style={{border: '1px solid gray'}} width="800" />
 
 
 ### MSEntra Authentication Audit
-The **Azure Cache for Redis - MSEntra Authentication Audit** dashboard provides details like requests by location, requests by resource name, requests by username and MSEntra authentication audit details
+
+The **Azure Cache for Redis - MSEntra Authentication Audit** dashboard provides details like requests by location, requests by resource name, requests by username, and MSEntra authentication audit details.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-MSEntra-Authentication-Audit.png')} alt="Azure Cache for Redis - MSEntra Authentication Audit" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Policy and Recommendations
-The **Azure Cache for Redis - Policy and Recommendations** dashboard provides details like total success policy events, total failed policy events, total recommendation events and recent recommendation events etc.
+
+The **Azure Cache for Redis - Policy and Recommendations** dashboard provides details like total success policy events, total failed policy events, total recommendation events, and recent recommendation events.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Policy-and-Recommendations.png')} alt="Azure Cache for Redis - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Resource Operations
-The **Azure Cache for Redis - Resource Operations** dashboard provides details like total operations, ops per second (max), gets, sets, evicted key count and expired key count etc.
+
+The **Azure Cache for Redis - Resource Operations** dashboard provides details like total operations, ops per second (max), gets, sets, evicted key count, and expired key count.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Operations.png')} alt="Azure Cache for Redis - Resource Operations" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Resource Overview
-The **Azure Cache for Redis - Resource Overview** dashboard provides details like max server load %, max CPU %, max bytes used, max number of connected clients and errors etc
+
+The **Azure Cache for Redis - Resource Overview** dashboard provides details like max server load %, max CPU %, max bytes used, max number of connected clients, and errors.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Overview.png')} alt="Azure Cache for Redis - Resource Overview" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Resource Performance
-The **Azure Cache for Redis - Resource Performance** dashboard provides details like cache hits, cache misses, cache write (max), cache read (max), cache latency microseconds, 99th percentile latency (max)
+
+The **Azure Cache for Redis - Resource Performance** dashboard provides details like cache hits, cache misses, cache write (max), cache read (max), cache latency microseconds, and 99th percentile latency (max).
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance.png')} alt="Azure Cache for Redis - Resource Performance" style={{border: '1px solid gray'}} width="800" />
 
