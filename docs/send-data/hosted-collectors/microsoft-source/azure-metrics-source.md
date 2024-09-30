@@ -27,7 +27,7 @@ Azure Metrics Source is used to collect all available metrics from Azure Monitor
 The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**, and **Client Secret** while configuring. To obtain these values, follow the below steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Navigate to Sumo Logic's [Custom Deployment wizard]](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
+1. Navigate to Sumo Logic's [Custom Deployment wizard](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
 1. In the **Custom Deployment** page, under **Basics** tab, select the **Subscription**, **Resource Group**, and **Region** in which to deploy the Application, then click **Next**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/basics.png')} alt="basics" style={{border:'1px solid gray'}} width="500"/>
 1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/> 
     1. Select service principal type as **Create new** to create a new app.
