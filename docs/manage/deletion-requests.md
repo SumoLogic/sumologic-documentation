@@ -25,8 +25,8 @@ Key features:
 
 ## Create a deletion request
 
-:::caution
-After data deletion request is approved, data will be deleted from the customer org and no users within the customer org (admin or otherwise) will be able to access the data. Reiterating the data deletion requests should not be raised frivolously and any data deletion approvals should be given sufficient consideration.
+:::warning
+After a data deletion request is approved, data will be deleted from the organization and no users within the organization (admin or otherwise) will be able to access the data. Data deletion requests should not be done without planning, and any data deletion approvals should be given sufficient consideration.
 :::
 
 :::note
