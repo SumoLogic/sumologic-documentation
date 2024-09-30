@@ -40,7 +40,7 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Close the **Overviews** page to go back to the **Custom Deployment** page.
 1. Enter the copied **Value** in the **Client secret** section, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/add-client-secret.png')} alt="add-client-secret" style={{border:'1px solid gray'}} width="500"/>  
 1. Under **Subscription** tab, select the subscriptions from which you would like to collect metrics, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/subscriptions.png')} alt="subscriptions" style={{border:'1px solid gray'}} width="500"/>  
-1. Click **Review + Create**, you will be navigated to **Review + Create** tab. Review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/> 
+1. Click **Review + Create**. On the **Review + Create** tab review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/> 
 
 ### Source configuration
 
