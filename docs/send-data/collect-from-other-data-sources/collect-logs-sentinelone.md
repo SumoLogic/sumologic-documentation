@@ -62,7 +62,7 @@ To configure syslog messages, do the following:
 
 1. Click **Test**, and then click **Save**.
 
-1. In Sumo Logic, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you do not see any data coming in after 2-3 minutes, check the following:
+1. In Sumo Logic, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-geta-token-and-certificate-from-sumo-logic). If you do not see any data coming in after 2-3 minutes, check the following:
 
    * that the Sumo Logic Collector has read access to the logs
    * that your time zone is configured correctly.

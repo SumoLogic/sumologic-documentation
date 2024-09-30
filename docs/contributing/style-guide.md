@@ -286,21 +286,21 @@ To format an open beta release:
 
    First paragraph goes here...
    ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui-new.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
+1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
      ```js title="sidebars.ts"
      getstarted: [
        {
          type: 'category',
          label: 'Welcome to Sumo Logic',
          items: [
-           'get-started/sumo-logic-ui-new',
+           'get-started/sumo-logic-ui',
            ...
      beta: [
        {
          type: 'category',
          label: 'Beta',
          items: [
-           'get-started/sumo-logic-ui-new',
+           'get-started/sumo-logic-ui',
            ...
      ```
 1. Publish the doc.
@@ -1283,7 +1283,7 @@ For repeatable content - an identical section that appears in one or more docs -
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
 
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
 
 <Tabs
   className="unique-tabs"

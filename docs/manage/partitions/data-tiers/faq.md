@@ -139,3 +139,13 @@ See [Searching Data Tiers](searching-data-tiers.md).
 ## Can I use Scheduled Searches on the lower data tiers?
 
 Currently, you cannot use [Scheduled Searches](/docs/alerts/scheduled-searches) on the Infrequent Tier.  
+
+## What happens to the queries with _dataTier modifier while migrating to Flex Pricing?
+
+:::note
+Users will continue to have support for the `_dataTier` modifier while still migrating to Flex pricing.
+:::
+
+After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
+
+Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.
