@@ -56,7 +56,7 @@ From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the
 
 ### Step 2: Select a source category
 
-Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate. In this example, we'll do AWS WAF.
+Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate. In this example, we'll select a source for AWS WAF.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
