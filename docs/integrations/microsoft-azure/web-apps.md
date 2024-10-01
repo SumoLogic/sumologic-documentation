@@ -280,7 +280,7 @@ Use this dashboard to:
 *  Monitor I/O operational events and their impact on service availability.
 *  Analyze trends in operational performance over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-I/O-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-I-O-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS Statistics
 
