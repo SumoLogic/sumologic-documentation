@@ -12,7 +12,7 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the **Monitors** page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
- 
+
 
 The page displays the following information:
 * **Name**. Name of the monitor.
@@ -69,7 +69,7 @@ To view the thresholds translating values in your metrics explorer, follow the s
 1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
 
 :::note
-Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
+Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
 :::
 
 ## Edit, Disable, More Actions
