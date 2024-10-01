@@ -12,7 +12,7 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the **Monitors** page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
- 
+
 
 The page displays the following information:
 * **Name**. Name of the monitor.
@@ -25,7 +25,7 @@ The page displays the following information:
 
 ![monitors page](/img/monitors/monitors-page.png)
 
-Open the [Alert List](alert-response.md) to view all of the triggered alerts from a monitor by hovering your cursor over its **Status** and clicking the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
+Open the [Alert List](alert-response.md) to view all of the triggered alerts from a monitor by hovering your cursor over its **Status** and clicking the icon.<br/><img src={useBaseUrl('img/monitors/monitors-shortcut.png')} alt="monitor shortcut" width="550" />
 
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter monitors by name and status. For example, you can view all monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
@@ -69,7 +69,7 @@ To view the thresholds translating values in your metrics explorer, follow the s
 1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
 
 :::note
-Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
+Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
 :::
 
 ## Edit, Disable, More Actions
@@ -89,7 +89,19 @@ Note that the same threshold translating functionality supports to [Creating Mon
 
 ## Tags
 
-Adding a **Tag** to a monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your monitors beyond their name and description. Example tag: `team=alerting`, where key is `team` and value is `alerting`.
+Tagging monitors and alerts can help you categorize, search, filter, and correlate data. These tags are key/value pairs that allow you to apply additional metadata to your monitors and alerts beyond their names and descriptions. Example tag: `team=alerting`, where key is `team` and value is `alerting`.
+
+### Create a tag
+
+To add a tag while creating a new monitor, see [Create a Monitor > Monitor details](/docs/alerts/monitors/create-monitor/#step-5-monitor-details).
+
+To add a tag to an existing monitor:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
+1. Double-click on any monitor in your list.
+1. In the side panel, click **Edit**.
+1. Under the **Monitor details** step, create a tag using the `key=value` format.
+1. Click **Save**.
 
 ### Syntax
 
@@ -98,45 +110,38 @@ Adding a **Tag** to a monitor can help you categorize, search, filter, and corre
 - Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
 - You can associate a maximum of 50 tags per monitor
 
-### Create a tag
-
-To add a tag to an existing monitor:
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-1. Double-click on any monitor in your list.
-1. In the side panel, click **Edit**.
-1. Under step 4 (**Monitor Details**), create a tag using the `key=value` format.
-1. Click **Save**.
-
-To add a tag while creating a new monitor:
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-1. Click **Add** > **New Monitor**.
-1. Follow the steps to create a new monitor. When you get to step 4 (**Monitor Details**), you can:
-   * Create a new tag using the `key=value` format.
-   * Apply an existing tag by selecting the key and its possible values from the dropdown.
-1. Click **Save**.
-
-
 ### Using tags
 
-Tags will appear on all future alerts triggered by the same monitor but will not be applied to past alerts.
+:::note
+After you create a tag from a Monitor, it will appear on future alerts triggered by that monitor. Tags are not retroactively applied to past alerts.
+:::
 
-To view your tags, go to your alerts list page. 
+#### From the Monitors page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+To view tags from your Monitors page:
 
-[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Here, you'll see a **Tags** column. On, this page, you can filter by tags.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
+1. You'll see a **Tags** column, and you can filter by tags at the top.<br/><img src={useBaseUrl('img/alerts/monitors-tags.png')} alt="Monitors page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/alerts/monitors-alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800"  />
 
-You can also see your tags on Alert Response pages. Here's an example:
+#### From the Alert List page
 
-<img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
+To view tags from your Alert List:
 
-## Folder permissions
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Navigate to the **Alerts** section by clicking the notification bell icon at the top of your Sumo Logic dashboard.<br/> [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+1. You'll see a **Tags** column, and you can filter by tags at the top.<br/><img src={useBaseUrl('img/alerts/alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800" />
 
-This section describes permissions for folders that contain monitors. This feature is not enabled by default in all accounts. If you would like access to this feature please contact Sumo Logic Support for assistance.
+#### From Alert Response pages
+
+You can also see your tags on Alert Response pages:
+
+1. Click on any alert from your **Alerts List** page (like those shown in the previous screenshot).
+1. Go to the **Tags** section.<br/><img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
+
+
+## Monitor folder permissions
+
+This section describes permissions for monitor folders. This feature is not enabled by default in all accounts. To request access, contact Support.
 
 Access to folders that contain monitors is controlled by permissions. If you have the **Manage Monitors** role capability, you can grant one or more roles permissions to folders that you have created. If you have the **Admin Monitors** capability you can manage permission to all folders on the **Monitors** page. The permissions you can set are:
 
@@ -147,7 +152,7 @@ Access to folders that contain monitors is controlled by permissions. If you hav
 * **Manage**. Ability to move folders and to grant other roles permissions to the folder. If you grant this permission, the permissions listed above will be granted as well.
 
 To set permissions for a monitors folder:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions**.
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  
