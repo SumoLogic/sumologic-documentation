@@ -27,8 +27,6 @@ For Azure Web Apps, you can collect the following logs and metrics:
     * [AppServicePlatformLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceplatformlogs)
     * [AppServiceAntivirusScanAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceantivirusscanauditlogs)
 
-    Requests made by the WebApps service itself, such as log creation or deletion, aren't logged. For a full list of the logged data, see [Storage logged operations and status messages](https://learn.microsoft.com/en-us/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
-
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
 * **Azure WebApps specific metrics**. These are metrics specific to Functions like execution count and execution units.
