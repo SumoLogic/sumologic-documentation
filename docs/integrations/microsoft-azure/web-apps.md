@@ -13,21 +13,24 @@ The Azure Web Apps app allows you to collect Azure web server and application di
 
 For more information, see [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/).
 
-## Log types
+## Log and metric types
 
-The Azure Web Apps app supports:
-* **Web Server Logging.** Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
-* **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
-* **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
-* **AppServiceConsoleLogs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceconsolelogs).
-* **AppServiceHTTPLogs**. Provides detailed records of all HTTP requests made to your Azure services, helping you analyze traffic patterns and diagnose issues. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicehttplogs).
-* **AppServiceEnvironmentPlatformLogs**. Offers insights into the underlying platform environment of your Azure App Service, allowing you to monitor the health and performance of your app's infrastructure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceenvironmentplatformlogs).
-* **AppServiceAuditLogs**. Captures administrative actions taken on your Azure App Service resources, enabling you to track changes and maintain compliance. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceauditlogs).
-* **AppServiceFileAuditLogs**. Records actions taken on files within your Azure App Service, assisting in the auditing of file access and modifications. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicefileauditlogs).
-* **AppServiceAppLogs**. Provides application-specific logging information, giving developers insights into application behavior and issues. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceapplogs).
-* **AppServiceIPSecAuditLogs**. Details the use of IPsec policies within your Azure App Service, helping to ensure secure network configurations. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceipsecauditlogs).
-* **AppServicePlatformLogs**. Gives an overview of the platform-level events that occur within your Azure App Service, helping you monitor service reliability and performance. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceplatformlogs).
-* **AppServiceAntivirusScanAuditLogs**. Provides records of antivirus scan activities within your Azure App Service, ensuring that your applications remain secure from malicious threats. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceantivirusscanauditlogs).
+For Azure Web Apps, you can collect the following logs and metrics:
+
+- **Resource logs**, which provide an insight into operations that were performed within an Azure resource. For a complete schema for resource logs refer to the below documentation:
+    * [Web Server Logging](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx)
+    * [Application Diagnostics Logs](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx)
+    * [Activity logs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema)
+    * [AppServiceAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceauditlogs)
+    * [AppServiceFileAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicefileauditlogs)
+    * [AppServiceIPSecAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceipsecauditlogs)
+    * [AppServicePlatformLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceplatformlogs)
+    * [AppServiceAntivirusScanAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appserviceantivirusscanauditlogs)
+
+- **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
+
+* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
 
 ### Sample log messages
 
@@ -49,44 +52,17 @@ _sourceCategory=Azure/Web-app
 | outlier _count
 ```
 
-## Collecting logs for Azure Web Apps
+## Setup
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
-1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). It is recommended to create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
+* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
-     When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApps/Logs`.
-2. Push logs from Azure Monitor to Event Hub.
-    1. Sign in to [Azure Portal](https://portal.azure.com/).
-    1. Go to your Azure Web App and in the left pane, go to **Monitoring** > **Diagnostics Settings.**
-    1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
-    1. Select the **Stream to an event hub box** checkbox.
-    1. Select an Azure subscription.
-    1. **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
-    1. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
-    1. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
-    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-web-apps" width="800"/>
-    1. Click **Save**.
+You must explicitly enable diagnostic settings for each web app that you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-## Collecting Metrics for Azure Web Apps (Optional)
-
-In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md). For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
-
-The current Sumo Logic app for Web Apps does not support metric content so this step is optional.
-
-1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor).  
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApp/Metrics`
-2. Push metrics from Azure Monitor to Event Hub.
-    1. Sign in to [Azure Portal](https://portal.azure.com/).
-    1. Go to your Azure Web App and in the left pane, go to **Monitoring** > **Diagnostics Settings.**
-    1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
-    1. Select the **Stream to an event hub box** checkbox.
-    1. Select an Azure subscription.
-    1. **Event hub namespace.** Namespace created in [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor) by Metrics ARM template starting with `SumoMetricsNamespace<unique suffix>`.
-    1. **Event hub name (optional).** Select **insights-metrics-pt1m** from the **Select Event hub name** dropdown.
-    1. **Event hub policy.** Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
-    1. Select the checkbox for **AllMetrics** types under **Metrics** which you want to ingest.
-    1. Click **Save**.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApps/Logs`, `Azure/WebApps/Metrics`.
 
 ### Configure field in field schema
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
@@ -175,7 +151,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure WebApps that you want to monitor.
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
-   1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azure-webapps-metrics.png')} alt="Azure WebApps metrics" style={{border: '1px solid gray'}} width="800" />
 
 ### Configure logs collection
 
@@ -186,9 +162,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure WebApps that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
-   1. Select `AllMetrics`.
-   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-WebApps-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+   1. Select `HTTP logs`, `App Service Console Logs`, `App Service Application Logs`, `Access Audit Logs`, `IPSecurity Audit logs`, `App Service Platform logs`, `Report Antivirus Audit Logs`, `Site Content Change Audit Logs`.
+   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure WebApps Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azure-webapps-logs.png')} alt="Azure WebApps logs" style={{border: '1px solid gray'}} width="800" />
 
 #### Activity logs (optional)
 
@@ -244,7 +220,7 @@ Use this dashboard to:
 *  View recent antivirus scan results and their statuses.
 *  Analyze audit logs for compliance and security checks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Antivirus-Scan-Audit.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Content and Client Platform
 
@@ -254,7 +230,7 @@ Use this dashboard to:
 *  Monitor content delivery metrics and client platform usage.
 *  Identify trends in client platform access and performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Content-and-Client-Platform.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cost
 
@@ -264,7 +240,7 @@ Use this dashboard to:
 *  Analyze cost trends and breakdowns for your Azure WebApps usage.
 *  Review budget forecasts and optimize spending.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Cost.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### IP Restrictions
 
@@ -274,7 +250,7 @@ Use this dashboard to:
 *  View configured IP restrictions and their statuses.
 *  Monitor access attempts based on IP restrictions.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-IP-Restrictions.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Memory
 
@@ -284,7 +260,7 @@ Use this dashboard to:
 *  Monitor real-time memory utilization and trends.
 *  Identify memory-related performance issues and bottlenecks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Memory.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
@@ -294,17 +270,17 @@ Use this dashboard to:
 *  Analyze network traffic patterns and performance metrics.
 *  Identify potential network issues affecting your applications.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Network.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Operations
+### I/O Operations
 
-The **Azure WebApps - Operations** dashboard provides a comprehensive view of the operational metrics and activities associated with your Azure WebApps.
+The **Azure WebApps - I/O Operations** dashboard provides a comprehensive view of the I/O operational metrics and activities associated with your Azure WebApps.
 
 Use this dashboard to:
-*  Monitor operational events and their impact on service availability.
+*  Monitor I/O operational events and their impact on service availability.
 *  Analyze trends in operational performance over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-I-O-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS Statistics
 
@@ -314,7 +290,7 @@ Use this dashboard to:
 *  Monitor key OS performance indicators and health metrics.
 *  Identify potential issues at the operating system level.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-OS-Statistics.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Platform
 
@@ -324,37 +300,37 @@ Use this dashboard to:
 *  Monitor platform health metrics and configurations.
 *  Identify trends and issues related to platform performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Platform.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Server Operations - Errors and Response Codes
+### Errors
 
-The **Azure WebApps - Server Operations - Errors and Response Codes** dashboard details the error rates and response codes generated by your Azure WebApps.
+The **Azure WebApps - Errors** dashboard details the error rates and response codes generated by your Azure WebApps.
 
 Use this dashboard to:
 *  Analyze error trends and response code distribution.
 *  Identify common issues affecting application performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Errors.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Server Operations - Request and Response Time
+### Server Operations
 
-The **Azure WebApps - Server Operations - Request and Response Time** dashboard tracks request and response times for your Azure WebApps.
+The **Azure WebApps - Server Operations** dashboard tracks request and response times for your Azure WebApps.
 
 Use this dashboard to:
 *  Monitor performance metrics related to request and response times.
 *  Identify latency issues and optimize response performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Server-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Traffic Insights - Apps and Requests
+### Traffic Insights
 
-The **Azure WebApps - Traffic Insights - Apps and Requests** dashboard provides a comprehensive view of traffic patterns for your Azure WebApps.
+The **Azure WebApps - Traffic Insights** dashboard provides a comprehensive view of traffic patterns for your Azure WebApps.
 
 Use this dashboard to:
 *  Analyze traffic metrics for different applications and requests.
 *  Identify usage trends and optimize application performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Traffic-Insights.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
