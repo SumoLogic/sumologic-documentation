@@ -4,6 +4,8 @@ title: Monitors FAQ
 description: Frequently asked questions about Sumo Logic monitors.
 ---
 
+import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
+
 ## Can I convert my existing Scheduled Search to a monitor?
 
 Yes, however, it's a manual process. You have to create a new monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
@@ -16,7 +18,7 @@ For example, instead of creating one monitor to alert on CPU utilization, you co
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason: 
+Sumo Logic will automatically disable a monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason:
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -53,6 +55,11 @@ For the best experience, we recommend being mindful of the number of monitors yo
 ## Can I reference my monitor configuration in the notification?
 
 Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
+
+
+## How does a timeslice affect a monitor?
+
+<AlertsTimeslice/>
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
