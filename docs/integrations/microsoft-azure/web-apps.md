@@ -222,7 +222,7 @@ Use this dashboard to:
 *  View recent antivirus scan results and their statuses.
 *  Analyze audit logs for compliance and security checks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Antivirus-Scan-Audit.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Content and Client Platform
 
@@ -232,7 +232,7 @@ Use this dashboard to:
 *  Monitor content delivery metrics and client platform usage.
 *  Identify trends in client platform access and performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Content-and-Client-Platform.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cost
 
@@ -242,7 +242,7 @@ Use this dashboard to:
 *  Analyze cost trends and breakdowns for your Azure WebApps usage.
 *  Review budget forecasts and optimize spending.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Cost.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### IP Restrictions
 
@@ -252,7 +252,7 @@ Use this dashboard to:
 *  View configured IP restrictions and their statuses.
 *  Monitor access attempts based on IP restrictions.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-IP-Restrictions.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Memory
 
@@ -262,7 +262,7 @@ Use this dashboard to:
 *  Monitor real-time memory utilization and trends.
 *  Identify memory-related performance issues and bottlenecks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Memory.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
@@ -272,17 +272,17 @@ Use this dashboard to:
 *  Analyze network traffic patterns and performance metrics.
 *  Identify potential network issues affecting your applications.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Network.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Operations
+### I/O Operations
 
-The **Azure WebApps - Operations** dashboard provides a comprehensive view of the operational metrics and activities associated with your Azure WebApps.
+The **Azure WebApps - I/O Operations** dashboard provides a comprehensive view of the I/O operational metrics and activities associated with your Azure WebApps.
 
 Use this dashboard to:
-*  Monitor operational events and their impact on service availability.
+*  Monitor I/O operational events and their impact on service availability.
 *  Analyze trends in operational performance over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-I/O-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS Statistics
 
@@ -292,7 +292,7 @@ Use this dashboard to:
 *  Monitor key OS performance indicators and health metrics.
 *  Identify potential issues at the operating system level.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-OS-Statistics.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Platform
 
@@ -302,37 +302,37 @@ Use this dashboard to:
 *  Monitor platform health metrics and configurations.
 *  Identify trends and issues related to platform performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Platform.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Server Operations - Errors and Response Codes
+### Errors
 
-The **Azure WebApps - Server Operations - Errors and Response Codes** dashboard details the error rates and response codes generated by your Azure WebApps.
+The **Azure WebApps - Errors** dashboard details the error rates and response codes generated by your Azure WebApps.
 
 Use this dashboard to:
 *  Analyze error trends and response code distribution.
 *  Identify common issues affecting application performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Errors.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Server Operations - Request and Response Time
+### Server Operations
 
-The **Azure WebApps - Server Operations - Request and Response Time** dashboard tracks request and response times for your Azure WebApps.
+The **Azure WebApps - Server Operations** dashboard tracks request and response times for your Azure WebApps.
 
 Use this dashboard to:
 *  Monitor performance metrics related to request and response times.
 *  Identify latency issues and optimize response performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Server-Operations.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### Traffic Insights - Apps and Requests
+### Traffic Insights
 
-The **Azure WebApps - Traffic Insights - Apps and Requests** dashboard provides a comprehensive view of traffic patterns for your Azure WebApps.
+The **Azure WebApps - Traffic Insights** dashboard provides a comprehensive view of traffic patterns for your Azure WebApps.
 
 Use this dashboard to:
 *  Analyze traffic metrics for different applications and requests.
 *  Identify usage trends and optimize application performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Health.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Traffic-Insights.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
