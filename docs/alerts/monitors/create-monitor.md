@@ -239,7 +239,7 @@ To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 * **Automation Service**. Required for linking playbooks to metrics-based monitors.
 * **Metrics data**. Metrics data must be sent to Sumo Logic for anomaly detection.
-* **Metrics aggregation**. Queries that return multiple time series should be aggregated (e.g., using `sum` or `avg` operators) before applying anomaly detection.
+* **Metrics aggregation**. Queries that return multiple time series should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
 Examples:
 
