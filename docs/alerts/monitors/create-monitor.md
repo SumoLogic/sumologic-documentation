@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide will walk you through the steps of creating a monitor in Sumo Logic, from setting up trigger conditions to configuring advanced settings, notifications, and playbooks.
 
+Our AI-driven alerts use machine learning to analyze historical data, establish baselines, detect significant deviations, and filter out irrelevant alerts to reduce alert fatigue and help teams focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution. With seasonality detection and customizable anomaly clustering, false positives are minimized, enabling faster issue resolution.
+
+Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
@@ -18,21 +22,16 @@ There are several ways to create a new monitor, depending on where you are in Su
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
 
 <!-- These options are not appearing
-
 ### From a Dashboard
-
 1. From a Dashboard, hover your mouse over any panel, click the three-dot kebab icon, then click **Open in Log Search**.
 1. From your Log Search view, click the three-dot kebab icon in the upper right corner, then **Create a Monitor**.
 
 ### From the App Catalog
-
 1. Search for your app in the **App Catalog > Search Apps** field.
 1. Navigate to **What's Included** tab, scroll down to the **Monitors** section, then click **Create** next to the pre-configured monitors.
 
 ### From Log Search
-
 Click the kebab icon in the upper right corner, then **Create a Monitor**.
-
 -->
 
 ### From Metrics Explorer
@@ -41,13 +40,14 @@ Creating a monitor based on the threshold values defined in the Metrics page can
 
 To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
 
-1. Open the Metrics Explorer page:
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
+1. Open the **Metrics Explorer**:
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="300"/>
    * [**New UI**](/docs/get-started/sumo-logic-ui). Click the **Go To...** menu at the top of the screen and select **Metrics Search**.
-1. Enter a metrics query. For example:<br/><img src={useBaseUrl('img/monitors/metrics-explorer-view.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic displaying a query" style={{border: '1px solid gray'}} width="500"/>
-1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/> <img src={useBaseUrl('img/monitors/metrics-explorer-thresholds.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
-1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/> <img src={useBaseUrl('img/monitors/create-monitor.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
-1. The **New Monitor** will open with prefilled data based on the threshold values you set in the previous steps.<br/> <img src={useBaseUrl('img/monitors/new-monitor-window.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, specifically focusing on the Trigger Conditions section. The Monitor Type is set to Metrics and Detection Method to Static. The query is set for node memory utilization for a specific collector. The Alert Grouping options include one alert per monitor or one alert per time series. The Trigger Type section shows critical alerts set to trigger when the result is greater than or equal to 500000000 within 15 minutes. The recovery settings are enabled to recover automatically when the result is less than 500000000 within a 15-minute window. Historical Trend is displayed below, with a dashed red line indicating the threshold." style={{border: '1px solid gray'}} width="600"/>
+1. On the **Metrics Explorer** page:
+   1. Enter a metrics query.<br/><img src={useBaseUrl('img/alerts/query-metrics-explorer-view.png')} alt="Metrics explorer query" style={{border: '1px solid gray'}} width="800"/>
+   1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
+1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/><img src={useBaseUrl('img/monitors/create-monitor.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
+1. The **New Monitor** will open with prefilled data based on the threshold values you set in the previous steps.<br/><img src={useBaseUrl('img/monitors/new-monitor-window.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, specifically focusing on the Trigger Conditions section. The Monitor Type is set to Metrics and Detection Method to Static. The query is set for node memory utilization for a specific collector. The Alert Grouping options include one alert per monitor or one alert per time series. The Trigger Type section shows critical alerts set to trigger when the result is greater than or equal to 500000000 within 15 minutes. The recovery settings are enabled to recover automatically when the result is less than 500000000 within a 15-minute window. Historical Trend is displayed below, with a dashed red line indicating the threshold." style={{border: '1px solid gray'}} width="600"/>
 1. In the **Trigger Type** section, enable the checkbox that corresponds to the threshold value that you want to use (Critical and/or Warning).
    * The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.
    * Set all other parameters to default, including the window (15 minutes) and the **at all times** box.
@@ -56,79 +56,8 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 1. The same threshold will also be applied to the histogram chart.
 
 :::note
-The same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+The same threshold translating functionality supports to [Opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
-
-
-<!-- This will be consolidated and moved to the appropriate parts of the doc after https://github.com/SumoLogic/sumologic-documentation/pull/4593
-
-AI-Driven Alerts for metrics-based monitors, which includes advanced anomaly detection and automated incident resolution through playbooks.
-
-AI-driven alerts for metrics-based monitors use machine learning to analyze historical data, detect significant deviations, and filter out irrelevant alerts, reducing alert fatigue and allowing teams to focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution.
-
-Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, streamlining workflows, and improving response times. The customizable "Cluster anomalies" detector allows users to set specific triggers for spiky systems, further reducing false positives and enabling faster issue resolution.
-
-<details>
-<summary>What are AI-driven alerts?</summary>
-
-AI-driven alerts use machine learning to analyze historical data, establish baselines, and detect significant deviations in metrics signals. Seasonality detection reduces false positives, and integrated playbooks automate incident response, helping teams resolve issues faster.
-
-</details>
-
-## Key features
-
-### Advanced anomaly detection
-
-- **Machine learning models**. Use 30 days of historical data to establish baseline behavior and detect deviations.
-- **Seasonality detection**. Identify recurring patterns, minimizing false positives from periodic spikes.
-- **Auto-tuning**. Automatically adjust detection parameters to balance noise and relevance.
-- **Extensible detection framework**. Customizable rules, such as "Cluster anomalies," allow for advanced incident detection based on multiple data points exceeding thresholds within a defined time window.
-
-### Playbook integration
-
-Automate responses to anomalies, including diagnostics, team notifications, and recovery tasks like restarting services or scaling infrastructure by linking playbooks to metrics-based monitors.
-
-## Prerequisites
-
-To fully leverage AI-driven alerts for metrics monitors, you'll need:
-
-- **Automation Service**. Required for linking playbooks to metrics-based monitors.
-- **Metrics data**. Metrics data must be sent to Sumo Logic for anomaly detection.
-- **Metrics aggregation**. Queries that return multiple time series should be aggregated (e.g., using `sum` or `avg` operators) before applying anomaly detection.
-
-## Create a metrics anomaly monitor
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
-1. Under **Trigger Conditions**:
-   * For **Monitor Type**, select **Metrics**.
-   * For **Detection Method**, select **Anomaly**.
-1. Enter your alert conditions, notification settings by going to [Create a Monitor](docs/alerts/monitors/create-monitor.md) and following steps 2 to the end.
-
-## Examples
-
-* **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in spiky environments.
-* **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
-
-## Limitations
-
-Anomaly detection applies to one time series at a time. Multi-time series queries must be aggregated before detection.
-
-## Getting started with playbooks
-
-1. Visit **Automation Service App Central**.
-2. Browse over 500 pre-built playbooks.
-3. Clone and customize a playbook based on your requirements.
-
-By leveraging pre-built playbooks, you can quickly automate incident responses, reducing time to resolution.
-
-## More information
-
-* [Automation Service](/docs/platform-services/automation-service)
-* [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/)
-* [Create a Monitor](/docs/alerts/monitors/create-monitor)
-* [App Central](/docs/platform-services/automation-service/app-central)
-* [Metrics Operators](/docs/metrics/metrics-operators)
--->
 
 ## Step 1. Set trigger conditions
 
@@ -140,54 +69,37 @@ Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search
 
 ### Detection Method
 
-Select a **Detection Method**.
+Next, select a **Detection Method**. This is not applicable to SLO monitors.
 
-:::note logs and metrics only
-There is no detection method for **SLO**.
-:::
+<img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="monitor detection methods" width="200"/>
 
-#### Logs
-
-<img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="200"/>
-
-**Static**
+### Static
 
 Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization and memory.
 
-**Anomaly**
+### Anomaly
 
-Lets you uncover unusual behavior identified by anomaly detection, which applies machine learning techniques to detect anomalies and identifies suspicious patterns of activity. This type of detection, also called [*AI-Driven Alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg), works by establishing baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. AI-driven alerting overcomes monitoring limitations through:
-* **Model-driven anomaly detection**. Utilizing historical data, ML models establish accurate baselines, eliminating guesswork and noise in alerts.
-* **AutoML**. The system self-tunes, including seasonality detection, minimizing user intervention for a simpler experience.
-* **User context**. Users set alert sensitivity and incident thresholds, adding context to anomaly detection to mitigate noise.
-* **One-click playbook assignment**. Monitors seamlessly [link to Automation Service playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook), expediting response without manual intervention.
-* **Auto-diagnosis and recovery**. Sumo Logic Automation Service automates diagnosis and resolution, closing the loop from alert to recovery.
+Anomaly detection leverages machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
+
+* **Model-driven detection**. Machine learning models create accurate baselines, eliminating guesswork and noise.
+* **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
+* **User-defined sensitivity**. Users set alert sensitivity and thresholds, providing context to filter out noise.
+* **One-click playbook assignment**. Monitors automatically link to [Sumo Logic Automation Service playbooks](#automated-playbooks), expediting incident response.
+* **Auto-diagnosis and recovery**. Use our Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
+* **Customizable detection**. Advanced rules, like "Cluster anomalies," allow detection based on multiple data points exceeding thresholds within a set time frame.
 
 If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
-#### Metrics
-
-<img src={useBaseUrl('img/monitors/monitor-detection-methods-for-metrics.png')} alt="Metrics detection methods" width="200"/>
-
-**Static**
-
-Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-
-**Outlier**
+#### Outlier
 
 Lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
 
 ### Query
 
-In the next step, you'll need to provide a logs or metrics query.
+In this step, you'll need to provide a logs or metrics query. This is not applicable to **SLO** monitors.
 
-:::note logs and metrics monitors only
-No need to enter a query for **SLO** monitors.
-:::
-
-**Logs** monitors can have one query up to 15,000 characters long.
-
-**Metrics** monitors can have up to six queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
+* **Logs** monitors can have one query up to 15,000 characters long.
+* **Metrics** monitors can have up to 6 queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
 
 ### Anomaly or Outlier Direction
 
@@ -197,9 +109,9 @@ If you're using the outlier or anomaly detection method, you'll need to select t
 
 <img src={useBaseUrl('img/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/>
 
-* **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
-* **Down.** Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
-* **Both.** Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
+* **Up**. Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
+* **Down**. Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
+* **Both**. Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
 
 
 ### Trigger Type (Logs)
@@ -320,6 +232,23 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
 ### Trigger Type (Metrics)
 
 <img src={useBaseUrl('img/monitors/metrics-query.png')} alt="metrics query.png" style={{border: '1px solid gray'}} width="600" />
+
+#### Prerequisites
+
+To fully leverage AI-driven alerts for metrics monitors, you'll need:
+
+* **Automation Service**. Required for linking playbooks to metrics-based monitors.
+* **Metrics data**. Metrics data must be sent to Sumo Logic for anomaly detection.
+* **Metrics aggregation**. Queries that return multiple time series should be aggregated (e.g., using `sum` or `avg` operators) before applying anomaly detection.
+
+Examples:
+
+* **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in spiky environments.
+* **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
+
+:::info Limitations
+Anomaly detection applies to one time series at a time. Multi-time series queries must be aggregated before detection.
+:::
 
 #### Static detection method
 
@@ -449,8 +378,15 @@ Configure who gets notified when the monitor triggers an alert. When a trigger c
 
 In this step, you can add a playbook to run in response to an alert.
 
-* **Text Playbook**. Provide manual instructions to handle alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
-* **Automated Playbooks**. Select from existing automated playbooks in the [Automation Service](/docs/platform-services/automation-service) to run when an alert is fired. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). Optionally, you can click **Add Playbook** to add more automated playbooks to run sequentially, and **Manage Playbooks** to manage the automated playbooks in the Automation Service.
+### Text Playbook
+
+Provide manual instructions to handle alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
+
+### Automated Playbooks
+
+Choose from over 500 prebuilt automated playbooks in the [Automation Service](/docs/platform-services/automation-service) to run when an alert is triggered. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
+
+Optionally, you can click **Add Playbook** to add more automated playbooks to run sequentially, and **Manage Playbooks** to oversee and organize your automated playbooks in the Automation Service.
 
 ## Step 5. Monitor details
 
