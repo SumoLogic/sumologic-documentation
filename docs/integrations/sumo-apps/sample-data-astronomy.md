@@ -7,6 +7,12 @@ description: The Sumo Logic Sample Data (Astronomy) app offers real-time insight
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 <img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Sample-Data-Astronomy-Icon.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic Sample Data (Astronomy) app offers real-time insights for monitoring telemetry data from the OpenTelemetry Demo Astronomy application. Featuring predefined searches and dashboards, this app enhances visibility into application performance and operational metrics.
