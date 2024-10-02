@@ -2683,6 +2683,7 @@
   "/cid/30039": "/docs/integrations/microsoft-azure/microsoft-dynamics365-customer-insights",
   "/cid/30040": "/docs/integrations/microsoft-azure/azure-hdinsight",
   "/cid/21001": "/docs/integrations/google/cloud-alloydb-for-postgresql",
+  "/cid/21342": "/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source",
   "/cid/21002": "/docs/integrations/google/cloud-api-gateway",
   "/cid/21003": "/docs/integrations/google/cloud-apis",
   "/cid/21004": "/docs/integrations/google/cloud-armor",
