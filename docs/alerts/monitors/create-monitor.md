@@ -56,7 +56,7 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 1. The same threshold will also be applied to the histogram chart.
 
 :::note
-The same threshold translating functionality supports to [Opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
 ## Step 1. Set trigger conditions
