@@ -1,5 +1,5 @@
 ---
-id: sumo-logic-sample-data-astronomy
+id: sample-data-astronomy
 title: Sumo Logic Sample Data (Astronomy)
 sidebar_label: Sumo Logic Sample Data (Astronomy)
 description: The Sumo Logic Sample Data (Astronomy) app offers real-time insights for monitoring telemetry data from the OpenTelemetry Demo Astronomy application.
@@ -35,23 +35,23 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Sumo Logic Sample Data (Astronomy) - Application Health
 
-The **Sumo Logic Sample Data (Astronomy) - Application Health Dashboard** provides a comprehensive view of the application's performance and operational metrics. It includes key indicators such as CPU and memory usage, transaction times for checkouts and payments, error rates, and service latency. Additionally, it displays deployment logs, user journeys, and error logs, allowing users to quickly identify issues and monitor the overall health of the application.
+The **Sumo Logic Sample Data (Astronomy) - Application Health** dashboard provides a comprehensive view of the application's performance and operational metrics. It includes key indicators such as CPU and memory usage, transaction times for checkouts and payments, error rates, and service latency. Additionally, it displays deployment logs, user journeys, and error logs, allowing users to quickly identify issues and monitor the overall health of the application.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Sample-Data-Astronomy-Application-Health-Dashboard.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Sample-Data-Astronomy-Application-Health-Dashboard.png')} style={{border: '1px solid gray'}} alt="test" />
 
 ### Sumo Logic Sample Data (Astronomy) - Business KPIs
 
-The **Sumo Logic Sample Data (Astronomy) - Business KPIs Dashboard** focuses on critical business performance metrics. It tracks customer satisfaction, support tickets, revenue trends, and promotional offers redeemed. This dashboard also monitors customer churn rates and cart abandonment rates, providing insights into user engagement and revenue distribution globally. These metrics help businesses make informed decisions to enhance customer experiences and drive growth.
+The **Sumo Logic Sample Data (Astronomy) - Business KPIs** dashboard focuses on critical business performance metrics. It tracks customer satisfaction, support tickets, revenue trends, and promotional offers redeemed. This dashboard also monitors customer churn rates and cart abandonment rates, providing insights into user engagement and revenue distribution globally. These metrics help businesses make informed decisions to enhance customer experiences and drive growth.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Sample-Data-Astronomy-Business-KPIs-Dashboard.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Sample-Data-Astronomy-Business-KPIs-Dashboard.png')} style={{border: '1px solid gray'}} alt="test" />
 
-## Upgrading the Sumo Logic Sample Data (Astronomy) app (Optional)
+## Upgrading the Sumo Logic Sample Data (Astronomy) app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Sumo Logic Sample Data (Astronomy) app (Optional)
+## Uninstalling the Sumo Logic Sample Data (Astronomy) app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
