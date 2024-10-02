@@ -34,7 +34,7 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
     1. Click **Change selection** to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/> 
 1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
         1. **Description**. Enter the description of your choice.
-        1. **Expires**. From the dropdown select the expiry time period to the secret value.
+        1. **Expires**. From the dropdown, select the expiry time period to the secret value.
         1. Copy and save the **Value**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/client-secrets.png')} alt="client-secrets" style={{border:'1px solid gray'}} width="600"/>   
 1. Navigate to **Overview**, copy and save the **Application (client) ID** and **Directory (tenant) ID**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/overview.png')} alt="overview" style={{border:'1px solid gray'}} width="600"/>  
 1. Close the **Overviews** page to go back to the **Custom Deployment** page.
