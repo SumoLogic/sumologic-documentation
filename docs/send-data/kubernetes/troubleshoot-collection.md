@@ -786,7 +786,7 @@ Logs do not contain metadata fields. Due to that, you can only check data body s
 
 ### Missing metrics - cannot see cluster in Explore
 
-If you are not seeing metrics coming in to Sumo or/and your cluster is not showing up in [Explore](/docs/observability/kubernetes/monitoring#open-explore) it is most likely due to the fact that Prometheus pod is not running.
+If you are not seeing metrics coming in to Sumo or/and your cluster is not showing up in [Explore](/docs/observability/kubernetes/monitoring#open-kubernetes-views) it is most likely due to the fact that Prometheus pod is not running.
 
 You can verify that by using the following command:
 

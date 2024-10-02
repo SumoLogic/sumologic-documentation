@@ -48,7 +48,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Sumo Logic Cloud SIEM configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.  
 1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.

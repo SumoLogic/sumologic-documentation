@@ -100,9 +100,9 @@ You must update the indicated field for the search to be successfully saved.
    ```sql
    X as daily_plan_size
    ```
-   The correct value is on the Account page. 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
- Kanso--><br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/ingestion-volume/account-overview.png)
+   The correct value is on the Account page.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
+ <br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/ingestion-volume/account-overview.png)
 
 #### Query
 
@@ -247,7 +247,7 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers/).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
 
 #### Setup

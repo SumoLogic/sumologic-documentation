@@ -1,7 +1,7 @@
 ---
 id: use-playbooks-with-monitors
 title: Automated Playbooks in Monitors
-sidebar_label: Automated Playbooks in Monitors
+sidebar_label: Using Automated Playbooks
 description: Learn how to use Automation Service playbooks with monitors.
 ---
 
@@ -39,7 +39,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  
 1. The Automation Service screen opens on the **Playbook** tab.
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/).
@@ -66,6 +66,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/monitors/playbook-running-icon.png')} alt="Playbook running icon" width="30" /> | Running |
    | <img src={useBaseUrl('img/monitors/playbook-user-interaction-icon.png')} alt="Waiting for user interaction icon" width="30" /> | Waiting for user interaction |
    | <img src={useBaseUrl('img/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
+   | <img src={useBaseUrl('img/monitors/playbook-completed-with-errors-icon.png')} alt="Completed icon" width="30" /> | Completed with errors |
 
 1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
 1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />
@@ -104,7 +105,7 @@ To create an anomaly monitor that runs an automated playbook in response to an a
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
 1. Select the **Logs** monitor type.
 1. Select **Anomaly** under **Detection Method**. <br/>(Note that **Outlier** monitors are under **Anomaly** because they use anomaly detection on in-query data.) <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="600" />
-1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#provide-a-query-logs-and-metrics-only) for the logs to be monitored for anomalous behavior.
+1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#query) for the logs to be monitored for anomalous behavior.
 1. In the **Critical** tab under **Trigger Type**, select the parameters for the alert trigger:
    * **Alert when anomaly count is at least ___ (max. 5) at any time within ___**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.  
    * **Show me fewer alerts --- more alerts**. Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.  
