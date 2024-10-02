@@ -188,8 +188,6 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="log-monitor">
 
-![Logs monitors.png](/img/monitors/logs-monitors.png)
-
 Trigger alerts on:
 
 ![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
