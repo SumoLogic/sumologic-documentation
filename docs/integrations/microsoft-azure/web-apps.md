@@ -29,8 +29,7 @@ For Azure Web Apps, you can collect the following logs and metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
-For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
+* **Azure WebApps platform metrics**. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
 
 ### Sample log messages
 
@@ -231,16 +230,6 @@ Use this dashboard to:
 *  Identify trends in client platform access and performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Content-and-Client-Platform.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
-
-### Cost
-
-The **Azure WebApps - Cost** dashboard presents an overview of the costs associated with your Azure WebApps services.
-
-Use this dashboard to:
-*  Analyze cost trends and breakdowns for your Azure WebApps usage.
-*  Review budget forecasts and optimize spending.
-
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Cost.png')} alt="Azure WebApps health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### IP Restrictions
 
