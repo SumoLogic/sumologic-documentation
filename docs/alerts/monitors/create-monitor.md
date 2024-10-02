@@ -85,7 +85,7 @@ Anomaly detection leverages machine learning to identify unusual behavior and su
 * **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
 * **User-defined sensitivity**. Users set alert sensitivity and thresholds, providing context to filter out noise.
 * **One-click playbook assignment**. Monitors automatically link to [Sumo Logic Automation Service playbooks](#automated-playbooks), expediting incident response.
-* **Auto-diagnosis and recovery**. Use our Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
+* **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Advanced rules, like "Cluster anomalies," allow detection based on multiple data points exceeding thresholds within a set time frame.
 
 If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
