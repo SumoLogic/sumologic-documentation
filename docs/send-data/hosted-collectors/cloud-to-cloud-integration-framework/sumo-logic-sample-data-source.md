@@ -27,8 +27,8 @@ Sumo Logic Sample Data source is designed for ingesting logs and metrics into Su
 
 | Name | Description |
 | :--- | :--- |
-| Initial Data             | The source ingests data from `6 hours in the past` and `6 hours into the future`. |
-| Regular Ingestion        | Every 6 hours, the source ingests an additional `6 hours of future-dated data` to ensure dashboards are always populated. |
+| Initial Data             | The source ingests data from 6 hours in the past and 6 hours into the future. |
+| Regular Ingestion        | Every 6 hours, the source ingests an additional 6 hours of future-dated data to ensure dashboards are always populated. |
 | Latency Spike Simulation | The data demonstrate a scenario showcasing latency spikes, aiding in performance analysis and debugging. |
 
 
