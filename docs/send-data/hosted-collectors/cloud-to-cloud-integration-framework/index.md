@@ -315,6 +315,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source"><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="50"/><h4>LastPass Source</h4></a>
+  <p>Collects audit reporting events from the LastPass platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
   </div>
