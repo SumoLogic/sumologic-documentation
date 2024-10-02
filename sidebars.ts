@@ -2402,6 +2402,7 @@ integrations: [
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
+          // 'integrations/sumo-apps/sample-data-astronomy',
         ],
       },
       {
