@@ -10,5 +10,3 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </head>
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
