@@ -243,7 +243,7 @@ To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 Examples:
 
-* **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in spiky environments.
+* **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in volatile environments.
 * **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
 
 :::info Limitations
