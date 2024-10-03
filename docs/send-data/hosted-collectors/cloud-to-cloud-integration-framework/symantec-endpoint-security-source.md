@@ -1,17 +1,12 @@
 ---
 id: symantec-endpoint-security-source
-title: Symantec Endpoint Security Source (Beta)
+title: Symantec Endpoint Security Source
 sidebar_label: Symantec Endpoint Security
 tags:
   - cloud-to-cloud
   - symantec-endpoint-security
-description: Learn how to collect incident and incident events from the Symantec Endpoint Security source.
+description: Learn how to collect incident and incident events using the Symantec Endpoint Security source.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import MyComponentSource from '!!raw-loader!/files/c2c/symantec-endpoint-security/example.json';
@@ -26,8 +21,8 @@ Symantec Endpoint Protection is a client-server solution that protects laptops, 
 
 | Polling Interval | Data Source | Description |
 | :--- | :--- |  :--- |
-| 5 min |  [Incidents](https://api.sep.securitycloud.symantec.com/v1/incidents)| Used to retrieve incidents and incident events. |
-| 5 min |  [Incident Events](https://api.sep.securitycloud.symantec.com/v1/incidents/events)| Used to retrieve incident related events based on time range filter. |
+| 5 min |  Incidents | Used to retrieve incidents and incident events. |
+| 5 min |  Incident Events | Used to retrieve incident related events based on time range filter. |
 
 ## Setup
 
@@ -46,7 +41,7 @@ The Symantec Endpoint Security source requires you to provide credentials. To ob
 When you create a Symantec Endpoint Security Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Symantec Endpoint Security Source, follow the steps below:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Symantec Endpoint Security**.
 1. Enter a **Name** for the Source. The description is optional.

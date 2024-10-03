@@ -48,7 +48,7 @@ The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://doc
 
 In this step, you create the AWS Kinesis Firehose for Metrics source.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Source** next to a Hosted Collector. 
 1. Select **AWS Kinesis Firehose** for Metrics.
 1. Enter a **Name** for the source.
@@ -104,3 +104,13 @@ Inclusive and exclusive filters can’t be combined. You can choose namespaces t
 1. Click **All metrics** and select the **Exclude metric namespaces** option.
 1. From the list of AWS namespaces, select the namespaces whose metrics you do not want to receive.
 1. Click **Save changes** at the bottom of the page.
+
+## Troubleshooting
+
+### Metric streams output format
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams. If you see an error similar to the below:
+
+```HTTP ERROR 400 Could not parse firehose input json```
+
+Then it's likely that you have the incorrect output format selected in your CloudWatch metric stream.

@@ -18,10 +18,10 @@ You can observe apps and microservices at the level of individual requests to p
 
 You can access Traces if your Sumo Logic service package has been upgraded to include it.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
+ 
 
 ## Micro Lesson
 
@@ -34,7 +34,7 @@ This micro lesson can help you get started with Tracing.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

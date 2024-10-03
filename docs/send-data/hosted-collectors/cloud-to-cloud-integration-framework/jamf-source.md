@@ -1,17 +1,12 @@
 ---
 id: jamf-source
-title: Jamf Source (Beta)
+title: Jamf Source
 sidebar_label: Jamf
 tags:
   - cloud-to-cloud
   - jamf
 description: Learn how to collect data from the Jamf platform.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/jamf/example.json';
@@ -44,7 +39,7 @@ The Jamf source requires you to provide the Base URL, Client ID, and Client Secr
 When you create a Jamf Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Jamf Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select the **Jamf** icon.
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.

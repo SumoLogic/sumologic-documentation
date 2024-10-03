@@ -1,0 +1,14 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "DataGen"
+        },
+        "config": {
+          "name": "datagen_source",
+          "category": "datagen_category",
+          "dataType":"OTEL"
+       },
+        "sourceType": "Universal"
+    }
+}

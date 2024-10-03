@@ -1,7 +1,7 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java
-title: Java OpenTelemetry auto-instrumentation
-sidebar_label: Java OpenTelemetry auto-instrumentation
+title: Java OpenTelemetry Auto-Instrumentation
+sidebar_label: OpenTelemetry Auto-Instrumentation
 description: OpenTelemetry Instrumentation for Java automatically detects when one of the popular libraries is being used in the service and injects the instrumentation without writing any code.
 ---
 
@@ -19,7 +19,7 @@ Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environmen
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

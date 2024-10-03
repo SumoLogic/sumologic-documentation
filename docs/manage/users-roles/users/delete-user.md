@@ -43,7 +43,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 Use caution when deleting a user. This action cannot be undone.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso--> <br/><img src={useBaseUrl('img/users-roles/users-page.png')} alt="Kebab menu option highlighted on the Users page" style={{border: '1px solid gray'}} width="700" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**.  <br/><img src={useBaseUrl('img/users-roles/users-page.png')} alt="Kebab menu option highlighted on the Users page" style={{border: '1px solid gray'}} width="700" />
 1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. <br/><img src={useBaseUrl('img/users-roles/delete-user.png')} alt="Delete dialog with transfer option selected" style={{border: '1px solid gray'}} width="400" />
 1. Click **Transfer Contents To**, select a user from the list that appears, and click **Delete User**.
@@ -54,7 +54,7 @@ Use caution when deleting a user. This action cannot be undone.
 Use caution when deleting a user. This action cannot be undone.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->  <br/><img src={useBaseUrl('img/users-roles/users-page-2.png')} alt="Kebab menu option highlighted on Users page" style={{border: '1px solid gray'}} width="700" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**.  <br/><img src={useBaseUrl('img/users-roles/users-page-2.png')} alt="Kebab menu option highlighted on Users page" style={{border: '1px solid gray'}} width="700" />
 1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. <br/><img src={useBaseUrl('img/users-roles/delete-user2.png')} alt="Delete dialog with transfer option selected" style={{border: '1px solid gray'}} width="400" />
 1. Click the radio button next to **Delete user and all related contents**.

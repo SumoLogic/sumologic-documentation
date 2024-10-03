@@ -1,17 +1,17 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Managing your Library
+sidebar_label: Managing Your Library
 description: Managing your Library in Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic content in the Library. The Library also allows you to launch searches and Dashboards with a single click—speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
+You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic content in the Library. The Library also allows you to launch searches and Dashboards with a single click, speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
 Open the **Library** page to expose additional search options and to organize and manage Library contents. 
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. You'll see two **View as** options:
     * **Me**. See your own saved searches and dashboards.
     * **Content Administrator**. Available if you have a Sumo role that grants you "Manage Content" capability, this option turns off your personal content in the Library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/>  <img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
@@ -19,7 +19,7 @@ Open the **Library** page to expose additional search options and to organize an
 
 ## Explore the Library
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 1. Search for items:
    * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
@@ -78,7 +78,7 @@ When your content is moved, you’ll need to click the new folder location to vi
 
 To add a folder to the Library:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. Click **Add New > New Folder**. 
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
@@ -87,6 +87,10 @@ To add a folder to the Library:
 
 1. Create a subfolder by clicking **Add New > New Folder** in your Personal folder.
 1. In the **Add Folder** dialog, enter a folder name, for example **My Apps**, and click **Add**. The new subfolder is added to the folder list.
+
+:::note
+You can only nest subfolders to six levels. If you add any more beyond that, you will receive this error message: **You’ve reached the depth limit on the number of nested items that can be created/moved.**
+:::
 
 ### Share Subfolders
 
@@ -112,7 +116,7 @@ There is a limit of 20 favorite items per user.
 
 ### Mark content as favorite
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. Hover your mouse over an item in the library, and click the star icon that appears. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
 1. The star darkens, and the item now appears in **Favorites**.
 
@@ -156,7 +160,7 @@ the following prefixes:
 
 ### Search content in the Library
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. 
 1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
 1. Enter your text. You can use any of the following:
    * Keyword
