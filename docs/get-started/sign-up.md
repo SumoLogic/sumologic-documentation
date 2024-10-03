@@ -145,6 +145,8 @@ Should you decide to cancel, you can do this through AWS Marketplace.
 
 Your subscription will be cancelled immediately.
 
+<!-- placeholder data -->
+
 ## Resources
 
 * [Sumo Logic Quickstart](/docs/get-started/quickstart)

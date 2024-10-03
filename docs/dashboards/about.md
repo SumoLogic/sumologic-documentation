@@ -19,6 +19,8 @@ Dashboard provides the unique ability to display metrics metadata and logs dat
 
 [Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
+<!-- placeholder data -->
+
 ### Features
 
 :::tip
