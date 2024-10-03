@@ -76,4 +76,3 @@ import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-conf
 :::info
 Refer to the [changelog](changelog.md) to know about the periodic changes for this source template.
 ::: 
-
