@@ -185,7 +185,7 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 For getting health check metric, make sure you enable **Health check** under the **Monitoring** dropdown.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric.png')} alt="Enable Health Check Metric" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric-WebApps.png')} alt="Enable Health Check Metric" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure Web Apps app
 
