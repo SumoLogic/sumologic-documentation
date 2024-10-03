@@ -67,7 +67,7 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 ### How to upgrade Next-Gen apps
 
 :::info
-Navigate to the **Releases Notes** tab to know about the version updates.
+See our [Releases Notes](/docs/release-notes) to learn about app version updates.
 :::
 
 import AppUpdate from '../reuse/apps/app-update.md';
