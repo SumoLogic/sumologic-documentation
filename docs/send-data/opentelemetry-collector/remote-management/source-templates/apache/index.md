@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="70"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+ <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="70"/>
 
 Apache source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of logs and metrics of Apache to Sumo Logic.
 
