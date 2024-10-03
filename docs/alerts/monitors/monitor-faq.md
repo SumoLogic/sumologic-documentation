@@ -13,7 +13,7 @@ To optimize scan costs for monitors under [Flex Pricing](/docs/manage/partitions
 - **Data scanned by the query**. This is the primary driver of cost and is incurred every time the monitor is evaluated. To reduce costs, optimize your query using [default scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope) to include only necessary partitions and minimize the amount of data scanned.
 - **Time range of the monitor query**. For static monitors, adjust the detection window under [Trigger Type](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) (for example, `"Alert when result is _____ within <detection window> minutes"`) to use a shorter time range, which reduces the amount of data scanned. For outlier monitors, reduce the **datapoints** parameter under **Trigger Type** to lower the scanned bytes.
 
-By carefully configuring these elements, you can optimize monitor performance while keeping scan costs under control.
+By carefully configuring these elements, you can balance scan costs with monitoring requirements.
 
 ## Can I convert my existing Scheduled Search to a monitor?
 
