@@ -57,7 +57,7 @@ jobs:
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
-        run: sudo apt-get install -y jq
+        run: sudo apt-get install jq #sudo apt-get install -y jq ?
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
