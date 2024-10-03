@@ -8,7 +8,7 @@ description: Changelog for Kafka source template for OpenTelemetry.
 ## [2.0.0] - 2024-10-01
 
 ### Added
-- Changelog link and compatibility declaration for otel collector
+- Changelog link and compatibility declaration for OpenTelemetry collector
 
 ## [1.0.0] - 2024-08-12
 
