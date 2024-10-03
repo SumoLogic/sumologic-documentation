@@ -108,7 +108,11 @@ Lets you detect an unusual change or a spike in a time series of a key indicator
 
 ### Query
 
-In the next step, you'll need to provide a logs or metrics query.
+:::tip
+For guidance on optimizing scan costs when using Flex Pricing, refer to the [FAQ on optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing).
+:::
+
+In this step, you'll need to provide a logs or metrics query.
 
 :::note logs and metrics monitors only
 No need to enter a query for **SLO** monitors.
