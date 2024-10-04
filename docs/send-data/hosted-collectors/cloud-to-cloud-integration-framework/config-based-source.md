@@ -256,6 +256,20 @@ Select this authentication option if the vendor API does not require any form of
   **Headers**. The source will look through all of the `Link` HTTP response headers from the vendor API and find the next url in the described format.
 
   **Body**. The source expects a JSON response body and you will need to provide the **Next Page URL JPath** as part of this configuration pointing the source to the location of the next link. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
+
+  #### Numeric Offset
+  Use this type of pagination if the vendor API uses a numeric limit and offset value to paginate through the data. This pagination will keep paginating (increasing the offset) until the API returns a response with results less than the limit value. You can use the limit/offset key names in the HTTP request **Headers** or **Parameters** and you can customize the key names if needed.
+
+  Here is an example of the pagination using the values as parameters:
+
+  1. `api/v1/events?limit=100`
+  1. `api/v1/events?offset=100&limit=100`
+  1. `api/v1/events?offset=200&limit=100`
+  1. `api/v1/events?offset=300&limit=100`
+
+  #### None
+  Use this type of pagination if the vendor API does not implement any kind of pagination.
+
   </div>
 </details>
 <details>
