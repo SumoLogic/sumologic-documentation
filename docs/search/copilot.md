@@ -60,9 +60,9 @@ Click **Select Source Category** - the source expression box - and type/select t
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
-### Step 3: Execute a Suggestions prompt
+### Step 3: Execute an Explore prompt
 
-Under **Suggestions** > **Explore**, click on any of the prebuilt, AI-suggested prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
+Click on any of the prebuilt **Suggestions** > **Explore** prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
