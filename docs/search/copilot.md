@@ -108,25 +108,23 @@ Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **L
 
 #### Edit query code
 
-Optionally, you can edit your log search query code.
+You can manually edit your log search query code if needed.
 
-1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
-   <!-- These two notes conflict. I've asked for clarity.
-   :::note JSON formatting
-   If your log query contains a mix JSON and non-JSON formatting, add `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
-   :::
+<details>
+<summary>**JSON Syntax Rules**</summary>
 
-   :::warning Limitations
-   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query:
-   ```
+* Copilot supports querying JSON logs only. It cannot be used to query unstructured data, metrics, or traces. To retrieve a list of `_sourceCategories` with JSON data, use the following query:
+   ```sql
    _sourceCategory=* "{" "}"
    | limit 10000 | logreduce keys noaggregate
    | count by _sourceCategory, _schema
    | where _schema != "unknown"
    | sum(_count) by _sourceCategory
    ```
-   :::
-   -->
+* If your log query contains a mix JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+</details>
+
+1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 1. When you're done, press Enter or click the search button.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
