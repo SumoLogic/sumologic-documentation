@@ -21,7 +21,7 @@ Source templates are useful for managing data collection in scenarios like:
 * Collecting metrics from a fleet of containers
 * Aggregating error logs from distributed services
 
-## Creating and Managing Source Templates
+## Creating and managing Source templates
 
 To create a source template:
 
@@ -32,7 +32,8 @@ To create a source template:
 3. **Link Collectors**. Use tags or collector names to link the appropriate collectors to your source template.
 4. **Apply and manage**. Apply the source template to the linked collectors and manage or update it as needed.
 
-## Example Scenario: Monitoring Nginx Access Logs
+
+## Example Scenario: Monitoring Nginx access logs
 
 Monitoring Nginx Access Logs from a group of web servers:
 

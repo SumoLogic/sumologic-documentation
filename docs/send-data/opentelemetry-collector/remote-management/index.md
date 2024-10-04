@@ -20,20 +20,20 @@ Remote management data configuration for OpenTelemetry collectors is handled usi
 
 Use collector tags to group collectors and associate Source templates to these groups, reducing redundancy in data collection setup. This process, known as *Collector Linking*, streamlines configuration management.
 
-## Example Scenario: Monitoring Apache Logs
+## How it works
 
-To help you get started, let's walk through an example scenario where you need to monitor Apache error logs from 50 Linux servers.
+To illustrate the setup and configuration process, let's walk through an example scenario where you'd need to monitor Apache error logs from 50 Linux servers.
 
 ### Step 1: Install collectors
 
-First, you'll need to install the OpenTelemetry collectors on each of the 50 servers and tag them to identify that they are running Apache.
+First, you'll need to install the OpenTelemetry collectors on each of the 50 servers and tag them to indicate that they are running Apache.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**.
 1. Click **Add Collector**.
-1. In the **Set up Collector** step, choose **Linux**.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
+1. In the **Set up Collector** step, choose **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 1. Enter your **Installation Token**.
 1. Under **Tag data on Collector level**, add a new tag, `“application = Apache”`.
-1. Leave the **Collector Settings** at their default values (unchecked).
+1. Leave the **Collector Settings** at their default values.
 1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="linux-terminal-installation" width="800"/>
 1. After installation is complete, click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the **Apache Source Template** to apply the source template to start collecting logs from all linked collectors.
@@ -51,4 +51,4 @@ Next, you'll create a data collection configuration to gather Apache error logs 
 
 ### Step 3: Monitor Logs
 
-Once the data collection is set up, you can monitor the collected Apache error logs using the [Log Search](/docs/search). Additionally, use our [Dashboards](/docs/dashboards) to analyze the logs and gain insights from your Apache servers.
+After configuring data collection, you can monitor the collected Apache error logs using the [Log Search](/docs/search). Additionally, use our [Dashboards](/docs/dashboards) to analyze the logs and gain insights from your Apache servers.
