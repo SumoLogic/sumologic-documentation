@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/send-data/digital-guardian-logo.png')} alt="icon" width="70"/>
+<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
 
 Digital Guardian is a data protection platform that discovers, classifies, and controls data movement across endpoints, networks, and the cloud. Digital Guardian Analytics and Reporting Cloud (DG ARC) is an advanced analytics, workflow, and reporting cloud service that delivers no-compromise data protection.
 
