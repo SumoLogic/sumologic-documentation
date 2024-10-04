@@ -96,7 +96,11 @@ Lets you detect an unusual change or a spike in a time series of a key indicator
 
 ### Query
 
-In this step, you'll need to provide a logs or metrics query. This is not applicable to **SLO** monitors.
+:::tip
+For guidance on optimizing scan costs when using Flex Pricing, refer to the [FAQ on optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing).
+:::
+
+In this step, you'll need to provide a logs or metrics query. This is not applicable to SLO monitors.
 
 * **Logs** monitors can have one query up to 15,000 characters long.
 * **Metrics** monitors can have up to 6 queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
