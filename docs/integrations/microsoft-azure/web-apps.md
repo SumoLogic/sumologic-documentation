@@ -29,7 +29,8 @@ For Azure Web Apps, you can collect the following logs and metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure WebApps platform metrics**. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
+* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
 
 ### Sample log messages
 
@@ -185,7 +186,7 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 For getting health check metric, make sure you enable **Health check** under the **Monitoring** dropdown.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric-WebApps.png')} alt="Enable Health Check Metric" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Enable-Health-Check-Metric.png')} alt="Enable Health Check Metric" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure Web Apps app
 
@@ -366,3 +367,4 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
