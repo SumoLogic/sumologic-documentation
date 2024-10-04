@@ -146,7 +146,7 @@ The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of a
 - **Top 10 Objects Changed**. The top objects changed widget identifies the specific objects that have undergone the most modifications, offering insights into areas that require further investigation or monitoring.
 - **Audit Summary**. The audits summary widget provides a concise summary of key audit log details, helping you to quickly understand the nature of the recorded activities.
 
-## Upgrading the Cato Networks app (Optional)
+## Upgrade/Downgrade the Cato Networks app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

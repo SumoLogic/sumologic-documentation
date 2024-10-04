@@ -231,7 +231,7 @@ The **Azure Application Gateway - Traffic** dashboard provides details into the 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Application Gateway app (optional)
+## Upgrade/Downgrade the Azure Application Gateway app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

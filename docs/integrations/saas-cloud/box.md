@@ -363,7 +363,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Top 10 Automated Users.** Displays information on top automated users by user and event count in a column chart for the last 24 hours. Automated users are devices or applications that login through a user account.
 
-## Upgrading the Box app (Optional)
+## Upgrade/Downgrade the Box app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

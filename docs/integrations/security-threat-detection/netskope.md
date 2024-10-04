@@ -214,7 +214,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
 
-## Upgrading the Netskope app (Optional)
+## Upgrade/Downgrade the Netskope app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -104,7 +104,7 @@ The **Webex - Overview** dashboard provides a holistic view of all critical acti
 
 The **Webex - Security Events** dashboard in Sumo Logic offers a detailed view of security-related activities within the Webex environment. It tracks changes in Multi-Factor Authentication (MFA) status, remote access events, login activities, and authorization events over time. The dashboard includes sections for recent login and authorization code events, recent deactivated and reactivated users, and activities on allow and deny lists. Additionally, it provides insights into external admin additions and accounts assigned to external users. This dashboard provides information about potential security issues and helps in proactive incident management. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Security-Events.png' alt="Webex-Security-Events" />
 
-## Upgrading the Webex app (Optional)
+## Upgrade/Downgrade the Webex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

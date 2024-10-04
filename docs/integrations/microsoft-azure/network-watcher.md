@@ -183,7 +183,7 @@ The **Network Watcher - Denied Traffic Flow** dashboard drills down on denied tr
 
 **Denied Traffic per Hour -  Outlier.** Using Sumo Logic machine learning [Outlier](/docs/search/search-query-language/search-operators/outlier) operator, shows any unexpected sequence in denied traffic.
 
-## Upgrading the Azure Network Watcher app (Optional)
+## Upgrade/Downgrade the Azure Network Watcher app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

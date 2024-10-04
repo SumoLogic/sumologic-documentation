@@ -384,7 +384,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/JMX_ClassLoadingCompilation.png')} alt="jmx dashboard" />
 
-## Upgrading the JMX app (Optional)
+## Upgrade/Downgrade the JMX app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

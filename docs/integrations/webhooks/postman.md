@@ -150,7 +150,7 @@ The **Postman - Monitors** provides immediate notifications and real-time data r
 
 <img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman-Monitors"/>
 
-## Upgrading the Postman app (Optional)
+## Upgrade/Downgrade the Postman app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

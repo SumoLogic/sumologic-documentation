@@ -170,7 +170,7 @@ The **Proofpoint on Demand - Message Monitoring** dashboard offers valuable insi
 
 The **Proofpoint on Demand - Security Overview** dashboard is designed to monitor email communications for compliance with both internal policies and external regulations, such as DLP and DMARC. It includes widgets for geo-location tracking of messages from high-risk countries, a summary of policy results for DMARC, DLP, Anti-Spam and Anti-Virus, and messages in the quarantine folder by category. In addition, the dashboard includes a TLS message trend chart that displays the ratio of encrypted to unencrypted messages, along with insights into the unencrypted sender and receiver domains. Overall, the Security Overview dashboard helps organizations maintain compliance with relevant regulations and policies while also providing valuable insights to improve their email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Security-Overview.png')} alt="Proofpoint-on-Demand-Security-Overview" width="750"/>
 
-## Upgrading the Proofpoint on Demand app (Optional)
+## Upgrade/Downgrade the Proofpoint on Demand app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -356,7 +356,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-WebApps/Azure-WebApps-Administrative-Operations.png')} alt="Azure WebApps Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Web Apps app (Optional)
+## Upgrade/Downgrade the Azure Web Apps app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

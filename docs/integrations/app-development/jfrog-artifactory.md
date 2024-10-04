@@ -297,7 +297,7 @@ import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <JfrogNon/>
 
-## Upgrading the Artifactory app (Optional)
+## Upgrade/Downgrade the Artifactory app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

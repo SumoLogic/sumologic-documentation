@@ -253,7 +253,7 @@ See information about users  in Google BigQuery, including query operations, bil
 
 **Location of Users with Errors.** Shows the number of users with errors in the last 24 hours and their location on a map.
 
-## Upgrading the Google BigQuery app (Optional)
+## Upgrade/Downgrade the Google BigQuery app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

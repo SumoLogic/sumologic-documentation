@@ -169,7 +169,7 @@ The **Security Monitoring - TRAFFIC Log Overview** dashboard helps you to monito
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
-## Upgrading the PAN Firewall 10 Security app (Optional)
+## Upgrade/Downgrade the PAN Firewall 10 Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

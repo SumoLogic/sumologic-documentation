@@ -146,7 +146,7 @@ The **Dropbox - Logins, Devices & Sessions** dashboard provides visibility into 
 
 The **Dropbox - Team Admin Actions** dashboard displays the most frequent actions performed by administrators and provides a table view of the top active admins along with their respective countries. It also shows all recent admin activities for easy monitoring.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-team-admin-actions.png')} alt="dropbox-team-admin-actions" width="900"/>
 
-## Upgrading the Dropbox app (Optional)
+## Upgrade/Downgrade the Dropbox app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

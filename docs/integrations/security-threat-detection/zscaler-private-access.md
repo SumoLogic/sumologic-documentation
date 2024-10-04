@@ -181,7 +181,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
 
-## Upgrading the Zscaler Private Access app (optional)
+## Upgrade/Downgrade the Zscaler Private Access app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -132,7 +132,7 @@ The **iLert - Overview** dashboard presents a comprehensive insight into the ale
 
 <img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert-Overview"/>
 
-## Upgrading the iLert app (Optional)
+## Upgrade/Downgrade the iLert app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

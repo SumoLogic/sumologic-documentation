@@ -211,7 +211,7 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 
 **4xx Status Code Per Load Balancer**.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.
 
-## Upgrading the Google Cloud Load Balancing app (Optional)
+## Upgrade/Downgrade the Google Cloud Load Balancing app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
