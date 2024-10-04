@@ -242,8 +242,8 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
 To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 * **Automation Service**. Required for linking playbooks to metrics-based monitors.
-* **Metrics data**. Metrics data must be sent to Sumo Logic for anomaly detection.
-* **Metrics aggregation**. Queries that return multiple time series should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
+* **Metrics data**. Our anomaly detection uses at least 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
+* **Metrics aggregation**. Queries should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
 Examples:
 
@@ -251,7 +251,7 @@ Examples:
 * **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
 
 :::info Limitations
-Anomaly detection applies to one time series at a time. Multi-time series queries must be aggregated before detection.
+Anomaly detection applies to one time series at a time. All metrics anomaly monitor trigger queries must have aggregation applied at the end of the query before detection.
 :::
 
 #### Static detection method
