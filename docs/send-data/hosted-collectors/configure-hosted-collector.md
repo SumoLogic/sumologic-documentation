@@ -17,7 +17,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 
 Steps to configure a Hosted Collector:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted** Collector.
 1. Provide a **Name** for the Collector. **Description** is optional.
@@ -25,7 +25,7 @@ Steps to configure a Hosted Collector:
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Assign to a Budget** allows you to assign an ingest budget to the Collector. The dropdown displays your ingest budgets in the following format: `<budget name> (<field value>) (<allocated capacity>)`
+1. **Assign to a Budget** allows you to assign an  <!-- impacted by v1 deprecation? --> ingest budget to the Collector. The dropdown displays your ingest budgets in the following format: `<budget name> (<field value>) (<allocated capacity>)`
 1. **Time Zone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
 1. Review your input and when finished click **Save**.<br/> ![Screenshot of the 'Add Hosted Collector' dialog box in Sumo Logic. The form includes fields for 'Name' (with 'Sumo' entered), 'Description,' 'Category,' and 'Fields' with an option to '+Add Field.' Additional options include 'Assign to a Budget,' set to 'Not Assigned,' and 'Time Zone,' set to '(UTC) Etc/UTC.' At the bottom are 'Cancel' and 'Save' buttons.](/img/send-data/add-hosted-collector.png)
 1. After the Collector has been set up, it appears on the Collection page as a Hosted Collector. <br/> ![Screenshot showing a portion of the Sumo Logic interface. It displays the label '--00CH' with a 'Hosted' badge next to it, indicating a hosted status with a green checkmark.](/img/send-data/Collector-types-hosted.png)
