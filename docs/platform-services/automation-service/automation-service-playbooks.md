@@ -7,6 +7,7 @@ description: Learn about playbooks. A playbook is a predefined set of actions an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
+import CartesianProduct from '../../reuse/cartesian-product.md';
 
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
@@ -97,6 +98,10 @@ Before you can add action nodes to a playbook, you must [configure the connectio
    :::
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" style={{border:'1px solid gray'}} width="600"/>
 1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
+1. Deselect the **Cartesian product** checkbox. 
+   :::warning
+   <CartesianProduct/>
+   :::
 1. Once you have entered all the information requested, click **Create**. The action node is added to the playbook.
 1. Repeat the steps to add other action nodes.
 1. [Add condition nodes](#add-a-condition-node-to-a-playbook) if desired.
@@ -115,6 +120,10 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" style={{border:'1px solid gray'}} width="500"/>
+1. Deselect the **Cartesian product** checkbox. 
+   :::warning
+   <CartesianProduct/>
+   :::
 1. Click **Create**. The empty condition appears on the playbook.
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
 1. Now that you've linked the condition to an action, hover the mouse over the condition node and click the edit button on the node to configure the condition settings.<br/><img src={useBaseUrl('img/cse/automations-edit-condition-node.png')} style={{border:'1px solid gray'}} alt="Edit a condition node" width="150"/>
@@ -193,9 +202,11 @@ A filter node filters results from the preceding action based on the condition y
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node-conditions.png')} alt="Add filter node conditions" style={{border:'1px solid gray'}} width="500"/>
 1. (Optional) Use **Split by** to select an output if it is a list (array) and you want to evaluate each item separately. Each item in the list is checked against the filter condition. If the condition is true for an item, the item is passed to the next node.  (If you do not use the **Split by** field on an output that is a list, then if the condition is true for any item in the list, the entire list moves forward to the next node.)
 1. Configure the conditions you want to use for filtering. 
+1. Deselect the **Cartesian product** checkbox. 
+   :::warning
+   <CartesianProduct/>
+   :::
 1. Click **Create**.
-
-
 
 ## Playbook versioning
 

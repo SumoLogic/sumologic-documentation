@@ -23,4 +23,4 @@ To enable data forwarding in the Infrequent Tier, follow the steps:
 1. Click the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/> <img src={useBaseUrl('img/partitions-data-tiers/enable-infrequent.png')} alt="data-forwarding" width="400" />
 1. Click **Enable Data Forwarding** checkbox.
 
-For setting up **Forwarding destinations**, you can refer to the [Forward Data to S3](/docs/manage/data-forwarding/amazon-s3-bucket/#forward-datato-s3) section.
+For setting up **Forwarding destinations**, you can refer to the [Forward data to an S3 forwarding destination](/docs/manage/data-forwarding/amazon-s3-bucket/#forward-datato-an-s3-forwarding-destination) section.
