@@ -172,13 +172,13 @@ Be aware of the following features:
 * Download a report on usage, or just on credits usage as a CSV file.
 * View the detailed usage data for any time period on the chart by hovering over the chart.
 
-<img src={useBaseUrl('/img/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/><br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/manage/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/><br/><img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
 :::
 
-![Manage_Organization_options.png](/img/subscriptions/Manage_Organization_options.png)
+![Manage_Organization_options.png](/img/manage/subscriptions/Manage_Organization_options.png)
 
 ## Monitoring account usage ​
 
@@ -215,7 +215,7 @@ To switch between views and time interval displays:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. From the Account Overview tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
-1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/account/account-details-credit-usage-flex.png)
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/manage/account/account-details-credit-usage-flex.png)
 1. To toggle an analytic data type back on, click the blank icon next to the data type name. The analytic data type reappears in the graph and the credit usage for the data type is once again included.
 1. To change the aggregation of the data, click the Group by arrow and choose day, week, or month from the dropdown list. The default is **View By Day**.
 

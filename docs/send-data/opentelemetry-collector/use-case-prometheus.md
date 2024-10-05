@@ -136,17 +136,17 @@ Finally, we will create a new dashboard in Sumo Logic to visualize the custom Pr
 
 To create a new dashboard:
 
-1. Go to the Sumo Logic **Home** tab, click **+ New**, then select **Dashboard (New)** from the dropdown list.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/dashboard-new-new.png')} alt="dashboard-new-new.png" width="500"/>
-1. Click the name of the dashboard and write in a unique title. In this case, we'll do **Custom Metrics Dashboard**.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/custom-dashboard.png')} alt="custom-dashboard.png" width="350"/>
-1. Click the **Time Series** button to create a time series chart panel.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/time-series.png')} alt="time-series.png" width="350"/>
-1. Select the icon next to the query box to choose a **Metrics** query.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/custom-metrics.png')} alt="custom-metrics.png" width="400"/>
-1. Select **mock_metric_counter_0** from the drop down (of course, this could be any metric. This is just an example).<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/mock-counter.png')} alt="mock-counter.png" width="600" />
-1. From filters, choose the **client_addr** dimension. This will let us only show the metrics for specific client(s).<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/client-addr.png')} alt="client-addr.png" width="600" />
-1. Choose the `=()` *In* operator. This will let us specify a list of clients we want to include on the chart.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/client-addr-0.png')} alt="client-addr-0.png" width="500"/>
-1. Select the desired clients. In this case, there’s only a single client, **client3**.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/client3.png')} alt="client3.png" width="400" />
-1. Click the search button (magifying glass) to execute the search and see example output.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/client3-search.png')} alt="client3-search.png" />
-1. You should see something like this below. If it looks right, click the **Add to Dashboard** button.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/add-to-dash.png')} alt="add-to-dash.png" />
-1. Now we have a new dashboard in our Library called **Custom Metrics Dashboard** with the time-series chart showing just the clients we want to observe.<br/><img src={useBaseUrl('img/dashboards-new/create-dashboard-new/custom-dash-final.png')} alt="custom-dash-final.png" />  
+1. Go to the Sumo Logic **Home** tab and select **Dashboard**.<br/><img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="dashboard.png" width="70"/>
+1. Click the name of the dashboard and write in a unique title. In this case, we'll do **Custom Metrics Dashboard**.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/custom-dashboard.png')} alt="custom-dashboard.png" width="350"/>
+1. Click the **Time Series** button to create a time series chart panel.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/time-series.png')} alt="time-series.png" width="350"/>
+1. Select the icon next to the query box to choose a **Metrics** query.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/custom-metrics.png')} alt="custom-metrics.png" width="400"/>
+1. Select **mock_metric_counter_0** from the drop down (of course, this could be any metric. This is just an example).<br/><img src={useBaseUrl('img/dashboards/create-dashboard/mock-counter.png')} alt="mock-counter.png" width="600" />
+1. From filters, choose the **client_addr** dimension. This will let us only show the metrics for specific client(s).<br/><img src={useBaseUrl('img/dashboards/create-dashboard/client-addr.png')} alt="client-addr.png" width="600" />
+1. Choose the `=()` *In* operator. This will let us specify a list of clients we want to include on the chart.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/client-addr-0.png')} alt="client-addr-0.png" width="500"/>
+1. Select the desired clients. In this case, there’s only a single client, **client3**.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/client3.png')} alt="client3.png" width="400" />
+1. Click the search button (magifying glass) to execute the search and see example output.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/client3-search.png')} alt="client3-search.png" />
+1. You should see something like this below. If it looks right, click the **Add to Dashboard** button.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/add-to-dash.png')} alt="add-to-dash.png" />
+1. Now we have a new dashboard in our Library called **Custom Metrics Dashboard** with the time-series chart showing just the clients we want to observe.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/custom-dash-final.png')} alt="custom-dash-final.png" />  
 
 
 ## Step 4: Set up an alert
