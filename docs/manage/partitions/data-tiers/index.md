@@ -84,7 +84,7 @@ For information about searching data tiers, see [Searching Data Tiers](searchin
 
 This section describes the most common error messages for Data Tiers.
 
-* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/>![create-panel.png](/img/partitions-data-tiers/no-dashboard-support.png)    
+* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/>![create-panel.png](/img/manage/partitions-data-tiers/no-dashboard-support.png)    
 * If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you'll receive this error message: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`
 
 ## Guides
