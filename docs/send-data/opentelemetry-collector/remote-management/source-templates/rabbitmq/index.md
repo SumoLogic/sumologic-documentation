@@ -51,7 +51,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration :
+In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
@@ -72,5 +72,5 @@ import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-conf
 <DataConfiguration/>
 
 :::info
-Refer to the [changelog](changelog.md) to know about the periodic changes for this source template.
+Refer to the [changelog](changelog.md) for information on periodic updates to this source template.
 :::

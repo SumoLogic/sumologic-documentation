@@ -206,7 +206,7 @@ module.exports = {
 //                    },
 //                    {
 //                      type: 'category',
-//                      label: 'nginx',
+//                      label: 'Nginx',
 //                      collapsible: true,
 //                      collapsed: true,
 //                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},

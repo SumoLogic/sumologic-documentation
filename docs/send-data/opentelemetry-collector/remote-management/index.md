@@ -6,6 +6,14 @@ sidebar_label: Remote Management
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+This feature is in Beta. To participate, contact your Sumo Logic account executive.
+
 The Sumo Logic Distribution for OpenTelemetry Collector simplifies remote management of data collection, allowing setup from the Sumo Logic UI and deployment to multiple collectors.
 
 ## Remote Management features
@@ -49,6 +57,6 @@ Next, you'll create a data collection configuration to gather Apache error logs 
 1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created Source Template.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Next** to complete Source Template creation. The system will apply the configuration to all linked collectors and start collecting Apache error logs.
 
-### Step 3: Monitor Logs
+### Step 3: Monitor logs
 
 After configuring data collection, you can monitor the collected Apache error logs using the [Log Search](/docs/search). Additionally, use our [Dashboards](/docs/dashboards) to analyze the logs and gain insights from your Apache servers.
