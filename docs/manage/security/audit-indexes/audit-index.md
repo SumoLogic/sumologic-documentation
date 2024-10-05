@@ -4,6 +4,8 @@ title: Audit Index
 description: Provides information on the internal events that occur in Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -11,7 +13,7 @@ description: Provides information on the internal events that occur in Sumo Logi
 | Cloud Flex   | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Index** provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
+The Audit Index provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
 
 This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
@@ -24,7 +26,7 @@ All users can access the data contained within the audit index, but only adminis
 
 ## Enable the audit index
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
@@ -43,7 +45,7 @@ You can run more targeted search by including other metadata, message fields, o
 
 Results are returned in the **Messages** tab.
 
-![audit-index-search.png](/img/security/audit-index-search.png)
+<img src={useBaseUrl('/img/security/audit-index-search.png')} alt="Hidden Field highlighted on the Messages tab of search results" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 The audit index must be enabled for a search to produce results.
@@ -72,7 +74,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source categories](#audit-index-source-categories). |
 | `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |

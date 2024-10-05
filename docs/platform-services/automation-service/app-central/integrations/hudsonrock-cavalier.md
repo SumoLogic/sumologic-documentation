@@ -1,7 +1,6 @@
 ---
 title: HudsonRock Cavalier
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

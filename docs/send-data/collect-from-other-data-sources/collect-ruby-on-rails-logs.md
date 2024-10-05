@@ -32,7 +32,8 @@ and the multiline setup.
 
 1. Click **Save**. 
 
-1. In Sumo Logic, go to **Manage Data > Collection > Status** to verify that the logs are being ingested. If you do not see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
+1. Verify that the logs are being ingested. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. 
+1. If you do not see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
 
 ## Parsing RoR Logs
 

@@ -99,15 +99,11 @@ returns results similar to:
 | stream-2454 | search-733434 | stream-2454 |
 | stream-7343 | search-854343 | stream-7343 |
 | stream-7343 | search-32342  | stream-7343 |
-| stream-6543 | search-854343 | stream-6543 |
+| stream-6543 | search-455563 | stream-6543 |
 
 ### Performance
 
-The join operator can consume significant processing time. Selectivity
-reduces the number of log messages that must be considered. To improve
-join operator performance, place the parse operators toward the start of
-the query expression, bringing the search anchors to the front of the
-search scope, as in this example:
+The join operator can consume significant processing time. Selectivity reduces the number of log messages that must be considered. To improve join operator performance, place the parse operators toward the start of the query expression, bringing the search anchors to the front of the search scope, as in this example:
 
 ```
 ("starting stream from" OR "starting search") | join
@@ -180,9 +176,17 @@ on t1.taskId = t2.taskId
 | fields t1_taskId, t1_delay, delay_diff, t2_duration
 ```
 
-Produces results in the **Aggregate** tab like:
+Produces results like this in the Log Search **Aggregates** tab:
 
-![NewAggregation.png](/img/search/searchquerylanguage/search-operators/NewAggregation.png)
+| #  | t1_taskid          | t1_delay | delay_diff | t2_duration |
+|:----|:--------------------|:----------|:------------|:-------------|
+| 1  | 000000000009AD10A  | 54658    | 5          | 5           |
+| 2  | 000000000009AD109  | 54152    | 506        | 5           |
+| 3  | 000000000009AC152  | 54049    | 103        | 8           |
+| 4  | 000000000009ABE49  | 53503    | 546        | 5           |
+| 5  | 000000000009ABE48  | 53105    | 398        | 5           |
+| 6  | 000000000009ABE47  | 52925    | 180        | 5           |
+
 
 ### Operate on fields after the ON clause
 

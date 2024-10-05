@@ -1,7 +1,6 @@
 ---
 title: Microsoft Defender ATP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

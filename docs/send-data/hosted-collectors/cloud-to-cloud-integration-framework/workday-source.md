@@ -13,6 +13,7 @@ import ExampleJSON from '/files/c2c/workday/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/workday/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/workday/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
@@ -40,23 +41,23 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 
 To configure a Workday Source, follow the steps below:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 8. **SignOn Report URL**. Paste the SignOn Report URL from [Step 1.5](/docs/integrations/saas-cloud/workday.md#step-15-create-a-custom-sign-on-report).
 9. **Integration System User Name**. Name of the account (SumoLogic_ISU) created in [Step 1.1](/docs/integrations/saas-cloud/workday.md#step-11-create-an-integration-system-user).
 10. **Integration System User Password**. The password of the account created in [Step 1.1](/docs/integrations/saas-cloud/workday.md#step-11-create-an-integration-system-user).
-11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-API-client).
-15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
+11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client).
+15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 16. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
   :::note
   <CollBegin/>
@@ -106,13 +107,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/workday/example.json)
+<a href="/files/c2c/workday/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/workday/example.tf)
+<a href="/files/c2c/workday/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -186,7 +187,7 @@ To resolve this:
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly. 
+To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly.
 
 ## FAQ
 

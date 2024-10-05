@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/microsoft-graph-security-api/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
@@ -22,8 +23,7 @@ The Microsoft Graph Security API Source provides a secure endpoint to receive a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min |  [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
@@ -47,7 +47,7 @@ The following steps show you how to create a service application:
 1. Copy the Client Secret value, you'll need it when creating the Source in Sumo Logic.
     <img src={useBaseUrl('/img/send-data/5_ms_graph_app_client_secret_created.png')} alt="5_ms_graph_app_client_secret_created" width="800"style={{border: '1px solid gray'}} />
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
-    You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
+    You need to find and select the **SecurityAlert.Read.All**, **SecurityIncident.Read.All**, and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
     :::
@@ -69,12 +69,12 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Graph Security API**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -130,13 +130,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.json)
+<a href="/files/c2c/microsoft-graph-security-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-graph-security-api/example.tf)
+<a href="/files/c2c/microsoft-graph-security-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

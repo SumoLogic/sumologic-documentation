@@ -1,27 +1,40 @@
 ---
 title: AWS EKS
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.0  
-Updated: April 18, 2024***
+***Version: 1.1  
+Updated: July 13, 2024***
 
 AWS EKS streamlines Kubernetes application deployment, ensuring scalability and security with minimal management overhead.
 This integration provides comprehensive Kubernetes cluster insights, node and pod management, volume tracking, and configuration updates.
 
+## Actions
+
+* **Cordon Node** _(Containment)_ - By cordoning the impacted worker node, you're informing the scheduler to avoid scheduling pods onto the affected node. This will allow you to remove the node for forensic study without disrupting other workloads.
+* **Create Network Policy to Isolate Pod** _(Containment)_ - Isolate the Pod by creating a Network Policy that denies all ingress and egress traffic to the pod.
+* **Delete Pod** _(Containment)_ - Delete a Pod.
 * **Describe Cluster** _(Enrichment)_ - Describes an Amazon EKS cluster.
+* **Get Insight** _(Enrichment)_ - Returns details about an insight that you specify using its ID.
+* **Get Network Policy** _(Enrichment)_ - Get the specified Network Policy.
+* **Get Node** _(Enrichment)_ - Get Worker Node.
+* **Get Pod** _(Enrichment)_ - Get the specified Pod.
+* **Identify Pods with Vulnerable Image** _(Enrichment)_ - Identify Pods with vulnerable or compromised image and worker nodes.
 * **List Clusters** _(Enrichment)_ - Lists the Amazon EKS clusters in your AWS account in the specified AWS Region.
+* **List Deployment** _(Enrichment)_ - List objects of kind Deployment.
 * **List Insights** _(Enrichment)_ - Returns a list of all insights checked for against the specified cluster.
+* **List Namespaces** _(Enrichment)_ - List objects of kind Namespace.
+* **List Network Policy** _(Enrichment)_ - List objects of kind Network Policy.
 * **List Nodes** _(Enrichment)_ - Returns a list of all Nodes.
 * **List Persistent Volumes** _(Enrichment)_ - Returns a list of Persistent Volumes.
 * **List Pods** _(Enrichment)_ - Returns a list of Pods for all namespaces.
 * **Read Namespaced Pod Status** _(Enrichment)_ - Read the status of the specified Pod.
 * **Read Node Status** _(Enrichment)_ - Read the status of the specified Node.
+* **UnCordon Node** _(Containment)_ - UnCordon the worker node
 * **Update Cluster Config** _(Containment)_ - Updates an Amazon EKS cluster configuration.
 
 ## External Libraries
@@ -33,3 +46,36 @@ This integration provides comprehensive Kubernetes cluster insights, node and po
 ## Change Log
 
 * April 18, 2024 (v1.0) - First upload
+* July 13, 2024 (v1.1)
+    + Docker has been updated for AWS EKS
+    + Added New Actions:
+        - Cordon Node
+        - Create Network Policy to Isolate Pod
+        - Delete Pod
+        - Get Insight
+        - Get Network Policy
+        - Get Node
+        - Get Pod
+        - Identify Pods with Vulnerable Image
+        - List Deployment
+        - List Namespaces
+        - List Network Policy
+        - UnCordon Node
+    + List of changes grouped by Actions:
+        - List Insights
+            * Added new Filter Field
+            * Updated output
+        - List Nodes
+            * Added new Limit Field
+            * Updated output
+        - List Pods
+            * Added selector to restrict the list of returned objects by their field
+            * Added new Limit Field
+            * Updated output
+        - Read Namespaced Pod Status
+            * Updated output
+        - Read Node Status
+            * Updated output
+        - Update Cluster Config
+            * Updated resources VPC Config text field to a textarea field
+            * Added output

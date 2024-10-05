@@ -35,7 +35,7 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 
-<img src={useBaseUrl('img/cse/agg-rule.png')} alt="Aggregate rule" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/agg-rule.png')} alt="If Triggered section of an aggregation rule" style={{border: '1px solid gray'}} width="400"/>
 
 Watch this micro lesson to learn how to create an Aggregation rule.
 
@@ -46,7 +46,7 @@ Watch this micro lesson to learn how to create an Aggregation rule.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -55,11 +55,11 @@ import Iframe from 'react-iframe'; 
 
 ## Create an Aggregation rule
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  <br/><img src={useBaseUrl('img/cse/aggregation-rule.png')} alt="Aggregation rule" style={{border: '1px solid gray'}} width="600"/>
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  <br/><img src={useBaseUrl('img/cse/aggregation-rule.png')} alt="Aggregation rule dialog" style={{border: '1px solid gray'}} width="600"/>
 
 ### Configure “If Triggered” settings
 
@@ -98,15 +98,15 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **and a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" style={{border: '1px solid gray'}} width="325"/>
+1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Constant severity portion of the dialog" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" style={{border: '1px solid gray'}} width="450"/>
+   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="Dynamic Severity portion of the dialog" style={{border: '1px solid gray'}} width="450"/>
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
-   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" style={{border: '1px solid gray'}} width="450"/>
+   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>
    1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" style={{border: '1px solid gray'}} width="450"/>
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value Is option" style={{border: '1px solid gray'}} width="450"/>
    1. Select one of the following options:
       * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
       * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.

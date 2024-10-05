@@ -1,0 +1,16 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                "name": "Zendesk",
+                "emailId": "bob123@example.com",
+                "apiToken": "gfygwfihwcboghbuwguwdsyu",
+                "baseURL": "https://sumologic.zendesk.com",
+                "pollingIntervalMin": 5
+		},
+		"schemaRef": {
+            		"type": "Zendesk"
+        	    },
+        	"sourceType": "Universal"
+	}
+}

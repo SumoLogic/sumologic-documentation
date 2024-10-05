@@ -30,7 +30,7 @@ Some Webhook events may not be available based on the plan type. Refer to the Pr
 
 Follow the below steps to get the required fields for user configuration:
 1. Sign in to [Zoom Marketplace](https://marketplace.zoom.us/).
-1. In the upper right corner, click **Develop > Build App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="zoom-sign-in" width="400"/>
+1. In the upper right corner, click **Develop > Build Legacy App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="zoom-sign-in" style={{border: '1px solid gray'}} width="200"/>
 1. **Create** a Webhook Only.
 1. Specify the following App Information:
     - App Name    
@@ -44,7 +44,7 @@ Follow the below steps to get the required fields for user configuration:
 ## Create Zoom Source
 
 To configure a Zoom Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Zoom**. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="60"/>
 1. Enter a **Name** for the Source. A description is optional. <br/><img src={useBaseUrl('img/send-data/zoom-configuration-settings.png')} alt="zoom-configuration-settings" width="400"/>

@@ -1,7 +1,6 @@
 ---
 title: SpiderFoot HX
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

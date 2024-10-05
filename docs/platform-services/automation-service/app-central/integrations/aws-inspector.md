@@ -1,7 +1,6 @@
 ---
 title: AWS Inspector
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -89,7 +89,7 @@ _sourceCategory=Apache/Access
 
 Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards/panels/column-charts):
 
-![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
+![Bar chart comparing the number of users by operating system (Android, MacOS, Other, Windows, iPad, iPhone) and web browser (Other, Safari, Internet Explorer, Chrome, Firefox). Windows users predominantly use Internet Explorer, followed by Chrome and Firefox. Android and MacOS users mainly use Safari, while iPad users are evenly split between Safari and Other. iPhone users show a smaller user base with Safari usage.](/img/search/searchquerylanguage/search-operators/matches.png)
 
 ### Viewing errors and warnings over time
 
@@ -109,9 +109,9 @@ _sourceCategory=OS/Windows (error or warning)
 | sort _timeslice asc
 ```
 
-Produces results similar to the following, when you configure it to be visualized as a [linechart](/docs/dashboards/panels/line-charts):
+Produces results similar to the following, when you configure it to be visualized as a [line chart](/docs/dashboards/panels/line-charts):
 
-![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
+![Line chart displaying the number of errors and warnings over time. Errors consistently range between 300 to 400 with slight fluctuations, while warnings remain relatively stable around 100. Both metrics show a sharp decline towards the end of the time period.](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 
 ### Matching against parsed field values
 

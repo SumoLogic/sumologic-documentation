@@ -17,9 +17,9 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 ## Configure a Syslog Source
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
-1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
+1. Select **Syslog** for the Source type. <br/>![A screenshot of a Sumo Logic configuration form with fields for Name (required), Description, Protocol (UDP selected), Port (required, 1514), Source Category, and an option to +Add Field."](/img/send-data/syslog-source.png)
 1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
 1. **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
 1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
@@ -214,7 +214,11 @@ These steps can help identify the problem:
 
     Once the client is started with one of the above commands you can enter a message in the command line and press enter/return to send the message. For example,
 
-    ![netcat-send.png](/img/send-data/netcat-send.png)
+    ```sh
+    ubuntu@ubuntu:~$ nc localhost 12345
+    hey
+    how are you?
+    ```
 
 1. **Verify ingestion of test messages and check for timestamp issues**: Check the Sumo **Search** page to make sure that the data pushed in the chat interface is available. 
 

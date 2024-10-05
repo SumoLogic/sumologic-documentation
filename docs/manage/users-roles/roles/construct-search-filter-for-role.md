@@ -6,7 +6,7 @@ description: Construct a role search filter to control what log data users with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure.
+This page describes how to define an advanced search filter for a role. These instructions apply to the **Search filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure.
 
 
 ## Understanding search filters
@@ -76,10 +76,6 @@ _collector=HR_Tools AND <user-query>
 ```
 
 #### Using AND and OR in a search filter
-
-:::note
-For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
-:::
 
 You can use AND and OR in a search filter. For example, this role filter uses OR to grant access to log data from two source categories:
 

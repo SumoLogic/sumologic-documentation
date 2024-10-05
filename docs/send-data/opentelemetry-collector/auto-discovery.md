@@ -30,7 +30,7 @@ For the discovered services, you can set up data collection with guided onboardi
 
 ### Collector installation completion page
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. [Install the OpenTelemetry collector](/docs/send-data/opentelemetry-collector/install-collector/).
 1. On the **Done** page, you can see services discovered which are updated in real time.<br/><img src={useBaseUrl('img/send-data/collector-installation-completion-page.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
@@ -41,7 +41,7 @@ For the discovered services, you can set up data collection with guided onboardi
 
 You can also review the applications discovered per collector on the collector list page.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. Click on the collector from the list which will open the Collector Inspector view.  
 1. Select **Discovered Service(s)** tab to review all the services discovered.<br/><img src={useBaseUrl('img/send-data/collector-list-page.png')} alt="collector-list-page" style={{border:'1px solid gray'}} width="800" />
 1. On clicking the application of interest, you will be taken to the **Configure App** section.

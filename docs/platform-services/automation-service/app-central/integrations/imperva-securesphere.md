@@ -1,7 +1,6 @@
 ---
 title: Imperva SecureSphere
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

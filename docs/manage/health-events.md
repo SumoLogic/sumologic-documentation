@@ -15,7 +15,7 @@ Health events allow you to keep track of the health of your Collectors, Sourc
 
 This framework includes the following:
 
-* Health event logs indexed in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
+* Health event logs indexed in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index).
 * A [health events table](#health-events-table) on the Alerts page.
 * A health status column on the [Collection page](#collection-page).
 
@@ -28,9 +28,7 @@ Alerts for specific health events are easy to create in the Health Events Tabl
 
 ## Health events
 
-Health events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
-
-The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md) lists all of the possible Health Events.
+Health events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
 
 ### Health events table
 
@@ -38,10 +36,10 @@ The health events table allows you to easily view and investigate problems getti
 
 On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the health events table, in the main Sumo Logic menu select **Monitoring > Health Events**. You can also click the **Go To...** menu at the top of the screen and select **Health Events**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the health events table, in the top menu select **Configuration**, and then under **Data Collection** select **Health Events**. You can also click the **Go To...** menu at the top of the screen and select **Health Events**. 
+ 
 
 ![health events table.png](/img/health-events/health-events-table.png)
 

@@ -14,7 +14,7 @@ Cluster and Heatmap graphically depicts the location and number of hits from dat
 To map your data you can: 
 
 * Use the [geoip](/docs/search/search-query-language/search-operators/geoip) or [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) operators to provide these values from extracted IPv4 and IPv6 addresses.
-* Manually provide valid aggregated **latitude** and **longitude** values. Ensure the field names are `latitude` and `longitude` so that map chart can recognize them. Format the values with positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W, such as, `30.42` and `-87.21`.
+* Manually provide valid aggregated **latitude** and **longitude** values. Ensure the field names are `latitude` and `longitude` so that map chart can recognize them. Format the values with positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W, such as: `30.42` and `-87.21`.
 * A `_count` aggregator is required. 
 * Other aggregators like `sum` or `avg` do not provide accurate results. 
 

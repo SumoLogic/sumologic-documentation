@@ -2,6 +2,11 @@
 id: time-reference
 title: Timestamps, Time Zones, Time Ranges, and Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
+keywords:
+  - time
+  - time reference
+  - timezone
+  - time zone
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,7 +33,7 @@ If your log messages from a Source contain multiple timestamps, timestamps in un
 
 The Collector assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that Source it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
 
-The Collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#ingest-old-historical-data) for further details.
+The Collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
 
 ### Automated timestamp parsing
 
@@ -123,10 +128,10 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to step 2.
-   * To edit the timestamp settings for an existing Source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="source-edit" width="600"/>
-1. Navigate to the **Advanced Options for Logs (Optional)** section.<br/><img src={useBaseUrl('img/send-data/advanced-options-logs.png')} alt="advanced-options-logs" />
-1. Under **Timestamp Format**, select **Specify a format** > **+ Add Timestamp Format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="specify-timestamp-format" width="300"/>
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>
+   * To edit the timestamp settings for an existing Source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="Screenshot showing the editing interface for a source in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="600"/>
+1. Navigate to the **Advanced Options for Logs (Optional)** section.<br/><img src={useBaseUrl('img/send-data/advanced-options-logs.png')} alt="Screenshot of the advanced options for logs in Sumo Logic, focusing on the timestamp format settings" style={{border: '1px solid gray'}} />
+1. Under **Timestamp Format**, select **Specify a format** > **+ Add Timestamp Format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="Screenshot illustrating the process of specifying a custom timestamp format in the Sumo Logic UI" style={{border: '1px solid gray'}} width="300"/>
+1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="Screenshot showing the field where a user can input a custom timestamp format" style={{border: '1px solid gray'}} width="600"/><br/>
    :::note
    If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
    :::
@@ -136,7 +141,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    * When providing multiple custom formats, specify the most common format first. The Collector will process each custom format in the order provided. Once a timestamp is located, no further timestamp checking is done.
    * If no timestamps are located that match your custom formats, the Collector will still attempt to automatically locate the log's timestamp.
    :::
-1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.<br/>  ![timestamp locator highlighted.png](/img/send-data/timestamp-locator-highlighted.png) The timestamp locator must:
+1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.<br/><img src={useBaseUrl('/img/send-data/timestamp-locator-highlighted.png')} alt="Screenshot highlighting the timestamp locator field, where users can specify a regular expression to locate timestamps in logs" width="500"/><br/>The timestamp locator must:
     * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
     * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported.`
     * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
@@ -145,8 +150,8 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
       If you use quotes in the timestamp locator regular expression, you may see issues in the display after you save. The regular expression is not actually changed and can still be used to locate your timestamp.
       :::
 1. If you have more than one custom timestamp format that you want to add, click **+ Add**. The ordering of formats is significant. Each provided timestamp format is tested, in the order specified, until a matching format is found. The first matching format determines the final message timestamp. If none of the provided formats match a particular message, the Collector will attempt to automatically determine the message's timestamp.
-1. Next, we recommend testing a few log lines from your data against your specified formats and locators. Enter sample log messages to test the timestamp formats you want to extract.<br/>  ![timestamp format test examples.png](/img/send-data/timestamp-format-test-examples.png)
-1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).<br/>  ![timestamp format test results.png](/img/send-data/timestamp-format-test-results.png)
+1. Next, we recommend testing a few log lines from your data against your specified formats and locators. Enter sample log messages to test the timestamp formats you want to extract.<br/> <img src={useBaseUrl('img/send-data/timestamp-format-test-examples.png')} alt="Screenshot displaying example log lines used to test custom timestamp formats" width="600"/>
+1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).<br/><img src={useBaseUrl('img/send-data/timestamp-format-test-results.png')} alt="Screenshot of the results from testing custom timestamp formats, showing matched and unmatched formats" width="500"/><br/>
     You should see one of the following messages:  
     * **Format matched**.  In this example, the format of `yyyy/MM/dd HH:mm:ss` was matched and highlighted in green. This was the first format provided, so it returns as `1(format: yyyy/MM/dd HH:mm:ss locator: \[time=(.*?)\])` The **Effective message time** would be `2017-01-15 02:12.000 +0000`.
     * **None of the custom timestamp format was matched**.  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, `2017-06-01 02:12:12.259667` that we can use. **The Effective message** time is going to be `2017-06-01 02:12:12.259 +0000`.
@@ -186,7 +191,7 @@ _sourceCategory=PaloAltoNetworks
 | _format as timestampformat
 ```
 
-The result would look like this: <br/> ![format](/img/send-data/format.png)
+The result would look like this: <br/><img src={useBaseUrl('img/send-data/format.png')} alt="Screenshot showing the format parsing results, illustrating how the timestamp is parsed from a log file" width="600"/>
 
 
 ### Large time between message time and receipt time
@@ -252,26 +257,26 @@ Changing the **Default Timezone** setting affects how the UI displays messages
 
 For example, the following screenshot shows the time zone set to **PST** in the UI, in the **Time** column. The logs were collected from a system that was also configured to use the **PST** time zone, which is displayed in the timestamp of the **Message** column. The timestamps in both columns match as they are set to the same time zone.
 
-![img](/img/send-data/timezone_PST.png)
+<img src={useBaseUrl('img/send-data/timezone_PST.png')} alt="Screenshot demonstrating log timestamps displayed in Pacific Standard Time (PST) in the Sumo Logic UI" width="500" />
 
 The next screenshot shows the same search result after changing the Default Timezone setting to UTC. Now the Time column is displayed in UTC, while the Message column retains the original timestamp, in PST.
 
-![img](/img/send-data/timezone_UTC.png)
+<img src={useBaseUrl('img/send-data/timezone_UTC.png')} alt="Screenshot showing the same log timestamps now displayed in Coordinated Universal Time (UTC) after changing the default time zone setting" width="500"/>
 
 In another example, if your time zone is set to **UTC**, and you share a Dashboard with another user who has their time zone set to **PST**, what will they see?
 
 They will see the same data, just displayed using their custom set time zone. For example, if you have a Panel that uses a time series, the timeline on the X axis of your chart is displayed in your time zone, **UTC**. The other user will see the timeline on the X axis displayed in their time zone, **PST**. But the data displayed in the chart is exactly the same.
 
-![img](/img/send-data/timezone_dashboards_compare.png)
+<img src={useBaseUrl('img/send-data/timezone_dashboards_compare.png')} alt="Screenshot comparing how dashboards display time zones differently for users with custom time zone settings, highlighting the same data shown in different time zones." width="600"/>
 
 ## Time ranges
 
 The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
 
-When you create a [Scheduled Search](/docs/alerts/scheduled-searches) or a [Real-Time Alert](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
+When you create a [Scheduled Search](/docs/alerts/scheduled-searches) or a [real-time alert](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
 
 :::note
-The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or Real-Time Alerts. If you'd like your Scheduled Searches and Real-Time Alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.
+The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or real-time alerts. If you'd like your Scheduled Searches and real-time alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.
 :::
 
 For more information on time ranges, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range).

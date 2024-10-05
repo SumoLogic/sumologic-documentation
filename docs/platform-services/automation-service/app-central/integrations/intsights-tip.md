@@ -1,7 +1,6 @@
 ---
 title: Intsights TIP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -11,6 +11,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/crowdstrike-fdr-host-inventory/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -48,7 +49,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 1. Navigate to and click on **API clients and keys**. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-new-client.png>" width="600" />
 1. Provide a proper name and description and select the **Read Hosts Scope**. Click on `ADD` to complete the process.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-add-client.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-add-client.png>" width="600" />
-1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and paste the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FDR Host Inventory Source](#set-up-crowdstrike-fdr-host-inventory-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} alt="<crowdstrike-fdr-host-inventory-copy-creds.png>" style={{border:'1px solid gray'}} width="600" />
+1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and paste the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FDR Host Inventory Source](#source-configuration).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} alt="<crowdstrike-fdr-host-inventory-copy-creds.png>" style={{border:'1px solid gray'}} width="600" />
 
 #### Region
 
@@ -66,12 +67,12 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FDR Host Inventory API:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **CrowdStrike FDR Host Inventory** icon.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM as inventory.
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) as inventory. <br/><ForwardToSiem/>
 7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
@@ -116,13 +117,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-fdr-host-inventory/example.json)
+<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-fdr-host-inventory/example.tf)
+<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

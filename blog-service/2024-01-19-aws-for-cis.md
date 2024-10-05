@@ -5,11 +5,12 @@ keywords:
   - apps
   - app catalog
   - cloud infrastructure security
-hide_table_of_contents: true
-authors:
-  - url: https://help.sumologic.com/release-notes-service/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+hide_table_of_contents: true  
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 We’re excited to announce the general availability of Cloud Infrastructure Security for AWS. This solution unifies views of active threats, security control failures, and suspicious activity across your AWS environment to give you security posture visibility at a glance.  
 
@@ -21,7 +22,7 @@ Here are some of the key features the new solution offers:
 * **Misconfigurations**. See areas in your environment that need to be addressed because they fail best practice security controls.
 * **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
 
-To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws).
+To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/).
 
 
 :::note Action Required

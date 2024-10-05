@@ -67,24 +67,25 @@ For example, in Australia, DST goes into effect on October 2nd for Spring. For t
 
 In another example, if you had a 4h timeslice, you would usually see results at 12 a.m., 4 a.m., 8 a.m., 12 p.m., etc. But when the DST happens, the result after 12 a.m. could be either 3 a.m. or 5 a.m., depending on Fall or Spring.
 
-<AlertsTimeslice/>
+#### How does a timeslice affect a monitor?
 
+<AlertsTimeslice/>
 
 ### Basic examples
 
-**Timeslice 5m**   
+`timeslice 5m`
 
-Fixed-size buckets at 5 minutes. The output field is **default _timeslice**.
+Fixed-size buckets at 5 minutes. The output field is the default `_timeslice`.
 
-**Timeslice 2h as 2hrs** 
+`timeslice 2h as 2hrs` 
 
 Fixed-size buckets that are 2 hours long. The output field name is aliased to **2hrs**.
 
-**Timeslice 150 buckets**   
+`timeslice 150 buckets`   
 
 Bucketing to 150 buckets over the search results.
 
-**Timeslice 1m as `my_time_bucket_field_name`**   
+`timeslice 1m as my_time_bucket_field_name`   
 
 Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_time_bucket_field_name`**.
 

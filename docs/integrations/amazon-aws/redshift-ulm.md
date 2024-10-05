@@ -497,3 +497,15 @@ See node-level resource utilization metrics, including CPU; disk; network; and r
 **Commit Queue Length**. Shows trends in commit queue length by NodeID on a line chart for the last three hours.
 
 **WLM Queue Length**. Shows trends in WLM queue length by NodeID on a line chart for the last three hours.
+
+## Upgrading the Amazon Redshift ULM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Redshift ULM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

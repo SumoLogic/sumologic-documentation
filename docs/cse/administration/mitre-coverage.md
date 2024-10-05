@@ -31,16 +31,16 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
 ## User interface 
 
-<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
-<!--Kanso 
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
- Kanso-->
+ 
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" style={{border: '1px solid gray'}} width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. Coverage data is updated on the page once a day.
@@ -178,7 +178,7 @@ Select the values to filter:
 
 ## Audit logging for MITRE ATT&CK coverage
 
-MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
 ```
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage

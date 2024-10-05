@@ -6,7 +6,7 @@ description: Learn how to save and schedule a log search to run at a regularly s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#alert-types).
+This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#step-6-choose-a-scheduled-search-alert-type).
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
 
@@ -17,7 +17,7 @@ This section describes how to create a Scheduled Search at the time you save a s
 ### Step 1. Initiate Creation
 
 1. Run a Log Search and click the save icon.
-1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="img/alerts/schedule-this-search.png" width="500"/>
+1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="schedule-this-search.png" width="500"/>
 
 ### Step 2. Set Run Frequency
 
@@ -25,7 +25,6 @@ This section describes how to create a Scheduled Search at the time you save a s
 
 Choose the frequency with which the search should run from the available options:
 * **Never**. Temporarily disables the scheduled search.
-* **Real Time**. Sets up a [Real-Time Alert](create-real-time-alert.md). Note that receipt time is not supported with real-time frequency.
 * **Every 15 Minutes**. Runs the search approximately every 15 minutes. There may be a delay of up to 5 minutes past the selected time or interval, but will maintain the 15-minute run frequency.
 * **Hourly**. Executes the search every hour. We guarantee that hourly searches run every hour but not exactly at :00. May be delayed up to 10 minutes past the selected time or interval but will maintain the selected run frequency.
 * **Every 2, 4, 6, 8, or 12 Hours**. Runs the search at intervals at the top of the hour you specify.
@@ -51,7 +50,6 @@ The maximum allowed time range for different Scheduled Search frequencies is as 
 
 | Frequency          | Max Allowed Time Range |
 |:-------------------|:-----------------------|
-| Real Time          | 15 minutes             |
 | 15 min             | 1 Day                  |
 | 15 min -1 hour     | 7 Days                 |
 | 1 hour - 3 hours   | 15 Days                |
@@ -76,7 +74,7 @@ Under **Send Notification**, select the condition for when you want an alert to 
 
 * **Every time a search is complete**. Select this option if you want an email with search results every time the search is run (depending on the frequency, you could get an email every 15 minutes, every hour, or once a day).
 * **If the following condition is met**. Select this option if you'd like to set up a Scheduled Search that alerts you to specific events.
-   * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met. See this [FAQ](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results) for an example.
+   * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met. See this [FAQ](/docs/alerts/scheduled-searches/faq/#how-do-i-set-a-real-time-alert-with-more-than-1000-results) for an example.
       * **Equal to.** Choose if there is an exact number of records in a search result at which you want to be notified.
       * **Greater than.** Choose if you want to be notified only if the search results include greater than the number of messages or groups you set in the text box.
       * **Greater than or equal to.** Choose if you want to be notified only if the search results include greater than or equal to that number of messages or groups you set in the text box. For example, to ensure you're notified only when the specific query conditions are met, set the **Number of results** condition to greater than 0.
@@ -90,10 +88,6 @@ In the next section, we'll walk you through the available Scheduled Search alert
 When creating a Scheduled Search, you can configure various alert types, including:
 
 * [Email](create-email-alert.md). You can create a Scheduled Search to alert you via email when a set of conditions are satisfied. A maximum of 120 emails are sent per day per Scheduled Search.
-   * [Real-Time](create-real-time-alert.md). Get continuous alerts for immediate notification of error conditions. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
-   :::warning limitations
-   Scheduled searches with a real-time run frequency do not support the **Use Receipt Time** option.
-   :::
 * [Script Action](/docs/send-data/installed-collectors/sources/script-action). Trigger actions based on search results, such as firing SNMP traps.
 * [ServiceNow Connection](/docs/alerts/webhook-connections/servicenow/). Integrate Sumo Logic search results with ServiceNow for issue investigation.
 * [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections). Send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a Scheduled Search, then you can send an alert from that Scheduled Search as a post to a Slack channel, or integrate with third-party systems.
@@ -105,7 +99,7 @@ When creating a Scheduled Search, you can configure various alert types, includi
 
 Learn how to address common issues with Scheduled Searches:
 
-* [Prevent timeouts](faq.md#how-to-prevent-your-scheduled-search-from-timing-out). Scheduled searches cannot run indefinitely. At some point, the query will be timed out to protect the reliability of the service.
+* [Prevent timeouts](/docs/alerts/scheduled-searches/faq/#how-do-i-prevent-my-scheduled-search-from-timing-out). Scheduled searches cannot run indefinitely. At some point, the query will be timed out to protect the reliability of the service.
 * [Manage Email Quotas](/docs/alerts/scheduled-searches/faq#why-have-i-received-a-scheduled-search-email-quota-reached-notification). Sumo Logic implements an email quota allowing 120 emails to be sent per day per Scheduled Search.
 * Understand scheduled search [suspension](faq.md#what-happens-when-a-scheduled-search-is-suspended) and [failure](faq.md#why-would-a-scheduled-search-fail) reasons.
 

@@ -17,7 +17,7 @@ This article only applies to organizations having a legacy Cloud SOAR instance U
 
 This topic describes *Cloud SOAR for MSSPs*, a full-featured instance of legacy Cloud SOAR designed for internal MSSP use. Using Cloud SOAR for MSSPs is virtually the same as using a standard Cloud SOAR instance. There are a few differences, which this page highlights.
 
-<img src={useBaseUrl('img/cloud-soar/architecture.png')} alt="architecture" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/architecture.png')} alt="Diagram showing an MSSP containing multiple tenants" style={{border: '1px solid gray'}} />
 
 Users in an MSSP access Cloud SOAR for MSSPs using the MSSP Console, a UI that centralizes management, aggregated reporting, and comprehensive tenant visibility.
 
@@ -25,7 +25,7 @@ You can use the MSSP Console to quickly propagate content like new and updated p
 
 The MSSP Console is similar to the standard Cloud SOAR UI. One difference you’ll notice is the icon in the upper right corner of the UI.
 
-<img src={useBaseUrl('img/cloud-soar/mssp-soar-options.png')} alt="mssp-soar-options" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/mssp-soar-options.png')} alt="MSSP icon" style={{border: '1px solid gray'}} />
 
 When you click that icon, a dropdown menu displays the following options:
 
@@ -42,19 +42,19 @@ The MSSP Dashboard is highly customizable. You can use out-of-the-box widgets or
 
 The screenshot below is the page you’ll see when you customize the MSSP Dashboard.
 
-<img src={useBaseUrl('img/cloud-soar/dashboard-customize.png')} alt="dashboard-customize" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/dashboard-customize.png')} alt="Dashboard customize screen" style={{border: '1px solid gray'}} />
 
 This screenshot shows a list of widgets that can be added to the MSSP Dashboard.
 
-<img src={useBaseUrl('img/cloud-soar/dashboard-customize-widget-list.png')} alt="dashboard-customize-widget-list" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/dashboard-customize-widget-list.png')} alt="Widget dropdown menu on the Dashboard customize screen" style={{border: '1px solid gray'}} />
 
 The **Edit widget** popup allows you to configure options for the widget. In the **Details** tab, you can tailor the widget title, the time range for the data to be presented, and when to start the time range with respect to the incident lifecycle, and the refresh period.
 
-<img src={useBaseUrl('img/cloud-soar/edit-widget-details.png')} alt="edit-widget-details" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/edit-widget-details.png')} alt="Edit widget screen" style={{border: '1px solid gray'}} />
 
 This **Tenants** tab allows you to select the tenants for which the widget will report.
 
-<img src={useBaseUrl('img/cloud-soar/edit-widget-tenants.png')} alt="edit-widget-tenants" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/edit-widget-tenants.png')} alt="Tenants tab on the Edit widget screen" style={{border: '1px solid gray'}} />
 
 For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-soar/incidents-triage/#dashboards).
 
@@ -67,7 +67,7 @@ The **Nodes Management** page shows the status of all paired child tenants and p
 * **Edit**. Edit the configuration of a tenant.
 * **Unpair**. Unpair a tenant.
 
-<img src={useBaseUrl('img/cloud-soar/nodes-mgmt-option.png')} alt="nodes-management" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/nodes-mgmt-option.png')} alt="Nodes Management screen" style={{border: '1px solid gray'}} />
 
 ## Playbook
 
@@ -75,17 +75,15 @@ You can use the **Playbook** page to create and edit Playbooks, and to push Play
 
 The screen below displays a list of playbooks that have been created, in this case, one Playbook.
 
-<img src={useBaseUrl('img/cloud-soar/playbook-list.png')} alt="playbook-list" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/playbook-list.png')} alt="Playbook screen" style={{border: '1px solid gray'}} />
 
 When you click a Playbook in the list, the Playbook is displayed. You can click **Push to All Tenants** to propagate the Playbook.
 
-<img src={useBaseUrl('img/cloud-soar/playbook.png')} alt="playbook" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/playbook.png')} alt="Example playbook" style={{border: '1px solid gray'}} />
 
 You’ll be offered the option to push the Playbook to selected tenants, as desired.
 
-<img src={useBaseUrl('img/cloud-soar/save-to-tenants.png')} alt="save-to-tenants" style={{border: '1px solid gray'}} />
-
-For more information, see [Playbook](/docs/cloud-soar/automation/#playbook).
+<img src={useBaseUrl('img/cloud-soar/save-to-tenants.png')} alt="Push to tenants option" style={{border: '1px solid gray'}} />
 
 ## Custom Fields
 
@@ -97,8 +95,8 @@ The screenshots below each show a list of Custom Fields for Incidents. This page
 
 When you mouse over the icons, you’ll see **Synchronized** and **Push Field**.
 
-<img src={useBaseUrl('img/cloud-soar/push-field.png')} alt="push-field" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/push-field.png')} alt="Push field button" style={{border: '1px solid gray'}} />
 
-<img src={useBaseUrl('img/cloud-soar/synchronized.png')} alt="synchronized" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cloud-soar/synchronized.png')} alt="Synchronized label" style={{border: '1px solid gray'}} />
 
 For more information about Custom Fields, see [Customization](/docs/cloud-soar/overview/#custom-fields).

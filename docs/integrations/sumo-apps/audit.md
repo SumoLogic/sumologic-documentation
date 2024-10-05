@@ -32,6 +32,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
+
 ### Account Management Overview
 
 See an overview of account management activities, including role, operation, and access key operations; and the location where administrative activities were performed.  
@@ -235,3 +237,15 @@ See information on scheduled searches that have been triggered, along with detai
 **Non-200 Status Codes by Name**. Details for non-200 status code results for Webhooks with saved search names and their respective counts.
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
+
+## Upgrading the Sumo Logic Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sumo Logic Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -500,3 +500,15 @@ See the overall Open Web Application Security Project (OWASP) anomaly score quar
     * **XSS (Cross-site Scripting)**
     * **SQL Injections.**
     * **Session Fixations.**
+
+## Upgrading the Fastly app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Fastly app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

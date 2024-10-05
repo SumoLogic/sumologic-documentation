@@ -1,15 +1,14 @@
 ---
 title: Sumo Logic Cloud SIEM
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.13  
-Updated: Apr 8, 2024***
+***Version: 1.14  
+Updated: Jul 3, 2024***
 
 Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
@@ -49,7 +48,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Sumo Logic Cloud SIEM configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.  
 1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
@@ -120,4 +119,7 @@ SIEM
         - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
         - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
         - Closure Comments (This field is only used within the Close Insight Trigger as a closure comment for Insight)
-* April 8, 2024 (v1.13) - Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* April 8, 2024 (v1.13)
+  * Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* July 3, 2024 (v1.14)
+  * Update `check_not_null_field` in Close Insight Trigger

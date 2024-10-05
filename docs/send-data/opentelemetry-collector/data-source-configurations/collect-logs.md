@@ -11,7 +11,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
   * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
-  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
+  * [Collect from Custom channels (PowerShell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -19,6 +19,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Collecting logs from a MySQL database](#collecting-logs-from-a-mysql-database)
   * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
   * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
+  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-an-mssql-database)
   * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
 * [Collecting logs from other sources](#collecting-logs-from-other-sources)
 
@@ -211,7 +212,7 @@ Following configuration demonstrates:
            - sumologic
    ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sample_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sample_windows.yaml`.
 1. Paste the above content into the file.
 1. Restart collector with following command:
    ```bash title="Windows"
@@ -235,7 +236,7 @@ Configuration details:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 
-### Collect from Custom channels (Powershell, Sysmon)
+### Collect from Custom channels (PowerShell, Sysmon)
 
 Following configuration demonstrates:
 
@@ -271,7 +272,7 @@ service:
         - sumologic
 ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sysmon_windows.yaml`.
 2. Paste the above content into the file.
 3. Restart collector with following command:
    ```bash title="Windows"
@@ -467,11 +468,11 @@ receivers:
     datasource: oracle://user:password@host:port/servicename
     storage: file_storage
     queries:
-      - sql: select log_id, log_text from logs_table where log_id > :id order by log_id
+      - sql: SELECT log_id, log_text, (log_id || ';' || log_text) AS concatenated_fields FROM logs_table WHERE log_id > :id ORDER BY log_id
         tracking_column: LOG_ID
         tracking_start_value: 1
         logs:
-          - body_column: LOG_TEXT
+          - body_column: concatenated_fields
 service:
   pipelines:
     logs/oracle:
@@ -526,6 +527,46 @@ With this configuration, the SQL Query receiver will run the SQL query `select l
 On the first query run, the parameter represented with the dollar one `$1` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
 
 The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
+
+### Collecting logs from an MSSQL database
+
+Here's an example configuration for Microsoft SQL that you can place in the `conf.d` directory:
+
+```yaml
+receivers:
+  sqlquery:
+    collection_interval: 60s
+    driver: sqlserver
+    datasource: server=hostname;port=1433;user=user;password=pass
+    storage: file_storage
+    queries:
+      - sql: SELECT [UserID], [FirstName], [LastName], [Email], [DateOfBirth], CONCAT([FirstName], ' ', [LastName], ',', [Email], ',', [DateOfBirth]) AS [ConcatenatedColumn] FROM [master].[dbo].[Users]
+        tracking_column: "UserID"
+        tracking_start_value: 1
+        logs:
+          - body_column: ConcatenatedColumn
+
+processors:
+  resource/sqlquery:
+    attributes:
+      - key: _sourceCategory
+        value: POV/PROD/test
+        action: insert
+
+service:
+  pipelines:
+    logs/sqlserver:
+      receivers:
+        - sqlquery
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - resource/sqlquery
+        - batch
+      exporters:
+        - sumologic
+```
+With this configuration, the SQL Query receiver will run the SQL query `SELECT [UserID], [FirstName], [LastName], [Email], [DateOfBirth], CONCAT([FirstName], ' ', [LastName], ',', [Email], ',', [DateOfBirth]) AS [ConcatenatedColumn] FROM [master].[dbo].[Users]` every 30 seconds and create a log record out of each result row, using the value from the `ConcatenatedColumn` column as the body of the log.
 
 ### Troubleshooting the SQL Query receiver
 

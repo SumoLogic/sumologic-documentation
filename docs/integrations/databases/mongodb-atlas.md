@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
@@ -399,8 +399,8 @@ This task makes the following assumptions:
     MongoDBAtlas:
       ORGANIZATION_ID: <Paste the Organization ID from step 1.>
       PROJECT_ID: <Paste the Project ID from step 1.>
-      PRIVATE_KEY: <Paste the Private Key from step 1.>
-      PUBLIC_KEY: <Paste the Public Key from step 1.>
+      PRIVATE_API_KEY: <Paste the Private Key from step 1.>
+      PUBLIC_API_KEY: <Paste the Public Key from step 1.>
       LOG_TYPES:
         DATABASE
         AUDIT
@@ -458,6 +458,11 @@ This task makes the following assumptions:
 
     Collection:
       DBNAME: "newmongodbatlas"
+      MIN_REQUEST_WINDOW_LENGTH: 60
+      MAX_REQUEST_WINDOW_LENGTH: 900
+      Clusters:
+        - "clusters1.mongodb.net"
+        - "clusters2.mongodb.net"
     ```
 
 ```sh title="Example execution of second yaml file"
@@ -584,6 +589,18 @@ between retries. </td>
   <tr>
    <td>TIMEOUT<br/>in Collection Section   </td>
    <td>Request time out used by the requests library.   </td>
+  </tr>
+  <tr>
+   <td>MIN_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
+   <td>Minimum window length for the request window. The default is 60 seconds.   </td>
+  </tr>
+  <tr>
+   <td>MAX_REQUEST_WINDOW_LENGTH<br/>in Collection Section   </td>
+   <td>Maximum window length for the request window. The default is 900 seconds.   </td>
+  </tr>
+  <tr>
+   <td>Clusters<br/>in Collection Section   </td>
+   <td>User provided list of clusters for selecting specific clusters. By default, it selects all the clusters.   </td>
   </tr>
   <tr>
    <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
@@ -768,3 +785,15 @@ Use this dashboard to:
 * Track chunk move operations to ensure they are in line with expectations.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Sharding.png')} alt="MongoDB Atlas dashboards" />
+
+## Upgrading the MongoDB Atlas app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the MongoDB Atlas app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

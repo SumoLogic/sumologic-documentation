@@ -11,10 +11,10 @@ This topic describes the Cloud SIEM UI for working with Insights. 
 
 ## Insights list page
 
-<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To open the Insights page, click **Insights** at the top of the screen. 
-<!--Kanso 
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the Insights page, click **Insights** at the top of the screen. 
+
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
- Kanso-->
+ 
 By default, the **Insights** page presents all Insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
 :::note
@@ -237,7 +237,7 @@ Watch this micro lesson to learn more about the Entity relationship graph.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

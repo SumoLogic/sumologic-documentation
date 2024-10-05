@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details. 
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details.
 
 ## Log and metrics types  
 
@@ -270,7 +270,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error 
 | sort by _timeslice
 ```
 
-## Collecting Logs and Metrics for the Amazon RDS app
+## Collecting logs and metrics for the Amazon RDS app
 
 Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
@@ -333,7 +333,7 @@ We recommend not to set `log_statement` to any value other than none (default va
 
 #### MSSQL
 - Amazon RDS [MSSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html) supports [publishing the following MSSQL logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html#USER_LogAccess.SQLServer.PublishtoCloudWatchLogs):
-   - Agent 
+   - Agent
    - Error
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
@@ -350,8 +350,8 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field in Field Schema
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the `dbidentifier` field. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the `dbidentifier` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 ### Field Extraction Rule(s)
@@ -404,7 +404,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
 
-```sql
+```
 Rule Name: AwsObservabilityGenericCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -467,7 +467,7 @@ Use this dashboard to:
 * Quickly identify problems in resource utilization.
 * Monitor databases performance insights such as relative CPU load, non-CPU load, and overall database load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
 
 ### 2. Amazon RDS CloudTrail Audit Events
 
@@ -647,7 +647,7 @@ Use this dashboard to:
 The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occurring on your PostgreSQL instance by keeping track of log severity using `postgresql.log`.
 
 Use this dashboard to:
-* Obtain PostgreSQL log severity distribution along with error log log distribution by database, user, and host.
+* Obtain PostgreSQL log severity distribution along with error log distribution by database, user, and host.
 * Identify PostgreSQL log severity over time by user, host along with error event (fatal/error log level) outlier.
 * Obtain recent and top fatal and error events.
 * Obtain recent queries running into error with error message.
@@ -660,7 +660,7 @@ The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an
 
 Use this dashboard to:
 * Obtain count of slow queries and unique slow queries.
-* Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
+* Identify number of slow queries by user, host, and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
@@ -712,7 +712,7 @@ Use this dashboard to:
 
 ### 19. Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview
 
-The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
+The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides information about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
 
 Use this dashboard to:
 * Get a high-level overview of your MSSQL infrastructure like instance type and version.
