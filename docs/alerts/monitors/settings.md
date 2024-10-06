@@ -22,15 +22,15 @@ The page displays the following information:
 * **Last Modified**. The time the monitor was last updated.
 * **Capacity Used**. The bottom of the table shows the number of Log and metric monitors in your account.
 
-![monitors page](/img/monitors/monitors-page.png)
+![monitors page](/img/alerts/monitors/monitors-page.png)
 
-Open the [Alert List](alert-response.md) to view all of the triggered alerts from a monitor by hovering your cursor over its **Status** and clicking the icon.<br/><img src={useBaseUrl('img/monitors/monitors-shortcut.png')} alt="monitor shortcut" width="550" />
+Open the [Alert List](alert-response.md) to view all of the triggered alerts from a monitor by hovering your cursor over its **Status** and clicking the icon.<br/><img src={useBaseUrl('img/alerts/monitors/monitors-shortcut.png')} alt="monitor shortcut" width="550" />
 
 At the top of the page, you can:
-* **Search Monitors**. Use the search field to filter monitors by name and status. For example, you can view all monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
+* **Search Monitors**. Use the search field to filter monitors by name and status. For example, you can view all monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/alerts/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
 * **Add** > **New Folder**. Create a folder to organize your monitors.
 * **Add** > **New Monitor**. Create a [new monitor](/docs/alerts/monitors/create-monitor).
-* **Add** > **Import**. Import monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
+* **Add** > **Import**. Import monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/alerts/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
 
 :::important
 The **Import** function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -38,11 +38,11 @@ The **Import** function is provided for you to transfer data immediately. The Su
 
 ## Quick menu
 
-The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/monitors/quick-menu-monitors.png)
+The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/alerts/monitors/quick-menu-monitors.png)
 
 ## Details pane
 
-The details pane provides additional information about a selected monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.<br/><img src={useBaseUrl('img/monitors/monitor-details.png')} alt="monitor-details.png" width="300"/>
+The details pane provides additional information about a selected monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" width="300"/>
 
 In the details pane, you'll see the following details for a monitor:
 
@@ -62,10 +62,10 @@ The **View in Metrics Explorer** button on the Monitors Details page allows you 
 
 To view the thresholds translating values in your metrics explorer, follow the steps below:
 1. Select monitor from the **Monitoring** page.
-1. On the Monitors Details pane, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('img/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
-1. Click the **View in Metrics Explorer** button <img src={useBaseUrl('img/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" />. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
-1. On the **Panel settings** page, click threshold <img src={useBaseUrl('img/monitors/thresholds-icon.png')} alt="thresholds-icon" width="40" /> icon to view the values that you have defined for the monitor.
-1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
+1. On the Monitors Details pane, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('img/alerts/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
+1. Click the **View in Metrics Explorer** button <img src={useBaseUrl('img/alerts/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" />. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
+1. On the **Panel settings** page, click threshold <img src={useBaseUrl('img/alerts/monitors/thresholds-icon.png')} alt="thresholds-icon" width="40" /> icon to view the values that you have defined for the monitor.
+1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/alerts/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
 
 :::note
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
@@ -84,7 +84,7 @@ Note that the same threshold translating functionality supports to [Creating Mon
   * **Edit Permissions**.
   * **Delete**.
   * **Subscribe**.
-  * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
+  * **Copy Link**.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
 ## Tags
 
@@ -146,4 +146,4 @@ The permissions you set for a folder are inherited by that folder’s subfolders
 
 ## Monitor History
 
-In the **Monitor History** tab, you can view the history of all triggered alerts of your selected monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
+In the **Monitor History** tab, you can view the history of all triggered alerts of your selected monitor.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>

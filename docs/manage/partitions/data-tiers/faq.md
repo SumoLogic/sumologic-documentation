@@ -61,15 +61,15 @@ The table below shows how many credits would be consumed for the same query over
 
 Your **Account Overview** page shows the credits your org has consumed for Infrequent searches. 
 
-![infrequent-usage.png](/img/partitions-data-tiers/infrequent-usage.png)
+![infrequent-usage.png](/img/manage/partitions-data-tiers/infrequent-usage.png)
 
 In addition, when you enter an Infrequent query in a [Log Search](/docs/search), before you run it, you'll see an estimate of the amount of data that will be scanned for that query. 
 
-![estimated-scan.png](/img/partitions-data-tiers/estimated-scan.png)
+![estimated-scan.png](/img/manage/partitions-data-tiers/estimated-scan.png)
 
 After you run an Infrequent query, you can see the volume of data that was actually scanned.  
 
-![total-scan.png](/img/partitions-data-tiers/total-scan.png)
+![total-scan.png](/img/manage/partitions-data-tiers/total-scan.png)
 
 ## How do I create partitions to reroute data to a different tier later? 
 
@@ -79,11 +79,11 @@ These recommendations only apply if you do not use Data Streams. You can change 
 
 Add a custom metadata field at either the collector or source level, and then use it as the routing expression for the partition. For example, you could create a field named `usage`, and set it to **infrequent**.
 
-<img src={useBaseUrl('img/partitions-data-tiers/field.png')} alt="field" width="450"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/field.png')} alt="field" width="450"/> 
 
 Then, when you create a new partition, you can use the field in the scoping expression along with other scoping rules.
 
-<img src={useBaseUrl('img/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
 
 In the future, if you want to change the data that goes into the partition, you can just update the usage field.
 

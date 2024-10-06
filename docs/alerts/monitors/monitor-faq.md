@@ -80,9 +80,9 @@ The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/se
 
 ## One of our monitors suddenly stopped sending notifications, even though I see it on the monitors page
 
-One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
+One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/alerts/monitors/user-unknown-monitors.png)
 
-You can quickly **Duplicate** the monitor by hovering over it on the monitors page and clicking the three-dot kebab icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
+You can quickly **Duplicate** the monitor by hovering over it on the monitors page and clicking the three-dot kebab icon:<br/>![more actions menu for monitors.png](/img/alerts/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
 
