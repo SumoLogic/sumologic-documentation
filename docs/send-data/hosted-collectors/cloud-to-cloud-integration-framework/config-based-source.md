@@ -186,7 +186,7 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 
 #### JSON with JPath
 
-Use this option when the vendor API returns a JSON document with an array of log data somewhere inside the document. You will need to add one or more log location configurations telling the source where the array log are and how to parse their timestamps. In most cases vendor will only provide one array of log data and you only need to configure this once.
+Use this option when the vendor API returns a JSON document with an array of log data somewhere inside the document. You will need to add one or more log location configurations telling the source where the array log are and how to parse their timestamps. In most cases, the vendor will only provide one array of log data and you only need to configure this once.
 
 The source follows the [JSON Path standard defined here](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html).
 
