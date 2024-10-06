@@ -107,7 +107,7 @@ Select this authentication option if the vendor API does not require any form of
   Configure how the HTTP requests are created for your source.
 
 :::danger protect your credentials
-**Do NOT** include any sensitive information such as authentication secrets in this section. Use the authentication section for any sensitive information such as keys and passwords.
+Do NOT include any sensitive information such as authentication secrets in this section. Use the authentication section for any sensitive information such as keys and passwords.
 :::
 
 #### HTTP method used in the request
