@@ -88,7 +88,7 @@ Select this authentication option if the vendor API requires bearer authenticati
 
 #### OAuth 2.0 Client Credentials
 
-Select this authentication option if the vendor API allows [OAuth 2 Client Credentials Grant Type](https://oauth.net/2/grant-types/client-credentials/) as a form of authentication. Please be aware, this is specifically for APIs that support the `Client Credentials` grant type and **NOT** any other form of OAuth grant type.
+Select this authentication option if the vendor API allows [OAuth 2 Client Credentials Grant Type](https://oauth.net/2/grant-types/client-credentials/) as a form of authentication. Please be aware, this is specifically for APIs that support the `Client Credentials` grant type and NOT any other form of OAuth grant type.
 
 You will need to provide your API `Client ID`, `Client Secret`, and the `OAuth Token URL` as required fields.
 
