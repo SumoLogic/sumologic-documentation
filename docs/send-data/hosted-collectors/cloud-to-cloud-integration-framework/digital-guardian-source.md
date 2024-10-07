@@ -24,7 +24,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Digital Guardian is a data protection platform that discovers, classifies, and controls data movement across endpoints, networks, and the cloud. Digital Guardian Analytics and Reporting Cloud (DG ARC) is an advanced analytics, workflow, and reporting cloud service that delivers no-compromise data protection.
 
-The Digital Guardian integration ingest the export data using the [Export API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/export) and uses [Acknowledge API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/acknowledge) to advance the bookmark value to obtain the next chunk of data from export endpoint.
+The Digital Guardian integration ingests the export data using the [Export API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/export) and uses [Acknowledge API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/acknowledge) to advance the bookmark value to obtain the next chunk of data from export endpoint.
 
 ## Data collected
 
