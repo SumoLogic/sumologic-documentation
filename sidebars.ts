@@ -908,11 +908,31 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/views/index'},
       items: [
-        'manage/views/add-view',
-        'manage/views/pause-disable-view',
+        {
+          type: 'category',
+          label: 'Scheduled Views',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/views/scheduled-views/index'},
+          items: [
+            'manage/views/add-view',
+            'manage/views/pause-disable-view',
+            'manage/views/best-practices',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Scheduled Searches',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/views/scheduled-searches/index'},
+          items: [
+            'manage/views/add-scheduled-search',
+            'manage/views/pause-disable-scheduled-search',
+          ]
+        },
         'manage/views/run-search-against-view',
         'manage/views/lag-time',
-        'manage/views/best-practices',
         'manage/views/view-list',
       ]
     },

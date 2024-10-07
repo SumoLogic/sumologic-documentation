@@ -1,19 +1,19 @@
 ---
 id: run-search-against-view
 title: Run a Search Against a View
-description: Learn how to run a search against indexed data in a Scheduled View.
+description: Learn how to run a search against indexed data in a View.
 ---
 
-Running a search against the indexed data in a Scheduled View is almost exactly the same as running any other query. The difference you'll notice is the quick speed at which results are returned, especially if you're searching over a long period of historical data.
+Running a search against the indexed data in a View is almost exactly the same as running any other query. The difference you'll notice is the quick speed at which results are returned, especially if you're searching over a long period of historical data.
 
-Queries that contain Views can be saved as scheduled searches, as Dashboard Panels, and as published or saved searches. Only Admins can [create Scheduled Views](add-view.md).
+Queries that contain Views can be saved as scheduled searches, as Dashboard Panels, and as published or saved searches. Only Admins can [create Views](add-view.md).
 
-To run a search against a Scheduled View:
+To run a search against a View:
 
-1. Begin the search with `_view=ScheduledViewName`, specifying the name of the Scheduled View that has indexed the data you want to search. The use of `_view` is only supported in the scope of a query, that is, before the first pipe (`|`).
+1. Begin the search with `_view=ViewName`, specifying the name of the View that has indexed the data you want to search. The use of `_view` is only supported in the scope of a query, that is, before the first pipe (`|`).
 1. Type the rest of the query, using any operators you prefer.
 
-    For our example, we're running a search against a Scheduled View named fraudTroller, which indexes NGINX logs. By specifying that subset of data, we can dive into the prior day's logs, and get search results very quickly because the data has already been aggregated. Depending on the operators in the query, we could use this as a scheduled search or even a Dashboard Panel.  
+    For our example, we're running a search against View named fraudTroller, which indexes NGINX logs. By specifying that subset of data, we can dive into the prior day's logs, and get search results very quickly because the data has already been aggregated. Depending on the operators in the query, we could use this as a scheduled search or even a Dashboard Panel.  
 
     ```sql
     _view=fraudTroller
