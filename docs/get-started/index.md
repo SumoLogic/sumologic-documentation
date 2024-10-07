@@ -44,7 +44,7 @@ Let's get started!
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/get-started/account-settings-preferences"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Account Preferences</h4></a>
-  <p>Account settings, access keys, and credentials.</p>
+  <p>Account settings and credentials.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -464,9 +464,9 @@ Monitors are disabled by default. Once you have installed the alerts via this me
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#from-the-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
 4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/
 
 Edit the redis.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
