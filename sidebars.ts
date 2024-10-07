@@ -1057,9 +1057,9 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/views/scheduled-views/index'},
           items: [
-            'manage/views/add-view',
-            'manage/views/pause-disable-view',
-            'manage/views/best-practices',
+            'manage/views/scheduled-views/add-view',
+            'manage/views/scheduled-views/pause-disable-view',
+            'manage/views/scheduled-views/best-practices',
           ]
         },
         {
@@ -1069,8 +1069,8 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/views/scheduled-searches/index'},
           items: [
-            'manage/views/add-scheduled-search',
-            'manage/views/pause-disable-scheduled-search',
+            'manage/views/scheduled-searches/add-scheduled-search',
+            'manage/views/scheduled-searches/pause-disable-scheduled-search',
           ]
         },
         'manage/views/run-search-against-view',
