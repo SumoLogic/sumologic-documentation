@@ -141,7 +141,9 @@ You do not have to stop there either. You can take the next step and become Sumo
 -->
 
 <!--
+
 This section is on hold pending finalization of UI.
+
 ## Mastering everyday tasks
 
 This section provides information on how to perform basic everyday tasks using the Sumo Logic UI.
