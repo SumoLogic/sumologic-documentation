@@ -17,9 +17,9 @@ You can select from Free, Trial, or Enterprise Suite Flex accounts.
    :::note
    [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts (Trial and paid accounts only).
 
-   <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
-   <!--Kanso 
-   [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Data Management page, in the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. Kanso-->
+   [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Data Management page, in the main Sumo Logic menu select **Administration > Account > Data Management**. 
+   
+   [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Data Management page, in the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. 
    :::
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest. For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts).
    :::note
@@ -104,9 +104,9 @@ The following table provides a summary list of key features by Flex package acco
 
 The **Account Overview** tab of the **Account** page displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 
 :::note permissions required
 To view the **Account Overview** tab, you must have a role that grants you the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
@@ -154,9 +154,9 @@ For example, if your contract period is licensed for 100,000 credits and 10,000 
 
 You can view you account information on the Account Overview tab. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Account Overview tab, in the main Sumo Logic menu select **Administration > Account > Account Overview**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Account Overview tab, in the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 
 :::note permissions required
 To view the **Account Overview** tab, you must have a role that grants you the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
@@ -172,13 +172,13 @@ Be aware of the following features:
 * Download a report on usage, or just on credits usage as a CSV file.
 * View the detailed usage data for any time period on the chart by hovering over the chart.
 
-<img src={useBaseUrl('/img/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/><br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/manage/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/><br/><img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
 :::
 
-![Manage_Organization_options.png](/img/subscriptions/Manage_Organization_options.png)
+![Manage_Organization_options.png](/img/manage/subscriptions/Manage_Organization_options.png)
 
 ## Monitoring account usage ​
 
@@ -213,9 +213,9 @@ The Sumo Logic **Account** page allows you to easily monitor your data usage ove
 
 To switch between views and time interval displays:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. From the Account Overview tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
-1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/account/account-details-credit-usage-flex.png)
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/manage/account/account-details-credit-usage-flex.png)
 1. To toggle an analytic data type back on, click the blank icon next to the data type name. The analytic data type reappears in the graph and the credit usage for the data type is once again included.
 1. To change the aggregation of the data, click the Group by arrow and choose day, week, or month from the dropdown list. The default is **View By Day**.
 

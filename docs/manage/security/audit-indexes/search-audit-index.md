@@ -25,7 +25,7 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 :::note
