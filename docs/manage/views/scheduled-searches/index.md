@@ -41,10 +41,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to add alerts and schedule search to run it at a regular scheduled time.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/views/scheduled-searches/add-schedule-search"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Pause or Disable a Scheduled Search</h4></a>
-  <p>Learn how to add alerts and schedule search to run it at a regular scheduled time.</p>
-  </div>
-</div>
 </div>

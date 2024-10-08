@@ -45,12 +45,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/views/scheduled-views/pause-disable-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable Scheduled Views</h4></a>
-  <p>Learn how to pause view stops new data from being Indexed.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/manage/views/scheduled-views/best-practices"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
   <p>Get to know some tips for setting up Scheduled View queries.</p>
   </div>
