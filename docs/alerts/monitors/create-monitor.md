@@ -94,6 +94,8 @@ Lets you uncover unusual behavior identified by anomaly detection, which applies
 
 If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
+After you create a logs monitor, you'll have the option to [switch from outlier to anomaly](/docs/alerts/monitors/settings/#convert-to-anomaly).
+
 #### Metrics
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-metrics.png')} alt="Metrics detection methods" width="200"/>
