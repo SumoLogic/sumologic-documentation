@@ -6,7 +6,7 @@ description: Learn how to add a Scheduled View.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::important
-To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-roles/users/multi-account-access.md).
+To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](/docs/manage/users-roles/users/multi-account-access).
 :::
 
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices). 
@@ -20,9 +20,9 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
         :::note limitation
         You cannot select a start date older than 365 days.
         :::
-    1. **Search Mode**. Set to **Auto Parse Mode** for [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) of JSON data. Manual Mode is the default search behavior.
-    1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of sumologic_default**. For more information, see [Manage Indexes with Variable Retention](../partitions/manage-indexes-variable-retention.md).
-    1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
+    1. **Search Mode**. Set to **Auto Parse Mode** for [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing) of JSON data. Manual Mode is the default search behavior.
+    1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of sumologic_default**. For more information, see [Manage Indexes with Variable Retention](/docs/manage/partitions/manage-indexes-variable-retention).
+    1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](/docs/manage/data-forwarding/amazon-s3-bucket). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](/docs/manage/data-forwarding/amazon-s3-bucket) for details on how the file objects are structured.
     <img src={useBaseUrl('/img/scheduled-views/add-view.png')} alt="add-view" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Save**.
 
