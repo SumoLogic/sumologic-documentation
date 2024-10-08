@@ -43,6 +43,19 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to add a Scheduled View.</p>
   </div>
 </div>
+
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/views/scheduled-views/pause-disable-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable a Scheduled View</h4></a>
+  <p>Learn how to pause or disable a Scheduled View.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/views/scheduled-views/lag-time"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Views Lag Time</h4></a>
+  <p>Learn how to view data that's not up to date in the View.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/views/scheduled-views/best-practices"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
