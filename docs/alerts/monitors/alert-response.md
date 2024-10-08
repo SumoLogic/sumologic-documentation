@@ -8,17 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="40"/>
 
-Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
+Alert response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures. An alert provides curated information to on-calls to help them troubleshoot issues more quickly.
 
 On-call engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 
 
-By assembling relevant context from prior alerts and by analyzing patterns in logs and metrics underlying alerts, Alert Response enables on-call engineers to cut down the time spent piecing together insights during an incident from various sources and accelerate recovery.
+By assembling relevant context from prior alerts and by analyzing patterns in logs and metrics underlying alerts, Sumo Logic alert response enables on-call engineers to cut down the time spent piecing together insights during an incident from various sources and accelerate recovery.
 
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-Learn how to use Alert Response.
+Learn how to use alert response.
 
 <Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
         width="854px"
@@ -33,46 +33,45 @@ Learn how to use Alert Response.
 
 :::
 
-## Setting up Alert Response
+## Setting up alert response
 
-Email alerts automatically get a button labeled **View Alert** that opens the alert on the Alert page, shown in the below image.<br/> ![view alert from email.png](/img/alerts/monitors/view-alert-from-email.png)
+Email alerts automatically get a button labeled **View Alert** that opens the alert on the alert page, shown in the below image.<br/> ![view alert from email.png](/img/alerts/monitors/view-alert-from-email.png)
 
-If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](/docs/alerts/monitors/alert-variables) in your notification payload of a monitor to receive a link that opens Alert Response. When your monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the Alert Response.
+If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](/docs/alerts/monitors/alert-variables) in your notification payload of a monitor to receive a link that opens alert response. When your monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the alert response.
 
 The following is an example Slack payload with the variable:
+
 ```json
 {
-	"attachments":[
-		{
-			"pretext":"Sumo Logic Alert",
-			"fields":[
-				{
-					"title":"Alert Page",
-					"value":"{{alertResponseUrl}}"
-				}
-			],
-			"mrkdwn_in":[
-				"text",
-				"pretext"
-			],
-			"color":"#29A1E6"
-		}
-	]
+  "attachments":[
+    {
+      "pretext":"Sumo Logic Alert",
+      "fields":[
+        {
+          "title":"Alert Page",
+          "value":"{{alertResponseUrl}}"
+        }
+      ],
+      "mrkdwn_in":[
+        "text",
+        "pretext"
+      ],
+      "color":"#29A1E6"
+    }
+  ]
 }
 ```
 
-## Alerts list
+## Alert List
 
-The Alerts list shows all of your Alerts from monitors triggered within the past 7 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
+The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+To get to your Alert List from the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="200"/>
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+To search, use the search bar and filters. To sort by category (for example, **Name**, **Severity**, **Status**), click on a column header.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
 
-To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
-
-:::info Limitations
-The Alerts list displays up to 1,000 alerts.
+:::info
+The Alerts List displays up to 1,000 alerts.
 :::
 
 ### Resolving alerts
@@ -81,14 +80,13 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 ### Translating thresholds
 
-Threshold translating allows you to open the Alert Response page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
+Threshold translating allows you to open the alert response page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
 
 For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
 
-To view the Alert Response chart in Metrics Explorer, follow the steps below:
+To view the alert response chart in Metrics Explorer, follow the steps below:
 
-1. Navigate to the [Alerts list](#alerts-list) and select the alert for which you want to view the corresponding metrics and threshold values.
-1. Open the **Alert Response** page.
+1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
 1. Click the **View in Metrics Explorer** button for that alert. You can click on either of the two buttons, and they both function the same way.
 1. The Metrics Explorer view will open with the graph of the metric associated with the alert.
 1. In the **Threshold** section of the Metrics Explorer, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
@@ -104,15 +102,12 @@ Note that the same threshold translating functionality supports to [Create Monit
 
 ## Alert page
 
-The Alert page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alerts list.
-
-An Alert provides curated information to on-calls in order for them to troubleshoot issues more quickly. It provides two different types of information to help get to the root cause of the issue quickly.
-* **Alert Details**. Overview of the alert that was triggered to help you understand the issue and its potential impact. 
-* **Alert Context**. System curated context helps you understand potential underlying symptoms within the system that might be causing the issue.
+An alert page is where you can view granular details about an individual alert. To get to an alert page, go to your **Alert List** and click on any alert. You'll see two types of information to help get to the root cause of the issue quickly: alert details and alert context.
 
 ### Alert details
 
-The details section provides:
+The alert details section is an overview of the alert that was triggered to help you understand the issue and its potential impact. This section provides:
+
 * a chart to visualize the alerting KPI before and during the alert.
 * a table with the raw data that triggered the alert.
 * related alerts firing in the system around the same time.
@@ -123,10 +118,10 @@ The following images label each section of the page with a letter, see the list
 
 The top of the page provides several details and buttons.
 
-* **A**. The title of the monitor.
-* **B**. Copy the link to the opened Alert page.
-* **C**. The type of monitor trigger condition that triggered the alert, either Critical, Warning, or MissingData.
-* **D**. The status of the Alert, either **Active** or **Resolved**.
+* **A**. Monitor name.
+* **B**. Copies the link to the opened Alert page.
+* **C**. Shows the type of monitor trigger condition that triggered the alert (Critical, Warning, or Missing Data).
+* **D**. Status of the Alert (**Active** or **Resolved**).
 * **E**. Refreshes the Alert page.
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
    * Text playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/> ![playbook example.png](/img/alerts/monitors/playbook-example.png)
@@ -155,9 +150,13 @@ Below this, as you scroll down on the page, you'll see context cards covered in 
 
 ### Alert context cards
 
-**Alert Context** provides additional insights that the system has discovered automatically by analyzing your data. The system uses artificial intelligence and machine learning to track your logs and metrics data and find interesting patterns in the data that might help explain the underlying issue and surfaces them in the form of context cards.
+Alert context is system-curated information helps you understand potential underlying symptoms that might be causing the issue. It provides additional insights automatically discovered by the system through data analysis. Using artificial intelligence and machine learning, the system tracks your logs and metrics, identifies patterns that may explain the issue, and presents them as context cards.
 
 Depending on the type of data an alert is based on (metrics or logs) and the detection method (static or outlier), you'll see different context cards. You will see a progress spinner labeled **Analyzing alert content** at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.<br/> ![analyzing alert content.png](/img/alerts/monitors/analyzing-alert-content.png)
+
+### Alert tags
+
+See [Using tags in alerts](/docs/alerts/monitors/settings/#using-tags-in-alerts).
 
 ### Log fluctuations
 
@@ -227,17 +226,23 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 * **E**. Expand/collapse details panel.
 * **F**. Opens a Log Search filtered to the Log messages that match the dimensional details of the telemetry value
 
-## Subscribe to alert monitors
+## Subscribe to monitors
 
-### From your Alerts list
-* Right-click on a row item > click **Subscribe**
-* Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
-* Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
+### From your Alerts List
 
-### From your monitors list
-* Right-click on a row item > click **Subscribe**
-* Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
-* Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
+There are three places from your [Alerts List](#alert-list) to subscribe to a monitor:
+
+* Right-click on a row item > click **Subscribe**.
+* Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**.
+* Single-click on a row item > on the opened alert page, click the three-dot kebab menu > **Subscribe to Monitor**.
+
+### From your Monitors list
+
+There are three places from your [Monitors](/docs/alerts/monitors/settings) list to subscribe to a monitor:
+
+* Right-click on a row item > click **Subscribe**.
+* Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**.
+* Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**.
 
 #### From a folder
 

@@ -1,6 +1,6 @@
 ---
 id: create-monitor
-title: Create a Monitor
+title: Create a New Monitor
 description: Learn how to create a Sumo Logic monitor.
 ---
 
@@ -12,7 +12,7 @@ This guide will walk you through the steps of creating a monitor in Sumo Logic, 
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
 
-### From the Monitors page
+### From Monitors
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
