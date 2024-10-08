@@ -51,4 +51,4 @@ In this section, we'll introduce the following concepts:
       <p>Learn how to view data forwarding configuration information for your organization.</p>
     </div>
   </div>
-  </div>
+</div>
