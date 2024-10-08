@@ -30,7 +30,7 @@ At the top of the page, you can:
    * **Add a filter**. Click in this field to view a list of available filters, such as Status and Tag, to search monitor attributes. To view all monitors that are currently triggered, click **Status: All Triggered**. <br/><img src={useBaseUrl('img/alerts/monitors/filter-monitors.png')} alt="search monitors input" width="600"/>
 * **Add** > **New Folder**. Creates a folder to organize your monitors.<br/><img src={useBaseUrl('img/alerts/monitors/new-folder.png')} alt="import-folder" width="200"/>
 * **Add** > **New Monitor**. Creates a [new monitor](/docs/alerts/monitors/create-monitor).<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor.png')} alt="new-monitor" width="200"/>
-* **Add** > **Import**. Imports monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" width="200"/>
+* **Add** > **Import**. Imports monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#monitor-details-pane) of the original monitor.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" width="200"/>
 
 :::important
 The **Import** function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -38,9 +38,9 @@ The **Import** function is provided for you to transfer data immediately. The Su
 
 ## Quick menu
 
-The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/alerts/monitors/quick-menu-monitors.png)
+The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#monitor-details-pane).<br/>![quick menu](/img/alerts/monitors/quick-menu-monitors.png)
 
-## Monitor details
+## Monitor details pane
 
 The monitor details pane provides additional information about a selected monitor, like its query, trigger conditions, and notification preferences. Select any monitor from your **Monitors** list, and a details pane will appear to the right of the table.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" width="600"/>
 
