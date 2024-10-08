@@ -1071,7 +1071,7 @@ module.exports = {
             'manage/views/scheduled-searches/add-scheduled-search',
           ]
         },
-        'manage/views/scheduled-views/pause-disable-view',
+        'manage/views/pause-disable-view',
         'manage/views/run-search-against-view',
         'manage/views/lag-time',
         'manage/views/view-list',
