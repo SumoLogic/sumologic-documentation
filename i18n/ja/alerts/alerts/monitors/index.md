@@ -91,12 +91,6 @@ At the top of the page, you can:
 
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**.
 
-    ![search monitors input.png](/img/alerts/monitors/search-monitors-input.png)
-
-* Click **Add** to:   
-
-![Add monitors page.png](/img/alerts/monitors/Add-monitors-page.png)
-
   * create folders for organizing your Monitors.
   * create a [new Monitor](#add-a-monitor).
   * import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.
