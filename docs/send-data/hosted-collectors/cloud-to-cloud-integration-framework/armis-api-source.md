@@ -14,7 +14,12 @@ import MyComponentSource from '!!raw-loader!/files/c2c/armis-api/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/armis-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::sumo[Best Practice]
+Armis and Sumo Logic recommend you use the Armis SIEM Integration which pushes logs from Armis into a Sumo Logic HTTP source. There is a known limitation with the Armis API time query parameters that can cause missing logs if you use this Cloud-to-Cloud source. Please use the Armis side integration instead of this Cloud-to-Cloud source.
+:::
+
 <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
+
 
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.
