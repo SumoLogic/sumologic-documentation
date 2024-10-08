@@ -6,7 +6,7 @@ description: Learn how to run a search against indexed data in a View.
 
 Running a search against the indexed data in a View is almost exactly the same as running any other query. The difference you'll notice is the quick speed at which results are returned, especially if you're searching over a long period of historical data.
 
-Queries that contain Views can be saved as scheduled searches, as Dashboard Panels, and as published or saved searches. Only Admins can [create Views](add-view.md).
+Queries that contain Views can be saved as scheduled searches, as Dashboard Panels, and as published or saved searches. Only Admins can [create Views](/docs/manage/views/scheduled-views/add-view).
 
 To run a search against a View:
 
