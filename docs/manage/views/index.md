@@ -11,6 +11,7 @@ Views allows you to track all user created indexes and system created indexes wh
 * Visibility of all indexes will be based on admin created roles/permissions.
 * As a user you will be able to delete or decommission the user created indexes.
 * As a user you will be able to see the schema of each view and see the views in search autocomplete to which you have the access.
+* As a user you can save only the query and reuse it later by using `| save as <view name>` at the end of query.
 * As a admin you will be able to view the existing system limits for each type and amount of consumed quota. 
 * Only admin can define the access control on these indexes.
 * Scheduled searches only with **Save to Index** alert type will be visible in Views.
