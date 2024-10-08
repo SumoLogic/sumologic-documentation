@@ -4066,7 +4066,7 @@
   "/docs/manage/scheduled-views/add-scheduled-view": "/docs/manage/views/scheduled-views/add-view",
   "/docs/manage/scheduled-views/pause-disable-scheduled-views": "/docs/manage/views/scheduled-views/pause-disable-view",
   "/docs/manage/scheduled-views/run-search-against-scheduled-view": "/docs/manage/views/run-search-against-view",
-  "/docs/manage/scheduled-views/scheduled-view-lag-time": "/docs/manage/views/lag-time",
+  "/docs/manage/scheduled-views/scheduled-view-lag-time": "/docs/manage/views/scheduled-views/lag-time",
   "/docs/manage/scheduled-views/best-practices": "/docs/manage/views/scheduled-views/best-practices",
   "/docs/manage/scheduled-views/view-list-scheduled-views": "/docs/manage/views/view-list"
 }
