@@ -72,3 +72,4 @@ However, if a user is assigned multiple roles that each have different Index Acc
 1. Select a role with search filtering defined.
 1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid gray'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid gray'}} width="800"/>
+
