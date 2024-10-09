@@ -192,7 +192,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/role-management"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2 (Beta)</h4></a>  
+  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2 (Beta)</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
