@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The page has information about viewing information about the views/indexes configured for your organization.
 
 :::note
-You must have a role that grants you the View Scheduled Views [role capability](view-list.md) in order to view information about scheduled views.
+You must have a role that grants you the View Scheduled Views [role capability](/docs/manage/views/view-list) in order to view information about scheduled views.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
