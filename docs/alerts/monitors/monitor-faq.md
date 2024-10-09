@@ -6,6 +6,15 @@ description: Frequently asked questions about Sumo Logic monitors.
 
 import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
 
+## How can I optimize scan costs for monitors when using Flex Pricing?
+
+To optimize scan costs for monitors under [Flex Pricing](/docs/manage/partitions/flex), consider the following factors:
+
+- **Data scanned by the query**. This is the primary driver of cost and is incurred every time the monitor is evaluated. To reduce costs, optimize your query using [default scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope) to include only necessary partitions and minimize the amount of data scanned.
+- **Time range of the monitor query**. For static monitors, adjust the detection window under [Trigger Type](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) (for example, `"Alert when result is _____ within <detection window> minutes"`) to use a shorter time range, which reduces the amount of data scanned. For outlier monitors, reduce the **datapoints** parameter under **Trigger Type** to lower the scanned bytes.
+
+By carefully configuring these elements, you can balance scan costs with monitoring requirements.
+
 ## Can I convert my existing Scheduled Search to a monitor?
 
 Yes, however, it's a manual process. You have to create a new monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
@@ -71,9 +80,9 @@ The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/se
 
 ## One of our monitors suddenly stopped sending notifications, even though I see it on the monitors page
 
-One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
+One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/alerts/monitors/user-unknown-monitors.png)
 
-You can quickly **Duplicate** the monitor by hovering over it on the monitors page and clicking the three-dot kebab icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
+You can quickly **Duplicate** the monitor by hovering over it on the monitors page and clicking the three-dot kebab icon:<br/>![more actions menu for monitors.png](/img/alerts/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
 
