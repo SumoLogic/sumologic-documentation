@@ -31,7 +31,7 @@ You must have a role that grants you the View Scheduled Views [role capability
         * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.
         * **Run Frequency**. Displays the frequency of run to collect the data.
         * **Start Date**. Date when data was first added to the scheduled view.
-        * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](lag-time.md).
+        * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](/docs/manage/views/scheduled-views/lag-time).
         * **Progress**. Indicates how up-to-date the scheduled view is. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid gray'}} alt="sched-view-details" width="400"/>
     * **Data Sources - Scheduled Searches**. Displays the scheduled searches ssociated with the selected view/index.
         * **View Source ID**. Unique ID for each scheduled search, used for faster debugging and improved internal operation efficiency. With the scheduled search ID, you can collect the details and update the scheduled search directly using the API.

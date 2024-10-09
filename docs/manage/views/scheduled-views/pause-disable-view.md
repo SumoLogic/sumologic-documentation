@@ -9,7 +9,7 @@ Pausing a view stops new data from being indexed. You can resume indexing at any
 
 ## Pause a scheduled view
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
 1. Scroll through or search to identify the required index. Click the index to open the right side pane.
 1. Click the **Pause** <img src={useBaseUrl('/img/scheduled-views/pause-button.png')} alt="pause-button" style={{border:'1px solid gray'}} width="30"/> button against the required scheduled view.
 
@@ -23,6 +23,6 @@ If you disable a view, it is no longer visible in Sumo Logic. If you create a ne
 
 To disable a scheduled view:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
 1. Scroll through or search to identify the required index. Click the index to open the right side pane.
 1. Click the **Disable** <img src={useBaseUrl('/img/scheduled-views/disable-button.png')} alt="disable-button" style={{border:'1px solid gray'}} width="30"/> button against the required scheduled view.

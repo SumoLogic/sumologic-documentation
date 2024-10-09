@@ -11,7 +11,7 @@ To create a Scheduled View you must be an admin or have the Manage Scheduled V
 
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices). 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.
 1. Click **+ Add View**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} alt="scheduled-view-page" style={{border:'1px solid gray'}} width="800"/>
 1. Enter the follow fields to create the scheduled view:
     1. **Scheduled View name**. Enter a name for the view. You'll use this name in queries to search the view, so use a name that's descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, and _ after the first letter.
