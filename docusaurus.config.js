@@ -273,8 +273,8 @@ module.exports = {
     },
     announcementBar: {
       id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui"><b>Check out the new Sumo Logic UI</b></a>!',
-      backgroundColor: '#E0E0E0',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a>🚀',
+      backgroundColor: '#D3BAF7',
       textColor: '#000',
     },
     prism: {
