@@ -7,14 +7,25 @@ description: Get to know the Sumo Logic platform user interface.
 
 <!--
 When officially GA'd (est. Nov 2024):
-retire the Classic UI version
-add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
+-retire the Classic UI version
+-Add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This guide introduces you to the new, faster Sumo Logic UI.
+This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience. To opt in, navigate to the left-hand panel and click **Switch to New UI**.
+
+<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+
+With the new UI, you'll benefit from:
+
+* Unified experience across operational and security analytics products.
+* Faster load times with enhanced caching.
+* Stateful URLs that save your session and position when you log back in.
+* Use-case-driven navigation to help you quickly find the features you need.
+
+For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/). Watch the quickstart overview video below to get familiar with the new interface.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
@@ -25,29 +36,7 @@ This guide introduces you to the new, faster Sumo Logic UI.
         position="relative"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        />
-
-:::tip
-New to Sumo Logic? Start with our [Quickstart Guide](/docs/get-started/quickstart) to get up and running fast. You'll be introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. 
-:::
-
-## Benefits
-
-With the New UI, you can expect:
-
-* Unified experience across operational and security analytics products.
-* Faster load times with enhanced caching.
-* Stateful URLs that save your place upon re-login.
-* Use-case-based navigation for streamlined feature discovery.
-
-You can view the full list of updates [here](/release-notes-service/2024/02/23/ui/).
-
-
-## Switching to the New UI
-
-To opt into the new UI, go to the left navigation panel and click **Switch to New UI**.
-
-<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+        />        
 
 ## Home
 
