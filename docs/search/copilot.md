@@ -21,25 +21,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-powered assistant that simplifies log analysis by allowing you to ask questions in plain English and get intelligent search suggestions—eliminating the need to manually write complex log queries.
+Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English, get contextual suggestions—minimizing the need to write log queries.
 
-With its intuitive interface, Copilot automatically generates log searches from natural language prompts, helping you quickly detect performance issues, anomalies, and security threats. It guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. By providing precise answers and faster resolutions, Copilot enhances your log analysis process with expert-level insights to accelerate root cause identification and empower informed decisions.
+With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Copilot enhances incident resolution with expert level insights to accelerate root cause identification and empower informed decisions.
 
 ### Key features
 
 Copilot reduces manual effort by combining prebuilt insights with natural language query analysis.
 
-* **AI-curated insights**. Get customized insights tailored to your data.
 * **Natural language queries**. Ask questions in plain English—no need to enter query syntax.
-* **Prebuilt insights**. Utilize prebuilt insights to accelerate your workflow.
-* **Root cause analysis**. Quickly identify the root cause of issues with AI assistance.
-* **Increased efficiency**. Streamline the log analysis process, minimizing manual tasks.
+* **Contextual suggestions**. Automated suggestions to accelerate your workflow.
+* **Conversation history**. Save and resume any troubleshooting session without losing context.
+* **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
+
 
 ### Who benefits from Copilot?
 
 Copilot is ideal for:
 
-* **On-call engineers**. Accelerate time to resolution by surfacing key application insights.
+* **On-call engineers**. Accelerate time to resolution by surfacing key troubleshooting insights.
 * **Security engineers**. Obtain security insights rapidly for faster threat detection.
 
 ## How to use Copilot
