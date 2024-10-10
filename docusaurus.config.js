@@ -461,7 +461,7 @@ module.exports = {
               },
               {
                 label: 'Contribute to Docs',
-                to: '/docs/contributing',
+                to: 'docs/contributing',
                 icon: 'edit_note',
               },
             ],

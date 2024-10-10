@@ -253,13 +253,12 @@ html[data-theme='light'] {
 }
 
 
-
-// Support dropdown button
+/* General styling for the Support dropdown button */
 .support-menu-trigger {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: white; /* Text color should be white */
+  color: white !important; /* Text color should be white */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Border matching the style */
   border-radius: 3px;
   padding: 5px 15px;
@@ -283,12 +282,26 @@ html[data-theme='light'] {
   margin-right: 8px; /* Space between text and the arrow */
 }
 
-/* Ensure the arrow is styled similarly */
+/* Styling the arrow (SVG) */
 .support-menu-trigger svg {
   width: 9px;
   height: 6px;
   fill: none;
-  stroke: white; /* Make the arrow white */
+  stroke: white; /* Make the arrow white by default */
+}
+
+/* Media query for light mode */
+@media (prefers-color-scheme: light) {
+  .support-menu-trigger svg {
+    stroke: white; /* Change the arrow color to black for light mode */
+  }
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+  .support-menu-trigger svg {
+    stroke: white !important; /* Ensure the arrow is white for dark mode */
+  }
 }
 
 /* Style the dropdown wrapper */
