@@ -59,6 +59,7 @@ To configure Kandji Source:
 1. The **Threat Details Interval** is set for 5 minutes hours by default. You can adjust it based on your needs.
 1. In the Devices section, select the type of devices data: **Collect Devices**, **Collect Device Activities**, and/or **Collect Device Details**.
 1. The **Devices Interval** is set for 12 hours hours by default. You can adjust it based on your needs.
+1. **Processing Rules**. Configure any desired filters, such as allowlist, deny list, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
