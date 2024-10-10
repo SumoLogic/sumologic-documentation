@@ -7,8 +7,8 @@ description: Get to know the Sumo Logic platform user interface.
 
 <!--
 When officially GA'd (est. Nov 2024):
--retire the Classic UI version
--Add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
+retire the Classic UI version
+add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
