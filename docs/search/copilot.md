@@ -111,7 +111,7 @@ Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **L
 You can manually edit your log search query code if needed.
 
 <details>
-<summary>**JSON Syntax Rules**</summary>
+<summary>JSON Syntax Rules</summary>
 
 * Copilot supports querying JSON logs only. It cannot be used to query unstructured data, metrics, or traces. To retrieve a list of `_sourceCategories` with JSON data, use the following query:
    ```sql
