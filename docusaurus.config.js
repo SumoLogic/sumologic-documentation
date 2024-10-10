@@ -273,9 +273,9 @@ module.exports = {
     },
     announcementBar: {
       id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the Sumo Logic New UI!</a>',
-      backgroundColor: '#f2ecc9',
-      textColor: '#091E42',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui"><b>Check out the new Sumo Logic UI</b></a>!',
+      backgroundColor: '#E0E0E0',
+      textColor: '#000',
     },
     prism: {
       theme: lightCodeTheme,
