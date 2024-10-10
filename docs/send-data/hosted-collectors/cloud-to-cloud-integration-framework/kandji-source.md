@@ -56,7 +56,7 @@ To configure Kandji Source:
 1. In **Endpoint URL**, enter the endpoint URL collected from the Kandji platform.
 1. In **Bearer Token**, enter the bearer token collected from the Kandji platform.
 1. Select the **Collect Threat Details** checkbox to collect threat data. By default, **Collect Threat Details** checkbox will be selected.
-1. The **Threat Details Interval** is set for 5 minutes hours by default. You can adjust it based on your needs.
+1. The **Threat Details Interval** is set for 5 minutes by default. You can adjust it based on your needs.
 1. In the Devices section, select the type of devices data: **Collect Devices**, **Collect Device Activities**, and/or **Collect Device Details**.
 1. The **Devices Interval** is set for 12 hours hours by default. You can adjust it based on your needs.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, deny list, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
