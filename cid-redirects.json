@@ -3773,7 +3773,6 @@
   "/Send_Data/Sources/02Sources_for_Hosted_Collectors/Cloud_Syslog_Source": "/docs/send-data/hosted-collectors/cloud-syslog-source",
   "/Send_Data/Sources/HTTP_Source": "/docs/send-data/hosted-collectors/http-source",
   "/Send_Data/Sources/Local_Windows_Event_Log_Source/Local_Windows_Event_Source_Custom_Channels": "/docs/send-data/installed-collectors/sources/local-windows-event-log-source",
-  "/Send-Data/Sources/01Sources-for-Installed-Collectors/Local_Windows_Event_Log_Source/Local_Windows_Event_Source_Custom_Channels": "/docs/send-data/installed-collectors/sources/local-windows-event-log-source",
   "/Send-Data/Applications-and-Other-Data-Sources": "/docs/integrations",
   "/Send-Data/Applications-and-Other-Data-Sources/Akamai-Cloud-Monitor/Akamai-Cloud-Monitor-App-Dashboards": "/docs/integrations/saas-cloud/akamai-cloud-monitor",
   "/Send-Data/Applications-and-Other-Data-Sources/Amazon-CloudFront/Amazon-CloudFront-App-Dashboards": "/docs/integrations/amazon-aws/cloudfront",
