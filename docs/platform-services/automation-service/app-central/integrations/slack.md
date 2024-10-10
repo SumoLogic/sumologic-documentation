@@ -128,5 +128,5 @@ Create a public or private channel, Send messages or Files to channels or Users 
 * Oct 1, 2024 (v1.10)
     * Updated action: Ask Question, Ask For User Email (Made changes for timeout)
 * Oct 10, 2024 (v1.11)
-    * Update Integration File - Added Token Type and Team ID arg. 
-    * Update actions - Create Channel, List Channel, Get Channel, List Users, Send Message, Ask Questions, Ask For User Email (added team_id arg if using org level token)
+    * Updated Integration File - Added Token Type and Team ID arg. 
+    * Updated actions - Create Channel, List Channel, Get Channel, List Users, Send Message, Ask Questions, Ask For User Email (added team_id arg if using org level token)
