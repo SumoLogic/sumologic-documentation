@@ -33,7 +33,7 @@ Automox is a cloud-based platform for automated IT operations, offering patching
 
 The Automox source requires you to provide the Bearer Token and Organization ID. Follow the below steps to generate the required values:
 
-- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_bsw_lfg_mmb). 
+- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console). 
 - To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call). 
 
 ### Source configuration
