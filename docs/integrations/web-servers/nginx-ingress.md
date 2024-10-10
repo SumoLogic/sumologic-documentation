@@ -72,7 +72,7 @@ It’s assumed that you are using the latest helm chart version if not please up
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
 4. **Add an FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Webserver**.
@@ -106,7 +106,7 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
    * For alerts applicable only to a specific farm, your custom filter would be: `webserver_farm=nginx-ingress.01`
    * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
    * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1` AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 

@@ -36,7 +36,7 @@ For full end-to-end visibility, we recommended supplementing your RUM browser au
 
 To configure a RUM HTTP Traces source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.   
 1. If you've not yet created a Hosted Collector, [follow these steps](/docs/send-data/hosted-collectors/configure-hosted-collector) to do so.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. <br/><img src={useBaseUrl('img/reuse/add-source.png')} alt="add source" style={{border: '1px solid gray'}} width="500"/>
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring HTTP Traces app icon" style={{border: '1px solid gray'}} width="100"/>

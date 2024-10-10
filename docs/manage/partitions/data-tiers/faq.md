@@ -7,7 +7,7 @@ description: Answers to frequently asked questions about Data Tiers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers/).
+This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers).
 
 ## In which Sumo subscriptions are Data Tiers available? 
 
@@ -15,13 +15,13 @@ The Continuous Data Tier is available in all Sumo subscriptions. Frequent and In
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 
-No. Infrequent Tier is only available to customers who have [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) packaging. 
+No. Infrequent Tier is only available to customers who have [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) packaging.
 
 ## How to choose between Frequent and Infrequent ?
 
 Choosing between Frequent and Infrequent for a data set depends on how frequently you need to access the data. If you expect to search the data often, the Frequent Tier, with its predictable upfront pricing model, is appropriate. Data that you expect to access less often is an ideal candidate for the Infrequent Tier, which offers low ingest cost, and competitive on-demand search pricing.
 
-For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development. 
+For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development.
 
 In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent Tier to keep the cost of ownership low.   
 
@@ -61,15 +61,15 @@ The table below shows how many credits would be consumed for the same query over
 
 Your **Account Overview** page shows the credits your org has consumed for Infrequent searches. 
 
-![infrequent-usage.png](/img/partitions-data-tiers/infrequent-usage.png)
+![infrequent-usage.png](/img/manage/partitions-data-tiers/infrequent-usage.png)
 
 In addition, when you enter an Infrequent query in a [Log Search](/docs/search), before you run it, you'll see an estimate of the amount of data that will be scanned for that query. 
 
-![estimated-scan.png](/img/partitions-data-tiers/estimated-scan.png)
+![estimated-scan.png](/img/manage/partitions-data-tiers/estimated-scan.png)
 
 After you run an Infrequent query, you can see the volume of data that was actually scanned.  
 
-![total-scan.png](/img/partitions-data-tiers/total-scan.png)
+![total-scan.png](/img/manage/partitions-data-tiers/total-scan.png)
 
 ## How do I create partitions to reroute data to a different tier later? 
 
@@ -79,11 +79,11 @@ These recommendations only apply if you do not use Data Streams. You can change 
 
 Add a custom metadata field at either the collector or source level, and then use it as the routing expression for the partition. For example, you could create a field named `usage`, and set it to **infrequent**.
 
-<img src={useBaseUrl('img/partitions-data-tiers/field.png')} alt="field" width="450"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/field.png')} alt="field" width="450"/> 
 
 Then, when you create a new partition, you can use the field in the scoping expression along with other scoping rules.
 
-<img src={useBaseUrl('img/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
 
 In the future, if you want to change the data that goes into the partition, you can just update the usage field.
 
@@ -139,3 +139,13 @@ See [Searching Data Tiers](searching-data-tiers.md).
 ## Can I use Scheduled Searches on the lower data tiers?
 
 Currently, you cannot use [Scheduled Searches](/docs/alerts/scheduled-searches) on the Infrequent Tier.  
+
+## What happens to the queries with _dataTier modifier while migrating to Flex Pricing?
+
+:::note
+Users will continue to have support for the `_dataTier` modifier while still migrating to Flex pricing.
+:::
+
+After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
+
+Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.

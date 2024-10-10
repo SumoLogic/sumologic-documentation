@@ -46,7 +46,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
 ## Create a metric query
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Metrics**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**.  
 1. The Metrics Explorer opens. Click the **Metric** field. A list of metrics appears. You can scroll through the list, or begin typing to dynamically narrow the list. Click the desired metric.
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
