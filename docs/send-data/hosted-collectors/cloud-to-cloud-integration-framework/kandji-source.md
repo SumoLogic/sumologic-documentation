@@ -101,6 +101,10 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <a href="/files/c2c/kandji/example.tf" target="_blank">Download example</a>
 
+## Limitation
+
+- While retrieving threats, the source can face data loss due to API limitations and improper pagination support. If you face any such discrepancies, contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
+
 ## FAQ
 
 :::info
