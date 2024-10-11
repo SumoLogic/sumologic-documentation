@@ -42,6 +42,10 @@ The Kandji source requires you to provide the Endpoint URL and Bearer Token. Fol
 Threat Details endpoint is only available for EDR customers.
 :::
 
+:::info
+While retrieving threats, the source can face data loss due to API limitations and improper pagination support. If you face any such discrepancies, contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
+:::
+
 When you create a Kandji Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure Kandji Source:
@@ -100,10 +104,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
 <a href="/files/c2c/kandji/example.tf" target="_blank">Download example</a>
-
-## Limitation
-
-- While retrieving threats, the source can face data loss due to API limitations and improper pagination support. If you face any such discrepancies, contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
 
 ## FAQ
 
