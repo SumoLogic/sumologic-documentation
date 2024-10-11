@@ -2972,6 +2972,7 @@ integrations: [
         'api/password-policy',
         'api/policies-management',
         'api/role-management',
+        'api/role-management-v2',
         'api/saml-configuration',
         'api/scheduled-views',
         'api/search-job',

@@ -37,4 +37,4 @@ Dashboards (Classic) had 6 color schemes, while Dashboards have 11 color schemes
 
 With Dashboards (Classic), you could choose chart colors while setting it up. With Dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
 
-<img src={useBaseUrl('img/dashboards-new/color-mapping.png')} alt="icon" width="800"/>
+<img src={useBaseUrl('img/dashboards/color-mapping.png')} alt="icon" width="800"/>

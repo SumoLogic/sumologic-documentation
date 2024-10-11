@@ -13,7 +13,7 @@ You can specify data forwarding settings for a partition so that the messages th
     :::note 
     You can see the suggestions only if there are two or more responses for the same column or section. 
     ::: 
-    <img src={useBaseUrl('/img/partitions-data-tiers/partitions-page.png')} alt="partitions-page" style={{border:'1px solid gray'}} width="800"/>
-1. The partition details are displayed on the right side of the page.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="edit-partition-pane-search-icon" width="300"/>    
-1. Click **Edit** to open the pane for editing. <br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
+    <img src={useBaseUrl('/img/manage/partitions-data-tiers/partitions-page.png')} alt="partitions-page" style={{border:'1px solid gray'}} width="800"/>
+1. The partition details are displayed on the right side of the page.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="edit-partition-pane-search-icon" width="300"/>    
+1. Click **Edit** to open the pane for editing. <br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
 1. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](../data-forwarding/amazon-s3-bucket.md).

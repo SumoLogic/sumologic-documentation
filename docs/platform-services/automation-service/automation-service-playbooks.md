@@ -43,11 +43,11 @@ The following procedure provides a brief introduction to how to create a playboo
 1. Click **Create**. The new playbook appears in the list of available playbooks.
 1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
 1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
-1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook: 
+1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook:
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
-    * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/). 
-    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.) 
+    * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
+    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
     * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
 1. When you select one of these options, standard parameters for the trigger type are displayed. (If you select **Parse from json**, a box appears for you to enter the JSON payload.) Click the **Remove** icon to remove any parameters you don't want passed into the playbook, and if you want to add more parameters, click **Add New Param** at the bottom of the dialog.
 1. Click **Update**. The playbook will display a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. You can drag and drop them anywhere on the screen to allow you space to add multiple nodes between them.
@@ -98,7 +98,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
    :::
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" style={{border:'1px solid gray'}} width="600"/>
 1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
-1. Deselect the **Cartesian product** checkbox. 
+1. Deselect the **Cartesian product** checkbox.
    :::warning
    <CartesianProduct/>
    :::
@@ -120,7 +120,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" style={{border:'1px solid gray'}} width="500"/>
-1. Deselect the **Cartesian product** checkbox. 
+1. Deselect the **Cartesian product** checkbox.
    :::warning
    <CartesianProduct/>
    :::
@@ -191,18 +191,18 @@ Define a playbook to run inside another playbook. For example, you may want to c
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Playbook**. The playbook node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-playbook-node.png')} alt="Add playbook node" style={{border:'1px solid gray'}} width="500"/>
 1. In the **Playbook** drop-down menu, select the playbook to run.
-1. Click **Create**. 
+1. Click **Create**.
 
 ### Add a filter node to a playbook
 
 A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. For example, let's suppose that the action feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
 
-1. [Add an action node](#add-an-action-node-to-a-playbook). 
+1. [Add an action node](#add-an-action-node-to-a-playbook).
 1. Hover your mouse over an action node and click the **+** button. The available nodes are displayed. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node-conditions.png')} alt="Add filter node conditions" style={{border:'1px solid gray'}} width="500"/>
 1. (Optional) Use **Split by** to select an output if it is a list (array) and you want to evaluate each item separately. Each item in the list is checked against the filter condition. If the condition is true for an item, the item is passed to the next node.  (If you do not use the **Split by** field on an output that is a list, then if the condition is true for any item in the list, the entire list moves forward to the next node.)
-1. Configure the conditions you want to use for filtering. 
-1. Deselect the **Cartesian product** checkbox. 
+1. Configure the conditions you want to use for filtering.
+1. Deselect the **Cartesian product** checkbox.
    :::warning
    <CartesianProduct/>
    :::
@@ -210,7 +210,7 @@ A filter node filters results from the preceding action based on the condition y
 
 ## Playbook versioning
 
-Every time you edit a playbook, a new version of the playbook is saved. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained. 
+Every time you edit a playbook, a new version of the playbook is saved. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
 
 <img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
 
@@ -230,7 +230,7 @@ It is crucial that the file names inside the tar.gz adhere to the following form
 You can test a playbook to verify that it works properly. The test results show the outcome as if the playbook actually ran.
 
 1. Select a playbook.
-1. Click the kebab button in the upper-right corner of the UI. 
+1. Click the kebab button in the upper-right corner of the UI.
 1. Select **Run Test**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-run-test.png')} alt="Run a playbook test" style={{border:'1px solid gray'}} width="600"/>
 1. In the **Test playbook** dialog, enter the requested information and click **Run**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-playbook.png')} alt="Test playbook" style={{border:'1px solid gray'}} width="600"/>
 1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
@@ -241,17 +241,17 @@ You can test a playbook to verify that it works properly. The test results show 
 You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.
 
 :::tip
-To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). 
+To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook).
 :::
 
 ### Open playbooks that require investigation
 
 #### Open a playbook from an alert
 
-1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alerts-list).
+1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alert-list).
 1. Open an alert that uses a playbook.
 1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
-1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors. 
+1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors.
 1. To investigate the problem, click the playbook name. The playbook opens in the Automation Service and any issues display in the results section.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1.png')} alt="An alert playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
@@ -282,7 +282,7 @@ After you have [opened a playbook that requires investigation](/docs/platform-se
 1. For more detailed information about the action, click the **Graph View** in the upper right and then click on the action. A pane opens that displays more information about the action. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/>
 1. Sometimes the playbook's payload will provide more information about why an action has a problem. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/>
 1. Examine the payload for information that might help you resolve the problem. For example, the payload may be able to tell you if a field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
-1. Based on what you uncover during investigation, you may need to make changes to the playbook and then [test the playbook](#test-a-playbook) to ensure it works correctly. 
+1. Based on what you uncover during investigation, you may need to make changes to the playbook and then [test the playbook](#test-a-playbook) to ensure it works correctly.
 
 
 ### Common playbook problems
@@ -291,7 +291,7 @@ Following are some common problems that can occur with playbooks:
 * **No response from the bridge**<br/>The [automation bridge](/docs/platform-services/automation-service/automation-service-bridge/) is offline, or the bridge does not have the egress firewall settings to handle the outbound request.
 * **API rate limiting issues** <br/>The vendor has capped the number of requests that can be made to their API in a certain time frame.
 * **HTTPS connection pool issues** <br/>There are no available connections at the vendor, usually indicative of a vendor API health issue.
-* **A required field is empty that the action is looking for** <br/>A field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires. 
+* **A required field is empty that the action is looking for** <br/>A field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.
 * **Permission denied** <br/>The API key is incorrect on the [integration resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource), or the account running the playbook has invalid credentials or insufficient permissions.
 * **You have exceeded the actions limit** <br/>The number of actions that your organization can run per hour is limited to a certain threshold. Any actions that are launched beyond this [actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) will not run. You might exceed the limit if:
     * There are alert surges. <br/>
