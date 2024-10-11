@@ -273,7 +273,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a>🚀',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
     },
@@ -450,7 +450,7 @@ module.exports = {
                 icon: 'support',
               },
               {
-                label: 'Request Demo',
+                label: 'Request a Demo',
                 to: 'https://www.sumologic.com/demos',
                 icon: 'co_present',
               },
