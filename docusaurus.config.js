@@ -439,29 +439,38 @@ module.exports = {
             alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s',
             position: 'right',
-            className: 'header-support',
-            alt: 'Contact Sumo Logic support',
-          },
-          {
-            position: 'right',
-            className: 'header-github-link',
+            className: 'support-menu-trigger',
+            to: '#',
             type: 'dropdown',
-            'aria-label': 'GitHub repository',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            items:[
+            items: [
               {
-                label: 'Send Feedback',
+                label: 'Contact Support',
+                to: 'https://support.sumologic.com/support/s',
+                icon: 'support',
+              },
+              {
+                label: 'Request Demo',
+                to: 'https://www.sumologic.com/demos',
+                icon: 'co_present',
+              },
+              {
+                label: 'Submit Feedback',
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'rate_review',
+                icon: 'thumbs_up_down',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: 'docs/contributing',
                 icon: 'edit_note',
               },
-            ]
+            ],
+          },
+          {
+            className: 'header-github-link',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
+            position: 'right',
+            alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
       },
