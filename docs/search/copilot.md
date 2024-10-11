@@ -60,40 +60,28 @@ Click **Select Source Category** - the source expression box - and type/select t
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
-### Step 3: Execute an Explore prompt
+### Step 3: Execute a Suggestion
 
-Click on any of the prebuilt **Suggestions** > **Explore** prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
+Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
-<img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 <br/><br/>
 
 <details>
 <summary>Manual entry (not recommended)</summary>
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions** > **Explore**. Because manually typing an AI prompt requires careful precision for optimal performance, we recommend sticking with the prebuilt prompts.
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. Because manually typing an AI prompt requires careful precision for optimal performance, we recommend sticking with the prebuilt prompts.
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-You'll need to be very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately. If your statement cannot be translated into a query, this field will say "Failed translation".
+Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately. If your statement cannot be translated into a query, this field will say "Failed translation".
 
 Express your chain of thought to the AI by breaking up your prompt into smaller problems that the AI can answer more accurately.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 </details>
 
-### Step 4: Refine your investigation
-
-After running a prompt, your current investigation will be summarized in plain text in the **Ask Something...** field. Under **Suggestions** > **Refine**, you'll find AI-driven natural language prompt ideas to further narrow your investigation so you can quickly identify attacker tactics, techniques, and procedures (TTPs).
-
-For best results, start with a simple prompt, verify the query translation, and then gradually refine your investigation by applying the **Refine** suggestions.
-
-We'll build on the prompt from the previous step, `Count the number of log entries by the collector ID`.
-
-1. To refine your search for log anomalies, click the **Refine** option outlined in red, `Count the number of log entries by the collector ID. Sum _collectorid by _count`.<br/><img src={useBaseUrl('img/search/copilot/refine1.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
-1. After the first refinement, you'll see both the prompt and query code updated. Continue to narrow down your results by clicking option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine2.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
-1. The prompt and query code are updated with the second refinement. Next, click the **Refine** option `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine3.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" />
-1. After the third refinement, the prompt now reads `Count the number of log entries by the collector ID. Sum _collectorid by _count. Standard deviation of _count by _sum. Last _stddev by _sum`.<br/><img src={useBaseUrl('img/search/copilot/refine4.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="800" /><br/>You can continue to refine and/or configure further settings below.
 
 #### Time range
 
@@ -102,7 +90,11 @@ We'll build on the prompt from the previous step, `Count the number of log entri
 
 #### Chart type
 
-Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
+Copilot will attempt to auto-visualize your data. For example, you might ask `Top ip by geo` and the translation will add a geo lookup and render results on a map. An example is below.
+
+<img src={useBaseUrl('img/search/copilot/copilot-geo-chart.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="800" />
+
+If required, select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
 <img src={useBaseUrl('img/search/copilot/chart-types.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="500" />
 
@@ -145,7 +137,7 @@ To view your entire prompt history across all conversations, click **History**.<
 To start over and begin a new investigation, click **New Conversation**. <br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
-### Step 5: Open in Log Search
+### Step 4: Open in Log Search
 
 Click the **Open in Log Search** icon, which will copy your query from Copilot over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
