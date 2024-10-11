@@ -292,15 +292,16 @@ html[data-theme='light'] {
 
 /* Media query for light mode */
 @media (prefers-color-scheme: light) {
-  .support-menu-trigger svg {
-    stroke: white; /* Change the arrow color to black for light mode */
+  .support-menu-trigger {
+    stroke: white;
+    border-color: black; /* Darker border for light mode */
   }
 }
 
 /* Media query for dark mode */
 @media (prefers-color-scheme: dark) {
   .support-menu-trigger svg {
-    stroke: white !important; /* Ensure the arrow is white for dark mode */
+    stroke: white; /* Ensure the arrow is white for dark mode */
   }
 }
 
