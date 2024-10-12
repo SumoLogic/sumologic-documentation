@@ -259,7 +259,7 @@ html[data-theme='light'] {
   align-items: center;
   cursor: pointer;
   color: white !important; /* Text color should be white */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Border matching the style */
+  border: .5px solid rgba(255, 255, 255, 0.2); /* Border matching the style */
   border-radius: 3px;
   padding: 5px 15px;
   font-size: 13px;
@@ -294,7 +294,7 @@ html[data-theme='light'] {
 @media (prefers-color-scheme: light) {
   .support-menu-trigger {
     stroke: white;
-    border-color: black; /* Darker border for light mode */
+//    border-color: black; /* Darker border for light mode */
   }
 }
 
@@ -351,7 +351,7 @@ html[data-theme='light'] {
 
 .header-trial::before {
   content: 'Start free trial';
-  border: 1px solid #0466FF;
+  border: .5px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
@@ -363,14 +363,9 @@ html[data-theme='light'] {
   margin-right: -10px;
 }
 
-.header-trial::after {
-    display: none !important;
-    content: none !important;
-}
-
 [data-theme='dark'] .header-trial::before {
   background: transparent;
-  border: 0px solid #0466FF;
+  border: .5px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
@@ -381,6 +376,16 @@ html[data-theme='light'] {
   margin-right: -10px;
   background: linear-gradient(35deg, #0466FF 0%, #0800FF 30%, #000099 100%);
 }
+
+[data-theme='light'] .header-trial::before {
+  border: .5px solid #0466FF;
+}
+
+.header-trial::after {
+    display: none !important;
+    content: none !important;
+}
+
 
 .markdown {
   h1 {
