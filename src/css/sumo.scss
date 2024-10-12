@@ -363,6 +363,11 @@ html[data-theme='light'] {
   margin-right: -10px;
 }
 
+.header-trial::after {
+    display: none !important;
+    content: none !important;
+}
+
 [data-theme='dark'] .header-trial::before {
   background: transparent;
   border: .5px solid #0466FF;
@@ -379,11 +384,6 @@ html[data-theme='light'] {
 
 [data-theme='light'] .header-trial::before {
   border: .5px solid #0466FF;
-}
-
-.header-trial::after {
-    display: none !important;
-    content: none !important;
 }
 
 
