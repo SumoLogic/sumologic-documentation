@@ -60,9 +60,9 @@ Follow the below steps to create a data collection configuration to collect the 
 1. On the **Source Template** page, click **Add Source Template** and search for the required Source Template.
 1. Complete the Source Template form by providing the mandatory fields, then click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="300"/> <!-- Update screenshot -->
 1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.
-1. Navigate to **Preview Collector(s)** to view the details about the compatiblity of the collectors and list of collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get a separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800"/> <!-- Update screenshot -->
+1. Navigate to **Preview Collector(s)** to view the details about the compatibility of the collectors and list of collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get a separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800"/> <!-- Update screenshot -->
   :::note
-  Incompatible version conflict is found if your collectors cannot be linked to the source template due to version incompatiblity or unsupported operating system.To move to next step, make sure you update the collect version of the incompatible collector.
+  Incompatible version conflict is found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system.To move to next step, make sure you update the collect version of the incompatible collector.
   :::
 1. Click **Next** to complete Source Template creation. In the background, the system will apply the configuration to all the compatible linked collectors and starts collecting the required files.
 
@@ -79,7 +79,7 @@ To edit a source template:
 ## Upgrade the Source Template
 
 :::note
-Source Template update is not available if there are any uncompatible collector version.
+Source Template update is not available if there are any incompatible collector version.
 :::
 
 Follow the below steps to upgrade the source template:
