@@ -1,6 +1,6 @@
 ---
 id: migrate-audit-logging
-title: Migrating Audit Logs from Role V1 to V2
+title: Migrating Audit Logs Queries from Role V1 to V2
 description: Learn to migrate from V1 to V2 audit logging by changing the search queries.
 ---
 
@@ -8,7 +8,7 @@ description: Learn to migrate from V1 to V2 audit logging by changing the search
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-With [RBAC for Indexes](/docs/manage/users-roles/roles/rbac-for-indexes/), role audit log lines will be changed and you are recommended to migrate the search from V1 to V2 audit logging. With advanced search filters added you can obtain more granular information about the selected role. The `filterPredicate` field in V1 audit logging is replaced with `logAnalyticsFilter`, `auditDataFilter`, and `securityDataFilter` fields in V2. In addition, we have also added `selectionType` and `selectedViews` fields to apply RBAC for indexes.
+With [audit data filtering](/docs/manage/users-roles/roles/rbac-for-indexes/), role audit log lines for role creation and modification will be changed and we recommend you migrate the search from V1 to V2 audit logging. With advanced search filters added you can obtain more granular information about the selected role. The `filterPredicate` field in V1 audit logging is replaced with `logAnalyticsFilter`, `auditDataFilter`, and `securityDataFilter` fields in V2. In addition, we have also added `selectionType` and `selectedViews` fields to apply RBAC for indexes.
 
 Currently, [Roles Management APIs v2](/docs/api/role-management-v2) records both the V1 and V2 log line changes.
 
