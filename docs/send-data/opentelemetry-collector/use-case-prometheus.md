@@ -139,7 +139,7 @@ Finally, we will create a new dashboard in Sumo Logic to visualize the custom Pr
 
 To create a new dashboard:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). Go to the Sumo Logic **Home** tab and select **Dashboard**. [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). Go to the Sumo Logic **Home** tab and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Click the name of the dashboard and write in a unique title like **Custom Metrics Dashboard**.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/custom-dashboard.png')} alt="custom-dashboard.png" width="350"/>
 1. Click the **Time Series** button to create a time series chart panel.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/time-series.png')} alt="time-series.png" width="350"/>
 1. Select the icon next to the query box to choose a **Metrics** query.<br/><img src={useBaseUrl('img/dashboards/create-dashboard/custom-metrics.png')} alt="custom-metrics.png" width="300"/>
