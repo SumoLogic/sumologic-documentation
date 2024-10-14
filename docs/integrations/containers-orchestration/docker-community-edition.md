@@ -440,7 +440,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Receive Errors by Container.** Displays the number of received errors by container in a bar chart for the last hour.
 
-## Upgrading the Docker CE app (Optional)
+## Upgrade/Downgrade the Docker CE app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

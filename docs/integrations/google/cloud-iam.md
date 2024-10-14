@@ -248,7 +248,7 @@ See the details of IAM policy changes, user operations, role assignments, and ro
 
 **Removed Roles Over Time**. See the count and trend of the different roles removed in the last 24 hours on a stacked column chart.
 
-## Upgrading the Google Cloud IAM app (Optional)
+## Upgrade/Downgrade the Google Cloud IAM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

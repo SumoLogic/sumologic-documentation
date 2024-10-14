@@ -234,7 +234,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Average Output Queue Length.** Displays the average length of the output queue as a line chart on a timeline using timeslices of one minute for the last 15 minutes.
 
-## Upgrading the Windows Performance app (Optional)
+## Upgrade/Downgrade the Windows Performance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

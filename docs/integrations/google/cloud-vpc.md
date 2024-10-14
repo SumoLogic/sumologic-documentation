@@ -309,7 +309,7 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 
 **Latency (ms) Box Plot.** Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
 
-## Upgrading the Google Cloud VPC app (Optional)
+## Upgrade/Downgrade the Google Cloud VPC app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

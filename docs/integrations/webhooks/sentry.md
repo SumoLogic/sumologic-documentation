@@ -583,7 +583,7 @@ The **Sentry - Tags** delivers valuable insights and statistical analysis of err
 
 <img src={useBaseUrl('img/integrations/webhooks/Sentry-Tags.png')} style={{border: '1px solid black'}} alt="Sentry-Tags"/>
 
-## Upgrading the Sentry app (Optional)
+## Upgrade/Downgrade the Sentry app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

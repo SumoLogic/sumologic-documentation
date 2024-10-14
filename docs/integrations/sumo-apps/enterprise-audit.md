@@ -361,7 +361,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_SAML_Activities.png')} alt="test" />
 
-## Upgrading the Enterprise Audit apps (Optional)
+## Upgrade/Downgrade the Enterprise Audit apps (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

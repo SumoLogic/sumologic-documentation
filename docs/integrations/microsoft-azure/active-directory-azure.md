@@ -267,7 +267,7 @@ See information about failure sign-in events in your Azure AD, including the geo
 
 **Anomaly in Total Login Count.** Shows any Anomaly in the total failure login count over 7 days.
 
-## Upgrading the Azure Active Directory app (Optional)
+## Upgrade/Downgrade the Azure Active Directory app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -440,7 +440,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/VMware-CPU.png')} alt="VMware dashboards" />
 
-## Upgrading the VMware app (Optional)
+## Upgrade/Downgrade the VMware app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

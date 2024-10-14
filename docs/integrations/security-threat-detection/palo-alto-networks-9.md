@@ -319,7 +319,7 @@ Use this dashboard to:
 * Detect which users are not using secure multi-factor authentication.
 * Get better visibility into the application activity at a user level so as to define policies based on users or groups of users.
 
-## Upgrading the Palo Alto Networks 9 app (Optional)
+## Upgrade/Downgrade the Palo Alto Networks 9 app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

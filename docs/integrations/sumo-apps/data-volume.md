@@ -121,7 +121,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
 
-## Upgrading the Data Volume app (Optional)
+## Upgrade/Downgrade the Data Volume app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

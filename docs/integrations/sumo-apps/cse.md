@@ -202,7 +202,7 @@ The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM use
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM User Telemetry"/>
 
-## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
+## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -326,7 +326,7 @@ The **Security Monitoring - User, Service, and System Monitoring** dashboard pro
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-User-Service-and-System-Monitoring.png')} alt="Linux Security dashboards" />
 
-## Upgrading the Linux app (Optional)
+## Upgrade/Downgrade the Linux app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

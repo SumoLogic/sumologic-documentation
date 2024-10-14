@@ -350,7 +350,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack_File_And_App_Audit.png')} alt="Slack dashboards" />
 
-## Upgrading the Slack app (Optional)
+## Upgrade/Downgrade the Slack app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

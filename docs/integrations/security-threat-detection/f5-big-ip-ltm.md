@@ -178,7 +178,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
 
-## Upgrading the F5 - BIG-IP LTM app (Optional)
+## Upgrade/Downgrade the F5 - BIG-IP LTM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

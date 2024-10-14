@@ -204,7 +204,7 @@ The **Google Cloud Compute Engine - Quota Overview** dashboard is based on signi
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Quota-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Quota Overview" width="800"/>
 
-## Upgrading the Google Compute Engine app (Optional)
+## Upgrade/Downgrade the Google Compute Engine app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

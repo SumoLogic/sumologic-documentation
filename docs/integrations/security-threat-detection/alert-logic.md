@@ -67,7 +67,7 @@ The **Alert Logic - Overview** dashboard provides a holistic view of your organi
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Alert-Logic/Alert-Logic-Incident-Overview.png')} style={{border: '1px solid gray'}} alt="Alert Logic-Overview" width="800"/>
 
-## Upgrading the Alert Logic app (Optional)
+## Upgrade/Downgrade the Alert Logic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

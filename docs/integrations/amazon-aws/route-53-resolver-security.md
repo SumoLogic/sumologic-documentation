@@ -167,7 +167,7 @@ Panels include:
 * Malicious URIs
 * Malicious IPs
 
-## Upgrading the Amazon Route 53 Resolver Security app (Optional)
+## Upgrade/Downgrade the Amazon Route 53 Resolver Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

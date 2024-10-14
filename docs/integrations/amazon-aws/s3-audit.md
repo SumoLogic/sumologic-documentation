@@ -122,7 +122,7 @@ This dashboard provides high-level views of threats throughout your S3 Service. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/S3-Threat-Intel.png')} alt="S3 Audit dashboards" />
 
-## Upgrading the Amazon S3 Audit app (Optional)
+## Upgrade/Downgrade the Amazon S3 Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
