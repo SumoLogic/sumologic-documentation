@@ -18,7 +18,7 @@ V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
 
 <br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON-diff-V1-V2" style={{border: '1px solid gray'}} width="800"/>
 
-For example, consider you are interested in quering upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
+For example, consider you are interested in querying upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
 
 ```sql title="V1 Audit Logging"
 (_index=sumologic_audit_events)
