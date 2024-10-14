@@ -56,17 +56,19 @@ In addition to the details listed under [Monitor attributes](#monitor-attributes
 * **Alert Grouping**.
 * **Trigger Conditions**. Thresholds value that must met for monitor to trigger an alert.  Applicable values include Critical, Warning, and Missing Data. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time.
 
+
 ### Convert to Anomaly
 
-:::note Log monitors only
-Metrics monitors not supported at this time.
+:::note Log monitors only  
+Metrics monitors not supported at this time.  
 :::
 
-Outlier monitors are functionally similar to anomaly monitors, but tend to generate more noise. From a data usage perspective, anomaly monitors are more cost-effective.
+Outlier monitors are functionally similar to anomaly monitors, but they tend to generate more noise. From a data usage perspective, anomaly monitors are more cost-effective.
 
 To reduce data usage and alert frequency, you can convert an existing outlier monitor to an anomaly-based monitor by clicking **Convert to Anomaly**. This action will open a monitor configuration window with the [detection method](/docs/alerts/monitors/create-monitor/#detection-method) preset to **Anomaly**, and you can adjust other settings as needed. You’ll then have the option to either disable the original outlier monitor or keep it active.<br/><img src={useBaseUrl('img/alerts/monitors/convert-to-anomaly.png')} alt="convert-to-anomaly" width="600"/>
 
 For more guidance on optimizing scan costs when using Flex Pricing, refer to the [FAQ on optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing).
+
 
 ### View in Log Search
 
