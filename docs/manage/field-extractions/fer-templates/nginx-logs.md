@@ -32,5 +32,5 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | url | Resource requested by the client. | `/wp-content/uploads/Screen-Shot-2017-04-13-at-7.12.35-PM-231x300.png` |
 | status_code | HTTP response status code. | 304 |
 |  size | The size of the object returned to the client. | 0 |
-|  referrer | The website from which the client reports are referred. | [AWS Elastic Load Balancer](https://www.sumologic.com/aws/elb/aws-elastic-load-balancers-classic-vs-application/) |
+|  referrer | The website from which the client reports are referred. | `https://www.sumologic.com/aws/elb/aws-elastic-load-balancers-classic-vs-application` |
 |  user_agent | Information about the client browser. | Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0 |
