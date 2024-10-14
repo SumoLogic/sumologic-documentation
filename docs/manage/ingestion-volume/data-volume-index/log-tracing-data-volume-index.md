@@ -97,7 +97,7 @@ _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 
 would produce results such as:
 
-![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/ingestion-volume/volume-each-category.png)
+![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/manage/ingestion-volume/volume-each-category.png)
 
 **Volume for Each Collector by Tier**
 
@@ -223,7 +223,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
 
 This query produces results like these: 
 
-![tracing-volume-source-category](/img/ingestion-volume/tracing-volume-source-category.png)
+![tracing-volume-source-category](/img/manage/ingestion-volume/tracing-volume-source-category.png)
 
 #### Tracing volume by collector
 
@@ -238,7 +238,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query produces results like these:
 
-![image](/img/ingestion-volume/tracing-volume-source-category.png)
+![image](/img/manage/ingestion-volume/tracing-volume-source-category.png)
 
 #### Tracing volume for a specific collector
 

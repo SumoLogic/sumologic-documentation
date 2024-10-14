@@ -47,7 +47,7 @@ The apps provide monitors crafted by subject matter experts such as the Sumo Log
 
 Pre-built playbooks that use the Sumo Logic Automation Service are made available in some of the monitors to automatically respond to security incidents. 
 
-<img src={useBaseUrl('img/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="700" />
 
 ## FAQ
 

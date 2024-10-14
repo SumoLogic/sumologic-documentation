@@ -1,36 +1,36 @@
 ---
 id: settings
-title: Monitor and Alert Settings
-sidebar_label: Monitor Settings
+title: Monitor Settings
 description: Monitors continuously query your logs or metrics and send alert notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Monitors** page allows you to view, create, manage, and organize your monitors.
+The monitors page allows you to view, create, manage, and organize your monitors. To access it from the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Monitoring > Monitors**; from the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Monitors**.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the **Monitors** page, in the main Sumo Logic menu select **Manage Data > Monitoring > Monitors**.  
+![monitors page](/img/alerts/monitors/monitors-page.png)
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Monitors page, in the main Sumo Logic menu select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
+## Monitor attributes
 
-The page displays the following information:
+Each monitor is assigned the following attributes:
 * **Name**. Name of the monitor.
-* **Status**. A monitor is considered **Normal** when none of the trigger conditions are met and your data is actively being monitored.
-* **Type**. A monitor type is either Logs or metrics, based on the type of data being monitored.
-* **Query**. The query the monitor is running to track your data.
-* **Created By**. The user that created the monitor.
-* **Last Modified**. The time the monitor was last updated.
-* **Capacity Used**. The bottom of the table shows the number of Log and metric monitors in your account.
+* **Status**. Shows the status of the monitor - **Normal, Critical, Warning, or Missing Data**. A monitor can be in multiple states at the same time. Normal indicates none of the trigger conditions are met and your data is actively being monitored.
+   * For **Critical** and **Missing Data** monitors, hover your cursor over its **Status** and click the open icon to view all alerts triggered by that monitor.<br/><img src={useBaseUrl('img/alerts/monitors/monitors-shortcut.png')} alt="monitor shortcut" width="300" />
+* **Subscribed**. Indicates whether or not you're subscribed to receive alerts from a monitor.
+* **Type**. Indicates whether the monitor type is either logs or metrics.
+* **Tags**. Lists the [tag(s)](#tags) applied to a monitor.
+* **Created By**. The user who created the monitor.
+* **Last Modified**. The time the monitor was last updated, shown in the time zone designated in your user preferences.
+* **Capacity Used**. The number of logs and metrics monitors in your account.
 
-![monitors page](/img/monitors/monitors-page.png)
-
-Open the [Alert List](alert-response.md) to view all of the triggered alerts from a monitor by hovering your cursor over its **Status** and clicking the icon.<br/><img src={useBaseUrl('img/monitors/monitors-shortcut.png')} alt="monitor shortcut" width="550" />
+## Search and filter monitors
 
 At the top of the page, you can:
-* **Search Monitors**. Use the search field to filter monitors by name and status. For example, you can view all monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
-* **Add** > **New Folder**. Create a folder to organize your monitors.
-* **Add** > **New Monitor**. Create a [new monitor](/docs/alerts/monitors/create-monitor).
-* **Add** > **Import**. Import monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
+* **Search Monitors**. If you know a monitor's name or partial name, enter that in the input field to run a search. <br/><img src={useBaseUrl('img/alerts/monitors/search-monitors.png')} alt="search monitors input" width="600"/>
+   * **Add a filter**. Click in this field to view a list of available filters, such as Status and Tag, to search monitor attributes. To view all monitors that are currently triggered, click **Status: All Triggered**. <br/><img src={useBaseUrl('img/alerts/monitors/filter-monitors.png')} alt="search monitors input" width="600"/>
+* **Add** > **New Folder**. Creates a folder to organize your monitors.<br/><img src={useBaseUrl('img/alerts/monitors/new-folder.png')} alt="import-folder" width="200"/>
+* **Add** > **New Monitor**. Creates a [new monitor](/docs/alerts/monitors/create-monitor).<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor.png')} alt="new-monitor" width="200"/>
+* **Add** > **Import**. Imports monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#monitor-details-pane) of the original monitor.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" width="200"/>
 
 :::important
 The **Import** function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -38,53 +38,71 @@ The **Import** function is provided for you to transfer data immediately. The Su
 
 ## Quick menu
 
-The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/monitors/quick-menu-monitors.png)
+The quick menu allows you to make changes to the monitor without opening the Details pane. Find and hover your mouse over a monitor in the monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#monitor-details-pane).<br/>![quick menu](/img/alerts/monitors/quick-menu-monitors.png)
 
-## Details pane
+## Monitor details pane
 
-The details pane provides additional information about a selected monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.<br/><img src={useBaseUrl('img/monitors/monitor-details.png')} alt="monitor-details.png" width="300"/>
+The monitor details pane provides additional information about a selected monitor, like its query, trigger conditions, and notification preferences. Select any monitor from your **Monitors** list, and a details pane will appear to the right of the table.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" width="600"/>
 
-In the details pane, you'll see the following details for a monitor:
+In addition to the details listed under [Monitor attributes](#monitor-attributes), you'll also see the following:
 
-* **Name**. Shows the name of the monitor.
-* **Status**. Shows the status of the monitor - **Normal, Critical, Warning, or Missing Data**. A monitor can be in multiple states at the same time.
 * **Description**. Shows the description, if any.
-* **Type**. Shows the type of monitor, either Logs or metrics.
 * **Path**. Shows the Library location where the monitor is located.
 * **Query**. It is used to track your data. 
-* **Trigger Conditions** Thresholds value that must met for monitor to trigger an alert. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time. Applicable values include Critical, Warning, and Missing Data.
 * **Notifications**. These are configured on the monitor.
-* The timestamp and user that **Created** and last **Modified** the monitor. The alert response page will show alert details in the time zone designated in your user preferences.
+* **Muting Schedules**.
+* **Detection Method**.
+* **Evaluation Delay**.
+* **Alert Grouping**.
+* **Trigger Conditions**. Thresholds value that must met for monitor to trigger an alert.  Applicable values include Critical, Warning, and Missing Data. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time.
+
+### View in Log Search
+
+The **View in Log Search** button opens a new **Log Search** page with the monitor’s query preloaded in the search field. You can run the query to compare the search results against the threshold values set in your monitor.
 
 ### View in Metrics Explorer
 
-The **View in Metrics Explorer** button on the Monitors Details page allows you to view the threshold values of a monitor in Metrics Explorer. When you click on this button, it takes you to the Metrics Explorer page with the same thresholds values applied. This helps you to see how your monitor's thresholds values are translating into the metrics, and easily compare the threshold values set in monitor with the data displayed in the Metrics Explorer graph.
+The **View in Metrics Explorer** button allows you to view a monitor’s threshold values in the Metrics Explorer. It directs you to the Metrics Explorer page with the threshold values applied, enabling you to compare the set thresholds against the displayed data in the Metrics Explorer graph.
 
-To view the thresholds translating values in your metrics explorer, follow the steps below:
-1. Select monitor from the **Monitoring** page.
-1. On the Monitors Details pane, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('img/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
-1. Click the **View in Metrics Explorer** button <img src={useBaseUrl('img/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" />. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
-1. On the **Panel settings** page, click threshold <img src={useBaseUrl('img/monitors/thresholds-icon.png')} alt="thresholds-icon" width="40" /> icon to view the values that you have defined for the monitor.
-1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
+To view how the threshold values are applied in Metrics Explorer, follow these steps:
+
+1. Navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters, such as the 15-minute window and the "at all times" option, will be set to default. <br/><img src={useBaseUrl('img/alerts/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
+1. Click the **View in Metrics Explorer** button <img src={useBaseUrl('img/alerts/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" />. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
+1. On the **Panel settings** page, click threshold icon <img src={useBaseUrl('img/alerts/monitors/thresholds-icon.png')} alt="thresholds-icon" width="40" /> to view the defined threshold values for the monitor.
+1. To adjust the chart view, you may need to change the time range in the graph, as the default window is set to 15 minutes.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
 
 :::note
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
 :::
 
-## Edit, Disable, More Actions
+### Edit a monitor
 
-* **Edit** button. Use this to make changes to the selected monitor.
-* **Disable** button. Puts the monitor in a disabled state so it will not fire any notifications.
-* **More Actions** menu:
-  * **Disable** and **Enable**. A monitor that is in a disabled state will not fire any notifications.
-  * **Copy Path**. Copy the path of the monitor to your computer clipboard.
-  * **Duplicate**. Make another monitor based on the same settings.
-  * **Move**. Move the monitor to a different path.
-  * **Export**. Provides JSON of the monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
-  * **Edit Permissions**.
-  * **Delete**.
-  * **Subscribe**.
-  * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
+Click the **Edit** button to make changes to the selected monitor.
+
+<img src={useBaseUrl('img/alerts/monitors/edit-monitor.png')} alt="edit-monitor" width="500"/>
+
+### Disable a monitor
+
+Click the **Disable** button put the monitor in a disabled state so it will not fire any notifications.
+
+<img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="disable-monitor" width="500"/>
+
+### Mute a monitor
+
+Click the **Mute** button mute the monitor. See also: [Muting Schedules](/docs/alerts/monitors/muting-schedules).
+
+<img src={useBaseUrl('img/alerts/monitors/mute-monitor.png')} alt="mute-monitor" width="500"/>
+
+### More actions
+
+Click the **More Actions** menu to view more options, including:
+
+* **Copy Path**. Copies the path of the monitor to your computer clipboard.
+* **Duplicate**. Makes another monitor based on the same settings.
+* **Move**. Moves the monitor to a different path.
+* **Export**. Provides JSON of the monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
+
+<img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" width="600"/>
 
 ## Tags
 
@@ -146,4 +164,4 @@ The permissions you set for a folder are inherited by that folder’s subfolders
 
 ## Monitor History
 
-In the **Monitor History** tab, you can view the history of all triggered alerts of your selected monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
+In the **Monitor History** tab, you can view the history of all triggered alerts of your selected monitor.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
