@@ -69,7 +69,7 @@ To view the selected scan budget:
   - **Action**. Describes the type of action sected to notify when the budget limit is reached.
   - **Created**. The user who created the scan budget. 
   - **Modified**. The user that most recently modified the scan budget.
-  - **Audit Logs**. Records the budget defenition changes. Click on **View Details** to view the budget defenition changes.
+  - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
 
 
