@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page provides information about the Scan Budgets, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume. 
 
-Sumo Logic provides two ways with which you can set the query limits:
+Sumo Logic provides two modes with which you can set the query limits:
 - Basic
 - Advanced
 
@@ -17,7 +17,7 @@ Sumo Logic provides two ways with which you can set the query limits:
 To manage the query size limit using **Basic** configuration:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Usage Management**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Usage Management**. You can also click the **Go To...** menu at the top of the screen and select **Usage Management**. <br/><img src={useBaseUrl('/img/manage/account/usage-management.png')} alt="usage-management" style={{border:'1px solid gray'}} width="650"/>
-1. **Enable Query Limit**. Select this checkbox and click on **Update limit** to enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query. However, if you run an unoptimized query, excessive data will be scanned and accordingly the scan cost will be increased.
+1. **Enable Query Limit**. Select this checkbox and click on **Update limit** to enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query.
 1. Click **Save Limit**.
 
 :::note
@@ -42,23 +42,25 @@ To create the query size limit using **Advanced** configuration:
 It may take up to 5 minutes for a newly created budget to become active and enforceable in the system.
 :::
 
-### View deatails about a Scan Budgets
+### View details about a Scan Budgets
 
 To view the selected scan budget:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Usage Management**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Usage Management**. You can also click the **Go To...** menu at the top of the screen and select **Usage Management**.
 1. Navigate to **Advanced** tab and click the row with the scan budget you want to view.
 1. In the details section: <br/><img src={useBaseUrl('/img/manage/account/view-scan-budget.png')} alt="view-scan-budget" style={{border:'1px solid gray'}} width="400"/>
-  - **Edit**. Click the **Edit** button to open the pane for editing. Edit the query limit and click on **Save**.
+  - **Edit**. Click the **Edit** button to open the pane for editing. Edit the required fields and click on **Save**.
     :::note
-    You cannot edit the Scope, Action, and Details information.
+    You can only edit the **Capacity** for *Org-wide Query Budget* set using Basic.
     :::
   - **Deactivate/Activate**. Click the **Deactivate/Activate** button to deactivate/activate the selected scan budget.
   - **Delete**. Click the **Delete** button to delete the selected scan budget.
   - **View violations**. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
-  - **Budget Type**. 
+  - **Budget Type**. Defines the type of budget set: **Per Query Budget** or **Time-Based Budgets**(TBA).
+    - **Per Query Budget**. Limits the data (in GBs) that a single query can consume.
+    - **Time-Based Budgets**(TBA). Limits the data or credits consumed over a day, week, or month.
   - **Status**. Describes if the scan budget is active or inactive.
-  - **Usage Category**. 
+  - **Usage Category**. Describes the type of scan. For Flex this is shown as Flex scan and for Data tier this is shown as Infrequent scan.
   - **Applied to Roles**. Describes the roles for which the selected scan budget is applied for.
   - **Excluded to Roles**. Describes the roles for which the selected scan budget is excluded for.
   - **Applied to Users**. Describes the users for which the selected scan budget is applied for.
@@ -67,5 +69,12 @@ To view the selected scan budget:
   - **Action**. Describes the type of action sected to notify when the budget limit is reached.
   - **Created**. The user who created the scan budget. 
   - **Modified**. The user that most recently modified the scan budget.
-  - **Audit Logs**.
-  - **System Audit**.
+  - **Audit Logs**. Records the budget defenition changes. Click on **View Details** to view the budget defenition changes.
+  - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
+
+
+## FAQ
+
+### Handle overlapping budgets
+
+When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. If there is still an overlap, the budget with the most restrictive action takes precedence. For example, if you are a part of multiple groups with different query size budgets, the one with the largest capacity will be applied.
