@@ -117,7 +117,7 @@ Every action requires restart of the pods involved in tracing.
 
     Example output:
 
-    ![istio1.png](/img/traces/istio1.png)  
+    ![istio1.png](/img/apm/traces/istio1.png)  
 
     Check if correct values are set for `enableTracing` and `defaultConfig.tracing.EXPORTER_NAME.address`. If OpenCensus was configured, then Zipkin by default points to an Istio endpoint.
 
@@ -127,7 +127,7 @@ Every action requires restart of the pods involved in tracing.
     kubectl get namespace -L istio-injection
     ```
 
-    ![istio2.png](/img/traces/istio2.png)  
+    ![istio2.png](/img/apm/traces/istio2.png)  
 
 1. Make sure the `namespace` in which the application is running `istio-injection` label is set as `enabled`. If label value is disabled or not set then run:  
 
@@ -143,4 +143,4 @@ Every action requires restart of the pods involved in tracing.
 
     Example output:  
 
-    ![istio3.png](/img/traces/istio3.png)
+    ![istio3.png](/img/apm/traces/istio3.png)

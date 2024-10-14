@@ -72,7 +72,7 @@ Select links from the **Summary** tab, to go directly to:
 
 ### Custom dashboards
 
-You can make your own custom dashboards to show up in the view by using the stack linking capability within Dashboards (New).
+You can make your own custom dashboards to show up in the view by using the stack linking capability within Dashboards.
 
 In order to link a dashboard to an existing Kubernetes hierarchy, your entity key in Stack Linking must be the same as the explored entity on the view.
 
