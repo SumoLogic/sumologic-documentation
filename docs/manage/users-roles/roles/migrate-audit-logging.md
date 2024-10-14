@@ -23,7 +23,7 @@ For example, consider you are interested in quering upon audit logs with change 
 ```sql title="V1 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
-| json fields=_raw "eventTime"
+| json fields=_raw "eventTime" as eventTime
 | json fields=_raw "role.filterPredicate" as create_role
 | json fields=_raw "to.filterPredicate" as update_role
 | json fields=_raw "operator.email" as actor
@@ -34,7 +34,7 @@ For example, consider you are interested in quering upon audit logs with change 
 ```sql title="V2 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
-| json fields=_raw "eventTime"
+| json fields=_raw "eventTime" as eventTime
 | json fields=_raw "role.logAnalyticsFilter" as created_log_analytics_filter
 | json fields=_raw "role.auditDataFilter" as created_audit_data_filter
 | json fields=_raw "to.logAnalyticsFilter" as updated_log_analytics_filter
