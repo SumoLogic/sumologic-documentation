@@ -32,7 +32,7 @@ The Data Volume Index must be enabled by an administrator.
 To enable the Data Volume Index:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Data Management**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. 
-1. Under **Data Volume**, select **Enable**. <br/>![data_volume_check_box.png](/img/ingestion-volume/data_volume_check_box.png)
+1. Under **Data Volume**, select **Enable**. <br/>![data_volume_check_box.png](/img/manage/ingestion-volume/data_volume_check_box.png)
 
 A message confirms that the feature is enabled.
 
