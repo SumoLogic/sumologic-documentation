@@ -236,6 +236,380 @@ You can test a playbook to verify that it works properly. The test results show 
 1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
 1. Click the clock icon in the upper-right corner to see the testing history. Select **Latest actions** to see test results for all the actions on the playbook, or select items on the list to see results for individual actions. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results-filtered.png')} alt="Filtered test results" style={{border:'1px solid gray'}} width="600"/>
 
+## Playbook payloads
+
+When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an Insight, Entity, or an alert. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
+
+You select the initial object to use for the payload when you [create a playbook](#create-a-new-playbook). In the **Add one or more params as a playbook input** field, you select the kind of trigger that will execute the playbook:
+    * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
+    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
+    * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
+
+Following are examples of payloads from each trigger type.
+
+### Alert payload
+
+#### View an alert payload
+
+To view the variables available from an alert that triggered a playbook:
+1. [View the automated playbooks for an alert](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert).
+1. Expand the playbook name to view the payload. <br/><img src={useBaseUrl('img/alerts/playbook_payload.png')} alt="View playbook payload" style={{border: '1px solid gray'}} width="600" />
+
+#### Alert payload variables
+
+ The below variables are passed in the payload from an alert to a playbook. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by called `customPlaceholderMap[].user_name`.
+
+| Variable     | Description |
+| :---         |:----        |
+|`​​Id`|The unique identifier for alert that triggered the playbook.|
+|`Name`|The name of the monitor.|
+|`Query`|The query used in the monitor.|
+|`QueryURL`|The URL to the logs or metrics query within Sumo Logic.|
+|`AlertName`|The name of the alert.|
+|`SourceURL`|The URL to the configuration or status page of the monitor in Sumo Logic.|
+|`AlertGroup`|The alert grouping that triggered the alert, including associated values for that field.|
+|`Description`|The description of the monitor.|
+|`MonitorType`|The type of alert, either `Logs` or `Metrics`.|
+|`ResultsJson`|JSON object containing the query results that triggered the alert.|
+|`TriggerTime`|The date and time the query triggered the alert.|
+|`TriggerType`|The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`.|
+|`TriggerValue`|The value that triggered the alert.|
+|`Notifications`|The details for the notifications configured in the monitor.|
+|`NumRawResults`|Number of results returned by the search.|
+|`DetectionMethod`|The type of detection method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`, `LogsMissingDataCondition`, or `MetricsMissingDataCondition`.|
+|`NumQueryResults`|The number of results the query returned.|
+|`SloDashboardURL`|The URL to the SLO dashboard.|
+|`TriggerQueryURL`|The URL to the log search for the query that triggered the alert.|
+|`AlertResponseURL`|The URL to the alert page for the corresponding alert ID.|
+|`TriggerCondition`|The condition that triggered the alert.|
+|`TriggerTimeRange`|The time range of the query that triggered the alert.|
+|`ResultsJsonParsed`|The parsed fields from `ResultsJson`.|
+|`AggregateResultsJson`|JSON object containing the query results that triggered the alert, along with aggregate values such as message count.|
+|`customPlaceholderMap`|The parsed fields from `ResultsJson` and the aggregate values returned from the query.|
+|`AggregateResultsJsonParsed`|The parsed fields from `AggregateResultsJson`.|
+
+#### Alert payload example
+
+```json
+{
+  "Id": "00000000016CCCDD",
+  "Name": "Amazon Guard Duty Brute Force",
+  "Query": "_sourceCategory=Labs/AWS/GuardDuty_V3 | parse \"{\\\"key\\\":\\\"Owner\\\",\\\"value\\\":\\\"*\\\"}\" as owner_key | json field=_raw \"service.action.networkConnectionAction.remotePortDetails.portName\"as port_name | json field=_raw \"service.action.networkConnectionAction.remotePortDetails.port\" as port | json field=_raw \"service.action.networkConnectionAction.remoteIpDetails.ipAddressV4\" as ip_address | json field=_raw \"accountId\", \"region\", \"partition\", \"id\", \"arn\", \"type\",\"service.serviceName\",\"service.detectorId\",\"service.action\",\"severity\",\"title\",\"description\", \"vpcId\", \"subnetId\", \"groupId\" , \"tags\", \"groupName\", \"resource.instanceDetails.instanceId\" as account_id, region, partition, id, arn, type, service_name, detector_id, action, severity, title, description, vpcId, subnetId , securityGroupId, tags, securityGroupName, instanceid nodrop  | where type matches \"*BruteForce*\" | count by instanceid, ip_address, port, port_name, owner_key",
+  "QueryURL": "https://live.us2.sumologic.com/ui/index.html#/search/1IzrB2mrW6L7egF1GY3zwnqJW663xPamyh9oe1AcFBanRckiRpXQiuPU2hOngFWnHO9bOLhpZ1GnssHTKtQpcLPBAOBp8wwW9VerT83Fj77k6hXQqMl5lI3tqsPv5bMG",
+  "AlertName": "Amazon GuardDuty Brute Force Finding",
+  "SourceURL": "https://live.us2.sumologic.com/ui/#/alerts/unified-monitors/00000000000007A0?selectedRows=0000000000593B6D",
+  "AlertGroup": "instanceid=i-F56tg45tty5gfgd45",
+  "Description": "",
+  "MonitorType": "Logs",
+  "ResultsJson": "[{\"Count\":1,\"instanceid\":\"i-F56tg45tty5gfgd45\",\"ip_address\":\"78.24.180.93\",\"owner_key\":\"security@lxechip.com\",\"port\":\"22\",\"port_name\":\"SSH\"}]",
+  "TriggerTime": "05/01/2024 02:08:46 PM CDT",
+  "TriggerType": "Critical",
+  "TriggerValue": 1,
+  "Notifications": [
+    {
+      "notification": {
+        "images": [],
+        "subject": "Monitor Alert: {{TriggerType}} on {{AlertName}}",
+        "actionId": -4194941809035894000,
+        "jsonClass": "EmailAction",
+        "ccRecipients": [],
+        "templateName": "Default Unified Monitor Email With Alert Response Variables",
+        "toRecipients": [
+          "example@sumologic.com"
+        ],
+        "bccRecipients": [],
+        "relatedContent": [],
+        "emailBodyMessage": ""
+      },
+      "runForTriggerTypes": [
+        "Critical"
+      ]
+    }
+  ],
+  "NumRawResults": "45",
+  "DetectionMethod": "LogsStaticCondition",
+  "NumQueryResults": "1",
+  "SloDashboardURL": "",
+  "TriggerQueryURL": "https://live.us2.sumologic.com/ui/index.html#/search/1IzrB2mrW6L7egF1GY3zwnqJW663xPamyh9oe1AcFBanRckiRpXQiuPU2hOngFWnHO9bOLhpZ1GnssHTKtQpcLPBAOBp8wwW9VerT83Fj77k6hXQqMl5lI3tqsPv5bMG",
+  "AlertResponseURL": "https://live.us2.sumologic.com/ui/#/alert/00000000016CCCDD",
+  "TriggerCondition": "ResultCount is Greater than 0.0 in the last 1440 minutes",
+  "TriggerTimeRange": "04/30/2024 02:06:46 PM CDT to 05/01/2024 02:06:46 PM CDT",
+  "ResultsJsonParsed": [
+    {
+      "port": "22",
+      "Count": 1,
+      "owner_key": "security@example.com",
+      "port_name": "SSH",
+      "instanceid": "i-F56tg45tty5gfgd45",
+      "ip_address": "78.24.180.93"
+    }
+  ],
+  "AggregateResultsJson": "[{\"Count\":1,\"instanceid\":\"i-F56tg45tty5gfgd45\",\"ip_address\":\"78.24.180.93\",\"owner_key\":\"security@lxechip.com\",\"port\":\"22\",\"port_name\":\"SSH\"}]",
+  "customPlaceholderMap": [
+    {
+      "port": "22",
+      "Count": "1",
+      "_count": "1",
+      "owner_key": "security@example.com",
+      "port_name": "SSH",
+      "instanceid": "i-F56tg45tty5gfgd45",
+      "ip_address": "78.24.180.93"
+    }
+  ],
+  "AggregateResultsJsonParsed": [
+    {
+      "port": "22",
+      "Count": 1,
+      "owner_key": "security@example.com",
+      "port_name": "SSH",
+      "instanceid": "i-F56tg45tty5gfgd45",
+      "ip_address": "78.24.180.93"
+    }
+  ]
+}
+```
+
+### Entity payload
+
+#### View an Entity payload
+
+#### Entity payload variables
+
+#### Entity payload example
+
+```json
+{
+  "id": "_ip-198.51.100.0",
+  "name": "198.51.100.0",
+  "tags": [],
+  "value": "198.51.100.0",
+  "hostname": null,
+  "lastSeen": "2024-08-30T13:36:18",
+  "firstSeen": null,
+  "inventory": [],
+  "entityType": "_ip",
+  "macAddress": null,
+  "reputation": null,
+  "sensorZone": null,
+  "criticality": null,
+  "isSuppressed": false,
+  "activityScore": 12,
+  "recentSignalSeverity": 12
+}
+```
+
+### Insight payload
+
+#### View an Insight payload
+
+#### Insight payload variables
+
+#### Insight payload example
+
+```json
+{
+  "id": "8e965194-f2da-36e0-839d-c2bacffca684",
+  "name": "Unspecified Malicious Activity",
+  "tags": [
+    "custom-tag",
+    "dataComponent:File",
+    "foo",
+    "MITRE_Expansion_C2",
+    "testtag"
+  ],
+  "orgId": "0000000006ACDE44",
+  "closed": null,
+  "entity": {
+    "id": "_ip-192.0.2.0",
+    "name": "192.0.2.0",
+    "value": "192.0.2.0",
+    "hostname": null,
+    "entityType": "_ip",
+    "macAddress": null,
+    "sensorZone": ""
+  },
+  "source": "ALGORITHM",
+  "status": {
+    "name": "new",
+    "displayName": "New"
+  },
+  "created": "2024-09-05T20:25:59.673356",
+  "signals": [
+    {
+      "id": "d02c5f27-5925-54a0-b0dd-0fee9ee2de2d",
+      "name": "CrowdStrike Aggregation Rule test signal",
+      "tags": [],
+      "stage": "Unknown/Other",
+      "entity": {
+        "id": "_ip-192.0.2.0",
+        "name": "192.0.2.0",
+        "value": "192.0.2.0",
+        "hostname": null,
+        "entityType": "_ip",
+        "macAddress": null,
+        "sensorZone": ""
+      },
+      "ruleId": "AGGREGATION-U07128",
+      "created": "2024-09-05T20:20:51.904000",
+      "severity": 4,
+      "artifacts": [],
+      "timestamp": "2024-09-05T20:20:51.904000",
+      "contentType": "RULE",
+      "description": "test description",
+      "recordCount": 1,
+      "recordTypes": [],
+      "recordSearchDetails": {
+        "query": "_index=sec_record_* | where (if (isNull(metadata_vendor), true, metadata_vendor != \"CrowdStrike\") and if (isNull(objectType), true, objectType != \"email\") and if (isNull(srcDevice_ip), false, srcDevice_ip == \"192.0.2.0\"))",
+        "queryEndTime": "2024-09-05T20:24:00",
+        "queryStartTime": "2024-09-05T19:24:00"
+      }
+    },
+    {
+      "id": "34b173fe-792b-55b0-8723-808ded9547ce",
+      "name": "Exclude CrowdStrike and Email Chain Rule",
+      "tags": [
+        "custom-tag",
+        "foo",
+        "testtag"
+      ],
+      "stage": "Unknown/Other",
+      "entity": {
+        "id": "_ip-192.0.2.0",
+        "name": "192.0.2.0",
+        "value": "192.0.2.0",
+        "hostname": null,
+        "entityType": "_ip",
+        "macAddress": null,
+        "sensorZone": ""
+      },
+      "ruleId": "CHAIN-U07162",
+      "created": "2024-09-05T20:20:51.904000",
+      "severity": 4,
+      "artifacts": [],
+      "timestamp": "2024-09-05T20:20:51.904000",
+      "contentType": "RULE",
+      "description": "chain rule test description",
+      "recordCount": 1,
+      "recordTypes": [],
+      "recordSearchDetails": {
+        "query": "_index=sec_record_* | where ((if (isNull(metadata_vendor), true, metadata_vendor != \"CrowdStrike\") or if (isNull(objectType), true, objectType != \"email\")) and if (isNull(srcDevice_ip), false, srcDevice_ip == \"192.0.2.0\"))",
+        "queryEndTime": "2024-09-05T20:24:00",
+        "queryStartTime": "2024-09-05T19:24:00"
+      }
+    },
+    {
+      "id": "f7ee1ba7-fb69-51e3-8cbe-a7673e237dfe",
+      "name": "CrowdStrike First Seen Rule test signal",
+      "tags": [
+        "testtag",
+        "foo",
+        "custom-tag"
+      ],
+      "stage": "Unknown/Other",
+      "entity": {
+        "id": "_ip-192.0.2.0",
+        "name": "192.0.2.0",
+        "value": "192.0.2.0",
+        "hostname": null,
+        "entityType": "_ip",
+        "macAddress": null,
+        "sensorZone": ""
+      },
+      "ruleId": "FIRST-U00161",
+      "created": "2024-09-05T20:20:51.904000",
+      "severity": 4,
+      "artifacts": [],
+      "timestamp": "2024-09-05T20:20:51.904000",
+      "contentType": "ANOMALY",
+      "description": "test description",
+      "recordCount": 1,
+      "recordTypes": [],
+      "recordSearchDetails": null
+    },
+    {
+      "id": "5f0db81c-c11a-5b13-b2e0-8a25de6ba376",
+      "name": "Exclude CrowdStrike and Email Threshold Rule test",
+      "tags": [
+        "MITRE_Expansion_C2",
+        "testtag",
+        "dataComponent:File"
+      ],
+      "stage": "Unknown/Other",
+      "entity": {
+        "id": "_ip-192.0.2.0",
+        "name": "192.0.2.0",
+        "value": "192.0.2.0",
+        "hostname": null,
+        "entityType": "_ip",
+        "macAddress": null,
+        "sensorZone": ""
+      },
+      "ruleId": "THRESHOLD-U07169",
+      "created": "2024-09-05T20:25:51.043000",
+      "severity": 4,
+      "artifacts": [],
+      "timestamp": "2024-09-05T20:25:51.043000",
+      "contentType": "RULE",
+      "description": "Test Threshold rule",
+      "recordCount": 1,
+      "recordTypes": [],
+      "recordSearchDetails": {
+        "query": "_index=sec_record_* | where (if (isNull(metadata_vendor), true, metadata_vendor != \"CrowdStrike\") and if (isNull(objectType), true, objectType != \"email\") and if (isNull(srcDevice_ip), false, srcDevice_ip == \"192.0.2.0\"))",
+        "queryEndTime": "2024-09-05T21:36:00",
+        "queryStartTime": "2024-09-05T09:36:00"
+      }
+    }
+  ],
+  "assignee": null,
+  "closedBy": null,
+  "severity": "HIGH",
+  "timestamp": "2024-09-05T20:25:51.043000",
+  "assignedTo": null,
+  "confidence": null,
+  "readableId": "INSIGHT-637",
+  "resolution": null,
+  "description": "Unknown/Other",
+  "lastUpdated": "2024-09-05T20:25:59.673351",
+  "lastUpdatedBy": null,
+  "subResolution": null,
+  "teamAssignedTo": null,
+  "timeToResponse": null,
+  "timeToDetection": 307.769356,
+  "involvedEntities": [
+    {
+      "id": "_ip-192.0.2.0",
+      "name": "192.0.2.0",
+      "value": "192.0.2.0",
+      "hostname": null,
+      "entityType": "_ip",
+      "macAddress": null,
+      "sensorZone": null
+    },
+    {
+      "id": "_username-pete@tclab.us",
+      "name": "pete@tclab.us",
+      "value": "pete@tclab.us",
+      "hostname": null,
+      "entityType": "_username",
+      "macAddress": null,
+      "sensorZone": null
+    },
+    {
+      "id": "_username-key--d2b90316--a1d3--492d--beb5--308184ab4973 (Sumo Logic API client (read only))",
+      "name": "key-d2b90316-a1d3-492d-beb5-308184ab4973 (Sumo Logic API client (read only))",
+      "value": "key-d2b90316-a1d3-492d-beb5-308184ab4973 (Sumo Logic API client (read only))",
+      "hostname": null,
+      "entityType": "_username",
+      "macAddress": null,
+      "sensorZone": null
+    }
+  ],
+  "timeToRemediation": null
+}
+```
+
 ## Troubleshoot playbooks
 
 You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.

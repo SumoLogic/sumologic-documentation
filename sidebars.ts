@@ -1090,7 +1090,6 @@ module.exports = {
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
-            'alerts/monitors/automation-payload-variables'
           ],
         },
         {
