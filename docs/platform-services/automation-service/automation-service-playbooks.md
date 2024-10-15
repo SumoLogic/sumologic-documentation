@@ -238,31 +238,36 @@ You can test a playbook to verify that it works properly. The test results show 
 
 ## Playbook payloads
 
-When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an Insight, Entity, or an alert. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
+When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an alert, entity, or Insight. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
 
 You select the initial object to use for the payload when you [create a playbook](#create-a-new-playbook). In the **Add one or more params as a playbook input** field, you select the kind of trigger that will execute the playbook:
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
-    * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Entity**. An [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
     * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
     * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
 
-Following are examples of payloads from each trigger type.
+Following are examples of payloads from different trigger types:
+* [Alert payload](#alert-payload)
+* [Entity payload](#entity-payload)
+* [Insight payload](#insight-payload)
 
 ### Alert payload
 
 #### View an alert payload
 
-To view the variables available from an alert that triggered a playbook:
-1. [View the automated playbooks for an alert](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert).
-1. Expand the playbook name to view the payload. <br/><img src={useBaseUrl('img/alerts/playbook_payload.png')} alt="View playbook payload" style={{border: '1px solid gray'}} width="600" />
+1. Access the [alert list](/docs/alerts/monitors/alert-response/#alert-list).
+1. Open an alert that uses a playbook.
+1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-new.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
+1. Click the playbook name. The playbook opens in the Automation Service.
+1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert-1-new.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="800"/> <br/>The alert payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/alert-payload.png')} alt="Alert payload" style={{border: '1px solid gray'}} width="800"/>
 
 #### Alert payload variables
 
- The below variables are passed in the payload from an alert to a playbook. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by called `customPlaceholderMap[].user_name`.
+ The following variables are passed in the payload from an alert to a playbook. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by called `customPlaceholderMap[].user_name`.
 
-| Variable     | Description |
-| :---         |:----        |
+| Variable | Description |
+| :--  | :-- |
 |`​​Id`|The unique identifier for alert that triggered the playbook.|
 |`Name`|The name of the monitor.|
 |`Query`|The query used in the monitor.|
@@ -373,9 +378,33 @@ To view the variables available from an alert that triggered a playbook:
 
 ### Entity payload
 
-#### View an Entity payload
+#### View an entity payload
+
+1. Open an [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Click the **Automations** button at the top of the entity details page to view the automations on the Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automation-on-entity-in-cloud-siem.png')} alt="Automation on an Entity in Cloud SIEM" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** on an automation. The automation's playbook opens in the Automation Service. 
+1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="800"/> <br/>The entity payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-payload.png')} alt="Entity payload" style={{border: '1px solid gray'}} width="800"/>
 
 #### Entity payload variables
+
+| Variable | Description |
+| :-- | :-- |
+| `​​Id` | The unique ID of the [entity](/docs/cse/records-signals-entities-insights/view-manage-entities) whose information is provided in the payload.|
+| ​`name` | The entity’s name. ​|
+| `tags`​ | [Tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) attached to the entity.​ |
+| `value` | The value of the entity. |
+| `hostname` ​| The hostname of the entity (if the entity is an item that can have a hostname, such as a computer). ​|
+| `lastSeen` ​| When the entity was last seen in a record. ​|
+| `firstSeen` ​| When the entity was first seen in a record. ​|
+| `inventory` ​| The [inventory source](/docs/cse/administration/inventory-sources-and-data/) for the entity (if it originated in an inventory). ​|
+| `entityType` ​| The [type of entity](/docs/cse/records-signals-entities-insights/view-manage-entities/#about-entities). ​|
+| `macAddress` ​| The [medium access control (MAC) address](https://en.wikipedia.org/wiki/MAC_address) assigned to the entity (if the entity is a piece of hardware). ​|
+| `reputation` ​| The reputation score for the entity. ​|
+| `sensorZone` ​| [Sensor zone](/docs/cse/administration/using-sensor-zones/) for the entity. ​|
+| `criticality` | The [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) of the entity. |
+| `isSuppressed` | Whether the [entity is suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression/#suppress-by-entity). |
+| `activityScore` | The entity’s [activity score](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#understanding-entity-activity-scores). |
+| `recentSignalSeverity` | The most recent [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity) of the signal that the entity appeared on. |
 
 #### Entity payload example
 
@@ -404,7 +433,42 @@ To view the variables available from an alert that triggered a playbook:
 
 #### View an Insight payload
 
+1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Click the **Automations** button at the top of the Insight details page to view the automations on the Insight.  <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-automation.png')} alt="Automations on an Insight" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** on an automation. The automation's playbook opens in the Automation Service.  
+1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-playbook.png')} alt="Insight playbook" style={{border: '1px solid gray'}} width="800"/> <br/>The Insight payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-payload.png')} alt="Insight payload" style={{border: '1px solid gray'}} width="800"/>
+
 #### Insight payload variables
+
+| Variable | Description |
+| :-- | :-- |
+| `​​id` | The unique ID of the [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insight-details-page) whose information is provided in the payload.
+| `name` | The name of the Insight. |
+| `tags` | [Tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) attached to the Insight. |
+| `orgId` | The ID of the Sumo Logic organization where the Insight originated. |
+| `closed` | Whether the Insight is closed. |
+| `entity` |  The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities) the Insight fired on. |
+| `source` |  The source of the Insight data. |
+| `status` |  The current status of the Insight. |
+| `created` | When the Insight was created. |
+| `signals` |  The Signals in the Insight. |
+| `assignee` | The analyst assigned to the incident. |
+| `closedBy` | The analyst who closed the Insight (if it’s status is closed). | 
+| `severity` | The [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity) of the Insight. |
+| `timestamp` | The timestamp when the Insight fired. |
+| `assignedTo` | The analyst assigned to the incident. |
+| `confidence` | If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight is shown. |
+| `readableId` |  The human-readable ID of the Insight. |
+| `resolution` | The [resolution](/docs/cse/administration/manage-custom-insight-resolutions/) of the Insight (if the Insight is resolved). |
+| `description` | A description of the Insight. |
+| `lastUpdated` | When the Insight was last updated. |
+| `lastUpdatedBy` | The analyst who last updated the Insight. |
+| `subResolution` | The [sub-resolution](/docs/cse/administration/manage-custom-insight-resolutions/) of the Insight (if the Insight is resolved and if a sub-resolution is applied). |
+| `teamAssignedto` | The team the Insight is assigned to. |
+| `timeToResponse` | The time it took to respond to the Insight. |
+| `timeToDetection` | The time it took to detect the Insight. |
+| `involvedEntities` | The entities involved in the Insight. |
+| `timeToRemediation` | The time it took to resolve the Insight. | 
 
 #### Insight payload example
 
@@ -622,7 +686,7 @@ To test a playbook before using it in an automation, see [Test a playbook](/docs
 
 #### Open a playbook from an alert
 
-1. Access the [alerts list](/docs/alerts/monitors/alert-response/#alert-list).
+1. Access the [alert list](/docs/alerts/monitors/alert-response/#alert-list).
 1. Open an alert that uses a playbook.
 1. On the alert details page, click the **Playbooks** button to see [automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) attached to the alert. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-alert.png')} alt="Playbook on an alert" style={{border: '1px solid gray'}} width="300"/>
 1. Hover your mouse over the icon to the right of the playbook to see its status. In the example above, the playbook completed with errors.
@@ -655,7 +719,7 @@ After you have [opened a playbook that requires investigation](/docs/platform-se
 1. Click an action for an explanation of the problem. <br/><img src={useBaseUrl('img/platform-services/automation-service/reason-for-failed-action.png')} alt="Reasons for failed actions on a playbook" style={{border: '1px solid gray'}} width="800"/>
 1. For more detailed information about the action, click the **Graph View** in the upper right and then click on the action. A pane opens that displays more information about the action. <br/><img src={useBaseUrl('img/platform-services/automation-service/failed-action-in-graph-view.png')} alt="Failed action in playbook graph view" style={{border: '1px solid gray'}} width="800"/>
 1. Sometimes the playbook's payload will provide more information about why an action has a problem. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/arrow-on-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="300"/>
-1. Examine the payload for information that might help you resolve the problem. For example, the payload may be able to tell you if a field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
+1. Examine the [playbook payload](#playbook-payloads) for information that might help you resolve the problem. For example, the payload may be able to tell you if a field has not been properly passed from a previous action, or a field was unintentionally left blank that the action requires.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-payload.png')} alt="Playbook payload" style={{border: '1px solid gray'}} width="300"/>
 1. Based on what you uncover during investigation, you may need to make changes to the playbook and then [test the playbook](#test-a-playbook) to ensure it works correctly.
 
 
