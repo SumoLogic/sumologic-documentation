@@ -2440,6 +2440,7 @@ integrations: [
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/asana',
+          'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
           'integrations/saas-cloud/cisco-meraki-c2c',
