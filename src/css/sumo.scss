@@ -294,7 +294,6 @@ html[data-theme='light'] {
 @media (prefers-color-scheme: light) {
   .support-menu-trigger {
     stroke: white;
-    border-color: black; /* Darker border for light mode */
   }
 }
 
@@ -351,7 +350,7 @@ html[data-theme='light'] {
 
 .header-trial::before {
   content: 'Start free trial';
-  border: 1px solid #0466FF;
+  border: .5px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
@@ -370,7 +369,7 @@ html[data-theme='light'] {
 
 [data-theme='dark'] .header-trial::before {
   background: transparent;
-  border: 0px solid #0466FF;
+  border: .5px solid #0466FF;
   color: #FFF;
   border-radius: 3px;
   padding: 5px 15px;
@@ -382,6 +381,9 @@ html[data-theme='light'] {
   background: linear-gradient(35deg, #0466FF 0%, #0800FF 30%, #000099 100%);
 }
 
+[data-theme='light'] .header-trial::before {
+  border: .5px solid #0466FF;
+}
 .markdown {
   h1 {
     font-size: 2rem !important;
