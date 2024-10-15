@@ -73,6 +73,4 @@ By following these steps, you can take full advantage of Intellisense to acceler
 
 ## Leverage Copilot AI
 
-In a hurry to complete your investigation? Need help writing queries?
-
-Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that lets you enter natural questions in plain English and auto-generate queries - no need to write them manually. It guides you through query building step-by-step with AI-driven suggestions to refine your results. Because all your observability and security source records are in Sumo Logic, Copilot helps discover related datasets.
+Still need help writing queries? Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that lets you enter natural questions in plain English and auto-generate queries - no need to write them manually. It guides you through query building step-by-step with AI-driven suggestions to refine your results. Because all your observability and security source records are in Sumo Logic, Copilot helps discover related datasets.
