@@ -49,6 +49,7 @@ Office 365 comes with a set of admin roles that you can assign to users in you
 When you configure a Microsoft Office 365 Audit Source in Sumo you will need to authenticate with Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. For the sake of the principle of least privilege (PoLP), the authenticating account should be as restrictive as possible while enabling appropriate access. What's appropriate for you depends on which Office 365 edition you use and your security policies.
 
 Using the Global Administrator role is recommended:
+However, you can also use the Global reader role
 
 | Role  |   Description |
 |:-----------------------|:-------------|
