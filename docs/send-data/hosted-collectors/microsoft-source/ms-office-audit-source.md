@@ -70,7 +70,6 @@ Alternatively, you could assign more granular roles to the authenticating accoun
 The variety and range of configurations in Office 365 environments preclude exhaustive testing of log ingestion from Office 365 sources. You might need to experiment with several roles to ensure you are ingesting the data you want. Note also that Office 365 administrators must enable logging in their environments for the logs to be available.
 :::
 
-
 ## Enable Exchange Audit Logging
 
 Before you can configure a Sumo Logic Microsoft Office 365 Audit Source for Exchange log data, enable Exchange Audit Logging within your Office 365 tenant by following the steps at https://technet.microsoft.com/library/dn879651.aspx.
