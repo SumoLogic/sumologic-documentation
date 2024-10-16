@@ -238,14 +238,14 @@ You can test a playbook to verify that it works properly. The test results show 
 
 ## Playbook payloads
 
-When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an alert, entity, or Insight. The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
+When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an alert, entity, or Insight). The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
 
-You select the initial object to use for the payload when you [create a playbook](#create-a-new-playbook). In the **Add one or more params as a playbook input** field, you select the kind of trigger that will execute the playbook:
+You select the initial object to use for the payload when you [create a playbook](#create-a-new-playbook). In the **Add one or more params as a playbook input** field, you select the kind of trigger that will execute the playbook: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Entity**. An [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
     * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
-    * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
+    * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). 
 
 Following are examples of payloads from different trigger types:
 * [Alert payload](#alert-payload)
@@ -264,7 +264,7 @@ Following are examples of payloads from different trigger types:
 
 #### Alert payload variables
 
- The following variables are passed in the payload from an alert to a playbook. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by called `customPlaceholderMap[].user_name`.
+ The following variables are passed in the payload from an alert to a playbook. 
 
 | Variable | Description |
 | :--  | :-- |
@@ -279,11 +279,11 @@ Following are examples of payloads from different trigger types:
 |`MonitorType`|The type of alert, either `Logs` or `Metrics`.|
 |`ResultsJson`|JSON object containing the query results that triggered the alert.|
 |`TriggerTime`|The date and time the query triggered the alert.|
-|`TriggerType`|The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`.|
+|`TriggerType`|The status of the alert or recovery. Alert will have a status of `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have a status of `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`.|
 |`TriggerValue`|The value that triggered the alert.|
 |`Notifications`|The details for the notifications configured in the monitor.|
 |`NumRawResults`|Number of results returned by the search.|
-|`DetectionMethod`|The type of detection method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`, `LogsMissingDataCondition`, or `MetricsMissingDataCondition`.|
+|`DetectionMethod`|The type of detection method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`, `LogsMissingDataCondition`, or `MetricsMissingDataCondition`.|
 |`NumQueryResults`|The number of results the query returned.|
 |`SloDashboardURL`|The URL to the SLO dashboard.|
 |`TriggerQueryURL`|The URL to the log search for the query that triggered the alert.|
@@ -292,7 +292,7 @@ Following are examples of payloads from different trigger types:
 |`TriggerTimeRange`|The time range of the query that triggered the alert.|
 |`ResultsJsonParsed`|The parsed fields from `ResultsJson`.|
 |`AggregateResultsJson`|JSON object containing the query results that triggered the alert, along with aggregate values such as message count.|
-|`customPlaceholderMap`|The parsed fields from `ResultsJson` and the aggregate values returned from the query.|
+|`customPlaceholderMap`|The parsed fields from `ResultsJson` and the aggregate values returned from the query. The fields specific to the query that triggered the alert can be referenced by using `customPlaceholderMap`. For example, if the result of the query includes a field named `user_name`, this can be referenced by calling `customPlaceholderMap[].user_name`.|
 |`AggregateResultsJsonParsed`|The parsed fields from `AggregateResultsJson`.|
 
 #### Alert payload example
@@ -381,7 +381,7 @@ Following are examples of payloads from different trigger types:
 #### View an entity payload
 
 1. Open an [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
-1. Click the **Automations** button at the top of the entity details page to view the automations on the Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automation-on-entity-in-cloud-siem.png')} alt="Automation on an Entity in Cloud SIEM" style={{border: '1px solid gray'}} width="800"/>
+1. Click the **Automations** button at the top of the entity details page to view the automations on the entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automation-on-entity-in-cloud-siem.png')} alt="Automation on an Entity in Cloud SIEM" style={{border: '1px solid gray'}} width="800"/>
 1. Click **View Playbook** on an automation. The automation's playbook opens in the Automation Service. 
 1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="800"/> <br/>The entity payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-payload.png')} alt="Entity payload" style={{border: '1px solid gray'}} width="800"/>
 

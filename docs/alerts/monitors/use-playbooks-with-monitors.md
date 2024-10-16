@@ -167,7 +167,7 @@ You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the moni
 1. Select **Alert** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_alert.png')} alt="Payload parameters from an alert" style={{border: '1px solid gray'}} width="700" />
 1. The parameters from the default [alert payload variables](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
 
-#### Configure Parameters from a JSON Payload
+#### Configure parameters from a JSON payload
 
 1. Click **Edit** on the Start Node.
 1. Select **Parse from Json** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_json.png')} alt="Payload parameters from a Json payload" style={{border: '1px solid gray'}} width="700" />
