@@ -52,7 +52,7 @@ To create the query size limit using **Advanced** configuration:
 1. **Capacity**. Enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
-    - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set, which will block the foreground searches, such as querying in search UI, dashboards, and copilots, but will not impact any background searches, such as scheduled search, monitors, SLO, and API.
+    - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set, which will block the foreground searches, such as querying in the search UI and dashboards, but will not impact any background searches, such as scheduled search, monitors, SLO, and API.
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
 
