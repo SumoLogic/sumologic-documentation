@@ -44,7 +44,7 @@ Audit log data can contain sensitive information. When you configure any audit l
 
 ## Office 365 admin roles
 
-Office 365 comes with a set of admin roles that you can assign to users in your organization. Each admin role maps to common business functions and gives people in your organization permissions to do specific tasks in the Office 365 admin center.
+Office 365 comes with a set of admin roles that you can assign to users in your organization. Each admin role maps to common business functions and gives people in your organization permissions to do specific tasks in the Office 365 admin center. 
 
 When you configure a Microsoft Office 365 Audit Source in Sumo Logic, you will need to authenticate with Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. For the sake of the principle of least privilege (PoLP), the authenticating account should have the minimum necessary permissions while still enabling appropriate access. The appropriate role depends on the Office 365 edition you use and your security policies.
 
