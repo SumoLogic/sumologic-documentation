@@ -14,10 +14,18 @@ Sumo Logic provides two modes with which you can set the query limits:
 
 ## Basic
 
+### Availability
+
+| Account Type | Account Level |
+|:--------------|:--------------------------------------|
+| Credits | Free, Trail, Essentials(Flex), Enterprise Operations (Flex), Enterprise Security (flex), Enterprise Suite |
+
+### Set query size limit
+
 To manage the query size limit using **Basic** configuration:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Usage Management**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Usage Management**. You can also click the **Go To...** menu at the top of the screen and select **Usage Management**. <br/><img src={useBaseUrl('/img/manage/account/usage-management.png')} alt="usage-management" style={{border:'1px solid gray'}} width="650"/>
-1. **Enable Query Limit**. Select this checkbox and click on **Update limit** to enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query.
+1. **Enable Query Limit**. Select this checkbox and enter the GB value based on your needs. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query.
 1. Click **Save Limit**.
 
 :::note
@@ -25,6 +33,16 @@ It may take up to 5 minutes for a newly created budget to become active and enfo
 :::
 
 ## Advanced
+
+The **Advanced** method for setting the query size limit allows you to set the limit for individual users and helps admins to specify roles for easier group selection. This method also provides flexibility in your actions when the budget limit is reached.
+
+### Availability
+
+| Account Type | Account Level |
+|:--------------|:--------------------------------------|
+| Credits | Essentials(Flex) and Enterprise Suite |
+
+### Set query size limit
 
 To create the query size limit using **Advanced** configuration:
 
