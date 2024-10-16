@@ -42,7 +42,6 @@ Audit log data can contain sensitive information. When you configure any audit l
  * [Enable Exchange Audit Logging](#enable-exchange-audit-logging)
  * Authentication must be with a new Office 365 Audit Source, we do not support re-authenticating existing sources.
 
-
 ## Office 365 admin roles
 
 Office 365 comes with a set of admin roles that you can assign to users in your organization. Each admin role maps to common business functions and gives people in your organization permissions to do specific tasks in the Office 365 admin center.
