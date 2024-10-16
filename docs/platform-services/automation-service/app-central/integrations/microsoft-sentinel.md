@@ -37,4 +37,4 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 	+ renamed action Incidents Daemon Sentinel to Microsoft Sentinel Incidents Daemon
 	+ added new action List Incident Alerts
 * October 14, 2024 (v1.4)
-	+ Updated the integration by adding two new fields (**API Root and Login Endpoint**) to the configuration
+	+ Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration
