@@ -78,7 +78,7 @@ To view the selected scan budget:
     - **Per Query Budget**. Limits the data (in GBs) that a single query can consume.
     - **Time-Based Budgets**(TBA). Limits the data or credits consumed over a day, week, or month.
   - **Status**. Describes if the scan budget is active or inactive.
-  - **Usage Category**. Describes the type of scan. For Flex this is shown as Flex scan and for Data tier this is shown as Infrequent scan.
+  - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for Data tier this is shown as **Infrequent Scan**.
   - **Applied to Roles**. Describes the roles for which the selected scan budget is applied for.
   - **Excluded to Roles**. Describes the roles for which the selected scan budget is excluded for.
   - **Applied to Users**. Describes the users for which the selected scan budget is applied for.
