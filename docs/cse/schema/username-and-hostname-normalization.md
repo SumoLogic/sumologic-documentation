@@ -49,7 +49,8 @@ If a name normalization configuration exists, the name attribute will be populat
 ## Configuration
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
-1. The **Domain** tab is selected by default. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
+1. Select the **Domain** tab. (For information about the **Lookup Tables** tab, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)). 
+1. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
 1. Under **Normalization Formats** there are configuration options to normalize names from:
    * **FQDN**. Normalize names in the form `user@somedomain.net` or `hostname.somedomain.net`.
    * **Active Directory**. Normalize active directory domains username and hostname formats.
@@ -88,7 +89,7 @@ In this case, these domains map to a different normalized domain (`jask`).  Whe
 
 ## Examples
 
-### Example - single domain
+### Single domain
 
 In this example, it is assumed you have configured the system for “Primary domain” and you configured the domains `SUMO` and `sumologic.com`. In this case, assume a log line has a username field:
 
@@ -137,7 +138,7 @@ The normalized username would be:
 
 `user_username_raw = JASK\fred`
 
-#### Example - multiple domains
+### Multiple domains
 
 In this example, it is assumed you have configured the system for “Primary domain” and also introduced a sub-domain (JASK). In this case, the configuration looks like:
 
@@ -162,7 +163,7 @@ Name forms matching the default domain would look like:
 | `bob@someothername.com` | `bob@someothername.com` |
 | `OTHERDOMAIN\suzy`      | `otherdomain\suzy`     | 
 
-### Example - test domain
+### Test domain
 
 Following is an example configuration for a case where the customer has a domain name `test.com` and an Active Directory domain named `test`. 
 
