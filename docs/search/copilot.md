@@ -21,9 +21,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English, get contextual suggestions—minimizing the need to write log queries.
+Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get answers faster.
 
-With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Copilot enhances incident resolution with expert level insights to accelerate root cause identification and empower informed decisions.
+With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
 ### Key features
 
@@ -34,13 +34,17 @@ Copilot reduces manual effort by combining prebuilt insights with natural langua
 * **Conversation history**. Save and resume any troubleshooting session without losing context.
 * **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
 
+### Security and compliance
+
+<!-- under legal review -->
+
 
 ### Who benefits from Copilot?
 
 Copilot is ideal for:
 
 * **On-call engineers**. Accelerate time to resolution by surfacing key troubleshooting insights.
-* **Security engineers**. Obtain security insights rapidly for faster threat detection.
+* **Security engineers**. Obtain security insights rapidly for faster security incident resolution.
 
 ## How to use Copilot
 
@@ -54,15 +58,15 @@ From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to 
 
 From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="150" />
 
-### Step 2: Select a source category
+### Step 2: Review the auto-selected source
 
-Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate. In this example, we'll select a source for AWS WAF.
+Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration. In this example, we'll select a source for AWS WAF.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
 ### Step 3: Execute a Suggestion
 
-Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are customized for the specific data source you've chosen.
+Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are tailored to the specific data source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
@@ -73,26 +77,37 @@ In this example, we'll click `Count the number of log entries by the collector I
 <details>
 <summary>Manual entry (not recommended)</summary>
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. Because manually typing an AI prompt requires careful precision for optimal performance, we recommend sticking with the prebuilt prompts.
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**.
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately. If your statement cannot be translated into a query, this field will say "Failed translation".
+Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
-Express your chain of thought to the AI by breaking up your prompt into smaller problems that the AI can answer more accurately.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Break your questions into smaller, specific prompts to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 </details>
 
 
 #### Time range
 
-1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
+By default, Copilot searches run with a 15-minute time range. If your search returns no results, consider expanding the time range.
+
+1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="400" />
 1. Click the search button.<br/><img src={useBaseUrl('img/search/copilot/search-button.png')} alt="Copilot search button" style={{border: '1px solid gray'}} width="250" />
 
 #### Chart type
 
-Copilot will attempt to auto-visualize your data. For example, you might ask `Top ip by geo` and the translation will add a geo lookup and render results on a map. An example is below.
+Copilot will automatically attempt to visualize your data. For example, a query like `Top ip by geo` will trigger a geo lookup and display the results on a map:
 
 <img src={useBaseUrl('img/search/copilot/copilot-geo-chart.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="800" />
+
+The following rules are used to deduce chart type:
+* If both latitude and longitude fields exist, it returns a MAP chart type.
+* If there is only one field and one record, it returns an SVP chart type. Example query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | count`
+* If a `sort` operator is present and there are string fields, it returns a TABLE. Given that there is a `sort` operator, probably the user is interested in `count`. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | sort by _count`
+* If there is a `_timeslice` field, it returns LINE chart type if there are numeric fields or a TABLE chart type if there are string fields.
+* If there is one string field, one numeric field, and record count is less than 6, it returns a PIE chart type. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename"`.
+* If there is one string field, less than 3 numeric field, and record count is less than 20, it returns a LINE chart.
+* If none of the above conditions are met, it defaults to returning a TABLE chart type.
 
 If required, select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
@@ -113,7 +128,7 @@ You can manually edit your log search query code if needed.
    | where _schema != "unknown"
    | sum(_count) by _sourceCategory
    ```
-* If your log query contains a mix JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+* If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 </details>
 
 1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
@@ -123,18 +138,19 @@ You can manually edit your log search query code if needed.
 To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 :::
 
-#### Recent history
-
-To view your recent prompts from your current session, click the recent history icon.<br/><img src={useBaseUrl('img/search/copilot/recent-history.png')} alt="recent-history.png" style={{border: '1px solid gray'}} width="700" />
-
-
 #### History
 
-To view your entire prompt history across all conversations, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+Often, users work on multiple incidents at the same time. To view Copilot interactions related to these incidents, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+
+You can resume a conversation in two ways:
+
+First, the Resume conversation icon picks up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history1.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+
+Second, you can resume from a specific query in a conversation by clicking on the row in the conversation history and then clicking on the gray area on the right side, as shown below.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history2.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
 
 #### New Conversation
 
-To start over and begin a new investigation, click **New Conversation**. <br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
+To start a new exploration, click **New Conversation**. <br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
 ### Step 4: Open in Log Search
