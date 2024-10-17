@@ -22,16 +22,21 @@ There are several ways to create a new monitor, depending on where you are in Su
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
 
 <!-- These options are not appearing
+
 ### From a Dashboard
+
 1. From a Dashboard, hover your mouse over any panel, click the three-dot kebab icon, then click **Open in Log Search**.
 1. From your Log Search view, click the three-dot kebab icon in the upper right corner, then **Create a Monitor**.
 
 ### From the App Catalog
+
 1. Search for your app in the **App Catalog > Search Apps** field.
 1. Navigate to **What's Included** tab, scroll down to the **Monitors** section, then click **Create** next to the pre-configured monitors.
 
 ### From Log Search
+
 Click the kebab icon in the upper right corner, then **Create a Monitor**.
+
 -->
 
 ### From Metrics Explorer
