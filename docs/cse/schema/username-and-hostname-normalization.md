@@ -48,19 +48,21 @@ If a name normalization configuration exists, the name attribute will be populat
 
 ## Configuration
 
-The name normalization feature can be enabled in the **Incoming Data** section under the **Entities** tab of the Cloud SIEM configuration.  
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
+1. The **Domain** tab is selected by default. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
+1. Under **Normalization Formats** there are configuration options to normalize names from:
+   * **FQDN**. Normalize names in the form `user@somedomain.net` or `hostname.somedomain.net`.
+   * **Active Directory**. Normalize active directory domains username and hostname formats.
+   * **AWS**. Normalize AWS ARN and usernames.
+1. In **Normalized Default Domain**, provide a default domain name. 
+1. In **Domain Name Mappings**, enter mappings for secondary domains.
+1. Click **Save**.
+
+Following is an example configuration:
 
 <img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration dialog" style={{border: '1px solid gray'}} width="800"/>
 
-You can configure just username normalization, just hostname normalization, or both. We recommend you enable both. 
-
-There are configuration options to normalize names (“Normalization Formats”) from:
-
-* FQDN - Normalize names in the form `user@somedomain.net` or `hostname.somedomain.net`
-* Active Directory - Normalize active directory domains username and hostname formats
-* AWS - Normalize AWS ARN and Usernames
-
-## Default domains
+### Default domains
 
 When normalization is configured, at least one domain must be configured and a “Normalized Default Domain” must be provided. The default name will never show up in normalized names, as it’s assumed, and username forms with no domain portion will be considered part of that domain. In our example above, we’ve assumed the name “sumo”.
 
@@ -73,7 +75,7 @@ Next, the user should enter the domain name forms that will be seen in the custo
 
 These domains should all have the “Normalized Name” that matches the “Normalized Default Domain”, for example, `sumo`.   
 
-## Secondary domains
+### Secondary domains
 
 The normalization configurations also supports secondary domains that may not map users in a different namespace to the same name. For example, if `bob@sumologic.com` is not the same as `bob@jask.com`, then a secondary domain should be configured.  In this case a second set of configurations should be populated to maps to a different “normalized domain” (`jask`). 
 
@@ -84,19 +86,11 @@ For example, in this case a configuration could be:
 
 In this case, these domains map to a different normalized domain (`jask`).  When one of these domains is normalized, it will show up as `bob:jask` in the normalized name form.
 
-## Warnings and issues
-
-If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase. 
-
-## Example UI
-
-An example UI is provided for a case where the customer has a domain name `test.com` and an active directory domain named `test`. 
-
-<img src={useBaseUrl('img/cse/Example_UI.png')} alt="Configuration example" style={{border: '1px solid gray'}} width="600"/>
+## Examples
 
 ### Example - single domain
 
-In this example, it is assumed the user has configured the system for “Primary domain” and has configured the domains `SUMO` and `sumologic.com`. In this case, assume a log line has a username field:
+In this example, it is assumed you have configured the system for “Primary domain” and you configured the domains `SUMO` and `sumologic.com`. In this case, assume a log line has a username field:
 
 `bob`
 
@@ -145,7 +139,7 @@ The normalized username would be:
 
 #### Example - multiple domains
 
-In this example, it is assumed the user has configured the system for “Primary domain” and has also introduced a sub-domain (JASK). In this case, the configuration looks like:
+In this example, it is assumed you have configured the system for “Primary domain” and also introduced a sub-domain (JASK). In this case, the configuration looks like:
 
 Normalized Default Domain: sumo
 
@@ -166,4 +160,15 @@ Name forms matching the default domain would look like:
 | `fred@jask.com`         | `fred:jask`            |
 | `JASK\fred`             | `fred:jask`             |
 | `bob@someothername.com` | `bob@someothername.com` |
-| `OTHERDOMAIN\suzy`      | `otherdomain\suzy`     |
+| `OTHERDOMAIN\suzy`      | `otherdomain\suzy`     | 
+
+### Example - test domain
+
+Following is an example configuration for a case where the customer has a domain name `test.com` and an Active Directory domain named `test`. 
+
+<img src={useBaseUrl('img/cse/Example_UI.png')} alt="Configuration example" style={{border: '1px solid gray'}} width="600"/>
+
+## Warnings and issues
+
+If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase.
+
