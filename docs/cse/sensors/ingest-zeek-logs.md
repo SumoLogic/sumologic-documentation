@@ -47,8 +47,8 @@ After installing the `json-streaming-logs` package, follow these instructions to
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Create Sumo Logic Mapping** page:
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
-   1. **Format**. Choose Bro/Zeek JSON.
-   1. **Event ID**. Enter *_path*.
+   1. **Format**. Choose **Bro/Zeek JSON**.
+   1. **Event ID**. Enter `{_path}`.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/create-mapping.png')} alt="Create mapping" style={{border: '1px solid gray'}} width="600"/>
 
