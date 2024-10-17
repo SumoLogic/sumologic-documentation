@@ -41,7 +41,7 @@ Creating a monitor based on the threshold values defined in the Metrics page can
 To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
 
 1. Open the **Metrics Explorer**:
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="300"/>
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
    * [**New UI**](/docs/get-started/sumo-logic-ui). Click the **Go To...** menu at the top of the screen and select **Metrics Search**.
 1. On the **Metrics Explorer** page:
    1. Enter a metrics query.<br/><img src={useBaseUrl('img/alerts/query-metrics-explorer-view.png')} alt="Metrics explorer query" style={{border: '1px solid gray'}} width="800"/>
