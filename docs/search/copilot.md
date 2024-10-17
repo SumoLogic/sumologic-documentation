@@ -44,66 +44,6 @@ Copilot combines pre-built insights with the ability to ask questions of your lo
 * **Find root causes faster**. Use AI to quickly pinpoint issues.
 * **Enhance efficiency**. Streamline the log analysis process.
 
-
-## Sample Copilot queries
-
-<!-- add micro lesson video when published-->
-<!-- replace with https://www.youtube.com/watch?v=QrRvN2Bg4NY ? -->
-
-In the scenario depicted in the video, Copilot is leveraged to investigate a security issue where it appears AWS CloudTrail access keys were leaked outside an organization.
-
-<Iframe url="https://player.vimeo.com/video/939372059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-        width="854px"
-        height="480px"
-        title="Copilot Demo"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-To recap the steps taken:
-
-1. First, the data source is selected for AWS CloudTrail audit logs.
-1. Launch the log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
-1. The query is refined by applying the suggestion `Count logs by eventname, access key and sourceIp`.
-1. The filter is applied for Create and Authorize events; attackers often create new resources during a breach. You'll then see an anomaly with `AuthoritySecurityGroupIngress` events.
-1. Feedback is provided back to Sumo Logic to enhance the AI's accuracy stating that the queries have been accurate so far.  
-1. The security `groupid` is added to the prompt to tabulate events containing that data.
-1. Focus on a specific access key, `ABCDEFGOYCM3PIKNOVRA`, noting `PutRolePolicy` events indicating permission elevation. Multiple AWS accounts are impacted.
-
-You can conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
-
-<!--
-### Security example
-
-This video demonstrates how to use Copilot to analyze AWS CloudTrail data by reviewing AI-curated suggestions, refining searches with natural language prompts, and launching an AI-generated dashboard for root cause analysis and sharing.
-
-<Iframe url="https://www.youtube.com/embed/QrRvN2Bg4NY?si=Bsc2mRbqMPq8bsqg"
-        width="854px"
-        height="480px"
-        title="Copilot Demo"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-Here's a recap:
-
-1. **Select AWS CloudTrail**. Start by selecting AWS CloudTrail as the data source.
-1. **Review Suggestions**. Look at the **Suggestions** section where AI-curated natural language insights are provided, customized for the specific AWS CloudTrail data.
-1. **Select a Suggestion**. Choose the suggestion `Count logs by eventname`.
-1. **Refine Search**. Enhance your search for log anomalies by adding `access key and sourceIp` to the prompt. No need to edit the query code.
-1. **Filter Results**. Narrow down the results by adding `eventname contains Create` to the prompt.
-1. **Review Recommendations**. Quickly review AI-driven recommendations to identify attacker TTPs (Tactics, Techniques, and Procedures).
-1. **Launch Dashboard**. Launch an AI-generated dashboard directly from the UI for root cause analysis.
--->
-
 ## How to use Copilot
 
 In this section, you'll learn the recommended workflow for using Copilot effectively, along with best practices to maximize its benefits.
