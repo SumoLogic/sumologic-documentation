@@ -61,7 +61,7 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 1. The same threshold will also be applied to the histogram chart.
 
 :::note
-The same threshold translating functionality supports [opening the alert response page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
 ## Step 1. Set trigger conditions
@@ -74,9 +74,7 @@ Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search
 
 ### Detection Method
 
-Next, select a **Detection Method**. This is not applicable to SLO monitors.
-
-<img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="monitor detection methods" width="200"/>
+Next, select a **Detection Method** (not applicable to SLO monitors).
 
 #### Logs
 
@@ -84,18 +82,18 @@ Next, select a **Detection Method**. This is not applicable to SLO monitors.
 
 **Static**
 
-Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization and memory.
+Set specific threshold conditions for well-defined KPIs with constant thresholds (for example, infrastructure metrics like CPU utilization and memory).
 
 **Anomaly**
 
-Anomaly detection leverages machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
+Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
 
 * **Model-driven detection**. Machine learning models create accurate baselines, eliminating guesswork and noise.
 * **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
 * **User-defined sensitivity**. Users set alert sensitivity and thresholds, providing context to filter out noise.
 * **One-click playbook assignment**. Monitors automatically link to [Sumo Logic Automation Service playbooks](#automated-playbooks), expediting incident response.
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
-* **Customizable detection**. Advanced rules, like "Cluster anomalies," allow detection based on multiple data points exceeding thresholds within a set time frame.
+* **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
 If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
@@ -105,11 +103,11 @@ If you want to trigger alerts on outlier direction rather than anomaly detection
 
 **Static**
 
-Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
+Set threshold conditions for KPIs with defined, constant thresholds (for example, infrastructure metrics like CPU utilization and memory).
 
 **Outlier**
 
-Lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
+Detect unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
 
 ### Query
 
