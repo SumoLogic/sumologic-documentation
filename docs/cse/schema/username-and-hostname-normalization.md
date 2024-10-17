@@ -7,14 +7,18 @@ description: Learn about how Cloud SIEM normalizes usernames and hostnames durin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes how Cloud SIEM normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
+Cloud SIEM normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
-## Details
+## Getting data into Cloud SIEM for normalization
 
-The name normalization process normalizes a complete username into a base username and a domain. The following forms of usernames are
-normalized.
+Data that is normalized comes into Cloud SIEM from several sources:
+* **Active Directory**. Configure the [Windows Active Directory Inventory Source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/). The username, hostname, and domain information is pulled in directly from Active Directory to Cloud SIEM for normalization. For information on the computer and user data that is obtained, see the [Windows Active Directory Inventory Source](/docs/cse/administration/inventory-sources-and-data/#windows-active-directory-inventory-source) section in [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
+* **AWS**. Configure AWS sources and ensure that the **Forward to SIEM** option is set to true. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/) and [Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/).
+* **Other sources**. See [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
-Some of the common forms for username are:
+## Normalization process
+
+The name normalization process normalizes a complete username into a base username and a domain. Some of the common forms for username are:
 
 * `username` (no domain)
 * `AD-DOMAIN\username`
@@ -42,11 +46,13 @@ The following fields of the schema are normalized.
 
 When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_useraname_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
 
-It’s important to note, that if no name normalization configuration exists, the name attribute will consist of the original (non-normalized) form and the system will continue to operate as it does today, with the exception that that `_raw` attribute will also be populated. 
+If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Single domain example](#single-domain-example) and [Multiple domains example](#multiple-domains-example) below.
 
-If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Example - single Domain](#example---single-domain) and [Example - multiple domains](#example---multiple-domains), below.
+:::note
+If no name normalization configuration exists, the name attribute will consist of the original (non-normalized) form and the system will continue to operate as it does today, with the exception that that `_raw` attribute will also be populated. 
+:::
 
-## Configuration
+## Configure entity normalization
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
 1. Select the **Domain** tab. (For information about the **Lookup Tables** tab, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)). 
@@ -62,6 +68,13 @@ If a name normalization configuration exists, the name attribute will be populat
 Following is an example configuration:
 
 <img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration dialog" style={{border: '1px solid gray'}} width="800"/>
+
+### Warnings and issues
+
+If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase.
+
+
+## Domain normalization
 
 ### Default domains
 
@@ -87,9 +100,7 @@ For example, in this case a configuration could be:
 
 In this case, these domains map to a different normalized domain (`jask`).  When one of these domains is normalized, it will show up as `bob:jask` in the normalized name form.
 
-## Examples
-
-### Single domain
+### Single domain example
 
 In this example, it is assumed you have configured the system for “Primary domain” and you configured the domains `SUMO` and `sumologic.com`. In this case, assume a log line has a username field:
 
@@ -138,7 +149,7 @@ The normalized username would be:
 
 `user_username_raw = JASK\fred`
 
-### Multiple domains
+### Multiple domains example
 
 In this example, it is assumed you have configured the system for “Primary domain” and also introduced a sub-domain (JASK). In this case, the configuration looks like:
 
@@ -163,13 +174,9 @@ Name forms matching the default domain would look like:
 | `bob@someothername.com` | `bob@someothername.com` |
 | `OTHERDOMAIN\suzy`      | `otherdomain\suzy`     | 
 
-### Test domain
+### Active Directory domain example
 
 Following is an example configuration for a case where the customer has a domain name `test.com` and an Active Directory domain named `test`. 
 
 <img src={useBaseUrl('img/cse/Example_UI.png')} alt="Configuration example" style={{border: '1px solid gray'}} width="600"/>
-
-## Warnings and issues
-
-If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase.
 
