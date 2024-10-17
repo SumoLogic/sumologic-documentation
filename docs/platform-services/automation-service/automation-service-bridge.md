@@ -83,7 +83,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
 :::info
-You must prefix your Installation Token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
+You must prefix your installation token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
 :::
 
 <img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" style={{border:'1px solid gray'}} width="800"/>
