@@ -23,8 +23,6 @@ This is a Preview release. To learn more, contact your Sumo Logic account execut
 
 Sumo Logic Copilot is an AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 
-<!-- Mention Intellisense -->
-
 ### Key features
 
 * **AI-curated insights**. Get customized insights tailored to your data.
