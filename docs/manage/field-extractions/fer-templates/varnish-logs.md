@@ -31,5 +31,5 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | url | Resource requested by the client.  | `/_includes/wp/blog/wp-content/plugins/us/31063765-bpfull.phpi?&w=50&id=6&random=1331063765` |
 | status_code | HTTP response status code. | 304 |
 | size | The size of the object returned to the client. | 5201 |
-| referrer | The website from which the client reports are referred. | [Yaho.com](http://search.yahoo.com/mobile/s?rewrite=72&.tsrc=log&first=1&p=AWS-logs&pintl=en) |
+| referrer | The website from which the client reports are referred. | `http://search.yahoo.com/mobile/s?rewrite=72&.tsrc=log&first=1&p=AWS-logs&pintl=en` |
 | user_agent  |  Information about the client browser. | Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0 |
