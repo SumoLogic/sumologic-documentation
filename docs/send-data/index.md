@@ -10,13 +10,14 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- placeholder data -->
+
 Learn how to send data to Sumo Logic and get started with our observability and security solutions. In this section, we'll introduce the following concepts:
 
 :::tip Designing your Deployment
 * [How to choose a Collector and Source](/docs/send-data/choose-collector-source)
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
-
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
