@@ -7,8 +7,8 @@ resource "sumologic_cloud_to_cloud_source" "digital-guardian-source" {
         "name": "DG ARC",
         "clientID": "hduj34-nduy73h-sdfnuw3r",
         "clientSecret": "sadadsfsfsdf",
-        "APIGatewayURL": "https://accessgw.XYZ.digitalguardian.com",
-        "authServerURL": "https://authsrv.XYZ.digitalguardian.com",
+        "APIGatewayURL": "https://accessgw.XYZ.abcd.com",
+        "authServerURL": "https://authsrv.XYZ.abcd.com",
         "exportProfile": "profile",
         "pollingIntervalMin": 5
   })

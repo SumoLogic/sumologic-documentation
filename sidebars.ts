@@ -400,7 +400,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
-                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',

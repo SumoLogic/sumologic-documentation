@@ -5,7 +5,7 @@ sidebar_label: Digital Guardian
 tags:
   - cloud-to-cloud
   - digital-guardian
-description: The Digital Guardian Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API.
+description: Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/digital-guardian/example.json';
@@ -14,17 +14,11 @@ import TerraformExample from '!!raw-loader!/files/c2c/digital-guardian/example.t
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
 
 Digital Guardian is a data protection platform that discovers, classifies, and controls data movement across endpoints, networks, and the cloud. Digital Guardian Analytics and Reporting Cloud (DG ARC) is an advanced analytics, workflow, and reporting cloud service that delivers no-compromise data protection.
 
-The Digital Guardian integration ingests the export data using the [Export API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/export) and uses [Acknowledge API](https://accessgw.msp.digitalguardian.com/rest/1.0/export_profiles/{Export_Profile}/acknowledge) to advance the bookmark value to obtain the next chunk of data from export endpoint.
+The Digital Guardian integration ingests the export data using the Export API and uses Acknowledge API to advance the bookmark value to obtain the next chunk of data from export endpoint.
 
 ## Data collected
 
