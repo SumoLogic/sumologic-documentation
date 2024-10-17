@@ -135,6 +135,7 @@ module.exports = {
 //                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
 //                    'send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules',
 //                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
+//                  ],
 //                },
 //                {
 //                  type: 'category',
@@ -151,6 +152,26 @@ module.exports = {
 //                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
 //                      items:[
 //                        'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
+//                      ]
+//                    },
+//                    {
+//                      type: 'category',
+//                      label: 'Docker',
+//                      collapsible: true,
+//                      collapsed: true,
+//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/docker/index'},
+//                      items:[
+//                        'send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog',
+//                      ]
+//                    },
+//                    {
+//                      type: 'category',
+//                      label: 'Kafka',
+//                      collapsible: true,
+//                      collapsed: true,
+//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/kafka/index'},
+//                      items:[
+//                        'send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog',
 //                      ]
 //                    },
 //                    {
@@ -185,6 +206,16 @@ module.exports = {
 //                    },
 //                    {
 //                      type: 'category',
+//                      label: 'Nginx',
+//                      collapsible: true,
+//                      collapsed: true,
+//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
+//                      items:[
+//                        'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+//                      ]
+//                    },
+//                    {
+//                      type: 'category',
 //                      label: 'RabbitMQ',
 //                      collapsible: true,
 //                      collapsed: true,
@@ -194,15 +225,6 @@ module.exports = {
 //                      ]
 //                    },
 //                    {
-//                      type: 'category',
-//                      label: 'Mac',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/changelog',
-//                      ]
-//                    },
 //                      type: 'category',
 //                      label: 'Redis',
 //                      collapsible: true,
@@ -232,9 +254,9 @@ module.exports = {
 //                        'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
 //                      ]
 //                    },
-//                  ]
+//                  ],
 //                },
-//              ]
+//              ],
 //            },
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
@@ -378,6 +400,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
@@ -413,6 +436,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
@@ -1067,7 +1091,6 @@ module.exports = {
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
-            'alerts/monitors/automation-payload-variables'
           ],
         },
         {
@@ -2950,6 +2973,7 @@ integrations: [
         'api/password-policy',
         'api/policies-management',
         'api/role-management',
+        'api/role-management-v2',
         'api/saml-configuration',
         'api/scheduled-views',
         'api/search-job',

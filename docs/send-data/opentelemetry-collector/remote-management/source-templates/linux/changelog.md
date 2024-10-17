@@ -19,7 +19,7 @@ description: Changelog for Linux source template for OpenTelemetry.
 
 ### Added
 - Log collection for standard linux logs.
-- Processing rules for logs (filtering and maksing) and metrics (filtering).
+- Processing rules for logs (filtering and masking) and metrics (filtering).
 
 ## [1.0.0] - 2024-03-19
 

@@ -1,6 +1,6 @@
 ---
 id: create-monitor
-title: Create a Monitor
+title: Create a New Monitor
 description: Learn how to create a Sumo Logic monitor.
 ---
 
@@ -16,7 +16,7 @@ Integrated playbooks automate incident response by gathering diagnostics, notify
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
 
-### From the Monitors page
+### From Monitors
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
@@ -65,7 +65,7 @@ The first step when creating a new monitor is setting the **Trigger Conditions**
 
 ### Monitor Type
 
-Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search/), [Metrics](/docs/metrics/metrics-queries/), or an [SLO](/docs/observability/reliability-management-slo/).<br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
+Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search/), [Metrics](/docs/metrics/metrics-queries/), or an [SLO](/docs/observability/reliability-management-slo/).<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
 
 ### Detection Method
 
@@ -73,11 +73,15 @@ Next, select a **Detection Method**. This is not applicable to SLO monitors.
 
 <img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="monitor detection methods" width="200"/>
 
-### Static
+#### Logs
+
+<img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="200"/>
+
+**Static**
 
 Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization and memory.
 
-### Anomaly
+**Anomaly**
 
 Anomaly detection leverages machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
 
@@ -88,9 +92,17 @@ Anomaly detection leverages machine learning to identify unusual behavior and su
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Advanced rules, like "Cluster anomalies," allow detection based on multiple data points exceeding thresholds within a set time frame.
 
-If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
+If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
-#### Outlier
+#### Metrics
+
+<img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-metrics.png')} alt="Metrics detection methods" width="200"/>
+
+**Static**
+
+Allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
+
+**Outlier**
 
 Lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
 
@@ -102,16 +114,17 @@ For guidance on optimizing scan costs when using Flex Pricing, refer to the [FAQ
 
 In this step, you'll need to provide a logs or metrics query. This is not applicable to SLO monitors.
 
-* **Logs** monitors can have one query up to 15,000 characters long.
-* **Metrics** monitors can have up to 6 queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
+**Logs** monitors can have one query up to 15,000 characters long.
+
+**Metrics** monitors can have up to 6 queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
 
 ### Anomaly or Outlier Direction
 
 If you're using the outlier or anomaly detection method, you'll need to select the **Anomaly Direction** or **Outlier Direction** you want to track (up and/or down). If you chose the **Static** detection method, you won't see this option.
 
-<img src={useBaseUrl('img/monitors/anomaly-detection-input.png')} alt="Anomaly detection direction" width="300"/><br/>
+<img src={useBaseUrl('img/alerts/monitors/anomaly-detection-input.png')} alt="Anomaly detection direction" width="300"/><br/>
 
-<img src={useBaseUrl('img/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/>
+<img src={useBaseUrl('img/alerts/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/>
 
 * **Up**. Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
 * **Down**. Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
@@ -120,7 +133,7 @@ If you're using the outlier or anomaly detection method, you'll need to select t
 
 ### Trigger Type (Logs)
 
-Next, you'll need to configure the **Trigger Type** for logs or [metrics](#trigger-type-metrics). Trigger alerts on:<br/><img src={useBaseUrl('img/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="200"/>
+Next, you'll need to configure the **Trigger Type** for logs or [metrics](#trigger-type-metrics). Trigger alerts on:<br/><img src={useBaseUrl('img/alerts/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="200"/>
 
 You can set the trigger based on the following:
 * A **returned row count** (default), which is the number of rows returned from the log search.
@@ -133,7 +146,7 @@ You can set the trigger based on the following:
 
 **Example: Log Trigger Type - Critical and Warning**  
 
-<img src={useBaseUrl('img/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
 
 `Alert when returned row count is <threshold type> <threshold> within <time range>`
 
@@ -147,7 +160,7 @@ You can set the trigger based on the following:
 
 Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
 
-<img src={useBaseUrl('img/monitors/edit-recovery-settings1.png')} alt="logs trigger recovery toggle.png" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/alerts/monitors/edit-recovery-settings1.png')} alt="logs trigger recovery toggle.png" style={{border: '1px solid gray'}} width="700"/>
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
@@ -155,7 +168,7 @@ For example, when the alert is set to `> 10` the recovery would be set to `<=
 
 #### Configurable Resolution Window
 
-When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/><img src={useBaseUrl('img/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 | Parameter | Description |
 |:--|:--|
@@ -163,13 +176,13 @@ When configuring monitor trigger conditions, you can set a resolution window to 
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 | Occurrence Type	| The time condition you want for recovering the alert. Select either at any time within or at all times. Choose at all times if you want all the data points for the given metric to meet threshold conditions in a given time range, before recovering an alert. Alternatively, choose at any time within if you want to recover an alert when only a single data point meets the threshold condition for the given time range. |
 
-For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.<br/><img src={useBaseUrl('img/monitors/metricsmonitor.png')} alt="Monitors" style={{border: '1px solid gray'}} width="600" />
+For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.<br/><img src={useBaseUrl('img/alerts/monitors/metricsmonitor.png')} alt="Monitors" style={{border: '1px solid gray'}} width="600" />
 
 #### Anomaly detection method
 
 **Example: Logs Trigger Type - Critical**
 
-<img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
 
 | Parameter | Description |
 |:--|:--|
@@ -180,7 +193,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 **Example: Logs Trigger Type - Critical and Warning**
 
-<img src={useBaseUrl('img/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
@@ -196,7 +209,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 **Example: Logs Trigger Type - Missing Data**  
 
-<img src={useBaseUrl('img/monitors/logs-missing-data.png')} alt="logs missing data" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/alerts/monitors/logs-missing-data.png')} alt="logs missing data" style={{border: '1px solid gray'}} width="500" />
 
 `Alert when missing data within <time range>`
 
@@ -235,7 +248,7 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
 
 ### Trigger Type (Metrics)
 
-<img src={useBaseUrl('img/monitors/metrics-query.png')} alt="metrics query.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-query.png')} alt="metrics query.png" style={{border: '1px solid gray'}} width="600" />
 
 #### Prerequisites
 
@@ -258,7 +271,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 **Example: Metrics Trigger Type - Critical and Warning**
 
-<img src={useBaseUrl('img/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
 
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
@@ -273,7 +286,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
 
-![metrics trigger recovery toggle.png](/img/monitors/edit-recover-settings.png)  
+![metrics trigger recovery toggle.png](/img/alerts/monitors/edit-recover-settings.png)  
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
 
@@ -290,7 +303,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 
 This setting affects both the alert generation logic and the alert recovery logic.
 
-![metrics alert datapoints.png](/img/monitors/minimum-datapoints.png)
+![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
 
 `Alert and recovery require a minimum of <Count> data points for "at all times" evaluation windows`
 
@@ -308,7 +321,7 @@ This setting only works when you choose `at all times within` as the type of occ
 
 **Example: Metrics Trigger Type - Critical and Warning**
 
-<img src={useBaseUrl('img/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 
@@ -323,7 +336,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 **Example: Metrics Trigger Type - Missing Data**
 
-<img src={useBaseUrl('img/monitors/missing.png')} alt="missing data" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/alerts/monitors/missing.png')} alt="missing data" style={{border: '1px solid gray'}} width="500" />
 
 `Alert when missing data <occurrence type> for <time range>`
 
@@ -343,7 +356,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 Configure advanced settings like the Alert Name and Evaluation Delay.
 
-<img src={useBaseUrl('img/monitors/new-monitor-advanced-settings.png')} alt="Screenshot of the Advanced Settings section in Sumo Logic's 'New Monitor' setup page. It includes options to use the monitor name or customize the alert name, and an evaluation delay slider set to 0 seconds with a maximum of 120 minutes." style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/alerts/monitors/new-monitor-advanced-settings.png')} alt="Screenshot of the Advanced Settings section in Sumo Logic's 'New Monitor' setup page. It includes options to use the monitor name or customize the alert name, and an evaluation delay slider set to 0 seconds with a maximum of 120 minutes." style={{border: '1px solid gray'}} width="800"/>
 
 ### Alert Name
 
@@ -365,7 +378,7 @@ If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/s
 
 Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services. Metrics monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log monitors always group notifications.
 
-<img src={useBaseUrl('img/monitors/new-monitor-notifications.png')} alt="Screenshot of the Notifications section in Sumo Logic's 'New Monitor' setup page. It includes an option to select the preferred notification time zone, set to (GMT-06:00) America/Chicago. Below is a section to configure connection types for notifications, with options for Critical, Alert, Recovery, Warning, and Missing Data. There is also a button to add a new notification." style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/alerts/monitors/new-monitor-notifications.png')} alt="Screenshot of the Notifications section in Sumo Logic's 'New Monitor' setup page. It includes an option to select the preferred notification time zone, set to (GMT-06:00) America/Chicago. Below is a section to configure connection types for notifications, with options for Critical, Alert, Recovery, Warning, and Missing Data. There is also a button to add a new notification." style={{border: '1px solid gray'}} width="800"/>
 
 * **Preferred Notification Time Zone**. Set the time zone for your alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 * **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (e.g., email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
@@ -378,7 +391,7 @@ Configure who gets notified when the monitor triggers an alert. When a trigger c
 
 ## Step 4. Playbook (optional)
 
-<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Screenshot of the Playbook section in Sumo Logic's 'New Monitor' setup page. It includes a Text Playbook field with a placeholder 'Click here to start typing' and a note indicating that Markdown is supported. Below, there is a dropdown menu to select an automated playbook, with options to add or manage playbooks" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/alerts/monitors/new-monitor-playbook.png')} alt="Screenshot of the Playbook section in Sumo Logic's 'New Monitor' setup page. It includes a Text Playbook field with a placeholder 'Click here to start typing' and a note indicating that Markdown is supported. Below, there is a dropdown menu to select an automated playbook, with options to add or manage playbooks" style={{border: '1px solid gray'}} width="800"/>
 
 In this step, you can add a playbook to run in response to an alert.
 
@@ -396,7 +409,7 @@ Optionally, you can click **Add Playbook** to add more automated playbooks to ru
 
 Finalize your monitor by configuring its details. **Monitor Name** gives your monitor a name and **Location** where the monitor will be saved.
 
-<img src={useBaseUrl('img/monitors/new-monitor-details.png')} alt="Monitor details modal" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/alerts/monitors/new-monitor-details.png')} alt="Monitor details modal" style={{border: '1px solid gray'}} width="800"/>
 
 Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organize your monitors and/or a **Description**.
 

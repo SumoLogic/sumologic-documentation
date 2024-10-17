@@ -25,7 +25,7 @@ The web interface autocomplete feature for log search variables has the follow
 
 ## Show and hide variables option
 
-In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} alt="Show and Hide filters" style={{border: '1px solid gray'}} width="400" />
+In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('/img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} alt="Show and Hide filters" style={{border: '1px solid gray'}} width="400" />
 
 ## Create a template variable
 
@@ -41,9 +41,9 @@ A custom list variable allows you to specify random string values for a variable
 
 To add a Custom List variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog.png')} style={{border:'1px solid gray'}} alt="Create-Template-Variable-dialog" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Create-Template-Variable-dialog.png')} style={{border:'1px solid gray'}} alt="Create-Template-Variable-dialog" width="800"/>
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
 1. (Optional) Provide a **Default Value** for the variable.
@@ -55,9 +55,9 @@ A Metrics Metadata Search variable allows you to specify metric metadata to a
 
 To add a Metrics Metadata Search variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png')} style={{border:'1px solid gray'}} alt="dashboard-new-metrics-metadata-search-variable" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png')} style={{border:'1px solid gray'}} alt="dashboard-new-metrics-metadata-search-variable" width="800"/>
 1. Select **Metrics Metadata Search** as the **Variable Type**.
 1. The **Fields (key)** is the metadata field you want to use as the filter.
 1. (Optional) **Filters** allow you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
@@ -70,9 +70,9 @@ A Logs Search variable allows you to specify log metadata fields to act as a 
 
 To add a Logs Search variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Variable-for-logs-search.png')} style={{border:'1px solid gray'}} alt="Variable-for-logs-search" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Variable-for-logs-search.png')} style={{border:'1px solid gray'}} alt="Variable-for-logs-search" width="800"/>
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
@@ -85,9 +85,9 @@ This task shows you how to modify an existing template variable in a Dashboard 
 
 To edit a template variable, do the following:
 
-1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
-1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="edit-variable" width="800"/>
-1. Edit the variable as needed.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/edit-variable-dialog.png')} style={{border:'1px solid gray'}} alt="edit-variable-dialog" width="800"/>
+1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
+1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="edit-variable" width="800"/>
+1. Edit the variable as needed.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable-dialog.png')} style={{border:'1px solid gray'}} alt="edit-variable-dialog" width="800"/>
 1. Click **Save Template Variable** to apply your changes.
 
 ## Delete a template variable
@@ -96,8 +96,8 @@ This task shows you how you can easily delete a template variable from Dashboard
 
 To delete a template variable, do the following:
 
-1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
-1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="delete-variable" width="800"/>
+1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
+1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="delete-variable" width="800"/>
 
 ## Use variables in queries
 
@@ -110,7 +110,7 @@ The variable must already exist on the dashboard to add a query with a variable.
 To use a variable in a logs query, do the following:
 
 1. Go to your logs query.
-1. Add the variable name wrapped in double brackets `{{<variable_name>}}` to your query. In the following example `cluster` is the name of the variable.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Logs_variable_query_example.png')} style={{border:'1px solid gray'}} alt="Logs_variable_query_example" width="600"/><br/> At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable dropdown list.
+1. Add the variable name wrapped in double brackets `{{<variable_name>}}` to your query. In the following example `cluster` is the name of the variable.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Logs_variable_query_example.png')} style={{border:'1px solid gray'}} alt="Logs_variable_query_example" width="600"/><br/> At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable dropdown list.
 
 #### String literal
 
@@ -131,8 +131,8 @@ _sourceCategory=query
 To use a metrics variable in a query working with the structured query builder, do the following:
 
 1. In the structured query builder, enter the Key for the variable followed by an equals sign.
-1. Select the desired variable from the dropdown list. It appears in curly braces to indicate it is a variable.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Metrics_variable_query_example1.png')} style={{border:'1px solid gray'}} alt="Metrics_variable_query_example1" width="400"/>
-<br/>The variable is inserted into the query and will convert the variable into the appropriate value, as shown in the following example.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Metrics_variable_query_example2.png')} style={{border:'1px solid gray'}} alt="Metrics_variable_query_example2" width="400"/>
+1. Select the desired variable from the dropdown list. It appears in curly braces to indicate it is a variable.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Metrics_variable_query_example1.png')} style={{border:'1px solid gray'}} alt="Metrics_variable_query_example1" width="400"/>
+<br/>The variable is inserted into the query and will convert the variable into the appropriate value, as shown in the following example.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Metrics_variable_query_example2.png')} style={{border:'1px solid gray'}} alt="Metrics_variable_query_example2" width="400"/>
 
 To use a metrics variable in a query working in advanced query mode, do the following:
 
