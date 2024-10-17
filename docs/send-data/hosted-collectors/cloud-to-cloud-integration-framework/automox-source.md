@@ -33,15 +33,15 @@ Automox is a cloud-based platform for automated IT operations, offering patching
 
 The Automox source requires you to provide the Bearer Token and Organization ID. Follow the below steps to generate the required values:
 
-- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_bsw_lfg_mmb). 
-- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call). 
+- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console).
+- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call).
 
 ### Source configuration
 
 When you create a Automox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Automox Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Automox**.
 1. Enter a **Name** for the Source. The **description** is optional.
