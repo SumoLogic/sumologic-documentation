@@ -1,7 +1,6 @@
 ---
 id: copilot
 title: Sumo Logic Copilot - Feature Preview
-sidebar_label: Copilot 🤖
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -33,11 +32,6 @@ Copilot reduces manual effort by combining prebuilt insights with natural langua
 * **Contextual suggestions**. Automated suggestions to accelerate your workflow.
 * **Conversation history**. Save and resume any troubleshooting session without losing context.
 * **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
-
-### Security and compliance
-
-<!-- under legal review -->
-
 
 ### Who benefits from Copilot?
 
