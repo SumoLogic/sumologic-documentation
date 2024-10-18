@@ -290,7 +290,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 ### Collect Amazon Bedrock CloudWatch logs
 
-To enable Amazon Bedrock CloudWatch Logs follow the [link](https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html)
+To enable Amazon Bedrock CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html)
 
 :::note
 Ensure that when configuring `CloudWatch Logs`, the log group name follows the pattern `/aws/bedrock/*`.
