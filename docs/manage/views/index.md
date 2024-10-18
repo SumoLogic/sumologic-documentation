@@ -38,7 +38,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/views/scheduled-searches"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Scheduled Searches</h4></a>
-  <p>Learn how to add a Scheduled Searches.</p>
+  <p>Learn how to add a Scheduled Search.</p>
   </div>
 </div>
 <div className="box smallbox card">
