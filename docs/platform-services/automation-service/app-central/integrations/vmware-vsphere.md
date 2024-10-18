@@ -28,14 +28,14 @@ Utilize and manipulate virtual machines during an incident investigation with VM
 
 * [VMWare vSphere](https://github.com/vmware/pyvmomi/blob/master/LICENSE.txt)
 
-## Minimum Permissions Required
+## Minimum permissions required
 
 The following permissions are required for the integration:
 
-1. **Read-Only**: Allows reading details of virtual machines in the vSphere inventory. 
-2. For further details on how to create the role, please refer to the following video. [VMWare vSphere Role Creation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-5372F580-5C23-4E9C-8A4E-EF1B4DD9033E.html)
-3. For the **HOST**, use the _IP_ or _Domain_ of the vSphere node.
-4. The port should be set to 443.
+* **Read-Only**. Allows reading details of virtual machines in the vSphere inventory. 
+* For further details on how to create the role, see [vSphere Permissions and User Management Tasks](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-5372F580-5C23-4E9C-8A4E-EF1B4DD9033E.html).
+* For the **HOST**, use the _IP_ or _Domain_ of the vSphere node.
+* The port should be set to 443.
 
 ## Change Log
 
