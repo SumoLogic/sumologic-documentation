@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/>
 
-The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
+The [Scheduled View Management API](/docs/api/scheduled-views/) allows you to manage Scheduled Views from HTTP endpoints.
 
 ## Documentation
 

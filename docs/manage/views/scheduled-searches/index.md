@@ -1,9 +1,10 @@
 ---
-id: save-to-index
-title: Save to Index
-sidebar_label: Save to Index
-description: When you save the results of a scheduled search to an Index you can search your data using _index=index_name with increased search performance.
+slug: /manage/views/scheduled-searches
+title: Scheduled Searches
+description: Learn how to schedule log searches to send alerts.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 
@@ -19,26 +20,25 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 | parse "rhost=* " as src_host nodrop
 | where dest_user!="" | "Login/Success" as classification | "Low" as Severity | "Linux" as Device_Vendor | "OS" as Device_Type
 ```
-
-When naming your index, use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( _ ) are the only special characters allowed.
-
 ## Should I create a Scheduled View or use Save to Index?
 
-In most cases, if you can use a [Scheduled View](/docs/manage/views/scheduled-views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your Scheduled Search results to an Index allows you to do this.
+In most cases, if you can use a [Scheduled View](/docs/manage/views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your Scheduled Search results to an Index allows you to do this.
 
-## Limitations
+### Limitations
 
 * When you use Save to Index, metadata fields from the Collector (for example, _collector) will be dropped. 
 * Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like _collector), then it won't work.
 * No more than 512 results can be saved each time the Scheduled Search completes.
 
-## Save the results of a scheduled search as an Index
+## Guide contents
 
-1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. Click **Schedule this search**.<br/>![SaveToIndex.png](/img/alerts/SaveToIndex.png)
-1. For all configuration options, see [Schedule a Search](schedule-search.md). 
-1. **Alert Type**. Select **Save to Index**.
-1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores (`_`) are the only special characters allowed.
-1. Click **Save**.
+In this section, we'll introduce the following concepts:
 
-Once you have saved your Scheduled Search as an Index, you can cancel or edit the Scheduled Search, but you cannot delete an Index. 
+<div className="box-wrapper">
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/views/scheduled-searches/add-schedule-search"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Create a Scheduled Search</h4></a>
+  <p>Learn how to add alerts and schedule search to run it at a regular scheduled time.</p>
+  </div>
+</div>
+</div>
