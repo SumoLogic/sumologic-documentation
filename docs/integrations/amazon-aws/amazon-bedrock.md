@@ -381,7 +381,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up a collection for **Amazon Bedrock**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-bedrock-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -389,7 +389,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-### verview
+### Overview
 
 The **Amazon Bedrock - Overview** dashboard provides a overall heath of Bedrock service based logs and metrics.
 
