@@ -1,6 +1,7 @@
 ---
 id: amazon-bedrock
 title: Amazon Bedrock
+sidebar_label: Amazon Bedrock
 description: Learn about the collection process for the Amazon Bedrock service.
 ---
 
