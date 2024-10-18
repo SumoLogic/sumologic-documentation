@@ -40,7 +40,7 @@ If you use role-based [audit data filtering](/docs/manage/users-roles/roles/crea
 
 With advanced search filters added, you can obtain more granular information about the selected role. The `filterPredicate` field in V1 audit logging is replaced with `logAnalyticsFilter`, `auditDataFilter`, and `securityDataFilter` fields in V2. In addition, we have also added `selectionType` and `selectedViews` fields to apply for audit data filtering.
 
-Currently, [Roles Management APIs V2](/docs/api/role-management-v2) records both the V1 and V2 log line changes.
+Currently, Role Management APIs V2 records both the V1 and V2 log line changes.
 
 :::note
 V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
