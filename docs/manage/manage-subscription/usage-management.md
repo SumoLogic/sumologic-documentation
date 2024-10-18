@@ -40,7 +40,7 @@ The **Advanced** method for setting the query size limit allows you to set the l
 
 | Account Type | Account Level |
 |:--------------|:--------------------------------------|
-| Credits | Essentials(Flex) and Enterprise Suite |
+| Credits | Essentials (Flex) and Enterprise Suite |
 
 ### Set query size limit
 
