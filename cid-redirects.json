@@ -2532,6 +2532,7 @@
   "/cid/20157": "/docs/integrations/amazon-aws/aws-global-accelerator",
   "/cid/20158": "/docs/integrations/amazon-aws/aws-ground-station",
   "/cid/20159": "/docs/integrations/amazon-aws/aws-healthlake",
+  "/cid/20160": "docs/integrations/amazon-aws/amazon-bedrock",
   "/cid/8394": "/docs/search/search-query-language/search-operators/dedup",
   "/cid/85858": "/docs/observability/kubernetes/quickstart",
   "/cid/8595": "/docs/manage/security/set-password-policy",
