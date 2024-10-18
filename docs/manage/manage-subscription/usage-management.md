@@ -34,7 +34,7 @@ It may take up to 5 minutes for a newly created budget to become active and enfo
 
 ## Advanced
 
-The **Advanced** method for setting the query size limit allows you to set the limit for individual users and helps admins to specify roles for easier group selection. This method also provides flexibility in your actions when the budget limit is reached.
+The **Advanced** method for setting query size limits allows you to configure limits for individual users and helps admins assign roles for easier group selection. This method also provides flexibility in your actions when the budget limit is reached.
 
 ### Availability
 
