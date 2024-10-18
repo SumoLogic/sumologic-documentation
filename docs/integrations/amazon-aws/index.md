@@ -60,13 +60,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/amazon-bedrock">Amazon Bedrock</a></h4>
-  <p>A guide to the Sumo Logic integration for Amazon Bedrock.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-certificate-manager-logo.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/amazon-aws/aws-certificate-manager">AWS Certificate Manager</a></h4>
   <p>A guide to the Sumo Logic integration for AWS Certificate Manager.</p>
