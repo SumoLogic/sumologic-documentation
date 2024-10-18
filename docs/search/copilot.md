@@ -24,8 +24,6 @@ Sumo Logic Copilot is an AI-powered assistant that accelerates investigations an
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
-<!-- Mention Intellisense -->
-
 ### Key features
 
 Copilot reduces manual effort by combining prebuilt insights with natural language query analysis.
