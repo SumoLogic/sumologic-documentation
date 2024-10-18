@@ -1,0 +1,1 @@
+This article describes using the Cloud SIEM Network Sensor. The Network Sensor has reached end of life and is no longer supported. Instead, use Zeek. For more information, see [Ingest Zeek Logs](/docs/cse/sensors/ingest-zeek-logs/). 

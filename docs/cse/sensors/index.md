@@ -14,6 +14,12 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/cse/sensors/ingest-zeek-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Document icon" width="40"/><h4>Ingest Zeek Logs</h4></a>
+  <p>Learn how to collect Zeek (Bro) logs and ingest them to Cloud SIEM.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/cse/sensors/sensor-download-locations"><img src={useBaseUrl('img/icons/operations/sensor.png')} alt="Database icon" width="40"/><h4>Sensor Download Locations</h4></a>
   <p>Learn about where to download the Cloud SIEM Network sensor that's specific to your Cloud SIEM deployment.</p>
   </div>
@@ -34,12 +40,6 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/cse/sensors/log-sensor-troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Wrench icon" width="40"/><h4>Log Sensor Troubleshooting</h4></a>
   <p>Learn how to collect Log Sensor status and data to support troubleshooting efforts.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cse/sensors/ingest-zeek-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Document icon" width="40"/><h4>Ingest Zeek Logs</h4></a>
-  <p>Learn how to collect Zeek (Bro) logs and ingest them to Cloud SIEM.</p>
   </div>
 </div>
 </div>
