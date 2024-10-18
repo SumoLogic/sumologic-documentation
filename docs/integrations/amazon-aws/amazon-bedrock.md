@@ -389,7 +389,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-### 1. Amazon Bedrock - Overview
+### verview
 
 The **Amazon Bedrock - Overview** dashboard provides a overall heath of Bedrock service based logs and metrics.
 
@@ -400,7 +400,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Overview.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
-### 2. Amazon Bedrock - CloudTrail Audit Overview
+### CloudTrail Audit Overview
 
 The **Amazon Bedrock - CloudTrail Audit Overview** dashboard provides a record of actions taken by a user, role, or an AWS service in Amazon Bedrock. CloudTrail captures all API calls for Amazon Bedrock as events.
 
@@ -412,7 +412,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-CloudTrail-Audit-Overview.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
-### 3. Amazon Bedrock - Model Invocation Log Analysis
+### Model Invocation Log Analysis
 
 The **Amazon Bedrock - Model Invocation Log Analysis** dashboard provides insights into audit events of your invocation logs, model input data, and model output data for all invocations in your AWS account used in Amazon Bedrock.
 
@@ -423,9 +423,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Model-Invocation-Log-Analysis.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
-### 4. Amazon Bedrock - Runtime Performance Monitoring
+### Runtime Performance Monitoring
 
-**Amazon Bedrock - Runtime Performance Monitoring** dashboard provides statistical insights of runtime model invocation metrics.
+The **Amazon Bedrock - Runtime Performance Monitoring** dashboard provides statistical insights of runtime model invocation metrics.
 
 Use this dashboard to:
 * Monitor all Invocations related metrics.
