@@ -12,53 +12,64 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
+This feature is in beta, with select features available for early access. Full general availability is expected by the end of the year. To participate, contact your Sumo Logic account executive.
 
-Our new **Simplified Query Writing** enhancements focus on delivering a frictionless query experience with real-time syntax suggestions, schema suggestions, and partial/full query predictions. These features make it easier for both novice and advanced users to build accurate and efficient queries.
+Our new simplified query writing enhancements provide a frictionless experience with real-time syntax suggestions, schema suggestions, and partial/full query predictions. These features simplify the query-building process, helping both novice and advanced users write accurate, efficient queries.
 
-## Key features
+By incorporating user feedback, we’ve implemented improvements to reduce the complexity of Sumo Logic’s query language, making it easier to discover relevant fields, minimize errors, and benefit from intelligent query-building assistance.
 
-* **Syntax suggestions**. Get real-time syntax suggestions as you type, reducing errors and speeding up query creation.
-* **Schema suggestions**. Automatically receive schema-related suggestions, helping you navigate complex data structures like JSON logs with ease.
-* **Partial/Full query suggestions**. Based on your input, the system predicts and suggests the next operator or even a full query, streamlining the process.
-* **Frictionless query experience**. An intuitive interface highlights errors and provides immediate fixes, allowing for smooth and seamless query building.
-* **Key-Value pair support**. Offers enhanced suggestions for structured logs like JSON, recognizing keys and values for more precise filtering.
-* **Facet identification for JSON Logs**. Identifies key facets (e.g., timestamp, status) to help refine your queries.
+## Key enhancements made to the query-building experience
 
-## How to use
+* **Improved learning curve**. We’ve simplified learning and using Sumo Logic queries. The new syntax suggestions and schema-based prompts allow you to write queries faster with less need for deep familiarity with the syntax.
+* **Enhanced auto-complete**. The auto-complete function has been optimized to provide more relevant, context-based suggestions that align with your queries and organizational patterns, improving accuracy and efficiency.
+* **Streamlined field discovery**. No need to manually search for fields within your logs. The system automatically suggests key fields, especially for structured data like JSON, making it easier to navigate complex data and build accurate queries.
 
-### 1. Start a Log Search
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** to start crafting your query.
+## Token-by-token prediction and auto-complete
 
-### 2. Syntax suggestions
+Get real-time suggestions for query completion as you type, with token-by-token predictions helping to quickly finish your queries.
 
-1. Begin typing in the query field to see syntax and operator suggestions.
-2. Use arrow keys or your mouse to navigate and select the desired option.
+As you start typing a query, such as `_sourceCategory=`, the system provides **token-by-token predictions** and auto-completes your query with relevant metadata options. Simply use the `Tab` key to accept the suggestion. For example, after typing `status=`, you will be prompted with likely values such as `success`, `error`, or other status codes based on your previous queries or log data.
 
-### 3. Schema suggestions
+## Schema discovery and field suggestions
 
-1. For structured logs (like JSON), Intellisense will offer schema-based suggestions, helping you choose relevant keys (e.g., `status`, `timestamp`) for more accurate queries.
+Automatically receive suggestions for relevant fields in structured data like JSON logs, making field discovery much easier.
 
-### 4. Partial/Full query predictions
+For structured logs like JSON, the system automatically suggests relevant fields such as `userID`, `eventType`, or `timestamp` as you type. This eliminates the need for manual inspection of logs, making it easier to filter and aggregate data.
 
-1. After entering a filtering condition (e.g., `where status="error"`), the system will predict and suggest the next logical operator or a complete query, saving you time.
+## Next operator and full query predictions
 
-### 5. UI enhancements
+The system intelligently predicts the next operator or offers full query suggestions based on your input, reducing manual effort.
 
-1. As you write, syntax issues are automatically highlighted, with real-time suggestions for corrections.
+When you type a query such as `source=logs | where status="error"`, the system predicts the **next operator** and offers suggestions like `count by employeeID` or other common fields. This minimizes manual input and ensures your queries are accurate and aligned with standard query patterns.
 
-### 6. JSON facet identification
+## Real-time error highlighting and feedback
 
-1. When working with JSON logs, relevant facets like `status` and `timestamp` will be suggested to refine your query further.
+Errors are flagged as you type, with immediate suggestions for corrections, ensuring a seamless query-writing experience.
 
-These enhancements ensure a smoother, more efficient query-building experience, making it easier to analyze your data.
+As you write queries, the system highlights any syntax errors in real-time. For example, if you forget to close parentheses or misspell an operator, the system will flag it and provide suggestions to fix the issue immediately, preventing unnecessary troubleshooting.
 
-<!--
-## Example
-Use meeting query
--->
+## Contextual auto-complete and field discovery
 
-## Need more help?
+Suggestions are ranked based on your organization’s common queries, making query completion smarter and more relevant.
+
+The system ranks suggestions based on common queries from your organization or your own previous queries. This ensures that your auto-complete options are not only relevant but also contextually accurate, speeding up the query-writing process.
+
+## How to get started
+
+1. **Start a log search**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** to start crafting your query.
+2. **Leverage syntax and schema suggestions**. As you type, the system will offer real-time suggestions for fields and operators. Select options using your arrow keys and press `Tab` to auto-complete.
+3. **Use partial and full query predictions**. Take advantage of the system’s predictions to build queries faster and more accurately.
+4. **Review and correct errors**. As you write your query, watch for real-time error highlighting and corrections before running the query.
+
+### Need more help?
 
 Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write queries in plain English and auto-generates them for you.
+
+<!--
+These features will be available in phases:
+
+* **Phase 1**. Token-by-token prediction, metadata auto-complete, and basic schema suggestions.
+* **Phase 2**. Enhanced operator predictions, full query suggestions, and advanced schema discovery.
+* **Phase 3**. Real-time error feedback, more contextual suggestions, and query pattern-based improvements.
+-->
