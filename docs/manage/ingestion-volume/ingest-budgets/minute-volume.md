@@ -45,7 +45,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
 1. Click the **+ Add Budget** button on the top right of the table.
-1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
+1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/manage/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.

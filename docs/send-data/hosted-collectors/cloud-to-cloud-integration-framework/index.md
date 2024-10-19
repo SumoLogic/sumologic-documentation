@@ -105,6 +105,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source"><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="icon" width="40"/><h4>Automox Source</h4></a>
+  <p>Learn how to retrieve all events objects, audit trail events, and device inventory details into the Sumo Logic environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source"><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="icon" width="50"/><h4>AWS Cost Explorer</h4></a>
   <p>Learn to collect cost and usage reports from AWS Cost Explorer Source.</p>
   </div>
@@ -315,8 +321,20 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="75"/><h4>Kandji Source</h4></a>
+  <p>Learn how to collect threat details, devices list, device activities, and device details from the Kandji platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="120"/><h4>KnowBe4 API Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source"><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="50"/><h4>LastPass Source</h4></a>
+  <p>Collects audit reporting events from the LastPass platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
