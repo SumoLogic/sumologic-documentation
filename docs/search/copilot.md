@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get answers faster.
+Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
@@ -157,7 +157,7 @@ Click the **Open in Log Search** icon, which will copy your query from Copilot o
 
 ## Example queries
 
-### Observability
+### Logs for security
 
 <!-- add micro lesson when published-->
 
@@ -179,7 +179,7 @@ The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review
 
 ### Cloud SIEM
 
-You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
+You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. You want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
 
 1. In Copilot, you type the source for Cloud SIEM network records:
    ```
