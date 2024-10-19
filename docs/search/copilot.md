@@ -18,7 +18,6 @@ import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
-
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
 Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
@@ -158,11 +157,11 @@ Click the **Open in Log Search** icon, which will copy your query from Copilot o
 
 ## Example queries
 
-### Logs for security example
+### Logs for security
 
 <!-- add micro lesson when published-->
 
-In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization. \
+In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization.
 
 The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review AI-curated suggestions, refine searches using natural language prompts, and generate an AI-driven dashboard for root cause analysis and sharing.
 
