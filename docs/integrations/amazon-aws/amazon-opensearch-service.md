@@ -339,7 +339,7 @@ Use this dashboard to:
 
 ### **03. Amazon OpenSearch \- CloudTrail Audit Events**
 
-The Amazon Opensearch \- CloudTrail Audit Overview​ dashboard provides insights across CloudTrail events across location, status, and topic names.
+The Amazon Opensearch \- CloudTrail Audit Events dashboard provides insights across CloudTrail events across location, status, and topic names.
 
 Use this dashboard to:
 
