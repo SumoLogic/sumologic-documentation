@@ -24,6 +24,18 @@ Sumo Logic Copilot is an AI-powered assistant that accelerates investigations an
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
+<Iframe url="https://player.vimeo.com/video/1021631518?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+
 ### Key features
 
 Copilot reduces manual effort by combining prebuilt insights with natural language query analysis.
@@ -32,6 +44,15 @@ Copilot reduces manual effort by combining prebuilt insights with natural langua
 * **Contextual suggestions**. Automated suggestions to accelerate your workflow.
 * **Conversation history**. Save and resume any troubleshooting session without losing context.
 * **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
+
+## Security and compliance
+
+Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. Refer to the following resources for Amazon Bedrock security and compliance:
+
+* [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
+* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
+
+Over and above, all aspects of our service, including Copilot, conform to the security and compliance requirements in our [Service Agreement](https://www.sumologic.com/service-agreement).
 
 ### Who benefits from Copilot?
 
