@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
-You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
+You can configure a webhook connection to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid gray'}} width="600"/>
