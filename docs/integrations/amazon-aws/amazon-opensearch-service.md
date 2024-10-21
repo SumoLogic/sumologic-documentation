@@ -16,11 +16,11 @@ The Sumo Logic app for Amazon OpenSearch collects CloudWatch logs, CloudWatch me
 
 The Sumo Logic app for Amazon OpenSearch uses:
 
-* OpenSearch CloudWatch Logs. For details, see [here](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html).  
-* OpenSearch CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html).  
-* OpenSearch using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudtrailauditing.html).
+* [OpenSearch CloudWatch Logs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html)
+* [OpenSearch CloudWatch Metrics](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudwatchmetrics.html)
+* [OpenSearch using AWS CloudTrail](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-cloudtrailauditing.html)
 
-### **Sample OpenSearch CloudWatch Logs**
+### Sample OpenSearch CloudWatch Logs
 
 <details>
 <summary>Click to expand</summary>
@@ -72,7 +72,7 @@ The Sumo Logic app for Amazon OpenSearch uses:
 
 </details>
 
-### **Sample OpenSearch CloudTrail Logs**
+### Sample OpenSearch CloudTrail Logs
 
 <details>
 <summary>Click to expand</summary>
@@ -145,7 +145,7 @@ The Sumo Logic app for Amazon OpenSearch uses:
 ```
 </details>
 
-### **Sample queries**
+### Sample queries
 
 ```sql title="Average GC Time (Cloud Watch Error Log)"
 account=* region=* namespace=aws/es domainname=* "[WARN ][o.o.m.j.JvmGcMonitorService]"
@@ -155,6 +155,7 @@ account=* region=* namespace=aws/es domainname=* "[WARN ][o.o.m.j.JvmGcMonitorSe
 | sum(duration) as Total_Time, avg(duration) as Avg_Time, max(duration) as Max_Time
 | fields Avg_Time
 ```
+
 ```sql title="Top 5 Slow Queries by Index (Cloud Watch Slow Log)"
 account=* region=* namespace=aws/es domainname=* "[index.search.slowlog.query]"
 | parse "[*][*][*] [*] [*][*] took[*], took_millis[*], total_hits[*], stats[], search_type[*], total_shards[*], source[*], id[*]" as timestamp,log_level,log_type, node_id, index_name, shard_number, execution_time, execution_time_millis, total_hits, search_type, total_shards, source, id
@@ -163,6 +164,7 @@ account=* region=* namespace=aws/es domainname=* "[index.search.slowlog.query]"
 | count as frequency by domainname, index_name, node_id, execution_time_millis , source 
 | topk(5, execution_time_millis) by index_name
 ```
+
 ```sql title="Failed Login by User (Cloud Watch Audit Log)"
 account=* region=* namespace=aws/es domainname=* FAILED_LOGIN
 | json "audit_cluster_name", "audit_node_id","audit_category","audit_request_origin", "audit_request_remote_address", "audit_request_layer","audit_request_effective_user", "audit_rest_request_path"
@@ -172,6 +174,7 @@ account=* region=* namespace=aws/es domainname=* FAILED_LOGIN
 | count as freq by domainname, audit_request_effective_user
 | sort by freq, domainname asc, audit_request_effective_user asc
 ```
+
 ```sql title="Successful Events by Event Name (Cloud Trail Logs)"
 account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
@@ -186,13 +189,14 @@ account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 | count as event_count by event_name
 | sort by event_count, event_name asc
 ```
+
 ```sql title="Write Latency by Domain Name (Metrics-based)"
 account=* region=* namespace=aws/es domainname=* !nodeid=* metric=WriteLatency statistic = average | avg by domainname 
 ```
 
-## **Collect logs and metrics for the Amazon OpenSearch app**
+## Collect logs and metrics for the Amazon OpenSearch app
 
-### **Collect Amazon OpenSearch CloudWatch Logs**
+### Collect Amazon OpenSearch CloudWatch Logs
 
 To enable Amazon OpenSearch CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html)
 
@@ -212,18 +216,18 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### **Collect Amazon OpenSearch CloudTrail Logs**
+### Collect Amazon OpenSearch CloudTrail Logs
 
 1. Add an [AWS CloudTrail Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) to your Hosted Collector.  
-   * Name. Enter a name to display for the new Source.  
-   * Description. Enter an optional description.  
-   * S3 Region. Select the Amazon Region for your cloudTrail S3 bucket.  
-   * Bucket Name. Enter the exact name of your cloudTrail S3 bucket.  
-   * Path Expression. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (\*) in this string.  
+   * **Name**. Enter a name to display for the new Source.  
+   * **Description**. Enter an optional description.  
+   * **S3 Region**. Select the Amazon Region for your CloudTrail S3 bucket.  
+   * **Bucket Name**. Enter the exact name of your CloudTrail S3 bucket.  
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (\*) in this string.  
      * DO NOT use a [leading forward slash](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions/).  
      * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.  
-   * Source Category. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.  
-   * Fields. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the account field.  
+   * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.  
+   * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the account field.  
      ![Fields][image3]  
    * Access Key ID and Secret Access Key. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
    * Log File Discovery \-\> Scan Interval. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
@@ -231,9 +235,9 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
    * Time Zone. Select Ignore time zone from the log file and instead use, and select UTC from the dropdown.  
    * Timestamp Format. Select Automatically detect the format.  
    * Enable Multiline Processing. Select the Detect messages spanning multiple lines check box, and select Infer Boundaries.  
-2. Click Save.
+2. Click **Save**.
 
-### **Collect Amazon OpenSearch CloudWatch Metrics**
+### Collect Amazon OpenSearch CloudWatch Metrics
 
 1. Configure a [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/).  
 2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) or [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) (Recommended).  
@@ -312,7 +316,7 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 ## **Viewing Amazon OpenSearch dashboards**
 
-### **01. Amazon OpenSearch \- Overview**
+### Overview
 
 The Amazon OpenSearch \- Overview dashboard provides a comprehensive overview of Amazon OpenSearch performance and operational metrics. It displays key information about cluster utilization, user activity, query performance, error logs, and system events. The dashboard is designed to help administrators monitor and optimize their OpenSearch deployment across different domains and regions.
 
@@ -323,7 +327,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/01.-Amazon-OpenSearch-Overview.png')} alt="Fields" />
 
-### **02. Amazon Opensearch \- Performance Overview**
+### Performance Overview
 
 The Amazon OpenSearch \- Performance Overview dashboard provides a comprehensive view of the OpenSearch cluster's health, performance, and resource utilization. It offers real-time insights into cluster status, CPU and memory usage, storage metrics, document management, and read/write latencies across different domains.
 
@@ -337,7 +341,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/02.-Amazon-OpenSearch-Performance-Overview.png')} alt="Fields" />
 
-### **03. Amazon OpenSearch \- CloudTrail Audit Events**
+### CloudTrail Audit Events
 
 The Amazon Opensearch \- CloudTrail Audit Events dashboard provides insights across CloudTrail events across location, status, and topic names.
 
@@ -350,7 +354,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/03.-Amazon-OpenSearch-CloudTrail-Audit-Events.png')} alt="Fields" />
 
-### **04. Amazon OpenSearch \- Audit Logs \- Failed Logins**
+### Audit Logs - Failed Logins
 
 The Amazon OpenSearch \- Audit Logs \- Failed Logins dashboard provides a comprehensive view of login activities, focusing on failed login attempts and authentication errors. It offers insights into the geographical distribution of failed logins, user-specific login failures, cluster-based login issues, and detailed authentication error logs.
 
@@ -363,7 +367,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/04.-Amazon-OpenSearch-Audit-Logs-Failed-Logins.png')} alt="Fields" />
 
-### **05. Amazon OpenSearch \- Error Logs \- Garbage Collection**
+### Error Logs - Garbage Collection
 
 The Amazon OpenSearch \- Error Logs \- Garbage Collection dashboard provides a comprehensive view of garbage collection (GC) activities in AWS OpenSearch Service. It offers insights into GC performance, memory cleanup, and JVM memory usage across different domains. The dashboard helps monitor and optimize the garbage collection process, which is crucial for maintaining the performance and stability of OpenSearch clusters.
 
@@ -376,7 +380,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/05.-Amazon-OpenSearch-Error-Logs-Garbage-Collection.png')} alt="Fields" />
 
-### **06. Amazon OpenSearch \- Slow Logs \- Queries**
+### Slow Logs - Queries
 
 The Amazon Opensearch \- Slow Logs \- Queries dashboard provides a comprehensive view of query performance and behavior within an OpenSearch environment.
 
@@ -388,7 +392,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/06.-Amazon-OpenSearch-Slow-Logs-Queries.png')} alt="Fields" />
 
-### **07. Amazon OpenSearch \- Domain Name (Cluster) Performance**
+### Domain Name (Cluster) Performance
 
 The Amazon OpenSearch \- Domain Name (Cluster) Performance dashboard provides a comprehensive view of cluster performance and resource utilization across different domains. It offers insights into node count, CPU and memory usage, request patterns, and storage metrics for OpenSearch clusters.
 
@@ -401,10 +405,10 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/07.-Amazon-OpenSearch-Domain-Name-Cluster-Performance.png')} alt="Fields" />
 
-### **08. Amazon OpenSearch \- Nodes Performance**
+### Nodes Performance
 
-Summary:  
 The Amazon OpenSearch \- Nodes Performance dashboard provides a detailed view of node-level performance metrics for OpenSearch clusters across different domains. It offers insights into search and indexing operations, threadpool activities, and overall cluster health, allowing for granular monitoring and troubleshooting of OpenSearch nodes.  
+
 Use this dashboard to:  
 * Compare search and indexing performance across different nodes and domains, with visualizations for search/indexing rates and latencies, helping identify potential bottlenecks or underperforming nodes.  
 * Monitor thread pool activities, including search queue times, rejected requests, and write queue metrics, which are crucial for understanding cluster load and capacity issues.  
@@ -414,9 +418,10 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/08.-Amazon-OpenSearch-Nodes-Performance.png')} alt="Fields" />
 
-### **09. Amazon OpenSearch \- EBS Volume Performance**
+### EBS Volume Performance
 
-The Amazon OpenSearch \- EBS Volume Performance dashboard provides a comprehensive view of the performance metrics for Amazon Elastic Block Store (EBS) volumes associated with OpenSearch clusters. It displays various key performance indicators such as read and write latency, I/O operations per second (IOPS), throughput, burst balance, and disk queue depth.   
+The Amazon OpenSearch \- EBS Volume Performance dashboard provides a comprehensive view of the performance metrics for Amazon Elastic Block Store (EBS) volumes associated with OpenSearch clusters. It displays various key performance indicators such as read and write latency, I/O operations per second (IOPS), throughput, burst balance, and disk queue depth.
+
 Use this dashboard to:  
 * Monitor read and write latency of EBS volumes to ensure optimal response times for OpenSearch operations.  
 * Track read and write IOPS to understand the I/O demand on your EBS volumes and identify any performance constraints.  
@@ -426,14 +431,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/09.-Amazon-OpenSearch-EBS-Volume-Performance.png')} alt="Fields" />
 
-### **10. Amazon OpenSearch \- Cache Performance**
+### Cache Performance
 
 The Amazon OpenSearch \- Cache Performance dashboard provides insights into cache performance, evictions, capacity, and memory usage, which are crucial for maintaining optimal performance of OpenSearch clusters.
 
 Use this dashboard to:
-* Performance tuning of OpenSearch clusters  
-* Capacity planning for cache and memory resources  
-* Troubleshooting cache-related issues  
-* Ability to correlate cache metrics with overall system performance
+* Performance tuning of OpenSearch clusters.
+* Capacity planning for cache and memory resources.
+* Troubleshooting cache-related issues.
+* Ability to correlate cache metrics with overall system performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/10.-Amazon-OpenSearch-Cache-Performance.png')} alt="Fields" />
