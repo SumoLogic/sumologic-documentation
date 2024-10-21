@@ -28,7 +28,7 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 |:--|:--|:--|
 | src_ip | IP address of the client (remote host) from which the request is made to the server. | 221.125.19.252 |
 | method | Method used by the client. | GET |
-| url | Resource requested by the client. | `v` |
+| url | Resource requested by the client. | `/_js/master.js` |
 | status_code | Status code that the server sends back to the client. | 200 |
 | size | Size of the object returned to the client. | 8825 |
 | referrer | Displays the site that the client reports having been referred from. | `http://www.google.com/url?sa=t&rct=j...source=web&cd=4` |
