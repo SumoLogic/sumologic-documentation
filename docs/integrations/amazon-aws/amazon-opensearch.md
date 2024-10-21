@@ -1,6 +1,6 @@
 ---
-id: amazon-opensearch-service
-title: Amazon OpenSearch Service
+id: amazon-opensearch
+title: Amazon OpenSearch
 description: Learn about the collection process for the Amazon OpenSearch Service.
 ---
 
@@ -306,7 +306,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 
 ## Installing the Amazon OpenSearch app
 
-Now that you have set up a collection for Amazon OpenSearch, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon OpenSearch**, install the Sumo Logic app to use the [pre-configured dashboards](#viewing-amazon-opensearch-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
