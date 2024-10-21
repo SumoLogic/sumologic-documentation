@@ -109,7 +109,9 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 <img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
+1. **Entities**. Click to view [Entities](#about-the-entities-tab-graph-view) on the Signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
+1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the Insight.
 1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
 1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 1. **Legend**. Key to the symbols used to represent the Signals:
@@ -120,8 +122,6 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 1. **Show Related**. Click this link to show Related Signals in addition to Attached Signals. If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
     * A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
     * A *Related Insight* is an Insight that a Related Signal is attached to.
-    <br/>Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
-    <br/><img src={useBaseUrl('img/cse/related-signal.png')} alt="Related signal" width="800"/>
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
@@ -150,7 +150,7 @@ The **Entities** tab includes two views, the **list** view and the **graph** vie
 
 The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entities.png')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
