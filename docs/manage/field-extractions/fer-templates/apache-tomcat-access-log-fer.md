@@ -10,7 +10,6 @@ description: Create a field extraction rule for Apache Tomcat 7 Access Logs.
 
 **Rule Description:** Parse the Remote IP address, Method, Requested URL path, HTTP status code, Time Taken, and Bytes Sent.
 
-
 **Sample Log:**
 
 ```
@@ -27,11 +26,11 @@ description: Create a field extraction rule for Apache Tomcat 7 Access Logs.
 
 | Field Name | Description | Example |
 |:--|:--|:--|
-| ip |   | 192.100.20.135 |
-| method |   | GET |
-| url |   | /ServiceAPI/mappings/123456/load |
-| status |   | 200 |
-| time_taken |   | 1414 |
-| bytes_sent |   | 6234 |
+| ip | The client IP address.  | 192.100.20.135 |
+| method | HTTP request method.  | GET |
+| url | Resource requested by the client. | `/ServiceAPI/mappings/123456/load` |
+| status | HTTP response status code.  | 200 |
+| time_taken | Time taken to process the request. | 1414 |
+| bytes_sent | Count of bytes sent. | 6234 |
 
- 
+
