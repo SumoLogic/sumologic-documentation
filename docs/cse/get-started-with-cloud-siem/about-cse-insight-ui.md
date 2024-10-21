@@ -198,35 +198,31 @@ The card for an Entity displays any [tags](/docs/cse/records-signals-entities-in
 
 #### About the Entities tab graph view
 
-The screenshot below shows the **Entities** tab **graph** view for an Insight.
+The screenshot below shows the **Entities** tab graph view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entity-graph.png')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
 
 By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 
-To switch between the list and graph view, click the chooser in the upper-right corner of the panel **(1)**.
+1. **Graph view**. To switch between the list and graph view, click the chooser in the upper-right corner of the panel.
+1. **Primary Entity**. Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default.
+1. **Involved Entities**. As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines.
+1. **Related Entities**. Entities that are related to this Insight will have an Insight icon on their upper-left edge. 
+1. **Selected Entity**. When you select an Entity, it will be highlighted in blue and the Entity details pane will appear on the right.
+1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+1. **Controls**. The graph view has several controls:
+   * A **key** that explains how to read the graph
+   * **Zoom** controls (you can also use your mouse wheel)
+   * A **screen size** control, which toggles between the center pane view and a full browser window view.
+   * A **reset** control, which resets the view to the original default.
+   * A link to **help**.
+   * A **filter** control, which enables you to view only specific Entity types in the graph.
+   * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight.
 
-The graph view has several controls **(2)**:
-
-* A **key** that explains how to read the graph
-* **Zoom** controls (you can also use your mouse wheel)
-* A **screen size** control, which toggles between the center pane view and a full browser window view
-* A **reset** control, which resets the view to the original default
-* A link to **help**
-* A **filter** control, which enables you to view only specific Entity types in the graph
-* A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight
-
-Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default **(3)**. Entities that are related to this Insight will have an Insight icon on their upper-left edge **(4)**. 
-
-When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
-
-As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines **(6)**. Entities with a *detected* relationship will be connected with solid lines **(7)**. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
-
-If you hover over an Entity, it and all connections to it will be highlighted in blue **(8)** and if its value is not fully visible by default, the full value will be displayed.
-
-Any Entity with an Indicator will have an additional icon in the upper right **(9)** and if the Indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
-
-Finally, if Cloud SIEM has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control **(10)** will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+In addition, the following can appear in the graph:
+* **Detected Entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
+* **Threat indicators**. Any Entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
+* **Hover**. If you hover over an Entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
 Watch this micro lesson to learn more about the Entity relationship graph.
 
