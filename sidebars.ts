@@ -911,6 +911,7 @@ module.exports = {
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
         'manage/manage-subscription/fedramp-capabilities',
+        'manage/manage-subscription/usage-management',
       ]
     },
     {
