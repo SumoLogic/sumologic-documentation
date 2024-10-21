@@ -165,6 +165,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-opensearch-service-logo.png')} alt="Thumbnail icon" width="50"/>
+        <h4><a href="/docs/integrations/amazon-aws/amazon-opensearch">Amazon OpenSearch</a></h4>
+        <p>Learn about the collection process for the Amazon OpenSearch Service.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/networkLoadBalancer.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href="/docs/integrations/amazon-aws/network-load-balancer">AWS Network Load Balancer</a></h4>
         <p>A guide to the Sumo Logic app for AWS Network Load Balancer.</p>
