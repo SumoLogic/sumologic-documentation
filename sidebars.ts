@@ -1091,7 +1091,6 @@ module.exports = {
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
-            'alerts/monitors/automation-payload-variables'
           ],
         },
         {
@@ -2000,6 +1999,7 @@ integrations: [
         'integrations/amazon-aws/amazon-appflow',
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
+        'integrations/amazon-aws/amazon-bedrock',
         'integrations/amazon-aws/amazon-chime',
         'integrations/amazon-aws/amazon-chimesdk',
         'integrations/amazon-aws/cloudfront',
@@ -2028,7 +2028,7 @@ integrations: [
         'integrations/amazon-aws/inspector',
         'integrations/amazon-aws/inspector-classic',
         'integrations/amazon-aws/kinesis-streams',
-        'integrations/amazon-aws/amazon-opensearch-service',
+        'integrations/amazon-aws/amazon-opensearch',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
