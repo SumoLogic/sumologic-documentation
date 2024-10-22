@@ -144,7 +144,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step if you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
 
 :::note
 Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
