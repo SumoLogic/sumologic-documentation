@@ -122,12 +122,11 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  
 1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" style={{border: '1px solid gray'}} width="400"/>
 1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators-for-rules.png')} alt="Operators" style={{border: '1px solid gray'}} width="250"/>  
-1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.<br/><img src={useBaseUrl('img/cse/search-results.png')} alt="Search results" style={{border: '1px solid gray'}} width="800"/>
-
+1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
 
 ### Filter a list view by clicking a tag
 
-On the Insights, Signals, Rules, or Entities page, you can click a tag to filter the list. For example, if you click the **Tactic:TA0005 - Defense Evasion** tag on an Insight, like this:
+On the Insights, Signals, Rules, or Entities page, you can click a tag to filter the list. For example, if you click the **Tactic: TA0005 - Defense Evasion** tag on an Insight, like this:
 
 <img src={useBaseUrl('img/cse/filter-list-by-tag.png')} alt="Filter list by tag" style={{border: '1px solid gray'}} width="800"/>
 
