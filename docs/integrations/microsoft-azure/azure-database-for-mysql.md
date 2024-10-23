@@ -141,6 +141,20 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" /> 
+2. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
+   
+   Set Audit log related parameters as below:
+   - audit_log_enabled: set to *ON*
+   - audit_log_events: Select the event types to be logged from the dropdown list.
+
+   Set error logs related server parameters as below:
+   - error_server_log_file: set to *ON*
+   - log_output: set to *FILE*
+   
+   Set Slow Query logs related parameters as below:
+   - slow_query_log: set to *ON*
+   - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
+   - log_slow_admin_statements: set to *ON*
 
 #### Activity Logs
 
