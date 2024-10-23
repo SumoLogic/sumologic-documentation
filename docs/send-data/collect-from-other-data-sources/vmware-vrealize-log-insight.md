@@ -31,7 +31,9 @@ To set up vRealize Log Insight log collection for Sumo Logic, do the following:
    ![vRealize_New-Destination.png](/img/send-data/vRealize_New-Destination.png)
 
 1. In the Edit Destination dialog, specify the following information. Optionally, you can also add additional tags and also filter the events on this popup.
-
+   :::note
+   Select the **Transport** type as **UDP** if you are handling multiple messages.
+   :::
    ![vRealize_Edit-Destination.png](/img/send-data/vRealize_Edit-Destination.png)
 
 1. **Test** and **Save** the connection.
