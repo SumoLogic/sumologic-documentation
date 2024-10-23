@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-CrowdStrike is the leader in next-generation endpoint protection, threat intelligence, and response services. CrowdStrike’s core technology, the Falcon platform, stops breaches by preventing and responding to all types of attacks — both malware and malware-free. The CrowdStrike Threat Intel integration ingests the indicator data from CrowdStrike Combined API and sends it to Sumo Logic as normalized threat indicator.
+CrowdStrike is the leader in next-generation endpoint protection, threat intelligence, and response services. CrowdStrike’s core technology, the Falcon platform, stops breaches by preventing and responding to all types of attacks — both malware and malware-free. The CrowdStrike Threat Intel integration ingests the indicator data from CrowdStrike Combined API and sends it to Sumo Logic as normalized threat indicator information.
 
 :::important
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
