@@ -18,7 +18,7 @@ This feature is in Beta. To participate, contact your Sumo Logic account executi
 
 The Sumo Logic Distribution for OpenTelemetry Collector facilitates remote management of data collection configurations, enabling seamless setup from the Sumo Logic UI and deployment to one or more collectors.
 
-## Remote Management features
+## Remote management features
 
 ### Collector tags
 
@@ -26,11 +26,15 @@ With OpenTelemetry (OTel) remote management, you can tag your [OpenTelemetry Col
 
 ### Source templates
 
-With remote management, data configuration setup for OTel collectors is done using Source templates. This feature extends our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources), allowing attachment to multiple collectors.
+:::note
+Source template feature is not available for locally managed collectors.
+:::
 
-Utilize collector tags for grouping collectors, and associate Source templates to these collector groups, reducing redundancy in data collection setup. This process, termed *Collector Linking*, streamlines configuration management.
+With remote management, data configuration setup for OTel collectors is done using source templates. This feature extends our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources), allowing attachment to multiple collectors.
 
-## Install a Collector and configure the Source Template
+Utilize collector tags for grouping collectors, and associate source templates to these collector groups, reducing redundancy in data collection setup. This process, termed *Collector Linking*, streamlines configuration management.
+
+## Install a Collector and configure the source template
 
 ### Step 1: Collector installation
 
@@ -44,7 +48,7 @@ Follow the below steps to install the collector and add uniquely identifiable ta
 1. For **Collector Settings**, leave them as default to configure collectors as remotely managed.
 1. Under **Generate and run the command to install the collector**, copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="linux-terminal-installation" width="800"/>
 1. Wait for the installation process to complete, then click **Next** to proceed.
-1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
+1. On the next screen, you will see a list of available source templates. Select the required source template and proceed with the data configuration.
 
 ### Step 2: Data configuration
 
@@ -56,7 +60,7 @@ Follow the below steps to create a data collection configuration to collect the 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  
 1. On the **Source Template** page, click **Add Source Template** and search for the required Source Template.
-1. Complete the Source Template form by providing the mandatory fields, then click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="500"/>
+1. Complete the source template form by providing the mandatory fields, then click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="500"/>
 1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.
 1. Navigate to **Preview Collector(s)** to view the details about the compatibility of the collectors and list of collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get a separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" height="500"/>
     :::note
@@ -64,40 +68,40 @@ Follow the below steps to create a data collection configuration to collect the 
     :::
 1. Click **Next** to complete Source Template creation. In the background, the system will apply the configuration to all the compatible linked collectors and starts collecting the required files.
 
-## Edit a Source Template
+## Edit a source template
 
 To edit a source template:
 
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the Source Template that you need to edit, and click **Edit**. Or, click the kebab menu against the selected source template and click **Edit** from the dropdown.
-1. Change the required configuration in the Source Template configuration page, and click **Next**.
+1. Change the required configuration in the source template configuration page, and click **Next**.
 1. If required, update the collectors on the **Link Collectors** page. 
-1. Click **Next** to complete editing the Source Template. 
+1. Click **Next** to complete editing the source template. 
 
-## Upgrade the Source Template
+## Upgrade the source template
 
 :::note
-Source Template update will not available if there are any incompatible collector version.
+Source template update will not available if there are any incompatible collector version.
 :::
 
 Follow the below steps to upgrade the source template:
 
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
-1. Select the Source Template that you need to upgrade, and click **Upgrade** button.
+1. Select the source template that you need to upgrade, and click **Upgrade** button.
 1. To upgrade the compatible collectors:
-    1. Update the required configuration for the new Source Template version.
+    1. Update the required configuration for the new source template version.
         :::info
-        To know about the changes in the latest Source Template version, click the **Learn more** button in the warning.<br/><img src={useBaseUrl('img/send-data/learn-more-button-warning.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="500"/>
+        To know about the changes in the latest source template version, click the **Learn more** button in the warning.<br/><img src={useBaseUrl('img/send-data/learn-more-button-warning.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="500"/>
         :::
     1. Click **Next** to finish the upgrade.
 1. To upgrade the incompatible collectors. Navigate to the **Preview Collector(s)** section to view the list of collectors that are compatible and incompatible to the new version of the source template. Follow any one of the below steps:
     - Create a new source template and link the compatible collectors by collector name and collector tags.
     - Or, unlink the collectors added in the new source template to the existing source template.
 
-## Delete a Source Template
+## Delete a source template
 
 To delete a source template:
 
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
-1. Select the Source Template that you need to delete, and click the **Delete** button. Or, click the kebab menu against the selected source template and click **Delete** from the dropdown.
+1. Select the source template that you need to delete, and click the **Delete** button. Or, click the kebab menu against the selected source template and click **Delete** from the dropdown.
 1. The source template will be deleted and removed from the **Source Template** page.
