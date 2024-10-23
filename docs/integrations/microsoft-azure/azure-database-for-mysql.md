@@ -177,13 +177,11 @@ The **Azure Database for Mysql - Administrative Operations** dashboard provides 
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Administrative-Operations.png')} alt="Azure Database for Mysql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Connections
 
 The **Azure Database for Mysql - Connections** dashboard provides details about Connections by Location, Total Connections, Active Connections, Aborted Connections, Total Queries, Connections, Queries, and Recent Disconnect Logs.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Connections.png')} alt="Azure Database for Mysql - Connections" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Overview
 
@@ -191,20 +189,17 @@ The **Azure Database for Mysql - Overview** dashboard provides details about Con
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Overview.png')} alt="Azure Database for Mysql - Overview" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Performance
 
 The **Azure Database for Mysql - Performance** dashboard provides details about Max CPU (%), Max Memory (%), Max IO Consumption (%), Slow Queries Count, Max CPU (%), Max Memory (%), Max IO Consumption (%), and Slow Queries.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Performance.png')} alt="Azure Database for Mysql - Performance" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Policy and Recommendations
 
 The **Azure Database for Mysql - Policy and Recommendations** dashboard provides details about Total Success Policy Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Total Recommendation Events, and Recent Recommendation Events.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Policy-and-Recommendations.png')} alt="Azure Database for Mysql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Queries
 
@@ -219,13 +214,11 @@ The **Azure Database for Mysql - Replication** dashboard provides details about 
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Replication.png')} alt="Azure Database for Mysql - Replication" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Slow Queries
 
 The **Azure Database for Mysql - Slow Queries** dashboard provides details about Top 10 IPs Firing Slow Queries, Top 10 Users Firing, Top 10 Hosts Firing Slow Queries, Excessive Slow Queries by Host, Top 10 Slow Queries by Average Execution Time, Top 10 Excessive Slow Queries by Frequency, Slow Queries Over Time, and Excessive Slow Queries Over Time.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Slow-Queries.png')} alt="Azure Database for Mysql - Slow Queries" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Storage Overview
 
