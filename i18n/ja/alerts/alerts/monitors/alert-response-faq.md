@@ -42,7 +42,7 @@ For example, in Slack, you can add the following section to the payload:
 },
 ```
 
-![alertResponseURLExample.png](/img/monitors/alertResponseURLExample.png)
+![alertResponseURLExample.png](/img/alerts/monitors/alertResponseURLExample.png)
 
 Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 

@@ -15,7 +15,7 @@ Output-level filtering ensures you will always have valuable, useful, and cost-o
 
 For best results, perform filtering on a central instance of Aggregating OpenTelemetry Collector (see the following diagram), as it gives possibilities to act on whole trace, rather than individual span level.
 
-![env multiple agents bd.png](/img/traces/env-multiple-agents-bd.png)
+![env multiple agents bd.png](/img/apm/traces/env-multiple-agents-bd.png)
 
 The aggregating collector can receive data from local collectors/agents or directly from the tracing client.
 

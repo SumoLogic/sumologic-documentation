@@ -11,6 +11,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/1password/"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="70"/><h4>1Password</h4></a>
+  <p>1Password helps you monitor your 1Password account’s sign-in and item usage events.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/abnormal-security"><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="icon" width="120"/><h4>Abnormal Security</h4></a>
   <p>Gain robust monitoring of email security threats.</p>
   </div>
@@ -49,6 +55,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/asana"><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon.png" width="60" /><h4>Asana</h4></a>
   <p>Monitor and analyze the Asana data to detect potential security threats related to user activity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/atlassian"><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon.png" width="60" /><h4>Atlassian</h4></a>
+  <p>Monitor and analyze the critical events of Atlassian data.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -133,6 +145,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="160" /><h4>KnowBe4</h4></a>
   <p>Monitor and analyze KnowBe4 Phishing Security logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/microsoft-azure-ad-inventory"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
+  <p>Identify security threats by analyzing users and devices logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
