@@ -66,10 +66,6 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 1. Scan the QR code displayed on your screen with your TOTP App.
 1. After the TOTP App is configured, enter two consecutive authentication codes.
 
-## My Access Keys
-
-In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
-
 ## My Preferences
 
 Preference settings are only changed for your personal account; they do not affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.

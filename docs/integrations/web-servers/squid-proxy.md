@@ -359,7 +359,7 @@ The process to set up collection for Squid Proxy data is done through the follow
 
 Squid Proxy app supports the default access logs and cache logs format.
 
-1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
+1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following [these instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
 2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
@@ -687,7 +687,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method 2: Install the alerts using a Terraform script
 
-1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these [instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Squid Proxy alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/SquidProxy/.
@@ -759,7 +759,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Squid Proxy cluster filter. Examples:
       * For all Squid Proxy clusters: `proxy_cluster=*`
       * For a specific farm; `proxy_cluster=squidproxy.dev.01`.
