@@ -15,7 +15,7 @@ For details on all other Log Search page features, see [How to use the search pa
 
 When you open a Log Search you'll have the option to switch between Basic and Advanced Mode. The selected mode will persist to new searches.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click the **+ New** button at the top of the screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
 1. Click the three-dot kebab icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options. <br/>![search menu options.png](/img/search/get-started-search/search-page/search-menu-options.png)
 
 ## Basic Mode

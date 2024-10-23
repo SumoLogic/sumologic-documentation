@@ -26,7 +26,7 @@ Key features:
 ## Create a deletion request
 
 :::warning
-Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
+After a data deletion request is approved, data will be deleted from the organization and no users within the organization (admin or otherwise) will be able to access the data. Data deletion requests should not be done without planning, and any data deletion approvals should be given sufficient consideration.
 :::
 
 :::note
@@ -37,11 +37,11 @@ During the data deletion process, existing messages may temporarily appear dupli
 To create or view data deletion requests, you must have the **Manage Deletion Rules** capability. But to only view the data deletion requests, you must have either `viewDeletionRules` or `manageDeletionRules` capability.
 :::
 
-You can create a data deletion request from either the **Logs** tab or any **Log Search**.
+Data cannot be recovered once it gets deleted. Ensure that you have appropriately backed up any necessary data before submitting a deletion request. You can create a data deletion request from either the **Logs** tab or any **Log Search**.
 
 ### From the Logs tab
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Deletion Requests**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note
@@ -53,7 +53,25 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From a Log Search
 
-1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
+#### Delete audit events
+
+The Audit Event Index has detailed JSON logs. To search for audit events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+
+```
+(_index=sumologic_audit_events) AND _sourceCategory=deletionRule
+```
+
+#### Delete system events
+
+The System Event Index has detailed JSON logs. To search for system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
+
+```
+(_index=sumologic_system_events) AND _sourceCategory=deletionRule
+
+```
+
+1. In the **Log Search**, search for the required logs that needs to be deleted.
+1. Click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
 
 ## Cancel a deletion request
