@@ -18,7 +18,7 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 * **List Incidents** (*Enrichment*) - Get a list of all incidents.
 * **Search Into Sentinel Events** (*Enrichment*) - Query into a Sentinel event.
 * **List Incident Entities** (*Enrichment*) - Get all incident related entities.
-* **List Incident Entities V2** (*Enrichment*) - Get all incident related entities and enrich sentinel entities with additional information to CSOAR entities.
+* **List Incident Entities V2** (*Enrichment*) - Get all incident related entities and enrich Sentinel entities with additional information to Cloud SOAR entities.
 * **Add Incident Comment** (*Containment*) - Add a new incident comment.
 * **Delete Incident** (*Containment*) - Delete an incident.
 * **Update Incident** (*Containment*) - Update an incident.
@@ -41,5 +41,5 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 	+ Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration
 + October 22, 2024 (v1.5)
 	+ Added new action **List Incident Entities V2**
-    + Updated the integration by adding a new fields (**Cloud Soar URL API URL**, **Access ID** , **Access Key**) to the configuration
+    + Updated the integration by adding a new fields (**Cloud SOAR URL API URL**, **Access ID** , **Access Key**) to the configuration
     
