@@ -26,6 +26,8 @@ In addition, you can also see the Model training scan details for the anomaly de
 You can view the scan estimates data once you select the trigger type.
 :::
 
+Use the **Show Optimization Tips** button to obtain contextual optimization suggestions along with relevant documentation links. By clicking on the **Show Optimization Tips** button, you will get the highlighted targeted tips for optimization. The overlay directly draws attention to the query input field and includes hints to improve the query, with the corresponding documentation link located below the query tab. In the trigger input section, the overlay highlights the area with customised hints with critical and warning triggers.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/show-optimized-tips.png')} alt="show-optimized-tips" style={{border:'1px solid gray'}} width="450" /> 
+
 ## Scheduled searches
 
 As Sumo Logic charges for each data scan, scheduling searches can help mitigate costs. When [creating or modifying a scheduled search](/docs/alerts/scheduled-searches/schedule-search/), you can view the Average scan, Daily scan, and Yearly scanned data information based on the selected run frequency by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> on top of the **Schedule this search** popup. <br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/scan-schedules-search.png')} alt="scan-schedules-search" style={{border:'1px solid gray'}} width="450" />
