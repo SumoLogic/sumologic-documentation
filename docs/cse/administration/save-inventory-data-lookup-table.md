@@ -18,7 +18,7 @@ Although the Scheduled Search feature does support an **Alert Type** of “Save 
 
 ## Prerequisites 
 
-In order to create an inventory Lookup Table you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the Windows Active Directory Inventory source running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
+In order to create an inventory Lookup Table you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the [Windows Active Directory Inventory source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/) running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
 
 Any inventory source–or any log source, for that matter–can be used to populate Lookup Tables. Sumo Logic also has a variety of inventory sources that run on Hosted Collectors, including the Okta and Carbon Black sources.
 
