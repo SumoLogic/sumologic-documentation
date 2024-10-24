@@ -28,5 +28,5 @@ The following query references a data stream with IPv4 addresses, parses those I
 ```sql
 _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| lookup organization, asn from asn://default on ip = ip
+| lookup organization, registering_organization, asn from asn://default on ip = ip
 ```
