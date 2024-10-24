@@ -19,7 +19,7 @@ Following are examples that show you how to create Cloud SIEM automations using 
 The following example shows how to add an enrichment to an Insight using the “IP Reputation V3” action from VirusTotal.
 
 1. Edit the VirusTotal OIF resource:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui).  In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.. 
+   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui).  In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
