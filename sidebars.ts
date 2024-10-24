@@ -2975,6 +2975,7 @@ integrations: [
         'api/role-management',
         'api/role-management-v2',
         'api/saml-configuration',
+        'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
         'api/service-allowlist',
