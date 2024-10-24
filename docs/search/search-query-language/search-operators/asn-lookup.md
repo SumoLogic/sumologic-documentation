@@ -19,12 +19,11 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 | `*` | Use a wildcard (`*`) character as a shortcut to return both fields. |
 | `asn` | Autonomous System Number |
 | `organization` | Autonomous System Organization Name (Carrier) or ID in some cases. |
+| `registering_organization` |  |
 
 ## Example
 
-The following query references a data stream with IPv4 addresses, parses
-those IPv4 addresses, and then uses ASN Lookup to retrieve their
-autonomous system information. 
+The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information. 
 
 ```sql
 _sourceCategory=stream "remote_ip="
