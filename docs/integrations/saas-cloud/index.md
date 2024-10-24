@@ -288,6 +288,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/zendesk"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="icon" width="70"/><h4>Zendesk</h4></a>
+  <p>Identify security threats by analyzing audit logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="icon" width="50"/><h4>Zoom</h4></a>
   <p>Monitor your organization's Zoom performance, security, and user activity.</p>
   </div>
