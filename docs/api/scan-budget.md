@@ -35,4 +35,4 @@ The Scan Budget Management APIs allows you to manage scan budgets from HTTP endp
 | US1        | https://api.sumologic.com/docs/#tag/budgetManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/budgetManagement |
 
-To Manage ingest budgets, you must have the **Manage Usage Management** role capability. Enabling this will also automatically enable the **View Usage Management** capability.
+To Manage scan budgets, you must have the **Manage Usage Management** role capability. Enabling this will also automatically enable the **View Usage Management** capability.
