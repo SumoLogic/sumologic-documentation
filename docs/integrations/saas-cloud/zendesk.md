@@ -36,7 +36,7 @@ This app uses Sumo Logic’s Zendesk Source to collect [audit logs](https://deve
   "change_description": "Group changed from Premium Support to Premium Support Korea",
   "ip_address": "77.105.132.70",
   "created_at": "2024-10-23T15:02:20Z",
-  "actor_name": "Parth Langalia"
+  "actor_name": "****** Langalia"
 }
 ```
 ## Sample queries
