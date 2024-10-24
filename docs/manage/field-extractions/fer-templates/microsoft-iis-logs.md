@@ -24,16 +24,16 @@ parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S
 
 | Field | Description | Example |
 |:--|:--|:--|
-| s_ip | IP address of the server on which the log file entry was generated | 10.0.0.103 |
-| cs_method | Requested action | POST |
-| cs_uri_stem | Target of the action | /ConfigWeb/ManageUsers.aspx |
-| cs_uri_query | The query, if any, that the client was trying to perform | name=.NET+StockTrader+Web+Application&cfgSvc=Trade.StockTraderWebApplicationConfigurationImplementation.ConfigurationService&version=Version+5.0&hoster=Microsoft+Corporation&platform=Windows+Server+2008+R2+with+.NET+Framework+v4.0.30319&action=addUser&identify=0 |
-| s_port | Server port number that is configured for the service | 80 |
-| cs_username | Name of the authenticated user who accessed your server | localadmin |
-| c_ip | IP address of the client that made the request | 164.110.188.119 |
+| s_ip | IP address of the server on which the log file entry was generated. | `10.0.0.103` |
+| cs_method | HTTP request method | POST |
+| cs_uri_stem | Target URL for the action.| `/ConfigWeb/ManageUsers.aspx` |
+| cs_uri_query | The query that the client was trying to perform. | name=.NET+StockTrader+Web+Application&cfgSvc=Trade.StockTraderWebApplicationConfigurationImplementation.ConfigurationService&version=Version+5.0&hoster=Microsoft+Corporation&platform=Windows+Server+2008+R2+with+.NET+Framework+v4.0.30319&action=addUser&identify=0 |
+| s_port | Server port number that is configured for the service. | 80 |
+| cs_username | Name of the authenticated user who accessed your server. | localadmin |
+| c_ip | IP address of the client that made the request. | `164.110.188.119` |
 | cs_User_Agent | Browser type that the client used | 500 |
-| cs_Referer | Site that the user last visited | 0 |
-| sc_status | HTTP status code | 0 |
-| sc_substatus | Substatus error code | 4786 |
-| sc_win32_status | Windows status code | 194110 |
-| time_taken | Length of time that the action took, in milliseconds | 552 |
+| cs_Referer | The website from which the client reports are referred. | 0 |
+| sc_status | HTTP response status code. | 0 |
+| sc_substatus | Substatus of the error code. | 4786 |
+| sc_win32_status | Windows status code. | 194110 |
+| time_taken | Time taken to complete the action (in milliseconds). | 552 |
