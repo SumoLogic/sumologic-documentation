@@ -2458,6 +2458,7 @@ integrations: [
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/knowbe4',
+          'integrations/saas-cloud/lastpass',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/microsoft-graph-security-v1',
