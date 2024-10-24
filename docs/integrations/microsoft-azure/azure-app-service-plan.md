@@ -101,7 +101,7 @@ Use this dashboard to:
 * View recent resource and service health incidents.
 * View distribution of service and resource health by incident type.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-AppService-Overview.png')} alt="Azure AppService Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Plan-Overview.png')} alt="Azure AppService Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
@@ -111,7 +111,7 @@ Use this dashboard to:
 *  Analyze network traffic patterns and performance metrics.
 *  Identify potential network issues affecting your applications.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-AppService-Network.png')} alt="Azure AppService Network dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Plan-Network.png')} alt="Azure AppService Network dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Utilisation
 
@@ -121,7 +121,7 @@ Use this dashboard to:
 *  Monitor resource utilisation events and their impact on service availability.
 *  Analyze trends in operational performance over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-AppService-I-O-Operations.png')} alt="Azure AppService Resource Utilisation dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Plan-Resource-Utilisation.png')} alt="Azure AppService Resource Utilisation dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -132,7 +132,7 @@ Use this dashboard to:
 * View Top 10 operations that caused the most errors.
 * View recent read, write, and delete operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-AppService-Administrative-Operations.png')} alt="Azure AppService Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Plan-Administrative-Operations.png')} alt="Azure AppService Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrading the Azure App Service Plan app (Optional)
 
