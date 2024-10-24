@@ -16,7 +16,7 @@ For Azure App Service Plan, you can collect the following metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-- **Platform Metrics for Azure App Service Plan**. These metrics are available in [Microsoft.Web/serverfarms](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-serverfarms-metrics) namespace. For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#understand-metrics). App Service plan metrics are available only for plans in Basic, Standard, and Premium tiers.
+- **Platform Metrics for Azure App Service Plan**. These metrics are available in [Microsoft.Web/serverfarms](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-serverfarms-metrics) namespace. For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#understand-metrics). App Service Plan metrics are available only for plans in Basic, Standard, Premium and Isolated tiers.
 
 ## Setup
 
@@ -28,6 +28,28 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 You must explicitly enable diagnostic settings for each Azure App Service plan you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServicePlan/Logs`, `Azure/AppServicePlan/Metrics`.
+
+### Configure metric rules
+
+#### Azure Observability Metadata Extraction Service Level
+
+If this rule already exists, there's no need to create it again.
+
+```sql
+Rule Name: AzureObservabilityMetadataExtractionWebAppServerFarmLevel
+```
+
+```sql title="Metric match expression"
+resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/SERVERFARMS/* tenant_name=*
+```
+
+| Fields extracted | Metric rule    |
+|:-----------------|:---------------|
+| `subscription_id`  | $resourceId._1 |
+| `resource_group`   | $resourceId._2 |
+| `provider_name`    | $resourceId._3 |
+| `resource_type`    | SERVERFARMS |
+| `resource_name`    | $resourceId._4 |
 
 ### Configure metrics collection
 
@@ -41,6 +63,17 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure logs collection
+
+#### Diagnostic logs
+
+In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
+
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure Functions that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
+   1. Select `AllMetrics`.
+   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-App-Service-Plan-Configure-Diagnostic-Metrics.png')} alt="Azure App Service Plan Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
 
