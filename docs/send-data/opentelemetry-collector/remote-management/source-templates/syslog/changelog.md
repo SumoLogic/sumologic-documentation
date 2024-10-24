@@ -5,6 +5,11 @@ sidebar_label: Changelog
 description: Changelog for Syslog source template for OpenTelemetry.
 ---
 
+## [2.1.0] - 2024-10-26
+
+### Added
+- UI related changes for uniformity
+
 ## [2.0.0] - 2024-10-01
 
 ### Added
