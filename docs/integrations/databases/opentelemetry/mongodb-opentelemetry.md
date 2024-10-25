@@ -37,7 +37,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-The MongoDB receiver fetches stats from a MongoDB instance using the [golang mongo driver](https://github.com/mongodb/mongo-go-driver). Stats are collected via MongoDB's `dbStats` `serverStatus` and `top` commands. The MongoDB receiver extracts values from the result and converts them to OpenTelemetry metrics.
+The MongoDB receiver fetches stats from a MongoDB instance using the [golang mongo driver](https://github.com/mongodb/mongo-go-driver). Stats are collected via MongoDB's `dbStats`, `serverStatus`, and `top` commands. The MongoDB receiver extracts values from the result and converts them to OpenTelemetry metrics.
 
 ### For logs collection
 
