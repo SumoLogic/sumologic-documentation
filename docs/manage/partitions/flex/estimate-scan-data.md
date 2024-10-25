@@ -26,7 +26,7 @@ In addition, you can also see the Model training scan details for the anomaly de
 You can view the scan estimates data once you select the trigger type.
 :::
 
-Use the **Show Optimization Tips** button to obtain contextual optimization suggestions along with relevant documentation links. By clicking on the **Show Optimization Tips** button, you will get the highlighted targeted tips for optimization. The overlay directly draws attention to the query input field and includes hints to improve the query, with the corresponding documentation link located below the query tab. In the trigger input section, the overlay highlights the area with customised hints with critical and warning triggers.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/show-optimized-tips.png')} alt="show-optimized-tips" style={{border:'1px solid gray'}} width="450" /> 
+The **Show Optimization Tips** button displays contextual suggestions for your monitor settings. When clicked, it highlights both the query and trigger sections, displaying relevant optimization tips below each section. These tips are tailored based on whether you're configuring a static or outlier trigger.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/show-optimized-tips.png')} alt="show-optimized-tips" style={{border:'1px solid gray'}} width="450" /> 
 
 ## Scheduled searches
 
