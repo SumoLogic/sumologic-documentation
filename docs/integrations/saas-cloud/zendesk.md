@@ -55,7 +55,7 @@ _sourceCategory="Labs/Zendesk"
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration Zendesk Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source) for the Zendesk app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Zendesk Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Zendesk app is properly integrated and configured to collect and analyze your Zendesk data.
+To set up the [Zendesk Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source) for the Zendesk app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Zendesk Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Zendesk app is properly integrated and configured to collect and analyze your Zendesk data.
 
 ## Installing the Zendesk app​
 
