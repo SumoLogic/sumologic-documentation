@@ -98,7 +98,7 @@ Below are the inputs required:
 
 - **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. This is required to scrap metrics. (For example: `localhost:27017`.)
   :::note
-For collecting metrics, *only* use the `mongod` endpoint. The Sumo Logic OpenTelemetry collector *does not* support the `mongos` endpoint.
+    For collecting metrics, *only* use the `mongod` endpoint. The Sumo Logic OpenTelemetry collector *does not* support the `mongos` endpoint.
   :::
 - **`Logs Path`**. Provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
