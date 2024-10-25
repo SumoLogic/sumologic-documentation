@@ -11,18 +11,21 @@ description: Create a mask rule to replace an expression with a mask string.
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 :::note
-This doc is specific for masking with Windows Source Template. For masking logs for any other source template please refer [this](mask-rules.md) doc.
+This document only support masking logs for Windows source template. Refer to [Mask Rules](mask-rules.md) to mask logs for other source template.
 :::
 
-A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever key you choose to mask, value for that key will be matched against a regex and replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default `"#####"`.
+A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule, the selected key will have its value matched against a regex pattern, which will then be replaced with a mask string before being sent to Sumo Logic. You can provide a custom mask string or use the default string, `"#####"`.
 
-Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is a good method for reducing overall ingestion volume.
+Ingestion volume is calculated after applying the mask filter. If masking reduces the log size, the smaller size will be considered against the ingestion limits. Masking is an effective method for reducing overall ingestion volume.
 
-Following inputs are required from user to mask specific field in Windows Event Log : 
-- **Key** - This should point to the key in windows event log, value for which needs to get masked. This key can be nested as well and each level can be seperated by dot(.) for example  `provider.guid`
-- **Regex** - This is to identify the part of string value, which needs to get masked.
-- **Replacement** - This is to get the string which will be substituted in place of the string selected through regex expression.
+To mask specific fields in the Windows Event Log, the following inputs are required:
+- **Key**. This should point to the key in the Windows Event Log for which the value needs to be masked.  This key can be nested, with each level separated by a dot(.). For example, `provider.guid`.
+- **Regex**. This identifies the part of the string value that needs to be masked.
+- ** Replacement **. This is to get the string that will be substituted in place of the string that was selected through the regex expression.
 
+:::important
+Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
+:::
 
 For example, to mask numbers inside `guid` under `provider` field from this log:
 
@@ -80,9 +83,9 @@ For example, to mask numbers inside `guid` under `provider` field from this log:
 ```
 
 You could use the following masking expression input:
-1. Key as `provider.guid`
-2. Regex as `[-a-z0-9]+`
-3. Replacement as `######` 
+1. Key as `provider.guid`.
+1. Regex as `[-a-z0-9]+`.
+1. Replacement as `######`.
 
 Using the above masking options would provide the following result:
 
@@ -139,11 +142,6 @@ Using the above masking options would provide the following result:
 }
 ```
 
-## Limitations
-- Users can only mask the data which is a string in the windows event log json. Any value which is not a string like integer cannot be masked. This is because internally we will be using [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) ottl function which can work on strings only.
-- Limtation is also applicable for masking a value which is nested inside some array.
-
-
 :::note 
 - For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
    - $ must be escaped as $$ to bypass environment variable substitution logic.
@@ -151,8 +149,7 @@ Using the above masking options would provide the following result:
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
 :::
 
+## Limitations
 
-:::important
-Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
-:::
-
+- You can *only* mask the data which is a string in the Windows event log JSON.
+- You cannot mask a value which is nested inside any array.
