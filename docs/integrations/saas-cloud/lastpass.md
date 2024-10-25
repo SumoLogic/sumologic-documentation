@@ -48,7 +48,7 @@ _sourceCategory="lastpass_event" Action Username
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration LastPass Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source) for the LastPass app, follow the instructions provided. These instructions will guide you through the process of creating a source using the LastPass Source category, which you will need to use when installing the app. By following these steps, you can ensure that your LastPass app is properly integrated and configured to collect and analyze your LastPass data.
+To set up the [LastPass Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source) for the LastPass app, follow the instructions provided. These instructions will guide you through the process of creating a source using the LastPass Source category, which you will need to use when installing the app. By following these steps, you can ensure that your LastPass app is properly integrated and configured to collect and analyze your LastPass data.
 
 ## Installing the LastPass app​
 
