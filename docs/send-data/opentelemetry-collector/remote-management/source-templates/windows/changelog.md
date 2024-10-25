@@ -7,19 +7,19 @@ description: Changelog for Windows source template for OpenTelemetry.
 
 ## [6.1.0] - 2024-10-26
 ### Added
-- Separate section for Log and metrics with enable/disable functionality
-- Masking support for windows event log
-- Minor UI changes
+- Separate section for logs and metrics with enable or disable functionality.
+- Masking support for Windows event log.
+- Minor UI changes.
 
 ## [5.0.0] - 2024-10-16
 
 ### Fix
-- Fix : Removal of whitespace if any, in custom windows event channel name to make validation pass through OpenTelemetry collector.
+- Removal of whitespace if any, in custom Windows event channel name to make validation pass through OpenTelemetry collector.
 
 ## [3.0.0] - 2024-10-01
 
 ### Added
-- Changelog link and compatibility declaration for OpenTelemetry collector
+- Changelog link and compatibility declaration for OpenTelemetry collector.
 
 ## [2.0.0] - 2024-08-08
 
