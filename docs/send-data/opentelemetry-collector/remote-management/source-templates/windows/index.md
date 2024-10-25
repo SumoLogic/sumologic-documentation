@@ -65,7 +65,7 @@ import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-
 <ProcMetrics/>
 
 - **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md). For masking windows event logs please refer to [this](../../processing-rules/mask-rules-windows.md) doc
+- **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md). For masking windows event logs,  refer to [Mask Rules for Windows Source Template](mask-rules-windows.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
