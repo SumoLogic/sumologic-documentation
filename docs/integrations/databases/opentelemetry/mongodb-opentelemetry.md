@@ -97,11 +97,9 @@ In this step, you will configure the YAML file required for MongoDB collection.
 Below are the inputs required:
 
 - **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. This is required to scrap metrics. (For example: `localhost:27017`.)
-
-:::note
-Currently to scrap metrics please use `mongod` endpoint. `mongos` endpoint are not supported.
-:::
-
+  :::note
+   To collect metrics, *only* use `mongod` endpoint. Sumo Logic OpenTelemetry collector do not support `mongos` endpoint.
+  :::
 - **`Logs Path`**. Provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
 - **`password (optional)`**. If authentication is required, the password can be provided here.
