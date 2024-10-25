@@ -2482,6 +2482,7 @@ integrations: [
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
+          'integrations/saas-cloud/zendesk',
           'integrations/saas-cloud/zoom',
         ],
       },
