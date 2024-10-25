@@ -94,7 +94,7 @@ To create a server profile specifying  the log destination, do the following:
 
 To configure syslog forwarding for traffic and threat logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
-As of March 24, 2022, some Palo Alto Network systems have experienced troubles with validating the Sumo Logic certificate due to their OCSP checking logic. Please contact Palo Alto’s support for  a workaround, and if needed, contact Sumo Logic’s support for the related Palo Alto Case number.
+As of March 24, 2022, some Palo Alto Network systems have experienced troubles with validating the Sumo Logic certificate due to their OCSP checking logic. If you encounter this problem, try disabling OCSP checking logic in the firewall. If you continue to have issues, contact Palo Alto’s support, and if needed, contact Sumo Logic’s support for the related Palo Alto case number.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
