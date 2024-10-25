@@ -911,6 +911,7 @@ module.exports = {
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
         'manage/manage-subscription/fedramp-capabilities',
+        'manage/manage-subscription/usage-management',
       ]
     },
     {
@@ -2978,6 +2979,7 @@ integrations: [
         'api/role-management',
         'api/role-management-v2',
         'api/saml-configuration',
+        'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
         'api/service-allowlist',
