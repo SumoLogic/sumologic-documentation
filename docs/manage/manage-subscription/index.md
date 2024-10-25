@@ -77,4 +77,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn the capabilities included with Sumo Logic’s FedRAMP solution.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/usage-management"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Usage Management</h4></a>
+  <p>Learn to set query-level budget to define spending limits for queries.</p>
+  </div>
+</div>
 </div>
