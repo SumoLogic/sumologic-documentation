@@ -7,7 +7,7 @@ description: Changelog for Windows source template for OpenTelemetry.
 
 ## [6.1.0] - 2024-10-26
 ### Added
-- Seperate section for Log and metrics with enable/disable functionality
+- Separate section for Log and metrics with enable/disable functionality
 - Masking support for windows event log
 - Minor UI changes
 

@@ -7,7 +7,7 @@ description: Changelog for Docker source template for OpenTelemetry.
 ## [2.1.0] - 2024-10-26
 
 ### Added
-- Seperate section for Log and metrics with enable/disable functionality
+- Separate section for Log and metrics with enable/disable functionality
 - Minor UI changes
 
 ## [2.0.0] - 2024-10-01
