@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 :::warning
-Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
+Root Cause Explorer has been [deprecated](/docs/observability/root-cause-explorer-deprecation). It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
 :::
 
 
