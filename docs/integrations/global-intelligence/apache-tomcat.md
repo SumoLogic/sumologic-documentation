@@ -114,7 +114,7 @@ To do this, first consult the Distance measurement and then the difference betwe
 
 ![screen](/img/global-intelligence/GI-Tomcat-04-Latency-Signals-and-Contributing-Factors.png)
 
-## Upgrading the Global Intelligence for Apache Tomcat app (Optional)
+## Upgrade/Downgrade the Global Intelligence for Apache Tomcat app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

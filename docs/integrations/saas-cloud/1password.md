@@ -224,7 +224,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Audit Events from Risky Locations` | This alert is fired when an audit event is registered from an embargo location (Afghanistan, China, Cuba, North Korea, Iran, Libya, Nigeria, Sudan, Syria, and Yemen). | Critical | Count > 0 |
 | `1Password tenant-level Changes` | This alert is fired when changes are made to firewall rules, SSO settings, or a user sets up their 1Password account to unlock with SSO. | Critical | Count > 0 |
 
-## Upgrading the 1Password app (Optional)
+## Upgrade/Downgrade the 1Password app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
