@@ -158,13 +158,13 @@ Be aware of the following features:
 * Download a report on usage, or just on credits usage as a CSV file.
 * View the detailed usage data for any time period on the chart by hovering over the chart.
 
-<img src={useBaseUrl('/img/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>
 
 :::note
 If you are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
 :::
 
-![Manage_Organization_options.png](/img/subscriptions/Manage_Organization_options.png)
+![Manage_Organization_options.png](/img/manage/subscriptions/Manage_Organization_options.png)
 
 ## Monitoring account usage 
 
@@ -205,7 +205,7 @@ To switch between views and time interval displays:
 
     The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 
-1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude. ![account-details-of-credit-usage.png](/img/account/account-details-of-credit-usage.png)
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude. ![account-details-of-credit-usage.png](/img/manage/account/account-details-of-credit-usage.png)
 
 1. To toggle an analytic data type back on, click the blank icon next to the data type name.
 

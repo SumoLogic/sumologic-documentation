@@ -142,7 +142,7 @@ The Sumo Logic app for Sophos includes a comprehensive set of monitors designed 
 | `Sophos - Real Time Protection Disabled` | This alert is fired when real-time protection is disabled for more than 2.5 hours, leaving systems vulnerable to threats. | Critical | Count > 0 | 
 | `Sophos - Running Manual Not Cleaned Up` | This alert is fired when a program running on a computer exhibits malicious or suspicious behavior that cannot be cleaned up. | Critical | Count > 0 | 
 
-## Upgrading the Sophos app (Optional)
+## Upgrade/Downgrade the Sophos app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

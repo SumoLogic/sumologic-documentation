@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/slack.png')} alt="slack" width="80"/>
 
-***Version: 1.10  
-Updated: Sept 17, 2024***
+***Version: 1.11  
+Updated: Oct 10, 2024***
 
 Create a public or private channel, Send messages or Files to channels or Users directly. This Slack integration keeps teams connected. Organize conversations, and quickly find what you need to get work done.
 
@@ -99,9 +99,11 @@ Create a public or private channel, Send messages or Files to channels or Users 
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
 1. Create a new resource for the User.
 1. Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+1. If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.
 1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 1. Create another resource for the Bot User.
 1. Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+1. If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.
 1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
@@ -123,3 +125,8 @@ Create a public or private channel, Send messages or Files to channels or Users 
 * March 22, 2024 (v1.9) - New action: Rename Channel
 * Sept 17, 2024 (v1.10)
     * Updated action: Ask Question (Added Allow Custom Text feature)
+* Oct 1, 2024 (v1.10)
+    * Updated action: Ask Question, Ask For User Email (Made changes for timeout)
+* Oct 10, 2024 (v1.11)
+    * Updated Integration File - Added Token Type and Team ID arg. 
+    * Updated actions - Create Channel, List Channel, Get Channel, List Users, Send Message, Ask Questions, Ask For User Email (added team_id arg if using org level token)

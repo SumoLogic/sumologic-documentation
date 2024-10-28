@@ -86,7 +86,8 @@ Create the following field extraction rules (FER) for Azure Storage by following
    ```
 
    ```sql title="Parse Expression"
-   json "resourceId"
+   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId
    | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
    | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -230,7 +231,7 @@ The **Azure Application Gateway - Traffic** dashboard provides details into the 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Application Gateway app (optional)
+## Upgrade/Downgrade the Azure Application Gateway app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

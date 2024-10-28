@@ -7,7 +7,7 @@ description: The Docker app monitors Docker container logs and metrics (stats) i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="150"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
 
 :::note
 The Docker app will be fully functional with Docker setup using [cgroup v1](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -440,7 +440,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Receive Errors by Container.** Displays the number of received errors by container in a bar chart for the last hour.
 
-## Upgrading the Docker CE app (Optional)
+## Upgrade/Downgrade the Docker CE app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

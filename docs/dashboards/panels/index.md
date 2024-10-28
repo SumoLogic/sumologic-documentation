@@ -18,7 +18,7 @@ Related topics:
 
 ## Time Series Panel 
 
-<img src={useBaseUrl('/img/dashboards-new/panels/time-series-panel.png')} style={{border: '1px solid gray'}} alt="time series panel" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/time-series-panel.png')} style={{border: '1px solid gray'}} alt="time series panel" width="75"/>
 
 Time series panels provide information on a series of data points ordered in time. Typically, a time series is a sequence taken at successive equally spaced points in time. Examples of time series are CPU and Memory over time.
 
@@ -48,7 +48,7 @@ When you move the cursor over the Line, Column, Bar, Area, and Box Plot time ser
 Crosshair timestamps are not available for Heatmap, Table, Categorical, and Honeycomb charts.
 :::
 
-<img src={useBaseUrl('/img/dashboards-new/panels/crosshair_1.png')} style={{border: '1px solid gray'}} alt="crosshair" width="500" /><br/><img src={useBaseUrl('/img/dashboards-new/panels/crosshair_2.png')} style={{border: '1px solid gray'}} alt="crosshair" width="500" />
+<img src={useBaseUrl('/img/dashboards/panels/crosshair_1.png')} style={{border: '1px solid gray'}} alt="crosshair" width="500" /><br/><img src={useBaseUrl('/img/dashboards/panels/crosshair_2.png')} style={{border: '1px solid gray'}} alt="crosshair" width="500" />
 
 As a dashboard user, you are allowed to modify the time range for the selected panel or for the entire panels in the dashboard. To know more, refer to [Set Custom Time Ranges](/docs/dashboards/set-custom-time-ranges/#modify-time-ranges).
 
@@ -82,7 +82,7 @@ The types of charts you’ll find in the time series panel include:
 
 ## Categorical Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/categorical-icon.png')} style={{border: '1px solid gray'}} alt="categorical icon" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/categorical-icon.png')} style={{border: '1px solid gray'}} alt="categorical icon" width="75"/>
 
 Categorical panels provide information on the number of occurrences (frequency) of distinct values. Categorical frequencies are typically shown in pie, table, and column charts. 
 
@@ -102,19 +102,19 @@ Available chart types:
 * [Funnel Charts](/docs/metrics/metrics-queries/funnel-chart)
 * [Sankey Diagram](/docs/dashboards/panels/sankey-charts)
 
-The following image shows an example of Scatter and Bubble charts.<br/><img src={useBaseUrl('/img/dashboards-new/panels/scatter-and-bubble-charts.png')} style={{border: '1px solid gray'}} alt="scatter and bubble charts" width="800"/>
+The following image shows an example of Scatter and Bubble charts.<br/><img src={useBaseUrl('/img/dashboards/panels/scatter-and-bubble-charts.png')} style={{border: '1px solid gray'}} alt="scatter and bubble charts" width="800"/>
 
 ## Single Value Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/single-value-panel.png')} style={{border: '1px solid gray'}} alt="single value panel" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/single-value-panel.png')} style={{border: '1px solid gray'}} alt="single value panel" width="75"/>
 
 Single Value Panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
 
-Only [single value charts](single-value-charts.md) are supported.<br/><img src={useBaseUrl('/img/dashboards-new/panels/single-value-charts.png')} style={{border: '1px solid gray'}} alt="single value charts" width="800"/>
+Only [single value charts](single-value-charts.md) are supported.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts.png')} style={{border: '1px solid gray'}} alt="single value charts" width="800"/>
 
 ## Map Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/map-panel.png')} style={{border: '1px solid gray'}} alt="map panel" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/map-panel.png')} style={{border: '1px solid gray'}} alt="map panel" width="75"/>
 
 Maps identify where requests are coming from. These are ideal for [geolocation](/docs/search/search-query-language/search-operators/geo-lookup-map) data.
 
@@ -122,11 +122,11 @@ Maps identify where requests are coming from. These are ideal for [geolocation]
 You may not see map panels render if hardware acceleration is disabled on your browser.
 :::
 
-Only [map charts](map-charts.md) are supported.<br/><img src={useBaseUrl('/img/dashboards-new/panels/new-map-charts.png')} style={{border: '1px solid gray'}} alt="new map charts" width="800"/>
+Only [map charts](map-charts.md) are supported.<br/><img src={useBaseUrl('/img/dashboards/panels/new-map-charts.png')} style={{border: '1px solid gray'}} alt="new map charts" width="800"/>
 
 ## Text Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/text-panel.png')} style={{border: '1px solid gray'}} alt="text panel" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/text-panel.png')} style={{border: '1px solid gray'}} alt="text panel" width="75"/>
 
 Text can clarify what you are showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
 
@@ -136,16 +136,16 @@ There is no limit to the number of Text Panels you can add to Dashboards. These 
 
 To add a Text Panel:
 
-1. With the Dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards-new/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
+1. With the Dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
 1. Choose **Text **as the Panel Type**.** 
-1. The **Text Editor** and **Visual Settings** are displayed.<br/><img src={useBaseUrl('/img/dashboards-new/panels/Display-options.png')} style={{border: '1px solid gray'}} alt="Display options" width="800"/>
+1. The **Text Editor** and **Visual Settings** are displayed.<br/><img src={useBaseUrl('/img/dashboards/panels/Display-options.png')} style={{border: '1px solid gray'}} alt="Display options" width="800"/>
     1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](markdown-syntax.md) for details on what is supported.
     1. The **Visual Settings** options allow you to adjust the font, colors, and alignment of your data.
     1. A title is optional, you can toggle its visibility in the **Panel Details** covered in the next section.
-1. Next, to set a Title, select the **General** menu icon to open the **Panel Details** pane.<br/><img src={useBaseUrl('/img/dashboards-new/panels/Panel-details-general-icon.png')} style={{border: '1px solid gray'}} alt="Panel details general icon" width="800"/>
+1. Next, to set a Title, select the **General** menu icon to open the **Panel Details** pane.<br/><img src={useBaseUrl('/img/dashboards/panels/Panel-details-general-icon.png')} style={{border: '1px solid gray'}} alt="Panel details general icon" width="800"/>
     A title is optional. Use the toggle switch labeled **Show Title** to set if the title is displayed. If desired, enter a title and set the font size.
-1. The **Panel Preview** section displays your text panel based on your settings.<br/><img src={useBaseUrl('/img/dashboards-new/panels/Text-Panel-preview.png')} style={{border: '1px solid gray'}} alt="Text Panel preview" width="800"/>
-1. When you are done, click **Add to Dashboard** at the top of the window.<br/><img src={useBaseUrl('/img/dashboards-new/panels/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="800"/>
+1. The **Panel Preview** section displays your text panel based on your settings.<br/><img src={useBaseUrl('/img/dashboards/panels/Text-Panel-preview.png')} style={{border: '1px solid gray'}} alt="Text Panel preview" width="800"/>
+1. When you are done, click **Add to Dashboard** at the top of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="800"/>
 
 ### Add links to text panels
 
@@ -159,24 +159,24 @@ To add a link to a Panel in order to drill down to another Dashboard, see [Add 
 [<Text>](<URL>)
 ```
 
-<img src={useBaseUrl('/img/dashboards-new/panels/link-syntax-example-Jan-2021.png')} style={{border: '1px solid gray'}} alt="link syntax example Jan 2021" width="600"/>
+<img src={useBaseUrl('/img/dashboards/panels/link-syntax-example-Jan-2021.png')} style={{border: '1px solid gray'}} alt="link syntax example Jan 2021" width="600"/>
 
 The link is displayed is in the panel.
 
 ## Service Map Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="icon-service-map" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="icon-service-map" width="75"/>
 
 The [Services List and Map](/docs/apm/traces/services-list-map) views display high-level views of your application environment, giving you a greater insight into your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards-new/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="panel-service" width="800"/>
+You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="panel-service" width="800"/>
 
 To add a Service Map panel:
 
-1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.<br/><img src={useBaseUrl('/img/dashboards-new/panels/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="400"/>
-1. A panel configuration page opens.<br/><img src={useBaseUrl('/img/dashboards-new/panels/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="800"/>
+1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.<br/><img src={useBaseUrl('/img/dashboards/panels/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="400"/>
+1. A panel configuration page opens.<br/><img src={useBaseUrl('/img/dashboards/panels/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="800"/>
 1. Select from the dropdown menus to filter the Service Map by the following:<br/><img src={useBaseUrl('/img/apm/traces/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/>
     * **Application** if your tracing data has the `application=[app-name]`, tag **Service**.
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`.
@@ -187,7 +187,7 @@ To add a Service Map panel:
 
 ## Trace List Panel
 
-<img src={useBaseUrl('/img/dashboards-new/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="icon-trace-list" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="icon-trace-list" width="75"/>
 
 Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
 
@@ -197,14 +197,14 @@ See the [Dashboard](/docs/dashboards/about) guide for additional information and
 You are limited to three Trace List panels in a dashboard.
 :::
 
-<img src={useBaseUrl('/img/dashboards-new/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="panel-trace" width="600"/>
+<img src={useBaseUrl('/img/dashboards/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="panel-trace" width="600"/>
 
 To add a Trace List panel:
 
 1. With the Dashboard open, click the **Add Panel** button. <br/><img src={useBaseUrl('/img/apm/traces/add-tracelist.png')} style={{border: '1px solid gray'}} alt="add-tracelist" width="400"/> 
-1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards-new/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="create-tracelist" width="800"/>
+1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="create-tracelist" width="800"/>
 1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces. 
-1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('/img/dashboards-new/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
+1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
 1. Select **Chart Type** as either:
    1. **Table**. showing table with traces.
    1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.  
@@ -229,5 +229,5 @@ To add a Trace List panel:
 You can delete a panel that you no longer need.
 
 1. Go to the Dashboard in Sumo Logic that has the panel you want to delete.
-1. Hover the cursor over the **Details** icon to display the pop-up menu. <br/><img src={useBaseUrl('/img/dashboards-new/panels/delete-panel/details-option.png')} style={{border: '1px solid gray'}} alt="details option" width="800"/>
-1. Select **Delete**. <br/><img src={useBaseUrl('/img/dashboards-new/panels/delete-panel/delete-a-panel.png')} style={{border: '1px solid gray'}} alt="delete a panel" width="800"/>
+1. Hover the cursor over the **Details** icon to display the pop-up menu. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/details-option.png')} style={{border: '1px solid gray'}} alt="details option" width="800"/>
+1. Select **Delete**. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/delete-a-panel.png')} style={{border: '1px solid gray'}} alt="delete a panel" width="800"/>
