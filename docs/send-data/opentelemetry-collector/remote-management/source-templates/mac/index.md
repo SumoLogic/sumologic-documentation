@@ -58,7 +58,7 @@ In this step, you will configure the yaml required for Mac Collection. Below are
 - **Logs**. The following fields are pre-populated with default paths for common log files that are used in different Mac distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
 
 #### Metrics Collection
-- **Metrics**. Select the metric scrappers you want to enable. By default metric collection for memory,load,file system,network and paging are enabled and process metric collection is disabled.
+- **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for memory, load, file system, network and paging are enabled and process metric collection is disabled.
 
 ##### Enable process metric collection (Optional)
 
@@ -76,5 +76,5 @@ import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-conf
 <DataConfiguration/>
 
 :::info
-Refer to the [changelog](changelog.md) to know about the periodic changes for this source template.
+Refer to the [changelog](changelog.md) for information on periodic updates to this source template.
 :::

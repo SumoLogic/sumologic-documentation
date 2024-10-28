@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.10
-Updated: July 8, 2024***
+***Version: 1.10  
+Updated: Oct 16, 2024***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -53,6 +53,6 @@ EDR
 * March 21, 2023 (v1.5) - Logo updated
 * July 12, 2023 (v1.8) - Changed fields visibility
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
-* July 8, 2024 (v1.10) - Added new actions
+* October 16, 2024 (v1.10) - Added new actions
     + Create Indicators
     + Get Indicators

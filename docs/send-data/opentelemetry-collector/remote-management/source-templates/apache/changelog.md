@@ -18,7 +18,7 @@ description: Changelog for Apache source template for OpenTelemetry.
 ## [1.1.0] - 2024-07-05
 
 ### Added
-- Processing rules for logs (filtering and maksing) and metrics (filtering).
+- Processing rules for logs (filtering and masking) and metrics (filtering).
 
 ## [1.0.0] - 2024-03-19
 
