@@ -72,7 +72,7 @@ If logging is not enabled, you can configure it by following the steps below.
 
 :::note
 Currently this app does not support collection of unified audit trail logs collected in Oracle on windows as windows event logs.
-Dashbaords **Oracle - Sys Audit Log, Oracle - Sys Audit Log - Logon Analysis, Oracle - XML Audit Log - Logon Analysis and Oracle - XML Audit Log - SQL Statement Analysis** will be populated when collecting logs for version below 21c 
+Dashboards **Oracle - Sys Audit Log, Oracle - Sys Audit Log - Logon Analysis, Oracle - XML Audit Log - Logon Analysis and Oracle - XML Audit Log - SQL Statement Analysis** will be populated when collecting logs for version below 21c 
 
 Dashboard **Oracle - Unified Audit Syslogs** will populate for audit log collected for oracle version 21c and above.
 :::
@@ -552,7 +552,7 @@ Recent Jobs in the database. A table of information about recent database jobs, 
 ### Oracle - Unified Audit Syslog
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Unified-Audit-Syslog.png' alt="Monitor Performance by DB Script" />
-See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. In addition to this dashbaord gives insight around logon status trend, top current and database users.
+See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. In addition to this dashboard gives insight around logon status trend, top current and database users.
 
 
 ### Oracle - Performance Details
