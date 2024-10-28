@@ -149,6 +149,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/lastpass"><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="60" /><h4>LastPass</h4></a>
+  <p>Identify security threats by analyzing audit events.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/microsoft-azure-ad-inventory"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
   <p>Identify security threats by analyzing users and devices logs.</p>
   </div>
@@ -284,6 +290,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/workday"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="icon" width="50"/><h4>Workday</h4></a>
   <p>Monitor Workday login activity, user activity, and admin activity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/zendesk"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="icon" width="70"/><h4>Zendesk</h4></a>
+  <p>Identify security threats by analyzing audit logs.</p>
   </div>
 </div>
 <div className="box smallbox card">

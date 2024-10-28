@@ -304,7 +304,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Acquia_Drupal_Requests_Overview.png')} alt="Dashboard" />
 
-## Upgrading the Acquia app (Optional)
+## Upgrade/Downgrade the Acquia app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
