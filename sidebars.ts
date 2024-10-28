@@ -911,6 +911,7 @@ module.exports = {
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
         'manage/manage-subscription/fedramp-capabilities',
+        'manage/manage-subscription/usage-management',
       ]
     },
     {
@@ -2458,6 +2459,7 @@ integrations: [
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/knowbe4',
+          'integrations/saas-cloud/lastpass',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/microsoft-graph-security-v1',
@@ -2481,6 +2483,7 @@ integrations: [
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
+          'integrations/saas-cloud/zendesk',
           'integrations/saas-cloud/zoom',
         ],
       },
@@ -2977,6 +2980,7 @@ integrations: [
         'api/role-management',
         'api/role-management-v2',
         'api/saml-configuration',
+        'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
         'api/service-allowlist',
