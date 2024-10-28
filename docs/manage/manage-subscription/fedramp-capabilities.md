@@ -98,7 +98,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Manage Data - Logs | [Field extraction rules](/docs/manage/field-extractions/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Logs | [Partitions](/docs/manage/partitions/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Logs | [Scheduled searches](/docs/alerts/scheduled-searches/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Manage Data - Logs | [Scheduled views](/docs/manage/scheduled-views/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Manage Data - Logs | [Views](/docs/manage/views/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Metrics | [Logs-to-Metrics](/docs/metrics/logs-to-metrics/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Metrics | [Metrics Rules](/docs/metrics/metric-rules-editor/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Metrics | [Metrics transformation rules](/docs/metrics/metrics-transformation-rules/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

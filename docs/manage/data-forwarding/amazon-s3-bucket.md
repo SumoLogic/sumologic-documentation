@@ -6,7 +6,7 @@ description: Learn about how to forward data from Sumo Logic to S3.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
+You can forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/views/scheduled-views) to an S3 bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
 
 To forward data to an S3 bucket:
 1. [Configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination).
@@ -17,6 +17,10 @@ After data forwarding is configured, you should start to see file objects poste
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
+
+You can forward log data from a [Partition](/docs/manage/partitions) or [Views](/docs/manage/views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
+
+After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 ## Prerequisites
 
@@ -124,7 +128,7 @@ Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwardi
     * **Scheduled View**: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. 
 1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/manage/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
     :::tip
-    In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/scheduled-views/add-scheduled-view/).
+    In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/views/scheduled-views/add-view/).
     :::
 1. Click the **Enable Data Forwarding** checkbox. More options appear. <br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
 1. **Forwarding Destination**. Choose one of the following:  

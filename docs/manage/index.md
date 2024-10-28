@@ -85,7 +85,7 @@ This topic describes features and options that give you administration over acco
 -->
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Scheduled Views</h4></a>
+  <a href="/docs/manage/views"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Views</h4></a>
   <p>Accelerate the search process for data subsets by functioning as a pre-aggregated index.</p>
   </div>
 </div>
