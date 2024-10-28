@@ -89,7 +89,7 @@ By default, when an entity’s Activity Score exceeds the threshold of 12, Clou
 
 After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
 
-### Example of an Entity that has reached Activity Score threshold
+### Example of an Entity that has exceeded Activity Score threshold
 
 In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “192.168.1.1”, an IP address. The right side of the page shows the three Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
 
