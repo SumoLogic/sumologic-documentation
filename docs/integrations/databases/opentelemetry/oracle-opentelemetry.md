@@ -15,17 +15,11 @@ The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app 
 
 This app is tested with the following Oracle versions:
 
-- Non-Kubernetes: Oracle Database 23 Release 23.4.0.24.05
+- Non-Kubernetes: Oracle Database 23 Release 23.4.0.24.05.
 
 Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are collected through [Oracledb receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/oracledbreceiver)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
-
-## Log types
-
-- Alert Logs
-- Listener Logs
-- Audit Logs
 
 ## Fields creation in Sumo Logic for Oracle
 
@@ -38,7 +32,7 @@ Following are the tags which that be created as part of Oracle App install if no
 
 ## Prerequisites
 
-## Metrics
+### For metrics collection
 You will need to assign these permissions to the database user used to fetch metrics:
 
 ```
@@ -50,7 +44,8 @@ GRANT SELECT ON DBA_DATA_FILES TO <username>;
 GRANT SELECT ON DBA_TABLESPACE_USAGE_METRICS TO <username>;
 ```
 
-## Logs
+### For logs collection
+
 Here are the steps required to configure log collection for Oracle running on a non-Kubernetes environment.
 
 * [Enable Oracle logging](#enable-oracle-logging)
@@ -58,7 +53,7 @@ Here are the steps required to configure log collection for Oracle running on a 
 * [Set up Oracle performance metrics script](#performance-metrics-script-setup)
 * [Configure three local log file Sources](#step-2-configure-integration)
 
-### Enable Oracle logging
+#### Enable Oracle logging
 
 If logging is not enabled, you can configure it by following the steps below.
 
@@ -70,14 +65,11 @@ If logging is not enabled, you can configure it by following the steps below.
    ```
 - **Audit Log**. Traditional auditing is deprecated in Oracle Database 21c. If you are using version below 21c follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs. For version 21c and above, follow [this](https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/administering-the-audit-trail.html#GUID-662AA54B-D878-4B78-94D3-733256B3F37C) to enable exporting for unified audit trail through syslog for Oracle on Linux.
 
-:::note
-Currently this app does not support collection of unified audit trail logs collected in Oracle on windows as windows event logs.
-Dashboards **Oracle - Sys Audit Log, Oracle - Sys Audit Log - Logon Analysis, Oracle - XML Audit Log - Logon Analysis and Oracle - XML Audit Log - SQL Statement Analysis** will be populated when collecting logs for version below 21c 
+  :::note
+  Currently this app does not support collection of unified audit trail logs collected in Oracle on Windows as Windows event logs.
+  :::
 
-Dashboard **Oracle - Unified Audit Syslogs** will populate for audit log collected for oracle version 21c and above.
-:::
-
-### Verify local logs file directories and path
+#### Verify local logs file directories and path
 
 - **Oracle Alert Logs**. For 11g and later releases (12c, 18c, 19c). By default, Oracle logs are stored in
 `$ORACLE_BASE/diag/rdbms/$DB_UNIQUE_NAME/$ORACLE_SID/trace/`. The default directory for log files is stored in `BACKGROUND_DUMP_DEST` parameter. You can query the value of `BACKGROUND_DUMP_DEST`, an initialization parameter, where you can find Oracle alert log by executing the command below:
@@ -89,22 +81,19 @@ Dashboard **Oracle - Unified Audit Syslogs** will populate for audit log collect
   [oracle@sumolab alert]$ lsnrctl status
   ```
 - **Oracle Audit Logs**. 
-  - **For Oracle version below 21c** 
-  By default, Oracle logs are stored in
-  ```
-  $ORACLE_BASE/app/oracle/admin/orcl/adump
-  ```
+  - **For Oracle version below 21c**. By default, Oracle logs are stored in
+    ```
+    $ORACLE_BASE/app/oracle/admin/orcl/adump
+    ```
+    The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`.
 
-  The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`.
+    Audit Logs should be in either `XML`, `EXTENDED`, or `{{OS }}` format for the app to work.
 
-  Audit Logs should be in either `XML`, `EXTENDED`, or `{{OS }}` format for the app to work.
+    The location of these logs will be required when you set up the app through the app catalog.
 
-  The location of these logs will be required when you set up the app through the app catalog.
+  - **For Oracle version 21c and above**. Once unified audit trail is redirected to syslog, it will start getting written to destination set in `syslog.conf`. 
 
-  - **For Oracle version 21c and above**
-  Once unified audit trail is redirected to syslog it will start getting written to destination set in syslog.conf. 
-
-### Performance Metrics Script Setup
+#### Performance Mmtrics script setup
 
 To set up the performance metrics script on Linux and Windows for the Oracle app:
 
@@ -192,10 +181,10 @@ In this step, you will configure the yaml required for Oracle Collection.
 Below are the inputs required:
 
 - **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
-- **`Alert Logs`**. Path of the log file configured to capture oracle logs needs to be given here
-- **`Listener Logs`**. Path of the log file configured to capture oracle logs needs to be given here
-- **`Audit Logs`**. Path of the log file configured to capture oracle logs needs to be given here
-- **`Performance metric script-based logs`**. Path of the log file configured to capture oracle logs needs to be given here
+- **`Alert Logs`**. Path of the log file configured to capture oracle logs.
+- **`Listener Logs`**. Path of the log file configured to capture oracle logs needs to be given here.
+- **`Audit Logs`**. Path of the log file configured to capture oracle logs needs to be given here.
+- **`Performance metric script-based logs`**. Path of the log file configured to capture oracle logs needs to be given here.
 - **`username`**. Username for the OracleDB connection.
 - **`password`**. Password for the OracleDB connection. Special characters are allowed.
 - **`service`**. OracleDB Service that the receiver should connect to.
@@ -292,7 +281,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log message
 
-Sample Log Message in Non-Kubernetes environment:
+Sample log message in Non-Kubernetes environment:
 
 ```sh title="Time"
 20-Jan-2023 11:02:56 * (CONNECT_DATA=(CID=(PROGRAM=null)(HOST=__jdbc__)(USER=null))(SERVICE_NAME=sumo.cmdb01.com)) * (ADDRESS=(PROTOCOL=TCP)(HOST=124.243.25.82)(PORT=56486)) * establish * sumo.cmdb01.com * 12514
@@ -300,9 +289,9 @@ Sample Log Message in Non-Kubernetes environment:
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-## Sample Log query
+## Sample log query
 
-This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
+This sample query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
 ```sql title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
@@ -314,19 +303,26 @@ This sample Query is from the **Oracle - Overview** dashboard > **DB Connection*
 | count as %"ConnectionCount"
 ```
 
-# Sample metrics
+## Sample metrics
+
 ```json
 {"queryId":"A","oracledb.instance.name":"localhost:1521/FREE","_source":"oracle/oracledb","cloud.platform":"aws_ec2","_metricId":"lZCclGCpxjgi0_E4r4v5ww","host.image.id":"ami-000314be38df8042e","_sourceName":"oracle","cloud.availability_zone":"us-east-1b","host.id":"i-05ce9f3824aa73d10","host.group":"anemaoracle","os.type":"linux","sumo.datasource":"oracle","db.system":"oracle","db.node.name":"ip-10-0-29-37","cloud.account.id":"956882708938","_sourceCategory":"OTC Metric Input","deployment.environment":"anemaoracle","_contentType":"OpenTelemetry","tablespace_name":"SYSTEM","host.type":"m5.large","host.name":"ip-10-0-29-37","metric":"oracledb.tablespace_size.usage","_collectorId":"00005AF310D08C7C","_sourceId":"0000000000000000","unit":"By","db.cluster.name":"test","cloud.region":"us-east-1","cloud.provider":"aws","_sourceHost":"ip-10-0-29-37","_collector":"ip-10-0-29-37","max":1104150528,"min":1104150528,"avg":1104150528,"sum":3312451584,"latest":1104150528,"count":3}
 ```
-## Sample Metrics query
 
-This sample Query is from the **Oracle - Overview** dashboard > **Session Count** panel.
+## Sample metrics query
+
+This sample query is from the **Oracle - Overview** dashboard > **Session Count** panel.
 
 ```sql title="Session Count"
 sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum 
 ```
 
 ## Viewing Oracle dashboards
+
+:::note
+- **Oracle - Sys Audit Log**, **Oracle - Sys Audit Log - Logon Analysis**, **Oracle - XML Audit Log - Logon Analysis**, and **Oracle - XML Audit Log - SQL Statement Analysis** dashboards will be populated only when collecting logs for Oracle database version below 21c.
+- **Oracle - Unified Audit Syslogs** dashboard will populate for audit log collected for Oracle database version 21c and above.
+:::
 
 ### Overview
 
@@ -549,13 +545,12 @@ Top Session Wait Time Events. A table that shows the top 10 event types associat
 Recent Jobs in the database. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
 
 
-### Oracle - Unified Audit Syslog
+### Unified Audit Syslog
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Unified-Audit-Syslog.png' alt="Monitor Performance by DB Script" />
 See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. In addition to this dashboard gives insight around logon status trend, top current and database users.
 
-
-### Oracle - Performance Details
+### Performance Details
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-Details.png' alt="Monitor Performance by DB Script" />
 The Oracle - Performance Details dashboard gives insight about - count of rollback, commits, transaction, process, session. 
