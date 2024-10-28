@@ -185,7 +185,7 @@ Below are the inputs required:
 - **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
 - **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
 - **`Audit Logs`**. Path of the log file configured to capture oracle audit logs.
-- **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script needs to be given here
+- **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script.
 - **`username`**. Username for the OracleDB connection.
 - **`password`**. Password for the OracleDB connection. Special characters are allowed.
 - **`service`**. OracleDB Service that the receiver should connect to.
