@@ -182,10 +182,10 @@ In this step, you will configure the yaml required for Oracle Collection.
 Below are the inputs required:
 
 - **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
-- **`Alert Logs`**. Path of the log file configured to capture oracle logs.
-- **`Listener Logs`**. Path of the log file configured to capture oracle logs needs to be given here.
-- **`Audit Logs`**. Path of the log file configured to capture oracle logs needs to be given here.
-- **`Performance metric script-based logs`**. Path of the log file configured to capture oracle logs needs to be given here.
+- **`Alert Logs`**. Path of the log file configured to capture oracle alert logs needs to be given here
+- **`Listener Logs`**. Path of the log file configured to capture oracle listner logs needs to be given here
+- **`Audit Logs`**. Path of the log file configured to capture oracle audit logs needs to be given here
+- **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script needs to be given here
 - **`username`**. Username for the OracleDB connection.
 - **`password`**. Password for the OracleDB connection. Special characters are allowed.
 - **`service`**. OracleDB Service that the receiver should connect to.
