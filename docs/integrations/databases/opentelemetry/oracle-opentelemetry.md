@@ -33,6 +33,7 @@ Following are the tags which that be created as part of Oracle App install if no
 ## Prerequisites
 
 ### For metrics collection
+
 You will need to assign these permissions to the database user used to fetch metrics:
 
 ```
@@ -93,7 +94,7 @@ If logging is not enabled, you can configure it by following the steps below.
 
   - **For Oracle version 21c and above**. Once unified audit trail is redirected to syslog, it will start getting written to destination set in `syslog.conf`. 
 
-#### Performance Mmtrics script setup
+#### Performance metrics script setup
 
 To set up the performance metrics script on Linux and Windows for the Oracle app:
 
