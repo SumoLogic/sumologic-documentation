@@ -184,7 +184,7 @@ Below are the inputs required:
 - **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
 - **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
 - **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
-- **`Audit Logs`**. Path of the log file configured to capture oracle audit logs needs to be given here
+- **`Audit Logs`**. Path of the log file configured to capture oracle audit logs.
 - **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script needs to be given here
 - **`username`**. Username for the OracleDB connection.
 - **`password`**. Password for the OracleDB connection. Special characters are allowed.
