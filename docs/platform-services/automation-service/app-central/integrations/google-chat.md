@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 2.0  
-Updated: August 27, 2024***
+Updated: Oct 29, 2024***
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams.
 
@@ -37,6 +37,8 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 10. Under the **KEYS** tab, Click **ADD KEY** and choose **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 11. Click on **CREATE** (make sure **JSON** is selected).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-5.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
 12. The JSON file is downloaded. Make sure you save it in a safe place.
+13. To configure the app in Google Chat API Go to the **API&Services** > select **Google Chat API** > In **CONFIGURATION** provide the details and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-10.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
+14. Go to the **Google Chat App** and add the Above App in that, also to add above app in space go to **space** and in **Apps & integration** add the app.
 
 ## Google Chat in Automation Service and Cloud SOAR
 
@@ -47,3 +49,4 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 ## Change Log
 
 * August 27, 2024 (v2.0) - First upload
+* October 29, 2024 (v2.0) - Updated the docs 
