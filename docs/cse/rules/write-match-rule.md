@@ -77,20 +77,20 @@ import Iframe from 'react-iframe'; 
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Match Rule dialog" style={{border: '1px solid gray'}} width="325"/>
+1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Match Rule dialog" style={{border: '1px solid gray'}} width="250"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="Dynamic Severity field" style={{border: '1px solid gray'}} width="450"/>
+   1. The severity area updates. 
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
-   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>
-   1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value is Option.png" style={{border: '1px solid gray'}} width="450"/>
+   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="300"/>
+   1. Click **Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value is Option.png" style={{border: '1px solid gray'}} width="300"/>
    1. Select one of the following options:
-      * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
-      * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.
       * **greater than**. The Record field’s value must be greater than the numeric value you supply. The match is not inclusive. For example "greater than “5" will match “5.1”, but not “5”.
+      * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.
       * **between**. The Record field’s value must be between the two numeric values you supply. The match is inclusive. For example, "Between 5 and 10" will match “5”, “7”, or “10”, but not “10.1”.
+      * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
       * **not in the record**. Will match when the attribute is found in the Record. For example, if the selected field is `broirc_value`, and that field is not present in a Record, the rule will match. If `broirc_value` exists but is null or empty, the rule will not match.
    1. You can define additional conditions, as desired. To define an additional condition, repeat the steps above, starting with **Add More Mappings**.
    :::note
