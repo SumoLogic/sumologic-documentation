@@ -26,7 +26,7 @@ Searching the Audit Event Index and System Event Index is the same as running a 
 
 To search for events:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click the **+ New** button at the top of the screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_audit_events or _index=sumologic_system_events) _sourceCategory=oar*

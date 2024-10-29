@@ -123,16 +123,14 @@ This section shows you how to get started working with logs and metrics. The li
 To launch a search, metrics visualization, or live tail session, do the following:
 
 1. Go to the Sumo Logic **Home** page.
-1. Do one of the following:
-   * Click **+New** in the Tabs menu and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/new-icons.png')} alt="new-icons.png" width="600"/>
-   * Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
-     * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
-     * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
-     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
-     * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
-     * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
-     * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
+1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
+   * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
+   * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
+   * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
+   * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
+   * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
+   * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
+   * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 

@@ -31,6 +31,16 @@ There is another benefit of using tuning built-in rules instead of writing custo
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
 
+### Example tuning expression
+
+Here’s what the example tuning expression looks like in the Cloud SIEM UI.
+
+<img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" style={{border: '1px solid gray'}} width="700"/>
+
+## Writing a tuning expression
+
+Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
+
 Watch this micro lesson to learn how to create a rule tuning expression.
 
 <Iframe url="https://www.youtube.com/embed/3BUKLtJtPI8?rel=0"
@@ -46,21 +56,10 @@ Watch this micro lesson to learn how to create a rule tuning expression.
 
 import Iframe from 'react-iframe'; 
 
-## Writing a tuning expression
-
-Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
-
-## Example tuning expression
-
-Here’s what the example tuning expression looks like in the Cloud SIEM UI.
-
-<img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" style={{border: '1px solid gray'}} width="800"/>
-
 ## Create a tuning expression
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
 1. On the **Rule Tuning** page, click **Create**.
-    <br/><img src={useBaseUrl('img/cse/rule-tuning-page.png')} alt="Rule tuning page" style={{border: '1px solid gray'}} width="800"/>
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
@@ -72,8 +71,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
    * Leave **include** selected if you want Signals to be fired for Records that match both the rule expression and the tuning expression.
    * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and do not match the tuning expression.
 1. Enter a tuning expression.
-2. Click **Submit**.
-   <br/><img src={useBaseUrl('img/cse/new-expression.png')} alt="New expression" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Submit**.
 
 ### Create tuning expression without applying it to rules
 
@@ -83,7 +81,7 @@ If you want to create a tuning expression and not apply it to any rules immediat
 
 You can also create new tuning expression and apply existing tuning expressions to a rule using the **Rules Editor** UI.
 
-<img src={useBaseUrl('img/cse/tuning.png')} alt="Add tuning expression" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/tuning.png')} alt="Add tuning expression" style={{border: '1px solid gray'}} width="400"/>
 
 ## Enabling and disabling a tuning expression
 
@@ -102,6 +100,6 @@ You can also toggle the enablement state on the details page for a tuning expres
 
 When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-expressions) by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you do not want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
 
-<img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" style={{border: '1px solid gray'}} width="600"/>
 
  

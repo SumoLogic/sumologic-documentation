@@ -183,7 +183,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginSecurity.png')} alt="OneLogin" />
 
-## Upgrading the OneLogin app (Optional)
+## Upgrade/Downgrade the OneLogin app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
