@@ -150,7 +150,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/google/Google-Workspace-Alert-Center-Other-Alerts.png')} alt="Google Workspace dashboards" />
 
-## Upgrading the Google Workspace app (Optional)
+## Upgrade/Downgrade the Google Workspace app (Optional)
 
 import AppUpdate from '../../../reuse/apps/app-update.md';
 

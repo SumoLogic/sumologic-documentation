@@ -139,7 +139,7 @@ The **Akamai Security Events - Threat Intel** dashboard provides an at-a-glance 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Threat-Intel.png')} alt="Akamai Security Events dashboards" />
 
-## Upgrading the Akamai Security Events app (Optional)
+## Upgrade/Downgrade the Akamai Security Events app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

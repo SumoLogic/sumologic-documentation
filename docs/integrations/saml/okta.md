@@ -339,7 +339,7 @@ Shows the details of user authentication and Multi-Factor Authentication (MFA) a
 
 <img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta-AdministrativeActions" />
 
-## Upgrading the Okta app (Optional)
+## Upgrade/Downgrade the Okta app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

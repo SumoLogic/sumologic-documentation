@@ -134,7 +134,7 @@ Use this dashboard to:
 
 ![GI-Apache-05-Visitor-Benchmarks.png](/img/global-intelligence/GI-Apache-05-Visitor-Benchmarks.png)
 
-## Upgrading the Global Intelligence for Apache app (Optional)
+## Upgrade/Downgrade the Global Intelligence for Apache app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
