@@ -26,7 +26,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" style={{border: '1px solid gray'}} width="400"/>
 1. Create the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="300"/>
    1. In the **New playbook** dialog, give your playbook a **Name**.
    1. For **Type**, enter **CSE**.
