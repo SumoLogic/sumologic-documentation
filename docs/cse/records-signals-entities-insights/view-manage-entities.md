@@ -58,9 +58,6 @@ When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for t
 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
-
-Here’s a screenshot of the Entities page.
-
 <img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
 
@@ -71,34 +68,43 @@ Here’s a screenshot of the Entities page.
 | c | In this area you can sort Entities by Activity Score, Name, or Type.  |
 | d | The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](#update-multiple-entities). |
 | e | Shows the Entity Type and its value.  |
-| f | The **Criticality** column shows whether a [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default". |
-| g | The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
-| h | If you see a link below the Entity value, it’s a [tag](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/). You can click it to filter Entities by that tag. |
-| i | If an Entity has the **Suppressed** indicator, that means that Signals will not be fired on the Entity.   |
+| f | If an Entity has the **Suppressed** indicator, that means that Signals will not be fired on the Entity. |
+| g | The **Criticality** column shows whether a [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default". |
+| h | The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
+| i | The total amount of Signal severity for the Entity. |
+
+If you see a link below the Entity value, it’s a [tag](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/). You can click it to filter Entities by that tag. 
 
 ## About the Entities Details page
 
 When you click an Entity on the **Entities** page, a details page for
 the Entity appears.
 
-<img src={useBaseUrl('img/cse/entity-details-new-host.png')} alt="Entity details page" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/entity-details-new-host.png')} alt="Entity details page" style={{border: '1px solid gray'}} width="900"/>
 
 | Letter | Description |
 |:--|:--|
-| a | Suppression slider. Shows whether or not the Entity is currently [suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression). You can use the slider to suppress the Entity so that it is excluded from the Insight generation process.  |
-| b | **Tags**. Lists any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
-| c | **Criticality**. An Entity’s [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
-| d | **Metadata**. This section lists the contents of enrichment fields  that were added during Record processing. |
-| e | **Inventory**. If the selected Entity is standard Entity type (as opposed to a custom Entity type), this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. Cloud SIEM joins inventory data on demand with data from Entities in Insights data to provide context to Signals. |
-| f | **Notes**. Contains any notes added to the Entity.|
-| g | **Audit Log**. This area will list any audit events that have been logged for the Entity. An audit log is generated each time an Entity is suppressed or unsuppressed.|
-| h | **Recent Activity**. Provides a count of how many Signals or Insights included the Entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
-| i | **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
-| j | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
-| k | **Entity Timeline**. A timeline appears for the Entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
-| l | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
-| m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which Cloud SIEM evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the Cloud SIEM UI.) |
-| n | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
+| a | **Suppression**. Shows whether or not the Entity is currently [suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression). You can use the slider to suppress the Entity so that it is excluded from the Insight generation process.  |
+| b | **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#run-an-automation-manually-on-entities) available to be run on the Entity. |
+| c | **Tags**. Lists any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
+| d | **Criticality**. An Entity’s [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
+| e | **Signal Severity Total**.  The total amount of Signal severity for the Entity. |
+| f | **Indicators**.  The indicators on the Entity, whether from enrichments or threat intelligence. |
+| g | **Metadata**. This section lists the contents of enrichment fields  that were added during Record processing. |
+| h | **Network Blocks**.  [Network blocks](/docs/cse/administration/create-use-network-blocks/) for the Entity.  |
+| i | **Inventory**. If the selected Entity is standard Entity type (as opposed to a custom Entity type), this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. Cloud SIEM joins inventory data on demand with data from Entities in Insights data to provide context to Signals. |
+| j | **Notes**. Contains any notes added to the Entity.|
+| k | **Audit Log**. This area will list any audit events that have been logged for the Entity. An audit log is generated each time an Entity is suppressed or unsuppressed.|
+| l | **Recent Activity**. Provides a count of how many Signals or Insights included the Entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
+| m | **Activity**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
+| n | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
+| o | **Timeline**. A timeline appears for the Entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
+| p | **Related Entities**. Entities related to the current Entity. |
+| q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the Entity. |
+| r | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
+| s | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which Cloud SIEM evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the Cloud SIEM UI.) |
+
+Below the **Current State** section there may be a **Prior Activity** section. This section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity. 
 
 ## About the Entity Timeline tab
 
@@ -120,10 +126,8 @@ You can create an Insight for an Entity based on one or more Signals on the Enti
 
 <img src={useBaseUrl('img/cse/create-insight.png')} alt="Create Insight" style={{border: '1px solid gray'}} width="800"/>
 
-
 The page refreshes and shows the selected Signals grouped in a new Insight.
 
-<img src={useBaseUrl('img/cse/insight-created.png')} alt="Signals grouped in Insight" style={{border: '1px solid gray'}} width="800"/>
 
 ## Update multiple Entities
 
@@ -134,11 +138,12 @@ or Criticality for one or more Entities.
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
 1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
-1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
-1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:
+1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. 
+1. Note that once you select an Entity, three options appear at the top of the Entities list. <br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
+<br/>See the instructions for each option below:
    * [Update Tags](#update-tags)
    * [Update Suppression](#update-suppression)
-   * [Update Criticalities](#update-criticalities)
+   * [Update Criticality](#update-criticality)
 
 #### Update tags
 
@@ -159,11 +164,11 @@ or Criticality for one or more Entities.
 2. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
 3. If you want to unsuppress the selected Entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the Entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
 
-#### Update Criticalities
+#### Update Criticality
 
-1. After selecting the Entities you want to update, click **Update Criticalities**. 
-2. The **Update Criticalities** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
-3. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticalities**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticalities**.
+1. After selecting the Entities you want to update, click **Update Criticality**. 
+2. The **Update Criticality** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
+3. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticality**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticality**.
 
 ### Import Entity updates from a CSV file
 
