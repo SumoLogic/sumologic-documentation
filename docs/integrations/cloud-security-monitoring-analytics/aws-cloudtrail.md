@@ -87,7 +87,7 @@ _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
-## Installing the AWS CloudTrail App
+## Installing the AWS CloudTrail app
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
