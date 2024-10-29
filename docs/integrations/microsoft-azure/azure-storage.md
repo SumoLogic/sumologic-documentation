@@ -430,7 +430,7 @@ Use this dashboard to:
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureStorage/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-## Upgrading the Azure Storage app (optional)
+## Upgrade/Downgrade the Azure Storage app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
