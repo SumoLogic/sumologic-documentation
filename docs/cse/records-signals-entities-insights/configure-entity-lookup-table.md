@@ -66,10 +66,14 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. On the **Entity Normalization** page, click **Lookup Tables**.
 1. Click **Create** on the **Lookup Tables** tab.
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. The **Existing Lookup Table** popup appears.
 =======
 1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="600"/>  
 >>>>>>> 499b3f85d (DOCS-501 - Recapture Cloud SIEM screenshots (#4702))
+=======
+1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="600"/>  
+>>>>>>> main
 1. **Type**. Choose the type of normalization you want to set up.
    * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
    * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
