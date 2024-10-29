@@ -207,7 +207,7 @@ Cloud SIEM automatically normalizes, enriches, and correlates all your data acro
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-1.png')} alt="Records creation" style={{border: '1px solid gray'}} width="800"/>
 
-When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score is 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity.
+When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score exceeds 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity.
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" style={{border: '1px solid gray'}} width="725"/>
 
@@ -273,7 +273,7 @@ On the Cloud SIEM main page, you'll see a panel similar to this one. In this cas
 
 Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just one Insight was created out of all those Signals.
 
-An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
+An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created because the total activity score exceeds 12.
 
 ## Get started with threat investigation
 
@@ -330,7 +330,7 @@ When you click into a Signal, you’ll have the option to see the full details o
 
 #### Entities
 
-The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score reaches at least 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
+The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score exceeds 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="800"/>
 

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sentinel.png')} alt="microsoft-sentinel" width="100"/>
 
-***Version: 1.5  
-Updated: Oct 22, 2024***
+***Version: 1.6  
+Updated: Oct 29, 2024***
 
 Microsoft Sentinel is a cloud-native security information and event manager (SIEM) platform that uses built-in AI to help analyze large volumes of data across an enterprise. 
 
@@ -41,5 +41,7 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 	+ Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration
 + October 22, 2024 (v1.5)
 	+ Added new action **List Incident Entities V2**
-    + Updated the integration by adding a new fields (**Cloud SOAR URL API URL**, **Access ID** , **Access Key**) to the configuration
+    + Updated the integration by adding new fields (**Cloud SOAR URL API URL**, **Access ID** , **Access Key**) to the configuration
++ October 29, 2024 (v1.6)
+	+ Updated **List Incident Entities V2** action in the output field.
     
