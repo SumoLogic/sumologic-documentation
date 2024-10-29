@@ -91,9 +91,9 @@ After Cloud SIEM fires a particular Signal on a particular Entity, it suppresse
 
 ### Example of an Entity that has reached Activity Score threshold
 
-In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “192.168.1.1”, an IP address. The right side of the page shows the three Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
+In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “217.xxx.x.x”, an IP address. The right side of the page shows the Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
 
-The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
+The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “217.xxx.x.x” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
 <img src={useBaseUrl('img/cse/insight.png')} alt="Insight" style={{border: '1px solid gray'}} width="800"/>
 
