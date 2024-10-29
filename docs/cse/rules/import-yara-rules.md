@@ -19,8 +19,8 @@ To import YARA rules:
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > File Analysis**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > File Analysis**. You can also click the **Go To...** menu at the top of the screen and select **File Analysis**.  
 1. Click **Add Source**.
-1. On the **Add New Source** popup, click **Create** in the GitHub tile. <br/><img src={useBaseUrl('img/cse/add-source-1.png')} alt="Create button"/>
-1. The **Add New Source** popup updates. <br/><img src={useBaseUrl('img/cse/add-source-2.png')} alt="Add New Source dialog"/>
+1. On the **Add New Source** popup, click **Create** in the GitHub tile. <br/><img src={useBaseUrl('img/cse/add-source-1.png')} alt="Create button" style={{border: '1px solid gray'}} width="400" />
+1. The **Add New Source** popup updates. <br/><img src={useBaseUrl('img/cse/add-source-2.png')} alt="Add New Source dialog" tyle={{border: '1px solid gray'}} width="500" />
 1. **Name**. Enter a display name for the rule set to be imported.
 1. **Description**. Describe the rule set.
 1. Enabled. If you want Cloud SIEM to apply to rules upon import, leave the toggle set to Enabled. Otherwise, change it to Disabled.

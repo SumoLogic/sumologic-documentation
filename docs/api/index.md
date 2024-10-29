@@ -202,6 +202,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/scheduled-views"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scheduled Views</h4></a>
   </div>
 </div>

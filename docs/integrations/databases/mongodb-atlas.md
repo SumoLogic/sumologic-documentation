@@ -786,7 +786,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Sharding.png')} alt="MongoDB Atlas dashboards" />
 
-## Upgrading the MongoDB Atlas app (Optional)
+## Upgrade/Downgrade the MongoDB Atlas app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
