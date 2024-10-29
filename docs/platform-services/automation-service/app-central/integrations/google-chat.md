@@ -30,15 +30,15 @@ Google Chat is an intelligent and secure communication and collaboration tool, b
 3. Go to the **API&Services** > **Credentials** page.
 4. In the same page click on **ENABLES API AND SERVICES** and search for Google Chat and enable it.
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
-6. Enter a Service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
+6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
 7. (Optional) Enter a description of the service account.
 8. Skip two optional grant permissions steps and click **Done** to complete the service account creation.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-2.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 9. Click on the generated service account to open the details.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-3.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
-10. Under the **KEYS** tab, Click **ADD KEY** and choose **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
+10. Under the **KEYS** tab, click **ADD KEY** and choose **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 11. Click on **CREATE** (make sure **JSON** is selected).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-5.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
 12. The JSON file is downloaded. Make sure you save it in a safe place.
-13. To configure the app in Google Chat API Go to the **API&Services** > select **Google Chat API** > In **CONFIGURATION** provide the details and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-10.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
-14. Go to the **Google Chat App** and add the Above App in that, also to add above app in space go to **space** and in **Apps & integration** add the app.
+13. To configure the app in Google Chat API, go to **APIs & Services**, select **Google Chat API**, and in **CONFIGURATION** provide the details and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-10.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
+14. Go to the **Google Chat App** and add the above app in that. Also, to add above app in space, go to **space** and in **Apps & integration** add the app.
 
 ## Google Chat in Automation Service and Cloud SOAR
 
