@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Cloud SIEM rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Rules, in the top menu select **Content > Rules**. 
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Rules, in the top Cloud SIEM menu select **Content > Rules**. 
 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
  
@@ -42,6 +42,47 @@ There are several kinds of rules. Each supports a different sort of firing behav
 * **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple Records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
 * **First Seen rule**. Fires when behavior by an Entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
 * **Outlier rule**. Fires when behavior by an Entity is encountered that deviates from its baseline activity. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
+
+## Rule status
+
+You can see a rule's status while viewing the rule:
+* On the rule list page: <br/><img src={useBaseUrl('img/cse/rule-status-on-list-page.png')} alt="Rule status on list page" style={{border: '1px solid gray'}} width="800"/>
+* On the rule details page: <br/><img src={useBaseUrl('img/cse/rule-status-on-detail-page.png')} alt="Rule status on details page" style={{border: '1px solid gray'}} width="800"/>
+
+Following are the rule statuses:
+
+| Status | Description | Action required |
+| :-- | :-- | :-- |
+| Active | The rule is executing normally. | No action required. |
+| Degraded | The rule exceeded a [group limit](#group-limit) and was disabled. | No action required. The rule will be re-enabled and return to Active status once the rate period is reached. |
+| Disabled | The rule was manually disabled using the toggle in the UI, or was disabled [with the API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | Enable the rule with the toggle in the UI, or use the API. |
+| Failed | The rule exceeded [signal limit](#signal-limit) and was disabled. | Edit the rule so that it will not exceed the rule limit again. Then enable the rule with the toggle in the UI, or with the API. |
+
+<!-- I did not see any Warning status rules in the sandbox.
+| Warning | The rule exceeded a [group limit](#group-limit). | Edit the rule so you will not lose baseline data. The rule will continue to run for up to 7 more days after the warning first appears. |
+-->
+
+## Rule limits
+
+Limits are set on the number of signals that a rule is allowed to fire so that the system is not overloaded. 
+
+### Signal limit
+
+If a rule fires more than 100 K signals in 1 hour or 1 M signals in 24 hours, the [rule status](#rule-status) changes from Active to Failed, and the rule is disabled. 
+
+| Type of limit | Limit | Result of exceeding the limit | 
+| :-- | :-- | :-- |
+| Signals per hour | 100 K | Rule is disabled. Status changes from Active to Failed. |
+| Signals per 24 hours | 1 M | Rule is disabled. Status changes from Active to Failed. | 
+
+### Group limit
+
+All rules except Match rules group the record stream before attempting to trigger a signal. If a rule groups too many items beyond the limit, the [rule status](#rule-status) changes to Degraded. 
+
+| Type of limit | Limit | Result of exceeding the limit | 
+| :-- | :-- | :-- |
+| Matched records per day | 20 K records per day | Status changes to Degraded until the end of the day when it becomes Active again. |
+| Distinct seen occurrences per entity <br/>([First Seen](/docs/cse/rules/write-first-seen-rule/) rule only) | 10 K distinct occurrences | Status changes to Degraded until the system automatically removes the oldest seen occurrences to bring the count under the limit. Then it becomes Active again. |
 
 ## About rule expressions
 
