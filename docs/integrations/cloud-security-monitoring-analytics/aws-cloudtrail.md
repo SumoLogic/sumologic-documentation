@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
 
-## Collecting logs for the AWS CloudTrail App
+## Collecting logs for the AWS CloudTrail app
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
