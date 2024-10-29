@@ -95,7 +95,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS CloudTrail Dashboards
+## Viewing AWS CloudTrail dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
