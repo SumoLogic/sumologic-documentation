@@ -63,7 +63,7 @@ In this step you configure Zeek to send log messages to the Sumo Logic platform.
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappipngs.png')} alt="Sumo Logic ingest mappings" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
     1. **Format**. Enter *Bro/Zeek JSON*.  
