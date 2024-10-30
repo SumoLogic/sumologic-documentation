@@ -42,17 +42,17 @@ Rule authors can also write rules that look for threat intelligence information 
 ### Create a threat intelligence source from Cloud SIEM UI
 
 1.  [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
-1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
-1. Click **Custom** on the **Add Source** popup. <br/><img src={useBaseUrl('img/cse/custom-button.png')} alt="Custom button" width="600"/>
-1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. <br/><img src={useBaseUrl('img/cse/add-custom-source.png')} alt="Add new source" width="600"/>
+1. Click **Add Source** on the **Threat Intelligence** page. 
+1. Click **Custom** on the **Add Source** popup.
+1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. 
 1. Click **Add Custom Source**.
 
 Your new source should now appear on the **Threat Intelligence** page.
 
 ### Enter indicators manually
 
-1. On the **Threat Intelligence** page, click the name of the source you want to update.  <br/><img src={useBaseUrl('img/cse/click-name.png')} alt="List of sources" width="800"/>
-1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**. <br/><img src={useBaseUrl('img/cse/threat-details.png')} alt="List of indicators" width="800"/>
+1. On the **Threat Intelligence** page, click the name of the source you want to update.  
+1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**.
 1. On the **New Threat Intelligence Indicator** popup.
     1. **Value**. Enter an IP address, hostname, URL, or file hash.
         Your entry must be one of:
@@ -72,7 +72,7 @@ Your new source should now appear on the **Threat Intelligence** page.
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="'Import Indicators from CSV' dialog" width="400"/>
+save time by creating a .csv file and uploading it to Cloud SIEM. 
 
 #### Create a CSV file
 

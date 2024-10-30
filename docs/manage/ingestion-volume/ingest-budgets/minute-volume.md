@@ -91,7 +91,7 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
-1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute.
+1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
    ```sql    
     _sourceCategory=<source category> AND _index=<partition name>
     | timeslice 1m
