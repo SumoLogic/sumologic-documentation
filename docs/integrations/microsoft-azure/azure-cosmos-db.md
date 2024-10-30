@@ -20,7 +20,7 @@ The below instructions applies to the following [database APIs](https://learn.mi
 * Table
 
 :::note
-This app is tested with Azure CosmosDB for MongoDB, Cassandra and NoSQL database account types.
+This app is tested with Azure Cosmos DB for MongoDB, Cassandra and NoSQL database account types.
 :::
 
 ## Log and metric types
@@ -140,7 +140,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Use the Event hub namespace created by the ARM template in previous step. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/azurecosmosdb-metrics.png')} alt="Azure Cosmos DB Diagnostic Settings for metrics" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-Currently only Azure CosmosDB for NoSQL database account type supports exporting metrics using diagnostic settings.
+Currently only Azure Cosmos DB for NoSQL database account type supports exporting metrics using diagnostic settings.
 :::
 
 ### Configure logs collection
@@ -176,13 +176,13 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 ## Installing the Azure Cosmos DB app
 
-This section provides instructions on how to install the Azure CosmosDB app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
+This section provides instructions on how to install the Azure Cosmos DB app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing the Azure CosmosDB dashboards
+## Viewing the Azure Cosmos DB dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -193,59 +193,59 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Throughput
 
-The **Azure CosmosDB - Throughput** dashboard provides details about RU (Request Unit) consumption for logical partition keys in each region, within each of their physical partitions.
+The **Azure Cosmos DB - Throughput** dashboard provides details about RU (Request Unit) consumption for logical partition keys in each region, within each of their physical partitions.
 
 Use this dashboard to:
 * Identify hot partitions from a request volume perspective.
 * Track request units consumed by each database.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure CosmosDB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure Cosmos DB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
 
 
 ### Audit
 
-The **Azure CosmosDB - Audit** dashboard provides details about all data plane and control plane operations executed on the account.
+The **Azure Cosmos DB - Audit** dashboard provides details about all data plane and control plane operations executed on the account.
 
 Use this dashboard to:
 * Monitor control plane requests which includes modifications to the regional failover policy, indexing policy, IAM role assignments, backup/restore policies, VNet and firewall rules, private links as well as updates and deletes of the account.
 * Monitor data plane operations executed to create, update, delete or retrieve data within the account.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure CosmosDB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure Cosmos DB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Storage
 
-The **Azure CosmosDB - Storage** dashboard provides details about data usage, document count and physical partition size by database.
+The **Azure Cosmos DB - Storage** dashboard provides details about data usage, document count and physical partition size by database.
 
 Use this dashboard to:
 * Identify logical partition keys that have consumed more storage space than others.
 * Track document count and data usage.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure CosmosDB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure Cosmos DB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Performance
 
-The **Azure CosmosDB - Performance** dashboard provides insights into the performance of your Azure CosmosDB databases. This includes metrics on query duration, server side latency, and failed queries.
+The **Azure Cosmos DB - Performance** dashboard provides insights into the performance of your Azure Cosmos DB databases. This includes metrics on query duration, server side latency, and failed queries.
 
 Use this dashboard to:
-* Monitor and analyze the failed queries of your Azure CosmosDB.
+* Monitor and analyze the failed queries of your Azure Cosmos DB.
 * Identify performance bottlenecks and optimize query execution.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Performance.png')} alt="Azure CosmosDB Performance dashboard" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Performance.png')} alt="Azure Cosmos DB Performance dashboard" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Health
 
-The **Azure CosmosDB - Health** dashboard provides information of any service health incidents or resource health events associated with Azure CosmosDB accounts in your azure account.
+The **Azure Cosmos DB - Health** dashboard provides information of any service health incidents or resource health events associated with Azure Cosmos DB accounts in your azure account.
 
 Use this dashboard to:
 * View recent resource and service health incidents.
 * View distribution of service and resource health by incident type.
 * Monitor service availability.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Health.png')} alt="Azure CosmosDB health dashboard" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Health.png')} alt="Azure Cosmos DB health dashboard" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Policy and Recommendations
 
-The **Azure CosmosDB - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure policy and recommendations events from Azure Advisor.
+The **Azure Cosmos DB - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure policy and recommendations events from Azure Advisor.
 
 Use this dashboard to:
 * Monitor policy events with warnings and errors.
@@ -254,27 +254,27 @@ Use this dashboard to:
 * Identify High Impact recommendations.
 * View recent recommendation events and navigate to the affected resource.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB-for-NoSQL/Azure-CosmosDB-Policy-and-Recommendations.png')} alt="Azure CosmosDB - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB-for-NoSQL/Azure-CosmosDB-Policy-and-Recommendations.png')} alt="Azure Cosmos DB - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Administrative Operations
 
-The **Azure CosmosDB - Administrative Operations** dashboard provides details on users performing admin operations.
+The **Azure Cosmos DB - Administrative Operations** dashboard provides details on users performing admin operations.
 
 Use this dashboard to:
 * Identify top users performing administrative operations.
 * View Top 10 operations that caused the most errors.
 * View recent Diagnostic, Network and Replication Settings updates operations.
 
-<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Administrative-Operations.png')} alt="Azure CosmosDB Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
+<!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Administrative-Operations.png')} alt="Azure Cosmos DB Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
 
 
-## Upgrade/Downgrade the Azure CosmosDB app (optional)
+## Upgrade/Downgrade the Azure Cosmos DB app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure CosmosDB app (optional)
+## Uninstalling the Azure Cosmos DB app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
