@@ -20,7 +20,7 @@ The below instructions applies to the following [database APIs](https://learn.mi
 * Table
 
 :::note
-This app is tested with Azure Cosmos DB for MongoDB, Cassandra and NoSQL database account types.
+This app is tested with Azure Cosmos DB for MongoDB, Cassandra, and NoSQL database account types.
 :::
 
 ## Log and metric types
@@ -29,7 +29,7 @@ For Azure Cosmos DB, you can collect the following logs and metrics:
 
 * **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Cosmos DB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#resource-logs).
 
-* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available in following namespaces:
+* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available in the following namespaces:
    * `Microsoft.DocumentDB/applicationGateways`
    * `Microsoft.DocumentDB/cassandraClusters`
    * `Microsoft.DocumentDB/mongoClusters`
@@ -42,9 +42,9 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
-You must explicitly enable diagnostic settings for each Azure Cosmos DB account you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each Azure Cosmos DB account you want to monitor. You can forward logs to the same Event Hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/CosmosDB/Logs`, `Azure/CosmosDB/Metrics`.
+When you configure the Event Hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/CosmosDB/Logs`, `Azure/CosmosDB/Metrics`.
 
 ### Configure field in field schema
 
@@ -133,11 +133,10 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Cosmos DB account that you want to monitor.
-
-   * Choose **Stream to an event hub** as destination.
-   * Select all the metrics under **Metrics** section.
-   * Use the Event hub namespace created by the ARM template in previous step. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/azurecosmosdb-metrics.png')} alt="Azure Cosmos DB Diagnostic Settings for metrics" style={{border: '1px solid gray'}} width="800" />
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the following steps for each Azure Cosmos DB account that you want to monitor.
+   1. Choose **Stream to an event hub** as destination.
+   1. Select all the metrics under **Metrics** section.
+   1. Use the Event Hub namespace created by the ARM template in the previous step. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/azurecosmosdb-metrics.png')} alt="Azure Cosmos DB Diagnostic Settings for metrics" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 Currently only Azure Cosmos DB for NoSQL database account type supports exporting metrics using diagnostic settings.
@@ -149,10 +148,10 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. If you want to audit Azure Cosmos DB control plane operations, [disable the key based metadata write access](https://learn.microsoft.com/en-us/azure/cosmos-db/audit-control-plane-logs#disable-key-based-metadata-write-access).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-resource-logs?tabs=azure-portal#create-diagnostic-settings). Perform below steps for each Azure Cosmos DB account that you want to monitor.
-   * Choose **Stream to an event hub** as the destination.
-   * Select your preferred log categories depending upon your database API or select **allLogs**.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/cosmosdb-diagnostic-logs.png')} alt="Azure CosmosDB Diagnostic Settings for logs" style={{border: '1px solid gray'}} width="800" />
+1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-resource-logs?tabs=azure-portal#create-diagnostic-settings). Perform the following steps for each Azure Cosmos DB account that you want to monitor.
+   1. Choose **Stream to an event hub** as the destination.
+   1. Select your preferred log categories depending upon your database API or select **allLogs**.
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/cosmosdb-diagnostic-logs.png')} alt="Azure CosmosDB Diagnostic Settings for logs" style={{border: '1px solid gray'}} width="800" />
 1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
@@ -165,7 +164,7 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ##### Enabling Microsoft Defender for Cloud
 
-For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-databases-enable-cosmos-protections?tabs=azure-portal). In Defender Plans Settings page toggle the Databases status under Cloud Workload Protection section and select the resource types.
+For security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-databases-enable-cosmos-protections?tabs=azure-portal). In the Defender Plans Settings page toggle the Databases status under the Cloud Workload Protection section and select the resource types.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
 
