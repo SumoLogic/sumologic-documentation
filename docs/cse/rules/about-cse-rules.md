@@ -45,44 +45,39 @@ There are several kinds of rules. Each supports a different sort of firing behav
 
 ## Rule status
 
+### View a rule's status
+
 You can see a rule's status while viewing the rule:
 * On the rule list page: <br/><img src={useBaseUrl('img/cse/rule-status-on-list-page.png')} alt="Rule status on list page" style={{border: '1px solid gray'}} width="800"/>
 * On the rule details page: <br/><img src={useBaseUrl('img/cse/rule-status-on-detail-page.png')} alt="Rule status on details page" style={{border: '1px solid gray'}} width="800"/>
 
-Following are the rule statuses:
+### Kinds of rule status
+
+Following are the different kinds of rule statuses. A rule's status can change depending on whether it exceeds [rule limits](#rule-limits).
 
 | Status | Description | Action required |
 | :-- | :-- | :-- |
-| Active | The rule is executing normally. | No action required. |
-| Degraded | The rule exceeded a [group limit](#group-limit) and was disabled. | No action required. The rule will be re-enabled and return to Active status once the rate period is reached. |
-| Disabled | The rule was manually disabled using the toggle in the UI, or was disabled [with the API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | Enable the rule with the toggle in the UI, or use the API. |
-| Failed | The rule exceeded [signal limit](#signal-limit) and was disabled. | Edit the rule so that it will not exceed the rule limit again. Then enable the rule with the toggle in the UI, or with the API. |
-
-<!-- I did not see any Warning status rules in the sandbox.
-| Warning | The rule exceeded a [group limit](#group-limit). | Edit the rule so you will not lose baseline data. The rule will continue to run for up to 7 more days after the warning first appears. |
--->
+| **Active** | The rule is executing normally. | No action required. |
+| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. <br/>At the end of the hour, the rule is allowed to return to execution and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-degraded-info-button.png')} alt="Rule degraded information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded in the future. |
+| **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-failed-info-button.png')} alt="Rule failed information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the API. |
+| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled in the future. |
 
 ## Rule limits
 
-Limits are set on the number of signals that a rule is allowed to fire so that the system is not overloaded. 
+Limits are set on the number of signals that a rule is allowed to fire so that the system is not overloaded. All rules except Match rules group the record stream before attempting to trigger a signal. 
 
-### Signal limit
+If a rule exceeds a limit, its [rule status](#rule-status) changes.
 
-If a rule fires more than 100 K signals in 1 hour or 1 M signals in 24 hours, the [rule status](#rule-status) changes from Active to Failed, and the rule is disabled. 
+Rule limits differ depending on your tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
 
-| Type of limit | Limit | Result of exceeding the limit | 
-| :-- | :-- | :-- |
-| Signals per hour | 100 K | Rule is disabled. Status changes from Active to Failed. |
-| Signals per 24 hours | 1 M | Rule is disabled. Status changes from Active to Failed. | 
-
-### Group limit
-
-All rules except Match rules group the record stream before attempting to trigger a signal. If a rule groups too many items beyond the limit, the [rule status](#rule-status) changes to Degraded. 
-
-| Type of limit | Limit | Result of exceeding the limit | 
-| :-- | :-- | :-- |
-| Matched records per day | 20 K records per day | Status changes to Degraded until the end of the day when it becomes Active again. |
-| Distinct seen occurrences per entity <br/>([First Seen](/docs/cse/rules/write-first-seen-rule/) rule only) | 10 K distinct occurrences | Status changes to Degraded until the system automatically removes the oldest seen occurrences to bring the count under the limit. Then it becomes Active again. |
+| Type | Limit | 
+| :-- | :-- | 
+| Signals per hour | 50 K - Tier 1<br/>100 K - Tier 2<br/>150 K - Tier 3|
+| Signals per 24 hours | 1 M - Tier 1<br/>2 M - Tier 2<br/>3 M - Tier 3 |
+| Matched records per day | 200 K - Tier 1<br/>400 K - Tier 2<br/>600 K - Tier 3 | 
+| Rule group cardinality per kay | 100 K - Tier 1<br/>200 K - Tier 2<br/>300 K - Tier 3 |
+| Total allowed custom rules per each [rule type](#rule-types) | 100 - Tier 1<br/>200 - Tier 2<br/>500 - Tier 3 |
 
 ## About rule expressions
 
