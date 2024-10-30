@@ -2450,6 +2450,7 @@ integrations: [
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
+          'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',

@@ -123,7 +123,7 @@ Use this dashboard to see the details on events, resources, and users.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
 
-## Upgrading the Azure Audit app (Optional)
+## Upgrade/Downgrade the Azure Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
