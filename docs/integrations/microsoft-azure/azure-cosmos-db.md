@@ -150,7 +150,6 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. If you want to audit Azure Cosmos DB control plane operations, [disable the key based metadata write access](https://learn.microsoft.com/en-us/azure/cosmos-db/audit-control-plane-logs#disable-key-based-metadata-write-access).
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-resource-logs?tabs=azure-portal#create-diagnostic-settings). Perform below steps for each Azure Cosmos DB account that you want to monitor.
-
    * Choose **Stream to an event hub** as the destination.
    * Select your preferred log categories depending upon your database API or select **allLogs**.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/cosmosdb-diagnostic-logs.png')} alt="Azure CosmosDB Diagnostic Settings for logs" style={{border: '1px solid gray'}} width="800" />
@@ -193,7 +192,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Throughput
 
-The **Azure Cosmos DB - Throughput** dashboard provides details about RU (Request Unit) consumption for logical partition keys in each region, within each of their physical partitions.
+The **Azure Cosmos DB - Throughput** dashboard provides details about Request Unit (RU) consumption for logical partition keys in each region, within each of their physical partitions.
 
 Use this dashboard to:
 * Identify hot partitions from a request volume perspective.
@@ -207,14 +206,14 @@ Use this dashboard to:
 The **Azure Cosmos DB - Audit** dashboard provides details about all data plane and control plane operations executed on the account.
 
 Use this dashboard to:
-* Monitor control plane requests which includes modifications to the regional failover policy, indexing policy, IAM role assignments, backup/restore policies, VNet and firewall rules, private links as well as updates and deletes of the account.
-* Monitor data plane operations executed to create, update, delete or retrieve data within the account.
+* Monitor control plane requests which includes modifications to the regional failover policy, indexing policy, IAM role assignments, backup/restore policies, VNet and firewall rules, private links as well as updates, and deletes of the account.
+* Monitor data plane operations executed to create, update, delete, or retrieve data within the account.
 
 <!-- <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Storage-Overview.png')} alt="Azure Cosmos DB - Storage Overview" style={{border: '1px solid gray'}} width="800" /> -->
 
 ### Storage
 
-The **Azure Cosmos DB - Storage** dashboard provides details about data usage, document count and physical partition size by database.
+The **Azure Cosmos DB - Storage** dashboard provides details about data usage, document count, and physical partition size by database.
 
 Use this dashboard to:
 * Identify logical partition keys that have consumed more storage space than others.
@@ -251,7 +250,7 @@ Use this dashboard to:
 * Monitor policy events with warnings and errors.
 * View recent failed policy events.
 * View total recommendation events.
-* Identify High Impact recommendations.
+* Identify high impact recommendations.
 * View recent recommendation events and navigate to the affected resource.
 
 <!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB-for-NoSQL/Azure-CosmosDB-Policy-and-Recommendations.png')} alt="Azure Cosmos DB - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
@@ -262,11 +261,10 @@ The **Azure Cosmos DB - Administrative Operations** dashboard provides details o
 
 Use this dashboard to:
 * Identify top users performing administrative operations.
-* View Top 10 operations that caused the most errors.
-* View recent Diagnostic, Network and Replication Settings updates operations.
+* View top 10 operations that caused the most errors.
+* View recent diagnostic, network, and replication settings updates operations.
 
 <!-- <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-CosmosDB-Administrative-Operations.png')} alt="Azure Cosmos DB Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" /> -->
-
 
 ## Upgrade/Downgrade the Azure Cosmos DB app (optional)
 
