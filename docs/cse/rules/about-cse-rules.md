@@ -58,26 +58,29 @@ Following are the different kinds of rule statuses. A rule's status can change d
 | Status | Description | Action required |
 | :-- | :-- | :-- |
 | **Active** | The rule is executing normally. | No action required. |
-| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. <br/>At the end of the hour, the rule is allowed to return to execution and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-degraded-info-button.png')} alt="Rule degraded information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded in the future. |
+| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-degraded-info-button.png')} alt="Rule degraded information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
 | **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-failed-info-button.png')} alt="Rule failed information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the API. |
-| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled in the future. |
+| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
 
 ## Rule limits
 
-Limits are set on the number of signals that a rule is allowed to fire so that the system is not overloaded. All rules except Match rules group the record stream before attempting to trigger a signal. 
+Limits are set on rules so that the system is not overloaded. For example, if a rule fires too many signals in an hour, it can cause performance problems for all rule processes. If a rule exceeds a limit, its [rule status](#rule-status) changes from Active to Failed and the rule is disabled. 
 
-If a rule exceeds a limit, its [rule status](#rule-status) changes.
+| Type | Limit |
+| :-- | :-- |
+| Total allowed custom rules of each [rule type](#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
+| Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
+| Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
+| Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
+| Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
 
-Rule limits differ depending on your tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
+*Applies to all [rule types](#rule-types) except Match rules. 
+<br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
 
-| Type | Limit | 
-| :-- | :-- | 
-| Signals per hour | 50 K - Tier 1<br/>100 K - Tier 2<br/>150 K - Tier 3|
-| Signals per 24 hours | 1 M - Tier 1<br/>2 M - Tier 2<br/>3 M - Tier 3 |
-| Matched records per day | 200 K - Tier 1<br/>400 K - Tier 2<br/>600 K - Tier 3 | 
-| Rule group cardinality per kay | 100 K - Tier 1<br/>200 K - Tier 2<br/>300 K - Tier 3 |
-| Total allowed custom rules per each [rule type](#rule-types) | 100 - Tier 1<br/>200 - Tier 2<br/>500 - Tier 3 |
+:::note
+Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
+:::
 
 ## About rule expressions
 
