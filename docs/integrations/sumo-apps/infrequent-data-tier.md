@@ -146,7 +146,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="IDT_Credits_Consumed" />
 
-## Upgrading the Infrequent Data Tier app (Optional)
+## Upgrade/Downgrade the Infrequent Data Tier app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

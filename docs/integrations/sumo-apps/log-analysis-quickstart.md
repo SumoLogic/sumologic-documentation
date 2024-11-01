@@ -43,7 +43,7 @@ The panels in the Collector and Source Monitoring dashboard help you keep an eye
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
 * **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
 
-## Upgrading the Log Analysis QuickStart app (Optional)
+## Upgrade/Downgrade the Log Analysis QuickStart app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
