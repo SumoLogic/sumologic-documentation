@@ -28,6 +28,12 @@ To manage the query size limit using the **Basic** configuration:
 1. **Enable Query Limit**. Select this checkbox and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query.
 1. Click **Save Limit**.
 
+:::info
+Sumo Logic defines scan as two types:
+  - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
+  - **Background search**. API, Scheduled Search, Monitor, and SLO. 
+:::
+
 :::note
 It may take up to 5 minutes for a newly created budget to become active and enforceable in the system.
 :::
@@ -52,7 +58,12 @@ To create the query size limit using the **Advanced** configuration:
 1. **Capacity**. Enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
-    - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set, which will block the foreground searches, such as querying in the search UI and dashboards, but will not impact any background searches, such as scheduled search, monitors, SLO, and API.
+    - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
+    :::info
+    Sumo Logic defines scan as two types:
+    - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
+    - **Background search**. API, Scheduled Search, Monitors, and SLO. 
+    :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
 
