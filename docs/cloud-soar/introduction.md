@@ -176,6 +176,73 @@ In this lab, you’ll investigate an alert, gather information, and decide what 
 
 ### Incident response
 
+#### What is incident response?
+
+There are six steps to cybersecurity incident response cycle:
+
+1. **Preparation**. Prepare your environment with firewalls, multi-factor authentication, compliant software, and other security measures to prevent attacks.
+1. **Identification**. Monitor your systems for indicators of compromise and get alerted when a potential threat happens. Investigate the potential threat and triage it.
+1. **Containment**. Reduce further damage by isolating files, machines, and users or by blocking IoCs related to the incident.
+1. **Eradication**. Delete malware, phishing emails, or anything else related to the incident. 
+1. **Recovery**. Use backup files, reinstall software, and get your environment up and running as it was before the incident.
+1. **Lessons Learned**. Discuss what worked and what went wrong. Use these findings to prepare better, then start at step 1 again. 
+ 
+
+For example, let’s say one of the employee’s at your company accidentally downloaded some malware onto their laptop, despite your preparation by installing VPNs on all employee machines. Once you have identified the malware, you may want to quarantine the infected laptop but putting it behind a firewall to contain it. You might also want to scan all the laptops in your company for that same malware, and block the IP address that’s the source of the malware download to eradicate the threat. Finally, you’ll need to provision a new laptop for the employee and recover their files. Then, you may need to assign them some cybersecurity training as part of lessons learned.
+
+#### How can playbooks help with incident response?
+ 
+The main way to respond to an incident in Cloud SOAR is by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. You typically execute a playbook after you have identified a threat. The playbook will then automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
+
+For example, let’s say you identified potential malware on an employee’s computer. First you must investigate to verify that the threat isn’t a false positive, for example by checking the data against an external threat intelligence database. Once the threat is verified, notifications have to be sent to relevant teams through Slack. You then need to contain the threat by quarantining the infected machine with a Palo Alto firewall to block the IP address source of the attack. Containment might also include resetting passwords via an SSO service like Okta. Finally, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
+
+Many of these tasks can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called “Malware Detected” in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can simply click “Run” on the playbook, and all the tasks will be done automatically. 
+
+Here are some other workflows you could automate with a playbook:
+* **Phishing**. An employee reports suspicious email. A playbook uses threat intel to decide if it’s a phishing attempt. It confirms the employee didn’t click any links, then blocks the malicious email address.
+* **Brute force**. A user gets request for multi-factor authentication access. When they confirms they weren’t trying to log into their account, a playbook automatically investigates the source of the login attempt and resets the user's password.
+* **Data exfiltration**. If network activity spikes, a playbook automatically investigates to determine whether data is being exfiltrated legitimately. It can prevent the flow of data by applying endpoint patches and increasing firewall security, and chang
+
+Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. However, in our lab activities we will be manually attaching playbooks so you can see how they work.
+
+##### ARK suggestions
+
+Playbooks automate the individual tasks of incident response. But Cloud SOAR's Automated Responder Knowledge (ARK) suggestions take things one step further. ARK uses machine learning to suggest the most appropriate playbook for your Incidents based on what you've done on similar Incidents in the past. This frees up even more resources for analysts, as they don't have to spend time choosing a playbook before responding.
+
+When ARK suggests a playbook to you, you have the option to add the playbook to the Incident, run it, or dismiss the suggestion. 
+
+#### App Central, custom integrations, and other automations
+
+Cloud SOAR has hundreds of pre-built playbooks which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
+
+Both pre-built and custom playbooks are simply combinations of various integrations and automations. These integrations can also be used stand-alone rather than as part of a playbook. Typically, an integration in Cloud SOAR contains one or more of these actions:
+* **Enrichment**. Adds information, metadata, or context, such as from a threat intelligence database.
+* **Containment**. Reduces further damage by isolating files or machines related to a threat.
+* **Daemon**. A background process that can ingest data. 
+* **Notification**. An alert sent via email, Slack, PagerDuty, or most other services you can connect with an API.
+* **Custom**. Scripts and any other automations you can create using Perl, Python, PowerShell or Bash.
+
+Actions are the building blocks of integrations. You can find many pre-built playbooks, integrations, and automations in Cloud SOAR’s [App Central](/docs/platform-services/automation-service/app-central/). From App Central, analysts can easily install and deploy a wide variety of automations that leverage these actions.
+
+The Sumo Logic Cloud SOAR team is constantly adding new integrations, playbooks, and use cases to App Central. These playbooks in App Central are only a starting point, however. You can build off of them and create custom playbooks of your own as well.
+
+App Central may not be available to all users. Ask your Cloud SOAR admin if you need access to App Central.
+
+When you open a playbook, you'll see a flowchart like the one below. 
+
+<img src={useBaseUrl('img/cloud-soar/playbook-node-examples.png')} alt="Playbook node examples" style={{border: '1px solid gray'}} width="700" />
+
+* A. **Condition**. Playbooks can use conditions to fork into different paths. In this example, if the threat intelligence enrichments confirm the threat, the fork goes up and the severity is changed to "High". If the enrichments find the threat is a false positive, the fork goes down and the severity is changed to "Low".
+* B. **Enrichment**. Green nodes enrich data. For example, this node uses VirusTotal to check whether an email contains a virus.
+* C. **Branching**. All playbooks have branching paths. Use these arrows to connect different nodes to create your playbook.
+* D. **Custom**. Purple nodes use custom APIs. In this example, the Cloud SIEM severity is changed to "Low".
+* E. **Notificaiton**. Blue nodes are notifications. They can send alerts or add notes in Cloud SOAR.
+
+You can modify an existing playbook or build one from scratch by dragging and dropping each node in Edit mode. Each node is an integration: enrichment, containment, daemon, notification, or custom API.
+
+
+
+
 
 
 ### Dashboards and reports
