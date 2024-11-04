@@ -34,7 +34,7 @@ In this introduction, we'll focus on learning how to use Sumo Logic's Cloud SOAR
 
 #### Automating your SOC
 
-As the newest member of your company's SOC team, it’s your task to set up some dashboards and playbooks to help monitor the system and automate daily security tasks, as well as prepare for compliance audits. The lab activities in this course will walk you through some of this using Sumo Logic’s Cloud SOAR.
+As the newest member of your company's SOC team, it’s your task to set up some dashboards and playbooks to help monitor the system and automate daily security tasks, as well as prepare for compliance audits. The activities in this section will walk you through some of this using Sumo Logic’s Cloud SOAR.
 
 ##### The Sumo Logic security pipeline
 
@@ -157,7 +157,7 @@ The Entities page contains in-depth information about entities related to the In
 
 #### Investigate an Incident
 
-In this lab, you’ll investigate an alert, gather information, and decide what to do in response to it.
+In this section, you’ll investigate an alert, gather information, and decide what to do in response to it.
 
 1. Navigate to the Incidents page.<br/>[**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
 2. Click the column configuration icon in the upper right.<br/><img src={useBaseUrl('img/cloud-soar/column-configuration-icon.png')} alt="Column configuration icon" style={{border: '1px solid gray'}} width="100" />
@@ -203,7 +203,7 @@ Here are some other workflows you could automate with a playbook:
 * **Brute force**. A user gets request for multi-factor authentication access. When they confirms they weren’t trying to log into their account, a playbook automatically investigates the source of the login attempt and resets the user's password.
 * **Data exfiltration**. If network activity spikes, a playbook automatically investigates to determine whether data is being exfiltrated legitimately. It can prevent the flow of data by applying endpoint patches and increasing firewall security, and chang
 
-Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. However, in our lab activities we will be manually attaching playbooks so you can see how they work.
+Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. 
 
 ##### ARK suggestions
 
@@ -236,16 +236,13 @@ When you open a playbook, you'll see a flowchart like the one below.
 * B. **Enrichment**. Green nodes enrich data. For example, this node uses VirusTotal to check whether an email contains a virus.
 * C. **Branching**. All playbooks have branching paths. Use these arrows to connect different nodes to create your playbook.
 * D. **Custom**. Purple nodes use custom APIs. In this example, the Cloud SIEM severity is changed to "Low".
-* E. **Notificaiton**. Blue nodes are notifications. They can send alerts or add notes in Cloud SOAR.
+* E. **Notification**. Blue nodes are notifications. They can send alerts or add notes in Cloud SOAR.
 
 You can modify an existing playbook or build one from scratch by dragging and dropping each node in Edit mode. Each node is an integration: enrichment, containment, daemon, notification, or custom API.
 
+#### Recovery and lessons learned
 
+Cloud SOAR playbooks orchestrate and automate many pieces of the incident response process. But, once you click “Run”, your job as a SOC analyst isn’t done. It’s important to take time to reflect on the incident and prepare for the next one. 
 
-
-
-
-### Dashboards and reports
-
-## Introduction to Cloud SOAR for administrators
+A playbook can find that a threat was a false positive. However, it may have assigned an additional “Review Activity” task to the SOC analyst if a known threat was detected based on threat intelligence databases. This is your opportunity to do the tasks that humans do best. In the case of a phishing attempt, you might want to take the time to talk to the employees who clicked on the malicious links and teach them how to recognize phishing. Depending on the circumstances of the incident, you might need to deploy additional playbooks that can reset passwords or re-provision machines.
 
