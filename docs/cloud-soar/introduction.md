@@ -246,3 +246,28 @@ Cloud SOAR playbooks orchestrate and automate many pieces of the incident respon
 
 A playbook can find that a threat was a false positive. However, it may have assigned an additional “Review Activity” task to the SOC analyst if a known threat was detected based on threat intelligence databases. This is your opportunity to do the tasks that humans do best. In the case of a phishing attempt, you might want to take the time to talk to the employees who clicked on the malicious links and teach them how to recognize phishing. Depending on the circumstances of the incident, you might need to deploy additional playbooks that can reset passwords or re-provision machines.
 
+### Dashboards and reports
+
+In the previous sections, you identified and investigated an incident, executed a playbook, then analyzed the lessons learned before closing the incident. 
+
+Now, it’s time to start the incident response cycle over again with preparation and identification. Dashboards and reports help you visualize your environment’s status, prepare for potential threats, identify ongoing incidents, execute threat hunting and threat investigation, reflect on your lessons learned, and report back information to your teams
+
+In order to prepare for the next potential threat, you’ll need to set up alerts and dashboards to monitor your environment. Cloud SOAR offers a number of widgets you can add to your dashboards. Each widget is a graph, chart, table, or other visual representation of your system. Widgets are customizable in their placement, size, and color, and you can create different dashboards for different use cases. For example, you might have one dashboard that shows quarterly, high-level metrics and another that shows daily alerts and triage.
+
+#### Customize a dashboard
+
+In this section, you’ll create and customize a dashboard using widgets.
+
+1. Navigate to the Cloud SOAR SecOps page.<br/>[**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu select **Cloud SOAR**.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**. 
+1. Near the top left corner, above your user name, click **Dashboard**.
+1. Click the **+** icon in the upper right to create a new dashboard.  
+1. Click on the default dashboard name (**Dashboard #**) and change the name to include your initials or chosen ID number.  Add a description if desired by clicking on the "No description available" field and adding some text.
+1. Click the **Edit** control in the top right corner to enter edit mode.
+1. Click on one or more widgets from the edit sidebar to add the widget to your dashboard. Note that you can drag and place the dashboard widget in different places and arrangements on the dashboard screen.
+1. Click **New** in the edit sidebar to create a new widget.
+1. Enter a widget name "Incidents By Type XXX" using your initials or chosen ID number in place of the XXX.
+1. Under Group By, select **Type**.
+1. In the left sidebar, choose the bar graph icon (second from the top).
+1. Click **Save** in the lower right corner.
+1. Back on the edit sidebar, click on your new widget to add it to your dashboard.  You can rearrange the rows and columns by dragging widgets to different locations.
+1. Click **Edit** in the upper right to turn off edit mode. 
