@@ -26,7 +26,7 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information. 
 
 ```sql
-_dataTier=all _sourceCategory=*/katta "remote_ip="
+_dataTier=all _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | lookup organization, registering_organization, asn from asn://default on ip = ip
 ```
