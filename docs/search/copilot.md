@@ -45,14 +45,14 @@ Copilot reduces manual effort by combining prebuilt insights with natural langua
 * **Conversation history**. Save and resume any troubleshooting session without losing context.
 * **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
 
-## Security and compliance
+## Security compliance and legal
 
-Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. Refer to the following resources for Amazon Bedrock security and compliance:
+Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
-Over and above, all aspects of our service, including Copilot, conform to the security and compliance requirements in our [Service Agreement](https://www.sumologic.com/service-agreement).
+Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts. 
 
 ### Who benefits from Copilot?
 
