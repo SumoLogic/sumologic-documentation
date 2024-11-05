@@ -239,6 +239,9 @@ module.exports = {
       },
     ],
   ],
+  future: {
+    experimental_faster: true,
+  },
   themeConfig:
     ({
       docs: {
@@ -248,7 +251,12 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'sumo logic, documentation, tutorials, observability, logs, metrics, security, siem, soar, traces'
+      }
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -273,7 +281,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
+      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui"><b>Check out the new Sumo Logic UI!</b></a>',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
     },
