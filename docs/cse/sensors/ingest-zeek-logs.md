@@ -108,7 +108,7 @@ Perform these steps for each of the FERs.
 ## Unsupported collection method: Network Sensor
 
 :::caution End-of-Life
-This section describes using the Cloud SIEM Network Sensor. The Network Sensor has reached end of life and is no longer supported. Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic Source](#supported-collection-method-sumo-logic-source). 
+This section describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic Source](#supported-collection-method-sumo-logic-source) above. 
 :::
 
 You can use Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This method ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
