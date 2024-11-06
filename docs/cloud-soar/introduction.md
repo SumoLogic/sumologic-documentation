@@ -316,3 +316,96 @@ You can use Cloud SOAR to make downloadable reports, using the same information 
 1. Click on one or more of the available widgets to add them to the report. (You can create new widgets using the same process as in the previous section about [creating a dashboard](#create-a-dashboard)).
 1. Click **Save** when you've finished designing your report. 
 1. After saving your report, click **Export** at the bottom of the page to download your report in PDF form.
+
+## Introduction to Cloud SOAR for administrators
+
+### SUMO Logic Cloud SOAR
+
+#### What is Cloud SOAR administration?
+
+Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
+* **Role-based access controls**. Admins can create different roles and user groups with different levels of edit and view access to various areas within Cloud SOAR.
+* **Dashboards and reports**. Admins manage the default settings, create templates, and configure the look and feel of Cloud SOAR dashboards and reports for their organization.
+* **Playbooks and automations**. Admins configure and manage the playbooks, automations, integrations, and tasks in Cloud SOAR. This requires access keys and knowledge of APIs.
+
+Administrators configure these and other settings to help SOC analysts automate and orchestrate many processes that are a routine part of responding to security incidents. Playbook automation offloads many tedious and repetitive tasks from the SOC team, reducing response time and allowing SOC analysts to focus on other mission-critical tasks. Dashboards and reports help distribute knowledge to different teams to work together to orchestrate their response in a timely, synchronized manner. RBAC ensures that only authorized members of your SOC team can perform certain actions.
+
+#### The incident response Cycle
+
+As a Cloud SOAR administrator, your task is to set up RBAC controls, configure settings, create templates, and use APIs. Your ultimate goal is to enable Cloud SOAR to automate and orchestrate many parts of the incident response cycle. The more tasks you can automate with Cloud SOAR, the more time the SOC analysts on your team can devote to other activities like threat hunting.
+
+Let’s briefly review the incident response cycle:
+* **Preparation**. Prepare your environment with firewalls, multi-factor authentication, compliant software, and other security measures to prevent attacks.
+* **Identification**. Monitor your systems for indicators of compromise (IoCs) and get alerted when a potential threat happens. Investigate the potential threat and triage it.
+* **Containment**. Isolate affected machines, files, and users, and block IoCs related to the incident to prevent problems from spreading.
+* **Eradication**. Delete malware, phishing emails, or anything else related to the incident. 
+* **Recovery**. Use backup files, reinstall software, and get your environment up and running as it was before the incident.
+* **Lessons Learned**. Discuss what worked and what went wrong. Use these findings to prepare better, then start at step 1 again.
+
+##### How can Sumo Logic Cloud SOAR help?
+
+Let’s say one of the employees at your company accidentally downloaded some malware onto their laptop, despite your preparation by installing VPNs and firewalls on all employee machines. Once you have identified the malware, you must investigate to verify that the threat isn’t a false positive, for example by checking the data against an external threat intelligence database like CrowdStrike or VirusTotal. You may want to quarantine the infected laptop by putting it behind a firewall to contain it. Containment might also include resetting passwords via an SSO service like Okta. You might also want to scan all the laptops in your company for that same malware, and block the IP address that’s the source of the malware download to eradicate the threat. Then, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
+
+Many of these tasks, from identifying malware to restoring the system, can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called “Malware Detected” in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can simply click “Execute” on the playbook, and all the tasks will be done automatically. We can even use Cloud SOAR to export a report after the incident is closed, and use that report to jumpstart the lessons learned discussion.
+
+#### Exploring Cloud SOAR settings for administrators
+
+Cloud SOAR administrators have privileged access to the Settings and Automation sections of the Cloud SOAR UI.
+
+##### General settings
+
+The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension whitelisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/overview/#general).
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
+
+##### Groups
+
+Basic user management and role-based access control (RBAC) is done through the main Sumo Logic interface; however, you can create user groups specific to Cloud SOAR through the **Groups** page. For more information, see [Groups](/docs/cloud-soar/overview/#groups).
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
+
+##### Event Triggers
+
+The **Event Triggers** page contains a list of triggers where you can configure default email notifications whenever key events happen. For more information, see [Notifications](/docs/cloud-soar/overview/#notifications).
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access event triggers settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access event triggers settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
+
+##### Additional settings
+
+You can use additional settings to customize fields, incident labels, and triage information. Use these settings to customize many of the templates, field names, and incident names used in the views and reports your analysts generate. You can also set the defaults for incident triage.
+
+See:
+* [Custom fields](/docs/cloud-soar/overview/#custom-fields)
+* [Incident labels](/docs/cloud-soar/overview/#incident-labels)
+* [Triage](/docs/cloud-soar/overview/#triage-1)
+
+#### Exploring Cloud SOAR Automations
+
+In addition to settings, Cloud SOAR administrators have privileged access to the Automation section of the platform. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/). 
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-menu.png')} alt="Cloud SOAR Automation menu" style={{border: '1px solid gray'}} width="400"/>
+
+Within Automation, you’ll see subsections for:
+* [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
+* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
+* [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
+* [Integrations](/docs/platform-services/automation-service/automation-service-integration-framework/). Lets you connect third party tools through APIs.
+* [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
+* [Bridge](https://help.sumologic.com/docs/platform-services/automation-service/automation-service-bridge/). Contains configuration details on any installed bridges.
+
