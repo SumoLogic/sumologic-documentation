@@ -140,7 +140,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Use the Event Hub namespace created by the ARM template in the previous step. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/azurecosmosdb-metrics.png')} alt="Azure Cosmos DB Diagnostic Settings for metrics" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-Currently only Azure Cosmos DB for NoSQL database account type supports exporting metrics using diagnostic settings.
+Currently, only Azure Cosmos DB for NoSQL database account type supports exporting metrics using diagnostic settings.
 :::
 
 ### Configure logs collection
