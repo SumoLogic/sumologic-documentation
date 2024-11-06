@@ -409,3 +409,97 @@ Within Automation, you’ll see subsections for:
 * [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
 * [Bridge](https://help.sumologic.com/docs/platform-services/automation-service/automation-service-bridge/). Contains configuration details on any installed bridges.
 
+### Settings and configurations
+
+#### Fields
+
+Fields are used to map data that is imported into Cloud SOAR to various attributes used by Cloud SOAR. Fields are often pre-populated as data is imported into Cloud SOAR. However, there are some times you may wish to customize fields. For example, you can use a custom field to make sure the data you’re importing from Cloud SIEM, such as an entity, gets mapped properly to the equivalent entity field in Cloud SOAR. Or, you might want to create a custom field called Time to Manage that calculates the difference between incident Open Time and Close Time. You could then track Time to Manage across different incident types or different analysts to find pain points in your SOC. 
+
+Administrators can edit existing fields, delete fields, and add new fields for almost every section of Cloud SOAR. Fields can be customized one by one manually, or an administrator can import a CSV file to customize them in bulk. Any existing field can have its name or value edited, but its type cannot be changed. Field types include date, text, numeric, timezone, email address, IP address, and many others. 
+
+There are several categories of fields you can customize in Cloud SOAR: triage, incidents, tasks, notes, and attachments. Each section of Cloud SOAR supports different numbers of custom fields. The Incidents section, for example, supports up to 100 custom fields. 
+
+Custom fields are an essential component of Cloud SOAR. They are used to normalize data collected from the different platforms such as SIEMs, ticketing systems like Jira, or any kind of technology that sends data. The data ingested from all these sources can have different names but thanks to custom fields we can map the data to a unique Field in Cloud SOAR. 
+
+Fields can be used to apply advanced filters or add them as a new column in the incident list view. For example, you might want to sort your incidents by the IP address field. You can also use fields to perform some calculations on other fields to create a new field. 
+
+#### Define and test a custom field
+
+In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance.
+
+##### Define a custom field
+
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
+1. In the **Custom Fields** menu, select **Incidents**. 
+1. Click the **+** icon.
+1. Give the field a name that designates what it is for. For example, to create a field for IPs originating from entities, enter **Source IP**.
+1. For **Type** select **Text**.
+1. Click **Create**.
+
+##### View your custom field
+
+To test the new field, we'll create a new incident manually. 
+
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**. 
+1. Click the **+** icon to create a new incident.
+1. Scroll down to the bottom to see your new field. Your field may appear in either the left or right column. It may be near the bottom or several rows up.
+1. Type a value in your new field. For example, if your new field is for a source IP, you could type in an IP address, such as **1.1.1.1**.
+1. For **Incident ID**, enter a unique identifier.
+1. For for **Type** select **General**, for **Purpose** select **Generic**, and for **Category** select **General**. 
+1. Leave other fields as their defaults, then click **Create**.
+
+:::note
+You will not be able to create the incident until there is a green **No Issue Found** in the top right corner. If you see the orange **Warning** icon, hover over it to learn what fields are missing or erroneous.
+::: 
+
+#### Incidents
+
+Incidents are the main place where SOC analysts conduct their threat investigations and orchestrate their responses. There are several areas of the admin UI where you can customize the way incidents behave in Cloud SOAR:
+* **[Incident templates](/docs/cloud-soar/automation/#incident-templates)**. Incident templates control how incidents appear in the War Room and include fields like type, severity, and status. Incident Templates are also essential when creating [automation rules](/docs/cloud-soar/automation/#automation-rules) that trigger incidents. When you first set up and automate your SOC, it will primarily be using incident templates.
+* **[General](/docs/cloud-soar/overview/#general)** settings **Incidents** section. Use this settings section for some configuration of the incidents in Cloud SOAR. You can allow or prohibit duplicate names, set whether closing notes are mandatory or not, and select which objects are extracted from Incidents here.
+* **[Reports](/docs/cloud-soar/incidents-triage/#report)**. Use this feature to create and edit report templates. These templates are used when analysts export a report after closing an incident as part of the lessons learned stage of the incident response cycle. 
+* **[Incident Labels](/docs/cloud-soar/overview/#incident-labels)**. Incident labels are used to organize the way incidents are displayed inside Cloud SOAR.
+
+Work with the analysts on your team to customize reports, labels, and templates to suit their needs. As a best practice, create labels and templates that use standardized and unique naming conventions.
+
+#### Customize incident labels
+
+In this section, we’ll create a custom incident label. This new label will make it easier to sort and respond to incidents.
+
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
+1. Click the **+** icon to create a new incident label. 
+1. For **Name**, enter a name that designates what the incident is for. For example, to create a label for incidents originating in Cloud SIEM, you could enter **Cloud SIEM Alert**.
+1. Optionally, you can include a short **Description**.
+1. For **Value**, type the label as you want it to appear in the UI. For example, type **Cloud SIEM Alert -**. 
+7. Double-click entries you want to add to the value. For example, double-click **Counter**. The fields inside the brackets will be replaced by the appropriate variable when this incident label is used. For example, if the incident is created in October, the `[=MONTH]` field will be replaced by 10. 
+1. Click **Save**.
+
+Now you can use this incident label the next time you manually create an incident. You can also use it when creating or configuring automation rules that create incidents. 
+
+#### Triage
+
+##### Incident triage
+
+Sometimes your system may record events that are unverified, or have a low confidence level such that you may want to triage them before reporting them as incidents.  The triage features of Cloud SOAR allow users to view these events and their details, as well as assign up to 100 custom fields for triage use, allowing maximum flexibility over a variety of event use cases.
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR > Triage**.
+
+Any recorded events that have not been converted to an incident will be displayed in a sortable table. Click on any column to sort by that field. By default, you will see two fields, **Status** and **Type**. 
+
+<img src={useBaseUrl('img/cloud-soar/triage.png')} alt="Triage screen" style={{border: '1px solid gray'}} width="800"/>
+
+The **Type** field is directly linked to the incident type field (and can be added through the **Triage** section of the **[Custom Fields](/docs/cloud-soar/overview/#custom-fields)** page).
+
+To add additional custom fields (up to 100), select **Triage** from the **Custom Fields** list.  To add a custom field, click the **+** button in the upper left of the display and set the field properties as desired. Make sure to check **Use as filter** if you want your new custom field to be filterable in the triage module.
+
+##### Triaging an event
+
+In the **Triage** page, you can begin triaging an event by assigning the event to a user. Hover over an event and click on the person icon to assign or "grab" that event.<br/><img src={useBaseUrl('img/cloud-soar/grab-event.png')} alt="Grab event" style={{border: '1px solid gray'}} width="150"/>
+
+Grabbing an event assigns that event to the selected analyst, and any playbooks defined for that incident type will be automatically executed, with the results displayed on the event details screen. Because all playbooks for the specified incident type are executed automatically, it is recommended to create separate incident types and playbooks for triage use.
+
+To convert the event to an incident, click the three-dot kebab in the upper-right of the event and select **Convert To Incident**. Select the appropriate incident template, owner, and label, then click **Save**. The new incident will now be available in the **Incidents** screen along with any custom information gathered by playbooks run during triage.
+
+<br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>
