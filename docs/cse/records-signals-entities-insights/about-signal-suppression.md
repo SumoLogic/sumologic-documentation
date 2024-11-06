@@ -21,7 +21,7 @@ Signal suppression can occur for a variety of reasons, including [Entity suppres
 
 By default, Signals are automatically suppressed for 72 hours. You can change this value to anywhere from 24 hours to 72 hours with the **Global Signal Suppression** setting on the **Insight Detection** page. See [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/).
 
-<img src={useBaseUrl('img/cse/detection-threshold-global-signal-suppression.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/cse/detection-threshold-global-signal-suppression.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="600"/>
 
 ### Override global Signal suppression
 
@@ -45,9 +45,9 @@ You can suppress multiple Entities at once on the [Entities list page](/docs/cse
 
 <img src={useBaseUrl('img/cse/entity-page.png')} alt="Suppression on the Entities page" style={{border: '1px solid gray'}} width="800"/>
 
-When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to Cloud SIEM. For details, see the [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities) topic. You can see what Entities are currently suppressed on the **Entities** page by filtering the list by **Suppressed**.
+When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to Cloud SIEM. For details, see the [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities) topic. 
 
-<img src={useBaseUrl('img/cse/suppressed-entities-page.png')} alt="Suppressed Entities" style={{border: '1px solid gray'}} width="800"/>
+You can see what Entities are currently suppressed on the **Entities** page by filtering the list by **Suppressed**. <br/><img src={useBaseUrl('img/cse/suppressed-entities-page.png')} alt="Suppressed Entities" style={{border: '1px solid gray'}} width="300"/>
 
 ## Suppress by indicator
 
