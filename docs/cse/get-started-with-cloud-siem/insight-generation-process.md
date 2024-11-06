@@ -87,7 +87,7 @@ The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force At
 
 By default, when an entity’s Activity Score exceeds the threshold of 12, Cloud SIEM generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold) for Insight generation. When Cloud SIEM creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
 
-After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
+After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for a time to prevent redundant Signals. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below.
 
 ### Example of an Entity that has exceeded Activity Score threshold
 
