@@ -319,9 +319,7 @@ You can use Cloud SOAR to make downloadable reports, using the same information 
 
 ## Introduction to Cloud SOAR for administrators
 
-### SUMO Logic Cloud SOAR
-
-#### What is Cloud SOAR administration?
+### What is Cloud SOAR administration?
 
 Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
 * **Role-based access controls**. Admins can create different roles and user groups with different levels of edit and view access to various areas within Cloud SOAR.
@@ -502,4 +500,73 @@ Grabbing an event assigns that event to the selected analyst, and any playbooks 
 
 To convert the event to an incident, click the three-dot kebab in the upper-right of the event and select **Convert To Incident**. Select the appropriate incident template, owner, and label, then click **Save**. The new incident will now be available in the **Incidents** screen along with any custom information gathered by playbooks run during triage.
 
-<br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>
+
+### Automations and integrations
+
+#### Why automate?
+
+Automations are at the heart of Cloud SOAR. Playbooks, rules, and integrations all help you automate various tasks in your security operations center.
+
+There are several reasons you might want to automate some security tasks:
+* **Faster responses**. Automating parts of your SOC can mean faster response times.
+* **Consolidate tools**. Orchestrate all your security tools in one location with integrations and custom APIs.
+* **Close the skills gap**. Analysts of all skill levels can deploy playbooks. Veteran analysts can spend more time on threat hunting.
+
+Typically, each playbook in Sumo Logic Cloud SOAR will help automate or partially automate two or three of the steps of the incident response cycle. 
+
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" style={{border: '1px solid gray'}} width="600"/>
+
+#### Import and Configure an integration through App Central
+
+Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Central. 
+
+As a Cloud SOAR administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the Integrations page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
+
+Let's walk through how to install and configure useful integrations through App Central.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
+2. Click on the **Integrations** tab in the top tab row.<br/>The App Central integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Central Integrations tab" style={{border: '1px solid gray'}} width="600"/>
+1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of actions that are supported in automations.
+1. Navigate to the **Integrations** view to show installed integrations.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>In this view, you can see the integrations that have already been installed and configured in the system.
+1. Click an integration. The panel on the right will show the integration details, including available actions.  Many integrations after install will require appropriate configuration using "resources".
+1. Move the mouse cursor over the resource, then click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/cloud-soar/example-integration-resource.png')} alt="Example integration resource" style={{border: '1px solid gray'}} width="600"/>
+1. You will see a dialog showing the configuration fields for this resource. <br/>When you create a resource or configure an existing one, you will need to enter the appropriate connection information such as the API web URL (for either Sumo Logic or a third-party service) and associated API keys. Many Sumo Logic integrations will require you to create an [access key](/docs/manage/security/access-keys/) and supply an associated access ID and access key to use in configuring integrations. Some third party integrations may require you to visit their website and sign up for an account in order to obtain the appropriate URL and/or credentials for their API.<br/><img src={useBaseUrl('img/cloud-soar/example-edit-resource.png')} alt="Example edit resource" style={{border: '1px solid gray'}} width="400"/>
+1. Click the **Test** button after you have configured the resource to test the connection info.  You will see a small popup that indicates whether the test was successful. (It may take a few seconds to execute depending on the integration.)
+
+#### Playbooks
+
+Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
+
+Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in Cloud SOAR.
+
+Playbooks are made up of nodes which are connected together in a flowchart. Whether you’re customizing a playbook or creating one from scratch, you have several node options:
+* **Actions**. Enrich data, execute APIs, send notifications, or use other integrations.
+* **Tasks**. Assign a task to an analyst or another human for later review.
+* **Conditions**. If-then statements that allow playbooks to branch in different directions.
+* **User choice**. Pause the playbook and wait for a human’s decision.
+* **Embedded playbooks**. Run another playbook.
+
+Each of these nodes are color-coded in a playbook:
+* A. **Conditions**. Conditions are represented by a purple diamond, allow your playbook to branch in different directions based on an if-then statement.
+* B. **Enrichments**. Green nodes are enrichments. These might add additional information from a threat intel database or convert data from one type to another. 
+* C. **User Choice** User choices, represented by a red circle, pause a playbook and wait for a human's decision. After the choice is made,  the playbook can continue branching in different directions.
+* D. **Containments**. Red nodes are containments. These can stop the spread of viruses and keep your data safe.
+* E. **Tasks**. Orange nodes assign tasks to a teammate in Cloud SOAR, such as manually reviewing data.
+* F. **Notifications**. Blue nodes are notification actions, such as a Slack or email alert.
+* G. **Custom**. Purple nodes are custom actions, such as APIs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nodes-example.png')} alt="Example playbook nodes" style={{border: '1px solid gray'}} width="700"/>
+
+Action nodes use integrations. These integrations broadly fall into several types:
+* **Enrichments**. Add information, metadata, or context, such as from a threat intelligence database.
+* **Containment**. Reduces further damage by isolating files or machines related to a threat.
+* **Notifications**. Alerts sent via email, Slack, PagerDuty, or most other services you can connect with an API.
+* **Custom**. Scripts and any other automations you can create using YAML, Perl, Python, PowerShell, or Bash.
+* **Daemons**. Background processes that can ingest data. 
+
+Custom actions can also include trigger actions, which run based on an event type until certain criteria are met. For example, if malware is detected, a trigger action could run an anti-malware cleanup software until no malware is detected. Similarly, you can create scheduled actions that run at certain intervals. For example, you could create a scheduled action that checks for malicious IP addresses every 5 minutes until no more malicious IP addresses are found.
+
+##### Best practices
+
+Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
+
+
