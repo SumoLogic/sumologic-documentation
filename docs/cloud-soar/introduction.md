@@ -569,4 +569,63 @@ Custom actions can also include trigger actions, which run based on an event typ
 
 Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
 
+#### Create a custom playbook for Cloud SIEM Insights
+
+Cloud SOAR allows us to create automations that will run whenever Cloud SIEM Insights are created or closed.  These automations are powered through "playbooks" as discussed in the previous section, predefined actions run in an automated workflow to respond to an incident.  
+
+Let’s use Cloud SOAR to create a playbook for use in Cloud SIEM.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
+1. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbooks, to give you an idea of the type of actions and structures that you can create with custom playbooks. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria.  You can click on any component of a playbook to see more detailed information about each node.  
+1. Let's create a playbook of our own. Click the plus icon near the top to create a new playbook.   
+   1. Enter a name, for example, **Test Playbook**. You can optionally enter a description.  Select **Cloud SIEM** as the **Type** for the playbook.
+   1. Click **Create** when finished.<br/>On the following screen you will see the starting template for your new (empty) playbook, with "Start" and "End" nodes.  
+1. Switch to edit mode by clicking on the **Edit** (pencil) icon in the bottom toolbar.
+1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM Insight.  
+   1. Mouse over the Start node, and click on the Edit (pencil) icon.  
+   1. In the Edit Node popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** will automatically populate the popup view with a number of input parameters that will be added to the playbook from the corresponding Insight.
+   1. Click **Update** to save and close the input parameters.    
+   1. Select **Action** from the node type options. 
+   1. Fill in a node name, for example, “Get Insight Details”
+   1. From the **Integration** options, select **Sumo Logic Cloud SIEM**.
+   1. For **Type**, ensure **Enrichment** is selected.
+   1. As the **Action**, select **Get Insight V2**.
+   1. as the **Insight ID**, select **CSE Insight ID**.
+   1. Click **Create** when finished.
+1. Add another action to the playbook by clicking the **+** icon on the **Get Insight Details** node you just created.  Use the parameters outlined below:
+    1. Name: “Get VirusTotal Info”
+    1. Integration: “VirusTotal V3”
+    1. Type: “Enrichment”
+    1. Action: “IP Reputation”
+    1. For the IPs field, click the “cog” icon on the right, and select the “Get Insight Details” action.  Then find the “output.entity.ip.address” field and select it.
+    1. Click Update to save the new action.
+1. Add another action to the playbook by clicking the **+** icon on the “Get VirusTotal Info” node you just created. Use the parameters outlined below:
+    1. Name: “Add Entity Enrichment”
+    1. Integration: “Sumo Logic Cloud SIEM”
+    1. Type: “Notification”
+    1. Action: “Add Entity Enrichment”
+    1. Entity ID: “cog” icon > Get Insight Details > output.entity.id
+    1. Enrichment Name: “VirusTotal IP Reputation”
+    1. Raw JSON: “cog” icon > Get VirusTotal Info > output.raw
+    1. You can leave the other fields blank. Click **Update** to save the action.
+1. Playbooks also allow “condition” nodes that can switch execution branches depending on the true/false results of a given expression.  Let’s add a condition node to our playbook that will differentiate the execution branch depending on the severity of the insight.
+   1. Click the **+** icon under our last action (the blue “Add Entity Enrichment” action). Choose a Condition node.
+   1. Click the pencil icon to edit the new Condition node.
+   1. For the top “select a value”, select the “output.severity” option from the “Get Insight Details” action.  Make sure “==” is selected in the middle row.
+   1. For the bottom “select a value” field, add a manual value: “High”.
+   1. Click **Update** to save the Condition node.
+1. Click the ‘plus’ icon under the Condition node to create a new node.  Select “Action” for this new node.
+   1. Set the Name for this action to “Send Notification Email”.
+   1. For the Integration, select “Basic Tools”. Set Type to be “Notification” and Action to be “Send Email”.
+   1. For Recipients, enter an email address (real or fake). Make sure you hit Enter after typing the email address to signal the Recipients field to parse and accept the email address.
+   1. Type in a subject into the Subject field “High Severity Insight detected”.
+   1. When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text. Click on the “{ }” icon to add a parameter field to your HTML Content (Body) text.
+   1. Click on the red parameter box that appears and select a source for the desired input parameter (for instance: “Insight.Severity” or “Get Insight Details.output.name”).  The parameter box will turn green once you have selected a valid source parameter.  You can add custom text before or after the source parameter.
+   1. Add one or more source parameters and accompanying custom text to outline what you want the email to say (for instance, explain that a high severity insight has been detected with the following details: name, timestamp, etc).
+   1. Click **Create** when finished with this action.
+1. When you’ve created your final node(s) for your playbook, manually drag the mouse cursor from the gray connection circle on the right side of the Email Notification node to the left connection area of the “End” node.  Drag and connect the “failure” end of the condition node to the End node as well.
+1. Verify that the Start > End node sequence for all branches have been completed – it will look more or less like the screenshot below.  (Note that you can always drag playbook elements anywhere in the playbook canvas for clarity or organization).
+1. Click the disk (**Save**) icon at the bottom to save your playbook.
+1. You can test your playbook before publishing by going to the “triple dot” icon in the upper right corner and selecting **Run Test**. 
+1. After testing and troubleshooting playbook details (if needed), click the **Publish** (clipboard) icon next to the edit/pencil icon to publish your playbook.  (You can add a description here if you wish.)
 
