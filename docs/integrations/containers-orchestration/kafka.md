@@ -737,7 +737,7 @@ Use this dashboard to:
 | Kafka - Underreplicated Partitions          | This alert fires when we detect underreplicated partitions on a given Kafka broker.                                                                     |                 |                   |
 | Kafka - Large number of broker errors       | This alert fires when we detect that there are 5 or more errors on a Broker node within a time interval of 5 minutes.                                   |                 |                   |
 | Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (`>=`85%) for an interval of 5 minutes.                        |                 |                   |
-| Kafka - Out of Sync Followers               |                                                                                                                                                         |                 |                   |
+| Kafka - Out of Sync Followers               | This alert fires when we detect that there are Out of Sync Followers within a time interval of 5 minutes.                                                                                                                                                        |                 |                   |
 | Kafka - High Broker Memory Utilization      | This alert fires when the average memory utilization within a 5 minute interval for a given Kafka node is high (`>=`85%).                                 | `>=` 85           | < 85              |
 
 
