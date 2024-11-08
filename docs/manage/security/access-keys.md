@@ -33,7 +33,7 @@ Managing Access Keys (how to).
 
 * You'll need the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security) to create an access key.
 * You'll need the [**Manage Access Keys** capability](/docs/manage/users-roles/roles/role-capabilities#security) to manage access keys created by other users in your org.
-
+* Access keys use the permissions of the user running the key. The user utilizing an access key must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the access key is needed for. 
 
 ## Create an access key
 
