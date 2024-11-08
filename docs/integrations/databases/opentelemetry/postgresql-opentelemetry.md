@@ -331,7 +331,7 @@ Use this dashboard to:
 
 ## Create monitors for PostgreSQL app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 

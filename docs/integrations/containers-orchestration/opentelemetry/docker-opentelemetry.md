@@ -273,7 +273,7 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 
 ## Create monitors for Docker app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 

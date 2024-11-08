@@ -327,7 +327,7 @@ The **Linux - Security Status** dashboard provides information about security on
 
 ## Create monitors for Linux app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 

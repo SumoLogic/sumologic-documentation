@@ -325,7 +325,7 @@ The **Elasticsearch - Queries** dashboard shows Elasticsearch provides analytics
 
 ## Create monitors for Elasticsearch app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
