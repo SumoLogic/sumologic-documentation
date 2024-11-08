@@ -365,7 +365,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
 
-## Upgrading the Host and Process Metrics app (Optional)
+## Upgrade/Downgrade the Host and Process Metrics app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

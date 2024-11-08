@@ -131,7 +131,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
 
-## Upgrading the Active Directory JSON app (Optional)
+## Upgrade/Downgrade the Active Directory JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
