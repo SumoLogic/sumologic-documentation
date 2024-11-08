@@ -149,7 +149,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.pngg')} alt="icon" width="100" /><h4>Kandji</h4></a>
+  <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
   <p>Identify security threats by analyzing threat events and device events.</p>
   </div>
 </div>
