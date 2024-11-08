@@ -81,11 +81,11 @@ Next, select a **Detection Method** (not applicable to SLO monitors).
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="200"/>
 
-**Static**
+#### Static
 
 Set specific threshold conditions for well-defined KPIs with constant thresholds (for example, infrastructure metrics like CPU utilization and memory).
 
-**Anomaly**
+#### Anomaly
 
 Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
 
@@ -249,7 +249,7 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
 To fully leverage AI-driven alerts for metrics monitors, you'll need:
 
 * **Automation Service**. Required for linking playbooks to metrics-based monitors.
-* **Metrics data**. Our anomaly detection uses at least 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
+* **Metrics data**. Our anomaly detection uses up to 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
 * **Metrics aggregation**. Queries should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
 Examples:
@@ -310,6 +310,10 @@ For example, you want to be alerted when the CPU usage is over 60% `at all times
 :::note
 This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
 :::
+
+<!-- awaiting instructions from B.A.
+#### Anomaly detection method
+--->
 
 #### Outlier detection method
 
