@@ -11,11 +11,6 @@ This section has instructions for collecting Corelight Zeek log messages and sen
 
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
-:::note
-The [Cloud SIEM Network Sensor](/docs/cse/sensors/network-sensor-deployment-guide/) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
-:::
-
-
 ## Step 1: Configure collection
 
 In this step, you configure a Syslog Source to collect Corelight Zeek log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
