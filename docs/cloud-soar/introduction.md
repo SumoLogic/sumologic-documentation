@@ -188,6 +188,8 @@ There are six steps to cybersecurity incident response cycle:
 1. **Eradication**. Delete malware, phishing emails, or anything else related to the incident. 
 1. **Recovery**. Use backup files, reinstall software, and get your environment up and running as it was before the incident.
 1. **Lessons Learned**. Discuss what worked and what went wrong. Use these findings to prepare better, then start at step 1 again. 
+
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
  
 For example, let’s say one of the employees at your company accidentally downloaded some malware onto their laptop, despite your preparation by installing VPNs on all employee machines. Once you have identified the malware, you may want to quarantine the infected laptop but putting it behind a firewall to contain it. You might also want to scan all the laptops in your company for that same malware, and block the IP address that’s the source of the malware download to eradicate the threat. Finally, you’ll need to provision a new laptop for the employee and recover their files. Then, you may need to assign them some cybersecurity training as part of lessons learned.
 
@@ -328,7 +330,7 @@ Broadly speaking, Security Orchestration Automation and Response (SOAR) is a col
 
 Administrators configure these and other settings to help SOC analysts automate and orchestrate many processes that are a routine part of responding to security incidents. Playbook automation offloads many tedious and repetitive tasks from the SOC team, reducing response time and allowing SOC analysts to focus on other mission-critical tasks. Dashboards and reports help distribute knowledge to different teams to work together to orchestrate their response in a timely, synchronized manner. RBAC ensures that only authorized members of your SOC team can perform certain actions.
 
-#### The incident response Cycle
+#### The incident response cycle
 
 As a Cloud SOAR administrator, your task is to set up RBAC controls, configure settings, create templates, and use APIs. Your ultimate goal is to enable Cloud SOAR to automate and orchestrate many parts of the incident response cycle. The more tasks you can automate with Cloud SOAR, the more time the SOC analysts on your team can devote to other activities like threat hunting.
 
@@ -339,6 +341,8 @@ Let’s briefly review the incident response cycle:
 * **Eradication**. Delete malware, phishing emails, or anything else related to the incident. 
 * **Recovery**. Use backup files, reinstall software, and get your environment up and running as it was before the incident.
 * **Lessons Learned**. Discuss what worked and what went wrong. Use these findings to prepare better, then start at step 1 again.
+
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
 
 ##### How can Sumo Logic Cloud SOAR help?
 
@@ -415,17 +419,15 @@ Fields are used to map data that is imported into Cloud SOAR to various attribut
 
 Administrators can edit existing fields, delete fields, and add new fields for almost every section of Cloud SOAR. Fields can be customized one by one manually, or an administrator can import a CSV file to customize them in bulk. Any existing field can have its name or value edited, but its type cannot be changed. Field types include date, text, numeric, timezone, email address, IP address, and many others. 
 
-There are several categories of fields you can customize in Cloud SOAR: triage, incidents, tasks, notes, and attachments. Each section of Cloud SOAR supports different numbers of custom fields. The Incidents section, for example, supports up to 100 custom fields. 
+There are several categories of fields you can customize in Cloud SOAR: triage, incidents, tasks, notes, and attachments. Each section of Cloud SOAR supports different numbers of custom fields. The **Incidents** section, for example, supports up to 100 custom fields. 
 
-Custom fields are an essential component of Cloud SOAR. They are used to normalize data collected from the different platforms such as SIEMs, ticketing systems like Jira, or any kind of technology that sends data. The data ingested from all these sources can have different names but thanks to custom fields we can map the data to a unique Field in Cloud SOAR. 
+Custom fields are an essential component of Cloud SOAR. They are used to normalize data collected from the different platforms such as SIEMs, ticketing systems like Jira, or any kind of technology that sends data. The data ingested from all these sources can have different names but thanks to custom fields we can map the data to a unique field in Cloud SOAR. 
 
 Fields can be used to apply advanced filters or add them as a new column in the incident list view. For example, you might want to sort your incidents by the IP address field. You can also use fields to perform some calculations on other fields to create a new field. 
 
 #### Define and test a custom field
 
-In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance.
-
-##### Define a custom field
+In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance. For more information, see [Custom fields](/docs/cloud-soar/overview/#custom-fields).
 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
 1. In the **Custom Fields** menu, select **Incidents**. 
@@ -434,7 +436,7 @@ In this section, we’ll create a custom field to map data that’s ingested int
 1. For **Type** select **Text**.
 1. Click **Create**.
 
-##### View your custom field
+##### Test your custom field
 
 To test the new field, we'll create a new incident manually. 
 
@@ -454,7 +456,7 @@ You will not be able to create the incident until there is a green **No Issue Fo
 
 Incidents are the main place where SOC analysts conduct their threat investigations and orchestrate their responses. There are several areas of the admin UI where you can customize the way incidents behave in Cloud SOAR:
 * **[Incident templates](/docs/cloud-soar/automation/#incident-templates)**. Incident templates control how incidents appear in the War Room and include fields like type, severity, and status. Incident Templates are also essential when creating [automation rules](/docs/cloud-soar/automation/#automation-rules) that trigger incidents. When you first set up and automate your SOC, it will primarily be using incident templates.
-* **[General](/docs/cloud-soar/overview/#general)** settings **Incidents** section. Use this settings section for some configuration of the incidents in Cloud SOAR. You can allow or prohibit duplicate names, set whether closing notes are mandatory or not, and select which objects are extracted from Incidents here.
+* **[General](/docs/cloud-soar/overview/#general)** settings **Incidents** section. Use this settings section for some configuration of the incidents in Cloud SOAR. You can allow or prohibit duplicate names, set whether closing notes are mandatory or not, and select which objects are extracted from incidents here.
 * **[Reports](/docs/cloud-soar/incidents-triage/#report)**. Use this feature to create and edit report templates. These templates are used when analysts export a report after closing an incident as part of the lessons learned stage of the incident response cycle. 
 * **[Incident Labels](/docs/cloud-soar/overview/#incident-labels)**. Incident labels are used to organize the way incidents are displayed inside Cloud SOAR.
 
@@ -476,9 +478,7 @@ Now you can use this incident label the next time you manually create an inciden
 
 #### Triage
 
-##### Incident triage
-
-Sometimes your system may record events that are unverified, or have a low confidence level such that you may want to triage them before reporting them as incidents.  The triage features of Cloud SOAR allow users to view these events and their details, as well as assign up to 100 custom fields for triage use, allowing maximum flexibility over a variety of event use cases.
+Sometimes your system may record events that are unverified, or have a low confidence level such that you may want to triage them before reporting them as incidents.  The triage features of Cloud SOAR allow users to view these events and their details, as well as assign up to 100 custom fields for triage use, allowing maximum flexibility over a variety of event use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
 
 [**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
 
@@ -500,7 +500,7 @@ Grabbing an event assigns that event to the selected analyst, and any playbooks 
 
 To convert the event to an incident, click the three-dot kebab in the upper-right of the event and select **Convert To Incident**. Select the appropriate incident template, owner, and label, then click **Save**. The new incident will now be available in the **Incidents** screen along with any custom information gathered by playbooks run during triage.
 
-<img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="700"/>
 
 ### Automations and integrations
 
@@ -515,13 +515,13 @@ There are several reasons you might want to automate some security tasks:
 
 Typically, each playbook in Sumo Logic Cloud SOAR will help automate or partially automate two or three of the steps of the incident response cycle. 
 
-<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
 
-#### Import and Configure an integration through App Central
+#### Import and configure an integration through App Central
 
-Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Central. 
+Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Central. For more information, see [App Central](/docs/platform-services/automation-service/automation-service-app-central/). 
 
-As a Cloud SOAR administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the Integrations page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
+As a Cloud SOAR administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
 
 Let's walk through how to install and configure useful integrations through App Central.
 
@@ -536,7 +536,7 @@ Let's walk through how to install and configure useful integrations through App 
 
 #### Playbooks
 
-Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
+Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes. For more information, see [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).
 
 Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in Cloud SOAR.
 
@@ -554,7 +554,7 @@ Each of these nodes are color-coded in a playbook:
 * D. **Containments**. Red nodes are containments. These can stop the spread of viruses and keep your data safe.
 * E. **Tasks**. Orange nodes assign tasks to a teammate in Cloud SOAR, such as manually reviewing data.
 * F. **Notifications**. Blue nodes are notification actions, such as a Slack or email alert.
-* G. **Custom**. Purple nodes are custom actions, such as APIs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nodes-example.png')} alt="Example playbook nodes" style={{border: '1px solid gray'}} width="700"/>
+* G. **Custom**. Purple nodes are custom actions, such as APIs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nodes-example.png')} alt="Example playbook nodes" style={{border: '1px solid gray'}} width="800"/>
 
 Action nodes use integrations. These integrations broadly fall into several types:
 * **Enrichments**. Add information, metadata, or context, such as from a threat intelligence database.
@@ -635,7 +635,7 @@ Let’s create a playbook for use in Cloud SIEM.
 
 #### Create a custom incident template
 
-Incident templates define which attributes will be automatically set each time an incident is generated. These attributes include incident type, classification, assignment, playbooks, and many others. For example, you may want to automatically assign certain incoming incidents to a certain analyst based on their timezone or area of expertise. Or, you might want to automatically run a playbook on all incoming incidents.
+Incident templates define which attributes will be automatically set each time an incident is generated. These attributes include incident type, classification, assignment, playbooks, and many others. For example, you may want to automatically assign certain incoming incidents to a certain analyst based on their timezone or area of expertise. Or, you might want to automatically run a playbook on all incoming incidents. For more information, see [Incident templates](/docs/cloud-soar/automation/#incident-templates).
 
 In this section, we’ll create a custom incident template. This template will automatically assign the playbook you created earlier to certain new incidents, and then automatically run it.  
 
@@ -651,15 +651,13 @@ In this section, we’ll create a custom incident template. This template will a
 1. Click **Add**.
 1. Toggle the **Autorun** switch to the **Enabled** (blue) position.
 
-#### Automation rules
-
-Automation rules define what happens when data is received from a source. These rules allow specific data to be parsed from the incoming data sources and then acted upon automatically. 
-
-Automation rules can automatically pull information from sources. They can also execute playbooks based on certain criteria. For example, you might want to pull Insights from Cloud SIEM once an hour and create incidents from them. Then, you could configure a rule that runs a playbook based on the tags in the Incident. This way, the entire incident response cycle is automated: Cloud SIEM identifies a threat, and playbooks in Cloud SOAR are automatically deployed to contain and eradicate the threats, restore systems, and email a final report for an analyst to review.  
-
 #### Create a custom automation rule
 
-In this section, we’ll create a custom automation rule. This rule will pull information from Cloud SIEM every five hours.
+Automation rules define what happens when data is received from a source. These rules allow specific data to be parsed from the incoming data sources and then acted upon automatically. For more information, see [Automation rules](/docs/cloud-soar/automation/#automation-rules).
+
+Automation rules can automatically pull information from sources. They can also execute playbooks based on certain criteria. For example, you might want to pull Insights from Cloud SIEM once an hour and create incidents from them. Then, you could configure a rule that runs a playbook based on the tags in the incident. This way, the entire incident response cycle is automated: Cloud SIEM identifies a threat, and playbooks in Cloud SOAR are automatically deployed to contain and eradicate the threats, restore systems, and email a final report for an analyst to review.  
+
+Let's create a custom automation rule. This rule will pull information from Cloud SIEM every five hours.
 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**.  
 1. Near the top, click the **+** icon to create a new rule.
