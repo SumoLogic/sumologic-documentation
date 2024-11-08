@@ -2459,6 +2459,7 @@ integrations: [
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
