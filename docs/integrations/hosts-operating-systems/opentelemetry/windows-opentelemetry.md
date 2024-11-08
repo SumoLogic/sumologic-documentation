@@ -349,3 +349,11 @@ Use this dashboard to:
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
+
+## Create monitors for Windows app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows alerts

@@ -328,3 +328,11 @@ Use this dashboard to:
 - Track index utilization of existing indexes in a relation.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
+
+## Create monitors for PostgreSQL app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PostgreSQL alerts

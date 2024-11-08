@@ -1,6 +1,6 @@
 ---
 id: macos-opentelemetry
-title: macos - OpenTelemetry Collector
+title: macOS - OpenTelemetry Collector
 sidebar_label: macOS - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for MacOS.
 ---
@@ -151,7 +151,7 @@ sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | 
 }
 ```
 
-## Viewing Linux dashboards
+## Viewing macOS dashboards
 
 ### Host Metrics - Overview
 
@@ -218,3 +218,11 @@ Use this dashboard to:
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+
+## Create monitors for macOS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### macOS alerts

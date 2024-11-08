@@ -239,3 +239,11 @@ Use this dashboard to:
 * Gain insights into garbage collection impact on different memory pools.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Memory-Pool.png' alt="Memory Pool" />
+
+## Create monitors for JMX app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### JMX alerts

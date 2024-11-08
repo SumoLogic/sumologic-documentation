@@ -320,3 +320,11 @@ Use this dashboard to:
 - Dashboard filters allow you to narrow a search for a specific database cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Performance-and-Resource-Metrics.png' alt="Performance and Resource Metrics" />
+
+## Create monitors for MySQL app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### MySQL alerts

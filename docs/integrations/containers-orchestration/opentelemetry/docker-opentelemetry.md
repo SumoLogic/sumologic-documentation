@@ -270,3 +270,11 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 - **Average Tx Packets by Container**. Average packets transmitted per timeslice by each container.
 - **Count of Tx Dropped Packets**. Count of packets dropped during transmission per timeslice by each container.
 - **Count of Tx Error Packets**. Count of error packets transmitted per timeslice by each container.
+
+## Create monitors for Docker app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Docker alerts

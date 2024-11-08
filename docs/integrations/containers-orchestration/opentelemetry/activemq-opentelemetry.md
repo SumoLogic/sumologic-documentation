@@ -347,3 +347,11 @@ Use this dashboard to:
 * Quickly determine patterns across all audit logs in a given ActiveMQ cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Audit.png' alt="ActiveMQ dashboards" />
+
+## Create monitors for ActiveMQ app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ActiveMQ alerts

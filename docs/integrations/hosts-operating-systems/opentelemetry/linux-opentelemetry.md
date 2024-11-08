@@ -324,3 +324,11 @@ The **Linux - Login Status** dashboard provides information about logins to Linu
 The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
+
+## Create monitors for Linux app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux alerts

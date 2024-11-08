@@ -288,3 +288,11 @@ Use this dashboard to:
 - Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Connections-and-Requests-Metrics.png' alt="Connections and Requests Metrics" />
+
+## Create monitors for Nginx app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Nginx alerts

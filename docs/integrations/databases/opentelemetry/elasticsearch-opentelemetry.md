@@ -322,3 +322,11 @@ The **Elasticsearch - Operations** dashboard allows you to monitor server stats 
 The **Elasticsearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Queries.png' alt="Resource Usage" />
+
+## Create monitors for Elasticsearch app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Elasticsearch alerts

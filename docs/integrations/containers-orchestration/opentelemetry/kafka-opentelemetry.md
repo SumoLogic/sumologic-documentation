@@ -258,3 +258,11 @@ Use this dashboard to:
 - Identify unsynchronized partition replicas.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Metrics.png' alt="Metrics" />
+
+## Create monitors for Kafka app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Kafka alerts

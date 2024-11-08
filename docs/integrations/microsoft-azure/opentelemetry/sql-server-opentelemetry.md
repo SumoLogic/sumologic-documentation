@@ -266,3 +266,11 @@ Use this dashboard to:
 - Insight into lock waits rate, page read and write rate along with patch request rate and SQL compilation, and recompilation per sec.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Performance-Counters" />
+
+## Create monitors for Microsoft SQL Server app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft SQL Server alerts
