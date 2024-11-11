@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
@@ -11,6 +11,29 @@ import ErrorBoundary from '../components/ErrorBoundary'; // Import the ErrorBoun
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
+
+  useEffect(() => {
+    // Load the Berry widget script only if it hasn’t already been loaded
+    if (!document.getElementById('berry-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'berry-widget-script';
+      script.type = 'text/javascript';
+      script.src = 'https://www.berryapp.io/js/berry-widget.min.js';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        const widgetJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MjU5NDg5MTcsImV4cCI6MTc0MTYwODkxNywiYXVkIjoiV2lkZ2V0SW5pdGlhbGl6YXRpb24iLCJvcmdhbml6YXRpb25JZCI6NjN9.oJEGkGq1q3uFD66J916f_ZBrqQjPHP9orUOKFxInG38';
+        window.Berry.init({
+          token: widgetJwt,
+          primaryColor: '#021b9a',
+          position: { side: 'right', offsetX: 25, offsetY: 100 },
+          isOpenByDefault: false,
+          botUrlPath: 'nova',
+          showNewChat: true,
+        });
+      };
+    }
+  }, []);
 
   return (
     <ErrorBoundary>
