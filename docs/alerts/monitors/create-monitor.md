@@ -63,6 +63,9 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 :::note
 The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
+:::tip
+When you create a monitor and open the metrics search query in the Metrics Explorer, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Explorer may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
+:::
 
 ## Step 1. Set trigger conditions
 
@@ -75,8 +78,6 @@ Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search
 ### Detection Method
 
 Next, select a **Detection Method** (not applicable to SLO monitors).
-
-#### Logs
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="200"/>
 
@@ -95,19 +96,9 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
-If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
+**Use Outlier**
 
-#### Metrics
-
-<img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-metrics.png')} alt="Metrics detection methods" width="200"/>
-
-**Static**
-
-Set threshold conditions for KPIs with defined, constant thresholds (for example, infrastructure metrics like CPU utilization and memory).
-
-**Outlier**
-
-Detect unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
+If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**. This detects unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
 ### Query
 
