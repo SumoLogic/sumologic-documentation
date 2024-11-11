@@ -67,7 +67,7 @@ When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the 
 <img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" style={{border: '1px solid gray'}} width="600"/>
 
 
-## Search Records or from the Partitions page
+## Search Records from the Partitions page
 
 If you have the **View Partitions** role capability, you can search Cloud SIEM partitions from the **Partitions** page in the Sumo Logic UI.
 
