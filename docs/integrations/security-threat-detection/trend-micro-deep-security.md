@@ -264,7 +264,7 @@ The Sumo Logic app for Trend Micro - Deep Security provides the following filter
 * severity
 * signature_id
 
-## Upgrading the Trend Micro Deep Security app (Optional)
+## Upgrade/Downgrade the Trend Micro Deep Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

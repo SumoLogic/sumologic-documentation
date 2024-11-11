@@ -5,11 +5,26 @@ sidebar_label: Flex
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="55"/>
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
+<details>
+<summary><strong>Micro Lesson</strong>: Viewing the Flex App Dashboards</summary>
+<Iframe url="https://www.youtube.com/embed/kn3SVhAIwDk?si=nMQBWvp5Ruo-nOaB"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+</details>
+    
 ## Log types
 
 - [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
@@ -216,7 +231,7 @@ The **Flex - Metrics** dashboard helps you review metrics details of your data i
 
 The **Flex - Tracing** dashboard helps to review Tracing details of your data ingest and to identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Tracing.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
 
-## Upgrading the Flex app (Optional)
+## Upgrade/Downgrade the Flex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

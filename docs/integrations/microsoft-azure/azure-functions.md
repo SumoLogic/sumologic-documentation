@@ -44,7 +44,7 @@ You must explicitly enable diagnostic settings for each Azure Functions you want
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/FunctionApp/Logs`, `Azure/FunctionApp/Metrics`.
 
 ### Configure field in field schema
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for following fields:
    - `tenant_name`. This field is tagged at the collector level and you can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
    - `location`. The region to which the resource name belongs to.
@@ -85,7 +85,8 @@ Scope (Specific Data): tenant_name=*
 ```
 
 ```sql title="Parse Expression"
-json "resourceId"
+json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+| if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
 | toUpperCase(resourceId) as resourceId
 | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
 | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -93,7 +94,7 @@ json "resourceId"
 | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
 | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
 | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type,service_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
 ```
 
 
@@ -104,7 +105,7 @@ json "resourceId"
 If this rule already exists, there's no need to create it again.
 
 ```sql
-Rule Name: AzureObservabilityMetadataExtractionFunctionAppLevel
+Rule Name: AzureObservabilityMetadataExtractionAppServiceLevel
 ```
 
 ```sql title="Metric match expression"
@@ -301,7 +302,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Administrative-Operations.png')} alt="Azure Functions Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Functions app (Optional)
+## Upgrade/Downgrade the Azure Functions app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
