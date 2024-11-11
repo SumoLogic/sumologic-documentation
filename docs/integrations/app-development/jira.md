@@ -431,7 +431,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     * started (sprint_started)
     * closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#step-2-configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Installing the Jira app
 
@@ -550,7 +550,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
 
-## Upgrading the Jira app (Optional)
+## Upgrade/Downgrade the Jira app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

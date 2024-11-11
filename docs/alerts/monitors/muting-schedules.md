@@ -20,7 +20,7 @@ If fine-grained permissions are enabled for your account, you'll need the **Mana
 
 To set a muting schedule:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Muting Schedules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Muting Schedules**. You can also click the **Go To...** menu at the top of the screen and select **Muting Schedules**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Muting Schedules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Muting Schedules**. You can also click the **Go To...** menu at the top of the screen and select **Muting Schedules**. 
 1. Click **Add** > **New Schedule**.
 1. Define your **Schedule Configuration** using the provided UI or [*RRule*](https://freetools.textmagic.com/rrule-generator), a syntax that allows you to specify schedule recurrence rules for calendar dates programmatically.
 1. Define your **Scope**, where you associate one or more monitors with this schedule.
@@ -29,7 +29,7 @@ To set a muting schedule:
 ### Validate muting schedule
 
 To confirm that your muting schedule has been applied successfully:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 1. Find your monitor in the list and check the **Status** column, where you should see the muted indicator.
 
 <img src={useBaseUrl('img/alerts/mute-sched1.png')} alt="mute schedule" />
@@ -42,6 +42,6 @@ Optionally, you can apply a muting schedule to an entire alert group, rather tha
 
 Once you've set up an alert group and a muting schedule, here's how how to link them together:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 1. Select the alert group variable you want to mute. In this example, we'll choose `region`.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups1.png')} alt="mute-sched-alert-groups1.png" style={{border: '1px solid gray'}} width="500"/>
 1. Under **(1) Trigger Conditions**, find the alert group you want to use. In this example, we've set up the condition so that if the `region` is `us-east-1`, alerts will be muted every third Saturday.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups2.png')} alt="mute-sched-alert-groups2.png" style={{border: '1px solid gray'}} width="500" />

@@ -21,8 +21,8 @@ Just as for Entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom Entity type:
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  Kanso-->
-1. Click **Create** on the **Custom Entity Types** page. <br/><img src={useBaseUrl('img/cse/custom-types-page.png')} alt="Custom Entity types page" style={{border: '1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
+1. Click **Create** on the **Custom Entity Types** page. 
 2. The **Create Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" style={{border: '1px solid gray'}} width="500"/>
 3. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 
 4. **Identifier**. Enter a unique identifier for the custom Entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the Entity type doesn’t appear in the Cloud SIEM UI, but is used by the Cloud SIEM backend.

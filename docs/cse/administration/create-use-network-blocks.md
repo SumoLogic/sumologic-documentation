@@ -61,13 +61,11 @@ In the case that the two or more Network Blocks overlap, Cloud SIEM uses the sma
 
 When Cloud SIEM looks for the Network Block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
 
-<img src={useBaseUrl('img/cse/overlapping-network-blocks.png')} alt="Overlapping network blocks" style={{border: '1px solid gray'}} width="400"/>
-
 ## Create a Network Block manually
 
 Follow these instructions to create a Network Block using the Cloud SIEM UI. For information about creating multiple Network Blocks by file upload, see [Upload a CSV file of Network Blocks](#upload-a-csv-file-of-network-blocks).
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Network Blocks**. <!--Kanso  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. 
 1. On the **Create Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the Network Block.
@@ -118,12 +116,16 @@ In the table below, the left column contains schema fields that contain IP addre
 | `srcDevice_ip `| `srcDevice_ip_location` | `srcDevice_ip_isInternal` |
 | `srcDevice_natIp`	 | `srcDevice_natIp_location` | `srcDevice_natIp_isInternal` |
 
+<!-- Can't reproduce the screenshot
+
 The screenshot below shows a Record that contains several Network Block-related enrichment fields. Note that:
 
 * `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in Network Blocks that are marked Internal.
 * `srcDevice_ip_location` indicates that `srcDevice_ip` is in the “test_internal” Network Block.
 
 <img src={useBaseUrl('img/cse/record.png')} alt="Example enrichment fields" style={{border: '1px solid gray'}} width="600"/>
+
+-->
 
 ## Using enrichment fields
 

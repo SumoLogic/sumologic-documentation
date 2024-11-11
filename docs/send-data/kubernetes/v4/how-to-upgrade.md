@@ -51,7 +51,7 @@ There are several scenarios here, depending on the exact use case:
 Recording rule metrics removed in version 4 were used in the Sumo Kubernetes App. A new version of the App must be installed to ensure
 compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
 
-[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgrading-the-kubernetes-app
+[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgradedowngrade-the-kubernetes-app
 
 #### Using the new app with v3
 
@@ -78,12 +78,14 @@ kube-prometheus-stack:
             sourceLabels: [__name__]
 ```
 
-#### Apply missing Custom Resource Definition for OpenTelemetry Operator
-
-**When??** If you already use OpenTelemetry Operator in a version below `0.42.0`, apply the following command on your cluster:
+#### Update custom resource definition for OpenTelemetry operator
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetryinstrumentation.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetrycollector.yaml`
 ```
 
 ### How to revert to the v3 defaults

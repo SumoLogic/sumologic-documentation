@@ -20,10 +20,10 @@ If the account owner leaves your organization and you cannot transfer the accoun
 
 Verify if the user has an IP address that should be removed on the Service AllowList Settings page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Service AllowList Settings page, in the main Sumo Logic menu select **Administration > Security > Service AllowList Settings**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Service AllowList Settings page, in the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**.
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Service AllowList Settings page, in the main Sumo Logic menu select **Administration > Security > Service AllowList Settings**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Service AllowList Settings page, in the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**.
+ 
 
 ## Check for access to any shared Access IDs and Keys
 

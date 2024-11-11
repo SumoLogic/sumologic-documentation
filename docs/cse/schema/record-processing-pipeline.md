@@ -32,7 +32,7 @@ The key-value pairs are input to the next step of the process: mapping.
 
 ## Map message fields to schema attributes
 
-The mapping process creates a Record from the key-value pairs that were extracted from a message, and maps a subset of the keys to Cloud SIEM schema attributes. 
+The [mapping process](/docs/cse/schema/create-structured-log-mapping/) creates a Record from the key-value pairs that were extracted from a message, and maps a subset of the keys to Cloud SIEM schema attributes. 
 
 Mapping solves a particular problem: messages from different products use different names to identify users, applications, devices and so on. For example, some messages may refer to a source IP address as `sourceIP`, while others use `sourceIpAddress`. We need a standard set of names for the data that most messages are likely to contain. The [Cloud SIEM schema](/docs/cse/schema) defines that standard set of names. 
 
@@ -40,7 +40,7 @@ What’s the benefit of mapping? It results in Records that use a common (standa
 
 ## Normalize usernames and hostnames
 
-Username and hostname normalization is the process of transforming the value of Record attributes that contain usernames and hostnames into a standard format. The normalized value replaces the non-normalized value in a Record. The non-normalized values of hostname and usernames are retained in a `_raw` field in the Record.
+[Username and hostname normalization](/docs/cse/schema/username-and-hostname-normalization/) is the process of transforming the value of Record attributes that contain usernames and hostnames into a standard format. The normalized value replaces the non-normalized value in a Record. The non-normalized values of hostname and usernames are retained in a `_raw` field in the Record.
 
 Why normalize? Assume Cloud SIEM receives messages with an email-type field "bob@bobsbaitshop.com" and username-type field  "bob". We can use normalization to transform "bob@bobsbaitshop.com" to "bob", allowing the username and email to be correlated together.
 

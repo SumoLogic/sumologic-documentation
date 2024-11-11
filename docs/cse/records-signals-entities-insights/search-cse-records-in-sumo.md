@@ -67,11 +67,11 @@ When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the 
 <img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" style={{border: '1px solid gray'}} width="600"/>
 
 
-## Search Records or from the Partitions page
+## Search Records from the Partitions page
 
 If you have the **View Partitions** role capability, you can search Cloud SIEM partitions from the **Partitions** page in the Sumo Logic UI.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.
 1. The partitions that contain Cloud SIEM Records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" style={{border: '1px solid gray'}} width="800"/>  
 2. To search for all content in the partition, click the icon that appears next to a Partition name when you hover over a row.  
 3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
@@ -82,7 +82,7 @@ To  search a Sumo Logic partition, you specify the name of the partition using
 
 ## Open a log search tab
 
-To open a log search tab in Sumo Logic, click **+ New** at the top of the page and select **Log Search**.
+To open a log search tab in Sumo Logic, go to the **Home** screen and select **Log Search**.
 
 ## Search all Records or Signals in a partition 
 

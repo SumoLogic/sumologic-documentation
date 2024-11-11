@@ -19,7 +19,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Collecting logs from a MySQL database](#collecting-logs-from-a-mysql-database)
   * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
   * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
-  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-a-mssql-database)
+  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-an-mssql-database)
   * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
 * [Collecting logs from other sources](#collecting-logs-from-other-sources)
 
