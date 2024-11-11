@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
 
 ***Version: 0.1  
-Updated: Sep 9, 2024***
+Updated: Nov 11, 2024***
 
 Sumo Logic Automation Tools simplifies CloudSOAR playbooks with data processing and automation.
 
@@ -330,4 +330,4 @@ Break Lines
 ```
 ## Change Log
 
-* Sep 09, 2024 - Beta version released
+* Nov 11, 2024 - Beta version released
