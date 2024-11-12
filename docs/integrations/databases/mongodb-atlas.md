@@ -323,7 +323,7 @@ The lambda function should be working now in sending logs to Sumo. You can check
 
 13. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
 
-1. [Deploy the MongoDB Atlas SAM application](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
+1. [Deploy the MongoDB Atlas SAM application](#deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
 2. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second SAM app deployment, because these events are global and are already captured by first collector.
 
 14. By default the solution collects all log types & metrics for all the clusters, if you to filter based on cluster alias, do the following
@@ -415,7 +415,7 @@ You configure Webhooks for real-time alerts. This section explains how to config
 
 ### Advanced Configuration
 
-This section is common for both [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) and [script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas).
+This section is common for both [AWS Lambda-based collection](#deploy-the-sumo-logic-mongodb-atlas-sam-application) and [script-based collection](#configure-script-based-collection-for-mongodb-atlas).
 
 <details>
 <summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
