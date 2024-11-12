@@ -44,12 +44,12 @@ You may edit the retention period of Partitions and Scheduled Views. The minimum
 1. On the **Partitions** or **Scheduled Views** tab, hover over the item you would like to edit the retention period for.
 1. Click the three-dot kebab icon on the right of the desired row, and from the menu select **Edit Retention Period**. (You may also edit the retention period from the expanded information dialog. Next to **Retention Period**, click **Edit**.)
 1. In the **Edit Retention Period** dialog, enter the new retention period in days.
-   1. If the new retention period is longer than the previous period, click **Save**.<br/> <img src={useBaseUrl('img/partitions-data-tiers/edit_retention_period_save.png')} alt="edit_retention_period_save.png" style={{border:'1px solid gray'}} width="300"/>
+   1. If the new retention period is longer than the previous period, click **Save**.<br/> <img src={useBaseUrl('img/manage/partitions-data-tiers/edit_retention_period_save.png')} alt="edit_retention_period_save.png" style={{border:'1px solid gray'}} width="300"/>
    :::info
    The new retention policy will apply to all logs in the partition that have not yet aged out, not just to newly ingested data.
    :::
    1. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either:
-       * Simulate this data deletion for a few days and then reduce it permanently by selecting **Apply change in 7 days**. You will be billed for this data until the deletion is permanent, but it gives you a sense of how the deletion will impact you before it is final.<br/><img src={useBaseUrl('img/partitions-data-tiers/reduce-retention-period.png')} alt="reduce-retention-period" style={{border:'1px solid gray'}} width="350"/>
+       * Simulate this data deletion for a few days and then reduce it permanently by selecting **Apply change in 7 days**. You will be billed for this data until the deletion is permanent, but it gives you a sense of how the deletion will impact you before it is final.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/reduce-retention-period.png')} alt="reduce-retention-period" style={{border:'1px solid gray'}} width="350"/>
          :::info
          With this option, the retention period on your Partitions page will not change immediately. There will be an icon indicating that a retention decrease is imminent in a number of days. When the counter expires, the data will be deleted, the warning icon will disappear, and the new retention policy will be in effect. The retention period change applies to all data (including data ingested before the change).
          :::

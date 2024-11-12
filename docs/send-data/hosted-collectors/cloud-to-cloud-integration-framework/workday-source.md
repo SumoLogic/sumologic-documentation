@@ -132,6 +132,7 @@ To resolve this:
 1. Check if you have such an authentication policy enabled. If by default your users' login via SSO then you may have to exclude the ISU Security Group to allow it to use username and password by creating a separate authentication policy.
 1. Try changing the Session Timeout Minutes to 0 as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
 1. Exempt user from password expiration as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
+1. Configure the user login to skip security questions, if any.
 
 Below is the section for common errors for **Activity Logs**.
 

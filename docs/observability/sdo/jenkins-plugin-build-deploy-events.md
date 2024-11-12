@@ -8,7 +8,7 @@ description: Learn how to send build and deploy events to Sumo Logic from Jenkin
 ## Prerequisites
 
 Use the latest [Sumo Logic Jenkins Plugin](https://plugins.jenkins.io/sumologic-publisher/#documentation)
-version of the plugin. You will be using [SumoUpload](https://github.com/SumoLogic/sumologic-jenkins-plugin#sumoupload)
+version of the plugin. You will be using [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload)
 function to send an event to Sumo Logic from your DevOps pipeline.
 
 As an example: Upload a Key-Value map as JSON to Sumo Logic.
