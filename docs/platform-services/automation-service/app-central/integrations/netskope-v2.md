@@ -43,7 +43,8 @@ When finished, click **OK**. After being created, tokens can be managed by click
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-7.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="150"/> 
 1. Populate all the required fields (\*) and then click **SAVE**.
    * **Server URL**. URL for API V2 REST API (https://&lt;tenant-name&gt;.goskope.com).
-   * **Token**. The Token you copied earlier.
+   * **Token**. The Token you copied earlier. 
+   * <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
 1. Additionally, if need you can populate the query daemons.
 1. To make sure the resource is working, hover over the resource and then click the **TEST** that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-8.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="200"/> 
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-10.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/> 
