@@ -12,6 +12,7 @@ In Sumo Logic, you'll need an access key to:
 
 import Iframe from 'react-iframe';
 
+<!-- outdated
 :::sumo Micro Lesson
 
 Managing Access Keys (how to).
@@ -28,6 +29,7 @@ Managing Access Keys (how to).
         />
 
 :::
+-->
 
 ## Prerequisites
 
@@ -67,7 +69,7 @@ Administrators can create access keys under **Access Keys** as an alternative to
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**.
 1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." width="700"/>
-1. Follow the steps from [the previous section](#from-the-personal-access-keys-page), starting with step 3.
+1. Follow the steps in the [previous section](#from-the-personal-access-keys-page), starting with step 3.
 
 #### CORS support
 
@@ -104,7 +106,7 @@ an Access-Control-Allow-Origin header.
 
 ### Organization access keys
 
-If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can you can edit, deactivate, and delete any access keys created by other users in your organization.
+If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can edit, deactivate, and delete any access keys created by other users in your organization.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. 
 1. Hover your mouse over an access key and click the three-dot kebab icon. This reveals the same modification options that appear on the **Personal Access Key** page, [as described above](#edit-deactivate-or-delete-access-keys).
@@ -118,6 +120,6 @@ An administrator can adjust the limit to the number of days an Access Key can go
 To configure the Access Keys deactivation policy:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Under the **Access Keys Deactivation** section, select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation settings in Sumo Logic, allowing automatic deactivation of unused or unmodified API access keys after a specified number of days." style={{border: '1px solid gray'}} width="600"/>
-    :::info For Administrators only
+    :::note
     This section is visible to Administrators only.
     :::
