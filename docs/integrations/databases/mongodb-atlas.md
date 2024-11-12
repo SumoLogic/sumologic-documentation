@@ -273,10 +273,10 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 ### Step 3: Configure Collection for MongoDB Atlas
 
 In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas app. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
-* [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) via a Serverless Application Model (SAM) application
-* [Script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas) from a Linux machine
+* [AWS Lambda-based collection](#deploy-the-sumo-logic-mongodb-atlas-sam-application) via a Serverless Application Model (SAM) application
+* [Script-based collection](#configure-script-based-collection-for-mongodb-atlas) from a Linux machine
 
-A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#step-3b-configure-collection-for-multiple-projects-optional) if you have multiple projects.
+A single instance of the collector is responsible for collecting logs from a single project. If you have multiple projects, refer to the additional steps in these sections.
 
 
 #### Deploy the Sumo Logic MongoDB Atlas SAM application
