@@ -161,38 +161,34 @@ CACHE_USED_BYTES
 CONNECTIONS
 CURSORS_TOTAL_OPEN
 CURSORS_TOTAL_TIMED_OUT
-DATABASE_AVERAGE_OBJECT_SIZE
-DB_STORAGE_TOTAL
 DB_DATA_SIZE_TOTAL
+DB_STORAGE_TOTAL
 EXTRA_INFO_PAGE_FAULTS
 GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
 MEMORY_RESIDENT
 MEMORY_VIRTUAL
-MEMORY_MAPPED
 NETWORK_BYTES_IN
 NETWORK_BYTES_OUT
 NETWORK_NUM_REQUESTS
+OP_EXECUTION_TIME_COMMANDS
+OP_EXECUTION_TIME_READS
+OP_EXECUTION_TIME_WRITES
 OPCOUNTER_CMD
-OPCOUNTER_QUERY
-OPCOUNTER_UPDATE
 OPCOUNTER_DELETE
 OPCOUNTER_GETMORE
 OPCOUNTER_INSERT
-OP_EXECUTION_TIME_READS
-OP_EXECUTION_TIME_WRITES
-OP_EXECUTION_TIME_COMMANDS
-OPLOG_MASTER_LAG_TIME_DIFF
-OPLOG_SLAVE_LAG_MASTER_TIME
+OPCOUNTER_QUERY
+OPCOUNTER_UPDATE
+PROCESS_CPU_KERNEL
+PROCESS_CPU_USER
 QUERY_EXECUTOR_SCANNED
 QUERY_EXECUTOR_SCANNED_OBJECTS
-QUERY_TARGETING_SCANNED_PER_RETURNED
 QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-SYSTEM_NORMALIZED_CPU_USER
-SYSTEM_NORMALIZED_CPU_KERNEL
+QUERY_TARGETING_SCANNED_PER_RETURNED
 SYSTEM_NORMALIZED_CPU_IOWAIT
-PROCESS_CPU_USER
-PROCESS_CPU_KERNEL
+SYSTEM_NORMALIZED_CPU_KERNEL
 SYSTEM_NORMALIZED_CPU_STEAL
+SYSTEM_NORMALIZED_CPU_USER
 ```
 
 ```txt title="Sample metric"
@@ -246,9 +242,11 @@ By default, the collection starts from the current date and time, but this setti
 ### Step 1: Acquire Authentication Info from MongoDB Atlas Portal
 
 This section shows you how to acquire MongoDB Atlas portal authentication information. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key, respectively.
-1. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key respectively.
+1. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key respectively. You may also have to configure [ip access list](https://www.mongodb.com/docs/atlas/configure-api-access-org/#edit-the-api-access-list) for the host from which you want Atlas to accept API requests.
+    <img src={useBaseUrl('img/integrations/databases/mongodbatlas/createapikey.png')} alt="MongoDB Atlas create api key" />
 2. Specify the API key **Organization Member** permissions, under **Organization > Access Manager > API Keys**, as shown in the following example.
 3. Go to **Project Settings** > **Access Manager** > **API Keys** and then click on **Invite To Project** to add the API key created above for this project as shown in the following example.
+    <img src={useBaseUrl('img/integrations/databases/mongodbatlas/invitetoproject.png')} alt="MongoDB Atlas invite to project" />
 4. Specify **Project Data Access Read Only** permission, under **Project Settings > Access Manager > API Keys**, as shown in the following example.
 5. Go to your project, click **Settings**, and copy the **Project ID**, as shown in the following example.
 6. Go to your organization by using context dropdown at the top, click **Settings**, and copy the **Organization ID**.
@@ -281,7 +279,7 @@ In this section, we explore various mechanisms to collect database logs, events,
 A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#step-3b-configure-collection-for-multiple-projects-optional) if you have multiple projects.
 
 
-#### Step 3A: Deploy the Sumo Logic MongoDB Atlas SAM application
+#### Deploy the Sumo Logic MongoDB Atlas SAM application
 
 In this section, you deploy the SAM application, which creates the necessary resources in your AWS account. To deploy the Sumo Logic MongoDB Atlas SAM application, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
@@ -323,18 +321,21 @@ In this section, you deploy the SAM application, which creates the necessary res
 
 The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
-#### Step 3B: Configure Collection for Multiple Projects (optional)
+13. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
 
-This section shows you how to configure collection for multiple projects, assuming you are already collecting Atlas data for one project. This task requires that you do the following:
-* Stop the collection of OrgEvents in the second SAM app deployment, because these events are global and are already captured by first collector.
-* Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
-
-To configure collection for multiple projects, do the following:
 1. [Deploy the MongoDB Atlas SAM application](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
-2. After the deployment is complete, change the database name by adding environment variable (`DBNAME`) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
-3. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of org events, because they are already being collected by the first collector.
+2. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second SAM app deployment, because these events are global and are already captured by first collector.
 
-#### Step 3C: Configure Script-Based Collection for MongoDB Atlas
+14. By default the solution collects all log types & metrics for all the clusters, if you to filter based on cluster alias, do the following
+  1.  After the deployment is complete, go to the Lambda console, and open the **mongodbatlas.yaml** file and uncomment  `Clusters` parameter under `Collection` section, as shown in the following example. Add your cluster names for which you want to collect logs & metrics. Cluster name should be same as what you have specified during [cluster creation](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/#specify-a-name-for-the-cluster-in-the-name-box).
+
+      <img src={useBaseUrl('img/integrations/databases/mongodbatlas/changecluster.png')} alt="MongoDB Atlas filter by cluster" />
+
+  1. By default the solution collects logs types and metrics which are used in the app, if you want to collect specific log types and metric types uncomment to collect the respective log type or metric name as shown below.
+
+      <img src={useBaseUrl('img/integrations/databases/mongodbatlas/updatemetricslogs.png')} alt="MongoDB Atlas filter by log and metric type" />
+
+#### Configure Script-Based Collection for MongoDB Atlas
 
 This section shows you how to configure script-based log collection for the Sumo Logic MongoDB Atlas app. The _sumologic-mongodb-atlas_ script is compatible with python 3.11 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
@@ -365,7 +366,7 @@ This task makes the following assumptions:
 	     ```bash
 	     pip3 install sumologic-mongodb-atlas
 	     ```
-3. Create a `mongodbatlas.yaml` configuration file in the home directory and fill in the parameters as shown in the following example.
+3. Create a `mongodbatlas.yaml` configuration file in the home directory by downloading the [sample file](https://github.com/SumoLogic/sumologic-mongodb-atlas/blob/master/mongodbatlas_sample.yaml) and fill in the following mandatory parameters as shown in the following example.
    ```bash title="mongodbatlas.yaml"
    SumoLogic:
      HTTP_LOGS_ENDPOINT: <Paste the HTTP Logs source URL from step 2.>
@@ -387,87 +388,23 @@ This task makes the following assumptions:
      */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
      ```
 5. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
-   * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
-   * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
+   * Create a new **mongodbatlas.yaml** file similar to previous step and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second collector deployment, because these events are global and are already captured by first collector.
+   * State is maintained per project, change the `DBNAME` so that state (keys for bookkeeping) maintained in the database (key value store) are not in conflict.
 	 * Configure the script on a Linux machine, then go to your configuration file.
-	 * Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
-    ```
-    SumoLogic:
-      LOGS_SUMO_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
-      METRICS_SUMO_ENDPOINT: <Paste the URL for the HTTP Metrics source from step 2.>
 
-    MongoDBAtlas:
-      ORGANIZATION_ID: <Paste the Organization ID from step 1.>
-      PROJECT_ID: <Paste the Project ID from step 1.>
-      PRIVATE_API_KEY: <Paste the Private Key from step 1.>
-      PUBLIC_API_KEY: <Paste the Public Key from step 1.>
-      LOG_TYPES:
-        DATABASE
-        AUDIT
-        EVENTS_PROJECT
-        EVENTS_ORG
-        ALERTS
+6. By default the solution collects all log types & metrics for all the clusters, if you to filter based on cluster alias, do the following
+  1.  After the deployment is complete, go to the Lambda console, and open the **mongodbatlas.yaml** file and uncomment  `Clusters` parameter under `Collection` section, as shown in the following example. Add your cluster names for which you want to collect logs & metrics. Cluster name should be same as what you have specified during [cluster creation](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/#specify-a-name-for-the-cluster-in-the-name-box).
 
-      METRIC_TYPES:
-        PROCESS_METRICS:
-          CACHE_DIRTY_BYTES
-          CACHE_USED_BYTES
-          CONNECTIONS
-          CURSORS_TOTAL_OPEN
-          CURSORS_TOTAL_TIMED_OUT
-          DATABASE_AVERAGE_OBJECT_SIZE
-          DB_STORAGE_TOTAL
-          DB_DATA_SIZE_TOTAL
-          EXTRA_INFO_PAGE_FAULTS
-          GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-          MEMORY_RESIDENT
-          MEMORY_VIRTUAL
-          MEMORY_MAPPED
-          NETWORK_BYTES_IN
-          NETWORK_BYTES_OUT
-          NETWORK_NUM_REQUESTS
-          OPCOUNTER_CMD
-          OPCOUNTER_QUERY
-          OPCOUNTER_UPDATE
-          OPCOUNTER_DELETE
-          OPCOUNTER_GETMORE
-          OPCOUNTER_INSERT
-          OP_EXECUTION_TIME_READS
-          OP_EXECUTION_TIME_WRITES
-          OP_EXECUTION_TIME_COMMANDS
-          OPLOG_MASTER_LAG_TIME_DIFF
-          OPLOG_SLAVE_LAG_MASTER_TIME
-          QUERY_EXECUTOR_SCANNED
-          QUERY_EXECUTOR_SCANNED_OBJECTS
-          QUERY_TARGETING_SCANNED_PER_RETURNED
-          QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-          SYSTEM_NORMALIZED_CPU_USER
-          SYSTEM_NORMALIZED_CPU_KERNEL
-          SYSTEM_NORMALIZED_CPU_IOWAIT
-          PROCESS_CPU_USER
-          PROCESS_CPU_KERNEL
-          SYSTEM_NORMALIZED_CPU_STEAL
+      <img src={useBaseUrl('img/integrations/databases/mongodbatlas/changecluster.png')} alt="MongoDB Atlas filter by cluster" />
 
-        DISK_METRICS:
-          DISK_PARTITION_IOPS_READ
-          DISK_PARTITION_IOPS_WRITE
-          DISK_PARTITION_LATENCY_READ
-          DISK_PARTITION_LATENCY_WRITE
-          DISK_PARTITION_SPACE_PERCENT_FREE
-          DISK_PARTITION_SPACE_PERCENT_USED
+  1. By default the solution collects logs types and metrics which are used in the app, if you want to collect specific log types and metric types uncomment to collect the respective log type or metric name as shown below.
 
-    Collection:
-      DBNAME: "newmongodbatlas"
-      MIN_REQUEST_WINDOW_LENGTH: 60
-      MAX_REQUEST_WINDOW_LENGTH: 900
-      Clusters:
-        - "clusters1.mongodb.net"
-        - "clusters2.mongodb.net"
-    ```
+      <img src={useBaseUrl('img/integrations/databases/mongodbatlas/updatemetricslogs.png')} alt="MongoDB Atlas filter by log and metric type" />
 
 ```sh title="Example execution of second yaml file"
 /usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>
 ```
+
 
 ### Step 4: Configure Webhooks for Alerts Collection
 
@@ -496,7 +433,7 @@ in MongoDBAtlas Section </td>
 <br/>EVENTS_PROJECT
 <br/>EVENTS_ORG
 <br/>ALERTS
-<br/>Remove any one of the lines if you do not want to collect metric of that type.</td>
+<br/>Remove or comment any one of the lines if you do not want to collect metric of that type.</td>
   </tr>
   <tr>
    <td>PROCESS_METRICS<br/>in MongoDBAtlas Section</td>
@@ -534,7 +471,7 @@ SYSTEM_NORMALIZED_CPU_KERNEL<br/>
 SYSTEM_NORMALIZED_CPU_IOWAIT<br/>
 PROCESS_CPU_USER<br/>
 PROCESS_CPU_KERNEL<br/>
-SYSTEM_NORMALIZED_CPU_STEAL<br/>Remove any one of the lines if you do not want to collect metric of that type. </td>
+SYSTEM_NORMALIZED_CPU_STEAL<br/>Remove or comment any one of the lines if you do not want to collect metric of that type. </td>
   </tr>
   <tr>
    <td>DISK_METRICS<br/>in MongoDBAtlas Section</td>
@@ -545,12 +482,7 @@ DISK_PARTITION_LATENCY_READ<br/>
 DISK_PARTITION_LATENCY_WRITE<br/>
 DISK_PARTITION_SPACE_FREE<br/>
 DISK_PARTITION_SPACE_USED<br/>
-Remove any one of the lines if you do not want to collect metric of that type.</td>
-  </tr>
-  <tr>
-   <td>BACKFILL_DAYS<br/>in Collection Section</td>
-   <td>Number of days before the event collection will start. If the value is 1,
-then events are fetched from yesterday to today.</td>
+Remove or comment any one of the lines if you do not want to collect metric of that type.</td>
   </tr>
   <tr>
    <td>PAGINATION_LIMIT<br/>in Collection Section</td>
@@ -587,6 +519,11 @@ backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...]
 between retries. </td>
   </tr>
   <tr>
+   <td>BACKFILL_DAYS<br/>in Collection Section</td>
+   <td>Number of days before the event collection will start. If the value is 1,
+then events are fetched from yesterday to today.</td>
+  </tr>
+  <tr>
    <td>TIMEOUT<br/>in Collection Section   </td>
    <td>Request time out used by the requests library.   </td>
   </tr>
@@ -599,8 +536,8 @@ between retries. </td>
    <td>Maximum window length for the request window. The default is 900 seconds.   </td>
   </tr>
   <tr>
-   <td>Clusters<br/>in Collection Section   </td>
-   <td>User provided list of clusters for selecting specific clusters. By default, it selects all the clusters.   </td>
+   <td>MAX_PAYLOAD_BYTESIZE<br/>in Collection Section   </td>
+   <td> Maximum size of the chunk to be sent to sumo logic. Default is 4MB.  </td>
   </tr>
   <tr>
    <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
@@ -645,6 +582,14 @@ Traceback (most recent call last):
    raise Exception("Invalid config")
 Exception: Invalid config
 ```
+
+4. Common Error codes
+
+    **TENANT_CLUSTER_LOGS_FOR_HOST_NOT_SUPPORTED** - This means that logs are not supported for that tier.
+
+    **IP_ADDRESS_NOT_ON_ACCESS_LIST** - This means that you may also have to configure [ip access list](https://www.mongodb.com/docs/atlas/configure-api-access-org/#edit-the-api-access-list) for the host from which you want Atlas to accept API requests.
+
+    **METRIC_TYPE_UNSUPPORTED** - This means that some metric type has been deprecated, refer the logs and remove that particular metric type from mongodbatlas.yaml file.
 
 ## Installing the MongoDB Atlas app
 
