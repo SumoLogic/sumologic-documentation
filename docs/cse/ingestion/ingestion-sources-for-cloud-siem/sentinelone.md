@@ -57,6 +57,6 @@ In this step you configure SentinelOne to send log messages to the Sumo Logic pl
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
-1. On the **Log Mappings** page search for "SentinelOne" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/sentinelone-record-volume.png')} alt="SentinelOne record volume" style={{border: '1px solid gray'}} width="600"/>
+1. On the **Log Mappings** tab search for "SentinelOne" and check the **Records** columns.
 1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for SentinelOne security records.<br/><img src={useBaseUrl('img/cse/sentinelone-search.png')} alt="SentinelOne search" style={{border: '1px solid gray'}} width="400"/> 
      
