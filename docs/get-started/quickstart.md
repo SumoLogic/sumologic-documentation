@@ -39,7 +39,7 @@ With your [trial](/docs/get-started/sign-up), you can access preloaded kickstart
 ### How it works
 
 1. **User assignment**. When you start your trial, you will be automatically assigned to either the placeholder data workflow or the custom data workflow, based on your user profile.
-2. **Preloaded sample data**. If you are assigned the placeholder data option, sample data will be preloaded into the platform, along with dashboards and log searches tailored to your use cases, such as Monitoring & Troubleshooting (M&T) or Compliance & Security (CIS).
+2. **Preloaded sample data**. If you are assigned the placeholder data option, sample data will be preloaded into the platform, along with dashboards and log searches tailored to your use cases, such as monitoring, troubleshooting, or security.
 3. **Onboarding checklist**. You will follow a guided checklist that helps you:
     * Analyze sample data.
     * Perform log searches.
