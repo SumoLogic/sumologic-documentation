@@ -25,6 +25,33 @@ What you'll learn:
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
+## Getting started with kickstart data in your trial
+
+With your [trial](/docs/get-started/sign-up), you can access preloaded kickstart placeholder data, letting you explore Sumo Logic without setting up your own data. This feature helps you experience the platform’s value immediately, bypassing setup barriers like firewall and security configurations.
+
+### Key benefits
+
+* **Immediate insights**. Explore Sumo Logic right away, without initial data setup, to quickly see its value and decide if it’s a fit for you.
+* **Quick setup**. Placeholder data removes technical hurdles, making onboarding faster and easier.
+* **Guided experience**. Access pre-built dashboards and reports that demonstrate real-world scenarios, helping you make the most of your trial.
+* **Safe exploration**. Evaluate our platform in a secure environment with no exposure of sensitive data.
+
+### How it works
+
+1. **User assignment**. When you start your trial, you will be automatically assigned to either the placeholder data workflow or the custom data workflow, based on your user profile.
+2. **Preloaded sample data**. If you are assigned the placeholder data option, sample data will be preloaded into the platform, along with dashboards and log searches tailored to your use cases, such as Monitoring & Troubleshooting (M&T) or Compliance & Security (CIS).
+3. **Onboarding checklist**. You will follow a guided checklist that helps you:
+    * Analyze sample data.
+    * Perform log searches.
+    * Invite team members to join and explore the platform with you.
+4. **Seamless transition to real data**. After you complete the sample data onboarding steps, you can set up your own data ingestion while continuing to use the platform’s core features.
+5. **Sample data deactivation**. The placeholder data will automatically be deactivated at the end of your trial period.
+
+:::warning limitations
+* User profiling for selection. Your assignment to either placeholder data or your own data workflow is determined by user profiling data from marketing. You won't be able to manually select your preferred workflow.
+* Limited availability. At launch, the placeholder data option will only be available to select trial users based on profiling.
+:::
+
 ## Step 1: Get your data into Sumo
 
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
@@ -117,8 +144,6 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 
 
 ## More Resources
-
-<!-- placeholder data -->
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).

@@ -23,8 +23,6 @@ Sumo Logic apps address these common use cases:
 
 To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
 
-<!-- placeholder data -->
-
 ## Certified by Sumo Logic
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:

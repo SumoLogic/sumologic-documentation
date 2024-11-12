@@ -145,7 +145,11 @@ Should you decide to cancel, you can do this through AWS Marketplace.
 
 Your subscription will be cancelled immediately.
 
-<!-- placeholder data -->
+## Discover Sumo Logic with preloaded data
+
+To help you get started quickly, preloaded placeholder data is available for trial users. This feature lets you jump in and explore Sumo Logic right away, with sample dashboards and data tailored to your needs.
+
+For more information on maximizing this feature, check out our [Quickstart Guide](/docs/get-started/quickstart).
 
 ## Resources
 

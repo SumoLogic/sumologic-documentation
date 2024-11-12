@@ -10,8 +10,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- placeholder data -->
-
 Learn how to send data to Sumo Logic and get started with our observability and security solutions. In this section, we'll introduce the following concepts:
 
 :::tip Designing your Deployment
