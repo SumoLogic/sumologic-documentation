@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 2.3  
-Updated: Mar 4, 2024***
+***Version: 2.4  
+Updated: Nov 12, 2024***
 
 Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 
@@ -130,6 +130,17 @@ full\_access\_as\_app Use Exchange Web Services with full access to all mailboxe
 
 Once API permission are added then Admin must consent to a grant these permissions, [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
 
+**Steps to Assign the Required RBAC Roles in the Exchange Admin Center**
+
+1. Sign in to the Exchange Admin Center (EAC) using the URL [click](https://admin.exchange.microsoft.com/#/).
+2. In the EAC, navigate to **Roles**
+3. Click on **Admin Roles**
+4. Search for the role **Discovery Management** and click on it.
+5. Click on **Assign** tab.
+6. Click on **+** and search for the user you want to assign the role to.
+7. Click on **Save**.
+
+
 ## Category
 
 Email Gateway
@@ -146,3 +157,6 @@ Email Gateway
 * November 29, 2022 - Added new actions (Send Email and Reply To Email)
 * October 6, 2023 (v2.2) - Integration Updated
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
+* November 12, 2024 (v2.4) 
+  * Updated the exchange_lib library to 5.4.2
+  * Updated the action Get Contacts to return the message "No contacts found" if the contacts are not found rather than returning an exception.
