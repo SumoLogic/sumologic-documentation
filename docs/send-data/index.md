@@ -17,6 +17,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
 
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
