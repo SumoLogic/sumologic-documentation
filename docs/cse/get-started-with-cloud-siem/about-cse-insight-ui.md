@@ -109,7 +109,9 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 <img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
+1. **Entities**. Click to view [Entities](#about-the-entities-tab-graph-view) on the Signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
+1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the Insight.
 1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
 1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 1. **Legend**. Key to the symbols used to represent the Signals:
@@ -120,8 +122,6 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 1. **Show Related**. Click this link to show Related Signals in addition to Attached Signals. If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
     * A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
     * A *Related Insight* is an Insight that a Related Signal is attached to.
-    <br/>Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
-    <br/><img src={useBaseUrl('img/cse/related-signal.png')} alt="Related signal" width="800"/>
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
@@ -150,7 +150,7 @@ The **Entities** tab includes two views, the **list** view and the **graph** vie
 
 The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entities.png')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
@@ -198,35 +198,31 @@ The card for an Entity displays any [tags](/docs/cse/records-signals-entities-in
 
 #### About the Entities tab graph view
 
-The screenshot below shows the **Entities** tab **graph** view for an Insight.
+The screenshot below shows the **Entities** tab graph view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entity-graph.png')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
 
 By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 
-To switch between the list and graph view, click the chooser in the upper-right corner of the panel **(1)**.
+1. **Graph view**. To switch between the list and graph view, click the chooser in the upper-right corner of the panel.
+1. **Primary Entity**. Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default.
+1. **Involved Entities**. As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines.
+1. **Related Entities**. Entities that are related to this Insight will have an Insight icon on their upper-left edge. 
+1. **Selected Entity**. When you select an Entity, it will be highlighted in blue and the Entity details pane will appear on the right.
+1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+1. **Controls**. The graph view has several controls:
+   * A **key** that explains how to read the graph
+   * **Zoom** controls (you can also use your mouse wheel)
+   * A **screen size** control, which toggles between the center pane view and a full browser window view.
+   * A **reset** control, which resets the view to the original default.
+   * A link to **help**.
+   * A **filter** control, which enables you to view only specific Entity types in the graph.
+   * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight.
 
-The graph view has several controls **(2)**:
-
-* A **key** that explains how to read the graph
-* **Zoom** controls (you can also use your mouse wheel)
-* A **screen size** control, which toggles between the center pane view and a full browser window view
-* A **reset** control, which resets the view to the original default
-* A link to **help**
-* A **filter** control, which enables you to view only specific Entity types in the graph
-* A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight
-
-Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default **(3)**. Entities that are related to this Insight will have an Insight icon on their upper-left edge **(4)**. 
-
-When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
-
-As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines **(6)**. Entities with a *detected* relationship will be connected with solid lines **(7)**. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
-
-If you hover over an Entity, it and all connections to it will be highlighted in blue **(8)** and if its value is not fully visible by default, the full value will be displayed.
-
-Any Entity with an Indicator will have an additional icon in the upper right **(9)** and if the Indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
-
-Finally, if Cloud SIEM has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control **(10)** will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+In addition, the following can appear in the graph:
+* **Detected Entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
+* **Threat indicators**. Any Entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
+* **Hover**. If you hover over an Entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
 Watch this micro lesson to learn more about the Entity relationship graph.
 
