@@ -54,7 +54,7 @@ Managing Access Keys (how to).
    :::
    Select the scopes for the key:
     * **Default**. The key has all permissions.
-    * **Custom**. The key has only the specified permissions. <br/><img src={useBaseUrl('/img/security/access-key-scopes.png')} alt="Access key scopes" style={{border: '1px solid gray'}} width="400"/><br/>Select the **View** and **Manage** permissions that you want the access key to have using the available categories.<br/><img src={useBaseUrl('/img/security/custom-scopes-detail.png')} alt="Custom scopes detail" style={{border: '1px solid gray'}} width="400"/>
+    * **Custom**. The key has only the specified permissions. <br/><img src={useBaseUrl('/img/security/access-key-scopes.png')} alt="Access key scopes" style={{border: '1px solid gray'}} width="400"/><br/>Select the **View** and **Manage** permissions that you want the access key to have using the available categories.<br/><img src={useBaseUrl('/img/security/custom-scopes-detail.png')} alt="Custom scopes detail" style={{border: '1px solid gray'}} width="550"/>
 1. Click **Save** to generate the key. 
 1. **IMPORTANT**. Copy both the generated Access ID and Access Key before clicking **Done**. *This is the only time you will be able to copy the ID and key*.<br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created message in Sumo Logic for creating an access key, showing the Access ID and Access Key with options to copy them, and a Done button." style={{border: '1px solid gray'}} width="600"/>
    :::warning
