@@ -97,3 +97,7 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 ### Deletion request limit
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
+
+### Supported operators
+
+Currently, we only support [`as`](/docs/search/search-query-language/search-operators/as), [`concat`](/docs/search/search-query-language/search-operators/concat), [`contains`](/docs/search/search-query-language/search-operators/contains), [`decToHex`](/docs/search/search-query-language/search-operators/dectohex), [`floor`](/docs/search/search-query-language/math-expressions/floor), [`if`](/docs/search/search-query-language/search-operators/if), [`in`](/docs/search/search-query-language/search-operators/in), [`lookup`](/docs/search/search-query-language/search-operators/lookup), [`toLower`](/docs/search/search-query-language/search-operators/tolowercase-touppercase), [`matches`](/docs/search/search-query-language/search-operators/matches), [`parse`](/docs/search/search-query-language/parse-operators), [`toUpper`](/docs/search/search-query-language/search-operators/tolowercase-touppercase), and [`where`](/docs/search/search-query-language/search-operators/where) search query operators.
