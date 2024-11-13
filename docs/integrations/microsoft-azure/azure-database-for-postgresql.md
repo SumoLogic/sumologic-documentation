@@ -101,16 +101,16 @@ Rule Name: AzureObservabilityMetadataExtractionAzureDatabaseForPostgreSQLLevel
 ```
 
 ```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/FLEXIBLESERVERS/* tenant_name=*
+resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/MICROSOFT.DBFORPOSTGRESQL/FLEXIBLESERVERS/* tenant_name=*
 ```
 
-| Fields extracted  | Metric rule     |
-|:------------------|:----------------|
-| subscription_id   | $resourceId._1  |
-| resource_group    | $resourceId._2  |
-| provider_name     | $resourceId._3  |
-| resource_type     | FLEXIBLESERVERS |
-| resource_name     | $resourceId._4  |
+| Fields extracted  | Metric rule              |
+|:------------------|:-------------------------|
+| subscription_id   | $resourceId._1           |
+| resource_group    | $resourceId._2           |
+| provider_name     | MICROSOFT.DBFORPOSTGRESQL|
+| resource_type     | FLEXIBLESERVERS          |
+| resource_name     | $resourceId._3           |
 
 
 ### Configure metrics collection
@@ -124,7 +124,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-postgresqlserver-metrics.png')} alt="Azure flexible postgresql server metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for PostgreSql Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
@@ -147,7 +147,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    - log_statement: select *ALL*
    - log_lock_waits: set to *ON*
    - log_recovery_conflict_waits: set to *ON*
-4. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
+4. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for PostgreSql Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
 
@@ -159,7 +159,7 @@ Since this source contains logs from multiple regions, ensure that you do not ta
 
 ## Installing the Azure Flexible Database for PostgreSql app
 
-Now that you have set up data collection, install the Azure Load Balancer Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up data collection, install the Azure Database for PostgreSQL Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -171,61 +171,61 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Desk
-**Azure Database for PostgreSQL - Desk** dashboard provides details like Number of Temporary Files Created, Blocks Hit Count, Number of I/O Operations, Number of Temp Files Created, Total Bytes Written to Temp Files (Bytes), Disk I/Os Consumed/min (%), Disk Bandwidth Consumed/min (%), Number of Outstanding I/O Operations, Blocks Read Count, Total Bytes Written to Temp Files, Disk Bandwidth Consumed/min (%), Disk I/Os Consumed/min (%) etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Disk.png')} alt="Azure Database for PostgreSql - Disk" style={{border: '1px solid gray'}} width="800" />
+### Disk
+**Azure Database for PostgreSQL - Disk** dashboard provides details like Number of Temporary Files Created, Blocks Hit Count, Number of I/O Operations, Number of Temp Files Created, Total Bytes Written to Temp Files (Bytes), Disk I/Os Consumed/min (%), Disk Bandwidth Consumed/min (%), Number of Outstanding I/O Operations, Blocks Read Count, Total Bytes Written to Temp Files, Disk Bandwidth Consumed/min (%), Disk I/Os Consumed/min (%) etc.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Disk.png')} alt="Azure Database for PostgreSql - Disk" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 **Azure Database for PostgreSQL - Administrative Operations** dashboard provides details like Top 10 operations that caused the most errors, Distribution by Operation Type (Read, Write and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, Distribution by Status etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Administrative-Operations.png')} alt="Azure Database for PostgreSql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Administrative-Operations.png')} alt="Azure Database for PostgreSql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Autovacuum
 **Azure Database for PostgreSQL - Autovacuum** dashboard provides details like Estimated Dead Rows User Tables, Estimated Live Rows User Tables, Estimated Modifications User Tables, Analyze Counter User Tables, Vacuum Counter User Tables, User Tables Vacuumed vs AutoVacuumed, User Tables Analyzed vs User Tables Auto etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Autovacuum.png')} alt="Azure Database for PostgreSql - Autovacuum" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Autovacuum.png')} alt="Azure Database for PostgreSql - Autovacuum" style={{border: '1px solid gray'}} width="800" />
 
 ### Connections
 **Azure Database for PostgreSQL - Connections** dashboard provides details like Active Connections, Failed Connections, Succeeded Connections, Max Connections, Active vs Succeeded vs Failed Connections etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Connections.png')} alt="Azure Database for PostgreSql - Connections" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Connections.png')} alt="Azure Database for PostgreSql - Connections" style={{border: '1px solid gray'}} width="800" />
 
 ### Error Logs
 **Azure Database for PostgreSQL - Error Logs** dashboard provides details like Log by Sql Errcode, Log by Severity, Database Shut Down Events, Log by Backend Type, Database System Up Events, Top Error Statements, Top Fatal Errors etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Error-Logs.png')} alt="Azure Database for PostgreSql - Error Logs" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Error-Logs.png')} alt="Azure Database for PostgreSql - Error Logs" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
 **Azure Database for PostgreSQL - Overview** dashboard provides details like Requests by Location, Is DB Alive, Number of Backends Connected to Database, Number of Deadlocks Detected in Database etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Overview.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Overview.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 **Azure Database for PostgreSQL - Performance** dashboard provides details like Max CPU (%), Max Memory (%), Cpu Credits Consumed, Cpu Credits Remaining, Read Throughput, Read Iops, Write Throughput, Write Iops etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Performance.png')} alt="Azure Database for PostgreSql - Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Performance.png')} alt="Azure Database for PostgreSql - Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 ***Azure Database for PostgreSQL -  Policy and Recommendations*** dashboard provides details about Total Success Policy Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Total Recommendation Events, Recent Recommendation Events etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Policy-and-Recommendations.png')} alt="Azure Database for PostgreSql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Policy-and-Recommendations.png')} alt="Azure Database for PostgreSql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 ***Azure Application Gateway - Health*** dashboard provides details like recent alerts, resource health incidents, recent resource health status by resource name, trend by event type, downtime by causes, trend of unavailable, degraded,  available etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Health.png')} alt="Azure Database for PostgreSql - Health" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Health.png')} alt="Azure Database for PostgreSql - Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Replication
 **Azure Database for PostgreSQL - Replication** dashboard provides details like Average Replication Lag, Physical Replication Lag, Logical Replication Lag etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Replication.png')} alt="Azure Database for PostgreSql - Error Logs" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Replication.png')} alt="Azure Database for PostgreSql - Error Logs" style={{border: '1px solid gray'}} width="800" />
 
 ### Schema Overview
 **Azure Database for PostgreSQL - Schema Overview** dashboard provides details like Indexes Scanned By Schema, Rows Inserted By Schema, Rows Updated By Schema, Rows Deleted By Schema, Dead Rows By Schema, Live Rows By Schema, Sequential Scan By Schema, Tables Vacuumed By Schema etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Schema-Overview.png')} alt="Azure Database for PostgreSql - Schema Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Schema-Overview.png')} alt="Azure Database for PostgreSql - Schema Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Sessions
 **Azure Database for PostgreSQL - Sessions** dashboard provides details like Longest Transaction Time (Sec), Oldest Backend Time (Sec), Longest Query Time (Sec), Oldest Backend Xmin (Sec), Oldest Backend Xmin Age, Application Name with Most Sessions, Session duration distribution etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Sessions.png')} alt="Azure Database for PostgreSql - Sessions" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Sessions.png')} alt="Azure Database for PostgreSql - Sessions" style={{border: '1px solid gray'}} width="800" />
 
 ### Storage Overview
 **Azure Database for PostgreSQL - Storage Overview** dashboard provides details like Storage Used (Bytes), Storage Used (%), Storage Used by Transaction Logs(Bytes), Max Backup Storage Used (Bytes), Database Size (Bytes), Storage Free (Bytes), Egress (Bytes), Ingress (Bytes) etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Storage-Overview.png')} alt="Azure Database for PostgreSql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Storage-Overview.png')} alt="Azure Database for PostgreSql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Transactions
 **Azure Database for PostgreSQL - Transactions** dashboard provides details like Transactions Per Second, Total Transactions, Transactions Commit, Transactions Rollback, Maximum Used TransactionIDs, Delete Transactions, Insert Transactions, Fetched Transactions, Returned Transactions, Returned Transactions, Update Transactions etc.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Transactions.png')} alt="Azure Database for PostgreSql - Transactions" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Transactions.png')} alt="Azure Database for PostgreSql - Transactions" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting
 

@@ -169,7 +169,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Azure Load Balancer - Overview** dashboard provides a collective information on Health Probe Status, Average Data Path Availability, Transmission Details, Connection Details, and SNAT Ports Utilization(%).
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Overview.png')} alt="Azure Load Balancer Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Overview.png')} alt="Azure Load Balancer Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -181,7 +181,7 @@ Use this dashboard to:
 - View top 10 operations that caused the most errors.
 - View recent read, write, and delete operations.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
@@ -192,7 +192,7 @@ Use this dashboard to:
 - Identify failed requests and operations.
 - Detect when all backend instances in a pool are not responding to the configured health probes.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
@@ -203,7 +203,7 @@ Use this dashboard to:
 - Detect when there is less data path availability than expected due to platform issues.
 - Monitor data transmission (packets and bytes) through your load balancers.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy
 
@@ -213,7 +213,7 @@ Use this dashboard to:
 - Monitor policy events with warnings and errors.
 - View recent failed policy events.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting
 

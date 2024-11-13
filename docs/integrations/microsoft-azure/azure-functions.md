@@ -131,7 +131,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Functions app Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
@@ -143,8 +143,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 2. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure Functions that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `AllMetrics`.
-   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
-3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Functions-Configure-Diagnostic-Metrics.png')} alt="Azure Functions app Tag Location" style={{border: '1px solid gray'}} width="800" />
+3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Functions app Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
 

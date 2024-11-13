@@ -138,7 +138,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose **Stream to an event hub** as destination.
    1. Select all the metrics under **Metrics** section.
    1. Use the Event Hub namespace created by the ARM template in the previous step. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/azurecosmosdb-metrics.png')} alt="Azure Cosmos DB Diagnostic Settings for metrics" style={{border: '1px solid gray'}} width="800" />
-5. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+5. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Cosmos DB for NoSQL Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 :::note
 Currently, only Azure Cosmos DB for NoSQL database account type supports exporting metrics using diagnostic settings.
@@ -154,7 +154,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Choose **Stream to an event hub** as the destination.
    1. Select your preferred log categories depending upon your database API or select **allLogs**.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/cosmosdb-diagnostic-logs.png')} alt="Azure CosmosDB Diagnostic Settings for logs" style={{border: '1px solid gray'}} width="800" />
-4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Cosmos DB for NoSQL Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
 
