@@ -191,7 +191,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-IOCs.png')} alt="Carbon_Black_Cloud dashboards" />
 
-## Upgrading the Carbon Black Cloud app (Optional)
+## Upgrade/Downgrade the Carbon Black Cloud app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

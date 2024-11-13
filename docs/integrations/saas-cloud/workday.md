@@ -281,7 +281,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity.png')} alt="workday dashboards" />
 
-## Upgrading the Workday app (Optional)
+## Upgrade/Downgrade the Workday app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

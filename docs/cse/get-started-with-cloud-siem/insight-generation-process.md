@@ -87,13 +87,13 @@ The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force At
 
 By default, when an entity’s Activity Score exceeds the threshold of 12, Cloud SIEM generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold) for Insight generation. When Cloud SIEM creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
 
-After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
+After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for a time to prevent redundant Signals. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below.
 
-### Example of an Entity that has reached Activity Score threshold
+### Example of an Entity that has exceeded Activity Score threshold
 
-In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “192.168.1.1”, an IP address. The right side of the page shows the three Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
+In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “217.xxx.x.x”, an IP address. The right side of the page shows the Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
 
-The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
+The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “217.xxx.x.x” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
 <img src={useBaseUrl('img/cse/insight.png')} alt="Insight" style={{border: '1px solid gray'}} width="800"/>
 
