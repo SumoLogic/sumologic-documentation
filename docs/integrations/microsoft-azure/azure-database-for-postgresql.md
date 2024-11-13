@@ -199,6 +199,14 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Azure Database for PostgreSQL - Performance** dashboard provides details like Max CPU (%), Max Memory (%), Cpu Credits Consumed, Cpu Credits Remaining, Read Throughput, Read Iops, Write Throughput, Write Iops etc.
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Performance.png')} alt="Azure Database for PostgreSql - Performance" style={{border: '1px solid gray'}} width="800" />
 
+### Policy and Recommendations
+***Azure Database for PostgreSQL -  Policy and Recommendations*** dashboard provides details about Total Success Policy Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Total Recommendation Events, Recent Recommendation Events etc.
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Policy-and-Recommendations.png')} alt="Azure Database for PostgreSql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
+
+### Health
+***Azure Application Gateway - Health*** dashboard provides details like recent alerts, resource health incidents, recent resource health status by resource name, trend by event type, downtime by causes, trend of unavailable, degraded,  available etc.
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Health.png')} alt="Azure Database for PostgreSql - Health" style={{border: '1px solid gray'}} width="800" />
+
 ### Replication
 **Azure Database for PostgreSQL - Replication** dashboard provides details like Average Replication Lag, Physical Replication Lag, Logical Replication Lag etc.
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Replication.png')} alt="Azure Database for PostgreSql - Error Logs" style={{border: '1px solid gray'}} width="800" />
