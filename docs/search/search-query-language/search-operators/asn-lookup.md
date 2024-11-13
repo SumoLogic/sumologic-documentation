@@ -18,7 +18,7 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 |:--|:--|
 | `*` | Use a wildcard (`*`) character as a shortcut to return both fields. |
 | `asn` | Autonomous System Number |
-| `organization` |  The name of the organization that owns the ASN or ID in some cases. This organization is responsible for the routing of traffic for network blocks. |
+| `organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
 | `registering_organization` | The organization responsible for the actions and content associated with a given block of IP addresses. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. |
 
 ## Example
