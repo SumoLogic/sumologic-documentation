@@ -15,7 +15,7 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 
 * OS:
    * Ubuntu 18.04, 20.04, or 24.04
-   * CentOS 7
+   * CentOS 8
    * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
