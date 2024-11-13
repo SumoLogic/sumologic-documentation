@@ -127,7 +127,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-metrics.png')} alt="Azure flexible mysql server metrics" style={{border: '1px solid gray'}} width="800" />
-
+4. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
@@ -136,14 +137,12 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
+2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" /> 
-2. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
-   
-   Set Audit log related parameters as below:
+   <img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" />
+3. Set Audit log related parameters as below:
    - audit_log_enabled: set to *ON*
    - audit_log_events: Select the event types to be logged from the dropdown list.
 
@@ -155,6 +154,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
    - log_slow_admin_statements: set to *ON*
+4. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
+5. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
 #### Activity Logs
 
