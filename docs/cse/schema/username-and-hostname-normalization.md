@@ -67,7 +67,7 @@ If no name normalization configuration exists, the name attribute will consist o
 
 Following is an example configuration:
 
-<img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration dialog" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration dialog" style={{border: '1px solid gray'}} width="600"/>
 
 ### Warnings and issues
 
