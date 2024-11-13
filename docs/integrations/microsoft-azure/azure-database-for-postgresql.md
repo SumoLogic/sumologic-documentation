@@ -169,9 +169,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Desk
+### Disk
 
-The **Azure Database for PostgreSQL - Desk** dashboard provides insights on Number of Temporary Files Created, Blocks Hit Count, Number of I/O Operations, Number of Temp Files Created, Total Bytes Written to Temp Files (Bytes), Disk I/Os Consumed/min (%), Disk Bandwidth Consumed/min (%), Number of Outstanding I/O Operations, Blocks Read Count, Total Bytes Written to Temp Files, Disk Bandwidth Consumed/min (%), and Disk I/Os Consumed/min (%).
+The **Azure Database for PostgreSQL - Disk** dashboard provides insights on Number of Temporary Files Created, Blocks Hit Count, Number of I/O Operations, Number of Temp Files Created, Total Bytes Written to Temp Files (Bytes), Disk I/Os Consumed/min (%), Disk Bandwidth Consumed/min (%), Number of Outstanding I/O Operations, Blocks Read Count, Total Bytes Written to Temp Files, Disk Bandwidth Consumed/min (%), and Disk I/Os Consumed/min (%).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Disk.png')} alt="Azure Database for PostgreSql - Disk" style={{border: '1px solid gray'}} width="800" />
 
