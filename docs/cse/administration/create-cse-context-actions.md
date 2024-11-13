@@ -32,7 +32,7 @@ The Context Actions menu will be available for any of these types, wherever they
 
 ## How a user accesses Context Actions
 
-A user runs a Context Action by clicking the Context Action icon next to an Entity, Record field, or IOC and choosing an action from the list that appears. The icon appears when you hover over the value of the item.
+A user runs a Context Action by clicking the Context Action icon <img src={useBaseUrl('img/cse/context-action-icon.png')} alt="Context action icon" style={{border: '1px solid gray'}} width="20"/> next to an Entity, Record field, or IOC and choosing an action from the list that appears. The icon appears when you hover over the value of the item.
 
 In the screenshot below, Context Actions are listed below the built-in **Add to Match List** and **Add to Suppressed List** options.
 
@@ -58,17 +58,18 @@ import Iframe from 'react-iframe'; 
 ## Configure a Context Action
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
-1. On the **Context Actions** page click **Create**.
-1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="500"/>
-    1. **Enter Context Action Name**. Enter a name for the Context Action. 
-    1. Choose whether you want to open a **URL** to an external service or
-        a **Sumo Logic Query**. 
-    1. Enter the URL or log query that the context action will issue.
+1. On the **Context Actions** tab click **+ Add Context Action**.
+1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="400"/>
+    1. **Name**. Enter a name for the Context Action. 
+    1. **Action Type**. Choose whether you want to open a **Sumo Logic Query** or a **URL** to an external service. 
+    1. **Query**. Enter the URL or log query that the context action will issue.
         For instructions, see:
         * [Create a Sumo Logic search URL](#create-a-sumo-logic-search-url)
         * [Create a URL to external service](#create-an-url-to-an-external-service)
     1. If you chose **Sumo Logic Query** above, the **Timestamp offset** option appears, which set the query time range. The offset can be either -30m or +30m, and it will be applied to the timestamp in the target Record’s [timestamp](/docs/cse/schema/schema-attributes) field.
-    1. Choose the IOC data types to which the context action will apply. You can select one or more of the following data types listed below. Your context action will be available for any occurrences of the IOCs you select.
+    1. **Entity Types**. Select the Entity types that the context action will apply to.
+    1. **Record Properties**. Select the Record properties that the context action will apply to.
+    1. **IOC Data Types**. Choose the IOC data types to which the context action will apply. You can select one or more of the following data types listed below. Your context action will be available for any occurrences of the IOCs you select.
         * **Domain**
         * **Entity Types**
         * **Hash**
