@@ -43,6 +43,25 @@ There are several kinds of rules. Each supports a different sort of firing behav
 * **First Seen rule**. Fires when behavior by an Entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
 * **Outlier rule**. Fires when behavior by an Entity is encountered that deviates from its baseline activity. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
+## Rule limits
+
+Limits are set on how often a rule fires so that the system is not overloaded. For example, if a rule fires too many signals in an hour, it can cause performance problems for all rule processes. If a rule exceeds a limit, its [rule status](#rule-status) changes from Active to Failed and the rule is disabled. 
+
+| Type | Limit |
+| :-- | :-- |
+| Total allowed custom rules of each [rule type](#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
+| Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
+| Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
+| Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
+| Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
+
+*Applies to all [rule types](#rule-types) except Match rules. 
+<br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
+
+:::note
+Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
+:::
+
 ## Rule status
 
 ### View a rule's status
@@ -63,24 +82,56 @@ Following are the different kinds of rule statuses. A rule's status can change d
 | **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-failed-info-button.png')} alt="Rule failed information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the API. |
 | **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
 
-## Rule limits
+### Query for rule status changes
 
-Limits are set on rules so that the system is not overloaded. For example, if a rule fires too many signals in an hour, it can cause performance problems for all rule processes. If a rule exceeds a limit, its [rule status](#rule-status) changes from Active to Failed and the rule is disabled. 
+You can query audit logs for rule status changes. (For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).)
 
-| Type | Limit |
-| :-- | :-- |
-| Total allowed custom rules of each [rule type](#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
-| Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
-| Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
-| Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
-| Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
+#### Example query for rule status changes
 
-*Applies to all [rule types](#rule-types) except Match rules. 
-<br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
+The following query queries for match rules whose status was changed automatically to `Warning` by the system:
 
-:::note
-Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
-:::
+```json
+_index=sumologic_system_events _sourceCategory=cseRule
+| json field=_raw "templatedMatchRule.status"
+| where eventname = "TemplatedMatchRuleUpdated" 
+| where templatedMatchRule.status = "Warning"
+```
+
+You can set up this query for one or multiple rules, with one or multiple statuses.
+* To query for other rule types, replace `"templatedMatchRule.status"` with another rule type. For example:
+   * `"templatedAggregationRule.status"`
+   * `"templatedChainRule.status"`
+   * `"templatedFirstSeenRule.status"`
+   * `"templatedMatchRule.status"`
+   * `"templatedOutlierRule.status"`
+   * `"templatedThresholdRule.status"`
+* To query for for other statuses, replace `Warning` in the example above with another status. For example:
+   * `"Active"`
+   * `"Degraded"`
+   * `"Disabled"`
+   * `"Failed"`
+   * `"Warning"`
+
+#### Example query for disabled rules
+
+If you want to query simply for match rules that are disabled, you could execute a query like this:
+
+```json
+(_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
+| json field=_raw "templatedMatchRule.enabled"
+| where eventname = "TemplatedMatchRuleUpdated" 
+| where templatedMatchRule.enabled = "false"
+```
+
+This query looks for match rules that were manually disabled (`_index=sumologic_audit_events`) or automatically disabled by the system (`_index=sumologic_system_events`).
+
+### Create a monitor to alert on rule status changes
+
+You can [create a monitor](/docs/alerts/monitors/create-monitor/) to generate alerts when rules statuses change. This will alert you when you need to take action.
+
+For example, you could use the [example query for rule status changes](#example-query-for-rule-status-changes) above in your monitor. It will alert when the status of match rules change to `Warning`. 
+
+<img src={useBaseUrl('img/cse/example-monitor-for-rule-status-change.png')} alt="Example monitor for rule status change" style={{border: '1px solid gray'}} width="700"/>
 
 ## About rule expressions
 
