@@ -1,6 +1,6 @@
 ---
 id: copilot
-title: Sumo Logic Copilot - Feature Preview
+title: Sumo Logic Copilot
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -10,17 +10,10 @@ keywords:
   - ml
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
-This is a Preview release. To learn more, contact your Sumo Logic account executive.
-
-Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
+Sumo Logic <!-- Copilot? Mo Pilot? --> is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
@@ -52,7 +45,7 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
-Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts. 
+Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
 ### Who benefits from Copilot?
 
