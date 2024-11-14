@@ -98,13 +98,13 @@ _index=sumologic_system_events _sourceCategory=cseRule
 ```
 
 You can set up this query for one or multiple rules, with one or multiple statuses.
-* To query for other rule types, replace `"templatedMatchRule.status"` with another rule type. For example:
-   * `"templatedAggregationRule.status"`
-   * `"templatedChainRule.status"`
-   * `"templatedFirstSeenRule.status"`
-   * `"templatedMatchRule.status"`
-   * `"templatedOutlierRule.status"`
-   * `"templatedThresholdRule.status"`
+* To query for other rule types, replace the `field` and `eventname` strings. For example:
+   * `"templatedAggregationRule.status"` and `"TemplatedAggregationRuleUpdated"`
+   * `"templatedChainRule.status"` and `"TemplatedChainRuleUpdated"`
+   * `"templatedFirstSeenRule.status"` and `"TemplatedFirstSeenRuleUpdated"`
+   * `"templatedMatchRule.status"` and `"TemplatedMatchRuleUpdated"`
+   * `"templatedOutlierRule.status"` and `"TemplatedOutlierRuleUpdated"`
+   * `"templatedThresholdRule.status"` and `"TemplatedThresholdRuleUpdated"`
 * To query for for other statuses, replace `Warning` in the example above with another status. For example:
    * `"Active"`
    * `"Degraded"`
