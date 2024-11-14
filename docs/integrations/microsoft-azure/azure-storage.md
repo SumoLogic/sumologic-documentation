@@ -172,6 +172,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Choose `Stream to an event hub` as destination.
    * Select `Transaction`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+4. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
@@ -185,7 +187,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 1. Tag the location field in the source with right location value.
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
    
 #### Activity Logs
 
