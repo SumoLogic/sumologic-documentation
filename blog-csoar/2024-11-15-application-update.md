@@ -21,33 +21,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 #### Automation Bridge
 
-We are happy to announce a new version of the [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) that includes security fixes in various components of the Bridge.
-
-* New CentOS version
+We are happy to announce a beta version of the [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) that includes the following:
+* Support for new CentOS version
     * The CentOS docker image version has been upgraded from CentOS 7 to CentOS 8.
-* Security fixes to the following Golang packages:
-    * http://github.com/docker/docker 
-    * http://golang.org/x/net 
-    * http://github.com/docker/distribution 
-* Security fixes to the following Golang docker images:
-    * http://github.com/docker/docker 
-    * http://google.golang.org/grpc 
-    * http://go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp 
-    * http://go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace 
-    * http://golang.org/x/net 
-    * http://go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc 
-    * http://github.com/opencontainers/runc 
-    * http://google.golang.org/protobuf 
-    * http://golang.org/x/crypto 
-* Security fixes in the following Ubuntu 20.04 and CentOS 8 docker images:
-    * libssl3
-    * libcrypto3
-    * openssh-client-default
-    * openssh-keygen
-    * openssh-client-common
-    * busybox
-    * busybox-binsh
-    * ssl_client
+* Security fixes
 
 ### Bug Fixes
 
