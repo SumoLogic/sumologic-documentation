@@ -261,6 +261,7 @@ module.exports = {
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
+            'send-data/opentelemetry-collector/time-reference',
             'send-data/opentelemetry-collector/troubleshooting',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
             'send-data/opentelemetry-collector/faq',
