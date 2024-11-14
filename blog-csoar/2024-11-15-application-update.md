@@ -14,6 +14,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
 
+#### Platform
+
+* Playbooks
+   * Improvement - Disabled Cartesian Product flag on all new nodes by default.
+
 #### Automation Bridge
 
 We are happy to announce a new version of the [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) that includes security fixes in various components of the Bridge.
@@ -43,3 +48,15 @@ We are happy to announce a new version of the [Automation Bridge](/docs/platform
     * busybox
     * busybox-binsh
     * ssl_client
+
+### Bug Fixes
+
+* Playbooks
+   * Fixed Playbook nodes rendering issue on Safari browser.
+   * Fixed issue related to use of underscore within playbooks input fields.
+   * Fixed issue with using authorizer value from playbook input variables in user choice node.
+* Integrations
+   * Resolved an issue where the 'Close Insight' trigger action was not functioning as expected.
+* Incidents
+   * Improved Incident templates page load time.
+   * Fixed issues while trying to update Incident templates.
