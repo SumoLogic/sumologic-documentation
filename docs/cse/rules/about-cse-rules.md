@@ -90,7 +90,7 @@ You can query audit logs for rule status changes. (For more information about qu
 
 The following query queries for match rules whose status was changed automatically to `Warning` by the system:
 
-```json
+```sql
 _index=sumologic_system_events _sourceCategory=cseRule
 | json field=_raw "templatedMatchRule.status"
 | where eventname = "TemplatedMatchRuleUpdated" 
@@ -116,7 +116,7 @@ You can set up this query for one or multiple rules, with one or multiple status
 
 If you want to query simply for match rules that are disabled, you could execute a query like this:
 
-```json
+```sql
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
 | json field=_raw "templatedMatchRule.enabled"
 | where eventname = "TemplatedMatchRuleUpdated" 
