@@ -19,25 +19,7 @@ Because of the importance of timestamps, Sumo Logic indexes the timestamp of e
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify.
 
-### Timestamp considerations
-
-By default, we can automatically detect timestamps in your log messages. Automatic detection identifies timestamps in common formats and prefers timestamps that appear early in the message.
-
-If your log messages from a Source contain multiple timestamps, timestamps in unusual formats, or a mix of distinct timestamp formats, you have two options:
-* Configure a Source for each log format
-* Configure a custom timestamp format for your Source
-
-The OTel collector assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that Source it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
-
-The OTel collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
-
 ### OTel automated timestamp parsing
-
-OTel collectors can automatically parse any of the following timestamp formats. If more than one valid timestamp is detected in a log message, the OTel collector will select the timestamp that appears "furthest left" in the message. 
-
-:::note
-The Java SimpleDateFormat library is used for timestamp parsing. [Learn more](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html).
-:::
 
 | OTel Timestamp Format | Example |
 |:---|:---|
