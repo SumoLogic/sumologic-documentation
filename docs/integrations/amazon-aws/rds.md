@@ -217,6 +217,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*SlowQue
 | avg(query_time) as avgTime, sum(query_time) as totalTime, min(query_time) as minTime, max(query_time) as maxTime, avg(rows_examined) as avgRowsExamined, avg(rows_sent) as avgRowsSent, avg(Lock_Time) as avgLockTime, count as frequency group by sql_cmd, user, ip_addr
 | sort by avgTime | limit 100
 ```
+
 ```sql title="Audit Logs (MySQL CloudWatch log based)"
 account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*Audit CONNECT
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
@@ -300,7 +301,6 @@ account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert
 | transpose row _timeslice column oraerr
 ```
 
-
 ## Collecting logs and metrics for the Amazon RDS app
 
 Sumo Logic supports collecting metrics using two source types:
@@ -363,11 +363,13 @@ We recommend not to set `log_statement` to any value other than none (default va
 :::
 
 #### MSSQL
+
 - Amazon RDS [MSSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html) supports [publishing the following MSSQL logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html#USER_LogAccess.SQLServer.PublishtoCloudWatchLogs):
    - Agent
    - Error
 
 #### Oracle
+
 - Amazon RDS [Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.Oracle.html) supports [publishing the following Oracle logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.Oracle.html#USER_LogAccess.Oracle.PublishtoCloudWatchLogs):
    - Alert logs
    - Audit files
@@ -761,7 +763,7 @@ Use this dashboard to:
 
 ### 20. Amazon RDS - Oracle CloudTrail Logs Analysis
 
-The **Amazon RDS Oracle  CloudTrail Logs Analysis** dashboard provides insights into audit events of your database instance.
+The **Amazon RDS - Oracle CloudTrail Logs Analysis** dashboard provides insights into audit events of your database instance.
 
 Use this dashboard to:
 * Monitor Amazon Oracle RDS-related audit logs using CloudTrail Events.
