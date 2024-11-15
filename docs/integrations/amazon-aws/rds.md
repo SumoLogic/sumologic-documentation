@@ -272,7 +272,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error 
 | sort by _timeslice
 ```
 
-```sql title="Engine and It's DB Instance (Oracle CloudTrail log based)"
+```sql title="Engine and Its DB Instance (Oracle CloudTrail log based)"
 account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !errorCode
 | json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
 | where event_source = "rds.amazonaws.com"
