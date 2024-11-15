@@ -1,4 +1,4 @@
-resource "sumologic_cloud_to_cloud_source" "sumo-logic-sample-data-source" {
+resource "sumologic_cloud_to_cloud_source" "sumo-logic-kickstart-data-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
     type = "DataGen"

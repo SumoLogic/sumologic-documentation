@@ -460,7 +460,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-sql-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
-                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-sample-data-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
@@ -2459,6 +2459,7 @@ integrations: [
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
@@ -2549,7 +2550,7 @@ integrations: [
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
-          // 'integrations/sumo-apps/sample-data-astronomy',
+          // 'integrations/sumo-apps/kickstart-data',
         ],
       },
       {
@@ -2805,11 +2806,11 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/sensors/index'},
           items: [
+            'cse/sensors/ingest-zeek-logs',
             'cse/sensors/sensor-download-locations',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
             'cse/sensors/log-sensor-troubleshooting',
-            'cse/sensors/ingest-zeek-logs',
           ],
         },
         {
