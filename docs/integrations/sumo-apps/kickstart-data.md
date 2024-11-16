@@ -61,4 +61,4 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
-<AppUninstall/>
+<AppUninstall/> 
