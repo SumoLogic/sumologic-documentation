@@ -321,12 +321,20 @@ In this section, you deploy the SAM application, which creates the necessary res
 
 The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
-13. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
+##### Configure collection for multiple projects
+
+If you are already collecting Atlas data for one project, perform the following steps to configure for additional projects:
 
 1. [Deploy the MongoDB Atlas SAM application](#deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
-2. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second SAM app deployment, because these events are global and are already captured by first collector.
 
-14. By default the solution collects all log types & metrics for all the clusters, if you to filter based on cluster alias, do the following
+1. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second SAM app deployment, because these events are global and are already captured by first collector.
+
+1. After editing the file, Choose **Deploy**. The next lambda invocation will use the new configuration file.
+
+##### Filtering log types and metrics
+
+By default the solution collects all log types & metrics for all the clusters, if you want to filter based on cluster alias and log types, do the following:
+
   1.  After the deployment is complete, go to the Lambda console, and open the **mongodbatlas.yaml** file and uncomment  `Clusters` parameter under `Collection` section, as shown in the following example. Add your cluster names for which you want to collect logs & metrics. Cluster name should be same as what you have specified during [cluster creation](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/#specify-a-name-for-the-cluster-in-the-name-box).
 
       <img src={useBaseUrl('img/integrations/databases/mongodbatlas/changecluster.png')} alt="MongoDB Atlas filter by cluster" />
@@ -334,6 +342,8 @@ The lambda function should be working now in sending logs to Sumo. You can check
   1. By default the solution collects logs types and metrics which are used in the app, if you want to collect specific log types and metric types uncomment to collect the respective log type or metric name as shown below.
 
       <img src={useBaseUrl('img/integrations/databases/mongodbatlas/updatemetricslogs.png')} alt="MongoDB Atlas filter by log and metric type" />
+
+  1. After editing the file, Choose **Deploy**. The next lambda invocation will use the new configuration file.
 
 #### Configure Script-Based Collection for MongoDB Atlas
 
@@ -387,13 +397,26 @@ This task makes the following assumptions:
      ```bash
      */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
      ```
-5. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
-   * Create a new **mongodbatlas.yaml** file similar to previous step and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second collector deployment, because these events are global and are already captured by first collector.
-   * State is maintained per project, change the `DBNAME` so that state (keys for bookkeeping) maintained in the database (key value store) are not in conflict.
-	 * Configure the script on a Linux machine, then go to your configuration file.
 
-6. By default the solution collects all log types & metrics for all the clusters, if you to filter based on cluster alias, do the following
-  1.  After the deployment is complete, go to the Lambda console, and open the **mongodbatlas.yaml** file and uncomment  `Clusters` parameter under `Collection` section, as shown in the following example. Add your cluster names for which you want to collect logs & metrics. Cluster name should be same as what you have specified during [cluster creation](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/#specify-a-name-for-the-cluster-in-the-name-box).
+##### Configure collection for multiple projects
+
+If you are already collecting Atlas data for one project, perform the following steps to configure for additional projects:
+
+   1. Create a new **mongodbatlas.yaml** file similar to previous step and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of `Organisation Events` in the second collector deployment, because these events are global and are already captured by first collector.
+
+   1. State is maintained per project, change the `DBNAME` so that state (keys for bookkeeping) maintained in the database (key value store) are not in conflict.
+
+	 1. Configure the script on a Linux machine (or use the same machine), and run it using the new configuration file.
+
+      ```bash title="Example execution of second yaml file"
+       /usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>
+      ```
+
+##### Filtering log types and metrics
+
+By default the solution collects all log types & metrics for all the clusters, if you want to filter based on cluster alias and log types, do the following:
+
+  1.  Open the **mongodbatlas.yaml** file and uncomment  `Clusters` parameter under `Collection` section, as shown in the following example. Add your cluster names for which you want to collect logs & metrics. Cluster name should be same as what you have specified during [cluster creation](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/#specify-a-name-for-the-cluster-in-the-name-box).
 
       <img src={useBaseUrl('img/integrations/databases/mongodbatlas/changecluster.png')} alt="MongoDB Atlas filter by cluster" />
 
@@ -401,9 +424,7 @@ This task makes the following assumptions:
 
       <img src={useBaseUrl('img/integrations/databases/mongodbatlas/updatemetricslogs.png')} alt="MongoDB Atlas filter by log and metric type" />
 
-```sh title="Example execution of second yaml file"
-/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>
-```
+  1. After saving the changes in your file, the next invocation (as per cron job schedule) will use the new configuration file.
 
 
 ### Step 4: Configure Webhooks for Alerts Collection
