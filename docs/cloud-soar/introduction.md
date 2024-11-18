@@ -6,7 +6,9 @@ sidebar_label: Introduction
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SOAR for analysts and administrators.
+This article provides an introduction to Cloud SOAR for analysts and administrators. 
+
+If you are unsure whether you are an analysts or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
 
 ## Introduction to Cloud SOAR for analysts
 
