@@ -107,13 +107,13 @@ Rule Name: AzureObservabilityMetadataExtractionFlexibleMySQLServerLevel
 resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/FLEXIBLESERVERS/* tenant_name=*
 ```
 
-| Fields extracted  | Metric rule     |
-|:------------------|:----------------|
-| subscription_id   | $resourceId._1  |
-| resource_group    | $resourceId._2  |
-| provider_name     | $resourceId._3  |
-| resource_type     | FLEXIBLESERVERS |
-| resource_name     | $resourceId._4  |
+| Fields extracted  | Metric rule          |
+|:------------------|:---------------------|
+| subscription_id   | $resourceId._1       |
+| resource_group    | $resourceId._2       |
+| provider_name     | MICROSOFT.DBFORMYSQL |
+| resource_type     | FLEXIBLESERVERS      |
+| resource_name     | $resourceId._3       |
 
 
 ### Configure metrics collection
@@ -127,7 +127,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-metrics.png')} alt="Azure flexible mysql server metrics" style={{border: '1px solid gray'}} width="800" />
-
+4. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
@@ -136,14 +137,12 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
+2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" /> 
-2. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
-   
-   Set Audit log related parameters as below:
+   <img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" />
+3. Set Audit log related parameters as below:
    - audit_log_enabled: set to *ON*
    - audit_log_events: Select the event types to be logged from the dropdown list.
 
@@ -155,6 +154,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
    - log_slow_admin_statements: set to *ON*
+4. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
+5. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
 #### Activity Logs
 
@@ -182,63 +183,63 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Azure Database for Mysql - Error Logs** dashboard provides details about Errors Count, Server Start and Shutdown Events Over Time, Stopped Servers, Error Log Type Over Time, Crash Recovery Attempts Over Time, Top Errors, Top Warnings, and Log Reduce.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Error-Logs.png')} alt="Azure Database for Mysql - Error Logs" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Error-Logs.png')} alt="Azure Database for Mysql - Error Logs" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Administrative Operations
 
 The **Azure Database for Mysql - Administrative Operations** dashboard provides details like distribution by operation type, by operation, recent delete operations, top 10 operations that caused most errors and users / applications by operation type.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Administrative-Operations.png')} alt="Azure Database for Mysql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Administrative-Operations.png')} alt="Azure Database for Mysql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Connections
 
 The **Azure Database for Mysql - Connections** dashboard provides details about Connections by Location, Total Connections, Active Connections, Aborted Connections, Total Queries, Connections, Queries, and Recent Disconnect Logs.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Connections.png')} alt="Azure Database for Mysql - Connections" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Connections.png')} alt="Azure Database for Mysql - Connections" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
 
 The **Azure Database for Mysql - Overview** dashboard provides details about Connections by Location, Requests by DB Instance, Top 10 IPs, Requests by Event Type, Requests by Error Code, Top Users with Executed Queries, Disconnection Events, Performance Overview, Error Details, and Queries Executed.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Overview.png')} alt="Azure Database for Mysql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Overview.png')} alt="Azure Database for Mysql - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 
 The **Azure Database for Mysql - Performance** dashboard provides details about Max CPU (%), Max Memory (%), Max IO Consumption (%), Slow Queries Count, Max CPU (%), Max Memory (%), Max IO Consumption (%), and Slow Queries.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Performance.png')} alt="Azure Database for Mysql - Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Performance.png')} alt="Azure Database for Mysql - Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
 The **Azure Database for Mysql - Policy and Recommendations** dashboard provides details about Total Success Policy Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Total Recommendation Events, and Recent Recommendation Events.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Policy-and-Recommendations.png')} alt="Azure Database for Mysql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Policy-and-Recommendations.png')} alt="Azure Database for Mysql - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Queries
 
 The **Azure Database for Mysql - Queries** dashboard provides details about Queries by IP, Drop Table Count by Instance, Create Table Count by Instance, Create Database Count by Instance, Drop Database Count by Instance, Executed SQL Statements, Queries executed vs Slow Queries, Drop Statements, Create Statements, Drop Database Statements, and Drop Table Statements.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Queries.png')} alt="Azure Database for Mysql - Queries" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Queries.png')} alt="Azure Database for Mysql - Queries" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Replication
 
 The **Azure Database for Mysql - Replication** dashboard provides details about Average Replication Lag (Seconds), Average Replication Lag (Seconds), Average HA Replication Lag (Seconds), and Average HA Replication Lag (Seconds).
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Replication.png')} alt="Azure Database for Mysql - Replication" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Replication.png')} alt="Azure Database for Mysql - Replication" style={{border: '1px solid gray'}} width="800" />
 
 ### Slow Queries
 
 The **Azure Database for Mysql - Slow Queries** dashboard provides details about Top 10 IPs Firing Slow Queries, Top 10 Users Firing, Top 10 Hosts Firing Slow Queries, Excessive Slow Queries by Host, Top 10 Slow Queries by Average Execution Time, Top 10 Excessive Slow Queries by Frequency, Slow Queries Over Time, and Excessive Slow Queries Over Time.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Slow-Queries.png')} alt="Azure Database for Mysql - Slow Queries" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Slow-Queries.png')} alt="Azure Database for Mysql - Slow Queries" style={{border: '1px solid gray'}} width="800" />
 
 ### Storage Overview
 
 The **Azure Database for Mysql - Storage Overview** dashboard provides details about Max Storage utilisation (MB), Max Data File Size (MB), Max System Tablespace Size (MB), Max System Tablespace Size (MB), Max Binlog Storage (MB), Max Other Storage (MB), Max Storage Limit (MB), Max Backup Storage Used (MB), and Max Storage (%).
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Troubleshooting
