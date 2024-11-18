@@ -550,7 +550,7 @@ Playbooks are made up of nodes which are connected together in a flowchart. Whet
 Each of these nodes are color-coded in a playbook:
 * A. **Conditions**. Conditions are represented by a purple diamond, allow your playbook to branch in different directions based on an if-then statement.
 * B. **Enrichments**. Green nodes are enrichments. These might add additional information from a threat intel database or convert data from one type to another. 
-* C. **User Choice** User choices, represented by a red circle, pause a playbook and wait for a human's decision. After the choice is made,  the playbook can continue branching in different directions.
+* C. **User Choice**. User choices, represented by a red circle, pause a playbook and wait for a human's decision. After the choice is made,  the playbook can continue branching in different directions.
 * D. **Containments**. Red nodes are containments. These can stop the spread of viruses and keep your data safe.
 * E. **Tasks**. Orange nodes assign tasks to a teammate in Cloud SOAR, such as manually reviewing data.
 * F. **Notifications**. Blue nodes are notification actions, such as a Slack or email alert.
