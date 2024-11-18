@@ -641,7 +641,7 @@ In this section, we’ll create a custom incident template. This template will a
 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.
 1. Near the top, click the **+** icon to create a new template.
-1. In the **Name** provide a name for the template. 
+1. In the **Name** field, provide a name for the template. 
 1. In the **Category** field, enter a category (for example, **Test**). 
 1. Click the **Incident** tab.
 1. Leave the fields as their defaults, and select **General** for **Type**.
