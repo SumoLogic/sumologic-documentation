@@ -602,12 +602,12 @@ Let’s create a playbook for use in Cloud SIEM.
     1. For the **IP** field, click the cog icon on the right, and select the **Get Insight Details** action. Then find the **output.entity.ip.address** field and select it.
     1. Click **Create** to save the new action.
 1. Add another action to the playbook by clicking the **+** icon on the **Get VirusTotal Info** node you just created and selecting **Action**. Use the parameters outlined below:
-    1. **Name**: “Add Entity Enrichment”
-    1. **Integration**: **Sumo Logic Cloud SIEM Internal**
-    1. **Type**: **Notification**
-    1. **Action**: **Add Entity Enrichment**
+    1. **Name**: "Add Entity Enrichment".
+    1. **Integration**: **Sumo Logic Cloud SIEM Internal**.
+    1. **Type**: **Notification**.
+    1. **Action**: **Add Entity Enrichment**.
     1. **Entity ID**: Click the cog icon on the right, and select the **Get Insight Details** action. Then find the **output.entity.id** field and select it.
-    1. **Enrichment Name**: “VirusTotal IP Reputation”
+    1. **Enrichment Name**: "VirusTotal IP Reputation".
     1. **Raw JSON**: Click the cog icon, select **Get VirusTotal Info**, then select **output.raw**.
     1. You can leave the other fields blank. Click **Create** to save the action.
 1. Playbooks also allow condition nodes that can switch execution branches depending on the true/false results of a given expression. Let’s add a condition node to our playbook that will differentiate the execution branch depending on the severity of the insight.
