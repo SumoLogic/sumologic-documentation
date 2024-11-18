@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/smartsheet.png')} alt="thumbnail icon" width="55"/>
 
-Smartsheet is used to collaborate on project timelines, documents, calendars, tasks, and other works. Smartsheet integrates and connects with many of the systems teams use today. This allows for efficient information sharing, improved collaboration, and decision-making across teams’ tech stack. The Smartsheet source collects and ingests the events that are occurring in your Smartsheet organization account. Examples of events are creation, update, load, and delete of sheets, reports, dashboards, attachments, users, etc.
+Smartsheet is used to collaborate on project timelines, documents, calendars, tasks, and other works. Smartsheet integrates and connects with many of the systems teams use today. This allows for efficient information sharing, improved collaboration, and decision-making across teams’ tech stack. The Smartsheet source collects and ingests the events that are occurring in your Smartsheet organization account. Examples of events are creation, update, load, and delete of sheets, reports, dashboards, attachments, and users.
 
 ## Data collected
 
@@ -27,7 +27,7 @@ Smartsheet is used to collaborate on project timelines, documents, calendars, ta
 
 ### Vendor configuration
 
-To collect data from Smartsheet, you need a Smartsheet account with admin privileges that would allow the creation of an app via a developer account. [Steps](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) to create a developer account in smartsheet.
+To collect data from Smartsheet, you need a Smartsheet account with admin privileges that would allow the creation of an app via a developer account. See [steps in the Smartsheet documentation](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) to create a developer account in Smartsheet.
 
 ### Source configuration
 
@@ -65,8 +65,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`\ |
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| app_client_id | String | Yes | `null` | The Smartsheet app client id to collect from Smartsheet platform. |  |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| app_client_id | String | Yes | `null` | The Smartsheet app client ID to collect from Smartsheet platform. |  |
 | client_secret | String | Yes | `null` | The Smartsheet app client secret to collect from Smartsheet platform. |  |
 | authorization_code | String | Yes | `null` | The Smartsheet app client OAuth2 authorization code to collect from Smartsheet platform. |  |
 | polling_interval | Integer | Yes | 10 | How frequently the integration should poll to Smartsheet. |  |
