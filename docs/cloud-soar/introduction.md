@@ -595,10 +595,10 @@ Let’s create a playbook for use in Cloud SIEM.
    1. As the **Insight ID**, select **Insight ID**.
    1. Click **Create**.
 1. Add another action to the playbook by clicking the **+** icon on the **Get Insight Details** node you just created and selecting **Action**. Use the parameters outlined below:
-    1. **Name**: “Get VirusTotal Info”
-    1. **Integration**: **VirusTotal**
-    1. **Type**: **Enrichment**
-    1. **Action**: **IP Reputation**
+    1. **Name**: “Get VirusTotal Info”.
+    1. **Integration**: **VirusTotal**.
+    1. **Type**: **Enrichment**.
+    1. **Action**: **IP Reputation**.
     1. For the **IP** field, click the cog icon on the right, and select the **Get Insight Details** action. Then find the **output.entity.ip.address** field and select it.
     1. Click **Create** to save the new action.
 1. Add another action to the playbook by clicking the **+** icon on the **Get VirusTotal Info** node you just created and selecting **Action**. Use the parameters outlined below:
