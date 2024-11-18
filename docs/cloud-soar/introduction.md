@@ -657,7 +657,7 @@ Automation rules define what happens when data is received from a source. These 
 
 Automation rules can automatically pull information from sources. They can also execute playbooks based on certain criteria. For example, you might want to pull Insights from Cloud SIEM once an hour and create incidents from them. Then, you could configure a rule that runs a playbook based on the tags in the incident. This way, the entire incident response cycle is automated: Cloud SIEM identifies a threat, and playbooks in Cloud SOAR are automatically deployed to contain and eradicate the threats, restore systems, and email a final report for an analyst to review.  
 
-Let's create a custom automation rule. This rule will pull information from Cloud SIEM every five hours.
+Let's create a custom automation rule. This rule will pull information from Cloud SIEM every 5 hours.
 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**.  
 1. Near the top, click the **+** icon to create a new rule.
