@@ -617,9 +617,9 @@ Let’s create a playbook for use in Cloud SIEM.
    1. For the bottom **select a value** field, add a manual value: **High**.
    1. Click **Create** to save the Condition node.
 1. Click the **+** icon under the **Condition** node to create a new node. Select **Action** for this new node. Use the parameters outlined below:
-   1. **Name**: "Send Notification Email"
-   1. **Integration**: **Basic Tools**
-   1. **Type**: **Notification**
+   1. **Name**: "Send Notification Email".
+   1. **Integration**: **Basic Tools**.
+   1. **Type**: **Notification**.
    1. **Action**: **Send Email**.
    1. For **Recipients**, enter an email address (real or fake). Make sure you press Enter after typing the email address to signal the **Recipients** field to parse and accept the email address.
    1. Type in a subject into the **Subject** field: “High Severity Insight detected”.
