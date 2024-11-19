@@ -1,0 +1,16 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Smartsheet"
+        },
+        "config": {
+                "name": "smartsheet",
+                "app_client_id": "<your client id>",
+                "client_secret": "***********",
+                "authorization_code": "***********",
+                "polling_interval": 10
+        },
+        "sourceType": "Universal"
+    }
+}
