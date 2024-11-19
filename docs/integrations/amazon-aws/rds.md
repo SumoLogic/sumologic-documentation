@@ -761,22 +761,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
-<<<<<<< Updated upstream
-### 20. Amazon RDS - Oracle CloudTrail Logs Analysis
-
-The **Amazon RDS - Oracle CloudTrail Logs Analysis** dashboard provides insights into audit events of your database instance.
-
-Use this dashboard to:
-* Monitor Amazon Oracle RDS-related audit logs using CloudTrail Events.
-* Monitor locations of successful and failed Amazon Oracle RDS user activity events.
-* Monitor most active users working on Oracle RDS infrastructure, database engines used in the infrastructure, and various events invoked on Oracle RDS instance,
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-CloudTrail-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
-
-### 21. Amazon RDS - Oracle Logs - Alert Logs Analysis
-=======
 ### 20. Amazon RDS - Oracle Logs - Alert Logs Analysis
->>>>>>> Stashed changes
 
 The **Amazon RDS - Oracle Logs - Alert Logs Analysis** dashboard provides details on Oracle errors, including counts of various error types, ORA messages, Oracle instance states, and other data derived from the Oracle Alert log.
 
