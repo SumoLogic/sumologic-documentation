@@ -761,6 +761,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
+<<<<<<< Updated upstream
 ### 20. Amazon RDS - Oracle CloudTrail Logs Analysis
 
 The **Amazon RDS - Oracle CloudTrail Logs Analysis** dashboard provides insights into audit events of your database instance.
@@ -773,6 +774,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-CloudTrail-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
 ### 21. Amazon RDS - Oracle Logs - Alert Logs Analysis
+=======
+### 20. Amazon RDS - Oracle Logs - Alert Logs Analysis
+>>>>>>> Stashed changes
 
 The **Amazon RDS - Oracle Logs - Alert Logs Analysis** dashboard provides details on Oracle errors, including counts of various error types, ORA messages, Oracle instance states, and other data derived from the Oracle Alert log.
 
@@ -783,7 +787,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Alert-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
-### 22. Amazon RDS - Oracle Logs - Audit Logs Analysis
+### 21. Amazon RDS - Oracle Logs - Audit Logs Analysis
 
 The **Amazon RDS - Oracle Logs - Audit Logs Analysis** dashboard provides details on syslog audit trail, including successful and failed activities, and top usage by client, database user, and privileges used.
 
@@ -794,7 +798,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Audit-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
 
-### 23. Amazon RDS - Oracle Logs - Listener Troubleshooting
+### 22. Amazon RDS - Oracle Logs - Listener Troubleshooting
 
 The **Amazon RDS - Oracle Logs - Listener Troubleshooting** dashboard provides insights into Oracle listener process activity, including database connections by host and application, connection failures, command execution statuses and trends, and additional data from the Oracle Listener log.
 
