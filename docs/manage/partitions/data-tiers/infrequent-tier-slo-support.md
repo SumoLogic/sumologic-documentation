@@ -33,7 +33,7 @@ While defining SLOs for the Infrequent Tier logs, you can use the following samp
 
 Sumo Logic provides a dashboard to monitor the Infrequent Tier consumption by SLOs.
 
-<img src={useBaseUrl('img/partitions-data-tiers/infrequent-support-slo.png')} alt="dashboard" />
+<img src={useBaseUrl('img/manage/partitions-data-tiers/infrequent-support-slo.png')} alt="dashboard" />
 
 The dashboard presents the following information for the currently selected time range:
 * **Avg Credits Consumed/Day**. The daily average number of credits consumed over the last 30 days.

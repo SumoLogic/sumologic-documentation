@@ -18,16 +18,15 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 |:--|:--|
 | `*` | Use a wildcard (`*`) character as a shortcut to return both fields. |
 | `asn` | Autonomous System Number |
-| `organization` | Autonomous System Organization Name (Carrier) or ID in some cases. |
+| `organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
+| `registering_organization` | The organization responsible for the actions and content associated with a given block of IP addresses. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. |
 
 ## Example
 
-The following query references a data stream with IPv4 addresses, parses
-those IPv4 addresses, and then uses ASN Lookup to retrieve their
-autonomous system information. 
+The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information. 
 
 ```sql
-_sourceCategory=stream "remote_ip="
+_dataTier=all _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| lookup organization, asn from asn://default on ip = ip
+| lookup organization, registering_organization, asn from asn://default on ip = ip
 ```

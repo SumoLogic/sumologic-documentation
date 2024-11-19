@@ -6,6 +6,11 @@ description: Learn about Network Sensor deployment planning, standard sensor pla
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
+
+:::warning end-of-life
+<SensorEOL/>
+:::
 
 This section has instructions for deploying the Cloud SIEM Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 

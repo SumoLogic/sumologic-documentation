@@ -189,7 +189,7 @@ The **Palo Alto 9 - Security Monitoring - TRAFFIC Log Overview** dashboard provi
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto 9 Security Dashboards" />
 
-## Upgrading the PAN Firewall 9 Security app (Optional)
+## Upgrade/Downgrade the PAN Firewall 9 Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
