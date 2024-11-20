@@ -13,7 +13,7 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic <!-- Copilot? Mo Pilot? https://www.sumologic.com/blog/copilot-amazon-bedrock/ --> is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
+Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
@@ -31,12 +31,23 @@ With its intuitive interface, Copilot automatically generates log searches from 
 
 ### Key features
 
-Copilot reduces manual effort by combining prebuilt insights with natural language query analysis.
+Copilot reduces manual effort in log searches by combining prebuilt insights with natural language query analysis, eliminating the need for complex query syntax.  Designed to address common challenges such as syntax errors and steep learning curves, Copilot enhances usability and accelerates time to insights across your organization. With sub-2-second response times with over 90% translation accuracy, Copilot ensures fast and dependable results for all supported log types.
 
 * **Natural language queries**. Ask questions in plain English—no need to enter query syntax.
-* **Contextual suggestions**. Automated suggestions to accelerate your workflow.
-* **Conversation history**. Save and resume any troubleshooting session without losing context.
-* **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
+* **Contextual suggestions**. Get automated suggestions tailored to your search, accelerating your workflow.
+* **Conversation history**. Save and resume troubleshooting sessions without losing valuable context.
+* **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards.
+* **Log compatibility**. Copilot supports structured logs, semi-structured logs (e.g., Cohesity logs), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
+* **Enhanced query experience**. Provides auto-completion to streamline natural language queries.
+
+## Use cases
+
+Copilot supports users at all expertise levels:
+
+* **Novices**. Simplifies log analysis for new users or teams unfamiliar with Sumo Logic.
+* **Practitioners**. Provides query suggestions and assists with query refinement.
+* **Experts**. Offers IDE-style completion assistance for faster complex query building.
+
 
 ## Security compliance and legal
 
@@ -80,10 +91,7 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 <img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-<br/><br/>
-
-<details>
-<summary>Manual entry (not recommended)</summary>
+#### Ask a question
 
 In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**.
 
@@ -92,8 +100,11 @@ In the **Ask Something...** field, you can manually enter a natural language pro
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
 Break your questions into smaller, specific prompts to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
-</details>
 
+<!-- TO DO
+##### Autocompletion for natural language
+see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
+--->
 
 #### Time range
 
@@ -125,26 +136,35 @@ If required, select your preferred chart type, such as **Table**, **Bar**, **Col
 
 You can manually edit your log search query code if needed.
 
-<details>
-<summary>JSON Syntax Rules</summary>
-
-* Copilot supports querying JSON logs only. It cannot be used to query unstructured data, metrics, or traces. To retrieve a list of `_sourceCategories` with JSON data, use the following query:
-   ```sql
-   _sourceCategory=* "{" "}"
-   | limit 10000 | logreduce keys noaggregate
-   | count by _sourceCategory, _schema
-   | where _schema != "unknown"
-   | sum(_count) by _sourceCategory
-   ```
-* If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
-</details>
-
 1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 1. When you're done, press Enter or click the search button.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
 To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 :::
+
+#### JSON Syntax Rules
+
+Copilot querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query unstructured data, metrics, or traces.
+
+To retrieve a list of `_sourceCategories` with JSON data, use the following query:
+
+```sql
+_sourceCategory=* "{" "}"
+| limit 10000 | logreduce keys noaggregate
+| count by _sourceCategory, _schema
+| where _schema != "unknown"
+| sum(_count) by _sourceCategory
+```
+
+If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+
+#### Tips and tricks
+
+* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
+* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
+* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
+* **Include time for timeslicing**. When timeslicing data, ensure you mention `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
 
 #### History
 
@@ -209,7 +229,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
    Count logs by action. Sort the results. versus the previous 1h
    ```
    Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
-1. Switching to table view, you notice “Malicious” in the search results. So, you add in `Filter results by action contains Malicious` to the query:
+1. Switching to table view, you notice "Malicious” in the search results. So, you add in `Filter results by action contains Malicious` to the query:
    ```
    Count logs by action. Sort the results. Filter results by action contains Malicious.
    ```
