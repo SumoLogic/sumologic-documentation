@@ -10,8 +10,6 @@ Sumo Logic provides everything you need to conduct real-time forensics and log m
 
 By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Sumo Logic SaaS Log Analytics Platform features.
 
-After 45 days, if you've not purchased a plan, your account will convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), and you can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
-
 ## Sign up through Sumo Logic
 
 To start your 30-day free trial:
@@ -43,7 +41,7 @@ Thanks for signing up! Next, you'll be taken to a brief two-step data collector 
 
 Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-After 30 days, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
+After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -59,9 +57,7 @@ After 30 days, your Sumo Logic **Trial account** will automatically convert to a
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
-For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
-
-Unlock premium features and scale your Sumo Logic usage as your needs grow by upgrading to a [paid plan](https://www.sumologic.com/pricing).
+ To unlock premium features and scale your Sumo Logic usage as your needs grow, upgrade to a paid plan. For more information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Managing Your Subscription](/docs/manage/manage-subscription).
 
 ### Upgrade to a Flex plan
 
