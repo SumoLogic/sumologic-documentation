@@ -63,7 +63,7 @@ To configure an Trend Micro source:
 1. **Auth Token**. Enter the authentication token collected from the [Trend Micro platform](#vendor-configuration).
 1. **Polling Interval**. The polling interval is set for 15 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-1. When you are finished configuring the Source, click **Save**.
+1. When you are finished configuring the source, click **Save**.
 
 ## JSON schema
 
