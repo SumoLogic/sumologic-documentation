@@ -8,20 +8,28 @@ description: Learn how to use the Sumo Logic Real User Monitoring (RUM) Dashboar
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-## RUM App
+## Installing the RUM App (Optional)
 
-Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
+Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
 
-The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
+The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Installed Apps** folder. Do not modify or delete content in this folder, as it is maintained by Sumo Logic.
 
-If your RUM app is removed accidentally, you'll need to install it manually:
+If your RUM app is removed accidentally, you'll need to install it manually
 
-1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
-1. Click **Add to Library**.
-1. Provide an **App Name**. You can retain the existing name or enter a name of your choice for the app.
-1. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-1. Click **Add to Library**.
-1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
+import AppInstall from '../../reuse/apps/app-install-v2.md';
+
+## Upgrade/Downgrade the RUM App (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the RUM App (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 
 ## Using Real User Monitoring view
 
