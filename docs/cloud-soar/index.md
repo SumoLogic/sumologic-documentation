@@ -19,6 +19,11 @@ This section contains the following topics:
   <a href="/docs/cloud-soar/overview"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Overview</h4></a>
   <p>Learn how Cloud SOAR allows you to perform incident management and threat response.</p>
   </div>
+</div><div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/introduction"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Introduction</h4></a>
+  <p>Provides an introduction to Cloud SOAR for analysts and administrators. </p>
+  </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
