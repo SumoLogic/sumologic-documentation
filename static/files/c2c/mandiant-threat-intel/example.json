@@ -1,0 +1,17 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+			"name": "Mandiant",
+			"category": "mandiant",
+			"apiKeyId": "076xxxxd69832568xxxxxe778b73f98b375",
+			"apiSecret": "fcbe4fd8ce72b5dxxxxxx10032",
+			"userSourceId": "user_source_id",
+			"pollingIntervalMin": 5
+		},
+		"schemaRef": {
+			"type": "Mandiant Threat Intel"
+		},
+		"sourceType": "Universal"
+	}
+}
