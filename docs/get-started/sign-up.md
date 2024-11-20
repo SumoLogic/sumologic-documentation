@@ -57,7 +57,7 @@ After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account**
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
- To unlock premium features and scale your Sumo Logic usage as your needs grow, upgrade to a paid plan. For more information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Managing Your Subscription](/docs/manage/manage-subscription).
+ To unlock premium features and scale your Sumo Logic usage as your needs grow, upgrade to a paid plan. For more information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
 
 ### Upgrade to a Flex plan
 
