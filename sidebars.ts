@@ -458,6 +458,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-sql-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
@@ -2890,6 +2891,7 @@ integrations: [
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
         'cloud-soar/overview',
+        'cloud-soar/introduction',
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',

@@ -107,7 +107,7 @@ Perform these steps for each of the FERs.
 
 ## Unsupported collection method: Network Sensor
 
-:::caution End-of-Life
+:::warning End-of-Life
 This section describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic Source](#supported-collection-method-sumo-logic-source) above. 
 :::
 

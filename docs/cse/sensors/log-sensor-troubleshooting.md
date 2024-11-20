@@ -4,7 +4,7 @@ title: Log Sensor Troubleshooting
 description: Learn how to collect Log Sensor status and data to support troubleshooting efforts.
 ---
 
-:::caution end-of-life
+:::warning end-of-life
 The Cloud SIEM Log Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector or Installed Collector. For more information, see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
 :::
 
