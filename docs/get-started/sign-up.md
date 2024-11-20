@@ -33,7 +33,7 @@ To activate your Sumo Logic Trial account:
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
-Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
+Thanks for signing up! Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
 
 ### Set up Collector
 
@@ -41,12 +41,9 @@ Next, you'll be taken to a brief two-step data collector installation process, w
 1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
 1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
 
-That's it - congrats! Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
+Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-
-### Upgrade or continue with Free account
-
-After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and log analytics services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
+After 30 days, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -63,6 +60,42 @@ After 30 days, your Sumo Logic **Trial account** will convert to a **Free accoun
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
 For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
+
+Unlock premium features and scale your Sumo Logic usage as your needs grow by upgrading to a [paid plan](https://www.sumologic.com/pricing).
+
+### Upgrade to a Flex plan
+
+Using our service checkout, you can quickly and easily sign up for our Flex Essentials plan with a credit card in just minutes.  
+
+The Flex Essentials plan is ideal for:  
+- Small- to medium-sized businesses seeking quick and independent onboarding.  
+- IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.  
+
+If your requirements exceed the capabilities of the Flex Essentials plan, you’ll need to [upgrade to an enterprise plan](#upgrade-to-an-enterprise-plan).
+
+#### How to use self-service checkout  
+
+1. Log in to your Sumo Logic account.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From the left nav menu, go to **Administration** > **Account** > **Manage Plan**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top Sumo Logic nav menu, go to **Administration** > **Manage Plan**.
+1. Here, you can review the available Sumo Logic plans and pricing. Select the **Flex Essentials** plan.
+1. Enter your credit card details in the secure checkout form.  
+1. Review and confirm your purchase.  
+1. Once your payment has been processed, your account will be upgraded, and you’ll have immediate access to premium features.  
+
+For information on updating your payment information, see [Manage Billing Information](/docs/manage/manage-subscription/manage-billing-information).
+
+:::note limitations
+At this time:  
+- Customers using order forms for billing are not eligible to switch to self-service payments.  
+- Downgrades to the free plan cannot be completed through the checkout interface.  
+- Downgrades between paid plans take effect at the start of the next billing cycle.  
+:::
+
+If you encounter any issues during the upgrade process, contact our [support team](https://support.sumologic.com/support/s/).  
+
+### Upgrade to an enterprise plan
+
+Contact our [Sales Team](https://www.sumologic.com/contact-us/) for assistance. We'll consult with you to determine the best solution for your organization.
 
 ## Sign up through AWS Marketplace
 
