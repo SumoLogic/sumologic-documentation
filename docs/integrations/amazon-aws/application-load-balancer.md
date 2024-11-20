@@ -207,3 +207,15 @@ Use this dashboard to:
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" />
+
+### AWS Application Load Balancer - CloudTrail Audit
+
+The **AWS Application Load Balancer - CloudTrail Audit** dashboard provides a comprehensive overview of AWS Application Load Balancer activities through CloudTrail audit logs. It visualizes successful and failed events globally, event trends, error details, and user activities, offering insights into load balancer performance, security, and usage patterns.
+
+Use this dashboard to:
+* Monitor the geographical distribution of successful and failed load balancer events, allowing for quick identification of regions with high activity or potential issues.
+* Track the overall success rate of load balancer events and analyze trends over time, helping to identify any sudden changes or patterns in performance.
+* Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
+* Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" />
