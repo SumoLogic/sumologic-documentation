@@ -27,6 +27,9 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  future: {
+    experimental_faster: true,
+  },
   staticDirectories: ['static'],
   webpack: {
     jsLoader: (isServer) => ({
