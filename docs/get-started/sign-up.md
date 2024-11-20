@@ -147,7 +147,7 @@ Your subscription will be cancelled immediately.
 
 ### Kickstart your Sumo Logic experience with placeholder data  
 
-Get started with Sumo Logic effortlessly using **Kickstart Data**—preloaded placeholder data designed to help you explore and understand the platform’s capabilities. With Kickstart Data, you can dive in immediately and explore Sumo Logic's features without needing to set up your own data sources.  
+Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded placeholder data designed to help you explore and understand the platform’s capabilities. With Kickstart Data, you can dive in immediately and explore Sumo Logic's features without needing to set up your own data sources.  
 
 Experience the platform with sample dashboards and data tailored to your needs, allowing you to test searches, dashboards, and alerts right away.  
 
