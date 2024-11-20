@@ -483,7 +483,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="100"/><h4>Trend Micro</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source"><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Thumbnail icon" width="150"/><h4>Trend Micro</h4></a>
         <p>Learn how to collect alert details from Trend Micro platform.</p>
         </div>
       </div>
