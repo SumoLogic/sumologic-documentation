@@ -76,12 +76,12 @@ For these formats, Cloud SIEM uses the values you configure for **Product**, **V
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
 1. The **Log Mappings** page displays a list of mappers.<br/><img src={useBaseUrl('img/cse/log-mappings-page.png')} alt="Log Mappings page" width="800"/>
 1. In the **Filters** area, you can filter the list of log mappings by
-    typing in a keyword, or by selecting a field to filter by.<br/><img src={useBaseUrl('img/cse/log-mapping-filters.png')} alt="Log Mappings filters" style={{border: '1px solid gray'}} width="300"/>
-1. When you find the mapper you’re looking for, you can find the **Product**, **Vendor**, and **Event ID pattern** for a mapper on the **If Input Matches** side of the **Input/Output** side of the page.
-    * **Format**. This is the value labeled **c** in the screenshot below.
-    * **Product**. This is the value labeled **b** in the screenshot below.
-    * **Vendor**. This is the value labeled **a** in the screenshot below.
-    * **Event ID pattern**. This is the value labeled **d** in the screenshot below.<br/><img src={useBaseUrl('img/cse/mapping.png')} alt="Log Mapping details" style={{border: '1px solid gray'}} width="800"/>
+    typing in a keyword, or by selecting a field to filter by.<br/><img src={useBaseUrl('img/cse/log-mapping-filters.png')} alt="Log Mappings filters" style={{border: '1px solid gray'}} width="400"/>
+1. When you find the mapper you’re looking for, you can find the following for a mapper on the **If Input Matches** side of the page:
+    * Vendor
+    * Product
+    * Format
+    * Event ID pattern<br/><img src={useBaseUrl('img/cse/mapping.png')} alt="Log Mapping details" style={{border: '1px solid gray'}} width="800"/>
 
 ### Quick reference to configuring ingest mappings
 
@@ -105,7 +105,7 @@ This table in this section is a quick reference to supplying values for each su
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured. The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingestion mappings" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector. 
     1. **Format**. Follow the instructions for the type of messages your source collects:
@@ -166,10 +166,9 @@ If you would like to manipulate the JSON data before it’s flattened and parsed
     `{ “pets” : { “fluffy” : “cat” , “fido” : “dog”, “sammy” : “snake”}}`  
 
     The JSON Zip parameters are:
-
-* **Key Name**. The name of the attribute whose value is the array to zip.
-* **Match Key**. The name of the attribute that represents the key in the output. In the example above, it’s `name`.
-* **Match Value**. The attribute in the array object that represents the value in the final output. In the example above it’s `type`.
+    * **Key Name**. The name of the attribute whose value is the array to zip.
+    * **Match Key**. The name of the attribute that represents the key in the output. In the example above, it’s `name`.
+    * **Match Value**. The attribute in the array object that represents the value in the final output. In the example above it’s `type`.
 
 ### JSON messages with a syslog header
 

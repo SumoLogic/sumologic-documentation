@@ -82,7 +82,7 @@ You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cs
 :::
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. 
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/match-list-create-icon.png')} alt="Create match list" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Create**.
 1. On the **New Match List** popup, enter the following:
     1. **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
     1. **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).
@@ -92,15 +92,15 @@ You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cs
         Once you create a Match List, it's not possible to change its **Target Column**.
         :::
     1. Click **Create**.<br/><img src={useBaseUrl('img/cse/new-match-list.png')} alt="New match list" style={{border: '1px solid gray'}} width="400"/>
-1. The Match List now appears on the **Match Lists** page. <br/><img src={useBaseUrl('img/cse/match-list-added.png')} alt="Match list added" style={{border: '1px solid gray'}} width="800"/>
+1. The Match List now appears on the **Match Lists** page.
 1. Click the name of the Match List to open it.
-1. On the **Match List > Details** page, click **ADD LIST ITEM**.<br/><img src={useBaseUrl('img/cse/match-list-add-item-icon.png')} alt="Match list add list item" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Match List > Details** page, click **Add List Item**.
 1. On the **New Match List Item** popup, enter:
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.
    * **Description**. (Optional) Enter a description of the entity instance you entered.
    * **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   * Click **Add** to add the item to the list.<br/><img src={useBaseUrl('img/cse/new-match-list-item.png')} alt="New match list item" style={{border: '1px solid gray'}} width="400"/>
-1. The item now appears in the Match List.<br/><img src={useBaseUrl('img/cse/item-added.png')} alt="Item added" style={{border: '1px solid gray'}} width="800"/>
+   * Click **Add** to add the item to the list.
+1. The item now appears in the Match List.
 
 ## Import a Match List
 

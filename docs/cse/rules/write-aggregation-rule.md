@@ -101,7 +101,7 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Constant severity portion of the dialog" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="Dynamic Severity portion of the dialog" style={{border: '1px solid gray'}} width="450"/>
+   1. The severity area updates. 
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
    1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>

@@ -366,7 +366,7 @@ See an analysis of puppet runs on nodes, including resources analysis, average t
 
 <img src={useBaseUrl('img/integrations/app-development/puppet-node-puppet-runs-analysis.png')} alt="puppet" />
 
-## Upgrading the Puppet app (Optional)
+## Upgrade/Downgrade the Puppet app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

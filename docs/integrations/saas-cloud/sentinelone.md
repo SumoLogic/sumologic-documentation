@@ -372,7 +372,7 @@ With the information provided by this dashboard, security teams can effectively 
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
 
-## Upgrading the SentinelOne app (Optional)
+## Upgrade/Downgrade the SentinelOne app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

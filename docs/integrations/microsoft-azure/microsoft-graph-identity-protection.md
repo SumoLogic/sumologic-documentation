@@ -153,7 +153,7 @@ This dashboard helps to monitor and manage the risky users of your organization.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />
 
-## Upgrading the Microsoft Graph Identity Protection app (Optional)
+## Upgrade/Downgrade the Microsoft Graph Identity Protection app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

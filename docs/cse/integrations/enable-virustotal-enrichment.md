@@ -37,8 +37,8 @@ VirusTotal enrichments are only added to Signals that are part of an Insight.
 ## Configure VirusTotal enrichment
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Enrichment**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Enrichment**. You can also click the **Go To...** menu at the top of the screen and select **Enrichment**.  
-1. On the **Enrichment** page, click the pencil icon for VirusTotal.<br/><img src={useBaseUrl('img/cse/enrichment-page.png')} alt="Edit button on the VirusTotal enrichment" style={{border: '1px solid gray'}} width="800" />
-2. On the **Edit VirusTotal Configuration** popup, enter your VirusTotal API Key, and click Update.<br/><img src={useBaseUrl('img/cse/edit.png')} alt="Edit VirusTotal Configuration pop-up" style={{border: '1px solid gray'}} width="400" />
+1. On the **Enrichment** page, click the pencil icon for VirusTotal.<br/><img src={useBaseUrl('img/cse/enrichment-page.png')} alt="Edit button on the VirusTotal enrichment" style={{border: '1px solid gray'}} width="500" />
+2. On the **Edit VirusTotal Configuration** popup, enter your VirusTotal API Key, and click Update.<br/><img src={useBaseUrl('img/cse/edit.png')} alt="Edit VirusTotal Configuration pop-up" style={{border: '1px solid gray'}} width="300" />
 
 ## Example VirusTotal enrichment
 <img src={useBaseUrl('img/cse/virus-total-enrichment.png')} alt="Example VirusTotal enrichment" style={{border: '1px solid gray'}} width="700" />

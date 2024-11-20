@@ -18,7 +18,7 @@ Although the Scheduled Search feature does support an **Alert Type** of “Save 
 
 ## Prerequisites 
 
-In order to create an inventory Lookup Table you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the Windows Active Directory Inventory source running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
+In order to create an inventory Lookup Table, you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the [Windows Active Directory Inventory source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/) running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
 
 Any inventory source–or any log source, for that matter–can be used to populate Lookup Tables. Sumo Logic also has a variety of inventory sources that run on Hosted Collectors, including the Okta and Carbon Black sources.
 
@@ -39,14 +39,14 @@ To create the Lookup Table schema:
 
 1. Go to the Sumo Logic Library.
 1. Navigate to the folder where you want to create the Lookup Table.
-1. Click **Add New** and then select **New Lookup**. <br/><img src={useBaseUrl('img/cse/new-lookup.png')} alt="New lookup link" width="600"/>
-1. The **Create Lookup Table** page appears. <br/><img src={useBaseUrl('img/cse/create-in-cip.png')} alt="Create lookup table" width="600"/>
+1. Click **Add New** and then select **New Lookup**. <br/><img src={useBaseUrl('img/cse/new-lookup.png')} alt="New lookup link" style={{border: '1px solid gray'}} width="600"/>
+1. The **Create Lookup Table** page appears. <br/><img src={useBaseUrl('img/cse/create-in-cip.png')} alt="Create lookup table" style={{border: '1px solid gray'}} width="600"/>
 1. **Name**. Enter a name for the Lookup Table.
 1. **Description**. (Optional)
 1. **Set a TTL (Time to Live) for table entries**? Click **No**.
 1. **Choose a size limit handling option**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
 1. **Create Lookup Table** Click **Create Schema only**.
-1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/><img src={useBaseUrl('img/cse/schema.png')} alt="Schema settings" width="600"/>
+1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/><img src={useBaseUrl('img/cse/schema.png')} alt="Schema settings" style={{border: '1px solid gray'}} width="600"/>
 1. For the first column, enter:
    * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
@@ -75,7 +75,7 @@ Where:
 * `_collector` identifies the collector where the Active Directory source runs. 
 * `PATH` is the path of the lookup table, in this format:   `path://"/Library/Admin Recommended/userIdToUsername"` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.
 
-   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab menu button" width="600"/>
+   <img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab menu button" style={{border: '1px solid gray'}} width="600"/>
 
 ## Step 3: Save and schedule the search
 
@@ -85,13 +85,13 @@ Be sure to choose “Email” as the **Alert type**. (*Don’t* select **Save to
 
 To save and schedule the search:
 
-1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as on dropdown list" width="600"/>
+1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as on dropdown list" style={{border: '1px solid gray'}} width="600"/>
 1. On the **Save Item** popup:
    * **Name**. Enter a name for the query.
    * **Time range**. Select a time range for the query.
    * **Search By**. Select *Receipt Time*.  
    * **Location to save to**. Choose a folder location.
-   * Click **Schedule this search**.     <br/><img src={useBaseUrl('img/cse/save-item.png')} alt="Save item dialog" width="400"/>
+   * Click **Schedule this search**.     <br/><img src={useBaseUrl('img/cse/save-item.png')} alt="Save item dialog" style={{border: '1px solid gray'}} width="400"/>
 1. On the **Save Item** popup:
    * **Run frequency**. Select *Daily*, unless you have another preference.
    * **Send Notification**. Choose *If the following condition is met*.
@@ -99,7 +99,7 @@ To save and schedule the search:
    * **Alert type**. Select *Email*.
    * **Number of results**. Enter *5*, or another value if you prefer.
    * **Recipients.** Enter the email addresses of one or more users to receive email alerts.
-   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/><img src={useBaseUrl('img/cse/save-item-2.png')} alt="Save item dialog" width="400"/>
+   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/><img src={useBaseUrl('img/cse/save-item-2.png')} alt="Save item dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save.**
 
 ## Step 4: Configure the Lookup Table in Cloud SIEM

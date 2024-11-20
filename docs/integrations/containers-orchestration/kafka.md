@@ -728,30 +728,23 @@ Use this dashboard to:
 
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
 |:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (`>=`85%) for an interval of 5 minutes.                        |                 |                   |
 | Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | `>=`85            | < 85              |
-| Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |
-| Kafka - High Broker Memory Utilization      | This alert fires when the average memory utilization within a 5 minute interval for a given Kafka node is high (`>=`85%).                                 | `>=` 85           | < 85              |
-| Kafka - Large number of broker errors       | This alert fires when we detect that there are 5 or more errors on a Broker node within a time interval of 5 minutes.                                   |                 |                   |
-| Kafka - Large number of broker warnings     | This alert fires when we detect that there are 5 or more warnings on a Broker node within a time interval of 5 minutes.                                 |                 |                   |
-| Kafka - Out of Sync Followers               |                                                                                                                                                         |                 |                   |
-| Kafka - Unavailable Replicas                | This alert when we detect that there are replicas that are unavailable.                                                                                 |                 |                   |
-| Kafka - Consumer Lag                        | This alert fires when we detect that a Kafka consumer has a 30 minutes and increasing lag                                                               |                 |                   |
-| Kafka - Fatal Event on Broker               | This alert fires when we detect a fatal operation on a Kafka broker node      | `>=`1             | `<`1      |
-| Kafka - Multiple Errors on Broker           | This alert fires when we detect five or more errors on a Kafka broker node in a 5 minute interval.                                                      | `>=`5             | `<`5                |
-| Kafka - Underreplicated Partitions          | This alert fires when we detect underreplicated partitions on a given Kafka broker.                                                                     |                 |                   |
-| Kafka - Offline Partitions                  | This alert fires when we detect offline partitions on a given Kafka broker.                                                                             |                 |                   |
+| Kafka - Failed Zookeeper connections        | This alert fires when we detect Broker to Zookeeper connection failures.                                                                                 |                 |                   |
 | Kafka - High Leader election rate           | This alert fires when we detect high leader election rate.                                                                                              |                 |                   |
-| Kafka - Failed Zookeeper connections        | This alert fires when we detect Broker to Zookeeper connection failures                                                                                 |                 |                   |
-| Kafka - Replica Lag                         | This alert fires when we detect that a Kafka replica has a lag of over 30 minutes                                                                       |                 |                   |
-| Kafka - Lower Producer-Consumer buffer time | This alert fires when we detect that there is only one hour of time remaining between earliest offset and consumer position.                            |                 |                   |
+| Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |
+| Kafka - Offline Partitions                  | This alert fires when we detect offline partitions on a given Kafka broker.                                                                             |                 |                   |
+| Kafka - Fatal Event on Broker               | This alert fires when we detect a fatal operation on a Kafka broker node      | `>=`1             | `<`1      |
+| Kafka - Underreplicated Partitions          | This alert fires when we detect underreplicated partitions on a given Kafka broker.                                                                     |                 |                   |
+| Kafka - Large number of broker errors       | This alert fires when we detect that there are 5 or more errors on a Broker node within a time interval of 5 minutes.                                   |                 |                   |
+| Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (`>=`85%) for an interval of 5 minutes.                        |                 |                   |
+| Kafka - Out of Sync Followers               | This alert fires when we detect that there are Out of Sync Followers within a time interval of 5 minutes.                                                                                                                                                        |                 |                   |
+| Kafka - High Broker Memory Utilization      | This alert fires when the average memory utilization within a 5 minute interval for a given Kafka node is high (`>=`85%).                                 | `>=` 85           | < 85              |
+
 
 
 ## Kafka Metrics
 
 Here's a list of available Kafka metrics.
-
-d
 
 <table cellpadding="0" cellspacing="0" class="mt-responsive-table" dir="ltr">
     <colgroup>

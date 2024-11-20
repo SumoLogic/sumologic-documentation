@@ -28,8 +28,7 @@ To create a custom Insight status:
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui).  In the top menu select **Configuration**, and then under **Workflow** select **Statuses**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**. 
 1. On the **Statuses** page, click **Create Status**.
 1. On the **New Status** popup, enter a name and description for the status. 
-1. Click **Color** to select a color for the status. The color will appear on the status on the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display). <br/><img src={useBaseUrl('img/cse/new-status.png')} alt="New status" style={{border: '1px solid gray'}} width="400"/>
-1. Click **Create**.
+1. Click **Color** to select a color for the status. The color will appear on the status on the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display).
 
 ## Change the order of Insight statuses
 
@@ -43,7 +42,7 @@ To change the order of Insight statuses:
 
  
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Statuses**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**.  
-1. On the **Statuses** page, each status that can be moved has a handle to the left of its name.  <br/><img src={useBaseUrl('img/cse/reorder-icons.png')} alt="Reorder icons" style={{border: '1px solid gray'}} width="700"/>
+1. On the **Statuses** page, each status that can be moved has a handle to the left of its name.  <br/><img src={useBaseUrl('img/cse/reorder-icons.png')} alt="Reorder icons" style={{border: '1px solid gray'}} width="200"/>
 1. To move a status to a different location on the list, use your mouse to drag it to the desired location.
 
 ## Edit or delete a custom Insight status

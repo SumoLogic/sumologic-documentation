@@ -68,7 +68,7 @@
     "loader-utils": "^3.2.1",
     "mdn-data": "2.0.30",
     "mdx-mermaid": "^2.0.0",
-    "mermaid": "^10.6.1",
+    "mermaid": "^10.9.3",
     "minimist": "^1.2.6",
     "nanoid": "^3.1.31",
     "node-fetch": "^2.6.7",

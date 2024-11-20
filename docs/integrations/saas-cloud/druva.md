@@ -101,7 +101,7 @@ The **Druva - Backup and Restore Overview** dashboard offers a comprehensive vie
 
 The trend of failed backup/restore/download events over time offers an overview of any issues, enabling you to quickly identify and resolve them. The geo-location widget tracks activity locations, helping you identify potential threats or vulnerabilities. With this dashboard, you can monitor your data protection activities closely, ensuring the smooth running of backup and restore processes and securing your data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-backup-and-restore.png')} alt="druva-backup-and-restore" width="750"/>
 
-## Upgrading the Druva app (Optional)
+## Upgrade/Downgrade the Druva app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

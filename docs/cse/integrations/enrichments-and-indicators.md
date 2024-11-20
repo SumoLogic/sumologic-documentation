@@ -31,10 +31,10 @@ Threat indicators, if set, will be displayed throughout the Cloud SIEM UI either
 | Label | Description | Icon |
 |:--|:--|:--|
 | **Malicious** | <img src={useBaseUrl('img/cse/indicator-malicious-label.png')} alt="Malicious label" width="100"/> | <img src={useBaseUrl('img/cse/indicator-malicious-icon.png')} alt="Malicious icon" width="30"/> |
-| **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="125"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
+| **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="110"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
 | **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Suspicious label" width="125"/> | None |
 
-No icon is displayed for Entities that with the **Not Flagged** label.
+No icon is displayed for Entities with the **Not Flagged** label.
 
 :::note
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.

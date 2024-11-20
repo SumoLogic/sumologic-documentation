@@ -247,7 +247,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
 
-## Upgrading the Zscaler Internet Access app (Optional)
+## Upgrade/Downgrade the Zscaler Internet Access app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

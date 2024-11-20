@@ -189,12 +189,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="100"/><h4>CloudQuery</h4></a>
-  <p>Provides a secure endpoint to receive data from CloudQuery.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
@@ -239,6 +233,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source"><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="60"/><h4>Cybereason</h4></a>
   <p>Provides a secure endpoint to receive authentication logs from the Cybereason Malops API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="45"/><h4>Digital Guardian</h4></a>
+  <p>Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -449,6 +449,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source"><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/><h4>Slack</h4></a>
         <p>Learn about the Slack Source, part of Sumo Logic's Cloud-to-Cloud Integration Framework.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
+        <p>Learn how to collect events from Smartsheet platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

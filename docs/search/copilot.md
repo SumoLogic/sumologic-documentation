@@ -20,9 +20,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
 This is a Preview release. To learn more, contact your Sumo Logic account executive.
 
-Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get answers faster.
+Sumo Logic Copilot is an AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
+
+<Iframe url="https://player.vimeo.com/video/1021631518?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
 
 ### Key features
 
@@ -32,6 +44,15 @@ Copilot reduces manual effort by combining prebuilt insights with natural langua
 * **Contextual suggestions**. Automated suggestions to accelerate your workflow.
 * **Conversation history**. Save and resume any troubleshooting session without losing context.
 * **Auto-visualize**. Copilot renders charts based on search results automatically. These charts can be added to dashboards from within Copilot.
+
+## Security compliance and legal
+
+Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
+
+* [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
+* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
+
+Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts. 
 
 ### Who benefits from Copilot?
 
@@ -157,7 +178,7 @@ Click the **Open in Log Search** icon, which will copy your query from Copilot o
 
 ## Example queries
 
-### Observability
+### Logs for security
 
 <!-- add micro lesson when published-->
 
@@ -179,7 +200,7 @@ The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review
 
 ### Cloud SIEM
 
-You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. Rather than wait for 14 days for an Insight to trigger, you want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
+You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. You want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
 
 1. In Copilot, you type the source for Cloud SIEM network records:
    ```

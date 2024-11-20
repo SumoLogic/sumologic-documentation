@@ -28,7 +28,7 @@ import Iframe from 'react-iframe'; 
 
 ### Access Cloud SIEM
  
-To access Cloud SIEM, in the main Sumo Logic menu select **Cloud SIEM**.  <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" style={{border: '1px solid gray'}} width="150"/>
+To access Cloud SIEM, in the main Sumo Logic menu select **Cloud SIEM**.  <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" style={{border: '1px solid gray'}} width="200"/>
 
 Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
 
@@ -207,7 +207,7 @@ Cloud SIEM automatically normalizes, enriches, and correlates all your data acro
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-1.png')} alt="Records creation" style={{border: '1px solid gray'}} width="800"/>
 
-When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score is 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity.
+When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score exceeds 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity.
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" style={{border: '1px solid gray'}} width="725"/>
 
@@ -269,11 +269,11 @@ Cloud SIEM typically processes thousands or millions of records and boils them d
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-records-signals-insights.png')} alt="Records, signals, and insights" style={{border: '1px solid gray'}} width="400"/>
 
-On the Cloud SIEM main page, you'll see a panel similar to this one. In this case, 199 thousand records have been ingested and processed into just 51 Signals. Some Signals could be false alarms, but many are worth investigating anyway. But, 51 is still way too many for the average SOC analyst to sift through every day. So, how do you know which Signals to pay attention to first?
+On the Cloud SIEM main page, you'll see a panel similar to this one. In this case, 52 thousand records have been ingested and processed into 4 thousand Signals. Some Signals could be false alarms, but many are worth investigating anyway. But, 4 thousand is still way too many for the average SOC analyst to sift through every day. So, how do you know which Signals to pay attention to first?
 
-Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just four Insights were created out of 51 Signals.
+Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just one Insight was created out of all those Signals.
 
-An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
+An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created because the total activity score exceeds 12.
 
 ## Get started with threat investigation
 
@@ -322,17 +322,17 @@ However, sometimes you may want to investigate deeper, to really understand what
 
 The Signals tab lists all the Signals created by rules that have been triggered in your system in the last 14 days, by default. Signals provide summaries of potential security threats. Remember, not all Signals are security incidents. After all, there are legitimate reasons why someone might be logged in to two different devices at the same time, or why there have been several failed password attempts on an account.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals.png')} alt="Signals" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals.png')} alt="Signals" style={{border: '1px solid gray'}} width="800"/>
 
 When you click into a Signal, you’ll have the option to see the full details of the record that triggered it. This includes information like the IP address, geolocation, threat level, and other information that can aid you in your investigation.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" style={{border: '1px solid gray'}} width="800"/>
 
 #### Entities
 
-The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score reaches at least 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
+The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score exceeds 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="800"/>
 
 ### Bring it back to Sumo Logic search
 

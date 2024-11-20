@@ -91,13 +91,22 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
-1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute.
-   ```sql
-   {Your scope for data, example: _sourceCategory= alpha }
-   | timeslice 1d
-   | sum(_size) as datasize by _timeslice
-   | sort by datasize desc
-   | limit 1
+1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
+   ```sql    
+    _sourceCategory=<source category> AND _index=<partition name>
+    | timeslice 1m
+    | sum(_size) as bytes by _timeslice
+    | bytes/1Mi as mbytes
+    | formatDate(_timeslice, "yyyy-MM-dd") as dateslice
+    | max(mbytes) as max_mb_per_min by dateslice
+    | round(max_mb_per_min, 2) as max_mbpmin
+    | round(max_mb_per_min * 1.1, 2) as %"max_mbpmin_110%"
+    | round(max_mb_per_min * 1.2, 2) as %"max_mbpmin_120%"
+    | round(max_mb_per_min * 1.5, 2) as %"max_mbpmin_150%"
+    | round(max_mb_per_min * 1.75, 2) as %"max_mbpmin_175%"
+    | round(max_mb_per_min * 2, 2) as %"max_mbpmin_200%"
+    | sort by dateslice asc
+    | fields -max_mb_per_min
    ```
 1. Keep this value and add a 10% to 15% buffer while setting up **Minute Volume** ingest budgets.
 1. Complete ingest budget setup.

@@ -117,7 +117,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 - **HTTP Status Codes Over Time.** Shows HTTP status codes over time in timeslices of five minutes for the last three hours in a timeline.
 - **Traffic and Megabytes Served.** Provides information on site traffic hits and Megabytes served in timeslices of one hour over the last 24 hours in a combination column and line chart.
 
-## Upgrading the Amazon CloudFront app (Optional)
+## Upgrade/Downgrade the Amazon CloudFront app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

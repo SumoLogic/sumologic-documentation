@@ -238,7 +238,7 @@ See information on scheduled searches that have been triggered, along with detai
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
 
-## Upgrading the Sumo Logic Audit app (Optional)
+## Upgrade/Downgrade the Sumo Logic Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

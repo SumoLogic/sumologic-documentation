@@ -37,7 +37,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-The MongoDB receiver fetches stats from a MongoDB instance using the [golang mongo driver](https://github.com/mongodb/mongo-go-driver). Stats are collected via MongoDB's `dbStats` and `serverStatus` commands. The MongoDB receiver extracts values from the result and converts them to OpenTelemetry metrics.
+The MongoDB receiver fetches stats from a MongoDB instance using the [golang mongo driver](https://github.com/mongodb/mongo-go-driver). Stats are collected via MongoDB's `dbStats`, `serverStatus`, and `top` commands. The MongoDB receiver extracts values from the result and converts them to OpenTelemetry metrics.
 
 ### For logs collection
 
@@ -96,7 +96,10 @@ In this step, you will configure the YAML file required for MongoDB collection.
 
 Below are the inputs required:
 
-- **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. (For example: `localhost:27017`.)
+- **`Endpoint (no default)`**. The hostname and port of the MognoDB instance, separated by a colon. This is required to scrap metrics. (For example: `localhost:27017`.)
+  :::note
+    For collecting metrics, *only* use the `mongod` endpoint. The Sumo Logic OpenTelemetry collector *does not* support the `mongos` endpoint.
+  :::
 - **`Logs Path`**. Provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
 - **`password (optional)`**. If authentication is required, the password can be provided here.

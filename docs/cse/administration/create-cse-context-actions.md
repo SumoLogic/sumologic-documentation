@@ -107,10 +107,6 @@ The only required parameter in the URL is `{{value}}`. Depending on your use cas
 
 `https://www.criminalip.io/asset/report/{{value}}`
 
-For example:
-
-<img src={useBaseUrl('img/cse/context-action-criminal-ip-example.png')} alt="Criminal IP context action example" style={{border: '1px solid gray'}} width="500"/>
-
 ## Template parameters for Context Actions
 
 The table below defines the parameters you can use in the URL template for a Context Action.

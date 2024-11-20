@@ -147,7 +147,7 @@ The **SailPoint - Security** dashboard provides a summary of source deletion eve
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
 
-## Upgrading the SailPoint app (Optional)
+## Upgrade/Downgrade the SailPoint app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
