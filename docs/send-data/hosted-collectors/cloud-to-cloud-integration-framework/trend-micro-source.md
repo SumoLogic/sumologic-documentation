@@ -13,7 +13,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/trend-micro/example.json'
 import TerraformExample from '!!raw-loader!/files/c2c/trend-micro/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="webex-logo" width="120" />
+<img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="logo" width="120" />
 
 Trend Micro is a global leader in cybersecurity solutions, offering a range of products and services to protect against online threats. The company specializes in security for cloud environments, networks, endpoints, and hybrid infrastructure, leveraging advanced threat intelligence and artificial intelligence.
 
