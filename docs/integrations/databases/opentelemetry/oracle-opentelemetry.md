@@ -17,9 +17,9 @@ This app is tested with the following Oracle versions:
 
 - Non-Kubernetes: Oracle Database 23 Release 23.4.0.24.05.
 
-Oracle logs like listner, alert and traditional audit logs (oracle version <= 19c) are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) whereas unified audit logs (oracle version >= 21c) are collected through [syslog](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) for linux environment and [windowseventlog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/) receiver for windows environment.
+Oracle logs, such as listener, alert, and traditional audit logs (oracle version <= 19c) are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) whereas, unified audit logs (oracle version >= 21c) are collected through [syslog](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) for the Linux environment and [windowseventlog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/) receiver for windows environment.
 
-Metrics are collected through [Oracledb receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/oracledbreceiver)
+Metrics are collected through [Oracledb receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/oracledbreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
 
@@ -90,8 +90,8 @@ If logging is not enabled, you can configure it by following the steps below.
 
     The location of these logs will be required when you set up the app through the app catalog.
 
-  - **For Oracle version 21c and above**.  Based on [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configuered, audit logs exported will direclty be ingested to sumo using syslog or windows event log. 
-  For linux environment instead of redirecting audit logs to a file we need to directly redirect it to local port. In the next step, otel collector can be configured to listen to this port to send log to sumo. This can be done using a below configuration in rsyslog.conf : 
+  - **For Oracle version 21c and above**. Based on the [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configured, audit logs exported will be directly ingested to Sumo Logic using syslog or windows event log. 
+For the Linux environment, instead of redirecting audit logs to a file, we need to redirect them to the local port. In the next step, the OTel collector can be configured to listen to this port and then send the log to Sumo Logic. This can be done using the below configuration in the `rsyslog.conf`. : 
   ```local7.info @@127.0.0.1:10514```
   This will redirect all the unified audit logs to localhost port 10514.
 
@@ -185,8 +185,8 @@ Below are the inputs required:
 - **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
 - **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
 - **`Audit Logs`**. 
-  - For **Traditional Audit Logs** - Path of the log file configured to capture oracle audit logs.
-  - For **Unified Audit Logs** - You need to select the OS where the oracle is setup - windows or linux. For Oracle on windows machine no parameter is required. Only respective event id will be ingested. For linux environment you need to give the **port** (configured in prerequisite steps for linux environment) where the syslog receiver should listen to, for sending the logs to sumo.
+  - For **Traditional Audit Logs**, path of the log file is configured to capture oracle audit logs.
+  - For **Unified Audit Logs**, you need to select the OS where the Oracle is setup - Windows or Linux. For Oracle on Windows machine, no parameter is required. Only respective event IDs will be ingested. For the Linux environment, you need to provide the **port** (configured in pre-requisite steps for the Linux environment) which the syslog receiver should listen to for sending the logs to Sumo Logic.
 - **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script can be configured in other logs.
 - **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
 - **`username`**. Username for the OracleDB connection.
@@ -552,7 +552,7 @@ Recent Jobs in the database. A table of information about recent database jobs, 
 ### Unified Audit Syslog
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Unified-Audit-Syslog.png' alt="Monitor Performance by DB Script" />
-See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. In addition to this dashboard gives insight around logon status trend, top current and database users. This dashboard work with unified audit logs exported from both windows and linux environment.
+See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. Additionally, this dashboard also provides insight around logon status trend, top current, and database users. This dashboard work with unified audit logs exported from both Windows and Linux environment.
 
 ### Performance Details
 
