@@ -228,7 +228,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### AWS Application Load Balancer - CloudTrail Audit
+### CloudTrail Audit
 
 The **AWS Application Load Balancer - CloudTrail Audit** dashboard provides a comprehensive overview of AWS Application Load Balancer activities through CloudTrail audit logs. It visualizes successful and failed events globally, event trends, error details, and user activities, offering insights into load balancer performance, security, and usage patterns.
 
