@@ -1,7 +1,7 @@
 ---
 id: application-load-balancer
 title: AWS Application Load Balancer
-description: The Sumo Logic App for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) App that gives you visibility into the health of your Application Load Balancer and target groups.
+description: The Sumo Logic app for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) app that gives you visibility into the health of your Application Load Balancer and target groups.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The AWS Application Load Balancer functions at the application layer, receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 
-The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
+The Sumo Logic app for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
 ## Log types
 
@@ -105,7 +105,7 @@ import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create Field Extraction Rule (FER) for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityAlbAccessLogsFER
@@ -116,7 +116,9 @@ Scope (Specific Data): account=* region=* (http or https or h2 or grpcs or ws or
 ```sql title="Parse Expression"
 parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId | tolowercase(loadbalancer) as loadbalancer | fields loadbalancer
 ```
-#### Create/Update Field Extraction Rule(s) for ALB CloudTrail logs
+
+#### Create/Update Field Extraction Rule(s) for Application Load Balancer CloudTrail logs
+
 ```sql
 Rule Name: AwsObservabilityALBCloudTrailLogsFER
 Applied at: Ingest Time
@@ -135,7 +137,7 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 | fields region, namespace, loadbalancer, accountid
 ```
 
-## Installing the AWS Application Load Balancer App
+## Installing the AWS Application Load Balancer app
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -143,7 +145,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Application Load Balancer Dashboards
+## Viewing AWS Application Load Balancer dashboards
 
 ### Overview
 

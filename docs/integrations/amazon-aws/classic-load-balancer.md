@@ -1,7 +1,7 @@
 ---
 id: classic-load-balancer
 title: AWS Classic Load Balancer
-description: The Sumo Logic App for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) App which helps you monitor the classic load balancer.
+description: The Sumo Logic app for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) app which helps you monitor the classic load balancer.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Elastic Load Balancer Classic distributes the incoming application traffic across multiple EC2 instances in multiple Availability Zones.
 
-The Sumo Logic App for AWS Elastic Load Balancer Classic is a unified logs and metrics App that helps you monitor the classic load balancer. The preconfigured dashboards provide information on the latency, HTTP backend codes, requests, and host status, that help you investigate the issues in the load balancer.
+The Sumo Logic app for AWS Elastic Load Balancer Classic is a unified logs and metrics App that helps you monitor the classic load balancer. The preconfigured dashboards provide information on the latency, HTTP backend codes, requests, and host status, that help you investigate the issues in the load balancer.
 
-## Log and Metric Types
+## Log and metric types
 
 ELB logs are stored as *.log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
 
@@ -26,7 +26,7 @@ The log format is described in [AWS ELB Access Log Collection](http://docs.aws.a
 For details on AWS Classic Load Balancer metrics, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-cloudwatch-metrics.html).
 
 
-### Sample Access Log Message
+### Sample access log message
 
 ```json
 2017-11-06T23:20:38 stag-www-lb 250.38.201.246:56658 10.168.203.134:23662 0.007731 0.214433 0.000261 404 200 3194 123279 \
@@ -61,7 +61,6 @@ account={{account}} region={{region}} Namespace={{namespace}} \
 loadbalancername={{loadbalancername}} metric=HTTPCode_ELB_4XX \
 Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
-
 
 ## Collecting logs and metrics for the AWS Classic Load Balancer
 
@@ -124,6 +123,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 ```
 
 #### Create/Update Field Extraction Rule(s) for Classic Load Balancer CloudTrail logs
+
 ```sql
 Rule Name: AwsObservabilityCLBCloudTrailLogsFER
 Applied at: Ingest Time
@@ -138,52 +138,52 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBa
 | fields region, namespace, loadbalancername, accountid
 ```
 
-## Install the AWS Classic Load Balancer App
+## Install the AWS Classic Load Balancer app
 
-Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing the AWS Classic Load Balancer Dashboards
+## Viewing the AWS Classic Load Balancer dashboards
 
-### AWS Classic Load Balancer - Overview
+### Overview
 
-**AWS Classic Load Balancer - Overview** dashboard provides visibility into the health of your Classic Load Balancer, with at-a-glance views of latency, request and host status, requests from malicious sources, and HTTP backend codes.
+The **AWS Classic Load Balancer - Overview** dashboard provides visibility into the health of your Classic Load Balancer, with at-a-glance views of latency, request and host status, requests from malicious sources, and HTTP backend codes.
 
 Use this dashboard to:
-* Monitor requests to each load balancer to ensure the load is being distributed as desired
-* Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts
-* Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections
+* Monitor requests to each load balancer to ensure the load is being distributed as desired.
+* Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts.
+* Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
 
-### AWS Classic Load Balancer - Response Analysis
+### Response Analysis
 
-**AWS Classic Load Balancer - Response Analysis** dashboard provides insights into how your load balancers respond to clients.
+The **AWS Classic Load Balancer - Response Analysis** dashboard provides insights into how your load balancers respond to clients.
 
 Use this dashboard to:
-* Monitor incoming client locations for all 5XX, 4XX and 3XX error responses.
+* Monitor incoming client locations for all 5XX, 4XX, and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
 
-### AWS Classic Load Balancer - Backend Response Analysis
+### Backend Response Analysis
 
 The **AWS Classic Load Balancer - Backend Response Analysis** dashboard provides insights into how various backend servers respond to client requests.
 
 Use this dashboard to:
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
-* Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures
+* Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
-### AWS Classic Load Balancer - Latency Overview
+### Latency Overview
 
-**The AWS Classic Load Balancer - Latency Overview** dashboard provides insights into load balancers' response times and availability zones, including backend log response times.
+The **The AWS Classic Load Balancer - Latency Overview** dashboard provides insights into load balancers response times and availability zones, including backend log response times.
 
 Use this dashboard to:
 * Monitor response times by load balancer, and availability zone.
@@ -192,53 +192,52 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
 
-### AWS Classic Load Balancer - Latency Details  
+### Latency Details  
 
-**The AWS Classic Load Balancer - Latency Details** dashboard provides insights into client latency by domain and ELB server and processing times by ELB server throughout your infrastructure.
+The **The AWS Classic Load Balancer - Latency Details** dashboard provides insights into client latency by domain and ELB server and processing times by ELB server throughout your infrastructure.
 
-Use this dashboard to:
-* Troubleshoot load balancer performance via detailed views across client, request processing and response time latencies.
+Use this dashboard to troubleshoot load balancer performance via detailed views across client, request processing, and response time latencies.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Details.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
-### AWS Classic Load Balancer - Connection and Host Status
+### Connection and Host Status
 
-**The AWS Classic Load Balancer - Connection and Host Status** dashboard provides insights into active and rejected connections, backend connection errors, and healthy and unhealthy hosts.
+The **AWS Classic Load Balancer - Connection and Host Status** dashboard provides insights into active and rejected connections, backend connection errors, and healthy and unhealthy hosts.
 
 Use this dashboard to:
-* Monitor active connections, new connections, rejected connections, and connection errors for load balancers
-* Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure
+* Monitor active connections, new connections, rejected connections, and connection errors for load balancers.
+* Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
-### AWS Classic Load Balancer - Requests and Processed Bytes  
+### Requests and Processed Bytes  
 
-**AWS Classic Load Balancer - Requests and Processed Bytes** dashboard provides insights into client requests, network traffic, and processed data.
+The **AWS Classic Load Balancer - Requests and Processed Bytes** dashboard provides insights into client requests, network traffic, and processed data.
 
 Use this dashboard to:
-* Monitor client request load, network traffic, and processed bytes to determine how to configure load balancers for optimal performance best
-* Determine how to allocate best backend resources based on load
+* Monitor client request load, network traffic, and processed bytes to determine how to configure load balancers for optimal performance best.
+* Determine how to allocate best backend resources based on load.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
-### AWS Classic Load Balancer - Threat Intel
+### Threat Intel
 
-**AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat
+The **AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Dashboard panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
-* Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
+* Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.
 * Monitor malicious confidence level for all incoming malicious IP addresses posing the threats.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Threat-Intel.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
-### AWS Classic Load Balancer - CloudTrail Audit
+### CloudTrail Audit
 
-**AWS Classic Load Balancer - CloudTrail Audit** dashboard provides a comprehensive overview of AWS Classic Load Balancer activities through CloudTrail audit logs. It visualizes successful and failed events globally, event trends, error details, and user activities, offering insights into load balancer performance, security, and usage patterns.
+The **AWS Classic Load Balancer - CloudTrail Audit** dashboard provides a comprehensive overview of activities through CloudTrail audit logs. It visualizes successful and failed events globally, event trends, error details, and user activities, offering insights into load balancer performance, security, and usage patterns.
 
 Use this dashboard to:
 * Monitor the geographical distribution of successful and failed load balancer events, allowing for quick identification of regions with high activity or potential issues.
-* Track the overall success rate of load balancer events and analyze trends over time, helping to identify any sudden changes or patterns in performance.
+* Track the overall success rate of load balancer events and analyze trends over time, helping to identify sudden changes or patterns in the performance.
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
-* Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
+* Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />

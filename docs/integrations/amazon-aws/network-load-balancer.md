@@ -44,7 +44,8 @@ Namespace for **Amazon Network Load Balancer** Service is **AWS/NetworkELB.**
 
 Create Field Extraction Rule for AWS Network Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-#### Create/Update Field Extraction Rule(s) for Classic Load Balancer CloudTrail logs
+#### Create/Update Field Extraction Rule(s) for Network Load Balancer CloudTrail logs
+
 ```sql
 Rule Name: AwsObservabilityNLBCloudTrailLogsFER
 Applied at: Ingest Time
@@ -77,15 +78,13 @@ Save it
 
 ## Installing the AWS Network Load Balancer app
 
-This section has instructions for installing the Sumo Logic app for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
-
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Network Load Balancer Dashboards
+## Viewing AWS Network Load Balancer dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
 
@@ -93,7 +92,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### Overview
 
-**The AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
+The **The AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
 
 Use this dashboard to:
 * Get an at-a-glance view of the number of errors and status of backend hosts.
@@ -105,18 +104,14 @@ Use this dashboard to:
 
 ### Active and New Flows
 
-**The AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic.
-
-Use this dashboard to:
-* Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts.
+The **AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic. Use this dashboard to to monitor trends around active and new flows (connections) to make sure they line up with expectations, then use this information to scale up/scale down backend hosts.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Flows.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Host Health Status
 
-
-**The AWS Network Load Balancer - Host Health Status** dashboard provides detailed insights into the number of healthy and unhealthy hosts.
+The **AWS Network Load Balancer - Host Health Status** dashboard provides detailed insights into the number of healthy and unhealthy hosts.
 
 Use this dashboard to:
 
@@ -125,11 +120,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-health.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
-
-
 ### Errors
 
-**The AWS Network Load Balancer - Errors** dashboard provides detailed insights into the errors reported by the network load balancer. This dashboard shows information for the total number of TLS handshakes that failed during negotiation between a client and a TLS listener, and the total number of TLS handshakes that failed during negotiation between a TLS listener and a target.
+The **AWS Network Load Balancer - Errors** dashboard provides detailed insights into the errors reported by the network load balancer. This dashboard shows information for the total number of TLS handshakes that failed during negotiation between a client and a TLS listener, and the total number of TLS handshakes that failed during negotiation between a TLS listener and a target.
 
 Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
@@ -138,36 +131,29 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-errors.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
-
 ### Reset (RST) Packets
 
+The **AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detailed insights into the number reset (RST) packets received by the network load balancer. The dashboard shows the information for the total number of reset (RST) packets sent from a client to a target , the total number of reset (RST) packets generated by the load balancer, and the total number of reset (RST) packets sent from a target to a client.
 
-**The AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detailed insights into the number reset (RST) packets received by the network load balancer. The dashboard shows the information for the total number of reset (RST) packets sent from a client to a target , the total number of reset (RST) packets generated by the load balancer, and the total number of reset (RST) packets sent from a target to a client.
-
-Use this dashboard to:
-* To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
+Use this dashboard to monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-rst.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Processed Bytes
 
-**The AWS Network Load Balancer - Processed Bytes** dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic.
-
-Use this dashboard to:
-* Monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
+The **AWS Network Load Balancer - Processed Bytes** dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic. Use this dashboard to monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-bytes.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Consumed LCUs
 
-The **AWS Network Load Balancer - Consumed LCUs** dashboard shows you the total number of load balancer capacity units (LCU) used by your load balancer by network protocol.
+The **AWS Network Load Balancer - Consumed LCUs** dashboard shows you the total number of load balancer capacity units (LCU) used by your load balancer by network protocol. Use this dashboard to optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol.
 
+:::note
 You pay for the number of LCUs that you use per hour.
-
-Use this dashboard to:
-* Optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol.
+:::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
@@ -179,6 +165,6 @@ Use this dashboard to:
 * Monitor the geographical distribution of successful and failed load balancer events, allowing for quick identification of regions with high activity or potential issues.
 * Track the overall success rate of load balancer events and analyze trends over time, helping to identify any sudden changes or patterns in performance.
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
-* Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
+* Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Network-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
