@@ -40,6 +40,28 @@ Namespace for **Amazon Network Load Balancer** Service is **AWS/NetworkELB.**
 1. Search for the “**networkloadbalancer**” field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
+### Field Extraction Rule(s)
+
+Create Field Extraction Rule for AWS Network Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+
+#### Create/Update Field Extraction Rule(s) for Classic Load Balancer CloudTrail logs
+```sql
+Rule Name: AwsObservabilityNLBCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
+```
+
+```sql title="Parse Expression"
+json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "apiVersion" as event_source, region, accountid, networkloadbalancer, loadbalancertype, loadbalancerarn, api_version nodrop 
+|"" as namespace
+| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
+| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype, networkloadbalancer, f1 nodrop
+| if(loadbalancertype matches "network", "aws/nlb", if(balancertype matches "net", "aws/nlb", namespace)) as namespace
+| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype matches "app", "aws/applicationelb", namespace)) as namespace
+| where namespace="aws/nlb" or isEmpty(namespace)
+| toLowerCase(networkloadbalancer) as networkloadbalancer  
+| fields region, namespace, networkloadbalancer, accountid
+```
 
 ### Metric Rules
 
@@ -78,7 +100,7 @@ Use this dashboard to:
 * Identify load balancers with the most number of unhealthy hosts.
 * Monitor trends around active connections, bytes processed, and reset packets to ensure load balancers are operating as expected.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Overview.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Overview.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Active and New Flows
@@ -88,7 +110,7 @@ Use this dashboard to:
 Use this dashboard to:
 * Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Flows.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Flows.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Host Health Status
@@ -101,7 +123,7 @@ Use this dashboard to:
 * Get a quick overview of the number of healthy and unhealthy hosts.
 * Monitor trends around the number of unhealthy hosts to spot potential service disruptions that could warrant deeper investigation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-health.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-health.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 
@@ -113,7 +135,7 @@ Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
 * Monitor TLS handshake errors during negotiation between a TLS listener and a target. Possible causes for this error include a mismatch of ciphers or protocols.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-errors.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-errors.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 
@@ -125,7 +147,7 @@ Use this dashboard to:
 Use this dashboard to:
 * To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-rst.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-rst.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Processed Bytes
@@ -135,7 +157,7 @@ Use this dashboard to:
 Use this dashboard to:
 * Monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-bytes.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-bytes.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 
 ### Consumed LCUs
@@ -147,7 +169,7 @@ You pay for the number of LCUs that you use per hour.
 Use this dashboard to:
 * Optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
 
 ### CloudTrail Audit
 
@@ -159,4 +181,4 @@ Use this dashboard to:
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
 * Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Network-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
