@@ -90,7 +90,10 @@ If logging is not enabled, you can configure it by following the steps below.
 
     The location of these logs will be required when you set up the app through the app catalog.
 
-  - **For Oracle version 21c and above**.  Based on [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configuered, audit logs exported will direclty be ingested to sumo using syslog or windows event log. For linux environment instead of redirecting audit logs to a file we need to directly redirect it to local port. In the next step, otel collector can be configured to listen to this port to send log to sumo.
+  - **For Oracle version 21c and above**.  Based on [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configuered, audit logs exported will direclty be ingested to sumo using syslog or windows event log. 
+  For linux environment instead of redirecting audit logs to a file we need to directly redirect it to local port. In the next step, otel collector can be configured to listen to this port to send log to sumo. This can be done using a below configuration in rsyslog.conf : 
+  ```local7.info @@127.0.0.1:10514```
+  This will redirect all the unified audit logs to localhost port 10514.
 
 #### Performance metrics script setup
 
