@@ -31,25 +31,16 @@ With its intuitive interface, Copilot automatically generates log searches from 
 
 ### Key features
 
-Copilot reduces manual effort in log searches by combining prebuilt insights with natural language query analysis, eliminating the need for complex query syntax.  Designed to address common challenges such as syntax errors and steep learning curves, Copilot enhances usability and accelerates time to insights across your organization. With sub-2-second response times with over 90% translation accuracy, Copilot ensures fast and dependable results for all supported log types.
+Copilot accelerates incident response by combining prebuilt contextual insights with natural language queries and enhancing time to insights for users across your organization. With sub-3-second response times with over 90% translation accuracy for most queries, Copilot ensures fast and dependable results for supported log sources.
 
-* **Natural language queries**. Ask questions in plain English—no need to enter query syntax.
+* **Natural language queries**. Ask questions in plain English.
 * **Contextual suggestions**. Get automated suggestions tailored to your search, accelerating your workflow.
-* **Conversation history**. Save and resume troubleshooting sessions without losing valuable context.
+* **Conversation history**. Save and resume troubleshooting sessions without losing context.
 * **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards.
-* **Log compatibility**. Copilot supports structured logs, semi-structured logs (e.g., Cohesity logs), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
-* **Enhanced query experience**. Provides auto-completion to streamline natural language queries.
+* **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
+* **Enhanced query experience**. Auto-complete to streamline natural language queries.
 
-## Use cases
-
-Copilot supports users at all expertise levels:
-
-* **Novices**. Simplifies log analysis for new users or teams unfamiliar with Sumo Logic.
-* **Practitioners**. Provides query suggestions and assists with query refinement.
-* **Experts**. Offers IDE-style completion assistance for faster complex query building.
-
-
-## Security compliance and legal
+## Security and compliance
 
 Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
@@ -60,7 +51,7 @@ Additionally, all aspects of our service, including Copilot, adhere to the secur
 
 ### Who benefits from Copilot?
 
-Copilot is ideal for:
+Copilot is ideal for users of all skill levels:
 
 * **On-call engineers**. Accelerate time to resolution by surfacing key troubleshooting insights.
 * **Security engineers**. Obtain security insights rapidly for faster security incident resolution.
@@ -73,19 +64,19 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot:
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab on the Sumo Logic home page.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="150" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
 
 ### Step 2: Review the auto-selected source
 
-Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration. In this example, we'll select a source for AWS WAF.
+Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration. In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
 ### Step 3: Execute a Suggestion
 
-Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are tailored to the specific data source you've chosen.
+Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are tailored to the specific source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
@@ -93,13 +84,15 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 #### Ask a question
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**.
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a work in the search bar to trigger completions based on the keyword.
+
+<!-- BA to upload to YouTube DEMO: https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing -->
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
-Break your questions into smaller, specific prompts to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 <!-- TO DO
 ##### Autocompletion for natural language
@@ -123,9 +116,9 @@ The following rules are used to deduce chart type:
 * If both latitude and longitude fields exist, it returns a MAP chart type.
 * If there is only one field and one record, it returns an SVP chart type. Example query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | count`
 * If a `sort` operator is present and there are string fields, it returns a TABLE. Given that there is a `sort` operator, probably the user is interested in `count`. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | sort by _count`
-* If there is a `_timeslice` field, it returns LINE chart type if there are numeric fields or a TABLE chart type if there are string fields.
+* If there is a `_timeslice` field, it returns a LINE chart type if there are numeric fields or a TABLE chart type if there are string fields.
 * If there is one string field, one numeric field, and record count is less than 6, it returns a PIE chart type. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename"`.
-* If there is one string field, less than 3 numeric field, and record count is less than 20, it returns a LINE chart.
+* If there is one string field, less than 3 numeric fields, and record count is less than 20, it returns a LINE chart.
 * If none of the above conditions are met, it defaults to returning a TABLE chart type.
 
 If required, select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
@@ -143,9 +136,9 @@ You can manually edit your log search query code if needed.
 To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 :::
 
-#### JSON Syntax Rules
+#### Compatible Log Formats
 
-Copilot querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query unstructured data, metrics, or traces.
+Copilot querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query metrics or trace telemetry.
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
@@ -217,7 +210,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
 
 1. In Copilot, you type the source for Cloud SIEM network records:
    ```
-   * _index=sec_record_network
+   _index=sec_record_network
    ```
 1. You know what you are looking for. So, you ask:
    ```
@@ -245,6 +238,10 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
 1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next.
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.
+
+## Role Based Access Control
+
+Role Based Access Control is not supported for contextual Suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search and will see the error: `""`.
 
 ## Feedback
 
