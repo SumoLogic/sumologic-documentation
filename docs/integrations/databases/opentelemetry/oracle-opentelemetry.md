@@ -17,7 +17,7 @@ This app is tested with the following Oracle versions:
 
 - Non-Kubernetes: Oracle Database 23 Release 23.4.0.24.05.
 
-Oracle logs, such as listener, alert, and traditional audit logs (oracle version <= 19c) are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) whereas, unified audit logs (oracle version >= 21c) are collected through [syslog](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) for the Linux environment and [windowseventlog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/) receiver for windows environment.
+Oracle logs, such as listener, alert, and traditional audit logs (Oracle version 19c and below) are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) whereas, unified audit logs (Oracle version 21c and above) are collected through [syslog](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) for the Linux environment and [windowseventlog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/) receiver for windows environment.
 
 Metrics are collected through [Oracledb receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/oracledbreceiver).
 
