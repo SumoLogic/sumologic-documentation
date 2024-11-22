@@ -458,6 +458,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-sql-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
@@ -465,6 +466,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
@@ -1322,6 +1324,7 @@ module.exports = {
         },
       ],
     },
+    'search/copilot',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -2459,6 +2462,7 @@ integrations: [
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
@@ -2549,7 +2553,7 @@ integrations: [
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/security-analytics',
-          // 'integrations/sumo-apps/kickstart-data-astronomy',
+          // 'integrations/sumo-apps/kickstart-data',
         ],
       },
       {
@@ -2805,11 +2809,11 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/sensors/index'},
           items: [
+            'cse/sensors/ingest-zeek-logs',
             'cse/sensors/sensor-download-locations',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
             'cse/sensors/log-sensor-troubleshooting',
-            'cse/sensors/ingest-zeek-logs',
           ],
         },
         {
@@ -2889,6 +2893,7 @@ integrations: [
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
         'cloud-soar/overview',
+        'cloud-soar/introduction',
         'cloud-soar/compared-to-automation-service',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',

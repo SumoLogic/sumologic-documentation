@@ -149,6 +149,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
+  <p>Identify security threats by analyzing threat events and device events.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="160" /><h4>KnowBe4</h4></a>
   <p>Monitor and analyze KnowBe4 Phishing Security logs.</p>
   </div>
