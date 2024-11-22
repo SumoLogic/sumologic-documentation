@@ -35,7 +35,7 @@ Copilot accelerates incident response by combining prebuilt contextual insights 
 
 * **Natural language queries**. Ask questions in plain English.
 * **Contextual suggestions**. Get suggestions relevant to your troubleshooting and investigations context.
-* **Conversation history**. Save and resume troubleshooting or investigations sessions without losing context.
+* **Conversation history**. Save and resume troubleshooting or investigation sessions without losing context.
 * **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards.
 * **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
