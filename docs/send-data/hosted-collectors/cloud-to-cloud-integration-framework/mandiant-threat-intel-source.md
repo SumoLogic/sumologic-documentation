@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
 
-Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. The Mandiant Threat Intel integration ingests the indicators data from Mandiant API and send it to Sumo as normalized threat indicators.
+Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. The Mandiant Threat Intel integration ingests the indicators data from Mandiant API and sends it to Sumo Logic as normalized threat indicators.
 
 ## Data collected
 
