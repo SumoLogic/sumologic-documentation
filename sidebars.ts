@@ -1324,6 +1324,7 @@ module.exports = {
         },
       ],
     },
+    'search/copilot',
     {
       type: 'category',
       label: 'Search Query Language',
