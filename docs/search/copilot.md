@@ -104,16 +104,22 @@ Break your questions into smaller, specific requirements to help Copilot provide
 see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
 --->
 
-Copilot is built on [Sumo Logic search query language](/docs/search/search-query-language). Below are key functions you can call using natural language prompts:
+##### Tips and tricks
 
-* `Count logs by` [field(s)]
-* `Group logs by` [field(s)]
+* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
+* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
+* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
+* **Include time for timeslicing**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
+
+Below are examples of how you can phrase queries if the autocompletions and contextual suggestions are not relevant to you:
+
+* `Count logs by` [field(s)] and `Group logs by` [field(s)] produce the same result
 * `Sort by` [field(s)] [in descending order]
-* `Percentage breakdown in` [field] `values`
+* `Percentage by` [field] `values`
 * `Find` [stat] `for` [field] (max, min, standard deviation, etc.)
 * `Filter by` [field] `contains` [keyword]
-   :::note
-   Keyword searches are case-sensitive
+   :note
+   Keyword searches are case-sensitive.
    :::
 * `Apply logreduce to logs`
 
@@ -121,13 +127,6 @@ Additional prompts can trigger more advanced activities (e.g., mapping network a
 
 * `Analyze risk and severity of network activity`
 * `Identify top application categories accessed`
-
-##### Tips and tricks
-
-* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
-* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
-* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
-* **Include time for timeslicing**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
 
 #### Time range
 
