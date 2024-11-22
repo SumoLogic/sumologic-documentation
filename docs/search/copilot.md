@@ -99,6 +99,31 @@ Break your questions into smaller, specific requirements to help Copilot provide
 see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
 --->
 
+Copilot is built on [Sumo Logic search query language](/docs/search/search-query-language). Below are key functions you can call using natural language prompts:
+
+* `Count logs by` [field(s)]
+* `Group logs by` [field(s)]
+* `Sort by` [field(s)] [in descending order]
+* `Percentage breakdown in` [field] `values`
+* `Find` [stat] `for` [field] (max, min, standard deviation, etc.)
+* `Filter by` [field] `contains` [keyword]
+   :::note
+   Keyword searches are case-sensitive
+   :::
+* `Apply logreduce to logs`
+
+Additional prompts can trigger more advanced activities (e.g., mapping network activity against CrowdStrike):
+
+* `Analyze risk and severity of network activity`
+* `Identify top application categories accessed`
+
+##### Tips and tricks
+
+* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
+* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
+* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
+* **Include time for timeslicing**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
+
 #### Time range
 
 By default, Copilot searches run with a 15-minute time range. If your search returns no results, consider expanding the time range.
@@ -152,13 +177,6 @@ _sourceCategory=* "{" "}"
 
 If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 
-#### Tips and tricks
-
-* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
-* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
-* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
-* **Include time for timeslicing**. When timeslicing data, ensure you mention `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
-
 #### History
 
 Often, users work on multiple incidents at the same time. To view Copilot interactions related to these incidents, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
@@ -171,7 +189,7 @@ Second, you can resume from a specific query in a conversation by clicking on th
 
 #### New Conversation
 
-To start a new exploration, click **New Conversation**. <br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
+To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
 ### Step 4: Open in Log Search
