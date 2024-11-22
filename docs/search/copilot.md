@@ -119,6 +119,7 @@ Additional prompts can trigger more advanced activities (e.g., mapping network a
 * `Analyze risk and severity of network activity`
 * `Identify top application categories accessed`
 
+
 ##### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
