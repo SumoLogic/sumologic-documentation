@@ -6,12 +6,6 @@ description: Learn about the Sumo Logic collection process for the Microsoft Def
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic app for Microsoft Defender for Cloud is a powerful solution designed to provide Azure cloud security analysts with actionable insights into their cloud security posture. By integrating with Microsoft Defender for Cloud, this app delivers advanced monitoring, alerting, and compliance tracking capabilities through purpose-built dashboards tailored to meet the needs of security teams.
@@ -327,7 +321,7 @@ The **Microsoft Defender for Cloud - Alerts** dashboard provides a centralized v
 
 An affected resources table lists impacted Azure services, such as virtual machines and storage accounts, to assess the scope of incidents. The dashboard also summarizes frequent alert types, enabling recognition of recurring issues like privilege escalation or malware detections. A top action plan provides recommended steps for addressing severe alerts, helping analysts respond swiftly and effectively. Lastly, an alert summary offers detailed descriptions of recent high-severity events, supporting deeper investigation and remediation efforts. This dashboard equips security teams with the insights needed to protect their Azure environment from emerging threats.
 
-<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Microsoft-Defender-for-Cloud-Alerts" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Alerts.png' alt="Microsoft-Defender-for-Cloud-Alerts" />
 
 ### Regulatory Compliance
 
@@ -337,7 +331,7 @@ The dashboard offers detailed breakdowns of passed, failed, and skipped controls
 
 This dashboard empowers teams to prioritize remediation efforts, track progress over time, and strengthen their cloud security posture. With actionable insights and a focus on simplifying regulatory alignment, the dashboard is an essential resource for achieving and maintaining compliance in Azure environments.
 
-<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Microsoft-Defender-for-Cloud-Regulatory-Compliance" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Regulatory-Compliance.png' alt="Microsoft-Defender-for-Cloud-Regulatory-Compliance" />
 
 ### Security Recommendations
 
@@ -347,7 +341,7 @@ The dashboard highlights affected resources, such as Virtual Machines, Storage A
 
 Detailed remediation steps are included in the Top Action Plans, providing clear guidance for resolving high-risk vulnerabilities. This dashboard empowers security teams to proactively secure their Azure environment, streamline remediation workflows, and maintain compliance with organizational security goals.
 
-<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Microsoft-Defender-for-Cloud-Security-Recommendations" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Security-Recommendations.png' alt="Microsoft-Defender-for-Cloud-Security-Recommendations" />
 
 ## Create monitors for Microsoft Defender for Cloud app
 

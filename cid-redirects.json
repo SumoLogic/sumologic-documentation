@@ -1823,6 +1823,7 @@
   "/cid/1963": "/docs/integrations/sumo-apps/enterprise-audit",
   "/cid/1964": "/docs/integrations/security-threat-detection/f5-big-ip-ltm",
   "/cid/1965": "/docs/integrations/security-threat-detection/netskope",
+  "/cid/19665": "/docs/integrations/security-threat-detection/microsoft-defender-for-cloud",
   "/cid/1966": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source",
   "/cid/1987": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source",
   "/cid/1257": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source",

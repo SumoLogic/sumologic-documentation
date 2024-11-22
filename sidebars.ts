@@ -2522,6 +2522,7 @@ integrations: [
           'integrations/security-threat-detection/evident-security-platform',
           'integrations/security-threat-detection/f5-big-ip-ltm',
           'integrations/security-threat-detection/imperva-incapsula',
+          'integrations/security-threat-detection/microsoft-defender-for-cloud',
           'integrations/security-threat-detection/netskope-legacy-collection',
           'integrations/security-threat-detection/netskope',
           'integrations/security-threat-detection/observable-networks',
