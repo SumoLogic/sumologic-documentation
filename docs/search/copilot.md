@@ -34,8 +34,8 @@ With its intuitive interface, Copilot automatically generates log searches from 
 Copilot accelerates incident response by combining prebuilt contextual insights with natural language queries and enhancing time to insights for users across your organization. With sub-3-second response times with over 90% translation accuracy for most queries, Copilot ensures fast and dependable results for supported log sources.
 
 * **Natural language queries**. Ask questions in plain English.
-* **Contextual suggestions**. Get automated suggestions tailored to your search, accelerating your workflow.
-* **Conversation history**. Save and resume troubleshooting sessions without losing context.
+* **Contextual suggestions**. Get suggestions relevant to your troubleshooting and investigations context.
+* **Conversation history**. Save and resume troubleshooting or investigations sessions without losing context.
 * **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards.
 * **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
@@ -259,7 +259,7 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 ## Role Based Access Control
 
-Role Based Access Control is not supported for contextual Suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search and will see the error: `""`.
+Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search and will see the error: `""`.
 
 ## Feedback
 
