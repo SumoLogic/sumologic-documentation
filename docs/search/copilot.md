@@ -47,7 +47,7 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
-Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
+Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts. 
 
 ### Who benefits from Copilot?
 
