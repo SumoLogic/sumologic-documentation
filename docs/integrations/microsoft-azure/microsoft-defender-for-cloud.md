@@ -34,7 +34,7 @@ Key features of the Microsoft Defender for Cloud app include:
 This app includes [built-in monitors](#microsoft-defender-for-cloud-monitors). For details on creating custom monitors, refer to [Create monitors for Microsoft Defender for Cloud app](#create-monitors-for-microsoft-defender-for-cloud-app).
 :::
 
-## Log types  
+## Log types
 
 The Microsoft Defender for Cloud app uses the following logs:
 
