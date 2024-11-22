@@ -118,7 +118,7 @@ Below are examples of how you can phrase queries if the autocompletions and cont
 * `Percentage by` [field] `values`
 * `Find` [stat] `for` [field] (max, min, standard deviation, etc.)
 * `Filter by` [field] `contains` [keyword]
-   :note
+   :::note
    Keyword searches are case-sensitive.
    :::
 * `Apply logreduce to logs`
