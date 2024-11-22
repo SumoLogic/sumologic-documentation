@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic app for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins, and error logs.
 
-This App supports MySQL version 8.0.
+This app supports MySQL version 8.0.
 
 We use the OpenTelemetry collector for MySQL metric collection and for collecting MySQL logs.
 
@@ -21,9 +21,13 @@ The diagram below illustrates the components of the MySQL collection for each da
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#mysql-alerts). For details on creating custom monitors, refer to [Create monitors for MySQL app](#create-monitors-for-mysql-app).
+:::
+
 ## Log and metrics types
 
-The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
+The Sumo Logic app for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
 
 - The MySQL - Overview dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
 - Dashboards in the Metrics folder are based on MySQL metrics.
@@ -42,12 +46,12 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ## Fields creation in Sumo Logic for MySQL
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of MySQL App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of MySQL app installation, if not already present. 
 
-- `db.cluster.name` - User configured. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- `db.system` - Has fixed value of **mysql**
-- `sumo.datasource` - Has fixed value of **mysql**
-- `db.node.name` - Has the value of host name of the machine which is being monitored
+- `db.cluster.name`. User configured. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `db.system`. Has fixed value of **mysql**.
+- `sumo.datasource`. Has fixed value of **mysql**.
+- `db.node.name`. Has the value of host name of the machine which is being monitored.
 
 ## Prerequisites
 
@@ -240,7 +244,6 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 | sort by avg_time | limit  10
 ```
 
-
 This sample metrics query is from the **FSync Op Count** panel.
 
 ```sql title="Sample metrics query"
@@ -249,9 +252,13 @@ sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* 
 
 ## Viewing MySQL dashboards
 
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
+
 ### Overview
 
-The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
+The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, and uptime.
 
 Use this dashboard to:
 - Quickly identify the state of a given database cluster.
@@ -328,3 +335,14 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 <CreateMonitors/>
 
 ### MySQL alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `MySQL - Excessive Slow Query Detected Alert` | This alert gets triggered when we detect the average time to execute a query is more than 15 seconds over a 24 hour time-period | Count > = 100 | Count < 100 |
+| `MySQL - Follower replication lag detected Alert` | This alert gets triggered when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval. | Count > = 900 | Count < 900 |
+| `MySQL - High average query run time Alert` | This alert gets triggered when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes. | Count > = 10 | Count < 10 |
+| `MySQL - High Innodb buffer pool utilization Alert` | This alert gets triggered when we detect that the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval. | Count > = 90 | Count < 90 |
+| `MySQL - Instance down Alert` | This alert gets triggered when we detect that a MySQL instance is down within last 5 minutes interval | Count > = 1 | Count < 1 |
+| `MySQL - Large number of statement errors Alert` | This alert gets triggered when we detect that there are 5 or more statement errors within a 5 minute time interval. | Count > = 5 | Count < 5 |
+| `MySQL - Large number of statement warnings Alert` | This alert gets triggered when we detect that there are 20 or more statement warnings within a 5 minute time interval. | Count > = 20 | Count < 20 |
+| `MySQL - No index used in the SQL statements Alert` | This alert gets triggered when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval. | Count > = 5 | Count < 5 |

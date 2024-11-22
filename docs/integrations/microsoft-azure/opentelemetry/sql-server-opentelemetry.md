@@ -17,16 +17,20 @@ The SQL Server app is a unifies logs and metrics app to help you monitor the ava
 
 This app has been tested with following SQL Server versions:
 
-- Microsoft SQL Server 2016
+- `Microsoft SQL Server 2016`
 
 The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine.
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards"/>
 
+:::info
+This app includes [built-in monitors](#sql-server-alerts). For details on creating custom monitors, refer to [Create monitors for Microsoft SQL Server app](#create-monitors-for-sql-server-app).
+:::
+
 ## Fields creation in Sumo Logic for SQL Server
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of SQL Server App install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of SQL Server app installation, if not already present.
 * `db.cluster.name`. User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `db.system`. Has a fixed value of **sqlserver**.
 * `deployment.environment`. User configured. This is the deployment environment where the SQL Server cluster resides. For example dev, prod, or qa.
@@ -150,7 +154,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ```
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
 ```
-## Sample Metrics
+## Sample metrics
 
 ```json
 {
@@ -183,7 +187,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
+This is a sample log query from the **Error and warning count** panel in the **SQL Server App - Overview** dashboard.
 
 ```sql
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
@@ -192,15 +196,17 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 | count by LogType
 ```
 
-## Sample Metrics Query
-
-The following query is from the **SQL Server - Performance Counters** dashboard > **Page Buffer hit ratio %** panel:
+This is a sample metrics query from the **Page Buffer hit ratio %** panel in the **SQL Server - Performance Counters** dashboard.
 
 ```sql
 sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio
 ```
 
 ## Viewing Microsoft SQL Server dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -225,13 +231,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The **SQL Server - Backup Restore Mirroring** dashboard provides information about:
-
-- Transaction log backup events
-- Database backup events
-- Restore activities
-- Backup failures and reasons
-- Mirroring errors
+The **SQL Server - Backup Restore Mirroring** dashboard provides information about the Transaction log backup events, Database backup events, Restore activities, Backup failures and reasons, and Mirroring errors.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
 
@@ -274,3 +274,13 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 <CreateMonitors/>
 
 ### Microsoft SQL Server alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `SQL Server - AppDomain Alert` | This alert gets triggered when we detect AppDomain related issues in your SQL Server instance. | Count > = 1 | Count < 1 |
+| `SQL Server - Backup Fail Alert` | This alert gets triggered when we detect that the SQL Server backup failed. | Count > = 1 | Count < 1 |
+| `SQL Server - Instance Down Alert` | This alert gets triggered when we detect that the SQL Server instance is down for 5 minutes. | Count > 0 | Count < = 0 |
+| `SQL Server - Insufficient Space Alert` | This alert gets triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count > = 1 | Count < 1 |
+| `SQL Server - Login Fail Alert` | This alert gets triggered when we detect that the user cannot login to SQL Server. | Count > = 1 | Count < 1 |
+| `SQL Server - Mirroring Error Alert` | This alert gets triggered when we detect that the SQL Server mirroring has error. | Count > = 1 | Count < 1 |
+| `SQL Server - Processes Blocked Alert` | This alert gets triggered when we detect that SQL Server has blocked processes. | Count > 1 | Count < = 1 |
