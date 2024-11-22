@@ -1,6 +1,7 @@
 ---
 id: copilot
 title: Sumo Logic Copilot
+sidebar_label: Copilot
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -47,7 +48,7 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
-Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts. 
+Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
 ### Who benefits from Copilot?
 
