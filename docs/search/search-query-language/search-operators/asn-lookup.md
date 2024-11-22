@@ -23,7 +23,7 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 | `carrier_organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
 
 :::note
-The `organization` and `carrier_organization` lookup fields will have the same value, since `carrier` field is used to map both the `organization` and `carrier_organization` values.
+The `organization` and `carrier_organization` lookup fields will have the same value because the `carrier` field is used to populate both the `organization` and `carrier_organization` values.
 :::
 
 ## Example
