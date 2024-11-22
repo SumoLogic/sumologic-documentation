@@ -25,7 +25,7 @@ SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards"/>
 
 :::info
-This app includes [built-in monitors](#sql-server-alerts). For details on creating custom monitors, refer to [Create monitors for Microsoft SQL Server app](#create-monitors-for-sql-server-app).
+This app includes [built-in monitors](#microsoft-sql-server-alerts). For details on creating custom monitors, refer to [Create monitors for Microsoft SQL Server app](#create-monitors-for-microsoft-sql-server-app).
 :::
 
 ## Fields creation in Sumo Logic for SQL Server
