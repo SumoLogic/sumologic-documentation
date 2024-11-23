@@ -20,6 +20,11 @@ lookup\<field\> from asn://default on ip\<ip_address\>
 | `asn` | Autonomous System Number |
 | `organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
 | `registering_organization` | The organization responsible for the actions and content associated with a given block of IP addresses. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. |
+| `carrier_organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
+
+:::note
+The `organization` and `carrier_organization` lookup fields will have the same value because the `carrier` field is used to populate both the `organization` and `carrier_organization` values.
+:::
 
 ## Example
 
