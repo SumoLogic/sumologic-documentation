@@ -1,6 +1,7 @@
 ---
 id: onboarding-checklists
 title: Onboarding Checklists
+sidebar_label: Onboarding checklists
 description: Onboarding Checklists for Analysts and Administrators.
 ---
 
@@ -8,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
 1. In your profile, view the roles you are assigned. <br/><img src={useBaseUrl('img/get-started/check-role.png')} alt="Check role" width="500" style={{border: '1px solid gray'}} width="300" />
 
 
