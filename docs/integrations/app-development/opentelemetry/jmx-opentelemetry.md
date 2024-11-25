@@ -248,7 +248,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `JMX - High Heap Memory Usage Alert` | This alert gets triggered when heap memory usage exceeds threshold | Count < 20 | Count >= 20 |
-| `JMX - High Memory Pool Usage Alert` | This alert gets triggered when memory pool usage exceeds threshold | Count < 20 | Count >= 20 |
-| `JMX - High Non Heap Memory Usage Alert` | This alert gets triggered when non heap memory usage exceeds threshold | Count < 20 | Count >= 20 |
-| `JMX - High Number Of Classes Loaded Alert` | This alert gets triggered when high number of classes are loaded | Count > 1000 | Count < = 1000 |
+| `JMX - High Heap Memory Usage Alert` | This alert gets triggered when heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Memory Pool Usage Alert` | This alert gets triggered when memory pool usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Non Heap Memory Usage Alert` | This alert gets triggered when non heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Number Of Classes Loaded Alert` | This alert gets triggered when high number of classes are loaded. | Count > 1000 | Count < = 1000 |
