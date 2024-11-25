@@ -74,7 +74,9 @@ From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the
 
 ### Step 2: Review the auto-selected source
 
-Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration. In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`.
+Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration.
+
+In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`. Autocompletion is supported for sources; type a few words, view source suggestions and pick one.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
@@ -86,7 +88,7 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 <img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-#### Ask a question
+### Step 4: Ask a question
 
 In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a work in the search bar to trigger completions based on the keyword.
 
@@ -107,9 +109,9 @@ see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=s
 ##### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
-* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
+* **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
 * **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
-* **Include time for timeslicing**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
+* **Include time or variations to add `timeslice` as a dimension**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
 
 Below are examples of how you can phrase queries if the autocompletions and contextual suggestions are not relevant to you:
 
@@ -196,7 +198,7 @@ Second, you can resume from a specific query in a conversation by clicking on th
 To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
-### Step 4: Open in Log Search
+### Step 5: Open in Log Search
 
 Click the **Open in Log Search** icon, which will copy your query from Copilot over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
@@ -263,7 +265,7 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 ## Role Based Access Control
 
-Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search and will see the error: `""`.
+Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
 ## Feedback
 
