@@ -345,4 +345,4 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `MySQL - Instance down Alert` | This alert gets triggered when we detect that a MySQL instance is down within last 5 minutes interval | Count > = 1 | Count < 1 |
 | `MySQL - Large number of statement errors Alert` | This alert gets triggered when we detect that there are 5 or more statement errors within a 5 minute time interval. | Count > = 5 | Count < 5 |
 | `MySQL - Large number of statement warnings Alert` | This alert gets triggered when we detect that there are 20 or more statement warnings within a 5 minute time interval. | Count > = 20 | Count < 20 |
-| `MySQL - No index used in the SQL statements Alert` | This alert gets triggered when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval. | Count > = 5 | Count < 5 |
+| `MySQL - No index used in the SQL statements Alert` | This alert gets triggered when we detect that there are 5 or more statements not using an index in the SQL query within a 5 minute time interval. | Count > = 5 | Count < 5 |
