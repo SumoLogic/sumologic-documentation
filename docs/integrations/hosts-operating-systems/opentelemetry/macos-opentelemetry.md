@@ -229,5 +229,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Metrics Mac - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold | Count > 80 | Count < = 80 |
-| `Mac - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold | Count > 80 | Count < = 80 |
+| `Metrics Mac - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Mac - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |
