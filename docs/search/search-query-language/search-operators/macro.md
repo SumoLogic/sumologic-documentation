@@ -44,7 +44,7 @@ To create a macro follow the steps below:
 
 ### Example
 
-Consider the below query that search for the errors with timeslice of 5 minutes. 
+Consider the below query, which searches for errors with `timeslice` of 5 minutes. 
 
 ```
 _sourceCategory=error | timeslice 5m
