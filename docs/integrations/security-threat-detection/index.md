@@ -93,13 +93,6 @@ import CisNote from '../../reuse/cis-note.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/microsoft-defender-for-cloud"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="thumbnail icon" width="75"/><h4>Microsoft Defender for Cloud</h4></a>
-  <p>Learn about the Sumo Logic collection process for the Microsoft Defender for Cloud service.</p>
-  </div>
-</div>
-
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/integrations/security-threat-detection/netskope-legacy-collection"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope Legacy Collection</h4></a>
   <p>A guide to the Sumo Logic app for Netskope Legacy Collection.</p>
   </div>
