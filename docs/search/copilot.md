@@ -14,8 +14,9 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
-This is a Preview release. To learn more, contact your Sumo Logic account executive.
+:::sumo Preview release
+This is a Preview release. To learn more, contact your Sumo Logic account executive. To opt out, please open a [support ticket](https://support.sumologic.com/support/s/).
+:::
 
 Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
