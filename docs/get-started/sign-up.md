@@ -1,14 +1,19 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
+sidebar_label: Sign up and activate your account
 description: Learn how to sign up with Sumo Logic and create your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without the hassle of managing or scaling hardware or storage.
 
-By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Sumo Logic SaaS Log Analytics Platform features.
+Sign up for a **Trial account** through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes. With your trial, you’ll have 30 days of full access to the Enterprise plan to explore all the powerful features Sumo Logic has to offer.
+
+During the trial, you’ll experience the full capabilities of Sumo Logic’s Continuous Intelligence Platform™, including real-time forensics and log management, with elastic scalability to support deployments of any size—no complex installations or hardware upgrades required.
+
+At the end of the 30-day trial, if you haven’t purchased a plan, your account will automatically convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), allowing you to continue with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time to continue enjoying premium features.
 
 ## Sign up through Sumo Logic
 
@@ -40,6 +45,8 @@ Thanks for signing up! Next, you'll be taken to a brief two-step data collector 
 1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
 
 Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
+
+### Upgrade or continue with Free account
 
 After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
 
@@ -184,7 +191,7 @@ Whether you're new to Sumo Logic or evaluating its features, Kickstart Data prov
 
 ## Resources
 
-* [Sumo Logic Quickstart](/docs/get-started/quickstart)
+* [Sumo Logic quickstart](/docs/get-started/quickstart)
 * [Onboarding checklists](/docs/get-started/onboarding-checklists)
-* [Free Sumo Logic Training and Certification](/docs/get-started/training-certification-faq)
+* [Sumo Logic training and certifications](/docs/get-started/training-certification-faq)
 * [Sumo Logic terms and conditions](https://www.sumologic.com/support-terms)
