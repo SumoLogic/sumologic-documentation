@@ -338,6 +338,6 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Linux - High CPU Utilization Alert` | This alert gets triggered when cpu utilization exceeds threshold | Count > 80 | Count < = 80 |
-| `Linux - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold | Count > 80 | Count < = 80 |
-| `Linux - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold | Count > 80 | Count < = 80 |
+| `Linux - High CPU Utilization Alert` | This alert gets triggered when CPU utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |
