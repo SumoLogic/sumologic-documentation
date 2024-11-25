@@ -32,8 +32,8 @@ To create a macro follow the steps below:
 1. Or, in the log search page, select the part of search query language that needs to be reused and click on **Create Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-search-page.png')} alt="macro-search-page" style={{border: '1px solid gray'}} width="800" />
 1. **Macro Details**. Enter the name for the macro. Description is optional.
 1. **Macro Definition**. Enter the definition for the macro. To add arguments use the `{{Arg}}` syntax or select a part of the definition and click on **Add Argument**.
-1. (Optional)**Arguments**. Enter the name and select the data type for the argument selected.
-1. (Optional)**Argument Validation**. Define the validation condition and enter the error message that needs to be shown when the validation expression returns false.
+1. (Optional) **Arguments**. Enter the name and select the data type for the argument selected.
+1. (Optional) **Argument Validation**. Define the validation condition and enter the error message that needs to be shown when the validation expression returns false.
 1. **Usage**. Preview of how you use the macro in the log search.
 1. Click **Submit** to save the macro.
 
