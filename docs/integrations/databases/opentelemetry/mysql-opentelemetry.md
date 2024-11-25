@@ -342,7 +342,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `MySQL - Follower replication lag detected Alert` | This alert gets triggered when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval. | Count > = 900 | Count < 900 |
 | `MySQL - High average query run time Alert` | This alert gets triggered when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes. | Count > = 10 | Count < 10 |
 | `MySQL - High Innodb buffer pool utilization Alert` | This alert gets triggered when we detect that the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval. | Count > = 90 | Count < 90 |
-| `MySQL - Instance down Alert` | This alert gets triggered when we detect that a MySQL instance is down within last 5 minutes interval | Count > = 1 | Count < 1 |
+| `MySQL - Instance down Alert` | This alert gets triggered when we detect that a MySQL instance is down within last 5 minutes interval. | Count > = 1 | Count < 1 |
 | `MySQL - Large number of statement errors Alert` | This alert gets triggered when we detect that there are 5 or more statement errors within a 5 minute time interval. | Count > = 5 | Count < 5 |
 | `MySQL - Large number of statement warnings Alert` | This alert gets triggered when we detect that there are 20 or more statement warnings within a 5 minute time interval. | Count > = 20 | Count < 20 |
 | `MySQL - No index used in the SQL statements Alert` | This alert gets triggered when we detect that there are 5 or more statements not using an index in the SQL query within a 5 minute time interval. | Count > = 5 | Count < 5 |
