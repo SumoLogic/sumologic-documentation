@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage log searches, dashboards, apps, and other Sumo Logic content in your library. The library also allows you to launch searches and dashboards with a single click, speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
-Open the **Library** page to expose additional search options and to organize and manage library contents.
+Open the **Library** page to expose additional search options and to organize and manage library contents. 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. You'll see two **View as** options:
@@ -57,7 +57,7 @@ Do any of the following from the information panel in the library:
 
 ## Personal Folder
 
-You can add folders and subfolders to the libraryrary in order to organize your content for easy access or to share content.
+You can add folders and subfolders to the library in order to organize your content for easy access or to share content.
 
 In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically. <br/><img src={useBaseUrl('img/get-started/library/personal-folder.png')} alt="Personal folder" style={{border: '1px solid gray'}} width="800"/>
 
@@ -79,7 +79,7 @@ When your content is moved, you’ll need to click the new folder location to vi
 To add a folder to the library:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
-1. Click **Add New > New Folder**.
+1. Click **Add New > New Folder**. 
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
 
@@ -160,7 +160,7 @@ the following prefixes:
 
 ### Search content in the library
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. 
 1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
 1. Enter your text. You can use any of the following:
    * Keyword
@@ -230,7 +230,7 @@ To rename a pinned search:
 To remove a search from the pinned search List:
 
 1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
-1. Click **Unpin**.
+1. Click **Unpin**. 
 1. In the **Confirm** dialog, click **OK**.
 
 The search is removed from the list of Pinned Searches.
