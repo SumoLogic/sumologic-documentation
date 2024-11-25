@@ -19,10 +19,14 @@ The Sumo Logic OpenTelemetry collector will run on the same host as Docker and c
 - Docker container event logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 :::info
-The Sumo Logic app for Docker supports Docker version 23.0.2.
+The Sumo Logic app for Docker supports Docker version `23.0.2`.
 :::
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Schematics.png')} alt="Docker-Schematics"/>
+
+:::info
+This app includes [built-in monitors](#docker-alerts). For details on creating custom monitors, refer to [Create monitors for Docker app](#create-monitors-for-docker-app).
+:::
 
 ## Fields creation in Sumo Logic for Docker
 
@@ -34,11 +38,11 @@ Following are the tags which will be created as part of the Docker app installat
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
 
-#### Metric collection
+### Metric collection
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-#### Log collection
+### Log collection
 
 To collect the Docker container event logs, the following command needs to be executed on the host machine and needs to be kept running, for monitoring all the Docker container-related events. The following command also needs a JSON file path where these container events can be dumped.
 
@@ -129,11 +133,9 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log and metrics messages
+## Sample log message
 
-### Log message
-
-```json title="Log message"
+```json
 {
   "status":"start",
   "id":"51f87a02dbcebbfe85bd3f9edb092132b6ac8ee873d541cdc059c70e17e52835",
@@ -155,9 +157,9 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-### Metric message
+## Sample metrics
 
-```json title="Metric message"
+```json
 {
   "queryId":"A",
   "_source":"docker-otel",
@@ -192,7 +194,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ### Log query
 
-This sample Query is from the **Docker - Overview** > **Docker Events Over Time** panel.
+This sample log query is from the **Docker Events Over Time** panel in the **Docker - Overview** dashboard.
 
 ```sql title="Log query"
 sumo.datasource=docker
@@ -208,9 +210,9 @@ sumo.datasource=docker
 ```
 ### Metrics query
 
-This sample Query is from the **Docker - Overview** > **Top 5 Containers by CPU Usage** panel.
+This sample metrics query is from the **Top 5 Containers by CPU Usage** panel in the **Docker - Overview** dashboard.
 
-```sql title="Metric query"
+```sql
 sumo.datasource=docker container.image.name={{container.image.name}} container.name={{container.name}}  metric=container.cpu.usage.total
 | avg by container.name
 | topk(5,avg)
@@ -218,7 +220,11 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 
 ## Viewing Docker dashboards
 
-### Docker - Overview
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
+
+### Overview
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Overview-Otel.png')} alt="Docker-Overview"/>
 
@@ -235,7 +241,7 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 - **Top 5 Containers by Rx Bytes**. Bytes received by the five containers that have received the most bytes.
 - **Top 5 Containers by Memory Usage**. Memory usage by the top five containers that used the most memory.
 
-### Docker - CPU Usage
+### CPU Usage
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-CPU-Usage-Otel.png')} alt="Docker-CPU-Usage"/>
 
@@ -246,7 +252,7 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 - **Time for Which Container was Throttled**. Duration for which each container's CPU was throttleds.
 - **Count of Periods with Throttling Active**. A chart that shows how many times each container's CPU was throttled.
 
-### Docker - Memory Usage
+### Memory Usage
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Memory-Usage-Otel.png')} alt="Docker-Memory-Usage"/>
 
@@ -258,7 +264,7 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 - **Memory that Cannot be Reclaimed**. Amount of memory that cannot be reclaimed for each container.
 - **Number of Bytes Transferred to/from the Disk**. Number of bytes transferred to and from disk by each container
 
-### Docker - Network Usage
+### Network Usage
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="Docker-Network-Usage"/>
 
@@ -270,3 +276,16 @@ sumo.datasource=docker container.image.name={{container.image.name}} container.n
 - **Average Tx Packets by Container**. Average packets transmitted per timeslice by each container.
 - **Count of Tx Dropped Packets**. Count of packets dropped during transmission per timeslice by each container.
 - **Count of Tx Error Packets**. Count of error packets transmitted per timeslice by each container.
+
+## Create monitors for Docker app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Docker alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Docker - High CPU Consumption by Container Alert` | This alert gets fired when cpu utilization exceeds 90% for any container. | Count > 90 | Count < = 90 |
+| `Docker - High Memory Consumption by Container Alert` | This alert gets fired when memory utilization exceeds 90% for any container. | Count > 90 | Count < = 90 |

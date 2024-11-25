@@ -19,9 +19,13 @@ The diagram below illustrates the components of the Elasticsearch collection for
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#elasticsearch-alerts). For details on creating custom monitors, refer to [Create monitors for Elasticsearch app](#create-monitors-for-elasticsearch-app).
+:::
+
 ## Fields Create in Sumo Logic for Elasticsearch
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of Elasticsearch App install, if not already present:
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Elasticsearch app installation, if not already present:
 
 - `db.cluster.name`. User configured. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system`. Has a fixed value of **elasticsearch**.
@@ -190,7 +194,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample OpenTelemetry metrics
+## Sample metrics
 
 ```json
 {
@@ -220,9 +224,9 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-### Logs
+### Sample logs query
 
-Sample log query from the **Errors** panel.
+This is a sample log query from the **Errors** panel.
 
 ```sql
 db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.cluster.name={{db.cluster.name}} ERROR | json "log" as _rawlog nodrop 
@@ -235,15 +239,19 @@ db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.
 | count
 ```
 
-### Metrics
+### Sample metrics query
 
-Metrics query from the **JVM Memory Used (MB)** panel.
+This is a sample metrics query from the **JVM Memory Used (MB)** panel.
 
 ```sql
 deployment.environment=* metric=jvm.memory.heap.used db.cluster.name=* db.node.name=* | sum by db.cluster.name, db.node.name
 ```
 
-## Viewing Elasticsearch Dashboards
+## Viewing Elasticsearch dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -322,3 +330,27 @@ The **Elasticsearch - Operations** dashboard allows you to monitor server stats 
 The **Elasticsearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Queries.png' alt="Resource Usage" />
+
+## Create monitors for Elasticsearch app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Elasticsearch alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Elasticsearch - Cluster Red Alert` | Elasticsearch Cluster red health status. | Count > = 1 | Count < 1 |
+| `Elasticsearch - Cluster Yellow Alert` | Elasticsearch Cluster yellow health status. | Count > 1 | Count < = 1 |
+| `Elasticsearch - Disk Out of Space Alert` | This alerts gets triggered when disk usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Error Log Too Many Alert` | This alert gets triggered when error logs exceeds threshold. | Count > = 1000 | Count < 1000 |
+| `Elasticsearch - Healthy Data Nodes Alert` | This alert gets triggered when missing data node in Elasticsearch cluster. | Count < = 1 | Count > 1 |
+| `Elasticsearch - Heap Usage Too High Alert` | This alert gets triggered when heap usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Initializing Shards Too Long Alert` | This alerts gets triggered when shard initialization takes more than 5 min. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Pending Tasks Alert` | This alert gets triggered when Elasticsearch has pending tasks. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Query Time Slow Alert` | This alert gets triggered when slow query time greater than 5 ms. | Count  >= 1 | Count < 1 |
+| `Elasticsearch - Query Time Too Slow Alert` | This alert gets triggered when Slow Query Too High (10 ms). | Count > = 1 | Count < 1 |
+| `Elasticsearch - Relocating Shards Too Long Alert` | This alert gets triggered when shards relocation take more than 5 min. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Too Many Slow Query Alert` | This alert gets triggered when too many slow queries are found in 5 minutes window. | Count > = 10 | Count < 10 |
+| `Elasticsearch - Unassigned Shards Alert` | This alert gets triggered when Elasticsearch has unassigned shards. | Count > 5 | Count < = 5 |
