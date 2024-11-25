@@ -341,16 +341,16 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Elasticsearch - Cluster Red Alert` | Elasticsearch Cluster red health status | Count > = 1 | Count < 1 |
-| `Elasticsearch - Cluster Yellow Alert` | Elasticsearch Cluster yellow health status | Count > 1 | Count < = 1 |
-| `Elasticsearch - Disk Out of Space Alert` | This alerts gets triggered when disk usage is over 90% | Count > 90 | Count < = 90 |
-| `Elasticsearch - Error Log Too Many Alert` | This alert gets triggered when error logs exceeds threshold | Count > = 1000 | Count < 1000 |
-| `Elasticsearch - Healthy Data Nodes Alert` | This alert gets triggered when Missing data node in Elasticsearch cluster | Count < = 1 | Count > 1 |
-| `Elasticsearch - Heap Usage Too High Alert` | This alert gets triggered when heap usage is over 90% | Count > 90 | Count < = 90 |
-| `Elasticsearch - Initializing Shards Too Long Alert` | This alerts gets triggered when shard initialization takes more than 5 min | Count > = 5 | Count < 5 |
-| `Elasticsearch - Pending Tasks Alert` | This alert gets triggered when elasticsearch has pending tasks. | Count > = 5 | Count < 5 |
-| `Elasticsearch - Query Time Slow Alert` | This alert gets triggered when slow query time greater than 5 ms | Count  >= 1 | Count < 1 |
-| `Elasticsearch - Query Time Too Slow Alert` | This alert gets triggered when Slow Query Too High (10 ms) | Count > = 1 | Count < 1 |
-| `Elasticsearch - Relocating Shards Too Long Alert` | This alert gets triggered when shards relocation take more than 5min | Count > = 5 | Count < 5 |
+| `Elasticsearch - Cluster Red Alert` | Elasticsearch Cluster red health status. | Count > = 1 | Count < 1 |
+| `Elasticsearch - Cluster Yellow Alert` | Elasticsearch Cluster yellow health status. | Count > 1 | Count < = 1 |
+| `Elasticsearch - Disk Out of Space Alert` | This alerts gets triggered when disk usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Error Log Too Many Alert` | This alert gets triggered when error logs exceeds threshold. | Count > = 1000 | Count < 1000 |
+| `Elasticsearch - Healthy Data Nodes Alert` | This alert gets triggered when missing data node in Elasticsearch cluster. | Count < = 1 | Count > 1 |
+| `Elasticsearch - Heap Usage Too High Alert` | This alert gets triggered when heap usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Initializing Shards Too Long Alert` | This alerts gets triggered when shard initialization takes more than 5 min. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Pending Tasks Alert` | This alert gets triggered when Elasticsearch has pending tasks. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Query Time Slow Alert` | This alert gets triggered when slow query time greater than 5 ms. | Count  >= 1 | Count < 1 |
+| `Elasticsearch - Query Time Too Slow Alert` | This alert gets triggered when Slow Query Too High (10 ms). | Count > = 1 | Count < 1 |
+| `Elasticsearch - Relocating Shards Too Long Alert` | This alert gets triggered when shards relocation take more than 5 min. | Count > = 5 | Count < 5 |
 | `Elasticsearch - Too Many Slow Query Alert` | This alert gets triggered when too many slow queries are found in 5 minutes window. | Count > = 10 | Count < 10 |
-| `Elasticsearch - Unassigned Shards Alert` | This alert gets triggered when elasticsearch has unassigned shards | Count > 5 | Count < = 5 |
+| `Elasticsearch - Unassigned Shards Alert` | This alert gets triggered when Elasticsearch has unassigned shards. | Count > 5 | Count < = 5 |
