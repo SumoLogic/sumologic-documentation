@@ -30,7 +30,7 @@ Under **My Profile**, the following information is displayed:
 
 As a Sumo Logic user, you can change your own email address as necessary.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Under the **My Profile** section, click **Change Email**.<br/>![Change email](/img/get-started/change-email.png)
 1. In the **Change Email Address** dialog, enter your new email address, and then follow the verification steps.
 
