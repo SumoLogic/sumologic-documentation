@@ -90,7 +90,7 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 ### Step 4: Ask a question
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a work in the search bar to trigger completions based on the keyword.
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a word in the search bar to trigger completions based on the keyword.
 
 <!-- TO DO BA to upload to YouTube DEMO: https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
 -->
@@ -276,3 +276,7 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+## Opt out
+
+To opt out of Copilot, contact our [support team](https://support.sumologic.com/support/s/).
