@@ -373,6 +373,6 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Windows - High CPU Utilization Alert` | This alert gets triggered when cpu utilization exceeds threshold | Count > 80 | Count < = 80 |
-| `Windows - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold | Count > 80 | Count < = 80 |
-| `Windows - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold | Count > 80 | Count < = 80 |
+| `Windows - High CPU Utilization Alert` | This alert gets triggered when cpu utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Windows - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Windows - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |
