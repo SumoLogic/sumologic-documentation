@@ -10,7 +10,7 @@ Sumo Logic keyboard shortcuts are enabled by default.
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access keyboard shortcuts, in the Sumo Logic top menu select **Help > Keyboard Shortcuts**.
-
+ 
 
 :::tip
 You can also press the **?** key to display the list of keyboard shortcuts.
