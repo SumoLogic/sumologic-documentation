@@ -7,7 +7,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `macro` operator allows you to reuse portions of a search query across multiple queries. Additionally, this operator includes arguments and performs its respective evaluation of the arguments.
 
-Use backquote (``) character to refer macro operator in the query. Macros referred inside another macro is called **Nested macros**. Macro referred within the context of another macro query of is called **Inner Macro**. The macro where the inner macro is referred is called the **Outer Macro**.
+To use `macro` the operator, reference it in your query with backticks (``). Macros can also be nested, enabling complex query reuse:
+* **Nested Macros**. A macro referenced inside another macro.
+* **Inner Macro**. A macro used within the context of another macro query.
+* **Outer Macro**. The macro that references an inner macro.
 
 :::note
 - Only **Administrators** and **Users** with access to **Query Reference** will be able to run queries using macros.
