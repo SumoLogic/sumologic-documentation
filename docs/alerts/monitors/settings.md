@@ -113,10 +113,10 @@ Click the **Mute** button mute the monitor. See also: [Muting Schedules](/docs/
 
 ### Share a monitor
 
-You cannot share a monitor like you can [share a dashboard](/docs/dashboards/share-dashboard-new/). But you can share information about a monitor with others by using actions available in the [**More Actions**](#more-actions) menu:
-* **Duplicate**. Copies the monitor and gives you creator permissions on the duplicated monitor. 
-* **Export**. Exports the monitor to JSON so that you can import a copy of the monitor to another **Monitors** folder by selecting **Add > Import**.
-* **Copy Link**. Copies a link to the monitor. Provide the link to another Sumo Logic user in you organization so they can click the link to open the monitor.
+You can share information about a monitor with options in the [**More Actions**](#more-actions) menu:
+* **Duplicate**. Copies the monitor and gives you creator permissions on the duplicated monitor.
+* **Export**. Exports the monitor to JSON. To import a copy of the monitor to another **Monitors** folder, on the **Monitors** page select **Add > Import**.
+* **Copy Link**. Copies a link to the monitor. Provide the link to any Sumo Logic user in your organization so they can open the monitor.
 
 ### More actions
 
