@@ -41,23 +41,23 @@ The path to the current library folder is shown near the top of the **Library** 
 
 To create a new folder, click **Add New > New Folder**, enter the folder name and an optional description, and click **Add**.
 
-To get information on items in the library, click an item in the lib to open an information panel. If you click a folder in the lib, information about the folder is shown in the information panel. Double-click the folder to list the items that it contains.
+To get information on items in the library, click an item in the library to open an information panel. If you click a folder in the library, information about the folder is shown in the information panel. Double-click the folder to list the items that it contains.
 
 ![get-info](/img/get-started/library/get-info.png)
 
-Do any of the following from the information panel in the lib:
+Do any of the following from the information panel in the library:
 
 * Click **Edit** to modify the name or description of the item.
-* Click the **Trash** icon to delete the item from the lib. Deleting an item from the library means that the search, Dashboard, or folder is no longer available.
+* Click the **Trash** icon to delete the item from the library. Deleting an item from the library means that the search, Dashboard, or folder is no longer available.
 * Click the dotted **More** icon and select **Export** to open a window with the JSON code for the item, which you can copy or download.
-* Click the dotted **More** icon and select **Copy** to make a copy of the item. Select the location in the lib to copy it to, and click **Copy**.
+* Click the dotted **More** icon and select **Copy** to make a copy of the item. Select the location in the library to copy it to, and click **Copy**.
 * Click **Share** or **Unshare** to change the sharing settings for the item.
-* Click **Move** to move the item to another folder in the lib. Select the new location, and click **Move**.
+* Click **Move** to move the item to another folder in the library. Select the new location, and click **Move**.
 
 
 ## Personal Folder
 
-You can add folders and subfolders to the lib in order to organize your content for easy access or to share content.
+You can add folders and subfolders to the libraryrary in order to organize your content for easy access or to share content.
 
 In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically. <br/><img src={useBaseUrl('img/get-started/library/personal-folder.png')} alt="Personal folder" style={{border: '1px solid gray'}} width="800"/>
 
@@ -65,7 +65,7 @@ In the **Library**, your **Personal** folder is the root folder for all your s
 
 You can organize your saved content into subfolders in your Personal Folder.
 
-1. Mouse over the icon next to a lib item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="checkbox.png" width="<insert-pixel-number>"/>
+1. Mouse over the icon next to a library item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="checkbox.png" width="<insert-pixel-number>"/>
 1. Click the checkbox to select the item.
 1. Select other items as desired.
 1. After selecting the content you want to move, click the three-dot kebab menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="move-option.png" width="<insert-pixel-number>"/>
@@ -76,7 +76,7 @@ When your content is moved, you’ll need to click the new folder location to vi
 
 ## Add Folders
 
-To add a folder to the lib:
+To add a folder to the library:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. Click **Add New > New Folder**.
@@ -126,9 +126,9 @@ There is a limit of 20 favorite items per user.
 1. Hover your mouse over an item and click the star that appears to the right. The item is removed from the **Favorites** folder.
 
 
-## Search the lib
+## Search the library
 
-To find Sumo Logic content you have saved in the lib, you can search the **Personal** and **Org** folders using the search field.
+To find Sumo Logic content you have saved in the library, you can search the **Personal** and **Org** folders using the search field.
 
 You can search on the:
 
@@ -158,7 +158,7 @@ the following prefixes:
 * For multiple keywords, the assumed operator is AND, not OR.
 :::
 
-### Search content in the lib
+### Search content in the library
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.
 1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
@@ -179,7 +179,7 @@ The Home page lists all currently running searches and any searches performed ov
 
 ### Pinned searches
 
-The **Pinned Search** feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the lib on the [Recent](#recent-searches) tab in a folder named Pinned Searches.
+The **Pinned Search** feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the library on the [Recent](#recent-searches) tab in a folder named Pinned Searches.
 
 Once pinned, a search will run in the background for up to 24 hours. If it has not finished by then, it will be paused. There is no notification when your search is paused, but you can just restart the search to continue the query. Search results are available for three days.
 
@@ -193,7 +193,7 @@ There is a known issue that may cause Pinned Searches to be lost when Sumo Logic
 
 1. Enter a query in the search box and click **Start**.
 1. Click the three-dot kebab icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="pin-search-option.png" width="325"/>
-1. A message displays that tells you where you can find it later in the lib. The Pinned Search is named by default with the name of the search tab. <br/>![pinmessage.png](/img/get-started/library/pinmessage.png)
+1. A message displays that tells you where you can find it later in the library. The Pinned Search is named by default with the name of the search tab. <br/>![pinmessage.png](/img/get-started/library/pinmessage.png)
 1. To change the name of the pinned search, double-click the **Search** tab to activate the name field and enter a new name.
 1. To preserve the pinned search, follow the steps in Save a pinned search.
 1. To unpin the search, click **Unpin** in the menu bar. <br/><img src={useBaseUrl('img/get-started/library/unpin-search-option.png')} alt="pin-search-option.png" width="300"/>
@@ -237,9 +237,9 @@ The search is removed from the list of Pinned Searches.
 
 Removing an instance of a Saved Search from the list in the Pinned Searches tab does not delete the Saved Search from your Personal folder.
 
-### Share a saved search from the lib
+### Share a saved search from the library
 
-Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the lib in the **Org > [Your Name]** folder.
+Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the library in the **Org > [Your Name]** folder.
 
 To share a search and its results, see [Share a Link to a Search](/docs/search/get-started-with-search/search-basics/share-link-to-search). 
 
@@ -263,13 +263,13 @@ Searches and dashboards can be shared and unshared at any time. Additionally, o
 
 #### Unshare
 
-1. In the lib, highlight a search and click the share icon. <br/>![Unshare.png](/img/get-started/library/share-icon.png)
+1. In the library, highlight a search and click the share icon. <br/>![Unshare.png](/img/get-started/library/share-icon.png)
 1. Click **See who has access**.<br/>![Only Me.png](/img/get-started/library/who-has-access.png)
 1. Click the trash can icon to unshare the search with a user or role.<br/>![unshare.png](/img/get-started/library/unshare.png)
 1. Click **Save**.
 
 
-## Import and Export Content in the lib
+## Import and Export Content in the library
 
 In the **Library**, you can export content as JSON, including whole folders with subfolders, saved log searches, saved metric queries, and dashboards. Then you can import the content as JSON into the same or another Sumo Logic organization.
 
@@ -278,7 +278,7 @@ The Export and Import functions are provided in order for you to transfer data i
 :::warning limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
 * For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
-* All content names must be unique within a folder in the lib.
+* All content names must be unique within a folder in the library.
 * Only error free JSON will import successfully.
 * Import is limited to 1000 objects at a time.
 * For IE 11, in the Export Content dialog, the Download button is not available, due to the default IE 11 security configuration, which blocks this kind of download.
