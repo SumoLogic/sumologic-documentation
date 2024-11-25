@@ -338,7 +338,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `MySQL - Excessive Slow Query Detected Alert` | This alert gets triggered when we detect the average time to execute a query is more than 15 seconds over a 24 hour time-period | Count > = 100 | Count < 100 |
+| `MySQL - Excessive Slow Query Detected Alert` | This alert gets triggered when we detect the average time to execute a query is more than 15 seconds over a 24 hour time-period. | Count > = 100 | Count < 100 |
 | `MySQL - Follower replication lag detected Alert` | This alert gets triggered when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval. | Count > = 900 | Count < 900 |
 | `MySQL - High average query run time Alert` | This alert gets triggered when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes. | Count > = 10 | Count < 10 |
 | `MySQL - High Innodb buffer pool utilization Alert` | This alert gets triggered when we detect that the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval. | Count > = 90 | Count < 90 |
