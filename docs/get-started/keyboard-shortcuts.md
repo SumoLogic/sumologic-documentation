@@ -5,7 +5,7 @@ sidebar_label: Keyboard shortcuts
 description: Sumo Logic keyboard shortcuts.
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default.
+Sumo Logic keyboard shortcuts are enabled by default. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
 
