@@ -7,7 +7,7 @@ description: Learn how to troubleshoot problems with the Cloud SIEM Network Sens
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 
-:::caution end-of-life
+:::warning end-of-life
 <SensorEOL/>
 :::
 

@@ -1,7 +1,7 @@
 ---
 id: application-load-balancer
 title: AWS Application Load Balancer
-description: The Sumo Logic App for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) App that gives you visibility into the health of your Application Load Balancer and target groups.
+description: The Sumo Logic app for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) app that gives you visibility into the health of your Application Load Balancer and target groups.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The AWS Application Load Balancer functions at the application layer, receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 
-The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
+The Sumo Logic app for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
 ## Log types
 
@@ -105,7 +105,7 @@ import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create Field Extraction Rule (FER) for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityAlbAccessLogsFER
@@ -117,7 +117,27 @@ Scope (Specific Data): account=* region=* (http or https or h2 or grpcs or ws or
 parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId | tolowercase(loadbalancer) as loadbalancer | fields loadbalancer
 ```
 
-## Installing the AWS Application Load Balancer App
+#### Create/Update Field Extraction Rule(s) for Application Load Balancer CloudTrail logs
+
+```sql
+Rule Name: AwsObservabilityALBCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
+```
+
+```sql title="Parse Expression"
+json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "apiVersion" as event_source, region, accountid, loadbalancer, loadbalancertype, loadbalancerarn, api_version nodrop 
+|"" as namespace
+| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
+| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype, loadbalancer, f1 nodrop
+| if(loadbalancertype matches "network", "aws/nlb", if(balancertype matches "net", "aws/nlb", namespace)) as namespace
+| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype matches "app", "aws/applicationelb", namespace)) as namespace
+| where namespace="aws/applicationelb" or isEmpty(namespace)
+| toLowerCase(loadbalancer) as loadbalancer  
+| fields region, namespace, loadbalancer, accountid
+```
+
+## Installing the AWS Application Load Balancer app
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -125,7 +145,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Application Load Balancer Dashboards
+## Viewing AWS Application Load Balancer dashboards
 
 ### Overview
 
@@ -137,7 +157,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4XX, and 5XX errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers through active connections, new connections, target connection errors, and rejected connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-Overview.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-Overview.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Response Analysis
 
@@ -147,7 +167,7 @@ Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX, and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Target Group Response Analysis
 
@@ -157,7 +177,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your target groups by LoadBalancer, Target Group, and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Target_Group_Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Target_Group_Response_Analysis.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Latency Overview
 
@@ -167,7 +187,7 @@ Use this dashboard to:
 * Monitor response times by load balancer, target group, and availability zone.
 * Monitor client latency and processing times for target groups.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Latency_Overview.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Latency_Overview.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Latency Details
 
@@ -176,7 +196,7 @@ The **AWS Application Load Balancer - Latency Details** dashboard provides insig
 Use this dashboard to:
 * Troubleshoot load balancer performance through detailed views across client, request processing, and response time latencies.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Latency_Details.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Latency_Details.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Connection and Host Status
 
@@ -186,7 +206,7 @@ Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for the load balancer.
 * Monitor healthy and unhealthy host counts by the load balancer, target group, and availability zone across your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Connections_and_Host_Status.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load_Balancer-Connections_and_Host_Status.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Requests and Processed Bytes
 
@@ -196,7 +216,7 @@ Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to best configure load balancers for optimal performance.
 * Determine how to best allocate backend resources and target groups based on load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Requests_and_Processed_Bytes.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Requests_and_Processed_Bytes.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Threat Intel
 
@@ -206,4 +226,16 @@ Use this dashboard to:
 * Identify known malicious IPs that access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+### CloudTrail Audit
+
+The **AWS Application Load Balancer - CloudTrail Audit** dashboard provides a comprehensive overview of AWS Application Load Balancer activities through CloudTrail audit logs. It visualizes successful and failed events globally, event trends, error details, and user activities, offering insights into load balancer performance, security, and usage patterns.
+
+Use this dashboard to:
+* Monitor the geographical distribution of successful and failed load balancer events, allowing for quick identification of regions with high activity or potential issues.
+* Track the overall success rate of load balancer events and analyze trends over time, helping to identify any sudden changes or patterns in performance.
+* Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
+* Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>

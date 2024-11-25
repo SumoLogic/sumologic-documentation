@@ -55,7 +55,7 @@ To create the query size limit using the **Advanced** configuration:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Usage Management**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Usage Management**. You can also click the **Go To...** menu at the top of the screen and select **Usage Management**.
 1. Navigate to **Advanced** tab and click on **+ Create Scan Budget**. <br/><img src={useBaseUrl('/img/manage/account/usage-management-advanced.png')} alt="usage-management" style={{border:'1px solid gray'}} width="800"/>
 1. **Scope**. Include or exclude the users and roles for whom the scan budget should apply.
-1. **Capacity**. Enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
+1. **Capacity**. Enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
     - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
@@ -106,4 +106,5 @@ To view the selected scan budget:
 
 ### Handle overlapping budgets
 
-When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. If there is still an overlap, the budget with the most restrictive action takes precedence. For example, if you are a part of multiple groups with different query size budgets, the one with the largest capacity will be applied.
+When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence. 
+
