@@ -31,7 +31,7 @@ To manage the query size limit using the **Basic** configuration:
 :::info
 Sumo Logic defines scan as two types:
   - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-  - **Background search**. API, Scheduled Search, Monitor, and SLO. 
+  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
 :::
 
 :::note
@@ -62,7 +62,7 @@ To create the query size limit using the **Advanced** configuration:
     :::info
     Sumo Logic defines scan as two types:
     - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-    - **Background search**. API, Scheduled Search, Monitors, and SLO. 
+    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO. 
     :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
@@ -99,7 +99,6 @@ To view the selected scan budget:
   - **Modified**. The user that most recently modified the scan budget.
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
-
 
 ## FAQ
 
