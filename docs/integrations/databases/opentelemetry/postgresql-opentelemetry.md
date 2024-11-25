@@ -347,9 +347,9 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `PostgreSQL - Access from Highly Malicious Sources Alert` | This alert gets triggered when a Postgres instance is accessed from known malicious IP addresses. | Count > = 1 | Count < 1 |
-| `PostgreSQL - High Rate of Statement Timeout Alert` | This alert gets triggered when we detect Postgres transactions show a high rate of statement timeouts | Count > = 1 | Count < 1 |
+| `PostgreSQL - High Rate of Statement Timeout Alert` | This alert gets triggered when we detect Postgres transactions show a high rate of statement timeouts. | Count > = 1 | Count < 1 |
 | `PostgreSQL - High Replication Lag Alert` | This alert gets triggered when we detect that the Postgres Replication lag (in bytes) is high. | Count > 10 | Count < = 10 |
-| `PostgreSQL - Instance Down Alert` | This alert gets triggered when the Postgres instance is down | Count > = 1 | Count < 1 |
-| `PostgreSQL - SlowQueries Alert` | This alert gets triggered when we detect that the PostgreSQL instance is executing slow queries | Count > 5 | Count < = 5 |
+| `PostgreSQL - Instance Down Alert` | This alert gets triggered when the Postgres instance is down. | Count > = 1 | Count < 1 |
+| `PostgreSQL - SlowQueries Alert` | This alert gets triggered when we detect that the PostgreSQL instance is executing slow queries. | Count > 5 | Count < = 5 |
 | `Postgresql- Too Many Connections Alert` | PostgreSQL instance has too many connections. | Count > = 100 | Count < 100 |
-| `Postgresql - Too Many Locks Acquired Alert` | This alert gets triggered when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting max_locks_per_transaction. | Count > = 100 | Count < 100 |
+| `Postgresql - Too Many Locks Acquired Alert` | This alert gets triggered when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting `max_locks_per_transaction`. | Count > = 100 | Count < 100 |

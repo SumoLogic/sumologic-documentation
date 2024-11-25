@@ -305,5 +305,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `Nginx - Access from Highly Malicious Sources Alert` | This alert gets triggered when an Nginx server is accessed from highly malicious IP addresses. | Count > = 1 | Count < 1 |
 | `Nginx - Critical Error Messages Alert` | This alert gets triggered when we detect critical error messages for a given Nginx server. | Count > = 1 | Count < 1 |
 | `Nginx - High Client (HTTP 4xx) Error Rate Alert` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > = 1 | Count < 1 |
-| `Nginx - High Number of Active Connections Alert` | None | Count > = 100 | Count < 100 |
+| `Nginx - High Number of Active Connections Alert` | This alert gets triggered when there are many number of active connections. | Count > = 100 | Count < 100 |
 | `Nginx - High Server (HTTP 5xx) Error Rate Alert` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > = 1 | Count < 1 |
