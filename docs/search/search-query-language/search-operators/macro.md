@@ -51,7 +51,7 @@ _sourceCategory=error | timeslice 5m
 | count by _timeslice
 ```
 
-Now by creating macro for the timeslice field, the query with the `macro` operator is modified as:
+Now, by creating a macro for the `timeslice` field, the query using the `macro` operator can be simplified as follows:
 
 ```
 _sourceCategory=error | `timeslice_macro`
