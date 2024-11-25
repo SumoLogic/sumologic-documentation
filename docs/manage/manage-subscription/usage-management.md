@@ -85,9 +85,8 @@ To view the selected scan budget:
   - **Deactivate/Activate**. Click the **Deactivate/Activate** button to deactivate/activate the selected scan budget.
   - **Delete**. Click the **Delete** button to delete the selected scan budget.
   - **View violations**. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
-  - **Budget Type**. Defines the type of budget set: **Per Query Budget** or **Time-Based Budgets**(TBA).
+  - **Budget Type**. Defines the type of budget set.
     - **Per Query Budget**. Limits the data (in GBs) that a single query can consume.
-    - **Time-Based Budgets**(TBA). Limits the data or credits consumed over a day, week, or month.
   - **Status**. Describes if the scan budget is active or inactive.
   - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for Data tier this is shown as **Infrequent Scan**.
   - **Applied to Roles**. Describes the roles for which the selected scan budget is applied for.
