@@ -1,16 +1,19 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
+sidebar_label: Sign up and activate your account
 description: Learn how to sign up with Sumo Logic and create your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without the hassle of managing or scaling hardware or storage.
 
-By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Sumo Logic SaaS Log Analytics Platform features.
+Sign up for a **Trial account** through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes. With your trial, you’ll have 30 days of full access to the Enterprise plan to explore all the powerful features Sumo Logic has to offer.
 
-After 45 days, if you've not purchased a plan, your account will convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), and you can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
+During the trial, you’ll experience the full capabilities of Sumo Logic’s Continuous Intelligence Platform™, including real-time forensics and log management, with elastic scalability to support deployments of any size—no complex installations or hardware upgrades required.
+
+At the end of the 30-day trial, if you haven’t purchased a plan, your account will automatically convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), allowing you to continue with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time to continue enjoying premium features.
 
 ## Sign up through Sumo Logic
 
@@ -39,14 +42,14 @@ Next, you'll be taken to a brief two-step data collector installation process, w
 
 1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" width="400" />
 1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
-1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
+1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
 
-That's it - congrats! Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
+Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
 
 ### Upgrade or continue with Free account
 
-After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and log analytics services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
+After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -94,10 +97,10 @@ These accounts have the following limitations:
 
 To sign up through AWS Marketplace:
 
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.<br/>  ![AWS Marketplace](/img/get-started/aws_marketplace_new.png)
-1. Select a Sumo Logic product and click **View purchase options** or **Try it for free**.<br/>  ![View purchase options](/img/get-started/aws_marketplace_view_purchase_options.png)
-1. Configure the software contract and click **Create contract**.<br/> ![Create contract](/img/get-started/aws_marketplace_create_contract.png)
-1. Finalize the software contract and click **Set up your account**.<br/>  ![AWS setup](/img/get-started/aws_marketplace_setup_new.png)
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
+1. Select a Sumo Logic product and click **View purchase options** or **Try it for free**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_view_purchase_options.png')} alt="View purchase options" style={{border: '1px solid gray'}} width="800" />
+1. Configure the software contract and click **Create contract**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_create_contract.png')} alt="Create contract" style={{border: '1px solid gray'}} width="800" />
+1. Finalize the software contract and click **Set up your account**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_setup_new.png')} alt="Set up your account" style={{border: '1px solid gray'}} width="400" />
 1. You are redirected to Sumo Logic to complete your account creation:
     - **Email** - Enter an email for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace will create a new Sumo Logic organization.
     - **Region** - Select your region: North America, Europe, or Australia.
@@ -141,7 +144,7 @@ Should you decide to cancel, you can do this through AWS Marketplace.
 
 1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
 1. Go to **Manage your software subscriptions** and select **Sumo Logic**.
-1. Click **Cancel subscription**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
+1. Click **Cancel subscription**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_cancel.png')} alt="AWS Cancel" style={{border: '1px solid gray'}} width="800" />
 
 Your subscription will be cancelled immediately.
 
