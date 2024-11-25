@@ -79,7 +79,7 @@ When your content is moved, you’ll need to click the new folder location to vi
 To add a folder to the library:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
-1. Click **Add New > New Folder**.
+1. Click **Add New > New Folder**. 
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
 
