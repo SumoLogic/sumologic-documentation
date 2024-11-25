@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage log searches, dashboards, apps, and other Sumo Logic content in your library. The library also allows you to launch searches and dashboards with a single click, speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
-Open the **Library** page to expose additional search options and to organize and manage library contents.
+Open the **Library** page to expose additional search options and to organize and manage library contents. 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  
 1. You'll see two **View as** options:
