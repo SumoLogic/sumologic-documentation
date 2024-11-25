@@ -224,7 +224,7 @@ Use this dashboard to:
 
 ### Class Loading and Threads
 
-The **JMX - Class Loading and Threads** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your java virtual machine running on the deployment. Use this dashboard to identify the abnormal spikes in Threads and Loaded Classes.
+The **JMX - Class Loading and Threads** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your Java virtual machine running on the deployment. Use this dashboard to identify the abnormal spikes in Threads and Loaded Classes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Class-Loading-and-Threads.png' alt="Class Loading and Threads" />
 
