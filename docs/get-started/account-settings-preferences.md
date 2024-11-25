@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and do not affect other users in your organization.
 
 To access preferences:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Update your preferences as needed. <br/><img src={useBaseUrl('img/get-started/preference-settings.png')} alt="Preferences" style={{border: '1px solid gray'}} width="600" />
 
 ## My Profile
