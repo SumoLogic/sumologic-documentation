@@ -14,7 +14,7 @@ To use `macro` the operator, reference it in your query with backticks (``). Mac
 
 :::note
 - Only **Administrators** and **Users** with access to **Query Reference** will be able to run queries using macros.
-- Only users with **Administrator** access can create or delete the macro. 
+- Only users with **Administrator** access can create or delete macros.
 :::
 
 ## Syntax
