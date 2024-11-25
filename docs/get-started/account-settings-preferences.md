@@ -38,7 +38,7 @@ As a Sumo Logic user, you can change your own email address as necessary.
 
 To change your password:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Under **My Profile**, click **Change Password**.
 1. Enter your current password, and then enter the new password twice to verify it.
 1. Click **OK** to finish resetting your password.
