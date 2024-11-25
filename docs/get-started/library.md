@@ -57,7 +57,7 @@ Do any of the following from the information panel in the library:
 
 ## Personal Folder
 
-You can add folders and subfolders to the libraryrary in order to organize your content for easy access or to share content.
+You can add folders and subfolders to the library in order to organize your content for easy access or to share content.
 
 In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically. <br/><img src={useBaseUrl('img/get-started/library/personal-folder.png')} alt="Personal folder" style={{border: '1px solid gray'}} width="800"/>
 
