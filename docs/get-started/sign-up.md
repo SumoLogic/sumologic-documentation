@@ -191,7 +191,7 @@ Whether you're new to Sumo Logic or evaluating its features, Kickstart Data prov
 
 ## Resources
 
-* [Sumo Logic quickstart](/docs/get-started/quickstart)
+* [Sumo Logic Quickstart](/docs/get-started/quickstart)
 * [Onboarding checklists](/docs/get-started/onboarding-checklists)
 * [Sumo Logic training and certifications](/docs/get-started/training-certification-faq)
 * [Sumo Logic terms and conditions](https://www.sumologic.com/support-terms)
