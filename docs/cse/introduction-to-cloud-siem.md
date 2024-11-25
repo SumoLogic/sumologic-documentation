@@ -198,8 +198,123 @@ Use the **Configuration** menu to access:
     * [**Insight Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the Insight detection threshold. 
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
-    * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
+    * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules.
+
+## Introduction to Cloud SIEM for analyts
+
+### From logs to security insights
+
+#### What is Cloud SIEM?
+
+Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. However, it does have a slightly different user interface from the one you may be familiar with.
+
+The following images show Sumo Logic's Cloud SIEM home page.
+
+<img src={useBaseUrl('img/cse/cloud-siem-hud.png')} alt="Cloud SIEM main page" style={{border: '1px solid gray'}} width="800"/>
+
+* A. **Count**. A count of the Records created from incoming messages, and the Signals and Insights that have been generated.
+* B. **Insights by Status**. An overview of recent Insights and their statuses: New, In Progress, Closed, or Other.
+* C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent Records, light blue bars represent Signals, and red triangles represent Insights.
+* D. **Recent Activity**. Displays a feed of the latest Insights that have been generated.
+
+Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. Because it’s designed for larger data volumes, most organizations need to ingest a large amount of data each day for Insights to surface in Cloud SIEM. For smaller organizations, [additional security features](/docs/security/additional-security-features/) may be a better fit for your data ingest volume. 
+
+Whether your company has already bought Cloud SIEM or whether you’re still considering it, this section will help you make the best use of it.
+
+#### Getting your data into Cloud SIEM
+
+If you’ve read other Sumo Logic documentation, you’re probably familiar with the data pipeline:
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-pipeline.png')} alt="Sumo Logic data pipeline" style={{border: '1px solid gray'}} width="800"/>
+
+1. **Data collection**. To use Sumo Logic, first you must set up either an installed collector or a hosted collector and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
+2. **Search and analyze**. Once data is in Sumo Logic, you can write queries to search and correlate events in real-time from the analytics platform UI. Or, you might configure the collector to forward data to Cloud SIEM, and let it do all the correlation work for you.
+3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can create dashboards to visualize it and set up alerts to monitor your data in real-time. Certain apps, like Threat Intel Quick Analysis, come pre-configured with several dashboards designed for security.
+4. **Share the findings**. Export your dashboards or share with others on your team. You can control who can view and edit your dashboards to keep your data secure.
+
+Throughout this section, you’ll learn more about the security data pipeline. Then, you’ll be better prepared to discuss these things with your admin, or to set them up yourself if you need to. 
+
+##### Data collection
+
+Before you can start investigating threats, you need data. As a data analyst, this step may have been done by your administrator. 
+
+Your company collects and ingests millions of log messages into Sumo Logic. Typically, you can use these messages right away in many Sumo Logic apps. To use them in Cloud SIEM, however, your admin must enable data forwarding. Your admin may also need to create log mappings, field extraction rules, or complete other preprocessing steps to extract the right data.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.png')} alt="Sumo Logic data pipeline" style={{border: '1px solid gray'}} width="500"/>
+
+As a data analyst, you should periodically examine the data that’s being ingested into Sumo Logic and Cloud SIEM. After you’ve been using Cloud SIEM for a while, you may want to fine-tune it to fit your organization’s needs. If you discover that you’re ingesting too much or too little data to do threat hunting, you can work with your admin to find that balance.
+
+So, what’s the balance between too much and too little data? It depends. Work with your admin to answer these questions:
+
+* **Are you ingesting enough data?** Cloud SIEM takes thousands or millions of records and boils them down into just a handful of Insights. Most organizations ingest more than 50GB of data every day to start finding any Insights. If your ingest volume is smaller than this, consider sending more data to Cloud SIEM or using other security solutions like the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/).
+* **Are you ingesting too much data?** More data doesn’t always mean more Insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
+* **Are you ingesting the right data?** Cloud SIEM doesn’t just work on quantity alone. Quality data will affect your performance as well. As a best practice, you’ll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/).
+
+#### Processing your data for Cloud SIEM
+
+Before Cloud SIEM can generate security Insights, your log messages must go through a little processing first. First, Cloud SIEM processes the messages into Records. Each Record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" style={{border: '1px solid gray'}} width="500"/>
+
+Let’s follow a simple log message down this pipeline:
+```
+sso : ip-127-0-0-1 : alex@travellogic.com :
+"Successful Login" : “2021-05-25T22:11:42"
+```
+
+First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-127-0-0-1`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `127.0.0.1`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq).
+
+These normalized Records are then sent down the Cloud SIEM pipeline and compared to rules. 
+
+#### Extracting security insights from Cloud SIEM
+
+Each record ingested into Cloud SIEM is compared to hundreds of built-in and custom rules. If a record matches the criteria specified in a rule, then Cloud SIEM creates a Signal. When a Signal is created, it contains a name, entity, severity, stage, and description. A Signal always contains, at minimum, an entity and a severity. This data is later used by Cloud SIEM's Insight engine algorithm. 
+
+A Signal is an individual security event. The entity in a Signal is something like an IP address, MAC address, or hostname. The entity tells us who or what was involved in the event that the record described. The stage or tags are assigned based on where the event fits in the [MITRE ATT&CK](https://attack.mitre.org/) framework. This can tell us a bit about how or why the event occurred. The severity is a number between 0 and 10 that tells Cloud SIEM how serious the potential threat is. 
+
+Let's look at the details of one Signal:
+
+<img src={useBaseUrl('img/cse/intro-signal-example.png')} alt="Example Signal" style={{border: '1px solid gray'}} width="800"/>
+
+* A. **Description**. Every Signal's details page includes a description, detailed metadata, and other information to help your threat investigation.
+* B. **Event Time**. The event time tells you when the event occurred.
+* C. **Severity**. A signal's severity score is a number between 0 and 10. This score is used to track the entity's activity score.
+* D. **Rule**. Signals are created when the conditions of a rule are met. You can click on the rule from the Signal's details page to learn more.
+* E. **Tags**. Tags or stages use the MITRE ATT&CK framework to point you toward how or why an event occurred.
+* F. **Entity**. The entity can be any unique identifier like an IP address. In this case, it's a username.
+
+Cloud SIEM typically processes thousands or millions of records and boils them down into hundreds of Signals.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-signals-insights.png')} alt="Records, signals, and insights" style={{border: '1px solid gray'}} width="400"/>
+
+On the Cloud SIEM main page, you'll see a panel similar to this one. In this case, 52 thousand records have been ingested and processed into 4 thousand Signals. Some Signals could be false alarms, but many could be worth investigating anyway. But, 4 thousand is still way too many for the average SOC analyst to sift through every day. So, how do you know which Signals to pay attention to first?
+
+Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just 1 Insight were created out of 4 thousand Signals.
+
+An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
+
+## Introduction to Cloud SIEM for administrators
+
+### The Cloud SIEM data pipeline
+
+Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. 
+
+This is Sumo Logic's Cloud SIEM home page. 
+
+<img src={useBaseUrl('img/cse/cloud-siem-hud.png')} alt="Cloud SIEM main page" style={{border: '1px solid gray'}} width="800"/>
+
+* A. **Count**. A count of the Records created from incoming messages, and the Signals and Insights that have been generated.
+* B. **Insights by Status**. An overview of recent Insights and their statuses: New, In Progress, Closed, or Other.
+* C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent Records, light blue bars represent Signals, and red triangles represent Insights.
+* D. **Recent Activity**. Displays a feed of the latest Insights that have been generated.
+
+Sumo Logic collects and ingests millions of your company’s log messages. However, you may choose to send only a portion of these to Cloud SIEM. Cloud SIEM takes these messages and parses, maps, and enriches them into Records. These records are compared to Rules and, if there's a match, Entities are extracted from them and Cloud SIEM uses that information to create Signals. These Signals and Entities are correlated, and used in security detection use cases. Then, if a certain severity threshold is crossed, they become an Insight. Some of these Insights have actions available right in the Cloud SIEM platform, like alerting your SOC teammates.
+
+As a Cloud SIEM administrator, it’s your job to make sure that this pipeline flows smoothly. In this section, you’ll learn how to partition your data in Sumo Logic, forward it to Cloud SIEM, customize the schema mappings, and tune the SOC content to support the analysts on your SOC team. All these customizations and optimizations will help reduce false positives and enable your SOC analyst teammates to investigate and hunt threats faster.
+
+
  
+<!-- Old sections
 
 ## Getting your data into Cloud SIEM
 
@@ -430,3 +545,5 @@ Rule tuning, custom rules, and custom Insights are just a taste of what you can 
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
 * How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
+
+-->
