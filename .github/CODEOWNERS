@@ -7,7 +7,7 @@
 /docs/integrations/ @SumoLogic/sumoappdev @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
 
 # Owners of all files in the `/docs/send-data/kubernetes` directory.
-/docs/send-data/kubernetes/ @SumoLogic/k8s-developers @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
+/docs/send-data/kubernetes/ @SumoLogic/open-source-collection-team @SumoLogic/k8s-developers @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
 
 # Owners of all files in the `/docs/send-data/opentelemetry-collector` directory and its subdirectories.
 /docs/send-data/opentelemetry-collector/ @SumoLogic/open-source-collection-team @kimsauce @jpipkin1 @mafsumo @JV0812 @amee-sumo
