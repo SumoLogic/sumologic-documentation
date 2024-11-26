@@ -13,7 +13,7 @@ When you have full control over your logging format we recommend human readable
 
 Whatever you use follow these rules:
 
-* Use key-value pairs in a regular, defined format such as `key=value,` so they're easy to [parse](/docs/search/search-query-language/parse-operators).
+* Use key-value pairs in a regular, defined format such as `key=value`, so they're easy to [parse](/docs/search/search-query-language/parse-operators).
 * Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](/docs/send-data/reference-information/time-reference.md) for details.
 * Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](/docs/send-data/installed-collectors/sources/define-boundary-regex-multiline-messages.md) for details.
 
