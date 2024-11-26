@@ -1,7 +1,7 @@
 ---
 id: elastic-container-service
-title: Amazon Elastic Container Service (ECS)
-sidebar_label: Amazon ECS
+title: Amazon ECS without Container Insights and Traces
+sidebar_label: Amazon ECS without Container Insights and Traces
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
@@ -11,13 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic app for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The app also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-## Log and Metrics types
+We offer two different ECS versions, which have separate data collection steps:
+* **[Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/available-metrics.html) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
+* **[Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both ec2 and fargate based ecs deployments. For instructions on collecting these data, refer to the [Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/).
 
-The app collects ECS logs and metrics for:
-* [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html).
-* [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html).
-   * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
-
+This page has instructions for collecting logs and metrics for the Amazon ECS app.
 
 ### Sample log messages
 
