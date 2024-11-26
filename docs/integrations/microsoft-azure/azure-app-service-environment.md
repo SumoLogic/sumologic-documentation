@@ -18,7 +18,7 @@ For Azure App Service Environment, you can collect the following logs:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **App Service Environment Platform Logs**. Logs are only emitted when your App Service Environment has an event (for example, a scale operation with an App Service plan) that triggers the logs. To learn more about the different situations and messages collected for Azure App Service Environment, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/environment/using#logging).
+* **App Service Environment Platform Logs**. Logs are only emitted when your App Service Environment has an event (for example, a scale operation with an App Service Environment) that triggers the logs. To learn more about the different situations and messages collected for Azure App Service Environment, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/environment/using#logging).
 
 ## Setup
 
@@ -79,10 +79,12 @@ json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure App Service Environment that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `App Service Environment Platform Logs`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+2. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure WebApps that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
+   1. Select `App Service Environment Platform Logs`.
+   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   <img src={useBaseUrl('img/send-data/Azure-App-Service-Plan-Configure-Diagnostic-Logs.png')} alt="Azure App Service Environment logs" style={{border: '1px solid gray'}} width="800" />
+3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure App Service Environment Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
 
@@ -110,7 +112,7 @@ Use this dashboard to:
 * View recent resource and service health incidents.
 * View distribution of service and resource health by incident type.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppServiceEnvironment/Azure-App-Service-Plan-Overview.png')} alt="Azure AppServiceEnvironment Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppServiceEnvironment/Azure-App-Service-Environment-Overview.png')} alt="Azure AppServiceEnvironment Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations
 
@@ -120,7 +122,7 @@ Use this dashboard to:
 *  Analyze scaling and upgrade events for your App Service Environment
 *  Identify potential operations issues affecting your webapps.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Network dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
