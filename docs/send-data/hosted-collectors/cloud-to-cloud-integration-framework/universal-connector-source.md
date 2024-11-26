@@ -307,8 +307,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter  | Type        | Value                                         | Required | Description                      |
 | :--------- | :---------- | :-------------------------------------------- | :------- | :------------------------------- |
-| schemaRef  | JSON Object | `{"type":"Config Based"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Config Based"`                              | Yes      | Type of source.                  |
+| schemaRef  | JSON Object | `{"type":"Universal Connector"}`                     | Yes      | Define the specific schema type. |
+| sourceType | String      | `"Universal Connector"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration Object
