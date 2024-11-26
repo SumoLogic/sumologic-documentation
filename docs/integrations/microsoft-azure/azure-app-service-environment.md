@@ -16,6 +16,8 @@ The below instructions applies to App Service Environment v3.
 
 For Azure App Service Environment, you can collect the following logs:
 
+- **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
+
 * **App Service Environment Platform Logs**. Logs are only emitted when your App Service Environment has an event (for example, a scale operation with an App Service plan) that triggers the logs. To learn more about the different situations and messages collected for Azure App Service Environment, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/environment/using#logging).
 
 ## Setup
@@ -28,7 +30,51 @@ You must explicitly enable diagnostic settings for each Azure App Service Enviro
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServiceEnvironment/Logs`, `Azure/AppServiceEnvironment/Metrics`.
 
+### Configure Field Extraction Rules
+
+Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
+
+#### Azure Location Extraction FER
+
+```sql
+Rule Name: AzureLocationExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
+
+```sql title="Parse Expression"
+json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+| replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+| if (!isBlank(resourceLocation), resourceLocation, location) as location
+| if (!isBlank(service_region), service_region, location) as location
+| if (isBlank(location), "global", location) as location
+| fields location
+```
+
+#### Resource ID Extraction FER
+
+```sql
+Rule Name: AzureResourceIdExtractionFER
+Applied at: Ingest Time
+Scope (Specific Data): tenant_name=*
+```
+
+```sql title="Parse Expression"
+json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+| if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
+| toUpperCase(resourceId) as resourceId
+| parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+| parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+| parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+| parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+| parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
+| if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
+```
+
 ### Configure logs collection
+
+#### Diagnostic logs
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
@@ -38,3 +84,63 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Select `App Service Environment Platform Logs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
+#### Activity logs (optional)
+
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+
+## Installing the Azure App Service Environment app
+
+This section provides instructions on how to install the Azure App Service Environment app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
+
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
+
+## Viewing Azure App Service Environment dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Azure AppService - Overview** dashboard provides comprehensive information of all the service health incidents or resource health events associated with Azure AppService in your azure account.
+
+Use this dashboard to:
+* View recent resource and service health incidents.
+* View distribution of service and resource health by incident type.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppServiceEnvironment/Azure-App-Service-Plan-Overview.png')} alt="Azure AppServiceEnvironment Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Operations
+
+The **Azure AppService - Operations** dashboard offers comprehensive insights into the scaling, upgrade events for your Azure AppServiceEnvironment.
+
+Use this dashboard to:
+*  Analyze scaling and upgrade events for your App Service Environment
+*  Identify potential operations issues affecting your webapps.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Network dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Administrative Operations
+
+The **Azure AppService - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
+
+Use this dashboard to:
+* Identify top users performing administrative operations.
+* View Top 10 operations that caused the most errors.
+* View recent read, write, and delete operations.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Administrative-Operations.png')} alt="Azure AppServiceEnvironment Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrading the Azure App Service Environment app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure App Service Environment app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
