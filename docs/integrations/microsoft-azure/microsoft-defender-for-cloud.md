@@ -36,6 +36,13 @@ The Microsoft Defender for Cloud app uses the following logs:
 * [Security recommendations](https://learn.microsoft.com/en-us/azure/defender-for-cloud/review-security-recommendations)
 * [Regulatory compliance](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance-standards)
 
+## Collection configuration
+
+To forward Microsoft Defender events to Sumo Logic, you can set up an efficient pipeline: **Microsoft Defender** > **Event Hub** > **Sumo Logic (Hosted Collector)**. This setup ensures that security events from Microsoft Defender are seamlessly ingested into Sumo Logic for monitoring and analysis.
+
+1. **[Create a Sumo Logic Azure Event Hub Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/)**. Configure an Event Hub source to receive events from the Azure platform. This will act as the endpoint for the data pipeline.
+1. **[Set up continuous export in Azure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)**. Within the Azure portal, configure the Microsoft Defender for Cloud to export its security events to the Event Hub instance created in the previous step. Continuous export ensures that the events such as alerts, recommendations, and regulatory compliance updates are forwarded in near real-time as shown below.
+
 ## Sample log messages
 
 <details>
@@ -301,8 +308,6 @@ _sourceCategory=azure/defender  "Microsoft.Security/regulatoryComplianceStandard
 | fields - _count
 ```
 
-## Collection configuration
-
 ## Installing the Microsoft Defender for Cloud app
 
 import AppInstall from '../../reuse/apps/app-install.md';
@@ -356,6 +361,30 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Alert from Embargoed Countries` | This alert is triggered when activities or access attempts are detected from countries or regions under embargo or subject to restrictions. It highlights potential geopolitical risks or unauthorized access attempts from flagged locations. | Critical | Count > 0 | 
 | `Critical Alert` | This is a high-priority alert that is triggered when a serious issue or threat is detected within your Azure environment. These alerts often correspond to malicious activities, severe configuration vulnerabilities, or critical system failures requiring immediate attention. | Critical | Count > 0|
 | `Critical Security Recommendation` | This alert is triggered when a high-risk vulnerability or misconfiguration is detected in your Azure resources. It provides actionable insights for strengthening your cloud security posture. | Critical | Count > 0 |
+
+## Troubleshooting
+
+### Verify Event Hub data flow
+
+If your configured Event Hub instance is not successfully sending data to Sumo Logic. Follow the below steps to troubleshoot the issue:
+
+1. Navigate to the **Event Hub Instance Blade** in the Azure portal and select the **Data Explorer(preview)** tab to send sample events..<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/event-hub-instance-blade.png')} style={{border:'1px solid gray'}} alt="event-hub-instance-blade" width="800"/>
+1. In the **Data Explorer(preview)** page, click **Send event** and preview the sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/data-explorer.png')} style={{border:'1px solid gray'}} alt="data-explorer" width="800"/>
+1. Verify if those events are being sent to the [Sumo Logic by Live Tailing](/docs/search/live-tail/about-live-tail/). If both the data matches, then event hub instance will be successfully sending data to Sumo Logic. <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/live-tailing.png')} style={{border:'1px solid gray'}} alt="live-tailing" width="800"/>
+
+### Validate alerts at Event Hub
+
+If you are not recieving any alerts from the Microsoft Defender to the Event Hub instance. Firstly, make sure that the generated sample alerts are received in your configured Event Hub instance. This ensures the connection between Defender and Event Hub is functioning correctly. To test the pipeline by sending sample alerts from Microsoft Defender by following the below steps:
+
+1. In the **Microsoft Defender** console, select **Security Alerts** under **General** section.
+1. In the **Security Alerts** page, select the **Sample Alerts** tab.
+1. Click on **Create sample alerts** to receieve the sample alerts. Thereby, to validate that the sample alerts are forwarded to the configured Event Hub instance.
+
+<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/validate-microsoft-defender-alerts.png')} style={{border:'1px solid gray'}} alt="validate-microsoft-defender-alerts" width="800"/>
+
+:::info
+There may be a delay in forwarding alerts from Microsoft Defender to the Event Hub instance. If you experience significant delays, reach out to Azure Support for assistance.
+:::
 
 ## Upgrade/Downgrade the Microsoft Defender for Cloud app (Optional)
 
