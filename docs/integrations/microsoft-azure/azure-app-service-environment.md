@@ -104,7 +104,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Azure AppService - Overview** dashboard provides comprehensive information of all the service health incidents or resource health events associated with Azure AppService in your azure account.
+The **Azure App Service Environment - Overview** dashboard provides comprehensive information of all the service health incidents or resource health events associated with Azure App Service Environments in your azure account.
 
 Use this dashboard to:
 * View recent resource and service health incidents.
@@ -114,7 +114,7 @@ Use this dashboard to:
 
 ### Operations
 
-The **Azure AppService - Operations** dashboard offers comprehensive insights into the scaling, upgrade events for your Azure AppServiceEnvironment.
+The **Azure App Service Environment - Operations** dashboard offers comprehensive insights into the scaling, upgrade events for your Azure App Service Environment.
 
 Use this dashboard to:
 *  Analyze scaling and upgrade events for your App Service Environment
@@ -124,7 +124,7 @@ Use this dashboard to:
 
 ### Administrative Operations
 
-The **Azure AppService - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
+The **Azure App Service Environment - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
 Use this dashboard to:
 * Identify top users performing administrative operations.
