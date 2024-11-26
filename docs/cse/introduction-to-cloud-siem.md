@@ -200,7 +200,7 @@ Use the **Configuration** menu to access:
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules.
 
-## Introduction to Cloud SIEM for analyts
+## Introduction to Cloud SIEM for analysts
 
 ### From logs to security insights
 
@@ -259,7 +259,7 @@ Before Cloud SIEM can generate security Insights, your log messages must go thro
 Let’s follow a simple log message down this pipeline:
 ```
 sso : ip-127-0-0-1 : alex@travellogic.com :
-"Successful Login" : “2021-05-25T22:11:42"
+"Successful Login" : "2021-05-25T22:11:42"
 ```
 
 First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-127-0-0-1`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `127.0.0.1`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq).
@@ -289,9 +289,161 @@ Cloud SIEM typically processes thousands or millions of records and boils them d
 
 On the Cloud SIEM main page, you'll see a panel similar to this one. In this case, 52 thousand records have been ingested and processed into 4 thousand Signals. Some Signals could be false alarms, but many could be worth investigating anyway. But, 4 thousand is still way too many for the average SOC analyst to sift through every day. So, how do you know which Signals to pay attention to first?
 
-Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just 1 Insight were created out of 4 thousand Signals.
+Cloud SIEM takes everything one step further and correlates those Signals into a manageable number of Insights. Here, just 1 Insight was created out of 4 thousand Signals.
 
 An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
+
+#### Explore the Cloud SIEM UI
+
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.
+1. Near the top of the left pane of the Cloud SIEM UI, you'll see summary statistics. In the upper right corner of this pane, a dropdown menu lets you select the timeframe for the summary statistics. Use the summary panel and the dropdown to answer these questions:
+   * How many Records have been ingested in the last 8 Hours?
+   * How many Signals have been created in the last 7 Days?
+   * How many Insights have been created in the last 24 Hours?<br/><img src={useBaseUrl('img/cse/intro-select-timeframe.png')} alt="Select timeframe" style={{border: '1px solid gray'}} width="800"/>
+1. In the center of the Cloud SIEM HUD is the Insight Radar. Hover over each piece of the Insight Radar to answer these questions:
+   * What time were the most Records ingested in the last 24 hours? When were the fewest records ingested? Hint: Hover over the blue line to find out how many Records were ingested at each time increment.
+   * What time were the most Signals created in the last 24 hours? When were the fewest Signals created? Hint: Hover over each bar to find out how many Signals were generated at each time increment.
+   * How many Insights have been generated in the last 24 hours? Hint: Each triangle represents one or more Insights, so hover over each to find the number of Insights each represents.<br/><img src={useBaseUrl('img/cse/intro-hud.gif')} alt="Explore the radar" style={{border: '1px solid gray'}} width="400"/>
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. Use the **Filters** bar in the **Rules** page to answer these questions:
+   * How many rules have a name that contains "firewall"? Hint: Use the autocomplete suggestions and dropdown menus to enter `Name contains firewall` in the **Filters** bar.
+   * How many rules have a severity score greater than 8?
+   * How many rules detect the "persistence" tactic"?<br/><img src={useBaseUrl('img/cse/intro-filter-rules.png')} alt="Filter rules" style={{border: '1px solid gray'}} width="325"/>
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+1. Use the **Filters** bar in the **Entities** page to answer these questions:
+   * How many entities have an activity score of 5 or greater? Hint: Use the autocomplete suggestions and dropdown menus to enter `Activity Score greater than` 5 in the **Filters** bar.
+   * How many entities have an activity score of 0?<br/><img src={useBaseUrl('img/cse/intro-filter-entities.png')} alt="Filter entities" style={{border: '1px solid gray'}} width="350"/>
+
+Your answer to all these questions may vary. Make sure you feel confident navigating the Cloud SIEM UI to find all this information.
+
+:::tip
+* Filters persist each time you search. This is great if you want to drill down into subsets of data.
+* Depending on your monitor size and the zoom settings of your browser, you may see two panes instead of three on the Cloud SIEM HUD. Try resizing your browser and adjusting your zoom settings to suit your needs.
+* Depending on your monitor size and the zoom settings of your browser, you may only see the icons, and not the words, in the top navigation bar. Try resizing your browser and adjusting your zoom settings to suit your needs.
+:::
+
+### Introduction to threat investigation
+
+#### Different threats but one platform
+
+In this section, we’ll help three fictional companies investigate their threats. Each company has their own unique security and compliance concerns.
+* Company 1 is a small retail business with a big tech idea: automate the entire coffee business from bean to cup. In addition to consumer protections like PCI DSS, their main concerns include keeping compute costs down while their startup grows.
+* Company 2 is a healthcare company that ships prescription meds to patients. While they meet all HIPAA standards and guidelines, they’re still concerned about data privacy. They want to monitor all their data to make sure their patients are safe and healthy in the digital world, too.
+* Company 3 is a major player in the banking industry. They meet all the GDPR and other international compliance standards but worry their big investors are still targets for hackers.
+
+Sumo Logic can help all of these companies meet their different security and compliance goals. Moreover, Cloud SIEM can help them identify potential threats before they become a problem.
+
+Think about it: What security and compliance issues are you most concerned about in your company today? How has that changed over the years? How were security concerns different at other companies you’ve worked for in the past?
+
+#### Using the MITRE ATT&CK matrix
+
+The [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/) is published by MITRE, a non-profit research organization. ATT&CK stands for Adversarial Tactics, Techniques, and Common Knowledge. 
+
+The framework organizes and categorizes the tactics and techniques that hactivists, cyber criminals, nation states, scripters, and other adversaries use. This includes attacks like exfiltrating databases, installing malware, stealing credentials, and all the other nefarious activities you and your SOC team are trying to stop. 
+
+Cloud SIEM uses these same tactic names for the stages of Signals and the names of Insights. Once you're familiar with ATT&CK, navigating Cloud SIEM's Insights page becomes easier.
+
+Let’s return to our fictional companies, and which MITRE ATT&CK tactics and techniques they might prioritize:
+
+* Company 1 monitors their infrastructure to make sure their apps are as efficient as possible. Execution is a particular concern, since many executable files use precious compute resources.
+* Company 2 is concerned about their patients’ privacy and compliance with standards like HIPAA. Exfiltration of private data is a major concern.
+* Company 3 needs to keep their client’s data secure. Credential access is a concern, since all customers have user credentials tied to their financial accounts.
+
+If you read the news, or are familiar with other cybersecurity frameworks like the Pyramid of Pain, you know there are many kinds of threats out there. It’s easy to become overwhelmed. However, Cloud SIEM helps organize all the potential threats in your system into one manageable dashboard, leveraging the knowledge found in the MITRE ATT&CK matrix along with the Insights algorithm.
+
+#### Get started with threat investigation
+
+Threat investigation is reactive while threat hunting is proactive. Typically, threat investigation happens in response to an alert. Once you’ve investigated a threat, you can hunt for similar threats and take precautionary steps to prevent attacks from happening again. 
+
+Threat investigation is an iterative process, much like troubleshooting. In both threat investigation and troubleshooting, you first monitor your systems. Once an anomaly is detected, you can make a hypothesis about how it happened and diagnose the problem. As you dig deeper, you may revise this initial hypothesis and find more clues about why or how the attack or error happened. You can then take action to resolve the issue. 
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-incident-response-process.png')} alt="Incident response process" style={{border: '1px solid gray'}} width="600"/>
+
+Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIEM’s threat intelligence and correlation algorithms organize related potential security events into Insights. When you get alerted to an Insight, it’s up to you to diagnose the problem and take action.
+
+<img src={useBaseUrl('img/cse/intro-insight-example.png')} alt="Insight example" style={{border: '1px solid gray'}} width="800"/>
+
+* A. **Name**. The Insight’s name can point you to how the event occurred, or why the adversaries did it. In this case, the adversaries wanted to gain credential access.
+* B. **Assignee**. You can assign the Insight to a coworker, update the Insight's status, send alerts, close the Insight, and perform other actions here.
+* C. **Entity**. The entity can point to who, where, or what was affected. In this case, the Insight is clustered around an hostname.
+* D. **Left pane**. A summary of the Insight's key features, like its severity, can be found in the left pane.
+* E. **Timeline**. The timeline can show you when the events occurred. In this case, there are four correlated events over several hours. Each event represents a signal.
+* F. **Signals**. The Signals below the timeline contain details of each event.
+
+The Insight page shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
+
+* Who is behind the event?
+* What assets did the event affect?
+* Where did the event occur?
+* When did the event occur?
+* Why did the event occur?
+* How did the event occur? 
+
+When Signals cluster together, Cloud SIEM uses their tactics and techniques to name the Insights they generate. The Insight’s name can point you to how the event occurred, or why the adversary is behaving that way. For example, a tactic name like discovery or persistence shows the reasons the adversary has. Similarly, tactic names like initial access or execution can tell you a little about the methods the adversary used. These names are just starting points, however, and you may need to revise your hypotheses as you continue your investigations.
+
+Example: An Insight is named Discovery with Execution. Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
+
+The timeline can tell you when the event occurred. You can see whether each signal was triggered at the same time, or sequentially, as well as whether everything happened over minutes, hours, or days. By default, Insights are related Signals that cluster together within the last 14 days.
+
+The entities within each Signal can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
+
+A day in the life of a SOC analyst can be summarized as follows:
+
+<img src={useBaseUrl('img/cse/intro-day-in-the-life-cloud-siem.png')} alt="A day-in-the-life with Cloud SIEM" style={{border: '1px solid gray'}} width="800"/>
+
+Cloud SIEM can help with every step of the threat investigation process:
+1. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the Insight Radar, under the Insight Activity pane, or from the Insights panel. 
+1. Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts.
+1. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
+1. You can also take certain actions directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
+1. Finally, you can update the Insight. You can mark it as "in progress" or "closed". When you close it, you can mark it as "resolved," "false positive", "duplicate", or "no action". Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future. 
+
+Of course, this process will repeat each day as new Insights are generated for you to investigate. 
+
+#### Investigating an Insight
+
+In this section, you'll be investigating an insight for your organization that was detected through Cloud SIEM. Our goal is to analyze the insight details and complete the narrative of what happened.
+
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Insights** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+1. Find an Insight to investigate. 
+1. Click the Insight’s name to investigate it. For our example, we found one named **Discovery with Execution and Initial Access**. <br/><img src={useBaseUrl('img/cse/intro-insight-example-investigation.png')} alt="Example threat insight" style={{border: '1px solid gray'}} width="800"/>
+1. Use the Insight’s name (and the [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/)), timeline, Signals, and Entities to answer these questions:
+   * What events (Signals) were detected and correlated together?
+   * What is the total of all the severity scores of the Signals in this Insight?
+   * What order did the events happen in?
+   * What hypotheses do you have about how and why the event happened?
+   * What other information can you find by exploring this Insight?
+1. Scroll to the bottom of the left navigation pane of the Insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: "*First, a known phishing link was received in a user’s email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon’s GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this Insight. Given the likelihood of active malware in the network, the user’s machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
+
+#### Dive into Signals and Entities
+
+Insights provide a great, high-level summary of potential security events. Because of Cloud SIEM’s threat intelligence and sophisticated correlation engine, very few Insights are false positives, so they’re all worth investigating.
+
+However, sometimes you may want to investigate deeper, to really understand what happened. Or, you may want to do proactive threat hunting work, to find potential problems before they begin impacting your system, even if some of what you’re looking at are false alarms.
+
+The Signals tab lists all the Signals created by rules that have been triggered in your system in the last 14 days, by default. Signals provide summaries of potential security threats. Remember, not all Signals are security incidents. After all, there are legitimate reasons why someone might be logged in to two different devices at the same time, or why there have been several failed password attempts on an account.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals.png')} alt="Signals" style={{border: '1px solid gray'}} width="800"/>
+
+When you click into a Signal, you’ll have the option to see the full details of the record that triggered it. This includes information like the IP address, geolocation, threat level, and other information that can aid you in your investigation.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" style={{border: '1px solid gray'}} width="800"/>
+
+The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score reaches at least 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="800"/>
+
+#### Bring it back to Sumo Logic search
+
+Sometimes you want to take your investigation even further. An in-depth threat investigation will use the most of both Cloud SIEM and Sumo Logic’s core search functionality. 
+
+There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is **Sumo Logic Search**. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn’t detected by a rule in Cloud SIEM. Hover your mouse over the entity name, click the <img src={useBaseUrl('img/cse/intro-context-action-icon.png')} alt="Context action button" style={{border: '1px solid gray'}} width="20"/> button that appears, and select **Sumo Logic Search** from the list.
+
+<img src={useBaseUrl('img/cse/intro-log-search-context-action.png')} alt="Sumo Logic Search context menu option" style={{border: '1px solid gray'}} width="400"/>
+
+Many entities in the Insights, Signals, and Entities pages have context actions (six dots icon). Hover next to certain entities and the six dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
+
+You can also work with your admin to set up dashboards in Sumo Logic that track Insights and other activity in Cloud SIEM. This allows you to monitor what’s going on in Cloud SIEM without ever leaving Sumo Logic’s core platform.
 
 ## Introduction to Cloud SIEM for administrators
 
@@ -367,7 +519,7 @@ Before Cloud SIEM can generate security Insights, your log messages must go thro
 Let’s follow a simple log message down this pipeline:
 ```
 sso : ip-127-0-0-1 : alex@travellogic.com :
-"Successful Login" : “2021-05-25T22:11:42"
+"Successful Login" : "2021-05-25T22:11:42"
 ```
 
 First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-127-0-0-1`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `127.0.0.1`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq).
@@ -423,7 +575,7 @@ Once you choose an Insight, you can dig through all the raw logs and Signals to 
 
 You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create Jira tickets, execute playbooks, and many other custom actions with the Actions button.
 
-Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved”, “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future.
+Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as "in progress" or "closed". When you close it, you can mark it as "resolved", "false positive", "duplicate", or "no action". Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future.
 
 Of course, this process will repeat each day as new Insights are generated for you to investigate.
 
