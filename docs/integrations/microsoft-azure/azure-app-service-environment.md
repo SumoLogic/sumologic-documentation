@@ -122,7 +122,7 @@ Use this dashboard to:
 *  Analyze scaling and upgrade events for your App Service Environment
 *  Identify potential operations issues affecting your app service environment.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppServiceEnvironment/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -133,7 +133,7 @@ Use this dashboard to:
 * View Top 10 operations that caused the most errors.
 * View recent read, write, and delete operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Administrative-Operations.png')} alt="Azure AppServiceEnvironment Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppServiceEnvironment/Azure-App-Service-Environment-Administrative-Operations.png')} alt="Azure AppServiceEnvironment Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrading the Azure App Service Environment app (Optional)
 
