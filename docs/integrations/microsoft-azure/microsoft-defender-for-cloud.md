@@ -378,7 +378,7 @@ If you are not receiving any alerts from the Microsoft Defender to the Event Hub
 
 1. In the **Microsoft Defender** console, select **Security Alerts** under **General** section.
 1. In the **Security Alerts** page, select the **Sample Alerts** tab.
-1. Click on **Create sample alerts** to receive the sample alerts. Thereby, to validate that the sample alerts are forwarded to the configured Event Hub instance.
+1. Click on **Create sample alerts** to receive the sample alerts. This validates that the sample alerts are forwarded to the configured Event Hub instance.
 
 <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/validate-microsoft-defender-alerts.png')} style={{border:'1px solid gray'}} alt="validate-microsoft-defender-alerts" width="800"/>
 
