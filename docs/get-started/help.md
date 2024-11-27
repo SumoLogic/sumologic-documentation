@@ -1,7 +1,6 @@
 ---
 id: help
 title: Help
-sidebar_label: Help
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
