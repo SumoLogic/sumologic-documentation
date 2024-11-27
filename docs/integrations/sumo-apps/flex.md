@@ -220,7 +220,7 @@ The `credits_conversion` parameter indicates the credits consumed per 1 GB of sc
 The **Flex - Feature Level Scan Volume** dashboard provides visibility into the scan volume at a feature level in order to monitor and control cost at a feature level.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Feature-Level-Scan-Volume.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
 
 :::note
-The `credits_conversion` parameter indicates the credits consumed per 1GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credit's Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
 :::
 
 ### Log Spikes
