@@ -1,6 +1,7 @@
 ---
 id: onboarding-checklists
 title: Onboarding Checklists
+sidebar_label: Onboarding checklists
 description: Onboarding Checklists for Analysts and Administrators.
 ---
 

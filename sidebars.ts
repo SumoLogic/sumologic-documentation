@@ -439,6 +439,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
@@ -466,6 +467,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
@@ -1323,6 +1325,7 @@ module.exports = {
         },
       ],
     },
+    'search/copilot',
     {
       type: 'category',
       label: 'Search Query Language',

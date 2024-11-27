@@ -9,11 +9,10 @@ resource "sumologic_cloud_to_cloud_source" "cyberark_test_source" {
 			"password": "Sumo@123",
 			"application_id": "sumologic-c2c",
 			"epm_server": "https://in.epm.cyberark.com",
-			"ratelimit": true,
 			"detailed_raw_events": false,
 			"aggregated_policy_audits": false,
 			"policy_audit_raw_events": false,
-			"polling_interval": 30
+			"polling_interval": 600
   })
 }
 resource "sumologic_collector" "collector" {
