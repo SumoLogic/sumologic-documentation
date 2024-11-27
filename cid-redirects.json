@@ -2005,6 +2005,8 @@
   "/cid/10220": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source",
   "/cid/25618": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source",
   "/cid/25619": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source",
+  "/cid/25779": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source",
+  "/cid/25719": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source",
   "/cid/25620": "/docs/integrations/security-threat-detection/duo-security",
   "/cid/25621": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source",
   "/cid/25622": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source",
