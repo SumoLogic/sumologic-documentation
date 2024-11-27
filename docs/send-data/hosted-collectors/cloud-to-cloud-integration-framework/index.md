@@ -339,12 +339,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source"><img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="80"/><h4>Mandiant Threat Intel Source</h4></a>
-  <p>Learn how to collect indicators list from the Mandiant Threat Intel platform.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
   </div>
