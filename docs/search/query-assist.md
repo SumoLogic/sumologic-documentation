@@ -1,7 +1,7 @@
 ---
-id: simplified-query-writing
-title: Simplified Query Writing Enhancements (Beta)
-description: Our new simplified query writing enhancements focus on delivering a frictionless query experience with real-time syntax suggestions, schema suggestions, and partial/full query predictions.
+id: query-assist
+title: Logs Query Assist - Preview
+description: Logs Query Assist improvements reduce the complexity of Sumo Logic’s query language, making it easier to discover relevant fields, minimize errors, and benefit from intelligent query-building assistance.
 ---
 
 <head>
@@ -10,20 +10,28 @@ description: Our new simplified query writing enhancements focus on delivering a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
+:::sumo Preview release
+This is a Preview release. To learn more, contact your Sumo Logic account executive. [Register here](https://docs.google.com/forms/d/e/1FAIpQLSdtmzRn1NyAdk1rXGZrJrpQQwR2i9FKOYd3uKLwEzrkZGVrwQ/viewform).
+:::
 
-This feature is in beta, with select features available for early access. Full general availability is expected by the end of the year. To participate, contact your Sumo Logic account executive.
+Query Assist simplifies query-building in Sumo Logic by offering real-time syntax suggestions, schema prompts, and partial/full query predictions. These enhancements streamline the process for users at all skill levels, making it easier to write accurate and efficient queries.
 
-Our new simplified query writing enhancements provide a frictionless experience with real-time syntax suggestions, schema suggestions, and partial/full query predictions. These features simplify the query-building process, helping both novice and advanced users write accurate, efficient queries.
+This feature reduces the complexity of query building, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation.
 
-By incorporating user feedback, we’ve implemented improvements to reduce the complexity of Sumo Logic’s query language, making it easier to discover relevant fields, minimize errors, and benefit from intelligent query-building assistance.
+## Key enhancements
 
-## Key enhancements made to the query-building experience
+* **Simplified learning curve**. Syntax suggestions and schema prompts make it easy to write queries without extensive knowledge of query syntax.
+* **Enhanced auto-complete**. Context-aware suggestions improve accuracy and efficiency, adapting to your queries and organizational patterns.
+* **Streamlined field discovery**. Relevant fields are automatically suggested, especially for structured data like JSON, eliminating manual searching.
 
-* **Improved learning curve**. We’ve simplified learning and using Sumo Logic queries. The new syntax suggestions and schema-based prompts allow you to write queries faster with less need for deep familiarity with the syntax.
-* **Enhanced auto-complete**. The auto-complete function has been optimized to provide more relevant, context-based suggestions that align with your queries and organizational patterns, improving accuracy and efficiency.
-* **Streamlined field discovery**. No need to manually search for fields within your logs. The system automatically suggests key fields, especially for structured data like JSON, making it easier to navigate complex data and build accurate queries.
+## How to get started
 
+1. **Start a log search**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** to start typing your query.
+2. **Leverage syntax and schema suggestions**. As you type, watch for real-time suggestions for fields and operators. Select options using your arrow keys and press `Tab` to auto-complete.
+3. **Take advantage of predictions**. Use partial and full query predictions to build queries faster and more accurately.
+4. **Review and correct errors**. Correct flagged errors before running your query.
+
+## Features
 
 ## Token-by-token prediction and auto-complete
 
@@ -55,19 +63,21 @@ Suggestions are ranked based on your organization’s common queries, making que
 
 The system ranks suggestions based on common queries from your organization or your own previous queries. This ensures that your auto-complete options are not only relevant but also contextually accurate, speeding up the query-writing process.
 
-## How to get started
-
-1. **Start a log search**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** to start crafting your query.
-2. **Leverage syntax and schema suggestions**. As you type, the system will offer real-time suggestions for fields and operators. Select options using your arrow keys and press `Tab` to auto-complete.
-3. **Use partial and full query predictions**. Take advantage of the system’s predictions to build queries faster and more accurately.
-4. **Review and correct errors**. As you write your query, watch for real-time error highlighting and corrections before running the query.
 
 ### Need more help?
 
-Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write queries in plain English and auto-generates them for you.
+Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write and execute natural language log search queries.
+
+## Feedback
+
+We want your input on Query Assist! Share your thoughts on its usage, relevance, accuracy, UX, and suggestions ranking (syntax, schema, single phrase).
+
+:::note
+Query Assist is a working name. Final naming and branding may change before release. All feature updates and release dates are subject to change.
+:::
 
 <!--
-These features will be available in phases:
+Phased Availability:
 
 * **Phase 1**. Token-by-token prediction, metadata auto-complete, and basic schema suggestions.
 * **Phase 2**. Enhanced operator predictions, full query suggestions, and advanced schema discovery.
