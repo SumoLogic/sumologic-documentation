@@ -79,7 +79,7 @@ json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure WebApps that you want to monitor.
+2. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure App Service Environment that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `App Service Environment Platform Logs`.
    1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
@@ -120,7 +120,7 @@ The **Azure App Service Environment - Operations** dashboard offers comprehensiv
 
 Use this dashboard to:
 *  Analyze scaling and upgrade events for your App Service Environment
-*  Identify potential operations issues affecting your webapps.
+*  Identify potential operations issues affecting your app service environment.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Environment-Operations.png')} alt="Azure AppServiceEnvironment Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
