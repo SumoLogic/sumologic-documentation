@@ -368,9 +368,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 If your configured Event Hub instance is not successfully sending data to Sumo Logic. Follow the below steps to troubleshoot the issue:
 
-1. Navigate to the **Event Hub Instance Blade** in the Azure portal and select the **Data Explorer(preview)** tab to send sample events..<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/event-hub-instance-blade.png')} style={{border:'1px solid gray'}} alt="event-hub-instance-blade" width="800"/>
-1. In the **Data Explorer(preview)** page, click **Send event** and preview the sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/data-explorer.png')} style={{border:'1px solid gray'}} alt="data-explorer" width="800"/>
-1. Verify if those events are being sent to the [Sumo Logic by Live Tailing](/docs/search/live-tail/about-live-tail/). If both the data matches, then event hub instance will be successfully sending data to Sumo Logic. <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/live-tailing.png')} style={{border:'1px solid gray'}} alt="live-tailing" width="800"/>
+1. Navigate to the **Event Hub Instance Blade** in the Azure portal and select the **Data Explorer (preview)** tab to send sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/event-hub-instance-blade.png')} style={{border:'1px solid gray'}} alt="event-hub-instance-blade" width="800"/>
+1. In the **Data Explorer (preview)** page, click **Send event** and preview the sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/data-explorer.png')} style={{border:'1px solid gray'}} alt="data-explorer" width="800"/>
+1. Verify if those events are being sent to the [Sumo Logic by Live Tailing](/docs/search/live-tail/about-live-tail/). If the data matches, then the Event Hub instance will successfully send data to Sumo Logic. <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/live-tailing.png')} style={{border:'1px solid gray'}} alt="live-tailing" width="800"/>
 
 ### Validate alerts at Event Hub
 
