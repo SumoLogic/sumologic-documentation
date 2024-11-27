@@ -374,7 +374,7 @@ If your configured Event Hub instance is not successfully sending data to Sumo L
 
 ### Validate alerts at Event Hub
 
-If you are not receiving any alerts from the Microsoft Defender to the Event Hub instance. Firstly, make sure that the generated sample alerts are received in your configured Event Hub instance. This ensures the connection between Defender and Event Hub is functioning correctly. To test the pipeline by sending sample alerts from Microsoft Defender by following the below steps:
+If you are not receiving any alerts from the Microsoft Defender to the Event Hub instance, first make sure that the generated sample alerts are received in your configured Event Hub instance. This ensures the connection between Defender and Event Hub is functioning correctly. To test the pipeline by sending sample alerts from Microsoft Defender, follow the below steps:
 
 1. In the **Microsoft Defender** console, select **Security Alerts** under **General** section.
 1. In the **Security Alerts** page, select the **Sample Alerts** tab.
