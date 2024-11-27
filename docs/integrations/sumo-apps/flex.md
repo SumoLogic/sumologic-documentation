@@ -212,7 +212,7 @@ The **Flex - Capacity Utilization** dashboard displays the subscribed, actual, a
 The **Flex - Credits Consumed** dashboard provides visibility into the total amount of [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) consumed by your organization. This allows you to monitor and control search costs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Credits-Consumed.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" /> 
 
 :::note
-The `credits_conversion` parameter indicates the credits consumed per 1GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credit's Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
 :::
 
 ### Feature Level Scan Volume
