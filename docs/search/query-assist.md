@@ -18,6 +18,8 @@ Query Assist simplifies query-building in Sumo Logic by offering real-time synta
 
 This feature reduces the complexity of query building, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation.
 
+<img src={useBaseUrl('img/search/get-started-search/query-assist-preview1.gif')} alt="query assist demo gif" width="700"/>
+
 ## Key enhancements
 
 * **Simplified learning curve**. Syntax suggestions and schema prompts make it easy to write queries without extensive knowledge of query syntax.
