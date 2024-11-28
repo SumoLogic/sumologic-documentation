@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.11  
-Updated: Nov 18, 2024***
+***Version: 1.12  
+Updated: Nov 28, 2024***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -31,7 +31,7 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
 * **Search into Alerts** *(Enrichment)* - Retrieves all Alerts ids that match a given query.
-* **Alerts CrowdStrike Falcon Daemon** *(Containment)* - Daemon to pull CrowdStrike Alerts.
+* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
 
@@ -59,7 +59,7 @@ EDR
 * October 16, 2024 (v1.10) - Added new actions
     + Create Indicators
     + Get Indicators
-* November 18, 2024 (v1.11) - Added new actions
+* November 28, 2024 (v1.12) - Added new actions
     + Update Alerts
     + Search into Alerts
     + Alerts CrowdStrike Falcon Daemon
