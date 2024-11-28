@@ -30,6 +30,18 @@ You must explicitly enable diagnostic settings for each Azure App Service Enviro
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServiceEnvironment/Logs`, `Azure/AppServiceEnvironment/Metrics`.
 
+### Configure field in field schema
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
+1. Search for following fields:
+   - `tenant_name`. This field is tagged at the collector level and you can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+   - `location`. The region to which the resource name belongs to.
+   - `subscription_id`. ID associated with a subscription where resource is present.
+   - `resource_group`. The resource group name where the Azure resource is present.
+   - `provider_name`. Azure resource provider name (for example, Microsoft.WEB).
+   - `resource_type`. Azure resource type (for example, SITES).
+   - `resource_name`. The name of the resource (for example, Azure Function App name).
+1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
+
 ### Configure Field Extraction Rules
 
 Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
