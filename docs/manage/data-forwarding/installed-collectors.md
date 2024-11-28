@@ -77,6 +77,10 @@ Follow the instructions for the destination type you chose.
 </TabItem>
 <TabItem value="archive">
 
+:::note
+Data forwarding to S3 Archive locations will forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. Data **will not** be forked to both Sumo Logic and AWS S3. In that case, you will want to send the data to Sumo Logic first and then configure [Forwarding Data from Sumo Logic to S3](/docs/manage/data-forwarding/amazon-s3-bucket/).
+:::
+
 * **Bucket Name**. Enter the exact name of the S3 bucket.You can create only one destination with a particular bucket name. If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
 *  **Description**. (Optional)
 * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
