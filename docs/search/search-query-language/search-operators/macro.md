@@ -66,9 +66,9 @@ _sourceCategory=error | timeslice 5m
 | count by _timeslice
 ```
 
-To create a macro that allows you to enter a value of your choice, we use arguments during the macro creation process. You may choose to include validation conditions within these arguments. If validation conditions are present, make sure to specify the correct data type for <arg1_value> to achieve the desired results.
+To create a macro that allows you to enter a value of your choice, we use arguments during the macro creation process. You may choose to include validation conditions within these arguments. If validation conditions are present, make sure to specify the correct data type for `<arg1_value>` to achieve the desired results.
 
-The following is a simplified version of the query that uses the macro operator with arguments. Replace <arg1_value> with the value of your choice.
+The following is a simplified version of the query that uses the macro operator with arguments. Replace `<arg1_value>` with the value of your choice.
 
 ```
 _sourceCategory=error | `timeslice_macro(<arg1_value>)`
