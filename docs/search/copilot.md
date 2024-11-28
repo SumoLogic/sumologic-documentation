@@ -22,19 +22,19 @@ Sumo Logic Copilot is our AI-powered assistant that accelerates investigations a
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
-<Iframe url="https://player.vimeo.com/video/1021631518?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
+<Iframe url="https://www.youtube.com/embed/yaeepHSaNKk?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
 
-### Key features
+## Key features
 
 Copilot accelerates incident response by combining prebuilt contextual insights with natural language queries and enhancing time to insights for users across your organization. With sub-3-second response times with over 90% translation accuracy for most queries, Copilot ensures fast and dependable results for supported log sources.
 
@@ -54,7 +54,7 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
-### Who benefits from Copilot?
+## Who benefits from Copilot?
 
 Copilot is ideal for users of all skill levels:
 
@@ -93,19 +93,23 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a word in the search bar to trigger completions based on the keyword.
 
-<!-- TO DO BA to upload to YouTube DEMO: https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
--->
+<Iframe url="https://player.vimeo.com/video/1034043268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
 Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
-
-<!-- TO DO
-##### Autocompletion for natural language
-see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
---->
 
 ##### Tips and tricks
 
@@ -205,8 +209,6 @@ Click the **Open in Log Search** icon, which will copy your query from Copilot o
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
 
-
-
 ## Example queries
 
 ### Logs for security
@@ -274,7 +276,7 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 
 <img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
 
-You can also leave feedback on errors.
+You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
 
