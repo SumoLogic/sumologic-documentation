@@ -453,6 +453,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
+        <p>Learn how to collect events from Smartsheet platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
         </div>
@@ -479,6 +485,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="80"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source"><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Thumbnail icon" width="150"/><h4>Trend Micro</h4></a>
+        <p>Learn how to collect alert details from Trend Micro platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

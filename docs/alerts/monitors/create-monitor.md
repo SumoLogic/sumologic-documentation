@@ -370,7 +370,9 @@ If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/s
 
 ## Step 3. Notifications (optional)
 
-Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services. Metrics monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log monitors always group notifications.
+Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services. 
+
+Notifications will be sent when the monitor is triggered as configured in the [Alert Grouping](/docs/alerts/monitors/alert-grouping/) section of the monitor.
 
 <img src={useBaseUrl('img/alerts/monitors/new-monitor-notifications.png')} alt="Screenshot of the Notifications section in Sumo Logic's 'New Monitor' setup page. It includes an option to select the preferred notification time zone, set to (GMT-06:00) America/Chicago. Below is a section to configure connection types for notifications, with options for Critical, Alert, Recovery, Warning, and Missing Data. There is also a button to add a new notification." style={{border: '1px solid gray'}} width="800"/>
 
