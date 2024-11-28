@@ -93,6 +93,10 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a word in the search bar to trigger completions based on the keyword.
 
+<img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+
+#### Video: Autocomplete in action
+
 <Iframe url="https://player.vimeo.com/video/1034043268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
      width="854px"
      height="480px"
@@ -104,14 +108,16 @@ In the **Ask Something...** field, you can manually enter a natural language pro
      allowfullscreen
      />
 
-
-<img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
-
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
 Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
-##### Tips and tricks
+<!-- TO DO
+##### Autocompletion for natural language
+see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
+--->
+
+#### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
 * **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
