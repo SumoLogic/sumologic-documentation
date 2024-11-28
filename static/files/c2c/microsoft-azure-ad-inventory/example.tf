@@ -10,6 +10,7 @@ resource "sumologic_cloud_to_cloud_source" "microsoft-azure-ad-inventory-source"
             "secret_key": "********",
             "application_id": "ApplicationID",
             "userSignInActivity": false,
+            "userGroupDetails": false,
             "fields": {
                 "_siemForward": false
             }
