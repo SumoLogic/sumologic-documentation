@@ -115,11 +115,6 @@ Broad questions may not yield accurate results. For best outcomes, frame your qu
 
 Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
-<!-- TO DO
-##### Autocompletion for natural language
-see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
---->
-
 #### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
