@@ -70,6 +70,8 @@ The system ranks suggestions based on common queries from your organization or y
 
 Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write and execute natural language log search queries.
 
+<!-- Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM6zrnapLaLo3gDm-S1uQPGAS0p9AquuLwiFXA/edit#slide=id.g3145b7936cd_0_8 -->
+
 ## Feedback
 
 We want your input on Query Assist! Share your thoughts on its usage, relevance, accuracy, UX, and suggestions ranking (syntax, schema, single phrase).
