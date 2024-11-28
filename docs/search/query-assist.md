@@ -47,7 +47,7 @@ Automatically receive suggestions for relevant fields in structured data like JS
 
 For structured logs like JSON, the system automatically suggests relevant fields such as `userID`, `eventType`, or `timestamp` as you type. This eliminates the need for manual inspection of logs, making it easier to filter and aggregate data.
 
-## Next operator and full query predictions
+## Next operator prediction
 
 The system intelligently predicts the next operator or offers full query suggestions based on your input, reducing manual effort.
 
