@@ -24,14 +24,14 @@ With its intuitive interface, Copilot automatically generates log searches from 
 
 <Iframe url="https://www.youtube.com/embed/yaeepHSaNKk?rel=0"
      width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 
 ## Key features
