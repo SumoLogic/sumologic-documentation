@@ -50,7 +50,7 @@ In the lower section of the left nav bar, you can access the [App Catalog](apps-
 <img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
 :::note
-The **Automation** option does not appear in the left nav bar if your organization has Cloud SOAR installed, as automation features are handled through. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
+The **Automation** option is not available in the navigation menu if your organization has Cloud SOAR installed, as automation features are handled through Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
 :::
 
 ## Working with tabs
