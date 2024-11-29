@@ -67,13 +67,13 @@ After your trial ends, your account will automatically convert to a Free account
 
 To unlock premium features and scale your Sumo Logic usage as your needs grow, upgrade to a paid plan. For more information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
 
-#### Upgrade to an Essentials plan
+#### Essentials plans
 
 import EssentialsUpgrade from '../reuse/essentials-upgrade.md';
 
 <EssentialsUpgrade/>
 
-#### Upgrade to an Enterprise plan
+#### Enterprise plans
 
 To upgrade to an Enterprise plan, contact our [Sales Team](https://www.sumologic.com/contact-us/) for assistance. We'll work with you to determine the best solution for your organization's requirements.
 
