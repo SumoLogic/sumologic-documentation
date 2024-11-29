@@ -36,7 +36,7 @@ To activate your account:
 1. Open the email and click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
-Thanks for signing up! Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
+Thanks for signing up! After activation, you’ll be guided through a two-step data collector installation process to start ingesting data in minutes.
 
 ### Set up Collector
 
