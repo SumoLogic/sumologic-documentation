@@ -14,14 +14,15 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href="/docs/beta"><span className="beta">Preview Release</span></a></p>
-This is a Preview release. To learn more, contact your Sumo Logic account executive.
+:::sumo Preview release
+This is a Preview release. To learn more, contact your Sumo Logic account executive. To opt out, please open a [support ticket](https://support.sumologic.com/support/s/).
+:::
 
 Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
-<Iframe url="https://player.vimeo.com/video/1021631518?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+<Iframe url="https://www.youtube.com/embed/yaeepHSaNKk?rel=0"
      width="854px"
      height="480px"
      id="myId"
@@ -33,7 +34,7 @@ With its intuitive interface, Copilot automatically generates log searches from 
      />
 
 
-### Key features
+## Key features
 
 Copilot accelerates incident response by combining prebuilt contextual insights with natural language queries and enhancing time to insights for users across your organization. With sub-3-second response times with over 90% translation accuracy for most queries, Copilot ensures fast and dependable results for supported log sources.
 
@@ -53,7 +54,7 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
-### Who benefits from Copilot?
+## Who benefits from Copilot?
 
 Copilot is ideal for users of all skill levels:
 
@@ -68,13 +69,15 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot:
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="200" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
 ### Step 2: Review the auto-selected source
 
-Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration. In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`.
+Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration.
+
+In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`. Autocompletion is supported for sources; type a few words, view source suggestions and pick one.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
@@ -86,14 +89,24 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 <img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
-#### Ask a question
+### Step 4: Ask a question
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a work in the search bar to trigger completions based on the keyword.
-
-<!-- TO DO BA to upload to YouTube DEMO: https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
--->
+In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a word in the search bar to trigger completions based on the keyword.
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+
+#### Video: Autocomplete in action
+
+<Iframe url="https://player.vimeo.com/video/1034043268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
@@ -104,16 +117,22 @@ Break your questions into smaller, specific requirements to help Copilot provide
 see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
 --->
 
-Copilot is built on [Sumo Logic search query language](/docs/search/search-query-language). Below are key functions you can call using natural language prompts:
+#### Tips and tricks
 
-* `Count logs by` [field(s)]
-* `Group logs by` [field(s)]
+* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
+* **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
+* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
+* **Include time or variations to add `timeslice` as a dimension**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
+
+Below are examples of how you can phrase queries if the autocompletions and contextual suggestions are not relevant to you:
+
+* `Count logs by` [field(s)] and `Group logs by` [field(s)] produce the same result
 * `Sort by` [field(s)] [in descending order]
-* `Percentage breakdown in` [field] `values`
+* `Percentage by` [field] `values`
 * `Find` [stat] `for` [field] (max, min, standard deviation, etc.)
 * `Filter by` [field] `contains` [keyword]
    :::note
-   Keyword searches are case-sensitive
+   Keyword searches are case-sensitive.
    :::
 * `Apply logreduce to logs`
 
@@ -121,13 +140,6 @@ Additional prompts can trigger more advanced activities (e.g., mapping network a
 
 * `Analyze risk and severity of network activity`
 * `Identify top application categories accessed`
-
-##### Tips and tricks
-
-* **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
-* **Clarify field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
-* **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
-* **Include time for timeslicing**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
 
 #### Time range
 
@@ -197,13 +209,11 @@ Second, you can resume from a specific query in a conversation by clicking on th
 To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
-### Step 4: Open in Log Search
+### Step 5: Open in Log Search
 
 Click the **Open in Log Search** icon, which will copy your query from Copilot over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
 
 <img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
-
-
 
 ## Example queries
 
@@ -264,7 +274,7 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 ## Role Based Access Control
 
-Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search and will see the error: `""`.
+Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
 ## Feedback
 
@@ -272,6 +282,10 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 
 <img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
 
-You can also leave feedback on errors.
+You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+## Opt out
+
+To opt out of Copilot, contact our [support team](https://support.sumologic.com/support/s/).
