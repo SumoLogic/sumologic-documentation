@@ -27,9 +27,12 @@ With the new UI, you'll benefit from:
 
 For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/).
 
-:::sumo quickstart
+## Opt in
 
-Check out this quickstart overview video to get familiar with the new interface.
+To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation panel and click **Switch to New UI**.<br/><img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+
+:::sumo quickstart
+Check out this overview video to get familiar with the New UI.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
@@ -41,12 +44,9 @@ Check out this quickstart overview video to get familiar with the new interface.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />     
-
 :::   
 
 ## Home
-
-To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation panel and click **Switch to New UI**.<br/><img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
 
 You'll land on the Sumo Logic **Home** page, which provides an at-a-glance view of the following:
 
