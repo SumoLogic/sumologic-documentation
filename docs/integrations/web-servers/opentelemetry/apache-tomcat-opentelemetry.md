@@ -388,7 +388,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### Apache Tomcat alerts
 
-| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+| Name  | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `Apache Tomcat - Access from Highly Malicious Sources` | This alert gets triggered when a Tomcat server is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
 | `Apache Tomcat - Error` | This alert gets triggered when error count is greater than 0. | Count > 0 | Count < = 0 |
