@@ -8,7 +8,7 @@ description: Learn about Network Sensor deployment planning, standard sensor pla
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 
-:::caution end-of-life
+:::warning end-of-life
 <SensorEOL/>
 :::
 
