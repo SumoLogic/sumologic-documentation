@@ -40,8 +40,8 @@ Thanks for signing up! After activation, you’ll be guided through a two-step d
 
 ### Set up Collector
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" style={{border: '1px solid gray'}} width="400" />
-1. Copy, paste, and run the provided command in your Terminal or PowerShell. This will install the OpenTelemetry collector and relevant dashboards. When the installation is complete, click **Start using Sumo**.
+1. Select the platform (Linux, Windows, macOS, or AWS) from which you want to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" style={{border: '1px solid gray'}} width="400" />
+1. Copy, paste, and run the provided command in your Terminal or PowerShell. This will install the OpenTelemetry collector and relevant dashboards. When the installation is complete, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
 
 Next, you'll be taken to your onboarding checklist guide, where you can view dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
