@@ -2,7 +2,7 @@
 id: digital-guardian-arc
 title: Digital Guardian ARC
 sidebar_label: Digital Guardian ARC
-description: The Sumo Logic App for Digital Guardian Advanced Reporting and Analytics (ARC) provides a comprehensive suite of dashboards and alerts to help security analysts monitor, detect, and respond to critical events within their data protection environment. 
+description: The Sumo Logic app for Digital Guardian ARC provides a comprehensive suite of dashboards and alerts to help security analysts monitor, detect, and respond to critical events within their data protection environment. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,16 +11,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Digital Guardian ARC provides a comprehensive suite of dashboards and alerts to help security analysts monitor, detect, and respond to critical events within their data protection environment. Designed to integrate seamlessly with Digital Guardian's Advanced Reporting and Analytics (ARC), this app offers actionable insights into endpoint activities, user behavior, and policy violations to enhance data security.
 
-Key features for Digital Guardian ARC app include:
+Key features of the Digital Guardian ARC app include:
 
 - **Real-time activity monitoring**. Gain visibility into activities such as file creations, modifications, and deletions, categorized by operation type, file types accessed, and protocols used.
-- **Risk-based alerts**. Preconfigured alerts for blocked events, failed login attempts, and user activities originating from high-risk locations allow analysts to detect and respond to potential threats in real-time.
+- **Risk-based alerts**. Pre-configured alerts for blocked events, failed login attempts, and user activities originating from high-risk locations allow analysts to detect and respond to potential threats in real-time.
 - **Policy enforcement analytics**. The app provides insights into rule violation events, helping organizations monitor adherence to security policies and identify areas for improvement.
 - **User and host analysis**. Interactive charts display the top users, applications, and systems contributing to security events, helping analysts pinpoint risky behaviors or potential insider threats.
 - **Geolocation insights**. Visualize sender and recipient activities from high-risk or suspicious locations with geolocation maps, enabling targeted threat investigation and response.
 - **Signature issuer intelligence**. Monitor digital signatures for files and applications to ensure authenticity and detect any potential tampering or unauthorized software.
 
-Use cases for Digital Guardian ARC app include:
+Use cases for the Digital Guardian ARC app include:
 
 - **Identify unauthorized activities**. Detect and investigate unauthorized file access, data exfiltration attempts, or suspicious behavior within the environment.
 - **Enforce compliance**. Track and address violations of security rules to maintain regulatory compliance and internal policy adherence.
@@ -35,7 +35,7 @@ This app also includes [built-in monitors](#digital-guardian-arc-monitors). For 
 
 ## Log types
 
-This App uses Sumo Logic’s [Digital Guardian ARC Source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source/) to collect event logs from Digital Guardian ARC.
+This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source/) to collect event logs from Digital Guardian ARC.
 
 ### Sample log messages
 
@@ -310,7 +310,7 @@ This App uses Sumo Logic’s [Digital Guardian ARC Source](https://help.sumologi
 ```
 </details>
 
-### Sample queries
+### Sample query
 
 ```sql title="Activities By Protocol"
 _sourceCategory="Labs/DigitalGuardian"
@@ -344,7 +344,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Digital Guardian ARC - Overview** dashboard offers a centralized view of data activities, enabling security analysts to monitor and secure sensitive information effectively. It highlights critical metrics such as total activities, blocked actions, unauthorized PKI activities, and rule violations for immediate visibility into security events. Analysts can track network activity by protocol (e.g., HTTP, IPsec) and identify operational types like file creation, deletion, and transfer. File type access insights help detect malicious files or unauthorized usage, while top users, computers, and applications provide a snapshot of entities generating the most activity.
+The **Digital Guardian ARC - Overview** dashboard offers a centralized view of data activities, enabling security analysts to monitor and secure sensitive information effectively. It highlights critical metrics such as total activities, blocked actions, unauthorized PKI activities, and rule violations for immediate visibility into security events. Analysts can track network activity by protocol (for example, HTTP, IPsec) and identify operational types like file creation, deletion, and transfer. File type access insights helps you to detect malicious files or unauthorized usage, while top users, computers, and applications provide a snapshot of entities generating the most activity.
 
 The dashboard includes geolocation maps for sender and recipient activity to identify unusual or risky data transfers across regions. It also highlights potentially risky geographies associated with flagged behaviors. Authentication insights, such as failed login attempts, enable analysts to investigate credential misuse or brute-force attempts. Process monitoring lists metadata like file size, path, and user domain to identify risky operations. Historical activity trends help detect abnormal surges or patterns.
 
@@ -362,8 +362,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:--|:--|:--|:--|
 | `Blocked Events` | This alert is fired when there are blocked events. | Critical | Count > 0 | 
 | `Failed Login Attempt` | This alert tracks repeated failed login attempts on monitored systems. It aids in identifying brute-force attacks, credential stuffing, or unauthorized access attempts, allowing analysts to take corrective actions to secure accounts and investigate potential insider threats. | Critical | Count > 3|
-| `Recipient Activities from Risky Locations` | This alert identifies activities involving recipients located in regions flagged as risky or suspicious. It enables analysts to assess potential data exfiltration risks or unauthorized sharing of sensitive information, strengthening data protection measures. | Critical | Count > 0 |
-| `Rule Violation Events` | This alert highlights incidents where monitored systems or users have violated predefined security rules. It provides insights into non-compliant behavior, supporting analysts in enforcing organizational security policies and maintaining compliance standards. | Critical | Count > 0 |
+| `Recipient Activities from Risky Locations` | This alert identifies activities involving recipients located in regions flagged as risky or suspicious. It enables analysts to assess potential data exfiltration risks or unauthorized sharing of sensitive information, thereby strengthening data protection measures. | Critical | Count > 0 |
+| `Rule Violation Events` | This alert highlights incidents, where monitored systems or users, have violated predefined security rules. It provides insights into non-compliant behavior, supporting analysts in enforcing organizational security policies and maintaining compliance standards. | Critical | Count > 0 |
 | `Sender Activities from Risky Locations` | This alert tracks activities initiated by senders located in high-risk geographic regions. It helps analysts detect and respond to potential threats involving unauthorized data transmission, insider threats, or compromised systems in critical locations. | Count > 0 |
 
 ## Upgrade/downgrade the Digital Guardian ARC app (optional)
