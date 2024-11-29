@@ -24,7 +24,7 @@ import EssentialsUpgrade from '../../reuse/essentials-upgrade.md';
 1. **Calculate Sumo Credits to Purchase**. Estimate your daily usage for each product variable. As you change the values, the required credits shown to the right will adjust.
    * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous Tier, in GB.
    * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous Tier.
-   * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM).
+   * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB. 
 -->
 
@@ -46,7 +46,7 @@ To update your Essentials plan:
 1. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for each product variable you want to change. As you make your changes, the plan cost and credits values are updated
     * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous Tier, in GB.
     * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous Tier.
-    * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM).
+    * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
     * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB.
 1. Click **Continue** to go to the **Payment Method** step.
 1. On the **Confirm Payment Method** page, click **Continue** to use the current payment method, or click **Change payment method** to enter new payment details.
