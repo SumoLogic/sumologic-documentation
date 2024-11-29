@@ -379,3 +379,18 @@ Use this dashboard to:
 The **Apache Tomcat - Connectors** dashboard provides an at-a-glance view of error count, request count, request processing time, total bytes sent/received, total connections, and thread (bust and ideal) information.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Connectors.png' alt="Threat intel" />
+
+## Create monitors for Apache Tomcat app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Apache Tomcat alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Apache Tomcat - Access from Highly Malicious Sources` | This alert gets triggered when a Tomcat server is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - Error` | This alert gets triggered when error count is greater than 0. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Client (HTTP 4xx) Error Rate` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Server (HTTP 5xx) Error Rate` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
