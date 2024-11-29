@@ -14,6 +14,8 @@ This example shows a customer that created three additional Partitions to separa
 
 ![data-by-environment](/img/search/optimize/data-by-environment.png)
 
+You can create partitions for both data tier and flex plans. All data ingested into Sumo Logic will go to the Continuous Tier, if not data tier is pecified. Only data that goes to a partition can go to the Frequent or Infrequent Tiers, but there will be cost incured for ingesting the data into Sumo Logic with data tier plans. To know more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers/). Whereas, there will be no cost incured for ingesting the data and only the insights and analytics volume dictate pricing with flex plan. To know more about the partitions with flex plan, refer to [Flex Partitions](/docs/manage/partitions/flex/).
+
 Consider the following queries:
 
 | Query |  Partition Status | Path |
