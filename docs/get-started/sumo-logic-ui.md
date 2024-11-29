@@ -14,9 +14,9 @@ add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience. To opt in, navigate to the left-hand panel and click **Switch to New UI**.
+This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience.
 
-<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example Classic UI" style={{border: '1px solid gray'}} width="800" />
 
 With the new UI, you'll benefit from:
 
@@ -25,7 +25,11 @@ With the new UI, you'll benefit from:
 * Stateful URLs that save your session and position when you log back in.
 * Use-case-driven navigation to help you quickly find the features you need.
 
-For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/). Watch the quickstart overview video below to get familiar with the new interface.
+For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/).
+
+:::sumo quickstart
+
+Check out this quickstart overview video to get familiar with the new interface.
 
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
@@ -36,11 +40,15 @@ For a detailed list of updates, [view the release notes](/release-notes-service/
         position="relative"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        />        
+        />     
+
+:::   
 
 ## Home
 
-When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab, which provides an at-a-glance view of the following:
+To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation panel and click **Switch to New UI**.<br/><img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+
+You'll land on the Sumo Logic **Home** page, which provides an at-a-glance view of the following:
 
 * Recently Opened Dashboards
 * Recently Run Searches
