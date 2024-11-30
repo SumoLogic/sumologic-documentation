@@ -160,6 +160,14 @@ Now that you have set up data collection, install the Azure Database for Postgre
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
+<AppInstallNoDataSourceV2/>
+
+## Viewing the Azure Cosmos DB for PostgreSQL dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
 ### Overview
 
 The **Azure Cosmos DB for PostgreSQL - Overview** dashboard provides details about replication lag, active connections and query duration distribution across clusters and servers.
@@ -264,20 +272,6 @@ Use this dashboard to:
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-CosmosDB-for-PostgreSQL/Azure-Cosmos-DB-for-PostgreSQL-Administrative-Operations.png')} alt="Azure Cosmos DB for PostgreSQL - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-<AppInstallNoDataSourceV2/>
-
-## Viewing the Azure Cosmos DB for PostgreSQL dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-## Troubleshooting
-
-### HTTP Logs and Metrics Source used by Azure Functions
-
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
-
 ## Upgrade/Downgrade the Azure Cosmos DB for PostgreSQL app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -289,3 +283,10 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### HTTP Logs and Metrics Source used by Azure Functions
+
+To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+
