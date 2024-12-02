@@ -91,7 +91,7 @@ Create the following Field Extraction Rules (FER) for Azure Storage by following
 
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule). Create the below rules if they are not present.
 
-#### Azure observability metadata extraction flexible postgresql server level
+#### Azure observability metadata extraction flexible PostgreSQL server level
 
 ```sql
 Rule Name: AzureObservabilityMetadataExtractionAzureCosmosDBForPostgreSQLLevel
@@ -127,7 +127,6 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
@@ -135,10 +134,10 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/export-logs-diagnostic-settings-cosmosdbforpostgresql.png')} alt="Azure flexible postgresql server logs" style={{border: '1px solid gray'}} width="800" />
 3. Set server parameters as below:
    - `log_statement`. Select **DDL**.
-   - `log_lock_waits`. Set to **ON**. You can also configure `deadlock_timeout` if required.
+   - `log_lock_waits`. Set to **ON**. If required, you can also configure `deadlock_timeout`.
    - `log_connections`. Set to **ON**.
    - `log_disconnections`. Set to **ON**.
-   - `log_duration`. Set to **ON**. You can also configure `log_min_duration_statement` if required.
+   - `log_duration`. Set to **ON**. If required, you can also configure `log_min_duration_statement`.
    - `log_hostname`. Set to **ON**.
    - `log_min_error_statement`. Set to **INFO**.
    - `log_min_messages`. Set to **INFO**.
@@ -175,18 +174,18 @@ The **Azure Cosmos DB for PostgreSQL - Overview** dashboard provides details abo
 Use this dashboard to:
 * Track replication lag across replica clusters.
 * Analyse query execution duration distribution and common errors across all servers.
-* Identify clusters with max cpu usage, memory usage and storage usage.
+* Identify clusters with max cpu usage, memory usage, and storage usage.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-CosmosDB-for-PostgreSQL/Azure-Cosmos-DB-for-PostgreSQL-Overview.png')} alt="Azure Cosmos DB for PostgreSQL - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
-The **Azure Cosmos DB for PostgreSQL - Network** dashboard provides insights on active connections, failed Ccnnections and network activity including ingress and egress bytes.
+The **Azure Cosmos DB for PostgreSQL - Network** dashboard provides insights on active connections, failed Ccnnections, and network activity including ingress and egress bytes.
 
 Use this dashboard to:
 
 * Quickly identify connection errors across clusters.
-* Monitor active connections, ingress and egress trends across clusters.
+* Monitor active connections, ingress, and egress trends across clusters.
 * Identify abnormally long sessions.
 
 
@@ -194,7 +193,7 @@ Use this dashboard to:
 
 ### Errors
 
-The **Azure Cosmos DB for PostgreSQL - Errors** dashboard provides insight into server error logs by specifically monitoring errors, and database shutdown/start events.
+The **Azure Cosmos DB for PostgreSQL - Errors** dashboard provides insight into server error logs by specifically monitoring errors and database shutdown/start events.
 
 Use this dashboard to:
 
@@ -207,7 +206,7 @@ Use this dashboard to:
 
 ### Security
 
-The **Azure Cosmos DB for PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
+The **Azure Cosmos DB for PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications, and top database errors and warnings.
 
 Use this dashboard to:
 
@@ -232,11 +231,10 @@ The **Azure Cosmos DB for PostgreSQL - Performance** dashboard provides insights
 
 Use this dashboard to:
 * Track clusters approaching the maximum IOPS capacity, to decide on adding worker nodes.
-* Identify clusters using a high percentage of the cluster’s available memory to decide on scaling up the compute if this metric consistently exceeds 90 percent.
-* Monitor the CPU usage to decide on scaling up compute if this metric exceeds 95 percent consistently.
+* Identify clusters using a high percentage of the clusters available memory to decide on scaling up the compute if this metric consistently exceeds 90 percent.
+* Monitor the CPU usage to decide on scaling up the compute if this metric exceeds 95 percent consistently.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-CosmosDB-for-PostgreSQL/Azure-Cosmos-DB-for-PostgreSQL-Performance.png')} alt="Azure Cosmos DB for PostgreSQL - Performance dashboard" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Queries
 
