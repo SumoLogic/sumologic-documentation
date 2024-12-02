@@ -445,6 +445,40 @@ Many entities in the Insights, Signals, and Entities pages have context actions 
 
 You can also work with your admin to set up dashboards in Sumo Logic that track Insights and other activity in Cloud SIEM. This allows you to monitor what’s going on in Cloud SIEM without ever leaving Sumo Logic’s core platform.
 
+#### Continue the investigation
+
+In a previous section, we looked at an Insight. In this section, we will use Sumo Logic Search to continue the investigation. Then, we will update the status of your investigation in Cloud SIEM.
+
+1. Return to the Insight you looked at in the previous section [Investigating an Insight](/docs/cse/introduction-to-cloud-siem/#investigating-an-insight).
+1. In the left pane, hover your mouse cursor over the **Entity** field (this is randomly generated and can be a user name or an IP address). Click the context actions (six dots) icon that appears next to the entity name.
+1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](/docs/cse/introduction-to-cloud-siem/#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You’ll be redirected to Sumo Logic Search.
+1. Make a note of the entity name that’s pre-populated in the query builder.
+1. Open another log search in Sumo Logic: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
+1. Find the top 10 records by threat type for that entity. For example, if the entity is a username, in the search bar type:
+   ```
+   _index=sec_record_* 
+    | where !isEmpty(threat_name) and user_username=“<entity name>”
+    | count by threat_name
+    | topk(10, _count)
+   ```
+    Replace `<entity name>` with the entity name from the previous step. 
+1. Click **Start** to run the log search.
+   * Make sure your quotes are straight. Copying and pasting the command sometimes changes the formatting of these quote marks to curly quotes. Manually typing the quote marks fixes this. 
+   * You may need to increase the time of the search to the Last 24 hours to see results. The default is the Last 15 minutes.
+   * Make sure you’re viewing the **Messages** tab when the results load.
+ 1. Explore the raw logs. The `_index=sec_record_*` query searches all the records that have been ingested by Cloud SIEM. This particular query excludes those records with nothing in the `threat_name` value. Additionally, it sorts it by threat name, and shows the most frequent threats. This will help you identify everything this user was doing around this time frame, to see if anything not caught by the Cloud SIEM rules sticks out. 
+1. When you're done exploring the raw logs, return to the Insight. 
+1. If you think there’s still more work to do, use the **Status** dropdown to set the Insight as **In Progress**. You can also use the **Assignee** field to reassign it.
+1. If you’ve finished your investigation, use the **Close Insight** button or use the **Status** dropdown to set the status to **Closed**.
+
+#### Take action on Insights
+
+In addition to the context actions available in the Cloud SIEM UI, there are many other actions you might take in response to an Insight. For example, you might work with your IT team to isolate and wipe laptops infected with malware to prevent spread of malicious code. Or, you might work with your HR team to enforce mandatory anti-phishing training among all employees to prevent future attacks.
+
+In Cloud SIEM, there are several different actions you can take on each Insight. You can comment on the Insight, or close it or assign a status to it. When you close an Insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the Insight lets you keep working on it, and keep track of your progress. 
+
+You can also assign the Insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+
 ## Introduction to Cloud SIEM for administrators
 
 ### The Cloud SIEM data pipeline
