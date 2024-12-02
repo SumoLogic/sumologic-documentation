@@ -1,5 +1,5 @@
 ---
-id: config-based-source
+id: universal-connector-source
 title: Universal Connector
 sidebar_label: Universal Connector
 description: Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.
@@ -8,12 +8,6 @@ description: Learn how to set up a Universal Connector to collect data into the 
 import CodeBlock from '@theme/CodeBlock';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 With our Universal Connector cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
 
@@ -313,8 +307,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter  | Type        | Value                                         | Required | Description                      |
 | :--------- | :---------- | :-------------------------------------------- | :------- | :------------------------------- |
-| schemaRef  | JSON Object | `{"type":"Config Based"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Config Based"`                              | Yes      | Type of source.                  |
+| schemaRef  | JSON Object | `{"type":"Universal Connector"}`                     | Yes      | Define the specific schema type. |
+| sourceType | String      | `"Universal Connector"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration Object
@@ -441,6 +435,8 @@ The syntax for this function requires a timestamp format as a single argument. R
 | :------------------------------------------------------------- | :---------------------------------- |
 | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`                   | `2024-03-07T20:15:56Z`              |
 | `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}`       | `2024-03-07T20:15:56.905571Z`       |
+| `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
+| `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
 
 ### WindowEndLocation
@@ -506,6 +502,8 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | :-------------------- | :------------------------------- | :------------------------------------ |
 | RFC 3339              | `2024-02-01T16:07:57Z`           | `2006-01-02T15:04:05Z07:00`           |
 | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `2006-01-02T15:04:05.999999999Z07:00` |
+| Epoch                 | `1706803677`                     | `epoch`                               |
+| Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
 
 ## FAQ
 

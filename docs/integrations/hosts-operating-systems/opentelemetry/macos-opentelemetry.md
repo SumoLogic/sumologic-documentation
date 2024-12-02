@@ -1,6 +1,6 @@
 ---
 id: macos-opentelemetry
-title: macos - OpenTelemetry Collector
+title: macOS - OpenTelemetry Collector
 sidebar_label: macOS - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for MacOS.
 ---
@@ -20,6 +20,10 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector for metrics colle
 The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metrics Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Schematics.png' alt="Schematics" />
+
+:::info
+This app includes [built-in monitors](#macos-alerts). For details on creating custom monitors, refer to [Create monitors for macOS app](#create-monitors-for-macos-app).
+:::
 
 ## Fields Created in Sumo Logic for macOS
 
@@ -58,7 +62,7 @@ import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collec
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid gray'}} width="800"/>
 
-### Step 3: Send metrics to Sumo
+### Step 3: Send metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -115,15 +119,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample queries
-
-Metrics query from the File System Utilization panel.
-
-```sh
-sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
-```
-
-## Sample OTel metrics
+## Sample metrics
 
 ```json
 {
@@ -151,25 +147,29 @@ sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | 
 }
 ```
 
-## Viewing Linux dashboards
+## Sample queries
+
+Metrics query from the File System Utilization panel.
+
+```sh
+sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
+```
+
+## Viewing macOS dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Host Metrics - Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU load, memory, network, and TCP connections of all your macOS hosts. 
-
-Use this dashboard to:
-
-- Identify hosts with high CPU load, memory utilization, and identify anomalies over time.
+The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU load, memory, network, and TCP connections of all your macOS hosts. Use this dashboard to identify hosts with high CPU load, memory utilization, and identify anomalies over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Overview.png' alt="Overview" />
 
 ### Host Metrics - CPU
 
-The **Host Metrics - CPU** dashboard provides the metric over time for CPU load.
-
-Use this dashboard to:
-
-- Identify hosts and processes with high CPU utilization.
+The **Host Metrics - CPU** dashboard provides the metric over time for CPU load. Use this dashboard to identify hosts and processes with high CPU utilization.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
 
@@ -218,3 +218,16 @@ Use this dashboard to:
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+
+## Create monitors for macOS app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### macOS alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Metrics Mac - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Mac - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |
