@@ -324,6 +324,7 @@ export const Home = () => {
 
         {/* Main */}
         <Container maxWidth='xl'>
+
           {/* Product Guides */}
           <Stack
             alignItems='center'
@@ -443,6 +444,7 @@ export const Home = () => {
               ))}
             </TabContext>
           </Stack>
+
         </Container>
       </Layout>
     </ErrorBoundary>
