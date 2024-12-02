@@ -38,3 +38,7 @@ At this time:
 :::
 
 All plans are supported under the Essentials package. For Cloud SIEM or other security features, contact sales to learn about additional pricing options. If your requirements exceed Essentials capabilities, you’ll need to upgrade to an Enterprise plan.
+
+
+
+<!-- at note about cancelling - have to contact support -->
