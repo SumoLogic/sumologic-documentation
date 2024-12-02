@@ -695,7 +695,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
    "AWS/NetworkELB",
    "AWS/SQS",
    "AWS/SNS"
- ],
+ ], 
+ "tag_filters": [],
  "source_category": "aws/observability/cloudwatch/metrics",
  "source_name": "CloudWatch Metrics (Region)"
 }
@@ -705,8 +706,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
-```json
-Cloudwatch_metrics_source_details = {
+```json title="cloudwatch_metrics_source_details"
+{
  "bucket_details": {
    "bucket_name": "",
    "create_bucket": true,
@@ -717,11 +718,24 @@ Cloudwatch_metrics_source_details = {
  "limit_to_namespaces": [
    "AWS/DynamoDB",
    "AWS/Lambda"
-  ],
+  ], 
+ "tag_filters": [{
+      "type":"TagFilters",
+      "namespace" : "AWS/DynamoDB",
+      "tags": ["env=prod;dev"]
+    },{
+      "type": "TagFilters",
+      "namespace": "AWS/Lambda",
+      "tags": ["env=prod"]
+ }],
  "source_category": "aws/observability/cloudwatch/metrics/us-east-1",
  "source_name": "CloudWatch Metrics us-east-1"
 }
 ```
+
+:::note
+All namespaces specified in `tag_filters` must be included in `limit_to_namespaces`.  
+:::
 
 #### cloudwatch_metrics_source_url
 
