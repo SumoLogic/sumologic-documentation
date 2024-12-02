@@ -2146,6 +2146,7 @@ integrations: [
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
+         'integrations/microsoft-azure/microsoft-defender-for-cloud',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
