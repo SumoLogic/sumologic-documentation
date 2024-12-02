@@ -22,7 +22,7 @@ You can also add threat intelligence indicators using a collector or the API. Se
 
 <img src={useBaseUrl('img/security/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
-1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
+1. **+ Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).
 1. **Source Name**. The source of the threat intelligence indicator file. 
@@ -39,7 +39,7 @@ You can also add threat intelligence indicators using a collector or the API. Se
 To add threat intelligence indicators in the **Threat Intelligence** tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
-1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
+1. Click **+ Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
