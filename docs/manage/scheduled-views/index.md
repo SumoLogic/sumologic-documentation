@@ -11,7 +11,7 @@ Scheduled Views speed the search process for small and historical subsets of you
 * Scheduled View queries run once per minute.
 * Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. 
 * Creating a Scheduled View for a query can vastly reduce the amount of data scanned at search time.
-* If the author of a Scheduled View do not have (or modified later to not have) access to specific data, because of Role-Based Access Control (RBAC) or role filter restrictions, it’s important to note that the Scheduled Views will not reflect that data. Ensuring proper access is crucial for comprehensive insights.
+* Data ingested into a Scheduled View query operates under the context of the user who created the scheduled view. If the user who created the Scheduled View does not have (or modified later to not have) access to specific data, because of Role-Based Access Control (RBAC) or role filter restrictions, it’s important to note that the Scheduled Views will not reflect that data.
 * Scheduled View once created cannot be edited/updated.
 * Scheduled Views can include historical data from as far back as the beginning of your retention period (say, 60 days or 90 days). Because historical data is included, Scheduled Views can help uncover long-term trends.
 * You can use Scheduled Views in Scheduled Searches, Dashboards, and ad hoc searches. Your Dashboards can include a large quantity of data without sacrificing performance. 
