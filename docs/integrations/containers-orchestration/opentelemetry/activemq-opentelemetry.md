@@ -19,17 +19,21 @@ The diagram below illustrates the components of the ActiveMQ collection for each
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTel-Collection-architecture.png' alt="ActiveMQ OTel Collection architecture" />
 
-This app has been tested with following ActiveMQ versions:
-  * 5.17.4
-  * 5.18.2
+This app has been tested with the following ActiveMQ versions:
+  * `5.17.4`
+  * `5.18.2`
+
+:::info
+This app includes [built-in monitors](#activemq-alerts). For details on creating custom monitors, refer to [Create monitors for ActiveMQ app](#create-monitors-for-activemq-app).
+:::
 
 ## Log and metrics types
 
-The Sumo Logic App for ActiveMQ assumes:
+The Sumo Logic app for ActiveMQ uses:
 
-- ActiveMQ app supports the below log format in the log4j2.properties file.
+- ActiveMQ app supports the below log format in the `log4j2.properties` file.
 
-  * [Audit Logs](https://activemq.apache.org/audit-logging):  Every management action made through JMX or Web Console management interface is logged in audit log files.
+  * [Audit Logs](https://activemq.apache.org/audit-logging). Every management action made through JMX or Web Console management interface is logged in audit log files.
 
     `appender.auditlog.layout.pattern=%d | %-5p | %m | %t%n`
 
@@ -37,13 +41,12 @@ The Sumo Logic App for ActiveMQ assumes:
 
     `appender.logfile.layout.pattern=%d | %-5p | %m | %c | %t%n%throwable{full}`
 
-
-- For a list of metrics that are collected and used by the app, see [ActiveMQ Metrics](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/activemq.md).
+- For a list of metrics that are collected and used by the app, refer to the [ActiveMQ Metrics](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/activemq.md).
 
 
 ## Fields creation in Sumo Logic for ActiveMQ
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of ActiveMQ App install if not already present.
+Following are the [fields](/docs/manage/fields/) which will be created as part of ActiveMQ app installation, if not already present.
 
 * `messaging.cluster.name`. User configured. Enter a name to uniquely identify your ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `messaging.node.name`. Has value of `host name`.
@@ -55,7 +58,7 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Prerequisites
 
-### Configure logging in ActiveMQ:
+### Configure logging in ActiveMQ
 
 1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
 1. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
@@ -135,7 +138,7 @@ Click on the **Download YAML File** button to get the YAML file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -216,26 +219,32 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log messages
 
-*activemq.log*
-
-```json
+```json title="ActiveMQ Logs"
 2021-06-22 15:00:41,922 | DEBUG | Stopping transport tcp:///192.168.100.8:36302@61616 | org.apache.activemq.transport.tcp.TcpTransport | ActiveMQ BrokerService[localhost] Task-15300
 ```
 
-*audit.log*
-
-```json
+```json title="Audit Logs"
 2010-12-22 12:12:07,225 | INFO  | admin requested /admin/createDestination.action [JMSDestination='test' JMSDestinationType='queue' secret='4eb0bc3e-9d7a-4256-844c-24f40fda98f1' ] from 127.0.0.1 | qtp12205619-39
 2010-12-22 12:12:14,512 | INFO  | admin requested /admin/purgeDestination.action [JMSDestination='test' JMSDestinationType='queue' secret='eff6a932-1b58-45da-a64a-1b30b246cfc9' ] from 127.0.0.1 | qtp12205619-36
 2010-12-22 12:12:17,802 | INFO  | admin requested /admin/sendMessage.action [JMSTimeToLive='' JMSXGroupSeq='' AMQ_SCHEDULED_DELAY='' JMSType='' JMSMessageCountHeader='JMSXMessageCounter' JMSXGroupID='' JMSReplyTo='' JMSDestination='test' AMQ_SCHEDULED_PERIOD='' JMSText='Enter some text
 here for the message body...' JMSDestinationType='queue' AMQ_SCHEDULED_CRON='' JMSCorrelationID='' AMQ_SCHEDULED_REPEAT='' JMSMessageCount='1' secret='a0e1df62-14d6-4425-82a2-17aa01a16e7d' JMSPriority='' ] from 127.0.0.1 | qtp12205619-37
 ```
 
+## Sample metrics
+
+```sql
+"Query","metric","deployment.environment","host.name","messaging.cluster.name","messaging.node.name","messaging.system","os.type","sumo.datasource","broker","destination","unit","latest"
+```
+
+```sql
+"#A","activemq.message.wait_time.avg","testprod","ip-10-0-10-92","activemq_cluster","ip-10-0-10-92","activemq","linux","activemq","localhost","testtopic","ms","254.4"
+```
+
 ## Sample queries
 
 ### Log query
 
-This sample Query is from the **Events by Severity** panel of the **ActiveMQ - Logs** dashboard.
+This sample log query is from the **Events by Severity** panel of the **ActiveMQ - Logs** dashboard.
 
 ```sql
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}}
@@ -246,29 +255,17 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 ### Metrics query
 
-Sample query from **Average Enqueue Latency** panel in **ActiveMQ - Destinations** dashboard.
+This sample metrics query from the **Average Enqueue Latency** panel of the **ActiveMQ - Destinations** dashboard.
 
-```
+```sql
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}} destination={{destination}} !(destination=activemq.*)  metric=activemq.message.wait_time.avg | avg by destination,messaging.cluster.name
 ```
 
-
-## Sample metrics
-
-```
-"Query","metric","deployment.environment","host.name","messaging.cluster.name","messaging.node.name","messaging.system","os.type","sumo.datasource","broker","destination","unit","latest"
-```
-
-```
-"#A","activemq.message.wait_time.avg","testprod","ip-10-0-10-92","activemq_cluster","ip-10-0-10-92","activemq","linux","activemq","localhost","testtopic","ms","254.4"
-```
-
-
 ## Viewing the ActiveMQ dashboards
 
-### Dashboard filters with template variables
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -283,7 +280,6 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Overview.png' alt="ActiveMQ dashboards" />
 
-
 ### Brokers
 
 The **ActiveMQ - Brokers** dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
@@ -295,8 +291,6 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Brokers.png' alt="ActiveMQ dashboards" />
 
-
-
 ### Destinations
 
 The **ActiveMQ - Destinations** dashboard provides an at-a-glance view of the state of your topics/queues in ActiveMQ clusters.
@@ -307,9 +301,7 @@ Use this dashboard to:
 * Monitor producers, consumers and expired messages on topics/queues.
 * Determine the number of topics/queues.
 
-
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Destinations.png' alt="ActiveMQ dashboards" />
-
 
 ### Resource utilization
 
@@ -321,8 +313,6 @@ Use this dashboard to:
 * Gain insights into memory utilization by topics/queues.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Resource-Utilization.png' alt="ActiveMQ dashboards" />
-
-
 
 ### Logs
 
@@ -347,3 +337,22 @@ Use this dashboard to:
 * Quickly determine patterns across all audit logs in a given ActiveMQ cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Audit.png' alt="ActiveMQ dashboards" />
+
+## Create monitors for ActiveMQ app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ActiveMQ alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when CPU usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when memory usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
+| `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
+| `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
+| `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
+
