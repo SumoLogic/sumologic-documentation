@@ -41,7 +41,7 @@ Get real-time suggestions for query completion as you type, with token-by-token 
 * **Operator suggestions**. When typing the first letters of an operator, the system displays all matching operators related to those letters, helping you quickly find and select the appropriate one. For example, typing `co` might suggest `count`, `count_distinct`, `count_frequent`, `compare`, `compose`, or other related operators.
 * **Value suggestions**. When you start typing a source expression (e.g. `_sourceCategory=`), you will be provided with relevant built-in metadata field options to help autocomplete your query.
 
- For example, as you start typing , the system provides relevant metadata options and autocompletes your query. Simply press the `Tab` key to accept a suggestion.  
+For example, as you start typing, the system provides relevant metadata options and autocompletes your query. Simply press the `Tab` key to accept a suggestion.  
 
 ### Schema discovery and field suggestions
 
