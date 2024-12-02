@@ -30,7 +30,7 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
   details.
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
-* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts ids that match a given query.
+* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
 * **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
