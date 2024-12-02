@@ -444,7 +444,6 @@ export const Home = () => {
               ))}
             </TabContext>
           </Stack>
-          
         </Container>
       </Layout>
     </ErrorBoundary>
