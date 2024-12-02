@@ -7,7 +7,7 @@ description: The Cloud SIEM Network sensor can be downloaded from a static URL t
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 
-:::caution end-of-life
+:::warning end-of-life
 <SensorEOL/>
 :::
 
