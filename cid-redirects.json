@@ -2021,6 +2021,7 @@
   "/cid/10226": "/docs/integrations/containers-orchestration/opentelemetry/activemq-opentelemetry",
   "/cid/25631": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source",
   "/cid/25632": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source",
+  "/cid/25633": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source",
   "/cid/25634": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source",
   "/cid/25635": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source",
   "/cid/25636": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source",
