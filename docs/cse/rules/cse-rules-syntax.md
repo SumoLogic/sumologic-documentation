@@ -1394,7 +1394,12 @@ Filters results based on the value of a boolean expression.  
 
 `... | where <boolean expression>`
 
-**Example**
+**Examples**
 
-`| where jsonArrayContains(field, “vuln_scanner”)`  
+* `| where jsonArrayContains(field, “vuln_scanner”)`
 
+* `| where` can be used at the beginning of an expression, as well as on subsequent lines after another syntax element has been used to start a preceding line. For example:
+   ```
+   | json field=fields "foo" as alias
+   | where toInt(alias) > 5
+   ```
