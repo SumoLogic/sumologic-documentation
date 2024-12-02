@@ -17,9 +17,7 @@ The below instructions applies to Azure Database for PostgreSQL with Flexible Se
 For Azure Database for PostgreSQL, you can collect the following logs and metrics:
 
 * **PostgreSQL Logs**. These logs can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance. To learn more about the log format, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-logging#log-format).
-
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
-
 * **Metrics**. These metrics are available for a flexible server instance of Azure Database for PostgreSQL. For more information on supported metrics and instructions for enabling them, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-monitoring#metrics).
 
 ## Setup
@@ -149,7 +147,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 4. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-#### Activity Logs
+#### Activity logs
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
 
