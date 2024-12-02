@@ -364,7 +364,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Failed Login Attempt` | This alert tracks repeated failed login attempts on monitored systems. It aids in identifying brute-force attacks, credential stuffing, or unauthorized access attempts, allowing analysts to take corrective actions to secure accounts and investigate potential insider threats. | Critical | Count > 3|
 | `Recipient Activities from Risky Locations` | This alert identifies activities involving recipients located in regions flagged as risky or suspicious. It enables analysts to assess potential data exfiltration risks or unauthorized sharing of sensitive information, thereby strengthening data protection measures. | Critical | Count > 0 |
 | `Rule Violation Events` | This alert highlights incidents, where monitored systems or users, have violated predefined security rules. It provides insights into non-compliant behavior, supporting analysts in enforcing organizational security policies and maintaining compliance standards. | Critical | Count > 0 |
-| `Sender Activities from Risky Locations` | This alert tracks activities initiated by senders located in high-risk geographic regions. It helps analysts detect and respond to potential threats involving unauthorized data transmission, insider threats, or compromised systems in critical locations. | Count > 0 |
+| `Sender Activities from Risky Locations` | This alert tracks activities initiated by senders located in high-risk geographic regions. It helps analysts detect and respond to potential threats involving unauthorized data transmission, insider threats, or compromised systems in critical locations. | Critical | Count > 0 |
 
 ## Upgrade/downgrade the Digital Guardian ARC app (optional)
 
