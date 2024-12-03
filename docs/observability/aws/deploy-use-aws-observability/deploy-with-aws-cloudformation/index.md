@@ -18,7 +18,7 @@ Click [here](https://youtu.be/aqngY0lUWUI) to view a microlesson on deploying th
 ## Before you start
 
 :::info
-If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being recreated in the AWS infrastructure or Sumo Logic.
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
 :::
 
 If this is the first time you've deployed the AWS Observability Solution, read the [Before You Deploy](../before-you-deploy.md) topic for information about:
