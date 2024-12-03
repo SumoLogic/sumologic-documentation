@@ -60,7 +60,7 @@ The client secret, known also as an application password, is a string value of y
 2. Select **Certificates & secrets > New client secret**.
 3. Add a description for your client secret.
 4. Select a duration.
-5. Select **Add**.
+5. Click **Add**.
 6. Record the secret's value for use in your client application code - it's never displayed again after you leave this page.
 
 ### Add permissions to API
