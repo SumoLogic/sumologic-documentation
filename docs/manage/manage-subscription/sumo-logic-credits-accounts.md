@@ -1,5 +1,5 @@
 ---
-id: credits-accounts
+id: sumo-logic-credits-accounts
 title: Sumo Logic Credits Accounts
 description: View information on Sumo Logic Credits accounts and intuitively monitor usage and manage account costs.
 ---
