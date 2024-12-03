@@ -1,12 +1,12 @@
 ---
 id: usage-management
 title: Usage Management
-description: Learn to set query level budget to define spending limits for queries. 
+description: Learn to set query level budget to define spending limits for queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page provides information about the Scan Budgets, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume. 
+This page provides information about the Scan Budgets, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume.
 
 Sumo Logic provides two modes with which you can set the query limits:
 - Basic
@@ -31,7 +31,7 @@ To manage the query size limit using the **Basic** configuration:
 :::info
 Sumo Logic defines scan as two types:
   - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
+  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO.
 :::
 
 :::note
@@ -62,7 +62,7 @@ To create the query size limit using the **Advanced** configuration:
     :::info
     Sumo Logic defines scan as two types:
     - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO. 
+    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO.
     :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
@@ -95,14 +95,11 @@ To view the selected scan budget:
   - **Excluded to Roles**. Describes the users for which the selected scan budget is excluded for.
   - **Budget Capacity for individual user**. Describes the budget set for individual user search.
   - **Action**. Describes the type of action sected to notify when the budget limit is reached.
-  - **Created**. The user who created the scan budget. 
+  - **Created**. The user who created the scan budget.
   - **Modified**. The user that most recently modified the scan budget.
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
 
-## FAQ
+## Handling multiple budgets
 
-### Handle overlapping budgets
-
-When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence. 
-
+When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence.
