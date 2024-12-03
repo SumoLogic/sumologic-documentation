@@ -8,7 +8,7 @@ description: Learn prerequisites and guidelines for deploying the AWS Observabil
 This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution. 
 
 :::info
-If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being recreated in the AWS infrastructure or Sumo Logic.
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
 :::
 
 ## Prerequisites
