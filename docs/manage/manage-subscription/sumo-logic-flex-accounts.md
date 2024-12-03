@@ -18,7 +18,7 @@ This page provides information on our available Flex Credits account types and h
 
 You can select from Free, Trial, or Enterprise Suite Flex accounts.
 
-### Free accounts
+### Free
 
 <!-- are these numbers still accurate? -->
 
@@ -28,7 +28,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts.
 :::
 
-### Trial accounts
+### Trial
 
 <!-- are these numbers still accurate? -->
 
@@ -40,7 +40,7 @@ To access your [Data Management](/docs/manage/users-roles/roles/role-capabilitie
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
 
-### Enterprise Suite Flex accounts
+### Enterprise Suite Flex
 
 Enterprise Suite Flex accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities.
 
@@ -136,7 +136,7 @@ The following table provides a summary list of key features by Flex package acco
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
-## Account Overview tab
+## Account Overview
 
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
 

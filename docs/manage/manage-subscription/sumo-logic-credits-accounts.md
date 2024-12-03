@@ -22,7 +22,7 @@ This plan was formerly called *Cloud Flex Credits*.
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Credits accounts.
 
-### Free accounts
+### Free
 
 Free accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-legacy-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
 
@@ -30,7 +30,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts.
 :::
 
-### Trial accounts
+### Trial
 
 Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/).  
 
@@ -40,7 +40,7 @@ To access your [Data Management](/docs/manage/users-roles/roles/role-capabilitie
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
 
-### Essentials accounts
+### Essentials
 
 Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription.
 
@@ -48,19 +48,19 @@ Essentials accounts scale to meet your growing needs for user licenses, data ret
 
 You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
 
-### Enterprise Operations accounts
+### Enterprise Operations
 
 Enterprise Operations accounts are optimized for best practice operational monitoring at any ingest volume.
 
 [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
 
-### Enterprise Security accounts
+### Enterprise Security
 
 Enterprise Security accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
 
 [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
 
-### Enterprise Suite accounts
+### Enterprise Suite
 
 Enterprise Suite accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
 
@@ -162,7 +162,7 @@ This panel provides detailed analytics and comparisons for credit usage:
    * **Metrics Ingest**. Credits used for metrics.  
    * **Storage**. Credits for log storage in Continuous and Frequent Tiers.  
    * **Infrequent Storage**. Credits for log storage in the Infrequent Tier.  
-   * **Promotional Credits**. See [Monitoring Promotional Credit Usage](#monitoring-promotional-credit-usage).  
+   * **Promotional Credits**. See [Promotional Credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * View data by time period (day, week, or month).  
 * Visualize usage with line or column charts.  

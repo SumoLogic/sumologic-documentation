@@ -236,7 +236,7 @@ You can view the aggregate usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](sumo-logic-credits-accounts.md#monitoring-promotional-credit-usage).
+* **Promotional categories**. For more information, see [Promotional Credits](sumo-logic-credits-accounts.md#promotional-credits).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
@@ -293,7 +293,7 @@ You can access the child credits usage for a selected organization from the **Or
 
 Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
 
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**. 
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the row for the org you want to check the baselines.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
