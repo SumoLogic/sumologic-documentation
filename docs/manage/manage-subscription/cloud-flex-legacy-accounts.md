@@ -1,6 +1,6 @@
 ---
 id: cloud-flex-legacy-accounts
-title: Cloud Flex Accounts (Legacy)
+title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
