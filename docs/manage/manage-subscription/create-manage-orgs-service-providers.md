@@ -1,6 +1,7 @@
 ---
 id: create-manage-orgs-service-providers
-title: Create and Manage Orgs (Service Providers)
+title: Create and Manage Organizations (Service Providers)
+sidebar_label: Create and Manage Orgs (Service Providers)
 description: For Sumo Logic Service Providers, Sumo Orgs eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments.
 ---
 
