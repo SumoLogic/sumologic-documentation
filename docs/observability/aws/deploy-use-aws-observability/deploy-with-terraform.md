@@ -14,7 +14,7 @@ Additional parameter overrides are available in an appendix section for [Source]
 ## Prerequisites
 
 :::info
-If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being recreated in the AWS infrastructure or Sumo Logic.
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
 :::
 
 :::note
@@ -572,7 +572,7 @@ To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer t
 ### Override Source Parameters
 
 :::info
-If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being recreated in the AWS infrastructure or Sumo Logic.
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
 :::
 
 Source Parameters define how collectors and their sources are set up in Sumo Logic. If needed, override the desired parameter in the module that you defined earlier for each AWS account and region in the **sumologic-solution-templates/aws-observability-terraform/main.tf** file. 
