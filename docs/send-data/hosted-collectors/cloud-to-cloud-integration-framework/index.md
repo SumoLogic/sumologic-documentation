@@ -495,7 +495,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="150"/><h4>Trust Login</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="80"/><h4>Trust Login</h4></a>
         <p>Learn how to collect report logs from Trust Login platform.</p>
         </div>
       </div>
