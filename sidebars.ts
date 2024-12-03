@@ -904,7 +904,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
         'manage/manage-subscription/sumo-logic-flex-accounts',
-        'manage/manage-subscription/credits-accounts',
+        'manage/manage-subscription/sumo-logic-credits-accounts',
         'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',
         'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
