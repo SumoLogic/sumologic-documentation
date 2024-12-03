@@ -1,21 +1,22 @@
 ---
 id: sumo-logic-credits-accounts
 title: Sumo Logic Credits Accounts
+sidebar_label: Credits Accounts
 description: View information on Sumo Logic Credits accounts and intuitively monitor usage and manage account costs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AccountCredit from '../../reuse/account-credit.md';
 
-:::note
-Formerly known as Cloud Flex Credits.
-:::
-
 Sumo Logic provides flexible account types within its Credits packaging for any size organization.
 
 <AccountCredit/>
 
 This page provides information on the Credits account types and how to monitor and manage your account.
+
+:::note
+This plan was formerly called *Cloud Flex Credits*.
+:::
 
 ## Credits - Account types
 
@@ -41,23 +42,29 @@ Trials are limited to 30 days. If you need to extend your trial period, contact 
 
 ### Essentials accounts
 
-Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
+Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription.
 
-Enterprise Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
+<!-- add Collaborating, Troubleshooting, Orchestrating at launch -->
+
+You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
+
+### Enterprise Operations accounts
+
+Enterprise Operations accounts are optimized for best practice operational monitoring at any ingest volume.
+
+[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
 
 ### Enterprise Security accounts
 
 Enterprise Security accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
 
+[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
+
 ### Enterprise Suite accounts
 
 Enterprise Suite accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
 
-:::important
-[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
-
-It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
-:::
+[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
 
 ## Features by plan type
 
@@ -123,11 +130,11 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 
 <img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
 
-### Organization Information panel  
+### Organization information panel  
 
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
-* **Plan Type**. Shows your subscription type (e.g., Essentials, Enterprise Suite).  
-* **Contract Period**. Lists the start and end dates of your contract period.  
+* **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite).  
+* **Contract period**. Lists the start and end dates of your contract period.  
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays a count of live dashboards and real-time alerts.  
 
 ### Total Credit Usage panel  

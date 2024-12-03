@@ -1,6 +1,7 @@
 ---
 id: sumo-logic-flex-accounts
 title: Sumo Logic Flex Accounts
+sidebar_label: Flex Accounts
 description: View information on Sumo Logic Flex Accounts and intuitively monitor usage and manage account costs.
 ---
 

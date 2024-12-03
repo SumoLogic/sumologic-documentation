@@ -772,13 +772,12 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage Account',
+    label: 'Manage Data and Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
     items: [
       'manage/fields',
-      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -856,6 +855,22 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Scheduled Views',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/scheduled-views/index'},
+      items: [
+        'manage/scheduled-views/add-scheduled-view',
+        'manage/scheduled-views/pause-disable-scheduled-views',
+        'manage/scheduled-views/run-search-against-scheduled-view',
+        'manage/scheduled-views/scheduled-view-lag-time',
+        'manage/scheduled-views/scheduled-views-best-practices',
+        'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
+    'manage/health-events',
+    {
+      type: 'category',
       label: 'Users and Roles',
       collapsible: true,
       collapsed: true,
@@ -898,36 +913,24 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Manage Subscription',
+      label: 'Manage Plan',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
         'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
         'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/usage-management',
+        'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
-        'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/usage-management',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Content Sharing',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/content-sharing/index'},
-      items: [
-        'manage/content-sharing/admin-mode',
-        'manage/content-sharing/changing-alerts',
-        'manage/content-sharing/content-sharing-faq',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
       ]
     },
     {
@@ -941,16 +944,6 @@ module.exports = {
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Data Archiving',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/data-archiving/index'},
-      items: [
-        'manage/data-archiving/archive',
       ]
     },
     {
@@ -995,21 +988,6 @@ module.exports = {
         ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Scheduled Views',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/scheduled-views/index'},
-      items: [
-        'manage/scheduled-views/add-scheduled-view',
-        'manage/scheduled-views/pause-disable-scheduled-views',
-        'manage/scheduled-views/run-search-against-scheduled-view',
-        'manage/scheduled-views/scheduled-view-lag-time',
-        'manage/scheduled-views/scheduled-views-best-practices',
-        'manage/scheduled-views/view-list-scheduled-views',
       ]
     },
     {
@@ -1063,6 +1041,28 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Content Sharing',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/content-sharing/index'},
+       items: [
+         'manage/content-sharing/admin-mode',
+         'manage/content-sharing/changing-alerts',
+         'manage/content-sharing/content-sharing-faq',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Data Archiving',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/data-archiving/index'},
+       items: [
+         'manage/data-archiving/archive',
        ]
      },
    ],
