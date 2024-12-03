@@ -15,7 +15,7 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 
 * OS:
    * Ubuntu 18.04, 20.04, or 24.04
-   * CentOS 7
+   * CentOS 7 or 8 (Version 8 is supported in a new beta release of the Automation Bridge)
    * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
