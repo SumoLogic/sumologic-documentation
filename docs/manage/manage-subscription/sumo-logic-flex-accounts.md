@@ -46,7 +46,7 @@ Enterprise Suite Flex accounts are optimized to address the most advanced data i
 
 [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), which are only available for Enterprise Suite Flex accounts, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 
-## Features by subscription type​
+## Features by plan type​
 
 The following table provides a summary list of key features by Flex package accounts. For Free and Trial account details, see the details for [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts).
 
