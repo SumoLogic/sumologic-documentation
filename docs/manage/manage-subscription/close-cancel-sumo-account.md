@@ -11,7 +11,7 @@ This guide explains how to permanently close a Sumo Logic Free or Trial account 
 Any financial obligations outlined in your contract remain in effect even if your account is closed or canceled.  
 :::
 
-## Closing a Sumo Logic Free or Trial account  
+## Close a Sumo Logic Free or Trial account
 
 Owners of Sumo Logic Free or Trial accounts can permanently delete their organization, removing all users, data, and access to Sumo Logic. This process will also log you out as a user.
 
