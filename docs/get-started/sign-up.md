@@ -47,9 +47,19 @@ Next, you'll be taken to your onboarding checklist guide, where you can view das
 
 ### Upgrade or continue with Free account
 
+For pricing details, see [Sumo Logic Pricing](https://www.sumologic.com/pricing).
+
+#### Essentials plans
+
+Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. Ready to get started? [Learn how to upgrade your plan](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
+
+#### Enterprise plans
+
+If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
+
 #### Free account
 
-After your trial ends, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
+After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -64,18 +74,6 @@ After your trial ends, your account will automatically convert to a Free account
 <sup>2</sup> Search through and visualize your data in near real-time, with up to 1000 data points per minute.<br/>
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
-
-To unlock premium features and scale your Sumo Logic usage as your needs grow, upgrade to a paid plan. For more information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
-
-#### Essentials plans
-
-import EssentialsUpgrade from '../reuse/essentials-upgrade.md';
-
-<EssentialsUpgrade/>
-
-#### Enterprise plans
-
-To upgrade to an Enterprise plan, contact our [Sales Team](https://www.sumologic.com/contact-us/) for assistance. We'll work with you to determine the best solution for your organization's requirements.
 
 ## Sign up through AWS Marketplace
 

@@ -1,69 +1,66 @@
 ---
 id: upgrade-sumo-logic-credits-account
 title: Upgrade a Sumo Logic Credits Account
-description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
+description: Learn how to upgrade your Free or Trial account to an Essentials plan.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
-
-For information about Essentials accounts, see [Credits - Account Types](/docs/manage/manage-subscription/sumo-logic-credits-accounts). 
+This page has instructions for upgrading and modifying a Sumo Logic Free or Trial account to an Essentials or Enterprise plan.
 
 ## Prerequisites
 
-You must be an administrator to upgrade your Sumo Logic account.
+You must be an account administrator to upgrade your Sumo Logic plan.
 
 ## Update a Free or Trial Credits account to Essentials
 
-import EssentialsUpgrade from '../../reuse/essentials-upgrade.md';
+Using our self-service checkout, you can sign up for an Essentials plan in just minutes using a credit card—no need to interact with the sales team.
 
-<EssentialsUpgrade/>
+Essentials plans are ideal for:  
+- Small- to medium-sized businesses seeking quick and independent onboarding.  
+- IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
 
-<!-- Not reflected in Figma
-1. **Calculate Sumo Credits to Purchase**. Estimate your daily usage for each product variable. As you change the values, the required credits shown to the right will adjust.
-   * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous Tier, in GB.
-   * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous Tier.
-   * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
-   * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB. 
--->
+<details>
+<summary>What's a Sumo Credit?</summary>
 
-## Update an Essentials account
+Sumo Credit is a unit of measure used to flexibly pay for any products (e.g., logs, metrics, storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
 
-This section provides instructions for modifying your Essentials account. You can switch your billing plan between monthly and annual options, or adjust the levels of log ingest, log retention, metrics, and tracing included in your plan.
+</details>
 
-* Annual Plan updates. Changes to an annual plan will take effect at the start of your next billing cycle or when your current credit balance is fully depleted. Until then, the update will remain in a "pending" status, and you can cancel it if needed.
-* Monthly Plan updates. If you’re making changes to product variables for a monthly plan (without switching to an annual plan), you can choose to apply the update immediately. Otherwise, the changes will take effect at the start of your next billing cycle or when your current credit balance is depleted.
+Steps to upgrade:
 
-To update your Essentials plan:
+1. Navigate to the Manage Plan page.
+   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration** > **Account** > **Manage Plan**.  
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration** > **Manage Plan**.
 
-1. Go to the **Manage Plan** page.
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Manage Plan**.
-   * [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. <br/>The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
-    ![current-plan.png](/img/manage/subscriptions/current-plan.png)
-1. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
-1. Choose **Subscription Type**. Click a radio button to change your subscription type from monthly to annual, or from annual to monthly, as desired.
-1. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for each product variable you want to change. As you make your changes, the plan cost and credits values are updated
-    * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous Tier, in GB.
-    * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous Tier.
-    * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
-    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB.
-1. Click **Continue** to go to the **Payment Method** step.
-1. On the **Confirm Payment Method** page, click **Continue** to use the current payment method, or click **Change payment method** to enter new payment details.
-1. On the **Confirm Upgrade** page, if you have a monthly plan, you have the option to either upgrade right away, or on your next subscription billing date. The following information, which pertains to an immediate upgrade, is displayed:
-    * **Remaining Days**. The number of days remaining in your billing cycle.
-    * **Prorated Credits**. The number of credits for your new product variable levels through the end of your billing cycle.
-    * **Prorated Cost**. The cost of the credits for your new product variable levels through the end of your billing cycle. This is the amount you’ll be charged in the next billing cycle.
+1. Choose a billing cycle, either **monthly** or **annual**, and select an Essentials plan that meets your needs.
+   * **Troubleshoot**. Ideal for foundational log analysis and troubleshooting.  
+   * **Collaborate**. Includes advanced team collaboration features.  
+   * **Orchestrate**. Designed for organizations requiring robust workflows and automation.
 
-    :::note
-    If your plan is annual, rather than monthly, you won't be prompted with the option to upgrade immediately.
-    :::
+1. Enter your payment details in the secure checkout form. Once your payment is processed, your account will be upgraded, granting you immediate access to premium features. The payment is calculated for the full day on which you confirm and pay. Your subscription begins at midnight Pacific Standard Time (PST) on that day.
 
-1. To upgrade immediately, leave the **Immediately** option selected in the **When do you want the upgrade to take effect section**. Otherwise, select **When subscription next bills**.
-1. Click **Service Level Agreements** to review the terms of your plan, and then click **Confirm** to complete the upgrade.
-1. The page refreshes and displays the **Upgrade Successful** message.
-    ![upgrade-successful.png](/img/manage/subscriptions/upgrade-success.png)
+The table below explains our Essentials plan billing plan change policies.
 
+| Plan Type           | Immediate Plan Change Allowed? | What Happens at 100% Credit Depletion? | When Are Overages Charged?            | When Are Plan Changes Charged?               |
+|:--------------------------|:------------------------------------|:--------------------------------------------|:-------------------------------------------|:--------------------------------------------------|
+| **Month-to-month**       | Yes                                | Overage allowed                            | At the start of the next billing cycle     | At the start of the next billing cycle           |
+| **Month-to-annual**      | No                                 | Overage allowed                            | At the start of the next billing cycle     | At the start of the next billing cycle           |
+| **Annual-to-annual**     | No                                 | Immediate plan renewal                     | N/A                                        | At credit depletion or at the next billing cycle |
+| **Annual-to-month**      | No                                 | Immediate plan renewal                     | N/A                                        | At credit depletion or at the next billing cycle |
+
+:::note  
+- There is no carry forward of unused credits in any plan type.  
+- Customers using order forms for billing cannot switch to self-service payments.  
+- Downgrades to the Free account are not supported through the checkout interface.  
+- Downgrades between paid plans take effect at the start of the next billing cycle.  
+:::
+
+For billing updates, see [Manage Billing Information](/docs/manage/manage-subscription/manage-billing-information). If you encounter issues during your upgrade, contact [Support](https://support.sumologic.com/support/s/).
+
+#### Enterprise plans
+
+If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
 
 ## Cancel your account
 
