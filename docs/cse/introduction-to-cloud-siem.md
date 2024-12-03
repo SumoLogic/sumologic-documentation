@@ -479,6 +479,47 @@ In Cloud SIEM, there are several different actions you can take on each Insight.
 
 You can also assign the Insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
 
+### Tune your environment
+
+#### Why tune?
+
+Once you’ve completed a few investigations, you may want to add or modify the rules, data sources, match lists, and other pieces of the Cloud SIEM puzzle. These modifications can help further reduce false positives or alert you even faster. The most common things to customize are rules and Insights.
+
+[Rules](/docs/cse/rules/about-cse-rules/) are one of the most important pieces of Cloud SIEM’s threat detection engine. All the records that are ingested in Cloud SIEM are compared to every rule in Cloud SIEM. If there’s a match, an entity is extracted and a Signal is created. Those entities are tracked and may correlate with other Signals to create an Insight, which is where most threat investigations begin.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" style={{border: '1px solid gray'}} width="400"/>
+
+You don’t have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of [out-of-the box rules](/docs/cse/rules/cse-built-in-rules/), to get you started. These rules are updated frequently, often every few days. You can check out the most recent updates in the [Cloud SIEM release notes page](/release-notes-cse/).
+
+If you do decide to write a custom rule, Insight, or rule tuning expression, these aren’t updated or deleted by Sumo Logic during the regular updates. They’re independent from the default rules.
+
+#### Write a rule tuning expression
+
+You’re updating some of the firewalls in your system, and you don’t want to trigger unnecessary alerts. Write a rule tuning expression that will allow yourself to bypass firewall-related rules.
+
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. On the **Rule Tuning** page, click **Create**.
+1. Name your rule tuning expression.
+1. **Tune selected Rules** should be selected by default. 
+1. Use the **Type to add a Rule...** search bar to find rules to add your expression to.
+1. Type “firewall” into the search bar to find all firewall-related rules. 
+1. Select a firewall rule, such as **Azure Firewall Rule Modified**.
+Under **to include Records that also match the expression**, write the logic for the rule tuning expression. For help, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
+1. Click **Submit** to save your rule tuning expression.
+1. Verify your tuning expression exists by going back to the rule tuning page (step 1 above). You should see it there. You may need to refresh the page or filter on your unique identifier to find it.
+
+Tips and tricks:
+* When a rule tuning expression is added to a rule, it’s appended with an AND statement. Rule tuning expressions are usually exceptions to the rule. Keep this in mind when writing the logic. It’s common to use the is not (!=) operator to make exceptions.
+* The autocomplete feature can help you write the logic. For example, typing “ip” will bring up a dropdown showing all available fields related to IP addresses.
+* The syntax coloring can help you write the logic. For example, try using single quotes (‘...’) instead of double quotes (“...”). Notice that the syntax coloring lights up correctly when you use double quotes, which is the best practice.
+* Check for an orange triangle icon next to the submit button before you submit. This will notify you of any errors or warnings.
+
+#### Custom rules
+
+Adding a rule tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to [write a new rule from scratch](/docs/cse/rules/before-writing-custom-rule/). You might do this if your system has a source that isn’t covered by the default rules, or if you’re looking for a threat that isn’t covered by the default rules.
+
+See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create.
+
 ## Introduction to Cloud SIEM for administrators
 
 ### The Cloud SIEM data pipeline
