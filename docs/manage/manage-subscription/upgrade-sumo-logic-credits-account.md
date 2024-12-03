@@ -1,5 +1,5 @@
 ---
-id: upgrade-credits-account
+id: upgrade-sumo-logic-credits-account
 title: Upgrade a Sumo Logic Credits Account
 description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---

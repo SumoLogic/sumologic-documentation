@@ -903,10 +903,10 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
-        'manage/manage-subscription/flex-accounts',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/credits-accounts',
         'manage/manage-subscription/cloud-flex-legacy-accounts',
-        'manage/manage-subscription/upgrade-credits-account',
+        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
         'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
