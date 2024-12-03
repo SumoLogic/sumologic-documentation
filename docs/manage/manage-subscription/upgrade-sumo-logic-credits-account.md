@@ -20,7 +20,7 @@ You must be an admin to upgrade your Credits free or trial account.
 
 1. To initiate your account upgrade: 
      * Click the **Upgrade** link at the top of the Sumo Logic UI in your account, or
-     * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**.
+     * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**. 
 2. The **Manage Plan** page appears.
     ![step-1.png](/img/manage/subscriptions/manage-plan-upgrade-to-essentials.png)
 3. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
