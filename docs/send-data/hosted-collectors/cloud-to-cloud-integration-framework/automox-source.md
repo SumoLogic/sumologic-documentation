@@ -52,11 +52,11 @@ To configure a Automox Source:
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. In **Bearer Token**, enter the bearer token collected from the Automox platform.
 1. In **Organization ID**, enter the Organization ID collected from the Automox platform.
-1. Select the **Colleect Audit Trail Logs** checkbox to collect the audit details.
+1. Select the **Collect Audit Trail Logs** checkbox to collect the audit details.
 1. The **Audit Trail Logs Interval** is set for 5 minutes by default. You can adjust it based on your needs.
-1. Select the **Colleect Events Logs** checkbox to collect the event details. Enter the supported events that you want to collect. Leaving this empty will collect all events.
+1. Select the **Collect Events Logs** checkbox to collect the event details. Enter the supported events that you want to collect. Leaving this empty will collect all events.
 1. The **Event Logs Interval** is set for 5 minutes by default. You can adjust it based on your needs.
-1. Select the **Colleect Devices** checkbox to collect the devices list details.
+1. Select the **Collect Devices** checkbox to collect the devices list details.
 1. The **Devices Logs Interval** is set for 12 hours by default. You can adjust it based on your needs.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.

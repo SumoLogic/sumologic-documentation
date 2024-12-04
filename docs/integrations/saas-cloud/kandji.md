@@ -2,7 +2,7 @@
 id: kandji
 title: Kandji
 sidebar_label: Kandji
-description: The LastPass app for Sumo Logic provides comprehensive visibility into the security and management of Apple devices.
+description: The Kandji app for Sumo Logic provides comprehensive visibility into the security and management of Apple devices.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
