@@ -36,14 +36,16 @@ Query Assist enhances the query-building experience in Sumo Logic by providing r
 
 ### Token-by-token prediction and autocomplete
 
-Get real-time suggestions for query completion as you type, with token-by-token predictions that help you quickly finish your queries. For example, as you start typing `_sourceCategory=`, the system provides relevant metadata options and autocompletes your query. Simply press the `Tab` key to accept a suggestion.  
+Get real-time suggestions for query completion as you type, with token-by-token predictions that help you quickly finish your queries.
 
-* **Operator suggestions**. When typing the first letters of an operator, the system displays all matching operators related to those letters, helping you quickly find and select the appropriate one. For example, typing `st` might suggest `status`, `startsWith`, or other related operators.
-* **Value suggestions**. After typing `status=`, you will be prompted with likely values such as `success`, `error`, or other status codes based on your previous queries or log data.
+* **Operator suggestions**. When typing the first letters of an operator, the system displays all matching operators related to those letters, helping you quickly find and select the appropriate one. For example, typing `co` might suggest `count`, `count_distinct`, `count_frequent`, `compare`, `compose`, or other related operators.
+* **Value suggestions**. When you start typing a source expression (e.g. `_sourceCategory=`), you will be provided with relevant built-in metadata field options to help autocomplete your query.
+
+For example, as you start typing, the system provides relevant metadata options and autocompletes your query. Simply press the `Tab` key to accept a suggestion.  
 
 ### Schema discovery and field suggestions
 
-Automatically receive suggestions for relevant fields in structured data like JSON logs, making field discovery much easier.
+Automatically receive suggestions for relevant [fields](/docs/manage/fields) in structured data like JSON logs, making field discovery much easier.
 
 * **Field suggestions**. For structured logs, the system automatically suggests relevant fields such as `userID`, `eventType`, or `timestamp` as you type. This eliminates the need for manual inspection of logs, making it easier to filter and aggregate data.
 
@@ -52,12 +54,6 @@ Automatically receive suggestions for relevant fields in structured data like JS
 The system intelligently predicts the next search operator or offers partial query suggestions based on your input, reducing manual effort.
 
 * **Operator predictions**. When you type a query such as `source=logs | where status="error"`, the system predicts the next operator and offers suggestions like `count by employeeID` or other common fields, aligning your queries with standard patterns.
-
-### Real-time error highlighting and feedback
-
-Errors are flagged as you type, with immediate suggestions for corrections, ensuring a seamless query-writing experience.
-
-* **Error detection**. As you write queries, the system highlights syntax errors in real-time, such as unclosed parentheses or misspelled operators, and provides instant suggestions to fix the issue, preventing unnecessary troubleshooting.
 
 ### Contextual autocomplete and field discovery
 
