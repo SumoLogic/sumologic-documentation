@@ -14,9 +14,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="50" />
 
-Trust Login is an advanced authentication platform that offers a secure and seamless login solutions to users and organizations alike. Trust Login enhances the authentication process by prioritizing trust, ease of use, and strong security. This ensures reliable access control without compromising user experience.
+Trust Login is an advanced authentication platform that offers a secure and seamless login solution to users and organizations alike. Trust Login enhances the authentication process by prioritizing trust, ease of use, and strong security. This ensures reliable access control without compromising user experience.
 
-The purpose of this integration is to provide Sumo Logic the Report Logs that are gathered from the Trust Login.
+The purpose of this integration is to provide Sumo Logic the Report Logs that are gathered from Trust Login.
 
 :::important
 The Trust Login API documentation is not public and can only be accessed by partners or customers.
