@@ -308,6 +308,8 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
 
+`Alert when anomaly count is at least <count> (max. 5) at any time within <time range>`
+
 | Parameter | Description |
 |:--|:--|
 | `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. |
