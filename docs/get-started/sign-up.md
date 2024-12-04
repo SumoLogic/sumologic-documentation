@@ -45,7 +45,7 @@ Thanks for signing up! After activation, you’ll be guided through a two-step d
 
 Next, you'll be taken to your onboarding checklist guide, where you can view dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-### Upgrade to a plan or continue with Free account
+### Upgrade or continue with Free account
 
 After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a [paid plan](#essentials-plans) at any time.
 
@@ -73,6 +73,8 @@ For information on plan types and pricing, see [Sumo Logic Pricing](https://www.
 #### Essentials plans
 
 Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. Ready to get started? [Learn how to upgrade your plan](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
+
+<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
 
 #### Enterprise plans
 
