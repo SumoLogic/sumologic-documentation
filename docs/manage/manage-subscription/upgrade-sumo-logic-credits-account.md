@@ -1,7 +1,8 @@
 ---
 id: upgrade-sumo-logic-credits-account
 title: Upgrade a Sumo Logic Credits Account
-description: Learn how to upgrade your Free or Trial account to an Essentials plan.
+sidebar_label: Upgrade a Credits Account
+description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
