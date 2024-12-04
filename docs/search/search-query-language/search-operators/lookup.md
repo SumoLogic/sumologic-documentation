@@ -6,7 +6,7 @@ sidebar_label: lookup
 
 The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the [Lookup API](/docs/api/lookup-tables). You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [`save` operator](/docs/search/search-query-language/search-operators/save) to save the results of a log query. 
 
-For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
+For information about lookup tables, see [Lookup Tables](/docs/search/lookup-tables/).
 
 ## Rules and limitations
 

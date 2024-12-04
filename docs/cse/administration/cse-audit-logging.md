@@ -37,7 +37,7 @@ Use  `_index=sumologic_system_events` to limit results to events related to sys
 
 You can use the `subsystem` field, which every event log contains, to limit the events returned to Cloud SIEM-related events:
 
-`subsystem=cse`
+`subsystem=cse*`
 
 For information about other fields you can use in Audit Index searches, see auto-generated documentation at the documentation URL for your deployment.
 
@@ -122,7 +122,7 @@ To search the Audit Event Index or System Event Index for logs that describe Clo
     ```sql
     _index=sumologic_system_events
     | json auto
-    | where subsystem="cse"
+    | where subsystem="cse*"
     ```
 3. Choose the time range for your search.
 4. Click **Start** to run the search.
