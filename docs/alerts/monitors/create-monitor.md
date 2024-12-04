@@ -229,7 +229,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 |:--|:--|
 | `<time range>` | The time span of data to evaluate (values range from 5 minutes to 24 hours). |
 
-For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
 
 ### Trigger Type (Metrics)
