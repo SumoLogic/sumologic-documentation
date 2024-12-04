@@ -42,11 +42,11 @@ You use the metrics rules editor to build a metrics rule. On the **Metrics Rule
 
 The subsections that follow describe the information shown in the columns on the **Metrics Rules** page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access the **Metrics Rules** page, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Rules**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Metrics Rules** page, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Rules**. 
 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the **Metrics Rules** page, go to the top menu and select **Configuration**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Metrics Rules** page, go to the top menu and select **Configuration**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
+ 
 
 ### Metrics match expression
 
@@ -88,8 +88,8 @@ Different classes have dot-delimited names of various lengths, so a match expres
 
 Here's how to create a metrics rule using the metrics rules editor in the Sumo UI:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Metrics > Metrics Rules**. <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Metrics** select **Metrics Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Rules**. Kanso--><br/>The **Metrics Rules** page lists the metrics rules that have already been defined.<br/><img src={useBaseUrl('img/metrics/named-rule.png')} alt="Metrics rules" style={{border: '1px solid gray'}} width="800" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Metrics Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Metrics** select **Metrics Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Rules**. <br/>The **Metrics Rules** page lists the metrics rules that have already been defined.<br/><img src={useBaseUrl('img/metrics/named-rule.png')} alt="Metrics rules" style={{border: '1px solid gray'}} width="800" />
 1. To add a new rule, click **+ Add new rule** in the upper right of the **Metrics Rules** page. The **Add New Rule** popup appears.<br/><img src={useBaseUrl('img/metrics/add-metric-rule-empty.png')} alt="Add metrics rule" style={{border: '1px solid gray'}} width="600" />
 1. In the **Rule name** field, enter a name for the new rule.
 1. In the **Metric match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.

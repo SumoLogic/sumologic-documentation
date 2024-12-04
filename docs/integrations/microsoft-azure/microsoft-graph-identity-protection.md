@@ -131,18 +131,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Graph Identity Protection app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Microsoft Graph Identity Protection app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Microsoft Graph Identity Protection dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -164,3 +152,15 @@ This dashboard provides insights into the risks detected in the organization. It
 This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />
+
+## Upgrade/Downgrade the Microsoft Graph Identity Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

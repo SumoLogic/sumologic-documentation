@@ -20,8 +20,8 @@ The Sumo Logic app for JFrog Xray and collection are tested on JFrog Xray 2.9.0 
 The JFrog Xray app uses the following log types:
 
 * JFrog Xray logs. JFrog Xray logs are in JSON format. For more information, see JFrog Xray [Webhook payload](https://www.jfrog.com/confluence/display/XRAY/Policies#Policies-WebhookPayload).
-* Artifactory logs. For more information, see [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
-* Kubernetes logs. For more information, see [Collect Logs for Kubernetes.](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app)
+* Artifactory logs. For more information, see [Collecting logs](/docs/integrations/app-development/jfrog-artifactory/#collecting-logs).
+* Kubernetes logs. For more information, see [Collecting Metrics and Logs for the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 
 
 
@@ -99,7 +99,7 @@ This section explains how to collect logs from JFrog Xray and ingest them into S
 In this step you collect details for your JFrog Xray instance that you will use in the following tasks.
 
 Collect the following details:
-* HostName and Port for your JFrog Xray instance — such as, JFrog instance URL **http://host-example:8000/web/#/login**
+* HostName and Port for your JFrog Xray instance — such as: JFrog instance URL **http://host-example:8000/web/#/login**
     * HostName = **host-example**
     * Port = **8000**
 * Your Username and Password for your JFrog Xray instance
@@ -109,12 +109,12 @@ Collect the following details:
 
 We recommend collecting data from JFrog Artifactory so as to investigate sources of vulnerable artifacts and who is using them. This is done by correlating Xray logs with Artifactory logs.
 
-To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
+To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs).
 
 
 ### Step 3: Collect Kubernetes logs
 
-If you have set up a Docker repository in Aritfactory and are running containers in a Kubernetes cluster, we recommend collecting data from your Kubernetes cluster so as to understand all vulnerable containers running in production.
+If you have set up a Docker repository in Artifactory and are running containers in a Kubernetes cluster, we recommend collecting data from your Kubernetes cluster so as to understand all vulnerable containers running in production.
 
 To perform this setup, follow the instructions in [Collect Logs for Kubernetes](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 
@@ -298,31 +298,17 @@ sudo yum -y install gcc
 sudo yum install python-devel
 ```
 
-
 ## Installing the JFrog Xray app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the JFrog Xray app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the JFrog Xray app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing JFrog Xray dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
-
 
 ### Overview
 
@@ -382,3 +368,15 @@ Use this dashboard to:
 * Monitor recent uploaded and downloaded artifacts.
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
+
+## Upgrade/Downgrade the JFrog Xray app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the JFrog Xray app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

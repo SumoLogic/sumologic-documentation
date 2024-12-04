@@ -76,18 +76,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the Amazon S3 Audit app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon S3 Audit app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Amazon S3 Audit dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -133,3 +121,15 @@ This dashboard provides geolocation of s3 clients, data added, 4xx/5xx status co
 This dashboard provides high-level views of threats throughout your S3 Service. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Actors, and Threat by Malicious Confidence.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/S3-Threat-Intel.png')} alt="S3 Audit dashboards" />
+
+## Upgrade/Downgrade the Amazon S3 Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon S3 Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

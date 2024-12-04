@@ -34,7 +34,7 @@ Not familiar with JSONPath syntax? Try our [UI generator](#ui-parse-generator) t
 
 ## Options
 
-* `nodrop`. Allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-the-nodrop-option).
+* `nodrop`. Allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-thenodrop-option).
 * `field=<field_name>`. Allows you to specify a field to parse other than the default message. For details, see [parse field](parse-field-option.md).
 * `auto`. Automatically detects JSON objects in logs and extracts the key/value pairs. See [JSON auto option](#json-auto-option) for details.
 

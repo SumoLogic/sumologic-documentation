@@ -179,18 +179,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Amazon Inspector Classic app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon Inspector Classic app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Inspector Classic dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -233,3 +221,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Finding Severity by Template and Run.** Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.
+
+## Upgrade/Downgrade the Amazon Inspector Classic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector Classic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

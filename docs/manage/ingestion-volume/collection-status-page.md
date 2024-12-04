@@ -9,7 +9,7 @@ The Status page provides a message volume history for your account, as well as a
 
 When you first install a Collector it is common to configure Sources to collect some historical data, rather than from the moment of installation. In this case, the status page shows a spike in message volume and then levels out as collection reaches a steady state. For example, a local log file can contain millions of log messages. When the Collector is initialized, it quickly gathers all those logs and sends them to Sumo Logic resulting in a traffic spike. After the initial collection, the Collector continues to tail the file, reading from the end of the file as new entries are created, and sends a smaller number of new log messages.
 
-![Status tab](/img/ingestion-volume/collection-status.png)
+![Status tab](/img/manage/ingestion-volume/collection-status.png)
 
 * **A.** Select to show all, running, or stopped Collectors.  
 * **B.** Select how many columns of Collectors are displayed.  

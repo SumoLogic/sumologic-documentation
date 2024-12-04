@@ -10,19 +10,18 @@ Cloud SIEM uses rules to evaluate incoming records, and when the conditions of 
  
 ## View record details
 
-<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Signals, click **Signals** at the top of the screen. 
-<!--Kanso 
-[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Signals, in the main Sumo Logic menu select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.
- Kanso-->
-When you view the details page for a signal that was triggered by a threshold, aggregation, or chain rule, you’ll see a section that displays records that matched the rules conditions. These records will continue to be associated with the signal as long as the signal is available. 
-
-Click the plus sign (+) for a record to view its details. Click the **Timestamp** button to sort records by their timestamp.
-
-<img src={useBaseUrl('img/cse/attached-records.png')} alt="View attached records" style={{border: '1px solid gray'}} width="800"/>
-
-:::note
-Only a single record is attached to the signal itself. Any other involved records are retrieved via log search. If the records are past their retention period, they no longer appear in the UI. In the API and `sec_signal` index, only the single attached record is included, along with a list of any other entities that were seen on the involved records (in `involvedEntities`). You must [perform a log search](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partition-for-cloud-siem-signals) to find the other involved records.
-:::
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view signals, click **Signals** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Signals, in the main Sumo Logic menu select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**. 
+1. Select a signal. The signal's details display. <br/>When you view the details page for a signal that was triggered by a threshold, aggregation, or chain rule, you’ll see a section that displays records that matched the rules conditions. These records will continue to be associated with the signal as long as the signal is available. 
+1. Click the plus sign (+) for a record to view its details. 
+1. Use the following to work with the records: 
+   * **Timestamp**. Sort records by their timestamp. 
+   * **Open in Log Search**. Select one of the the following options to run a query for the signal's records in log search:
+       * **Distinct Aggregated Records**. Exact records evaluated by the rule.
+       * **All Related Records**. All records related to the signal.
+   * **Export**. Export the records to a comma-separated value (CSV) or JSON file.<br/><img src={useBaseUrl('img/cse/attached-records.png')} alt="View attached records" style={{border: '1px solid gray'}} width="800"/>
+     :::note
+     Only a single record is attached to the signal itself. Any other involved records are retrieved via log search. If the records are past their retention period, they no longer appear in the UI. In the API and `sec_signal` index, only the single attached record is included, along with a list of any other entities that were seen on the involved records (in `involvedEntities`). You must select **Open in Log Search** to find the other involved records.
+     :::
 
 ## Select favorite fields
 

@@ -100,18 +100,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cato Networks app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cato Networks app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cato Networks dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -157,3 +145,15 @@ The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of a
 - **Top 10 Modules Changed**. The top modules changed widget identifies the specific modules that have undergone the most modifications, offering insights into areas that require further investigation or monitoring.
 - **Top 10 Objects Changed**. The top objects changed widget identifies the specific objects that have undergone the most modifications, offering insights into areas that require further investigation or monitoring.
 - **Audit Summary**. The audits summary widget provides a concise summary of key audit log details, helping you to quickly understand the nature of the recorded activities.
+
+## Upgrade/Downgrade the Cato Networks app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cato Networks app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

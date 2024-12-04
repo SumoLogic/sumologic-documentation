@@ -214,18 +214,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the Workday app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Workday app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Workday dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -292,3 +280,15 @@ Use this dashboard to:
 * Identify if API requests are being received from devices not supported by your IT teams.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity.png')} alt="workday dashboards" />
+
+## Upgrade/Downgrade the Workday app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Workday app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

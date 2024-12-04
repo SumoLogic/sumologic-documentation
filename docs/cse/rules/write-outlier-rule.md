@@ -53,7 +53,7 @@ Watch this micro lesson to learn more about Outlier rules.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -61,14 +61,14 @@ import Iframe from 'react-iframe'; 
 
 ## Example rule
 
-The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
+The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create an Outlier rule](#create-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Create an Outlier rule
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **Outlier** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.

@@ -115,18 +115,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Zscaler Private Access app (optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Zscaler Private Access app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing ZPA Dashboards  
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -192,3 +180,15 @@ Use this dashboard to:
 * Manage Policy and Timeout blocks.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
+
+## Upgrade/Downgrade the Zscaler Private Access app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Zscaler Private Access app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

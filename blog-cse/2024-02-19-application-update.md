@@ -2,13 +2,13 @@
 title: February 19, 2024 - Application Update
 keywords:
   - cloud siem
-image: https://help.sumologic.com/img/sumo-square.png
-authors:
-  - url: https://help.sumologic.com/release-notes-cse/rss.xml
-    image_url: /img/release-notes/rss-orange.png
+image: https://help.sumologic.com/img/sumo-square.png  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-cse/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+
 
 ### Minor changes and enhancements
 

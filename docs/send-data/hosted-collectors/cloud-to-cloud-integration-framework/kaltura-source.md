@@ -61,7 +61,7 @@ A Kaltura App Token with specific permissions is required for Sumo Logic to acce
 When you create an Kaltura source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Kaltura source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Kaltura**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -74,7 +74,8 @@ To configure a Kaltura source:
 1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **App Token**. Enter the **App Token** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **Select Base Entry Types for Base Entry Logs**. You have the option to **Collect all types** or **Select types**, where you can specify the exact event categories you would like to collect from the base entry logs. Must select from the pre-defined list.
-1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 24 hours.
+1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 24 hours.
+1. **Base Entry Init Lookback**. You have option to configure from when the integration should collect Kaltura **Base Entry** events. Default is 1 day.
 1. When you are finished configuring the Source, click **Save**.
 
 ## Metadata fields
@@ -112,7 +113,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | supportedApis | Array of strings | Yes | `Audit Trail` | Define one or more of the available APIs to collect.<br/>Options Base Entry, Audit Trail. |  |
 | collectAll | Boolean | Yes | True | By default, the Source will ingest all Base Entry events. If false, baseEntryTypes is required.. |  |
 | baseEntryTypes | Array of strings | no | `null` | A list of Base Entry Types to collect. Required if collectAll is false.<br/>Options: DATA, PLAYLIST, MIX, MEDIA_CLIP, SIP_ENTRY_SERVER, EXTERNAL_MEDIA, CONFERENCE_ENTRY_SERVER. |  |
-| polling_interval | Integer | No | 24 | How frequently the integration should poll to Kalura for Base Entry Events in hours. |  |
+| polling_interval | Integer | No | 24 | How frequently the integration should poll to Kaltura for Base Entry Events in hours. |  |
+| baseEntryInitLookback | Integer | No | 1 | From when the integration should collect Kaltura Base Entry Events. |  |
 
 ### JSON example
 

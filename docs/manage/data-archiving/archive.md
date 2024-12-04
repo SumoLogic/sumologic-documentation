@@ -25,7 +25,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 :::
 
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. 
 1. Click **+** to add a new destination.
 1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Configure the following:
@@ -60,7 +60,7 @@ To configure processing rules for Archive using the web application follow these
 You can use JSON to configure a processing rule, use the **Forward** filterType. See an example data forwarding rule.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Search for the Source that you want to configure, and click the **Edit** link for the Source. The Source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
@@ -110,7 +110,7 @@ By default, the Collector will complete writing logs to an archive file once th
 
 ## Ingest data from Archive
 
-You can ingest a specific time range of data from your Archive at any time with an **AWS S3 Archive Source**. First, [create an AWS S3 Archive Source](#create-an-aws-archive-destination), then [create an ingestion job](#create-an-ingestion-job).
+You can ingest a specific time range of data from your Archive at any time with an **AWS S3 Archive Source**. First, [create an AWS S3 Archive Source](#create-an-aws-s3-archivesource), then [create an ingestion job](#create-an-ingestion-job).
 
 ### Rules
 
@@ -136,7 +136,7 @@ An AWS S3 Archive Source allows you to ingest your Archived data. Configure it 
 To use JSON to create an AWS S3 Archive Source reference our AWS Log Source parameters and use `AwsS3ArchiveBucket` as the value for `contentType`.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
 1. Select **AWS S3 Archive**. <br/><img src={useBaseUrl('img/archive/archive-icon.png')} alt="Archive icon" width="100"/>
 1. Enter a name for the new Source. A description is optional.
@@ -168,12 +168,12 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 You need the Manage or View Collectors role capability to manage or view Archive.
 :::
 
-The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archive-source) in your account and ingestion jobs. 
+The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archivesource) in your account and ingestion jobs.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Archive page, in the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, in the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
+ 
 
 <img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>
 
@@ -196,7 +196,7 @@ A maximum of 2 concurrent jobs is supported.
 
 An ingestion job is a request to pull data from your S3 bucket. The job begins immediately and provides statistics on its progress. To ingest from your Archive you need an AWS S3 Archive Source configured to access your AWS S3 bucket with the archived data.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Archive**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Archive**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. 
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
 1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.

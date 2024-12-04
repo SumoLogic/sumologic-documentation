@@ -49,7 +49,7 @@ Watch this micro lesson to learn more about how to use context actions.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -57,7 +57,7 @@ import Iframe from 'react-iframe'; 
 
 ## Configure a Context Action
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
 1. On the **Context Actions** page click **Create**.
 1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="500"/>
     1. **Enter Context Action Name**. Enter a name for the Context Action. 
@@ -106,10 +106,6 @@ The only required parameter in the URL is `{{value}}`. Depending on your use cas
 #### Open the Criminal IP lookup page for an IP address
 
 `https://www.criminalip.io/asset/report/{{value}}`
-
-For example:
-
-<img src={useBaseUrl('img/cse/context-action-criminal-ip-example.png')} alt="Criminal IP context action example" style={{border: '1px solid gray'}} width="500"/>
 
 ## Template parameters for Context Actions
 

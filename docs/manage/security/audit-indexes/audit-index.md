@@ -26,7 +26,7 @@ All users can access the data contained within the audit index, but only adminis
 
 ## Enable the audit index
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
@@ -74,7 +74,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source categories](#audit-index-source-categories). |
 | `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |

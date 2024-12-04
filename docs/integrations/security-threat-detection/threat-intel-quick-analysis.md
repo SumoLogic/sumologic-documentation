@@ -639,7 +639,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
-* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#02_Threat-Intel-Optimization) and [FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) on working with the Threat Intel database.
+* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](#threat-intel-optimization) and [FAQs](#threat-intel-faq) on working with the Threat Intel database.
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
 * **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
 * **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  

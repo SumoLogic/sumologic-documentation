@@ -166,18 +166,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Netlify app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Netlify app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Netlify dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -201,3 +189,15 @@ The **Netlify - Build and Deploy Details** dashboard offers a comprehensive view
 The **Netlify - Commit Details** dashboard offers a comprehensive insight into your development workflow, focusing on critical aspects of version control and deployment. Keep a close eye on your team's progress and productivity with panels tracking Commits Over Time and Commits by Repo, providing valuable metrics to assess development activity and patterns. Analyze trends in Commits by Repo aiding in performance evaluation and future planning. With visibility into Commits by Branch, this dashboard enables you to fine-tune your development strategies and maintain an efficient and productive development environment.
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Commit Details"/>
+
+## Upgrade/Downgrade the Netlify app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Netlify app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.5  
-Updated: Jul 11, 2023***
+***Version: 1.6  
+Updated: Sept 11, 2024***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -39,10 +39,9 @@ Freshservice is a cloud-based IT Help Desk and service management solution that 
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. Populate all the required fields (\*) then click **SAVE SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-8.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
+1. Populate all the required fields (\*) then click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-9.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
 
 ## Category
@@ -59,3 +58,4 @@ Ticketing System
 * March 22, 2023 (v1.4)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * July 11, 2023 (v1.5) - Removed leading/trailing spaces
+* Sept 11, 2024(v1.6) - Updated the Update Ticket action

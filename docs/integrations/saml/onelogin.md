@@ -125,18 +125,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the OneLogin app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the OneLogin app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing OneLogin dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
@@ -194,3 +182,15 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 **User Modifications.** See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginSecurity.png')} alt="OneLogin" />
+
+## Upgrade/Downgrade the OneLogin app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the OneLogin app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

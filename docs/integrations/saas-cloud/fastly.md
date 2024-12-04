@@ -367,18 +367,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Fastly app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Fastly app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Fastly dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -512,3 +500,15 @@ See the overall Open Web Application Security Project (OWASP) anomaly score quar
     * **XSS (Cross-site Scripting)**
     * **SQL Injections.**
     * **Session Fixations.**
+
+## Upgrade/Downgrade the Fastly app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Fastly app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

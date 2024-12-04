@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
 
 ***Version: 1.0  
-Updated: July 26, 2024***
+Updated: Aug 13, 2024***
 
-Integration with Sumo Logic platform for monitors and Slack notification.
+Integration with Sumo Logic platform for monitors and Gmail notification.
 
 ## Actions
 
-* **Assess Alert Status** (*Scheduled*) - Periodically monitor status of a Sumo Logic alert and notify a Slack user about an unresolved alert.
+* **Assess Alert Status** (*Scheduled*) - Periodically monitor status of a Sumo Logic alert and notify a Gmail user about an unresolved alert.
 * **Authorize DO NOT USE IN PLAYBOOK** (*Enrichment*) - Authorize access to Gmail. This should only be run once and not from a playbook.
 * **Confirm DO NOT USE IN PLAYBOOK** (*Enrichment*) - Confirm access to Gmail. This should only be run once and not from a playbook.
 
@@ -88,4 +88,4 @@ Integration with Sumo Logic platform for monitors and Slack notification.
     * **Credentials(Gmail)**. Retrieve Credentials from the "Confirm DO NOT USE IN PLAYBOOK" Action
 ## Change Log
 
-* July 26, 2024 - First upload
+* Aug 13, 2024 - First upload

@@ -1,7 +1,6 @@
 ---
 id: help
 title: Help
-sidebar_label: Help
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +18,7 @@ Docs cover all product features and should be your first resource when you have 
 
 If you haven't found the answer to your question in our online help documentation:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help > Support**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help > Support**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help > Support**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help > Support**.  
 1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/>![Help - Support.png](/img/get-started/Help-Support.png)
 
 On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
@@ -34,7 +33,7 @@ Depending on your account type, you can also log a ticket with our support engin
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

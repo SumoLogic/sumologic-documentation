@@ -135,18 +135,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Azure Network Watcher app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure Network Watcher app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Azure Network Watcher dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -194,3 +182,15 @@ The **Network Watcher - Denied Traffic Flow** dashboard drills down on denied tr
 **Top 10 Denied Destination IP, Port.** Displays a table of destination IP addresses and ports with denied traffic flow.
 
 **Denied Traffic per Hour -  Outlier.** Using Sumo Logic machine learning [Outlier](/docs/search/search-query-language/search-operators/outlier) operator, shows any unexpected sequence in denied traffic.
+
+## Upgrade/Downgrade the Azure Network Watcher app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Network Watcher app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

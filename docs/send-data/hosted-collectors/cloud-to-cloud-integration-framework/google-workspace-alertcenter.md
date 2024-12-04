@@ -41,7 +41,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="400"/>
 1. To create JSON for the service account, you must create a key. Click the service account email to navigate to the Keys tab.<br/> <img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="service-account-create_key.png" width="800"/>
 1. Click **Add key** and select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.PNG')} alt="<service-account-key>" width="600"/>
-1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [Service account JSON](#example-of-service-account-json) example below.
+1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [service account JSON example](#json-example) below.
 1. Add domain-wide delegation to your service account using the client ID generated in step 5.
 1. From the Google admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account) and select it in the input form. The OAuth scope for alert API is:
    ```
@@ -56,7 +56,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 
 ### Source configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google Workspace AlertCenter**.
 1. **Name.** Enter a name for the Source.

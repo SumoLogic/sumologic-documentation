@@ -213,18 +213,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Rapid7 app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Rapid7 app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Rapid7 dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -238,3 +226,15 @@ The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the as
 ### Vulnerabilities Overview
 
 The **Rapid7 - Vulnerabilities Overview** dashboard offers significant insights into vulnerability findings from the assets. It tracks the number of new and remediated vulnerability findings over the period. The dashboard includes visual representations of vulnerabilities categorized by severity and highlights the top 10 vulnerabilities related to assets. Additionally, it presents a summary of the leading 10 solutions utilized to address vulnerabilities and showcases recent vulnerability instances based on their most recent discovery time, along with information on the assets involved.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Vulnerabilities-Overview.png')} alt="Rapid7-Vulnerabilities-Overview" width="750"/>
+
+## Upgrade/Downgrade the Rapid7 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Rapid7 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

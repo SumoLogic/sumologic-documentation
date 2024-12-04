@@ -22,7 +22,7 @@ While you can also see metrics ingestion breakdown in the [**Metrics** dashboard
  
 ## View Metrics Data Ingestion
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Metrics Data Ingestion page, in the main Sumo Logic menu select **Administration > Account > Metrics Data Ingestion**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Metrics Data Ingestion page, in the Sumo Logic top menu select **Administration**, and then under **Account** select **Metrics Data Ingestion**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Data Ingestion**. Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Metrics Data Ingestion page, in the main Sumo Logic menu select **Administration > Account > Metrics Data Ingestion**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Metrics Data Ingestion page, in the Sumo Logic top menu select **Administration**, and then under **Account** select **Metrics Data Ingestion**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Data Ingestion**. 
 
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics Data Ingestion screen" style={{border: '1px solid gray'}} width="800" />
 

@@ -47,7 +47,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
 This section has instructions for configuring SAML in Sumo Logic.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
 1. Click **+ Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="800" />     
 1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/add-config-onelogin.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="500" /> 
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
@@ -55,7 +55,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 1. **Issuer**. Paste in the **Issuer URL** you copied from the OneLogin **SSO** page, as described above.
 1. **X.509 Certificate**. Paste in the certificate you downloaded from the OneLogin **SSO** page, as described above. 
 1. **Attribute mapping**. Select "Use SAML subject".
-1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configure-sp-initiated-login).
+1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configuresp-initiated-login).
 1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](#configure-on-demand-role-provisioning).
 1. **On Demand Provisioning**. (Optional). See [Configure on demand provisioning](#configure-on-demand-account-provisioning) below.
 v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.

@@ -78,10 +78,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to use Automation Service playbooks with monitors.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/alerts/monitors/automation-payload-variables"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Automation Payload Variables</h4></a>
-  <p>Learn details about variables passed from a monitor to a playbook in the Automation Service.</p>
-  </div>
-</div>
 </div>

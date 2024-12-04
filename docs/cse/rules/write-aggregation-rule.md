@@ -46,7 +46,7 @@ Watch this micro lesson to learn how to create an Aggregation rule.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -55,7 +55,7 @@ import Iframe from 'react-iframe'; 
 
 ## Create an Aggregation rule
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
@@ -101,7 +101,7 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Constant severity portion of the dialog" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="Dynamic Severity portion of the dialog" style={{border: '1px solid gray'}} width="450"/>
+   1. The severity area updates. 
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
    1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>

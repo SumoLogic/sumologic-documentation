@@ -1,7 +1,7 @@
 ---
 id: manage-billing-information
 title: Manage Billing Information
-description: Manage billing for professional accounts.
+description: Manage billing for Sumo Logic accounts.
 ---
 
 
@@ -11,9 +11,9 @@ All users who have Admin role privileges can manage the billing information for
 
 Once changes are submitted, Sumo Logic will begin applies the new credit card for the next billing cycle. To reassign the account owner role to another admin user, see Account Page for your account type.
 
-To change the billing information, do the following:
+To modify your billing information:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Billing**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Billing**. You can also click the **Go To...** menu at the top of the screen and select **Billing**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Billing**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Billing**. You can also click the **Go To...** menu at the top of the screen and select **Billing**.
 1. Click **Use a New Credit Card**.
 1. Enter the new credit card information, or edit any of the billing address/contact information.
 1. Click **Submit**.

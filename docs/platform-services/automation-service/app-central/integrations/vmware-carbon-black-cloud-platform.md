@@ -21,11 +21,11 @@ VMware Carbon Black Cloud Platform Integration transform your security with inte
 * **Dismiss Alert** (*Containment*) - Dismiss an alert in Carbon Black Cloud with comments.
 * **Dismiss Threat** (*Containment*) - Dismiss a Threat in Carbon Black Cloud with comments.
 * **Enable Bypass** (*Containment*) - Enable Bypass on specific Endpoint, it should no longer be monitored but may need to in the future.
-* **Execute Custom Script On Endpoint** (*Containment*) - Execute a Powershell command on a windows endpoint to gather data.
+* **Execute Custom Script On Endpoint** (*Containment*) - Execute a PowerShell command on a windows endpoint to gather data.
 * **Get CBC Alerts** (*Enrichment*) - Queries all Alerts using input search criteria and returns a list of alerts.
 * **Get Devices** (*Enrichment*) - Retrieve info about a device.
 * **Get Endpoint Vulnerabilities** (*Enrichment*) - Get the vulnerabilities (CVEs) and their risks/exploitability identified for a given endpoint.
-* **Get File** (*Enrichment*) - Get the full contents of a suspicious MS Office or Powershell file that is executed on an endpoint.
+* **Get File** (*Enrichment*) - Get the full contents of a suspicious MS Office or PowerShell file that is executed on an endpoint.
 * **Get Policies** (*Enrichment*) - Get a list of Policies.
 * **Get Process Details** (*Enrichment*) - Get the most up-to-date metadata of a specific process.
 * **Get Process Events** (*Enrichment*) - Get relevant endpoint events of a watchlist hit. This is very resource-intensive for CBC and should be used sparingly.

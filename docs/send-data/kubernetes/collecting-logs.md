@@ -301,18 +301,40 @@ It's possible to customize the built-in Sumo Logic metadata (like [source name][
 
 ```yaml
 sumologic:
-  logs:
-    container|systemd|kubelet:
-      ## Set the _sourceHost metadata field in Sumo Logic.
-      sourceHost: ""
-      ## Set the _sourceName metadata field in Sumo Logic.
-      sourceName: "%{namespace}.%{pod}.%{container}"
-      ## Set the _sourceCategory metadata field in Sumo Logic.
-      sourceCategory: "%{namespace}/%{pod_name}"
-      ## Set the prefix, for _sourceCategory metadata.
-      sourceCategoryPrefix: "kubernetes/"
-      ## Used to replace - with another character.
-      sourceCategoryReplaceDash: "/"
+ clusterName: my-k8s-cluster
+ logs:
+   container:
+     enabled: true
+     ## Set the _sourceHost metadata field in Sumo Logic.
+     sourceHost: "%{node}"
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "%{namespace}.%{pod}.%{container}"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/%{namespace}/%{pod_name}"
+     ## Set the prefix, for _sourceCategory metadata. Not able to use variables for prefix
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   systemd:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_systemd"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/systemd"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   kubelet:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_kubelet"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/kubelet"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
 ```
 
 As can be seen in the above example, these fields can contain templates of the form `%{field_name}`, where `field_name` is the name of a resource attribute. Available resource attributes include the values of `sumologic.logs.fields`, which by default are:
@@ -641,7 +663,7 @@ For the example above, the `sumologic-secrets` secret with the `endpoint-product
 
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
-[source_name]: /docs/send-data/reference-information/metadata-naming-conventions.md#Source_Name
+[source_name]: /docs/send-data/reference-information/metadata-naming-conventions/#source-name
 [opentelemetry_processors]: https://opentelemetry.io/docs/collector/configuration/#processors
 [attributes_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/attributesprocessor/README.md
 [resource_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourceprocessor/README.md

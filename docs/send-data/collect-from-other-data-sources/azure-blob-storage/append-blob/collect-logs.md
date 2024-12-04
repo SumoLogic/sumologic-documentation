@@ -93,7 +93,7 @@ If you want to ingest data into Sumo Logic from multiple storage accounts, perfo
 The following steps assume you have noted down the resource group name, storage account name, and container name where the blobs will be ingested from.
 :::
 
-* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
+* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-read-from-storage-account) - Enables the Azure functions to read from the storage account.
 * [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
 * [Step 3. Enabling Vnet Integration(Optional)](#step-3-enabling-vnet-integration-optional)
 

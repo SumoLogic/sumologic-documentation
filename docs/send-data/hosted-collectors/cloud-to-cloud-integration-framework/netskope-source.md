@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
-The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/get-events-data.html). It securely stores the required authentication, scheduling, and state tracking information.
+The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints). It securely stores the required authentication, scheduling, and state tracking information.
 
 The following event types are available to collect:
 
@@ -35,7 +35,7 @@ The following event types are available to collect:
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 sec |  [Event data](https://docs.netskope.com/en/get-events-data.html) |
+| 5 sec |  [Event data](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints/) |
 
 ## Setup
 
@@ -75,7 +75,7 @@ When you create a Netskope Source, you add it to a Hosted Collector. Before cre
 
 To configure a Netskope Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Netskope**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -99,7 +99,7 @@ To configure a Netskope Source:
 | `_siemVendor` | `Netskope` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Security Cloud` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as, audit-logon or audit-logoff. |
+| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types with one exception. If the eventType is audit and the description contains logon/login or logoff/logout the eventType field will be the eventType with the value -logon or -logoff added respectively, such as: audit-logon or audit-logoff. |
 
 ## JSON schema
 

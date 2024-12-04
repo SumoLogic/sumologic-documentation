@@ -117,18 +117,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the SailPoint app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the SailPoint app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing SailPoint dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -158,3 +146,15 @@ The **SailPoint - Failed Authentications** dashboard shows the details of failed
 The **SailPoint - Security** dashboard provides a summary of source deletion events in source management operations.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
+
+## Upgrade/Downgrade the SailPoint app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the SailPoint app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

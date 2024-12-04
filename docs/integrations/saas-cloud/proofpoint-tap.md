@@ -165,18 +165,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Proofpoint TAP app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Proofpoint TAP app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Proofpoint TAP dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -190,3 +178,15 @@ The **Proofpoint TAP - Messages Overview** dashboard provides real-time analysis
 ### Clicks Overview
 
 The **Proofpoint TAP - Clicks Overview** dashboard offers real-time analysis of malicious URLs, providing insights into the trends of the click events. It presents the distribution of threats based on their categories and statuses. Furthermore, the dashboard displays the geographic locations of malicious URL clicks originating from high-risk countries and details about the top senders and receivers of the malicious URLs. Additionally, the dashboard offers a summary of recent click events, delivering a concise overview of the malicious URL click activity and highlighting any significant events that may require attention.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Clicks-Overview.png')} alt="Proofpoint-TAP-Clicks-Overview"/>
+
+## Upgrade/Downgrade the Proofpoint TAP app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Proofpoint TAP app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

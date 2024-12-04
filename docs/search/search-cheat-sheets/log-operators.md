@@ -206,7 +206,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>_sourceCategory=analytics<br/>| parse "ms: *" as time<br/>| bin time width=10, min = 0, max = 500<br/>| count by _bin, _bin_upper<br/>| sort by _bin_upper</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/CIDR">CIDR</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/cidr">CIDR</a></td>
    <td>The CIDR operator allows you to leverage Classless Inter-Domain Routing (CIDS) notations to analyze IP network traffic in order to narrow analysis to specific subnets. CIDR notations specify the routing prefix of IP addresses.</td>
    <td></td>
    <td></td>
@@ -227,7 +227,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>... | contains("hello world", "hello") as containing</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/decToHex">decToHex</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/dectohex">decToHex</a></td>
    <td>The decToHex operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.</td>
    <td></td>
    <td></td>
@@ -262,7 +262,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>error <br/>| parse "fiveMinuteRate=*," as rate <br/>| format("%s : %s","Five Minute Rate is" , rate) as formattedVal</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/formatDate">formatDate</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/formatdate">formatDate</a></td>
    <td>The formatDate operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, timestamps, etc.</td>
    <td></td>
    <td></td>
@@ -283,7 +283,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| haversine(39.04380, -77.48790, 45.73723, -119.81143) as distanceKMs</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/hexToDec">hexToDec</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/hextodec">hexToDec</a></td>
    <td>The hexToDec operator converts a hexadecimal string of 16 or fewer characters to long using Two's Complement for negative values.</td>
    <td></td>
    <td></td>
@@ -304,7 +304,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| if (status_code in ("500", "501", "502", "503", "504", "505", "506", "401", "402", "403", "404"), "Error", "OK") as status_code_type</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/ipv4ToNumber">ipv4ToNumber</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/ipv4tonumber">ipv4ToNumber</a></td>
    <td>The ipv4ToNumber operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.</td>
    <td></td>
    <td></td>
@@ -332,28 +332,28 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| where isNull(src_ip)</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isNumeric">isNumeric</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isnumeric">isNumeric</a></td>
    <td>The isNumeric operator checks whether a string is a valid Java number.</td>
    <td></td>
    <td></td>
    <td><code>| isNumeric(num)</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isPrivateIP">isPrivateIP</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isprivateip">isPrivateIP</a></td>
    <td>The isPrivateIP operator checks if an IPv4 address is private and returns a boolean.</td>
    <td></td>
    <td></td>
    <td><code>| isPrivateIP(hostip)</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isPublicIP">isPublicIP</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/ispublicip">isPublicIP</a></td>
    <td>The isPublicIP operator checks if an IPv4 address is public and returns a boolean.</td>
    <td></td>
    <td></td>
    <td><code>| isPublicIP("10.255.255.255") as isPublic</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isValidIP">isValidIP</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isvalidip">isValidIP</a></td>
    <td>The isValidIP operator checks if the value is a valid IP address. The isValidIPv4 and isValidIPv6 operators check if the value is a valid IPv4 or IPv6 address respectively.</td>
    <td></td>
    <td></td>
@@ -392,7 +392,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logexplain">logexplain</a></td>
    <td>The logexplain operator allows you to compare sets of structured logs based on events you're interested in. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_explanation<br/>_relevance<br/>_test_coverage<br/>_control_coverage</td>
-   <td>Not supported with <a href="/docs/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert">Real Time alerts</a>.<br/><a href="/docs/Time-Compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/Compare">compare operator</a> are not supported against LogExplain results.</td>
+   <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.<br/><a href="/docs/search/time-compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/compare">compare operator</a> are not supported against LogExplain results.</td>
    <td><code>_sourceCategory=stream <br/>| if(_raw matches "error", 1, 0) as hasError<br/>| logexplain hasError == 1 on _sourceHost</code></td>
   </tr>
   <tr>
@@ -424,7 +424,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| parse "name=*, phone number=*," as (name, phone)<br/>| count by name, phone<br/>//We recommend doing a lookup after an aggregation<br/>| lookup email from https://compay.com/userTable.csv on name=userName, phone=cell</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/Luhn">luhn (credit card validator)</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/luhn">luhn (credit card validator)</a></td>
    <td>The Luhn operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers, and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.</td>
    <td></td>
    <td></td>
@@ -776,12 +776,12 @@ You can use general mathematical expressions on numerical data extracted from lo
    <td><code>| hypot(1, 0) as v<br/>// v = 1</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/math-expressions/toDegrees">toDegrees</a></td>
+   <td><a href="/docs/search/search-query-language/math-expressions/todegrees">toDegrees</a></td>
    <td>Converts angles from radians to degrees.</td>
    <td><code>| toDegrees(asin(1)) as v<br/>// v = 90</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/math-expressions/toRadians">toRadians</a></td>
+   <td><a href="/docs/search/search-query-language/math-expressions/toradians">toRadians</a></td>
    <td>Converts angles from degrees to radians.</td>
    <td><code>| toRadians(180) as v<br/>// v = pi</code></td>
   </tr>

@@ -36,7 +36,7 @@ http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/<endpoint>
 
 To use our Cloud SOAR REST API, you must be an authorized user with a valid JWT API key. Org administrators should perform the following steps to issue an API key for a Cloud SOAR user:
 
-1. Select the desired user in the [User Management](/docs/cloud-soar/overview/#user-management) section.
+1. Select the desired user in the [User Management](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#user-management) section.
 1. Scroll to the **API Token** section.
 1. Click the **+** button on the right-hand side of the screen.
 1. Click **Generate** to confirm the generation of the API token. You can find your new JWT token in the **API Token** section of your user settings.

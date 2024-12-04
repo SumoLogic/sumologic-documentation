@@ -11,7 +11,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can filter and search the list pages in Cloud SIEM—**Insights**, **Signals**, **Entities**, **Records**, **Rules**, and **Network Blocks**—using the **Filter** bar near the top of the page.
+You can filter and search the list pages in Cloud SIEM—**Insights**, **Signals**, **Entities**, **Records**, **Rules**, and **Network Blocks**—using the **Filters** bar near the top of the page.
 
 <img src={useBaseUrl('img/cse/list-page-search.png')} alt="Filters box at the top of the page " width="500" />
 

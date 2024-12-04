@@ -82,18 +82,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cisco Meraki - C2C app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cisco Meraki - C2C app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cisco Meraki - C2C dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -111,3 +99,15 @@ The **Cisco Meraki - Appliance Security Events** dashboard provides real-time in
 ### Network Events and Air Marshal
 
 The **Cisco Meraki - Network Events and Air Marshal** dashboard provides you with a comprehensive overview of network activity, event timelines, and event type breakdown. It offers insights into associated clients and their respective SSIDs, highlighting recent association events. The geo locations of clients are displayed, allowing for easy identification of their geographical distribution. Additionally, this dashboard presents information on the SSID associated with clients and an Air Marshal overview to monitor security. Risky geo locations are highlighted to help you to identify potential threats and vulnerabilities. With these panels, the dashboard offers a holistic view of network performance, event analysis, client activity, and security monitoring. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cisco-Meraki-Network-Events-and-Air-Marshal.png')} alt="Cisco-Meraki-Network-Events-and-Air-Marshal" />
+
+## Upgrade/Downgrade the Cisco Meraki - C2C app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco Meraki - C2C app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

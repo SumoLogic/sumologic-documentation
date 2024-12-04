@@ -10,7 +10,7 @@ When you run a search your results are provided in a **Messages** tab. If the 
 
 After running a search, you can make these changes in the **Messages** tab:
 
-* [Add to your search](#add-to-your-search)
+* [Add to your search](#add-toyour-search)
 * [Parse a field from message text](#parse-a-field-from-message-text)
 * [Format JSON messages in search results](../search-basics/view-search-results-json-logs.md)
 

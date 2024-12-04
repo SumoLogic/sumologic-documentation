@@ -837,6 +837,23 @@ If `<field_name>` isn’t specified, the field dictionary is passed through inst
 
 `r|` syntax can be used here.
 
+:::tip
+`TRANSFORM*` operators only work on fields that contain a value, or a subfield within a JSON structure. 
+
+Suppose you had the following JSON array:
+
+```
+{
+"foo":
+{
+"bar":
+{
+"field":"value"
+```
+
+The `TRANSFORM*` operator must be placed on a subfield that contains a valid string or integer, in this case, `"field"`. Placing it on the top-level field, in this case `"foo"` or `"bar"`, will be ignored by the system.
+:::
+
 ### TRANSFORM_ALL
 
 Applies `<transfer_stanza_nam>` stanza to all fields (that have already been parsed or created by SET) that match the regular expression.

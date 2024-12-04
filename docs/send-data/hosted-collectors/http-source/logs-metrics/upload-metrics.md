@@ -86,7 +86,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 
 | Setting | Header Name | Header Value |
 |:--|:--|:--|
-| Compressed data | `Content-Encoding` | gzip or deflate<br/>Required if you are uploading compressed data. |
+| Compressed data | `Content-Encoding` | Values can be `zstd`, `gzip`, or `deflate`.<br/>Required if you are uploading compressed data. |
 | Content Type (for Metrics) | Content-Type | `application/vnd.sumologic.graphite`<br/>`application/vnd.sumologic.carbon2`<br/>`application/vnd.sumologic.prometheus`<br/>Required if you are uploading metrics. |
 | Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |
 | Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. |

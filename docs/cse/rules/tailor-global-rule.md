@@ -47,7 +47,7 @@ You can override some of the fields in the **If Triggered** section on the left 
 
 | Aggregation rule | Chain Rule | Threshold rule |
 |:--|:--|:--|
-| <img src={useBaseUrl('img/cse/aggregation-rule-edits.png')} alt="Aggregation rule"/> | <img src={useBaseUrl('img/cse/chain-rule-edits.png')} alt="Chain rule"/> | <img src={useBaseUrl('img/cse/thresh-rule-edits.png')} alt="Threshold rule"/> |
+| <img src={useBaseUrl('img/cse/aggregation-rule-edits.png')} alt="Aggregation rule" width="300" /> | <img src={useBaseUrl('img/cse/chain-rule-edits.png')} alt="Chain rule" width="300" /> | <img src={useBaseUrl('img/cse/thresh-rule-edits.png')} alt="Threshold rule" width="300" /> |
 
 ## Reverting overridden settings
 
@@ -55,6 +55,6 @@ You can revert any overrides you’ve made at any time back to the original valu
 
 Once you save the overrides to a rule, a revert button appears next to each edited field, as shown in the screenshot below. If you hover over the revert button, you can see what the original value was.
 
-<img src={useBaseUrl('img/cse/revert-icons.png')} alt="Revert settings" width="600"/>
+<img src={useBaseUrl('img/cse/revert-icons.png')} alt="Revert settings" width="200"/>
 
 To revert an override, just click the revert button next to it. After reverting all desired fields, click **Save Edits** at the bottom of the page. 

@@ -62,5 +62,5 @@ For more information about audit logging for Cloud SIEM, see [Cloud SIEM Audit L
 -->
 
 :::note
-Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. For more information, see [Audit Logging for the Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR Audit Logging](/docs/cloud-soar/audit-event-index/).
+Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. For more information, see [Audit Logging for the Automation Service and Cloud SOAR](/docs/platform-services/automation-service/automation-service-audit-logging/).
 :::

@@ -16,7 +16,8 @@
         "token":"***********",
         "tokenId":"*******",
         "category":"sanbox/kaltura",
-        "apiBaseUrl":"https://www.kaltura.com"
+        "apiBaseUrl":"https://www.kaltura.com",
+        "baseEntryInitLookback":1
       },
       "state":{
         "state":"Collecting"

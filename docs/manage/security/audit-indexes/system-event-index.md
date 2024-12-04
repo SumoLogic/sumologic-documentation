@@ -51,7 +51,7 @@ _index=sumologic_system_events _sourceCategory=alerts
 | :-- | :-- |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Apps](/docs/integrations/) | `apps` |
-| [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar*` |
+| [Automation Service and Cloud SOAR](/docs/platform-services/automation-service/automation-service-audit-logging/) | `oar*` |
 | [Cloud SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
 | [Fields](/docs/manage/fields) | `fieldManagement` |
 | [Health Events](/docs/manage/health-events/) | `Collection` |

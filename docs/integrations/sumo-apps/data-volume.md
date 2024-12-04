@@ -22,10 +22,10 @@ The Data Volume Index must be enabled by an administrator.
 
 To enable the Data Volume Index:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Data Management**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Data Management**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
 1. Under **Data Volume**, select **Enable**.
 
-<img src={useBaseUrl('img/ingestion-volume/data_volume_check_box.png')} alt="Enable Data Volume Index" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/manage/ingestion-volume/data_volume_check_box.png')} alt="Enable Data Volume Index" style={{border: '1px solid gray'}} width="800"/>
 
 A message confirms that the feature is enabled.
 
@@ -34,18 +34,6 @@ A message confirms that the feature is enabled.
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
-
-## Upgrading the Data Volume app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Data Volume app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Data Volume Dashboards
 
@@ -71,7 +59,7 @@ Use this dashboard to:
 * Determine the log ingest volume and trends in GB across various tiers.
 * Identify spikes where current hour ingestion is above 50% from the last hour. Identify outliers and forecast your data ingestion.
 * Determine the log data for default index and top non-default indexes.
-* Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to get your capacity values.
+* Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to get your capacity values.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs.png')} alt="Data volume dashboards" />
 
@@ -95,7 +83,7 @@ Use this dashboard to:
 * Determine the ingested DPM by various dimensions their
 * Examine trends over time.
 * Identify the spikes where current hour ingestion is above 50% from the last hour.
-* Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to see your Capacity Values.
+* Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to see your Capacity Values.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" />
 
@@ -115,7 +103,7 @@ Use this dashboard to:
 The **Data Volume - Capacity Utilization** dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
 
 Use this dashboard to:
-* Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to view the log ingest capacity value and metric DPM ingest capacity value.
+* Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to view the log ingest capacity value and metric DPM ingest capacity value.
 * Identify the average ingestion and subscribed ingestion capacity by percentage for logs and metrics.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Capacity-Utilization.png')} alt="Data volume dashboards" />
@@ -132,3 +120,15 @@ Use this dashboard to:
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
+
+## Upgrade/Downgrade the Data Volume app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Data Volume app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -26,8 +26,6 @@ You configure enrichments in the server’s configuration file. The key settings
 
 The Insight Enrichment Server periodically polls Cloud SIEM for new Insights. If an Insight’s Entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the Entity instance in the Insight. You can see an enrichment that has been added to an Insight on the **Enrichments** tab for an Insight.  
 
-The enrichment shown below returned the IP address associated with the hostname that is the Entity for the Insight.
-
 <img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
 
 ## Create configuration file
@@ -245,10 +243,10 @@ command_args = dsquery user -name ${USERNAME}
 cache_time = 5m
 ```
 
-## Passing parameters to Powershell scripts
+## Passing parameters to PowerShell scripts
 
 You can configure the Insight Enrichment Server to pass parameters to a
-Powershell script, as shown in the examples below.
+PowerShell script, as shown in the examples below.
 
 ### CarbonBlack enrichment
 
@@ -385,7 +383,7 @@ The example provided below is not guaranteed to work with all versions of the ap
     ```
 1. Restart the enrichment server.
 
-**Powershell Scripts**
+**PowerShell Scripts**
 
 **S1hostname.ps1**
 ```

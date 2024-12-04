@@ -119,18 +119,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the F5 - BIG-IP LTM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the F5 - BIG-IP LTM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing F5 - BIG-IP LTM dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -189,3 +177,15 @@ Use this dashboard to:
 * Review user requests and application access by users.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
+
+## Upgrade/Downgrade the F5 - BIG-IP LTM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the F5 - BIG-IP LTM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

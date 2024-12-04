@@ -31,7 +31,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
     1. Select the log type in **Category details** that you want to ingest.
     1. Select the **Stream to an event hub** checkbox and then select the following:
         * **Subscription.** Pull-down, select a subscription.
-        * **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+        * **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
         * **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
         * **Event hub policy name.** Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-audit.png" width="800"/>
     1. Click **Save.**
@@ -43,18 +43,6 @@ Now that you have set up collection from the Azure Activity Log (previously know
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Azure Audit app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure Audit app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Azure Audit dashboards
 
@@ -134,3 +122,15 @@ Use this dashboard to see the details on events, resources, and users.
 **Events by User.** Provides details on events per user in an area chart on a timeline for the last seven days.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
+
+## Upgrade/Downgrade the Azure Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

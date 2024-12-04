@@ -90,8 +90,11 @@ but it can also be any other process. To find out what process is using the port
 sudo lsof -i :8888
 ```
 
-You can either stop the process using the port, or change the metrics port that your collector uses.
-See [Accessing the collector's metrics](#accessing-the-collectors-metrics) section above.
+You can either stop the process using the port, or change the metrics port that your collector uses. See the [Accessing the collector's configuration](#accessing-the-collectors-configuration) section.
+
+#### When I change the name of the collector in the configuration file and redeploy I see a new collector in the Sumo Logic UI
+
+Changing the collector's name will result in re-registering the collector with Sumo Logic. The original collector will turn "inactive" soon after the change and will allow you to delete the collector in the Sumo Logic UI.
 
 
 

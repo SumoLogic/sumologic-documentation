@@ -152,18 +152,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Amazon Inspector app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon Inspector app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing the Amazon Inspector Overview dashboard
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -188,3 +176,15 @@ The other panels on the dashboard, for Critical, High, Medium, and Low Severity 
 * Severity Findings. The count of findings at this severity during the last 24 hours by default, or during the currently selected time range.  
 * Severity [Outliers](/docs/search/search-query-language/search-operators/outlier). Shows the trending volume of findings at this severity level during the last 24 hours by default, or during the currently selected time range. The gray shaded area corresponds to 3 standard deviations of the past 10 mean values. Pink triangles show values that exceed that threshold and are likely points of investigation considering the large change in volume of findings.
 * Last 20 Severity Findings. A table detailing the 20 most recent findings at this severity level.
+
+## Upgrade/Downgrade the Amazon Inspector app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

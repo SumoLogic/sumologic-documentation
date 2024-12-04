@@ -66,18 +66,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Amazon CloudFront app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon CloudFront app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Amazon CloudFront dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -128,6 +116,18 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 - **Cache Hit and Miss Over Time.** Displays the cache's hits and misses over time in timeslices of five minutes for the last three hours in a stacked column chart.
 - **HTTP Status Codes Over Time.** Shows HTTP status codes over time in timeslices of five minutes for the last three hours in a timeline.
 - **Traffic and Megabytes Served.** Provides information on site traffic hits and Megabytes served in timeslices of one hour over the last 24 hours in a combination column and line chart.
+
+## Upgrade/Downgrade the Amazon CloudFront app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon CloudFront app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Additional logs and metrics collection (Optional)
 

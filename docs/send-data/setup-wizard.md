@@ -8,14 +8,14 @@ description: Use the Setup Wizard to quickly get started sending data to Sumo Lo
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-The Setup Wizard is deprecated. <!--Kanso It is only available in the [Classic UI](/docs/get-started/sumo-logic-ui/). Kanso--> We recommend using the [App Catalog](/docs/integrations/) to onboard your data.
+The Setup Wizard is deprecated. It is only available in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using the [App Catalog](/docs/integrations/) to onboard your data.
 :::
 
 The Setup Wizard (deprecated) lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
 
 Before you begin, [sign up](/docs/get-started/sign-up.md) for a Sumo Logic account and activate it.
 
-To open the Setup Wizard, <!--Kanso in the [Classic UI](/docs/get-started/sumo-logic-ui/) Kanso--> select **Manage Data** > **Collection** > **Collection**, and then click the **Setup Wizard** link on the top right of the Collection page.
+To open the Setup Wizard, in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/) select **Manage Data** > **Collection** > **Collection**, and then click the **Setup Wizard** link on the top right of the Collection page.
 
 <img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="setup-wizard" />
 

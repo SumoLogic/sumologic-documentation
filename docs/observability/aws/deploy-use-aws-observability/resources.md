@@ -185,7 +185,7 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/de
   <tr>
    <td>Hosted Collector   </td>
    <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62;   </td>
-   <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62; </td>
+   <td>AWS Observability &#60;AccountAlias&#62; &#60;AccountID&#62; </td>
   </tr>
   <tr>
    <td>Field Extraction Rule   </td>

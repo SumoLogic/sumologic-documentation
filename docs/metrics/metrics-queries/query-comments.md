@@ -6,7 +6,7 @@ sidebar_label: Using Comments in Queries
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In the Metrics Explorer, in [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer#Switch-between-Basic-and-Advanced-Mode) you can add comments to a metrics query and comment out portions of the query by using comment formatting.
+In the Metrics Explorer, in [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer#switch-betweenbasic-and-advancedmode) you can add comments to a metrics query and comment out portions of the query by using comment formatting.
 
 Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries.
 

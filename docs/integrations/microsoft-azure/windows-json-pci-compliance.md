@@ -61,18 +61,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the PCI Compliance for Windows JSON app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the PCI Compliance for Windows JSON app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing PCI Compliance for Windows JSON dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -134,3 +122,15 @@ Track your Windows Update activities.
 * **Windows Update Trend.** Bar chart that displays 7-day trend of updates success and failure time sliced by hour.
 * **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures
+
+## Upgrade/Downgrade the PCI Compliance for Windows JSON app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI Compliance for Windows JSON app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

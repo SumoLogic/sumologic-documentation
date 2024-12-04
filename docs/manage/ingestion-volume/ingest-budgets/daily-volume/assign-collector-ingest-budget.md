@@ -14,7 +14,7 @@ description: Learn how to assign a Collector to an ingest budget.
 
 Once you have created an ingest budget you can assign a Collector to it. You can assign a Collector to an ingest budget by:
 
-* Using the [Collection](#assign-collector-to-ingest-budget) page.
+* Using the [Collection](#collection-page) page.
 * Using the `fields` parameter at any time with the [Collector Management API](#collector-management-api) or when first registering a Collector with Sumo with the [command line installer](#command-line-installation) or [user.properties](#userproperties) file.
 
 The UI installer for Installed Collectors does not support assigning ingest budgets, use another method.
@@ -27,7 +27,7 @@ Assigning an Ingest Budget to a Collector is only relevant for V1 Ingest Budgets
 
 On the [Collection page](/docs/send-data/collection) when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
-![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
+![assign to a budget dropdown option.png](/img/manage/ingestion-volume/assign-budget-dropdown-option.png)
 
 The dropdown displays your ingest budgets in the following format:
 
@@ -43,7 +43,7 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 If you do not have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](/docs/manage/fields) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
 
-![Manual budget field.png](/img/ingestion-volume/Manual-budget-field.png)
+![Manual budget field.png](/img/manage/ingestion-volume/Manual-budget-field.png)
 
 ## Collector Management API
 

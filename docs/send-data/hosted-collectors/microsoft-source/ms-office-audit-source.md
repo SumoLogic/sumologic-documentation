@@ -44,27 +44,30 @@ Audit log data can contain sensitive information. When you configure any audit l
 
 ## Office 365 admin roles
 
-Office 365 comes with a set of admin roles that you can assign to users in your organization. Each admin role maps to common business functions and gives people in your organization permissions to do specific tasks in the Office 365 admin center. 
+Office 365 comes with a set of admin roles that you can assign to users in your organization. Each admin role maps to common business functions and gives people in your organization permissions to do specific tasks in the Office 365 admin center. 
 
-When you configure a Microsoft Office 365 Audit Source in Sumo you will need to authenticate with Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. For the sake of the principle of least privilege (PoLP), the authenticating account should be as restrictive as possible while enabling appropriate access. What's appropriate for you depends on which Office 365 edition you use and your security policies.
+When you configure a Microsoft Office 365 Audit Source in Sumo Logic, you will need to authenticate with Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. For the sake of the principle of least privilege (PoLP), the authenticating account should have the minimum necessary permissions while still enabling appropriate access. The appropriate role depends on the Office 365 edition you use and your security policies.
 
-Using the Global Administrator role is recommended:
+Using the **Global Reader** role is recommended to reduce security risks, as it provides read-only access:
 
-| Role  |   Description |
-|:-----------------------|:-------------|
-| Global Administrator  | This role enables access to all administrative features in your Office 365 subscription. |
+| Role | Description |
+|:-----|:-------------|
+| Global Reader | This role provides read-only access to the Office 365 environment without the ability to modify settings or content, minimizing security risks. |
 
-You could take a different, more granular, approach to assign roles to
-the authenticating account. There are approximately 40 Office 365 roles,
-and some subset of those roles might meet your collection requirements.
-For more information, see the following topics in Microsoft help:
+In cases where read-only access is insufficient and additional permissions are required, you may need to use the **Global Administrator** role, which provides full access:
+
+| Role | Description |
+|:-----|:------------|
+| Global Administrator | This role enables access to all administrative features in your Office 365 subscription. Use this role only when absolutely necessary, as it grants full control. |
+
+Alternatively, you could assign more granular roles to the authenticating account. There are approximately 40 Office 365 roles, and some subset of those roles might meet your collection requirements. For more information, see the following topics in Microsoft help:
 
  * [Permissions in the Office 365 Security & Compliance Center](https://support.office.com/en-us/article/permissions-in-the-office-365-security-compliance-center-d10608af-7934-490a-818e-e68f17d0e9c1?ui=en-US&rs=en-US&ad=US)
  * [About Office 365 admin roles](https://support.office.com/en-us/article/about-office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d)
  * [Assigning administrator roles in Azure Active Directory](https://docs.microsoft.com/en-gb/azure/active-directory/active-directory-assign-admin-roles-azure-portal)
 
 :::note
-The variety and range of configurations of Office 365 environments preclude exhaustive testing log ingestion from Office 365 sources. You might need to experiment with several roles to ensure that you are ingesting the data you want. Note also that Office 365 administrators must enable logging in their environments for the logs to be available.
+The variety and range of configurations in Office 365 environments preclude exhaustive testing of log ingestion from Office 365 sources. You might need to experiment with several roles to ensure you are ingesting the data you want. Note also that Office 365 administrators must enable logging in their environments for the logs to be available.
 :::
 
 ## Enable Exchange Audit Logging
@@ -90,7 +93,7 @@ You must configure a separate Source for each Office 365 application you want to
 During the configuration, you will need to authenticate to Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. Refer to the API references in this article for additional information on Microsoft admin rights.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Source** next to a Hosted Collector. If you dont already have a hosted collector, see [Set Up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.

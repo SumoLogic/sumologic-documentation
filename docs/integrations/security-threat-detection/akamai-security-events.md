@@ -93,18 +93,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Akamai Security Events app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Akamai Security Events app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Akamai Security Events dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -150,3 +138,15 @@ Use this dashboard to:
 The **Akamai Security Events - Threat Intel** dashboard provides an at-a-glance view of threats analyzed using Crowdstrike Threat Feed. Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Threat-Intel.png')} alt="Akamai Security Events dashboards" />
+
+## Upgrade/Downgrade the Akamai Security Events app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai Security Events app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

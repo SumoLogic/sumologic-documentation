@@ -265,18 +265,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Evident.io ESP app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Evident.io ESP app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Evident.io ESP dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -314,3 +302,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Risks by Signature.** Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.
+
+## Upgrade/Downgrade the Evident.io ESP app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Evident.io ESP app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

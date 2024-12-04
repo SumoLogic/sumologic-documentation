@@ -85,8 +85,6 @@ You’ll be offered the option to push the Playbook to selected tenants, as desi
 
 <img src={useBaseUrl('img/cloud-soar/save-to-tenants.png')} alt="Push to tenants option" style={{border: '1px solid gray'}} />
 
-For more information, see [Playbook](/docs/cloud-soar/automation/#playbook).
-
 ## Custom Fields
 
 The **Custom Fields** page allows you to create and manage Custom Fields, and to push fields to tenants.

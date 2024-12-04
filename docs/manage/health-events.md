@@ -36,10 +36,10 @@ The health events table allows you to easily view and investigate problems getti
 
 On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the health events table, in the top menu select **Configuration**, and then under **Data Collection** select **Health Events**. You can also click the **Go To...** menu at the top of the screen and select **Health Events**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the health events table, in the top menu select **Configuration**, and then under **Data Collection** select **Health Events**. You can also click the **Go To...** menu at the top of the screen and select **Health Events**. 
+ 
 
 ![health events table.png](/img/health-events/health-events-table.png)
 

@@ -90,18 +90,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Akamai DataStream app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Akamai DataStream app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Akamai DataStream dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -131,3 +119,15 @@ The **Akamai DataStream - Requests Type** dashboard provides details about visit
 The **Akamai DataStream - Video Streaming** dashboard displays details related to video streaming requests, and analyzes failed vs successful video streaming requests over time.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai-DataStream-Video-Streaming"/>
+
+## Upgrade/Downgrade the Akamai DataStream app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai DataStream app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

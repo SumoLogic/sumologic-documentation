@@ -94,18 +94,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Salesforce app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Salesforce app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Salesforce dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -254,3 +242,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Failed Logins by Browser.** Displays details of failed logins by web browser in a pie chart for the last seven days.
 
 **API Login Trend by Type.** Provides details on the number and type of APIs used to login in a stacked column chart on a timeline for the last seven days.
+
+## Upgrade/Downgrade the Salesforce app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Salesforce app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

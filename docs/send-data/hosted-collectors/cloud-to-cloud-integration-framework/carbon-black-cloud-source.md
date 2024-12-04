@@ -54,7 +54,7 @@ When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. 
 
 To configure a Carbon Black Cloud Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Search for and select **Carbon Black Cloud**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -64,7 +64,7 @@ To configure a Carbon Black Cloud Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **CB Cloud Domain**. Enter your Carbon Black Cloud domain, such as `dev-prod05.conferdeploy.net`. See [this knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use.
-1. **API Key**. Enter the Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the [Authentication](#authentication) section.
+1. **API Key**. Enter the Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the [Vendor configuration](#vendor-configuration) section.
 1. **API ID**. Enter your Carbon Black Cloud API ID correlated to your API key.
 1. **Org Key**. Enter your Carbon Black Cloud Org key, found in your Carbon Black product console under **Settings > API Access > API Keys.**
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
@@ -97,7 +97,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| domain | String | Yes | `null` | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. |  |
+| domain | String | Yes | `null` | Enter your Carbon Black Cloud domain, such as: `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. |  |
 | api_key | String | Yes | `null` | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Vendor configuration](#vendor-configuration) section. |  |
 | api_id | String | Yes | `null` | The Carbon Black Cloud API ID correlated to your API key. |  |
 | org_key | String | Yes | `null` | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. |  |

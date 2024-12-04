@@ -195,23 +195,11 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Graph Security app (Optional)
+## Upgrade/Downgrade the Microsoft Graph Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
-
-## Uninstalling the Microsoft Graph Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
-## Viewing Microsoft Graph Security dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
 
 ### Microsoft Graph Security - Alerts Overview
 
@@ -228,3 +216,15 @@ The **Alerts Security Overview** dashboard allows you to have a high-level overv
 The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Security/Microsoft-Graph-Security-Alerts-Security-Overview.png' alt="Microsoft-Graph-Security-Alerts-Overview" />
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Microsoft Graph Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>

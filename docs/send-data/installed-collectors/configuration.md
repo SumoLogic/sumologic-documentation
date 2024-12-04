@@ -23,7 +23,7 @@ The maximum number of Collectors allowed per organization is 10,000.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -61,7 +61,7 @@ The columns are the Average CPU and Average Message Size.
 
 ### Number of Sources
 
-Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-collector) if needed.
+Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-for-collector) if needed.
 
 **1,000 events per second with 1 KB message size:**
 

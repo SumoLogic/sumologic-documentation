@@ -137,7 +137,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 ### Troubleshooting
 
 * To identify the operating system version and name.
-   * For Windows machines, run the command in Powershell to get the OS Version.
+   * For Windows machines, run the command in PowerShell to get the OS Version.
      ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
@@ -190,7 +190,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
    * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `'_sourceCategory=yourclustername/metrics'`.
    * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
-2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 3. Click **Add**.
 4. Click **Import** to import monitors from the JSON above.
 
@@ -260,18 +260,6 @@ If you haven’t enabled alerts or configured notifications through the Terrafor
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Host and Process Metrics app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Host and Process Metrics app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Host and Process Metrics dashboards​
 
@@ -377,6 +365,17 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
 
+## Upgrade/Downgrade the Host and Process Metrics app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host and Process Metrics app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 
 ## Host and Process Metrics Alerts

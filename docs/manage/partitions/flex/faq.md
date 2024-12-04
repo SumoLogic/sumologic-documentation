@@ -44,16 +44,20 @@ Then, you assign that role to any user that shouldn’t have access to data in t
 
 ## How can I get visibility into our Flex search costs?
 
-Your **Account Overview** page shows the credits your org has consumed for Flex data searches. <br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+Your **Account Overview** page shows the credits your org has consumed for Flex data searches. <br/><img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
 
 ## How can I optimize Flex data search costs?
 
-There are two ways you can control the cost of running queries data in Flex:
+Below are some ways to control the cost of running queries data in Flex:
 
 * Logically apportion your data, depending on how you plan to query it, into multiple partitions, instead of creating a single large partition. Try to limit queries to a single partition as much as possible. Assume you have three different services sending logs to Sumo Logic. There a couple of approaches you can take:
     * **Create one partition per service**. All the logs for that service go there. This approach can be leveraged if each team owns a service, and they typically query the logs within their service to find issues.
     * **Create one partition per log type (debug, infra, and so on)**. This approach can be leveraged if, most of the time, the team searches one log type per query. For example, the team only queries debug logs, and typically queries other logs like Database logs and OS logs in separate queries. 
-* Try to use a restrictive time range, instead of running a query with a very long time range. 
+* Try to use a restrictive time range, instead of running a query with a very long time range.
+* Use indexes with the metadata fields to narrow down the volume of data scanned. This in turn will help you to reduce the scan cost. For example, if you're querying data from the `k8s_host` source and it's being sent to multiple partitions, you can limit the scope of your search to the `abc` partition by using `_index=abc` for the selected time range.
+    ```sql
+    _index=abc AND _sourceCategory=k8s_host
+    ```
 
 Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named `ybase_partition`.
 
@@ -71,6 +75,10 @@ The table below should give you a sense of how the number of partitions you use 
 | 1 day            | 2                            | 4 TB         |
 | 1/2 day          | 2                            | 2 TB         |
 | 2 days           | 2                            | 8 TB         |
+
+:::note 
+Given all partition definitions and the user's query, Sumo Logic automatically optimizes query execution by rewriting the query to include `_view` and `_index` clauses. The system then identifies the minimal list of views required to serve the query, which ultimately contributes to the scanned volume, whether actual or estimated.
+:::
 
 ## What is an ideal size for a partition for Flex?
 
@@ -94,3 +102,13 @@ When partitions are marked as included and `_index` or `_view` is not referenced
 ## How are preview queries charged?
 
 While the current impact is extremely minimal, preview queries that you run during scenarios like monitor creation may incur repetitive but negligible charges.
+
+## What happens to the queries with _dataTier modifier while migrating to Flex Pricing?
+
+:::note
+Users will continue to have support for the `_dataTier` modifier while still migrating to Flex pricing.
+:::
+
+After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
+
+Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.

@@ -96,18 +96,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cloudflare app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cloudflare app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cloudflare dashboards
 
 This section has instructions for installing the Cloudflare App for Sumo Logic.
@@ -214,3 +202,15 @@ Use this dashboard to:
 * Investigate the cause of slow requested URLs in order to improve performance.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />
+
+## Upgrade/Downgrade the Cloudflare app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cloudflare app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

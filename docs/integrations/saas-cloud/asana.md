@@ -73,7 +73,17 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Asana app (Optional)
+## Viewing Asana dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Asana - Overview** dashboard presents a comprehensive overview of audit events related to actions taken on Asana. It includes widgets for user logins from risky locations, number of users invited, password change events, events by user authorization, user login events over time, content exports by resource, events by role change, events by team status, events by app authorization, events by access token authorization, deletion events, and geographical locations of user login. Overall, this dashboard provides quick access to pertinent information, making it a useful tool for improving event management. Also, the recent admin settings and recent access control events widgets offer a concise overview of recent events related to respective categories. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>
+
+## Upgrade/Downgrade the Asana app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
@@ -84,13 +94,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-## Viewing Asana dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-### Overview
-
-The **Asana - Overview** dashboard presents a comprehensive overview of audit events related to actions taken on Asana. It includes widgets for user logins from risky locations, number of users invited, password change events, events by user authorization, user login events over time, content exports by resource, events by role change, events by team status, events by app authorization, events by access token authorization, deletion events, and geographical locations of user login. Overall, this dashboard provides quick access to pertinent information, making it a useful tool for improving event management. Also, the recent admin settings and recent access control events widgets offer a concise overview of recent events related to respective categories. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>

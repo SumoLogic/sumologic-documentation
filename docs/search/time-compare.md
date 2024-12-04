@@ -85,7 +85,7 @@ For more compare operator examples, see [Examples](./time-compare.md).
 
 The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
 
-* `compare` is used for aggregated numeric data (such as, for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
+* `compare` is used for aggregated numeric data (such as: for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
 * `logcompare` is used for log signature counts (used right after the first pipe).
 
 ## Compare Operator

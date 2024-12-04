@@ -7,5 +7,8 @@
 | EU         | https://api.eu.sumologic.com/docs/sec/  |
 | IN         | https://api.in.sumologic.com/docs/sec/  |
 | JP         | https://api.jp.sumologic.com/docs/sec/  |
+| KR         | https://api.kr.sumologic.com/docs/sec/  |
 | US1        | https://api.sumologic.com/docs/sec/     |
 | US2        | https://api.us2.sumologic.com/docs/sec/ |
+
+

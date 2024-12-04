@@ -126,18 +126,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Postman app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Postman app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Postman dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -161,3 +149,15 @@ The **Postman - Collections, Requests & Team Activity** provides valuable insigh
 The **Postman - Monitors** provides immediate notifications and real-time data regarding the results of API tests.
 
 <img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman-Monitors"/>
+
+## Upgrade/Downgrade the Postman app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Postman app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

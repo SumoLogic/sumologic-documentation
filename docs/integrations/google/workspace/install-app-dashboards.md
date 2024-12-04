@@ -17,18 +17,6 @@ import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Google Workspace app (Optional)
-
-import AppUpdate from '../../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Google Workspace app (Optional)
-
-import AppUninstall from '../../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Google Workspace dashboards​
 
 import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
@@ -161,3 +149,15 @@ Use this dashboard to:
 * Monitor security and privacy issues affecting your organization's Google Workspace services.
 
 <img src={useBaseUrl('img/integrations/google/Google-Workspace-Alert-Center-Other-Alerts.png')} alt="Google Workspace dashboards" />
+
+## Upgrade/Downgrade the Google Workspace app (Optional)
+
+import AppUpdate from '../../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Workspace app (Optional)
+
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

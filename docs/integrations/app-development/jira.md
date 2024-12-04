@@ -431,25 +431,13 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     * started (sprint_started)
     * closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#step-2-configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Installing the Jira app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Jira app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Jira app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Jira dashboards​
 
@@ -561,3 +549,15 @@ Use this dashboard to:
 * Identify unusual user activity and closely monitor those users.
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
+
+## Upgrade/Downgrade the Jira app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jira app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

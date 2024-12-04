@@ -18,7 +18,7 @@ Watch this micro lesson to learn more about the Enterprise Audit - Cloud SIEM ap
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -63,21 +63,6 @@ Logs written to either of the partitions above are assigned the source category 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
-
-## View Cloud SIEM dashboards
-
-
-## Upgrading the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing the Enterprise Audit - Cloud SIEM app dashboards
 
@@ -216,3 +201,15 @@ The **Cloud SIEM - Signal Standup Overview** dashboard provides an overview of t
 The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM user telemetry.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM User Telemetry"/>
+
+## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

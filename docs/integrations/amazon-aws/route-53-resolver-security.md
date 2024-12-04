@@ -53,18 +53,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the Amazon Route 53 Resolver Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Amazon Route 53 Resolver Security dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -178,3 +166,15 @@ Panels include:
 * Threat Table
 * Malicious URIs
 * Malicious IPs
+
+## Upgrade/Downgrade the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

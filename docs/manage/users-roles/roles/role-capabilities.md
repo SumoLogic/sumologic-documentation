@@ -101,9 +101,9 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability | Description |
 | :-- | :-- |
-| View Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
-| Manage Monitors	| Users with this capability can create new folders and [Monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
-| Admin Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
+| View Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
+| Manage Monitors	| Users with this capability can create new folders and [monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
+| Admin Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
 | View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response#alert-page).|
 | View Muting Schedules	| Required for viewing the [Muting Schedules](/docs/alerts/monitors/muting-schedules) page and schedule definitions.|
 | Manage Muting Schedules	| Required for creating, editing, and deleting Muting Schedules.|
@@ -158,7 +158,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Triage | Edit | Create, edit,and delete triage events. |
 | Triage | Bulk physical delete | Perform bulk deletion of triage events. |
 | Folders | Edit | Create, edit, and delete folders. |
-| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#attachments). |
+| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#documentation-tab). |
 | Attachments | Edit | Create, edit, and delete attachments. |
 | Incident Playbook | Access | Access all [incident playbooks](/docs/cloud-soar/incidents-triage/#playbooks). |
 | Incident Playbook | Edit | Create, edit, and delete incident playbooks. |
@@ -166,10 +166,10 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#general-settings). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#settings). |
 | User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
 | Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
-| Customization | Logo | Customize the [logo](/docs/cloud-soar/overview/#logo). |
+| Customization | Logo | Customize the logo. |
 | Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
@@ -182,7 +182,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | API | Email Edit | Create, edit, and delete emails. |
 | Incident Templates | Access | Access all [incident templates](/docs/cloud-soar/automation/#incident-templates). |
 | Incident Templates | Configure | Configure templates. |
-| Automation Rules | Access | Access automation [rules](/docs/cloud-soar/automation/#rules). |
+| Automation Rules | Access | Access [automation rules](/docs/cloud-soar/automation/#automation-rules). |
 | Automation Rules | Configure | Configure automation rules. |
 | Entities | Access | Access all [entities](/docs/cloud-soar/incidents-triage/#entities). |
 | Entities | Manage | Manage entities. |

@@ -21,9 +21,9 @@ To create or edit a Partition, you must be an account Administrator or have th
  
 ## Create a Partition
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
 1. Click **+ Add Partition**.
-1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
@@ -52,7 +52,7 @@ When designing partitions, keep the following in mind:
   * Partition1: `_sourceCategory=prod`
   * Partition2: `_sourceCategory=*/Apache`
 
-Overlapping data between two or more Partitions will count as additional ingest toward your account's quota. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index).
+The best practice for cost optimization is to ensure that data from a source category is maintained in a single partition rather than multiple partitions to minimize multiple partitions from being included in the scope of the query. If data from a single source category is maintained in multiple partitions, it could potentially increase scan costs, as the query may need to consider data from multiple partitions.
 
 ## Edit a partition
 
@@ -75,10 +75,14 @@ You can make some changes to an existing partition:  
 
 ### How to edit a partition
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  :::note 
+  You can see the suggestions only if there are two or more responses for the same column or section. 
+  :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
-1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Include this partition in default scope**. Select/deselect the checkbox to include/exclude this partition as the default scope in your search.
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.

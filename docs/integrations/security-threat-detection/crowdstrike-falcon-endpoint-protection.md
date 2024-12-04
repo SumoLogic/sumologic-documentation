@@ -284,18 +284,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the CrowdStrike Falcon Endpoint Protection app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the CrowdStrike Falcon Endpoint Protection app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -366,3 +354,15 @@ Use this dashboard to:
 * Drill-down to the details of an incident using pre-built links in the CrowdStrike Falcon Console.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Incident_Summary_Events.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
+
+## Upgrade/Downgrade the CrowdStrike Falcon Endpoint Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CrowdStrike Falcon Endpoint Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

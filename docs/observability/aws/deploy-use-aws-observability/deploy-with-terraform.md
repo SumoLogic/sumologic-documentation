@@ -13,6 +13,10 @@ Additional parameter overrides are available in an appendix section for [Source]
 
 ## Prerequisites
 
+:::info
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
+:::
+
 :::note
 
 <details>
@@ -93,7 +97,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability] (https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
     :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, or `us1`.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, `kr`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
@@ -108,7 +112,7 @@ Before you run the Terraform script, perform the following actions on a server m
     export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
     export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
     ```
-    Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
+    Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed, kr, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
       ```bash
       $ sh fields.sh
@@ -567,6 +571,10 @@ To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer t
 
 ### Override Source Parameters
 
+:::info
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
+:::
+
 Source Parameters define how collectors and their sources are set up in Sumo Logic. If needed, override the desired parameter in the module that you defined earlier for each AWS account and region in the **sumologic-solution-templates/aws-observability-terraform/main.tf** file. 
 
 The following examples override the following:
@@ -661,7 +669,7 @@ Options available are:
 **Default JSON:**
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 ```
 
 #### cloudwatch_metrics_source_details
@@ -749,7 +757,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
-#### Configure collection of Application Load Balancer Access Logs
+### Configure collection of Application Load Balancer Access Logs
 
 Amazon Elastic load balancers have various [load balancers](https://aws.amazon.com/elasticloadbalancing/?whats-new-cards-elb.sort-by=item.additionalFields.postDateTime&whats-new-cards-elb.sort-order=desc). AWS Observability supports access log collection for Application Load Balancers only.
 
@@ -1542,7 +1550,7 @@ The following table provides a list of all source parameters and their default v
 |:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
-| `environment` | Enter au, ca, de, eu, jp, us2, in, fed, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |
+| `environment` | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |
 | `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page. | Ignore if already configured in main.auto.tfvars file. |
 | `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps". | `"AWS Observability Apps"`  |
 | `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors". | `"AWS Observability Monitors"` |
@@ -1586,14 +1594,41 @@ Local-exec provisioner error
 Module Not Found Error: No Module named ‘sumologic’
 ```
 #### Solution
-Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/providers.tf#L1).
+Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf#L1).
+
+### Field or FER already exists
+#### Error Message
+
+```
+"errors":[{"code":"field:already_exists","message":"Field with the given name already exists"}]
+
+"errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
+```
+#### Solution
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-2-configure-the-terraform-script).
+
+### waiting for S3 Bucket Policy (bucket-name) delete
+#### Error Message
+
+```
+Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
+```
+#### Solution
+Run `terraform destroy` again. 
+
+### Field with the given id can't be deleted because it is in use
+#### Error Message
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+#### Solution
+Run `terraform destroy` again. 
+
 
 ### Hierarchy named 'AWS Observability' already exist
 #### Error Message
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```

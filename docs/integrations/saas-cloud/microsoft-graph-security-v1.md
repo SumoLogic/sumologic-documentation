@@ -127,11 +127,17 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Graph Security app (Optional)
+## Upgrade/Downgrade the Microsoft Graph Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
+
+### Alerts Overview
+
+The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
+
+The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
 
 ## Uninstalling the Microsoft Graph Security app (Optional)
 
@@ -144,9 +150,3 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
-
-### Alerts Overview
-
-The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
-
-The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />

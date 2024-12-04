@@ -78,7 +78,17 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Airtable app (Optional)
+## Viewing Airtable dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+**Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('img/integrations/saas-cloud/airtable-overview.png')} alt="airtable-overview.png" width="600"/>
+
+## Upgrade/Downgrade the Airtable app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
@@ -89,13 +99,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-## Viewing Airtable dashboards​
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-### Overview
-
-**Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('img/integrations/saas-cloud/airtable-overview.png')} alt="airtable-overview.png" width="600"/>

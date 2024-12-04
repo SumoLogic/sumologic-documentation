@@ -155,7 +155,7 @@ These tasks require the Manage Collectors and Manage Access Keys [role capabilit
 
 In this step, you need to generate access key and access ID from the Sumo Logic console. To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-your-access-key)) document.
+1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-an-access-key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 

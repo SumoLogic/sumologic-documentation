@@ -63,14 +63,14 @@ difference is where you do the tagging. 
 
 ### UI for tagging a Rule
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  
 1. Navigate to a custom rule.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the **Rule Editor**.
-1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" style={{border: '1px solid gray'}} width="400"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" style={{border: '1px solid gray'}} width="350"/>
 
 ### UI for tagging an Entity
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> Click **Entities** at the top of the screen.  <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Entities** at the top of the screen.  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 1. Navigate to the Entity to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
 2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-entity.png')} alt="Tag an Entity" style={{border: '1px solid gray'}} width="350"/>
@@ -79,17 +79,17 @@ difference is where you do the tagging. 
 
 Note that in addition to tags that you manually assign to an Insight, an Insight will inherit any tags that were applied to the content that went into the Insight—the entity and the rule(s) or custom insight definitions that created the included signals—will automatically be inherited (and aggregated) by the Insight. 
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> Click **Insights** at the top of the screen. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click the **Go To...** menu at the top of the screen and select **Insights**. Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Insights** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click the **Go To...** menu at the top of the screen and select **Insights**. 
 1. Navigate to the Insight to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
 1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an Insight" style={{border: '1px solid gray'}} width="350"/>
 
 ### UI for tagging a custom Insight
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Custom Insights**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Custom Insights**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  
 1. Navigate to a custom Insight.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the Insight Editor.
-1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a Custom Insight" style={{border: '1px solid gray'}} width="350"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a Custom Insight" style={{border: '1px solid gray'}} width="600"/>
 
 ## Apply a schema key tag
 
@@ -104,32 +104,29 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. Navigate to the Rule, Entity, or Insight to which you want to add a tag, as described in [Find the tagging UI](#find-the-tagging-ui).
 1. In the tagging section, click the chevron icon.<br/><img src={useBaseUrl('img/cse/chevron-icon.png')} alt="Chevron icon" style={{border: '1px solid gray'}} width="400"/>
 1. A list of keyword tags that have already been assigned to items of the current type (Rule, Entity, or Insight) appears. You can select an existing tag, or add a new one. Enter text in the field to see a list of matching values.<br/><img src={useBaseUrl('img/cse/freeform-tag-list.png')} alt="Freeform tag list" style={{border: '1px solid gray'}} width="400"/>
-1. To add a new tag, enter it and press Return.<br/><img src={useBaseUrl('img/cse/add-freeform-tag.png')} alt="Add freeform tag" width="400"/> 
-1. The tag is added to the item.<br/><img src={useBaseUrl('img/cse/freeform-added.png')} alt="Freeform tag added" style={{border: '1px solid gray'}} width="400"/> 
+1. To add a new tag, enter it and press Return.
+1. The tag is added to the item. 
 
 ## Search by tag
 
 ### Search Insights, Signals, or Entities by tag
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> Near the top of the screen, click in the Cloud SIEM search area and then click the funnel icon. <!--Kanso  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Search Cloud SIEM**, and click the funnel icon. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**. Kanso--> <br/><img src={useBaseUrl('img/cse/funnel-icon.png')} alt="Funnel icon" width="400"/>
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Near the top of the screen, click in the Cloud SIEM search area and then click the funnel icon.  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Search Cloud SIEM**, and click the funnel icon. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**. <br/><img src={useBaseUrl('img/cse/funnel-icon.png')} alt="Funnel icon" width="400"/>
 1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.<br/><img src={useBaseUrl('img/cse/sources.png')} alt="Sources" style={{border: '1px solid gray'}} width="300"/>
-1. Select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/tags-field.png')} alt="Tags field" style={{border: '1px solid gray'}} width="500"/>
-1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators.png')} alt="Operators" style={{border: '1px solid gray'}} width="250"/>
+1. Select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/tags-field.png')} alt="Tags field" style={{border: '1px solid gray'}} width="600"/>
+1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators.png')} alt="Operators" style={{border: '1px solid gray'}} width="300"/>
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords list**, items that match are listed.
 
 ### Search Rules by tag
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
-1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" style={{border: '1px solid gray'}} width="250"/>
-1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators.png')} alt="Operators" style={{border: '1px solid gray'}} width="250"/>  
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  
+1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" style={{border: '1px solid gray'}} width="400"/>
+1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators-for-rules.png')} alt="Operators" style={{border: '1px solid gray'}} width="250"/>  
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
-
-<img src={useBaseUrl('img/cse/search-results.png')} alt="Search results" style={{border: '1px solid gray'}} width="800"/>
-
 
 ### Filter a list view by clicking a tag
 
-On the Insights, Signals, Rules, or Entities page, you can click a tag to filter the list. For example, if you click the **Tactic:TA0005 - Defense Evasion** tag on an Insight, like this:
+On the Insights, Signals, Rules, or Entities page, you can click a tag to filter the list. For example, if you click the **Tactic: TA0005 - Defense Evasion** tag on an Insight, like this:
 
 <img src={useBaseUrl('img/cse/filter-list-by-tag.png')} alt="Filter list by tag" style={{border: '1px solid gray'}} width="800"/>
 

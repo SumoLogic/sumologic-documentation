@@ -61,7 +61,7 @@ All API calls require an account ID parameter. When logged into the Cato account
 When you create an Cato Networks Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Cato Networks Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Cato Networks**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
+| `config` | JSON Object  | Yes | Contains the [configuration parameters](#configuration-object) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Cato Networks"}` for Cato Networks Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Cato Networks Source. | not modifiable |
 

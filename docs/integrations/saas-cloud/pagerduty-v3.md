@@ -17,7 +17,7 @@ The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDu
 This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V3, to collect PagerDuty events. Click a link to jump to a topic:
 
 * [Event types](#event-types)
-* [Log example](#sample-logs)
+* [Log example](#sample-log-messages)
 * [Sample Queries](#sample-queries)
 * [Configure a Sumo Logic Collector and Source](#configure-a-sumo-logic-collector-and-source)
 * [Create a PagerDuty V3 Webhook](#create-a-pagerduty-v3-webhook)

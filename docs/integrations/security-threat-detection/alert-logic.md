@@ -55,18 +55,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Alert Logic app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Alert Logic app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Alert Logic dashboards​
 
 import ViewDash from '../../reuse/apps/view-dashboards.md';
@@ -78,3 +66,15 @@ import ViewDash from '../../reuse/apps/view-dashboards.md';
 The **Alert Logic - Overview** dashboard provides a holistic view of your organization's cybersecurity landscape crafted to elevate your security operations. This dashboard empowers you with comprehensive insights into incidents, enabling the detection of potential threats and the execution of efficient responses to security incidents.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Alert-Logic/Alert-Logic-Incident-Overview.png')} style={{border: '1px solid gray'}} alt="Alert Logic-Overview" width="800"/>
+
+## Upgrade/Downgrade the Alert Logic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Alert Logic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

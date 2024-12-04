@@ -69,18 +69,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Carbon Black Cloud app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Carbon Black Cloud app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Carbon Black Cloud dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -202,3 +190,15 @@ Use this dashboard to:
 * Help tune new policies and reduce false positives
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-IOCs.png')} alt="Carbon_Black_Cloud dashboards" />
+
+## Upgrade/Downgrade the Carbon Black Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Carbon Black Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -50,24 +50,18 @@ Match Lists are for when you want to use the existence or absence of an indicato
 
 ## How are Suppressed Lists used? 
 
-Cloud SIEM uses Suppressed Lists the same way it uses [Match Lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, Cloud SIEM will compare items on that list only to Record fields that contain domains.
+Cloud SIEM uses Suppressed Lists similar to how it uses [Match Lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, Cloud SIEM will compare items on that list only to Record fields that contain domains.
 
 When a Record contains a value that matches one or more Suppressed Lists, two fields in the Record get populated:
 
 * `listMatches`. Cloud SIEM adds the names of the Suppressed Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the SourceIP address in the “vuln_scanners” Suppressed List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
 * `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s SourceIp is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” Suppressed List, the `matchedItems` field would look like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
-Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search. 
+Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.
 
-In a rule, you look for matches by extending  a rule expression with an `array_contains` function, for example:
+**If any entities within the Record match items listed in a suppressed list, suppressed Signals will be generated for those entities across all rules**. Consequently, these Signals will not affect the entity's Activity Score or contribute to Insight generation.
 
-`... AND NOT array_contains(listMatches, "vuln_scanners")`
-
-If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
-
-If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of \['vuln_scanners'\]. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
-
-For more information about referring to Suppressed List data in rules, see [Match Lists](/docs/cse/match-lists-suppressed-lists) in the *About Cloud SIEM Rules* topic.
+For more information about Signal Suppression mechanisms, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
 
 
 ## Suppressed List limitations 
@@ -78,7 +72,7 @@ A Suppressed List can contain up to 50,000 items.
 
 Perform the steps below to create a Suppressed List and add an indicator to it using the Cloud SIEM UI.
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Suppressed Lists**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  Kanso-->
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Suppressed Lists**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  
 1. Click **Create**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Suppressed List** popup, enter the following:
    1. **Name**. Name of the Suppressed List.
@@ -89,14 +83,14 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
        If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns).
        :::
    1. Click **Create**.
-1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/><img src={useBaseUrl('img/cse/suppressed-list-page-2.png')} alt="Suppressed lists page" style={{border: '1px solid gray'}} width="800"/>
+1. The Suppressed List now appears on the **Suppressed Lists** page.
 1. Click the name of the Suppressed List to open it.
-1. On the **Suppressed List > Details** page, click **ADD LIST ITEM**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Suppressed List > Details** page, click **Add List Item**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Suppressed List Item** popup, enter:
    1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is Domain, enter a domain.
    1. **Description**. (Optional) Enter a description of the list item.
    1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   1. Click **Add** to add the item to the list. <br/><img src={useBaseUrl('img/cse/new-item.png')} alt="New item" style={{border: '1px solid gray'}} width="400"/>
+   1. Click **Add** to add the item to the list.
 1. The item now appears on the list.
 
 ## Import a list of indicators 

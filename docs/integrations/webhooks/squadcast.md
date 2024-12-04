@@ -206,18 +206,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Squadcast app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Squadcast app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Squadcast dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -235,3 +223,15 @@ The **Squadcast - Overview** improves visibility into activities within the Squa
 The **Squadcast - Incidents** offers valuable statistics and insights regarding events associated with incident postmortems, communication channels, tasks, and notes.
 
 <img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast-Incidents"/>
+
+## Upgrade/Downgrade the Squadcast app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Squadcast app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
