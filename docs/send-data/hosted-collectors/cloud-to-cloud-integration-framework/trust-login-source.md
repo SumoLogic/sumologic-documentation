@@ -32,7 +32,7 @@ The Trust Login documentation is not public and can only be accessed by partners
 
 ### Vendor configuration
 
-The Trust Login source requires authentication with a **Bearer token** associated with an API Token.
+The Trust Login source requires authentication with a **Bearer Token** associated with an API Token.
 
 ### Source configuration
 
