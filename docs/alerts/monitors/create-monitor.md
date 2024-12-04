@@ -187,7 +187,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 |:--|:--|
 | `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
-For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
 #### Anomaly detection method
 
