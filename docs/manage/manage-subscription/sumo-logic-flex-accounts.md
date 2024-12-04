@@ -32,7 +32,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 <!-- are these numbers still accurate? -->
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest. For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts).
+Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest.
 
 To access your [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) page:
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
@@ -48,7 +48,7 @@ Enterprise Suite Flex accounts are optimized to address the most advanced data i
 
 ## Features by plan type​
 
-The following table provides a summary list of key features by Flex package accounts. For Free and Trial account details, see the details for [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts).
+The following table provides a summary list of key features by Flex package accounts.
 
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
