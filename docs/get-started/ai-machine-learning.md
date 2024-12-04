@@ -29,7 +29,7 @@ Pattern learning is fundamental to machine learning and deep learning, where alg
 
 </details>
 
-Our AI and security analytics capabilities allow security and development teams to align around a single source of truth and collect and act on data insights more quickly.
+Our AI and security analytics capabilities enable security and development teams to align around a unified source of truth, allowing for quicker collection and action on data insights.
 
 Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
 
