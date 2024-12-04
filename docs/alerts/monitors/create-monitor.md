@@ -244,7 +244,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 To fully leverage metrics monitor alerts, you'll need:
 
-* **Automation Service**. Required for linking playbooks to metrics-based monitors ([learn more](#anomaly)).
+* **Automation Service**. Required for linking playbooks to metrics-based monitors ([learn more](#automated-playbooks)).
 * **Metrics data**. Our anomaly detection uses up to 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
 * **Metrics aggregation**. Queries should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
