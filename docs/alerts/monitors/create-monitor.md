@@ -69,13 +69,13 @@ When you create a monitor and open the metrics search query in the Metrics Explo
 
 ## Step 1. Set trigger conditions
 
-The first step when creating a new monitor is setting the **Trigger Conditions**. Choose Logs, Metrics, or SLO, enter or select a query, and set thresholds to trigger alerts.
+The first step when creating a new monitor is setting the **Trigger Conditions**.
 
-### Monitor type
+### Monitor Type
 
 Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search/), [Metrics](/docs/metrics/metrics-queries/), or an [SLO](/docs/observability/reliability-management-slo/).<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
 
-### Detection method
+### Detection Method
 
 Next, select a **Detection Method** (not applicable to SLO monitors).
 
@@ -136,15 +136,14 @@ You can set a logs monitor trigger to alert based on the following:
 
 Triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
 
-* For static logs monitors, triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
+* For [static logs monitors](#static-detection-method), triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
    | When detection window (Y) is | Evaluate trigger every |
    |:-----------------------------|:-----------------------|
    | 30m or less  | 1m  |
    | 30m to 3h    | 2m |
    | 3hr to 12h   | 10m  |
    | Greater than 12h  | 20m |
-* For outlier logs monitors, triggers are evaluated every 5 minutes.
-* For anomaly logs monitors, triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
+* For [anomaly logs monitors](#anomaly-detection-method), triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
    ```
    _sourceCategory=Labs/Apache/Access
    | timeslice 2m
@@ -154,6 +153,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
    | sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
    | (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
    ```
+* For [outlier logs monitors](#outlier-detection-method), triggers are evaluated every 5 minutes.
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
@@ -161,9 +161,9 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 #### Static detection method
 
-**Logs - Static - Critical and Warning**  
+**Example: Logs - Static - Critical and Warning**  
 
-<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
 
 `Alert when returned row count is <threshold type> <threshold> within <time range>`
 
@@ -177,7 +177,7 @@ The recovery condition is set by default to the opposite of the alert condition.
 
 For example, if an alert is set to `greater than 10`, the recovery would be set to `less than or equal to 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
-**Logs - Static - Missing Data**
+**Example: Logs - Static - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
 
@@ -191,7 +191,7 @@ For recovery, Sumo Logic will automatically resolves the incident when the resol
 
 #### Anomaly detection method
 
-**Logs - Anomaly - Critical**
+**Example: Logs - Anomaly - Critical**
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
 
@@ -205,7 +205,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 #### Outlier detection method
 
-**Logs - Outlier - Critical and Warning**
+**Example: Logs - Outlier - Critical and Warning**
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
 
@@ -219,7 +219,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
 
-**Logs - Outlier - Missing Data**  
+**Example: Logs - Outlier - Missing Data**  
 
 <img src={useBaseUrl('img/alerts/monitors/logs-missing-data.png')} alt="logs missing data" style={{border: '1px solid gray'}} width="500" />
 
@@ -244,7 +244,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 To fully leverage metrics monitor alerts, you'll need:
 
-* **Automation Service**. Required for linking playbooks to metrics-based monitors.
+* **Automation Service**. Required for linking playbooks to metrics-based monitors ([learn more](#anomaly)).
 * **Metrics data**. Our anomaly detection uses up to 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
 * **Metrics aggregation**. Queries should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
@@ -255,7 +255,7 @@ Examples:
 
 #### Static detection method
 
-**Metrics - Static - Critical and Warning**
+**Example: Metrics - Static - Critical and Warning**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
 
@@ -287,7 +287,7 @@ The Alert and recovery setting affects both the alert generation logic and the a
 
 For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
 
-**Metrics - Static - Missing Data**
+**Example: Metrics - Static - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-static-missing.png')} alt="Metrics static missing data" style={{border: '1px solid gray'}} width="600" />
 
@@ -304,7 +304,7 @@ For example, you want to be alerted when the CPU usage is over 60% `at all times
 Anomaly detection applies to one time series at a time. All metrics anomaly monitor trigger queries must have aggregation applied at the end of the query before detection.
 :::
 
-**Metrics - Anomaly - Critical**
+**Example: Metrics - Anomaly - Critical**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
 
@@ -315,7 +315,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.
 
-**Metrics - Anomaly - Missing Data**
+**Example: Metrics - Anomaly - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
 
@@ -329,7 +329,7 @@ For recovery, Sumo Logic will automatically resolves the incident when the resol
 
 #### Outlier detection method
 
-**Metrics - Outlier - Critical and Warning**
+**Example: Metrics - Outlier - Critical and Warning**
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
 
@@ -342,7 +342,7 @@ For recovery, Sumo Logic will automatically resolves the incident when the resol
 
 The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
 
-**Metrics - Outlier - Missing Data**
+**Example: Metrics - Outlier - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-outlier-missing.png')} alt="metrics outlier" style={{border: '1px solid gray'}} width="600" />
 
