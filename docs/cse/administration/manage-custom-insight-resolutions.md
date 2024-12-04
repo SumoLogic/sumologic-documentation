@@ -23,13 +23,14 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 ## Create a custom sub-resolution
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Resolutions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  
-1. On the **Insight Resolutions** page, click **Create**. 
-1. The **Create Insight Resolution** page appears.
+1. On the **Insight Resolutions** tab, click **+ Add Resolution**. 
+1. The **Add Insight Resolution** popup appears.
     1. **Name**. Enter a meaningful name for the new resolution.
     1. **Parent Resolution**. Display the dropdown list and select a built-in resolution.
     1. **Description**. (Optional) Enter a description that will help other users understand when to use the new resolution.
-    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/create-insight-resolution.png')} alt="Create Insight resolution dialog" style={{border: '1px solid gray'}} width="400"/>
-    1. The new resolution appears on the **Insight Resolutions** page, indented below the parent resolution. 
+    1. Click **Save**. <br/><img src={useBaseUrl('img/cse/create-insight-resolution.png')} alt="Create Insight resolution dialog" style={{border: '1px solid gray'}} width="400"/>
+
+The new resolution appears on the **Insight Resolutions** tab, indented below the parent resolution. 
 
 ## Close an Insight using a custom resolution
 

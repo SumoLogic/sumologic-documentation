@@ -22,8 +22,8 @@ For more information about tags in Cloud SIEM, see [Using Tags with Insights, Si
 ## Define a custom tag schema
 
 1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Tag Schemas**.<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Tag Schemas**. You can also click the **Go To...** menu at the top of the screen and select **Tag Schemas**. 
-1. On the **Tag Schemas** page, click **Create**. <br/><img src={useBaseUrl('img/cse/tag-schema-empty.png')} alt="Create tag schema" style={{border: '1px solid gray'}} width="400"/>
-1. The **Tag Schema** popup appears. 
+1. On the **Tag Schemas** page, click **+Add Tag Schema**. 
+1. The **Add Tag Schemas** popup appears. <br/><img src={useBaseUrl('img/cse/tag-schema-empty.png')} alt="Create tag schema" style={{border: '1px solid gray'}} width="400"/>
     1. **Key**. Enter an identifier for the tag you’re defining. It won’t appear in the UI for assigning tags to a content item, unless you leave the **Label** field blank.
     1. **Label**. Enter a label for the tag. If you supply a label, that’s what will appear in the UI for assigning tags to a content item.
     1. **Content Types**. Select the types that you want the tag to be
@@ -32,7 +32,7 @@ For more information about tags in Cloud SIEM, see [Using Tags with Insights, Si
         * **Rule**
         * **Entity** The options do not include **Signal** or **Insight**. Signals and Insights inherit tag values from the rule(s) or Custom Insight definition that triggered the Signal or Insight and involved Entities.
     1. **Allow Custom Values**. Check this box to allow users to add additional allowable values to the tag schema. Otherwise, when applying the tag users may only select one of the values you define in the **Value Options** section below.
-    1. **Value Options**. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
+    1. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Enter Value**. Enter an allowable value for the tag.
         * **Enter Label**. Enter a label for the value.
         * **Enter Link** (optional). Enter a URL for it to appear in the Actions menu of the tag in any content items to which it’s been applied. Cloud SIEM’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site. <br/><img src={useBaseUrl('img/cse/mitre-link.png')} alt="Example MITRE link" style={{border: '1px solid gray'}} width="400"/>

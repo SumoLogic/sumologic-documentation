@@ -43,14 +43,14 @@ With this method, you use Corelight’s [json-streaming-logs](https://github.com
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic** . <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Create Sumo Logic Mapping** page:
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Add Ingest Mapping** tab:
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
    1. **Format**. Choose **Bro/Zeek JSON**.
    1. **Event ID**. Enter `{_path}`.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
-   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/create-mapping.png')} alt="Create mapping" style={{border: '1px solid gray'}} width="600"/>
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/create-mapping.png')} alt="Create mapping" style={{border: '1px solid gray'}} width="400"/>
 
 ### Use FERs
 
