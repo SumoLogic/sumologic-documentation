@@ -1,10 +1,10 @@
 ---
 slug: /manage/manage-subscription
-title: Manage Subscription
+title: Manage Plan
 description: Learn about Sumo Logic account plans and types and about how to manage yours.
 ---
 
-The topics in this guide provide information on Sumo Logic service agreements and how to manage your account efficiently. 
+The topics in this guide provide information on Sumo Logic service agreements, setting up a plan, and managing your account. 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
