@@ -45,21 +45,12 @@ Thanks for signing up! After activation, you’ll be guided through a two-step d
 
 Next, you'll be taken to your onboarding checklist guide, where you can view dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-### Upgrade or continue with Free account
+### Upgrade to a plan or continue with Free account
 
-For pricing details, see [Sumo Logic Pricing](https://www.sumologic.com/pricing).
+After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a [paid plan](#essentials-plans) at any time.
 
-#### Essentials plans
-
-Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. Ready to get started? [Learn how to upgrade your plan](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
-
-#### Enterprise plans
-
-If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
-
-#### Free account
-
-After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
+<details>
+<summary>What's the difference between a Trial and a Free account?</summary>
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -75,7 +66,17 @@ After your trial ends, if you've not purchased a plan, your account will automat
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
+</details>
+
 For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
+
+#### Essentials plans
+
+Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. Ready to get started? [Learn how to upgrade your plan](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
+
+#### Enterprise plans
+
+If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
 
 ## Sign up through AWS Marketplace
 

@@ -7,7 +7,7 @@ description: Learn how to upgrade a Free or Trial account to an Essentials subsc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has instructions for upgrading and modifying a Sumo Logic Free or Trial account to an Essentials or Enterprise plan.
+This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
 
 ## Prerequisites
 
@@ -16,6 +16,8 @@ You must be an account administrator to upgrade your Sumo Logic plan.
 ## Update a Free or Trial Credits account to Essentials
 
 Using our self-service checkout, you can sign up for an Essentials plan in just minutes using a credit card—no need to interact with the sales team.
+
+<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Sumo Logic Essentials upgrade plans" style={{border: '1px solid gray'}} width="700" />
 
 Essentials plans are ideal for:  
 - Small- to medium-sized businesses seeking quick and independent onboarding.  
