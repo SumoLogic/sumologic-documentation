@@ -126,23 +126,15 @@ Metrics monitors can have up to 6 queries. If you're providing multiple metrics 
 
 ### Trigger Type (Logs)
 
+You can set a logs monitor trigger to alert based on the following:
 
-:::note Recovery settings
-When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. The resolution window determines how long a monitor waits before resolving an alert after the underlying issue has been corrected.
+* A **returned row count** (default), which is the number of rows returned from the log search.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="200"/>
+* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [`num` operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration**, you would use the `num` operator as follows to convert it to a number value.
+   ```sh
+   | num(duration)
+   ```
 
-For example, if your monitor evaluates the last 1 hour, you can specify a resolution window of 15 minutes. Once the resolution window has been continuously satisfied for 15 minutes, the alert will automatically resolve.
-
-<img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
-
-| Parameter | Description |
-|:--|:--|
-| **Threshold type** | Defines how you want the value compared. Options include **greater than**, **greater than or equal**, **less than or equal**, or **less than**.                |
-| **Threshold**      | Specifies the value against which the resolution will be evaluated. Enter any valid numeric value.                                                           |
-| **Occurrence Type** | Sets the time condition for resolving the alert. Options: <br/>* **At all times**: Requires all data points within the given time range to meet the threshold conditions before resolving the alert.<br/>* **At any time within**: Resolves the alert when any single data point meets the threshold condition within the specified time range.                                                      |
-:::
-
-:::note Trigger Evaluation Frequency
-Log monitor triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
+Triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
 
 * For static logs monitors, triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
    | When detection window (Y) is | Evaluate trigger every |
@@ -162,14 +154,10 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
    | sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
    | (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
    ```
-:::
 
-You can set a logs trigger to alert based on the following:
-* A **returned row count** (default), which is the number of rows returned from the log search.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="150"/>
-* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [`num` operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration**, you would use the `num` operator as follows to convert it to a number value.
-   ```sh
-   | num(duration)
-   ```
+When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
+
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
@@ -177,16 +165,29 @@ You can set a logs trigger to alert based on the following:
 
 <img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="800"/>
 
+`Alert when returned row count is <threshold type> <threshold> within <time range>`
+
 | Parameter | Description |
 |:--|:--|
-| Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
-| Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
+| `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly.
 
 For example, if an alert is set to `greater than 10`, the recovery would be set to `less than or equal to 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
+**Logs - Static - Missing Data**
+
+<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
 
 #### Anomaly detection method
 
@@ -196,8 +197,11 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 | Parameter | Description |
 |:--|:--|
-|  Alert when anomaly count is at least ___ (max. ##) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
-| Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. |
+| `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. Ensure that the time period window is 5-10 times longer than the `timeslice` used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. |
+| `<time range>` | The duration of time to watch for anomalies (values range from 5 minutes to 24 hours). |
+
+Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.
+
 
 #### Outlier detection method
 
@@ -209,9 +213,9 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 | Parameter | Description |
 |:--|:--|
-| Threshold | The number of standard deviations for calculating violations. The default is `3`. |
-| Consecutive | The required number of consecutive indicator data points (outliers) to trigger a violation. |
-| Window | The number of data points used to calculate the baseline for outlier detection. |
+| `<threshold>` | The number of standard deviations for calculating violations. The default is `3`. |
+| `<consecutive>` | The required number of consecutive indicator data points (outliers) to trigger a violation. |
+| `<window>` | The number of data points used to calculate the baseline for outlier detection. |
 
 The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
 
@@ -223,7 +227,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 | Parameter | Description |
 |:--|:--|
-| Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours. |
+| `<time range>` | The time span of data to evaluate (values range from 5 minutes to 24 hours). |
 
 For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
 
@@ -232,21 +236,9 @@ For recovery, Sumo Logic will automatically resolves the incident when the resol
 
 For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
 
-:::note Recovery settings
+When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. The resolution window determines how long a monitor waits before resolving an alert after the underlying issue has been corrected.
-
-For example, if your monitor evaluates the last 1 hour, you can specify a resolution window of 15 minutes. Once the resolution window has been continuously satisfied for 15 minutes, the alert will automatically resolve.
-
-<img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
-
-| Parameter | Description |
-|:--|:--|
-| **Threshold type** | Defines how you want the value compared. Options include **greater than**, **greater than or equal**, **less than or equal**, or **less than**.                |
-| **Threshold**      | Specifies the value against which the resolution will be evaluated. Enter any valid numeric value.                                                           |
-| **Occurrence Type** | Sets the time condition for resolving the alert. Options: <br/>* **At all times**: Requires all data points within the given time range to meet the threshold conditions before resolving the alert.<br/>* **At any time within**: Resolves the alert when any single data point meets the threshold condition within the specified time range.                                                      |
-:::
-
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 
@@ -271,33 +263,40 @@ Examples:
 
 | Parameter | Description |
 |:--|:--|
-| Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
-| Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
-| Occurrence type | The time condition you want for the trigger. Select either **at any time within** or **at all times within**. <br/><br/>Choose **at all times within** if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when at least one single data point meets the threshold condition for the given time range. |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
+| `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
+| `<occurrence type>` | The time condition you want for the trigger. Select **at any time within** or **at all times within**. <br/><br/>Choose **at all times within** if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when at least one single data point meets the threshold condition for the given time range. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 `Recover automatically when result is <threshold type> <threshold> for the selected time period`
 
 The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
-For example, when the alert is set to `greater than 10` the recovery would be set to `less than or equal to 10` when inferred.
+For example, when an alert is set to `greater than 10`, the recovery would be set to `less than or equal to 10` when inferred.
 
 | Parameter | Description |
 |:--|:--|
-| Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
-| Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
+| `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
+| `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <Count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
 
 | Parameter | Description |
 |:--|:--|
-| Count | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
+| `<count>` | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
 
 For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
 
 **Metrics - Static - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-static-missing.png')} alt="Metrics static missing data" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data <occurrence type> for <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<occurrence type>`  | The time condition you want for the trigger. Choose **for all series** to get notified when all of the metrics meeting the query condition are not sending data in the given time range. Alternatively, you can choose **for any series** if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 #### Anomaly detection method
 
@@ -311,12 +310,22 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 | Parameter | Description |
 |:--|:--|
-|  Alert when anomaly count is at least ___ (max. ##) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
-| Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. |
+| `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. |
+| `<time range>` | The duration of time to watch for anomalies (values range from 5 minutes to 24 hours). |
+
+Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.
 
 **Metrics - Anomaly - Missing Data**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
 
 #### Outlier detection method
 
@@ -328,8 +337,8 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 | Parameter | Description |
 |:--|:--|
-| Threshold  | The number of standard deviations for calculating violations. The default is 3.0. |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<threshold>`  | The number of standard deviations for calculating violations. The default is 3. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
 
@@ -341,8 +350,8 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 | Parameter | Description |
 |:--|:--|
-| Occurrence type  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<occurrence type>`  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 For recovery, Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
