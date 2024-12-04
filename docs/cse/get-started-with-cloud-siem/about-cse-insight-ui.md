@@ -61,7 +61,6 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 
 You can use the **Filters** area near the top of the page to narrow down the Insights that appear on the Insights page. You can filter by:
 
-
 * Assignee
 * [Custom Resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
 * Created
@@ -73,6 +72,14 @@ You can use the **Filters** area near the top of the page to narrow down the Ins
 * Severity
 * Status
 * Tags
+
+### Multi-Insights list page
+
+We offer an Insights list page where you can see a list of all Insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all Insights across all areas in a single page.
+
+This multi-Insights list page (also known as a "federated" page) shows Insights just as in a normal [Insights list page](#insights-list-page). However, when you click an Insight on the page, it opens the Insight's details in the child organization's UI. You can use also use the [board view](#board-view) on the multi-Insights page to move Insights to different statuses.
+
+The multi-Insights list page requires a special environment be set up for it. To have a multi-Insights list page set up for your company, contact your Sumo Logic account representative, or contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
 
 ## Insight Details page
 
