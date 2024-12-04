@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#monitoring-account-usage).
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Sumo Logic Credits Account Overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
 With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
