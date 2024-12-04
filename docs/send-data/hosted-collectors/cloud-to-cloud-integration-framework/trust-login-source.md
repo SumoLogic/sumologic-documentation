@@ -36,7 +36,7 @@ The Trust Login Source requires authentication with a bearer token associated
 
 ### Source configuration
 
-When you create a Trust Login Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Trust Login Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Trust Login Source:
 
