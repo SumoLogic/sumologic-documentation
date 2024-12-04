@@ -60,7 +60,7 @@ System Files:
 
 Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
-1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
+1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
     $ terraform --version
     ```
