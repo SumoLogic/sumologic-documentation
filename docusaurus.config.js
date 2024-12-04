@@ -272,10 +272,11 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
+      id: 'copilot',
+      content: 'Heading to AWS re:Invent 2024? Visit us at <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/aws-reinvent">Booth #1727</a>!',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
+      //After reInvent 'Check out <a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a>, our new AI-powered logs assistant!',
     },
     prism: {
       theme: lightCodeTheme,
