@@ -291,7 +291,7 @@ For example, you want to be alerted when the CPU usage is over 60% `at all times
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-static-missing.png')} alt="Metrics static missing data" style={{border: '1px solid gray'}} width="600" />
 
-`Alert when missing data <occurrence type> for <time range>`
+`Alert when missing data <occurrence type> within <time range>`
 
 | Parameter | Description |
 |:--|:--|
