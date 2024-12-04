@@ -195,6 +195,8 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
 
+`Alert when anomaly count is at least <count> (max. 1) at any time within <time range>'
+
 | Parameter | Description |
 |:--|:--|
 | `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. Ensure that the time period window is 5-10 times longer than the `timeslice` used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. |
