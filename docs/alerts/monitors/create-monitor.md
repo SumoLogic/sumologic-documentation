@@ -67,15 +67,15 @@ The same threshold translating functionality supports [opening the Alerts Respon
 When you create a monitor and open the metrics search query in the Metrics Explorer, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Explorer may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
 :::
 
-## Step 1. Trigger conditions
+## Step 1. Set trigger conditions
 
 The first step when creating a new monitor is setting the **Trigger Conditions**. Choose Logs, Metrics, or SLO, enter or select a query, and set thresholds to trigger alerts.
 
-### Monitor Type
+### Monitor type
 
 Select a **Monitor Type**, which will create alerts based on [Logs](/docs/search/), [Metrics](/docs/metrics/metrics-queries/), or an [SLO](/docs/observability/reliability-management-slo/).<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
 
-### Detection Method
+### Detection method
 
 Next, select a **Detection Method** (not applicable to SLO monitors).
 
