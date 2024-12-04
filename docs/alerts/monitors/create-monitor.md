@@ -327,7 +327,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 |:--|:--|
 | `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
-For recovery, Sumo Logic will automatically resolves the incident when the resolution condition is satisfied.
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
 #### Outlier detection method
 
