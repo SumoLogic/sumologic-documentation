@@ -165,7 +165,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 <img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
 
-`Alert when returned row count is <threshold type> <threshold> within <time range>`
+`Alert when result is <threshold type> <threshold> within <time range>`
 
 | Parameter | Description |
 |:--|:--|
