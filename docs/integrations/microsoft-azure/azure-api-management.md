@@ -131,9 +131,9 @@ Create the following metrics rules by following the instructions in [Create a me
 In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
 1. Create hosted collector and tag tenant_name field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-3. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure API Management that you want to monitor.
+1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure API Management that you want to monitor.
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azure-apimanagement-metrics.png')} alt="Azure application gateway metrics" style={{border: '1px solid gray'}} width="800" />
@@ -162,6 +162,12 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
+:::note
+   Enable Defender for Cloud On Azure portal go to -> api management resource -> Security -> Defender for Cloud -> Click on button **Enable Defender on the subscription (recommended)**
+
+   on Defender plan page turn status on for selected plans and click on **Save** button. 
+:::
+
 ## Installing the Azure API Management app
 
 Now that you have set up data collection, install the Azure API Management Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -179,37 +185,37 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Administrative Operations
 The **Azure API Management - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, Distribution by Status etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Administrative-Operations.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Administrative-Operations.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Developer Portal
 The **Azure API Management - Developer Portal** dashboard provides details like Total Success Requests, Total Failed Requests, Success Requests vs Failed Requests, Failed Requests by Method, Requests by Response Code, Failed Request Details, Failed Requests by Resource etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Developer-Portal.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Developer-Portal.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
 The **Azure API Management - Errors** dashboard provides details like Failed Backend Requests by Backend Method, Failed Backend Requests by Backend Url, Failed Backend Requests by Backend Protocol, Failed Requests by Method, Failed Requests by Protocol, Requests by Response Code, Requests by Backend Response Code, Failed Requests, Failed Backend Requests, Failed Requests by Url, Top 10 Failed API Urls, Failed Request Details, Top 3 Caller IPs With Failures by Resource etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Errors.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Errors.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
 The **Azure API Management - Overview** dashboard provides details like Requests by Location, Total Requests by Method, Total Requests by Response Code, Top Operations with Request Size, Top Operations with Response Size, Backend, Top Backend Url by Request Size, Top Backend Urls with Response Size, Websockets, Websocket Connections by Event Name, Websocket Connection Details, Current Capacity Utilization, Total Requests, Requests Summary by Users, API Requests (Today, Yesterday, Last Week), Average Capacity Utilization (%), CPU (%) etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Overview.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Overview.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 The **Azure API Management - Performance** dashboard provides details like Request Duration by Url, Request Duration by Method, Requests by Response Code, Requests by Result Type, Backend Request Duration by Backend Url, Backend Request Duration by Backend Method, Backend Requests by Response Code, Overall Duration Vs Backend Duration, Successful Requests by Method, Successful Requests by Client Protocol, Top 10 APIs With Highest Backend Execution Duration, Top 10 APIs With Highest Number of Requests, etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Performance.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Performance.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 The **Azure API Management - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, Policy etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Policy-and-Recommendations.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Policy-and-Recommendations.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Subscriptions
 The **Azure API Management - Subscriptions** dashboard provides details like Total Requests by Subscription, Failed Requests by Subscription, Requests by Subscription, Failed Requests by Subscription, Top 10 Failed Subscription, Recent Changes in Subscription etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Subscriptions.png')} alt="Azure Database for PostgreSql - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Subscriptions.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Upgrade/Downgrade the Azure API Management app (optional)
