@@ -14,9 +14,9 @@ This example shows a customer that created three additional Partitions to separa
 
 ![data-by-environment](/img/search/optimize/data-by-environment.png)
 
-You can create partitions for both data tier and flex plans. By default, all data ingested into Sumo Logic will go to the Continuous Tier unless a specific Data Tier is specified. Only data that goes to a partition can be assigned Frequent or Infrequent Tiers. With these Data Tier plans, however, costs will be incurred for ingesting the data into Sumo Logic. To learn more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers). 
+You can create partitions for both data tier and flex plans. By default, all data ingested into Sumo Logic will go to the Continuous Tier, unless you specific the data tier using the routing expression. Only data that goes to a partition can be assigned Frequent or Infrequent Tiers. For Continuos and Frequent tier data ingestion, costs will be incurred for ingesting the data into Sumo Logic. But for Infrequent tier data ingestion, there is no cost incurred for ingesting the data, whereas, pricing is determined by the scanned volume of insights and analytics. To learn more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers). 
 
-By contrast, with the Flex plan, there are no costs for ingesting data. Instead, pricing is determined by the volume of insights and analytics. To learn more about creating partitions with the Flex plan, refer to [Flex Partitions](/docs/manage/partitions/flex).
+By contrast, with the Flex plan, there is no concept of configuring the data to a respective tier. All the data ingested in Flex plan will go as flex data, and pricing is determined by the scanned volume of insights and analytics with access to more default features like data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to [Flex Partitions](/docs/manage/partitions/flex).
 
 Consider the following queries:
 
