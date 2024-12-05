@@ -41,7 +41,7 @@ The Microsoft Defender for Cloud app uses the following logs:
 To forward Microsoft Defender events to Sumo Logic, you can set up an efficient pipeline: **Microsoft Defender** > **Event Hub** > **Sumo Logic (Hosted Collector)**. This setup ensures that security events from Microsoft Defender are seamlessly ingested into Sumo Logic for monitoring and analysis.
 
 1. **[Create a Sumo Logic Azure Event Hub Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/)**. Configure an Event Hub source to receive events from the Azure platform. This will act as the endpoint for the data pipeline.
-1. **[Set up continuous export in Azure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)**. Within the Azure portal, configure the Microsoft Defender for Cloud to export its security events to the Event Hub instance created in the previous step. Continuous export ensures that the events such as alerts, recommendations, and regulatory compliance updates are forwarded in near real-time as shown below.
+1. **[Set up continuous export in Azure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)**. Within the Azure portal, configure the Microsoft Defender for Cloud to export its security events to the Event Hub instance created in the previous step. Continuous export ensures that the events such as alerts, recommendations, and regulatory compliance updates are forwarded in near real-time.
 
 ## Sample log messages
 
