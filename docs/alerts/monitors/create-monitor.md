@@ -195,7 +195,7 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
 
-`Alert when anomaly count is at least <count> (max. 1) at any time within <time range>'
+`Alert when anomaly count is at least <count> (max. 1) at any time within <time range>`
 
 | Parameter | Description |
 |:--|:--|
@@ -219,7 +219,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 | `<consecutive>` | The required number of consecutive indicator data points (outliers) to trigger a violation. |
 | `<window>` | The number of data points used to calculate the baseline for outlier detection. |
 
-The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
+The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the monitor will be brought back to the normal state. You cannot customize the resolution condition for the monitor.
 
 **Example: Logs - Outlier - Missing Data**  
 
@@ -344,7 +344,7 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 | `<threshold>`  | The number of standard deviations for calculating violations. The default is 3. |
 | `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
-The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
+The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the monitor will be brought back to the normal state. You cannot customize the resolution condition for the monitor.
 
 **Example: Metrics - Outlier - Missing Data**
 
@@ -427,4 +427,4 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 
 ### Using Terraform
 
-You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
