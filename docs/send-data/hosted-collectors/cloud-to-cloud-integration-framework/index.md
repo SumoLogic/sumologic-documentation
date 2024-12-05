@@ -297,6 +297,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="thumbnail icon" width="180"/><h4>Intel 471 Threat Intel</h4></a>
+  <p>Collects threat indicators from the Intel 471 API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
   <p>Collect inventory data from the Jamf platform.</p>
   </div>

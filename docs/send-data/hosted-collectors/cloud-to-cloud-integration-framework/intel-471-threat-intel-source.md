@@ -1,7 +1,7 @@
 ---
 id: intel471-threat-intel-source
-title: Intel471 Threat Intel Source
-sidebar_label: Intel471 Threat Intel
+title: Intel 471 Threat Intel Source
+sidebar_label: Intel 471 Threat Intel
 tags:
   - cloud-to-cloud
   - intel471-threat-intel
@@ -14,7 +14,7 @@ import TerraformExample from '!!raw-loader!/files/c2c/intel471-threat-intel/exam
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="50" />
+<img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
 
 Intel 471 helps organizations protect against cyber threats by monitoring underground marketplaces and forums used by cybercriminals. They specialize in cyber threat intelligence, focusing on malware, malicious actors, their tactics, techniques, and procedures (TTPs).
 
