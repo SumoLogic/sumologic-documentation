@@ -59,7 +59,7 @@ The following table provides details on the fields returned by the index:
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
-| `data_scanned_bytes` | Displays the total sum of scanned bytes for charged (Continuous and Frequent bytes) and non-charged (Flex and Infrequent bytes) metering types. This value is an approximation, as the scanned message bytes are captured at intermittent time intervals and averaged over the query time range. It is important to note that this approximated value may be less than the actual retrieved bytes in some cases. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
+| `data_scanned_bytes` | Displays the total sum of scanned bytes for charged (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). This value can be different from what users see in scan estimates on UI. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
 | `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found in [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators). |
 | `query` | The query text string run by the user. |
@@ -74,7 +74,7 @@ The following table provides details on the fields returned by the index:
 | `session_id` | An identifier for every search run within the account. This is the same SESSION number displayed in the UI in the search tab. |
 | `status_message` | Gives the status of the search. The values include: **Finished successfully**, **Query failed**, and **Query canceled**. |
 | `user_name` | The email of the user that ran the search. |
-| `scanned_bytes_breakdown_by_metering_type` | Displays breakdown of the total amount of data scanned by a search query based on the metering type. It includes both charged metering types (Continuous and Frequent bytes) and non-charged metering types (Flex and Infrequent bytes). |
+| `scanned_bytes_breakdown_by_metering_type` | Displays breakdown of the total amount of data scanned by a search query based on the metering type. It includes both charged metering types (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). |
 
 ## Query type field values 
 
