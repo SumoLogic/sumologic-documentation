@@ -167,9 +167,13 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
-:::note
-Enable Defender for Cloud On Azure portal go to -> api management resource -> Security -> Defender for Cloud -> Click on button **Enable Defender on the subscription (recommended)** on the Defender plan page turn status on for selected plans and click on **Save** button. 
-:::
+##### Enabling Microsoft Defender for Cloud
+
+For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-app-service-plan#enable-the-defender-for-app-service-plan). In Defender Plans Settings page toggle the App Service status under Cloud Workload Protection section.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management-services.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure API Management app
 
