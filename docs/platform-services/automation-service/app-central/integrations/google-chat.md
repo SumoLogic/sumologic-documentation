@@ -12,9 +12,8 @@ Updated: Dev 06, 2024***
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams.
 
-:::info
-**Preferable**: To Send Rich Text Messages, use the Create Message action with _Disable HTML_ in the message body.
-Follow the docs: [Google Chat Rich Text Message](https://developers.google.com/workspace/chat/format-messages)
+:::info Preferable
+To send rich text messages, use the Create Message action with `Disable HTML` in the message body. Follow the directions in the [Google Chat documentation](https://developers.google.com/workspace/chat/format-messages).
 :::
 
 ## Actions
@@ -51,13 +50,19 @@ Follow the docs: [Google Chat Rich Text Message](https://developers.google.com/w
 * **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and
   copy-paste the whole content in the field.
 
-## Use Cases for Sending Messages
-1. **Disable HTML**  
-   Send plain text messages with HTML formatting disabled. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-1.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
-2. **Compose Rich Text Messages**  
-   Format your messages with rich text using [Google Chat Rich Text Message](https://developers.google.com/workspace/chat/format-messages) This allows you to enhance message readability with structured formatting options. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-2.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>  
-3. **Receive Notifications**  
-     Use Google Chat to receive notifications, ensuring you promptly get important updates or alerts. Notifications will be displayed in a well-formatted text, making them easy to read and understand in Google Chat. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-3.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
+## Use cases for sending messages
+
+### Disable HTML
+
+Send plain text messages with HTML formatting disabled. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-1.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
+
+### Compose rich text messages
+
+Format your messages with rich text using [Google Chat Rich Text Message](https://developers.google.com/workspace/chat/format-messages). This allows you to enhance message readability with structured formatting options. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-2.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
+
+### Receive notifications
+
+Use Google Chat to receive notifications, ensuring you promptly get important updates or alerts. Notifications will be displayed in a well-formatted text, making them easy to read and understand in Google Chat. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-3.png')} style={{border:'1px solid gray'}} alt="google-drive" width="400"/>
 
 ## Change Log
 
