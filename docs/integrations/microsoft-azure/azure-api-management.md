@@ -14,9 +14,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure API Management, you can collect the following logs and metrics:
 
-* **Logs related to ApiManagement Gateway**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
-* **Logs related to Websocket Connections**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
-* **Logs related to Developer Portal usage**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **Gateway Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **WebSocket Connection Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
+* **Developer Portal Audit Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
 * **Platform Metrics for Azure API Management**. These metrics are available in [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
 
 ## Setup
@@ -90,22 +90,41 @@ Create the following field extraction rules (FER) for Azure Storage by following
 
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
-#### Azure observability metadata extraction application gateway level
+* **Azure Observability Metadata Extraction Service Level**
+    In case this rule is already exists then no need to create again.
+   ```sql
+   Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
+   ```
+   
+   ```sql title="Metric match expression"
+   resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
+   ```
+   | Fields extracted | Metric rule    |
+   |------------------|----------------|
+   | subscription_id  | $resourceId._1 |
+   | resource_group   | $resourceId._2 |
+   | provider_name    | $resourceId._3 |
+   | resource_type    | $resourceId._4 |
+   | resource_name    | $resourceId._5 |
+   | service_type     | $resourceId._6 |
+   | service_name     | $resourceId._7 |
 
-```sql
-Rule Name: AzureObservabilityMetadataExtractionAppGatewayLevel
-```
+* **Azure observability metadata extraction application gateway level**
 
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/APPLICATIONGATEWAYS/* tenant_name=*
-```
-| Fields extracted  | Metric rule             |
-|:------------------|:------------------------|
-| subscription_id   | $resourceId._1          |
-| resource_group    | $resourceId._2          |
-| provider_name     | MICROSOFT.APIMANAGEMENT |
-| resource_type     | SERVICE                 |
-| resource_name     | $resourceId._3          |
+   ```sql
+   Rule Name: AzureObservabilityMetadataExtractionAppGatewayLevel
+   ```
+   
+   ```sql title="Metric match expression"
+   resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/APPLICATIONGATEWAYS/* tenant_name=*
+   ```
+   | Fields extracted  | Metric rule             |
+   |:------------------|:------------------------|
+   | subscription_id   | $resourceId._1          |
+   | resource_group    | $resourceId._2          |
+   | provider_name     | MICROSOFT.APIMANAGEMENT |
+   | resource_type     | SERVICE                 |
+   | resource_name     | $resourceId._3          |
 
 ### Configure metrics collection
 
