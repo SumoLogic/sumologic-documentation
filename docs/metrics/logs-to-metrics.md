@@ -83,11 +83,13 @@ Not all Sumo parsing operators are supported. For more information, see [Create 
 
 You cannot use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you shouldn't use a log search scope that includes `_view` or `_index`. 
 
-### Using Logs-to-Metrics in the frequent or infrequent tier
+### Using Logs-to-Metrics for partitions not included in default scope
 
-Since `_index` is not accepted in logs-to-metrics rules, you can just skip it and still get results for the data assigned to frequent and infrequent tier.
+In the data tier model, frequent and infrequent partitions are excluded from the default search scope. If your organization is configured for the flex pricing model, you can selectively choose which partitions to include or exclude from the [default search scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
 
-If you want to create a Logs-to-Metrics rule for the scope of frequent or infrequent tier partition, you can create the rule with the same log search scope as the partition where the data lives. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use the same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
+For cases involving partitions that fall outside the default scope, you can create a Logs-to-Metrics rule for the scope of frequent tier partition, infrequent tier partition, or for the partitions excluded in the flex pricing model. To do this, set the rule using the same log search scope as the partition where the data resides. 
+
+For example, if you have a partition with the index `_index=foo`, and its routing expression is `_sourceCategory=foo`, you should use the same routing expression, `_sourceCategory=foo`, when scoping the Logs-to-Metrics rule.
 
 ### _dataTier search modifier is not supported
 
