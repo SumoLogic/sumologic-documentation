@@ -1,16 +1,16 @@
 ---
-id: intel-471-threat-intel-source
-title: Intel 471 Threat Intel Source
-sidebar_label: Intel 471 Threat Intel
+id: intel471-threat-intel-source
+title: Intel471 Threat Intel Source
+sidebar_label: Intel471 Threat Intel
 tags:
   - cloud-to-cloud
-  - intel-471-threat-intel
+  - intel471-threat-intel
 description: This integration collects threat indicators from the Intel 471 API and sends them to Sumo Logic as normalized threat indicators for analysis.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/intel-471-threat-intel/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/intel-471-threat-intel/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/intel-471-threat-intel/example.tf';
+import ExampleJSON from '/files/c2c/intel471-threat-intel/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/intel471-threat-intel/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/intel471-threat-intel/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -84,13 +84,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-<a href="/files/c2c/intel-471-threat-intel/example.json" target="_blank">Download example</a>
+<a href="/files/c2c/intel471-threat-intel/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-<a href="/files/c2c/intel-471-threat-intel/example.tf" target="_blank">Download example</a>
+<a href="/files/c2c/intel471-threat-intel/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

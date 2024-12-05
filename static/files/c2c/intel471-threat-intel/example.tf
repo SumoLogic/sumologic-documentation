@@ -1,7 +1,7 @@
-resource "sumologic_cloud_to_cloud_source" "intel-471-threat-intel-source" {
+resource "sumologic_cloud_to_cloud_source" "intel471-threat-intel-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Intel 471 Threat Intel"
+    type = "Intel471 Threat Intel"
   }
   config = jsonencode({
                     "name": "Intel471",

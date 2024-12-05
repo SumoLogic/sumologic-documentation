@@ -9,7 +9,7 @@
 			"pollingIntervalHour": "1h"
 		},
 		"schemaRef": {
-			"type": "Intel47 Threat Intel"
+			"type": "intel471 Threat Intel"
 		},
 		"sourceType": "Universal"
 	}
