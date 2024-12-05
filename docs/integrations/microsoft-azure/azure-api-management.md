@@ -15,9 +15,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure API Management, you can collect the following logs and metrics:
 
 * **Gateway logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
-* **WebSocket Connection logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
-* **Developer Portal Audit logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
-* **Platform Metrics for Azure API Management**. These metrics are available in [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
+* **WebSocket connection logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
+* **Developer portal audit logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **Platform metrics**. These metrics are available in the [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
 
 ## Setup
 
@@ -29,6 +29,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 You must explicitly enable diagnostic settings for each Azure API Management service you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/APIManagement/Logs`, `Azure/APIManagement/Metrics`.
+
 ### Configure field in field schema
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
@@ -46,7 +47,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure field extraction rules
 
-Create the following field extraction rules (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
+Create the following Field Extraction Rule(s) (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 #### Azure location extraction FER
 
@@ -90,7 +91,7 @@ Create the following field extraction rules (FER) for Azure Storage by following
 
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
-* **Azure observability metadata extraction service level**
+#### Azure observability metadata extraction service level
 
 If this rule already exists, there is no need to create it again.
 
@@ -111,7 +112,7 @@ If this rule already exists, there is no need to create it again.
    | service_type     | $resourceId._6 |
    | service_name     | $resourceId._7 |
 
-* **Azure observability metadata extraction application gateway level**
+#### Azure observability metadata extraction application gateway level
 
    ```sql
    Rule Name: AzureObservabilityMetadataExtractionAppGatewayLevel
@@ -140,9 +141,11 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azure-apimanagement-metrics.png')} alt="Azure application gateway metrics" style={{border: '1px solid gray'}} width="800" />
 1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure API Management Tag Location" style={{border: '1px solid gray'}} width="400" />
+   
 :::note
 In the v2 service tiers, API Management has replaced the capacity metric with separate CPU and memory utilization metrics
 :::
+
 ### Configure logs collection
 
 #### Diagnostic logs
@@ -165,9 +168,7 @@ Since this source contains logs from multiple regions, make sure that you do not
 :::
 
 :::note
-   Enable Defender for Cloud On Azure portal go to -> api management resource -> Security -> Defender for Cloud -> Click on button **Enable Defender on the subscription (recommended)**
-
-   on Defender plan page turn status on for selected plans and click on **Save** button. 
+Enable Defender for Cloud On Azure portal go to -> api management resource -> Security -> Defender for Cloud -> Click on button **Enable Defender on the subscription (recommended)** on the Defender plan page turn status on for selected plans and click on **Save** button. 
 :::
 
 ## Installing the Azure API Management app
@@ -185,40 +186,46 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <ViewDashboards/>
 
 ### Administrative Operations
-The **Azure API Management - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, Distribution by Status etc.
+
+The **Azure API Management - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users/Applications by Operation type, and Distribution by Status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Administrative-Operations.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Developer Portal
-The **Azure API Management - Developer Portal** dashboard provides details like Total Success Requests, Total Failed Requests, Success Requests vs Failed Requests, Failed Requests by Method, Requests by Response Code, Failed Request Details, Failed Requests by Resource etc.
+
+The **Azure API Management - Developer Portal** dashboard provides details like Total Success Requests, Total Failed Requests, Success Requests vs Failed Requests, Failed Requests by Method, Requests by Response Code, Failed Request Details, and Failed Requests by Resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Developer-Portal.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
-The **Azure API Management - Errors** dashboard provides details like Failed Backend Requests by Backend Method, Failed Backend Requests by Backend Url, Failed Backend Requests by Backend Protocol, Failed Requests by Method, Failed Requests by Protocol, Requests by Response Code, Requests by Backend Response Code, Failed Requests, Failed Backend Requests, Failed Requests by Url, Top 10 Failed API Urls, Failed Request Details, Top 3 Caller IPs With Failures by Resource etc.
+
+The **Azure API Management - Errors** dashboard provides details like Failed Backend Requests by Backend Method, Failed Backend Requests by Backend Url, Failed Backend Requests by Backend Protocol, Failed Requests by Method, Failed Requests by Protocol, Requests by Response Code, Requests by Backend Response Code, Failed Requests, Failed Backend Requests, Failed Requests by Url, Top 10 Failed API Urls, Failed Request Details, and Top 3 Caller IPs With Failures by Resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Errors.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview
-The **Azure API Management - Overview** dashboard provides details like Requests by Location, Total Requests by Method, Total Requests by Response Code, Top Operations with Request Size, Top Operations with Response Size, Backend, Top Backend Url by Request Size, Top Backend Urls with Response Size, Websockets, Websocket Connections by Event Name, Websocket Connection Details, Current Capacity Utilization, Total Requests, Requests Summary by Users, API Requests (Today, Yesterday, Last Week), Average Capacity Utilization (%), CPU (%) etc.
+
+The **Azure API Management - Overview** dashboard provides details like Requests by Location, Total Requests by Method, Total Requests by Response Code, Top Operations with Request Size, Top Operations with Response Size, Backend, Top Backend Url by Request Size, Top Backend Urls with Response Size, Websockets, Websocket Connections by Event Name, Websocket Connection Details, Current Capacity Utilization, Total Requests, Requests Summary by Users, API Requests (Today, Yesterday, Last Week), Average Capacity Utilization (%), and CPU (%).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Overview.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
-The **Azure API Management - Performance** dashboard provides details like Request Duration by Url, Request Duration by Method, Requests by Response Code, Requests by Result Type, Backend Request Duration by Backend Url, Backend Request Duration by Backend Method, Backend Requests by Response Code, Overall Duration Vs Backend Duration, Successful Requests by Method, Successful Requests by Client Protocol, Top 10 APIs With Highest Backend Execution Duration, Top 10 APIs With Highest Number of Requests, etc.
+
+The **Azure API Management - Performance** dashboard provides details like Request Duration by Url, Request Duration by Method, Requests by Response Code, Requests by Result Type, Backend Request Duration by Backend Url, Backend Request Duration by Backend Method, Backend Requests by Response Code, Overall Duration Vs Backend Duration, Successful Requests by Method, Successful Requests by Client Protocol, Top 10 APIs With Highest Backend Execution Duration, and Top 10 APIs With Highest Number of Requests.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Performance.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
-The **Azure API Management - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, Policy etc.
+
+The **Azure API Management - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, and Policy.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Policy-and-Recommendations.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Subscriptions
-The **Azure API Management - Subscriptions** dashboard provides details like Total Requests by Subscription, Failed Requests by Subscription, Requests by Subscription, Failed Requests by Subscription, Top 10 Failed Subscription, Recent Changes in Subscription etc.
+
+The **Azure API Management - Subscriptions** dashboard provides details like Total Requests by Subscription, Failed Requests by Subscription, Requests by Subscription, Failed Requests by Subscription, Top 10 Failed Subscription, and Recent Changes in Subscription.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApiManagement/Azure-API-Management-Subscriptions.png')} alt="Azure API Management - Overview" style={{border: '1px solid gray'}} width="800" />
-
 
 ## Upgrade/Downgrade the Azure API Management app (optional)
 
