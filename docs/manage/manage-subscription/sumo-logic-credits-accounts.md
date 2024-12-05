@@ -24,7 +24,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 
 ### Free
 
-Free accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-legacy-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
+Free accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account) to Sumo Logic paid service agreements in the Sumo Logic UI.
 
 :::note
 [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts.
@@ -32,7 +32,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 ### Trial
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/).  
+Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest.
 
 To access your [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) page:
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
@@ -46,7 +46,7 @@ Essentials accounts scale to meet your growing needs for user licenses, data ret
 
 <!-- add Collaborating, Troubleshooting, Orchestrating at launch -->
 
-You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
+You can [upgrade](upgrade-sumo-logic-credits-account.md) from a Essential plan to an Enterprise plan at any time.
 
 ### Enterprise Operations
 
