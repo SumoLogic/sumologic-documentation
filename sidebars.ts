@@ -469,6 +469,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',

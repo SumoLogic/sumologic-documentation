@@ -499,6 +499,12 @@ In this section, we'll introduce the following concepts:
         <p>Learn how to collect alert details from Trend Micro platform.</p>
         </div>
       </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="80"/><h4>Trust Login</h4></a>
+        <p>Learn how to collect report logs from Trust Login platform.</p>
+        </div>
+      </div>
             <div className="box smallbox card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
