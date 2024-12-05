@@ -14,9 +14,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure API Management, you can collect the following logs and metrics:
 
-* **Gateway Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
-* **WebSocket Connection Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
-* **Developer Portal Audit Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **Gateway Logs**. Resource Logs for Azure API Management Gateway. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **WebSocket Connection Logs**. Websocket connection events for API Management Gateway. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
+* **Developer Portal Audit Logs**. Diagnostic Logs for API Management Developer Portal API. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
 * **Platform Metrics for Azure API Management**. These metrics are available in [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
 
 ## Setup
@@ -172,6 +172,7 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 Now that you have set up data collection, install the Azure API Management Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
