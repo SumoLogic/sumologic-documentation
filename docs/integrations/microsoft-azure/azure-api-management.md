@@ -8,15 +8,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid multicloud management platform for APIs across all environments. As a platform-as-a-service, API Management supports the complete API lifecycle. This integration provides near real-time visibility into the state and health of your APIs with rich information about API Management operations that are important for auditing.
+[Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid multicloud platform for managing APIs across different environments. As a platform-as-a-service, it supports the entire API lifecycle and provides near real-time visibility into API status and health, offering essential API Management operations and details for auditing.
 
 ## Log and metric types
 
 For Azure API Management, you can collect the following logs and metrics:
 
-* **Gateway Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
-* **WebSocket Connection Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
-* **Developer Portal Audit Logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **Gateway logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **WebSocket Connection logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apimanagementwebsocketconnectionlogs). The Consumption tier doesn't support the collection of resource logs.
+* **Developer Portal Audit logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/developer-portal-audit-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
 * **Platform Metrics for Azure API Management**. These metrics are available in [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
 
 ## Setup
@@ -44,7 +44,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure API Management service is Subscriptions).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
-### Configure Field Extraction Rules
+### Configure field extraction rules
 
 Create the following field extraction rules (FER) for Azure Storage by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
@@ -90,8 +90,10 @@ Create the following field extraction rules (FER) for Azure Storage by following
 
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
-* **Azure Observability Metadata Extraction Service Level**
-    In case this rule is already exists then no need to create again.
+* **Azure observability metadata extraction service level**
+
+If this rule already exists, there is no need to create it again.
+
    ```sql
    Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
    ```
