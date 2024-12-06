@@ -31,7 +31,7 @@ The Intel 471 source collects threat indicators from the [Intel 471 API](https:
 ### Vendor configuration
 
 :::info
-The Intel 471 API documentation is not public and can only be accessed by partners or customers.
+The Intel 471 documentation is not public and can only be accessed by partners or customers.
 :::
 
 The Intel 471 Threat Intel source requires you to provide the **Username** and **API Key** found in the API section in the [Intel 471 portal](https://titan.intel471.com/api/docs-openapi/#section/Authentication).
