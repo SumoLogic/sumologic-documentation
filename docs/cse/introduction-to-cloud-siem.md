@@ -9,21 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud SIEM, also known as Cloud SIEM, is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations.
 
-Watch the following micro lesson to learn how to get started using Cloud SIEM for threat investigation.
-
-<Iframe url="https://www.youtube.com/embed/cDUOzQ63zmc?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe'; 
-
 ## Cloud SIEM user interface
 
 ### Access Cloud SIEM
@@ -259,7 +244,7 @@ Before Cloud SIEM can generate security Insights, your log messages must go thro
 Let's follow a simple log message down this pipeline:
 ```
 sso : ip-192-0-2-0 : alex@travellogic.com :
-"Successful Login" : "2021-05-25T22:11:42"
+"Successful Login" : "2024-05-25T22:11:42"
 ```
 
 First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-192-0-2-0`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq).
@@ -755,9 +740,9 @@ In this section, we’ll send a simple JSON log message to the HTTP source we cr
        ```
        curl -d '{"ip": "192.0.2.0", "threatName": "<attacker name>"}' -H 'Content-Type: application/json' <http source url>
        ```
-     Replace `<attacker name>` with your own initials or another unique identifier. Replace the `<https source url>` with the URL you copied in Lab 2.
+     Replace `<attacker name>` with your own initials or another unique identifier. Replace the `<https source url>` with the URL you copied in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
 
-    This simple JSON log message, `{"ip": "192.0.2.0", "threatName": "trainingRS"}`, will be collected and ingested by Sumo Logic as soon as you press Enter. If data forwarding was enabled properly in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source), it’s also forwarded to Cloud SIEM where it’s parsed, mapped, and enriched. This process can take anywhere from a few seconds to up to 15 minutes. Now’s a great time to get up, stretch, and grab a beverage.
+    This simple JSON log message, `{"ip": "192.0.2.0", "threatName": "trainingRS"}`, will be collected and ingested by Sumo Logic as soon as you press Enter. If data forwarding was enabled properly in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source), it’s also forwarded to Cloud SIEM where it’s parsed, mapped, and enriched. This process can take anywhere from a few seconds to up to 15 minutes. 
 
 1. When you’re ready, we’ll find your log message as a record in Cloud SIEM.
     1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Records** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Records**. You can also click the **Go To...** menu at the top of the screen and select **Records**. 
@@ -774,3 +759,106 @@ In this section, we’ll send a simple JSON log message to the HTTP source we cr
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created earlier.
     * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category> ` Replaced `source-category` with the source category you created. 
 * If you still don’t see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
+
+#### Logs into records
+
+<img src={useBaseUrl('img/cse/intro-logs-into-records.png')} alt="Logs into records"  width="500"/>
+
+Now that you have a source set up to send data Sumo Logic into Cloud SIEM, let’s follow a simple log message down that data pipeline.
+
+```
+sso : ip-192-0-2-0 : alex@travellogic.com : "Successful Login" : “2024-05-25T22:11:42"
+```
+
+First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of ip-127-0-0-1, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the [Cloud SIEM schema](/docs/cse/schema/). Finally, the record is enriched with information from match lists or threat intelligence databases.
+
+These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. When Cloud SIEM extracts an entity from a record to create a signal, it uses the parsed and mapped key-value pairs to categorize each signal. When signals with the same entity cluster together, an insight is created. Therefore, it’s important for the records to have quality metadata from the start to produce the best insights.
+
+You can make sure these records are parsed, mapped, and enriched properly by maintaining good metadata design and setting up good log and ingest mappings, which we'll practice in the next sections.
+
+#### Set up an ingest mapping
+
+In [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), we sent a log message to Cloud SIEM, and received a "failed record" error. In this section and the next one, we’ll create ingest and log mappings to ensure the custom JSON data from the log messages we send are used properly by Cloud SIEM.
+
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**. 
+1. Click **Add Ingest Mapping**.
+1. Enter the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
+1. Select **JSON** as the **Format**. This matches the format of the log message we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem).
+1. Enter a **Vendor** and **Product**. As a best practice, avoid spaces in the vendor and product names. 
+1. Click **Save**.
+1. Hover your mouse over the new ingest mapping, click the three-dot icon that appears to the right, and select **Enable**. 
+
+##### Extra resources
+
+If you need help configuring other types of ingest mappings, see [Configure a Sumo Logic Ingest Mapping - Cloud SIEM](/docs/cse/ingestion/sumo-logic-ingest-mapping/).
+
+#### Set up a log mapping
+
+In this section, we’ll create a log mapping to ensure the custom ingest mapping we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) is used properly by Cloud SIEM.
+
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
+1. Click **Add Log Mapping**. 
+1. Click **Structured Mapping**. In Cloud SIEM, JSON data is considered to be structured data. 
+1. Give your log mapping a name.
+1. Under **If Input Matches**, use the vendor and product you created in [Set up an ingest mapping](#set-up-an-ingest-mapping). 
+1. Select **JSON** as the format.
+1. Type `.*` for the regex. This will match all incoming logs.
+1. Under **Then Create Record**, the vendor and product should match what you entered under **If Input Matches**.
+1. In **Fields**, enter the fields from the JSON log message we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) under **Input Field**. Then, under **Output Field**, map them to their equivalents in the Cloud SIEM chema. Then, click **Add Field**. Refer to this table for help:
+     | Input field | Output field |
+     | :-- | :-- |
+     | ip | device_ip |
+     | threatName | threat_name |
+     :::note
+     Typically, JSON logs have more than just two fields. In this section, we're using the simplified example log we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), so we only need to add two new fields.
+     :::
+1. Scroll back up to **Then Create Record**.
+1. For **Record of type** select **Authentication**. Selecting the record type now ensures you do not limit the fields you could selected in an earlier step.
+1. Click **Submit**.
+
+##### Tips and tricks
+
+* See [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources/) for a for a full list of the fields you can map to.
+* Hover over the yellow triangle next to the **Submit** button to see a list of errors and warnings that need to be resolved before you can submit.
+
+#### Send another log message to Cloud SIEM
+
+Your new log and ingest mappings won't apply to the first log message you sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem). In this section, we’ll send another log message to the HTTP source we created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source). Then, we’ll look for that new log message in Cloud SIEM. This time, the log and ingest mappings we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) and [Set up a log mapping](#set-up-a-log-mapping) should apply to the new record.
+
+1. Open a CLI window, such as Terminal or PowerShell. 
+1. Type this command:
+    * Windows:
+       ```
+       curl.exe -d "{"ip": "192.0.2.0", "threatName": "<attacker name>"}" -H "Content-Type: application/json" <http source url>
+       ```
+    * macOS:
+       ```
+       curl -d '{"ip": "192.0.2.0", "threatName": "<attacker name>"}' -H 'Content-Type: application/json' <http source url>
+       ```
+     Replace `<attacker name>` with your own initials or another unique identifier. Replace the `<https source url>` with the URL you copied in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
+
+     :::tip
+     Since you already sent a CURL command in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), you may be able to press the up arrow key and Enter to send the command again in most CLI programs.
+     :::
+
+     This simple JSON log message, `{"ip": "192.0.2.0", "threatName": "<attacker name>"}`, will be collected and ingested by Sumo Logic as soon as you press Enter. If data forwarding was enabled properly in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source), it’s also forwarded to Cloud SIEM where it’s parsed, mapped, and enriched. This process can take anywhere from a few seconds to up to 15 minutes. 
+
+1. When you’re ready, we’ll find your log message as a record in Cloud SIEM.
+    1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Records** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Records**. You can also click the **Go To...** menu at the top of the screen and select **Records**. 
+    1. In the **Filters** bar, select **Metadata Source Category** from the dropdown.
+    1. Select the **is** operator from the dropdown.
+    1. Type the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
+    1. You should see a record with the IP address and threat name parsed properly.
+
+Although the log message and method of ingestion was identical, the log message failed to parse into a Cloud SIEM record in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) because the log and ingest mappings weren’t configured. After we configured the log and ingest mappings, the new log messages forwarded to Cloud SIEM successfully completed the parse, map, and enrich steps to become a record.
+
+##### Tips and tricks
+
+* If you get an error after running the CURL command, make sure your quotes are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
+* If you don't see any records, try: 
+    * increasing the timestamp range to the last 60 minutes or the last 3 hours.
+    * making sure the metadata source category you searched in the **Filters** bar matches the one you created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
+    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category> ` Replace `<source-category>` with the source category you created earlier. 
+* If you still don’t see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
+* If your new record failed too (you see two failed records), either your log or ingest mapping weren't configured correctly. Review those configurations and try again.
+
