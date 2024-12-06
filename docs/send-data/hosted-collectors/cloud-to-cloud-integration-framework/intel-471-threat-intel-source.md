@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Intel 471 helps organizations protect against cyber threats by monitoring underground marketplaces and forums used by cybercriminals. They specialize in cyber threat intelligence, focusing on malware, malicious actors, their tactics, techniques, and procedures (TTPs).
 
-The Intel 471 source collects threat indicators from the [Intel 471 API](https://login.intel471.com/u/login/identifier?state=hKFo2SBJbDlzQnBDWGo0MU5wZEJndGh0YV9Eby0yQmRHb0dueqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDY3NW1vbmdfdFktTTVDY01kY1ZncndOSU9ZZllxSXBao2NpZNkgR1dKRFJFclBoS3BRZGlWcmxNN2F5c0V6TDZXeEw5azI#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis.
+The Intel 471 source collects threat indicators using the [Intel 471 Stream API](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis.
 
 ## Data collected
 
