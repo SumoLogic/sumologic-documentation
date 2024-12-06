@@ -27,7 +27,7 @@ Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  Indicators |
+| 1h default (customizable in number of hours) |  Indicators |
 
 ## Setup
 
