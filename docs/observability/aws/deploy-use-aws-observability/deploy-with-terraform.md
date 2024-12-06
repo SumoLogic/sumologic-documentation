@@ -64,7 +64,7 @@ System Files:
 
 Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
-1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
+1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
     $ terraform --version
     ```
@@ -647,7 +647,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
+To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
@@ -676,7 +676,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 
 Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
-* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
+* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS as well as custom namespaces. 
 
 Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for details on which namespaces they support.
 
@@ -703,7 +703,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
    "AWS/NetworkELB",
    "AWS/SQS",
    "AWS/SNS"
- ],
+ ], 
+ "tag_filters": [],
  "source_category": "aws/observability/cloudwatch/metrics",
  "source_name": "CloudWatch Metrics (Region)"
 }
@@ -713,8 +714,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
-```json
-Cloudwatch_metrics_source_details = {
+```json title="cloudwatch_metrics_source_details"
+{
  "bucket_details": {
    "bucket_name": "",
    "create_bucket": true,
@@ -724,12 +725,26 @@ Cloudwatch_metrics_source_details = {
  "fields": {},
  "limit_to_namespaces": [
    "AWS/DynamoDB",
-   "AWS/Lambda"
-  ],
+   "AWS/Lambda",
+   "CWAgent"
+  ], 
+ "tag_filters": [{
+      "type":"TagFilters",
+      "namespace" : "AWS/DynamoDB",
+      "tags": ["env=prod;dev"]
+    },{
+      "type": "TagFilters",
+      "namespace": "AWS/Lambda",
+      "tags": ["env=prod"]
+ }],
  "source_category": "aws/observability/cloudwatch/metrics/us-east-1",
  "source_name": "CloudWatch Metrics us-east-1"
 }
 ```
+
+:::note
+All namespaces specified in `tag_filters` must be included in `limit_to_namespaces`. Filters are not supported for custom metrics.
+:::
 
 #### cloudwatch_metrics_source_url
 
