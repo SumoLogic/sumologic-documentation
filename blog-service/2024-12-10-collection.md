@@ -1,5 +1,5 @@
 ---
-title: Intel 471 Threat Intel Source (Collection)
+title: Intel471 Threat Intel Source (Collection)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
