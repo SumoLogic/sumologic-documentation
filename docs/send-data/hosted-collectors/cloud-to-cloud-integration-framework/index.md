@@ -297,7 +297,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel 471 Threat Intel</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel471 Threat Intel</h4></a>
   <p>Learn to collect threat indicators from the Intel471 platform.</p>
   </div>
 </div>
