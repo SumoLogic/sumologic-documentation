@@ -142,7 +142,7 @@ The dashboard also shows the monitoring rules that triggered the most changes, a
 
 The **CrowdStrike Falcon FileVantage - Security** dashboard is tailored for security analysts to monitor high-risk file actions and potential policy violations. It categorizes file activities based on severity (**CRITICAL**, **HIGH**, **LOW**, **MEDIUM**) and action types, such as file creation, deletion, renaming, and attribute changes. This categorization helps analysts prioritize their responses to significant security events.
 
-The dashboard tracks high-risk actions over time, enabling security teams to identify patterns or spikes in suspicious activity. There is also a dedicated section for policy violations, which lists instances where file changes conflict with cnfigured security policies. This section includes details such as affected files, associated rules, and timestamps.
+The dashboard tracks high-risk actions over time, enabling security teams to identify patterns or spikes in suspicious activity. There is also a dedicated section for policy violations, which lists instances where file changes conflict with configured security policies. This section includes details such as affected files, associated rules, and timestamps.
 
 Additionally, security analysts can review file deletions with specific details, including file paths, user names, and originating countries. The severity trends are visually represented, providing a clear overview of security incidents over time and helping teams identify escalation points.
 
