@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
 
-Intel 471 helps organizations protect against cyber threats by monitoring underground marketplaces and forums used by cybercriminals. They specialize in cyber threat intelligence, focusing on malware, malicious actors, their tactics, techniques, and procedures (TTPs).
+Intel 471 is a cybersecurity firm specializing in providing cyber threat intelligence services. Their focus is primarily on delivering information about threats originating from the criminal underground, including malware, malicious actors, and their tactics, techniques, and procedures (TTPs). Intel 471 provides these insights to help organizations protect themselves against cyber threats. Their intelligence-gathering efforts often involve monitoring and analyzing underground marketplaces, forums, and other communication channels used by cyber criminals.
 
 The Intel 471 source collects threat indicators using the [Intel 471 Stream API](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis.
 
