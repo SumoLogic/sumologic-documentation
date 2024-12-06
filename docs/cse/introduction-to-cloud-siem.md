@@ -258,9 +258,9 @@ You can also work with your admin to set up dashboards in Sumo Logic that track 
 
 In a previous section, we looked at an Insight. In this section, we will use Sumo Logic Search to continue the investigation. Then, we will update the status of your investigation in Cloud SIEM.
 
-1. Return to the Insight you looked at in the previous section [Investigating an Insight](/docs/cse/introduction-to-cloud-siem/#investigating-an-insight).
+1. Return to the Insight you looked at in the previous section [Investigating an Insight](#investigating-an-insight).
 1. In the left pane, hover your mouse cursor over the **Entity** field (this is randomly generated and can be a user name or an IP address). Click the context actions (six dots) icon that appears next to the entity name.
-1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](/docs/cse/introduction-to-cloud-siem/#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You'll be redirected to Sumo Logic Search.
+1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You'll be redirected to Sumo Logic Search.
 1. Make a note of the entity name that's pre-populated in the query builder.
 1. Open another log search in Sumo Logic: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
 1. Find the top 10 records by threat type for that entity. For example, if the entity is a username, in the search bar type:
