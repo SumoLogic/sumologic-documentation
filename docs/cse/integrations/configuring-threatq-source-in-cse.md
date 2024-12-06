@@ -17,7 +17,7 @@ To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the in
 
 ## Configure a ThreatQ source
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. On the **Threat Intelligence** page, click **Add Source**. 
 1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" style={{border: '1px solid gray'}} width="600"/>
 1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" style={{border: '1px solid gray'}} width="800"/>

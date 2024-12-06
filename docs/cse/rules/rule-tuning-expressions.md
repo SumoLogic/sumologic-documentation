@@ -58,7 +58,7 @@ import Iframe from 'react-iframe'; 
 
 ## Create a tuning expression
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
 1. On the **Rule Tuning** page, click **Create**.
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" style={{border: '1px solid gray'}} width="800"/>

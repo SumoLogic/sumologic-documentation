@@ -54,9 +54,9 @@ When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for t
 
 ## About the Entities list page
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Entities, click **Entities** at the top of the screen. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view Entities, click **Entities** at the top of the screen. 
 
-[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+[**New UI**](/docs/get-started/sumo-logic-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
 <img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
@@ -136,7 +136,7 @@ or Criticality for one or more Entities.
 
 ### Update Entities from the UI
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
 1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. 
 1. Note that once you select an Entity, three options appear at the top of the Entities list. <br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 

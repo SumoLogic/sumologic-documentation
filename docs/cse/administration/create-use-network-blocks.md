@@ -65,7 +65,7 @@ When Cloud SIEM looks for the Network Block address `10.128.0.1`, it will ret
 
 Follow these instructions to create a Network Block using the Cloud SIEM UI. For information about creating multiple Network Blocks by file upload, see [Upload a CSV file of Network Blocks](#upload-a-csv-file-of-network-blocks).
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. 
 1. On the **Create Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the Network Block.

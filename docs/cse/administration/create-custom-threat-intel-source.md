@@ -41,7 +41,7 @@ Rule authors can also write rules that look for threat intelligence information 
 
 ### Create a threat intelligence source from Cloud SIEM UI
 
-1.  [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. Click **Add Source** on the **Threat Intelligence** page. 
 1. Click **Custom** on the **Add Source** popup.
 1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. 
