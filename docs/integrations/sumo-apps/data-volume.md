@@ -11,10 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Data Volume App provides you with a summary and detailed views of your account's data usage volume by data type, tier, category, collector, source name, and hosts via predefined searches and dashboards.
 
-Before you can install and use the Data Volume app, an administrator must first enable the feature. For more information, see [Enable the Data Volume Index](#enable-the-data-volume-index) below.
-
-The Data Volume Index gathers volume data as soon as it is enabled. It will not gather data from legacy versions or backfill data.
-
 ## Installing the Data Volume app
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
