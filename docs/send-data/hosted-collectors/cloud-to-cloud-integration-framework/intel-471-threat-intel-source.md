@@ -24,7 +24,7 @@ The Intel 471 source collects threat indicators from the [Intel 471 API](https:
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hr | [Indicators](https://login.intel471.com/u/login/identifier?state=hKFo2SBnRnh4QWZIandtd2J2S2pOeGdWS1MwWWZ1bFpubzctR6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEZXOFR0UGtYNWJLV3lWWXY4ME1tRlVrWk0yd0tneFBFo2NpZNkgR1dKRFJFclBoS3BRZGlWcmxNN2F5c0V6TDZXeEw5azI#tag/Indicators) |
+| 1 hour | [Indicators](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) |
 
 ## Setup
 
