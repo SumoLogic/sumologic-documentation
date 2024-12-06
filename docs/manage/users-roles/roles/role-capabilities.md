@@ -53,7 +53,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | :-- | :-- |
 | Manage Password Policy	| Set the password policy for your Sumo Logic account.|
 | Allowlist IP Addresses	| [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges.|
-| Create Access Keys	| Create your own [access keys](/docs/manage/security/access-keys/) on the [Account Preferences](/docs/get-started/account-settings-preferences) page.|
+| Create Access Keys	| Create your own [access keys](/docs/manage/security/access-keys/).|
 | Manage Access Keys	| Set up, activate, deactivate, or delete access keys for your organization.|
 | Manage Support Account Access	| Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization.|
 | Manage Audit Data Feed	| Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.|

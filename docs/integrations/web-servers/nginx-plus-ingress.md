@@ -133,7 +133,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#from-the-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the `git clone` command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
