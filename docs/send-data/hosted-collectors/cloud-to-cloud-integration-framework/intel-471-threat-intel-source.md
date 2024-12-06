@@ -53,7 +53,7 @@ To configure an Intel 471 Threat Intel source:
 1. **Username**. Enter the login ID or email address of the user.
 1. **API Key**. Enter the API key of the user account collected from the Intel 471 Threat Intel platform.
 1. **Sumo Logic Threat Intel Source ID**. Enter the Sumo Logic namespace where the indicators will be stored.
-1. **Polling Interval**. The polling interval is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the source checks for new data.
+1. **Polling Interval**. The polling interval is set for one hour by default. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
 
