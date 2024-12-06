@@ -1,19 +1,17 @@
 ---
-id: introduction-to-cloud-siem
-title: Introduction to Cloud SIEM
-sidebar_label: Introduction to Cloud SIEM
-description: Learn basic concepts about Cloud SIEM.
+id: introduction-to-cloud-siem-for-analysts
+title: Introduction to Cloud SIEM for Analysts
+sidebar_label: Introduction for Analysts
+description: Learn basic concepts about Cloud SIEM for security analysts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM, also known as Cloud SIEM, is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations.
+Cloud SIEM, is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations.
 
-## Introduction to Cloud SIEM for analysts
+## From logs to security insights
 
-### From logs to security insights
-
-#### What is Cloud SIEM?
+### What is Cloud SIEM?
 
 Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. However, it does have a slightly different user interface from the one you may be familiar with.
 
@@ -30,7 +28,7 @@ Cloud SIEM is a purchased add-on with an ever-expanding library of content desig
 
 Whether your company has already bought Cloud SIEM or whether you're still considering it, this section will help you make the best use of it.
 
-#### Getting your data into Cloud SIEM
+### Getting your data into Cloud SIEM
 
 If you've read other Sumo Logic documentation, you're probably familiar with the data pipeline:
 
@@ -43,7 +41,7 @@ If you've read other Sumo Logic documentation, you're probably familiar with the
 
 Throughout this section, you'll learn more about the security data pipeline. Then, you'll be better prepared to discuss these things with your admin, or to set them up yourself if you need to. 
 
-##### Data collection
+#### Data collection
 
 Before you can start investigating threats, you need data. As a data analyst, this step may have been done by your administrator. 
 
@@ -59,7 +57,7 @@ So, what's the balance between too much and too little data? It depends. Work wi
 * **Are you ingesting too much data?** More data doesn't always mean more Insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
 * **Are you ingesting the right data?** Cloud SIEM doesn't just work on quantity alone. Quality data will affect your performance as well. As a best practice, you'll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/).
 
-#### Processing your data for Cloud SIEM
+### Processing your data for Cloud SIEM
 
 Before Cloud SIEM can generate security Insights, your log messages must go through a little processing first. First, Cloud SIEM processes the messages into Records. Each Record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
 
@@ -75,7 +73,7 @@ First, the message is parsed into a set of key-value pairs. This process also fi
 
 These normalized Records are then sent down the Cloud SIEM pipeline and compared to rules. 
 
-#### Extracting security insights from Cloud SIEM
+### Extracting security insights from Cloud SIEM
 
 Each record ingested into Cloud SIEM is compared to hundreds of built-in and custom rules. If a record matches the criteria specified in a rule, then Cloud SIEM creates a Signal. When a Signal is created, it contains a name, entity, severity, stage, and description. A Signal always contains, at minimum, an entity and a severity. This data is later used by Cloud SIEM's Insight engine algorithm. 
 
@@ -102,7 +100,7 @@ Cloud SIEM takes everything one step further and correlates those Signals into a
 
 An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
 
-#### Explore the Cloud SIEM UI
+### Explore the Cloud SIEM UI
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.
 1. Near the top of the left pane of the Cloud SIEM UI, you'll see summary statistics. In the upper right corner of this pane, a dropdown menu lets you select the timeframe for the summary statistics. Use the summary panel and the dropdown to answer these questions:
@@ -131,9 +129,9 @@ Your answer to all these questions may vary. Make sure you feel confident naviga
 * Depending on your monitor size and the zoom settings of your browser, you may only see the icons, and not the words, in the top navigation bar. Try resizing your browser and adjusting your zoom settings to suit your needs.
 :::
 
-### Introduction to threat investigation
+## Introduction to threat investigation
 
-#### Different threats but one platform
+### Different threats but one platform
 
 In this section, we'll help three fictional companies investigate their threats. Each company has their own unique security and compliance concerns.
 * Company 1 is a small retail business with a big tech idea: automate the entire coffee business from bean to cup. In addition to consumer protections like PCI DSS, their main concerns include keeping compute costs down while their startup grows.
@@ -144,7 +142,7 @@ Sumo Logic can help all of these companies meet their different security and com
 
 Think about it: What security and compliance issues are you most concerned about in your company today? How has that changed over the years? How were security concerns different at other companies you've worked for in the past?
 
-#### Using the MITRE ATT&CK matrix
+### Using the MITRE ATT&CK matrix
 
 The [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/) is published by MITRE, a non-profit research organization. ATT&CK stands for Adversarial Tactics, Techniques, and Common Knowledge. 
 
@@ -160,7 +158,7 @@ Let's return to our fictional companies, and which MITRE ATT&CK tactics and tech
 
 If you read the news, or are familiar with other cybersecurity frameworks like the Pyramid of Pain, you know there are many kinds of threats out there. It's easy to become overwhelmed. However, Cloud SIEM helps organize all the potential threats in your system into one manageable dashboard, leveraging the knowledge found in the MITRE ATT&CK matrix along with the Insights algorithm.
 
-#### Get started with threat investigation
+### Get started with threat investigation
 
 Threat investigation is reactive while threat hunting is proactive. Typically, threat investigation happens in response to an alert. Once you've investigated a threat, you can hunt for similar threats and take precautionary steps to prevent attacks from happening again. 
 
@@ -209,7 +207,7 @@ Cloud SIEM can help with every step of the threat investigation process:
 
 Of course, this process will repeat each day as new Insights are generated for you to investigate. 
 
-#### Investigating an Insight
+### Investigating an Insight
 
 In this section, you'll be investigating an insight for your organization that was detected through Cloud SIEM. Our goal is to analyze the insight details and complete the narrative of what happened.
 
@@ -224,7 +222,7 @@ In this section, you'll be investigating an insight for your organization that w
    * What other information can you find by exploring this Insight?
 1. Scroll to the bottom of the left navigation pane of the Insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: "*First, a known phishing link was received in a user's email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon's GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this Insight. Given the likelihood of active malware in the network, the user's machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
 
-#### Dive into Signals and Entities
+### Dive into Signals and Entities
 
 Insights provide a great, high-level summary of potential security events. Because of Cloud SIEM's threat intelligence and sophisticated correlation engine, very few Insights are false positives, so they're all worth investigating.
 
@@ -242,7 +240,7 @@ The Entities tab lists all the entities that your rules have detected in the las
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="800"/>
 
-#### Bring it back to Sumo Logic search
+### Bring it back to Sumo Logic search
 
 Sometimes you want to take your investigation even further. An in-depth threat investigation will use the most of both Cloud SIEM and Sumo Logic's core search functionality. 
 
@@ -254,7 +252,7 @@ Many entities in the Insights, Signals, and Entities pages have context actions 
 
 You can also work with your admin to set up dashboards in Sumo Logic that track Insights and other activity in Cloud SIEM. This allows you to monitor what's going on in Cloud SIEM without ever leaving Sumo Logic's core platform.
 
-#### Continue the investigation
+### Continue the investigation
 
 In a previous section, we looked at an Insight. In this section, we will use Sumo Logic Search to continue the investigation. Then, we will update the status of your investigation in Cloud SIEM.
 
@@ -280,7 +278,7 @@ In a previous section, we looked at an Insight. In this section, we will use Sum
 1. If you think there's still more work to do, use the **Status** dropdown to set the Insight as **In Progress**. You can also use the **Assignee** field to reassign it.
 1. If you've finished your investigation, use the **Close Insight** button or use the **Status** dropdown to set the status to **Closed**.
 
-#### Take action on Insights
+### Take action on Insights
 
 In addition to the context actions available in the Cloud SIEM UI, there are many other actions you might take in response to an Insight. For example, you might work with your IT team to isolate and wipe laptops infected with malware to prevent spread of malicious code. Or, you might work with your HR team to enforce mandatory anti-phishing training among all employees to prevent future attacks.
 
@@ -288,9 +286,9 @@ In Cloud SIEM, there are several different actions you can take on each Insight.
 
 You can also assign the Insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
 
-### Tune your environment
+## Tune your environment
 
-#### Why tune?
+### Why tune?
 
 Once you've completed a few investigations, you may want to add or modify the rules, data sources, match lists, and other pieces of the Cloud SIEM puzzle. These modifications can help further reduce false positives or alert you even faster. The most common things to customize are rules and Insights.
 
@@ -302,7 +300,7 @@ You don't have to write rules from scratch. The Sumo Logic content team creates 
 
 If you do decide to write a custom rule, Insight, or rule tuning expression, these aren't updated or deleted by Sumo Logic during the regular updates. They're independent from the default rules.
 
-#### Write a rule tuning expression
+### Write a rule tuning expression
 
 You're updating some of the firewalls in your system, and you don't want to trigger unnecessary alerts. Write a rule tuning expression that will allow yourself to bypass firewall-related rules.
 
@@ -317,14 +315,14 @@ Under **to include Records that also match the expression**, write the logic for
 1. Click **Submit** to save your rule tuning expression.
 1. Verify your tuning expression exists by going back to the rule tuning page (step 1 above). You should see it there. You may need to refresh the page to find it.
 
-##### Tips and tricks
+#### Tips and tricks
 
 * When a rule tuning expression is added to a rule, it's appended with an AND statement. Rule tuning expressions are usually exceptions to the rule. Keep this in mind when writing the logic. It's common to use the is not (!=) operator to make exceptions.
 * The autocomplete feature can help you write the logic. For example, typing "ip" will bring up a dropdown showing all available fields related to IP addresses.
 * The syntax coloring can help you write the logic. For example, try using single quotes ('...') instead of double quotes ("..."). Notice that the syntax coloring lights up correctly when you use double quotes, which is the best practice.
 * Check for an orange triangle icon next to the **Submit** button before you submit. This will notify you of any errors or warnings.
 
-#### Custom rules
+### Custom rules
 
 Adding a rule tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to [write a new rule from scratch](/docs/cse/rules/before-writing-custom-rule/). You might do this if your system has a source that isn't covered by the default rules, or if you're looking for a threat that isn't covered by the default rules.
 
@@ -349,7 +347,7 @@ The below image shows a blank rule template.
 * G. **and a __ severity of**. You can configure the rule's severity score. This is on a scale from 0 to 10, with 10 being the most severe. Higher severity scores are more likely to trigger Insights.
 * H. **with tags**. The tags let you choose which tactics and techniques from the MITRE ATT&CK framework your rule is looking for.
 
-#### Write a match rule
+### Write a match rule
 
 You're concerned about traffic coming from a particular IP address that isn't covered by any of the default rules in Cloud SIEM. Write a match rule that looks for this IP address.
 
@@ -370,7 +368,7 @@ You're concerned about traffic coming from a particular IP address that isn't co
 1. Click **Submit** to save your rule.
 1. Verify your rule exists by going back to the rules page (step 1). You should see it there. You may need to refresh the page to find it.
 
-##### Tips and tricks
+#### Tips and tricks
 
 * The logic under **When a Record matches the expression** can be anything you like, but is typically a simple boolean statement for Match Rules.
 * The autocomplete feature can help you write the logic. For example, typing "ip" will bring up a dropdown showing all available fields related to IP addresses.
@@ -378,7 +376,7 @@ You're concerned about traffic coming from a particular IP address that isn't co
 * Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the MITRE ATT&CK framework your rule is looking for when selecting tags.
 * Check for an orange triangle icon next to the **Submit** button before you submit. This will notify you of any errors or warnings. 
 
-#### Custom Insights
+### Custom Insights
 
 Once a rule is in your system, whether it’s a custom rule you created or one created by the Sumo team, Cloud SIEM will use it to create Signals. When a rule is created, you configure its severity score. This is on a scale from 0 to 10, with 10 being the most severe.
 
@@ -398,7 +396,7 @@ But what if you want to be alerted right away when a certain rule is triggered?
 
 [Custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you create Insights based on one specific Signal, or a chain of Signals. This is great for known threats specific to your system. You won’t need to change any of your existing rules and Insights. They’ll keep working normally.
 
-#### Create a custom Insight
+### Create a custom Insight
 
 You want to be alerted right away when your new custom match rule is triggered. Create a custom Insight that looks for only this rule.
 
@@ -417,12 +415,12 @@ You want to be alerted right away when your new custom match rule is triggered. 
 1. Click **Submit** to save your Insight.
 1. Verify your Insight exists by going back to the custom insights page (step 1). You should see it there. You may need to refresh the page.
 
-##### Tips and tricks
+#### Tips and tricks
 
 * Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the MITRE ATT&CK framework your rule is looking for when selecting tags.
 * Check for an orange triangle icon next to the submit button before you submit. This will notify you of any errors or warnings.
 
-#### Other customizations and best practices
+### Other customizations and best practices
 
 Remember, Cloud SIEM’s out-of-the-box rules and Insights are great. But we want you to have the flexibility to customize your environment. There are three simple three ways to customize Cloud SIEM’s rules and Insights.
 
@@ -444,245 +442,3 @@ Rule tuning, custom rules, and custom Insights are just a taste of what you can 
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
 * How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
-
-## Introduction to Cloud SIEM for administrators
-
-### Build your SOC
-
-#### The Cloud SIEM data pipeline
-
-Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. 
-
-This is Sumo Logic's Cloud SIEM home page. 
-
-<img src={useBaseUrl('img/cse/cloud-siem-hud.png')} alt="Cloud SIEM main page" style={{border: '1px solid gray'}} width="800"/>
-
-* A. **Count**. A count of the Records created from incoming messages, and the Signals and Insights that have been generated.
-* B. **Insights by Status**. An overview of recent Insights and their statuses: New, In Progress, Closed, or Other.
-* C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent Records, light blue bars represent Signals, and red triangles represent Insights.
-* D. **Recent Activity**. Displays a feed of the latest Insights that have been generated.
-
-Sumo Logic collects and ingests millions of your company's log messages. However, you may choose to send only a portion of these to Cloud SIEM. Cloud SIEM takes these messages and parses, maps, and enriches them into Records. These records are compared to Rules and, if there's a match, Entities are extracted from them and Cloud SIEM uses that information to create Signals. These Signals and Entities are correlated, and used in security detection use cases. Then, if a certain severity threshold is crossed, they become an Insight. Some of these Insights have actions available right in the Cloud SIEM platform, like alerting your SOC teammates.
-
-<img src={useBaseUrl('img/cse/intro-data-flow.png')} alt="Cloud SIEM data flow"  width="800"/>
-
-As a Cloud SIEM administrator, it's your job to make sure that this pipeline flows smoothly. In this section, you'll learn how to partition your data in Sumo Logic, forward it to Cloud SIEM, customize the schema mappings, and tune the SOC content to support the analysts on your SOC team. All these customizations and optimizations will help reduce false positives and enable your SOC analyst teammates to investigate and hunt threats faster.
-
-#### Ingest the right data
-
-The first part of the security data pipeline is collection and ingestion in Sumo Logic.
-
-<img src={useBaseUrl('img/cse/intro-ingest-the-right-data.png')} alt="First part of the data pipeline"  width="500"/>
-
-These messages are then forwarded to Cloud SIEM. It’s a good idea to periodically examine the data you’re ingesting and sending to Cloud SIEM. Ask yourself these questions:
-
-* **Are you ingesting enough data?** Cloud SIEM takes thousands or millions of records and boils them down into just a handful of Insights. Most organizations ingest more than 50GB of data every day to start finding any Insights. If your ingest volume is smaller than this, consider sending more data to Cloud SIEM or using other security solutions like the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/).
-* **Are you ingesting too much data?** More data doesn’t always mean more Insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
-* **Are you ingesting the right data?** Cloud SIEM doesn’t just work on quantity alone. Quality data will affect your performance as well. As a best practice, you’ll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/). You should also consider whether your data is structured, like key-value pairs, or unstructured, like plain text files. Most data ingested into Sumo Logic is semi-structured, like JSON logs.
-
-Once you’ve answered these questions, you can assess what is and isn’t working for you and your SOC team. You can then partition your data in Sumo Logic and forward some or all of it to Cloud SIEM.
-
-##### Extra resources
-
-* All data must be ingested into Sumo Logic before it can be forwarded to Cloud SIEM. See [Cloud SIEM Ingestion](/docs/cse/ingestion/) to learn more details about data ingestion, setting up collectors, partitioning your data, and designing good metadata. 
-* If you only want to forward some, but not all of your data to Cloud SIEM you can use data tiers and partitions. For more information, see [Partitions](/docs/manage/partitions/).
-
-#### Which UI should I use?
-
-As a Cloud SIEM admin, you’ll use both the Sumo Logic UI and the Cloud SIEM UI. Even if you’re primarily focused on Cloud SIEM, you need to be comfortable using both interfaces.
-
-| Sumo Logic UI | Cloud SIEM UI |
-| :-- | :-- |
-| <ul><li>Add collectors and data sources.</li><li>Write field extraction rues.</li><li>Configure partitions and data tiers</li><li>Forward data to Cloud SIEM.</li><li>Configure RBAC controls.</li></ul> | <ul><li>Configure log and ingest mappings.</li><li>Create custom content, such as rules, match lists, and insights.</li><li>Customize actions, context actions, and other workflows.</li></ul>|
-
-In the Sumo Logic UI, you’ll add the collectors and data sources that will be used in Cloud SIEM. You can write field extraction rules, which help parse your logs so they can be better used as records in Cloud SIEM. You can also configure partitions and data tiers in Sumo Logic, and decide which data gets forwarded to Cloud SIEM. Finally, you configure users and roles for both Sumo Logic and Cloud SIEM using the Sumo Logic interface. 
-
-In the Cloud SIEM UI, you’ll configure the log and ingest mappings that turn your log messages into records. You can also create custom content to help with threat investigations like rules, match lists, and Insights. Finally, you can customize what the actions, context actions, and workflows do in the Cloud SIEM interface, using APIs and other playbooks.
-
-### Configure and enable Cloud SIEM
-
-#### Get your data into Cloud SIEM
-
-After you’ve decided what data to ingest (or not ingest), you can work on forwarding that data to Cloud SIEM.
-
-When you enable data forwarding, Cloud SIEM automatically starts processing your log messages into Records. Each Record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
-
-<img src={useBaseUrl('img/cse/intro-forward-data.gif')} alt="Forward data"  width="500"/>
-
-As an admin, there are several steps you must complete to forward data to Cloud SIEM. 
-1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo account rep will complete this process for you. 
-1. Next, you enable data forwarding. You can do this by adding the `_siemForward = True` field when you set up a collector. For cloud data sources, you can also toggle the **Forward to SIEM** checkbox. You’ll need to enable data forwarding each time you add a new data source into Sumo Logic, update your partitions, or make other changes to your data ingestion process.
-
-    Cloud SIEM will not ingest historic data. In other words, any new data ingested into Sumo Logic will be forwarded to Cloud SIEM as soon as you enable data forwarding. However, older data will not be processed by Cloud SIEM. Data will start flowing from Sumo Logic into Cloud SIEM within a few minutes of enabling data forwarding. You can expect Signals and Insights to start generating within a few hours.
-1. Finally, you’ll configure the log and ingest mappings. This process is usually automatic, but must be completed for certain types of custom data sources.
-
-If you do need to configure log and ingest mappings, there are certain details you need to know about your data:
-* Is your data structured or unstructured?
-* Does your data have a syslog header?
-* Is your data CEF, LEEF, JSON, XML, or some other common data type?
-* Have field extraction rules been applied to your messages in Sumo Logic?
-* What product and vendor do your messages come from? For example, are they Windows Event Logs, Palo Alto Firewall logs, or AWS GuardDuty logs?
-
-Once you know these details of your data, you can consult the Sumo Logic documentation for specific help for configuring your data pipeline. 
-
-Later in this introduction, we'll be ingesting and processing simple, structured JSON log messages to demonstrate this configuration process.
-
-##### Extra resources
-
-* There are many different data sources and data types you may be ingesting into Sumo Logic. You can read the details about forwarding data from various vendors and products to Cloud SIEM in [Cloud SIEM Ingestion](/docs/cse/ingestion/).
-* For the best Signals and Insights with the fewest false positives in Cloud SIEM, you need to ingest high-quality data. You can ensure your data is high quality by making sure your data and metadata are clean and organized from the moment you first ingest them into Sumo Logic. One way to do this is by writing good field extraction rules. See [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-#### Enable data forwarding for an HTTP source
-
-In this section, we’ll show you how to create a new source using a pre-configured collector and enable data forwarding to Cloud SIEM by selecting the **Forward to SIEM** checkbox. Once the new source is configured with data forwarding, you'll be able to send data to it and observe the data flow.
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
-1. Locate a hosted collector whose data you want to forward to Cloud SIEM.
-1. Click **Add Source**.
-1. Click **HTTP Logs & Metrics**.
-1. Enter a name and source category.
-1. Select the **Forward to SIEM** checkbox.
-1. Leave other fields as their defaults and click **Save**. 
-1. A popup will appear with a URL. Copy the URL and keep it somewhere safe, like a Notes or TextEdit file. We’ll use it in the next section.  
-
-##### Tips and tricks
-
-* Read [Best Practices for Data Collection](/docs/send-data/best-practices/).
-* If you need to find the HTTP source URL address again, click the **Show URL** link next to your source.
-
-#### Send a log message to Cloud SIEM
-
-In this section, we’ll send a simple JSON log message to the HTTP source we created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source). Then, we’ll look for that log message in Cloud SIEM. This will verify that we configured our source correctly, and demonstrate how quickly Cloud SIEM can ingest data.
-
-1. Open a CLI window, such as Terminal or PowerShell. 
-1. Type this command:
-    * Windows:
-       ```
-       curl.exe -d "{"ip": "192.0.2.0", "threatName": "<attacker name>"}" -H "Content-Type: application/json" <http source url>
-       ```
-    * macOS:
-       ```
-       curl -d '{"ip": "192.0.2.0", "threatName": "<attacker name>"}' -H 'Content-Type: application/json' <http source url>
-       ```
-     Replace `<attacker name>` with your own initials or another unique identifier. Replace the `<https source url>` with the URL you copied in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-
-    This simple JSON log message, `{"ip": "192.0.2.0", "threatName": "trainingRS"}`, will be collected and ingested by Sumo Logic as soon as you press Enter. If data forwarding was enabled properly in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source), it’s also forwarded to Cloud SIEM where it’s parsed, mapped, and enriched. This process can take anywhere from a few seconds to up to 15 minutes. 
-
-1. When you’re ready, we’ll find your log message as a record in Cloud SIEM.
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Records** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Records**. You can also click the **Go To...** menu at the top of the screen and select **Records**. 
-    1. In the **Filters** bar, select **Metadata Source Category** from the dropdown.
-    1. Select the **is** operator from the dropdown.
-    1. Type the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-    1. You should see a failed record. This record failed because the custom JSON log message does not have a log or ingest mapping associated with it. Although the log message was forwarded from Sumo Logic to Cloud SIEM, it did not successfully complete the parse, map, and enrich steps of the pipeline. We'll fix this in the next sections.
-
-##### Tips and tricks
-
-* If you get an error after running the CURL command in step 2, make sure your quotes are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
-* If you don’t see any records, try:
-    * increasing the timestamp range to the last 60 minutes or the last 3 hours.
-    * making sure the metadata source category you searched in the **Filters** bar matches the one you created earlier.
-    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category> ` Replaced `source-category` with the source category you created. 
-* If you still don’t see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
-
-#### Logs into records
-
-<img src={useBaseUrl('img/cse/intro-logs-into-records.png')} alt="Logs into records"  width="500"/>
-
-Now that you have a source set up to send data Sumo Logic into Cloud SIEM, let’s follow a simple log message down that data pipeline.
-
-```
-sso : ip-192-0-2-0 : alex@travellogic.com : "Successful Login" : “2024-05-25T22:11:42"
-```
-
-First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of ip-127-0-0-1, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the [Cloud SIEM schema](/docs/cse/schema/). Finally, the record is enriched with information from match lists or threat intelligence databases.
-
-These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. When Cloud SIEM extracts an entity from a record to create a signal, it uses the parsed and mapped key-value pairs to categorize each signal. When signals with the same entity cluster together, an insight is created. Therefore, it’s important for the records to have quality metadata from the start to produce the best insights.
-
-You can make sure these records are parsed, mapped, and enriched properly by maintaining good metadata design and setting up good log and ingest mappings, which we'll practice in the next sections.
-
-#### Set up an ingest mapping
-
-In [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), we sent a log message to Cloud SIEM, and received a "failed record" error. In this section and the next one, we’ll create ingest and log mappings to ensure the custom JSON data from the log messages we send are used properly by Cloud SIEM.
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**. 
-1. Click **Add Ingest Mapping**.
-1. Enter the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-1. Select **JSON** as the **Format**. This matches the format of the log message we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem).
-1. Enter a **Vendor** and **Product**. As a best practice, avoid spaces in the vendor and product names. 
-1. Click **Save**.
-1. Hover your mouse over the new ingest mapping, click the three-dot icon that appears to the right, and select **Enable**. 
-
-##### Extra resources
-
-If you need help configuring other types of ingest mappings, see [Configure a Sumo Logic Ingest Mapping - Cloud SIEM](/docs/cse/ingestion/sumo-logic-ingest-mapping/).
-
-#### Set up a log mapping
-
-In this section, we’ll create a log mapping to ensure the custom ingest mapping we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) is used properly by Cloud SIEM.
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
-1. Click **Add Log Mapping**. 
-1. Click **Structured Mapping**. In Cloud SIEM, JSON data is considered to be structured data. 
-1. Give your log mapping a name.
-1. Under **If Input Matches**, use the vendor and product you created in [Set up an ingest mapping](#set-up-an-ingest-mapping). 
-1. Select **JSON** as the format.
-1. Type `.*` for the regex. This will match all incoming logs.
-1. Under **Then Create Record**, the vendor and product should match what you entered under **If Input Matches**.
-1. In **Fields**, enter the fields from the JSON log message we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) under **Input Field**. Then, under **Output Field**, map them to their equivalents in the Cloud SIEM chema. Then, click **Add Field**. Refer to this table for help:
-     | Input field | Output field |
-     | :-- | :-- |
-     | ip | device_ip |
-     | threatName | threat_name |
-     :::note
-     Typically, JSON logs have more than just two fields. In this section, we're using the simplified example log we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), so we only need to add two new fields.
-     :::
-1. Scroll back up to **Then Create Record**.
-1. For **Record of type** select **Authentication**. Selecting the record type now ensures you do not limit the fields you could selected in an earlier step.
-1. Click **Submit**.
-
-##### Tips and tricks
-
-* See [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources/) for a for a full list of the fields you can map to.
-* Hover over the yellow triangle next to the **Submit** button to see a list of errors and warnings that need to be resolved before you can submit.
-
-#### Send another log message to Cloud SIEM
-
-Your new log and ingest mappings won't apply to the first log message you sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem). In this section, we’ll send another log message to the HTTP source we created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source). Then, we’ll look for that new log message in Cloud SIEM. This time, the log and ingest mappings we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) and [Set up a log mapping](#set-up-a-log-mapping) should apply to the new record.
-
-1. Open a CLI window, such as Terminal or PowerShell. 
-1. Type this command:
-    * Windows:
-       ```
-       curl.exe -d "{"ip": "192.0.2.0", "threatName": "<attacker name>"}" -H "Content-Type: application/json" <http source url>
-       ```
-    * macOS:
-       ```
-       curl -d '{"ip": "192.0.2.0", "threatName": "<attacker name>"}' -H 'Content-Type: application/json' <http source url>
-       ```
-     Replace `<attacker name>` with your own initials or another unique identifier. Replace the `<https source url>` with the URL you copied in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-
-     :::tip
-     Since you already sent a CURL command in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), you may be able to press the up arrow key and Enter to send the command again in most CLI programs.
-     :::
-
-     This simple JSON log message, `{"ip": "192.0.2.0", "threatName": "<attacker name>"}`, will be collected and ingested by Sumo Logic as soon as you press Enter. If data forwarding was enabled properly in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source), it’s also forwarded to Cloud SIEM where it’s parsed, mapped, and enriched. This process can take anywhere from a few seconds to up to 15 minutes. 
-
-1. When you’re ready, we’ll find your log message as a record in Cloud SIEM.
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Records** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Records**. You can also click the **Go To...** menu at the top of the screen and select **Records**. 
-    1. In the **Filters** bar, select **Metadata Source Category** from the dropdown.
-    1. Select the **is** operator from the dropdown.
-    1. Type the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-    1. You should see a record with the IP address and threat name parsed properly.
-
-Although the log message and method of ingestion was identical, the log message failed to parse into a Cloud SIEM record in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) because the log and ingest mappings weren’t configured. After we configured the log and ingest mappings, the new log messages forwarded to Cloud SIEM successfully completed the parse, map, and enrich steps to become a record.
-
-##### Tips and tricks
-
-* If you get an error after running the CURL command, make sure your quotes are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
-* If you don't see any records, try: 
-    * increasing the timestamp range to the last 60 minutes or the last 3 hours.
-    * making sure the metadata source category you searched in the **Filters** bar matches the one you created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category> ` Replace `<source-category>` with the source category you created earlier. 
-* If you still don’t see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
-* If your new record failed too (you see two failed records), either your log or ingest mapping weren't configured correctly. Review those configurations and try again.
-

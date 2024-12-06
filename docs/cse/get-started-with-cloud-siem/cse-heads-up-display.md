@@ -1,6 +1,7 @@
 ---
 id: cse-heads-up-display
 title: Cloud SIEM Heads Up Display
+sidebar_label: Heads Up Display
 description: Learn about Cloud SIEM's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
 ---
 
