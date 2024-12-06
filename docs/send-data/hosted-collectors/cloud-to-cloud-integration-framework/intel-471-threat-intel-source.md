@@ -5,7 +5,7 @@ sidebar_label: Intel 471 Threat Intel
 tags:
   - cloud-to-cloud
   - intel471-threat-intel
-description: This integration collects threat indicators from the Intel 471 API and sends them to Sumo Logic as normalized threat indicators for analysis.
+description: This integration collects threat indicators using the Intel 471 API and sends them to Sumo Logic  for analysis.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/intel471-threat-intel/example.json';
