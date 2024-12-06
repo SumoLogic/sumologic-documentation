@@ -6,6 +6,7 @@ description: Learn about the Cloud SIEM user interface.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Theme from '../../reuse/dark-light-theme.md';
 
 ## Access Cloud SIEM
  

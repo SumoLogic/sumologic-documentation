@@ -2669,7 +2669,6 @@ integrations: [
       link: {type: 'doc', id: 'cse/index'},
       items: [
         'cse/introduction-to-cloud-siem',
-        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2682,6 +2681,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
+            'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
           ],
         },
         {
