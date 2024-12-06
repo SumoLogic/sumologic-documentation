@@ -1,7 +1,7 @@
 ---
 id: crowdstrike-falcon-filevantage
-title: Crowdstrike Falcon FileVantage
-sidebar_label: Crowdstrike Falcon FileVantage
+title: CrowdStrike Falcon FileVantage
+sidebar_label: CrowdStrike Falcon FileVantage
 description: Analyze CrowdStrike Falcon FileVantage data to identify unauthorized file changes, policy violations, and unusual activity indicating potential threats or compliance breaches.
 ---
 
@@ -24,10 +24,10 @@ Use cases for the CrowdStrike Falcon FileVantage app include:
 - **Threat investigation**. Investigate suspicious file modifications to uncover potential breaches or insider threats.
 - **Host Activity Analysis**. Analyze file changes at the host level to identify risky behaviors or compromised endpoints.
 
-The Sumo Logic app for Crowdstrike Falcon FileVantage is an essential tool for security teams. It provides the visibility and intelligence needed to detect and respond to file-related threats, ensuring data integrity and compliance across the organization.
+The Sumo Logic app for CrowdStrike Falcon FileVantage is an essential tool for security teams. It provides the visibility and intelligence needed to detect and respond to file-related threats, ensuring data integrity and compliance across the organization.
 
 :::info
-This app includes [built-in monitors](#crowdstrike-fdr-host-inventory-alerts). For details on creating custom monitors, refer to [Create monitors for CrowdStrike FDR Host Inventory app](#create-monitors-for-crowdstrike-fdr-host-inventory-app).
+This app includes [built-in monitors](#crowdstrike-falcon-filevantage-monitors). For details on creating custom monitors, refer to [Create monitors for CrowdStrike Falcon FileVantage app](#create-monitors-for-crowdstrike-falcon-filevantage-app).
 :::
 
 ## Log types
@@ -115,15 +115,15 @@ _sourceCategory="Labs/CrowdStrikeFalconFileVantage" entity_type file
 
 ## Set up collection
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for Crowdstrike Falcon FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Crowdstrike Falcon FileVantage app is properly integrated and configured to collect and analyze your Crowdstrike Falcon FileVantage data.
+Follow the instructions provided to set up [Cloud-to-Cloud Integration for CrowdStrike Falcon FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike Falcon FileVantage app is properly integrated and configured to collect and analyze your CrowdStrike Falcon FileVantage data.
 
-## Installing the Crowdstrike Falcon FileVantage app
+## Installing the CrowdStrike Falcon FileVantage app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Crowdstrike Falcon FileVantage dashboards
+## Viewing CrowdStrike Falcon FileVantage dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -131,11 +131,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Crowdstrike Falcon FileVantage - Overview** dashboard provides a comprehensive overview of file and directory activity, helping security analysts monitor file integrity and identify potential risks. It provides a total count of the file changes, categorizing them by severity—**Critical**, **High**, **Medium**, and **Low**—to prioritize investigations. Suppressed changes, which are ignored due to predefined policies, are also highlighted.
+The **CrowdStrike Falcon FileVantage - Overview** dashboard provides a comprehensive overview of file and directory activity, helping security analysts monitor file integrity and identify potential risks. It provides a total count of the file changes, categorizing them by severity—**Critical**, **High**, **Medium**, and **Low**—to prioritize investigations. Suppressed changes, which are ignored due to predefined policies, are also highlighted.
 
 Key metrics include file change types (**WRITE**, **RENAME**, **READ** **PERMISSION**, **OTHERS**, **DELETE**), displayed in an easy-to-read pie chart for quick analysis. The dashboard tracks changes by operating system, identifies top hosts and users making changes, and highlights threats or anomalies.
 
-The dashboard also shows the monitoring rules that triggered the most changes, assisting in policy refinement. A detailed table of recent file activities, including timestamps, hostnames, file paths, severities, and associated policies, is provided. Overall, the dashboard strengthens the detection and response to unauthorized or suspicious file activities. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+dashboard.png')} alt="Crowdstrike Falcon FileVantage Overview" />
+The dashboard also shows the monitoring rules that triggered the most changes, assisting in policy refinement. A detailed table of recent file activities, including timestamps, hostnames, file paths, severities, and associated policies, is provided. Overall, the dashboard strengthens the detection and response to unauthorized or suspicious file activities. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+dashboard.png')} alt="CrowdStrike Falcon FileVantage Overview" />
  
 
 ### Security
@@ -146,29 +146,29 @@ The dashboard tracks high-risk actions over time, enabling security teams to ide
 
 Additionally, security analysts can review file deletions with specific details, including file paths, user names, and originating countries. The severity trends are visually represented, providing a clear overview of security incidents over time and helping teams identify escalation points.
 
-While the dashboard provides placeholders for tracking malicious file changes and directory changes, data in these sections requires specific configuration based on the environment. Finally, the **Host-Based Change Monitoring** table offers detailed insights into the hosts and host groups involved in file changes, assisting in pinpointing areas that need further investigation. Overall, this dashboard is a vital tool for ensuring file integrity and effectively mitigating risks. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+Security.png')} alt="Crowdstrike Falcon FileVantage Security" />
+While the dashboard provides placeholders for tracking malicious file changes and directory changes, data in these sections requires specific configuration based on the environment. Finally, the **Host-Based Change Monitoring** table offers detailed insights into the hosts and host groups involved in file changes, assisting in pinpointing areas that need further investigation. Overall, this dashboard is a vital tool for ensuring file integrity and effectively mitigating risks. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+Security.png')} alt="CrowdStrike Falcon FileVantage Security" />
 
-## Create monitors for Crowdstrike Falcon FileVantage app
+## Create monitors for CrowdStrike Falcon FileVantage app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Crowdstrike Falcon FileVantage monitors
+### CrowdStrike Falcon FileVantage monitors
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Crowdstrike Falcon FileVantage - Changes from Embargoed Geo Locations` | This alert identifies file activity originating from locations considered restricted or embargoed by the organization. It helps detect potentially unauthorized access or data exfiltration attempts from high-risk geographic areas. | Critical | Count > 0 | 
-| `Crowdstrike Falcon FileVantage - Suppressed Changes` | This alert captures file changes that have been intentionally excluded or suppressed due to pre-defined policies or filters. It provides visibility into the suppressed events for auditing or validation purposes. | Critical | Count > 0|
-| `Crowdstrike Falcon FileVantage - Critical Changes` | This alert tracks high-severity file modifications, deletions, or access attempts flagged as critical by CrowdStrike Falcon FileVantage. These changes could indicate potential security incidents, such as unauthorized access or malicious activity. | Critical | Count > 0|
+| `CrowdStrike Falcon FileVantage - Changes from Embargoed Geo Locations` | This alert identifies file activity originating from locations considered restricted or embargoed by the organization. It helps detect potentially unauthorized access or data exfiltration attempts from high-risk geographic areas. | Critical | Count > 0 | 
+| `CrowdStrike Falcon FileVantage - Suppressed Changes` | This alert captures file changes that have been intentionally excluded or suppressed due to pre-defined policies or filters. It provides visibility into the suppressed events for auditing or validation purposes. | Critical | Count > 0|
+| `CrowdStrike Falcon FileVantage - Critical Changes` | This alert tracks high-severity file modifications, deletions, or access attempts flagged as critical by CrowdStrike Falcon FileVantage. These changes could indicate potential security incidents, such as unauthorized access or malicious activity. | Critical | Count > 0|
 
-## Upgrade/Downgrade the Crowdstrike Falcon FileVantage app (Optional)
+## Upgrade/Downgrade the CrowdStrike Falcon FileVantage app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Crowdstrike Falcon FileVantage app (Optional)
+## Uninstalling the CrowdStrike Falcon FileVantage app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
