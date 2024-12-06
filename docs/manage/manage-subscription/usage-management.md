@@ -31,7 +31,7 @@ To manage the query size limit using the **Basic** configuration:
 :::info
 Sumo Logic defines scan as two types:
   - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-  - **Background search**. API, Scheduled Search, Monitor, and SLO. 
+  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
 :::
 
 :::note
@@ -62,7 +62,7 @@ To create the query size limit using the **Advanced** configuration:
     :::info
     Sumo Logic defines scan as two types:
     - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-    - **Background search**. API, Scheduled Search, Monitors, and SLO. 
+    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO. 
     :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
@@ -85,9 +85,8 @@ To view the selected scan budget:
   - **Deactivate/Activate**. Click the **Deactivate/Activate** button to deactivate/activate the selected scan budget.
   - **Delete**. Click the **Delete** button to delete the selected scan budget.
   - **View violations**. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
-  - **Budget Type**. Defines the type of budget set: **Per Query Budget** or **Time-Based Budgets**(TBA).
+  - **Budget Type**. Defines the type of budget set.
     - **Per Query Budget**. Limits the data (in GBs) that a single query can consume.
-    - **Time-Based Budgets**(TBA). Limits the data or credits consumed over a day, week, or month.
   - **Status**. Describes if the scan budget is active or inactive.
   - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for Data tier this is shown as **Infrequent Scan**.
   - **Applied to Roles**. Describes the roles for which the selected scan budget is applied for.
@@ -100,7 +99,6 @@ To view the selected scan budget:
   - **Modified**. The user that most recently modified the scan budget.
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
-
 
 ## FAQ
 

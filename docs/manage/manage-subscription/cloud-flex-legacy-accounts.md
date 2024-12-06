@@ -4,8 +4,8 @@ title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
-:::note
-You're viewing our legacy account page. Refer to our newer [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts) docs for the latest information.
+:::note legacy account type
+We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
 
 Sumo Logic provides flexible account types within its Cloud Flex Legacy packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
