@@ -50,7 +50,7 @@ To configure an Intel 471 Threat Intel source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Username**. Enter the login ID or email address of the user.
+1. **Username**. Enter your login ID or email address.
 1. **API Key**. Enter the API key of the user account collected from the [Intel 471 Threat Intel platform](#vendor-configuration).
 1. **Sumo Logic Threat Intel Source ID**. Enter the Sumo Logic namespace where the indicators will be stored.
 1. **Polling Interval**. The polling interval is set for one hour by default. You can adjust it based on your needs. This sets how often the source checks for new data.
