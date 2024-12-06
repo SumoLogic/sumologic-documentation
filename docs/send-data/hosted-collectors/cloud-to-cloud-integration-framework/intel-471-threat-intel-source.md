@@ -38,7 +38,7 @@ The Intel 471 Threat Intel source requires you to authenticate the **Username** 
 
 ### Source configuration
 
-When you create an Intel 471 Threat Intel source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Intel 471 Threat Intel source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Intel 471 Threat Intel source:
 
