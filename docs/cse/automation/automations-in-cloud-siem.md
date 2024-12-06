@@ -82,7 +82,7 @@ If you configured the automation to [run manually](#run-an-automation-manually),
 
 ## View automations
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
 
 To view the automations that have run on Insights or Entities, see [View results of an automation](#view-results-of-an-automation).
@@ -91,7 +91,7 @@ To view the automations that have run on Insights or Entities, see [View results
 
 The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. At the top of the automations screen, click **Create**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
 1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" style={{border: '1px solid gray'}} width="400"/>
 1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM.

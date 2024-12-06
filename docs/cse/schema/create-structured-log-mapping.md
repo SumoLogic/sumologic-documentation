@@ -21,7 +21,7 @@ When you set up a log mapping, you supply the following information:  
 
 ## Step 1: Choose mapping type and name the mapping
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
 1. Click **Create** in the upper right side of the **Log Mappings** page.<br/><img src={useBaseUrl('img/cse/log-mappings.png')} alt="Log mappings page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Structured Mapping** tile on the **Create a Mapping** page. <br/><img src={useBaseUrl('img/cse/select-mapping-type.png')} alt="Structured mapping" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Mapping** page, enter a name for the mapping.<br/><img src={useBaseUrl('img/cse/new-mapping-page.png')} alt="New mapping page" style={{border: '1px solid gray'}} width="800"/>

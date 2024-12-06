@@ -11,9 +11,9 @@ This topic describes the Cloud SIEM UI for working with Insights. 
 
 ## Insights list page
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the Insights page, click **Insights** at the top of the screen. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the Insights page, click **Insights** at the top of the screen. 
 
-[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+[**New UI**](/docs/get-started/sumo-logic-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
  
 By default, the **Insights** page presents all Insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
