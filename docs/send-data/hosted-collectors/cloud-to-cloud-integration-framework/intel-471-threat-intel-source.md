@@ -1,6 +1,6 @@
 ---
 id: intel471-threat-intel-source
-title: Intel 471 Threat Intel Source
+title: Intel471 Threat Intel Source
 sidebar_label: Intel 471 Threat Intel
 tags:
   - cloud-to-cloud
