@@ -4,7 +4,7 @@ title: cidr Search Operator
 sidebar_label: CIDR
 ---
 
-Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses.
+Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.
 
 Using the CIDR operators, you can determine the amount of traffic between network segments, review events from hosts within a specified network segment, or even use a not operator to find addresses that didn't originate from a particular network segment. CIDR operators can be used to compare the network segment of two IPv4 addresses, or just identify the network segment involved in particular messages.
 
