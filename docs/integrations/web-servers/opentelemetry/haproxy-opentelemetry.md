@@ -23,6 +23,10 @@ The app supports Logs from the open source version of HAProxy. The App is tested
 
 The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
 
+:::info
+This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
+:::
+
 ## Fields Create in Sumo Logic for HAProxy
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
@@ -349,3 +353,20 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
+
+
+## Create monitors for HAProxy app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### HAProxy alerts
+
+| Alert Name | Alert Description and conditions | Alert Condition | Recover Condition |
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
+| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | `>` 0 | `<=` 0 |
+| `HAProxy - Backend Error` | This alert is triggered when we detect backend server errors. | `>` 0 | `<=` 0 |
+| `HAProxy - Backend Server Down` | This alert is triggered when we detect a backend server for a given HAProxy server is down. | `>` 0 | `<=` 0 |
+| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | `>` 0 | `<=` 0 |
+| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | `>` 0 | `<=` 0 |

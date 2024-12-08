@@ -19,6 +19,10 @@ The app supports Logs from the open-source version of Cassandra. The App is test
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#cassandra-alerts). For details on creating custom monitors, refer to [Create monitors for Cassandra app](#create-monitors-for-cassandra-app).
+:::
+
 ## Fields creation in Sumo Logic for Cassandra
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
@@ -279,3 +283,24 @@ The **Cassandra - Requests** dashboard provides insight into the number of reque
 The **Cassandra - Storage** dashboard provides insight into the current value of total hints of your Cassandra cluster along with storage managed by the cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Storage.png' alt="Storage" />
+
+
+## Create monitors for Cassandra app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cassandra alerts
+
+| Alert Name | Alert Description and conditions | Alert Condition | Recover Condition |
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
+| `Cassandra - Compaction Task Pending` | This alert is triggered when there are more than 15 Compaction tasks which are pending. | `>=` 15 | `<` 15 |
+| `Cassandra - High Hints Backlog` | This alert is triggered when the number of in-progress hints exceeds given value (Default 5000) for 5 minutes. | `>=` 5000 | `<` 5000 |
+| `Cassandra - High Memory Usage` | This alert is triggered when memory used exceeds 85% of committed memory for more than 10 minutes. | `>=` 1 | `<` 1 |
+| `Cassandra - Node Down Alert` | This alert is triggered when a Cassandra node status changes to DOWN for more than 5 minutes. | `>=` 1 | `<` 1 |
+| `Cassandra - Operation Error Rate High` | This alert is triggered when the error rate of operations exceeds given value (Default 5%) for 5 minutes. | `>` 5 | `<=` 5 |
+| `Cassandra - Range Query Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of range query latency exceeds the given value (Default 2 seconds) for 5 minutes. | `>=` 2000000 | `<` 2000000 |
+| `Cassandra - Read Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of read latency exceeds given value (Default 500ms) for 5 minutes. | `>=` 500000 | `<` 500000 |
+| `Cassandra - Storage Growth Rate Abnormal` | This alert is triggered when the storage growth rate exceeds given value (Default 25MB/minute) for 5 minutes. | `>=` 26214400 | `<` 26214400 |
+| `Cassandra - Write Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of write latency exceeds given value (Default 200ms) for 5 minutes. | `>=` 200000 | `<` 200000 |
