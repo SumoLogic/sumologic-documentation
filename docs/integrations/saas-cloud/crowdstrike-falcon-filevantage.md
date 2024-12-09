@@ -32,7 +32,7 @@ This app includes [built-in monitors](#crowdstrike-falcon-filevantage-monitors).
 
 ## Log types
 
-This App uses Sumo Logic’s [CrowdStrike FileVantage Source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to collect the FileVantage logs from CrowdStrike.
+This App uses Sumo Logic’s [CrowdStrike FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to collect the FileVantage logs from CrowdStrike.
 
 ### Sample log message
 
