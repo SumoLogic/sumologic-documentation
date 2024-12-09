@@ -1250,23 +1250,26 @@ auto_enable_logs_subscription="New"
 
 ### auto_enable_logs_subscription_options
 
-`filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination).
+* `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
+* `tags_filter`. Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters)   
 
 **Default value:**
 
 ```json
 {
- "filter": "apigateway|lambda|rds"
+ "filter": "apigateway|lambda|rds",
+ "tags_filter": ""
 }
 ```
 
-**Default JSON:**
+**Override Example JSON:**
 
 The following example includes all log groups that match `"lambda-cloudwatch-logs"`:
 
 ```
 auto_enable_logs_subscription_options = {
  "filter": "lambda-cloudwatch-logs"
+ "tags_filter": "Environment=Production,Application=MyApp"
 }
 ```
 
