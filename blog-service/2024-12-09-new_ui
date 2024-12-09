@@ -1,0 +1,21 @@
+---
+title: New UI Improvements
+image: https://help.sumologic.com/img/sumo-square.png
+keywords:
+  - UI
+hide_table_of_contents: true  
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+
+We're excited to share some updates to the new UI based on feedback we've received from our customers. These updates were implemented to enhance your navigation experience and improve your workflow.
+
+- **Faster Library Navigation**. The loading time of the Library navigation has been significantly improved, reducing wait times as you navigate this menu.
+- **Tree Position Memory**. The Library navigation now remembers where you left off within the tree structure, making it easier to return to your exact spot when re-opening the subnavigation.
+- **Remembered Menu State**. The expand/collapse state of the navigation menu is now preserved when opening new tabs, giving you a consistent experience across multiple browser tabs.
+- **Pin Subnavigation**. You can now “pin” a subnavigation menu to keep it open while working within a specific feature area, giving you quicker access to what you need.
+- **Resizable Submenu**. Widen the submenu to better view content items with longer names.
+
+You can try the new UI by selecting the "Switch to New UI" link within the Classic UI menu. 
