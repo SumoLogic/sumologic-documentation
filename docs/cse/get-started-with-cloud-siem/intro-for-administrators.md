@@ -373,12 +373,133 @@ Now, we’ll test our new **Actions** button.
 
 ### Next steps
 
-In this introduction article, you learned how data is forwarded from Sumo Logic to Cloud SIEM. You followed a simple log message down the data pipeline. Then you learned how to set up log and ingest mappings to ensure that message was parsed properly into a record in Cloud SIEM.
-
-You also learned how to create custom rules, to make sure the data you ingest gets used in Cloud SIEM's threat detection engine properly. And you created a custom **Actions** button, so the analysts on your team can alert others in our company.
+So far in this introduction article, you learned how data is forwarded from Sumo Logic to Cloud SIEM. You followed a simple log message down the data pipeline. Then you learned how to set up log and ingest mappings to ensure that message was parsed properly into a record in Cloud SIEM. You also learned how to create custom rules, to make sure the data you ingest gets used in Cloud SIEM's threat detection engine properly. And you created a custom **Actions** button, so the analysts on your team can alert others in our company.
 
 What's next?
 
 * **Configure the data you're ingesting**. Make sure you're familiar with types of data you ingest and whether or not that data is forwarded properly to Cloud SIEM. Work with the analysts on your team to determine if you're ingesting too much or too little data.
 * **Create the roles and capabilities of your team**. Assign [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) to ensure the analysts on your team have access to Cloud SIEM and can interact with the insights, signals, rules, and entities they need to complete their investigations.
 * **Create custom content**. Work with your SOC teammates to create custom log and ingest mappings, rules, insights, and actions that suit your organization's needs.
+
+### Why automate?
+
+Automations are a key feature of Cloud SIEM that can help manage insights without a lot of manual effort.  Automations are composed of "smart actions" such as enrichments and notifications that can be automatically triggered under a set of circumstances, such as an insight being created or closed. Cloud SIEM automations use playbooks, a pre-defined set of actions in a linear or branching workflow to execute when the proper circumstances arise.  
+
+There are several reasons you might want to automate some security tasks:
+* **Faster responses**. Automating parts of your SOC can mean faster response times.
+* **Consolidate tools**. Orchestrate all your security tools in one location with integrations and custom APIs.
+* **Close the skills gap**. Analysts of all skill levels can deploy playbooks. Veteran analysts can spend more time on threat hunting.
+
+Typically, each playbook in Cloud SIEM will help partially or fully automate one or more steps of the incident response cycle.
+
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
+
+### Automations and integrations
+
+Cloud SIEM comes with hundreds of pre-built playbooks, integrations, and use cases as part of [App Central](/docs/platform-services/automation-service/app-central/). 
+
+As a Cloud SIEM administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SIEM to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SIEM can be a single, central location for orchestrating your security response. 
+
+### Install a new integration
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then and click **App Central** in the left navigation bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
+1. Click **Integrations** at the top of the window.
+1. Find any integration that isn’t already installed and click **Install**. If an integration has already been installed by another user, you will not see the option to download it. Instead, it will say **Installed**. 
+1. A popup window will appear, summarizing the actions that will become available once the integration has been installed. Once you have reviewed these actions, click **Install**. The actions will vary based on which integration you chose to install. 
+1. Verify the integration is installed. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+
+You should see the integration you installed here. This is how you can verify which integrations are installed on your instance of Cloud SIEM. You can now use the integration as part of any new playbooks you customize or create.
+
+### Playbooks
+
+Once you’ve identified a potential security incident, you can respond to it in Cloud SIEM by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. A playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
+
+Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in Cloud SIEM.
+
+Playbooks are made up of nodes which are connected together in a flowchart. Whether you’re customizing a playbook or creating one from scratch, you have several node options:
+* **Actions**. Enrich data, execute APIs, send notifications, or use other integrations. 
+* **Conditions**. If-then statements that allow playbooks to branch in different directions.
+* **Embedded playbooks**. Run another playbook.
+
+Each of these nodes are color-coded in a playbook. The following image shows a sample playbook. Note the different actions and enrichments, along with the branches that execute different sequences of actions based on conditions.
+
+<img src={useBaseUrl('img/cse/intro-admin-playbook-example.png')} alt="Playbook example" style={{border: '1px solid gray'}} width="800"/>
+
+* A. **Condition**. Conditions, represented by a purple diamond, allow your playbook to branch in different directions based on an if-then statement.
+* B. **Enrichment**. Green nodes are enrichments. These might add additional information from a threat intel database or convert data from one type to another.
+* C. **Notification**. Blue nodes are notification actions, such as a Slack or email alert.
+
+Action nodes use integrations. These integrations broadly fall into several types:
+* **Enrichment**. Add information, metadata, or context, such as from a threat intelligence database.
+* **Containment**. Reduces further damage by isolating files or machines related to a threat.
+* **Notification**. Alerts sent via email, Slack, PagerDuty, or most other services you can connect with an API.
+* **Custom**. Scripts and any other automations you can create using YAML, Perl, Python, PowerShell, or Bash.
+* **Daemons**. Background processes that can ingest data. 
+
+Custom actions can also include trigger actions, which run based on an event type until certain criteria are met. For example, if malware is detected, a trigger action could run an anti-malware cleanup software until no malware is detected. Similarly, you can create scheduled actions that run at certain intervals. For example, you could create a scheduled action that checks for malicious IP addresses every 5 minutes until no more malicious IP addresses are found.
+
+#### Best practices
+
+Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if the automations you want already exist, or if you can modify a playbook that’s similar to what you have in mind.
+
+### Create a custom playbook
+
+In this section, we’ll create a simple playbook from scratch. This playbook will send an email with insight details.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+1. On the Automation tab, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
+1. Near the top, click the **+** icon to create a new playbook.
+1. Configure the playbook:
+    1. Give your playbook a name.
+    1. From the **Type** dropdown, select **Cloud SIEM**.
+    1. Write a short description. For example, "Email Notification with Insight Details"
+    1. Click **Create**.
+1. Click the Edit (pencil) icon near the bottom of the playbook.
+1. Hover over the **Start** node, then click the pencil icon. 
+1. Select **Insight** from the dropdown. This will populate the dialog with additional parameters from the insight input, which we can use in other places in the playbook.
+1. Click **Update** to close the dialog window.
+1. Click the plus icon on the **Start** node to add a new node.
+1. Choose **Action** as the node type.
+1. Configure the node with the following steps: 
+    1. In **Node name** type "Email Notification".
+    1. From the **Integration** dropdown select **Basic Tools**.
+    1. From the **Type** dropdown, select **Notification**. 
+    1. In the **Action** dropdown, select **Send Email**. 
+    1. For **Recipients**, enter either a fake or real email. (If you enter a real email, you'll be able to check the email results later.) After entering the email address, press Enter to accept it. More than one email address can be entered to the **Recipients** field.
+    1. In the **Subject** field, type "Insight Details".
+    1. In the **HTML Content (Body)** field, click the **{ }** button to create a placeholder field. Click in the red field and select **Playbook.input.name**". Create two more placeholders with the following fields: **Playbook.input.id** and **Playbook.input.status.displayName**. Add any additional text content or formatting as desired.
+    1. Click Create.
+1. Back on the playbook edit screen, drag the mouse cursor from the half-circle on the right side of the **Email Notification** action to the equivalent node connector on the **End** node.
+1. Click the **Save** button at the bottom of the screen to save your playbook.
+1. Click the **Publish** button at the bottom of the screen to publish your playbook and make it available for automations. You can add a description to your playbook in the Publish dialog window if you'd like. 
+
+If the playbook is published successfully, you will see "Published version" in the upper right, instead of "Draft".
+
+### Automations
+
+[Automations](/docs/cse/automation/automations-in-cloud-siem) define the conditions in which a playbook will be executed. For instance, you might want to execute a specific playbook whenever Cloud SIEM creates a new insight.  Or another playbook whenever an insight is closed to create and distribute appropriate notifications or reports. Automations can also be set to "manual execution", allowing operators to run the playbook on a specific insight when judged necessary.
+
+This way, potentially the entire incident response cycle can now be automated: Cloud SIEM identifies a threat, creates an insight, then a playbook is automatically deployed to perform necessary actions and email a final report for an analyst to review.  
+ 
+### Create a custom automation
+
+In this section, you'll create a custom automation using the playbook you created in the previous lab. 
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu in Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. In the upper right of the **Automation** tab, click **+ Add Automation**.
+1. In **Playbook**, select your custom playbook created in the previous section [Create a custom playbook](#create-a-custom-playbook). (If you do not see your playbook in the list, return to the previous steps and ensure your playbook was published as well as saved.)
+1. For the **Object (expects attributes for)** field, select **Insight**.
+1. Note that the checkboxes under **Execution** field show that you can trigger your automation when an insight is created or closed. For this example, however, select **Manually Done**. 
+1. Click **Save**.
+
+#### Test your automation
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the Cloud SIEM screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+1. Select any insight from the list by clicking on its name.
+1. Click on the **Actions** menu in the left sidebar. 
+1. Select your automation from the **Insight Automations** list. (If you do not see your automation, you may need to leave and return to Cloud SIEM to refresh the list.)
+1. You should see a green popup at the bottom indicating that your automation was executed successfully.
+1. If your playbook included an email notification, and the recipient is your email address, your inbox should have an email from the Cloud SIEM system with the insight details.
+1. While still on the insight details screen, click on the **Automations** tab on the top of the screen to see the results of executing your automation. This view will show the status of the automations run on that insight, such as "Running", "Success" or "Completed with errors". 1. If errors occur, you can click the **View Playbook** link on the right side to see the Playbook view, along with any execution errors that occurred. For help, see [Troubleshoot playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks).
+
+You now have a custom automation that can be manually run or attached to an insight upton creation or closing.
