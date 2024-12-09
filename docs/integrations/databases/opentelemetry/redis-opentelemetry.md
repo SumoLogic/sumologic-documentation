@@ -35,7 +35,7 @@ The following are [fields](/docs/manage/fields/) that will be created as part of
 
 * **`db.cluster.name`**. User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`db.system`**. Has fixed value of redis.
-* **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
+* **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod, or qa.
 * **`db.node.name`**. Has the value of host name of the machine which is being monitored.
 * **`sumo.datasource`**. Has fixed value of redis.
 
@@ -257,9 +257,9 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Redis - High Memory Fragmentation Ratio` | This alert is triggered when the ration of Redis memory usage to Linux virtual memory pages (mapped to physical memory chunks) is higher than 1.5. A high ratio will lead to swapping and can adversely affect performance. | Count `>` 1.5 | Count `<=` 1.5 |
-| `Redis - Instance Down` | This alert is triggered when we detect that the Redis instance is down for 5 minutes. | Missing Data | Data Found |
-| `Redis - Rejected Connections` | This alert is triggered when we detect that some connections to a Redis cluster have been rejected. | Count `>` 0 | Count `<=` 0 |
-| `Redis - Replication Broken` | This alert is triggered when we detect that a Redis instance has lost all slaves. This will affect the redundancy of data stored in Redis. Please review how replication has been configured. | Count `<` 1 | Count `>=` 1 |
-| `Redis - Replication Offset` | This alert is triggered when the replication offset in a given Redis cluster is greater than 1 MB for last five minutes. Please review how replication has been configured. | Count `>=` 1 | Count `<` 1 |
-| `Redis - Too Many Connections` | This alert is triggered when we detect a given Redis server has too many connections (default is 100). | Count `>` 100 | Count `<=` 100 |
+| `Redis - High Memory Fragmentation Ratio` | This alert is triggered when the ratio of Redis memory usage to Linux virtual memory pages (mapped to physical memory chunks) is higher than 1.5. A high ratio will lead to swapping and can adversely affect performance. | Count > 1.5 | Count < = 1.5 |
+| `Redis - Instance Down` | This alert is triggered if the Redis instance is down for 5 minutes. | Missing Data | Data Found |
+| `Redis - Rejected Connections` | This alert is triggered when some connections to a Redis cluster have been rejected. | Count > 0 | Count < = 0 |
+| `Redis - Replication Broken` | This alert is triggered when a Redis instance has lost all slaves. This will affect the redundancy of data stored in Redis. We suggest you to review how replication has been configured. | Count < 1 | Count > = 1 |
+| `Redis - Replication Offset` | This alert is triggered when the replication offset in a given Redis cluster is greater than 1 MB for last 5 minutes. We suggest you to review how replication has been configured. | Count > = 1 | Count < 1 |
+| `Redis - Too Many Connections` | This alert is triggered when a given Redis server has too many connections (default is 100). | Count > 100 | Count < = 100 |
