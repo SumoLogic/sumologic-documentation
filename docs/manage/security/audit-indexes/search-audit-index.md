@@ -59,7 +59,7 @@ The following table provides details on the fields returned by the index:
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
-| `data_scanned_bytes` | Displays the total sum of scanned bytes for charged (Flex and Infrequent bytes) and non-charged metering types (Continuous, and Frequent bytes). This value can be different from what users see in scan estimates on UI. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
+| `data_scanned_bytes` | Displays the total sum of scanned bytes for charged (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). This value can be different from what users see in scan estimates on UI. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
 | `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found in [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators). |
 | `query` | The query text string run by the user. |
