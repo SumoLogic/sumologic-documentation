@@ -668,7 +668,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 
 Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
-* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS as well as custom namespaces. 
+* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS and custom namespaces. 
 
 Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for details on which namespaces they support.
 
