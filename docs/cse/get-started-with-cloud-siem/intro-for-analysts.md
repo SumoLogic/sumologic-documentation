@@ -220,7 +220,8 @@ In this section, you'll be investigating an insight for your organization that w
    * What order did the events happen in?
    * What hypotheses do you have about how and why the event happened?
    * What other information can you find by exploring this Insight?
-1. Scroll to the bottom of the left navigation pane of the Insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: "*First, a known phishing link was received in a user's email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon's GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this Insight. Given the likelihood of active malware in the network, the user's machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
+1. Scroll to the bottom of the left navigation pane of the Insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: 
+    "*First, a known phishing link was received in a user's email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon's GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this Insight. Given the likelihood of active malware in the network, the user's machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
 
 ### Dive into Signals and Entities
 
@@ -353,7 +354,7 @@ You're concerned about traffic coming from a particular IP address that isn't co
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. Click **Create**.
-1. Click **Match rule**.
+1. On the **Match** tile click **Create**.
 1. Provide a name for your rule.
 1. Under **When a Record matches the expression**, write the logic for the rule. For example, if you want the rule to fire when it encounters an entity for a specific IP address, enter it here. For example, `device_ip='192.0.2.0'`.
 1. Click **Add Tuning Expression**. Add the tuning expression you created in [Write a rule tuning expression](#write-a-rule-tuning-expression).

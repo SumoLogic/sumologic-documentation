@@ -246,3 +246,79 @@ Although the log message and method of ingestion was identical, the log message 
 * If you still don’t see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
 * If your new record failed too (you see two failed records), either your log or ingest mapping weren't configured correctly. Review those configurations and try again.
 
+## Tune your environment
+
+### Why tune?
+
+Once your data gets ingested in Cloud SIEM are records, they're compared to every rule in Cloud SIEM. If there’s a match, an entity is extracted and a signal is created. Those entities are tracked and may correlate with other signals to create an insight, which is where most threat investigations begin.
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" width="400"/>
+
+You’ve already learned how to set up log and ingest mappings to ensure rules accurately match and track these entities. Now that you have a properly parsed a record in Cloud SIEM, it will be compared to rules and potentially generate signals and insights.
+
+ 
+You’ve already learned how to set up log and ingest mappings to ensure rules accurately matches and track these entities. Now that you have a properly parsed record in Cloud SIEM, it will be compared to rules and potentially generate Signals and Insights.
+
+Although you don’t have to write rules from scratch, you can. In fact, there are several customizations you can do through Cloud SIEM.
+* [Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
+* [Rules](/docs/cse/rules/about-cse-rules/) let you write logic that’s unique to your system, to cover threats or data sources that aren’t covered by built-in rules.
+* [Custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you get alerts based on just one rule or a chain of rules.
+*[ Match lists](/docs/cse/match-lists-suppressed-lists/create-match-list/) can help create groups of entities, such as domains or IP addresses, that can be used when creating other custom content.
+
+Through [role-based access controls](/docs/manage/users-roles/roles/role-based-access-control/), you can allow analysts to customize content as well. However, as a best practice, you should limit who in your organization has the permission to edit and delete rules and other content, since they can impact the number of insights that are generated.
+
+We'll learn how to write some custom rules in later sections.
+
+### Custom rules
+
+You don’t have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of out-of-the-box rules, to get you started. You can find documentation on all the out-of-the-box rules in the [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog/). These rules are updated frequently, often every few days. You can check out the most recent updates in the [release notes](/release-notes-cse/).
+
+However, if you have a specific threat you’re concerned about or a unique data source that isn’t covered, you can write a custom rule. See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create:
+* **Match rules** take a simple boolean statement, check if it’s true or false. If it’s true, then an entity is extracted and a signal is created.
+* **Threshold rules** are triggered when a match is found a certain number of times. So, for example, if one failed login attempt is acceptable, but 5 isn’t, then a threshold rule would fire after the fifth failed login attempt. 
+* **Chain rules** fire when certain events happen in a certain time window. So, for example, if you want to look for 5 failed login attempts followed by one successful log in within one hour, you’d use a chain rule.
+* **Aggregation rules** are triggered when up to six different events accumulate over time. For example, if you want a rule that looks for a large number of event types from a single device IP, you’d use aggregation rules.
+* **First Seen rules** are triggered when behavior by an entity (such as a user) is encountered for the first time. For instance, it fires the first time a user logged in from a new geographic location.
+* **Outlier rules** are triggered when behavior by an entity is encountered that deviates from "normal" baseline activity.  For instance, it fires when a user has an abnormal volume of downloaded data, or has a number of failed logins.
+
+As a Cloud SIEM admin, you’ll be able to create all these rules. Work with the SOC analysts on your team to write rules that help them investigate threats and reduce response time.
+
+Before you create custom rules from scratch, there are some best practices you’ll want to follow.
+* **Check existing rules**. Sumo Logic already has hundreds of [built-in rules](/docs/cse/rules/cse-built-in-rules/), so you might not need to write a new one. Or, you may only need to make small changes to existing rules, like adding a rule tuning expression or adjusting a severity score.
+* **Know your system**. You’ll need to understand the [schema](/docs/cse/schema/) and [log mappings](/docs/cse/schema/create-structured-log-mapping/) of all the records ingested into Cloud SIEM to write effective rules. As an administrator, it’s your responsibility to know this inside and out. 
+* **Know your risk appetite**. In addition to your system’s details about log mappings and other metadata, you need to understand your company’s risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they’d assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
+* **Know the rule types**. You also need to understand all [the types of rules](/docs/cse/rules/about-cse-rules/#rule-types). If your use case requires a chain rule, but you try writing a threshold rule, the rule might not be as efficient or effective.
+* **Make small changes**. As a best practice, when you do write a new rule or edit an existing one, make small changes. For example, instead of decreasing a severity score from 8 to 2, try decreasing it from 8 to 7 and monitoring the change for a while.
+* **Save as a prototype**. Another best practice is to [save all new rules as a prototype](/docs/cse/rules/write-match-rule#save-as-prototype). This allows you to monitor the rule’s behavior, without creating new insights and alerts.
+
+### Write a threshold rule
+
+In this section, we’ll write a rule that looks for three unique Windows event IDs related to failed logins within an hour.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+1. Click **Create**.
+1. On the **Threshold** tile click **Create**.
+1. Give your rule a name. 
+1. Configure **If Triggered**.
+    1. Under **Show Advanced**, select **Count only distinct values for a field**.
+    1. Under **When a Record matches the expression**, look for event IDs from Windows by typing this logic: `metadata_deviceEventId=4625`.
+    1. Select **matches Records with 3 distinct values**.
+    1. In **for field** select **device_ip**. 
+    1. Select **within 1 hour(s)**. This configuration looks for any three records within one hour that have the event `ID 4625`, which is the Windows event ID for a failed login attempt.
+1. Configure **Then Create Signal**.
+    1. For **On Entity** select **device_ip**, since that's the unique entity we want to track.
+    1. Enter a description in **with the description**.
+    1. Under **with a severity of** select any severity score you think is appropriate for your rule. 
+    1. In **with tags** select **Tactic** and **TA0001 - Intial Access**. Because we’re looking for failed logins, these are attempts at initial access.
+    1. Select the **Save this rule as a prototype** checkbox.
+    1. Click **Submit** to save your rule.
+
+#### Tips and tricks
+* Rule names must be unique. If your rule won’t submit, it’s possible that there is a rule with the same name.
+* The autocomplete feature can help you write the logic. For example, typing "ip" will bring up a dropdown showing all available fields related to IP addresses.
+* The syntax coloring can help you write the logic. For example, try using single quotes ('...') instead of double quotes ("..."). Notice that the syntax coloring lights up correctly when you use double quotes, which is the best practice.
+* Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the MITRE ATT&CK framework your rule is looking for when selecting tags.
+* Whenever you create a new rule in Cloud SIEM, save it as a prototype so you can monitor its behavior for a few weeks before pushing it to your system live.
+* Check for an orange triangle icon next to the **Submit** button before you submit. This will notify you of any errors or warnings.
+
+
