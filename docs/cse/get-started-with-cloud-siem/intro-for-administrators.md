@@ -351,4 +351,34 @@ After you and the SOC analysts on your team monitor Cloud SIEM for a period of t
 * **Insight generation and custom insights**. There are several ways you can customize your insights. Although the default is to cluster entities together with an activity score of at least 12 over the last 14 days, this is configurable. You can increase or decrease the time frame, or adjust the activity score threshold. You can also create custom insights, which will be created when certain rules are triggered, regardless of their severity scores.
 * **Create custom workflows**. By default, you can mark an insight as New, In Progress, or Closed. However, with custom workflows, you can create a new status. For example, if your analysts frequently like to keep insights open while digging deeper to find the root cause, you might want to create a custom workflow for that called Investigating to keep it separate from other insights that are at different stages of the In Progress stage. 
 
+### Customize the actions button
 
+The **Actions** button is available in all insights in Cloud SIEM and can help you collaborate with teammates. In this section, we’ll create a custom **Actions** button to alert an incident response team.  
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. On the **Actions** tab, click **+ Add Action**.
+1. Give your action a name. 
+1. Under **Action Type** select **Email**. 
+1. Under **Notifications** select **On Demand**.
+1. In the **Recipients** field, enter an email address. 
+1. Click **Save**.
+1. Hover your mouse over the action, click the three-dot menu on the right, and select **Enable**.
+
+Now, we’ll test our new **Actions** button.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+1. Click the name of any insight. 
+1. In the left pane, click **Actions**. You should see your new action listed.
+1. Click the action on the list to execute it. 
+
+### Next steps
+
+In this introduction article, you learned how data is forwarded from Sumo Logic to Cloud SIEM. You followed a simple log message down the data pipeline. Then you learned how to set up log and ingest mappings to ensure that message was parsed properly into a record in Cloud SIEM.
+
+You also learned how to create custom rules, to make sure the data you ingest gets used in Cloud SIEM's threat detection engine properly. And you created a custom **Actions** button, so the analysts on your team can alert others in our company.
+
+What's next?
+
+* **Configure the data you're ingesting**. Make sure you're familiar with types of data you ingest and whether or not that data is forwarded properly to Cloud SIEM. Work with the analysts on your team to determine if you're ingesting too much or too little data.
+* **Create the roles and capabilities of your team**. Assign [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) to ensure the analysts on your team have access to Cloud SIEM and can interact with the insights, signals, rules, and entities they need to complete their investigations.
+* **Create custom content**. Work with your SOC teammates to create custom log and ingest mappings, rules, insights, and actions that suit your organization's needs.
