@@ -135,7 +135,7 @@ The **CrowdStrike Falcon FileVantage - Overview** dashboard provides a comprehen
 
 Key metrics include file change types (**WRITE**, **RENAME**, **READ** **PERMISSION**, **OTHERS**, **DELETE**), displayed in an easy-to-read pie chart for quick analysis. The dashboard tracks changes by operating system, identifies top hosts and users making changes, and highlights threats or anomalies.
 
-The dashboard also shows the monitoring rules that triggered the most changes, assisting in policy refinement. A detailed table of recent file activities, including timestamps, hostnames, file paths, severities, and associated policies, is provided. Overall, the dashboard strengthens the detection and response to unauthorized or suspicious file activities. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+dashboard.png')} alt="CrowdStrike Falcon FileVantage Overview" />
+The dashboard also shows the monitoring rules that triggered the most changes, assisting in policy refinement. A detailed table of recent file activities, including timestamps, hostnames, file paths, severities, and associated policies, is provided. Overall, the dashboard strengthens the detection and response to unauthorized or suspicious file activities. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+dashboard.png')} alt="CrowdStrike Falcon FileVantage Overview" style={{border: '1px solid gray'}} width="800" />
  
 
 ### Security
