@@ -354,16 +354,16 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 ### MongoDB alerts
 
 | Alert Name | Alert Description and conditions | Alert Condition | Recover Condition |
-|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| `MongoDB - Instance Down` | This alert is triggered when we detect that the MongoDB instance is down. | Missing Data | Missing Data |
-| `MongoDB - Replication Error` | This alert is triggered when we detect errors in MongoDB replication operations. | `>` 0 | `<=` 0 |
-| `MongoDB - Replication Heartbeat Error` | This alert is triggered when we detect that the MongoDB Replication Heartbeat request has errors, which indicates replication is not working as expected. | `>` 0 | `<=` 0 |
-| `MongoDB - Secondary Node Replication Failure` | This alert is triggered when we detect that a MongoDB secondary node is out of sync for replication. | `>` 0 | `<=` 0 |
-| `MongoDB - Sharding Balancer Failure` | This alert is triggered when we detect that data balancing failed on a MongoDB Cluster with 1 mongos instance and 3 mongod instances. | `>` 0 | `<=` 0 |
-| `MongoDB - Sharding Chunk Split Failure` | This alert is triggered when we detect that a MongoDB chunk not been split during sharding. | `>` 0 | `<=` 0 |
-| `MongoDB - Sharding Error` | This alert is triggered when we detect errors in MongoDB sharding operations. | `>` 0 | `<=` 0 |
-| `MongoDB - Sharding Warning` | This alert is triggered when we detect warnings in MongoDB sharding operations. | `>` 0 | `<=` 0 |
-| `MongoDB - Slow Queries` | This alert is triggered when we detect that a MongoDB cluster is executing slow queries. | `>` 0 | `<=` 0 |
-| `MongoDB - Too Many Connections` | This alert is triggered when we detect a given MongoDB server has too many connections (over 80% of capacity). | `>=` 80 | `<` 80 |
-| `MongoDB - Too Many Cursors Open` | This alert is triggered when we detect that there are too many cursors (>10K) opened by MongoDB. | `>=` 10000 | `<` 10000 |
-| `MongoDB - Too Many Cursors Timeouts` | This alert is triggered when we detect that there are too many cursors (100) timing out on a MongoDB server within a 5 minute time interval. | `>=` 100 | `<` 100 |
+|:--|:--|:--|:--|
+| `MongoDB - Instance Down` | This alert gets triggered when we detect that the MongoDB instance is down. | Missing Data | Data Found |
+| `MongoDB - Replication Error` | This alert gets triggered when we detect errors in MongoDB replication operations. | `>` 0 | `<=` 0 |
+| `MongoDB - Replication Heartbeat Error` | This alert gets triggered when we detect that the MongoDB Replication Heartbeat request has errors, which indicates replication is not working as expected. | `>` 0 | `<=` 0 |
+| `MongoDB - Secondary Node Replication Failure` | This alert gets triggered when we detect that a MongoDB secondary node is out of sync for replication. | `>` 0 | `<=` 0 |
+| `MongoDB - Sharding Balancer Failure` | This alert gets triggered when we detect that data balancing failed on a MongoDB Cluster with 1 mongos instance and 3 mongod instances. | `>` 0 | `<=` 0 |
+| `MongoDB - Sharding Chunk Split Failure` | This alert gets triggered when we detect that a MongoDB chunk not been split during sharding. | `>` 0 | `<=` 0 |
+| `MongoDB - Sharding Error` | This alert gets triggered when we detect errors in MongoDB sharding operations. | `>` 0 | `<=` 0 |
+| `MongoDB - Sharding Warning` | This alert gets triggered when we detect warnings in MongoDB sharding operations. | `>` 0 | `<=` 0 |
+| `MongoDB - Slow Queries` | This alert gets triggered when we detect that a MongoDB cluster is executing slow queries. | `>` 0 | `<=` 0 |
+| `MongoDB - Too Many Connections` | This alert gets triggered when we detect a given MongoDB server has too many connections (over 80% of capacity). | `>=` 80 | `<` 80 |
+| `MongoDB - Too Many Cursors Open` | This alert gets triggered when we detect that there are too many cursors (>10K) opened by MongoDB. | `>=` 10000 | `<` 10000 |
+| `MongoDB - Too Many Cursors Timeouts` | This alert gets triggered when we detect that there are too many cursors (100) timing out on a MongoDB server within a 5 minute time interval. | `>=` 100 | `<` 100 |
