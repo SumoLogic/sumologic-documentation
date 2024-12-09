@@ -321,4 +321,34 @@ In this section, we’ll write a rule that looks for three unique Windows event 
 * Whenever you create a new rule in Cloud SIEM, save it as a prototype so you can monitor its behavior for a few weeks before pushing it to your system live.
 * Check for an orange triangle icon next to the **Submit** button before you submit. This will notify you of any errors or warnings.
 
+### Write a chain rule
+
+In this section, we'll write a chain rule that looks for 1 successful login after 10 failed login attempts from the same IP address within 5 minutes.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+1. Click **Create**.
+1. On the **Chain** tile click **Create**.
+1. Give your rule a name.
+1. Configure **If Triggered**.
+    1. For **When at least ___ Record matches expression** select **10**. For the rule expression enter `bro_rfb_authenticationSuccessful=False`.
+    1. For **When at least ___ Record matches expression** select **1**. For the expression enter `bro_rfb_authenticationSuccessful=True`.
+    1. Select **in exact order** and **within 5 minutes**.
+1. Configure **Then Create Signal**.
+    1. For **On Entity** select **device_ip**. This will also update the **Grouped by** field in the **If Triggered** section.
+    1. In **with the description** write a description of the rule.
+    1. For **with a severity of** select any severity score you think is appropriate for your rule. 
+    1. In **with tags** select **Tactic** and **TA0001 - Initial Access**. Because we’re looking for failed logins, these are attempts at initial access.
+1. Select the **Save this rule as a prototype** checkbox.
+1. Click **Submit** to save your rule.
+
+### Other customizations
+
+Once your data is flowing into Cloud SIEM, millions of records will be compared to rules. From these, several hundred may match the rules in your system to create signals and a handful of insights. 
+
+After you and the SOC analysts on your team monitor Cloud SIEM for a period of time, you may decide you want even further customizations and performance tuning. Many of these customizations can only be performed by an administrator. For example, as an admin, you can: 
+* **Customize the Actions button in Insights**. Admins can create custom actions. Analysts use the **Actions** button to help complete their investigations. You can use APIs when creating custom actions, so you have a lot of flexibility and creativity here to do things like execute playbooks, create JIRA tickets, or send Slack notifications.
+* **Create and update match lists and suppression lists**. Match lists are groups of entities that Cloud SIEM can use in rules. They're similar to allowlists or denylists. Cloud SIEM comes with dozens of standard match lists, but you can also create your own. 
+* **Insight generation and custom insights**. There are several ways you can customize your insights. Although the default is to cluster entities together with an activity score of at least 12 over the last 14 days, this is configurable. You can increase or decrease the time frame, or adjust the activity score threshold. You can also create custom insights, which will be created when certain rules are triggered, regardless of their severity scores.
+* **Create custom workflows**. By default, you can mark an insight as New, In Progress, or Closed. However, with custom workflows, you can create a new status. For example, if your analysts frequently like to keep insights open while digging deeper to find the root cause, you might want to create a custom workflow for that called Investigating to keep it separate from other insights that are at different stages of the In Progress stage. 
+
 
