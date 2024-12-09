@@ -309,7 +309,7 @@ In this section, we’ll write a rule that looks for three unique Windows event 
     1. For **On Entity** select **device_ip**, since that's the unique entity we want to track.
     1. Enter a description in **with the description**.
     1. Under **with a severity of** select any severity score you think is appropriate for your rule. 
-    1. In **with tags** select **Tactic** and **TA0001 - Intial Access**. Because we’re looking for failed logins, these are attempts at initial access.
+    1. In **with tags** select **Tactic** and **TA0001 - Initial Access**. Because we’re looking for failed logins, these are attempts at initial access.
     1. Select the **Save this rule as a prototype** checkbox.
     1. Click **Submit** to save your rule.
 
