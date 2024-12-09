@@ -11,7 +11,6 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/intel471-threat-intel/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/intel471-threat-intel/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/intel471-threat-intel/example.tf';
-import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
