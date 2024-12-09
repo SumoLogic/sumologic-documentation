@@ -74,7 +74,7 @@ The following table provides details on the fields returned by the index:
 | `session_id` | An identifier for every search run within the account. This is the same SESSION number displayed in the UI in the search tab. |
 | `status_message` | Gives the status of the search. The values include: **Finished successfully**, **Query failed**, and **Query canceled**. |
 | `user_name` | The email of the user that ran the search. |
-| `scanned_bytes_breakdown_by_metering_type` | Displays breakdown of the total amount of data scanned by a search query based on the metering type. It includes both charged metering types (Flex and Infrequent bytes) and non-charged metering types  (Continuous, Frequent, and FlexSecurity bytes). |
+| `scanned_bytes_breakdown_by_metering_type` | Displays breakdown of the total amount of data scanned by a search query based on the metering type. It includes both charged metering types (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). |
 
 ## Query type field values 
 
