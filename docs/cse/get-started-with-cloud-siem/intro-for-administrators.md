@@ -7,6 +7,11 @@ description: Learn basic concepts about Cloud SIEM for administrators.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+
+This article provides an introduction to Cloud SIEM for administrators.
+
+If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)). To use Cloud SIEM as an administrator, you must be assigned [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) that allow you to view and manage Cloud SIEM elements as well as perform administrator tasks.
+
 ## Build your SOC
 
 ### The Cloud SIEM data pipeline
@@ -17,12 +22,12 @@ This is Sumo Logic's Cloud SIEM home page.
 
 <img src={useBaseUrl('img/cse/cloud-siem-hud.png')} alt="Cloud SIEM main page" style={{border: '1px solid gray'}} width="800"/>
 
-* A. **Count**. A count of the Records created from incoming messages, and the Signals and Insights that have been generated.
-* B. **Insights by Status**. An overview of recent Insights and their statuses: New, In Progress, Closed, or Other.
-* C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent Records, light blue bars represent Signals, and red triangles represent Insights.
-* D. **Recent Activity**. Displays a feed of the latest Insights that have been generated.
+* A. **Count**. A count of the Records created from incoming messages, and the signals and insights that have been generated.
+* B. **Insights by Status**. An overview of recent insights and their statuses: New, In Progress, Closed, or Other.
+* C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent Records, light blue bars represent signals, and red triangles represent insights.
+* D. **Recent Activity**. Displays a feed of the latest insights that have been generated.
 
-Sumo Logic collects and ingests millions of your company's log messages. However, you may choose to send only a portion of these to Cloud SIEM. Cloud SIEM takes these messages and parses, maps, and enriches them into Records. These records are compared to Rules and, if there's a match, Entities are extracted from them and Cloud SIEM uses that information to create Signals. These Signals and Entities are correlated, and used in security detection use cases. Then, if a certain severity threshold is crossed, they become an Insight. Some of these Insights have actions available right in the Cloud SIEM platform, like alerting your SOC teammates.
+Sumo Logic collects and ingests millions of your company's log messages. However, you may choose to send only a portion of these to Cloud SIEM. Cloud SIEM takes these messages and parses, maps, and enriches them into Records. These records are compared to Rules and, if there's a match, entities are extracted from them and Cloud SIEM uses that information to create signals. These signals and entities are correlated, and used in security detection use cases. Then, if a certain severity threshold is crossed, they become an insight. Some of these insights have actions available right in the Cloud SIEM platform, like alerting your SOC teammates.
 
 <img src={useBaseUrl('img/cse/intro-data-flow.png')} alt="Cloud SIEM data flow"  width="800"/>
 
@@ -36,8 +41,8 @@ The first part of the security data pipeline is collection and ingestion in Sumo
 
 These messages are then forwarded to Cloud SIEM. It’s a good idea to periodically examine the data you’re ingesting and sending to Cloud SIEM. Ask yourself these questions:
 
-* **Are you ingesting enough data?** Cloud SIEM takes thousands or millions of records and boils them down into just a handful of Insights. Most organizations ingest more than 50GB of data every day to start finding any Insights. If your ingest volume is smaller than this, consider sending more data to Cloud SIEM or using other security solutions like the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/).
-* **Are you ingesting too much data?** More data doesn’t always mean more Insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
+* **Are you ingesting enough data?** Cloud SIEM takes thousands or millions of records and boils them down into just a handful of insights. Most organizations ingest more than 50GB of data every day to start finding any insights. If your ingest volume is smaller than this, consider sending more data to Cloud SIEM or using other security solutions like the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/).
+* **Are you ingesting too much data?** More data doesn’t always mean more insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
 * **Are you ingesting the right data?** Cloud SIEM doesn’t just work on quantity alone. Quality data will affect your performance as well. As a best practice, you’ll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/). You should also consider whether your data is structured, like key-value pairs, or unstructured, like plain text files. Most data ingested into Sumo Logic is semi-structured, like JSON logs.
 
 Once you’ve answered these questions, you can assess what is and isn’t working for you and your SOC team. You can then partition your data in Sumo Logic and forward some or all of it to Cloud SIEM.
@@ -57,7 +62,7 @@ As a Cloud SIEM admin, you’ll use both the Sumo Logic UI and the Cloud SIEM UI
 
 In the Sumo Logic UI, you’ll add the collectors and data sources that will be used in Cloud SIEM. You can write field extraction rules, which help parse your logs so they can be better used as records in Cloud SIEM. You can also configure partitions and data tiers in Sumo Logic, and decide which data gets forwarded to Cloud SIEM. Finally, you configure users and roles for both Sumo Logic and Cloud SIEM using the Sumo Logic interface. 
 
-In the Cloud SIEM UI, you’ll configure the log and ingest mappings that turn your log messages into records. You can also create custom content to help with threat investigations like rules, match lists, and Insights. Finally, you can customize what the actions, context actions, and workflows do in the Cloud SIEM interface, using APIs and other playbooks.
+In the Cloud SIEM UI, you’ll configure the log and ingest mappings that turn your log messages into records. You can also create custom content to help with threat investigations like rules, match lists, and insights. Finally, you can customize what the actions, context actions, and workflows do in the Cloud SIEM interface, using APIs and other playbooks.
 
 ## Configure and enable Cloud SIEM
 
@@ -73,7 +78,7 @@ As an admin, there are several steps you must complete to forward data to Cloud 
 1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo account rep will complete this process for you. 
 1. Next, you enable data forwarding. You can do this by adding the `_siemForward = True` field when you set up a collector. For cloud data sources, you can also toggle the **Forward to SIEM** checkbox. You’ll need to enable data forwarding each time you add a new data source into Sumo Logic, update your partitions, or make other changes to your data ingestion process.
 
-    Cloud SIEM will not ingest historic data. In other words, any new data ingested into Sumo Logic will be forwarded to Cloud SIEM as soon as you enable data forwarding. However, older data will not be processed by Cloud SIEM. Data will start flowing from Sumo Logic into Cloud SIEM within a few minutes of enabling data forwarding. You can expect Signals and Insights to start generating within a few hours.
+    Cloud SIEM will not ingest historic data. In other words, any new data ingested into Sumo Logic will be forwarded to Cloud SIEM as soon as you enable data forwarding. However, older data will not be processed by Cloud SIEM. Data will start flowing from Sumo Logic into Cloud SIEM within a few minutes of enabling data forwarding. You can expect signals and insights to start generating within a few hours.
 1. Finally, you’ll configure the log and ingest mappings. This process is usually automatic, but must be completed for certain types of custom data sources.
 
 If you do need to configure log and ingest mappings, there are certain details you need to know about your data:
@@ -90,7 +95,7 @@ Later in this introduction, we'll be ingesting and processing simple, structured
 #### Extra resources
 
 * There are many different data sources and data types you may be ingesting into Sumo Logic. You can read the details about forwarding data from various vendors and products to Cloud SIEM in [Cloud SIEM Ingestion](/docs/cse/ingestion/).
-* For the best Signals and Insights with the fewest false positives in Cloud SIEM, you need to ingest high-quality data. You can ensure your data is high quality by making sure your data and metadata are clean and organized from the moment you first ingest them into Sumo Logic. One way to do this is by writing good field extraction rules. See [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
+* For the best signals and insights with the fewest false positives in Cloud SIEM, you need to ingest high-quality data. You can ensure your data is high quality by making sure your data and metadata are clean and organized from the moment you first ingest them into Sumo Logic. One way to do this is by writing good field extraction rules. See [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 ### Enable data forwarding for an HTTP source
 
@@ -257,7 +262,7 @@ Once your data gets ingested in Cloud SIEM are records, they're compared to ever
 You’ve already learned how to set up log and ingest mappings to ensure rules accurately match and track these entities. Now that you have a properly parsed a record in Cloud SIEM, it will be compared to rules and potentially generate signals and insights.
 
  
-You’ve already learned how to set up log and ingest mappings to ensure rules accurately matches and track these entities. Now that you have a properly parsed record in Cloud SIEM, it will be compared to rules and potentially generate Signals and Insights.
+You’ve already learned how to set up log and ingest mappings to ensure rules accurately matches and track these entities. Now that you have a properly parsed record in Cloud SIEM, it will be compared to rules and potentially generate signals and insights.
 
 Although you don’t have to write rules from scratch, you can. In fact, there are several customizations you can do through Cloud SIEM.
 * [Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
@@ -381,9 +386,11 @@ What's next?
 * **Create the roles and capabilities of your team**. Assign [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) to ensure the analysts on your team have access to Cloud SIEM and can interact with the insights, signals, rules, and entities they need to complete their investigations.
 * **Create custom content**. Work with your SOC teammates to create custom log and ingest mappings, rules, insights, and actions that suit your organization's needs.
 
+## Automation
+
 ### Why automate?
 
-Automations are a key feature of Cloud SIEM that can help manage insights without a lot of manual effort.  Automations are composed of "smart actions" such as enrichments and notifications that can be automatically triggered under a set of circumstances, such as an insight being created or closed. Cloud SIEM automations use playbooks, a pre-defined set of actions in a linear or branching workflow to execute when the proper circumstances arise.  
+[Automation](/docs/cse/automation/) is a key feature of Cloud SIEM that can help manage insights without a lot of manual effort. Automations are composed of "smart actions" such as enrichments and notifications that can be automatically triggered under a set of circumstances, such as an insight being created or closed. Cloud SIEM automations use playbooks, a pre-defined set of actions in a linear or branching workflow to execute when the proper circumstances arise.  
 
 There are several reasons you might want to automate some security tasks:
 * **Faster responses**. Automating parts of your SOC can mean faster response times.
