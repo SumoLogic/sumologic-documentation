@@ -24,15 +24,15 @@ Use cases for the CrowdStrike Falcon FileVantage app include:
 - **Threat investigation**. Investigate suspicious file modifications to uncover potential breaches or insider threats.
 - **Host Activity Analysis**. Analyze file changes at the host level to identify risky behaviors or compromised endpoints.
 
-The Sumo Logic app for CrowdStrike Falcon FileVantage is an essential tool for security teams. It provides the visibility and intelligence needed to detect and respond to file-related threats, ensuring data integrity and compliance across the organization.
+The Sumo Logic app for CrowdStrike Falcon FileVantage is an essential tool for security teams. It provides the visibility and intelligence needed to detect and respond to file-related threats, ensuring data integrity, and compliance across the organization.
 
 :::info
-This app includes [built-in monitors](#crowdstrike-falcon-filevantage-monitors). For details on creating custom monitors, refer to [Create monitors for CrowdStrike Falcon FileVantage app](#create-monitors-for-crowdstrike-falcon-filevantage-app).
+This app includes [built-in monitors](#crowdstrike-falcon-filevantage-monitors). For details on creating custom monitors, refer to the [Create monitors for CrowdStrike Falcon FileVantage app](#create-monitors-for-crowdstrike-falcon-filevantage-app).
 :::
 
 ## Log types
 
-This App uses Sumo Logic’s [CrowdStrike FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to collect the FileVantage logs from CrowdStrike.
+This app uses Sumo Logic’s [CrowdStrike FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to collect the FileVantage logs from CrowdStrike platform.
 
 ### Sample log message
 
@@ -131,16 +131,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **CrowdStrike Falcon FileVantage - Overview** dashboard provides a comprehensive overview of file and directory activity, helping security analysts monitor file integrity and identify potential risks. It provides a total count of the file changes, categorizing them by severity—**Critical**, **High**, **Medium**, and **Low**—to prioritize investigations. Suppressed changes, which are ignored due to predefined policies, are also highlighted.
+The **CrowdStrike Falcon FileVantage - Overview** dashboard provides a comprehensive overview of file and directory activity, helping security analysts monitor file integrity, and identify potential risks. It provides a total count of the file changes, categorizing them by severity: **Critical**, **High**, **Medium**, and **Low**, to prioritize investigations. Suppressed changes, which are ignored due to predefined policies are also highlighted.
 
-Key metrics include file change types (**WRITE**, **RENAME**, **READ** **PERMISSION**, **OTHERS**, **DELETE**), displayed in an easy-to-read pie chart for quick analysis. The dashboard tracks changes by operating system, identifies top hosts and users making changes, and highlights threats or anomalies.
+Key metrics include file change types (**WRITE**, **RENAME**, **READ** **PERMISSION**, **OTHERS**, and/or **DELETE**), displayed in an easy-to-read pie chart for quick analysis. The dashboard tracks changes by operating system, identifies top hosts and users making changes, and highlights threats or anomalies.
 
 The dashboard also shows the monitoring rules that triggered the most changes, assisting in policy refinement. A detailed table of recent file activities, including timestamps, hostnames, file paths, severities, and associated policies, is provided. Overall, the dashboard strengthens the detection and response to unauthorized or suspicious file activities. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Crowdstrike+Falcon+FileVantage/Crowdstrike+Falcon+FileVantage+dashboard.png')} alt="CrowdStrike Falcon FileVantage Overview" style={{border: '1px solid gray'}} width="800" />
  
-
 ### Security
 
-The **CrowdStrike Falcon FileVantage - Security** dashboard is tailored for security analysts to monitor high-risk file actions and potential policy violations. It categorizes file activities based on severity (**CRITICAL**, **HIGH**, **LOW**, **MEDIUM**) and action types, such as file creation, deletion, renaming, and attribute changes. This categorization helps analysts prioritize their responses to significant security events.
+The **CrowdStrike Falcon FileVantage - Security** dashboard is tailored for security analysts to monitor high-risk file actions and potential policy violations. It categorizes file activities based on severity (**CRITICAL**, **HIGH**, **LOW**, and **MEDIUM**) and action types, such as file creation, deletion, renaming, and attribute changes. This categorization helps analysts prioritize their responses to significant security events.
 
 The dashboard tracks high-risk actions over time, enabling security teams to identify patterns or spikes in suspicious activity. There is also a dedicated section for policy violations, which lists instances where file changes conflict with configured security policies. This section includes details such as affected files, associated rules, and timestamps.
 
