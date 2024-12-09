@@ -81,7 +81,7 @@ Perform the steps below to create a Match List in Cloud SIEM.
 You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cse/administration/cse-apis).
 :::
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. 
 1. Click **Create**.
 1. On the **New Match List** popup, enter the following:
     1. **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
