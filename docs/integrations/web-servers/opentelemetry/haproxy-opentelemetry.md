@@ -24,7 +24,7 @@ The app supports Logs from the open source version of HAProxy. The App is tested
 The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
 
 :::info
-This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
+This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to the [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
 :::
 
 ## Fields Create in Sumo Logic for HAProxy
@@ -363,10 +363,10 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### HAProxy alerts
 
-| Alert Name | Alert Description and conditions | Alert Condition | Recover Condition |
-|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | `>` 0 | `<=` 0 |
-| `HAProxy - Backend Error` | This alert is triggered when we detect backend server errors. | `>` 0 | `<=` 0 |
-| `HAProxy - Backend Server Down` | This alert is triggered when we detect a backend server for a given HAProxy server is down. | `>` 0 | `<=` 0 |
-| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | `>` 0 | `<=` 0 |
-| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | `>` 0 | `<=` 0 |
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | Count `>` 0 | Count `<=` 0 |
+| `HAProxy - Backend Error` | This alert is triggered when we detect backend server errors. | Count `>` 0 | Count `<=` 0 |
+| `HAProxy - Backend Server Down` | This alert is triggered when we detect a backend server for a given HAProxy server is down. | Count `>` 0 | Count `<=` 0 |
+| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count `>` 0 | Count `<=` 0 |
+| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count `>` 0 | Count `<=` 0 |

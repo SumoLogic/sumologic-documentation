@@ -21,7 +21,7 @@ Memcached logs are sent to Sumo Logic through the OpenTelemetry [filelog receive
 
 
 :::info
-This app includes [built-in monitors](#memcached-alerts). For details on creating custom monitors, refer to [Create monitors for Memcached app](#create-monitors-for-memcached-app).
+This app includes [built-in monitors](#memcached-alerts). For details on creating custom monitors, refer to the [Create monitors for Memcached app](#create-monitors-for-memcached-app).
 :::
 
 ## Fields creation in Sumo Logic for Memcached
@@ -274,10 +274,10 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### Memcached alerts
 
-| Alert Name | Alert Description and conditions | Alert Condition | Recover Condition |
-|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| `Memcached - Cache Hit Ratio` | The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert is triggered when low cache hit ratio is less than 50% | `<=` 50 | `>` 50 |
-| `Memcached - Commands Error` | This alert is triggered when Memcached has error commands. | `>` 0 | `<=` 0 |
-| `Memcached - Current Connections` | This alert is triggered when current connections to Memcached are zero. | `<=` 0 | `>` 0 |
-| `Memcached - High Memory Usage` | This alert is triggered when the memcached exceed given threshold memory usage (in GB) | `>` 5 | `<=` 5 |
-| `Memcached - High Number of Connections` | This alert is triggered when the number of current connection for memcached exceed given threshold. | `>=` 1000 | `<` 1000 |
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Memcached - Cache Hit Ratio` | The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert is triggered when low cache hit ratio is less than 50% | Count `<=` 50 | Count `>` 50 |
+| `Memcached - Commands Error` | This alert is triggered when Memcached has error commands. | Count `>` 0 | Count `<=` 0 |
+| `Memcached - Current Connections` | This alert is triggered when current connections to Memcached are zero. | Count `<=` 0 | Count `>` 0 |
+| `Memcached - High Memory Usage` | This alert is triggered when the memcached exceed given threshold memory usage (in GB) | Count `>` 5 | Count `<=` 5 |
+| `Memcached - High Number of Connections` | This alert is triggered when the number of current connection for memcached exceed given threshold. | Count `>=` 1000 | Count `<` 1000 |
