@@ -11,45 +11,45 @@ Sumo Logic provides everything you need to conduct real-time forensics and log m
 
 Sign up for a **Trial account** through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes. With your trial, you’ll have 30 days of full access to the Enterprise plan to explore all the powerful features Sumo Logic has to offer.
 
-During the trial, you’ll experience the full capabilities of Sumo Logic’s Continuous Intelligence Platform™, including real-time forensics and log management, with elastic scalability to support deployments of any size—no complex installations or hardware upgrades required.
+During the trial, you’ll experience the full capabilities of Sumo Logic’s **Continuous Intelligence Platform™**, including real-time forensics and log management, with elastic scalability to support deployments of any size—no complex installations or hardware upgrades required.
 
-At the end of the 30-day trial, if you haven’t purchased a plan, your account will automatically convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), allowing you to continue with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time to continue enjoying premium features.
+After 30 days, your account will automatically convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), allowing you to continue with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time to unlock premium features.
 
 ## Sign up through Sumo Logic
 
 To start your 30-day free trial:
 
 1. Go to our [free trial signup page](https://www.sumologic.com/sign-up).
-1. Follow the sign-up steps to register and create your free Sumo Logic instance with a business address.
+1. Follow the sign-up steps to register and create your free Sumo Logic Trial account with a business email address.
 
-You'll then receive an account activation email.
+Once you sign up, you'll receive an account activation email.
 
 ### Activate your account
 
 :::note
-The link in your account activation email will expire after 3 days. If the link has expired, you'll need to complete the signup process again.
+The activation link in your email expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
 :::
 
-To activate your Sumo Logic Trial account:
+To activate your account:
 
-1. Check your email inbox for the activation Sumo Logic email. If you do not see it, check your Spam and Trash folders.
-1. In the email, click **Activate Now**.
+1. Check your inbox for the Sumo Logic activation email. If you do not see it, check your spam and trash folders.
+1. Open the email and click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
-Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
+Thanks for signing up! After activation, you’ll be guided through a two-step data collector installation process to start ingesting data in minutes.
 
 ### Set up Collector
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" width="400" />
-1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
-1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
+1. Select the platform (Linux, Windows, macOS, or AWS) from which you want to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" style={{border: '1px solid gray'}} width="400" />
+1. Copy, paste, and run the provided command in your Terminal or PowerShell. This will install the OpenTelemetry collector and relevant dashboards. When the installation is complete, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
 
-Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
-
+Next, you'll be taken to your onboarding checklist guide, where you can view dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
 ### Upgrade or continue with Free account
 
-After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account** will automatically convert to a **Free account**, allowing you to continue using our monitoring and log analytics services with limited features.
+#### Free account
+
+After your trial ends, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -65,7 +65,7 @@ After 30 days, if you've not purchased a plan, your Sumo Logic **Trial account**
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
-For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
+For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
 
 ## Sign up through AWS Marketplace
 
