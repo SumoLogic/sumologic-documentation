@@ -2,23 +2,23 @@
 id: about-cse-insight-ui
 title: About the Insight UI
 sidebar_label: Insight UI
-description: Learn about the contents of the Insights UI in Cloud SIEM.
+description: Learn about the contents of the insights UI in Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes the Cloud SIEM UI for working with Insights. 
+This topic describes the Cloud SIEM UI for working with insights. 
 
 ## Insights list page
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the Insights page, click **Insights** at the top of the screen. 
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the insights page, click **Insights** at the top of the screen. 
 
-[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
  
-By default, the **Insights** page presents all Insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
+By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
 :::note
-Cloud SIEM displays Insights and the Signals attached to them in the Cloud SIEM UI through the end of the data retention period defined in your account agreement. 
+Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM UI through the end of the data retention period defined in your account agreement. 
 :::
 
 ### List view
@@ -31,25 +31,25 @@ Here’s one row from the List view. The numbered definitions below correspond t
 
 <img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="800"/>
 
-1. **Creation date and time**. When the Insight was created.
-1. **Detection time**. The time between when the first event happened (when the first Record in the Insight occurred) and when the Insight was generated. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
-1. **Age**. The elapsed time since the Insight was created.
-1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
-1. **Related incidents**. Incidents that share common Entities and other characteristics.
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight is shown. 
+1. **Creation date and time**. When the insight was created.
+1. **Detection time**. The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
+1. **Age**. The elapsed time since the insight was created.
+1. **Insight name**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight. 
+1. **Related incidents**. Incidents that share common entities and other characteristics.
+1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown. 
 1. **Assignee**. The analyst assigned to the Incident.
-1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the Insight.
-1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [About Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
-1. **Entity**. The Entity associated with the Insight.
+1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the insight.
+1. **Severity**. The severity of the insight. The value is a function of the configured Entity Activity Score threshold for insight generation. For more information, see [About Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
+1. **Entity**. The entity associated with the insight.
 1. **Signal Data**. This area has three bits of information:
-   * The count of Signals that caused the Insight to be created.
-   * The total count of Signals on the Insight Entity during the detection window.
-   * How long it's been since the last Signal fired associated with the Insight fired.
-1. The visualization plots the Insight's Signals over time (x-axis) by severity (y-axis).
+   * The count of signals that caused the insight to be created.
+   * The total count of signals on the insight entity during the detection window.
+   * How long it's been since the last signal fired associated with the insight fired.
+1. The visualization plots the insight's signals over time (x-axis) by severity (y-axis).
 
 ### Board view
 
-This screenshot shows the Insights page with the Signals organized as a board. Each of the columns corresponds to an Insight status value. (One of the status values shown is a [custom Insight status](/docs/cse/administration/manage-custom-insight-statuses/)).
+This screenshot shows the insights page with the signals organized as a board. Each of the columns corresponds to an insight status value. (One of the status values shown is a [custom insight status](/docs/cse/administration/manage-custom-insight-statuses/)).
 
 The information displayed in the board view is similar to the information in the [list view](#list-view). 
 
@@ -57,10 +57,9 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 
 <img src={useBaseUrl('img/cse/board.png')} alt="Board view" style={{border: '1px solid gray'}} width="800"/>
 
-### Filtering Insights 
+### Filtering insights 
 
-You can use the **Filters** area near the top of the page to narrow down the Insights that appear on the Insights page. You can filter by:
-
+You can use the **Filters** area near the top of the page to narrow down the insights that appear on the insights page. You can filter by:
 
 * Assignee
 * [Custom Resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
@@ -74,97 +73,105 @@ You can use the **Filters** area near the top of the page to narrow down the Ins
 * Status
 * Tags
 
-## Insight Details page
+### Multi-insights list page
 
-From the HUD screen, list view, or board view, click an Insight's name to see its details.
+We offer an insights list page where you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
+
+This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can use also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
+
+The multi-insights list page requires a special environment be set up for it. To have a multi-insights list page set up for your company, contact your Sumo Logic account representative, or contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
+
+## Insight details page
+
+From the HUD screen, list view, or board view, click an insight's name to see its details.
 
 ### Insight details pane
 
-The left pane of the Insight details page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
+The left pane of the insight details page displays detailed information about the selected insight. Some of the information that appears is the same as what’s in the row for an insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
 
 <img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="300"/>
 
 1. **Actions.** The [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
-1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
-1. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
-1. **Status.** Current status of the Insight.
-1. **Assignee** and **Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
-1. **Entity.** The Entity the Insight fired on.
-1. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
-1. **Global Confidence.** The [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight, if available.
-1. **Related Incidents and Triages**. Incidents and triages that are related to this Insight.
-1. **Create Incident | Add to Incident**. Create an incident for the Insight, or add the Insight to an existing incident.
-1. **Signal Data.** The number of Signals in the Insight.
-1. **Event Time.** The event time for the of the last Signal in the Insight.
-1. **Detection Time.** The time between when the first event happened (when the first Record in the Insight occurred) and when the Insight was generated. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
-1. **Insight Created.** When the Insight was created.
-1. **Tags** and **Create a tag.** Displays any tags that have already been assigned to the Insight, and a field for adding a tag.
-1. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
-1. **Show Comments/History.** The controls allow you to switch between viewing the Insight's comments and history. 
+1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
+1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
+1. **Status.** Current status of the insight.
+1. **Assignee** and **Assign to me.** Shows the current assignee and allows you to assign yourself the insight.
+1. **Entity.** The entity the insight fired on.
+1. **Severity.** Severity of the insight. Mouse over it to see an icon you can click to change the insight severity.
+1. **Global Confidence.** The [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
+1. **Related Incidents and Triages**. Incidents and triages that are related to this insight.
+1. **Create Incident | Add to Incident**. Create an incident for the insight, or add the insight to an existing incident.
+1. **Signal Data.** The number of signals in the insight.
+1. **Event Time.** The event time for the of the last signal in the insight.
+1. **Detection Time.** The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
+1. **Insight Created.** When the insight was created.
+1. **Tags** and **Create a tag.** Displays any tags that have already been assigned to the insight, and a field for adding a tag.
+1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
+1. **Show Comments/History.** The controls allow you to switch between viewing the insight's comments and history. 
 
 ### Signal visualization area
 
-At the top of the Insight details page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
+At the top of the insight details page, you’ll see a signal timeline that visualizes the insight’s attached signals, which are the signals that caused the insight to be created, and any signals that have been manually added to the insight.
 
 <img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
-1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-1. **Entities**. Click to view [Entities](#about-the-entities-tab-graph-view) on the Signal.
-1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
-1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the Insight.
-1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
-1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
-1. **Legend**. Key to the symbols used to represent the Signals:
+1. **Signals**. The signals link allows you to switch back to the signals view from the Enrichments view, described below. 
+1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
+1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
+1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
+1. **Signal timeline**. The timeline shows how spread apart each signal in the insight is. You can use the timeline to visualize how long these events are spread over and how often the signals fire. 
+1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each signal to show the details on each. You can also click a specific signal on the timeline to jump to those details. 
+1. **Legend**. Key to the symbols used to represent the signals:
    * **Rule**. Signals that were triggered by other rules.
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * **Threat intelligence**. Signals that were fired by Threat Intel rules.
    * **File Analysis**. Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
-1. **Show Related**. Click this link to show Related Signals in addition to Attached Signals. If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
-    * A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
-    * A *Related Insight* is an Insight that a Related Signal is attached to.
-1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
-1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
+1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** checkbox, the page updates and also displays any related signals or related insights.
+    * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
+    * A *related insight* is an insight that a related signal is attached to.
+1. **Sort options**. You can sort the signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
+1. **Add Signals**. Click this option if you want to add a signal to the insight. You’ll be prompted with a list of signals that have the same entity as the current insight (if there are any), and are not already attached to another insight. A signal that you add to an insight manually is considered an attached signal.
 
 ### Signal list area 
 
-Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
+Below the signal timeline, you’ll see a list of signals. By default, only attached signals are displayed.  
 
 <img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
 
-1. **Remove** button. Removes multiple Signals selected with the checkbox. You cannot select all Signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of Signals is disabled as a minimum of 1 Signal must be attached to the Insight. Deselect 1 or more Signals to enable bulk removal.**
-1. **Checkbox**. Click to select multiple Signals for removal. 
-1. **Signal name**. Click to view Signal details.
-1. **Remove** button. Removes an individual Signal.
-1. **Entity**. The Entity associated with the Signal. Click to search for the Entity, or perform an action on the Entity.
+1. **Remove** button. Removes multiple signals selected with the checkbox. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the Insight. Deselect 1 or more signals to enable bulk removal.**
+1. **Checkbox**. Click to select multiple signals for removal. 
+1. **Signal name**. Click to view signal details.
+1. **Remove** button. Removes an individual signal.
+1. **Entity**. The entity associated with the signal. Click to search for the entity, or perform an action on the entity.
 
 
 ### Entities tab
 
-The **Entities** tab displays a list of one or more _related Entities_. This view helps a security analyst more quickly investigate the Insight to better understand the scope of a security issue that the Insight reveals. Many times, the most interesting Entity (perhaps the malicious actor) in an Insight is one of these related Entities.
+The **Entities** tab displays a list of one or more _related entities_. This view helps a security analyst more quickly investigate the insight to better understand the scope of a security issue that the insight reveals. Many times, the most interesting entity (perhaps the malicious actor) in an insight is one of these related entities.
 
-An Insight is focused on a primary Entity. For example, the username or IP address that's found in each of the Insight's Signals. Related Entities expand the analyst’s view to include additional Entities that could be relevant to the Insight because they are either listed in the Records that belong to Signals in that Insight or Cloud SIEM has determined that they are the same Entity as one included in the Insight. For example, Cloud SIEM has determined that an IP address may have been associated with a specific hostname at the time the relevant Signal was generated.
+An insight is focused on a primary entity. For example, the username or IP address that's found in each of the insight's signals. Related entities expand the analyst’s view to include additional entities that could be relevant to the insight because they are either listed in the records that belong to signals in that insight or Cloud SIEM has determined that they are the same entity as one included in the insight. For example, Cloud SIEM has determined that an IP address may have been associated with a specific hostname at the time the relevant signal was generated.
 
-The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of Related Entities. However, the **graph** view can show additional Entity relationships extending "outside" of the Insight. 
+The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of Related entities. However, the **graph** view can show additional entity relationships extending "outside" of the insight. 
 
 #### About the Entities tab list view
 
-The screenshot below shows the **Entities** tab **list** view for an Insight.
+The screenshot below shows the **Entities** tab **list** view for an insight.
 
-<img src={useBaseUrl('img/cse/related-entities.png')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entities.png')} alt="Related entities" style={{border: '1px solid gray'}} width="800"/>
 
-In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
+In this view, the primary entity is always displayed first. (This is the entity common to each of the signals in the insight). Below the primary entity all of the related entities are listed.
 
-The related Entities fall into two categories. The first category, sometimes referred to as _involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
+The related entities fall into two categories. The first category, sometimes referred to as _involved entities_, are those entities that aren't the primary entity but are listed in one or more records in the signal(s) in the insight. So, for example, while the primary entity for an insight could be a username, a record in one of the signals in that insight could also include an IP address. That address would be included in this list.
 
-Other Entities could be included due to _detected Entity relationships_. For each Entity in the Insight — including the primary Entity and other involved Entities — Cloud SIEM searches for other Entities that seem to be related (across all Records, not just that Insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. So, for example, if the first Record in an Insight was created at 8 AM on Wednesday and the last Record at 10 PM on Friday, Cloud SIEM might detect that the IP address listed in the Insight was associated with a specific hostname (in another record) at that point. 
+Other entities could be included due to _detected entity relationships_. For each entity in the insight — including the primary entity and other involved entities — Cloud SIEM searches for other entities that seem to be related (across all records, not just that insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the insight. So, for example, if the first record in an insight was created at 8 AM on Wednesday and the last record at 10 PM on Friday, Cloud SIEM might detect that the IP address listed in the insight was associated with a specific hostname (in another record) at that point. 
 
-Involved Entities are connected to the primary Entity with dashed lines. Entities whose relationships are detected are labeled "**May also be**", indented, and connected with solid lines.
+Involved entities are connected to the primary entity with dashed lines. Entities whose relationships are detected are labeled "**May also be**", indented, and connected with solid lines.
 
 :::note
-It's possible for a related Entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the Insight's Signals.
+It's possible for a related entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the insight's signals.
 :::
 
-How does Cloud SIEM detect Entity relationships outside of the Insight? Within the time range of the Insight, described above, Cloud SIEM searches for related Entities in the following normalized Record fields:
+How does Cloud SIEM detect entity relationships outside of the insight? Within the time range of the insight, described above, Cloud SIEM searches for related entities in the following normalized record fields:
 * `*_command`
 * `*_domain`
 * `*_email`
@@ -179,52 +186,52 @@ How does Cloud SIEM detect Entity relationships outside of the Insight? Within t
 * `*_username`
 
 :::note
-[Custom Entities](/docs/cse/records-signals-entities-insights/create-custom-entity-type) that match will also be included in the results.
+[Custom entities](/docs/cse/records-signals-entities-insights/create-custom-entity-type) that match will also be included in the results.
 :::
 
-#### What’s in an Entity card
+#### What’s in an entity card
 
-The card for an Entity displays any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) that have been assigned the Entity, along with the following information:
+The card for an entity displays any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) that have been assigned the entity, along with the following information:
 
-* The number of times that Entity was referenced in the Signals in the Insight.
-* The number of Insights, created during the Insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), in which the current Entity is the primary Entity.
+* The number of times that entity was referenced in the signals in the insight.
+* The number of insights, created during the insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), in which the current entity is the primary entity.
    :::note
    The detection window is 14 days by default, but can be configured to be a different duration.
    :::
-* The number of Signals that fired during the Insight generation detection window, in which the current Entity is the primary Entity, and the sum of the severities for those Signals.
+* The number of signals that fired during the insight generation detection window, in which the current entity is the primary entity, and the sum of the severities for those signals.
    :::note
-   The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match. 
+   The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your insight generation threshold is 12. If the insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match. 
    :::
 
 #### About the Entities tab graph view
 
-The screenshot below shows the **Entities** tab graph view for an Insight.
+The screenshot below shows the **Entities** tab graph view for an insight.
 
-<img src={useBaseUrl('img/cse/related-entity-graph.png')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/related-entity-graph.png')} alt="Related entities graph" style={{border: '1px solid gray'}} width="800"/>
 
-By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
+By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the insight during the detection window to aid in deeper investigation.
 
 1. **Graph view**. To switch between the list and graph view, click the chooser in the upper-right corner of the panel.
-1. **Primary Entity**. Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default.
-1. **Involved Entities**. As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines.
-1. **Related Entities**. Entities that are related to this Insight will have an Insight icon on their upper-left edge. 
-1. **Selected Entity**. When you select an Entity, it will be highlighted in blue and the Entity details pane will appear on the right.
-1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+1. **Primary Entity**. Each node in the graph represents a single entity and will include an icon representing the entity type and the value (name). The primary entity for this insight will be larger and centered by default.
+1. **Involved Entities**. As on the list view, the entities that appear on the same signal (also known as *involved* entities) will be connected with dashed lines.
+1. **Related entities**. Entities that are related to this insight will have an insight icon on their upper-left edge. 
+1. **Selected Entity**. When you select an entity, it will be highlighted in blue and the entity details pane will appear on the right.
+1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the insight during the selected time frame, an expand/contract control will appear on the entity. Clicking on that control will reveal (or hide) those additional relationships. 
 1. **Controls**. The graph view has several controls:
    * A **key** that explains how to read the graph
    * **Zoom** controls (you can also use your mouse wheel)
    * A **screen size** control, which toggles between the center pane view and a full browser window view.
    * A **reset** control, which resets the view to the original default.
    * A link to **help**.
-   * A **filter** control, which enables you to view only specific Entity types in the graph.
-   * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight.
+   * A **filter** control, which enables you to view only specific entity types in the graph.
+   * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the insight.
 
 In addition, the following can appear in the graph:
-* **Detected Entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
-* **Threat indicators**. Any Entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
-* **Hover**. If you hover over an Entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
+* **Detected entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
+* **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly.
+* **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
-Watch this micro lesson to learn more about the Entity relationship graph.
+Watch this micro lesson to learn more about the entity relationship graph.
 
 <Iframe url="https://www.youtube.com/embed/GTTwjB8y_5k?rel=0"
         width="854px"
@@ -241,19 +248,19 @@ import Iframe from 'react-iframe'; 
 
 #### Entity details in the right pane
 
-When you select an Entity on the page, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected and can include:
+When you select an entity on the page, the right pane displays details about that entity. The information displayed depends on what type of entity is selected and can include:
 
 * A Threat indicator (if any)
-* A link to the Entity’s details page
+* A link to the entity’s details page
 * Geographic location
 * Suppression Status
 * Tags
 * [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality), if it is set to something other than the default
 * Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks) it falls within, as applicable, and so on.
-* A Signal graph if the Entity was the primary Entity in any Signals during the detection window (time/date is the horizontal axis and severity of each Signal is the vertical axis; the icon/color for each point depends on the Signal type)
-* Lists of the recent Signals and Insights the Entity has been associated with, and links to each object’s details page.
+* A signal graph if the entity was the primary entity in any signals during the detection window (time/date is the horizontal axis and severity of each signal is the vertical axis; the icon/color for each point depends on the signal type)
+* Lists of the recent signals and insights the entity has been associated with, and links to each object’s details page.
 
-#### Accessing related Entities using the API
+#### Accessing related entities using the API
 
-You can access related Entity information using the Cloud SIEM API. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
+You can access related entity information using the Cloud SIEM API. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
 
