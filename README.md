@@ -8,36 +8,80 @@
   <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
 </p>
 
-Share your knowledge with the Sumo Logic community by contributing to our docs! You can contribute by creating an issue or pull request (PR) on our GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics.
+Sumo Docs is the open-source documentation site for Sumo Logic, an all-in-one cloud data analytics platform built to support Security, Operations, and Business Intelligence use cases. Sumo Logic empowers users to monitor, analyze, troubleshoot, and visualize data from their applications and network environments in real time. Its elastic processing capabilities enable seamless log data collection and management from various sources, regardless of type, volume, or location. Learn more at [sumologic.com](https://www.sumologic.com).
 
-Documentation staff members review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
+## Get involved
 
-## Contributing Content
+We welcome contributions from the community! Whether it's fixing a typo, adding new content, or proposing improvements, your input helps users make the most of Sumo Logic. You can contribute by creating an issue or submitting a pull request in our GitHub repository.
 
-For detailed instructions, including our style guide, see [Contributor Guidelines](https://help.sumologic.com/docs/contributing).
+Here’s how to get started:
+- Fork our repo and create a new branch for your content changes.
+- Preview your edits by building the site locally.
+- Submit a pull request for review.
 
-We recommend forking our repo, creating a new branch for your content changes, and submitting a pull request. We will help review, test, and merge the content for publishing.
+Our team will help review, test, and merge your contributions for publishing.
 
-## Building Locally
+Sumo Docs is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins. We also use [cla-bot](https://colineberhardt.github.io/cla-bot/) to manage our Contributor License Agreement (CLA) process.
 
-Docusaurus requires the following to build on locals:
+Before submitting an issue or pull request, please review the sections below.
 
-* [NodeJS](https://nodejs.org/en/download/) version >= 16.14
-* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
+## Table of contents
 
-The site includes translations into other languages. To build on your local:
+- [Get involved](#get-involved)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Contributing content](#contributing-content)
+- [Building locally](#building-locally)
+- [Publishing content](#publishing-content)
 
-1. Clone the repo using Git or tools like GitHub Desktop.
-1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install`.
-1. To serve and review your content, use one of the following:
-   * Use start, hot reloads as you make changes: `yarn start`. Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
-   * Use npm serve to test and review multi-languages: `npm run serve`. This build does not hot reload and requires a rebuild to test and review.
-1. To build locally and test your links, run `yarn build`.   
+## Prerequisites
 
-The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. To stop the build or served site, hit Ctrl + C to interrupt. You can enter new commands in terminal, rebuild, and restart.
+To contribute to Sumo Docs, ensure you have the following tools installed:
 
-Sumo Docs was created using [Docusaurus 2](https://docusaurus.io/) with React, Rehype, and Remark plugin support. Our CLA bot was built using [cla-bot](https://colineberhardt.github.io/cla-bot/).
+- [Node.js](https://nodejs.org/en/download/) version 18 or higher
+- [Yarn](https://yarnpkg.com/en/), installable via [Homebrew](https://brew.sh/) (`brew install yarn`)
 
-## Publishing Content
+## Installation
 
-As pull requests are merged to the `main` branch by the Sumo Logic Doc team, the content builds and deploys to a staging site. This allows you to review and test your content thoroughly on a server, rather than a local build, prior to merging your code to production.
+1. Fork and clone the repository using Git or a tool like GitHub Desktop.
+2. Navigate to the cloned repository folder:
+   ```bash
+   cd sumologic-documentation
+   ```
+3. Install dependencies:
+   ```bash
+   yarn install
+   ```
+
+## Apply your changes
+
+Make edits using Markdown syntax. Keep contributions concise, informative, and aligned with our guidelines.
+
+Refer to our [Contributor Guidelines](https://help.sumologic.com/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
+- Markdown editing
+- Proposing bug fixes
+- Testing your changes
+
+All contributions must follow our [Style Guide](https://help.sumologic.com/docs/contributing/style-guide/).
+
+## Building locally
+
+Building the site locally ensures your changes are accurate and functional before submission.
+
+1. Serve and preview your content with hot reloads:
+   ```bash
+   yarn start
+   ```
+   Any issues, such as broken links or images, will be listed. Fix them, rebuild, and verify your changes.
+
+2. Build the site and test locally:
+   ```bash
+   yarn build
+   ```
+   The static files will be generated in the `build` folder and served at `http://localhost:3000/`.
+
+To stop the local server or build process, press `Ctrl + C`. You can rebuild and restart as needed.
+
+## Publishing content
+
+Our documentation team regularly reviews issues and pull requests. While we strive to address contributions promptly, there may be delays as we work through the backlog. Your patience is appreciated.
