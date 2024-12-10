@@ -381,7 +381,7 @@ Once a rule is in your system, whether it's a custom rule you created or one cre
 
 If a record matches a rule, an entity is extracted from the record. The entity might be something like an IP address, a user name, a domain name. It tells you who the potential threat is.
 
-<img src={useBaseUrl('img/cse/intro-records-to-signals.png')} alt="Reocrds to signals" width="450"/>
+<img src={useBaseUrl('img/cse/intro-records-to-signals.png')} alt="Records to signals" width="450"/>
 
 Once an entity is in Cloud SIEM's system, Cloud SIEM tracks the total severity score of signals associated with each entity as an activity score. Once that activity score gets high enough, usually over 12 by default, then an insight is created.
 
