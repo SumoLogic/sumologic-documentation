@@ -24,7 +24,7 @@ When naming your index, use a name that's descriptive and easy to remember. Name
 
 ## Should I create a Scheduled View or use Save to Index?
 
-In most cases, if you can use a [Scheduled View](/docs/manage/views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your Scheduled Search results to an Index allows you to do this.
+In most cases, if you can use a [Scheduled View](/docs/manage/views/scheduled-views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your Scheduled Search results to an Index allows you to do this.
 
 ## Limitations
 
