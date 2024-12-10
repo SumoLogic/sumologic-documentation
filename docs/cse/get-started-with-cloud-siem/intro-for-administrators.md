@@ -144,7 +144,7 @@ In this section, we'll send a simple JSON log message to the HTTP source we crea
 
 #### Tips and tricks
 
-* If you get an error after running the CURL command in step 2, make sure your quotes are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
+* If you get an error after running the CURL command in step 2, make sure your quotation marks are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
 * If you don't see any records, try:
     * increasing the timestamp range to the last 60 minutes or the last 3 hours.
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created earlier.
