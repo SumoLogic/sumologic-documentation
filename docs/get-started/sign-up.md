@@ -47,9 +47,10 @@ Next, you'll be taken to your onboarding checklist guide, where you can view das
 
 ### Upgrade or continue with Free account
 
-#### Free account
+After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a [paid plan](#essentials-plans) at any time.
 
-After your trial ends, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
+<details>
+<summary>What's the difference between a Trial and a Free account?</summary>
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -65,7 +66,19 @@ After your trial ends, your account will automatically convert to a Free account
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
+</details>
+
 For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
+
+#### Essentials plans
+
+Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. Ready to get started? [Learn how to upgrade your plan](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
+
+<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
+
+#### Enterprise plans
+
+If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
 
 ## Sign up through AWS Marketplace
 
@@ -148,7 +161,7 @@ Should you decide to cancel, you can do this through AWS Marketplace.
 
 Your subscription will be cancelled immediately.
 
-### Kickstart your Sumo Logic experience with placeholder data  
+## Kickstart your Sumo Logic experience with placeholder data  
 
 Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded placeholder data designed to help you explore and understand the platform’s capabilities. With Kickstart Data, you can dive in immediately and explore Sumo Logic's features without needing to set up your own data sources.  
 
