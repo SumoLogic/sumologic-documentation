@@ -63,11 +63,11 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
-   1. At the top of the automations screen, click **New Automation**.
+   1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
    1. Select an Insight.
@@ -135,11 +135,11 @@ The following example shows how to configure a notification that sends an email 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
-   1. At the top of the automations screen, click **New Automation**.
+   1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
    1. Select an Insight.
@@ -239,11 +239,11 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
     1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
-    1. At the top of the automations screen, click **New Automation**.
+    1. At the top of the **Automation** tab, click **+ Add Automation**.
     1. For **Playbook**, select the playbook you created in the previous steps.
-    1. For **Expects attributes for**, select **Insight**.
-    1. For **Executes when**, select **Manually Done**.
-    1. Click **Add to List**.
+    1. For **Object (expects attributes for)**, select **Insight**.
+    1. For **Execution**, select **Manually Done**.
+    1. Click **Save**.
 1. Run the automation:
     1. Select **Insights** from the main Cloud SIEM screen.
     1. Select an **Insight**.
@@ -363,9 +363,9 @@ The following example pulls together elements of the [Simple example](#simple-ex
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
    1. Select an Insight.
