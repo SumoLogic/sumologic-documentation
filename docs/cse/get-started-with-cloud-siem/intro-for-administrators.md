@@ -1,5 +1,5 @@
 ---
-id: introduction-to-cloud-siem-for-administrators
+id: intro-for-administrators
 title: Introduction to Cloud SIEM for Administrators
 sidebar_label: Introduction for Administrators
 description: Learn basic concepts about Cloud SIEM for administrators.

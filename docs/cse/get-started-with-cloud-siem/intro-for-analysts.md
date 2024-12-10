@@ -1,5 +1,5 @@
 ---
-id: introduction-to-cloud-siem-for-analysts
+id: intro-for-analysts
 title: Introduction to Cloud SIEM for Analysts
 sidebar_label: Introduction for Analysts
 description: Learn basic concepts about Cloud SIEM for security analysts.

@@ -16,13 +16,13 @@ The following articles help you get started using Cloud SIEM.
   </div>
 </div><div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/get-started-with-cloud-siem/introduction-to-cloud-siem-for-analysts"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Introduction to Cloud SIEM for Analysts</h4></a>
+  <a href="/docs/cse/get-started-with-cloud-siem/intro-for-analysts"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Introduction to Cloud SIEM for Analysts</h4></a>
   <p>Learn basic concepts about Cloud SIEM for security analysts.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/get-started-with-cloud-siem/introduction-to-cloud-siem-for-administrators"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Introduction to Cloud SIEM for Administrators</h4></a>
+  <a href="/docs/cse/get-started-with-cloud-siem/intro-for-administrators"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Introduction to Cloud SIEM for Administrators</h4></a>
   <p>Learn basic concepts about Cloud SIEM for administrators.</p>
   </div>
 </div>
