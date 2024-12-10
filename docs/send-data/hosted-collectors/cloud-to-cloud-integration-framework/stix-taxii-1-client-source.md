@@ -107,6 +107,14 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <a href="/files/c2c/taxii-1/example.tf" target="_blank">Download example</a>
 
+### Recommended Configurations
+Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 1.
+
+| Vendor                                                                                       | Notes                                                                                                                                                   |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="/files/c2c/taxii-1/alien-vault-config.json" target="_blank">AlienVault</a>          | Use your API key as the HTTP username and leave the password blank.                                                                                     |
+| <a href="/files/c2c/taxii-1/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. We recommend you setup both this TAXII 1 feed and the Recorded Future TAXII 2 feed. |
+
 ## FAQ
 
 :::info
