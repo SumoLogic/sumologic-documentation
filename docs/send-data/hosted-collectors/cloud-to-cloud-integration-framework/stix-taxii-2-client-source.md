@@ -112,17 +112,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <a href="/files/c2c/taxii-2/example.tf" target="_blank">Download example</a>
 
-### Recommended Configurations
+### Recommended configurations
+
 Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
 
-| Vendor                                                                                                           | Notes                                                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="/files/c2c/taxii-2/cisa-dhs-config.json" target="_blank">CISA DHS Automated Indicator Sharing (AIS)</a> | No authentication setup is required. Sumo Logic uses it's own certificates for authentication.                                                          |
-| <a href="/files/c2c/taxii-2/cybersixgill-config.json" target="_blank">Cybersixgill</a>                           | Be sure to specify collection `102` in the configuration.                                                                                               |
-| <a href="/files/c2c/taxii-2/dragos-config.json" target="_blank">Dragos</a>                                       |                                                                                                                                                         |
-| <a href="/files/c2c/taxii-2/eclecticiq-config.json" target="_blank">Eclecticiq</a>                               |                                                                                                                                                         |
-| <a href="/files/c2c/taxii-2/recorded-future-config.json" target="_blank">Recorded Future</a>                     | Use your API key as the HTTP password and leave the username blank. We recommend you setup both this TAXII 2 feed and the Recorded Future TAXII 1 feed. |
-| <a href="/files/c2c/taxii-2/palo-alto-unit42-config.json" target="_blank">PaloAlto Unit42</a>                    |                                                                                                                                                         |
+| Vendor | Notes |
+| :-- | :-- |
+| <a href="/files/c2c/taxii-2/cisa-dhs-config.json" target="_blank">CISA DHS Automated Indicator Sharing (AIS)</a> | No authentication setup is required. Sumo Logic uses it's own certificates for authentication. |
+| <a href="/files/c2c/taxii-2/cybersixgill-config.json" target="_blank">Cybersixgill</a> | Be sure to specify collection `102` in the configuration. |
+| <a href="/files/c2c/taxii-2/dragos-config.json" target="_blank">Dragos</a> |
+| <a href="/files/c2c/taxii-2/eclecticiq-config.json" target="_blank">Eclecticiq</a> | |
+| <a href="/files/c2c/taxii-2/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. We recommend you setup both this TAXII 2 feed and the Recorded Future TAXII 1 feed. |
+| <a href="/files/c2c/taxii-2/palo-alto-unit42-config.json" target="_blank">PaloAlto Unit42</a> | |
 
 ## FAQ
 
