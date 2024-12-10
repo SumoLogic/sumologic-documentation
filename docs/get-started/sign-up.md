@@ -70,7 +70,7 @@ Signing up for a Sumo Logic account through the AWS Marketplace creates a new Su
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
 
-<!-- Update screenshots and instructions. Awaiting clarification from PM. -->
+<!-- Update screenshots and instructions. Awaiting clarification from PM. Differentiate free trial signup vs. contract. -->
 
 1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
 1. Select a Sumo Logic product and click **View purchase options** or **Try it for free**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_view_purchase_options.png')} alt="View purchase options" style={{border: '1px solid gray'}} width="800" />
