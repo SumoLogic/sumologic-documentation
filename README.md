@@ -23,7 +23,7 @@ Our team will help review, test, and merge your contributions for publishing.
 
 Sumo Docs is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins. We also use [cla-bot](https://colineberhardt.github.io/cla-bot/) to manage our Contributor License Agreement (CLA) process.
 
-Before submitting an issue or pull request, please review the sections below.
+Before submitting an issue or pull request, we recommend reviewing the sections below.
 
 ## Table of contents
 
