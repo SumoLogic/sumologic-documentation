@@ -96,7 +96,7 @@ On the Cloud SIEM main page, you'll see a panel similar to this one. In this cas
 
 Cloud SIEM takes everything one step further and correlates those signals into a manageable number of insights. Here, just 1 insight was created out of 4 thousand signals.
 
-An [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) is a group of signals clustered around a single entity. An insight is created when the sum of the severity scores of signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an insight would not be created. However, if those same two rules had a severity score of 7, an insight would be created.
+An [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) is a group of signals clustered around a single entity. An insight is created when the sum of the severity scores of signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an insight would not be created. However, if those same two rules each had a severity score of 7, an insight would be created.
 
 ### Explore the Cloud SIEM UI
 
@@ -170,9 +170,9 @@ Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIE
 
 * A. **Name**. The insight's name can point you to how the event occurred, or why the adversaries did it. In this case, the adversaries wanted to gain credential access.
 * B. **Assignee**. You can assign the insight to a coworker, update the insight's status, send alerts, close the insight, and perform other actions here.
-* C. **Entity**. The entity can point to who, where, or what was affected. In this case, the insight is clustered around an hostname.
+* C. **Entity**. The entity can point to who, where, or what was affected. In this case, the insight is clustered around a username.
 * D. **Left pane**. A summary of the insight's key features, like its severity, can be found in the left pane.
-* E. **Timeline**. The timeline can show you when the events occurred. In this case, there are four correlated events over several hours. Each event represents a signal.
+* E. **Timeline**. The timeline can show you when the events occurred. Each event represents a signal.
 * F. **Signals**. The signals below the timeline contain details of each event.
 
 The insight page shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
@@ -186,7 +186,7 @@ The insight page shows everything you need to start unravelling the security eve
 
 When signals cluster together, Cloud SIEM uses their tactics and techniques to name the insights they generate. The insight's name can point you to how the event occurred, or why the adversary is behaving that way. For example, a tactic name like discovery or persistence shows the reasons the adversary has. Similarly, tactic names like initial access or execution can tell you a little about the methods the adversary used. These names are just starting points, however, and you may need to revise your hypotheses as you continue your investigations.
 
-Example: An insight is named Discovery with Execution. Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
+Example: An insight is named "Discovery with Execution"." Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
 
 The timeline can tell you when the event occurred. You can see whether each signal was triggered at the same time, or sequentially, as well as whether everything happened over minutes, hours, or days. By default, insights are related signals that cluster together within the last 14 days.
 
@@ -197,11 +197,11 @@ A day in the life of a SOC analyst can be summarized as follows:
 <img src={useBaseUrl('img/cse/intro-day-in-the-life-cloud-siem.png')} alt="A day-in-the-life with Cloud SIEM" width="800"/>
 
 Cloud SIEM can help with every step of the threat investigation process:
-1. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of insights with a low false positive rate. You can choose insights from the home page of Cloud SIEM in the insight radar, under the **Insight Activity** pane, or from the **Insights** panel. 
-1. Once you choose an insight, you can dig through all the raw logs and signals to conduct deep-dive investigations and even proactive threat hunts.
-1. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
-1. You can also take certain actions directly from the insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
-1. Finally, you can update the insight. You can mark it as "in progress" or "closed". When you close it, you can mark it as "resolved," "false positive", "duplicate", or "no action". Updating the status correctly will help the Cloud SIEM insight engine produce more accurate insights for your org in the future. 
+1. **Monitor**. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of insights with a low false positive rate. You can choose insights from the home page of Cloud SIEM in the insight radar, under the **Insight Activity** pane, or from the **Insights** panel. 
+1. **Investigate**. Once you choose an insight, you can dig through all the raw logs and signals to conduct deep-dive investigations and even proactive threat hunts.
+1. **Hypothesize**. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
+1. **Take action**. You can also take certain actions directly from the insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the **Actions** button.
+1. **Update**. Finally, you can update the insight. You can mark it as "in progress" or "closed". When you close it, you can mark it as "resolved," "false positive", "duplicate", or "no action". Updating the status correctly will help the Cloud SIEM insight engine produce more accurate insights for your organization in the future. 
 
 Of course, this process will repeat each day as new insights are generated for you to investigate. 
 
@@ -235,7 +235,7 @@ When you click into a signal, you'll have the option to see the full details of 
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" style={{border: '1px solid gray'}} width="800"/>
 
-The **Entities** tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity's activity score reaches at least 12, an insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
+The **Entities** tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an activity score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity's activity score reaches at least 12, an insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="800"/>
 
@@ -253,11 +253,11 @@ You can also work with your admin to set up dashboards in Sumo Logic that track 
 
 ### Continue the investigation
 
-In a previous section, we looked at an insight. In this section, we will use Sumo Logic Search to continue the investigation. Then, we will update the status of your investigation in Cloud SIEM.
+In a previous section, we looked at an insight. In this section, we will use Sumo Logic search to continue the investigation. Then, we will update the status of your investigation in Cloud SIEM.
 
 1. Return to the insight you looked at in the previous section [Investigating an insight](#investigating-an-insight).
 1. In the left pane, hover your mouse cursor over the **Entity** field (this is randomly generated and can be a user name or an IP address). Click the context actions (six dots) icon that appears next to the entity name.
-1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You'll be redirected to Sumo Logic Search.
+1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You'll be redirected to Sumo Logic search.
 1. Make a note of the entity name that's pre-populated in the query builder.
 1. Open another log search in Sumo Logic: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
 1. Find the top 10 records by threat type for that entity. For example, if the entity is a username, in the search bar type:
@@ -270,9 +270,9 @@ In a previous section, we looked at an insight. In this section, we will use Sum
     Replace `<entity name>` with the entity name from the previous step. 
 1. Click **Start** to run the log search.
    * Make sure your quotes are straight. Copying and pasting the command sometimes changes the formatting of these quote marks to curly quotes. Manually typing the quote marks fixes this. 
-   * You may need to increase the time of the search to the Last 24 hours to see results. The default is the Last 15 minutes.
+   * You may need to increase the time of the search to the **Last 24 hours** to see results. The default is the **Last 15 minutes**.
    * Make sure you're viewing the **Messages** tab when the results load.
- 1. Explore the raw logs. The `_index=sec_record_*` query searches all the records that have been ingested by Cloud SIEM. This particular query excludes those records with nothing in the `threat_name` value. Additionally, it sorts it by threat name, and shows the most frequent threats. This will help you identify everything this user was doing around this time frame, to see if anything not caught by the Cloud SIEM rules sticks out. 
+ 1. Explore the raw logs. The `_index=sec_record_*` query searches all the records that have been ingested by Cloud SIEM. This particular query excludes those records with nothing in the `threat_name` value. Additionally, it sorts it by threat name, and shows the most frequent threats. This will help you identify everything this user was doing around this timeframe, to see if anything not caught by the Cloud SIEM rules sticks out. 
 1. When you're done exploring the raw logs, return to the insight. 
 1. If you think there's still more work to do, use the **Status** dropdown to set the insight as **In Progress**. You can also use the **Assignee** field to reassign it.
 1. If you've finished your investigation, use the **Close Insight** button or use the **Status** dropdown to set the status to **Closed**.
@@ -307,7 +307,7 @@ You're updating some of the firewalls in your system, and you don't want to trig
 1. On the **Rule Tuning** page, click **Create**.
 1. Name your rule tuning expression.
 1. **Tune selected Rules** should be selected by default. 
-1. Use the **Type to add a Rule...** search bar to find rules to add your expression to.
+1. Use the **Type to add a Rule** search bar to find rules to add your expression to.
 1. Type "firewall" into the search bar to find all firewall-related rules. 
 1. Select a firewall rule, such as **Azure Firewall Rule Modified**.
 Under **to include Records that also match the expression**, write the logic for the rule tuning expression. For help, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
@@ -331,7 +331,7 @@ See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of ru
 * **Chain rules** fire when different events happen together within a certain time window. So, for example, if you want to look for five failed login attempts followed by one successful log in within one hour, you'd use a chain rule.
 * **Aggregation rules** are triggered when up to six different events accumulate over time. For example, if you want a rule that looks for a large number of event types from a single device IP, you'd use aggregation rules.
 * **First Seen rules** generate a signal when behavior by an entity (such as a user) is encountered that hasn't been seen before, such as logging in from a distant location.
-* **Outlier rules** generate a signal when behavior by an entity (such as a user) is encountered that deviates from its "normal" baseline activity: for instance, a sudden spike in failed login attempts or abnormally large downloads.
+* **Outlier rules** generate a signal when behavior by an entity (such as a user) is encountered that deviates from its "normal" baseline activity, for instance, a sudden spike in failed login attempts or abnormally large downloads.
 
 The below image shows a blank rule template. 
 
@@ -344,7 +344,7 @@ The below image shows a blank rule template.
 * E. **On Entity**. The entity for a rule is usually something that is found in the IF statement. For example, if your boolean logic looks for matches on IP addresses, then the entity would be an IP address.
 * F. **with the Summary**. The name, summary, and description are required fields. As a best practice, fill these out with details that will help other SOC analysts understand why you wrote this rule.
 * G. **and a __ severity of**. You can configure the rule's severity score. This is on a scale from 0 to 10, with 10 being the most severe. Higher severity scores are more likely to trigger insights.
-* H. **with tags**. The tags let you choose which tactics and techniques from the MITRE ATT&CK framework your rule is looking for.
+* H. **with tags**. The tags let you choose which tactics and techniques from the [MITRE ATT&CK](https://attack.mitre.org/) framework your rule is looking for.
 
 ### Write a match rule
 
@@ -360,16 +360,16 @@ You're concerned about traffic coming from a particular IP address that isn't co
     1. **On Entity** should use an entity that's also used in your rule's logic. In this example, select **device_ip**. 
     1. In **using the name** define the name for signals fired by the rule.
     1. Fill out the **with the summary** and **with the description** fields.
-    1. Select **constant** from the with ***...*** severity dropdown.
+    1. Select **constant** from the **and a ___ severity of** dropdown.
     1. Drag the severity meter to select a severity for your rule. In this example, a low severity like 1 would be appropriate.
-    1. Under tags, select some tactics and techniques from the MITRE ATT&CK framework. Select **Tactic** and then **TA0001 - Initial Access**. 
+    1. Under tags, select some tactics and techniques from the MITRE ATT&CK framework. For this example, you could select **Tactic** and then **TA0001 - Initial Access**. 
 1. Select the **Save this rule as a prototype** checkbox. As a best practice, whenever you create a new rule, save it as a prototype so you can monitor its behavior for a few weeks before pushing it to your system live.
 1. Click **Submit** to save your rule.
 1. Verify your rule exists by going back to the rules page (step 1). You should see it there. You may need to refresh the page to find it.
 
 #### Tips and tricks
 
-* The logic under **When a Record matches the expression** can be anything you like, but is typically a simple boolean statement for Match Rules.
+* The logic under **When a Record matches the expression** can be anything you like, but is typically a simple boolean statement for match rules.
 * The autocomplete feature can help you write the logic. For example, typing "ip" will bring up a dropdown showing all available fields related to IP addresses.
 * The syntax coloring can help you write the logic. For example, try using single quotes ('...') instead of double quotes ("..."). Notice that the syntax coloring lights up correctly when you use double quotes, which is the best practice.
 * Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the MITRE ATT&CK framework your rule is looking for when selecting tags.
@@ -377,23 +377,23 @@ You're concerned about traffic coming from a particular IP address that isn't co
 
 ### Custom insights
 
-Once a rule is in your system, whether it’s a custom rule you created or one created by the Sumo team, Cloud SIEM will use it to create signals. When a rule is created, you configure its severity score. This is on a scale from 0 to 10, with 10 being the most severe.
+Once a rule is in your system, whether it's a custom rule you created or one created by the Sumo Logic team, Cloud SIEM will use it to create signals. When a rule is created, you configure its severity score. This is on a scale from 0 to 10, with 10 being the most severe.
 
 If a record matches a rule, an entity is extracted from the record. The entity might be something like an IP address, a user name, a domain name. It tells you who the potential threat is.
 
 <img src={useBaseUrl('img/cse/intro-records-to-signals.png')} alt="Reocrds to signals" width="450"/>
 
-Once an entity is in Cloud SIEM’s system, Cloud SIEM tracks the total severity score of signals associated with each entity as an activity score. Once that activity score gets high enough, usually over 12 by default, then an insight is created.
+Once an entity is in Cloud SIEM's system, Cloud SIEM tracks the total severity score of signals associated with each entity as an activity score. Once that activity score gets high enough, usually over 12 by default, then an insight is created.
 
-So, if you want an insight to be created with the default settings, you’d have to have rules with a severity score of 1 trigger 12 different times, or rules with severity scores of 6 or higher trigger twice. This is why insights typically have several signals associated with them.
+So, if you want an insight to be created with the default settings, you'd have to have rules with a severity score of 1 trigger 13 different times, or rules with higher severity scores trigger enough times to add up to 13. This is why insights typically have several signals associated with them.
 
-You can have a large number of low-severity score signals that won’t create an insight. Or, you can have a small number of high-severity score signals that will create an insight. Keep this in mind when you’re configuring the severity scores of your custom rules.
+You can have a large number of low-severity score signals that won't create an insight. Or, you can have a small number of high-severity score signals that will create an insight. Keep this in mind when you're configuring the severity scores of your custom rules.
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-signals-to-insights.png')} alt="Signals to insights" width="500"/>
 
 But what if you want to be alerted right away when a certain rule is triggered?
 
-[Custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you create insights based on one specific signal, or a chain of signals. This is great for known threats specific to your system. You won’t need to change any of your existing rules and insights. They’ll keep working normally.
+[Custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you create insights based on one specific signal, or a chain of signals. This is great for known threats specific to your system. You won't need to change any of your existing rules and insights. They'll keep working normally.
 
 ### Create a custom insight
 
@@ -403,38 +403,38 @@ You want to be alerted right away when your new custom match rule is triggered. 
 1. Click **Create**.
 1. Give your custom insight a name.
 1. Under **When Signals are created from the following** select **rules**.
-1. In **Type to add a rule...***, search for the rule you created in [Write a match rule](#write-a-match-rule) and add it to your custom insight.
+1. In **Type to add a rule**, search for the rule you created in [Write a match rule](#write-a-match-rule) and add it to your custom insight.
 1. Choose **any** from the **in ___ order** dropdown.
 1. Under **Then Create an Insight**, configure the insight.
     1. Fill out **Create an Insight with name**.
     1. You must fill out all the fields. For this exercise, you can add placeholder text like “This is a test” to the **and description** field.
     1. Select **constant** for **with a ___ severity**.
     1. Select **low** from the **that is** dropdown. 
-    1. Under **and tags**, select some tactics and techniques from the MITRE ATT&CK framework. Select **Tactic** and then **TA0001 - Initial Access**.
-1. Click **Submit** to save your insight.
-1. Verify your insight exists by going back to the custom insights page (step 1). You should see it there. You may need to refresh the page.
+    1. Under **and tags**, select some tactics and techniques from the [MITRE ATT&CK](https://attack.mitre.org/) framework. For this example, you can select **Tactic** and then **TA0001 - Initial Access**.
+1. Click **Submit** to save your custom insight configuration.
+1. Verify your custom insight configuration exists by going back to the custom insights page (step 1). You should see it there. You may need to refresh the page.
 
 #### Tips and tricks
 
 * Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the MITRE ATT&CK framework your rule is looking for when selecting tags.
-* Check for an orange triangle icon next to the submit button before you submit. This will notify you of any errors or warnings.
+* Check for an orange triangle icon next to the **Submit** button before you submit. This will notify you of any errors or warnings.
 
 ### Other customizations and best practices
 
-Remember, Cloud SIEM’s out-of-the-box rules and insights are great. But we want you to have the flexibility to customize your environment. There are three simple three ways to customize Cloud SIEM’s rules and insights.
+Remember, Cloud SIEM's out-of-the-box rules and insights are great. But we want you to have the flexibility to customize your environment. There are three simple three ways to customize Cloud SIEM's rules and insights.
 
-* First, [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
-* Second, [custom rules](/docs/cse/rules/before-writing-custom-rule/) let you write logic that’s unique to your system, to cover threats or data sources that aren’t covered by built-in rules.
-* Finally, [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) allow you to get alerts based on just one rule or a chain of rules.
+* [Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
+* [Custom rules](/docs/cse/rules/before-writing-custom-rule/) let you write logic that's unique to your system, to cover threats or data sources that aren't covered by built-in rules.
+* [Custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) allow you to get alerts based on just one rule or a chain of rules.
 
-Before you create custom rules from scratch, there are some best practices you’ll want to follow.
+Before you create custom rules from scratch, there are some best practices you'll want to follow.
 
 * **Check existing rules**. Sumo Logic already has hundreds of [built-in rules](/docs/cse/rules/cse-built-in-rules/), so you might not need to write a new one. Or, you may only need to make small changes to existing rules, like adding a rule tuning expression or adjusting a severity score.
-* **Know your system**. You’ll need to understand the [schema](/docs/cse/schema/) and [log mappings](/docs/cse/schema/create-structured-log-mapping/) of all the records ingested into Cloud SIEM to write effective rules. You might want to work with an administrator on your team who knows this to write better rules.
-* **Know your risk appetite**. In addition to your system’s details about log mappings and other metadata, you need to understand your company’s risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they’d assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
+* **Know your system**. You'll need to understand the [schema](/docs/cse/schema/) and [log mappings](/docs/cse/schema/create-structured-log-mapping/) of all the records ingested into Cloud SIEM to write effective rules. You might want to work with an administrator on your team who knows this to write better rules.
+* **Know your risk appetite**. In addition to your system's details about log mappings and other metadata, you need to understand your company's risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they'd assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
 * **Know the rule types**. You also need to understand all [the types of rules](/docs/cse/rules/about-cse-rules/#rule-types). If your use case requires a chain rule, but you try writing a threshold rule, the rule might not be as efficient or effective.
 * **Make small changes**. As a best practice, when you do write a new rule or edit an existing one, make small changes. For example, instead of decreasing a severity score from 8 to 2, try decreasing it from 8 to 7 and monitoring the change for a while.
-* **Save as a prototype**. Another best practice is to [save all new rules as a prototype](/docs/cse/rules/write-match-rule#save-as-prototype). This allows you to monitor the rule’s behavior, without creating new insights and alerts.
+* **Save as a prototype**. Another best practice is to [save all new rules as a prototype](/docs/cse/rules/write-match-rule#save-as-prototype). This allows you to monitor the rule's behavior, without creating new insights and alerts.
 
 Rule tuning, custom rules, and custom insights are just a taste of what you can customize in Cloud SIEM. However, some customizations, like configuring the [Actions button](/docs/cse/administration/create-cse-actions), need admin privileges. You can work with your admin or your Sumo Logic account rep to customize:
 * [Log mappings](/docs/cse/schema/create-structured-log-mapping/)
