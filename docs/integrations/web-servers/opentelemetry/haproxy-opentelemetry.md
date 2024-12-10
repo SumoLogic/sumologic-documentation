@@ -19,9 +19,13 @@ The OpenTelemetry collector runs on the same host as HAProxy, where it uses the 
 
 ## HAProxy log types
 
-The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
+The app supports logs from the open source version of HAProxy. This app is tested on the `2.3.9` version of HAProxy.
 
 The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
+
+:::info
+This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to the [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
+:::
 
 ## Fields Create in Sumo Logic for HAProxy
 
@@ -185,6 +189,24 @@ May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
+## Sample metrics
+
+```json
+{
+  "Query": "A",
+  "metric": "avg",
+  "haproxy.proxy_name": "stats",
+  "webengine.cluster.name": "haproxy_otel_cluster",
+  "webengine.node.name": "node1",
+  "min": 3385124.8,
+  "max": 3553632,
+  "latest": 3553632,
+  "avg": 3469494.86851211,
+  "sum": 1002684017.0,
+  "count": 289,
+}
+```
+
 ## Sample queries
 
 ### Logs
@@ -220,25 +242,7 @@ sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.serv
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
 ```
 
-## Sample metrics
-
-```json
-{
-  "Query": "A",
-  "metric": "avg",
-  "haproxy.proxy_name": "stats",
-  "webengine.cluster.name": "haproxy_otel_cluster",
-  "webengine.node.name": "node1",
-  "min": 3385124.8,
-  "max": 3553632,
-  "latest": 3553632,
-  "avg": 3469494.86851211,
-  "sum": 1002684017.0,
-  "count": 289,
-}
-```
-
-## Viewing HAProxy dashboards
+## Viewing the HAProxy dashboards
 
 ### Overview
 
@@ -349,3 +353,20 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
+
+
+## Create monitors for HAProxy app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### HAProxy alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Error` | This alert is triggered when backend server error is detected. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Server Down` | This alert is triggered when a backend server for a given HAProxy server is down. | Count > 0 | Count < = 0 |
+| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
