@@ -186,7 +186,7 @@ The insight page shows everything you need to start unravelling the security eve
 
 When signals cluster together, Cloud SIEM uses their tactics and techniques to name the insights they generate. The insight's name can point you to how the event occurred, or why the adversary is behaving that way. For example, a tactic name like discovery or persistence shows the reasons the adversary has. Similarly, tactic names like initial access or execution can tell you a little about the methods the adversary used. These names are just starting points, however, and you may need to revise your hypotheses as you continue your investigations.
 
-Example: An insight is named "Discovery with Execution"." Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
+Example: An insight is named "Discovery with Execution". Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
 
 The timeline can tell you when the event occurred. You can see whether each signal was triggered at the same time, or sequentially, as well as whether everything happened over minutes, hours, or days. By default, insights are related signals that cluster together within the last 14 days.
 
