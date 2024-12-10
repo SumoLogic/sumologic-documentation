@@ -270,7 +270,7 @@ For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting
 
 Here are some troubleshooting steps specific to macOS.
 
-### uninstall.sh:No such file or directory error when uninstalling collector
+### uninstall.sh: No such file or directory error when uninstalling collector
 
 If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
