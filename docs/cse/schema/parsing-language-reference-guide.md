@@ -51,6 +51,7 @@ Patterns are stored in `patterns.conf` as `<Pattern Name> = <regex>` key value p
 In parsers, you refer to a pattern as `%{<Pattern Name>}`. You can use a pattern anywhere that regex can be used.  You can assign patterns to a
 named capture group like this:
 
+
 `%{<Pattern Name>:<field_name>}`
 
 For available patterns, see [Parsing Patterns](/docs/cse/schema/parsing-patterns).
