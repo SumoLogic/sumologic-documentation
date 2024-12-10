@@ -161,7 +161,7 @@ Should you decide to cancel, you can do this through AWS Marketplace.
 
 Your subscription will be cancelled immediately.
 
-### Kickstart your Sumo Logic experience with placeholder data  
+## Kickstart your Sumo Logic experience with placeholder data  
 
 Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded placeholder data designed to help you explore and understand the platform’s capabilities. With Kickstart Data, you can dive in immediately and explore Sumo Logic's features without needing to set up your own data sources.  
 
