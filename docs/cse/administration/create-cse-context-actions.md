@@ -57,7 +57,7 @@ import Iframe from 'react-iframe'; 
 
 ## Configure a Context Action
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
 1. On the **Context Actions** tab click **+ Add Context Action**.
 1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="400"/>
     1. **Name**. Enter a name for the Context Action. 
