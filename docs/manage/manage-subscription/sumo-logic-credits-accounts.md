@@ -44,7 +44,7 @@ Trials are limited to 30 days. If you need to extend your trial period, contact 
 
 Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription.
 
-<!-- add Collaborating, Troubleshooting, Orchestrating at launch -->
+<!-- add Collaborating, Troubleshooting, Orchestrating at launch --> 
 
 You can [upgrade](upgrade-sumo-logic-credits-account.md) from a Essential plan to an Enterprise plan at any time.
 
