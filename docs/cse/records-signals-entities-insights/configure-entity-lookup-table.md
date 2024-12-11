@@ -71,16 +71,17 @@ For instructions, see [Create a Lookup Table](/docs/search/lookup-tables/create-
 
 After you've [created your Entity Lookup Table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic Library, you can configure it in Cloud SIEM.
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  
-1. On the **Entity Normalization** page, click **Lookup Tables**.
-1. Click **Create** on the **Lookup Tables** tab.
-1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="600"/>  
-1. **Type**. Choose the type of normalization you want to set up.
-   * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
-   * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
-   * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
-1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.
-1. **Substitution Column Name**. Enter the name of the Lookup Table column that contains the value you want to substitute for the lookup column.
-1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
-1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the [Lookup Table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
-1. Click **Create**.     
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  
+1. On the **Normalization** tab, click **Lookup Tables**.
+1. Select the lookup table.
+1. The **Existing Lookup Table** popup appears. Following is an example.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Edit** to configure the lookup table. Note that most fields are read-only.
+    1. **Path**. The path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` <br/>To see the path to the [Lookup Table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library, hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
+    1. **Type**. The type of normalization:
+       * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
+       * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
+       * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
+    1. **Column Name**. The name of the Lookup Table column that contains the primary key for the table.
+    1. **Sub Column Name**. The name of the Lookup Table column that contains the value you want to substitute for the lookup column.
+    1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
+    1. Click **Save**.     
