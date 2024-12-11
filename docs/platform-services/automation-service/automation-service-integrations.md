@@ -65,7 +65,24 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ## Create a new integration
 
-You can build basic integrations without having to provide custom YAML files.
+### With the Automation Service
+
+To create a new integration, you must supply YAML configuration files. See the following for more information:
+* For an example of creating a new integration by supplying YAML files, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration). 
+* To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/automation-service-integration-framework/#integration-framework-file-formats). 
+* For example YAML files, see [Example files](/docs/platform-services/automation-service/automation-service-integration-framework/#example-files). 
+
+To create a new new integration:
+1. Create a YAML file containing the configuration for the new integration. 
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
+1. In the **New Integration** dialog, click **Upload File**.
+    1. Drag the file into the **Select File** box.
+    1. Click **Upload**. An integration is created based on the YAML file.
+
+### With Cloud SOAR
+
+If you have Cloud SOAR installed, you can build basic integrations without having to provide custom YAML files.
 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
