@@ -13,7 +13,7 @@ This page explains how to upgrade a Free or Trial Sumo Logic account to Essentia
 
 You must be an account administrator to upgrade your Sumo Logic plan.
 
-## Update a Free or Trial Credits account to Essentials
+## Upgrade a Free or Trial Credits account to Essentials
 
 Using our self-service checkout, you can upgrade for an Essentials plan in minutes using a credit card—no need to interact with the sales team.
 
@@ -36,11 +36,16 @@ Steps to upgrade:
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration** > **Account** > **Manage Plan**.  
    * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration** > **Manage Plan**.
 
-1. Select your Essentials plan:
+1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).
    - Choose **monthly** or **annual** billing.
 
-1. Enter your payment details in the secure checkout form. Once your payment is processed, your account will be upgraded, granting you immediate access to premium features. The payment is calculated for the full day on which you confirm and pay. Your subscription begins at midnight Pacific Standard Time (PST) on that day.
+1. Enter your payment details.
+   - Fill out the secure payment form. Once your payment is processed, your account will be upgraded, granting you immediate access to premium features. The payment is calculated for the full day on which you confirm and pay. Your subscription begins at midnight PST on that day.
+
+## Adjusting Essentials plans
+
+You can switch between Essentials plans or update billing cycles as needed. Changes take effect immediately or at the next billing cycle, depending on your request.
 
 The table below explains our Essentials plan billing plan change policies.
 
@@ -60,9 +65,9 @@ The table below explains our Essentials plan billing plan change policies.
 
 To modify your payment details, see [Manage Billing Information](/docs/manage/manage-subscription/manage-billing-information). If you encounter issues during your upgrade, contact [Support](https://support.sumologic.com/support/s/).
 
-#### Enterprise plans
+## Enterprise plans
 
-If our Essentials plans do not fully meet your needs and you’re interested in exploring further options like Cloud SIEM and SOAR, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
+If your needs exceed Essentials plan capabilities, contact [Sales](https://www.sumologic.com/contact-us/) to explore Enterprise plan features like Cloud SIEM and advanced tiered analytics. Our team is here to help you find the best fit for your organization.
 
 ## Cancel your account
 
