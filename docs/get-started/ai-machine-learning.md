@@ -16,8 +16,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this document, you'll learn about Sumo Logic features that leverage artificial intelligence (AI), machine learning (ML), and pattern recognition to support cloud security management, mitigate risks, reduce manual workloads for your team, and streamline incident response and resolution.
 
-Our AI and security analytics capabilities allow security and development teams to align around a single source of truth and collect and act on data insights more quickly.
-
 <details>
 <summary>What do these terms mean?</summary>
 
@@ -31,11 +29,9 @@ Pattern learning is fundamental to machine learning and deep learning, where alg
 
 </details>
 
-Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
+Our AI and security analytics capabilities enable security and development teams to align around a unified source of truth, allowing for quicker collection and action on data insights.
 
-<!-- Remove or ask brand to create a cleaner, branded version
-<img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
--->
+Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
 
 Sumo Logic provides observability into your technology stack by analyzing the millions of log files created in your environment, detecting anomalies and outlier data, and reporting security issues in a timely fashion with fewer false positives.
 

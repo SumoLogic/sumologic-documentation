@@ -101,6 +101,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
+  <p>Monitor and analyze file integrity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike FDR Host Inventory</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
@@ -109,6 +115,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-spotlight"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Spotlight</h4></a>
   <p>Gather real-time visibility into the vulnerabilities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/digital-guardian-arc"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
+  <p>Monitor, detect, and respond to critical events.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -145,6 +157,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/istio"><img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="icon" width="70"/><h4>Istio</h4></a>
   <p>Gain visibility into your Istio and control plane component performance.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
+  <p>Identify security threats by analyzing threat events and device events.</p>
   </div>
 </div>
 <div className="box smallbox card">

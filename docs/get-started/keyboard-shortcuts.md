@@ -1,7 +1,7 @@
 ---
 id: keyboard-shortcuts
 title: Keyboard Shortcuts
-sidebar_label: Keyboard Shortcuts
+sidebar_label: Keyboard shortcuts
 description: Sumo Logic keyboard shortcuts.
 ---
 
@@ -129,6 +129,3 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 | Option + Shift + D | Open Dashboard page in a new tab |
 | Option + Shift + Q | Duplicate a query in a new tab (Search/Metrics only) |
 | Command + K | Toggle Go To... |
-
-
-

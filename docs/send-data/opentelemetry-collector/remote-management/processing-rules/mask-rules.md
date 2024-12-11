@@ -10,6 +10,10 @@ description: Create a mask rule to replace an expression with a mask string.
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+:::note
+This document do not support masking logs for Windows source template. Refer to [Mask Rules for Windows Source Template](mask-rules-windows.md) to mask logs for Windows source template.
+:::
+
 A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default `"#####"`.
 
 Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is a good method for reducing overall ingestion volume.
