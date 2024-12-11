@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Cloud SIEM rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view Rules, in the top menu select **Content > Rules**. 
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Rules, in the top Cloud SIEM menu select **Content > Rules**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
  
@@ -32,6 +32,100 @@ Watch this micro lesson to learn more about rules.
 
 import Iframe from 'react-iframe'; 
 
+## Rule types
+
+There are several kinds of rules. Each supports a different sort of firing behavior (For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).)
+
+* **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
+* **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
+* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about Aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
+* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple Records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
+* **First Seen rule**. Fires when behavior by an Entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
+* **Outlier rule**. Fires when behavior by an Entity is encountered that deviates from its baseline activity. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
+
+## Rule limits
+
+Limits are set on how often a rule fires so that the system is not overloaded. For example, if a rule fires too many signals in an hour, it can cause performance problems for all rule processes. If a rule exceeds a limit, its [rule status](#rule-status) changes from Active to Failed and the rule is disabled. 
+
+| Type | Limit |
+| :-- | :-- |
+| Total allowed custom rules of each [rule type](#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
+| Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
+| Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
+| Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
+| Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
+
+*Applies to all [rule types](#rule-types) except Match rules. 
+<br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
+
+:::note
+Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
+:::
+
+## Rule status
+
+### View a rule's status
+
+You can see a rule's status while viewing the rule:
+* On the rule list page: <br/><img src={useBaseUrl('img/cse/rule-status-on-list-page.png')} alt="Rule status on list page" style={{border: '1px solid gray'}} width="800"/>
+* On the rule details page: <br/><img src={useBaseUrl('img/cse/rule-status-on-detail-page.png')} alt="Rule status on details page" style={{border: '1px solid gray'}} width="800"/>
+
+### Kinds of rule status
+
+Following are the different kinds of rule statuses. A rule's status can change depending on whether it exceeds [rule limits](#rule-limits).
+
+| Status | Description | Action required |
+| :-- | :-- | :-- |
+| **Active** | The rule is executing normally. | No action required. |
+| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-degraded-info-button.png')} alt="Rule degraded information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. |
+| **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-failed-info-button.png')} alt="Rule failed information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the API. |
+| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
+
+### Query for rule status changes
+
+You can query audit logs for rule status changes. (For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).)
+
+#### Example query for rule status changes
+
+The following query queries for match rules whose status was changed automatically to `Warning` by the system:
+
+```sql
+_index=sumologic_system_events _sourceCategory=cseRule
+| json field=_raw "templatedMatchRule.status"
+| where eventname = "TemplatedMatchRuleUpdated" 
+| where templatedMatchRule.status = "Warning"
+```
+
+You can set up this query for one or multiple rules, with one or multiple statuses.
+* To query for other rule types, replace the `field` and `eventname` strings. 
+* To query for for other statuses, replace `Warning` in the example above with another status. For example:
+   * `"Active"`
+   * `"Degraded"`
+   * `"Disabled"`
+   * `"Failed"`
+   * `"Warning"`
+
+#### Example query for disabled rules
+
+If you want to query simply for match rules that are disabled, you could execute a query like this:
+
+```sql
+(_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
+| json field=_raw "templatedMatchRule.enabled"
+| where eventname = "TemplatedMatchRuleUpdated" 
+| where templatedMatchRule.enabled = "false"
+```
+
+This query looks for match rules that were manually disabled (`_index=sumologic_audit_events`) or automatically disabled by the system (`_index=sumologic_system_events`).
+
+### Create a monitor to alert on rule status changes
+
+You can [create a monitor](/docs/alerts/monitors/create-monitor/) to generate alerts when rules statuses change. This will alert you when you need to take action.
+
+For example, you could use the [example query for rule status changes](#example-query-for-rule-status-changes) above in your monitor. It will alert when the status of match rules change to `Warning`. 
+
+<img src={useBaseUrl('img/cse/example-monitor-for-rule-status-change.png')} alt="Example monitor for rule status change" style={{border: '1px solid gray'}} width="700"/>
 
 ## About rule expressions
 
@@ -76,17 +170,6 @@ The screenshot below shows a rule whose "On Entity" attributes are `srcDevice
 <img src={useBaseUrl('img/cse/on-entity.png')} alt="On Entity configuration" width="300"/>
 
 When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
-
-## Rule types
-
-There are several kinds of rules. Each supports a different sort of firing behavior (For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).)
-
-* **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
-* **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
-* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about Aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
-* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple Records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
-* **First Seen rule**. Fires when behavior by an Entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
-* **Outlier rule**. Fires when behavior by an Entity is encountered that deviates from its baseline activity. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
 ## Product identification metadata fields
 
