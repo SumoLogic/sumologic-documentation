@@ -31,7 +31,7 @@ jobs:
         - name: Build the Docusaurus site
           env:
             NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
-          run: yarn build    
+          run: yarn build
     spellcheck:
       runs-on: ubuntu-latest
       steps:
