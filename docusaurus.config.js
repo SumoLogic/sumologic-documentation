@@ -278,8 +278,8 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
+      id: 'copilot',
+      content: 'Check out <a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a>, our new AI-powered logs assistant!',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
     },

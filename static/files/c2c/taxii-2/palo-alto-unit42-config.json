@@ -1,0 +1,12 @@
+{
+  "name": "Palo Alto Unit42 TAXII",
+  "authType": "Basic",
+  "basicUsername": "--- USER EMAIL ACCOUNT HERE ---",
+  "basicPassword": "--- USER PASSWORD HERE ---",
+  "ti_version": "2.0",
+  "ti_root_source": "1",
+  "ti_discovery_url": "https://stix2.unit42.org/taxii/",
+  "ti_user_source_id": "Palo Alto Unit42 Indicators",
+  "enable_limit": false,
+  "polling_interval": "1h"
+}
