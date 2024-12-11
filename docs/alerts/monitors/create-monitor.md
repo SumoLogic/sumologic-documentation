@@ -139,10 +139,10 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 * For [static logs monitors](#static-detection-method), triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
    | When detection window (Y) is | Evaluate trigger every |
    |:-----------------------------|:-----------------------|
-   | 30m or less  | 1m  |
-   | 30m to 3h    | 2m |
-   | 3hr to 12h   | 10m  |
-   | Greater than 12h  | 20m |
+   | Less than 15m | 1m  |
+   | 15m to 1h     | 2m  |
+   | 1h to 6h      | 10m |
+   | 6h to 1d      | 20m |
 * For [anomaly logs monitors](#anomaly-detection-method), triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
    ```
    _sourceCategory=Labs/Apache/Access
