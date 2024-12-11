@@ -21,7 +21,7 @@ Just as for Entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom Entity type:
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
 1. On the **Custom Entity Types** tab click **+ Add Custom Type**. 
 2. The **Add Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" style={{border: '1px solid gray'}} width="400"/>
 3. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 

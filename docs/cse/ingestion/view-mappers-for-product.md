@@ -13,7 +13,7 @@ See the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-con
 
 Cloud SIEM may have more than one log mapping for a particular product. For example, there may be a separate mapping for each message type issued by a product. You can view the available mappings in the Cloud SIEM UI.
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
 1. In the **Filters** area, filter by **Output Vendor**, **Output Product**, or both. 
 
 In the following screenshot, the list of mappings is filtered to display mappings for *Output Vendor is Proofpoint*. The list contains six mappings for two Proofpoint products: one for Proofpoint On Demand, and the rest for Targeted Attack Protection.<br/><img src={useBaseUrl('img/cse/proofpoint-log-mappers.png')} alt="Proofpoint log mapping" style={{border: '1px solid gray'}} width="800"/>

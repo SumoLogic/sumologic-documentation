@@ -22,7 +22,7 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 
 ## Create a custom sub-resolution
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Resolutions**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Workflow** select **Resolutions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  
 1. On the **Insight Resolutions** tab, click **+ Add Resolution**. 
 1. The **Add Insight Resolution** popup appears.
     1. **Name**. Enter a meaningful name for the new resolution.
