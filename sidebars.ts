@@ -2891,6 +2891,16 @@ integrations: [
             'cse/administration/mitre-coverage',
           ],
         },
+        {
+          type: 'category',
+          label: 'Troubleshoot Cloud SIEM',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/troubleshoot/index'},
+          items: [
+            'cse/troubleshoot/cloud-siem-parsers',
+          ],
+        },
       ],
     },
     {
