@@ -1,5 +1,5 @@
 ---
-id: cloud-siem-parsers
+id: troubleshoot-parsers
 title: Troubleshoot Parsers
 sidebar_label: Parsers
 description: Learn how to troubleshoot problems with log parsers.
@@ -22,12 +22,11 @@ Parsing issues can manifest in several ways:
 * Parsing failures. All or part of a parser is not handling logs as intended.
 * Incorrect parsing. Specific fields or metadata being parsed incorrectly (wrong key value pairs or event_id metadata)
 
+## Forwarding Logs to Cloud SIEM with Parsers
 
+### Forwarding Methods
 
-Forwarding Logs to Cloud SIEM with Parsers
-
-Forwarding Methods
-SIEM Forward + Parser (recommended)
+#### SIEM Forward + Parser (recommended)
 
 The recommended method is to set _siemForward = true and _parser = path/to/parser. This can be set several ways:
 At the source
@@ -40,7 +39,7 @@ Sending subsets of logs to Cloud SIEM is useful as not all log data is useful fr
 
 Many Cloud-To-Cloud (C2C) sources set the _parser and _siemForward metadata within the parser bypassing the need to manually specify for these sources.
 
-Other Methods
+#### Other Methods
 
 Other methods depend upon legacy methods which bypass parsers and are generally not recommended. These include:
 
@@ -49,7 +48,7 @@ For structured logs, this will use a Sumo Logic Ingest Mapping and has limited o
 For unstructured logs, this will utilize legacy “Grok” parsers which are approaching EOL and are not maintained outside of critical bug fixes.
 Older C2C sources set _siemForward and mapper metadata fields within the C2C.
 
-Best Practices
+### Best Practices
 
 Always use a parser when possible
 Provides consistent field extraction
@@ -62,28 +61,29 @@ Ensure parser matches the data format
 Use system parsers when available
 Create custom parsers only when necessary
 Following these fundamentals will help prevent common parsing issues and simplify troubleshooting when problems occur.
-Identifying Parser Issues
 
-Using the Failed Records Dashboard
+## Identifying Parser Issues
+
+### Using the Failed Records Dashboard
 
 The Cloud SIEM Enterprise Audit App provides dashboards and queries for greater visibility into Cloud SIEM activity. Troubleshooting parser failures is aided by the Failed Record Analysis dashboard and query found within Enterprise Audit - Cloud SIEM>Record Analysis>Failed Record Analysis (Enterprise Audit - Cloud SIEM app must be installed).
 
-Common Failure Types
+#### Common Failure Types
 
 Parser Failures: Include parser path and specific parsing error
 Mapper Failures: Usually mention mapper or mapping issues
 Mixed Failures: May indicate parser output doesn't match mapper expectations
 
 
-Investigating Failed Records
+#### Investigating Failed Records
  
-Identify the Pattern
+##### Identify the Pattern
 
 Look for commonalities in failed records
 Note specific error messages
 Check if failures are limited to certain sources
 
-Analyze Error Messages
+##### Analyze Error Messages
 
 Common Errors
 Fatal: /Parsers/System/Vendor/Product Name did not produce an event.
@@ -99,13 +99,13 @@ Indicates an required key value pair is missing from the parsed log and the log 
 Fatal:/Parsers/System/Vendor/Product Name- wrapper did not return the wrapped log entry
 A parser utilizing a wrapper transform did not find the log that is supposed to be present causing the parser failure
 
-Check for Recent Changes
+##### Check for Recent Changes
 For log sources which were previously parsed successfully:
 Vendors will occasionally make modifications to the log format or field names within the logs which cannot be handled by existing parsers
 Source configuration changes to logging on the appliance, service, or application sending logs may result in parsing issues or failures
 Sumo Logic is continuously making updates to our parser catalog. While these changes undergo regression testing, there can be unforeseen cases not caught in regression testing. Cloud SIEM Content Release Notes will note any modifications to out-of-the-box parsers by date with a brief summary of the changes.
 
-Other Considerations
+##### Other Considerations
 Parsing failures can occur when there is no issue with the parser for a variety of reasons:
 The parser was designed for a different version or log format than the ingested logs
 A new parser may be needed to accommodate these logs
@@ -120,7 +120,7 @@ There are niche use cases which can be accounted for by customizing a parser tha
 Verbose and Debug level logging frequently fall into this category
 
 
-Pivot to Raw Logs and Troubleshoot with the Parser
+##### Pivot to Raw Logs and Troubleshoot with the Parser
 With the error(s) identified, pivot to the raw message(s) for further troubleshooting. Note the specific parser(s) which are failing.
 
 Extract metadata_sourcemessageId from the failed record
@@ -128,7 +128,7 @@ Use _messageId (same as metadata_sourcemessageId) in a search to locate the orig
 Copy the raw message(s) and paste into the parser UI
 Use the parser UI to search for _messageID(s) with the appropriate timeframe to bring the logs into the UI to test
 
-Troubleshooting Existing Parsers
+### Troubleshooting Existing Parsers
 If you have identified a log message that should be parsed by an existing parser (the format is right, there is a clear security use case etc.) then it helps to understand the structure of the parser first to begin troubleshooting.
 
 Some parsers are very simple (most often structured log formats)
@@ -151,8 +151,10 @@ Some logs may be missing a timestamp and _messagetime from the Sumo collector or
 Unstructured logs with many different event types or variations between events
 Each event type must be handled by its own transform and often requires a regular expression to parse.
 These will often use variable transforms and/or transform cascades.
-Example Scenario
-Linux Syslog Parsing Failure
+
+#### Example Scenario
+
+##### Linux Syslog Parsing Failure
 This is a particularly illustrative example of how a more complex parser processes a log.
 
 Example: 
@@ -167,21 +169,23 @@ In this parser, the log is first processed for its header to determine how it sh
 
 Here we can see the header and process are parsed successfully. Examining the parser we find that there is a VARIABLE TRANSFORM which uses the syslog process to route the logs to another transform.
 
+```
 # Direct parser based on the syslog process name
 # Process Name = Transform Parser
 VARIABLE_TRANSFORM_INDEX:syslog_message = syslog_process
+```
 
 In this case there is a transform called for `systemd` processes called `parse_systemd` which takes the contents of syslog_message and passes it along to the named transform. Looking further down the parser we can find that specific transform.
 
 
-[transform:parse_systemd]
+transform:parse_systemd
 TRANSFORM_CASCADE:_$log_entry = parse_systemd_format_1,parse_systemd_format_2
 
 
 This particular transform passes along the contents of what it received from the variable transform and instructs it to pass along the field value stored in _$log_entry (syslog_message) to two additional parse transforms which it then attempts to use in the order shown in the transform cascade until a match is found.
 
 
-[transform:parse_systemd_format_1]
+transform:parse_systemd_format_1
 ```
 #<86>Jan 01 00:00:00 hostname systemd[20460]: pam_unix(systemd-user:session): session opened for user root by (uid=0)
 TRANSFORM_CASCADE:_$log_entry = parse_su_format_6,parse_sudo_format_2,parse_systemd_user_format_1
@@ -200,12 +204,14 @@ In these transforms we helpfully have an example log for which the transform is 
 Were this a useful log from a security context (it’s not) the failure could be addressed in a few ways, either by modifying one of the existing transform regular expressions (whichever is closer in format) or by creating a new transform as part of the transform cascade being called for the systemd process log. Since the particular log example is a significant departure from the intent of either existing transforms, a new one would be most appropriate. It would only require a modification to the parse_systemd transform cascade and the addition of a third transform with a regular expression to handle the particular log and then set the appropriate event_id.
 
 
-Escalating Parsing Issues
+### Escalating Parsing Issues
+
 Sumo Logic Threat Labs Detection Engineering maintains all Out-Of-The-Box (OoTB) Cloud SIEM Content. Content includes Parsers, Mappers, Rules, and Normalization Schema.
 
 Upon identifying an issue with a Cloud SIEM OoTB parser using this guide, it may be necessary to escalate the issue to Threat Labs.
 
-Escalation requirements
+#### Escalation requirements
+
 A concise description of the problem
 Screenshots are helpful for understanding current and potentially previous behavior if there was a change
 A representative raw log sample
@@ -220,10 +226,12 @@ Configuration Information
 Many data sources will have options for configuring logging.
 It is important to understand what those settings are to develop new global support for a data source or offer advice for a custom solution if a global one is not appropriate.
 
-Gathering Raw Samples
+#### Gathering Raw Samples
+
 Prior to opening a support request, it is helpful to gather sample raw logs (without Field Extraction Rules overwriting _raw) which represent the identified issue.
 
-Ways to gather samples
+##### Ways to gather samples
+
 Find Samples
 Search using the identified _messageId(s) of the failing to parse logs
 Example query:

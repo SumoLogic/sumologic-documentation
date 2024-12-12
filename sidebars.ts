@@ -2898,7 +2898,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/troubleshoot/index'},
           items: [
-            'cse/troubleshoot/cloud-siem-parsers',
+            'cse/troubleshoot/troubleshoot-parsers',
           ],
         },
       ],
