@@ -190,7 +190,7 @@ The **Netlify - Commit Details** dashboard offers a comprehensive insight into y
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Commit Details"/>
 
-## Upgrading the Netlify app (Optional)
+## Upgrade/Downgrade the Netlify app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

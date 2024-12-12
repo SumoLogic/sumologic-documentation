@@ -54,12 +54,12 @@ import Iframe from 'react-iframe';
 
 ## Example rule
 The screenshot below shows a First Seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create a First Seen rule](#create-a-first-seen-rule), below.
-<img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/cse/first-seen-rule.png')} alt="Example First Seen Rule Definition" style={{border: '1px solid gray'}} width="700"/>
 
 
 ## Create a First Seen rule
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.

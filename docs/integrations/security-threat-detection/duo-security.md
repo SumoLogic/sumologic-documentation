@@ -69,7 +69,7 @@ Outliers and threat analysis of Duo events.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo-outliers-threat.png')} alt="Duo Security dashboards" />
 
-## Upgrading the Duo app (Optional)
+## Upgrade/Downgrade the Duo app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

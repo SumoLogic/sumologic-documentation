@@ -31,8 +31,8 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 1. Navigate to the **Layers** section and click **Add a layer**.
-1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#sumo-logic-distro-lambda-layers-for-aws-region---amd64-x86_64-architecture) and [arm64](#sumo-logic-distro-lambda-layers-for-aws-region---arm64-arm-architecture) tables for the ARN ID. <br/> <img src={useBaseUrl('img/traces/lambda-nodejs1.png')} alt="Choose a layer" style={{border: '1px solid gray'}} width="800" />
-1. Ensure the AWS Distro layer is present in the Layers section: <br/> <img src={useBaseUrl('img/traces/lambda-nodejs2.png')} alt="Layers section" style={{border: '1px solid gray'}} width="800" />
+1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#sumo-logic-distro-lambda-layers-for-aws-region---amd64-x86_64-architecture) and [arm64](#sumo-logic-distro-lambda-layers-for-aws-region---arm64-arm-architecture) tables for the ARN ID. <br/> <img src={useBaseUrl('img/apm/traces/lambda-nodejs1.png')} alt="Choose a layer" style={{border: '1px solid gray'}} width="800" />
+1. Ensure the AWS Distro layer is present in the Layers section: <br/> <img src={useBaseUrl('img/apm/traces/lambda-nodejs2.png')} alt="Layers section" style={{border: '1px solid gray'}} width="800" />
     :::note
     <ApmTrace/>
     :::
@@ -47,7 +47,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
     :::note
     The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
-    <img src={useBaseUrl('img/traces/lambda-nodejs3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
+    <img src={useBaseUrl('img/apm/traces/lambda-nodejs3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
 ### Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
@@ -153,5 +153,5 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
     :::note
     The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
-   * `SUMO_OTEL_DISABLE_AWS_CONTEXT_PROPAGATION` (optional, default: true, values: true, false). In case of `xray trace context` propagation (AWS), set to `false`.<br/><img src={useBaseUrl('img/traces/lambda-nodejs4.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
+   * `SUMO_OTEL_DISABLE_AWS_CONTEXT_PROPAGATION` (optional, default: true, values: true, false). In case of `xray trace context` propagation (AWS), set to `false`.<br/><img src={useBaseUrl('img/apm/traces/lambda-nodejs4.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).

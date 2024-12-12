@@ -182,7 +182,7 @@ Replace these variables with your own in the code samples in this section:
 
 Once you are done with the above steps, the AWS service will be added to the AWS Observability view hierarchy. To validate this:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Explore**. Then select **AWS Observability** from the dropdown menu in the upper left. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **Observability**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then select **AWS Observability** from the dropdown menu in the upper left. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **Observability**.  
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
 <img src={useBaseUrl('img/observability/Validate_hierarchy.png')} alt="Validate hierarchy" style={{border: '1px solid gray'}} width="400" />

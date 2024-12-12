@@ -4,8 +4,8 @@ title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
-:::note
-You're viewing our legacy account page. Refer to our newer [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts) docs for the latest information.
+:::note legacy account type
+We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
 
 Sumo Logic provides flexible account types within its Cloud Flex Legacy packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
@@ -134,11 +134,11 @@ To view the Account page, do the following:
 :::note
 You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.
 :::
-![CloudFlex-AccountPage.png](/img/subscriptions/cloud-flex-account-page.png)
+![CloudFlex-AccountPage.png](/img/manage/subscriptions/cloud-flex-account-page.png)
 :::note
 If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization](manage-org-settings.md).
 :::
-![manage-org-links.png](/img/subscriptions/manage-org-links.png)
+![manage-org-links.png](/img/manage/subscriptions/manage-org-links.png)
 
 ## Monitoring account usage
 
@@ -166,9 +166,9 @@ The following visual indicators apply:
 To switch between views and time interval displays, do the following:
 
 1. Log in to Sumo Logic. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/manage/subscriptions/pqs.png)
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
-1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
+1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/manage/subscriptions/uage-billing-period.png)
 <br/>The data display changes accordingly. 
 
 ### Drilling into usage data 
@@ -179,19 +179,19 @@ To drill into usage data, do the following:
 
 1. In the Usage panel, drag your cursor over the graph intervals you want to analyze in greater detail. As you drag your cursor, the bars on the chart will be highlighted.
 
-    ![CloudFlex_Drilldown_select.png](/img/subscriptions/zoom-selection.png)
+    ![CloudFlex_Drilldown_select.png](/img/manage/subscriptions/zoom-selection.png)
 
     When you release the cursor, the display changes accordingly.
 
-    ![CloudFlex_Drilldown_select-results.png](/img/subscriptions/zoomed-in.png)
+    ![CloudFlex_Drilldown_select-results.png](/img/manage/subscriptions/zoomed-in.png)
 
 1. To scroll through the data, click the Zoom icon to toggle On the Pan feature, then select the background and drag your cursor to the left and right.
 
-    ![CloudFlex_Drilldown_scroll.png](/img/subscriptions/pan-feature.png)
+    ![CloudFlex_Drilldown_scroll.png](/img/manage/subscriptions/pan-feature.png)
 
 1. To drill down further, repeat step 1 and 2 as needed.
 1. To return to the original data display, click the Reset icon.
 
-    ![CloudFlex_Drilldown_reset.png](/img/subscriptions/reset-icon.png)
+    ![CloudFlex_Drilldown_reset.png](/img/manage/subscriptions/reset-icon.png)
 
     The display changes accordingly.

@@ -26,7 +26,7 @@ Key features:
 ## Create a deletion request
 
 :::warning
-Deletion requests result in the permanent deletion of data. Once deleted, the data cannot be recovered. Ensure that you have appropriately backed up any necessary data before submitting a deletion request.
+After a data deletion request is approved, data will be deleted from the organization and no users within the organization (admin or otherwise) will be able to access the data. Data deletion requests should not be done without planning, and any data deletion approvals should be given sufficient consideration.
 :::
 
 :::note
@@ -37,11 +37,11 @@ During the data deletion process, existing messages may temporarily appear dupli
 To create or view data deletion requests, you must have the **Manage Deletion Rules** capability. But to only view the data deletion requests, you must have either `viewDeletionRules` or `manageDeletionRules` capability.
 :::
 
-You can create a data deletion request from either the **Logs** tab or any **Log Search**.
+Data cannot be recovered once it gets deleted. Ensure that you have appropriately backed up any necessary data before submitting a deletion request. You can create a data deletion request from either the **Logs** tab or any **Log Search**.
 
 ### From the Logs tab
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Deletion**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Deletion Requests**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note
@@ -53,8 +53,27 @@ You can create a data deletion request from either the **Logs** tab or any **Log
 
 ### From a Log Search
 
-1. From a **Log Search**, click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Log Search**, search for the required logs that needs to be deleted.
+1. Click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
+   
+#### Delete events
+
+The Audit Event Index and System Event Index has detailed JSON logs. To search for audit events or system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. 
+
+```sql
+(_index=sumologic_*_events) AND _sourceCategory=deletionRule
+| json field=_raw "resourceIdentity.name" as name nodrop
+| json field=_raw "resourceIdentity.id" as id nodrop
+| json field=_raw "eventName" 
+| json field=_raw "operator.interface" as operator nodrop
+| json field=_raw "operator.email" as email nodrop
+
+| count by _messagetime,eventname,name,id,operator,email,_view
+| sort _messagetime asc
+```
+
+The events `DeletionRuleCreated` and `DeletionRuleStateUpdated` are contained in the `sumologic_audit_events` index and `DeletionRuleProcessingConcluded` is in the `sumologic_system_events` index.
 
 ## Cancel a deletion request
 
@@ -79,3 +98,7 @@ Deletion is restricted to partitions and the default view (sumologic_default) in
 ### Deletion request limit
 
 Each deletion request is limited to 100,000 messages. This means that any deletion operation can only target up to 100,000 messages at a time.
+
+### Supported operators
+
+Currently, we only support [`as`](/docs/search/search-query-language/search-operators/as), [`concat`](/docs/search/search-query-language/search-operators/concat), [`contains`](/docs/search/search-query-language/search-operators/contains), [`decToHex`](/docs/search/search-query-language/search-operators/dectohex), [`floor`](/docs/search/search-query-language/math-expressions/floor), [`if`](/docs/search/search-query-language/search-operators/if), [`in`](/docs/search/search-query-language/search-operators/in), [`lookup`](/docs/search/search-query-language/search-operators/lookup), [`toLower`](/docs/search/search-query-language/search-operators/tolowercase-touppercase), [`matches`](/docs/search/search-query-language/search-operators/matches), [`parse`](/docs/search/search-query-language/parse-operators), [`toUpper`](/docs/search/search-query-language/search-operators/tolowercase-touppercase), and [`where`](/docs/search/search-query-language/search-operators/where) search query operators.

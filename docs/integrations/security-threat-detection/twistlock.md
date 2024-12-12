@@ -285,7 +285,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-runtime.png')} alt="Twistlock Dashboard" />
 
 
-## Upgrading the Twistlock/Twistlock Classic app (Optional)
+## Upgrade/Downgrade the Twistlock/Twistlock Classic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

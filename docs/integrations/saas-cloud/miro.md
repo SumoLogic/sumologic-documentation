@@ -97,7 +97,7 @@ The widgets allow you to track and analyze your security events, including the n
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />
 
-## Upgrading the Miro app (Optional)
+## Upgrade/Downgrade the Miro app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

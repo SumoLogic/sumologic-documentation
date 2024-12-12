@@ -4,8 +4,14 @@ title: Sensor Download Locations
 description: The Cloud SIEM Network sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 
-The Cloud SIEM Network sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
+:::warning end-of-life
+<SensorEOL/>
+:::
+
+The Cloud SIEM Network Sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
 
 ## Installing the Network sensor
 

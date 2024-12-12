@@ -6,6 +6,7 @@ description: Get an overview of how the Automation Service allows you to automat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
 
 The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
 
@@ -56,8 +57,8 @@ Before you can access the Automation Service, you must first [configure role cap
 
 ### From Cloud SIEM
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
-1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="400"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="300"/>
 1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
 ## Prerequisites
@@ -95,8 +96,8 @@ To use [integrations](/docs/platform-services/automation-service/automation-serv
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
-
-import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 350 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
 
 <ActionsLimitQuery/>
+
+Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions counts toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.

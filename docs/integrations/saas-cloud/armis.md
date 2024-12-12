@@ -208,7 +208,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Armis - Device Overview** dashboard. The dashboard provides a table view of last-seen devices with key information to protect your IT infrastructure and offers visibility into devices based on risk levels, types, and categories.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Device-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
 
-## Upgrading the Armis app (Optional)
+## Upgrade/Downgrade the Armis app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

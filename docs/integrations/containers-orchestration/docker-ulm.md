@@ -7,7 +7,7 @@ description: The Docker ULM app is a unified logs and metrics (ULM) app that uti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
 
 :::note
 The Docker app will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -658,7 +658,7 @@ See information about network usage over the last three hours.
 
 **Count of Tx Error Packets**. A line chart that shows the count of error packets transmitted per timeslice by each container over the last three hours.   
 
-## Upgrading the Docker ULM app (Optional)
+## Upgrade/Downgrade the Docker ULM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

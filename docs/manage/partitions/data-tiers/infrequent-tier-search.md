@@ -40,7 +40,7 @@ If you choose **Save to Index** as the Alert Type for a Scheduled Search, and an
 
 Sumo Logic provides a dashboard you can use to monitor the Infrequent Tier space consumed by saved Scheduled Searches.
 
-<img src={useBaseUrl('img/partitions-data-tiers/infrequent-scheduled-search.png')} alt="dashboard" />
+<img src={useBaseUrl('img/manage/partitions-data-tiers/infrequent-scheduled-search.png')} alt="dashboard" />
 
 The dashboard presents the following information for the currently selected time range:
 

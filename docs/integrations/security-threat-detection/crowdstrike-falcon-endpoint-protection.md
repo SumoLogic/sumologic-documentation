@@ -263,7 +263,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Incident_Summary_Events.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
-## Upgrading the CrowdStrike Falcon Endpoint Protection app (Optional)
+## Upgrade/Downgrade the CrowdStrike Falcon Endpoint Protection app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

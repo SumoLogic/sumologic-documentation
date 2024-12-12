@@ -76,13 +76,13 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 
 ### Estimated and actual scan data for Infrequent queries
 
-When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent Tier that will be scanned in order to return the search results. You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers.
+When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent Tier that will be scanned in order to return the search results. You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers.
 
-The example below shows the estimate of how much Infrequent data will be scanned for a query that uses `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
+The example below shows the estimate of how much Infrequent data will be scanned for a query that uses `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
 
-When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Infrequent data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
+When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Infrequent data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
 
-If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/partitions-data-tiers/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="350" />
+If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="350" />
 
 ### Cross-tier searches and role search filters
 

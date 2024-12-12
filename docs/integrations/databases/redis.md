@@ -454,12 +454,12 @@ There are limits for how many alerts can be enabled - please see the [Alerts FAQ
    * For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=redis-.prod.01`.
    * For alerts applicable to all clusters that start with `redis-prod`, your custom filter would be: `db_cluster=redis-prod*`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=redis-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 3. Click **Add**.
 4. Click **Import** to import monitors from the JSON above.
 
 :::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#edit-disable-more-actions) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
+Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#monitor-details-pane) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script

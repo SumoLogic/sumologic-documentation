@@ -11,11 +11,6 @@ This section has instructions for collecting Corelight Zeek log messages and sen
 
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
-:::note
-The [Cloud SIEM Network Sensor](/docs/cse/sensors/network-sensor-deployment-guide/) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
-:::
-
-
 ## Step 1: Configure collection
 
 In this step, you configure a Syslog Source to collect Corelight Zeek log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
@@ -62,9 +57,9 @@ In this step you configure Zeek to send log messages to the Sumo Logic platform.
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappipngs.png')} alt="Sumo Logic ingest mappings" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Create Sumo Logic Mapping** popup:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.
+1. On the **Add Ingest Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
     1. **Format**. Enter *Bro/Zeek JSON*.  
     1. **Event ID**. *`{_path}`*.<br/><img src={useBaseUrl('img/cse/corelight-edit-mapping.png')} alt="Corelight edit mappings" style={{border: '1px solid gray'}} width="400"/> 
@@ -74,6 +69,6 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
-1. On the **Log Mappings** page search for "Zeek" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/corelight-record-volume.png')} alt="Corelight record volume" style={{border: '1px solid gray'}} width="600"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "Zeek" and check the **Records** columns. <br/><img src={useBaseUrl('img/cse/corelight-record-volume.png')} alt="Corelight record volume" style={{border: '1px solid gray'}} width="800"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Corelight Zeek security records.<br/><img src={useBaseUrl('img/cse/corelight-search.png')} alt="Corelight search" style={{border: '1px solid gray'}} width="400"/>

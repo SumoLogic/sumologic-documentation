@@ -498,7 +498,7 @@ See node-level resource utilization metrics, including CPU; disk; network; and r
 
 **WLM Queue Length**. Shows trends in WLM queue length by NodeID on a line chart for the last three hours.
 
-## Upgrading the Amazon Redshift ULM app (Optional)
+## Upgrade/Downgrade the Amazon Redshift ULM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

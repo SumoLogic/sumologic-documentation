@@ -8,14 +8,14 @@ The **Spans** page allows you to filter and aggregate your trace data at the raw
 
 ## Spans page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Spans, click the **+ New** button at the top of the screen and select **Spans**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Spans, go to the **Home** screen and select **Spans**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Spans, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**. 
  
 
 A new Spans page opens. Data is displayed once you run a query.
 
-![Spans page.png](/img/traces/Spans-page.png)
+![Spans page.png](/img/apm/traces/Spans-page.png)
 
 From here, you can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
 
@@ -50,11 +50,11 @@ This micro lesson provides an overview of Span Analytics, and describes the term
 
 You can build a spans query using the provided input fields. By default, you'll see an input for **Filters** and **Visualize**.
 
-![blank spans query.png](/img/traces/blank-spans-query.png)
+![blank spans query.png](/img/apm/traces/blank-spans-query.png)
 
 Once you click the text area of an input field, you'll get a dropdown menu that provides the available options detected from your data. You can manually type into these input fields or select from the dropdown of available options.
 
-![dropdown for spans filter.png](/img/traces/dropdown-for-spans-filter.png)
+![dropdown for spans filter.png](/img/apm/traces/dropdown-for-spans-filter.png)
 
 **Filters** narrow the scope of the query. Enter metadata values that match the data you want to search. You can add multiple filters to focus on specific data.
 
@@ -83,7 +83,7 @@ You can visualize multiple different metrics at once.
    * You can group by time and other fields at the same time. When you do time and another dimension, you can create a stacked bar time series.
 * If you define **Group By** you'll see another option to set a **Limit** value. This allows you to reduce the number of results by an order.
 
-![spans query.png](/img/traces/spans-query.png)
+![spans query.png](/img/apm/traces/spans-query.png)
 
 :::note
 When you run your query with **Visualize** and/or **Group By**, the results tab will automatically switch to **Aggregates**.
@@ -93,17 +93,17 @@ When you run your query with **Visualize** and/or **Group By**, the results tab 
 
 You set the time range of the query at the top right of the Spans page, above the search button. Tracing data retention in `_trace_spans` index is the same as default log index retention. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details.  
 
-![spans time range.png](/img/traces/spans-time-range.png)
+![spans time range.png](/img/apm/traces/spans-time-range.png)
 
 ### Run query
 
 Once you have defined your spans query, with filters and aggregation if desired, click the search button to run the search. It looks like the following:  
 
-![spans search button.png](/img/traces/spans-search-button.png)
+![spans search button.png](/img/apm/traces/spans-search-button.png)
 
 You can pause or stop your search by clicking the appropriate icons below the search button.  
 
-![pause or stop spans query.png](/img/traces/pause-or-stop-spans-query.png)
+![pause or stop spans query.png](/img/apm/traces/pause-or-stop-spans-query.png)
 
 ## Search Results
 
@@ -113,10 +113,10 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
 
-![messages results.png](/img/traces/messages-results.png)
+![messages results.png](/img/apm/traces/messages-results.png)
 
 * To move a column left or right, hold click and drag it to a different location in the table.
-* To adjust column width, click and drag the vertical line in between the columns.<br/> ![resize column.png](/img/traces/resize-column.png)
+* To adjust column width, click and drag the vertical line in between the columns.<br/> ![resize column.png](/img/apm/traces/resize-column.png)
 * To reset column width to the default size, double-click the vertical line to the right of a column name.
 
 #### Facets
@@ -125,20 +125,20 @@ The **Facets** panel provides a list of all the metadata fields returned from yo
 
 The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration). By default, the fields used in the query are shown in the Messages table.
 
-![Facets expanded.png](/img/traces/Facets-expanded.png)
+![Facets expanded.png](/img/apm/traces/Facets-expanded.png)
 
 * You can adjust which fields are displayed in the raw span messages table by checking or unchecking the box next to the field in the Facets panel.
 * Use the search field to easily find the metadata from your data. This applies the filter to both tag names and their values.
 * The number of values found for each is displayed for your reference.
 * Add and remove fields from your query by hovering over a field and clicking.  
 
-![facets add to query.png](/img/traces/facets-add-to-query.png)
+![facets add to query.png](/img/apm/traces/facets-add-to-query.png)
 
 ### Aggregates tab
 
 The Aggregates tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
 
-![sumo-logic-spans-aggregates-visualize.png](/img/traces/sumo-logic-spans-aggregates-visualize.png)
+![sumo-logic-spans-aggregates-visualize.png](/img/apm/traces/sumo-logic-spans-aggregates-visualize.png)
 
 ## Add to Dashboard
 
@@ -146,8 +146,8 @@ You can add to Dashboard as long as your total dashboard-originated `_trace_span
 
 To add your aggregated span data to a Dashboard:
 
-1. Click the three vertical-dots icon on the top right of the Spans page and select **Add to Dashboard**.<br/>  ![add-to-dashboard-spans.png](/img/traces/add-to-dashboard-spans.png)
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you'll have an option to select **Create New Dashboard** with your name.<br/>  ![span-dashboard.png](/img/traces/span-dashboard.png)
+1. Click the three vertical-dots icon on the top right of the Spans page and select **Add to Dashboard**.<br/>  ![add-to-dashboard-spans.png](/img/apm/traces/add-to-dashboard-spans.png)
+1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you'll have an option to select **Create New Dashboard** with your name.<br/>  ![span-dashboard.png](/img/apm/traces/span-dashboard.png)
 1. Click **Add** when you're done assigning which Dashboard to add the Panel to.
 
 ## Open in Search
@@ -155,7 +155,7 @@ To add your aggregated span data to a Dashboard:
 To further enhance your query, you can use the [Search Query Language](search-query-language-support-for-traces.md) for more advanced use cases by opening a Search of your spans. Click the
 three vertical-dots icon on the top right of the Spans page and select **Open in Search**.  
 
-![span-open-in-search.png](/img/traces/span-open-in-search.png)
+![span-open-in-search.png](/img/apm/traces/span-open-in-search.png)
 
 ### Examples
 
@@ -165,7 +165,7 @@ To compare the performance of different release versions defined by a custom tag
 
 Use the **filters** or **facets** features to find the appropriate service in the dropdown and select it. Then, select to visualize duration’s 95th percentile and pick a group by time, for example, 1-minute granularity and the `assemblyVersion` custom tag that carries version information. That’s it!
 
-![service percentile by time.png](/img/traces/service-percentile-by-time.png)
+![service percentile by time.png](/img/apm/traces/service-percentile-by-time.png)
 
 You can customize your chart by picking different visualization types and colors.
 
@@ -175,7 +175,7 @@ Next, let’s see how to find the distribution of different HTTP errors among ou
 
 Here is the simple query we used to visualize that data:
 
-![status codes spans example.png](/img/traces/status-codes-spans-example.png)
+![status codes spans example.png](/img/apm/traces/status-codes-spans-example.png)
 
 It’s now easier than ever to drill down into the information you care about. Note that our query only includes spans with codes from 4xx and 5xx ranges and visualizes the count of such spans, broken down by two dimensions, service and status code. Easy!
 
