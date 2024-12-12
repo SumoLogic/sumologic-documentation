@@ -54,6 +54,10 @@ Copilot leverages foundational models available through Amazon Bedrock. As a res
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
+* **Customer Data Privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
+* **Rolling Data Expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
+* **AI Provider**. Copilot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
+
 ## Who benefits from Copilot?
 
 Copilot is ideal for users of all skill levels:
@@ -295,6 +299,89 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
+## FAQ
+
+<details>
+<summary>What is Sumo Logic Mo Copilot?</summary>
+
+Sumo Logic Mo Copilot is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Copilot does not process or share your log data with any third party.
+</details>
+
+<details>
+<summary>Can I use Copilot to analyze unstructured logs?</summary>
+
+Yes, Copilot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
+</details>
+
+<details>
+<summary>Does Copilot save search history?</summary>
+
+Yes, Copilot retains conversation and search history, allowing you to resume investigations with context and continuity.
+</details>
+
+<details>
+<summary>What role does AI play in Copilot?</summary>
+
+Copilot uses AI to interpret natural language queries and recommend search results or query refinements, streamlining log analysis.
+</details>
+
+<details>
+<summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
+
+Sumo Logic Copilot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (e.g., email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
+</details>
+
+<details>
+<summary>Is customer data/PII used to train AI models?</summary>
+
+No, customer data or PII is not used for training AI models. Copilot operates using a foundation model served via Amazon Bedrock, ensuring your data remains private and secure.
+</details>
+
+<details>
+<summary>How long does the AI store customer information or PII, and when and how is it deleted?</summary>
+
+Certain features may rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
+
+For example, our AI-driven alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
+</details>
+
+<details>
+<summary>Does Sumo Logic Mo Copilot use any open-source library, GenAI providers, or cloud providers?</summary>
+
+For Generative AI, Copilot uses a foundation model served by Amazon Bedrock. Classical ML features leverage open-source Python libraries approved by Sumo Logic.
+</details>
+
+<details>
+<summary>What is the type of AI being used?</summary>
+
+Sumo Logic Copilot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in AI-driven alerts.
+</details>
+
+<details>
+<summary>Is there a human in the loop for Copilot?</summary>
+
+Yes, the on-call developer or security engineer troubleshooting an incident is the expected user. They interact with Copilot using natural language questions or through contextual suggestions.
+</details>
+
+<details>
+<summary>Does a fourth party have access to Copilot customer data?</summary>
+
+No. The foundation model provider used by Amazon Bedrock has no access to customer data.
+</details>
+
+<details>
+<summary>Do you hold any AI-specific certifications or accreditations?</summary>
+
+No, Sumo Logic does not currently hold any AI-specific certifications or accreditations.
+</details>
+
+<details>
+<summary>How are reviews conducted on the Copilot model?</summary>
+
+Each major capability added to Copilot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
+</details>
+
+
 ## Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon and entering the context of your query.
@@ -307,4 +394,4 @@ You can also leave feedback on specific errors.
 
 ## Opt out
 
-To opt out of Copilot, contact our [support team](https://support.sumologic.com/support/s/).
+If you prefer not to use Sumo Logic Copilot, you can opt out by submitting a [support ticket](https://support.sumologic.com/support/s/).
