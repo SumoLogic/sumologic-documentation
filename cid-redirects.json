@@ -1614,6 +1614,7 @@
   "/cid/10122": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source",
   "/cid/10125": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source",
   "/cid/10126": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source",
+  "/cid/10129": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source",
   "/cid/10135": "/docs/manage/manage-subscription/manage-org-settings",
   "/cid/10136": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
   "/cid/10234": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source",
