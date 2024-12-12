@@ -139,7 +139,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 * For [static logs monitors](#static-detection-method), triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
    | When detection window (Y) is | Evaluate trigger every |
    |:-----------------------------|:-----------------------|
-   | Less than 15m | 1m  |
+   | 15m or less | 1m  |
    | 15m to 1h     | 2m  |
    | 1h to 6h      | 10m |
    | Greater than 6h   | 20m |
