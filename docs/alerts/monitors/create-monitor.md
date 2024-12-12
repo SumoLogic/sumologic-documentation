@@ -142,7 +142,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
    | Less than 15m | 1m  |
    | 15m to 1h     | 2m  |
    | 1h to 6h      | 10m |
-   | 6h to 1d      | 20m |
+   | Greater than 6h   | 20m |
 * For [anomaly logs monitors](#anomaly-detection-method), triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
    ```
    _sourceCategory=Labs/Apache/Access
