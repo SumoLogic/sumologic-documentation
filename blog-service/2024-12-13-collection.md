@@ -1,5 +1,5 @@
 ---
-title: Universal Collector (Collection)
+title: Universal Connector (Collection)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - collection
