@@ -53,26 +53,27 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
 
 ### From a Log Search
 
-#### Delete audit events
-
-The Audit Event Index has detailed JSON logs. To search for audit events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
-
-```
-(_index=sumologic_audit_events) AND _sourceCategory=deletionRule
-```
-
-#### Delete system events
-
-The System Event Index has detailed JSON logs. To search for system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. For example, to search for data deletion logs you would use the query:
-
-```
-(_index=sumologic_system_events) AND _sourceCategory=deletionRule
-
-```
-
 1. In the **Log Search**, search for the required logs that needs to be deleted.
 1. Click the cog icon, then in the dropdown, select **Create Deletion Request**.<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request.png')} alt="deletion request" style={{border: '1px solid gray'}} width="400"/>
 1. In the popup window, enter a **Name** and **Reason** for your data deletion request, then click **Create Request**.
+   
+#### Delete events
+
+The Audit Event Index and System Event Index has detailed JSON logs. To search for audit events or system events for data deletion logs, use metadata field `_sourceCategory=deletionRule`. 
+
+```sql
+(_index=sumologic_*_events) AND _sourceCategory=deletionRule
+| json field=_raw "resourceIdentity.name" as name nodrop
+| json field=_raw "resourceIdentity.id" as id nodrop
+| json field=_raw "eventName" 
+| json field=_raw "operator.interface" as operator nodrop
+| json field=_raw "operator.email" as email nodrop
+
+| count by _messagetime,eventname,name,id,operator,email,_view
+| sort _messagetime asc
+```
+
+The events `DeletionRuleCreated` and `DeletionRuleStateUpdated` are contained in the `sumologic_audit_events` index and `DeletionRuleProcessingConcluded` is in the `sumologic_system_events` index.
 
 ## Cancel a deletion request
 
