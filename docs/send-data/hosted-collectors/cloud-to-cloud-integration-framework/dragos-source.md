@@ -45,7 +45,7 @@ Follow the instructions below to generate the API ID and API Secret:
 1. Open the Dragos platform and navigate to the **Admin** > **User**.
 1. Click **ADD NEW API KEY** under the **API Keys** section.
 1. Enter the name of the API Key in the **Name** field and then click **GENERATE KEY**.
-1. Copy the **API ID** and **API Secrect**.
+1. Copy the **API ID** and **API Secret**.
 
 ### Source configuration
 
