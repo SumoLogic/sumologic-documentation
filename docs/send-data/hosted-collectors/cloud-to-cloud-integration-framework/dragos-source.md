@@ -12,7 +12,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/dragos/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/dragos/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="dragos-logo" width="80" />
+<img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="dragos-logo" width="50" />
 
 Dragos is a cybersecurity platform with an ecosystem tailored for industrial environments, including Industrial Control Systems (ICS), Supervisory Control and Data Acquisition (SCADA), Distributed Control System (DCS), and Operational Technology (OT) environments.
 Dragos's Operational Technology (OT) offers clear visibility into your Industrial Control System (ICS) assets and communications. It monitors networks, detects threats, and addresses vulnerabilities without causing disruptions or shutdowns, helping you respond confidently to potential threats.
@@ -23,10 +23,10 @@ The Dragos source collects address, asset, vulnerability, and zone details from 
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min | Vulnerability |
-| 24 hrs | Addresses |
-| 24 hrs | Zones |
-| 24 hrs | Assets |
+| 5 minutes | Vulnerability |
+| 24 hours | Addresses |
+| 24 hours | Zones |
+| 24 hours | Assets |
 
 ## Setup
 
@@ -93,22 +93,10 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | requestEndpoint | String | Yes | `null` | The API URL to fetch the data from the Dragos log source. | `https://sumologic-dragos.cxc.dragos.cloud/` |
 | apiID | String | Yes | `null` | API ID of your account for authorization. | `036fxxxx-b642-xxxx-99d3-fcxxxx2exxxx` |
 | apiSecret | String | Yes | `null` | API Secret of your account for authorization. | `xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx` |
-| pollingIntervalVulnerabilityMin | String | Yes | `5 mins` | Time interval (in minutes) after which the source will check for new data for API.
-Default: 5 min
-Min: 5 min
-Max: 60 min |  |
-| pollingIntervalAddressesHour | String | Yes | `24 hrs` | Time interval (in hours) after which the source will check for new data for API.
-Default: 24 hrs
-Min: 12 hrs
-Max: 24 hrs |  |
-| pollingIntervalZonesHour | String | Yes | `24 hrs` | Time interval (in hours) after which the source will check for new data for API.
-Default: 24 hrs
-Min: 12 hrs
-Max: 24 hrs |  |
-| pollingIntervalAssetsHour | String | Yes | `24 hrs` | Time interval (in hours) after which the source will check for new data for API.
-Default: 24 hrs
-Min: 12 hrs
-Max: 24 hrs |  |
+| pollingIntervalVulnerabilityMin | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data for API.<br/>**Default**: 5 minutess <br/>**Minimum**: 5 minutes<br/>**Maximum**: 60 minutes |  |
+| pollingIntervalAddressesHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
+| pollingIntervalZonesHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
+| pollingIntervalAssetsHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | collectAddressDetails | Boolean | No | `True` | Specify if you need to collect the address details. |  |
 | collectZoneDetails | Boolean | No | `True` | Specify if you need to collect the zone details. |  |
 | collectDeviceDetails | Boolean | No | `True` | Specify if you need to collect the assets details. |  |

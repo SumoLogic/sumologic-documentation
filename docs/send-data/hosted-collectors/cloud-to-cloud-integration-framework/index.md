@@ -249,7 +249,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="45"/><h4>Dragos</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
   <p>Learn how to collect address, asset, vulnerability, and zone details from the Dragos API and send them to Sumo Logic.</p>
   </div>
 </div>
