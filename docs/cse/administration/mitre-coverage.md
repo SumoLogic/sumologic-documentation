@@ -24,6 +24,7 @@ Coverage data is updated on the page once a day. To determine your coverage, the
 
 Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 
+<!-- old YouTube video embedding
 <Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
      width="854px"
      height="480px"
@@ -34,6 +35,9 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+<script src="https://fast.wistia.net/player.js" async></script><iframe src="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false" title="Micro Lesson: Cloud SIEM MITRE ATT&amp;CK® Threat Coverage Explorer Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="854px" height="480px"></iframe>
 
 ## User interface 
 
