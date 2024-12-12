@@ -369,7 +369,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
 
-## Upgrading the JFrog Xray app (Optional)
+## Upgrade/Downgrade the JFrog Xray app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

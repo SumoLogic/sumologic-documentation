@@ -13,12 +13,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/lastpass/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/lastpass/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
 
 LastPass is a password manager tool that allows you to store, secure, and autofill your passwords. LastPass' users get a password vault, which is the encrypted part of the LastPass password manager where passwords, secure notes, and sensitive information are safely stored. The LastPass source collects audit reporting events data and sends it to Sumo Logic.
@@ -40,7 +34,7 @@ To collect audit reporting data from LastPass, you must have an authorized LastP
 When you create a LastPass source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the LastPass Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **LastPass** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.

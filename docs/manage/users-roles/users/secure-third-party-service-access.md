@@ -14,7 +14,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 To verify your email:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help**, and then select either **Support** or **Community**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Support** or **Community**.  
 1. You will be prompted to verify your email. Click **Send Verification Email**. <img src={useBaseUrl('img/users-roles/multi_account_third_party_verify.png')} alt="Send Verification Email message" style={{border: '1px solid gray'}} width="400" />
 1. Check your email for the **Sumo Logic Email Verification Request**.
 1. Open the email and click **Verify Your Email**. <br/><img src={useBaseUrl('img/users-roles/verify-email.png')} alt="Verify Your Email message" style={{border: '1px solid gray'}} width="400" />
@@ -29,7 +29,7 @@ If you have not yet activated your account, if you try to access a link in the H
 
 To activate your account:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help**, and then select either **Support** or **Community**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Support** or **Community**.  
 1. You will be prompted to activate your account. Click **Send Activation Email**. <br/><img src={useBaseUrl('img/users-roles/activate-user-ui-prompt.png')} alt="Send Activation Email message" style={{border: '1px solid gray'}} width="400" />
 1. Check your email for **Activate your Sumo Logic Account!**
 1. Open the email and click **Activate Now**. <br/><img src={useBaseUrl('img/users-roles/activate-user-email.png')} alt="Activate Account message" style={{border: '1px solid gray'}} width="400" />

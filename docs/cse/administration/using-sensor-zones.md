@@ -31,7 +31,7 @@ Sensor zones will only apply to IP addresses in private address ranges.
 
 To define a sensor zone for a Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Navigate to the Source you want to update.
 1. In the **Fields/Metadata** area, define a [Field](/docs/manage/fields) named `_siemSensorZone` and set it to the desired value.<br/><img src={useBaseUrl('img/cse/source.png')} alt="Fields/Metadata field" width="600"/>
 1. Click **Save**.

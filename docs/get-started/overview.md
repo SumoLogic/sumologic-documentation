@@ -7,7 +7,11 @@ sidebar_label: Intro to Sumo Logic
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Our pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+
+Sumo Logic empowers your team with advanced data analytics, making it simple to transform complex data into actionable insights. With pre-configured searches and intuitive, visual dashboards, anyone on your team can quickly search, filter, and analyze data without requiring deep technical expertise.
+
+Our real-time, at-a-glance visualizations provide continuous monitoring of your application and network health, security, and performance. These insights enable proactive troubleshooting and faster resolution of issues, helping your team stay ahead in an ever-changing digital landscape.
 
 Visual displays of real-time data allow you to monitor the health, fitness, and security of your application and network, providing insights for troubleshooting and timely resolutions.
 

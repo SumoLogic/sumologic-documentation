@@ -28,7 +28,7 @@ Your account owner can change the organizations' display name on the Account p
 
 Single account users are unaffected by multi-account Access, and will not see this option in the UI.
 
-## Log in using Multi-account Access
+## Log in using multi-account access
 
 1. Log in with your email and password.
 1. You will be asked to change your password. This new password will be your multi-account password.
@@ -36,11 +36,11 @@ Single account users are unaffected by multi-account Access, and will not see th
 1. You are logged into the second organization.
 1. After you log out, when you return, you will be redirected into the organization you were most recently logged into. You can now change between organizations at any time using the same username and password.
 
-## Inviting a New User to an Organization
+## Inviting a new user to an organization
 
-When an admin invites a new user to a Sumo Logic organization for the first time, the user will receive an email that includes their username and a temporary password.
+When an admin [creates a user](/docs/manage/users-roles/users/create-edit-users/#create-a-user) in a Sumo Logic organization for the first time, the user will receive an email that includes their username and a temporary password.
 
-If that admin invites the same user to a second organization, the user will receive an email that includes their username, and directs them to use their existing (multi-account) password, as shown.
+If that admin creates the same user in a second organization, the user will receive an email that includes their username, and directs them to use their existing (multi-account) password, as shown.
 
 <img src={useBaseUrl('img/users-roles/welcome.png')} alt="Welcome message" style={{border: '1px solid gray'}} width="400" />
 
@@ -52,14 +52,14 @@ To view multiple orgs with the same email address, you can log out of your SAML 
 
 As an administrator using SAML, if you have users that need to view and switch their account access from one account to another from the Sumo interface, you will need to set them up as whitelisted users on the SAML page and let them log in using a username and password.
 
-## Multi-account, Password Policies, and Web Session Timeouts
+## Multi-account, password policies, and Web session timeouts
 
 Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
+ 
 
 In the Password Policy page, you can set the following account settings:
 
@@ -77,7 +77,7 @@ Users should be aware that one organization might require only four unique passw
 
 When you take advantage of Multi-account access and switch to an organization with a shorter session timeout, you will need to re-enter credentials if you have been idle for a period exceeding the session timeout, even if it was much earlier in their session. While it may seem confusing to have different organizations with different timeouts, this is the most secure way to handle this case for Multi-account access. 
 
-## Multi-account and Collectors
+## Multi-account and collectors
 
 For Multi-account users, Collector registration with username and password is no longer supported. Multi-account users must use the token or accessid/access key option. 
 

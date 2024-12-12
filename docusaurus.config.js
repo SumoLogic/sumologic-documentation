@@ -20,7 +20,7 @@ module.exports = {
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
@@ -271,6 +271,12 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
+    announcementBar: {
+      id: 'copilot',
+      content: 'Check out <a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a>, our new AI-powered logs assistant!',
+      backgroundColor: '#D3BAF7',
+      textColor: '#000',
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -300,8 +306,8 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'senddata',
-                label: 'Send Data (Collectors)',
-                icon: 'cloud_upload',
+                label: 'Collectors, Sources',
+                icon: 'settings',
               },
               {
                 type: 'docSidebar',
@@ -325,7 +331,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
                 label: 'Apps and Integrations',
-                icon: 'apps',
+                icon: 'grid_view',
               },
               {
                 type: 'docSidebar',
@@ -343,7 +349,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
-                icon: 'query_stats',
+                icon: 'speed',
               },
               {
                 type: 'docSidebar',
@@ -355,7 +361,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
-                icon: 'swap_horiz',
+                icon: 'settings_suggest',
               },
               {
                 type: 'docSidebar',
@@ -433,29 +439,38 @@ module.exports = {
             alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s',
             position: 'right',
-            className: 'header-support',
-            alt: 'Contact Sumo Logic support',
-          },
-          {
-            position: 'right',
-            className: 'header-github-link',
+            className: 'support-menu-trigger',
+            to: '#',
             type: 'dropdown',
-            'aria-label': 'GitHub repository',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            items:[
+            items: [
               {
-                label: 'Send Feedback',
+                label: 'Contact Support',
+                to: 'https://support.sumologic.com/support/s',
+                icon: 'support',
+              },
+              {
+                label: 'Request a Demo',
+                to: 'https://www.sumologic.com/demos',
+                icon: 'co_present',
+              },
+              {
+                label: 'Submit Feedback',
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'rate_review',
+                icon: 'thumbs_up_down',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: 'docs/contributing',
                 icon: 'edit_note',
               },
-            ]
+            ],
+          },
+          {
+            className: 'header-github-link',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
+            position: 'right',
+            alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
       },

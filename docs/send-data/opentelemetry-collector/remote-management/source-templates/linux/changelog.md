@@ -5,6 +5,17 @@ sidebar_label: Changelog
 description: Changelog for Linux source template for OpenTelemetry.
 ---
 
+## [4.0.0] - 2024-10-26
+
+### Added
+- Separate section for logs and metrics with enable or disable functionality.
+- Minor UI changes.
+
+## [3.0.0] - 2024-10-01
+
+### Added
+- Changelog link and compatibility declaration for OpenTelemetry collector.
+
 ## [2.0.0] - 2024-08-08
 
 ### Fixed
@@ -14,7 +25,7 @@ description: Changelog for Linux source template for OpenTelemetry.
 
 ### Added
 - Log collection for standard linux logs.
-- Processing rules for logs (filtering and maksing) and metrics (filtering).
+- Processing rules for logs (filtering and masking) and metrics (filtering).
 
 ## [1.0.0] - 2024-03-19
 

@@ -14,10 +14,10 @@ This guide has information about how to create and manage Sumo Logic Users. In 
 To manage users and roles, you must have the administrator role or your role must have been assigned the [manage users and roles capability](../roles/role-capabilities.md).
 :::
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Users page, in the main Sumo Logic menu select **Administration > Users and Roles > Users**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Users page, in the top menu select **Administration**, and then under **Users and Roles** select  **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Users page, in the main Sumo Logic menu select **Administration > Users and Roles > Users**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Users page, in the top menu select **Administration**, and then under **Users and Roles** select  **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+ 
 
 In this section, we'll introduce the following concepts:
 

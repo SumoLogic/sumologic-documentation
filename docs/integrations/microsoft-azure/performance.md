@@ -135,7 +135,7 @@ To collect logs for the Windows Performance App, do the following:
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:
@@ -234,7 +234,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Average Output Queue Length.** Displays the average length of the output queue as a line chart on a timeline using timeslices of one minute for the last 15 minutes.
 
-## Upgrading the Windows Performance app (Optional)
+## Upgrade/Downgrade the Windows Performance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

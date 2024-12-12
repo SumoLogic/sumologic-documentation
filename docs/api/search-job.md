@@ -66,34 +66,19 @@ So, a 404 status is generated in these two situations:
 
 You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
 
-
-
 ## Search Job Result Limits
 
-<table>
-  <tr>
-   <td>Data Tier</td>
-   <td>Non-aggregate Search (messages)</td>
-  </tr>
-  <tr>
-   <td>Continuous</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-  <tr>
-   <td>Frequent</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-  <tr>
-   <td>Infrequent</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
-</table>
+| Data Tier | Non-aggregate Search |
+| :- | :- |
+| Continuous | Can return up to 100K messages per search. |
+| Frequent  | Can return up to 100K messages per search. |
+| Infrequent  | Can return up to 100K messages per search. |
 
 :::info
-Flex Licensing model can return up to 10 million records per search.
+Flex Licensing model can return up to 100K messages per search.
 :::
 
-If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records, consider breaking it into at least seven searches, each spanning a day.
+If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed.
 
 ## Rate limit throttling  
 
@@ -123,9 +108,8 @@ The following figure shows the process flow for search jobs.
 2. **Response.** Sumo Logic responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
 3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
 4. **Response.** Sumo Logic responds with job status. An error code (404) is returned if the request could not be completed. The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
-5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
+5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return 100K messages per search.
 6. **Response.** Sumo Logic delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
-
 
 ## Errors
 

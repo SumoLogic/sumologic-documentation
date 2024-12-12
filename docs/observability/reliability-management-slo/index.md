@@ -73,9 +73,9 @@ As an example, let's say an eCommerce app considers its checkout service transac
 
 The _SLI_ can be defined as the percentage of successful 5m windows in a _compliance period_ of 30 days (30d) or equal to 99.9% for any month. The number of unsuccessful (bad) transactions we allow as an _error budget_ is 0.1% of these 5m windows in 30d.
 
-The following chart shows our calculations and an example 5m window for the month of January where a number of requests were unsuccessful due to a completions that averaged greater than 600ms:
+The following chart shows our calculations and an example 5m window for the month of January where a number of requests were unsuccessful due to completions that were greater than 500ms:
 
-<img src={useBaseUrl('img/observability/slo-checkout-example.png')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo-checkout-example.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 With these calculations, we can configure an SLO, add a monitor, and start managing this and other services with ease. This is just one example. You can develop many different SLOs based on evaluation types (windows-based and request-based), ratios and thresholds for calculations, and error budgets for rolling or calendar compliance periods.
 
@@ -127,17 +127,17 @@ SLO data is retained for 800 days. It is retained separately, regardless of unde
 
 ## Accessing SLOs
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
 
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
+ 
 
 In the SLO screen, you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
 
 To locate an SLO, use the search that returns a list of SLOs based on the name and description.
 
-<img src={useBaseUrl('img/observability/slo1.png')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo1.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 To open the dashboard, locate and select an SLO. The details pane gives you a preview and an option to **Open SLO Dashboard**. See [SLO Dashboards and Notifications](/docs/observability/reliability-management-slo/dashboards) for more information.
 
@@ -154,7 +154,7 @@ The **SLO Details** tab provides a quick view of the SLO ID, description, config
 
 The **Monitors** tab provides a list of associated monitors for the SLO. Expand entries to review the status, condition, and configured triggers. Click the open icon (<img src={useBaseUrl('img/observability/open-monitor.png')} alt="Reliability Management SLO SLI" width="20" /> ) to open and edit the monitor.
 
-<img src={useBaseUrl('img/observability/slo-preview.gif')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo-preview.gif')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Query Recommendations

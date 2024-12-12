@@ -26,7 +26,16 @@ In addition, in some systems a user or a host has both a name and a unique ID, t
 * `d8ece0f8-10a4-3c62-b8a3-2e636a3a0509`
 * `testk-122.testlabs.local`
 
-Multiple identifiers for the same user or host are a problem when it comes to correlating Signals around a common Entity: unless you allow for all permutations of a username or hostname, your rule or search won’t function as intended with all data sources.
+Multiple identifiers for the same user or host are a problem when it comes to correlating Signals around a common Entity. Unless you allow for all permutations of a username or hostname, your rule or search won’t function as intended with all data sources.
+
+### Examples of when you create Lookup Tables
+
+Following are some examples of situations when you'd want to use Entity Lookup Tables:
+* CrowdStrike FDR data uses an agent ID (AID) instead of a hostname for some messages.
+* Mail Transfer Agent (MTA) systems report usernames in an email format.
+* Your users have different login names on different systems (for example, Windows, Linux, and AWS).
+
+### How does an Entity Lookup Table work?
 
 An Entity Lookup Table defines two sets of values: a lookup value to look for in an incoming message and a substitution value. You can create Entity Lookup Tables to support the following types of normalization:
 
@@ -34,17 +43,17 @@ An Entity Lookup Table defines two sets of values: a lookup value to look for in
 * **User ID to Normalized Username**
 * **Username to Normalized Username**
 
-Entity Lookup Tables are based on Sumo Logic’s Lookup Tables feature. Here is an example of a **Host ID to Normalized Hostname** Lookup Table in the Sumo Logic Library:
+Entity Lookup Tables are based on Sumo Logic’s [Lookup Tables](/docs/search/lookup-tables/) feature. Here is an example of a **Host ID to Normalized Hostname** Lookup Table in the Sumo Logic Library:
 
 <img src={useBaseUrl('img/cse/example-table.png')} alt="Example Entity lookup table" style={{border: '1px solid gray'}} width="800"/>
 
-## Limitations
-
-You can configure a maximum of five Entity Lookup Tables. 
-
 ## Creating a Lookup Table
 
-Before you configure a Lookup Table in Cloud SIEM, you must create the Lookup Table in the Sumo Logic platform. There are a variety of ways to create a Lookup Table. 
+Before you configure a Lookup Table in Cloud SIEM, you must [create the Lookup Table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic platform. There are a variety of ways to create a Lookup Table. 
+
+### Limitations
+
+You can configure a maximum of five Entity Lookup Tables. 
 
 ### Populate table from inventory data
 
@@ -56,22 +65,23 @@ This method–the typical way to populate a Lookup Table for the purpose of Enti
 
 If you already have a Lookup Table that contains normalization data, you can configure it in Cloud SIEM. Or, if you have existing normalization data that is not currently in a Lookup Table you can create a Lookup Table with that data. Note that your Lookup Table must contain a field that contains a lookup value and one that contains a substitution value. There is no requirement for particular column names.
 
-For instructions, see the Create a Lookup Table topic. After creating the table, perform the steps in [Configure the Lookup Table in Cloud SIEM](#configure-the-lookup-table-in-cloud-siem), below.
+For instructions, see [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table/). After creating the table, perform the steps in [Configure the Lookup Table in Cloud SIEM](#configure-the-lookup-table-in-cloud-siem), below.
 
 ### Configure the Lookup Table in Cloud SIEM
 
-After you’ve created your Entity Lookup Table in the Sumo Logic Library, you can configure it in Cloud SIEM.
+After you've [created your Entity Lookup Table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic Library, you can configure it in Cloud SIEM.
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  Kanso-->
-1. On the **Entity Normalization** page, click **Lookup Tables**.
-1. Click **Create** on the **Lookup Tables** tab.
-1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="800"/>  
-1. **Type**. Choose the type of normalization you want to set up.
-   * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
-   * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
-   * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
-1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.
-1. **Substitution Column Name**. Enter the name of the Lookup Table column that contains the value you want to substitute for the lookup column.
-1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
-1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the [Lookup Table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
-1. Click **Create**.     
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  
+1. On the **Normalization** tab, click **Lookup Tables**.
+1. Select the lookup table.
+1. The **Existing Lookup Table** popup appears. Following is an example.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table dialog" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Edit** to configure the lookup table. Note that most fields are read-only.
+    1. **Path**. The path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` <br/>To see the path to the [Lookup Table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library, hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
+    1. **Type**. The type of normalization:
+       * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
+       * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
+       * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
+    1. **Column Name**. The name of the Lookup Table column that contains the primary key for the table.
+    1. **Sub Column Name**. The name of the Lookup Table column that contains the value you want to substitute for the lookup column.
+    1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
+    1. Click **Save**.     

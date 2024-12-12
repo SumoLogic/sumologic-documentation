@@ -41,7 +41,7 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 
 To configure a Workday Source, follow the steps below:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
@@ -132,6 +132,7 @@ To resolve this:
 1. Check if you have such an authentication policy enabled. If by default your users' login via SSO then you may have to exclude the ISU Security Group to allow it to use username and password by creating a separate authentication policy.
 1. Try changing the Session Timeout Minutes to 0 as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
 1. Exempt user from password expiration as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
+1. Configure the user login to skip security questions, if any.
 
 Below is the section for common errors for **Activity Logs**.
 

@@ -15,11 +15,11 @@ It is important to understand the volume of metrics that you are ingesting into 
 
 For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab.  
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration > Account**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration > Account**. 
 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the **Account Overview** tab, in the top menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Account Overview** tab, in the top menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+ 
 
 The calculation of DPM varies according to the type of metric Source.
 

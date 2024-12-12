@@ -501,7 +501,7 @@ See the overall Open Web Application Security Project (OWASP) anomaly score quar
     * **SQL Injections.**
     * **Session Fixations.**
 
-## Upgrading the Fastly app (Optional)
+## Upgrade/Downgrade the Fastly app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

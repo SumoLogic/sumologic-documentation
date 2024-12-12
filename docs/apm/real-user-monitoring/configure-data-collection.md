@@ -36,7 +36,7 @@ For full end-to-end visibility, we recommended supplementing your RUM browser au
 
 To configure a RUM HTTP Traces source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.   
 1. If you've not yet created a Hosted Collector, [follow these steps](/docs/send-data/hosted-collectors/configure-hosted-collector) to do so.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. <br/><img src={useBaseUrl('img/reuse/add-source.png')} alt="add source" style={{border: '1px solid gray'}} width="500"/>
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring HTTP Traces app icon" style={{border: '1px solid gray'}} width="100"/>
@@ -70,8 +70,11 @@ To configure a RUM HTTP Traces source:
      :::warning **Propagate Trace Header CORS URLs**
      Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
      <details>
-     This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports <a href="https://www.w3.org/TR/trace-context">W3C Trace Context</a> HTTP headers. <br/><br/>To propagate tracing context to create front-end to back-end traces, set the domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response - for example: <code>Access-Control-Allow-Headers: traceparent, tracestate</code>.
-     Valid cross-origin resources must include the prefix <code>http://</code> or <code>https://</code> and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
+     This list is empty by default, which means trace context propagation&#8212;allowing creation of front-end to back-end traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports [W3C Trace Context](https://www.w3.org/TR/trace-context) HTTP headers. 
+     
+     To propagate tracing context to create front-end to back-end traces, set the domain(s) to propagate W3C tracing context to. You must configure your servers/APIs to accept and return the following CORS headers in their response: `Access-Control-Allow-Headers: traceparent, tracestate`.
+
+     Valid cross-origin resources must include the prefix `http://` or `https://` and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
      </details>
      :::
    * **Geolocation recognition**: Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:

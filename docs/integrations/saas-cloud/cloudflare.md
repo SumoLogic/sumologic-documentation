@@ -203,7 +203,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />
 
-## Upgrading the Cloudflare app (Optional)
+## Upgrade/Downgrade the Cloudflare app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

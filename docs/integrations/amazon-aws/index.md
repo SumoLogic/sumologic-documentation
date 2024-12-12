@@ -60,6 +60,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/amazon-bedrock">Amazon Bedrock</a></h4>
+  <p>A guide to the Sumo Logic integration for Amazon Bedrock.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-certificate-manager-logo.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/amazon-aws/aws-certificate-manager">AWS Certificate Manager</a></h4>
   <p>A guide to the Sumo Logic integration for AWS Certificate Manager.</p>
@@ -161,6 +168,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href="/docs/integrations/amazon-aws/kinesis-streams">Amazon Kinesis - Streams Classic</a></h4>
         <p>A guide to our app for Amazon Kinesis - Streams.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-opensearch-service-logo.png')} alt="Thumbnail icon" width="50"/>
+        <h4><a href="/docs/integrations/amazon-aws/amazon-opensearch">Amazon OpenSearch</a></h4>
+        <p>Learn about the collection process for the Amazon OpenSearch Service.</p>
         </div>
       </div>
       <div className="box smallbox card">

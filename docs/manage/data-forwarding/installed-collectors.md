@@ -29,7 +29,7 @@ You need the [Manage Collectors role capability](../users-roles/roles/role-capa
 
 To set up a data forwarding destination:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. 
 1. Click **+ Destination** to add a new destination.
 1. Select one of these options for **Destination Type**. 
    * Hitachi
@@ -77,6 +77,10 @@ Follow the instructions for the destination type you chose.
 </TabItem>
 <TabItem value="archive">
 
+:::note
+Data forwarding to S3 Archive locations will forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. Data **will not** be forked to both Sumo Logic and AWS S3. In that case, you will want to send the data to Sumo Logic first and then configure [Forwarding Data from Sumo Logic to S3](/docs/manage/data-forwarding/amazon-s3-bucket/).
+:::
+
 * **Bucket Name**. Enter the exact name of the S3 bucket.You can create only one destination with a particular bucket name. If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
 *  **Description**. (Optional)
 * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
@@ -101,16 +105,16 @@ There are several methods you can use to configure processing rules: 
 
 **To configure processing rules for data forwarding using the web application**
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Search for the source that you want to configure, and click the **Edit** link for the source. The source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Enter a name to define the rule.
 1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR. For more information about creating processing rules, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. Select **Forward messages that match** as the rule type. This option is visible only if you have defined at least one data forwarding destination, as described in the previous section. 
-1. Select the Destination from the dropdown menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior. <br/>![transparent syslog forwarding option.png](/img/data-forwarding/transparent-syslog-forwarding-option.png)
+1. Select the Destination from the dropdown menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior. <br/><img src={useBaseUrl('img/manage/data-forwarding/transparent-syslog-forwarding-option.png')} alt="Transparent Forwarding toggle " style={{border: '1px solid gray'}} width="400" />
 1. Click **Apply**. The new rule is listed along with any other previously defined processing rules.
-1. Click **Add Rule** if you want to add another rule. <br/>![ProcessingRule.png](/img/data-forwarding/ProcessingRule.png)
+1. Click **Add Rule** if you want to add another rule. <br/><img src={useBaseUrl('img/manage/data-forwarding/ProcessingRule.png')} alt="Add Rule button " style={{border: '1px solid gray'}} width="400" />
 1. Click **Save** to save the rules you defined and start forwarding data that matches the rules.
 
 ## Configuring the size of forwarded syslog messages

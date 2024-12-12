@@ -50,7 +50,7 @@ The threat intel vendor must follow the STIX/TAXII 1.x standards.
 When you create an TAXII 1 Client Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a TAXII 1 Client Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **TAXII 1 Client**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -58,7 +58,7 @@ To configure a TAXII 1 Client Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
+1. **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
 1. **STIX/TAXII Configuration**:
    * **Discovery URL**. Enter the TAXII Discovery URL provided by the vendor (optional).
 1. **Collection Names**. Enter the collections to fetch, using the poll URL.
@@ -106,6 +106,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
 <a href="/files/c2c/taxii-1/example.tf" target="_blank">Download example</a>
+
+### Recommended configurations
+
+Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 1.
+
+| Vendor | Notes |
+| :-- | :-- |
+| <a href="/files/c2c/taxii-1/alien-vault-config.json" target="_blank">AlienVault</a> | Use your API key as the HTTP username and leave the password blank. |
+| <a href="/files/c2c/taxii-1/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. We recommend you setup both this TAXII 1 feed and the Recorded Future TAXII 2 feed. |
 
 ## FAQ
 

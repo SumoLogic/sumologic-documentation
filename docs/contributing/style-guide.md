@@ -286,21 +286,21 @@ To format an open beta release:
 
    First paragraph goes here...
    ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui-new.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
+1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
      ```js title="sidebars.ts"
      getstarted: [
        {
          type: 'category',
          label: 'Welcome to Sumo Logic',
          items: [
-           'get-started/sumo-logic-ui-new',
+           'get-started/sumo-logic-ui',
            ...
      beta: [
        {
          type: 'category',
          label: 'Beta',
          items: [
-           'get-started/sumo-logic-ui-new',
+           'get-started/sumo-logic-ui',
            ...
      ```
 1. Publish the doc.

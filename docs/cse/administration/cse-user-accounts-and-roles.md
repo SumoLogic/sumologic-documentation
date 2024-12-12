@@ -20,7 +20,7 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
 
 ## Assign Cloud SIEM capabilities to a role
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Click the **Roles** tab.
 1. Click **Add Role**.
 1. In the **Create New Role** dialog, scroll down to [**Cloud SIEM**](/docs/manage/users-roles/roles/role-capabilities#cloud-siem).

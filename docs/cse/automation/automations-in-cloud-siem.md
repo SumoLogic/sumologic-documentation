@@ -55,10 +55,10 @@ Now that the playbook is configured, you can add it to an automation.
 
 1. [Create a new automation](#create-an-automation).
 1. Select the playbook you created in Step 2.
-1. In **Expects attributes for**,  select **Entity** or **Insight**.
+1. In **Object (expects attributes for)**, select **Entity** or **Insight**.
 1. Select whether you want to automatically run the automation when an Insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
 1. Select **Enabled**.
-1. Click **Add to List**.
+1. Click **Save**.
 
 ### Step 4: Run the automation
 
@@ -82,7 +82,7 @@ If you configured the automation to [run manually](#run-an-automation-manually),
 
 ## View automations
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
 
 To view the automations that have run on Insights or Entities, see [View results of an automation](#view-results-of-an-automation).
@@ -91,14 +91,13 @@ To view the automations that have run on Insights or Entities, see [View results
 
 The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. Kanso-->
-1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
-1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" style={{border: '1px solid gray'}} width="400"/>
-1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM.
-1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected.
-1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. At the top of the **Automation** tab, click **+ Add Automation**. (To modify an existing automation, select the automation and click **Edit**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
+1. In the **Add Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" style={{border: '1px solid gray'}} width="400"/>
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
-1. Click **Add to List** (or **Update** if editing an existing automation).
+1. In **Object (xpects attributes for)** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected.
+1. For **Execution** select when the automation runs: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
+1. Click **Save**.
 
 ## Run an automation automatically
 
@@ -114,7 +113,7 @@ If an automation is set to run when an Insight is created or closed, it runs aut
 
 Automations can be run manually from the **Actions** drop-down menu on [Insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#insight-details-page) pages:
 
-<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" style={{border: '1px solid gray'}} width="200"/>
+<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" style={{border: '1px solid gray'}} width="300"/>
 
 You will see three sections in the **Actions** menu:
 * **Insight Automation**. Displays a list of all enabled Insight automations configured to run manually.
@@ -125,7 +124,7 @@ You will see three sections in the **Actions** menu:
 
 On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, Entity Automations can be run manually from the **Automations** drop-down menu:
 
-<img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an Entity" style={{border: '1px solid gray'}} width="250"/>
+<img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an Entity" style={{border: '1px solid gray'}} width="300"/>
 
 :::tip
 You can run the same automation more than once for a given Entity or Insight, but not at the same time. Additional attempts to run an automation while an instance is running will result in an error.
@@ -140,11 +139,6 @@ On an Insight, if you select **Actions** > **Entity Automation > Run Automations
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type.
 1. Click **Next**. A list displays of all Entity automations that are enabled, configured to be run manually, and configured for at least one of the Entity types you selected on the previous screen.
 1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate Entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
-
-In this example:
-   * The CarbonBlack automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
-   * The nslookup automation is configured to only run on IP Addresses so it will run three times.
-   * No automation will run on the Hostname.
 
 ## View results of an automation
 
@@ -172,7 +166,7 @@ After [running an automation](#run-an-automation-automatically), you can go to t
 
 <img src={useBaseUrl('img/cse/automations-execution-status.png')} alt="Automations execution status" style={{border: '1px solid gray'}} width="800"/>
 
-On each card you will find:
+For each automation you will find:
 * The time and date when the automation was run.
 * The name and description of the associated playbook.
 * The playbook’s current status.
@@ -184,11 +178,11 @@ You may have to manually refresh this screen to see the most current status.
 
 If you click **View Playbook**, the Automation Service UI will open to the playbook status page:
 
-<img src={useBaseUrl('img/cse/automations-playbook-status.png')} alt="Playbook status" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/automations-playbook-status.png')} alt="Playbook status" style={{border: '1px solid gray'}} width="800"/>
 
-You can switch to the graphical view by clicking **Graph** in the upper-right corner:
+You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
 
-<img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
 
 ## Migrate from legacy actions and enrichments to the Automation Service
 

@@ -5,6 +5,11 @@ description: Learn how to troubleshoot problems with the Cloud SIEM Network Sens
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
+
+:::warning end-of-life
+<SensorEOL/>
+:::
 
 The Cloud SIEM Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all network sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the Cloud SIEM network sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
 

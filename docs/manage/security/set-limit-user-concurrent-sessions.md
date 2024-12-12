@@ -14,7 +14,7 @@ To configure this option, you must be a Sumo Logic Administrator or have the "M
 
 To configure a concurrent sessions limit:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. 
 1. Click the checkbox in the **Per User Concurrent Sessions Limit** section.
 1. Enter a value from 1 to 100 in the **Number of concurrent sessions** field.  <br/><img src={useBaseUrl('img/security/policies-page.png')} alt="Per User Concurrent Sessions Limit section on the Policies tab" style={{border: '1px solid gray'}} width="600" />
    :::note

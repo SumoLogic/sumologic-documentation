@@ -28,7 +28,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     environment:
       name: ${{ inputs.environment }}
       url: ${{ inputs.hostname }}${{ inputs.base_url }}
@@ -41,13 +41,13 @@ jobs:
       AWS_DEFAULT_REGION: us-east-1
       AWS_EC2_METADATA_DISABLED: "true"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           cache: 'yarn'
       - name: Docusaurus Webpack cache
         uses: actions/cache@v3
@@ -57,7 +57,7 @@ jobs:
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
-        run: sudo apt-get install jq
+        run: sudo apt-get install -y jq
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site

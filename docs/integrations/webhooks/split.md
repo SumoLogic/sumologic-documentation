@@ -159,7 +159,7 @@ The **Split - Users and Groups** dashboard offers concise statistical summaries 
 
 <img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} style={{border: '1px solid black'}} alt="Split-Users_and_Groups"/>
 
-## Upgrading the Split app (Optional)
+## Upgrade/Downgrade the Split app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

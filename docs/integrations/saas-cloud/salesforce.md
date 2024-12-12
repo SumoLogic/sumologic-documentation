@@ -243,7 +243,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **API Login Trend by Type.** Provides details on the number and type of APIs used to login in a stacked column chart on a timeline for the last seven days.
 
-## Upgrading the Salesforce app (Optional)
+## Upgrade/Downgrade the Salesforce app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
