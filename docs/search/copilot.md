@@ -54,7 +54,6 @@ Sumo Logic Copilot leverages foundational models provided by Amazon Bedrock, inh
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
-Copilot ensures that customer data remains private and secure:
 
 * **Customer data privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
