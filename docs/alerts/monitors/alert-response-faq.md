@@ -67,7 +67,7 @@ Sumo Logic detects and maintains a signature library. It does that by analyzing 
 
 There could be cases where the process has still not cataloged a new log message to a signature. As a result, it would get bundled into the "Others" category. This problem should be fixed automatically after some time (when the background process runs).
 
-You can also force run the signature cataloging process manually, by calling the [LogCompare](../../search/logcompare.md) or [LogReduce](/docs/search/logreduce) operators from the Log Search page. 
+You can also force run the signature cataloging process manually, by calling the [LogCompare](/docs/search/behavior-insights/logcompare) or [LogReduce](/docs/search/behavior-insights/logreduce) operators from the Log Search page. 
 
 ## I don’t see the Dimensional Explanation card for logs-based alert
 

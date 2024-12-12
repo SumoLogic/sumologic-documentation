@@ -12,9 +12,6 @@ Behavior Insights encompasses three log search operators to accelerate insights,
 
 Modeled after our LogReduce log summarization feature, the LogReduce Values and LogReduce Keys operators cluster logs based on their structure or pattern and activity content respectively.
 
-
-## Guide contents
-
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
@@ -32,7 +29,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/behavior-insights/logreduce-values"><h4>LogReduce Values</h4></a>
+  <a href="/docs/search/behavior-insights/logreduce/logreduce-values"><h4>LogReduce Values</h4></a>
   <p>Clusters JSON logs using the values of keys.</p>
   </div>
 </div>

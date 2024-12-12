@@ -54,7 +54,7 @@ With the provided results you can:
 * Field values must be categorical.
 * [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
-* [Time Compare](../time-compare.md) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
+* [Time Compare](/docs/search/time-compare) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
 * Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
@@ -92,7 +92,7 @@ _sourceCategory= *cloudtrail* errorCode
 
 ### Kubernetes
 
-After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md), you can use LogExplain to analyze the frequency of events.
+After using [LogReduce Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values), you can use LogExplain to analyze the frequency of events.
 
 If a cluster of logs has `reason="FailedScheduling"` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods, you can use `logexplain` to understand which pods and the reason they are unable to find a node to run in.
 
@@ -105,7 +105,7 @@ _sourceCategory="nite-primary-eks/events"
 
 ### AWS CloudTrail
 
-After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
+After using [LogReduce Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 ```sql
 _sourceCategory=*cloudtrail*

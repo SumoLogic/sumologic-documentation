@@ -131,7 +131,7 @@ Depending on the type of data the alert was based on, metrics or logs, and the d
 
 ### Log Fluctuations
 
-This card detects different signatures in your log messages using [LogReduce](/docs/search/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
+This card detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
 * **New**: Log signatures that were only seen after the Alert was triggered but not one hour prior to the Alert start time.
 * **Gone**: Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as, Transaction Succeeded or Success.

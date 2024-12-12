@@ -37,13 +37,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/logreduce"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LogReduce</h4></a>
+  <a href="/docs/search/behavior-insights/logreduce"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LogReduce</h4></a>
   <p>Quickly assess activity patterns for things like a range of devices or traffic on a website.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/logcompare"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LogCompare</h4></a>
+  <a href="/docs/search/behavior-insights/logcompare"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LogCompare</h4></a>
   <p>Easily compare log data from different time periods to detect major changes or anomalies.</p>
   </div>
 </div>

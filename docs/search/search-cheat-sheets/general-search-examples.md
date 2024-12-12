@@ -272,7 +272,7 @@ exception* or fail* or error* or fatal*
 ```
 
 :::sumo More Info
-For more information, see [LogReduce](/docs/search/logreduce).
+For more information, see [LogReduce](/docs/search/behavior-insights/logreduce).
 :::
 
 ## Add metadata fields

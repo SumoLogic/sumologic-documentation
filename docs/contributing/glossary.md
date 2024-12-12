@@ -174,9 +174,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local Configuration File Management allows you to set up and manage Sources on an Installed Collector using one or more JSON files.
 
-**[LogCompare](/docs/search/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
+**[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[LogReduce](/docs/search/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+**[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
 
