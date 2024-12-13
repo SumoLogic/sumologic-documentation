@@ -404,7 +404,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/behavior-insights/logreduce/logreduce-keys">logreduce keys</a></td>
-   <td>The logreduce<strong> k</strong>eys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
+   <td>The logreduce keys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
    <td>_signature_id<br/>_schema<br/>_count</td>
    <td></td>
    <td><code>_sourcecategory="Labs/AWS/GuardDuty_V8"<br/>| json keys "region", "partition", "resource"<br/>| logreduce keys field=resource</code></td>
