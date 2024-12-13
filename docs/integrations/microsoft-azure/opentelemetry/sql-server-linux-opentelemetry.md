@@ -184,3 +184,21 @@ Use this dashboard to:
 -   Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-Operations.png' alt="Operations" />
+
+## Create monitors for SQL Server Linux app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SQL Server Linux alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `SQL Server - AppDomain` | This alert is triggered when we detect AppDomain related issues in your SQL Server instance. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Backup Fail` | This alert is triggered when we detect that the SQL Server backup failed. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
+| `SQL Server - Instance Down` | This alert is triggered when we detect that the SQL Server instance is down for 5 minutes. | Count `>` 0 | Count `<=` 0 |
+| `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count `>` 0 | Count `<=` 0 |
+| `SQL Server - Login Fail` | This alert is triggered when we detect that the user cannot login to SQL Server. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Mirroring Error` | This alert is triggered when we detect that the SQL Server mirroring has error. | Count `>=` 1 | Count `<` 1 |
