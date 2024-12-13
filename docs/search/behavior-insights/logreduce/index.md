@@ -38,20 +38,32 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce/"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Detect Patterns with LogReduce</h4></a>
+  <a href="/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Detect Patterns with LogReduce</h4></a>
   <p>Group messages with similar structures and patterns, providing insight into specific keywords or time range.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/behavior-insights/logreduce/influence-the-logreduce-outcome/"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Influence the LogReduce Outcome</h4></a>
-  <p>Influence the algorithm by editing a signature to increase or decrease your results granularity.</p>
+  <a href="/docs/search/behavior-insights/logreduce/logreduce-keys"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="35"/><h4>LogReduce Keys</h4></a>
+  <p>Clusters JSON logs based on keys providing an at-a-glance summary of patterns in logs based on their schema while ignoring specific values.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/search/behavior-insights/logreduce/logreduce-values"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="35"/><h4>LogReduce Values</h4></a>
+  <p>Clusters JSON logs using the values of keys.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/behavior-insights/logreduce/understand-the-logreduce-relevance-column/"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LogReduce Relevance Column</h4></a>
   <p>Displays a numerical score for a signature, predicting which signatures could be most meaningful.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/search/behavior-insights/logreduce/influence-the-logreduce-outcome"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Influence the LogReduce Outcome</h4></a>
+  <p>Influence the algorithm by editing a signature to increase or decrease your results granularity.</p>
   </div>
 </div>
 </div>

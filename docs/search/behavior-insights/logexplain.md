@@ -54,7 +54,7 @@ With the provided results you can:
 * Field values must be categorical.
 * [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
-* [Time Compare](/docs/search/time-compare) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
+* [Time Compare](/docs/search/time-compare) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
 * Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
@@ -132,11 +132,11 @@ Results show the relevance of each explanation:
 
 As a SecOps user, I want to detect compromised user credentials for Windows machines. 
 
-SecOps Insight: A hacked credential will display a remote login pattern (eventdata_logontype = 10) where a given user logs into more machines than they usually do, based on eventid = 4624 (login successful). I want to baseline 14 days of remote access activity and detect outliers in the most recent 24 hours.
+SecOps Insight: A hacked credential will display a remote login pattern (`eventdata_logontype=10`) where a given user logs into more machines than they usually do, based on `eventid=4624` (login successful). I want to baseline 14 days of remote access activity and detect outliers in the most recent 24 hours.
 
 #### Approach 1: Time Compare
 
-The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2 day intervals with 7 epochs, to create 14 days of data.
+The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2-day intervals with 7 epochs, to create 14 days of data.
 
 ```sql
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
@@ -162,4 +162,4 @@ _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 
 In an example dataset, this requires you to examine just 4 results, versus 773 in the worst case for time compare. The machines were not reported as significant in the `logexplain` algorithm, as they appeared at relatively the same frequency in both the baseline and comparison logs. Subjectively, the 4 users identified by `logexplain` were among the 150 results in the `time compare` query, sorted by percent increase in activity, so we believe our accuracy was at least as good as `time compare` with fewer results for the user to examine.
 
-One important difference for `logexplain` is that it is able to detectusers who were very active 14 days ago but are no longer or less active recently. This is important as hackers may have left the network by the time Sec Ops chooses to run any of these queries. Time compare on the other hand, if sorted based on percent increase of activity, will force the user to examine all 773 user-machine combinations to get the full picture.
+One important difference for `logexplain` is that it is able to detect users who were very active 14 days ago but are no longer or less active recently. This is important as hackers may have left the network by the time SecOps chooses to run any of these queries. Time compare on the other hand, if sorted based on percent increase of activity, will force the user to examine all 773 user-machine combinations to get the full picture.

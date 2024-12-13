@@ -6,7 +6,7 @@ description: Group by the values of specific keys in JSON logs.
 
 
 
-The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the LogReduce Keys operator, you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
+The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the [LogReduce Keys operator](/docs/search/behavior-insights/logreduce/logreduce-keys), you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
 This operator does not automatically [parse](/docs/search/search-query-language/parse-operators) your logs. You need to parse the keys you want to explore prior to specifying them in the LogReduce Values operation. 
 
