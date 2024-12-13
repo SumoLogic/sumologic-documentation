@@ -1,7 +1,6 @@
 ---
 id: mask-rules
-title: Mask Rules (Beta)
-sidebar_label: Mask Rules
+title: Mask Rules
 description: Create a mask rule to replace an expression with a mask string.
 ---
 <head>
@@ -56,8 +55,8 @@ Using the masking string `auth=User:AAA` would provide the following result:
     ```
     "auth"\s*:\s*"Basic\s*[^"]+"
     ```
-    
-    If the masking string given here is `"auth":"#####"`, then the log output will be: 
+
+    If the masking string given here is `"auth":"#####"`, then the log output will be:
 
     ```
     {
@@ -82,7 +81,7 @@ Using the masking string `auth=User:AAA` would provide the following result:
     auth=User\:(.*(?s).*session=.*?)\]
     ```
 
-:::note 
+:::note
 - For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
    - $ must be escaped as $$ to bypass environment variable substitution logic.
    - To input a literal $, use $$$.

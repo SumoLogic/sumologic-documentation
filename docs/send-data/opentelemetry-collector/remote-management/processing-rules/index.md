@@ -1,13 +1,8 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/processing-rules
-title: Processing Rules for OpenTelemetry (Beta)
+title: Processing Rules for OpenTelemetry
 description: Use Sumo Logic processing rules for an OpenTelemetry agent with an OpenTelemetry remote management (OTRM) source template.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
