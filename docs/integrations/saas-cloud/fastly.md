@@ -236,7 +236,6 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
     "waf_session_fixation_score": "%{waf.session_fixation_score}V",
     "waf_message": "%{cstr_escape(waf.message)}V"
 }
-}
   ```
 
   </details>
