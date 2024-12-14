@@ -151,7 +151,6 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 
   ```
 {
-{
     "service_id": "%{req.service_id}V",
     "service_version": "%{fastly_info.version}V",
     "time_start": "%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
