@@ -62,7 +62,8 @@ To configure a Dragos Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Endpoint URL**. Enter the Dragos platform endpoint URL. For example, `https://test.cxc.dragos.cloud/`.
-1. Enter the following details for authorization:
+1. **API ID**. Enter the API ID of your account collected from the [Dragos platform](#vendor-configuration). For example, `036fxxxx-b642-xxxx-99d3-fcxxxx2exxxx`.
+1. **API Secret**. Enter the API Secret of your account collected from the [Dragos platform](#vendor-configuration).. For example, `xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx`.
     1. **API ID**. API ID of your account. For example, `036fxxxx-b642-xxxx-99d3-fcxxxx2exxxx`.
     1. **API Secret**. API Secret of your account. For example, `xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx`.
 1. Check the following boxes to collect the required data:
