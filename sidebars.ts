@@ -2806,7 +2806,6 @@ integrations: [
             'cse/schema/parser-editor',
             'cse/schema/parsing-language-reference-guide',
             'cse/schema/parsing-patterns',
-            'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
           ],
         },
@@ -2893,7 +2892,7 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Troubleshoot Cloud SIEM',
+          label: 'Troubleshoot',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'cse/troubleshoot/index'},

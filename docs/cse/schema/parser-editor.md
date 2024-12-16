@@ -8,14 +8,14 @@ description: Learn how to use the Parser Editor to configure and test a custom p
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
+This article has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
 
 For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
 See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
 * [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
 * [Parsing Patterns](/docs/cse/schema/parsing-patterns)
-* [Parser Troubleshooting](/docs/cse/schema/parser-troubleshooting-tips)
+* [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers)
 
 :::note
 The instructions that follow assume that you have already written your parser code.
