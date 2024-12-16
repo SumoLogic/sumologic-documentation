@@ -11,12 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
-
 ## Log types
 
 The Fastly app uses the following log types:
 * Fastly CDN logs
-* Fastly WAF Request and Debug logs. For information about WAF, logging see [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
+* Fastly WAF Request and Debug logs. For information about WAF, logging refer to the [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
 ### Sample queries
@@ -33,11 +32,9 @@ _sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | w
 _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
 ```
 
-
 ## Collecting logs for Fastly
 
 This section has instructions for setting up log collection for the Fastly app.  
-
 
 ### Step 1: Configure collector and source
 
@@ -299,15 +296,13 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
-
-
 ## Installing the Fastly app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Fastly dashboards
+## Viewing the Fastly dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -330,7 +325,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 
 ### CDN - Origin Performance
 
-Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
+Focus in on Origin Host performance to check latencies, slow URLs, and error-causing URLs.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
