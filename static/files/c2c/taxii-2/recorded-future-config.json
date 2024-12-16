@@ -1,5 +1,5 @@
 {
-    "name": "Recorded Future Large and Default Collections",
+    "name": "TAXII 2 Recorded Future Large and Default Collections",
     "authType": "Basic",
     "basicPassword": "--- API KEY HERE ---",
     "ti_version": "2.1",
