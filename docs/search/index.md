@@ -43,12 +43,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/lookup-tables"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Lookup Tables</h4></a>
-  <p>Learn about Lookup tables and the search operators you can use with them.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/search/behavior-insights"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Behavior Insights</h4></a>
   <p>Gain behavioral insight of your environment using LogReduce operators.</p>
   </div>
@@ -63,6 +57,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/search/time-compare"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Time Compare</h4></a>
   <p>Run a compare operation automatically from your search results.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/search/lookup-tables"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Lookup Tables</h4></a>
+  <p>Learn about Lookup tables and the search operators you can use with them.</p>
   </div>
 </div>
 <div className="box smallbox card">
