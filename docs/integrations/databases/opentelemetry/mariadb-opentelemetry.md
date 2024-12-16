@@ -262,5 +262,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `MariaDB - Critical Errors` | This alert is triggered when there are critical database errors. | Count `>` 10 | Count `<=` 10 |
 | `MariaDB - Excessive Slow Query Detected` | This alert is triggered when the average time to execute a query is more than 15 seconds for a 5 minute time interval. | Count `>=` 1 | Count `<` 1 |
 | `MariaDB - Failed Login Attempts` | This alert is triggered when there are excessive failed login attempts in a short period. | Count `>=` 1 | Count `<` 1 |
-| `MariaDB - Instance down` | This alert is triggered when we detect that a MariaDB instance is down | Count `>=` 1 | Count `<` 1 |
+| `MariaDB - Instance down` | This alert is triggered when the MariaDB instance is down. | Count `>=` 1 | Count `<` 1 |
 | `MariaDB - Replication Failure` | This alert is triggered when there are replication failures. | Count `>=` 1 | Count `<` 1 |
