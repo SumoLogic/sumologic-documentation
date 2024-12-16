@@ -181,22 +181,37 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 | count by okta_user_id, actor, outcome_result, country, state
 ```
 
+## Collection configuration and app installation
 
-## Configuring Okta Log Collection
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-Use the [new Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
+- [Create a new collector and install the app](#create-a-new-collector-and-install-the-app); Or
+- [Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app); Or
+- [Use existing source and install the app](#use-existing-source-and-install-the-app)
 
-:::note
-The Okta Log Collection configuration via SumoJanus is no longer applicable and deprecated. We recommend switching to [Cloud-to-Cloud integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to configure the Okta Log collection. The steps must be completed in the order they are presented.
+:::important
+Use the [Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Okta app is properly integrated and configured to collect and analyze your Okta data.
 :::
 
-## Installing the Okta app
+### Create a new collector and install the app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-<AppInstall2/>
+<AppCollectionOPtion1/>
 
-## Viewing Okta dashboards​
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Okta dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
