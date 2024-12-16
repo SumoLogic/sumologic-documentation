@@ -65,7 +65,6 @@ To configure a Dragos Source:
 1. **API ID**. Enter the API ID of your account collected from the [Dragos platform](#vendor-configuration). For example, `036fxxxx-b642-xxxx-99d3-fcxxxx2exxxx`.
 1. **API Secret**. Enter the API Secret of your account collected from the [Dragos platform](#vendor-configuration).. For example, `xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx`.
 1. Select the checkbox depending on the type of data that you wish to collect.
-    1. **Collect Vulnerability**
     1. **Collect Addresses**
     1. **Collect Zones**
     1. **Collect Assets**
