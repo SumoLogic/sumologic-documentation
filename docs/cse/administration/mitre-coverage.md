@@ -37,7 +37,16 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      />
 -->
 
-<script src="https://fast.wistia.net/player.js" async></script><iframe src="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false" title="Micro Lesson: Cloud SIEM MITRE ATT&amp;CK® Threat Coverage Explorer Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="854px" height="480px"></iframe>
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 ## User interface 
 
