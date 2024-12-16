@@ -206,6 +206,6 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `Squid Proxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count `>` 0 | Count `<=` 0 |
-| `Squid Proxy - High Denied Request` | This alert is triggered when there are too many HTTP denied requests (>5%) | Count `>` 0 | Count `<=` 0 |
+| `Squid Proxy - High Denied Request` | This alert is triggered when there are too many HTTP denied requests (>5%). | Count `>` 0 | Count `<=` 0 |
 | `Squid Proxy - High Response Time` | This alert is triggered when requests are taking too long to process. | Count `>` 20 | Count `<=` 20 |
 | `Squid Proxy - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count `>` 0 | Count `<=` 0 |
