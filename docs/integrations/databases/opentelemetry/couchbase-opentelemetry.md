@@ -238,7 +238,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `Couchbase - Bucket Not Ready` | This alert is triggered when a bucket in the Couchbase cluster is not ready. | Count `>` 0 | Count `<=` 0 |
-| `Couchbase - High Latency HTTP Requests` | This alert is triggered on high average latency for HTTP requests to Couchbase | Count `>` 1000 | Count `<=` 1000 |
+| `Couchbase - High Latency HTTP Requests` | This alert is triggered on high average latency for HTTP requests to the Couchbase. | Count `>` 1000 | Count `<=` 1000 |
 | `Couchbase - Node Down` | This alert is triggered when a node in the Couchbase cluster is down. | Count `>` 0 | Count `<=` 0 |
 | `Couchbase - Node Not Respond` | This alert is triggered when a node in the Couchbase cluster does not respond too many times. | Count `>=` 10 | Count `<` 10 |
 | `Couchbase - Too Many Error Queries on Buckets` | This alert is triggered when there are too many error queries on a bucket in a Couchbase cluster. | Count `>=` 1000 | Count `<` 1000 |
