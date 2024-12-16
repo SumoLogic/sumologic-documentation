@@ -200,5 +200,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
 | `SQL Server - Instance Down` | This alert is triggered when we detect that the SQL Server instance is down for 5 minutes. | Count `>` 0 | Count `<=` 0 |
 | `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count `>` 0 | Count `<=` 0 |
-| `SQL Server - Login Fail` | This alert is triggered when we detect that the user cannot login to SQL Server. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Login Fail` | This alert is triggered when the user is unable to login to the SQL Server. | Count `>=` 1 | Count `<` 1 |
 | `SQL Server - Mirroring Error` | This alert is triggered when the SQL Server mirroring has error. | Count `>=` 1 | Count `<` 1 |
