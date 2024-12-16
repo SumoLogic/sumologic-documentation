@@ -201,19 +201,16 @@ Upon identifying an issue with a Cloud SIEM out-of-the-box parser using this art
 
 ### Escalation requirements
 
-* A concise description of the problem 
-   * Screenshots are helpful for understanding current and potentially previous behavior if there was a change.
-* A representative raw log sample 
+Provide the following:
+* A concise description of the problem. Screenshots are helpful for understanding current and potentially previous behavior if there was a change.
+* A representative raw log sample.
    * Include logs which represent the issue. 
    * For new support or extension of an already supported source, include logs which represent the types of (possibly new) events.
-* A security use case if it is not immediately obvious 
-   * Not all logs necessarily will be useful in Cloud SIEM.
-* Supporting documentation
-   * Esoteric or poorly labelled values may require documentation which is not always publicly available.
-* Configuration information
-   * Many data sources will have options for configuring logging. It is important to understand what those settings are to develop new global support for a data source or offer advice for a custom solution if a global one is not appropriate.
+* Security use case if it is not immediately obvious. Not all logs necessarily will be useful in Cloud SIEM.
+* Supporting documentation. Esoteric or poorly labelled values may require documentation which is not always publicly available.
+* Configuration information. Many data sources will have options for configuring logging. It is important to understand what those settings are to develop new global support for a data source or offer advice for a custom solution if a global one is not appropriate.
 
-### Gathering raw samples
+### Gather raw samples
 
 Prior to opening a support request, it is helpful to gather sample raw logs (without field extraction rules overwriting `_raw`) which represent the identified issue.
 
@@ -223,7 +220,7 @@ Following are some ways to gather samples.
 
 #### Search for message IDs
 
-Gather a sample by searching using the identified `_messageId`(s) of the failing to parse logs:
+Gather a sample by searching for the logs that are failing to parse using the identified `_messageId`(s):
 ```
 _sourceCategory=<your/source/category>
 | where _messageId in (<messageId1>,<messageId2>,<etc.>)

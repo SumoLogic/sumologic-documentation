@@ -2898,6 +2898,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/troubleshoot/index'},
           items: [
             'cse/troubleshoot/troubleshoot-parsers',
+            'cse/troubleshoot/troubleshoot-mappers',
           ],
         },
       ],
