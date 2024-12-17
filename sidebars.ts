@@ -425,6 +425,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
@@ -2674,8 +2675,6 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
       items: [
-        'cse/introduction-to-cloud-siem',
-        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2683,9 +2682,13 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/get-started-with-cloud-siem/index'},
           items: [
+            'cse/get-started-with-cloud-siem/cloud-siem-ui',
+            'cse/get-started-with-cloud-siem/intro-for-analysts',
+            'cse/get-started-with-cloud-siem/intro-for-administrators',
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
         },
