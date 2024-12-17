@@ -1,6 +1,6 @@
 ---
 id: vmware-workspace-one-source
-title: VMware Workspace One
+title: VMware Workspace One Source
 sidebar_label: VMware Workspace One
 tags:
     - VMware Workspace One
