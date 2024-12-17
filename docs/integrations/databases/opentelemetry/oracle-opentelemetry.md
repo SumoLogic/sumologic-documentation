@@ -570,7 +570,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener could not resolve a command. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener cannot resolve a command. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Archival Log Creation` | This alert is triggered when an archive log creation error occurs. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Block Corruption` | This alert is triggered when we detect corrupted data blocks. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Database Crash` | This alert is triggered when the database crashes. | Count `>` 0 | Count `<=` 0 |
