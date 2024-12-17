@@ -34,7 +34,7 @@ The VMware Workspace One source supports [O-Auth-based authentication](https://d
 
 #### Endpoint URL
 
-The integration requires the configuration of the VMware Workspace One request endpoint URL, which will be the domain URL of the VMware Workspace console.
+Endpoint URL will be the domain URL of the VMware Workspace console. For example, `https://as135.awmdm.com`.
 
 Sample Values are:
 - `https://as135.awmdm.com`
