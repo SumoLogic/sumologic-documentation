@@ -329,12 +329,12 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `IIS - Access from Highly Malicious Sources` | This alert is triggered when an IIS server is accessed from highly malicious IP addresses. | Count `>` 0 | Count `<=` 0 |
-| `IIS - ASP.NET Application Errors` | This alert is triggered when we detect an error in the ASP.NET applications running on an IIS server. | Count `>` 0 | Count `<=` 0 |
-| `IIS - Blocked Async IO Requests` | This alert is triggered when we detect that there are blocked async I/O requests on an IIS server. | Count `>` 0 | Count `<=` 0 |
-| `IIS - Error Events` | This alert is triggered when an error in the IIS logs is detected. | Count `>` 0 | Count `<=` 0 |
-| `IIS - High ASP.NET Current Requests` | This alert is triggered when current ASP.NET request count exceeds given value (Default 500). | Count `>` 500 | Count `<=` 500 |
-| `IIS - High Client (HTTP 4xx) Error Rate (Copy)` | This alert is triggered when there are too many HTTP requests (>5%) with a 4xx response code. | Count `>` 0 | Count `<=` 0 |
-| `IIS - High Current Connections` | This alert is triggered when the current connections exceeds given value (Default 1000), to detect potential capacity issues. | Count `>` 1000 | Count `<=` 1000 |
-| `IIS - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a 5xx response code. | Count `>` 0 | Count `<=` 0 |
-| `IIS - No Worker Processes` | This alert is triggered when worker processes count drops to zero indicating potential application pool issues. | Count `<` 1 | Count `>=` 1 |
-| `IIS - Slow Response Time` | This alert is triggered when the response time for a given IIS server is greater than one second. | Count `>` 0 | Count `<=` 0 |
+| `IIS - ASP.NET Application Errors` | This alert is triggered when an error is detected in the ASP.NET applications running on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Blocked Async IO Requests` | This alert is triggered when blocked async I/O requests are detected on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Error Events` | This alert is triggered when an error is detected in the IIS logs. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High ASP.NET Current Requests` | This alert is triggered when the current ASP.NET request count exceeds the given value (Default 500). | Count `>` 500 | Count `<=` 500 |
+| `IIS - High Client (HTTP 4xx) Error Rate (Copy)` | This alert is triggered when more than 5% of HTTP requests result in a 4xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High Current Connections` | This alert is triggered when the current connections exceed the given value (Default 1000), indicating potential capacity issues. | Count `>` 1000 | Count `<=` 1000 |
+| `IIS - High Server (HTTP 5xx) Error Rate` | This alert is triggered when more than 5% of HTTP requests result in a 5xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - No Worker Processes` | This alert is triggered when the worker process count drops to zero, indicating potential application pool issues. | Count `<` 1 | Count `>=` 1 |
+| `IIS - Slow Response Time` | This alert is triggered when the response time for a given IIS server exceeds one second. | Count `>` 0 | Count `<=` 0 |
