@@ -4,7 +4,7 @@ title: VMware Workspace One
 sidebar_label: VMware Workspace One
 tags:
     - VMware Workspace One
-description: Collect the details of the devices and the corresponding applications of each device and send them to Sumo Logic.
+description: Collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/vmware-workspace-one/example.json';
