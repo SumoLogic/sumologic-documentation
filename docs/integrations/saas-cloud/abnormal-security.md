@@ -126,7 +126,7 @@ Depending on the set up collection method, you can configure and install the app
 
 - **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
 - **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
-- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
+- **[Use existing source and install the app](#use-an-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
 :::important
 Use the [Cloud-to-Cloud Integration for Abnormal Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
