@@ -16,7 +16,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 VMware is a leading software company specializing in virtualization and cloud technologies. It offers solutions that enhance IT infrastructure, streamline operations, and improve efficiency across various industries.
 
-VMware Workspace ONE is a digital workspace platform that combines unified endpoint management, access management, and application management. It allows organizations to securely deliver and manage apps on any device, simplifying device management, boosting security, streamlining user experience, and improving productivity.
 
 The VMware Workspace One source collects the details of the devices and the corresponding applications of each device and send them to Sumo Logic.
 
