@@ -46,17 +46,37 @@ _sourceCategory="lastpass_event" Action Username
 | limit 10
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [LastPass Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source) for the LastPass app, follow the instructions provided. These instructions will guide you through the process of creating a source using the LastPass Source category, which you will need to use when installing the app. By following these steps, you can ensure that your LastPass app is properly integrated and configured to collect and analyze your LastPass data.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the LastPass app​
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for LastPass](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your LastPass app is properly integrated and configured to collect and analyze your LastPass data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Viewing LastPass dashboards​​
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the LastPass dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 
-## Log types and versions
+## Log types
 
 The Sumo Logic collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
 
@@ -185,12 +185,12 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 Depending on the set up collection method, you can configure and install the app in three ways:
 
-- [Create a new collector and install the app](#create-a-new-collector-and-install-the-app); Or
-- [Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app); Or
-- [Use existing source and install the app](#use-existing-source-and-install-the-app)
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
 :::important
-Use the [Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Okta app is properly integrated and configured to collect and analyze your Okta data.
+Use the [Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Okta app is properly integrated and configured to collect and analyze your Okta data.
 :::
 
 ### Create a new collector and install the app

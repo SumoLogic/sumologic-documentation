@@ -7,29 +7,49 @@ description: The Sumo Logic App for Duo Security helps you monitor your Duo acco
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
 
 Duo provides two-factor authentication, endpoint remediation, and secure single sign-on tools. The Sumo Logic App for Duo Security helps you monitor your Duo account’s [authentication logs](https://duo.com/docs/adminapi#authentication-logs), [administrator logs](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs). The dashboards provide insight into failed and successful authentications, events breakdown by applications, factors, and users, geo-location of events, admin activities, outliers, threat analysis of authentication, and administrator events.
 
 ## Log types
 
-The Duo Security App uses following logs. See [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
+The Duo Security App uses following logs. Refer to the [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
 
 When you generate the Duo credentials, you should do it for the Admin API application.
 
-* Authentication Logs
-* Administrator Logs
-* Telephony Logs
+* Authentication logs
+* Administrator logs
+* Telephony logs
 
-## Collecting logs for the Duo Security app
+## Collection configuration and app installation
 
-To collect logs from the Duo Security App, use the new [Cloud-to-Cloud Integration for Duo Security App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the Duo Security app
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Duo Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-security-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Duo Security app is properly integrated and configured to collect and analyze your Duo Security data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Duo Security dashboards
 

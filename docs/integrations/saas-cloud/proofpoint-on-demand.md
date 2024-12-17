@@ -22,7 +22,10 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
 
 ## Sample log messages
 
-```json title="Message log"
+<details>
+<summary>Message log</summary>
+
+```json
  {
  "final_module": "access",
  "msg": {
@@ -129,6 +132,8 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
+</details>
+
 ## Sample queries
 
 ```sql title="Unique Inbound Domains"
@@ -146,15 +151,35 @@ _sourceCategory="pod_src"
 | count_distinct(inbound_domain)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the Proofpoint on Demand app​
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Proofpoint on Demand](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Proofpoint on Demand dashboards​​
 

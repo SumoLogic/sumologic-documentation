@@ -19,7 +19,7 @@ Key features and benefits of the Cato Networks app include:
 
 ## Log types
 
-This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and [Audit Feed](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed) data from Cato Networks platform.
+This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and [Audit Feed](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed) data from the Cato Networks platform.
 
 ## Sample log messages
 
@@ -90,15 +90,35 @@ _sourceName="source" admin
 | count(admin_id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/) source and use the same source category while installing the app.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the Cato Networks app
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Cato Networks](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Cato Networks app is properly integrated and configured to collect and analyze your Cato Networks data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Cato Networks dashboards
 
@@ -133,7 +153,7 @@ The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overv
 - **Top Attack Signatures**. The top attack signatures widget highlights the most common attack patterns, allowing you to focus on the most significant risks.
 - **Top Threats**. The top threats widgets highlight the specific threats allowing you to focus on the most significant risks.
 - **MTRE Attack Summary**. The MITRE summary provides a concise overview of the relevant MITRE AT and CK framework for understanding the tactics and techniques associated with threats.
-- **Threats Over Time**.The threats over time widget shows the trend of threats, assisting in monitoring the evolving threat landscape.
+- **Threats Over Time**. The threats over time widget shows the trend of threats, assisting in monitoring the evolving threat landscape.
 
 ### Audit Feed
 

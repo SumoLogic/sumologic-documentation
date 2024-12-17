@@ -84,15 +84,35 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up collection, follow the instructions in [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source). These instructions will guide you through the process of creating a source using the Salesforce Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the Salesforce app
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Salesforce](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Salesforce dashboards​
 

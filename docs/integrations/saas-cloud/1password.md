@@ -7,7 +7,7 @@ description: The Sumo Logic App for 1Password helps you monitor your 1Password a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="55"/>
 
 1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic app for 1Password enables you to monitor sign-in and item usage events within your 1Password account. It offers insights into failed and successful authentications, breaking down events by client applications, type, category, users, and geo-location, while also identifying outliers and analyzing threats related to sign-ins. Furthermore, the app provides in-depth tracking of critical security activities such as account activations, deletions, email changes, and group creations. It visualizes audit events by geographic location, highlights risky areas, and offers detailed logs of recent access activities and role changes. This app helps secure your 1Password vault by delivering comprehensive insights into user actions and threat intelligence on clients accessing shared vaults.
 
@@ -25,7 +25,10 @@ The 1Password app uses the following logs:
 
 ### Sample log messages
 
-```json title="Sign-in attempt Event"
+<details>
+<summary>Sign-in attempt Event</summary>
+
+```json 
     {
       "uuid": "56YE2TYN2VFYRLNSHKPW5NVT5E",
       "session_uuid": "A5K6COGVRVEJXJW3XQZGS7VAMM",
@@ -52,8 +55,12 @@ The 1Password app uses the following logs:
       }
     }
 ```
+</details>
 
-```json title="Item Usage Event"
+<details>
+<summary>Item Usage Event</summary>
+
+```json 
     {
       "uuid": "56YE2TYN2VFYRLNSHKPW5NVT5E",
       "timestamp": "2020-06-11T16:32:50-03:00",
@@ -77,8 +84,12 @@ The 1Password app uses the following logs:
     "action": "secure-copy"
     }
 ```
+</details>
 
-```json title="Audit Events Log"
+<details>
+<summary>Audit Events Log</summary>
+
+```json
 {
   "uuid": "56YE2TYN2VFYRLNSHKPW5NVT5E",
   "timestamp": "2023-03-15T16:33:50-03:00",
@@ -114,6 +125,7 @@ The 1Password app uses the following logs:
   }
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -155,15 +167,35 @@ _sourceCategory="app/"
 | fields -_messageTime
 ```
 
-## Collecting logs for 1Password
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app.
+Depending on the set up collection method, you can configure and install the app in three ways:
 
-## Installing the 1Password app
+- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
+- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
+- **[Use existing source and install the app](#use-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for 1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your 1Password app is properly integrated and configured to collect and analyze your 1Password data.
+:::
 
-<AppInstall/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing 1Password dashboards
 
