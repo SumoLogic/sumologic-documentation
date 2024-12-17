@@ -11,7 +11,7 @@ A Cloud SIEM rule is logic that fires based on information in incoming records. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view Rules, in the top Cloud SIEM menu select **Content > Rules**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
  
 :::tip
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
@@ -36,12 +36,12 @@ import Iframe from 'react-iframe'; 
 
 There are several kinds of rules. Each supports a different sort of firing behavior (For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).)
 
-* **Match rule**. Fires when an incoming record matches the rule expression. A Match rule is stateless: it looks at a single record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
-* **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple records—the difference is that a Chain rule applies multiple expressions to a record. For more information about Chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
-* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about Aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
-* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
-* **First Seen rule**. Fires when behavior by an entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
-* **Outlier rule**. Fires when behavior by an entity is encountered that deviates from its baseline activity. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
+* **Match rule**. Fires when an incoming record matches the rule expression. A match rule is stateless: it looks at a single record, and it either fires or it doesn’t. The expression in the previous section is an example of a match rule expression. If a record matches the expression, the rule fires. For more information about match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
+* **Chain rule**. You can use a chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a threshold rule, a chain rule is stateful and counts multiple records—the difference is that a chain rule applies multiple expressions to a record. For more information about chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
+* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
+* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A threshold rule is stateful, a condition must be satisfied by multiple records over a period of time. For more information about threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
+* **First Seen rule**. Fires when behavior by an entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
+* **Outlier rule**. Fires when behavior by an entity is encountered that deviates from its baseline activity. For each outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a signal. For more information about outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
 ## Rule limits
 
@@ -55,7 +55,7 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 | Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
 | Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
 
-*Applies to all [rule types](#rule-types) except Match rules. 
+*Applies to all [rule types](#rule-types) except match rules. 
 <br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
 
 :::note
@@ -191,26 +191,26 @@ Some of the key metadata fields are defined below.
 
 This section describes two key Cloud SIEM features that enable you to write richer rules that can look up information about the entities that are actors in a record. For example, you could compare a domain in a record to a list of allowed listed domains. Or you could compare an IP address to a list of IP addresses known to be indicators of compromise.  
 
-### Match Lists
+### Match lists
 
-The subsections below explain how Match Lists work, and how to leverage them in Cloud SIEM rules. For more information about Match Lists, see [Match Lists and Suppressed Lists](/docs/cse/match-lists-suppressed-lists/).
+The subsections below explain how match lists work, and how to leverage them in Cloud SIEM rules. For more information about match lists, see [Match Lists and Suppressed Lists](/docs/cse/match-lists-suppressed-lists/).
 
-#### Match Lists are used to enrich record data
+#### Match lists are used to enrich record data
 
-This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists) are, and how Cloud SIEM uses them to enrich record data. The short story is that when a record is ingested, Cloud SIEM uses Match Lists to add information to the record. So, your rule doesn’t directly refer to a Match List, it checks the record for data that Cloud SIEM may have added to the record at the time of ingestion. 
+This section describes what [match lists](/docs/cse/match-lists-suppressed-lists) are, and how Cloud SIEM uses them to enrich record data. The short story is that when a record is ingested, Cloud SIEM uses match lists to add information to the record. So, your rule doesn’t directly refer to a match List, it checks the record for data that Cloud SIEM may have added to the record at the time of ingestion. 
 
-Match Lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
+Match lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. match lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the Cloud SIEM UI. 
+Here’s an example of a match list in the Cloud SIEM UI. 
 
 <img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
 
-You can take advantage of Match Lists in rules, but Match Lists actually come into play when records are ingested. Here’s how it works:  When a record is ingested, Cloud SIEM compares the entries in all Match Lists to fields in the record. Of course, Cloud SIEM doesn’t compare the entries in a given Match List to all fields in a record; it wouldn’t make sense to compare a domain name to an IP address. You could say that Cloud SIEM understands the difference between apples and oranges: Cloud SIEM distinguishes which record fields contain IP addresses, which contain domain name and so on. So, Cloud SIEM compares a Match List of IP addresses to record fields that contain IP addresses. Similarly, Cloud SIEMs compares a Match List of usernames to record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
+You can take advantage of match lists in rules, but match lists actually come into play when records are ingested. Here’s how it works:  When a record is ingested, Cloud SIEM compares the entries in all match lists to fields in the record. Of course, Cloud SIEM doesn’t compare the entries in a given match list to all fields in a record; it wouldn’t make sense to compare a domain name to an IP address. You could say that Cloud SIEM understands the difference between apples and oranges: Cloud SIEM distinguishes which record fields contain IP addresses, which contain domain name and so on. So, Cloud SIEM compares a match list of IP addresses to record fields that contain IP addresses. Similarly, Cloud SIEMs compares a match list of usernames to record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
 
-When a record contains a value that *exactly* matches one or more Match Lists (partial matches are not supported), two fields in the record get populated:
+When a record contains a value that *exactly* matches one or more match lists (partial matches are not supported), two fields in the record get populated:
 
-* `listMatches.` Cloud SIEM adds the names of the Match Lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
-* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the record’s `SourceIp `is also “5.6.7.8”, the assuming the `SourceIP` address in the “vuln_scanners” Match List, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `listMatches.` Cloud SIEM adds the names of the match lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the `SourceIP` address in the “vuln_scanners” match list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
+* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s `SourceIp `is also “5.6.7.8”, the assuming the `SourceIP` address in the “vuln_scanners” match list, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within records, you can reference it downstream in both rules and search. 
 
@@ -248,15 +248,15 @@ This example below checks a record for a field named `listMatches` that contains
 
 ### Threat Intelligence
 
-Cloud SIEM’s Threat Intelligence lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
+Cloud SIEM’s Threat Intelligence lists are very similar to match lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
 
 Here’s an example of a Threat Intelligence list in the Cloud SIEM UI. 
 
 <img src={useBaseUrl('img/cse/example-threat-intl.png')} alt="Example threat intelligence list" width="800"/>
 
-Like Match Lists, Threat Intelligence lists are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your configured Threat Intelligence lists.
+Like match lists, Threat Intelligence lists are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your configured Threat Intelligence lists.
 
-When a record contains a value that matches an entry in one or more Threat Intelligence lists, just like with Match List data, two fields in the record get populated: a `listMatches` field that contains the names of Threat Intelligence lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
+When a record contains a value that matches an entry in one or more Threat Intelligence lists, just like with match list data, two fields in the record get populated: a `listMatches` field that contains the names of Threat Intelligence lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
 For example, given a record whose `SourceIp` column matches a entry in My Threat Intelligence List, the `listMatches` field added to the record would look like this:
 
