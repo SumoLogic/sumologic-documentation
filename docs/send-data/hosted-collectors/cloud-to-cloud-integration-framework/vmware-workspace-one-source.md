@@ -40,7 +40,7 @@ Endpoint URL will be the domain URL of the VMware Workspace console. For example
 #### Auth URL
 
 
-VMware Workspace One API Regions are:
+The following table contains the Auth URLs based on the location of your VMware Workspace One API account:
 
 | Region | Auth URL |
 |:--|:--|
