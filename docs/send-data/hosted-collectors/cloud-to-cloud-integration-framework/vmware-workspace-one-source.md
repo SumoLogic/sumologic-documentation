@@ -3,7 +3,7 @@ id: vmware-workspace-one-source
 title: VMware Workspace One Source
 sidebar_label: VMware Workspace One
 tags:
-    - VMware Workspace One
+    - vmware-workspace-one
 description: Collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
