@@ -196,7 +196,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `SQL Server - AppDomain` | This alert is triggered when we detect AppDomain related issues in your SQL Server instance. | Count `>=` 1 | Count `<` 1 |
-| `SQL Server - Backup Fail` | This alert is triggered when the SQL Server backup is failed. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Backup Fail` | This alert is triggered when the SQL Server backup fails. | Count `>=` 1 | Count `<` 1 |
 | `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
 | `SQL Server - Instance Down` | This alert is triggered when the SQL Server instance is down for 5 minutes. | Count `>` 0 | Count `<=` 0 |
 | `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count `>` 0 | Count `<=` 0 |
