@@ -36,7 +36,6 @@ The VMware Workspace One source supports [O-Auth-based authentication](https://d
 
 Endpoint URL will be the domain URL of the VMware Workspace console. For example, `https://as135.awmdm.com`.
 
-- `https://techp.awmdm.com`
 
 #### Auth URL
 
