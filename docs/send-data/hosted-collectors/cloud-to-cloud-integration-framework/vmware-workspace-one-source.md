@@ -74,7 +74,7 @@ To configure a VMware Workspace One Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL. For example, `https://as135.awmdm.com`.
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
-1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#vendor-configuration). For example, `cfea26d59bd542488ea706b025564d42`.
+1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](##client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
 1. **Client Secret**. Enter the Client Secret key of your account collected from the [VMware Workspace One platform](#vendor-configuration). For example, `E2220271xxxxxxxxxxxxxxxxxxxxx4556634`.
 1. (Optional) **Device Type**. Enter the list of device types to collect their information.
 1. Select the **Collect Apps Details** checkbox to collect the apps details.
