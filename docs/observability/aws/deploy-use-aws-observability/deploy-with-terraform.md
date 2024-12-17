@@ -707,7 +707,7 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
 ```json title="cloudwatch_metrics_source_details"
-{
+cloudwatch_metrics_source_details = {
  "bucket_details": {
    "bucket_name": "",
    "create_bucket": true,
