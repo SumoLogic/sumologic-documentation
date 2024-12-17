@@ -57,7 +57,7 @@ The following table contains the Auth URLs based on the location of your VMware 
 
 #### Client ID and Client Secret
 
-Follow the steps mentioned under the [Create an OAuth Client to Use for API Commands (SaaS)](https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#create_an_oauth_client_to_use_for_api_commands_saas) section to generate the Client ID and Client Secret.
+To generate the Client ID and Client Secret, refer to the [Create an OAuth Client to Use for API Commands (SaaS)](https://docs.omnissa.com/bundle/WorkspaceONE-UEM-Console-BasicsVSaaS/page/UsingUEMFunctionalityWithRESTAPI.html#create_an_oauth_client_to_use_for_api_commands_saas) section.
 
 ### Source configuration
 
