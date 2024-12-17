@@ -24,7 +24,7 @@ The VMware Workspace One source collects the details of the devices and the corr
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 24 hours | [Search API](https://cn135.awmdm.com/API/help/Docs/Explore?urls.primaryName=MDM%20API%20V3#/DevicesV3/DevicesV3_SearchAsync) |
+| 24 hours | [Devices](https://cn135.awmdm.com/API/help/Docs/Explore?urls.primaryName=MDM%20API%20V3#/DevicesV3/DevicesV3_SearchAsync) |
 | 24 hours | [App API](https://cn135.awmdm.com/API/help/Docs/Explore?urls.primaryName=MDM%20API%20V2#/AppsV2/AppsV2_GetAppListForDevicesAsync) |
 
 ## Setup
