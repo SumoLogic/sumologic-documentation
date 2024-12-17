@@ -42,7 +42,6 @@ Sample Values are:
 
 #### Auth URL
 
-The integration requires the configuration of the VMware Workspace One Authentication domain.
 
 VMware Workspace One API Regions are:
 
