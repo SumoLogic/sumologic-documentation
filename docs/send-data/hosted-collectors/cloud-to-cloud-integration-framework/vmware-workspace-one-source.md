@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="60" />
 
-VMware is a leading software company specializing in virtualization and cloud technologies. It offers solutions that enhance IT infrastructure, streamline operations, and improve efficiency across various industries.
+VMware Workspace ONE is a comprehensive digital workspace platform that combines unified endpoint management, access management, and application management capabilities. It enables organizations to securely deliver and manage any app on any device, providing a seamless and productive user experience. Workspace ONE empowers IT teams to simplify device management, enhance security, and increase workforce productivity through a unified and integrated.
 
 
 The VMware Workspace One source collects the device details and corresponding list of applications for the devices from the VMware Workspace One platform and send them to Sumo Logic.
