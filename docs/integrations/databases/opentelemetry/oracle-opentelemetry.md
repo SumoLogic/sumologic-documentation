@@ -579,6 +579,6 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `Oracle - Internal Errors` | This alert is triggered when internal errors are detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Login Fail` | This alert is triggered when we detect that a user cannot login. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Possible Inappropriate Activity` | This alert is triggered when we detect possible inappropriate activity. | Count `>` 0 | Count `<=` 0 |
-| `Oracle - TNS Error` | This alert is triggered when we detect TNS operations errors. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - TNS Error` | This alert is triggered when TNS operation errors are detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Unable To Extend Tablespace` | This alert is triggered when tablespace extension failures are detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Unauthorized Command Execution` | This alert is triggered when a user is not authorized to execute a requested listener command in an Oracle instance. | Count `>` 0 | Count `<=` 0 |
