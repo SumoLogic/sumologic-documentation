@@ -575,7 +575,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `Oracle - Block Corruption` | This alert is triggered when corrupt data blocks are detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Database Crash` | This alert is triggered when the database crashes. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Deadlock` | This alert is triggered when deadlocks are detected. | Count `>` 5 | Count `<=` 5 |
-| `Oracle - Fatal NI Connect Error` | This alert is triggered when we detect a "Fatal NI connect error". | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Fatal NI Connect Error` | This alert is triggered when a "Fatal NI connect error" is detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Internal Errors` | This alert is triggered when internal errors are detected. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Login Fail` | This alert is triggered when we detect that a user cannot login. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Possible Inappropriate Activity` | This alert is triggered when we detect possible inappropriate activity. | Count `>` 0 | Count `<=` 0 |
