@@ -195,10 +195,10 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `SQL Server - AppDomain` | This alert is triggered when we detect AppDomain related issues in your SQL Server instance. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - AppDomain` | This alert is triggered when AppDomain-related issues are detected in your SQL Server instance. | Count `>=` 1 | Count `<` 1 |
 | `SQL Server - Backup Fail` | This alert is triggered when the SQL Server backup fails. | Count `>=` 1 | Count `<` 1 |
-| `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
+| `SQL Server - Deadlock` | This alert is triggered when deadlocks are detected in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
 | `SQL Server - Instance Down` | This alert is triggered when the SQL Server instance is down for 5 minutes. | Count `>` 0 | Count `<=` 0 |
-| `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count `>` 0 | Count `<=` 0 |
+| `SQL Server - Insufficient Space` | This alert is triggered when the SQL Server instance cannot allocate a new page for the database due to insufficient disk space in the filegroup. | Count `>` 0 | Count `<=` 0 |
 | `SQL Server - Login Fail` | This alert is triggered when the user is unable to login to the SQL Server. | Count `>=` 1 | Count `<` 1 |
-| `SQL Server - Mirroring Error` | This alert is triggered when the SQL Server mirroring has error. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server - Mirroring Error` | This alert is triggered when an error occurs in SQL Server mirroring. | Count `>=` 1 | Count `<` 1 |
