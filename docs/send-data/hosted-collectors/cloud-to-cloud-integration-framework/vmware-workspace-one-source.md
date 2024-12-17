@@ -76,7 +76,7 @@ To configure a VMware Workspace One Source:
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](##client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
 1. **Client Secret**. Enter the Client Secret key of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `E2220271xxxxxxxxxxxxxxxxxxxxx4556634`.
-1. (Optional) **Device Type**. Enter the list of device types to collect their information.
+1. (Optional) **Device Type**. Enter the list of device types to collect information.
 1. Select the **Collect Apps Details** checkbox to collect the apps details.
 1. When you are finished configuring the Source, click **Submit**.
 
