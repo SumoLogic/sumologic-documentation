@@ -249,6 +249,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
+  <p>Learn how to collect address, asset, vulnerability, and zone details from the Dragos API and send them to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source"><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
   <p>Provides a secure endpoint to receive team events from the Get Events API.</p>
   </div>
@@ -515,6 +521,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
         <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="Thumbnail icon" width="60"/><h4>VMware Workspace One</h4></a>
+        <p> Learn how to collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
