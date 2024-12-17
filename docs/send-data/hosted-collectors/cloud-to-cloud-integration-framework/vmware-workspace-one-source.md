@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 VMware is a leading software company specializing in virtualization and cloud technologies. It offers solutions that enhance IT infrastructure, streamline operations, and improve efficiency across various industries.
 
 
-The VMware Workspace One source collects the details of the devices and the corresponding applications of each device and send them to Sumo Logic.
+The VMware Workspace One source collects the device details and corresponding list of applications for the devices from the VMware Workspace One platform and send them to Sumo Logic.
 
 ## Data collected
 
