@@ -581,4 +581,4 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `Oracle - Possible Inappropriate Activity` | This alert is triggered when we detect possible inappropriate activity. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - TNS Error` | This alert is triggered when we detect TNS operations errors. | Count `>` 0 | Count `<=` 0 |
 | `Oracle - Unable To Extend Tablespace` | This alert is triggered when we detect that we are unable to extend tablespaces. | Count `>` 0 | Count `<=` 0 |
-| `Oracle - Unauthorized Command Execution` | This alert is triggered when we detect that a user is not authorized to execute a requested listener command in a Oracle instance. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Unauthorized Command Execution` | This alert is triggered when a user is not authorized to execute a requested listener command in an Oracle instance. | Count `>` 0 | Count `<=` 0 |
