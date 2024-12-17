@@ -513,6 +513,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="Thumbnail icon" width="60"/><h4>VMware Workspace One</h4></a>
+        <p> Learn how to collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="100"/><h4>Webex</h4></a>
         <p>Learn to collect admin audit events using Webex API.</p>
         </div>
