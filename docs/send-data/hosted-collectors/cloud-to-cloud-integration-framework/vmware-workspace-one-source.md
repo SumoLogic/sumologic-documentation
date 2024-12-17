@@ -106,7 +106,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | authURL | String | Yes | `null` | API URL to fetch the auth token from the VMware Workspace One source. | `https://uat.uemauth.vmwservices.com` |
 | clientID | String | Yes | `null` | Client ID of your account. | `cfea26d59bd542488ea706b025564d42` |
 | clientSecret | String | Yes | `null` | Client Secret of your account. | `E2220271xxxxxxxxxxxxxxxxxxxxx4556634` |
-| deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, WindowsPC` |
+| deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, and/or WindowsPC` |
 | pollingIntervalVulnerabilityMin | String | Yes | `24 hours` | Time interval (in minutes) after which the source will check for new data.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | collectAppsDetails | Boolean | No | `False` | Specify if you need to collect the app details. |  |
 
