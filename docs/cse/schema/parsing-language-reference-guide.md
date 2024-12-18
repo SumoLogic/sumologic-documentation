@@ -2,16 +2,16 @@
 id: parsing-language-reference-guide
 title: Parsing Language Reference Guide
 sidebar_label: Parsing Language Reference
-description: Parsing is the first step in the Cloud SIEM Record processing pipeline
+description: Parsing is the first step in the Cloud SIEM record processing pipeline.
 ---
 
 This topic describes the Cloud SIEM parsing language, which you can use to write custom parsers.
 
 ## What is parsing?
 
-Parsing is the first step in the Cloud SIEM [Record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
+Parsing is the first step in the Cloud SIEM [record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
-Parsers are written in a specialized Sumo Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
+Parsers are written in a specialized Sumo Logic Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
 ## Key concepts
 
@@ -145,7 +145,7 @@ Parses Windows XML messages from Cloud SIEM Windows Sensor. 
 
 ## Mapping hints
 
-After parsing, the next step in the Cloud SIEM Record processing pipeline is log mapping, which is the process of mapping fields that were parsed out of messages to Cloud SIEM schema attributes. 
+After parsing, the next step in the Cloud SIEM record processing pipeline is log mapping, which is the process of mapping fields that were parsed out of messages to Cloud SIEM schema attributes. 
 
 Every parser must provide *mapping hints* that provide information Cloud SIEM can use to select the correct log mapper for parsed messages. You do this with the MAPPER attribute. For more information, see [MAPPER](#mapper).
 
@@ -170,7 +170,7 @@ You can declare your own variables in a parser. To ensure that a variable is not
 
 Messages are parsed to create a dictionary of field values, a start time, and an end time.
 
-When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Platform features, such as Sumo Logic core platform log and metric queries, action templates, and dashboards.
+When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Logic Platform features, such as Sumo Logic core platform log and metric queries, action templates, and dashboards.
 
 Field names beginning with `_$` (underscore followed by the dollar sign) aren’t saved in the field dictionary, but can be used to pass values from one part of the parsing process to another (from a parser to a transform, for instance).
 
@@ -183,7 +183,7 @@ The key principal: When selecting a name for the field, stay as close to the nam
 The `_starttime` and `_endtime` fields are normally assigned values using [START_TIME_FIELD](#start_time_field) and [END_TIME_FIELD](#end_time_field).  Note that if none of
 [DEFAULT_START_TIME](#default_start_time),  [DEFAULT_END_TIME](#default_end_time), START_TIME_FIELD or END_TIME_FIELD are defined `_starttime` and `_endtime` will not be included in the field dictionary.
 
-If `_starttime` is defined (at minimum, `START_TIME_FIELD` has been specified in the parser), it will be used as the Record timestamp. If `_starttime` is not defined, the timestamp should be set by the Cloud SIEM log mapper that processes the Record, typically by mapping a parsed field to the `timestamp` schema attribute.
+If `_starttime` is defined (at minimum, `START_TIME_FIELD` has been specified in the parser), it will be used as the record timestamp. If `_starttime` is not defined, the timestamp should be set by the Cloud SIEM log mapper that processes the record, typically by mapping a parsed field to the `timestamp` schema attribute.
 
 ### Representation of “no value”
 
@@ -579,7 +579,7 @@ Provides information that tells Cloud SIEM which log mapper should process the p
     * `MAPPER:event_id = {{eventType}}-{{eventName}}`
 
 :::note
-Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](create-structured-log-mapping.md) that are configured with the same attribute values, and could result in more than one Record being created. 
+Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](create-structured-log-mapping.md) that are configured with the same attribute values, and could result in more than one record being created. 
 :::
 
 **Syntax**
