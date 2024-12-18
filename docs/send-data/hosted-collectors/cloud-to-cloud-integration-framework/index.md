@@ -301,12 +301,14 @@ In this section, we'll introduce the following concepts:
   <p>Collects a list of users from the Google Workspace Users API.</p>
   </div>
 </div>
+<!--
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel471 Threat Intel</h4></a>
   <p>Learn to collect threat indicators from the Intel471 platform.</p>
   </div>
 </div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>

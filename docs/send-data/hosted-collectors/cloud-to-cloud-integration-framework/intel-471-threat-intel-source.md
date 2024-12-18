@@ -13,6 +13,12 @@ import MyComponentSource from '!!raw-loader!/files/c2c/intel471-threat-intel/exa
 import TerraformExample from '!!raw-loader!/files/c2c/intel471-threat-intel/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 <img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
 
 Intel471 is a cybersecurity firm specializing in providing cyber threat intelligence services. Their focus is primarily on delivering information about threats originating from the criminal underground, including malware, malicious actors, and their tactics, techniques, and procedures (TTPs). Intel471 provides these insights to help organizations protect themselves against cyber threats. Their intelligence-gathering efforts often involve monitoring and analyzing underground marketplaces, forums, and other communication channels used by cyber criminals.
