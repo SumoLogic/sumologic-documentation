@@ -11,7 +11,7 @@ This topic has instructions for creating a custom tag schema in Cloud SIEM. 
 
 ## About tags in Cloud SIEM
 
-Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. Cloud SIEM provides built-in schemas keys that display in the Cloud SIEM UI with a Sumo label, as shown in the example below. You can’t edit the built-in schemas.
+Tags are metadata you can attach to insights, signals, entities, and rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. Cloud SIEM provides built-in schemas keys that display in the Cloud SIEM UI with a Sumo Logic label, as shown in the example below. You can’t edit the built-in schemas.
 
 <img src={useBaseUrl('img/cse/built-in-tags.png')} alt="Built-in schema keys" style={{border: '1px solid gray'}} width="800"/>
 
@@ -30,7 +30,7 @@ For more information about tags in Cloud SIEM, see [Using Tags with Insights, Si
         available for. You can select one or more of the following:
         * **Custom Insight**
         * **Rule**
-        * **Entity** The options do not include **Signal** or **Insight**. Signals and Insights inherit tag values from the rule(s) or Custom Insight definition that triggered the Signal or Insight and involved Entities.
+        * **Entity** The options do not include **Signal** or **Insight**. Signals and insights inherit tag values from the rule(s) or custom insight definition that triggered the signal or insight and involved entities.
     1. **Allow Custom Values**. Check this box to allow users to add additional allowable values to the tag schema. Otherwise, when applying the tag users may only select one of the values you define in the **Value Options** section below.
     1. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Enter Value**. Enter an allowable value for the tag.
