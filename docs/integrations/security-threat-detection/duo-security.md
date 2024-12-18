@@ -30,7 +30,7 @@ Depending on the set up collection method, you can configure and install the app
 - **[Use existing source and install the app](#use-an-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
 
 :::important
-Use the [Cloud-to-Cloud Integration for Duo Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-security-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Duo Security app is properly integrated and configured to collect and analyze your Duo Security data.
+Use the [Cloud-to-Cloud Integration for Duo Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Duo Security app is properly integrated and configured to collect and analyze your Duo Security data.
 :::
 
 ### Create a new collector and install the app
