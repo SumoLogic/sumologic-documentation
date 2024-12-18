@@ -50,9 +50,9 @@ After you set up your ThreatQ source, it will appear on the Threat Intel page in
 
 ## Looking for ThreatQ indicators using Cloud SIEM rules
 
-As with other threat intel sources, Cloud SIEM compares each incoming record to the indicators provided by your ThreatQ source. 
+As with other threat intel sources, Cloud SIEM compares each incoming record to the indicators provided by your ThreatQ source. 
 
-When a record contains a value that matches an entry in one or more threat intel lists, two fields in the record get populated: a `listMatches` field that contains the names of threat intel lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
+When a record contains a value that matches an entry in one or more threat intel lists, two fields in the record get populated: a `listMatches` field that contains the names of threat intel lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
 For example, give a record whose `SourceIp` column matches a entry in “My Threat Intel List”, the `listMatches` field added to the record would look like this:
 
@@ -71,4 +71,3 @@ If the name of the list you are referencing with `array_contains` contains any s
 :::
 
 For more information, see [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About Cloud SIEM Rules* topic.  
- 
