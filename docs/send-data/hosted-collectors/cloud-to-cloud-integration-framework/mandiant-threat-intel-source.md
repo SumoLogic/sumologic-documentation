@@ -1,7 +1,7 @@
 ---
 id: mandiant-threat-intel-source
-title: Mandiant Threat Intel Source (Beta)
-sidebar_label: Mandiant Threat Intel (Beta)
+title: Mandiant Threat Intel Source
+sidebar_label: Mandiant Threat Intel
 tags:
   - cloud-to-cloud
   - mandiant-threat-intel
@@ -12,12 +12,6 @@ import ExampleJSON from '/files/c2c/mandiant-threat-intel/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/mandiant-threat-intel/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/mandiant-threat-intel/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
 
