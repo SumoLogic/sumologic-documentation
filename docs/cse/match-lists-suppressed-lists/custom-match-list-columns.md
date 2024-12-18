@@ -20,7 +20,7 @@ If you create a Match List for which none of the existing Target Column options 
 
 To see the custom columns that have been defined in your environment:
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**.  
 1. On the **Match Lists** page, click **Custom Columns**.<br/><img src={useBaseUrl('img/cse/match-lists.png')} alt="Match lists" width="800"/>
 1. The **Custom Columns** page lists the custom columns that have been defined in your environment. 
 
