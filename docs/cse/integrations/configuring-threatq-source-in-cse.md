@@ -15,7 +15,7 @@ To do so, [ingest threat intelligence indicators](/docs/security/threat-intellig
 
 ## Looking for ThreatQ indicators using Cloud SIEM rules
 
-Threat Intelligence sources are used at the time of Record ingestion. When a Record is ingested, Cloud SIEM determines whether any of the fields in the Record exist in any of your Threat Intelligence sources. When a Record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 -->
 
 This topic has information about configuring a ThreatQ source in Cloud SIEM.
@@ -50,15 +50,15 @@ After you set up your ThreatQ source, it will appear on the Threat Intel page in
 
 ## Looking for ThreatQ indicators using Cloud SIEM rules
 
-As with other threat intel sources, Cloud SIEM compares each incoming Record to the indicators provided by your ThreatQ source. 
+As with other threat intel sources, Cloud SIEM compares each incoming record to the indicators provided by your ThreatQ source. 
 
-When a Record contains a value that matches an entry in one or more threat intel lists, two fields in the Record get populated: a `listMatches` field that contains the names of threat intel lists that the Record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
+When a record contains a value that matches an entry in one or more threat intel lists, two fields in the record get populated: a `listMatches` field that contains the names of threat intel lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
-For example, give a Record whose `SourceIp` column matches a entry in “My Threat Intel List”, the `listMatches` field added to the record would look like this:
+For example, give a record whose `SourceIp` column matches a entry in “My Threat Intel List”, the `listMatches` field added to the record would look like this:
 
 `listMatches: ['My Threat Intel List', 'column:SourceIp', 'threat']`
 
-Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
+Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
 
 `array_contains(listMatches, "threat_intel_list_name")`
 
@@ -70,5 +70,5 @@ where
 If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
 :::
 
-For more information, see the [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About Cloud SIEM Rules* topic.  
+For more information, see [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About Cloud SIEM Rules* topic.  
  

@@ -626,14 +626,14 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
+The `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
 
 **Syntax**
 
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
+* `<fields>` is a list of comma separated entity field names. At least one field name is required.
 * `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
 * `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).

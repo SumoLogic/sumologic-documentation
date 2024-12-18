@@ -165,7 +165,7 @@ This example below checks a record for a field named `listMatches` that contains
 
 ### Threat Intelligence
 
-Threat Intelligence sources contain values that, when encountered in a Record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Manage Threat Intelligence Indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/).
+Threat Intelligence sources contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Manage Threat Intelligence Indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/).
 
-Threat Intelligence sources are used at the time of Record ingestion. When a Record is ingested, Cloud SIEM determines whether any of the fields in the Record exist in any of your Threat Intelligence sources. When a Record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 

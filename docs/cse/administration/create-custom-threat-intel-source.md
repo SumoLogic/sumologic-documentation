@@ -36,13 +36,13 @@ import Iframe from 'react-iframe'; 
 ### How Cloud SIEM uses indicators
 
 When Cloud SIEM encounters an indicator from your threat source in an incoming
-Record it adds relevant information to the Record. Because threat intelligence
-information is persisted within Records, you can reference it downstream
+record it adds relevant information to the record. Because threat intelligence
+information is persisted within records, you can reference it downstream
 in both rules and search. The built-in rules that come with Cloud SIEM
-automatically create a Signal for Records that have been enriched in
+automatically create a Signal for records that have been enriched in
 this way.
 
-Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
+Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
 ### Create a threat intelligence source from Cloud SIEM UI
@@ -89,7 +89,7 @@ The .csv file can contain up to four columns, which are described below. 
 | value  | Required. Must be one of the following: <br/>- A valid IPV4 or IPv6 address<br/>- A valid, complete URL <br/>- A valid email address<br/>- A hostname (without protocol or path)<br/>- A hexadecimal string of 32, 40, 64, or 128 characters |
 | description | Optional.  |  
 | expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. |
-| active | Required. Specifies whether the indicator actively looks for threat intelligence in Records. Valid values are `true` or `false`. |
+| active | Required. Specifies whether the indicator actively looks for threat intelligence in records. Valid values are `true` or `false`. |
 
 **Example .csv file**
 
