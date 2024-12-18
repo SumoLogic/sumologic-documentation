@@ -15,7 +15,9 @@ import MyComponentSource from '!!raw-loader!/files/c2c/taxii-1/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/taxii-1/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.x. 
+The STIX/TAXII 1 Client source supports collecting threat intelligence indicators from STIX/TAXII 1.x and sending them to Sumo Logic as normalized threat indicators. For more information about Sumo Logic threat intelligence, see [About Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
+
+[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. 
 
 :::sumo[Best Practice]
 This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
@@ -23,7 +25,7 @@ This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/
 
 ## Data collected
 
-This source collects [threat intelligence indicators](/docs/security/threat-intelligence/threat-intelligence-indicators) from a vendor's STIX/TAXII 1.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
+This source collects threat intelligence indicators from a vendor's STIX/TAXII 1.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
 
 ## Setup
 
