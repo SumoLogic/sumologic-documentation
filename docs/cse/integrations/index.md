@@ -19,13 +19,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/insight-enrichment-server"><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Insight Enrichment Server</h4></a>
-  <p>Learn how to automatically enrich Cloud SIEM Insights.</p>
+  <p>Learn how to automatically enrich Cloud SIEM insights.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/enable-virustotal-enrichment"><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Enable VirusTotal Enrichment</h4></a>
-  <p>Learn how to enrich Signals based on queries it runs against VirusTotal.</p>
+  <p>Learn how to enrich signals based on queries it runs against VirusTotal.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -43,7 +43,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/enrichments-and-indicators"><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Enrichments and Threat Indicators</h4></a>
-  <p>Learn how enrichments can add threat indicators to show risk level in Insights and Entities.</p>
+  <p>Learn how enrichments can add threat indicators to show risk level in insights and entities.</p>
   </div>
 </div>
 </div>

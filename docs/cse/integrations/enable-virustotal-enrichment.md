@@ -2,18 +2,18 @@
 id: enable-virustotal-enrichment
 title: Enable VirusTotal Enrichment
 sidebar_label: Enable VirusTotal Enrichment
-description: Enrich your Insights with information from VirusTotal.
+description: Enrich your insights with information from VirusTotal.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The VirusTotal Enrichment enriches Signals based on queries it runs against VirusTotal.
+The VirusTotal Enrichment enriches signals based on queries it runs against VirusTotal.
 
 :::note
 This feature requires the VirusTotal Premium API.
 :::
 
-For each Insight created, the enrichment checks the Records in the Signals that contribute to that Insight, looking for the values found in certain Record attributes that contain IP addresses, URLs, hostnames, or hashes. These are the fields the enrichment examines:
+For each insight created, the enrichment checks the records in the signals that contribute to that insight, looking for the values found in certain record attributes that contain IP addresses, URLs, hostnames, or hashes. These are the fields the enrichment examines:
 
 * `srcDevice_ip`
 * `dstDevice_ip`
@@ -28,10 +28,10 @@ For each Insight created, the enrichment checks the Records in the Signals that 
 * `file_hash_sha256`
 * `file_hash_ssdeep`
 
-The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a Record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the Signal’s **Enrichment** tab. For an example, see [Example VirusTotal Enrichment](#example-virustotal-enrichment).
+The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the signal’s **Enrichment** tab. For an example, see [Example VirusTotal Enrichment](#example-virustotal-enrichment).
 
 :::note
-VirusTotal enrichments are only added to Signals that are part of an Insight.
+VirusTotal enrichments are only added to signals that are part of an insight.
 :::
 
 ## Configure VirusTotal enrichment
