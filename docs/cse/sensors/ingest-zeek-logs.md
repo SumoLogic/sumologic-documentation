@@ -30,7 +30,7 @@ After configuring the appropriate source, use one of the methods described in [E
 
 ### Enable parsing and mapping of Zeek logs
 
-This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM Records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
+This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
 
 So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some other log type? Zeek logs don’t contain a key that explicitly holds a value that is only the log type identifier. There are two options for dealing with this:
 
@@ -111,7 +111,7 @@ Perform these steps for each of the FERs.
 This section describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic Source](#supported-collection-method-sumo-logic-source) above. 
 :::
 
-You can use Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This method ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
+You can use Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This method ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
 
 The Network Sensor extracts files observed over cleartext protocols that match selected MIME types. You can configure what types will be extracted using the [extracted_file_types](/docs/cse/sensors/network-sensor-deployment-guide) property in the Network Sensor’s configuration file, `trident-sensor.cfg`. By default the sensor will upload password-protected zip files and the following types of executables:
 

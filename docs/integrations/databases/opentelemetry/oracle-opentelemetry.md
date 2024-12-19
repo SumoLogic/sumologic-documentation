@@ -559,3 +559,26 @@ See information derived from the syslog audit trail, including successful and fa
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-Details.png' alt="Monitor Performance by DB Script" />
 The Oracle - Performance Details dashboard gives insight about - count of rollback, commits, transaction, process, session. 
 In addition to this it helps monitoring physical and logical reads, PGA allocated. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md). 
+
+## Create monitors for Oracle app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Oracle alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener cannot resolve a command. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Archival Log Creation` | This alert is triggered when an archive log creation error occurs. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Block Corruption` | This alert is triggered when corrupt data blocks are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Database Crash` | This alert is triggered when the database crashes. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Deadlock` | This alert is triggered when deadlocks are detected. | Count `>` 5 | Count `<=` 5 |
+| `Oracle - Fatal NI Connect Error` | This alert is triggered when a "Fatal NI connect error" is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Internal Errors` | This alert is triggered when internal errors are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Login Fail` | This alert is triggered when a user login failure is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Possible Inappropriate Activity` | This alert is triggered when possible inappropriate activity is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - TNS Error` | This alert is triggered when TNS operation errors are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Unable To Extend Tablespace` | This alert is triggered when tablespace extension failures are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Unauthorized Command Execution` | This alert is triggered when a user is not authorized to execute a requested listener command in an Oracle instance. | Count `>` 0 | Count `<=` 0 |

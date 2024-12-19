@@ -35,19 +35,19 @@ This guide helps you get started using Cloud SIEM for threat hunting.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/get-started-with-cloud-siem/insight-generation-process"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Insight Generation</h4></a>
-  <p>Learn how Cloud SIEM correlates Signals by entity to create Insights.</p>
+  <p>Learn how Cloud SIEM correlates signals by entity to create insights.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Cloud SIEM Insight UI</h4></a>
-  <p>Learn about the contents of the Insights UI in Cloud SIEM.</p>
+  <p>Learn about the contents of the insights UI in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="Checklist icon" width="40"/><h4>Cloud SIEM Content Catalog</h4></a>
-  <p>See the out-of-the-box Rules, Schema, Mappings, and Parsers for Cloud SIEM.</p>
+  <p>See the out-of-the-box rules, schema, mappings, and parsers for Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
