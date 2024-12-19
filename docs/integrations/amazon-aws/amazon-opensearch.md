@@ -220,7 +220,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Collect CloudTrail Logs
 
-1. Add an [AWS CloudTrail Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) to your Hosted Collector.  
+1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) to your Hosted Collector.  
    * **Name**. Enter a name to display for the new Source.  
    * **Description**. Enter an optional description.  
    * **S3 Region**. Select the Amazon Region for your CloudTrail S3 bucket.  
@@ -228,8 +228,8 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (\*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.  
    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the account field.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
-   * **Log File Discovery > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
+   * **Log File Discovery > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.  
    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.  
    * **Timestamp Format**. Select **Automatically detect the format**.  
@@ -238,8 +238,8 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Collect CloudWatch Metrics
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/).  
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) or [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) (Recommended).  
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).  
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) (Recommended).  
 3. **Namespaces**. Select **aws/es**.  
 4. **Metadata**. Add an account field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The account field allows you to query metrics.  
 5. Click **Save**.
@@ -248,11 +248,11 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 1. [Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[New UI](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  
 2. Search for the `domainname` field.  
-3. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/docs/manage/fields/#manage-fields).
+3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
 ```sql
 Rule Name: AwsObservabilityOpenSearchCloudTrailLogsFER
