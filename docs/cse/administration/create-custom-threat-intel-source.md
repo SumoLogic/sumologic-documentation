@@ -5,8 +5,14 @@ sidebar_label: Create a Custom Threat Intelligence Source
 description: Learn how to create and manage custom threat sources.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
+
+:::info
+This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use our new threat intelligence indicators framework. For more information, see [Custom threat intelligence sources in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#custom-threat-intelligence-sources-in-cloud-siem).
+:::
+-->
 
 This topic has information about setting up a *custom threat intelligence source* in Cloud SIEM, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
 
@@ -29,11 +35,8 @@ import Iframe from 'react-iframe'; 
 
 ### How Cloud SIEM uses indicators
 
-When Cloud SIEM encounters an indicator from your threat source in an incoming
-record it adds relevant information to the record. Because threat intelligence
-information is persisted within records, you can reference it downstream
-in both rules and search. The built-in rules that come with Cloud SIEM
-automatically create a signal for records that have been enriched in
+When Cloud SIEM encounters an indicator from your threat source in an incoming record it adds relevant information to the record. Because threat intelligence
+information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM automatically create a signal for records that have been enriched in
 this way.
 
 Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
