@@ -18,7 +18,7 @@ The following table shows the fields that are returned in results.
 With the provided results, you can:
 
 * Explore logs from each schema by clicking the links provided in the `_count` response field.
-* Compare results against a previous time range with [LogCompare](/docs/search/logcompare).
+* Compare results against a previous time range with [LogCompare](/docs/search/behavior-insights/logcompare).
 * Run subsequent searches.
 
 ## Syntax
@@ -44,7 +44,7 @@ Results can be returned in two ways:
 * When not specifying a field with the `field=` option, do not parse any fields. If you parse any fields, they'll be excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [`compare` operator](/docs/search/search-query-language/search-operators/compare) instead.
+* The [Time Compare](/docs/search/time-compare) button will not work on LogReduce Keys results, you need to manually input the [`compare` operator](/docs/search/search-query-language/search-operators/compare) instead.
 * Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 
 ## _count link
@@ -77,7 +77,7 @@ Returned schema:
 object.apiversion, object.count, object.firsttimestamp, object.involvedobject.kind, object.involvedobject.name, object.involvedobject.namespace, object.kind, object.lasttimestamp, object.message, object.metadata.creationtimestamp, object.metadata.name, object.metadata.namespace, object.metadata.resourceversion, object.metadata.selflink, object.metadata.uid, object.reason, object.reportingcomponent, object.reportinginstance, object.source.component, object.type, timestamp, type, object.involvedobject.apiversion, object.involvedobject.resourceversion, object.involvedobject.uid, object.source.host, object.involvedobject.fieldpath
 ```
 
-Next, use [LogReduce Values to explore the schema based on specific keys](logreduce-values.md).
+Next, use [LogReduce Values to explore the schema based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values).
 
 ### AWS CloudTrail
 
@@ -104,4 +104,4 @@ The schemas returned in your results are sorted based on the alphabetical order
 
 ![CloudTrail example LogReduce Keys.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Keys.png)
 
-Next, use [LogReduce Values](logreduce-values.md) to explore the schema based on specific keys.
+Next, use [LogReduce Values](/docs/search/behavior-insights/logreduce/logreduce-values) to explore the schema based on specific keys.
