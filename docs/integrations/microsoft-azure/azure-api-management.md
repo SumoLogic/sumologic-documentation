@@ -112,7 +112,7 @@ If this rule already exists, there is no need to create it again.
    | service_type     | $resourceId._6 |
    | service_name     | $resourceId._7 |
 
-#### Azure observability metadata extraction azure api level
+#### Azure observability metadata extraction azure api management level
 
    ```sql
    Rule Name: AzureObservabilityMetadataExtractionAzureAPIManagementLevel
