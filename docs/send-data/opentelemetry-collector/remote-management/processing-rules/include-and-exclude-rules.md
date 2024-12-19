@@ -1,6 +1,7 @@
 ---
 id: include-and-exclude-rules
-title: Include and Exclude Rules for OpenTelemetry (Beta)
+title: Include and Exclude Rules for OpenTelemetry
+sidebar_label: Include and Exclude Rules
 description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.
 ---
 
@@ -12,7 +13,7 @@ description: Use include and exclude processing rules to specify what kind of da
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use include and exclude processing rules to specify what data is sent to Sumo Logic using OpenTelemetry Collector. Internally these will use [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to get the data filtered. 
+You can use include and exclude processing rules to specify what data is sent to Sumo Logic using OpenTelemetry Collector. Internally these will use [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to get the data filtered.
 
 * An exclude rule functions as a denylist filter where the matching data is not sent to Sumo Logic.
 * An include rule functions as an allowlist filter where only matching data is sent to Sumo Logic.

@@ -1,6 +1,6 @@
 ---
 id: mask-rules-windows
-title: Mask Rules for Windows Source Template (Beta)
+title: Mask Rules for the Windows Source Template
 sidebar_label: Mask Rules for Windows
 description: Create a mask rule to replace an expression with a mask string.
 ---
@@ -142,7 +142,7 @@ Using the above masking options would provide the following result:
 }
 ```
 
-:::note 
+:::note
 - For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
    - $ must be escaped as $$ to bypass environment variable substitution logic.
    - To input a literal $, use $$$.
