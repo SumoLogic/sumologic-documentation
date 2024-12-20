@@ -19,7 +19,7 @@ This app includes [built-in monitors](#cisco-amp-monitors). For details on creat
 
 ## Log types
 
-This app uses Sumo Logic’s [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/) to collect the event logs from Cisco platform.
+This app uses Sumo Logic’s [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/) to collect the event logs from the Cisco platform.
 
 ### Sample log message
 
