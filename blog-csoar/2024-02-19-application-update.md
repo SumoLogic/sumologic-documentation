@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
 * Playbooks:
-  * Enabled [playbook testing](/docs/cloud-soar/automation/#testing-playbooks). With this improvement it is now possible to test a playbook configuration before publishing it, using Insight, Incident or custom JSON as input.
+  * Enabled [playbook testing](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). With this improvement it is now possible to test a playbook configuration before publishing it, using Insight, Incident or custom JSON as input.
   * Action configuration: Integration fields configuration now suggests default values, if present.
   * UserChoice, answer by Email: Fixed Authorizer usage from previous nodes.
 * AppCentral: Within the Integrations section, each integration card now contains a hyperlink to the related public documentation page [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
