@@ -1,4 +1,4 @@
-To install the app, do the following:
+To skip collection and only install the app, do the following:
 
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
