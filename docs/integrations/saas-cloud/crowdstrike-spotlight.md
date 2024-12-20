@@ -395,11 +395,9 @@ _sourceCategory="Labs/CrowdstrikeSpotlight"
 
 ## Collection configuration and app installation
 
-Depending on the set up collection method, you can configure and install the app in three ways:
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
-- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
-- **[Use existing source and install the app](#use-an-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
+<CollectionConfiguration/>
 
 :::important
 Use the [Cloud-to-Cloud Integration for CrowdStrike Spotlight](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike Spotlight app is properly integrated and configured to collect and analyze your CrowdStrike Spotlight data.

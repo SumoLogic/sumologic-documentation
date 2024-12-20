@@ -75,35 +75,15 @@ _sourceCategory=box  type "event_type" login
 | count as EventCount by src_user,src_login,src_ip | top 10 src_user,src_login,src_ip by EventCount
 ```
 
-## Collection configuration and app installation
+## Set up collection
 
-Depending on the set up collection method, you can configure and install the app in three ways:
+To set up [Cloud-to-Cloud Integration Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) for the Box app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Box Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
 
-- **[Create a new collector and install the app](#create-a-new-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under a new Sumo Logic Collector and later install the app; Or
-- **[Use an existing collector and install the app](#use-an-existing-collector-and-install-the-app)**. Create a new Sumo Logic Cloud-to-Cloud (C2C) source under an existing Sumo Logic Collector and later install the app; Or
-- **[Use existing source and install the app](#use-an-existing-source-and-install-the-app)**. Use your existing configured Sumo Logic Cloud-to-Cloud (C2C) source and install the app.
+## Installing the Box app
 
-:::important
-Use the [Cloud-to-Cloud Integration for Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
-:::
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-### Create a new collector and install the app
-
-import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
-
-<AppCollectionOPtion1/>
-
-### Use an existing collector and install the app
-
-import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
-
-<AppCollectionOPtion2/>
-
-### Use an existing source and install the app
-
-import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
-
-<AppCollectionOPtion3/>
+<AppInstall2/>
 
 ## Viewing the Box dashboards
 
