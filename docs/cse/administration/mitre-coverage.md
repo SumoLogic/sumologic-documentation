@@ -24,6 +24,7 @@ Coverage data is updated on the page once a day. To determine your coverage, the
 
 Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 
+<!-- old YouTube video embedding
 <Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
      width="854px"
      height="480px"
@@ -34,6 +35,18 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 ## User interface 
 
