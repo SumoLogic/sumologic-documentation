@@ -232,7 +232,7 @@ Below is the section for common errors for **Activity Logs**.
 - This is due to `System scope` is not provided to the API client.
 
 To resolve this:
-1. Enable the `System scope`. Refer to the [Workday App > API Client](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client) section.
+1. Enable the `System scope`. Refer to the [Workday App > API Client](#step-3-register-the-api-client) section.
 
 #### Error 401 | Unauthorized: invalid_client
 - Invalid client id or client secret is provided.
@@ -241,7 +241,7 @@ To resolve this:
 
 To resolve this:
 1. Provide the correct "client id" and "client secret".
-1. Enable the `The OAuth 2.0 Clients Enabled` checkbox. Refer to the [Workday App > OAuth 2.0 Clients Enabled](/docs/integrations/saas-cloud/workday/#step-14-enable-your-tenant-to-send-data) section.
+1. Enable the `The OAuth 2.0 Clients Enabled` checkbox. Refer to the [Workday App > OAuth 2.0 Clients Enabled](#step-4-enable-your-tenant-to-send-data) section.
 
 
 #### Error 400 | Bad Request: invalid_grant
@@ -279,7 +279,7 @@ To resolve this:
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly.
+To resolve this, [Create a Custom Sign on Report](#step-5-create-a-custom-sign-on-report) and configure the source accordingly.
 
 ## FAQ
 
