@@ -194,7 +194,7 @@ This section explains how to configure a Sumo Logic core platform source to send
 1. Navigate to your custom parser in the editor.
 1. Hover over the row that contains the parser.
 1. Click the three-dot kebab icon, and select **Copy Path** and save the path.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" style={{border: '1px solid gray'}} width="800"/>
-1. In Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.<br/><img src={useBaseUrl('img/cse/cloudtrail-source.png')} alt="CloudTrail source" width="500"/>
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>

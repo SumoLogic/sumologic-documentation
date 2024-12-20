@@ -41,7 +41,7 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
 
 ### From the Logs tab
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data** > **Logs** > **Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Deletion Requests**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Deletion Requests**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note
