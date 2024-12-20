@@ -24,15 +24,13 @@ auth=User:.*\.com
 
 Using the masking string `auth=User:AAA` would produce the following result:
 
-```sh
-2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
-```
+`2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]`
 
 ## Rules
 
 * Expressions that you want masked must be selected by the regular expression you given. And the masking string provided will mask whole of the string which is selected by the regular expression.
 
-    For example, this log message:
+    For example, for this log message:
 
     `{
       "reqHdr":{

@@ -34,8 +34,7 @@ Any masking expression should be tested and verified with a sample source file b
 
 For example, to mask numbers inside `guid` under `provider` field from this log:
 
-```
-{
+`{
   "record_id": 163054,
   "channel": "Security",
   "event_data": {
@@ -84,8 +83,7 @@ For example, to mask numbers inside `guid` under `provider` field from this log:
     "id": 4798
   },
   "level": "Information"
-}
-```
+}`
 
 You could use the following masking expression input:
 1. Key as `provider.guid`.
