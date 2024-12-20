@@ -62,7 +62,7 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
     1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
     1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
 1. Click **Save** at the bottom of the **Create SAML Integration** page.
-1. Go to **Administration > Security > SAML** in Sumo Logic.
+1. In Sumo Logic, go to the **SAML** page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
 1. Click your Okta configuration in the **Configuration List** and then click the edit icon (<img src={useBaseUrl('img/security/pencil.png')} alt="Pencil icon" width="20" />) in the details pane.
 1. Select the **Roles Attribute** checkbox and enter the name of the attribute name you created on the the **Group Attribute Statements** section above. <br/><img src={useBaseUrl('img/security/roles-attribute.png')} alt="Roles Attribute checkbox" style={{border: '1px solid gray'}} width="400" />
 1. **Save** the configuration.

@@ -81,11 +81,11 @@ Next, select a **Detection Method** (not applicable to SLO monitors).
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="200"/>
 
-**Static**
+#### Static
 
 Set specific threshold conditions for well-defined KPIs with constant thresholds (for example, infrastructure metrics like CPU utilization and memory).
 
-**Anomaly**
+#### Anomaly
 
 Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
 
@@ -100,6 +100,14 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 
 If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**. This detects unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
+#### Anomaly or Outlier Direction
+
+If you choose an anomaly or outlier detection method, you'll need to select the **Anomaly Direction** or **Outlier Direction** you want to track (not applicable to static detection method).
+
+* **Up**. Get alerted if there is an abnormal *increase* in the tracked key indicator. 
+* **Down**. Get alerted if there is an abnormal *decrease* in the tracked key indicator.
+* **Both**. Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
+
 ### Query
 
 :::tip
@@ -108,128 +116,34 @@ For guidance on optimizing scan costs when using Flex Pricing, refer to the [FAQ
 
 In this step, you'll need to provide a logs or metrics query. This is not applicable to SLO monitors.
 
-**Logs** monitors can have one query up to 15,000 characters long.
+#### Logs
 
-**Metrics** monitors can have up to 6 queries. When providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Joined metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/alerts/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
+Logs monitors can have one query up to 15,000 characters long.
 
-### Anomaly or Outlier Direction
+#### Metrics
 
-If you're using the outlier or anomaly detection method, you'll need to select the **Anomaly Direction** or **Outlier Direction** you want to track (up and/or down). If you chose the **Static** detection method, you won't see this option.
-
-<img src={useBaseUrl('img/alerts/monitors/anomaly-detection-input.png')} alt="Anomaly detection direction" width="300"/><br/>
-
-<img src={useBaseUrl('img/alerts/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/>
-
-* **Up**. Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
-* **Down**. Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
-* **Both**. Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
-
+Metrics monitors can have up to 6 queries. If you're providing multiple metrics queries, use the letter labels to reference a query row. The monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [Join metrics queries](/docs/metrics/metrics-queries/metrics-explorer/#join-metric-queries) for details.<br/><img src={useBaseUrl('img/alerts/monitors/metrics-monitor-query-row.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, showing the Trigger Conditions section. Metrics is selected as the Monitor Type and Static as the Detection Method. The query includes two metrics: CPU_Sys and CPU_User, with an alert condition combining both metrics (#B + #C). A bell icon is highlighted on the left side." style={{border: '1px solid gray'}} width="700"/>
 
 ### Trigger Type (Logs)
 
-Next, you'll need to configure the **Trigger Type** for logs or [metrics](#trigger-type-metrics). Trigger alerts on:<br/><img src={useBaseUrl('img/alerts/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="200"/>
+You can set a logs monitor trigger to alert based on the following:
 
-You can set the trigger based on the following:
-* A **returned row count** (default), which is the number of rows returned from the log search.
+* A **returned row count** (default), which is the number of rows returned from the log search.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-alerts-field.png')} alt="trigger alerts on field" style={{border: '1px solid gray'}} width="200"/>
 * A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [`num` operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration**, you would use the `num` operator as follows to convert it to a number value.
    ```sh
    | num(duration)
    ```
 
-#### Static detection method
+Triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
 
-**Example: Log Trigger Type - Critical and Warning**  
-
-<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
-
-`Alert when returned row count is <threshold type> <threshold> within <time range>`
-
-| Parameter | Description |
-|:--|:--|
-| Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
-| Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
-
-**Recover**
-
-Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
-
-<img src={useBaseUrl('img/alerts/monitors/edit-recovery-settings1.png')} alt="logs trigger recovery toggle.png" style={{border: '1px solid gray'}} width="700"/>
-
-For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
-
-`Recover automatically when result is <threshold type> <threshold> for the selected time period`.
-
-#### Configurable Resolution Window
-
-When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
-
-| Parameter | Description |
-|:--|:--|
-| Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
-| Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
-| Occurrence Type	| The time condition you want for recovering the alert. Select either at any time within or at all times. Choose at all times if you want all the data points for the given metric to meet threshold conditions in a given time range, before recovering an alert. Alternatively, choose at any time within if you want to recover an alert when only a single data point meets the threshold condition for the given time range. |
-
-For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.<br/><img src={useBaseUrl('img/alerts/monitors/metricsmonitor.png')} alt="Monitors" style={{border: '1px solid gray'}} width="600" />
-
-#### Anomaly detection method
-
-**Example: Logs Trigger Type - Critical**
-
-<img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
-
-| Parameter | Description |
-|:--|:--|
-|  Alert when anomaly count is at least ___ (max. ##) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
-| Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. |
-
-#### Use outlier with anomaly detection
-
-**Example: Logs Trigger Type - Critical and Warning**
-
-<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
-
-`Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
-
-| Parameter | Description |
-|:--|:--|
-| Threshold | The number of standard deviations for calculating violations. The default is 3.0. |
-| Consecutive | The required number of consecutive indicator data points (outliers) to trigger a violation. |
-| Window | The number of data points used to calculate the baseline for outlier detection. |
-
-**Recover**
-
-The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
-
-**Example: Logs Trigger Type - Missing Data**  
-
-<img src={useBaseUrl('img/alerts/monitors/logs-missing-data.png')} alt="logs missing data" style={{border: '1px solid gray'}} width="500" />
-
-`Alert when missing data within <time range>`
-
-| Parameter | Description |
-|:--|:--|
-| Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours. |
-
-**Recover**
-
-* Automatically: Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
-
-    `Recover automatically when data becomes available for the affected time span.`
-
-**Trigger Evaluation Frequency**
-
-Log monitor triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
-
-* For static logs monitors, triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
+* For [static logs monitors](#static-detection-method), triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
    | When detection window (Y) is | Evaluate trigger every |
    |:-----------------------------|:-----------------------|
-   | 30m or less  | 1m  |
-   | 30m to 3h    | 2m |
-   | 3hr to 12h   | 10m  |
-   | Greater than 12h  | 20m |
-* For outlier logs monitors, triggers are evaluated every 5 minutes.
-* For anomaly logs monitors, triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
+   | 15m or less | 1m  |
+   | 15m to 1h     | 2m  |
+   | 1h to 6h      | 10m |
+   | Greater than 6h   | 20m |
+* For [anomaly logs monitors](#anomaly-detection-method), triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
    ```
    _sourceCategory=Labs/Apache/Access
    | timeslice 2m
@@ -239,17 +153,101 @@ Log monitor triggers are evaluated by balancing the requirement of timely alert 
    | sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
    | (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
    ```
+* For [outlier logs monitors](#outlier-detection-method), triggers are evaluated every 5 minutes.
+
+When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
+
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+
+#### Static detection method
+
+**Example: Logs - Static - Critical and Warning**  
+
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
+
+`Alert when result is <threshold type> <threshold> within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
+| `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly.
+
+For example, if an alert is set to `greater than 10`, the recovery would be set to `less than or equal to 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
+
+**Example: Logs - Static - Missing Data**
+
+<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
+
+#### Anomaly detection method
+
+**Example: Logs - Anomaly - Critical**
+
+<img src={useBaseUrl('img/alerts/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when anomaly count is at least <count> (max. 1) at any time within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. Ensure that the time period window is 5-10 times longer than the `timeslice` used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. |
+| `<time range>` | The duration of time to watch for anomalies (values range from 5 minutes to 24 hours). |
+
+Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.
+
+
+#### Outlier detection method
+
+**Example: Logs - Outlier - Critical and Warning**
+
+<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
+
+| Parameter | Description |
+|:--|:--|
+| `<threshold>` | The number of standard deviations for calculating violations. The default is `3`. |
+| `<consecutive>` | The required number of consecutive indicator data points (outliers) to trigger a violation. |
+| `<window>` | The number of data points used to calculate the baseline for outlier detection. |
+
+The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the monitor will be brought back to the normal state. You cannot customize the resolution condition for the monitor.
+
+**Example: Logs - Outlier - Missing Data**  
+
+<img src={useBaseUrl('img/alerts/monitors/logs-missing-data.png')} alt="logs missing data" style={{border: '1px solid gray'}} width="500" />
+
+`Alert when missing data within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<time range>` | The time span of data to evaluate (values range from 5 minutes to 24 hours). |
+
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
+
 
 ### Trigger Type (Metrics)
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-query.png')} alt="metrics query.png" style={{border: '1px solid gray'}} width="600" />
+For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
+
+When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
+
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 
-To fully leverage AI-driven alerts for metrics monitors, you'll need:
+To fully leverage metrics monitor alerts, you'll need:
 
-* **Automation Service**. Required for linking playbooks to metrics-based monitors.
-* **Metrics data**. Our anomaly detection uses at least 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
+* **Automation Service**. Required for linking playbooks to metrics-based monitors ([learn more](#automated-playbooks)).
+* **Metrics data**. Our anomaly detection uses up to 30 days of your Sumo Logic metrics data history to establish baseline of the metrics signal and the underlying system behavior.
 * **Metrics aggregation**. Queries should be aggregated (for example, using `sum` or `avg` operators) before applying anomaly detection.
 
 Examples:
@@ -257,13 +255,9 @@ Examples:
 * **Cluster anomalies detection**. A user configures alerts for anomalies when 5 out of 10 data points in a 10-minute window exceed the baseline, allowing for precision in volatile environments.
 * **Automating resolution with playbooks**. A playbook responds to CPU usage anomalies by gathering logs, notifying teams, and restarting affected servers.
 
-:::info Limitations
-Anomaly detection applies to one time series at a time. All metrics anomaly monitor trigger queries must have aggregation applied at the end of the query before detection.
-:::
-
 #### Static detection method
 
-**Example: Metrics Trigger Type - Critical and Warning**
+**Example: Metrics - Static - Critical and Warning**
 
 <img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
 
@@ -271,49 +265,75 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 | Parameter | Description |
 |:--|:--|
-| Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
-| Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
-| Occurrence type | The time condition you want for the trigger. Select either **at any time within** or **at all times within**. <br/><br/>Choose **at all times within** if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when at least one single data point meets the threshold condition for the given time range. |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
-
-**Recover**
-
-Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
-
-![metrics trigger recovery toggle.png](/img/alerts/monitors/edit-recover-settings.png)  
-
-For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
-
-Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
+| `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
+| `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
+| `<occurrence type>` | The time condition you want for the trigger. Select **at any time within** or **at all times within**. <br/><br/>Choose **at all times within** if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when at least one single data point meets the threshold condition for the given time range. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
 `Recover automatically when result is <threshold type> <threshold> for the selected time period`
 
-| Parameter | Description |
-|:--|:--|
-| Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
-| Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
+The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly. Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
-#### Alert and recovery window
-
-This setting affects both the alert generation logic and the alert recovery logic.
-
-![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
-
-`Alert and recovery require a minimum of <Count> data points for "at all times" evaluation windows`
+For example, when an alert is set to `greater than 10`, the recovery would be set to `less than or equal to 10` when inferred.
 
 | Parameter | Description |
 |:--|:--|
-| Count | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
+| `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
+| `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
+
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+
+| Parameter | Description |
+|:--|:--|
+| `<count>` | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
 
 For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
 
-:::note
-This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
+**Example: Metrics - Static - Missing Data**
+
+<img src={useBaseUrl('img/alerts/monitors/metrics-static-missing.png')} alt="Metrics static missing data" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data <occurrence type> within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<occurrence type>`  | The time condition you want for the trigger. Choose **for all series** to get notified when all of the metrics meeting the query condition are not sending data in the given time range. Alternatively, you can choose **for any series** if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+#### Anomaly detection method
+
+:::info Limitations
+Anomaly detection applies to one time series at a time. All metrics anomaly monitor trigger queries must have aggregation applied at the end of the query before detection.
 :::
+
+**Example: Metrics - Anomaly - Critical**
+
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when anomaly count is at least <count> (max. 5) at any time within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<count>` | Enter the minimum number of anomalies to detect during the detection window before triggering an alert. |
+| `<time range>` | The duration of time to watch for anomalies (values range from 5 minutes to 24 hours). |
+
+Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies.
+
+**Example: Metrics - Anomaly - Missing Data**
+
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
+
+`Alert when missing data within <time range>`
+
+| Parameter | Description |
+|:--|:--|
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+
+For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
 #### Outlier detection method
 
-**Example: Metrics Trigger Type - Critical and Warning**
+**Example: Metrics - Outlier - Critical and Warning**
 
 <img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
 
@@ -321,29 +341,23 @@ This setting only works when you choose `at all times within` as the type of occ
 
 | Parameter | Description |
 |:--|:--|
-| Threshold  | The number of standard deviations for calculating violations. The default is 3.0. |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<threshold>`  | The number of standard deviations for calculating violations. The default is 3. |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
-**Recover**
+The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the monitor will be brought back to the normal state. You cannot customize the resolution condition for the monitor.
 
-The recovery condition will always be the opposite of the alerting condition. For example, if there is no outlier identified for the duration of the detection window from the time the alert was first fired, then the Monitor will be brought back to the normal state. You cannot customize the resolution condition for the Monitor.
+**Example: Metrics - Outlier - Missing Data**
 
-**Example: Metrics Trigger Type - Missing Data**
-
-<img src={useBaseUrl('img/alerts/monitors/missing.png')} alt="missing data" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-outlier-missing.png')} alt="metrics outlier" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data <occurrence type> for <time range>`
 
 | Parameter | Description |
 |:--|:--|
-| Occurrence type  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
-| Time range | The duration of time to evaluate. Select **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
+| `<occurrence type>`  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
+| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
 
-**Recover**
-
-* Automatically: Sumo Logic automatically resolves the incident when the resolution condition is satisfied. 
-
-`Recover automatically when data becomes available for the affected time span.`
+For recovery, Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
 
 ## Step 2. Advanced settings (optional)
@@ -370,7 +384,9 @@ If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/s
 
 ## Step 3. Notifications (optional)
 
-Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services. Metrics monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log monitors always group notifications.
+Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services.
+
+Notifications will be sent when the monitor is triggered as configured in the [Alert Grouping](/docs/alerts/monitors/alert-grouping/) section of the monitor.
 
 <img src={useBaseUrl('img/alerts/monitors/new-monitor-notifications.png')} alt="Screenshot of the Notifications section in Sumo Logic's 'New Monitor' setup page. It includes an option to select the preferred notification time zone, set to (GMT-06:00) America/Chicago. Below is a section to configure connection types for notifications, with options for Critical, Alert, Recovery, Warning, and Missing Data. There is also a button to add a new notification." style={{border: '1px solid gray'}} width="800"/>
 
@@ -411,4 +427,4 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 
 ### Using Terraform
 
-You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).

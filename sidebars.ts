@@ -23,12 +23,12 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
-        'get-started/sumo-logic-ui',
-        'get-started/sumo-logic-ui-classic',
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
+        'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-classic',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
@@ -425,6 +425,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
@@ -432,6 +433,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                // 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
@@ -439,6 +441,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
@@ -466,6 +469,10 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
@@ -769,13 +776,12 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage Account',
+    label: 'Manage Data and Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
     items: [
       'manage/fields',
-      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -853,6 +859,22 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Scheduled Views',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/scheduled-views/index'},
+      items: [
+        'manage/scheduled-views/add-scheduled-view',
+        'manage/scheduled-views/pause-disable-scheduled-views',
+        'manage/scheduled-views/run-search-against-scheduled-view',
+        'manage/scheduled-views/scheduled-view-lag-time',
+        'manage/scheduled-views/scheduled-views-best-practices',
+        'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
+    'manage/health-events',
+    {
+      type: 'category',
       label: 'Users and Roles',
       collapsible: true,
       collapsed: true,
@@ -895,36 +917,24 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Manage Subscription',
+      label: 'Manage Plan',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
         'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
         'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/usage-management',
+        'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
-        'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/usage-management',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Content Sharing',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/content-sharing/index'},
-      items: [
-        'manage/content-sharing/admin-mode',
-        'manage/content-sharing/changing-alerts',
-        'manage/content-sharing/content-sharing-faq',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
       ]
     },
     {
@@ -938,16 +948,6 @@ module.exports = {
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Data Archiving',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/data-archiving/index'},
-      items: [
-        'manage/data-archiving/archive',
       ]
     },
     {
@@ -982,21 +982,6 @@ module.exports = {
         ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Scheduled Views',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/scheduled-views/index'},
-      items: [
-        'manage/scheduled-views/add-scheduled-view',
-        'manage/scheduled-views/pause-disable-scheduled-views',
-        'manage/scheduled-views/run-search-against-scheduled-view',
-        'manage/scheduled-views/scheduled-view-lag-time',
-        'manage/scheduled-views/scheduled-views-best-practices',
-        'manage/scheduled-views/view-list-scheduled-views',
       ]
     },
     {
@@ -1050,6 +1035,28 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Content Sharing',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/content-sharing/index'},
+       items: [
+         'manage/content-sharing/admin-mode',
+         'manage/content-sharing/changing-alerts',
+         'manage/content-sharing/content-sharing-faq',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Data Archiving',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/data-archiving/index'},
+       items: [
+         'manage/data-archiving/archive',
        ]
      },
    ],
@@ -1313,6 +1320,7 @@ module.exports = {
         },
       ],
     },
+    'search/copilot',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -1518,9 +1526,23 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/behavior-insights/index'},
       items: [
+        'search/behavior-insights/logcompare',
+        {
+          type: 'category',
+          label: 'LogReduce',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'search/behavior-insights/logreduce/index'},
+          items: [
+            'search/behavior-insights/logreduce/logreduce-operator',
+            'search/behavior-insights/logreduce/detect-patterns-with-logreduce',
+            'search/behavior-insights/logreduce/logreduce-keys',
+            'search/behavior-insights/logreduce/logreduce-values',
+            'search/behavior-insights/logreduce/understand-the-logreduce-relevance-column',
+            'search/behavior-insights/logreduce/influence-the-logreduce-outcome',
+          ],
+        },
         'search/behavior-insights/logexplain',
-        'search/behavior-insights/logreduce-keys',
-        'search/behavior-insights/logreduce-values',
       ],
     },
     {
@@ -1538,20 +1560,6 @@ module.exports = {
         'search/live-tail/live-tail-show-in-search',
         'search/live-tail/multiple-live-tails',
         'search/live-tail/troubleshooting-live-tail',
-      ],
-    },
-    'search/logcompare',
-    {
-      type: 'category',
-      label: 'LogReduce',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/logreduce/index'},
-      items: [
-        'search/logreduce/logreduce-operator',
-        'search/logreduce/detect-patterns-with-logreduce',
-        'search/logreduce/influence-the-logreduce-outcome',
-        'search/logreduce/understand-the-logreduce-relevance-column',
       ],
     },
     'search/time-compare',
@@ -2132,6 +2140,7 @@ integrations: [
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
+         'integrations/microsoft-azure/microsoft-defender-for-cloud',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
@@ -2436,16 +2445,19 @@ integrations: [
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/crowdstrike-falcon-filevantage',
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/datadog',
-          'integrations/saas-cloud/druva',
+          'integrations/saas-cloud/digital-guardian-arc',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva',
           'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
@@ -2656,8 +2668,6 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
       items: [
-        'cse/introduction-to-cloud-siem',
-        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2665,9 +2675,13 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/get-started-with-cloud-siem/index'},
           items: [
+            'cse/get-started-with-cloud-siem/cloud-siem-ui',
+            'cse/get-started-with-cloud-siem/intro-for-analysts',
+            'cse/get-started-with-cloud-siem/intro-for-administrators',
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
         },
