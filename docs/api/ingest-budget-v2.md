@@ -14,7 +14,7 @@ import ApiRoles from '../reuse/api-roles.md';
 The Ingest Budget Management V2 APIs allow you to manage metadata-based [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) (with a scope) from HTTP endpoints.
 
 :::note
-Ingest Budget Management V1 APIs have been deprecated.
+Ingest Budget Management V1 APIs have been removed and are no longer supported.
 :::
 
 ## Prerequisites

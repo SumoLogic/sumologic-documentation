@@ -1,8 +1,14 @@
 ---
-slug: /manage/ingestion-volume/ingest-budgets/daily-volume
+id: daily-volume
 title: Daily Volume
 description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+:::note
+If you want to use APIs to manage ingest budgeting, you must use [Ingest Budget Management V2 APIs](/docs/api/ingest-budget-v2/). Ingest Budget Management V1 APIs have been removed and are no longer supported.
+:::
 
 Ingest budgets control the daily volume of log data sent to Sumo Logic. Log data can be assigned to an ingest budget that defines a daily log capacity limit. The capacity is tracked based on the combined volume from all sources of log data. When an ingest budget's capacity is reached you can have Sumo Logic stop collecting the log data assigned to it to control costs.
 
@@ -42,26 +48,7 @@ For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` im
 
 See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
 
-## Versions
-<!-- impacted by v1 deprecation -->
-There are two versions of ingest budgets:
-
-* V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell.<br/> ![v1 budget tag.png](/img/manage/ingestion-volume/v1-budget-tag.png)
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
-
-
-## Migrating V1 budgets to V2
-
-<!-- impacted by v1 deprecation -->
-* You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata-based.
-* V2 budgets are manageable with the [Ingest Budget Management **V2** API](/docs/api/ingest-budget-v2).
-* V1 budgets will be deprecated on September 16, 2024.
-
-
-Stopping collection differences:
-
-* First version ingest budgets take around 30 seconds to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit.
-* Second version ingest budgets drop data instantly once capacity is reached.
+[V2 ingest budgets](/docs/api/ingest-budget-v2/) provide you the ability to assign budgets to your log data by either [fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 ## Source type behavior
 
@@ -296,23 +283,3 @@ _index=sumologic_system_events "IngestBudget"
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Warning"
 ```
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-## Guide contents
-
-In this section, we'll introduce the following concepts:
-
-<div className="box-wrapper">
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Assign Collector to Ingest Budget</h4></a>
-  <p>Learn how to assign a Collector to an Ingest Budget.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/ingestion-volume/ingest-budgets/daily-volume/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
-  <p>Learn how to create and use Ingest Budgets.</p>
-  </div>
-</div>
-</div>

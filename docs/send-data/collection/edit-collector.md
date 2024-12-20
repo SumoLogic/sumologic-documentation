@@ -21,7 +21,7 @@ Changes to metadata are applied to messages going forward from this point in tim
     * Click the **Add Field** link in the **Fields** section if you want to assign metadata [fields](/docs/manage/fields) to the Collector. Define the fields you want to associate, each field needs a key and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-    * **Assign to a Budget**  <!-- impacted by v1 deprecation? --> allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The dropdown displays your ingest budgets in the following format:
+    * **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The dropdown displays your ingest budgets in the following format:
         ```xml
         <budget name> (<field value>) (<allocated capacity>)
         ```
