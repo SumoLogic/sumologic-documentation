@@ -83,11 +83,7 @@ The page displays the following information:
 * **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](/docs/send-data/reference-information/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
 * **Allocated Capacity** (bottom of table). The total allocated capacity from all ingest budgets out of your account's available daily log ingest capacity is provided. If you assign all your log data to ingest budgets you can easily track how much data you are allowing Sumo Logic to ingest compared to your account's available daily log ingest quota.
 
-At the top of the page, you can:
-
-* **Search Ingest Budgets**.
-* Select a [version](#versions) to **Show**.
-* Click **+ Add Budget** to [create a new ingest budget](#create-ingest-budget). 
+At the top of the page, you can click **+ Add Budget** to [create a new ingest budget](#create-ingest-budget). 
 
 For the ingest budgets listed, select a row to view its details. A details pane appears to the right of the table.
 
@@ -122,7 +118,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
      * **Time zone**. Set the time zone of the reset time.
      * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries).
 
-       * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [Source type](#source-type-behavior) and [version](#versions)
+       * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [Source type](#source-type-behavior).
        * **Keep** Collecting - Collection remains the same.
 
    * **Audit Threshold**. The threshold, as a percentage, of when an ingest budget's capacity usage is logged in the Audit Index.
