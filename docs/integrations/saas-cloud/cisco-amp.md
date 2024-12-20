@@ -2,16 +2,16 @@
 id: cisco-amp
 title: Cisco AMP
 sidebar_label: Cisco AMP
-description: The Sumo Logic App for Cisco AMP helps you monitor and analyze cybersecurity incidents, including host activity status and file types implicated in security incidents.
+description: The Sumo Logic app for Cisco AMP helps you to gain real-time monitoring and analysis of cybersecurity incidents in the Cisco AMP platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="thumbnail icon" width="85"/>
 
-The Sumo Logic App for Cisco AMP equips security analysts with tools to improve threat detection, conduct in-depth investigations, and strengthen cybersecurity defenses. It provides security analysts with a robust platform for real-time monitoring and analysis of cybersecurity incidents. Analysts can assess event severity, types of incidents, host activity, and file types involved in breaches.
-The app also highlights top hosts, users, tactics, and techniques, helping analysts identify trends and potential risks. Analysts can investigate detection types, recent malicious files, compromised endpoints, and suspicious processes to respond swiftly to security incidents.
-The app's geolocation features provide insights by mapping the origins of cybersecurity events and highlighting activities from restricted areas.
+The Sumo Logic app for Cisco AMP provides security analysts with essential tools to enhance threat detection, conduct thorough investigations, and strengthen cybersecurity defenses. It offers security analysts with a powerful platform for real-time monitoring and analysis of cybersecurity incidents. Analysts can evaluate event severity, identify types of incidents, assess host activities, and analyze file types involved in breaches. 
+
+Additionally, the app highlights the top hosts, users, tactics, and techniques, helping analysts recognize trends and potential risks. With this app, they can examine detection types, review recent malicious files, investigate compromised endpoints, and monitor suspicious processes to respond swiftly to security incidents. The app's geolocation features further enhance analysis by mapping the origins of cybersecurity events and emphasizing activities from restricted areas.
 
 :::info
 This app includes [built-in monitors](#cisco-amp-monitors). For details on creating custom monitors, refer to the [Create monitors for Cisco AMP app](#create-monitors-for-cisco-amp-app).
@@ -155,7 +155,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Cisco AMP - Events from Embargoed Geo Locations` | This alert identifies and flags events originating from embargoed geographic locations within the Cisco AMP environment. By promptly detecting and responding to activities from restricted regions, security analysts can proactively mitigate potential threats and prevent unauthorized access or breaches.. | Critical | Count > 0 | 
+| `Cisco AMP - Events from Embargoed Geo Locations` | This alert identifies and flags events originating from embargoed geographic locations within the Cisco AMP environment. By promptly detecting and responding to activities from restricted regions, security analysts can proactively mitigate potential threats and prevent unauthorized access or breaches. | Critical | Count > 0 | 
 | `Cisco AMP - High Severity Events` | This alert highlights security incidents with critical severity levels within the Cisco AMP ecosystem. By prioritizing these high-risk events, security personnel can quickly respond, investigate, and implement necessary actions to effectively mitigate risks before they escalate. | Critical | Count > 0|
 | `Cisco AMP - Events with Malicious File` | This alert tracks events related to malicious files within the Cisco AMP system. By promptly alerting analysts to activities involving malicious files, it enables quick identification, isolation, and remediation of threats, helping safeguard the organization's networks and endpoints from potential cybersecurity breaches. | Critical | Count > 0|
 
