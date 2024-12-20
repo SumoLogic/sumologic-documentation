@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 ### Changes and Enhancements
-* Playbooks: UserChoice nodes can be handled now from Slack workspace (see [documentation](/docs/cloud-soar/cloud-soar-delivery-2/#configure-slack-for-cloud-soar)).
+* Playbooks: UserChoice nodes can be handled now from Slack workspace (see [documentation](/docs/cloud-soar/automation#configure-slack-for-cloud-soar)).
 
 #### Cloud SOAR
 * New privilege "Api Admin": Enabling this privilege in Log Analytics Platform will allow user to handle incident operations without being involved directly as investigator.
