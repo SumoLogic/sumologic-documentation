@@ -29,8 +29,8 @@ For example, to include only messages from a Windows Event log with ID `8015`, y
 
 When creating regular expression rules, adhere to the following guidelines:
 
-- Your rule must comply with [RE2 syntax](https://github.com/google/re2/wiki/Syntax).  
-- If your rule matches *any part* of a log line, the entire log line will be matched.  
-- For *single-line messages*, it is not necessary to prefix or suffix the regex with `.*`.  
-- *Exclude rules* take precedence over *include rules*. Include rules are processed first, but if an exclude rule matches data that also matches the include rule, the data will be excluded.  
+- Your rule must comply with [RE2 syntax](https://github.com/google/re2/wiki/Syntax).
+- If your rule matches *any part* of a log line, the entire log line will be matched.
+- For *single-line messages*, it is not necessary to prefix or suffix the regex with `.*`.
+- *Exclude rules* take precedence over *include rules*. Include rules are processed first, but if an exclude rule matches data that also matches the include rule, the data will be excluded.
 - When multiple rules are listed, the assumed Boolean operator is `OR`.
