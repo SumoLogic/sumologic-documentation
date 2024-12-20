@@ -1,4 +1,4 @@
-To set up collection and install the app, do the following:
+To setup source in the existing collector and install the app, do the following:
 
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
