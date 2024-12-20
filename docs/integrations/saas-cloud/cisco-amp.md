@@ -132,7 +132,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Cisco AMP App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Cisco AMP app is properly integrated and configured to collect and analyze your Cisco AMP data.
+Use the [Cloud-to-Cloud Integration for Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Cisco AMP app is properly integrated and configured to collect and analyze your Cisco AMP data.
 :::
 
 ### Create a new collector and install the app
