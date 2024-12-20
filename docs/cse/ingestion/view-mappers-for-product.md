@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has instructions for find the log mappers that Cloud SIEM provides for particular product or service. 
 
-See the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md) for a complete list of [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md), [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md), and [Products](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/products/README.md).
+See the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md) for a complete list of [mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md), [vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md), and [products](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/products/README.md).
 
 Cloud SIEM may have more than one log mapping for a particular product. For example, there may be a separate mapping for each message type issued by a product. You can view the available mappings in the Cloud SIEM UI.
 
