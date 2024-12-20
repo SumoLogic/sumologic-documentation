@@ -153,7 +153,7 @@ import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 <AppCollectionOPtion3/>
 
-## Viewing Cisco AMP dashboards
+## Viewing the Cisco AMP dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
