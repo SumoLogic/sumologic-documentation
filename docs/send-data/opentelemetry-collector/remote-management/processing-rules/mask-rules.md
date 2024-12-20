@@ -3,35 +3,28 @@ id: mask-rules
 title: Mask Rules
 description: Create a mask rule to replace an expression with a mask string.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 :::note
-This document do not support masking logs for Windows source template. Refer to [Mask Rules for Windows Source Template](mask-rules-windows.md) to mask logs for Windows source template.
+This document does not cover masking logs for Windows source templates. For details on masking logs for Windows, refer to [Mask Rules for the Windows Source Template](mask-rules-windows.md).
 :::
 
-A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default `"#####"`.
+A mask rule is a processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule, the selected expression will be replaced with a mask string before the data is sent to Sumo Logic. You can either specify a custom mask string or use the default `"#####"`.
 
-Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is a good method for reducing overall ingestion volume.
+Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is an effective method to reduce overall ingestion volume.
 
 For example, to mask the email address `dan@demo.com` from this log:
 
-```
-2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:dan@demo.com] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
-```
+`2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:dan@demo.com] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]`
 
 You could use the following filter expression:
 
-```
+```sh
 auth=User:.*\.com
 ```
 
-Using the masking string `auth=User:AAA` would provide the following result:
+Using the masking string `auth=User:AAA` would produce the following result:
 
-```
+```sh
 2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
 ```
 
@@ -41,14 +34,12 @@ Using the masking string `auth=User:AAA` would provide the following result:
 
     For example, this log message:
 
-    ```
-    {
+    `{
       "reqHdr":{
         "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=",
         "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
       }
-    }
-    ```
+    }`
 
     You would use the following as a mask expression to mask the auth parameter's token:
 
@@ -56,16 +47,14 @@ Using the masking string `auth=User:AAA` would provide the following result:
     "auth"\s*:\s*"Basic\s*[^"]+"
     ```
 
-    If the masking string given here is `"auth":"#####"`, then the log output will be:
+    Applying the masking string `"auth":"#####"`, the log output will be:
 
-    ```
-    {
+    `{
       "reqHdr": {
         "auth":"#####",
         "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
       }
-    }
-    ```
+    }`
 
 * Do not unnecessarily match on more of the log than needed. As seen in the previous example, avoid using overly broad expressions that could mask the entire log. This ensures that only the sensitive information is masked, not the whole log entry.
 
@@ -73,18 +62,18 @@ Using the masking string `auth=User:AAA` would provide the following result:
     (?s).*auth"\s*:\s*"Basic\s*([^"]+)".*(?s)
     ```
 
-* Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being masked.
+* Avoid regular expressions that match an entire log line, as this will result in the entire line being masked.
 
-* If you need to mask values on multiple lines, use single-line modifiers (?s). For example:
+* To mask values spanning multiple lines, use the single-line modifier `(?s)`. For example:
 
     ```
     auth=User\:(.*(?s).*session=.*?)\]
     ```
 
 :::note
-- For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
-   - $ must be escaped as $$ to bypass environment variable substitution logic.
-   - To input a literal $, use $$$.
+- Masking utilizes the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
+   - Escape `$` as `$$` to bypass environment variable substitution logic.
+   - Use `$$$` to include a literal `$`.
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
 :::
 
@@ -98,6 +87,8 @@ Any masking expression should be tested and verified with a sample source file b
 
 You can mask credit card numbers from log messages using a regular expression within a mask rule. Once masked with a known string, you can then perform a search for that string within your logs to detect if credit card numbers may be leaking into your log files.
 
+To mask credit card numbers in logs, you can use a masking filter with the following regular expression:
+
 The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Mastercard, and Discover credit card numbers:
 
 ```
@@ -108,7 +99,7 @@ This regular expression covers instances where the number includes dashes, space
 
 Samples include:
 
-* **American Express:** 3711-078176-01234  \|  371107817601234  \|  3711 078176 01234
-* **Visa:** 4123-5123-6123-7123  \|  4123512361237123  \|  4123 5123 6123 7123
-* **Master Card:** 5123-4123-6123-7123  \|  5123412361237123  \|  5123 4123 6123 7123
-* **Discover:** 6011-0009-9013-9424  \|  6500000000000002  \|  6011 0009 9013 9424
+* **American Express**. 3711-078176-01234  \|  371107817601234  \|  3711 078176 01234
+* **Visa**. 4123-5123-6123-7123  \|  4123512361237123  \|  4123 5123 6123 7123
+* **Master Card**. 5123-4123-6123-7123  \|  5123412361237123  \|  5123 4123 6123 7123
+* **Discover**. 6011-0009-9013-9424  \|  6500000000000002  \|  6011 0009 9013 9424

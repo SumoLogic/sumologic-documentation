@@ -5,12 +5,6 @@ sidebar_label: Redis
 description: Learn about the Sumo Logic Redis source template for OpenTelemetry.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

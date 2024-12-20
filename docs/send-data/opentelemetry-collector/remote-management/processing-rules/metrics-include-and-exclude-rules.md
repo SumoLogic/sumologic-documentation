@@ -4,60 +4,66 @@ title: Metrics Include and Exclude Rules for OpenTelemetry
 sidebar_label: Metrics Include and Exclude Rules
 description: You can use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use include and exclude processing rules to specify what metrics is sent to Sumo Logic using OpenTelemetry Collector. Internally these will use [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to get the metrics filtered.
+You can use include and exclude processing rules to specify which metrics are sent to Sumo Logic using the OpenTelemetry Collector. These rules internally leverage the [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to filter metrics.
 
-* An exclude rule functions as a denylist filter where all data is sent except matching data to Sumo Logic.
-* An include rule functions as an allowlist filter where only matching data is sent to Sumo Logic.
+* An exclude rule functions as a denylist filter, ensuring that matching data is not sent to Sumo Logic.
+* An include rule functions as an allowlist filter, ensuring that only matching data is sent to Sumo Logic.
 
-As a best practice, specify these rules to match the lesser volume of data.
+As a best practice, configure these rules to filter the smaller volume of data for optimal performance:
 
-* If you want to collect the majority of data from a source template, provide exclude rules to match (filter out) the lesser volume of data
-* If you want to collect a small set of data from a source template, provide include rules to match (filter in) the lesser volume of data.
+* If you want to **collect the majority of data** from a source template, use **exclude** rules to match (filter out) the lesser volume of data.
+* If you want to **collect a small set of data** from a source template, use **include** rules to match (filter in) the lesser volume of data.
 
 ## Metric filter examples
 
-For filtering metrics data in source template you can add a metrics filter to the source template. You can then provide the name of the filter followed by **Type** (filter to include or exclude) and **Filter by**.
+You can apply filters to metrics data in a source template by adding a metrics filter. Specify the filter name, **Type** (include or exclude), and **Filter By** criteria.
 
-There are three ways to use metrics filter in source template:
+There are three filtering options:
 * Filter by metrics name
 * Filter by dimension
-* Filter by metrics name and dimension
+* Filter by metric name and dimension
 
 ### Filter by metrics name
 
-If you need to filter by name of the metrics, then you can select this option and provide the regex which matched with the metric name.
+To filter by the name of a metric, select this option and provide a regex that matches the metric name.
 
-For example when collecting host metrics, if you need to collect only network metrics, then you can give `network` in the metric name.
+For example, to collect only network metrics while collecting host metrics, specify `network` as the metric name.
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricname.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
 
 ### Filter by dimension
 
-If you need to filter by dimension of the metrics, then you can select this option and provide the list of keys and values in the dimension table. Key needs to be the exact dimension name and value can be a regex which matches against the value for the key given. All of these key value pairs will have the `AND` condition between them.
+To filter by metric dimensions, select this option and specify key-value pairs in the dimension table.
 
-For example, when collecting host metrics you can filter CPU metrics data for a specific CPU (say `cpu0`), and you can mention the respective key value pair in the dimension table.
+* The key must match the exact dimension name.
+* The value can be a regex matching the corresponding value.
+* Multiple key-value pairs are evaluated using an `AND` condition.
+
+For example, when collecting host metrics, you can filter CPU metrics data for a specific CPU (say `cpu0`), and you can mention the respective key value pair in the dimension table.
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricdimension.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
 
 ### Filter by metrics name and dimension
 
-If you need to filter by metrics name and dimension, then you can select this option and provide the metric name regex and dimension key and value. Key needs to be the exact dimension name and value can be a regex which matches against the value for the key given. All inputs here (that is, metric name) and all key value pairs will have the `AND` condition between them.
+To filter by both metric name and dimensions, specify a regex for the metric name along with key-value pairs for dimensions.
 
-For example, when collecting host metrics, you can filter network metrics for a specific device and direction by giving metric name regex as `network`, and in the dimension table key value pair you can specify `device=lo` and `direction=transmit`.
+* The key must match the exact dimension name.
+* The value can be a regex matching the corresponding value for the key given.
+* The metric name and all key-value pairs are evaluated using an `AND` condition.
+
+For example, when collecting host metrics, you can filter network metrics for a specific device and direction by specifying:
+
+* Metric name regex: network
+* Dimension key-value pairs: `device=lo`, `direction=transmit`
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricnameanddimension.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
 
-## Rules and Limitations
+## Rules and limitations
 
-* Your rule must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
-* Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
-* If two or more rules are listed, the assumed Boolean operator is OR.
-* If data needs to get filtered for single dimension key which can have multiple possible values then we can use a `|` operator. For example if we need to monitor cpu metrics for only cpu0 and cpu1 then we can form the dimension value expression as `cpu0|cpu1`.
+* Rules must be compliant with [RE2 syntax](https://github.com/google/re2/wiki/Syntax).
+* Exclude rules take precedence over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+* When multiple rules are listed, the assumed Boolean operator is `OR`.
+* To filter for a single dimension key with multiple possible values, use the `|` operator. For example, to monitor CPU metrics for only cpu0 and cpu1, specify the dimension value as `cpu0|cpu1`.

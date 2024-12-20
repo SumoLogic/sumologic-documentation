@@ -9,12 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="30"/>
 
 The Windows source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of Windows event log and metrics of Windows to Sumo Logic.
@@ -65,7 +59,7 @@ import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-
 <ProcMetrics/>
 
 - **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/). For masking windows event logs,  refer to [Mask Rules for Windows Source Template](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows). 
+- **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/). For masking windows event logs,  refer to [Mask Rules for Windows Source Template](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
