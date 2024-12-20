@@ -1,1 +1,1 @@
-This article describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Ingest Zeek Logs](/docs/cse/sensors/ingest-zeek-logs/). 
+This article describes using the Cloud SIEM Network Sensor. [The Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Ingest Zeek Logs](/docs/cse/sensors/ingest-zeek-logs/). 

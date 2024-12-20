@@ -7,7 +7,7 @@ description: The Cloud SIEM Content Catalog shows the out-of-the-box Rules, Sche
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Cloud SIEM Content Catalog is a public GitHub repository of Cloud SIEM's Rules, Schema, Mappings, and Parsers. This repository serves as a single place to view Cloud SIEM content in both markdown form and CSVs. This catalog is automatically generated based on content included out-of-the-box as it is released. 
+The Cloud SIEM Content Catalog is a public GitHub repository of Cloud SIEM's rules, schema, mappings, and parsers. This repository serves as a single place to view Cloud SIEM content in both markdown form and CSVs. This catalog is automatically generated based on content included out-of-the-box as it is released. 
 
 Access the Cloud SIEM Content Catalog here:
 [https://github.com/SumoLogic/cloud-siem-content-catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md)

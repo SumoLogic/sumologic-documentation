@@ -7,7 +7,7 @@ description: Learn how to configure Sumo Logic and Cloud SIEM to enable Sumo Log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
+This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
 
 :::note
 The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/).
@@ -59,8 +59,7 @@ You need to know how your messages are formatted. Cloud SIEM supports messages i
 * Structured syslog data (key-value pairs) with a syslog header
 * Microsoft Windows event logs in XML format
 * Winlogbeats
-* Messages that have been processed by Sumo Logic [Field Extraction
-    Rules](/docs/manage/field-extractions).
+* Messages that have been processed by Sumo Logic [Field Extraction Rules](/docs/manage/field-extractions).
 
 ### Determining Product, Vendor, and Event ID pattern
 

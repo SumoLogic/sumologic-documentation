@@ -1,5 +1,5 @@
 {
-    "name":"TAXII 1 RF - IP Large Test",
+    "name":"TAXII 1 Recorded Future IP Default",
     "useBasicAuth":true,
     "httpBasicPassword":"--- API KEY HERE ---",
     "discoveryURL":"https://api.recordedfuture.com/taxii",
