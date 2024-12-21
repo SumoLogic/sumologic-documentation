@@ -329,7 +329,7 @@ Copilot uses AI to interpret natural language queries and recommend search resul
 <details>
 <summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
 
-Sumo Logic Copilot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (e.g., email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
+Sumo Logic Copilot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
 </details>
 
 <details>
