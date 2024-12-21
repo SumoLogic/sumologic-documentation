@@ -1,7 +1,7 @@
 ---
 slug: /cse/schema
 title: Cloud SIEM Schema
-description: Learn about Cloud SIEM Schema v3, schema attributes, and the Record processing pipeline.
+description: Learn about Cloud SIEM Schema v3, schema attributes, and the record processing pipeline.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/schema/record-processing-pipeline"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Record Processing Pipeline</h4></a>
-  <p>Learn how Cloud SIEM transforms incoming raw messages into Records.</p>
+  <p>Learn how Cloud SIEM transforms incoming raw messages into records.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -24,19 +24,19 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/schema/attributes-map-to-records"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Mappable Attributes</h4></a>
-  <p>Learn what Cloud SIEM schema attributes you can map to Records.</p>
+  <p>Learn what Cloud SIEM schema attributes you can map to records.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/schema/cse-record-types"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Record Types</h4></a>
-  <p>Learn about the Record types to which you can map schema attributes.</p>
+  <p>Learn about the record types to which you can map schema attributes.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/schema/parsing-language-reference-guide"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Language Reference</h4></a>
-  <p>Parsing is the first step in the Cloud SIEM Record processing pipeline.</p>
+  <p>Parsing is the first step in the Cloud SIEM record processing pipeline.</p>
   </div>
 </div>
 <div className="box smallbox card">
