@@ -1,7 +1,7 @@
 ---
 id: copilot
 title: Sumo Logic Copilot
-sidebar_label: Copilot
+sidebar_label: Copilot 🤖
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -14,8 +14,8 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note
-If you need to opt out, please open a [support ticket](https://support.sumologic.com/support/s/).
+:::info
+If you prefer not to use Copilot, you can opt out by contacting [Support](https://support.sumologic.com/support/s/).
 :::
 
 Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
@@ -303,9 +303,9 @@ Role Based Access Control is not supported for contextual suggestions and autoco
 ## FAQ
 
 <details>
-<summary>What is Sumo Logic Mo Copilot?</summary>
+<summary>What is Sumo Logic Copilot?</summary>
 
-Sumo Logic Mo Copilot is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Copilot does not process or share your log data with any third party.
+Sumo Logic Copilot (also referred to as Sumo Logic Mo Copilot) is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Copilot does not process or share your log data with any third party.
 </details>
 
 <details>
@@ -382,6 +382,12 @@ No, Sumo Logic does not currently hold any AI-specific certifications or accredi
 Each major capability added to Copilot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
 </details>
 
+<details>
+<summary>How can I opt out of Copilot?</summary>
+
+If you prefer not to use Sumo Logic Copilot, please contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
+</details>
+
 
 ## Feedback
 
@@ -392,7 +398,3 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
-
-## Opt out
-
-If you prefer not to use Sumo Logic Copilot, you can opt out by submitting a [support ticket](https://support.sumologic.com/support/s/).
