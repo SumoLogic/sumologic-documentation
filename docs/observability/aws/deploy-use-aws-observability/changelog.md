@@ -22,7 +22,7 @@ New Feature:
 * Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
 * Added support to filter AWS CloudWatch metrics based on AWS tags.
 * Updated cloudformation helper function with Python Runtime to v3.13 .
-* Updated SAM apps with python lambda runtime v3.13 and library updates to handle any CVE’s .
+* Updated SAM apps with Python Lambda runtime v3.13 and library updates to handle any CVE’s.
 
 ## v2.10.0, 4-Sept-2024
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml`
