@@ -546,9 +546,9 @@ The following Cloud SIEM rules refer to this match list:
 
 ### known_docker_images
 
-**Target column:** Source IP Address (`SrcIp`)
+**Target column:** Username (`Username`)
 
-**Description:** Hosts that are known to be involved with specific administrative or privileged activity in Docker. 
+**Description:** Unrecognized Docker container images that may indicate an attempt to bypass security controls on existing images or escalate privileges. 
 
 The following Cloud SIEM rules refer to this match list:
 * Unrecognized Container Image
