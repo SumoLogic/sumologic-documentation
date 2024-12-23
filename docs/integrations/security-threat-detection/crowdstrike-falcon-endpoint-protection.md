@@ -26,11 +26,13 @@ For more information on Events, please refer to the CrowdStrike Falcon Endpoint 
 
 ### Sample log messages
 
-For more information on Events, please refer to [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
+For more information on Events, refer to the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
-```json title="Detection Event"
-  {
-   {
+<details>
+<summary>Detection Event</summary>
+
+```json 
+{
     "metadata": {
         "customerIDString": “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "offset": 14947764,
@@ -84,7 +86,12 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
 }
 ```
 
-```json title="Authentication Event"
+</details>
+
+<details>
+<summary>Authentication Event</summary>
+
+```json
 {
   "event": {
     "AuditKeyValues": [
@@ -108,6 +115,11 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
   }
 }NOPQRSTUV","eventType":"AuthActivityAuditEvent","eventCreationTime":1480375833,"offset":80960}}
 ```
+
+</details>
+
+<details>
+<summary>Detection Status Update</summary>
 
 ```json title="Detection Status Update"
 {
@@ -144,6 +156,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
     }
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -181,16 +194,33 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 | sort by _count
 ```
 
+## Collection configuration and app installation
 
-## Set up collection
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-To set up the [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) for the CrowdStrike Falcon Endpoint Protection app, follow the instructions provided. These instructions will guide you through the process of creating a source using the CrowdStrike Falcon Endpoint Protection source category, which you will need to use when installing the app. By following these steps, you can ensure that your CrowdStrike Falcon Endpoint Protection app is properly integrated and configured to collect and analyze your CrowdStrike Falcon Endpoint Protection data.
+<CollectionConfiguration/>
 
-## Installing the CrowdStrike Falcon Endpoint Protection app
+:::important
+Use the [Cloud-to-Cloud Integration for CrowdStrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike app is properly integrated and configured to collect and analyze your CrowdStrike data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
 
