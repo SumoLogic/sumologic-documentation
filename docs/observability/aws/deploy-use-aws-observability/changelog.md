@@ -17,7 +17,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 New Feature:
 * Amazon RDS app - Added support to analyze and monitor RDS Oracle CloudWatch and CloudTrail logs.
 * Amazon Load Balancer apps - Added support to analyze and monitor Cloudtrail audit event logs for Application Load Balancer, Classic Load Balancer, and Network Load Balancer.
-* Added out of the box Monitors for RDS Oracle DB, Application Load Balancer, Classic Load Balancer and Network Load Balancer. Solution now supports 78 out-of-box monitors.
+* Added out of the box monitors for RDS Oracle DB, Application Load Balancer, Classic Load Balancer, and Network Load Balancer. Solution now supports 78 out-of-box monitors.
 * Added support to collect custom metrics namespaces.
 * Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
 * Added support to filter AWS CloudWatch metrics based on AWS tags.
