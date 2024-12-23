@@ -19,7 +19,7 @@ New Feature:
 * Amazon Load Balancer apps - Added support to analyze and monitor Cloudtrail audit event logs for Application Load Balancer, Classic Load Balancer and Network Load Balancer.
 * Added out of the box Monitors for RDS Oracle DB, Application Load Balancer, Classic Load Balancer and Network Load Balancer. Solution now supports 78 out-of-box monitors.
 * Added support to collect custom metrics namespaces.
-* Added support to subscribe cloudWatch log groups based on AWS tags to sumologic.
+* Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
 * Added support to filter AWS CloudWatch metrics based on AWS tags.
 * Updated cloudformation helper function with Python Runtime to v3.13 .
 * Updated SAM apps with python lambda runtime v3.13 and library updates to handle any CVE’s .
