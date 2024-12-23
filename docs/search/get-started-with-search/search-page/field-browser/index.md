@@ -17,7 +17,7 @@ The Field Browser displays the number of values for each field returned in a sea
 In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
 
 :::info
-The **Receipt Time** field will only be displayed in the field browser when it is included in the query or when the **Use the Receipt Time** option is toggled on.
+The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
 :::
 
 ![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
