@@ -28,22 +28,11 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   staticDirectories: ['static'],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        }
-      },
-    }),
+  // Docusaurus Faster (https://docusaurus.io/blog/releases/3.6#adoption-strategy)
+  future: {
+    experimental_faster: {
+      swcJsLoader: true,
+    },
   },
   presets: [
     [
