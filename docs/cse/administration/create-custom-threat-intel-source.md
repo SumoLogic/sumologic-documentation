@@ -18,21 +18,6 @@ This topic has information about setting up a *custom threat intelligence source
 
 You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
 
-Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
-
-<Iframe url="https://www.youtube.com/embed/-DHQ2IBy5Ko?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe'; 
-
 ### How Cloud SIEM uses indicators
 
 When Cloud SIEM encounters an indicator from your threat source in an incoming record it adds relevant information to the record. Because threat intelligence
