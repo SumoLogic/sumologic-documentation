@@ -7,6 +7,7 @@ description: Learn how to write a threshold rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import Iframe from 'react-iframe';
 
 This topic has information about the threshold rules and how to create them in the Cloud SIEM UI.
 
@@ -16,8 +17,23 @@ If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/a
 
 A threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. 
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to create a threshold rule.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/04ymrxo93q?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Create a Threshold Rule in Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/uei_TDOy5QM?rel=0"
         width="854px"
         height="480px"
@@ -28,8 +44,9 @@ Watch this micro lesson to learn how to create a threshold rule.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 ## Create a threshold rule
 

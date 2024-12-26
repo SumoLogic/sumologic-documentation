@@ -28,7 +28,7 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
 :::
 
-:::sumo
+:::sumo Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
 
 <Iframe url="https://www.youtube.com/embed/5O16kI5UXpM?rel=0"

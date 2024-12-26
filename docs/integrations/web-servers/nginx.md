@@ -20,7 +20,7 @@ This app is tested with the following Nginx versions:
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
-Tutorial: Set up NGINX for non-Kubernetes Sources.
+Learn to set up NGINX for non-Kubernetes Sources.
 
 <Iframe url="https://www.youtube.com/embed/X_6f0MDVTxo?rel=0"
         width="854px"
