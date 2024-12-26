@@ -6,6 +6,7 @@ description: You can use Cloud SIEM actions to issue notifications to another se
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This topic has instructions for configuring Cloud SIEM actions.
 
@@ -29,8 +30,23 @@ You can use Cloud SIEM actions to issue a notification to another service when c
 
 An action can be configured for insight-related activity as described below in [Insight actions](#insight-actions). You can also configure an action to be run when a rule is automatically disabled, as described below in [Rule actions](#rule-actions).
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to configure an action.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/ovjy40b1vb?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Configure the Actions Button in Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
         width="854px"
         height="480px"
@@ -41,9 +57,9 @@ Watch this micro lesson to learn how to configure an action.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
-
+:::
 
 ## Insight actions
 
