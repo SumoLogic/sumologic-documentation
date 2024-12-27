@@ -4,6 +4,7 @@ title: OpenTelemetry Collector Quickstart
 sidebar_label: Quickstart
 description: Get up and running quickly with the Sumo Logic OpenTelemetry Collector.
 ---
+
 <!-- temporarily pulled from docs -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -35,13 +36,13 @@ In this section, you'll install Sumo Logic’s OpenTelemetry collector on your m
 
 ### Step 1: Log in to Sumo
 
-[Sign in](https://service.sumologic.com/ui/) to your Sumo Logic as you normally would.
+[Sign in](https://service.sumologic.com/ui/) to your Sumo Logic.
 
 ### Step 2: Get an Installation Token
 
 In this section, you'll create a new [installation token](/docs/manage/security/installation-tokens), which allows the collector to talk securely to Sumo Logic API and tells it what account to send the data to. This is secure enough that you can comfortably deploy it as an environment variable or as part of a script.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Security > Installation Tokens**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Security > Installation Tokens**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**.
 1. Click the **+ Add Token** button above the table. A panel named **Create Installation Token** appears to the right of the table.
 1. Input a unique name, then click **Save**.
 1. After you’ve created your token, don’t forget to copy it.
@@ -49,26 +50,23 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 
 ### Step 3: Install the collector on the target machine
 
-<details>
-<summary>What's a collector?</summary>
 A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
-</details>
 
 We've created a one-step installation script to make it easier to install the collector. In this example, you'll install this on a Mac. These same basic steps work for Linux environments as well.
 
 1. First, set up an environment variable to hold the installation token you just created. Open up a shell and run the following command:
-   ```bash
-   export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
-   ```
+   ```bash
+   export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
+   ```
 1. Next, run the install script. You’ll need to use `sudo` here, so ensure you run this from an account with admin privileges.
-   ```bash
-   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s --
-   ```
+   ```bash
+   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s --
+   ```
 1. After running the install script, you should see the following files installed:
-   - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.
-   - `/etc/otelcol-sumo/sumologic.yaml`. An auto-generated config file for the collector. It’s best to leave this one as-is, as it sets up some important defaults.
-   - `/etc/otelcol-sumo/conf.d/`. A directory that holds collector configuration files. A best practice is to use multiple single-purpose configuration files, which will all be loaded from this directory.
-   - `/etc/otelcol-sumo/conf.d/common.yaml`. A collector configuration file that contains the installation token.
+   - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.
+   - `/etc/otelcol-sumo/sumologic.yaml`. An auto-generated config file for the collector. It’s best to leave this one as-is, as it sets up some important defaults.
+   - `/etc/otelcol-sumo/conf.d/`. A directory that holds collector configuration files. A best practice is to use multiple single-purpose configuration files, which will all be loaded from this directory.
+   - `/etc/otelcol-sumo/conf.d/common.yaml`. A collector configuration file that contains the installation token.
 
 ### Step 4: Configure the metrics you want to collect
 
@@ -78,40 +76,35 @@ To do this, create a new file within the `/etc/otelcol-sumo/conf.d/` directory c
 
 ```yaml title="hostmetrics.yaml"
 receivers:
-  hostmetrics:
-    collection_interval: 5s
-    scrapers:
-      memory:
+  hostmetrics:
+    collection_interval: 5s
+    scrapers:
+      memory:
 
 exporters:
-  debug:
-    verbosity: detailed
+  debug:
+    verbosity: detailed
 
 service:
-  pipelines:
-    metrics:
-      receivers:
-        - hostmetrics
-      exporters:
-        - sumologic
-        - debug
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
-<details>
-<summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
-
-The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
-
-The [`exporters` section](https://opentelemetry.io/docs/collector/configuration/#exporters) describes the places we will send that data. The exporter is a component within the collector that sends data to another destination (in this case, Sumo Logic). The default configuration file already sets up an exporter called `sumologic`, so we don’t need to specify that again. Instead, you'll set up an additional simple console debug logger to see when the collector processes data.
-
-The [`service` section](https://opentelemetry.io/docs/collector/configuration/#service) describes how the collector will process the information between when it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
-</details>
+* The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
+* The [`exporters` section](https://opentelemetry.io/docs/collector/configuration/#exporters) describes the places we will send that data. The exporter is a component within the collector that sends data to another destination (in this case, Sumo Logic). The default configuration file already sets up an exporter called `sumologic`, so we don’t need to specify that again. Instead, you'll set up an additional simple console debug logger to see when the collector processes data.
+* The [`service` section](https://opentelemetry.io/docs/collector/configuration/#service) describes how the collector will process the information between when it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
 
 Save this yaml file. Now, the collector is ready to start running.
 
 ### Step 5: Run the collector
 
 To start the collector, run the following command:
+
 ```bash
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -119,6 +112,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 This command launches the collector with the default configuration, and any config files under the `/etc/otelcol-sumo/conf.d/` directory.
 
 Note that you could also run this via `systemd` or whatever your preferred system is for managing long-running services. In fact, by default, the install script includes files for integrating the collector with `systemd`. You can launch it with:
+
 ```bash
 systemctl restart otelcol-sumo
 ```
@@ -140,7 +134,7 @@ If you see that kind of output, the collector has successfully set up a connecti
 
 Back in the Sumo Logic UI:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its **Type** should be **OT Distro**.
 1. To see the metrics data, hover over the line, and two small icons will appear next to the collector's name. Click the icon to the right, **Open in Metrics**, which looks like a small graph.
 

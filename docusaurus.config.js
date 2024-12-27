@@ -32,6 +32,9 @@ module.exports = {
   future: {
     experimental_faster: {
       swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      mdxCrossCompilerCache: true,
     },
   },
   presets: [
