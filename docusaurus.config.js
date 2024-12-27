@@ -34,6 +34,8 @@ module.exports = {
       swcJsLoader: true,
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
+      lightningCssMinimizer: false,
+      rspackBundler: false,
       mdxCrossCompilerCache: true,
     },
   },
