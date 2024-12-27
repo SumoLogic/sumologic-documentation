@@ -30,7 +30,7 @@ Consider the following queries:
 
 You can create partitions for both data tier and flex plans. By default, all data ingested into Sumo Logic will go to the continuous tier unless you specify a different data tier using the routing expression. Only data that goes to a partition can be assigned to Frequent or Infrequent Tier. Costs will be incurred for ingesting the data into Sumo Logic for continuous and frequent tier data ingestion. However, for infrequent tier data ingestion, no cost is incurred for ingesting the data, whereas pricing is determined by the scanned volume of insights and analytics.  To learn more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers). 
 
-In contrast, the Flex plan does not involve configuring data into specific tiers. All data ingested under the Flex plan is classified as Flex data, and pricing is determined by the scanned volume of insights and analytics. This plan also provides access to additional default features, such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views.  To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
+In contrast, the Flex plan does not involve configuring data into specific tiers. All data ingested under the Flex plan is classified as Flex data, and pricing is determined by the scanned volume of insights and analytics. This plan also provides access to additional default features, such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
 
 ## What is Query Rewriting?
 
