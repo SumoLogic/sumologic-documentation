@@ -525,3 +525,17 @@ module.exports = {
       },
     }),
 };
+
+export default function (context, options) {
+  return {
+    name: 'custom-docusaurus-plugin',
+    configureWebpack(config, isServer, {currentBundler}) {
+      const bundler = (currentBundler.instance ?? require("webpack"))
+      return {
+        plugins: [
+          new bundler.DefinePlugin({}),
+        ]
+      };
+    },
+  };
+}
