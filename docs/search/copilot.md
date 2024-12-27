@@ -1,7 +1,7 @@
 ---
 id: copilot
-title: Sumo Logic Copilot - Feature Preview
-sidebar_label: Copilot - Preview
+title: Sumo Logic Copilot
+sidebar_label: Copilot 🤖
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -14,8 +14,8 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo Preview release
-This is a Preview release. To learn more, contact your Sumo Logic account executive. To opt out, please open a [support ticket](https://support.sumologic.com/support/s/).
+:::info
+If you prefer not to use Copilot, you can opt out by contacting [Support](https://support.sumologic.com/support/s/).
 :::
 
 Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
@@ -41,18 +41,23 @@ Copilot accelerates incident response by combining prebuilt contextual insights 
 * **Natural language queries**. Ask questions in plain English.
 * **Contextual suggestions**. Get suggestions relevant to your troubleshooting and investigations context.
 * **Conversation history**. Save and resume troubleshooting or investigation sessions without losing context.
-* **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards.
+* **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
 
 ## Security and compliance
 
-Copilot leverages foundational models available through Amazon Bedrock. As a result, our Copilot compliance and security posture are inherited from Amazon Bedrock. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
+Sumo Logic Copilot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
+
+
+* **Customer data privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
+* **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
+* **AI provider**. Copilot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
 
 ## Who benefits from Copilot?
 
@@ -60,6 +65,9 @@ Copilot is ideal for users of all skill levels:
 
 * **On-call engineers**. Accelerate time to resolution by surfacing key troubleshooting insights.
 * **Security engineers**. Obtain security insights rapidly for faster security incident resolution.
+* **Early career professionals**. Simplifies troubleshooting with natural language queries, making incident resolution accessible to those unfamiliar with query syntax.
+* **Practitioners**. Speeds up workflows with auto-complete and context-aware suggestions for frequent tasks.
+* **Experts**. Provides IDE-style assistance for crafting complex queries efficiently.
 
 ## How to use Copilot
 
@@ -112,17 +120,14 @@ Broad questions may not yield accurate results. For best outcomes, frame your qu
 
 Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
-<!-- TO DO
-##### Autocompletion for natural language
-see https://drive.google.com/file/d/10XUn4DQD3K91V3Qf5heCizkHJneTaBJ7/view?usp=sharing
---->
-
 #### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
 * **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
 * **Experiment with phrasing**. Try multiple variations of a query to provide context and receive more relevant suggestions.  
 * **Include time or variations to add `timeslice` as a dimension**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
+* **Explore context-aware suggestions**. Use prompts like `Calculate 95th percentile latency` or `Visualize request volumes over time` to quickly surface key metrics.
+* **Detect malicious activity**. Try queries like `Count register requests by 503 status code, IP, and threat confidence` to uncover potential DDoS attacks.
 
 Below are examples of how you can phrase queries if the autocompletions and contextual suggestions are not relevant to you:
 
@@ -135,6 +140,23 @@ Below are examples of how you can phrase queries if the autocompletions and cont
    Keyword searches are case-sensitive.
    :::
 * `Apply logreduce to logs`
+
+More examples:
+
+* Detecting malicious activity:
+   ```
+   Count logs by action. Sort the results.
+   Filter results by action contains Malicious.
+   ```
+* Advanced analysis with users and URLs:
+   ```
+   Count logs by action, url, user.
+   Sort the results. Filter results by action contains Malicious.
+   ```  
+* Root cause analysis for latency:
+   ```
+   Calculate 95th percentile latency by service and API.
+   ```
 
 Additional prompts can trigger more advanced activities (e.g., mapping network activity against CrowdStrike):
 
@@ -171,7 +193,7 @@ If required, select your preferred chart type, such as **Table**, **Bar**, **Col
 
 You can manually edit your log search query code if needed.
 
-1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
+1. Click in the code editor field and edit your search. New to Sumo Logic query language? Learn more in the [Search Query Language](/docs/search/search-query-language) guide.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 1. When you're done, press Enter or click the search button.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
@@ -196,13 +218,15 @@ If your log query contains a mix of JSON and non-JSON formatting (i.e., a log fi
 
 #### History
 
-Often, users work on multiple incidents at the same time. To view Copilot interactions related to these incidents, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+Conversation History saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, revisit earlier queries to explore other hypotheses.
+
+This functionality comes in handy when you're working on multiple incidents at the same time. To view Copilot interactions related to an incident, click **History**.
+<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
 
 You can resume a conversation in two ways:
 
-First, the Resume conversation icon picks up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history1.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
-
-Second, you can resume from a specific query in a conversation by clicking on the row in the conversation history and then clicking on the gray area on the right side, as shown below.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history2.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+* Click the **Resume conversation** icon to pick up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history1.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
+* Click on the row in the conversation history, and then click the gray area on the right side to resume from a specific query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history2.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
 
 #### New Conversation
 
@@ -276,6 +300,95 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
+## FAQ
+
+<details>
+<summary>What is Sumo Logic Copilot?</summary>
+
+Sumo Logic Copilot (also referred to as Sumo Logic Mo Copilot) is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Copilot does not process or share your log data with any third party.
+</details>
+
+<details>
+<summary>Can I use Copilot to analyze unstructured logs?</summary>
+
+Yes, Copilot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
+</details>
+
+<details>
+<summary>Does Copilot save search history?</summary>
+
+Yes, Copilot retains conversation and search history, allowing you to resume investigations with context and continuity.
+</details>
+
+<details>
+<summary>What role does AI play in Copilot?</summary>
+
+Copilot uses AI to interpret natural language queries and recommend search results or query refinements, streamlining log analysis.
+</details>
+
+<details>
+<summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
+
+Sumo Logic Copilot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
+</details>
+
+<details>
+<summary>Is customer data/PII used to train AI models?</summary>
+
+No, customer data or PII is not used for training AI models. Copilot operates using a foundation model served via Amazon Bedrock, ensuring your data remains private and secure.
+</details>
+
+<details>
+<summary>How long does the AI store customer information or PII, and when and how is it deleted?</summary>
+
+Certain features may rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
+
+For example, our AI-driven alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
+</details>
+
+<details>
+<summary>Does Sumo Logic Mo Copilot use any open-source library, GenAI providers, or cloud providers?</summary>
+
+For Generative AI, Copilot uses a foundation model served by Amazon Bedrock. Classical ML features leverage open-source Python libraries approved by Sumo Logic.
+</details>
+
+<details>
+<summary>What is the type of AI being used?</summary>
+
+Sumo Logic Copilot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in AI-driven alerts.
+</details>
+
+<details>
+<summary>Is there a human in the loop for Copilot?</summary>
+
+Yes, the on-call developer or security engineer troubleshooting an incident is the expected user. They interact with Copilot using natural language questions or through contextual suggestions.
+</details>
+
+<details>
+<summary>Does a fourth party have access to Copilot customer data?</summary>
+
+No. The foundation model provider used by Amazon Bedrock has no access to customer data.
+</details>
+
+<details>
+<summary>Do you hold any AI-specific certifications or accreditations?</summary>
+
+No, Sumo Logic does not currently hold any AI-specific certifications or accreditations.
+</details>
+
+<details>
+<summary>How are reviews conducted on the Copilot model?</summary>
+
+Each major capability added to Copilot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
+</details>
+
+<details>
+<summary>How can I opt out of Copilot?</summary>
+
+If you prefer not to use Sumo Logic Copilot, please contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
+</details>
+
+
 ## Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon and entering the context of your query.
@@ -285,7 +398,3 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
-
-## Opt out
-
-To opt out of Copilot, contact our [support team](https://support.sumologic.com/support/s/).
