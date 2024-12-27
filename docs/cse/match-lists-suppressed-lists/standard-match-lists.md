@@ -548,7 +548,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Target column:** Username (`Username`)
 
-**Description:** Unrecognized Docker container images that may indicate an attempt to bypass security controls on existing images or escalate privileges. 
+**Description:**  Known approved Docker images that act as a whitelist. If an image is identified that is not on this list, further investigation is warranted. If approved images are identified they should be added to this list. 
 
 The following Cloud SIEM rules refer to this match list:
 * Unrecognized Container Image
@@ -621,9 +621,9 @@ The following Cloud SIEM rules refer to this match list:
 
 ### OneLogin_Untrusted_Location
 
-**Target column:** Username (`Username`)
+**Target column:** IP Address (`Ip`)
 
-**Description:** Users that are known to be involved with specific administrative or privileged activity.
+**Description:** Locations that are known to be untrusted.
 
 The following Cloud SIEM rules refer to this match list:
 * OneLogin - API Credentials - Key Used from Untrusted Location
