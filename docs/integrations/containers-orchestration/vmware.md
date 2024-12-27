@@ -175,7 +175,8 @@ For a file source, configure a local or remote file source in one of the followi
 * **If the script and the Sumo Logic collector are on the same server**: configure a local file source by following [these](/docs/send-data/installed-collectors/sources/local-file-source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
 * **If the script and the Sumo Logic collector are on different servers**: configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/remote-file-source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
 * **For a syslog source**, configure the syslog source as follows:
-  1. Go to **Manage Data** > **Collection** > **Collection** and click **Add Source**.
+  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+  1. Click **Add Source**.
   2. Select **Syslog** for the Source type.
   3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
   4. For **Protocol** choose **TCP**.

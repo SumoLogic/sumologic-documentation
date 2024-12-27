@@ -77,6 +77,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/cisco-amp"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
+  <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/cisco-meraki-c2c"><img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="icon" width="70"/><h4>Cisco Meraki - C2C</h4></a>
   <p>Gain insights into the events and identify potential network events along with admin activities.</p>
   </div>
@@ -97,6 +103,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/cloudflare"><img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="icon" width="40"/><h4>Cloudflare</h4></a>
   <p>Analyze logs, events, and trends from your websites and apps on the Cloudflare network.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
+  <p>Monitor and analyze file integrity.</p>
   </div>
 </div>
 <div className="box smallbox card">
