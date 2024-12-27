@@ -3355,7 +3355,7 @@
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_API_Gateway/AWS_API_Gateway_Dashboards": "/docs/observability/aws/integrations/aws-api-gateway",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_Application_Load_Balancer": "/docs/observability/aws/integrations/aws-application-load-balancer",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_Application_Load_Balancer/AWS_Application_Load_Balancer_Dashboards": "/docs/observability/aws/integrations/aws-application-load-balancer",
-  "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_Observability_DynamoDB/View_the_AWS_Observability_DynamoDB_Dashboards": "/docs/observability/aws/integrations/aws-dynamodb",
+"/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_Observability_DynamoDB/View_the_AWS_Observability_DynamoDB_Dashboards": "/docs/observability/aws/integrations/aws-dynamodb",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_DynamoDB": "/docs/observability/aws/integrations/aws-dynamodb",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_DynamoDB/AWS_DynamoDB_Dashboards": "/docs/observability/aws/integrations/aws-dynamodb",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_EC2": "/docs/observability/aws/integrations/aws-ec2-host-metrics",
