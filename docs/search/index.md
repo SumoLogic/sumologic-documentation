@@ -99,8 +99,23 @@ To interact with other Sumo Logic users, post feedback, or ask a question, visit
 
 ## Journey of a log
 
+:::sumo Micro Lesson
+
 In this micro lesson, learn about the ingestion pipeline and the journey that a log message takes from collection into the Sumo Logic platform. The video covers key considerations for administrators around the ingestion pipeline and demonstrates how this process translates into a search, turning a raw event into a schema and then into actionable insights.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/zha12k8ffz?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: A Log's Journey Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/ycaoBEAF8hk?rel=0"
      width="854px"
      height="480px"
@@ -111,6 +126,9 @@ In this micro lesson, learn about the ingestion pipeline and the journey that a 
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 ## Partitions and Views
 
