@@ -85,9 +85,3 @@ To stop the local server or build process, press `Ctrl + C`. You can rebuild and
 ## Publishing content
 
 Our documentation team regularly reviews issues and pull requests. While we strive to address contributions promptly, there may be delays as we work through the backlog. Your patience is appreciated.
-
-## Legal notices
-
-This project includes third-party dependencies that are licensed under the Mozilla Public License, version 2.0 (MPL-2.0). The dependencies have not been modified, and their use complies with the terms of the MPL-2.0.
-
-For more details, see the `LICENSE` file.
