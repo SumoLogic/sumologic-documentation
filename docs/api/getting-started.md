@@ -39,7 +39,7 @@ Sumo Logic supports the following options for API authentication:
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 
 :::info
-Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for.
+Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for. 
 :::
 
 ### Access ID and Access Key
