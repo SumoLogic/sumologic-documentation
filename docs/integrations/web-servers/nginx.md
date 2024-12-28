@@ -19,9 +19,22 @@ This app is tested with the following Nginx versions:
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::sumo Tutorial
 Learn to set up NGINX for non-Kubernetes Sources.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/scxk3myspn?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Set up NGINX for non-Kubernetes Sources Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!--
 <Iframe url="https://www.youtube.com/embed/X_6f0MDVTxo?rel=0"
         width="854px"
         height="480px"
@@ -32,6 +45,7 @@ Learn to set up NGINX for non-Kubernetes Sources.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

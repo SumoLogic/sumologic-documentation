@@ -31,6 +31,20 @@ Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-star
 :::sumo Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/cz203tui1t?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: App Catalog in Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/5O16kI5UXpM?rel=0"
      width="854px"
      height="480px"
@@ -41,6 +55,8 @@ Watch this tutorial to learn how to use our **App Catalog**.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
 :::
 
 <br/>

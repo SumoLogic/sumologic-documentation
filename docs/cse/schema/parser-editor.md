@@ -25,6 +25,19 @@ The instructions that follow assume that you have already written your parser co
 
 Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/xqe7k7h2e4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Applying Parsers to Cloud SIEM Data Sets Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- 
 <Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
      width="854px"
      height="480px"
@@ -35,6 +48,7 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
 
 :::
 
@@ -243,4 +257,5 @@ Watch the following video for a walkthrough of the parser templates.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+
 :::
