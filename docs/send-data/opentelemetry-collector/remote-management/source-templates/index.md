@@ -1,47 +1,74 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/source-templates
-title: Source Templates
+title: OpenTelemetry Remote Management Source Templates
+description: Learn how to set up OpenTelemetry remote management templates for sources such as Apache and Windows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Source templates in Sumo Logic provide efficient, scalable data collection management by applying consistent setups across multiple collectors. They reduce redundancy and simplify configuration, making it easier to manage and scale your data collection efforts.
 
-## Benefits
+In this section, we'll show you how to set up the following source templates:
 
-* **Efficiency**. Create a template once and apply it to multiple collectors.
-* **Consistency**. Ensure uniform data collection across your environment.
-* **Scalability**. Easily manage configurations for large numbers of collectors.
-
-## Common use cases
-
-Source templates are useful for managing data collection in scenarios like:
-
-* Monitoring application logs across multiple servers
-* Collecting metrics from a fleet of containers
-* Aggregating error logs from distributed services
-
-## Creating and managing Source templates
-
-To create a source template:
-
-1. **Navigate to Source Templates**.
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Collection > Source Template**.
-   * [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration > Collection > Source Template**.
-2. **Create a new Source Template**. Click **Create Source Template** and fill in the required details, such as name and configuration settings.
-3. **Link Collectors**. Use tags or collector names to link the appropriate collectors to your source template.
-4. **Apply and manage**. Apply the source template to the linked collectors and manage or update it as needed.
-
-
-## Example Scenario: Monitoring Nginx access logs
-
-Monitoring Nginx Access Logs from a group of web servers:
-
-1. **Create Source Template**. Name it `"Nginx Access Logs"` and specify the log file path.
-2. **Link Collectors**. Tag your web servers with `"application=nginx"` and link these collectors to the source template.
-3. **Deploy**. Apply the source template to start collecting logs from all linked collectors.
-4. **Monitor**. Use our [log search](/docs/search) and [dashboard](/docs/dashboards) features to monitor and analyze the collected Nginx access logs.
-
-:::tip
-For more details on source templates, see [Installed Collector Source Documentation](/docs/send-data/installed-collectors/sources).
-:::
+<div className="box-wrapper" >
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/create-source-template"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Create a Source Template</h4></a>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/apache"><img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="60"/><h4>Apache</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker"><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="110"/><h4>Docker</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/kafka"><img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="65"/><h4>Kafka</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/linux"><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="30"/><h4>Linux</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/localfile"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Localfile</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/mac"><img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="30"/><h4>Mac</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx"><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="90"/><h4>Nginx</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq"><img src={useBaseUrl('/img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="30"/><h4>RabbitMQ</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis"><img src={useBaseUrl('/img/integrations/databases/redis.png')} alt="Thumbnail icon" width="30"/><h4>Redis</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/syslog"><img src={useBaseUrl('img/icons/operations/server.png')} alt="OTel thumbnail icon" width="30"/><h4>Syslog</h4></a>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows"><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="30"/><h4>Windows</h4></a>
+    </div>
+  </div>
+</div>

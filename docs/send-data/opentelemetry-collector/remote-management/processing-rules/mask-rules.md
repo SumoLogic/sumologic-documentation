@@ -1,7 +1,7 @@
 ---
 id: mask-rules
-title: Mask Rules
-description: Create a mask rule to replace an expression with a mask string.
+title: OpenTelemetry Remote Management Mask Rules
+description: Create an OpenTelemetry collector remote management mask rule to replace an expression with a mask string.
 ---
 
 :::note

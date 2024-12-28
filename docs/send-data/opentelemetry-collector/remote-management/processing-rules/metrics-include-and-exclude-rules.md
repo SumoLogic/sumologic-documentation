@@ -1,8 +1,8 @@
 ---
 id: metrics-include-and-exclude-rules
-title: Metrics Include and Exclude Rules for OpenTelemetry
+title: OpenTelemetry Remote Management Metrics Include and Exclude Rules
 sidebar_label: Metrics Include and Exclude Rules
-description: You can use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.
+description: You can use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry remote management.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

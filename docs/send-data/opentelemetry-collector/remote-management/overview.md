@@ -8,23 +8,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Distribution for OpenTelemetry Collector simplifies remote management of data collection, allowing setup from the Sumo Logic UI and deployment to multiple collectors.
 
-## Key benefits of Remote Management
+## Key benefits of remote management
 
-* Simplified setup and configuration via the Sumo Logic UI.
-* Tag-based collector grouping for efficient data collection.
-* Centralized configuration using [Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates).
-* No server access required after installation.
-* Faster time to value and reduced manual errors.
+* Simplified setup and configuration via the Sumo Logic UI
+* Tag-based collector grouping for efficient data collection
+* Centralized configuration using [source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates)
+* No server access required after installation
+* Faster time to value and reduced manual errors
 
 ## Common use cases
 
-* Monitoring error logs across multiple Apache servers.
-* Grouping collectors by environment (for example, production, staging).
-* Expanding data collection for new services with minimal effort.
-* Simplifying migration from legacy monitoring solutions.
+* Monitoring error logs across multiple Apache servers
+* Grouping collectors by environment (for example, production, staging)
+* Expanding data collection for new services with minimal effort
+* Simplifying migration from legacy monitoring solutions
 
-
-## Remote Management features
+## Remote management features
 
 ### Collector tags
 
@@ -32,9 +31,9 @@ With remote management, you can tag your [OpenTelemetry Collectors](/docs/send-d
 
 ### Source templates
 
-Remote management data configuration for OpenTelemetry collectors is handled using Source templates. This feature extends the [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, allowing association with multiple collectors.
+Remote management data configuration for OpenTelemetry collectors is handled using source templates. This feature extends the [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, allowing association with multiple collectors.
 
-Use collector tags to group collectors and associate Source templates to these groups, reducing redundancy in data collection setup. This process, known as *Collector Linking*, streamlines configuration management.
+Use collector tags to group collectors and associate source templates to these groups, reducing redundancy in data collection setup. This process, known as *Collector Linking*, streamlines configuration management.
 
 ## How it works
 
@@ -52,7 +51,7 @@ First, you'll need to install the OpenTelemetry collectors on each of the 50 ser
 1. Leave the **Collector Settings** at their default values.
 1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="Screenshot showing the terminal command to install the collector" width="800"/>
 1. After installation is complete, click **Next** to proceed.
-1. On the next screen, you will see a list of available Source Templates. Select the **Apache Source Template** to apply the source template to start collecting logs from all linked collectors.
+1. On the next screen, you will see a list of available source templates. Select the **Apache Source Template** to apply the source template to start collecting logs from all linked collectors.
 
 To revisit this screen later, navigate to:
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic): In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
@@ -62,15 +61,11 @@ To revisit this screen later, navigate to:
 
 Next, you'll create a data collection configuration to gather Apache error logs and link it to all collectors tagged `"application = Apache"`.
 
-1. Complete the Source Template form with the **Name** and **File Path** for your error logs, then click **Next**.
+1. Complete the source template form with the **Name** and **File Path** for your error logs, then click **Next**.
 1. Under **Link Collectors**, add the tag `"application = Apache"`.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Screenshot of the file path configuration for Apache logs" style={{border: '1px solid gray'}} width="300"/>
-1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created Source Template.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
-1. Click **Next** to complete Source Template creation. The system will apply the configuration to all linked collectors and start collecting Apache error logs.
+1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created source template.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Next** to complete source template creation. The system will apply the configuration to all linked collectors and start collecting Apache error logs.
 
 ### Step 3: Monitor logs
 
 After configuring data collection, you can monitor the collected Apache error logs using the [Log Search](/docs/search) and leverage [Dashboards](/docs/dashboards) to analyze the logs and gain insights from your Apache servers.
-
-## Try it now
-
-Start simplifying your data collection today by using remote management with OpenTelemetry collectors. For feedback or assistance, contact [Support](https://support.sumologic.com/support/s).

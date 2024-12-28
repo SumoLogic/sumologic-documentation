@@ -128,23 +128,12 @@ module.exports = {
                 'send-data/opentelemetry-collector/remote-management/overview',
                 {
                   type: 'category',
-                  label: 'Processing Rules',
-                  collapsible: true,
-                  collapsed: true,
-                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
-                  items:[
-                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
-                    'send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules',
-                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
-                  ],
-                },
-                {
-                  type: 'category',
                   label: 'Source Templates',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
                   items:[
+                    'send-data/opentelemetry-collector/remote-management/source-templates/create-source-template',
                     {
                       type: 'category',
                       label: 'Apache',
@@ -255,6 +244,19 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
                       ]
                     },
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Processing Rules',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',
                   ],
                 },
               ],

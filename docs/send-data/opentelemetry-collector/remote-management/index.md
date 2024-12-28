@@ -1,6 +1,6 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management
-title: Remote Management for OpenTelemetry Collector
+title: OpenTelemetry Collector Remote Management 
 sidebar_label: Remote Management
 ---
 
@@ -12,15 +12,15 @@ In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
   <div className="box smallbox card">
-    <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
-      <p>Use Sumo Logic processing rules for an OTel agent with an OTel remote management (OTRM) source template.</p>
+  <div className="container">
+    <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
+    <p>Simplify OpenTelemetry Collector remote management data ingestion using source templates.</p>
     </div>
   </div>
-    <div className="box smallbox card">
+  <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
-      <p>Sumo Logic OTRM source templates.</p>
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
+      <p>Use processing rules for an OpenTelemetry agent with Sumo Logic OpenTelemetry remote management source templates.</p>
     </div>
   </div>
 </div>

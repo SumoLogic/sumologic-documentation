@@ -1,8 +1,8 @@
 ---
 id: mask-rules-windows
-title: Mask Rules for the Windows Source Template
+title: OpenTelemetry Remote Management Windows Source Template Mask Rules
 sidebar_label: Mask Rules - Windows Source Template
-description: Create a mask rule to replace an expression with a mask string.
+description: Create an OpenTelemetry remote management Windows source template mask rule to replace an expression with a mask string.
 ---
 
 :::note

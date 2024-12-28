@@ -1,8 +1,8 @@
 ---
 id: include-and-exclude-rules
-title: Include and Exclude Rules for OpenTelemetry
+title: OpenTelemetry Remote Management Include and Exclude Rules
 sidebar_label: Include and Exclude Rules
-description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.
+description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry remote management.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
