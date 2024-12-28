@@ -1,6 +1,6 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management
-title: OpenTelemetry Collector Remote Management 
+title: OpenTelemetry Collector Remote Management
 sidebar_label: Remote Management
 ---
 
