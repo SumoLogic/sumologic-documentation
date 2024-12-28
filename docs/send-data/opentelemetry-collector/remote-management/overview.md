@@ -63,7 +63,7 @@ To revisit this screen later, navigate to:
 Next, you'll create a data collection configuration to gather Apache error logs and link it to all collectors tagged `"application = Apache"`.
 
 1. Complete the Source Template form with the **Name** and **File Path** for your error logs, then click **Next**.
-1. Under **Link Collectors**, add the tag `"application = Apache"`.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Screenshot of the file path configuration for Apache logs" width="300"/>
+1. Under **Link Collectors**, add the tag `"application = Apache"`.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Screenshot of the file path configuration for Apache logs" style={{border: '1px solid gray'}} width="300"/>
 1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created Source Template.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Next** to complete Source Template creation. The system will apply the configuration to all linked collectors and start collecting Apache error logs.
 
