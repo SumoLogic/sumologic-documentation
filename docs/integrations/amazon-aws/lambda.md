@@ -200,7 +200,7 @@ To collect the metrics in Sumo Logic, follow the steps below:
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
 
-<table><small>
+<table>
   <tr>
    <td>Metric   </td>
    <td>Description   </td>
@@ -220,7 +220,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
   <tr>
    <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>   </td>
    <td>Number of Invocations that are above Provisioned Concurrency   </td>
-  </tr></small>
+  </tr>
 </table>
 
 

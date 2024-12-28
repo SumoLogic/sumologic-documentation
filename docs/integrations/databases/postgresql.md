@@ -619,7 +619,7 @@ Use this dashboard to:
 
 Here are the metrics available for PostgreSQL.
 
-<table><small>
+<table>
   <tr>
    <td>PostgreSQL Metrics List</td>
   </tr>
@@ -757,7 +757,7 @@ Here are the metrics available for PostgreSQL.
   </tr>
   <tr>
    <td>postgresql_table_size   </td>
-  </tr></small>
+  </tr>
 </table>
 
 
