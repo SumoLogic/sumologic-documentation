@@ -271,12 +271,6 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
-    announcementBar: {
-      id: 'copilot',
-      content: 'Check out 🤖 <b><a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a></b>, our new AI-powered logs assistant!',
-      backgroundColor: '#D3BAF7',
-      textColor: '#000',
-    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,

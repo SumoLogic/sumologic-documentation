@@ -25,11 +25,10 @@ export const Home = () => {
   const [tab, setTab] = useState('0');
 
   const questions = [
-    'How can I set up alerts?',
-    'What is real-time monitoring?',
-    'How do I use dashboards?',
-    'What types of logs can I analyze?',
-    'How do I secure my environment?',
+    '✨ How do I set up alerts?',
+    '✨ What types of logs can I analyze?',
+    '✨ How do I secure my environment?',
+    '✨ How to navigate dashboards.'
   ];
 
   useEffect(() => {
@@ -46,65 +45,16 @@ export const Home = () => {
           token: widgetJwt,
           primaryColor: '#021b9a',
           position: { side: 'right', offsetX: 25, offsetY: 100 },
-          isOpenByDefault: false,
+          isOpenByDefault: true,
           botUrlPath: 'nova',
           showNewChat: true,
+          parentElementId: 'inline-chatbot-container',
         });
-
-        // Inject dark mode styles as needed
-        applyDarkModeStyles();
       };
 
       script.onerror = () => console.error('Failed to load Berry widget script');
     }
-
-    // Inject dark mode styles on initial load
-    applyDarkModeStyles();
-
-    // Listen for theme change events if your site supports dynamic theme switching
-    window.addEventListener('themeChange', applyDarkModeStyles);
-
-    return () => {
-      window.removeEventListener('themeChange', applyDarkModeStyles);
-    };
   }, []);
-
-  const applyDarkModeStyles = () => {
-    const isDarkMode = document.body.getAttribute('data-theme') === 'dark';
-    const styleId = 'dark-mode-styles';
-
-    // Remove existing dark mode styles to avoid duplicates
-    const existingStyle = document.getElementById(styleId);
-    if (existingStyle) existingStyle.remove();
-
-    // Apply dark mode styles only if in dark mode
-    if (isDarkMode) {
-      const style = document.createElement('style');
-      style.id = styleId;
-      style.innerHTML = `
-        body {
-          background-color: #121212 !important;
-          color: #ffffff !important;
-        }
-        a {
-          color: #90caf9 !important;
-        }
-        .MuiButton-outlined {
-          border-color: #90caf9 !important;
-          color: #90caf9 !important;
-        }
-        .MuiButton-outlined:hover {
-          background-color: #0045BE !important;
-          color: #ffffff !important;
-        }
-        .MuiTypography-root {
-          color: #ffffff !important;
-        }
-        /* Add more styles as necessary */
-      `;
-      document.head.appendChild(style);
-    }
-  };
 
   const handleQuestionClick = (question) => {
     if (window.Berry) {
@@ -152,41 +102,55 @@ export const Home = () => {
         </Typography>
 
         {/* Suggested Questions */}
-        <Box sx={{ width: '100%', bgcolor: '#f9f9f9', py: 4 }}>
+        <Box sx={{ width: '100%', background: '#2a2a2a', color: '#fff', py: 4 }}>
           <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-            <Typography variant="h5" fontFamily="Lab Grotesque" fontWeight={700} mb={1}>
-              Explore our new chatbot in the lower right corner!
+            <Typography variant="h4" fontFamily="Lab Grotesque" fontWeight={600} mb={1} sx={{ background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Your Sumo Docs assistant is here to help!
             </Typography>
-            <Typography variant="h5" fontFamily="Lab Grotesque" fontWeight={700} mb={2}>
-              Try asking these questions to get started:
+            <Typography fontFamily="Lab Grotesque" fontSize={15} fontWeight={300} mb={2}>
+              Ask me a question! Try these to get started:
             </Typography>
-            <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap" rowGap={2}>
-              {questions.map((question, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handleQuestionClick(question)}
-                  variant="outlined"
-                  sx={{
-                    bgcolor: 'white',
-                    color: '#0045BE',
-                    fontFamily: 'Lab Grotesque',
-                    borderColor: '#0045BE',
-                    '&:hover': {
-                      bgcolor: '#0045BE',
-                      color: 'white',
-                    },
-                  }}
-                >
-                  {question}
-                </Button>
-              ))}
-            </Stack>
-            <Typography variant="body2" color="textSecondary" mt={2}>
-              *Click on the chat icon <ChatIcon fontSize="small" /> in the bottom right if the chatbot does not open automatically.
-            </Typography>
+            <Stack
+            direction="row"
+            spacing={1} // Reduced horizontal spacing between buttons
+            justifyContent="center"
+            flexWrap="wrap"
+            rowGap={1} // Reduced vertical spacing between rows
+            >
+
+    {questions.map((question, index) => (
+      <Button
+        key={index}
+        onClick={() => handleQuestionClick(question)}
+        variant="outlined"
+        sx={{
+          bgcolor: 'transparent',
+          color: '#DDDDDD',
+          fontFamily: 'Lab Grotesque',
+          borderColor: '#808080',
+          borderRadius: '5px',
+          textTransform: 'lowercase',
+          fontSize: '12px',
+          fontWeight: '300',
+          padding: '4px 6px',
+          minWidth: 'auto',
+          '&:hover': {
+            bgcolor: '#2a2a2a',
+            color: '#DDDDDD',
+          },
+        }}
+      >
+        {question}
+      </Button>
+    ))}
+  </Stack>
+
+            {/* Inline Chatbot Container */}
+            <Box id="inline-chatbot-container" sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}>
+            {/* The chatbot will render here */}
+            </Box>
           </Container>
         </Box>
-
         {/* Hero */}
         <Stack
           sx={{
