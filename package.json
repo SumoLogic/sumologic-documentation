@@ -53,7 +53,6 @@
     "@swc/core": "^1.6.5",
     "@types/eslint": "9.6.1",
     "@types/eslint-scope": "3.7.7",
-    "add": "^2.0.6",
     "ansi-escapes": "4.3.2",
     "cacheable-request": "^10.2.7",
     "cheerio": "1.0.0-rc.12",
@@ -77,7 +76,6 @@
     "jsesc": "3.0.2",
     "json-loader": "^0.5.7",
     "json5": "^2.2.3",
-    "lightningcss": "^1.28.2",
     "loader-utils": "^3.2.1",
     "markdown-table": "2.0.0",
     "mdn-data": "2.0.30",
@@ -151,8 +149,7 @@
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-merge": "6.0.1",
     "wildcard": "2.0.1",
-    "yaml": "^2.3.1",
-    "yarn": "^1.22.22"
+    "yaml": "^2.3.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.6.3",
