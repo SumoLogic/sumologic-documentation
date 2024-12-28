@@ -71,7 +71,13 @@ We've created a one-step installation script to make it easier to install the co
 
 In this example, you'll set up the collector to read memory usage stats from the machine and send those as metrics to Sumo Logic.
 
-To do this, create a new file within the `/etc/otelcol-sumo/conf.d/` directory called `hostmetrics.yaml`. The contents should look like this:
+The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
+
+The [`exporters` section](https://opentelemetry.io/docs/collector/configuration/#exporters) describes the places we will send that data. The exporter is a component within the collector that sends data to another destination (in this case, Sumo Logic). The default configuration file already sets up an exporter called `sumologic`, so we don’t need to specify that again. Instead, you'll set up an additional simple console debug logger to see when the collector processes data.
+
+The [`service` section](https://opentelemetry.io/docs/collector/configuration/#service) describes how the collector will process the information between when it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
+
+1. Create a new file within the `/etc/otelcol-sumo/conf.d/` directory called `hostmetrics.yaml`. The contents should look like this:
 
 ```yaml title="hostmetrics.yaml"
 receivers:
@@ -94,11 +100,7 @@ service:
         - debug
 ```
 
-* The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
-* The [`exporters` section](https://opentelemetry.io/docs/collector/configuration/#exporters) describes the places we will send that data. The exporter is a component within the collector that sends data to another destination (in this case, Sumo Logic). The default configuration file already sets up an exporter called `sumologic`, so we don’t need to specify that again. Instead, you'll set up an additional simple console debug logger to see when the collector processes data.
-* The [`service` section](https://opentelemetry.io/docs/collector/configuration/#service) describes how the collector will process the information between when it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
-
-Save this yaml file. Now, the collector is ready to start running.
+2. Save this yaml file. Now, the collector is ready to start running.
 
 ### Step 5: Run the collector
 
