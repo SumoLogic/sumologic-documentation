@@ -1,6 +1,6 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/processing-rules
-title: Processing Rules for OpenTelemetry Remote Managment
+title: OpenTelemetry Remote Management Processing Rules
 description: Use Sumo Logic processing rules for an OpenTelemetry agent with an OpenTelemetry remote management source template.
 ---
 
