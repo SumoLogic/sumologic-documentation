@@ -19,7 +19,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector simplifies remote manage
 ## Common use cases
 
 * Monitoring error logs across multiple Apache servers.
-* Grouping collectors by environment (e.g., production, staging).
+* Grouping collectors by environment (for example, production, staging).
 * Expanding data collection for new services with minimal effort.
 * Simplifying migration from legacy monitoring solutions.
 
