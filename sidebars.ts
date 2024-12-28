@@ -978,18 +978,8 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
+            'manage/ingestion-volume/ingest-budgets/daily-volume',
             'manage/ingestion-volume/ingest-budgets/minute-volume',
-          {
-            type: 'category',
-            label: 'Daily Volume',
-            collapsible: true,
-            collapsed: true,
-            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
-            items: [
-              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
-              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
-            ]
-          },
         ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
@@ -2456,6 +2446,7 @@ integrations: [
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
@@ -2978,7 +2969,6 @@ integrations: [
         'api/field-management',
         'api/folder-management',
         'api/health-events',
-        'api/ingest-budget-v1',
         'api/ingest-budget-v2',
         'api/log-searches',
         'api/log-search-estimated-usage',

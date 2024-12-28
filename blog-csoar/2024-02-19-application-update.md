@@ -14,10 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
 * Playbooks:
-  * Enabled [playbook testing](https://help.sumologic.com/docs/cloud-soar/automation/#testing-playbooks). With this improvement it is now possible to test a playbook configuration before publishing it, using Insight, Incident or custom JSON as input.
+  * Enabled [playbook testing](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook). With this improvement it is now possible to test a playbook configuration before publishing it, using Insight, Incident or custom JSON as input.
   * Action configuration: Integration fields configuration now suggests default values, if present.
   * UserChoice, answer by Email: Fixed Authorizer usage from previous nodes.
-* AppCentral: Within the Integrations section, each integration card now contains a hyperlink to the related public documentation page [Integrations in App Central](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
+* AppCentral: Within the Integrations section, each integration card now contains a hyperlink to the related public documentation page [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
 * Integrations: It is now possible to send custom commands when an integration docker image is created. This feature is available for Not Certified integration only.
 
 #### Cloud SOAR
