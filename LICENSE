@@ -6,4 +6,17 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+Third-Party Licenses
+
+This project includes dependencies under the Mozilla Public License, version 2.0 (MPL-2.0):
+
+- `lightningcss-darwin-arm64` v1.28.2 (https://github.com/parcel-bundler/lightningcss)
+- `lightningcss` v1.28.2 (https://github.com/parcel-bundler/lightningcss)
+
+These components are licensed under MPL-2.0. A copy of the MPL-2.0 license can be found at https://www.mozilla.org/MPL/2.0/.
+
+This project also includes `dompurify` v3.1.6 (https://github.com/cure53/DOMPurify), which is dual-licensed under MPL-2.0 or Apache-2.0. It is used under the MPL-2.0 license.
+
+---
+
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
