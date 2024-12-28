@@ -1,14 +1,64 @@
-MIT License
+# NOTICE
 
-Copyright (c) Sumo Logic, Inc.
+This project includes dependencies licensed under the Mozilla Public License, Version 2.0 (MPL-2.0).
+The following dependencies are subject to the MPL-2.0 license:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+## MPL-2.0 Dependencies
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+1. **lightningcss-darwin-arm64**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+2. **lightningcss-freebsd-x64**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
 
----------------
+3. **lightningcss-linux-x64-gnu**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+4. **lightningcss-linux-x64-musl**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+5. **lightningcss-win32-x64-msvc**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+6. **lightningcss-linux-arm64-gnu**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+7. **lightningcss-linux-arm64-musl**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+8. **lightningcss-win32-arm64-msvc**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+9. **lightningcss-linux-arm-gnueabihf**
+   - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+   - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+10. **lightningcss**
+    - Introduced through: `@docusaurus/faster@3.6.3` > `lightningcss@1.28.2`
+    - URL: [LightningCSS GitHub](https://github.com/parcel-bundler/lightningcss.git)
+
+---
+
+## License Text
+
+The full license text for MPL-2.0 is included below:
+
+---
+
+**Mozilla Public License, Version 2.0**
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, you can obtain one at [https://mozilla.org/MPL/2.0/](https://mozilla.org/MPL/2.0/).
+
+---
 
 Mozilla Public License Version 2.0
 ==================================
@@ -383,3 +433,9 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
+
+--------
+
+## Notes
+
+For any redistribution of this software, ensure compliance with the MPL-2.0 requirements, including providing access to the source code of modifications to MPL-2.0-licensed files.
