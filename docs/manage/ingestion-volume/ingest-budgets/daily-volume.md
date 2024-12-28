@@ -1,8 +1,14 @@
 ---
-slug: /manage/ingestion-volume/ingest-budgets/daily-volume
+id: daily-volume
 title: Daily Volume
 description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+:::note
+If you want to use APIs to manage ingest budgeting, you must use [Ingest Budget Management V2 APIs](/docs/api/ingest-budget-v2/). Ingest Budget Management V1 APIs have been removed and are no longer supported.
+:::
 
 Ingest budgets control the daily volume of log data sent to Sumo Logic. Log data can be assigned to an ingest budget that defines a daily log capacity limit. The capacity is tracked based on the combined volume from all sources of log data. When an ingest budget's capacity is reached you can have Sumo Logic stop collecting the log data assigned to it to control costs.
 
@@ -42,25 +48,7 @@ For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` im
 
 See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
 
-## Versions
-
-There are two versions of ingest budgets:
-
-* V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell.<br/> ![v1 budget tag.png](/img/manage/ingestion-volume/v1-budget-tag.png)
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
-
-
-## Migrating V1 budgets to V2
-
-* You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata-based.
-* V2 budgets are manageable with the [Ingest Budget Management **V2** API](/docs/api/ingest-budget-v2).
-* V1 budgets will be deprecated on September 16, 2024.
-
-
-Stopping collection differences:
-
-* First version ingest budgets take around 30 seconds to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit.
-* Second version ingest budgets drop data instantly once capacity is reached.
+[V2 ingest budgets](/docs/api/ingest-budget-v2/) provide you the ability to assign budgets to your log data by either [fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 ## Source type behavior
 
@@ -72,18 +60,17 @@ A few Sources on Hosted Collectors behave differently when instructed to stop co
 
 ## Tools
 
-* [Ingest Budget Management API V2](/docs/api/ingest-budget-v1.md)
-* [Ingest Budget Management API V1](/docs/api/ingest-budget-v2.md)
+* [Ingest Budget Management API V2](/docs/api/ingest-budget-v2.md)
 * Terraform provider: [sumologic_ingest_budget_v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2)
 
 ## Manage ingest budgets
 
-Use the **Ingest Budgets** page to manage your ingest budgets. 
+Use the **Ingest Budgets** page to manage your ingest budgets.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Ingest Budgets page, in the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
- 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Ingest Budgets page, in the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.
+
 
 ![metadata ingest budgetspage.png](/img/manage/ingestion-volume/metadata-ingest-budgets-page.png)
 
@@ -96,11 +83,7 @@ The page displays the following information:
 * **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](/docs/send-data/reference-information/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
 * **Allocated Capacity** (bottom of table). The total allocated capacity from all ingest budgets out of your account's available daily log ingest capacity is provided. If you assign all your log data to ingest budgets you can easily track how much data you are allowing Sumo Logic to ingest compared to your account's available daily log ingest quota.
 
-At the top of the page, you can:
-
-* **Search Ingest Budgets**.
-* Select a [version](#versions) to **Show**.
-* Click **+ Add Budget** to [create a new ingest budget](#create-ingest-budget). 
+At the top of the page, you can click **+ Add Budget** to [create a new ingest budget](#create-ingest-budget). 
 
 For the ingest budgets listed, select a row to view its details. A details pane appears to the right of the table.
 
@@ -117,7 +100,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 #### Create ingest budget
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.
 1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table.
 1. Provide the following information, all fields are required except Description.
 
@@ -135,7 +118,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
      * **Time zone**. Set the time zone of the reset time.
      * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries).
 
-       * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [Source type](#source-type-behavior) and [version](#versions)
+       * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [Source type](#source-type-behavior).
        * **Keep** Collecting - Collection remains the same.
 
    * **Audit Threshold**. The threshold, as a percentage, of when an ingest budget's capacity usage is logged in the Audit Index.
@@ -146,7 +129,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 You can manually reset a budget at any time to set its capacity utilization tracking to zero. This won't affect the next scheduled reset time and can be done as many times as needed.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.
 1. In the table find the ingest budget you want to reset and click the row to open its details pane.
 1. Click the **Reset** button.
 
@@ -296,23 +279,3 @@ _index=sumologic_system_events "IngestBudget"
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Warning"
 ```
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-## Guide contents
-
-In this section, we'll introduce the following concepts:
-
-<div className="box-wrapper">
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Assign Collector to Ingest Budget</h4></a>
-  <p>Learn how to assign a Collector to an Ingest Budget.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/ingestion-volume/ingest-budgets/daily-volume/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
-  <p>Learn how to create and use Ingest Budgets.</p>
-  </div>
-</div>
-</div>

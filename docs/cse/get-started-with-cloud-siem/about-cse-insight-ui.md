@@ -23,7 +23,7 @@ Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM 
 
 ### List view
 
-This screenshot shows the **Insights** page in List view. 
+This screenshot shows the **Insights** page in list view. 
 
 <img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
@@ -39,7 +39,7 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown. 
 1. **Assignee**. The analyst assigned to the Incident.
 1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the insight.
-1. **Severity**. The severity of the insight. The value is a function of the configured Entity Activity Score threshold for insight generation. For more information, see [About Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
+1. **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
 1. **Entity**. The entity associated with the insight.
 1. **Signal Data**. This area has three bits of information:
    * The count of signals that caused the insight to be created.
@@ -62,7 +62,7 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 You can use the **Filters** area near the top of the page to narrow down the insights that appear on the insights page. You can filter by:
 
 * Assignee
-* [Custom Resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
+* [Custom resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
 * Created
 * Entity
 * Event Time
@@ -91,7 +91,7 @@ The left pane of the insight details page displays detailed information about th
 
 <img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="300"/>
 
-1. **Actions.** The [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
+1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
 1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
 1. **Status.** Current status of the insight.
@@ -138,7 +138,7 @@ Below the signal timeline, you’ll see a list of signals. By default, only atta
 
 <img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
 
-1. **Remove** button. Removes multiple signals selected with the checkbox. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the Insight. Deselect 1 or more signals to enable bulk removal.**
+1. **Remove** button. Removes multiple signals selected with the checkbox. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the insight. Deselect 1 or more signals to enable bulk removal.**
 1. **Checkbox**. Click to select multiple signals for removal. 
 1. **Signal name**. Click to view signal details.
 1. **Remove** button. Removes an individual signal.
@@ -255,8 +255,8 @@ When you select an entity on the page, the right pane displays details about tha
 * Geographic location
 * Suppression Status
 * Tags
-* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality), if it is set to something other than the default
-* Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks) it falls within, as applicable, and so on.
+* [Entity criticality](/docs/cse/records-signals-entities-insights/entity-criticality), if it is set to something other than the default
+* Metadata such as geographic location, Inventory information, the [network blocks](/docs/cse/administration/create-use-network-blocks) it falls within, as applicable, and so on.
 * A signal graph if the entity was the primary entity in any signals during the detection window (time/date is the horizontal axis and severity of each signal is the vertical axis; the icon/color for each point depends on the signal type)
 * Lists of the recent signals and insights the entity has been associated with, and links to each object’s details page.
 

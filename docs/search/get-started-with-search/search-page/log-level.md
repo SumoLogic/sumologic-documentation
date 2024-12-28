@@ -35,7 +35,15 @@ Sumo Logic detects five log levels out of the box: FATAL, ERROR, WARN, INFO, and
 
 </details>
 
-Log-Level pattern detection is automatic, meaning you do not need to parse log levels manually or write specific queries to see your distribution of error logs. Just execute a log search, and you'll see:
+Log-Level pattern detection is automatic, meaning you do not need to parse log levels manually or write specific queries to see your distribution of error logs. 
+
+If the log message is in JSON format, the log level detection method searches for the presence of keys such as "level", "Level", "loglevel", "logLevel", "Loglevel", "LogLevel", "log_level", "log-level", "Log_Level", "Log_level", "severity", or "_loglevel." If any of these keys are identified in the log message, their corresponding values will be considered and displayed in the results. And if the log message is in a non-JSON format, the log level detection method looks for keywords such as "debug", "info/information", "warn/warning", and "error." If any of these keywords are found in the log message, their corresponding values will be considered and displayed in the results. 
+
+:::info
+If multiple log levels are detected in the message, they will be prioritized in the following order: ERROR > WARN > INFO > DEBUG.
+:::
+
+Just execute a log search to see the `_loglevel` field:
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="log-level-legend" />
 
