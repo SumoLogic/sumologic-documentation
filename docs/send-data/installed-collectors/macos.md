@@ -7,7 +7,7 @@ description: Install or uninstall a Collector on a macOS system.
 
 Follow the steps in this topic to install or uninstall a Collector on  macOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 
-## System Requirements
+## System requirements
 
 * macOS 10.X
 * Single core, 512MB RAM

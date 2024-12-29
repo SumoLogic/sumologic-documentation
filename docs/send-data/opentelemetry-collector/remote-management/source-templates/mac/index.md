@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Mac source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Mac logs and host metrics to Sumo Logic.
 
-## Fields creation in Sumo Logic for Mac
+## Create Mac source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 

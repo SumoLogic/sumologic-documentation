@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Docker source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of Docker logs and metrics to Sumo Logic.
 
-## Fields creation in Sumo Logic for Docker
+## Create Docker source template fields
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
+If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **docker**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the docker env resides, such as `dev`, `prod`, or `qa`.
@@ -24,7 +24,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic Docker app.
 
-#### For metrics collection
+### For metrics collection
 
 Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
@@ -39,8 +39,7 @@ After installing Sumo OpenTelemetry collector to docker host machine, you need t
    sudo usermod -aG docker otelcol-sumo
    ```
 
-
-#### For logs collection
+### For logs collection
 
 To collect Docker container event logs, execute the following command on the host machine and keep it running to monitor all Docker container-related events. The command requires a JSON file path where these container events will be stored.
 

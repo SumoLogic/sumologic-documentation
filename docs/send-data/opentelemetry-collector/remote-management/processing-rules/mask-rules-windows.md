@@ -17,9 +17,11 @@ A mask rule is a type of processing rule that hides irrelevant or sensitive info
 
 Masking is an effective method for reducing overall ingestion volume. Ingestion volume is calculated after applying the mask filter. If masking reduces the log size, the smaller size will be considered against the ingestion limits.
 
-## Masking inputs
+## Examples
 
-To mask specific fields in the Windows Event Log, the following inputs are required:
+### Masking inputs
+
+To mask specific fields in a Windows Event Log, the following inputs are required:
 - **Key**. This should point to the key in the Windows Event Log for which the value needs to be masked. This key can be nested, with each level separated by a dot (`.`). For example, `provider.guid`.
 - **Regex**. This pattern identifies the part of the string value that needs to be masked.
 - **Replacement**. The string to substitute for the matching portion identified by the regex.
@@ -27,8 +29,6 @@ To mask specific fields in the Windows Event Log, the following inputs are requi
 :::important
 Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
 :::
-
-## Examples
 
 ### Masking numbers in a nested field
 
@@ -150,7 +150,7 @@ Using the above masking options would provide the following result:
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
 :::
 
-## Limitations
+## Rules and limitations
 
 - You can *only* mask the data which is a string in the Windows event log JSON.
 - You cannot mask a value that is nested inside any array.

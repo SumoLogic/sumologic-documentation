@@ -2,7 +2,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this step, we will install the collector and add a uniquely identifiable tag to these collectors.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the **OpenTelemetry Collection** page, click **Add Collector**.
 1. Select the platform of the remote host in the **Set up Collector**  section.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="Linux-install" style={{border: '1px solid gray'}} width="800"/>
 1. Enter your **Installation Token**.
@@ -13,5 +13,5 @@ In this step, we will install the collector and add a uniquely identifiable tag 
 1. On the next screen, you will see a list of available Source Templates.
 
 :::note
-If you close this Source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**. You can also click the **Go To...** menu at the top of the screen and select **Source Template**. 
+If you close this source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**. You can also click the **Go To...** menu at the top of the screen and select **Source Template**. 
 :::

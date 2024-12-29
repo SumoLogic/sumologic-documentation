@@ -1,7 +1,7 @@
 ---
 id: metrics-include-and-exclude-rules
-title: OpenTelemetry Remote Management Metrics Include and Exclude Rules
-sidebar_label: Metrics Include and Exclude Rules
+title: OpenTelemetry Remote Management Include and Exclude Rules for Metrics
+sidebar_label: Include and Exclude Rules - Metrics
 description: You can use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry remote management.
 ---
 
@@ -17,7 +17,7 @@ As a best practice, configure these rules to filter the smaller volume of data f
 * If you want to **collect the majority of data** from a source template, use **exclude** rules to match (filter out) the lesser volume of data.
 * If you want to **collect a small set of data** from a source template, use **include** rules to match (filter in) the lesser volume of data.
 
-## Metric filter examples
+## Examples
 
 You can apply filters to metrics data in a source template by adding a metrics filter. Specify the filter name, **Type** (include or exclude), and **Filter By** criteria.
 

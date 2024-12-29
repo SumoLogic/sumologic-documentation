@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Nginx source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Nginx logs and metrics in Sumo Logic.
 
-## Fields creation in Sumo Logic for Nginx
+## Create Nginx source template fields
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
+If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **nginx**.
 - **`webengine.system`**. Fixed value of **nginx**.

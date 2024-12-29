@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Linux. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
-## System Requirements​
+## System requirements​
 
 The Sumo Logic OpenTelemetry Collector is supported on both amd64 and arm64 architectures.
 
@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported Versions
+Supported versions:
 
 * RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2(AL2), Amazon Linux 2023(AL2023), CentOS (7, 8)
 
@@ -34,9 +34,9 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-### UI Installation
+### UI installation
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -44,9 +44,9 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
 1. Wait for the installation process to complete, then click **Next** to proceed.
 
-### Install Script
+### Install script
 
-#### 1. Get the Installation token
+#### Step 1: Get the installation token
 
 Get your [installation token](/docs/manage/security/installation-tokens) if you do not have it already and assign it to an environment variable:
 
@@ -54,7 +54,7 @@ Get your [installation token](/docs/manage/security/installation-tokens) if you 
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
 ```
 
-#### 2. Run the Installation script
+#### Step 2: Run the installation script
 
 You can run the script in two ways:
 
@@ -80,7 +80,7 @@ This will perform the following operations:
   * Enable `otelcol-sumo` service
   * Start `otelcol-sumo` service
 
-#### 3. Script Options
+#### Step 3: Add script options
 
 The following arguments can be passed to the script:
 
@@ -99,15 +99,15 @@ The following arguments can be passed to the script:
 | `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.         | No                         |
 | `--help`      | `h`        | Prints help and usage.           |
 
-The following env variables can be used along with script:
+The following env variables can be used along with your script:
 
 | name               | description        |
 |:-------------------|:-----------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
-### Manual step-by-step Installation
+### Manual step-by-step installation
 
-#### Step 1. Download the Binary
+#### Step 1: Download the binary
 
 Examples for OpenTelemetry Collector version `0.94.0-sumo-2`.
 
@@ -137,7 +137,7 @@ curl -sLo otelcol-sumo \
 </TabItem>
 </Tabs>
 
-#### Step 2. Move the binary to your `PATH` environment
+#### Step 2: Move the binary to your `PATH` environment
 
 Move the downloaded binary into a directory from your `PATH` environment, so that it can be used by simply invoking `otelcol-sumo`.
 
@@ -146,7 +146,7 @@ chmod +x otelcol-sumo
 sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
 ```
 
-#### Step 3. Verify the Installation
+#### Step 3: Verify the installation
 
 To verify installation, run the OpenTelemetry Collector.
 
@@ -154,7 +154,7 @@ To verify installation, run the OpenTelemetry Collector.
 otelcol-sumo --version
 ```
 
-#### Step 4. Run OpenTelemetry Collector as Systemd Service
+#### Step 4; Run OpenTelemetry Collector as systemd service
 
 We recommend using the [installation script](#install-script) as it supports the Systemd scenario. This section describes how to install it manually.
 
@@ -231,7 +231,7 @@ To run OpenTelemetry Collector as Systemd Service, follow the steps below:
    sudo journalctl -u otelcol-sumo  # checks logs
    ```
 
-#### Using Environmental variable to store Installation token
+#### Using Environmental variable to store installation token
 
 We recommend keeping the install token in environmental variable for `Systemd` installation:
 
@@ -265,7 +265,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    sudo systemctl restart otelcol-sumo
    ```
 
-#### Running Binary Manually
+#### Running binary manually
 
 If your system does not support `Systemd`, or you do not want to create a service, you can run Collector manually.
 
@@ -273,11 +273,11 @@ If your system does not support `Systemd`, or you do not want to create a servic
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
 
-### Additional Settings
+### Additional settings
 
 This section describes common OpenTelemetry customizations.
 
-#### Using Proxy
+#### Using proxy
 
 Exporters leverage the HTTP communication and respect the following proxy environment variables:
 
@@ -326,7 +326,7 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
 
-### Install Script
+### Install script
 
 If you installed the Collector with the install script, you can this command to uninstall the Collector:
 
@@ -354,7 +354,7 @@ sudo rm /usr/local/bin/otelcol-sumo
 
 First, you have to upgrade the Collector's version. The way you should do it, depends on how you installed it.
 
-#### Install Script
+#### Install script
 
 Running install script will simply upgrade collector to the latest version:
 
@@ -366,14 +366,14 @@ curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/release
 You need to restart collector process manually in order to apply changes.
 :::
 
-#### Manual step-by-step Installation
+#### Manual step-by-step installation
 
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
 
 * [Uninstall the Collector manually](#manual-step-by-step-installation-1)
 * [Install the Collector again with a new version](#manual-step-by-step-installation)
 
-### Update your Config
+### Update your config
 
 After an upgrade, you should make sure that your config for OpenTelemetry Collector is up to date.
 

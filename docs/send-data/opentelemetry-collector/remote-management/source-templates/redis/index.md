@@ -13,11 +13,11 @@ import TabItem from '@theme/TabItem';
 
 The Redis source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your redis logs to Sumo Logic.
 
-## Fields creation in Sumo Logic for Local File
+## Create Redis source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
-- **`sumo.datasource`**. Fixed value of **localfile**.
+- **`sumo.datasource`**. Fixed value of **redis**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
 - **`db.cluster.name`**. User configured. Enter a uniquely identifiable name for your redis server cluster to show in the Sumo Logic dashboards.
 - **`db.node.name`**. Includes the value of the hostname of the machine which is being monitored.

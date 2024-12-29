@@ -1,7 +1,7 @@
 ---
 id: include-and-exclude-rules
-title: OpenTelemetry Remote Management Include and Exclude Rules
-sidebar_label: Include and Exclude Rules
+title: OpenTelemetry Remote Management Include and Exclude Rules for Logs
+sidebar_label: Include and Exclude Rules - Logs
 description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry remote management.
 ---
 
@@ -16,6 +16,8 @@ As a best practice, configure these rules to filter the smaller volume of data f
 
 * If you want to **collect the majority of data** from a source template, use **exclude** rules to match (filter out) the lesser volume of data.
 * If you want to **collect a small set of data** from a source template, use **include** rules to match (filter in) the lesser volume of data.
+
+## Examples
 
 For example, to include only messages from a Windows Event log with ID `8015`, you can add a Logs Filter to the source template. Select the **Type** of the filter as "Include messages that match" and use the following filter regular expression:
 

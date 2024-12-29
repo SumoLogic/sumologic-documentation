@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Windows source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of Windows event log and metrics of Windows to Sumo Logic.
 
-## Fields creation in Sumo Logic for Windows
+## Create Windows source template fields
 
 If not already present, the following [fields](/docs/manage/fields/) are created as part of source template creation.
 

@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 Apache source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent you can ensure collection of logs and metrics of Apache to Sumo Logic.
 
-## Fields creation in Sumo Logic for Apache
+## Create Apache source template fields
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
+If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
 - **`sumo.datasource`**. Fixed value of **apache**.
 - **`webengine.system`**. Fixed value of **apache**.

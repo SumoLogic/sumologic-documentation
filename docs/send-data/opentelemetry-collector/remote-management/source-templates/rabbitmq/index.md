@@ -13,11 +13,11 @@ import TabItem from '@theme/TabItem';
 
 The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your RabbitMQ logs to Sumo Logic.
 
-## Fields creation in Sumo Logic for Local File
+## Create RabbitMQ source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
-- **`sumo.datasource`**. Fixed value of **localfile**.
+- **`sumo.datasource`**. Fixed value of **rabbitmq**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
 - **`messaging.cluster.name`**. User configured. Enter a uniquely identifiable name for your RabbitMQ server cluster to show in the Sumo Logic dashboards.
 - **`messaging.node.name`**. Includes the value of the hostname of the machine which is being monitored.

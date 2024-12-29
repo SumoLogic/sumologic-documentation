@@ -13,11 +13,12 @@ import TabItem from '@theme/TabItem';
 
 The Syslog source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, the agent will start listening on the configured port for syslogs and send them to Sumo Logic.
 
-## Fields creation in Sumo Logic for Syslog
+## Create Syslog source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
-- **`sumo.datasource`**. Fixed value of **localfile**.
+<!-- localfile? -->
+- **`sumo.datasource`**. Fixed value of **syslog**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
 - **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). This identifies the group of hosts.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.

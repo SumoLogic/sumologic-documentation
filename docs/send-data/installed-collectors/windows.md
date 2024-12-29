@@ -8,7 +8,7 @@ description: Install or uninstall a Collector on a Windows system.
 
 Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
 
-## System Requirements
+## System requirements
 
 * Windows 7, 32 or 64 bit
 * Windows 8, 32 or 64 bit

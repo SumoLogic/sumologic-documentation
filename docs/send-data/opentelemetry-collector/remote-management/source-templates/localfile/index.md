@@ -1,8 +1,8 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/source-templates/localfile
-title: Local File Source Template
-sidebar_label: Local File
-description: Learn about the Sumo Logic Local File source template for OpenTelemetry.
+title: Localfile Source Template
+sidebar_label: localfile
+description: Learn about the Sumo Logic localfile source template for OpenTelemetry.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-The Local File source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
+The localfile source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
 
-## Fields creation in Sumo Logic for Local File
+## Create localfile source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
@@ -45,7 +45,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration:
+In this step, you will configure the yaml required for localfile collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.

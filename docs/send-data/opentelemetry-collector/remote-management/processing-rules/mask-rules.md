@@ -1,6 +1,7 @@
 ---
 id: mask-rules
 title: OpenTelemetry Remote Management Mask Rules
+sidebar_label: Mask Rules
 description: Create an OpenTelemetry collector remote management mask rule to replace an expression with a mask string.
 ---
 
@@ -11,6 +12,10 @@ This document does not cover masking logs for Windows source templates. For deta
 A mask rule is a processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule, the selected expression will be replaced with a mask string before the data is sent to Sumo Logic. You can either specify a custom mask string or use the default `"#####"`.
 
 Ingestion volume is calculated after applying the mask filter. If the mask reduces the size of the log, the smaller size will be measured against ingestion limits. Masking is an effective method to reduce overall ingestion volume.
+
+## Examples
+
+### Mask an email address
 
 For example, to mask the email address `dan@demo.com` from this log:
 
@@ -26,7 +31,34 @@ Using the masking string `auth=User:AAA` would produce the following result:
 
 `2018-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [auth=User:AAA] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]`
 
-## Rules
+
+:::important
+Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
+:::
+
+### Mask credit card numbers
+
+You can mask credit card numbers from log messages using a regular expression within a mask rule. Once masked with a known string, you can then perform a search for that string within your logs to detect if credit card numbers may be leaking into your log files.
+
+To mask credit card numbers in logs, you can use a masking filter with the following regular expression:
+
+The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Mastercard, and Discover credit card numbers:
+
+```
+((?:(?:4\d{3})|(?:5[1-5]\d{2})|6(?:011|5[0-9]{2}))(?:-?|\040?)(?:\d{4}(?:-?|\040?)){3}|(?:3[4,7]\d{2})(?:-?|\040?)\d{6}(?:-?|\040?)\d{5})
+```
+
+This regular expression covers instances where the number includes dashes, spaces, or is a solid string of numbers.
+
+Samples include:
+
+* **American Express**. 3711-078176-01234  \|  371107817601234  \|  3711 078176 01234
+* **Visa**. 4123-5123-6123-7123  \|  4123512361237123  \|  4123 5123 6123 7123
+* **Master Card**. 5123-4123-6123-7123  \|  5123412361237123  \|  5123 4123 6123 7123
+* **Discover**. 6011-0009-9013-9424  \|  6500000000000002  \|  6011 0009 9013 9424
+
+
+## Rules and limitations
 
 * Expressions that you want masked must be selected by the regular expression you given. And the masking string provided will mask whole of the string which is selected by the regular expression.
 
@@ -74,30 +106,3 @@ Using the masking string `auth=User:AAA` would produce the following result:
    - Use `$$$` to include a literal `$`.
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
 :::
-
-## Examples
-
-:::important
-Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
-:::
-
-### Mask credit card numbers
-
-You can mask credit card numbers from log messages using a regular expression within a mask rule. Once masked with a known string, you can then perform a search for that string within your logs to detect if credit card numbers may be leaking into your log files.
-
-To mask credit card numbers in logs, you can use a masking filter with the following regular expression:
-
-The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Mastercard, and Discover credit card numbers:
-
-```
-((?:(?:4\d{3})|(?:5[1-5]\d{2})|6(?:011|5[0-9]{2}))(?:-?|\040?)(?:\d{4}(?:-?|\040?)){3}|(?:3[4,7]\d{2})(?:-?|\040?)\d{6}(?:-?|\040?)\d{5})
-```
-
-This regular expression covers instances where the number includes dashes, spaces, or is a solid string of numbers.
-
-Samples include:
-
-* **American Express**. 3711-078176-01234  \|  371107817601234  \|  3711 078176 01234
-* **Visa**. 4123-5123-6123-7123  \|  4123512361237123  \|  4123 5123 6123 7123
-* **Master Card**. 5123-4123-6123-7123  \|  5123412361237123  \|  5123 4123 6123 7123
-* **Discover**. 6011-0009-9013-9424  \|  6500000000000002  \|  6011 0009 9013 9424

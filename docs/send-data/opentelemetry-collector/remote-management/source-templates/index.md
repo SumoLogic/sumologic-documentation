@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Source templates in Sumo Logic provide efficient, scalable data collection management by applying consistent setups across multiple collectors. They reduce redundancy and simplify configuration, making it easier to manage and scale your data collection efforts.
 
-In this section, we'll show you how to set up the following source templates:
+In this section, we'll show you how to set up source templates for the following sources:
 
 <div className="box-wrapper" >
   <div className="box smallbox card">

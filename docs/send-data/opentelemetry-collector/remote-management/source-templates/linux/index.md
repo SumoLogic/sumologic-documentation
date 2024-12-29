@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Linux source template generates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Linux logs and host metrics for Sumo Logic.
 
-## Fields creation in Sumo Logic for Linux
+## Create Linux source template fields
 
 If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
 
@@ -67,7 +67,7 @@ In this step, you will configure the yaml required for Linux Collection. Below a
 #### Metrics Collection
 - **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for CPU, memory, disk, load, file system, network, and paging are enabled and process metric collection is disabled.
 
-##### Enable process metric collection (Optional)
+##### Enable process metric collection (optional)
 
 import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
 

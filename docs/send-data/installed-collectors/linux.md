@@ -7,7 +7,7 @@ description: Install or uninstall a Collector on a Linux system.
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
 
-## System Requirements 
+## System requirements 
 
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
 * Single core, 512MB RAM
