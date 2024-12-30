@@ -10,7 +10,7 @@ In this step, we will install the collector and add a uniquely identifiable tag 
 1. For **Collector Settings**, leave it as default.
 1. Under **Generate and run the command to install the collector**, copy the command and execute it in your system terminal, where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="Linux-terminal-installation" width="800"/>
 1. Wait for the installation process to complete, then click **Next** to proceed.
-1. On the next screen, you will see a list of available Source Templates.
+1. On the next screen, you will see a list of available source templates.
 
 :::note
 If you close this source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**. You can also click the **Go To...** menu at the top of the screen and select **Source Template**. 
