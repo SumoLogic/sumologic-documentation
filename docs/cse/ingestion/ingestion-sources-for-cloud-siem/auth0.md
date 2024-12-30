@@ -30,7 +30,7 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
 
 ### Configure an HTTP Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 

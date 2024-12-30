@@ -279,7 +279,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'copilot',
-      content: 'Check out <a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a>, our new AI-powered logs assistant!',
+      content: 'Check out 🤖 <b><a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a></b>, our new AI-powered logs assistant!',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
     },

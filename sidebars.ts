@@ -979,18 +979,8 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
+            'manage/ingestion-volume/ingest-budgets/daily-volume',
             'manage/ingestion-volume/ingest-budgets/minute-volume',
-          {
-            type: 'category',
-            label: 'Daily Volume',
-            collapsible: true,
-            collapsed: true,
-            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
-            items: [
-              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
-              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
-            ]
-          },
         ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
@@ -1539,9 +1529,23 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/behavior-insights/index'},
       items: [
+        'search/behavior-insights/logcompare',
+        {
+          type: 'category',
+          label: 'LogReduce',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'search/behavior-insights/logreduce/index'},
+          items: [
+            'search/behavior-insights/logreduce/logreduce-operator',
+            'search/behavior-insights/logreduce/detect-patterns-with-logreduce',
+            'search/behavior-insights/logreduce/logreduce-keys',
+            'search/behavior-insights/logreduce/logreduce-values',
+            'search/behavior-insights/logreduce/understand-the-logreduce-relevance-column',
+            'search/behavior-insights/logreduce/influence-the-logreduce-outcome',
+          ],
+        },
         'search/behavior-insights/logexplain',
-        'search/behavior-insights/logreduce-keys',
-        'search/behavior-insights/logreduce-values',
       ],
     },
     {
@@ -1559,20 +1563,6 @@ module.exports = {
         'search/live-tail/live-tail-show-in-search',
         'search/live-tail/multiple-live-tails',
         'search/live-tail/troubleshooting-live-tail',
-      ],
-    },
-    'search/logcompare',
-    {
-      type: 'category',
-      label: 'LogReduce',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/logreduce/index'},
-      items: [
-        'search/logreduce/logreduce-operator',
-        'search/logreduce/detect-patterns-with-logreduce',
-        'search/logreduce/influence-the-logreduce-outcome',
-        'search/logreduce/understand-the-logreduce-relevance-column',
       ],
     },
     'search/time-compare',
@@ -2458,6 +2448,7 @@ integrations: [
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
@@ -2995,7 +2986,6 @@ integrations: [
         'api/field-management',
         'api/folder-management',
         'api/health-events',
-        'api/ingest-budget-v1',
         'api/ingest-budget-v2',
         'api/log-searches',
         'api/log-search-estimated-usage',

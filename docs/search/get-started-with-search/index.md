@@ -5,13 +5,26 @@ description: Start here to begin exploring your data in Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
 import Iframe from 'react-iframe';
 
 Learn how to build and run searches, review logs, and more.
 
+:::sumo Micro Lesson
 Watch this micro lesson to get an introduction to search.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/i6vvbcw1fb?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Search Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/VbFsfpmP6LY?rel=0"
      width="854px"
      height="480px"
@@ -22,7 +35,9 @@ Watch this micro lesson to get an introduction to search.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
 
+:::
 
 In this section, we'll introduce the following concepts:
 

@@ -10,11 +10,27 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to use the Insight Trainer dashboard.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/9t416emj4w?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Insight Trainer Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
         width="854px"
         height="480px"
@@ -25,8 +41,9 @@ Watch this micro lesson to learn how to use the Insight Trainer dashboard.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ## About Insight Trainer
 
