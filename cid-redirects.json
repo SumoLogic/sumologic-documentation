@@ -2671,7 +2671,7 @@
   "/cid/9008": "/docs/alerts/webhook-connections/new-relic",
   "/cid/10333": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules",
   "/cid/10334": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules",
-  "/cid/10335": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules",
+  "/cid/10335": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules",
   "/cid/10336": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules",
   "/cid/9010": "/docs/send-data/opentelemetry-collector",
   "/cid/9011": "/docs/send-data/opentelemetry-collector/install-collector/linux",
