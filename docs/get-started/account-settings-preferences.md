@@ -1,7 +1,7 @@
 ---
 id: account-settings-preferences
 title: Setting Account Preferences and Credentials
-sidebar_label: Account Preferences
+sidebar_label: Account preferences
 description: Update and manage your Sumo Logic account.
 ---
 

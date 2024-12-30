@@ -15,8 +15,19 @@ import Iframe from 'react-iframe';
 <!-- outdated
 :::sumo Micro Lesson
 
-Managing Access Keys (how to).
+<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="title"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+<!-- old
 <Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
         width="854px"
         height="480px"
@@ -27,6 +38,7 @@ Managing Access Keys (how to).
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 -->

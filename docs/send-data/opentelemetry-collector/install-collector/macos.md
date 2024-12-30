@@ -270,7 +270,7 @@ For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting
 
 Here are some troubleshooting steps specific to macOS.
 
-### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
+### uninstall.sh: No such file or directory error when uninstalling collector
 
 If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
@@ -302,14 +302,14 @@ Going to remove Otelcol binary, user, file storage and configurations.
 Uninstallation completed
 ```
 
-### Verify that the `launchd` daemon has been installed
+### Verify that the 'launchd' daemon has been installed
 
 ```console
 $ sudo launchctl list | grep otelcol-sumo
 54109	0	otelcol-sumo
 ```
 
-### Verify that the `launchd` daemon is running
+### Verify that the 'launchd' daemon is running
 
 ```console
 $ sudo launchctl print system/otelcol-sumo

@@ -1,14 +1,14 @@
 ---
 id: insight-enrichment-server
 title: Insight Enrichment Server
-description: You can use the Cloud SIEM Insight Enrichment Server to automatically enrich Cloud SIEM Insights.
+description: You can use the Cloud SIEM Insight Enrichment Server to automatically enrich Cloud SIEM insights.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Cloud SIEM Insight Enrichment Server is a component that automatically enriches Cloud SIEM Insights.  
+The Cloud SIEM Insight Enrichment Server is a component that automatically enriches Cloud SIEM insights.  
 
 :::warning
 The Insight Enrichment Server is deprecated. Use the Automation Service instead for enrichments. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
@@ -20,11 +20,11 @@ This topic describes v1.5.0 of the non-FedRAMP version of the Insight Enrichmen
 
 ## What the Insight Enrichment Server does
 
-The Insight Enrichment Server performs an external query on the [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities) for an Insight—for example, an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
+The Insight Enrichment Server performs an external query on the [entity](/docs/cse/records-signals-entities-insights/view-manage-entities) for an insight—for example, an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the insight.
 
-You configure enrichments in the server’s configuration file. The key settings are the Entity type to run the enrichment on, and the command and command arguments to run. 
+You configure enrichments in the server’s configuration file. The key settings are the entity type to run the enrichment on, and the command and command arguments to run. 
 
-The Insight Enrichment Server periodically polls Cloud SIEM for new Insights. If an Insight’s Entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the Entity instance in the Insight. You can see an enrichment that has been added to an Insight on the **Enrichments** tab for an Insight.  
+The Insight Enrichment Server periodically polls Cloud SIEM for new insights. If an insight’s entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the entity instance in the insight. You can see an enrichment that has been added to an insight on the **Enrichments** tab for an insight.  
 
 <img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
 
@@ -141,7 +141,7 @@ Run the installer and follow the instructions.
 
 The Enrichment Server supports these variables:
 
-`${IP}`, `${MAC}`, `${USERNAME}`, and `${HOSTNAME}`, and for custom Entities, `${ENTITY}`.
+`${IP}`, `${MAC}`, `${USERNAME}`, and `${HOSTNAME}`, and for custom entities, `${ENTITY}`.
 
 
 ### General settings
@@ -154,7 +154,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 | `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |
-| `poll_interval` | no | How often the Insight Enrichment Server should check for new Insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |
+| `poll_interval` | no | How often the Insight Enrichment Server should check for new insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |
 | `post_workers` | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
 | enrichment_workers | no | The number of parallel workers (threads) running enrichment tasks. <br/><br/>Default: 12 |
 | `proxy_url` | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example,  `my.proxy.myorg.com:3128` or  `username:password@my.proxy.myorg.com:31281`. <br/><br/>Default: No proxy used |
@@ -168,11 +168,11 @@ Each enrichment should be configured in a separate section in the configuration�
 | Setting | Required? | Description |
 |:--|:--|:--|
 | `enrichment_type` | yes | Specifies the type of the enrichment. Currently, the only supported value is `command`. |
-| `entity_type` | yes | The type of Entity to enrich. The Insight Enrichment server supports built-in Entity types, including IP, mac, username, and hostname. (For a complete list, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities). It also supports [custom Entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type).  For custom Entity types, the `entity_type` should match the unique Identifier assigned to the custom Entity type.  |
-| `cache_time` | no | The length of time that the results of a specific enrichment for a specific Entity will be cached and returned for other enrichment requests for that enrichment and Entity.  This setting can be used to prevent an enrichment from running multiple times for the same Entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. <br/><br/>Default: none |
+| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types, including IP, mac, username, and hostname. (For a complete list, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities). It also supports [custom entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
+| `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. <br/><br/>Default: none |
 | `ip_range` | no | When `entity_type` is IP, you can specify a range of IP addresses that the enrichment will be limited to. Specify IP address ranges as a comma-separated list. For example:<br/><br/> `192.168.1.1-192.168.1.255, 192.168.5.1-192.168.8.120` |
-| `command_exe` | yes | The executable to run when enriching the Entity. |
-| `command_args` | yes | The arguments to pass to the executable specified by `command_exe` when performing the enrichment. Note that the value `${IP}` will be replaced by the IP address for IP Entities. The value `${HOSTNAME}` will be replaced with the  hostname for hostname Entities. The value `${MAC}` will be replaced with the MAC address for MAC Entities. The value `${USERNAME}` will be replaced with the username for username Entities. `command_args` also supports an `${ENTITY}` replacement value that you can use for custom Entity types and any of the built-in Entity types. |
+| `command_exe` | yes | The executable to run when enriching the entity. |
+| `command_args` | yes | The arguments to pass to the executable specified by `command_exe` when performing the enrichment. Note that the value `${IP}` will be replaced by the IP address for IP entities. The value `${HOSTNAME}` will be replaced with the  hostname for hostname entities. The value `${MAC}` will be replaced with the MAC address for MAC entities. The value `${USERNAME}` will be replaced with the username for username entities. `command_args` also supports an `${ENTITY}` replacement value that you can use for custom entity types and any of the built-in entity types. |
 | `command_timeout`  | no | A timeout value (in seconds) that will be enforced when running the command.<br/><br/>Default: none |
 
 ### Example enrichment
@@ -188,7 +188,7 @@ command_args = ${IP}
 ip_range = 10.10.10.1-10.10.10.4, 192.168.0.0-192.168.255.255
 ```
 
-If an Insight’s Entity is an IP address in one of the ranges specified by `ip_range`, the enrichment will run the command `whois.exe` on that IP address.
+If an insight’s entity is an IP address in one of the ranges specified by `ip_range`, the enrichment will run the command `whois.exe` on that IP address.
 
 ## Example configuration file
 

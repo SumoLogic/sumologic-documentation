@@ -14,6 +14,19 @@ To collect [traces](/docs/apm/traces) and RUM metrics from a browser, you'll fir
 :::sumo Micro Lesson
 Using the RUM HTTP Traces App for Manual Testing.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/qmxk5wxqu5?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Using the RUM HTTP Traces App for Manual Testing Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old 
 <Iframe url="https://www.youtube.com/embed/CduT1sqSPmE?rel=0"
         width="854px"
         height="480px"
@@ -24,7 +37,7 @@ Using the RUM HTTP Traces App for Manual Testing.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
+--> 
 :::
 
 ## Prerequisites

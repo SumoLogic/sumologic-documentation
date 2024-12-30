@@ -12,36 +12,21 @@ This topic has information about setting up a *custom threat intelligence source
 
 You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
 
-Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
-
-<Iframe url="https://www.youtube.com/embed/-DHQ2IBy5Ko?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe'; 
-
 ### How Cloud SIEM uses indicators
 
 When Cloud SIEM encounters an indicator from your threat source in an incoming
-Record it adds relevant information to the Record. Because threat intelligence
-information is persisted within Records, you can reference it downstream
+record it adds relevant information to the record. Because threat intelligence
+information is persisted within records, you can reference it downstream
 in both rules and search. The built-in rules that come with Cloud SIEM
-automatically create a Signal for Records that have been enriched in
+automatically create a signal for records that have been enriched in
 this way.
 
-Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
+Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
 ### Create a threat intelligence source from Cloud SIEM UI
 
-1.  [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. Click **Add Source** on the **Threat Intelligence** page. 
 1. Click **Custom** on the **Add Source** popup.
 1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. 
@@ -83,7 +68,7 @@ The .csv file can contain up to four columns, which are described below. 
 | value  | Required. Must be one of the following: <br/>- A valid IPV4 or IPv6 address<br/>- A valid, complete URL <br/>- A valid email address<br/>- A hostname (without protocol or path)<br/>- A hexadecimal string of 32, 40, 64, or 128 characters |
 | description | Optional.  |  
 | expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. |
-| active | Required. Specifies whether the indicator actively looks for threat intelligence in Records. Valid values are `true` or `false`. |
+| active | Required. Specifies whether the indicator actively looks for threat intelligence in records. Valid values are `true` or `false`. |
 
 **Example .csv file**
 

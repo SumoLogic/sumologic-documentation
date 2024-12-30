@@ -25,7 +25,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)
 | Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
 | Abilities - Solutions | [Kubernetes observability](/docs/observability/kubernetes/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
+| Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
 | Administration - Account | [Data management](/docs/manage/users-roles/roles/role-capabilities/#data-management) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Administration - Personal  | [Preferences](/docs/get-started/account-settings-preferences/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Administration - Security | [Access keys](/docs/manage/security/access-keys/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

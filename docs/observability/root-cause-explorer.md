@@ -469,7 +469,7 @@ _view=sumologic_signals_anomalies
 
 #### Return entities with the most problems
 
-This query uses the [logreduce](/docs/search/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
+This query uses the [logreduce](/docs/search/behavior-insights/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
 
 ```sql
 _view=sumologic_signals_anomalies

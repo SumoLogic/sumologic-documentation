@@ -20,6 +20,20 @@ import Iframe from 'react-iframe';
 
 Learn how to use alert response.
 
+
+<Iframe url="https://fast.wistia.net/embed/iframe/elkucyy4ap?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using Alert Response Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
         width="854px"
         height="480px"
@@ -30,6 +44,7 @@ Learn how to use alert response.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -160,7 +175,7 @@ See [Using tags in alerts](/docs/alerts/monitors/settings/#using-tags-in-alerts)
 
 ### Log fluctuations
 
-This card detects different signatures in your log messages using [LogReduce](/docs/search/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
+This card detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
 * **New**. Log signatures that were only seen after the Alert was triggered but not one hour prior to the Alert start time.
 * **Gone**. Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as **Transaction Succeeded** or **Success**.

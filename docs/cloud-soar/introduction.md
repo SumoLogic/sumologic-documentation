@@ -411,7 +411,7 @@ Within Automation, you’ll see subsections for:
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integration-framework/). Lets you connect third party tools through APIs.
 * [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
-* [Bridge](https://help.sumologic.com/docs/platform-services/automation-service/automation-service-bridge/). Contains configuration details on any installed bridges.
+* [Bridge](/docs/platform-services/automation-service/automation-service-bridge/). Contains configuration details on any installed bridges.
 
 ### Settings and configurations
 

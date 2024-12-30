@@ -1,21 +1,23 @@
 ---
 id: sumo-logic-ui-classic
 title: Tour the Sumo Logic Classic UI
-sidebar_label: Sumo Logic UI (Classic)
+sidebar_label: Tour the Sumo UI (Classic)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::danger Classic UI Deprecation
-The Classic UI will be deprecated in early 2025. We highly encourage you to begin transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) for the latest features and updates.
+:::warning Transition to the New UI
+The Classic UI will be retired in early 2025. To ensure you have access to the latest features and updates, we recommend transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) at your earliest convenience.
 :::
 
-This page will help you get to know the Sumo Logic Classic UI.
+This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
+
+<img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
 
 ## Using the left navigation bar
 
-When you first log in, you'll land on the Sumo Logic Home page. The left navigation (nav) menu bar is a one-stop location where you can access the following:
+When you first log in, you'll land on the Sumo Logic Home page. The left nav menu bar is a one-stop location where you can access the following:
 
 ### Access dashboards and searches
 
@@ -48,7 +50,7 @@ In the lower section of the left nav bar, you can access the [App Catalog](apps-
 <img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
 :::note
-The **Automation** option does not appear in the navigation menu if your organization has **Cloud SOAR** installed, because automation is provided by Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
+The **Automation** option is not available in the navigation menu if your organization has Cloud SOAR installed, as automation features are handled through Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
 :::
 
 ## Working with tabs

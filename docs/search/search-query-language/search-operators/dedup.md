@@ -15,6 +15,7 @@ The `dedup` operator is supported for the following features:
 * [Log Search](/docs/search)
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](/docs/alerts/scheduled-searches/schedule-search.md)
+* [Monitors](/docs/alerts/monitors/)
 
 ## Syntax
 
