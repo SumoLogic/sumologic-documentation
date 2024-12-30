@@ -29,7 +29,7 @@ You must update all of the indicated fields for the search to save successfully
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85

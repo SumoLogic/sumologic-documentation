@@ -6,7 +6,7 @@ description: Group by the values of specific keys in JSON logs.
 
 
 
-The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the LogReduce Keys operator, you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
+The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the [LogReduce Keys operator](/docs/search/behavior-insights/logreduce/logreduce-keys), you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
 This operator does not automatically [parse](/docs/search/search-query-language/parse-operators) your logs. You need to parse the keys you want to explore prior to specifying them in the LogReduce Values operation. 
 
@@ -21,7 +21,7 @@ The field is a clickable link that opens a new window with a query that drills d
 With the provided results you can:
 
 * Click the provided links to drill down and further explore logs from each schema.
-* Compare results against a previous time range with [LogCompare](/docs/search/logcompare).
+* Compare results against a previous time range with [LogCompare](/docs/search/behavior-insights/logcompare).
 * Run subsequent searches.
 
 ## Syntax
@@ -80,7 +80,7 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 ## Limitations
 
-* [Time Compare](../time-compare.md) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogReduce Values results.
+* [Time Compare](/docs/search/time-compare) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 
@@ -116,7 +116,7 @@ _sourceCategory="primary-eks/events"
 | logreduce values on reason, objectName, message, kind, component, namespace
 ```
 
-Next, use [LogExplain to determine how frequently your `reason` is](logexplain.md) `FailedScheduling`.  
+Next, use [LogExplain to determine how frequently your `reason` is](../logexplain.md) `FailedScheduling`.  
 
 ### AWS CloudTrail
 
@@ -144,7 +144,7 @@ Results show each unique signature:
 
 ![CloudTrail example LogReduce Values.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png)
 
-Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
+Next, use [LogExplain](../logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 **Drill down**
 

@@ -22,13 +22,13 @@ The Automation Service is a subset of automation capabilities adapted from Cloud
 ## Benefits
 
 * The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 
-* Enrichment actions can be used to gather additional information about an Entity or Insight, including threat indicators.
+* Enrichment actions can be used to gather additional information about an entity or insight, including threat indicators.
 * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Sumo Logic core platform, Slack, Microsoft Teams, Jira, email, and so on.
-* Automations can be triggered automatically when an Insight is created or closed. For example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
-  1. Changes the Insight state to “In Progress”.
-  1. Assigns the Insight.
-  1. Sends a (customized) email with information about the Insight and indicator.
-  1. Creates a Slack channel for the Insight.
+* Automations can be triggered automatically when an insight is created or closed. For example, you could define a playbook that is executed automatically when an insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
+  1. Changes the insight state to “In Progress”.
+  1. Assigns the insight.
+  1. Sends a (customized) email with information about the insight and indicator.
+  1. Creates a Slack channel for the insight.
   1. Invites certain people to the Slack channel.
 
 :::note
@@ -62,7 +62,7 @@ To learn how to create automations in Cloud SIEM that run playbooks from the Aut
 ### Configure role capabilities for Cloud SIEM automation
 
 Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. 
-1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of Cloud SIEM automation. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
@@ -81,7 +81,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
 * `POST /automations`. Create an automation
-* `POST /automations/execute`. Run one or more automations against one or more Entities/Insights
+* `POST /automations/execute`. Run one or more automations against one or more entities/insights
 * `DELETE /automations/{id}`. Delete an automation
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
