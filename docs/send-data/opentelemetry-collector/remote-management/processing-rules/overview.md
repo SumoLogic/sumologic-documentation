@@ -20,8 +20,8 @@ Processing rules for logs collection support the following rule types:
 
 Processing rules for metrics collection support the following rule types:
 
-* [Exclude metrics that match](metrics-include-and-exclude-rules.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
-* [Include metrics that match](metrics-include-and-exclude-rules.md). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
+* [Exclude metrics that match](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
+* [Include metrics that match](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
 
 ## How do processing rules work together?
 
