@@ -42,7 +42,7 @@ Utilize collector tags for grouping collectors, and associate source templates t
 
 Follow the below steps to install the collector and add uniquely identifiable tags:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the **OpenTelemetry Collection** page, click **Add Collector**.
 1. In the **Set up Collector** step, select **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 1. Enter your **Installation Token**.
@@ -77,8 +77,8 @@ To edit a source template:
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the Source Template that you need to edit, and click **Edit**. Or, click the kebab menu against the selected source template and click **Edit** from the dropdown.
 1. Change the required configuration in the source template configuration page, and click **Next**.
-1. If required, update the collectors on the **Link Collectors** page.
-1. Click **Next** to complete editing the source template.
+1. If required, update the collectors on the **Link Collectors** page. 
+1. Click **Next** to complete editing the source template. 
 
 ## Upgrade the source template
 
