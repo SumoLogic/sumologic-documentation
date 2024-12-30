@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
-
+import Iframe from 'react-iframe';
 
 This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
 :::tip
@@ -37,8 +37,23 @@ Sumo Logic ensures that rule processing does not impact the reliability of produ
 On the rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about first seen rules.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/b7o3idjehp?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM First Seen Rules Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
         width="854px"
         height="480px"
@@ -49,8 +64,9 @@ Watch this micro lesson to learn more about first seen rules.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ## Example rule
 The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create a first seen rule](#create-a-first-seen-rule), below.

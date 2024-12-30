@@ -5,6 +5,7 @@ description: Learn how to create a Sumo Logic monitor.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 This guide will walk you through the steps of creating a monitor in Sumo Logic, from setting up trigger conditions to configuring advanced settings, notifications, and playbooks.
 
@@ -87,7 +88,7 @@ Set specific threshold conditions for well-defined KPIs with constant thresholds
 
 #### Anomaly
 
-Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This [*AI-driven alerting*](https://www.youtube.com/watch?v=nMRoYb1YCfg) system uses historical data to minimize false positives and alerts you to deviations.
+Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This *AI-driven alerting* system uses historical data to minimize false positives and alerts you to deviations.
 
 * **Model-driven detection**. Machine learning models create accurate baselines, eliminating guesswork and noise.
 * **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
@@ -95,6 +96,35 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **One-click playbook assignment**. Monitors automatically link to [Sumo Logic Automation Service playbooks](#automated-playbooks), expediting incident response.
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
+
+:::sumo Micro Lesson
+Learn about AI-driven alerting.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: AI-driven Alerting Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
+<Iframe url="https://www.youtube.com/embed/nMRoYb1YCfg?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+-->
+:::
 
 **Use Outlier**
 

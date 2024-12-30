@@ -6,6 +6,7 @@ description: Learn about context actions, options that a Cloud SIEM analyst can 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This topic has information about Cloud SIEM context actions and how to create them. 
 
@@ -35,8 +36,23 @@ In the screenshot below, context actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a record field that doesn’t exist.
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about how to use context actions.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/o6amvox2uc?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="title"
+  id="Micro Lesson: Threat Investigation with Context Actions in Cloud SIEM Video"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/PrMr3sjaJxA?rel=0"
         width="854px"
         height="480px"
@@ -47,8 +63,9 @@ Watch this micro lesson to learn more about how to use context actions.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 ## Configure a context action
 

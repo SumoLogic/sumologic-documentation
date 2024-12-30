@@ -31,6 +31,19 @@ import Iframe from 'react-iframe';
 
 This micro lesson provides an overview of Span Analytics, and describes the term Span in the distributed tracing and the benefits of Span Analytics. It also explains how to perform Span Analytics in Sumo Logic UI.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/t2q0n8etid?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Span Analytics Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/2cp_0pmzD-A"
         width="854px"
         height="480px"
@@ -41,6 +54,7 @@ This micro lesson provides an overview of Span Analytics, and describes the term
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
