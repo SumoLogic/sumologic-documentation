@@ -18,8 +18,23 @@ This section has instructions for configuring a pipeline for shipping logs avail
 * This solution supports only log files from Blob storage that have file extensions of .csv, .json, .blob, or .log.
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
 
+:::sumo Micro Lesson
+
 Watch this tutorial to learn how to collect logs from Azure Blob Storage.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/y3bus7l7yq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Azure Block Blob Storage Collection (How-to) Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/186K2d-FFoc?rel=0"
         width="854px"
         height="480px"
@@ -30,6 +45,9 @@ Watch this tutorial to learn how to collect logs from Azure Blob Storage.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
+:::
 
 ## Functional overview
 

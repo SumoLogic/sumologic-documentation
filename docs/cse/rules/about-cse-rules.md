@@ -6,6 +6,7 @@ description: Learn about Cloud SIEM rules, rules syntax, and how to write rules.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 A Cloud SIEM rule is logic that fires based on information in incoming records. When a rule fires, it creates a signal.
 
@@ -17,8 +18,23 @@ A Cloud SIEM rule is logic that fires based on information in incoming records. 
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 :::
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about rules.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/p9g2m0c62a?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Understanding Cloud SIEM Rules Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/RVGk2dDeHmk?rel=0"
         width="854px"
         height="480px"
@@ -29,8 +45,9 @@ Watch this micro lesson to learn more about rules.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 ## Rule types
 

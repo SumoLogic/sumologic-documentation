@@ -5,8 +5,25 @@ sidebar_label: Troubleshooting
 description: Kubernetes views allow you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
+import Iframe from 'react-iframe';
+
 [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Kubernetes Observability Demo - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
         height="480px"
@@ -17,8 +34,10 @@ description: Kubernetes views allow you to quickly locate the object in a physic
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
+
 
 ## Step 1: Analyze a cluster
 

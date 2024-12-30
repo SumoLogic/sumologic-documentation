@@ -6,6 +6,7 @@ description: Learn about the contents of the insights UI in Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This topic describes the Cloud SIEM UI for working with insights. 
 
@@ -231,8 +232,23 @@ In addition, the following can appear in the graph:
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly.
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about the entity relationship graph.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/7kpacy65bq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Entity Timeline &amp; Relationship Graph Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/GTTwjB8y_5k?rel=0"
         width="854px"
         height="480px"
@@ -243,8 +259,9 @@ Watch this micro lesson to learn more about the entity relationship graph.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 #### Entity details in the right pane
 

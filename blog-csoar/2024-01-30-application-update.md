@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 ### Changes and Enhancements
-* Added public help document for supported integrations. See [Integrations in App Central](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
+* Added public help document for supported integrations. See [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
 * Integrations: Added possibility to rename an integration keeping original reference in YAML.
 * Playbooks:
   * List view set as default. View changes are saved in user preferences.

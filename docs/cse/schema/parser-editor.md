@@ -21,8 +21,23 @@ See additional articles for more information about the Sumo Logic Cloud SIEM par
 The instructions that follow assume that you have already written your parser code.
 :::
 
+:::sumo Micro Lesson
+
 Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/xqe7k7h2e4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Applying Parsers to Cloud SIEM Data Sets Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- 
 <Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
      width="854px"
      height="480px"
@@ -33,6 +48,9 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 ## Check parser code for mapping hints
 
@@ -194,7 +212,7 @@ This section explains how to configure a Sumo Logic core platform source to send
 1. Navigate to your custom parser in the editor.
 1. Hover over the row that contains the parser.
 1. Click the three-dot kebab icon, and select **Copy Path** and save the path.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" style={{border: '1px solid gray'}} width="800"/>
-1. In Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.<br/><img src={useBaseUrl('img/cse/cloudtrail-source.png')} alt="CloudTrail source" width="500"/>
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
@@ -225,6 +243,8 @@ We provide a number of parsers to extract data for normalization (see [Parsers](
 
 The parser templates cover common log formats and scenarios. Each template has two versions, one with verbose commentary on each component of the parser, and another without commentary that you can duplicate and use to quickly start creating a custom parser.
 
+:::sumo Micro Lesson
+
 Watch the following video for a walkthrough of the parser templates.
 
 <Iframe url="https://www.youtube.com/embed/GFzovRGhtDU?rel=0"
@@ -237,3 +257,5 @@ Watch the following video for a walkthrough of the parser templates.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+
+:::
