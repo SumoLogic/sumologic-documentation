@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Syslog source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, the agent will start listening on the configured port for syslogs and send them to Sumo Logic.
 
-## Create Syslog source template fields
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 <!-- localfile? -->
 - **`sumo.datasource`**. Fixed value of **syslog**.
@@ -26,9 +26,9 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 ## Prerequisite
 Ensure that the syslogs conform to the [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424) protocol. Since we use the OpenTelemetry [syslog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) with this protocol, this will ensure proper parsing of the syslog metadata when ingested into Sumo Logic.
 
-## Source template configuration
+## Configuring the Syslog source template
 
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 

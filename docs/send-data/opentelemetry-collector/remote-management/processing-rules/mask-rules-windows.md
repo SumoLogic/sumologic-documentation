@@ -143,14 +143,11 @@ Using the above masking options would provide the following result:
   "level": "Information"
 }`
 
-:::note
+## Rules and limitations
+
 - Masking utilizes the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
    - Escape `$` as `$$` to bypass environment variable substitution logic.
    - Use `$$$` to include a literal `$`.
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
-:::
-
-## Rules and limitations
-
 - You can *only* mask the data which is a string in the Windows event log JSON.
 - You cannot mask a value that is nested inside any array.

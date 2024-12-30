@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Windows. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
-## System requirements
+## System Requirements
 
 Minimal resource requirements are the following:
 
@@ -30,7 +30,7 @@ You can install our OpenTelemetry Collector using either of the following method
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-### UI installation
+### UI Installation
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
@@ -41,7 +41,7 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
 
-### Install script
+### Install Script
 
 A single line installation powered by Install Script.
 
@@ -74,7 +74,7 @@ The script is going to perform the following operations:
 | `-Fips` | If set to `$True`, installs the FIPS-compliant binary. The default is `$False`. See [FIPS](#fips) section for more details. | Yes, for example: `-Fips $True` or `-Fips $False` |
 | `-Version` | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version. | Yes, for example: `-Version 0.94.0-sumo-2` |
 
-### Manual installation
+### Manual Step-by-Step Installation
 
 1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest).
 2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="450" />
@@ -89,7 +89,7 @@ The script is going to perform the following operations:
    `C:\ProgramData` directory is hidden by default.
    :::
 
-### Verify the installation
+### Verify the Installation
 
 Run the following command in PowerShell:
 
@@ -102,11 +102,11 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
 Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not.
 
-### Additional settings
+### Additional Settings
 
 This section describes common OpenTelemetry customizations.
 
-#### Using proxy
+#### Using Proxy
 
 Exporters leverage the HTTP communication and respect the following proxy environment variables:
 
@@ -162,7 +162,7 @@ To upgrade the collector perform installation step and it will automatically upg
 
 ## Troubleshooting
 
-### Cannot restart service during installation
+### Cannot restart service during Installation
 
 If you get the following output while restarting the service:
 
@@ -197,11 +197,6 @@ crypto/internal/backend.init.0()
 
 This means you are running the Sumo Logic Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which means that the collector only works in a FIPS-compliant environment and will fail to start otherwise.
 
-To verify if your instance is in FIPS mode, open your registry editor and navigate to `HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled`.
+To verify if your instance is in FIPS mode, open your registry editor and navigate to **HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled**.
 * If the Enabled value is `1`, then FIPS is enabled successfully.
 * If the Enabled value is `0`, this means FIPS is not enabled. See the [Build option to require FIPS mode](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode) documentation to enable it.
-
-## Additional information
-
-* [Windows source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows)
-* [Windows mask rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows)

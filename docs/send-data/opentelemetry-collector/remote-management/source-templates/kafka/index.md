@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Kafka source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Kafka logs and metrics in Sumo Logic.
 
-## Create Kafka source template fields
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **kafka**.
 - **`messaging.system`**. Fixed value of **kafka**.
@@ -47,9 +47,9 @@ import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-co
 
 <OtelWindowsLogPrereq/>
 
-## Source template configuration
+## Configuring the Kafka source template
 
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 

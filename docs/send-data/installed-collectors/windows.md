@@ -8,7 +8,7 @@ description: Install or uninstall a Collector on a Windows system.
 
 Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
 
-## System requirements
+## System Requirements
 
 * Windows 7, 32 or 64 bit
 * Windows 8, 32 or 64 bit
@@ -28,7 +28,7 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the Collector to begin the download.
@@ -142,7 +142,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 ### Remove the Collector from Sumo Logic
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Find the Collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 

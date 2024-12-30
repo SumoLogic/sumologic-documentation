@@ -11,11 +11,11 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('/img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="30"/>
 
-The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your RabbitMQ logs to Sumo Logic.
+The RabbitMQ source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect your RabbitMQ logs to Sumo Logic.
 
-## Create RabbitMQ source template fields
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **rabbitmq**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
@@ -33,7 +33,7 @@ import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-co
 
 <OtelWindowsLogPrereq/>
 
-## Source template configuration
+## Configuring the RabbitMQ source template
 
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: OpenTelemetry Remote Management Overview
+title: OpenTelemetry Collector Remote Management Overview
 sidebar_label: Overview
 ---
 

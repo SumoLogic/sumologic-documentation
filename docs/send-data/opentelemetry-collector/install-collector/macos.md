@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
-## System requirements​
+## System Requirements​
 
 The Sumo Logic OpenTelemetry Collector is supported on both amd64 and arm64 architectures.
 
@@ -34,9 +34,9 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-### UI installation
+### UI Installation
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -44,7 +44,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
 
-### Install script
+### Install Script
 
 #### Get the Installation token
 
@@ -97,7 +97,7 @@ The following arguments can be passed to the script:
 | `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | No                         |
 | `--help`                    | `h`        | Prints help and usage.                                                                                                                                                       | No                         |
 
-The following env variables can be used along with your script:
+The following env variables can be used along with script:
 
 | name                           | description        |
 |:-------------------------------|:-------------------|

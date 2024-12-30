@@ -19,12 +19,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>OTRM Metrics Include and Exclude Rules</h4></a>
-  <p>Use OTRM metrics processing rules to specify which metrics data you want to send to Sumo Logic.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>OTRM Mask Rules</h4></a>
   <p>Create an OTRM mask rule to replace an expression with a mask string.</p>
   </div>

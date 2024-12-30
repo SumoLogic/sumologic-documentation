@@ -23,7 +23,7 @@ For example, to mask the email address `dan@demo.com` from this log:
 
 You could use the following filter expression:
 
-```sh
+```
 auth=User:.*\.com
 ```
 

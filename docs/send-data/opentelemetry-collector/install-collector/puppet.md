@@ -17,6 +17,6 @@ This documentation will guide you through the installation process using the sof
 4. Select/create installation token and customize your tags.
 5. Follow the auto-generated steps to install the collector using Puppet.
   :::note
-  These steps are only supported on the Linux Operating System.
+  These steps are only supported on Linux Operating System.
   :::
 6. Once steps are completed, click **Done** to review collector on OpenTelemetry Collection page.
