@@ -2,13 +2,13 @@
 id: automations-in-cloud-siem
 title: Automations in Cloud SIEM
 sidebar_label: Automations in Cloud SIEM
-description: Learn how automations run playbooks to add enrichments and create notifications for either Insights or Entities.  
+description: Learn how automations run playbooks to add enrichments and create notifications for either insights or entities.  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 
-Cloud SIEM automations run playbooks in the [Automation Service](/docs/platform-services/automation-service/) to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
+Cloud SIEM automations run playbooks in the [Automation Service](/docs/platform-services/automation-service/) to add enrichments and create notifications for either insights or entities. You can set automations to run automatically when insights are created or closed, or you can run them manually.
 
 :::note
 <ActionsLimit/>
@@ -55,25 +55,25 @@ Now that the playbook is configured, you can add it to an automation.
 
 1. [Create a new automation](#create-an-automation).
 1. Select the playbook you created in Step 2.
-1. In **Expects attributes for**,  select **Entity** or **Insight**.
-1. Select whether you want to automatically run the automation when an Insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
+1. In **Object (expects attributes for)**, select **Entity** or **Insight**.
+1. Select whether you want to automatically run the automation when an insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
 1. Select **Enabled**.
-1. Click **Add to List**.
+1. Click **Save**.
 
 ### Step 4: Run the automation
 
-Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs [automatically](#run-an-automation-automatically).
+Now that you've created the automation, it is ready to run. If you set the automation to run when an insight is created or closed, it runs [automatically](#run-an-automation-automatically).
 
-If you configured the automation to [run manually](#run-an-automation-manually), you can run it from an Insight or an Entity:
+If you configured the automation to [run manually](#run-an-automation-manually), you can run it from an insight or an entity:
 * Insights
-   1. Open an Insight.
+   1. Open an insight.
    1. Click **Actions**.
-   1. Select the automation from one of the following, depending on whether the automation expects attributes for Insights or Entities:
-      * **Insight Automation**. Displays a list of all enabled Insight automations configured to run manually.
-      * **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more Entity automations to run.
+   1. Select the automation from one of the following, depending on whether the automation expects attributes for insights or entities:
+      * **Insight Automation**. Displays a list of all enabled insight automations configured to run manually.
+      * **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more entity automations to run.
 * Entities
-   1. Open an Entity.
-   1. Click **Automations** under the Entity's name.
+   1. Open an entity.
+   1. Click **Automations** under the entity's name.
    1. Select an option under **Entity Automation**.
 
    :::note
@@ -82,88 +82,87 @@ If you configured the automation to [run manually](#run-an-automation-manually),
 
 ## View automations
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
 
-To view the automations that have run on Insights or Entities, see [View results of an automation](#view-results-of-an-automation).
+To view the automations that have run on insights or entities, see [View results of an automation](#view-results-of-an-automation).
 
 ## Create an automation
 
 The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
-1. At the top of the automations screen, click **Create**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
-1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" style={{border: '1px solid gray'}} width="400"/>
-1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM.
-1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected.
-1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. At the top of the **Automation** tab, click **+ Add Automation**. (To modify an existing automation, select the automation and click **Edit**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
+1. In the **Add Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" style={{border: '1px solid gray'}} width="400"/>
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
-1. Click **Add to List** (or **Update** if editing an existing automation).
+1. In **Object (xpects attributes for)** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. If **Entity** is selected, in the **Type** field select one or more entity types. The playbook will only execute on the entity types selected.
+1. For **Execution** select when the automation runs: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on insights or **Automations** menus on entities.
+1. Click **Save**.
 
 ## Run an automation automatically
 
-If an automation is set to run when an Insight is created or closed, it runs automatically provided that:
+If an automation is set to run when an insight is created or closed, it runs automatically provided that:
 * The automation is enabled,
 * The automation is configured to run on the trigger(s), and
-* The automation is an Insight automation, or
-* The automation is an Entity automation, and the Insight contains one or more Entities of the Entity types configured in the automation (this includes the primary and any related Entities).
+* The automation is an insight automation, or
+* The automation is an entity automation, and the insight contains one or more entities of the entity types configured in the automation (this includes the primary and any related entities).
 
 ## Run an automation manually
 
-### Run an automation manually on Insights
+### Run an automation manually on insights
 
-Automations can be run manually from the **Actions** drop-down menu on [Insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#insight-details-page) pages:
+Automations can be run manually from the **Actions** drop-down menu on [insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#insight-details-page) pages:
 
 <img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" style={{border: '1px solid gray'}} width="300"/>
 
 You will see three sections in the **Actions** menu:
-* **Insight Automation**. Displays a list of all enabled Insight automations configured to run manually.
-* **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more Entity automations to run (see below).
-* **Insight Actions**.  Displays a list of all valid legacy Insight Actions.
+* **Insight Automation**. Displays a list of all enabled insight automations configured to run manually.
+* **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more entity automations to run (see below).
+* **Insight Actions**.  Displays a list of all valid legacy insight actions.
 
-### Run an automation manually on Entities
+### Run an automation manually on entities
 
-On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, Entity Automations can be run manually from the **Automations** drop-down menu:
+On [entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, entity automations can be run manually from the **Automations** drop-down menu:
 
-<img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an Entity" style={{border: '1px solid gray'}} width="300"/>
+<img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an entity" style={{border: '1px solid gray'}} width="300"/>
 
 :::tip
-You can run the same automation more than once for a given Entity or Insight, but not at the same time. Additional attempts to run an automation while an instance is running will result in an error.
+You can run the same automation more than once for a given entity or insight, but not at the same time. Additional attempts to run an automation while an instance is running will result in an error.
 :::
 
-### Select Entities to run the automation on
+### Select entities to run the automation on
 
-On an Insight, if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the Entities included in the Insight:
+On an insight, if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the entities included in the insight:
 
-<img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity automation menu" style={{border: '1px solid gray'}} width="400"/>
 
-1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type.
-1. Click **Next**. A list displays of all Entity automations that are enabled, configured to be run manually, and configured for at least one of the Entity types you selected on the previous screen.
-1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate Entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
+1. Select one or more of the entities listed or select **Select All Entities**. The selected entities don’t have to be the same type.
+1. Click **Next**. A list displays of all entity automations that are enabled, configured to be run manually, and configured for at least one of the entity types you selected on the previous screen.
+1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
 
 ## View results of an automation
 
-If an automation is set to run when an Insight is created or closed, it [runs automatically](#run-an-automation-automatically). You can also [run an automation manually](#run-an-automation-manually).
+If an automation is set to run when an insight is created or closed, it [runs automatically](#run-an-automation-automatically). You can also [run an automation manually](#run-an-automation-manually).
 
-### View automations on Insights and Entities
+### View automations on insights and entities
 
-When automations run, the results display on Insights and Entities.
-1. Open an Insight or Entity.
-1. Click **Automations** at the top of the screen. The example below shows automations that ran on an Insight. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that the automation ran.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an Insight" style={{border: '1px solid gray'}} width="800"/>
+When automations run, the results display on insights and entities.
+1. Open an insight or entity.
+1. Click **Automations** at the top of the screen. The example below shows automations that ran on an insight. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that the automation ran.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/>
 
-While viewing an Insight or Entity, you can [run automations manually](#run-an-automation-manually).
+While viewing an insight or entity, you can [run automations manually](#run-an-automation-manually).
 
 ### View enrichments provided by automations
 
-When automations run, they can provide enrichments to Insights, Entities, and Signals.
-1. Open an Insight, Entity, or Signal with enrichments provided by an automation.
+When automations run, they can provide enrichments to insights, entities, and signals.
+1. Open an insight, entity, or signal with enrichments provided by an automation.
 1. Click **Enrichments** at the top of the screen.
 1. If [threat indicators are set by the enrichment](/docs/cse/integrations/enrichments-and-indicators#threat-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" style={{border: '1px solid gray'}} width="800"/>
 
 
 ## View an automation's status
 
-After [running an automation](#run-an-automation-automatically), you can go to the **Automations** tab for the Insight or Entity to view the automation's  status.  
+After [running an automation](#run-an-automation-automatically), you can go to the **Automations** tab for the insight or entity to view the automation's  status.  
 
 <img src={useBaseUrl('img/cse/automations-execution-status.png')} alt="Automations execution status" style={{border: '1px solid gray'}} width="800"/>
 
@@ -199,15 +198,15 @@ Migrating to the Automation Service has many benefits over using legacy actions 
 ### Use installed playbooks
 
 Though you can create your own playbooks, the Automation Service provides the following playbooks with functionality that replaces legacy actions and enrichments:
-* **Insight Full Enrichment**. Enriches the whole Insight with Recorded Future. It enriches both the primary and all the involved Entities by sorting them based on their Entity type. The playbook alerts you if a risky Entity is detected, and also adds tags to the Insight for easier identification.
-* **Entity Full Enrichment**. Determines the Entity type and uses the appropriate Recorded Future technology to enrich.
-* **Enrich Entity with PowerShell Carbon Black**. Executes the PowerShell script to enrich with Carbon Black, adds the enrichment to the Entity, and sends an email if a risky score is detected.
-* **Enrich Entity with PowerShell CrowdStrike**. Executes the PowerShell script to enrich with CrowdStrike, and adds the enrichment to the Entity.
-* **Enrich Entity with PowerShell GreyNoise**. Executes the PowerShell script to enrich with GreyNoise, and adds the enrichment to the Entity.
-* **Enrich Entity with PowerShell SentinelOne**: Executes the PowerShell script to enrich with SentinelOne, and adds the enrichment to the Entity.
-* **Enrich Entity with PowerShell nslookup**. Performs nslookup in the local host where PowerShell is running, and adds the enrichment to the Entity.
-* **Enrich Entity with PowerShell Whois**. Performs whois in the local host where PowerShell is running, and adds the enrichment to the Entity.
-* **Enrich Entity with PowerShell User Query**: Performs a query on user in the local host where PowerShell is running, and adds the enrichment to the Entity.
+* **Insight Full Enrichment**. Enriches the whole insight with Recorded Future. It enriches both the primary and all the involved entities by sorting them based on their entity type. The playbook alerts you if a risky entity is detected, and also adds tags to the insight for easier identification.
+* **Entity Full Enrichment**. Determines the entity type and uses the appropriate Recorded Future technology to enrich.
+* **Enrich Entity with PowerShell Carbon Black**. Executes the PowerShell script to enrich with Carbon Black, adds the enrichment to the entity, and sends an email if a risky score is detected.
+* **Enrich Entity with PowerShell CrowdStrike**. Executes the PowerShell script to enrich with CrowdStrike, and adds the enrichment to the entity.
+* **Enrich Entity with PowerShell GreyNoise**. Executes the PowerShell script to enrich with GreyNoise, and adds the enrichment to the entity.
+* **Enrich Entity with PowerShell SentinelOne**: Executes the PowerShell script to enrich with SentinelOne, and adds the enrichment to the entity.
+* **Enrich Entity with PowerShell nslookup**. Performs nslookup in the local host where PowerShell is running, and adds the enrichment to the entity.
+* **Enrich Entity with PowerShell Whois**. Performs whois in the local host where PowerShell is running, and adds the enrichment to the entity.
+* **Enrich Entity with PowerShell User Query**: Performs a query on user in the local host where PowerShell is running, and adds the enrichment to the entity.
 
 ### Replace legacy actions and enrichments
 
@@ -221,12 +220,12 @@ In place of the following legacy actions, use the corresponding actions from [in
 
 Legacy action | Description | Corresponding action <br/>in the Automation Service | Additional instructions |
 | :-- | :-- | :-- | :-- |
-| AWS Simple Notification Service | Pushes Insight JSON to the AWS Simple Notification Service. | The **Send Message** action in the **AWS Simple Notification Service** integration. | NA|
-| Email | Sends email with Insight details to a list of recipients. The email includes the MITRE tactic and Insight link. | The **Send Email** action in the **Basic Tools** integration). | NA |
-| HTTP POST v2 | Allows you to send a full Insight in JSON format to any HTTP URL. | The **HTTP POST** action in the **HTTP Tools** integration. | NA |
+| AWS Simple Notification Service | Pushes insight JSON to the AWS Simple Notification Service. | The **Send Message** action in the **AWS Simple Notification Service** integration. | NA|
+| Email | Sends email with insight details to a list of recipients. The email includes the MITRE tactic and insight link. | The **Send Email** action in the **Basic Tools** integration). | NA |
+| HTTP POST v2 | Allows you to send a full insight in JSON format to any HTTP URL. | The **HTTP POST** action in the **HTTP Tools** integration. | NA |
 | Microsoft Teams | Sends a message to a Teams channel using a webhook URL. | The **Send Teams Message** action in the **Microsoft Teams** integration.| Create a node with the **Send Teams Message** action and configure it with the message content and the channel name to which the message must be sent. |
 | PagerDuty | Sends a  notification to PagerDuty.| The **Create New Incident** action in the **PagerDuty** integration. | NA |
-| Recorded Future | Performs IP, URL, and hash reputation, and pushes the enrichment in the Insight. | The **IP Reputation**, **URL Reputation**, and **File Reputation** actions in the **Recorded Future OIF** integration. | 1. Create a node with the reputation action needed. You can add a condition node before the action to automatically determine the reputation action based on the Entity type. <br/>2. Create another node with the **Add Insight Enrichment** action from the **CSE Tools** integration, and configure it to use as enrichment the `output.raw` from the previous node. |
+| Recorded Future | Performs IP, URL, and hash reputation, and pushes the enrichment in the insight. | The **IP Reputation**, **URL Reputation**, and **File Reputation** actions in the **Recorded Future OIF** integration. | 1. Create a node with the reputation action needed. You can add a condition node before the action to automatically determine the reputation action based on the entity type. <br/>2. Create another node with the **Add Insight Enrichment** action from the **CSE Tools** integration, and configure it to use as enrichment the `output.raw` from the previous node. |
 | Slack | Sends a message to a Slack channel. | The **Send Message** action in the **Slack** integration. | Create a node with the **Send Message** action and configure the node with the channel name to which the message must be sent. |
 
 #### Legacy enrichments

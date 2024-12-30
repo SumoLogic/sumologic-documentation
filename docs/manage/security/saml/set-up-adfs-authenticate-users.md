@@ -82,6 +82,6 @@ You can now test the ADFS SSO implementation by attempting to log in
 from the login URL. If you have any trouble, return to Sumo Logic and
 perform the following steps:
 
-1. Choose **Administration > Security > SAML**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
 1. Select the **Debug Mode** check box and click **Save**.
 1. Test again.

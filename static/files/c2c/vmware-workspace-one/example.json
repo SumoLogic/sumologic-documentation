@@ -1,0 +1,22 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                    "name": "VMWare Workspace One",
+                    "requestEndpoint": "https://as135.awmdm.com",
+                    "authURL": "https://uat.uemauth.vmwservices.com",
+                    "clientID": "3xxxx62vvccbv4f6fbaxxxxxxx748e201",
+                    "clientSecret": "678adsfsxxxxxxxxxxxxxxxxfsf1",
+                    "deviceType": [
+                                    "Apple",
+                                    "Android",
+                                    "WindowsPC"
+                                  ],
+                    "pollingIntervalSearchHour": "24h",
+                    "collectAppsDetails": true
+                  },
+		"schemaRef": {
+            		"type": "VMware Workspace One"
+        	},
+        	"sourceType": "Universal"
+}}

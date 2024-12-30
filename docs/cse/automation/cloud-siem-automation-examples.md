@@ -16,7 +16,7 @@ Following are examples that show you how to create Cloud SIEM automations using 
 
 ## Simple example: Configure an enrichment
 
-The following example shows how to add an enrichment to an Insight using the “IP Reputation V3” action from VirusTotal.
+The following example shows how to add an enrichment to an insight using the “IP Reputation V3” action from VirusTotal.
 
 1. Edit the VirusTotal OIF resource:
    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.   
@@ -55,25 +55,25 @@ The following example shows how to add an enrichment to an Insight using the “
    1. In the **Enrichment name** field, type **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field, click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
-   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for Insight enrichment" style={{border: '1px solid gray'}} width="500"/>
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for insight enrichment" style={{border: '1px solid gray'}} width="500"/>
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
-   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
+   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
-   1. At the top of the automations screen, click **New Automation**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+   1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
-   1. Select an Insight.
+   1. Select an insight.
    1. Click the Actions button.
    1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
-   1. To see the results of the run, click the **Automations** tab at the top of the Insight.
+   1. To see the results of the run, click the **Automations** tab at the top of the insight.
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
@@ -125,7 +125,7 @@ The following example shows how to configure a notification that sends an email 
    1. For **Action** select **Send Email**.
    1. In **Recipients** enter your email address and press Enter.
    1. For **Subject** type a subject line for the email (for example, "Results of Sumo Logic log search").
-   1. In **Plain text content** enter the text you want to appear in the body of the email. For example, enter "Search in Sumo Logic was executed. Click the Automations tab at the top of the Insight for which the 'Notification for a log search' automation was run. Click 'View Playbook' to see the results."
+   1. In **Plain text content** enter the text you want to appear in the body of the email. For example, enter "Search in Sumo Logic was executed. Click the Automations tab at the top of the insight for which the 'Notification for a log search' automation was run. Click 'View Playbook' to see the results."
    1. Copy the plain text content into **HTML content** and add formatting if desired.
    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-send-email-node.png')} alt="Add Send Email node" style={{border: '1px solid gray'}} width="600"/>  
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
@@ -134,18 +134,18 @@ The following example shows how to configure a notification that sends an email 
    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
-   1. At the top of the automations screen, click **New Automation**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
-   1. Select an Insight.
+   1. Select an insight.
    1. Click the **Actions** button.
    1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
-   1. To see the results of the run, click the **Automations** tab at the top of the Insight.
+   1. To see the results of the run, click the **Automations** tab at the top of the insight.
    1. View the **Status** field to find out if the playbook has a status of **Success** or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
@@ -155,7 +155,7 @@ The following example shows how to configure a notification that sends an email 
 
 The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/automation-service-integration-framework/#integration-framework-file-formats).
 
-The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an Insight. To use the same action to add enrichment to Entities, see [Add Entity enrichment](#add-entity-enrichment) below.)
+The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an insight. To use the same action to add enrichment to entities, see [Add entity enrichment](#add-entity-enrichment) below.)
 
 1. [Install the Automation Service Bridge](/docs/platform-services/automation-service/automation-service-bridge/). Because this example uses a custom integration, you must first install the Bridge before you proceed.
 1. Obtain an API key from IP Quality Score:
@@ -196,7 +196,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
 1. Select the input parameters for the playbook:
     1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
     1. On the **Start** node, click the **Edit** button (pencil icon).
-    1. In the **Edit node** dialog, select **Insight** in the **Add one or more params as a playbook input** field. (If you want to create a playbook to add Entity enrichment instead, see [Add Entity enrichment](#add-entity-enrichment) below.)  
+    1. In the **Edit node** dialog, select **Insight** in the **Add one or more params as a playbook input** field. (If you want to create a playbook to add entity enrichment instead, see [Add entity enrichment](#add-entity-enrichment) below.)  
     1. Click **Update**.
 1. Add a condition to validate IP addresses:
     1. Click the **Add Node** button (**+** icon) on the **START** node.
@@ -236,35 +236,35 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
     1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
-    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
+    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-    1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
-    1. At the top of the automations screen, click **New Automation**.
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+    1. At the top of the **Automation** tab, click **+ Add Automation**.
     1. For **Playbook**, select the playbook you created in the previous steps.
-    1. For **Expects attributes for**, select **Insight**.
-    1. For **Executes when**, select **Manually Done**.
-    1. Click **Add to List**.
+    1. For **Object (expects attributes for)**, select **Insight**.
+    1. For **Execution**, select **Manually Done**.
+    1. Click **Save**.
 1. Run the automation:
     1. Select **Insights** from the main Cloud SIEM screen.
     1. Select an **Insight**.
     1. Click the **Actions** button.
     1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
-    1. To see the results of the run, click the **Automations** tab at the top of the Insight.
+    1. To see the results of the run, click the **Automations** tab at the top of the insight.
     1. View the **Status** field to find out if the playbook has a status of **Success** or another status such as **Completed with errors**.
     1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
     1. Click a node to download results of that node’s run.
-    1. Go back to the Insight and click the **Enrichments** tab to view the enrichments added by the automation.
+    1. Go back to the insight and click the **Enrichments** tab to view the enrichments added by the automation.
 
-### Add Entity enrichment
+### Add entity enrichment
 
-The preceding example shows how to use a custom integration to add enrichment to an Insight. To add enrichment to Entities instead, use the same steps but with the following changes:
+The preceding example shows how to use a custom integration to add enrichment to an insight. To add enrichment to entities instead, use the same steps but with the following changes:
 
 1. When you select the input parameters for the playbook, in the **Edit node** dialog, select **Entity** instead of **Insight** in the **Add one or more params as a playbook input** field.
 1. When you add a condition to validate IP addresses, for [**Playbook inputs**](#playbook-inputs) select **input.entityType** instead of **input.entity.entityType**.
 1. When you add the “IP Reputation” action to the playbook, for [**Playbook inputs**](#playbook-inputs) select **input.value** instead of **input.entity.value**.
 1. Instead of adding the “Add Insight Enrichment” action to the playbook, add the “Add Entity Enrichment” action.
 
-The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for Entity enrichment" style={{border: '1px solid gray'}} width="700"/>
+The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for entity enrichment" style={{border: '1px solid gray'}} width="700"/>
 
 ## Advanced example: Build a complex playbook
 
@@ -278,7 +278,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" style={{border: '1px solid gray'}} width="400"/>
 1. Edit the Sumo Logic resource:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
@@ -318,7 +318,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. In the **Enrichment name** field type **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
-   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for Insight enrichment" style={{border: '1px solid gray'}} width="500"/>
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for insight enrichment" style={{border: '1px solid gray'}} width="500"/>
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release.
 1. Add a condition to validate IP addresses:
     1. Click the **Add Node** button (**+** icon) on the **Add Insight Enrichment** node.
@@ -361,17 +361,17 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" style={{border: '1px solid gray'}} width="800"/> 
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
    1. For **Playbook**, select the playbook you created in the previous steps.
-   1. For **Expects attributes for**, select **Insight**.
-   1. For **Executes when**, select **Manually Done**.
-   1. Click **Add to List**.
+   1. For **Object (expects attributes for)**, select **Insight**.
+   1. For **Execution**, select **Manually Done**.
+   1. Click **Save**.
 1. Run the automation:
    1. Select **Insights** from the main Cloud SIEM screen.
-   1. Select an Insight.
+   1. Select an insight.
    1. Click the Actions button.
    1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
-   1. To see the results of the run, click the **Automations** tab at the top of the Insight.
+   1. To see the results of the run, click the **Automations** tab at the top of the insight.
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
