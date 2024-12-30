@@ -20,14 +20,10 @@ Integration with Sumo Logic platform for monitors and Gmail notification.
 
 ## Sumo Logic Notifications By Gmail configuration
 
-1. In the main Sumo Logic menu, select your username and then **Preferences**. 
-2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
+1. [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
    :::note
-   They won't be available again once you close this screen.
+   The ID and key won't be available again once you close the confirmation screen.
    :::
-5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
 6. Create a new Project in the [Developer Console](https://console.developers.google.com/). 
 7. In the **APIs & Services** section, navigate to **Credentials** and select **Create Credentials**: [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api). 
 8. Select **OAuth Client ID** as the credential type and set the following inputs:
