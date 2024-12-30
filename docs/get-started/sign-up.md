@@ -76,51 +76,30 @@ If the Essentials plan doesn’t fully meet your needs and you’re interested i
 
 ## Sign up through AWS Marketplace
 
-Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. You'll be billed through your Amazon account.
+Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. This option is not available for customers with existing Sumo Logic accounts.
 
-:::info important
-- Use a business email (e.g., no Gmail or Yahoo addresses).
-- AWS Marketplace signup is unavailable for existing Sumo Logic accounts.
-:::
+To sign up through AWS Marketplace:
 
-Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
-
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace), search for Sumo Logic, and click the free trial option.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace), search for "Sumo Logic", and click the free trial option.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
 1. Click **View purchase options**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_view_purchase_options.png')} alt="View purchase options" style={{border: '1px solid gray'}} width="800" />
 1. Configure your free trial contract and click **Subscribe**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_create_contract.png')} alt="Create contract" style={{border: '1px solid gray'}} width="800" />
 1. After the subscription finishes processing, you can set up your account.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_setup_new.png')} alt="Set up your account" style={{border: '1px solid gray'}} width="800" />
 1. You are redirected to Sumo Logic to complete your account creation:
-    - **Email** - Enter an email for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace will create a new Sumo Logic organization.
-    - **Region** - Select your region: North America, Europe, or Australia.
-    - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1. Click **Sign Up**.
-
-Sumo Logic sends you an email to activate your account.
-
-### Activate your account
-
-1. Open the activation email and click **Activate Now**.
-1. Complete the **Activate Your Account** form and click **Activate**.
-
-### Billing
-
-An account that is within its limits is defined as using Reserved Capacity.
-
-Each day you will be billed for your plan’s daily ingest data volume. Each day you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be charged for usage for this difference at the on-demand rate.
-
-The Total Reserved Capacity (usage) is: (the actual number of days in the billing cycle) X (plan daily ingest volume).
-
-For example, for 10GB/Day:
-
-- If the billing cycle is 30 days, the Reserved Capacity is 300GB.
-- If the billing cycle is 31 days, the Reserved Capacity is 310GB.
+    - **Email**. Enter an email address for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace requires a new email to create a separate Sumo Logic organization.
+     :::note
+     Personal email addresses such as Gmail or Yahoo are not supported.
+     :::
+    - **Region**. Select your region: North America, Europe, or Australia.
+    - **Service License Agreement**. Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
+1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the [activation process](#activate-your-account).
 
 ### Upgrade your account
 
 Upgrading increases your reserved capacity to avoid overage charges. If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
 
 - Payment is handled by Amazon. You do not need to provide any payment information.
-- The account upgrade is independent from your AWS subscription. It increases your reserved Sumo Logic ingest volume, so you are less likely to be subject to overage charges.
+- Upgrading increases your reserved Sumo Logic ingest volume, reducing the risk of overage charges.
+- Account upgrades are independent from your AWS subscription.
 
 To upgrade:
 
@@ -128,8 +107,22 @@ To upgrade:
 1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
 1. On the upgrade request form, enter the Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
 
-To cancel your subscription, you can do this through the AWS Marketplace.
--->
+#### Cancelling
+
+To cancel an auto-renewal subscription, you can do this through the AWS Marketplace under **Manage subscriptions**.
+
+### Billing
+
+An account that is within its limits is defined as using Reserved Capacity. After your trial, if you've signed up for auto-renewal, you will be billed for your plan’s daily ingest data volume.
+
+Each day, you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be charged for usage for this difference at the on-demand rate.
+
+The Total Reserved Capacity (usage) is: (the actual number of days in the billing cycle) X (plan daily ingest volume).
+
+For example, for 10GB/Day:
+
+- If the billing cycle is 30 days, the Reserved Capacity is 300GB.
+- If the billing cycle is 31 days, the Reserved Capacity is 310GB.
 
 ## Kickstart your Sumo Logic experience with placeholder data  
 
