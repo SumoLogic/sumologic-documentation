@@ -21,12 +21,6 @@ Enabling event-based notifications is an S3 bucket-level operation that subscrib
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
-:::sumo Micro Lesson
-
-[Watch this micro lesson video](https://www.youtube.com/embed/2vtjPfHQK1Q?rel=0) to learn more about our S3 event notifications integration, which combines scan based discovery and event-based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
-
-:::
-
 #### Create an AWS Source
 
 These configuration instructions apply to log collection from all AWS Source types.

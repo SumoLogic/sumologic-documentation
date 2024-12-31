@@ -24,9 +24,21 @@ Just as Installed Collectors, you can monitor the activity of Hosted Collectors 
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
+:::sumo Micro Lesson
 
-:::sumo Hosted Collector Overview
+<Iframe url="https://fast.wistia.net/embed/iframe/dtbh5w5f48?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Hosted Collector Overview Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+<!-- old
 <Iframe url="https://www.youtube.com/embed/bjbTm3vR2nA"
         width="854px"
         height="480px"
@@ -37,6 +49,7 @@ The maximum number of Collectors allowed per organization is 10,000.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
