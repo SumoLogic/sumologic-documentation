@@ -17,8 +17,22 @@ Visual displays of real-time data allow you to monitor the health, fitness, and 
 
 ## Overview
 
+:::sumo Micro Lesson
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
+<Iframe url="https://fast.wistia.net/embed/iframe/pfps97emeh?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/T4WAZz8-r54?rel=0"
         width="854px"
         height="480px"
@@ -29,7 +43,9 @@ Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
+:::
 
 ## Benefits of using Sumo Logic
 
@@ -40,6 +56,19 @@ There are various factors to consider when implementing a Sumo Logic solution in
 :::sumo micro lesson
 Get to know more about the benefits of using Sumo Logic.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/w9h0my941q?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of Using Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o?rel=0"
         width="854px"
         height="480px"
@@ -50,6 +79,7 @@ Get to know more about the benefits of using Sumo Logic.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -97,8 +127,22 @@ This section describes local collection, centralized collection, and data collec
 * [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 * [Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1-to-many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
-Get to know the Collection process through our video, "Data Collection Strategy".
+:::sumo Micro Lesson
+Get to know the collection process through our video, "Data Collection Strategy".
 
+<Iframe url="https://fast.wistia.net/embed/iframe/w03b0igi54?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Data Collection Strategy Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/Y1UVF4ASm_c?rel=0"
         width="854px"
         height="480px"
@@ -109,7 +153,8 @@ Get to know the Collection process through our video, "Data Collection Strategy"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
+-->
+:::
 
 ## Account configuration
 
