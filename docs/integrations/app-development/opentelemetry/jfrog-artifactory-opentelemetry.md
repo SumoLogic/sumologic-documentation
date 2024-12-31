@@ -16,7 +16,7 @@ The Sumo Logic app for Artifactory provides insight into your [JFrog Artifactory
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Schematics.png' alt="Artifactory-Schematics" />
 
 :::info
-This app includes [built-in monitors](#active-directory-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-active-directory-app).
+This app includes [built-in monitors](#jfrog-artifactory-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
 :::
 
 ## Fields creation in Sumo Logic for Artifactory
@@ -249,22 +249,13 @@ import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>
 
-## Create monitors for Active Directory app
+## Create monitors for JFrog Artifactory app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Active Directory alerts
-
-
-## Create monitors for Artifactory app
-
-import CreateMonitors from '../../../reuse/apps/create-monitors.md';
-
-<CreateMonitors/>
-
-### Artifactory alerts
+### JFrog Artifactory alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
