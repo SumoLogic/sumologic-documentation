@@ -21,7 +21,12 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#vmware-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-vmware-app).
+:::
+
 ## Prerequisites
+
 VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
 This receiver has been built to support ESXi and vCenter versions:
