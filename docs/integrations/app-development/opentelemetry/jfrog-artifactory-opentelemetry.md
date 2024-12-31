@@ -262,3 +262,4 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `Artifactory - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count `>` 5 | Count `<=` 5 |
 | `Artifactory - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count `>` 5 | Count `<=` 5 |
 | `Artifactory - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count `>` 5 | Count `<=` 5 |
+
