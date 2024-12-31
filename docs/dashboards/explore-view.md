@@ -163,6 +163,19 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
 
 :::sumo micro lesson
 
+<Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Kubernetes Observability Demo - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
         height="480px"
@@ -173,6 +186,7 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
