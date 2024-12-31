@@ -276,3 +276,21 @@ The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics
 - **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
 - **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
+
+## Create monitors for VMWare app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### VMWare alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `VMware - Datastore High Utilization` | This alert is triggered when datastore usage is approaching capacity. | Count `>=` 90 | Count `<` 90 |
+| `VMware - High Virtual Disk Read Latency` | This alert gets triggered on high virtual datastore read latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - High Virtual Disk Write Latency` | This alert gets triggered on high virtual datastore write latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - Host CPU High Utilization` | This alert is triggered when host CPU utilization is consistently high, which may impact VM performance. | Count `>=` 90 | Count `<` 90 |
+| `VMware - Host Memory Utilization` | This alert is triggered when host memory utilization is consistently high. | Count `>=` 95 | Count `<` 95 |
+| `VMware - VM CPU Ready Time High` | This alert gets triggered when VMs are waiting too long for CPU resources, indicating CPU contention. | Count `>=` 10 | Count `<` 10 |
+| `VMware - VM Memory Balloon Pressure` | This alert gets triggered when VMs are experiencing significant memory ballooning. | Count `>=` 1024 | Count `<` 1024 |
