@@ -244,3 +244,21 @@ import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
 import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>
+
+## Create monitors for Active Directory app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Active Directory alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Active Directory - Account Lockouts Spike` | This alert is triggered when there are multiple account lockouts in a short time period, indicating potential brute force attempts. | Count `>=` 5 | Count `<` 5 |
+| `Active Directory - Directory Service Failures` | This alert is triggered when there are critical Directory Service failures that could impact AD functionality. | Count `>=` 3 | Count `<` 3 |
+| `Active Directory - Mass User Account Deletions` | This alert triggers when multiple user accounts are deleted in a short time period, which could indicate malicious activity | Count `>` 5 | Count `<=` 5 |
+| `Active Directory - NTLM Authentication Failures` | This alert is triggered when there are multiple NTLM authentication failures, which could indicate credential theft attempts | Count `>=` 5 | Count `<` 5 |
+| `Active Directory - Replication Failures` | This alert triggers when AD replication failures occur, which can impact directory synchronization | Count `>` 0 | Count `<=` 0 |
+| `Active Directory - Schema Modifications` | This alert is triggered when changes are made to the AD schema, which are rare and potentially high-impact changes | Count `>` 0 | Count `<=` 0 |
+
