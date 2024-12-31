@@ -17,11 +17,15 @@ We recommend using the Active Directory JSON app in combination with the Windows
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#active-directory-alerts). For details on creating custom monitors, refer to the [Create monitors for Active Directory app](#create-monitors-for-active-directory-app).
+:::
+
 ## Fields creation in Sumo Logic for Active Directory
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
 
-**`sumo.datasource`** - Has fixed value of **activeDirectory**
+**`sumo.datasource`** - Has fixed value of **activeDirectory**.
 
 ### Event logs used by Active Directory app
 
@@ -193,7 +197,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 |:--|:--|:--|:--|
 | `Active Directory - Account Lockouts Spike` | This alert is triggered when there are multiple account lockouts in a short time period, indicating potential brute force attempts. | Count `>=` 5 | Count `<` 5 |
 | `Active Directory - Directory Service Failures` | This alert is triggered when there are critical Directory Service failures that could impact AD functionality. | Count `>=` 3 | Count `<` 3 |
-| `Active Directory - Mass User Account Deletions` | This alert triggers when multiple user accounts are deleted in a short time period, which could indicate malicious activity | Count `>` 5 | Count `<=` 5 |
-| `Active Directory - NTLM Authentication Failures` | This alert is triggered when there are multiple NTLM authentication failures, which could indicate credential theft attempts | Count `>=` 5 | Count `<` 5 |
-| `Active Directory - Replication Failures` | This alert triggers when AD replication failures occur, which can impact directory synchronization | Count `>` 0 | Count `<=` 0 |
-| `Active Directory - Schema Modifications` | This alert is triggered when changes are made to the AD schema, which are rare and potentially high-impact changes | Count `>` 0 | Count `<=` 0 |
+| `Active Directory - Mass User Account Deletions` | This alert triggers when multiple user accounts are deleted in a short time period, which could indicate malicious activity. | Count `>` 5 | Count `<=` 5 |
+| `Active Directory - NTLM Authentication Failures` | This alert is triggered when there are multiple NTLM authentication failures, which could indicate credential theft attempts. | Count `>=` 5 | Count `<` 5 |
+| `Active Directory - Replication Failures` | This alert triggers when AD replication failures occur, which can impact directory synchronization. | Count `>` 0 | Count `<=` 0 |
+| `Active Directory - Schema Modifications` | This alert is triggered when changes are made to the AD schema, which are rare and potentially high-impact changes. | Count `>` 0 | Count `<=` 0 |
