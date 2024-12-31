@@ -6,6 +6,7 @@ description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="50"/>
 
@@ -15,12 +16,21 @@ AWS CloudTrail records API calls made to AWS. This includes calls made using the
 You need to know where your CloudTrail log files are stored so you can provide the path to the AWS CloudTrail Source. Refer to AWS Documentation for [finding your CloudTrail log files](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html).
 :::
 
+:::sumo Tutorial
 
-import Iframe from 'react-iframe';
+<Iframe url="https://fast.wistia.net/embed/iframe/inopluxjef?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Set up an AWS CloudTrail Source Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-:::sumo Micro Lesson
-Tutorial: Set up an AWS CloudTrail Source.
-
+<!-- old
 <Iframe url="https://www.youtube.com/embed/SQMzez_9PiU?rel=0"
         width="854px"
         height="480px"
@@ -31,6 +41,7 @@ Tutorial: Set up an AWS CloudTrail Source.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

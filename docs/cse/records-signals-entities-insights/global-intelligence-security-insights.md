@@ -5,11 +5,27 @@ description: Insight Confidence scores, predicted by Sumo Logic’s Global Intel
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 This page describes Global Intelligence for security insights, implemented in Cloud SIEM as Global Confidence scores. This feature helps security analysts triage and prioritize insights.
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about Global Intelligence for insights.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/d5ue1hgvdw?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Global Intelligence for Security Insights Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/toAvKsfVbHc?rel=0"
      width="854px"
      height="480px"
@@ -20,8 +36,9 @@ Watch this micro lesson to learn more about Global Intelligence for insights.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ## What is a Global Confidence score?
 An insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the insight is actionable. 
