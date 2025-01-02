@@ -4,6 +4,8 @@ title: Audit Index
 description: Provides information on the internal events that occur in Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -11,7 +13,7 @@ description: Provides information on the internal events that occur in Sumo Logi
 | Cloud Flex   | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Index** provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
+The Audit Index provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
 
 This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
@@ -24,7 +26,7 @@ All users can access the data contained within the audit index, but only adminis
 
 ## Enable the audit index
 
-1. Go to **Administration** > **Security** > **Policies**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
@@ -43,7 +45,7 @@ You can run more targeted search by including other metadata, message fields, o
 
 Results are returned in the **Messages** tab.
 
-![audit-index-search.png](/img/security/audit-index-search.png)
+<img src={useBaseUrl('/img/security/audit-index-search.png')} alt="Hidden Field highlighted on the Messages tab of search results" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 The audit index must be enabled for a search to produce results.
@@ -72,7 +74,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source categories](#audit-index-source-categories). |
 | `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
@@ -275,9 +277,9 @@ The table below shows the value of the `class` and `action` fields for schedule
 | Finish | Scheduled search finished successfully. |
 | Delete | Scheduled search was deleted. |
 | Modify | The alert condition for the scheduled search was met and the alert action was fired. |
-| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out](/docs/alerts/scheduled-searches/faq#how-to-prevent-your-scheduled-search-from-timing-out). |
+| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out](/docs/alerts/scheduled-searches/faq#how-do-i-prevent-my-scheduled-search-from-timing-out). |
 | Suspend | Indicates that Sumo has suspended the search because it has timed out repeatedly.<br/><br/>When a Scheduled Search query fails, Sumo Logic attempts to run the query again two more times, for a total of three tries. If all attempts fail, then an Alert Email is sent with a notification of the failure. The Scheduled Search is not run again until the next time it is scheduled to do so.<br/><br/>The next time the Scheduled Search runs, if it fails again after the three tries, then it is suspended. Another Alert Email is sent to notify you that the query has been suspended.<br/><br/>The Scheduled Search will remain suspended for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day). |
-| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?](/docs/alerts/scheduled-searches/faq#suspended-scheduled-search) |
+| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended) |
 | Unsuspend | Indicates that Sumo has unsuspended a suspended scheduled search. |
 
 Suspend events only occur if Sumo Logic has manually suspended a search for some reason. If you see a suspended search and feel that this is in error, contact Sumo Logic Support.

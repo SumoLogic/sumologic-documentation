@@ -58,7 +58,7 @@ The following AWS Lambda environment variables are supported in both the Lambda 
 | `SOURCE_HOST_OVERRIDE` | (Optional) You can use this variable to override the `_sourceHost` configured for the HTTP Source. |
 | `SOURCE_NAME_OVERRIDE` | (Optional) You can use this variable to override the `_sourceName` configured for the HTTP Source. |
 
-If you are configuring log collection for VPC flow logs, see the Environment variables for VPC flow log collection section on Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation.
+If you are configuring log collection for VPC flow logs, see [Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation](/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow#collect-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 Define variables in the `Environment` section of the CloudFormation template.
 
@@ -179,14 +179,14 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
     :::
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
-    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#add-a-hosted-collector-and-http-source).<br/>  ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
+    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#step-1-add-a-hosted-collector-and-http-source).<br/>  ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this CloudFormation stack. Click **Next** to get to the final **Review** window.
 1. In the **Review** window, click the checkbox acknowledging that you understand the the template creates IAM resources, and click **Create**.
 
 After few minutes you will see `CREATE_COMPLETE` in the Status column.
 
 :::note
-This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with 
+This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with
 <br/>`var consoleFormatRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z\s(\w+?-\w+?-\w+?-\w+?-\w+)\s/;`
 :::
 
@@ -200,10 +200,10 @@ If you're using an existing log group or if you don’t want to send logs to the
 ## Step 5: Validate email address for alarms
 
 :::note
-If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed, you'll need to verify the **EmailID** provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console). Otherwise, skip to [Step 6](#step-6-subscribe-sumocwlogslambda-to-cloudwatch-log-groups).
+If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed, you'll need to verify the **EmailID** provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console). Otherwise, skip to [Step 6](#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups).
 :::
 
-Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
+Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#step-4-create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
 
 ![aws-notification.png](/img/send-data/aws-notification.png)  
 
@@ -230,8 +230,8 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
 
 :::note
-Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
-```json 
+Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` .
+```json
 {
     "timestamp":1705908605000,
     "message":"2024-01-22 07:30:05 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB"

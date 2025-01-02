@@ -167,12 +167,13 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
-1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
-2. Configure the following fields:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+1. Click **Add**.
+1. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
     * **Scope.** Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
     * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
-3. Click **Add**.
+1. Click **Add**.
 
 ```sql title="FER for Akamai Cloud Monitor"
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
@@ -287,3 +288,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
+
+## Upgrade/Downgrade the Akamai Cloud Monitor app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai Cloud Monitor app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

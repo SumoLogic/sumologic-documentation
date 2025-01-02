@@ -1,13 +1,10 @@
 ---
 slug: /integrations/app-development
 title: App Development
-sidebar_label: App Development
-description: Docs for Sumo Logic apps for platforms and tools that support software development processes.
+description: Learn how to use Sumo Logic apps for platforms and tools that support software development processes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<img src={useBaseUrl('img/icons/operations/app-stack.png')} alt="Thumbnail icon" width="50"/>
 
 Sumo Logic provides apps for platforms and tools that support software development processes, including software development platforms, automation tools, and issue tracking systems.
 
@@ -20,7 +17,7 @@ Sumo Logic provides apps for platforms and tools that support software developme
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/app-development/github"><img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="100"/><h4>GitHub</h4></a>
+  <a href="/docs/integrations/app-development/github"><img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="55"/><h4>GitHub</h4></a>
   <p>A guide to Sumo Logic apps for GitHub.</p>
   </div>
 </div>

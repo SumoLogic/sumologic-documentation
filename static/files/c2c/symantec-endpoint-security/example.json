@@ -1,0 +1,23 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name":"Symantec Endpoint Security Test",
+        "clientID":"********",
+        "incidentsIncludeEvents":true,
+        "incidentsInitialLookback":"1d",
+        "fields":{
+          "_siemForward":false
+        },
+        "clientSecret":"********",
+        "pollingInterval":"5m"
+      },
+      "schemaRef":{
+        "type":"Symantec Endpoint Security"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

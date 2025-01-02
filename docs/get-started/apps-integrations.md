@@ -11,35 +11,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
+<img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" style={{border:'1px solid gray'}} width="800"/>
+
 Sumo Logic apps address these common use cases:
 
-* **Increase availability and performance.** Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
-* **Provide real-time insights.** With Sumo Logic enterprises easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
-* **Accelerate Cloud deployment.** Sumo Logic enables enterprises to automate and speed the development and deployment process for cloud-based applications. Companies can rapidly detect, identify and resolve application issues.
-* **Decrease app time to market.** With Sumo Logic, companies can implement a consistent release process resulting in on-time releases. They can easily identify application issues and configuration changes across development, test and deployment environments.
-* **Enforce compliance.** Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
+* **Increase availability and performance**. Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
+* **Provide real-time insights**. With Sumo Logic, enterprises can easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
+* **Accelerate Cloud deployment**. Sumo Logic enables enterprises to automate and speed the development and deployment process for cloud-based applications. Companies can rapidly detect, identify and resolve application issues.
+* **Decrease app time to market**. Sumo Logic facilitates a consistent release process, resulting in timely releases. It aids in quickly identifying application issues and configuration changes across development, testing, and deployment environments.
+* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
 
-In our **App Catalog**, you'll find two categories of apps: Next-Gen and Classic.
+To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
 
-## App categories
+## Certified by Sumo Logic
 
-### Next-Gen Apps
+Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
 
-What makes Next-Gen different from Classic apps?
-
-* Installation and updates must be performed by an administrator or a user with the **Manage Apps** role capability.
-* App icons will display a badge indicating if it's been installed within your org.
-* App icons will display a badge indicating if there's an app update available. The upgrade can then be applied with a single click.
-* App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
-* Additional filter options make it easy to find your installed or upgradeable apps.
-* Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
-* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
-
-### Classic Apps (Legacy)
-
-All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
+These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
 ## Prerequisites
 
@@ -54,13 +44,53 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Installing apps to your Library
+## Next-Gen apps
 
-import AppInstall from '../reuse/apps/app-install.md';
+Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+
+What makes Next-Gen different from Classic apps?
+
+* Installation and updates must be performed by an administrator or a user with the **Manage Apps** role capability.
+* App icons will display a badge indicating if it's been installed within your org.
+* App icons will display a badge indicating if there's an app update available. The upgrade can then be applied with a single click.
+* App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
+* Additional filter options make it easy to find your installed or upgradeable apps.
+* Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
+* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+
+### How to install Next-Gen apps
+
+import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Install apps in multiple environments
+### How to upgrade Next-Gen apps
+
+:::info
+See our [Releases Notes](/docs/release-notes) to learn about app version updates.
+:::
+
+import AppUpdate from '../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+### How to uninstall Next-Gen apps
+
+import AppUninstall from '../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Classic apps (Legacy)
+
+All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
+
+### How to install Classic apps
+
+import ClassicAppInstall from '../reuse/apps/app-install.md';
+
+<ClassicAppInstall/>
+
+### How to install classic apps in multiple environments
 
 If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
@@ -96,14 +126,6 @@ Each Sumo Logic app has unique requirements, so make sure to follow the specific
 1. Finally, install an instance of the Sumo Logic app for the **perf** environment.
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
    * Rename the title of the app to denote the environment it is configured for, for example, **Windows-Perf**.
-
-## Certified by Sumo Logic
-
-Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
-
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
-
-These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
 ## Troubleshooting
 
@@ -146,7 +168,7 @@ If you do not have data that matches the requirements of the search query, or if
 Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume app") do not require you to select a Source Category.
 :::
 
-### Custom Data Filters
+## Custom data filters
 
 When you install a Sumo Logic app, you tell Sumo what data to search and present in app dashboards.
 
@@ -154,14 +176,14 @@ Most typically, you specify the source category that was assigned to the logs
 
 However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you must define a custom data filter. The app will prefix its searches with your custom data filter. 
 
-#### Define a custom data filter
+### Define a custom data filter
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
 1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
 1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
 1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
 
-#### Example custom data filters
+### Example custom data filters
 
 The table below has examples of custom data filters.
 
@@ -171,58 +193,3 @@ The table below has examples of custom data filters.
 | `_sourceCategory=Apache* AND "dev-us"` | App searches will return log data that contains the string dev-us whose source category begins with the string Apache. |
 | `_sourceHost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you must use quotes. |
 | `_sourceHost=stage-EMEA* AND (_source=Apache* or _source=DB)` | App searches will return data whose source host begins with the string stage-EMEA and whose source either begins with Apache or is DB. We use parentheses to group the logic operations. |
-
-
-## Log Analysis QuickStart app
-
-The Log Analysis QuickStart app, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated.
-
-Whether you're new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
-
-### Installation
-
-To install the app:
-
-1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
-1. Click **Add Integration**.<br/><img src={useBaseUrl('/img/get-started/library/log-quickstart-analysis.png')} alt="log-quickstart-analysis" style={{border:'1px solid gray'}} width="500" />
-1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
-    :::info
-    If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you do not know which `_sourceCategory` to select, ask your administrator who configured the Source.
-    :::
-1. Leave the app in the default folder location (**Personal** folder in your **Library**) or choose a different location. You can also click **New Folder** to add it to a new folder.
-1. Click **Next**. A dialog will confirm the app is installed successfully.
-
-### Visits Dashboard
-
-The Visits Dashboard displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
-
-<img src={useBaseUrl('/img/get-started/library/log-analysis-qs-visits.png')} alt="log_analysis_app_visits" style={{border:'1px solid gray'}} width="800" />
-
-* **Geo Location of All Users.** Uses a geolocation search to display the locations of IP addresses used by visitors.
-* **Frequent IP Addresses.** Shows a list of the most frequently used IP addresses by visitors.
-* **Logins Over Time.** Displays the successful and failed logins over the past three hours.
-* **Frequent Email Addresses.** Displays the most frequently used email addresses.
-* **Sessions.** Monitor errors across all sessions in your deployment.
-* **Observed IP Addresses by Type.** Displays IP addresses used by internal and external visitors.
-
-### Keywords and Metadata
-
-This Dashboard provides several ways to monitor your logs based on the metadata of your data. All of the Panels include searches for specific issues. You can learn more about metadata options in [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
-
-* **High Priority Keywords.** Displays how often the terms error, failure, and exception appear in all log messages over time.
-* **Medium Priority Keywords.** Displays how often the terms time out, warn, check, exist, reject, deny, and timeout appear in all log messages over time.
-* **Issues by Origin.** Displays how often high priority keywords occur by the origin of issue, which could be application, data or service.
-* **Issues in Top Categories.** This Panel shows the top 10 source categories by number of log messages that contain error, exception, or failure terms.
-* **Issues in Top 10 Hosts.** Displays the top 10 hosts by number of log messages that contain error, exception, or failure terms.
-* **Issues in Top 10 Files.** Shows the top 10 files by number of log messages that contain error, exception, or failure terms.
-* **Issues by Category.** This Panel shows the number of log messages that contain error, exception, or failure terms by Source Category over time.
-* **Issues by Host.** Displays the number of log messages that contain time out, error, exceptions, and failures broken down by Source Host over time.
-* **Issues by File Name.** Displays the number of log messages that contain error, exception, or failure terms issues by log file name over time.
-
-### Collectors and Source Monitoring
-
-The Panels in the Collector and Source Monitoring Dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
-
-* **Issues by Collector.** This Panel displays the number of log messages that contain error, exception, or failure terms by Collector.
-* **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
-* **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.

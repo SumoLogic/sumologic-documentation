@@ -7,7 +7,7 @@ description: Learn how to configure Sumo Logic and Cloud SIEM to enable Sumo Log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
+This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
 
 :::note
 The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/).
@@ -22,7 +22,7 @@ Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -37,7 +37,7 @@ Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -59,12 +59,11 @@ You need to know how your messages are formatted. Cloud SIEM supports messages i
 * Structured syslog data (key-value pairs) with a syslog header
 * Microsoft Windows event logs in XML format
 * Winlogbeats
-* Messages that have been processed by Sumo Logic [Field Extraction
-    Rules](/docs/manage/field-extractions).
+* Messages that have been processed by Sumo Logic [Field Extraction Rules](/docs/manage/field-extractions).
 
 ### Determining Product, Vendor, and Event ID pattern
 
-When you fill out the **Sumo Logic Ingest Mapping** page, for most of the supported message formats, all you need to select a value for **Format**. However, for the following formats, you also need to tell Cloud SIEM the **Product**, **Vendor**, and **Event ID template** for the messages:
+When you fill out the **Add Ingest Mapping** page, for most of the supported message formats, all you need to select a value for **Format**. However, for the following formats, you also need to tell Cloud SIEM the **Product**, **Vendor**, and **Event ID template** for the messages:
 
 * JSON messages without a syslog header
 * JSON messages with a syslog header
@@ -73,19 +72,19 @@ When you fill out the **Sumo Logic Ingest Mapping** page, for most of the suppor
 
 For these formats, Cloud SIEM uses the values you configure for **Product**, **Vendor**, and **Event ID** (in addition to **Format**) to select the appropriate Cloud SIEM mapper to process the messages. To verify the correct values, you can go to the **Log Mapping Details** page for the mapper in the Cloud SIEM UI. To do so:
 
-1. In the Cloud SIEM UI, click the gear icon, then the **Log Mappings** link.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
-1. The **Log Mappings** page displays a list of mappers.<br/><img src={useBaseUrl('img/cse/log-mappings-page.png')} alt="Log Mappings page" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. The **Log Mappings** tab displays a list of mappers.<br/><img src={useBaseUrl('img/cse/log-mappings-page.png')} alt="Log Mappings page" width="800"/>
 1. In the **Filters** area, you can filter the list of log mappings by
-    typing in a keyword, or by selecting a field to filter by.<br/><img src={useBaseUrl('img/cse/log-mapping-filters.png')} alt="Log Mappings filters" width="800"/>
-1. When you find the mapper you’re looking for, you can find the **Product**, **Vendor**, and **Event ID pattern** for a mapper on the **If Input Matches** side of the **Input/Output** side of the page.
-    * **Format**. This is the value labeled **c** in the screenshot below.
-    * **Product**. This is the value labeled **b** in the screenshot below.
-    * **Vendor**. This is the value labeled **a** in the screenshot below.
-    * **Event ID pattern**. This is the value labeled **d** in the screenshot below.<br/><img src={useBaseUrl('img/cse/mapping.png')} alt="Log Mapping details" width="800"/>
+    typing in a keyword, or by selecting a field to filter by.<br/><img src={useBaseUrl('img/cse/log-mapping-filters.png')} alt="Log Mappings filters" style={{border: '1px solid gray'}} width="400"/>
+1. When you find the mapper you’re looking for, you can find the following for a mapper on the **If Input Matches** side of the page:
+    * Vendor
+    * Product
+    * Format
+    * Event ID pattern<br/><img src={useBaseUrl('img/cse/mapping.png')} alt="Log Mapping details" style={{border: '1px solid gray'}} width="800"/>
 
 ### Quick reference to configuring ingest mappings
 
-This table in this section is a quick reference to supplying values for each supported message format on the **Create Sumo Logic Mapping** page in Cloud SIEM. This reference summarizes the step-by-step instructions provided below. 
+This table in this section is a quick reference to supplying values for each supported message format on the **Add Ingest Mapping** page in Cloud SIEM. This reference summarizes the step-by-step instructions provided below. 
 
 | If your messages are... | Select this option for Format | Are Vendor, Product, andEvent ID pattern required? | How Cloud SIEM picks a mapper |
 | :-- | :-- | :-- | :-- |
@@ -104,9 +103,9 @@ This table in this section is a quick reference to supplying values for each su
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured. The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. Click the gear icon, and select **Sumo Logic** under **Integrations**.<br/><img src={useBaseUrl('img/cse/integrations-sumologic.png')} alt="Integrations link" width="400"/>  
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingestion mappings" width="800"/>
-1. On the **Create Sumo Logic Mapping** popup:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.
+1. On the **Add Ingest Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector. 
     1. **Format**. Follow the instructions for the type of messages your source collects:
         * [Unstructured messages with a syslog header](#unstructured-messages-with-a-syslog-header)
@@ -124,13 +123,13 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 If your messages are unstructured with a syslog header, all you need to do is select “Process Syslog with Valid Header” for **Format**. 
 
-<img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Create mapping" width="400"/>
+<img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Create mapping" style={{border: '1px solid gray'}} width="400"/>
 
 ### Unstructured messages without a syslog header
 
 If your messages are unstructured without a syslog header, all you need to do is select “Do not Process Syslog Header” for **Format**. 
 
-<img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="Create mapping without header" width="400"/>
+<img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="Create mapping without header" style={{border: '1px solid gray'}} width="400"/>
 
 ### JSON messages without a syslog header
 
@@ -139,11 +138,11 @@ If your messages are JSON format without a syslog header, there are required and
 #### Required settings: Format, Vendor, Product, and Event ID
 
 1. For **Format**, select “JSON”. 
-1. You must specify values for **Vendor**, **Product**, and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern), above. <br/><img src={useBaseUrl('img/cse/create-mapping-2.png')} alt="Create mapping with JSON format" width="400"/> 
+1. You must specify values for **Vendor**, **Product**, and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern), above. <br/><img src={useBaseUrl('img/cse/create-mapping-2.png')} alt="Create mapping with JSON format" style={{border: '1px solid gray'}} width="400"/> 
 
 #### Optional settings: Advanced JSON Parsing
 
-If you would like to manipulate the JSON data before it’s flattened and parsed, expand the **Advanced JSON Parsing** section of the popup.<br/><img src={useBaseUrl('img/cse/advanced-json-parsing.png')} alt="Advanced JSON parsing" width="400"/>
+If you would like to manipulate the JSON data before it’s flattened and parsed, expand the **Advanced JSON Parsing** section of the popup.<br/><img src={useBaseUrl('img/cse/advanced-json-parsing.png')} alt="Advanced JSON parsing" style={{border: '1px solid gray'}} width="400"/>
 
 1. **JSON Explode**. This option takes a JSON array value (flattened value) and creates multiple copies of the log line, one for each value of the array. You can only apply JSON Explode to one attribute within the JSON. For example, given the following example JSON log:  
 
@@ -166,10 +165,9 @@ If you would like to manipulate the JSON data before it’s flattened and parsed
     `{ “pets” : { “fluffy” : “cat” , “fido” : “dog”, “sammy” : “snake”}}`  
 
     The JSON Zip parameters are:
-
-* **Key Name**. The name of the attribute whose value is the array to zip.
-* **Match Key**. The name of the attribute that represents the key in the output. In the example above, it’s `name`.
-* **Match Value**. The attribute in the array object that represents the value in the final output. In the example above it’s `type`.
+    * **Key Name**. The name of the attribute whose value is the array to zip.
+    * **Match Key**. The name of the attribute that represents the key in the output. In the example above, it’s `name`.
+    * **Match Value**. The attribute in the array object that represents the value in the final output. In the example above it’s `type`.
 
 ### JSON messages with a syslog header
 
@@ -177,7 +175,7 @@ If your messages are JSON format with a syslog header:
 
 1. **Format**. Select “Process Syslog with Valid Header”. 
 1. **Syslog Format**. Choose “JSON”.
-1. You must specify values for **Vendor**, **Product,** and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).<br/><img src={useBaseUrl('img/cse/create-mapping-4.png')} alt="JSON message with syslog header" width="400"/>  
+1. You must specify values for **Vendor**, **Product,** and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).<br/><img src={useBaseUrl('img/cse/create-mapping-4.png')} alt="JSON message with syslog header" style={{border: '1px solid gray'}} width="400"/>  
 
 ### CEF or LEEF messages with a syslog header
 
@@ -185,7 +183,7 @@ If your messages are CEF or LEEF messages with a syslog header, all you need to 
 
 Don’t specify **Syslog Format**. 
 
-Don’t specify **Vendor**, **Product,** or **Event ID**. Cloud SIEM can determine those values from the CEF or LEEF message itself.<br/><img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Process syslog with valid header" width="400"/> 
+Don’t specify **Vendor**, **Product,** or **Event ID**. Cloud SIEM can determine those values from the CEF or LEEF message itself.<br/><img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Process syslog with valid header" style={{border: '1px solid gray'}} width="400"/> 
 
 ### CEF or LEEF messages without a syslog header
 
@@ -193,7 +191,7 @@ If your messages are CEF or LEEF messages without a syslog header, all you need 
 
 Don’t specify **Syslog Format**. 
 
-Don’t specify **Vendor**, **Product**, or **Event ID**. Cloud SIEM can determine those values from the CEF or LEEF message itself.<br/><img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="CEF or LEEF messages without header" width="400"/>
+Don’t specify **Vendor**, **Product**, or **Event ID**. Cloud SIEM can determine those values from the CEF or LEEF message itself.<br/><img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="CEF or LEEF messages without header" style={{border: '1px solid gray'}} width="400"/>
 
 ### Structured syslog data (key-value pairs) with a syslog header
 
@@ -204,7 +202,7 @@ If your messages are structured syslog data (key-value pairs) with a syslog head
 1. The popup refreshes, with options for syslog delimiters.
 1. **Syslog Delimiter**. This is the delimiter between the key-value pairs.
 1. **Syslog kv Delimiter**. This is the delimiter between a key and a value.
-1. You must specify values for **Vendor**, **Product**, and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).<br/><img src={useBaseUrl('img/cse/syslog-delimiters.png')} alt="Syslog delimiters" width="400"/>  
+1. You must specify values for **Vendor**, **Product**, and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).<br/><img src={useBaseUrl('img/cse/syslog-delimiters.png')} alt="Syslog delimiters" style={{border: '1px solid gray'}} width="400"/>  
 
 ### Microsoft Windows event logs in XML format
 
@@ -217,7 +215,7 @@ Cloud SIEM will determine the appropriate mapper to use from individual events. 
 * **Product** is “Windows”.
 * **Event ID** is the value of `{channel}-{eventid}`, for example, “Security-1234”.
 
-<img src={useBaseUrl('img/cse/windows.png')} alt="Windows mapping" width="400"/>
+<img src={useBaseUrl('img/cse/windows.png')} alt="Windows mapping" style={{border: '1px solid gray'}} width="400"/>
 
 
 ### Winlogbeats
@@ -231,7 +229,7 @@ Cloud SIEM will determine the appropriate mapper to use from individual events. 
 * **Product** is “Windows”.
 * **Event ID** is the value of `{channel}-{eventid}`, for example, “Security-1234”.
 
-<img src={useBaseUrl('img/cse/winlogbeats.png')} alt="Winlogbeats" width="400"/>
+<img src={useBaseUrl('img/cse/winlogbeats.png')} alt="Winlogbeats" style={{border: '1px solid gray'}} width="400"/>
 
 ### Fields extracted from Sumo Logic-ingested messages
 
@@ -240,7 +238,7 @@ If the messages with the source category you’ve specified in the mapping have
 1. **Format**. Select “Extracted Fields JSON”
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which Cloud SIEM will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern). 
 
-<img src={useBaseUrl('img/cse/extracted-fields-json.png')} alt="Extracted fields JSON" width="400"/>
+<img src={useBaseUrl('img/cse/extracted-fields-json.png')} alt="Extracted fields JSON" style={{border: '1px solid gray'}} width="400"/>
 
 ## Enable mapping
 

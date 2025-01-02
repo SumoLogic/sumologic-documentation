@@ -17,7 +17,7 @@ To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisite
 To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Remote File** for the Source type.   
 
@@ -68,7 +68,7 @@ To configure a Remote File Source:
 
 ## Configuring sourceCategory and sourceHost using variables
 
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.

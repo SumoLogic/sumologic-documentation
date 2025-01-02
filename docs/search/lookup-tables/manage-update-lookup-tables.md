@@ -41,7 +41,7 @@ For example: `username,IPAddress,region`
 1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Merge Data**.
-1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="img/search/lookup-tables/merge-lookup-data.png" width="350"/>
+1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="Merge Lookup Data popup" width="350"/>
 1. Click **Upload**.
 1. Navigate to the .csv file and click **Open**.
 1. Click **Done**.
@@ -137,3 +137,20 @@ The status of an update can be one of the following:
 * **Completed**. The update operation was successfully completed.
 * **Completed with Warning**. The update operation was successful, but there were some warnings.  
 * **Error**. There was an issue in completing the update operation. 
+
+
+## FAQ
+
+### Upgrade the lookup table to avoid negative count results
+
+:::info
+Lookup schema matching is relaxed to allow Int-Long type mismatch to support the new behavioural change of the `count` operator.
+:::
+
+If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new lookup table with `long` data type and run the below query:
+
+```
+cat path://"<Lookup file Path>" | save path://"<New Lookup File Path>"
+```
+
+By doing so, the query will read the data from the existing lookup table in old file and migrate it to the new file.

@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -33,27 +29,29 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 ### Vendor configuration
 
 :::note
-* Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
-* Your Service account's Personal Access Token (PAT) is required.
+
+- Only [Asana service accounts](https://asana.com/guide/help/premium/service-accounts) in certain pricing tiers can access audit log events.
+- Asana's [audit log events documentation](https://developers.asana.com/docs/audit-log-events) has the latest information on the required pricing tiers.
 :::
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Log in to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
+1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
 1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.
 1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/add_service_account.png')} style={{border:'1px solid gray'}} alt="add_service_account" width="800" />
-1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/pat.png')} style={{border:'1px solid gray'}} alt="pat" width="400" />
-1. Click **Save changes** to save the PAT token for your service account.
-1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} style={{border:'1px solid gray'}} alt="workspace_id" width="700" />
+1. Give the service account a name.
+1. Under **Permissions scopes**, choose **Scoped permissions**, and tick the **Audit logs** box.<br/><img src={useBaseUrl('img/send-data/asana-service-account-create.png')} style={{border:'1px solid gray'}} alt="service account" width="400" />
+1. Click **Save changes** and copy the service account token from here for later use.<br/><img src={useBaseUrl('img/send-data/asana-token-copy.png')} style={{border:'1px solid gray'}} alt="service account" width="400" />
+1. Inspect the URL in your browser and parse the ID of your Asana workspace.<br/><img src={useBaseUrl('img/send-data/workspace_id.png')} style={{border:'1px solid gray'}} alt="workspace_id" width="700" />
 
 ### Source configuration
 
 When you create an Asana Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Asana Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Asana**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -90,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/asana/example.json)
+<a href="/files/c2c/asana/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/asana/example.tf)
+<a href="/files/c2c/asana/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

@@ -4,6 +4,9 @@ title: Integrate Sumo Logic with Okta
 description: You can integrate Sumo Logic's SAML 2.0 API with Okta to allow users to log into Sumo Logic using their Single Sign-On (SSO) credentials.
 ---
 
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -27,22 +30,14 @@ Sumo Logic using their Single Sign-On (SSO) credentials.
 
 1. Open the Okta Administration pages.
 1. In the left-nav, select **Applications > Applications**.
-1. Click the **Browse App Catalog** button.
-
-    ![browse-app-catalog.png](/img/security/browse-app-catalog.png)
-1. Enter "Sumo Logic" in the search bar, and select the **Sumo Logic** SAML, SWA integration.
-
-    ![browse.png](/img/security/browse.png)
+1. Click the **Browse App Catalog** button. <br/><img src={useBaseUrl('img/security/browse-app-catalog.png')} alt="Browse App Catalog button" style={{border: '1px solid gray'}} width="600" />
+1. Enter "Sumo Logic" in the search bar, and select the **Sumo Logic** SAML, SWA integration. <br/><img src={useBaseUrl('img/security/browse.png')} alt="Sumo Logic in the search bar" style={{border: '1px solid gray'}} width="600" />
 1. On the Sumo Logic app overview page, select **Add.**
-1. On the **General Settings** tab: * **App label**. Enter a name for the Sumo Logic integration app.
-
+1. On the **General Settings** tab: 
+   * **App label**. Enter a name for the Sumo Logic integration app.
    * **Application Visibility**. Use these options if you don’t want the Sumo Logic integration app to appear to users in the Okta portal or mobile app.
-   * Click **Next**.    
-
-    ![general-settings-2.png](/img/security/general-settings-2.png)
-1. On the **Sign-on Options** tab, select **View Setup Instructions**.
-
-    ![sign-on-options.png](/img/security/sign-on-options.png)
+   * Click **Next**. <br/><img src={useBaseUrl('img/security/general-settings-2.png')} alt="General Settings tab" style={{border: '1px solid gray'}} width="600" />
+1. On the **Sign-on Options** tab, select **View Setup Instructions**. <br/><img src={useBaseUrl('img/security/sign-on-options.png')} alt="Sign-on Options tab" style={{border: '1px solid gray'}} width="600" />
 1. Follow the instructions on the **View Setup Instructions** page to configure the Sumo Logic SAML integration. The information that appears is similar to the content of the [How to Configure SAML 2.0 for Sumo Logic](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Sumologic.html) in Okta help.  The page includes instructions on how to configure on-demand user account provisioning and SP-initiated login.
 
 ### Configure Okta to send role assignments to Sumo (Optional)
@@ -59,30 +54,22 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. Select the **Sign-On** tab of your Sumo Logic application in Okta.
 1. Click **Edit** in the Settings.
 1. Click the arrow icon to the left of **Attributes (Optional)** to expand the attributes form.
-1. In the **Group Attribute Statements** section, enter a name for the attribute that will contain your Okta groups. For example, "**roles**". Note the name you supply will be used when configuring the **Roles Attribute** in your Sumo Logic SAML configuration. Sumo Logic only accepts a single role attribute name when configuring the **Roles Attribute** in Sumo Logic.
-
-    ![group-attributes-2.png](/img/security/group-attributes-2.png)
-
+1. In the **Group Attribute Statements** section, enter a name for the attribute that will contain your Okta groups. For example, "**roles**". Note the name you supply will be used when configuring the **Roles Attribute** in your Sumo Logic SAML configuration. Sumo Logic only accepts a single role attribute name when configuring the **Roles Attribute** in Sumo Logic. <br/><img src={useBaseUrl('img/security/group-attributes-2.png')} alt="Group Attribute Statements section" style={{border: '1px solid gray'}} width="400" />
 1. **Name Format**. Leave unspecified.
 1. **Filter**. In the left-side field, choose one of the options from the pulldown, to select the type of match expression you are going to enter:
-
     1. **Starts with**. Useful if all the names of the Okta groups with Sumo users all begin with the same string.
     1. **Equals**. Useful if there is a single Okta group for Sumo users.
     1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
     1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
 1. Click **Save** at the bottom of the **Create SAML Integration** page.
-1. Go to **Administration > Security > SAML** in Sumo Logic.
-1. Click your Okta configuration in the **Configuration List** and then click the edit icon (![pencil](/img/security/pencil.png)) in the details pane.
-1. Select the **Roles Attribute** checkbox and enter the name of the attribute name you created on the the **Group Attribute Statements** section above. 
-
-    ![roles-attribute.png](/img/security/roles-attribute.png)
+1. In Sumo Logic, go to the **SAML** page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
+1. Click your Okta configuration in the **Configuration List** and then click the edit icon (<img src={useBaseUrl('img/security/pencil.png')} alt="Pencil icon" width="20" />) in the details pane.
+1. Select the **Roles Attribute** checkbox and enter the name of the attribute name you created on the the **Group Attribute Statements** section above. <br/><img src={useBaseUrl('img/security/roles-attribute.png')} alt="Roles Attribute checkbox" style={{border: '1px solid gray'}} width="400" />
 1. **Save** the configuration.
 
 ### Add Okta users to the Sumo Logic app in Okta 
 
-1. In Okta, go to the **Assignments** tab for your Sumo Logic app.
-
-    ![assignments-tab.png](/img/security/assignments-tab.png)
+1. In Okta, go to the **Assignments** tab for your Sumo Logic app. <br/><img src={useBaseUrl('img/security/assignments-tab.png')} alt="Assignments tab" style={{border: '1px solid gray'}} width="800" />
 1. Click the **Assign** button and select either **assign to people** or **assign to groups**.
 1. Select the **Assign** link next to the users or groups you want to have access to Sumo Logic. 
 1. Once all users or groups have been assigned, click **Done**.
@@ -94,6 +81,7 @@ The Sumo Logic app you configured should now appear on the users' Okta dashboa
 If you want to force users to access Sumo Logic using SAML, as opposed to also being able to log in with a username and password, follow the instructions in this section.
 
 ### Check SAML Usage
+
 If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
@@ -111,28 +99,30 @@ The query results show, for each user that has accessed Sumo over the time range
 
 If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
-![saml-use-query.png](/img/security/saml-use-query.png) 
+<img src={useBaseUrl('img/security/saml-use-query.png')} alt="Query results" style={{border: '1px solid gray'}} width="800" />
 
 ### Require SAML for sign-in
+
 Click Require SAML Sign In to require users to sign in using SAML.
 
 :::tip
 After you lock down SAML, any new users you allowlist will have to select Forgot Password from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
 :::
 
-![require-saml](/img/security/require-saml.png)
+<img src={useBaseUrl('img/security/require-saml.png')} alt="Require SAML Sign In toggle" style={{border: '1px solid gray'}} width="800" />
 
 Sumo automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo if you run into issues.
 
 Having only one user able to bypass SAML may not be convenient or practical if you have a global company or a large team. You can add additional allowlisted users by clicking the (+) icon by **Allow these users to sign in using passwords in addition to SAML**:
 
-![allow-users](/img/security/allow-users.png)
+<img src={useBaseUrl('img/security/allow-users.png')} alt="Plus button to allow users to sign in" style={{border: '1px solid gray'}} width="800" />
 
 We do not recommend denying all users password access to Sumo even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
 
-![prevent-password-based-login](/img/security/prevent-password-based-login.png)
+<img src={useBaseUrl('img/security/prevent-password-based-login.png')} alt="Prevent Password-Based Sign In message" style={{border: '1px solid gray'}} width="400" />
 
 ## SAML lockdown limitations
+
 There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:
 
 * You cannot change a user's login email address when SAML is locked down.

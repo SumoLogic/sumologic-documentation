@@ -1,7 +1,6 @@
 ---
 title: CyberArk AAM
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

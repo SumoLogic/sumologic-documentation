@@ -32,7 +32,7 @@ You can install our OpenTelemetry Collector using either of the following method
 
 ### UI Installation
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -54,7 +54,7 @@ Get your [installation token](/docs/manage/security/installation-tokens) if you 
 Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from previous step:
 
 ```sh
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
 ```
 
 The script is going to perform the following operations:
@@ -76,7 +76,7 @@ The script is going to perform the following operations:
 
 ### Manual Step-by-Step Installation
 
-1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest).
+1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest).
 2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="450" />
 3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="450" />
 4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="450" />
@@ -120,6 +120,18 @@ You can set it by adding the following properties to Windows Registry key `HKLM:
 FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+```
+
+You can do it using the following PowerShell command:
+
+```powershell
+Set-ItemProperty `
+    -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo' `
+    -Name Environment `
+    -Type MultiString `
+    -Value "FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>"
 ```
 
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following line:
@@ -183,4 +195,8 @@ crypto/internal/backend.init.0()
         crypto/internal/backend/cng_windows.go:34 +0x85
 ```
 
-This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).
+This means you are running the Sumo Logic Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which means that the collector only works in a FIPS-compliant environment and will fail to start otherwise.
+
+To verify if your instance is in FIPS mode, open your registry editor and navigate to **HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled**.
+* If the Enabled value is `1`, then FIPS is enabled successfully.
+* If the Enabled value is `0`, this means FIPS is not enabled. See the [Build option to require FIPS mode](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode) documentation to enable it.

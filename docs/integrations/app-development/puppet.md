@@ -183,7 +183,7 @@ Puppet Master only runs on Linux.
 
 ### Step 3: Configure local file source for Puppet Server logs
 
-In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
+In this step, you add a local file source to the installed collector you created in [Step 2](#step-2-install-collector-on-puppet-master). The local file source will receive Puppet Server logs.  
 
 Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
 
@@ -225,7 +225,7 @@ For more information, see [Script Source](/docs/send-data/installed-collectors/s
 
 The script requires Ruby on the host machine.
 
-1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
 3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
@@ -333,7 +333,7 @@ Puppet logs and reports should start flowing into Sumo Logic.
 
 If you encounter problems:
 
-* Review [Script source prerequisites](#Script_source_prerequisites).
+* Review [Script source prerequisites](#script-source-prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
 ## Installing the Puppet app
@@ -365,3 +365,15 @@ See an analysis of errors in Puppet Master and nodes.
 See an analysis of puppet runs on nodes, including resources analysis, average time to apply, node puppet activity.
 
 <img src={useBaseUrl('img/integrations/app-development/puppet-node-puppet-runs-analysis.png')} alt="puppet" />
+
+## Upgrade/Downgrade the Puppet app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Puppet app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

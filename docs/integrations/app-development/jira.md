@@ -20,7 +20,7 @@ The Jira app uses the following log types:
 
 * **Jira Access Logs**. Apache HTTP server log files, in `/var/log/apache2/*.log`.
 * **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
-* **Jira Catalina Logs**. The application server log file, `logs/catalina.out`, in your JIRA Installation Directory.
+* **Jira Catalina Logs**. The application server log file, `logs/catalina.out`, in your Jira Installation Directory.
 * **Jira Webhooks**. Webhook events of types:
     * Issue
     * User
@@ -378,7 +378,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira app
+## Collecting logs for the Jira app
 
 This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
@@ -387,9 +387,9 @@ The Jira app supports Jira Server. For Jira Cloud, please see documentation for 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
 
-### Set up local file sources on an installed collector
+### Step 1: Set up local file sources on an installed collector
 
-1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/installed-collectors).
+1. Install a collector on the Jira host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Jira access logs. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
     * **Filepath**. On Linux, access logs are typically found in `/var/log/apache2/*.log`.
     * **Source Category**. Set to:` Atlassian/Jira/Server/Access`
@@ -401,7 +401,7 @@ You will configure an installed collector on your Jira host with three local fil
     * **Source Category**. Set to: `Atlassian/Jira/Server/Catalina`
 
 
-### Configure hosted collector to receive Webhooks
+### Step 2: Configure hosted collector to receive Webhooks
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
 
@@ -411,7 +411,7 @@ In this step, you create a host collector to receive webhooks from Jira, and set
     * Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 
 
-### Register webhook in Jira
+### Step 3: Register webhook in Jira
 
 Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help to register a webhook for the following events:
 
@@ -431,7 +431,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     * started (sprint_started)
     * closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#step-2-configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Installing the Jira app
 
@@ -549,3 +549,15 @@ Use this dashboard to:
 * Identify unusual user activity and closely monitor those users.
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
+
+## Upgrade/Downgrade the Jira app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jira app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

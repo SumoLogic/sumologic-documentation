@@ -83,7 +83,7 @@ You will now be able to see Heroku logs flowing into that HTTP source in Sumo Lo
 You can also run `heroku drains` or `heroku drains --json` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app, which can be attached to a new app.
 :::
 
-### Collecting Logs via Sumo Logic add-on
+### Collecting logs via Sumo Logic add-on
 
 The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
@@ -190,7 +190,7 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
    d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
    ```
 2. Define an FER in Sumo Logic.
-    1. In the Sumo Logic web app, go to **Manage Data > Settings > Field Extraction Rules**.
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
@@ -360,3 +360,15 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Error Details**. Shows the count of different types of error messages for different Heroku components.
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
+
+## Upgrade/Downgrade the Heroku app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Heroku app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -276,14 +276,16 @@ falco:
 
 ## Overriding metadata using annotations
 
-You can use [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to override some metadata and settings per pod.
+You can use [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to override some metadata and settings per pod or per namespace.
+
+Pod annotations take precedence over namespace annotations.
 
 - `sumologic.com/sourceCategory` overrides the value of the `sumologic.logs.container.sourceCategory` property
 - `sumologic.com/sourceCategoryPrefix` overrides the value of the `sumologic.logs.container.sourceCategoryPrefix` property
 - `sumologic.com/sourceCategoryReplaceDash` overrides the value of the `sumologic.logs.container.sourceCategoryReplaceDash` property
 - `sumologic.com/sourceName` overrides the value of the `sumologic.logs.container.sourceName` property
 
-For example:
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -309,6 +311,21 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+```
+
+The following example uses namespace annotations:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    sumologic.com/sourceCategory: "namespaceSourceCategory"
+    sumologic.com/sourceCategoryPrefix: "namespace-Source-Category-Prefix"
+    sumologic.com/sourceCategoryReplaceDash: "#"
+    sumologic.com/sourceHost: "namespaceSourceHost"
+    sumologic.com/sourceName: "namespaceSourceName"
+  name: my-namespace
 ```
 
 ### Overriding source category with pod annotations
@@ -348,6 +365,9 @@ The `sumologic.com/sourceCategoryReplaceDash` annotation with value `-` prevents
 ### Excluding data using annotations
 
 You can use the `sumologic.com/exclude` [annotation](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to exclude data from Sumo. This data is sent to the metadata enrichment service, but not to Sumo.
+You can exclude data per pod using pod annotations or per namespace using namespace annotations. However, pod annotations take precedence over namespace annotations.
+
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -371,6 +391,17 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+```
+
+The following example uses namespace annotations:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    sumologic.com/exclude: "true"
+  name: my-namespace
 ```
 
 #### Including subsets of excluded data
@@ -434,9 +465,23 @@ If you want to disable the collection of logs, metrics, or falco, make the below
 | `sumologic.metrics.enabled` | false | disable metrics collection |
 | `falco.enabled`             | false | disable falco              |
 
-## Changing scrape interval for Prometheus
+## Changing scrape interval for OpenTelemetry metrics collection
 
-Default scrapeInterval for collection is `30s`. This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
+You can adjust the default metric scrapeInterval (`30s`) if you are using OpenTelemetry for collection (default). This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
+
+To change it, you can use following configuration:
+
+```yaml
+sumologic:
+  metrics: 
+    collector:
+      otelcol:
+        scrapeInterval: 30s
+```
+
+## Changing scrape interval for Prometheus metrics collection
+
+You can adjust the default metric scrapeInterval (`30s`) if you are using Prometheus for collection instead of OpenTelemetry (default). This is the recommended value which ensures that all of Sumo Logic dashboards are filled up with proper data.
 
 To change it, you can use following configuration:
 
@@ -1001,4 +1046,119 @@ sumologic:
     ## Add a -fips suffix to all image tags. With default tags, this results in FIPS-compliant otel images.
     ## See https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md for more information.
     addFipsSuffix: false
+```
+
+## Use containers only from Docker Hub registry
+
+If DockerHub is the only available Docker registry option, we recommend the following configuration:
+
+```yaml
+sumologic:
+  setup:
+    job:
+      image:
+        repository: docker.io/sumologic/kubernetes-setup
+      initContainerImage:
+        repository: docker.io/sumologic/busybox
+  otelcolImage:
+    repository: docker.io/sumologic/sumologic-otel-collector
+  metrics:
+    remoteWriteProxy:
+      image:
+        repository: docker.io/sumologic/nginx-unprivileged
+falco:
+  image:
+    registry: docker.io
+  extra:
+    initContainers:
+      ## Add initContainer to wait until kernel-devel is installed on host
+      - name: init-falco
+        image: docker.io/sumologic:1.36.0
+        command:
+          - "sh"
+          - "-c"
+          - |
+            while [ -f /host/etc/redhat-release ] && [ -z "$(ls /host/usr/src/kernels)" ] ; do
+            echo "waiting for kernel headers to be installed"
+            sleep 3
+            done
+        volumeMounts:
+          - mountPath: /host/usr
+            name: usr-fs
+            readOnly: true
+          - mountPath: /host/etc
+            name: etc-fs
+            readOnly: true
+  driver:
+    loader:
+      initContainer:
+        image:
+          registry: docker.io
+otellogs:
+  daemonset:
+    initContainers:
+      changeowner:
+        image:
+          repository: docker.io/sumologic/busybox
+opentelemetry-operator:
+  instrumentation:
+    dotnet:
+      repository: docker.io/sumologic/autoinstrumentation-dotnet
+    java:
+      repository: docker.io/sumologic/autoinstrumentation-java
+    python:
+      repository: docker.io/sumologic/autoinstrumentation-python
+    nodejs:
+      repository: docker.io/sumologic/autoinstrumentation-nodejs
+  instrumentationJobImage:
+    image:
+      repository: docker.io/sumologic/kubernetes-tools-kubectl
+  manager:
+    collectorImage:
+      repository: docker.io/sumologic/sumologic-otel-collector
+    image:
+      repository: docker.io/sumologic/opentelemetry-operator
+  kubeRBACProxy:
+    image:
+      repository: docker.io/sumologic/kube-rbac-proxy
+  testFramework:
+    image:
+      repository: docker.io/sumologic/busybox
+tailing-sidecar-operator:
+  kubeRbacProxy:
+    image:
+      repository: docker.io/sumologic/kube-rbac-proxy
+  operator:
+    image:
+      repository: docker.io/sumologic/tailing-sidecar-operator
+  sidecar:
+    image:
+      repository: docker.io/sumologic/tailing-sidecar
+telegraf-operator:
+  image:
+    # Ensure the image tag is the same like in Sumo Logic Kubernetes Collection Chart
+    sidecarImage: docker.io/sumologic/telegraf:1.21.2
+    repository: docker.io/sumologic/telegraf-operator
+kube-prometheus-stack:
+  prometheus-node-exporter:
+    image:
+      repository: docker.io/sumologic/node-exporter
+  kube-state-metrics:
+    image:
+      repository: docker.io/sumologic/kube-state-metrics
+  prometheusOperator:
+    image:
+      repository: docker.io/sumologic/prometheus-operator
+  prometheus:
+    prometheusSpec:
+      image:
+        repository: docker.io/sumologic/prometheus
+pvcCleaner:
+  job:
+    image:
+      repository: docker.io/sumologic/kubernetes-tools-kubectl
+debug:
+  sumologicMock:
+    image:
+      repository: docker.io/sumologic/sumologic-mock
 ```

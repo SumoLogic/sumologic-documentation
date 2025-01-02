@@ -97,3 +97,15 @@ The **Druva Cyber Resilience - Unusual Data Activities** dashboard provides a co
 ### Ransomware Recovery Events
 
 The **Druva Cyber Resilience - Ransomware Recovery Events** dashboard offers a comprehensive overview of ransomware recoveries, encompassing their total count, distribution based on Syslog severity and type across time, top resource owners affected, quarantined event breakdown by resource type, geographic origins including high-risk countries, and concludes by furnishing detailed information and an overview of recent ransomware recoveries. The platform is under constant surveillance to swiftly identify and counter ransomware attacks in real time.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Ransomware-Recovery-Events.png')} style={{border: '1px solid gray'}} alt="Druva-Cyber-Resilience-Ransomware-Recovery-Events" width="800"/>
+
+## Upgrade/Downgrade the Druva Cyber Resilience app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Druva Cyber Resilience app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -114,6 +114,7 @@ Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
 
+
 ### User Activity
 
 These searches are intended to help you understand how privileged and non-privileged users are authenticating to and using your Linux servers.
@@ -292,3 +293,15 @@ _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "term
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""
 ```
+
+## Upgrade/Downgrade the Linux app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Linux app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

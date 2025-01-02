@@ -38,7 +38,7 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 1. Click **Schedule this search**.<br/>![SaveToIndex.png](/img/alerts/SaveToIndex.png)
 1. For all configuration options, see [Schedule a Search](schedule-search.md). 
 1. **Alert Type**. Select **Save to Index**.
-1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( _ ) are the only special characters allowed.
+1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores (`_`) are the only special characters allowed.
 1. Click **Save**.
 
 Once you have saved your Scheduled Search as an Index, you can cancel or edit the Scheduled Search, but you cannot delete an Index. 

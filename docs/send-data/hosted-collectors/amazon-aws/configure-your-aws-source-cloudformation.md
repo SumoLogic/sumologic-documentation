@@ -116,7 +116,7 @@ Resources:
 
 You can grant Sumo Logic access to your AWS Product with an IAM Role using CloudFormation. You can use the [AWS Command Line Interface](https://aws.amazon.com/cli/) (CLI) or [create a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
-1. Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-to-set-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
+1. Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-toset-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
 
 ![iam role generate cloudformation](/img/send-data/iam-role-generate-cloudformation-template-in-UI.png)
 

@@ -5,10 +5,12 @@ on:
       branches:
         - main
     merge_group:
+      types:
+        - checks_requested
 
 jobs:
     build-and-deploy:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-22.04
       env:
           CI: true
           NODE_ENV: production
@@ -28,7 +30,7 @@ jobs:
           run: yarn install --frozen-lockfile
         - name: Build the Docusaurus site
           env:
-            NODE_OPTIONS: "--max-old-space-size=8192"
+            NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
           run: yarn build
     spellcheck:
       runs-on: ubuntu-latest
@@ -38,5 +40,5 @@ jobs:
         name: Check spelling
         with:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,ddress,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te"
+          ignore_words_list: "aks,atleast,cros,ddress,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
           path: docs

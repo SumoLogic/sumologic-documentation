@@ -60,7 +60,7 @@ _sourceCategory="jira_cloud" *issue*
 ```
 
 
-## Collecting Logs for the Jira Cloud App
+## Collecting logs for the Jira Cloud App
 
 This section provides instructions for configuring log collection for the Jira Cloud App.
 

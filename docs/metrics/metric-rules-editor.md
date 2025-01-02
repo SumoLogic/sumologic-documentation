@@ -4,6 +4,8 @@ title: Metrics Rules Editor
 description: The Sumo Logic metrics rules editor allows you to tag metrics with data derived from the metric identifier.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The purpose of metrics rules is to make it easier to query metrics. This guide describes Sumo Logic metrics rules and metrics rules editor, our interface where you can create them. Here, you can also tag metrics with data derived from the metric identifier and then use those tags in metric queries.
 
 ## About metrics rules
@@ -36,9 +38,15 @@ Here is an example of the Graphite metric path, the Carbon 2.0 key-value pairs, 
 
 A metrics rule is made up of two parts: a *metric match expression* that defines the scope of the rule, and one or more variables that define the tags that will be applied to metrics that match the match expression.
 
-You use the metrics rules editor to build a metrics rule. On the **Metrics Rules** page (**Manage Data > Metrics > Metrics Rules),** metrics rules are listed like this: <br/> ![named-rule.png](/img/metrics/named-rule.png)
+You use the metrics rules editor to build a metrics rule. On the **Metrics Rules** page, metrics rules are listed like this: <br/><img src={useBaseUrl('img/metrics/named-rule.png')} alt="Metrics rules" style={{border: '1px solid gray'}} width="800" />
 
 The subsections that follow describe the information shown in the columns on the **Metrics Rules** page.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Metrics Rules** page, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Rules**. 
+
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Metrics Rules** page, go to the top menu and select **Configuration**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
+ 
 
 ### Metrics match expression
 
@@ -80,28 +88,25 @@ Different classes have dot-delimited names of various lengths, so a match expres
 
 Here's how to create a metrics rule using the metrics rules editor in the Sumo UI:
 
-1. In the Sumo web app, go to **Manage Data > Metrics > Metrics Rules**. The **Metrics Rules** page lists the metrics rules that have already been defined.<br/> ![named-rule.png](/img/metrics/named-rule.png)
-1. To add a new rule, click the plus sign (+) in the upper left of the **Metrics Rules** page. The **Add Metrics Rule** popup appears.<br/>  ![add-metric-rule-empty.png](/img/metrics/add-metric-rule-empty.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Metrics Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Metrics** select **Metrics Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Rules**. <br/>The **Metrics Rules** page lists the metrics rules that have already been defined.<br/><img src={useBaseUrl('img/metrics/named-rule.png')} alt="Metrics rules" style={{border: '1px solid gray'}} width="800" />
+1. To add a new rule, click **+ Add new rule** in the upper right of the **Metrics Rules** page. The **Add New Rule** popup appears.<br/><img src={useBaseUrl('img/metrics/add-metric-rule-empty.png')} alt="Add metrics rule" style={{border: '1px solid gray'}} width="600" />
 1. In the **Rule name** field, enter a name for the new rule.
-1. In the **Metrics match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.
+1. In the **Metric match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.
    * For example: `collectd.cqsplitter.stag-cqsplitter-2.GenericJMX-health_jmx-memory.memory-heapmax` and this match expression: `_sourceCategory=training/shipping/metrics type=payment` matches all metrics whose`_sourceCategory` field is "training/shipping/metrics" and type field is “payment”.
     :::tip
     For greedy matching, use two asterisks. For more information, see the [Greedy match expressions](#greedy-match-expressions). You can use more than one match expression. For more information, see the [Multiple match expressions](#multiple-match-expressions).
     :::
-    The **Time Series** section of the page lists metrics that match the expression you entered. If no metrics are listed, edit your match expression until matching metrics appear.<br/> ![add-metric-rule-with-expression.png](/img/metrics/add-metric-rule-with-expression.png)
+    The **Time Series** section of the page lists metrics that match the expression you entered. If no metrics are listed, edit your match expression until matching metrics appear.<br/><img src={useBaseUrl('img/metrics/add-metric-rule-with-expression.png')} alt="Add metrics rule with expression" style={{border: '1px solid gray'}} width="600" />
 1. In the **Define variables** section of the page, for each tag you want to apply to matching metrics, enter a meaningful tag name in the **Variable name** field on the left. In the **Tag sequence** field, assign a variable to the tag. There are two different formats for specifying the Tag Sequence.
    * To pull a tag from a dot-delimited string in the metric's `_rawName` field, use `$_1` to extract the first segment of the string, `$_2` to extract the second segment of the string, and so on.  For more information, see [Extracting variables from a dot-delimited match expression](#extract-variables-from-a-dot-delimited-match-expression).
    * To pull a tag from a dot-delimited string in metric field other than `_rawName` field, use `$FieldName._1` to extract the first segment of the string, `$FieldName._2` to extract the second segment of the string, and so on. For more information, see [Extracting variables from a key-value pair match expression](#extract-variables-from-a-key-value-pair-match-expression).
-1. Select a metric in the **Time Series** section to see the values that would be assigned to each extracted tag for the selected metric. The entries below show what values would be assigned to the selected metric given the specified Tag Sequences. <br/>![variable-extracton.png](/img/metrics/variable-extracton.png)     
+1. Select a metric in the **Time Series** section to see the values that would be assigned to each extracted tag for the selected metric. The entries in the columns show what values would be assigned to the selected metric given the specified Tag Sequences. <br/><img src={useBaseUrl('img/metrics/variable-extracton.png')} alt="Variables in time series" style={{border: '1px solid gray'}} width="600" />   
 1. Click **Save** to save your rule. The tags will be applied to incoming metrics. Sumo Logic will not re-index your historical data.
-
-
 
 ## Variable extractions
 
-Variable extractions define the tags you want to attach to metrics that match a match expression. You define extraction assignments using the fields in the **Define variables** section of the **Add Metrics Rule** popup.
-
-![add-metric-rule-with-expression.png](/img/metrics/add-metric-rule-with-expression.png)
+Variable extractions define the tags you want to attach to metrics that match a match expression. You define extraction assignments using the fields in the **Define variables** section of the **Add new rule** popup.
 
 When you define a variable you give it a name and define its Tag Sequence, which maps the variable to a specific segment of a delimited string. The format for the Tag Sequence depends on whether the corresponding match expression is a Graphite string or is one or more key-value pairs. 
 
@@ -133,9 +138,9 @@ Use the `$_field_sequence` format, specifying the `_rawName` field. For example
 
 To check out how your variable assignments work, select a metric in the **Time Series** section of the rules editor. The values that would be assigned to each tag are displayed.
 
-![variable-extracton.png](/img/metrics/variable-extracton.png)
+<img src={useBaseUrl('img/metrics/variable-extraction-selection.png')} alt="Selection in time series" style={{border: '1px solid gray'}} width="600" />   
 
-In the screenshot above, the following metric is selected: `collectd.kafka-forge-aa.nite-kafka-forge-aa-1.irq.irq-cal`. The values Sumo assigns to the variables are shown to the right of the variable definition. For our example metric, Sumo would attach the following name-value pairs to the metric: `cluster=kafka-forge-aa node=nite-kafka-forge-aa-1 id=irq metric=irq-cal`.
+In the screenshot above, the following metric is selected: `AWS/EC2 i-09fe7b149b8248820`. The values Sumo assigns to the variables are shown to the right of the variable definition. For our example metric, Sumo would attach the following name-value pairs to the metric: `entity=i-09fe7b149b8248820`.
 
 
 ## Metrics Rules editor error messages

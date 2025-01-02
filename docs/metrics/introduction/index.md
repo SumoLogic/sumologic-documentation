@@ -86,7 +86,13 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 
 ## Metrics queries
 
-To query metrics in Sumo, you open the Metrics Explorer by clicking **+ New**, and selecting **Metrics**. In the screenshot below, the Metrics Explorer show the results of two queries.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Explorer, go to the **Home** screen and select **Metrics**. 
+
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Metrics Explorer, in the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 
+ 
+
+In the screenshot below, the Metrics Explorer shows the results of two queries.
 
 ![two-queries.png](/img/metrics/two-queries.png)
 
@@ -96,7 +102,7 @@ A metric query consists of a metric, one or more filters and optionally, one or
 
 #### Metric
 
-When you create a metric query in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
+When you [create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
 
 #### Filters  
 
@@ -113,7 +119,7 @@ For more information, see [Metrics Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
-For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md). 
+For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md#create-a-metric-query). 
 
 ### Metricmonitors
 

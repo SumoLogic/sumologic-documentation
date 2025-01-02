@@ -5,7 +5,7 @@ title: Flow Diagrams
 
 The Sankey diagram, a specific type of flow diagram, uses the width of an arrow or stripe to show the proportion of a quantity. In Sumo Logic, Flow Diagrams can show the flow within a distributed system, for example, or can be used to see how customers flow through your website via states, which are triggered by log events. These states can show you how long customers take to complete purchases, or even where users are dropping off your site or app.
 
-Flow diagrams cannot be added to Dashboards but they can be used as part of a saved search.
+Flow diagrams can be used as part of a saved search, or in a [dashboard](/docs/dashboards/panels/sankey-charts/).
 
 The Sankey chart works with the [`transaction`](/docs/search/search-query-language/transaction-analytics) operator. When constructing your query, you will define the edges of the chart's lines; Sumo Logic sorts each transaction type into the correct flow line using the states defined in your query.
 

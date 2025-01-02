@@ -1,7 +1,6 @@
 ---
 title: AWS Simple Notification Service
 description: ''
-tags: []
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,8 +23,7 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 
 ## Configure Amazon Simple Notification Service in Automation Service and Cloud SOAR
 
-1. To configure AWS Simple Notification Service (SNS) in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-1.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-1" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-2.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-2" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-3.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-3" width="600"/>
 1. Populate all the required fields(\*) and click **SAVE**.

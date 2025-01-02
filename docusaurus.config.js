@@ -20,30 +20,12 @@ module.exports = {
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
-  ],
-  scripts: [
-    {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
-      async: true,
-    },
-    {
-      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
-      async: true,
-    },
-    {
-      src: './src/helper/google-tag-manager.js',
-      async: true,
-    },
-    {
-      src: './src/helper/google-analytics.js',
-      async: true,
-    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -95,11 +77,14 @@ module.exports = {
             ],
           },
         },
-        gtag: {
-          trackingID: 'G-CVH19TBVSL',
-        },
-        googleTagManager: {
-          containerId: 'GTM-58ZK7D',
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'daily',
+          ignorePatterns: [
+            '/docs/reuse/**',
+            '/tags/**'
+          ],
+          filename: 'sitemap.xml',
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
@@ -110,8 +95,12 @@ module.exports = {
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -127,7 +116,16 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
+    ['@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-58ZK7D',
+      },
+    ],
+    ['@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-CVH19TBVSL',
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
@@ -149,8 +147,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -169,8 +171,12 @@ module.exports = {
          postsPerPage: 'ALL',
          blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
          showReadingTime: false,
+         onUntruncatedBlogPosts: 'ignore',
+         onInlineTags: 'ignore',
+         onInlineAuthors: 'ignore',
          feedOptions: {
            type: 'rss',
+           xslt: true,
            title: 'Sumo Logic Cloud SOAR Release Notes',
            description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -189,8 +195,12 @@ module.exports = {
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -209,8 +219,12 @@ module.exports = {
           postsPerPage: 'ALL',
           blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           feedOptions: {
             type: 'rss',
+            xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -257,13 +271,18 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
+    announcementBar: {
+      id: 'copilot',
+      content: 'Check out 🤖 <b><a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a></b>, our new AI-powered logs assistant!',
+      backgroundColor: '#D3BAF7',
+      textColor: '#000',
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
-        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -281,14 +300,14 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'getstarted',
-                label: 'Start Here',
+                label: 'Get Started',
                 icon: 'rocket',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'senddata',
-                label: 'Send Data (Collectors)',
-                icon: 'cloud_upload',
+                label: 'Collectors, Sources',
+                icon: 'settings',
               },
               {
                 type: 'docSidebar',
@@ -298,15 +317,21 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'apps',
+                sidebarId: 'security',
+                label: 'Security',
+                icon: 'security',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'manage',
                 label: 'Manage Account',
                 icon: 'manage_accounts',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'grid_view',
               },
               {
                 type: 'docSidebar',
@@ -322,21 +347,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'apm',
-                label: 'Traces, RUM, APM',
-                icon: 'account_tree',
-              },
-              {
-                type: 'docSidebar',
                 sidebarId: 'observability',
                 label: 'Observability',
-                icon: 'query_stats',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'security',
-                label: 'Security',
-                icon: 'security',
+                icon: 'speed',
               },
               {
                 type: 'docSidebar',
@@ -348,7 +361,13 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'platformservices',
                 label: 'Platform Services',
-                icon: 'swap_horiz',
+                icon: 'settings_suggest',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'apm',
+                label: 'Traces, RUM, APM',
+                icon: 'account_tree',
               },
             ]
           },
@@ -411,36 +430,47 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: '<div id="google_translate_element"></div>',
+            value: 'google_translate',
           },
           {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
-          },
-          {
-            to: 'https://support.sumologic.com/support/s/contactsupport',
-            position: 'right',
-            className: 'header-support',
+            alt: 'Sign up for a Sumo Logic free trial',
           },
           {
             position: 'right',
-            className: 'header-github-link',
+            className: 'support-menu-trigger',
+            to: '#',
             type: 'dropdown',
-            'aria-label': 'GitHub repository',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            items:[
+            items: [
               {
-                label: 'Send Feedback',
+                label: 'Contact Support',
+                to: 'https://support.sumologic.com/support/s',
+                icon: 'support',
+              },
+              {
+                label: 'Request a Demo',
+                to: 'https://www.sumologic.com/demos',
+                icon: 'co_present',
+              },
+              {
+                label: 'Submit Feedback',
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'rate_review',
+                icon: 'thumbs_up_down',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: 'docs/contributing',
                 icon: 'edit_note',
               },
-            ]
+            ],
+          },
+          {
+            className: 'header-github-link',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
+            position: 'right',
+            alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
       },
@@ -468,7 +498,7 @@ module.exports = {
             items: [
               {
                 label: 'Contact Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -476,7 +506,7 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
             title: 'Help',
@@ -497,23 +527,6 @@ module.exports = {
               },
             ],
             title: 'Open Source',
-          },
-          {
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@sumologic/videos',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/sumo-logic',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://twitter.com/SumoLogic',
-              },
-            ],
-            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

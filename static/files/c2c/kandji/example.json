@@ -1,0 +1,20 @@
+{
+  "api.version": "v1",
+  "source": {
+    "config": {
+      "name": "Kandji",
+      "requestEndpoint": "https://sumo.api.kandji.io",
+      "bearerToken": "xxxxxxxxxxxxxxxxxxxxxxxx",
+      "collectThreatDetails": true,
+      "collectDevices": true,
+      "pollingIntervalMin": 5,
+      "pollingIntervalHour": 12,
+      "collectDeviceActivities": true,
+      "collectDeviceDetails": true
+    },
+    "schemaRef": {
+      "type": "Kandji"
+    },
+    "sourceType": "Universal"
+  }
+}

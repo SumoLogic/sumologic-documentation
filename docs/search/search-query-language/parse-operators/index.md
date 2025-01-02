@@ -6,7 +6,7 @@ description: Sumo Logic provides a number of ways to parse fields in your log me
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Parse operators allow you to extract fields from log messages within a query manually and on an ad-hoc basis.
+Parse operators allow you to extract fields from log messages within a query manually and on an ad hoc basis.
 
 For best practices, use Parse operators to build [Field Extraction Rules](/docs/manage/field-extractions) to automatically extract field values and use them to extend your query.
 

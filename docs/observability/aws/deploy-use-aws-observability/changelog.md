@@ -9,6 +9,57 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.10.0, 4-Sept-2024
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+Updates:
+
+* All python Lambda runtimes have been updated to version 3.12 along with the required libraries.
+
+## v2.9.0, 02-Aug-2024
+
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.9.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Feature:
+* Amazon RDS app - Added support to analyze and monitor RDS MS SQL CloudWatch logs.
+* Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out-of-box monitors.
+* By default, the solution now sends CloudFormation deployment telemetry to Sumo Logic. Users have the option to opt out of this telemetry.
+
+Updates:
+* Reduced the installation time for the AWS Observability solution using the CloudFormation template.
+* Integrated the latest SAM versions with AWSO v2.9.0 (CF + TF) to address CVEs and updated Lambda runtimes from Node.js v18.x to v20.x.
+* Upgraded to Sumo Logic Terraform provider v2.31.0 for CVE fixes.
+* Updated Terraform test code written in Go language from v1.18 to v1.22, addressing CVEs associated with the gRPC module.
+* Enhanced log group subscriptions limit in the updated SAM app sumologic-loggroup-connector v1.0.12 .
+
+Bug Fixes:
+* Resolved an issue where updating from versions lower than v2.8.0 to v2.8.0 was not functioning correctly. Users are now recommended to update directly to v2.9.0, bypassing v2.8.0.
+
+## v2.8.0, 17-May-2024 - Yanked
+
+### This version has been Yanked. Please deploy/update to AWS Observabilty v2.9.0 or latest version.
+
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Features:
+* RDS app - Added support to analyze RDS PostgreSQL cloudwatch logs.
+* New monitors added for RDS PostgreSQL, RDS MySQL, DynamoDB, EC2, Lambda, and API Gateway.
+* Added new dashboards for HTTP and Websocket API which covers use cases based on cloudwatch logs and metrics including enhanced metrics.
+* Added support for API Gateway access logs for all three types of APIs - REST, HTTP, and WebSocket API.
+
+Updates:
+* Optimized time to install AWS observability solution with cloudformation template.
+* AccountID tag removed from AWS CloudWatch Metrics sources.
+* CVE fixes associated with Sumologic terraform provider and terraform integration module (update >= 2.28.3, < 3.0.0).
+* Updated Terraform integration module to AWS terraform provider version 5.x.
+* Existing source URL of Classic Load Balancer is integrated with CloudFormation (CF) Solution.
+
 ## v2.7.0, 25-Oct-2023
 
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml`
@@ -179,7 +230,7 @@ Bug Fixes:
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml
 
 Updates:
-* Updated the AWS Explore hierarchy and all dashboards to use entity model.
+* Updated the AWS Observability view hierarchy and all dashboards to use entity model.
 * Added new FERs and fields to support the entity model.
 
 ## v1.0.0, 31-Aug-2020

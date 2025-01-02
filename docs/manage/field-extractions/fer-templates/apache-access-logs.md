@@ -12,7 +12,7 @@ description: Parse the common fields in your Apache Access Logs using the FER te
 **Sample Log**:
 
 ```
-221.125.19.252 - - [2017-07-13 17:59:50.697 +0000] "GET /_js/master.js HTTP/1.1" 200 8825 "http://www.google.com/url?sa=t&rct=j...ource=web&cd=4" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5"
+221.125.19.252 - - [2017-07-13 17:59:50.697 +0000] "GET /_js/master.js HTTP/1.1" 200 8825 "http://www.google.com/url?sa=t&rct=j...source=web&cd=4" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5"
 ```
 
 **Parsing Rule**:
@@ -26,10 +26,10 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 
 | Field | Description | Example |
 |:--|:--|:--|
-| src_ip | IP address of the client (remote host) which made the request to the server | 221.125.19.252 |
-| method | Method used by the client | GET |
-| url | Resource requested by the client | `v` |
-| status_code | Status code that the server sends back to the client | 200 |
-| size | Size of the object returned to the client | 8825 |
-| referrer | Site that the client reports having been referred from | [http://www.google.com/url?sa=t&rct=j...ource=web&cd=4](http://www.google.com/url?sa=t&rct=j&q=log-reduce&source=web&cd=4) |
-| user_agent  | Identifying information that the client browser reports about itself | Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5 |
+| src_ip | IP address of the client (remote host) from which the request is made to the server. | 221.125.19.252 |
+| method | Method used by the client. | GET |
+| url | Resource requested by the client. | `/_js/master.js` |
+| status_code | Status code that the server sends back to the client. | 200 |
+| size | Size of the object returned to the client. | 8825 |
+| referrer | Displays the site that the client reports having been referred from. | `http://www.google.com/url?sa=t&rct=j...source=web&cd=4` |
+| user_agent  | Identifying information that the client browser reports about itself. | Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) <br/> AppleWebKit/533.21.1 (KHTML, like Gecko) <br/> Chrome/19.0.1084.30 <br/> Safari/536.5 |

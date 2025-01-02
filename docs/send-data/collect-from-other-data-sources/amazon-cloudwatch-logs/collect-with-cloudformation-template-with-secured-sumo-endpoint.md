@@ -61,7 +61,7 @@ Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/devel
 
 ## Step 3: Download the CloudFormation template
 
-Sumo Logic provides a CloudFormation template to make setup easier. Download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications. Otherwise, proceed to [Step 5](#step-5-create-a-stack-on-the-aws-cloudformation-console​).
+Sumo Logic provides a CloudFormation template to make setup easier. Download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications. Otherwise, proceed to [Step 5](#step-5-create-a-stack-on-the-aws-cloudformation-console).
 
 ## Step 4: Tailor the CloudFormation template
 

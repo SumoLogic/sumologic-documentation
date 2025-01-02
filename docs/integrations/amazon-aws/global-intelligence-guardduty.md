@@ -155,13 +155,13 @@ These tasks require the Manage Collectors and Manage Access Keys [role capabilit
 
 In this step, you need to generate access key and access ID from the Sumo Logic console. To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
+1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-an-access-key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
 #### Step 2: Deploy the Sumo Logic GI GuardDuty SAM App
 
-In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#Process-overview).
+In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#process-overview).
 
 To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 

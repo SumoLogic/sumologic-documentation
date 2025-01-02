@@ -1,7 +1,6 @@
 ---
 title: AWS Route53
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

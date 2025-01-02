@@ -19,14 +19,15 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+ 
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
 1. Download the appropriate collector for your operating system.
 1. Install the collector. Instructions for your preferred operating system and method of installation are available on the [Installed Collectors](/docs/send-data/installed-collectors) page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector popup** appears. <br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" width="500"/>
+1. The **Edit Collector popup** appears. <br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Provide a name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -40,11 +41,11 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/>
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
@@ -59,10 +60,10 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 
 Follow the Nginx [instructions](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/?_bt=569896217465&_bk=&_bm=&_bn=g&_bg=129938098486&gclid=Cj0KCQiAraSPBhDuARIsAM3Js4ofA0fdqQ-4JXfkhqJFoX7qjLl7hdHhuVe4CJsI1ESWUUdnekGV03saAuS9EALw_wcB) for configuring the access log. General instructions to Configure forwarding to Syslog Source are available in Sumo Logic help.
 
-### Step 3: Verify Ingestion
+## Step 3: Verify Ingestion
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mapping link" width="400"/> 
-1. On the **Log Mappings** page search for "Nginx" and check under **Record Volume**, a list of mappers for Nginx will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/nginx-record-volume.png')} alt="Nginix record volume" width="600"/>
-1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Nginx security records. <br/><img src={useBaseUrl('img/cse/nginx-search.png')} alt="Nginix search" width="400"/> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "Nginx" and check the **Records** columns. A list of mappers for Nginx will appear and you can see if logs are coming in.
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Nginx security records. <br/><img src={useBaseUrl('img/cse/nginx-search.png')} alt="Nginix search" style={{border: '1px solid gray'}} width="400"/> 

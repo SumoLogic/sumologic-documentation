@@ -63,7 +63,7 @@ _sourceCategory="security/flowlogs"
 | sort _count
 ```
 
-## Collecting Logs for the Azure Network Watcher app
+## Collecting logs for the Azure Network Watcher app
 
 This document provides instructions for configuring the collection of NSG Flow Logs for the Azure Network Watcher App.
 
@@ -115,29 +115,31 @@ To configure an HTTP source for Azure, do the following:
 
 ### Step 3: Configure Azure Resources using ARM template
 
-To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage/#step-3-configure-azure-resources-using-arm-template).
+To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template).
 
 ### Step 4: Enable NSG flow logs via the Azure Portal
 
 In this step, you enable NSG flow logs with the Azure portal.
 
-* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in [Configure Azure Storage Account](#Configure_Azure_Storage_Account) section.
+* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in the [Configure Azure Storage Account](#step-1-configure-azure-storage-account) section.
 
 ### Troubleshooting
 
-If logs do not start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection.md).
+If logs do not start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection).
 
 ## Installing the Azure Network Watcher app
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic app for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Azure Network Watcher dashboards
 
-All dashboards include filters that you can use in Interactive Mode for further analysis of your data.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -180,3 +182,15 @@ The **Network Watcher - Denied Traffic Flow** dashboard drills down on denied tr
 **Top 10 Denied Destination IP, Port.** Displays a table of destination IP addresses and ports with denied traffic flow.
 
 **Denied Traffic per Hour -  Outlier.** Using Sumo Logic machine learning [Outlier](/docs/search/search-query-language/search-operators/outlier) operator, shows any unexpected sequence in denied traffic.
+
+## Upgrade/Downgrade the Azure Network Watcher app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Network Watcher app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

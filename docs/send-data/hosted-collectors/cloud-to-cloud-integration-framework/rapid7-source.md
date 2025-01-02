@@ -16,10 +16,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Rapid7 source collects asset and vulnerabilities from [Rapid7 InsightVM](https://help.rapid7.com/insightvm/en-us/api/integrations.html) API and sends it to Sumo Logic. InsightVM provides a fully available, scalable, and efficient way to collect vulnerability data and minimize risk. InsightVM automatically evaluates changes in user's networks, allowing security professionals to better understand and quickly manage the risk posed to their organization.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -38,7 +34,7 @@ The Rapid7 InsightVM source requires you to provide a region and organizational 
 When you create an Rapid7 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Rapid7 Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Rapid7**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -48,14 +44,6 @@ To configure an Rapid7 Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the **Region** of Rapid7 InsightVM platform.
 1. Enter the **API Key** for authorization.
-
-## Metadata fields
-
-| Field | Value | Description |
-| :--- | :--- | :--- |
-| `_siemDataType` | `Inventory` | Set when **Forward To SIEM** is checked. |
-| `_siemProduct` | `InsightVM` | Set when **Forward To SIEM** is checked. |
-| `_siemVendor` | `Rapid7` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
@@ -74,7 +62,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | region | String | Yes | |Region of the Insight platform. Know more about [Supported regions](https://docs.rapid7.com/insight/product-apis/#supported-regions).  |  |
 | apikey | String | Yes | `null` |API Key for the account authorization. |  |
 
@@ -82,13 +69,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/rapid7/example.json)
+<a href="/files/c2c/rapid7/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/rapid7/example.tf)
+<a href="/files/c2c/rapid7/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

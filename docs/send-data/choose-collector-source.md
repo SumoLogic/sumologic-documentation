@@ -10,6 +10,12 @@ import Iframe from 'react-iframe';
 
 To send your data to Sumo Logic, you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
 
+:::info
+You cannot delete the individual log lines once they are ingested and stored in the service. Hosted services are designed to protect logs from being changed because they are supposed to be immutable. However, data sets for a specific time range within a data partition can be deleted. If you need surgical removal of log lines from view, you can use the keyword searches as [Role Filters](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
+
+An administrator can set up a role filter, but other administrators in the your environment with the appropriate rights can reverse it. Alternatively, the Sumo Logic engineering team can implement a role filter that is invisible and unchangeable by any users, including admins.
+:::
+
 ## Sumo Logic Collectors
 
 ### OpenTelemetry Distribution (Installed Agent)
@@ -163,7 +169,7 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -197,7 +203,7 @@ The maximum number of Sources allowed on a Collector is 1,000.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

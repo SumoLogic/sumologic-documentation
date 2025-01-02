@@ -206,7 +206,7 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for GKE - Control Plane app
+## Collecting logs and metrics for GKE - Control Plane app
 
 This section has instructions for configuring log and metric collection for the Sumo Logic app for GKE - Control Plane.
 
@@ -285,7 +285,7 @@ To install the app, do the following:
     3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 4. Click **Add to Library**.
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking on Cluster from side navigation of the tab.
 
 ## Viewing GKE Dashboards
 

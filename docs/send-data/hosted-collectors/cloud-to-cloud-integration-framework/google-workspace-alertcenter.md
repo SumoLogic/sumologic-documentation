@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/google-workspace-alertcenter/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
@@ -21,10 +22,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </head>
 
 This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
-
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
 
 ## Data collected
 
@@ -44,7 +41,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="400"/>
 1. To create JSON for the service account, you must create a key. Click the service account email to navigate to the Keys tab.<br/> <img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="service-account-create_key.png" width="800"/>
 1. Click **Add key** and select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.PNG')} alt="<service-account-key>" width="600"/>
-1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [Service account JSON](#example-of-service-account-json) example below.
+1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [service account JSON example](#json-example) below.
 1. Add domain-wide delegation to your service account using the client ID generated in step 5.
 1. From the Google admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account) and select it in the input form. The OAuth scope for alert API is:
    ```
@@ -59,13 +56,13 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 
 ### Source configuration
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google Workspace AlertCenter**.
 1. **Name.** Enter a name for the Source.
 1. **Description.** (Optional). Enter the description of the Source.
 1. **Source Category.** Enter a string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Click if you want the Source to forward the logs it ingests to Cloud SIEM.
+1. **Forward to SIEM**. Click if you want the Source to forward the logs it ingests to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate, each field needs a name (key) and value. For more information, see [Fields](/docs/manage/fields).
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
@@ -108,13 +105,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.json)
+<a href="/files/c2c/google-workspace-alertcenter/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/google-workspace-alertcenter/example.tf)
+<a href="/files/c2c/google-workspace-alertcenter/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

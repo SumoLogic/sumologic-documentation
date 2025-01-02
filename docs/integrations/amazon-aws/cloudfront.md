@@ -28,7 +28,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 | sort by count
 ```
 
-## Collecting Logs for the Amazon CloudFront app
+## Collecting logs for the Amazon CloudFront app
 
 ### Prerequisites
 
@@ -62,13 +62,15 @@ You could use this Boundary Regex:
 
 Now that you have set up collection for CloudFront, install the Sumo Logic app for Amazon CloudFront to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Amazon CloudFront dashboards
 
-Amazon CloudFront is a content delivery network (CDN) that allows an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. The Sumo Logic application for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -114,6 +116,18 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 - **Cache Hit and Miss Over Time.** Displays the cache's hits and misses over time in timeslices of five minutes for the last three hours in a stacked column chart.
 - **HTTP Status Codes Over Time.** Shows HTTP status codes over time in timeslices of five minutes for the last three hours in a timeline.
 - **Traffic and Megabytes Served.** Provides information on site traffic hits and Megabytes served in timeslices of one hour over the last 24 hours in a combination column and line chart.
+
+## Upgrade/Downgrade the Amazon CloudFront app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon CloudFront app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Additional logs and metrics collection (Optional)
 

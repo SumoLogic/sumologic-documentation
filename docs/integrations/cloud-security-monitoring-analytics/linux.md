@@ -26,9 +26,14 @@ Follow the steps in this topic to install or uninstall a collector on Linux. See
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
--or-
-* Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
+* Sumo Logic
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+    1. Click **Add Collector**.
+    1. Click **Installed Collector**.
+    1. Click the link for the collector to begin the download.
+* Browser 
+    1. Open a browser.
+    1. Enter the static URL for your pod. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url/) for a list of URLs for your deployment pod. The download begins immediately.
 
 ### Install the Collector on Linux
 
@@ -40,17 +45,17 @@ Choose one of these methods to install the Collector:
 Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
 
 1. Open the downloaded installer file.
-2. If prompted, enter the root or Administrator user name and password for the system.
-3. Open the wizard to show the Welcome page. Click **Next**.
-4. Accept the license agreement and click **Next**.
-5. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
-6. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
-7. Choose an authentication method.
-   * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-   * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-   * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
-8. Click **Finish** to complete the setup.
-9. In Sumo Logic select **Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
+1. If prompted, enter the root or Administrator user name and password for the system.
+1. Open the wizard to show the Welcome page. Click **Next**.
+1. Accept the license agreement and click **Next**.
+1. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
+1. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
+1. Choose an authentication method.
+   * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
+   * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
+1. Click **Finish** to complete the setup.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
 
 </details>
 
@@ -194,7 +199,7 @@ Use the following command to start the collector service.
  ```bash
  sudo ./collector start
  ```
-13. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
+13. Verify that you can see the collector. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 
 </details>
 
@@ -268,7 +273,7 @@ sudo systemctl daemon-reload
 
 
 2. **Remove the collector from Sumo Logic**:
-   1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.
 
@@ -320,3 +325,15 @@ The **Security Monitoring - User, Service, and System Monitoring** dashboard pro
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-User-Service-and-System-Monitoring.png')} alt="Linux Security dashboards" />
+
+## Upgrade/Downgrade the Linux app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Linux app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

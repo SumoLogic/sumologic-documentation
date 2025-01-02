@@ -33,7 +33,7 @@ The Palo Alto Networks 9 app uses the following log types:
 * [Threat](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) Logs
 
 
-## Sample logs
+## Sample log messages
 
 ```json title="System logs"
 Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09
@@ -168,8 +168,6 @@ To verify the logs in Palo Alto Networks, do the following:
    ```sql
    _sourceCategory = NW/PAN/V9
    ```
-
-
 
 ## Install the Palo Alto Networks 9 app
 
@@ -320,3 +318,15 @@ Use this dashboard to:
 * Monitor users logged into a device on an IP generating the traffic.
 * Detect which users are not using secure multi-factor authentication.
 * Get better visibility into the application activity at a user level so as to define policies based on users or groups of users.
+
+## Upgrade/Downgrade the Palo Alto Networks 9 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

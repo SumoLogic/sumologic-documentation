@@ -16,17 +16,21 @@ The Field Browser displays the number of values for each field returned in a sea
 
 In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
 
+:::info
+The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
+:::
+
 ![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
 
-1. Search for fields by entering text in this field.
-1. List of Fields shown in the Messages tab.
-1. Indicates a Timestamp field.
-1. List of Fields that are hidden from view.
-1. Indicates the field contains a text string.
-1. Indicates the field contains numerical data.
-1. Click to save the settings for this search.
-1. Displays the count of a field. Available for non-aggregate queries only.
-1. Tilde (`~`) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
+- A. Search for fields by entering text in this field.
+- B. List of Fields shown in the Messages tab.
+- C. Indicates a Timestamp field.
+- D. List of Fields that are hidden from view.
+- E. Indicates the field contains a text string.
+- F. Indicates the field contains numerical data.
+- G. Click to save the settings for this search.
+- H. Displays the count of a field. Available for non-aggregate queries only.
+- I. Tilde (`~`) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
 
 ## Search for fields
 

@@ -28,7 +28,7 @@ The Host List is available for you automatically - no additional configuration n
 
 <img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid gray'}} width="800"/>
 
-Clicking on any of the rows brings up the **Entity Inspector** panel, which provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the **Explore** view.
+Clicking on any of the rows brings up the **Entity Inspector** panel, which provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the [monitoring dashboards](/docs/dashboards/explore-view/).
 
 <img src={useBaseUrl('/img/observability/host_list2.png')} alt="host_list2" style={{border: '1px solid gray'}} width="500"/>
 

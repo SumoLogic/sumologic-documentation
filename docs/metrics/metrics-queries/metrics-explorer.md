@@ -14,8 +14,8 @@ This page describes the Metrics Explorer UI and how to use it.
 The Metrics Explorer appears when you open a new metrics tab. The page
 has two modes:
 
-* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-basic-mode-ui).
-* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui).
+* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports.
+* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators.
 
 If your query supports basic mode, you can freely move between basic and advanced mode to build and run your query.
 
@@ -34,102 +34,6 @@ When converted, the filters convert allowing you to select and modify, make diff
 
 ![switch-modes.png](/img/metrics/metric-explorer-switch-modes.png)
 
-## Switch to the Classic metrics UI
-
-import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
-
-<ClassicMetricsNote/>
-
-If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot kebab icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
-
-Not all of the features available in the Metrics Explorer are found in the Classic UI.
-
-You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot kebab icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
-
-![switch-to-classic.png](/img/metrics/confirm-switch-to-classic.png)
-
-### About Basic Mode UI
-
-This section is a brief introduction to the Basic Mode of the Metrics Explorer. This screenshot shows the UI with a query already built.
-
-![ui.png](/img/metrics/metric-explorer-ui.png)
-
-The key components of the UI are:
-
-| Element | Description |
-|:--|:--|
-| A | In the **Metric** area, you select the metric you want to return. When you click in this area, you’re presented with a list of metrics. In our example query, we selected the `CPU_LoadAvg_15min` metric. As you enter changes to your query, a message displays indicating if you need to execute the query to see updated results. |
-| B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
-| C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
-| D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
-| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards/panels/modify-chart).  |
-| F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
-| G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
-| H | The icons in this area allow you to save and share metric queries. |
-| I | The magnifying glass icon is the run button you click to run a metric query. You can also run a query by pressing Enter on your keyboard, or pressing Alt-Enter, depending on how your **Query Editing** Preference is set.  |
-
-### About Advanced Mode UI
-
-In Advanced Mode, you can enter a free-form metric query. You'll also be prompted with selectors for choosing metrics, metadata, and operators.
-
-![advanced-mode-2.png](/img/metrics/advanced-mode-2.png)
-
-### Keyboard shortcuts
-
-You can use keyboard shortcuts in the Metrics Explorer to navigate quickly among multiple metric queries, hide or show queries, switch to advanced mode, and so on. Use **Shift ?** display a list of keyboard shortcuts. 
-
-The listed shortcuts display for your Operating System. The following list displays for MacOS.
-
-![keyboard-shortcuts.png](/img/metrics/keyboard-shortcuts.png)
-
-### What's in the Time Series Table?
-
-The screenshot below shows a portion of the **Time Series Table** for a metric query. (There are too many columns to show in a screenshot.)
-
-![keyboard-shortcuts.png](/img/metrics/preview-table.png)
-
-### Contents of the Time Series Table
-
-The **Time Series Table** contains a row for each time series returned by a query. A row contains the following information:
-
-* Query. Indicates which query returned the time series, for example `#A` or `#B`.
-* Metric. The name of the metric returned, for example `CPU_LoadAvg_15min`.
-* dimensions. A column appears for each dimension associated with the metric. Dimensions include standard Sumo Logic metadata fields, such as `_sourceCategory`, `_collectorId`, `_sourceHost`, and any other dimensions added to the metric by other means, for instance, using the [Metric Rules Editor](/docs/metrics/metric-rules-editor).
-* Data. The columns furthest to the right of the Time Series table present the current value of the metric, and minimum, maximum, average, current, count, and sum of the metric value over the query time range.
-
-You can search the query results by entering a string in the search area above the Time Series table and clicking the magnifying glass icon.
-
-You can add or remove a column from the Time Series table using the checkbox next to the column name in the pane to the left of the table.
-
-### Context menu
-
-When you mouse over a cell in the Time SeriesEC2 table, a three-dot kebab icon appears. Click it to display a context menu.
-
-The context menu is available in both Basic and Advanced mode.
-
-![time-series-context-menu](/img/metrics/time-series-context-menu.png)
-
-
-The menu options are:
-
-* Copy value. Copies the value in the cell to the clipboard.
-* Copy dimension and value. Copies the dimension and the value in the cell to the clipboard as a key:value pair.
-* Copy entire time series. Copies the complete time series to the clipboard as an array of key:value pairs.
-* Add to query. Adds the dimension to the query.
-* Add to query and run. Adds the dimension to the query and runs the query.
-* Add to query as NOT. Adds the dimension to the query with a NOT.
-* Add to query as NOT and run. Adds the dimension to the query with a NOT and runs the query.
-
-### Export query results
-
-You can export the results of a query to a .cvs file by clicking the download icon at the right end of the search bar.
-
-![download-icon.png](/img/metrics/download-icon.png)
-
-You’ll be prompted with the options to:
-* Include data points. If you select this option, the export will include the individual data points collected during the currently selected time range.
-* Export only selected fields. You can use this option to export a subset of the data and dimensions returned by your query. In the left pane, deselect the items you don’t want to export, and then choose Export only selected fields.
-
 ## View Metrics Query History
 
 Every query run by a user is saved in query history (both incorrect and correct queries). You can use the Metrics query history to find your previous metric queries. Both those run in the Metric Tab and the Dashboard panels. Queries as saved and stored in user settings, just like information on hidden columns for Preview Table and open tabs.
@@ -142,7 +46,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
 ## Create a metric query
 
-1. In the Sumo Logic UI, click **+ New** and choose **Metrics** from the dropdown list.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**.  
 1. The Metrics Explorer opens. Click the **Metric** field. A list of metrics appears. You can scroll through the list, or begin typing to dynamically narrow the list. Click the desired metric.
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
@@ -162,7 +66,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
     ![query-visualization.png](/img/metrics/query-visualization.png)
 
-1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui) syntax and a description of the operator.
+1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](#switch-betweenbasic-and-advancedmode) syntax and a description of the operator.
 
     ![delta-hover.png](/img/metrics/delta-hover.png)
 
@@ -215,7 +119,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 ![pre-join.png](/img/metrics/pre-join.png)
 
-To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot kebab menu in that row.
+To join the queries, add a third query row, and then switch to advanced mode by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
 ![advanced.png](/img/metrics/advanced.png)
 

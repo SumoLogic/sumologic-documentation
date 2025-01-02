@@ -1,7 +1,6 @@
 ---
 title: MSSQL
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -15,6 +14,10 @@ Query data from MSSQL Database.
 ## Actions
 
 * **Query MSSQL** (*Enrichment*) - Query data from MSSQL Database.
+
+:::note
+This Integration does not support client-side encryption.
+:::
 
 ## Change Log
 

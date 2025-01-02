@@ -262,7 +262,7 @@ The Jenkins app uses the following log types:
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
@@ -543,3 +543,15 @@ Use this dashboard to:
 * Identify the failed pipeline stages and steps.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins_Pipeline_Stage_Monitoring.png')} alt="jenkins" />
+
+## Upgrade/Downgrade the Jenkins app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jenkins app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

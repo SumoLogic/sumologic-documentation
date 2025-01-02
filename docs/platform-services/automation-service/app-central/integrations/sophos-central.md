@@ -1,7 +1,6 @@
 ---
 title: Sophos Central
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

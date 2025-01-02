@@ -64,7 +64,7 @@ You can also filter by compliance period to view your past activity and plan ahe
 #### Open in Log Search
 
 You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
-1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.  
 1. Double-click on any SLO line item.
 1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
 
@@ -131,9 +131,10 @@ _view=sumologic_slo_output
 | concat (sloname, " (", sloId, ")") as sloUniqueName
 | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
 | totalEvents - goodEvents as badEvents
-| if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+| if (evaluationType = "Window", queryTimeRange() / sliwindowsize, totalEvents) as denominator
 | 100 * (1 - badEvents / denominator) as sli
 | 100 * (sli - target) / (100 - target) as budgetRemaining
+| if(budgetRemaining < 0, 0, budgetRemaining) as budgetRemaining
 | fields sloUniqueName, budgetRemaining
 ```
 

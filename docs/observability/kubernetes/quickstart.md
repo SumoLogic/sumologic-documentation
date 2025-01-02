@@ -35,7 +35,7 @@ Video: Quick Onboarding with Kubernetes.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -44,7 +44,7 @@ Video: Quick Onboarding with Kubernetes.
 
 ## Prerequisites
 
-* You must have a Sumo Logic account. If you do not have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account).
+* You must have a Sumo Logic account. If you do not have one, [sign up for a free trial](/get-started/sign-up.md).
 * Obtain your Sumo Logic [Access ID and Access Key](/docs/manage/security/access-keys).
 * Ensure that your Sumo Logic account has the Manage Content and Manage Collector [role capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 
@@ -148,7 +148,7 @@ If you're adding additional configuration, we recommend using the [helm values f
 
 ## Next Steps
 
-To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
+To get started, open a new [Kubernetes view](/docs/dashboards/explore-view/#kubernetes-views) and view your Kubernetes App Dashboards.
 
 If you're looking to monitor specific aspects of Kubernetes control plane provided by different cloud vendors (such as GKE, AKS, EKS), you'll need to install those [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
@@ -158,7 +158,7 @@ If you do not see data in Sumo Logic, review our [troubleshooting guide](/docs/s
 
 * [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
 * [Share a Dashboard](/docs/dashboards/share-dashboard-new.md)
-* [Link a dashboard to Explore](/docs/dashboards/link-dashboards.md)
+* [Linking multiple dashboards](/docs/dashboards/link-dashboards.md)
 
 
 ### Kubernetes Partner Apps

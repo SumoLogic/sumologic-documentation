@@ -84,281 +84,33 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.
 
-## Collecting logs for the Salesforce app
+## Collection configuration and app installation
 
-This section provides instructions for setting up event collection from Salesforce for analysis in Sumo Logic.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-### Configure Collection for Salesforce
+<CollectionConfiguration/>
 
-In this section, we will configure a collection of EventLogFiles and audit logs from Salesforce and send them to Sumo Logic via one of the methods listed below.
+:::important
+Use the [Cloud-to-Cloud Integration for Salesforce](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+:::
 
-* For non-FedRamp Sumo Logic deployments:
-    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source)
-* If you're using the Sumo Logic FedRamp deployment:
-    * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
-    * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
+### Create a new collector and install the app
 
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-### Configure a new SumoJanus installation for Salesforce (DEPRECATED)
+<AppCollectionOPtion1/>
 
-These instructions have been tested on Unix, and also work for Windows. For Windows however, you may need to install third-party tools to handle tar.gz files. This process includes the following tasks, which must be performed in the order in which they are presented:
+### Use an existing collector and install the app
 
-1. [Set Salesforce permissions](#Step_1:_Set_Salesforce_user_permissions).
-2. [Install the collector and download the SumoJanus package](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package).
-3. [Deploy the SumoJanus packages](#Step_3:_Deploy_the_SumoJanus_package).
-4. [Configure the SFDC bundle](#Step_4:_Configure_the_SFDC_Bundle).
-5. [Configure the JRE path](#Step_5:_Configure_the_JRE_path).
-6. [Authenticate with Salesforce](#Step_6:_Authenticate_with_Salesforce).
-7. [Configure a script source](#step-7-configure-a-script-source-deprecated).
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
+<AppCollectionOPtion2/>
 
-#### Step 1: Set Salesforce user permissions (DEPRECATED)
+### Use an existing source and install the app
 
-if you are a Salesforce admin, you don’t need to perform the steps in this section. Otherwise, have your Salesforce admin create a permission set for you, as described below.
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-To create a permission set and assign it to a user:
-
-1. In Salesforce, go to **Setup > Administer > Manage Users > Permission Sets**.  
-2. Create a permission set with the **API Enabled** permission and either the **View Event Log Files** or the **View All Data** permission. For more information, see [Create Permission Sets](https://help.salesforce.com/articleView?id=perm_sets_create.htm&type=0) in Salesforce help.
-3. On the **Permission Set Overview > System Permissions** page, select **API Enabled** and **View Event Log Files**.
-4. Click the **Manage Assignments** button in the permission set you just created, and click **Add Assignments**.
-5. Find your user and assign that user to the permission set you just created.
-6. Save your changes.
-
-
-#### Step 2: Install the collector and download the SumoJanus package (DEPRECATED)
-
-In this section you will install a Sumo Logic collector and download the necessary SumoJanus package.
-
-1. **Install the collector**. In Sumo Logic, install a Collector (version i19.115 or later) on the system where you want to collect Salesforce Event Monitoring Logs. Configure an [Installed Collector](/docs/send-data/installed-collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
-2. **Download the SumoJanus package**. The SumoJanus file is required to collect logs from Salesforce. SumoJanus is a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce. Use the following SumoJanus package file that is appropriate for your system:
-   * **For Linux**, download sumojanus-salesforce-dist.3.1.0.tar.gz from:
-[https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.tar.gz](https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.tar.gz).
-   * **For Windows**, download sumojanus-salesforce-dist.3.1.0.zip from
-[https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.zip](https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.zip).
-
-
-#### Step 3: Deploy the SumoJanus package (DEPRECATED)
-
-This section provides steps for a new SumoJanus installation.
-
-* New SumoJanus installation
-  * On Linux, run the following commands:
-   ```
-   tar xzvf sumojanus-salesforce-3.1.0.tar.gz
-   ```
-  * On Windows, you can use Windows Explorer to open the zip package and copy it to the target folder.
-   ```
-   sumojanus-salesforce-dist.3.1.0.zip
-   ```
-* Upgrade an existing SumoJanus installation for Salesforce (DEPRECATED)
-  1. Back up `conf/sumologic.properties` and the data folder.
-  2. Set up a [New SumoJanus installation](#New_SumoJanus_installation)
-  3. Migrate the backed up `conf/sumologic.properties` and data folder to the new Janus folder
-  4. Modify the paths in [Step 7](#Step_7._Configure_a_script_source) below to point to the new folder.
-
-
-#### Step 4: Configure the SFDC Bundle (DEPRECATED)
-
-This section only applies for a new SumoJanus installation.
-
-1. Go to the unzipped `sumojanus-salesforce` folder.
-2. Open the file `conf/sumologic.properties` and add the following section to the end of the file (do not overwrite any existing content in the file):
-  ```
-  [salesforce]
-  url = <Salesforce Instance URL>
-  token_file_path = ${path}/data/salesforce.token
-  record_file_path = ${path}/data/sf_readfiles.dat
-  # If you're using a SFDC sandbox environment, set the following to true
-  sandbox = false
-  interval = daily
-  ```
-3. Set the following properties:
-    1. `url` — Point to your Salesforce URL. For example: `https://na25.salesforce.com`
-    2. `sandbox` — If you are is using a sandbox environment, set the property to `true`. It is set to` false` by default.
-    3. `start_time` — If you don’t specify `start_time`, logs will be collected from two days in the past.
-    4. `interval` — Controls whether you collect daily or hourly logs. Note that later in this procedure, in  [Step 7: Configure a script source](#Step_7:_Configure_a_script_source), the setting you specify for Frequency, should correspond to the `interval` setting.
-
-In the file `conf/sumologic.properties`, the following properties are supported.
-
-<table>
-  <tr>
-   <td>Property   </td>
-   <td>Required or Default   </td>
-   <td>Description   </td>
-  </tr>
-  <tr>
-   <td><code>url</code>   </td>
-   <td>Required   </td>
-   <td>Instance URL (for example, <code>https://na31.salesforce.com/</code>   </td>
-  </tr>
-  <tr>
-   <td><code>token_file_path</code>   </td>
-   <td>Required   </td>
-   <td>Path to access token file to authenticate with SFDC API.   </td>
-  </tr>
-  <tr>
-   <td><code>convert_csv_to_json</code>   </td>
-   <td>Not required, default: <code>true</code>   </td>
-   <td>Set to <code>true</code> if output should be in JSON. This is because raw event logs from SF are in CSV format.   </td>
-  </tr>
-  <tr>
-   <td><code>record_file_path</code>   </td>
-   <td>Not required, default: <code>$&#123;path&#125;/sf_readfiles.dat</code>   </td>
-   <td>Path to store list of log event files read successfully.   </td>
-  </tr>
-  <tr>
-   <td><code>sandbox</code>   </td>
-   <td>Not required, default: <code>false</code> </td>
-   <td>Set to <code>true</code> if the URL points to a sandbox instance.   </td>
-  </tr>
-  <tr>
-   <td><code>start_time</code>   </td>
-   <td>Not required, default: 2 days ago   </td>
-   <td>Milliseconds since the epoch to begin collecting (for example, 1450137600000).   </td>
-  </tr>
-  <tr>
-   <td><code>end_time</code>   </td>
-   <td>Not required, default: now   </td>
-   <td>Milliseconds since the epoch to stop collecting.   </td>
-  </tr>
-  <tr>
-   <td><code>interval</code> </td>
-   <td>Not required, default: <code>daily</code>   </td>
-   <td>Set to <code>daily</code> or <code>hourly</code> for corresponding log files.   </td>
-  </tr>
-</table>
-
-#### Step 5: Configure the JRE path (DEPRECATED)
-
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
-
-* **On Windows, update SumoJanus_SF.bat**. Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bat  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
-```bash
-set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
-```
-
-  If your collector JRE is in a different location, update Line 3 accordingly.  
-
-* **On Linux, update SumoJanus_SF.bash**. Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bash in a text editor. Update the script as follows:
-  1. Add a line that sets `JAVA_HOME `to point to the location of your JRE,  just before the last line of the script. For example, if your collector's JRE is in `/opt/SumoCollector/jre/bin`, insert this line:
-   ```bash
-   JAVA_HOME=/opt/SumoCollector/jre/bin
-   ```
-  2. The last line of the script is:
-  ```bash
-  java -jar ${SUMOJANUS_JAR_FILE} ${runMode} SalesforceCollector-3.1.0.jar -e 1800
-  ```
-  Prefix the line with `$JAVA_HOME/`, like this:
-  ```bash
-  $JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} SalesforceCollector-3.1.0.jar -e 1800
-  ```
-
-
-#### Step 6: Authenticate with Salesforce (DEPRECATED)
-
-After completing the previous steps, you should authenticate the installation with the task outlined in this section.
-
-To authenticate the installation, do the following:
-1. Log out of SalesForce.
-2. Run the following command under the unzipped `sumojanus-salesforce` folder:
-    * On Unix-like systems: `bin/SumoJanus_SF.bash -s`
-    * On Windows: `bin\SumoJanus_SF.bat -s`
-3. A browser will open (if it doesn't, see [If your browser does not open](#If_your_browser_does_not_open), below):
-    * If your browser has already authenticated with Salesforce, a message will display saying that access has been granted.
-    * Otherwise, you will see the Salesforce login. Supply your credentials (with the required permissions) to grant access.
-4. You will then see the following message, which says that the token file has been created:
-
-   If you do not see the login screen and just see the token file message, check to make sure that the token file actually exists under the package folder. If it doesn't exist, sign out and retry the process.
-5. Don't close the session where you ran `bin/SumoJanus_SF.bash -s`.
-
-
-#### If your browser doesn't open
-
-If the target environment does not have a GUI, for example, if you are remoting into the environment, SumoJanus won't be able to open a browser and will print out a link to the CLI instead. Copy that link and paste into a browser. Then follow the authentication and approval process with Salesforce, until you get a URL back that looks like this:
-```xml
-http://localhost:8080/?code=<some_value>&state=<some_value>
-```
-
-Your browser will display error messages like those shown below. You can ignore them.
-
-Copy the URL from the browser, change the protocol from "https" to "http" then use one of the following options ON THE SAME MACHINE where the script is running (in case your browser is actually on a different machine). The use of single quotes surrounding the URL are required:
-
-* For Linux, open a terminal window and run:
-```bash
-curl -X GET 'the above url'
-```
-* For Windows, open a Powershell window and run:
-```bash
-Invoke-WebRequest 'the above url' -Method Get
-```
-
-If everything was successful, you should see the message `“Thank you for granting access for SumoLogic SalesforceCollector”` somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.
-
-You should see a confirmation that the token file has been created, similar to the one shown in [Step 4](#Step_4._Configure_the_SFDC_Bundle) above.
-
-If the curl command returns the message `Empty reply from server`, it is likely that the single quotes around `the_above_url` are missing.
-
-If the browser does not connect to the salesforce instance and you are using Chrome, try again with a Firefox browser.
-
-
-#### Test your configuration
-
-1. To make sure that the settings are correct, run the following command from the `sumojanus-salesforce` folder:
-    * On Unix-like systems: `bin/SumoJanus_SF.bash`
-    * On Windows: `bin\SumoJanus_SF.bat`
-    (run the command without the `-s` flag)
-2. You should see something like this (which may go on for a while):
-3. Remove the `sf_readfiles.dat` file that was just created. This file should be located under the `data` folder.
-
-
-#### Step 7. Configure a script source (DEPRECATED)
-
-In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/script-source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
-
-To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
-
-For the Sumo Logic App for Salesforce, use the following configuration settings:
-
-* **Frequency.**
-    * For daily log files, set frequency to every 6 hours.
-    * For hourly log files, set frequency to 1 hour.
-* **Specify a timeout for your command:**
-    * For daily log files, set timeout to every 3 hours.
-    * For hourly log files, set timeout to 1 hour.
-* **Command:** /bin/bash
-    * On Unix-like systems:` /bin/bash`
-    * On Windows: Windows Script
-* **Type the full path to the script to execute**. For example
-    * On Unix-like systems:` /opt/SumoCollector/sumojanus/bin/SumoJanus_SF.bash`
-    * On Windows: `c:\Program Files\SumoCollector\sumojanus\bin\SumoJanus_SF.bat`
-* **Update the Working Directory**. For Working Directory set the full path to the sumojanus folder, for example:
-    * On Unix-like systems: `/opt/SumoCollector/sumojanus`
-    * On Windows: `c:\Program Files\SumoCollector\sumojanus`
-
-Your path may be different, depending on where you deployed SumoJanus. Salesforce generates event logs during non-peak hours, every 24 hours. This means that you may not see data fill your Dashboard Panels for at least 24 hours. If you do not see data in 48 hours, contact Salesforce customer support.
-
-* **Working Directory:**
-    1. On Unix-like systems:` /opt/SumoCollector/sumojanus`
-    2. On Windows: `c:\Program Files\SumoCollector\sumojanus`
-* **Advanced Options for Logs**
-    3. **Timezone**: Select "UTC".
-    4. **Timestamp Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS`
-    5. **Timestamp Locator:** `TIMESTAMP_DERIVED\":\"([^\"]+)\"`
-    6. Download and deploy the SumoJanus package, as described in [Step 2](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package) and [Step 3](#Step_3:_Deploy_the_SumoJanus_package).
-    7.  Configure the JRE path, as described in [Step 5](#Step_5:_Configure_the_JRE_path).
-    8. From the previous sumojanus folder, copy these files into the corresponding subfolders of the new **sumojanus-salesforce** folder:
-        1. `conf/sumologic.properties`
-        2. `data/salesforce.token`
-        3. `data/sf_readfiles.dat`
-    9. Test your configuration, as described in [Step 6](#Step_6:_Authenticate_with_Salesforce).
-    10. From the SumoLogic UI, identify the script source created in [Step 7](#Step_7._Configure_a_script_source) and modify the path to the script and the working directory so they point to the respective newly created directories.
-
-## Installing the Salesforce app
-
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-
-<AppInstall2/>
+<AppCollectionOPtion3/>
 
 ## Viewing Salesforce dashboards​
 
@@ -508,3 +260,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Failed Logins by Browser.** Displays details of failed logins by web browser in a pie chart for the last seven days.
 
 **API Login Trend by Type.** Provides details on the number and type of APIs used to login in a stacked column chart on a timeline for the last seven days.
+
+## Upgrade/Downgrade the Salesforce app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Salesforce app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

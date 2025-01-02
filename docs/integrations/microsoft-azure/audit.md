@@ -17,16 +17,13 @@ The Azure Audit app uses the following log:
 
 * [Azure Activity Log](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
-## Collecting Logs for the Azure Audit app from Event Hub
+## Collecting logs for the Azure Audit app from Event Hub
 
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
 
-1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
-
-    - [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
-    - Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection) 
+1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
     
-    When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AzureActivity/Logs`.
+    When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AzureActivity/Logs`.
 
 2. Push logs from Azure Monitor to Event Hub.
     1. In the search bar, search, and select **Activity Log**.
@@ -34,7 +31,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
     1. Select the log type in **Category details** that you want to ingest.
     1. Select the **Stream to an event hub** checkbox and then select the following:
         * **Subscription.** Pull-down, select a subscription.
-        * **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+        * **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
         * **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
         * **Event hub policy name.** Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-audit.png" width="800"/>
     1. Click **Save.**
@@ -43,13 +40,15 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit app to use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Azure Audit Dashboards
+## Viewing Azure Audit dashboards
 
-The predefined Dashboards on Azure Audit allow you to instantly monitor the activities and events. All the dashboards in the app, except the Azure Audit - Active Directory dashboard, support logs from both Event Hub and Insight API.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -123,3 +122,15 @@ Use this dashboard to see the details on events, resources, and users.
 **Events by User.** Provides details on events per user in an area chart on a timeline for the last seven days.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
+
+## Upgrade/Downgrade the Azure Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

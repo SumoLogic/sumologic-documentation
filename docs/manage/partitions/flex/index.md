@@ -5,10 +5,10 @@ description: Learn about Sumo Logic Flex Pricing.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Flex pricing delivers a new financial model for log management, in which your businesses can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable  and secure digital experience.
+Flex Pricing delivers a new financial model for log management in which your businesses can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience.
 
 :::sumo important
-Search modifier `datatier` is not supported for any Flex query.
+The search modifier `dataTier` is not supported for Flex queries.
 :::
 
 ## Feature support 
@@ -62,7 +62,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/flex/flex-pricing-faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
+  <a href="/docs/manage/partitions/flex/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
   <p> Answers to FAQ about Flex.</p>
   </div>
 </div>

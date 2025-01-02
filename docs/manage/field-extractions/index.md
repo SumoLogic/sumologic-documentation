@@ -6,19 +6,30 @@ description: Field Extraction speeds the search process by parsing fields as log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
+Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
 Fields are extracted from the time you create your FER moving forward. Therefore, set your FERs early on to take advantage of this automatic parsing mechanism.
 
 For best practices on naming your fields, see [Field Naming Convention](field-naming-convention.md). 
 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
+ 
+
+To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  
+:::note
+You can see the suggestions only if there are two or more responses for the same column or section.
+:::
+
 :::important
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::
 
-![FER page.png](/img/field-extraction-rules/fer-page.png)
+<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="fer-page" style={{border:'1px solid gray'}} width="800"/>
 
-The **Manage Data** > **Logs** > **Field Extraction Rules** page displays the following information: 
+The Field Extraction Rules page displays the following information: 
 
 When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
 
@@ -32,7 +43,7 @@ When hovering over a row in the table there are icons that appear on the far ri
 
 You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields) page.
 
-On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
+On the Field Extraction Rules page you can:
 
 * Click **+ Add** to [create a Field Extraction Rule](create-field-extraction-rule.md).
 * Search Field Extraction Rules by name and scope.
@@ -55,7 +66,7 @@ import FerLimit from '../../reuse/fer-limitations.md';
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -65,7 +76,7 @@ import Iframe from 'react-iframe';
 
 Changes to Field Extraction Rules are implemented immediately.
 
-1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
 1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
 1. Make changes as needed and click **Save** when done.
 
@@ -73,7 +84,7 @@ Changes to Field Extraction Rules are implemented immediately.
 
 Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields) page.
 
-1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
 1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
 
 ## Guide contents

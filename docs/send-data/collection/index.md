@@ -8,7 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="50"/>
 
-This page provides an overview of the Sumo Logic **Collection** page UI, where you can manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data** > **Collection** > **Collection**. <br/>![Collection page June 2021.png](/img/collector/collection-page.png)
+This page provides an overview of the Sumo Logic **Collection** page UI, where you can manage all of your Collectors and Sources. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Collection page, in the main Sumo Logic menu select **Manage Data > Collection > Collection**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Collection page, in the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+ 
+
+![Collection page June 2021.png](/img/collector/collection-page.png)
 
 ## Prerequisites
 

@@ -1,11 +1,11 @@
 ---
 id: troubleshoot-with-explore
-title: Troubleshoot Kubernetes with Explore
+title: Troubleshoot with Kubernetes Views
 sidebar_label: Troubleshooting
-description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
+description: Kubernetes views allow you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
-[Explore navigation](/docs/dashboards/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+[Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
@@ -14,7 +14,7 @@ description: Explore navigation allows you to quickly locate the object in a phy
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -46,7 +46,8 @@ In this troubleshooting scenario, we detect a problem with a cluster while nav
 
 To troubleshoot a problem with our cluster, we performed the following steps:
 
-1. At the top of the navigation panel, we clicked **Explore By**, selected **Kubernetes Service View**, then chose the cluster we wanted to explore, and selected the Dashboards **Kubernetes - Cluster Overview** option on the upper right menu bar.<br/> ![TSS_Cluster_Overview_dialog.png](/img/kubernetes/TSS_Cluster_Overview_dialog.png)<br/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). We went to our **Home** dashboard and selected **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, we selected **Observability**, and then under **Infrastructure Monitoring**, we selected **Kubernetes**.
+1. In the upper-left corner of the screen, we selected **Kubernetes Service View**, then chose the cluster we wanted to explore, and selected the Dashboards **Kubernetes - Cluster Overview** option on the upper right menu bar.<br/> ![TSS_Cluster_Overview_dialog.png](/img/kubernetes/TSS_Cluster_Overview_dialog.png)<br/>
 The Dashboards view on the right displays panels that show the statuses of the clusters.
 1. In our scenario, we selected the **prod-loggen** namespace in the **Pods Running** panel and discovered 2 pods that were not functioning (shown in Red). <br/>![TSS_Cluster_Pods-Running_panel.png](/img/kubernetes/TSS_Cluster_Pods-Running_panel.png)
 1. We hovered our cursor over one of the failed pods for a detailed view of the failed services.<br/> ![TSS_Failed_Pod_details.png](/img/kubernetes/TSS_Failed_Pod_details.png)<br/> In our scenario, we focused on PagerDuty pod and made a note of the pod name, including the last 5 characters that follow the hyphen (in this example we are looking at **pagerduty-84d685f79f-4wjln**). Pods are ephemeral and the characters after **pagerduty-** constantly change, so it's important to make a note of them for further investigation. 
@@ -55,7 +56,7 @@ The Dashboards view on the right displays panels that show the statuses of the
 1. The Aggregates view displays by default, so we clicked the **Messages** tab to analyze the log messages. <br/> ![TSS_Logs_Messages_tab.png](/img/kubernetes/TSS_Logs_Messages_tab.png)
 1. To further isolate the data we're looking for, we unchecked **Message** in the left navigation panel. We had parsed the log message so as to leave out the message field, allowing us to view log messages that are easier to understand so we can focus on the parsed log metadata.  <br/> ![TSS_Logs_Message_field.png](/img/kubernetes/TSS_Logs_Message_field.png)
 1. We want to focus on two messages to pinpoint the authentication problem. The **first message** shows a **java.io.IOException** and contains an HTTP **status code 401** related to authentication. The **second message** shows the **access_id** used for the authentication. To isolate this further, we highlighted the access_id, **suRhn0DW7l4DZ**, right-clicked and selected **Copy Selected Text**. <br/> ![TSS_Logs_2_messages.png](/img/kubernetes/TSS_Logs_2_messages.png)
-1. To search for the keyword **suRhn0DW7l4DZU**, we clicked **+ New**. selected **Log Search** from the dropdown menu, changed the time interval to the **Last 60 Minutes**, then pasted the access_id keyword **suRhn0DW7l4DZU** in the query window and clicked **Start**. To view the logs retrieved from 2 Source Categories, we went to Hidden fields on the left and clicked **Source Category**. <br/>![TSS_New_Log_Search_drilldown.png](/img/kubernetes/TSS_New_Log_Search_drilldown.png)
+1. To search for the keyword **suRhn0DW7l4DZU**, we went to our **Home** page and selected **Log Search** from the dropdown menu, changed the time interval to the **Last 60 Minutes**, then pasted the access_id keyword **suRhn0DW7l4DZU** in the query window and clicked **Start**. To view the logs retrieved from 2 Source Categories, we went to Hidden fields on the left and clicked **Source Category**. <br/>![TSS_New_Log_Search_drilldown.png](/img/kubernetes/TSS_New_Log_Search_drilldown.png)
 1. We noticed that the Labs/Sumo_Logic only had a couple of messages. This caught our attention, because root cause items occur less frequently. To investigate further, we highlighted and select the **Labs/Sumo_Logic** Source Category. <br/> ![TSS_Source_Category_Labs-Sumo_Logic.png](/img/kubernetes/TSS_Source_Category_Labs-Sumo_Logic.png) <br/> We discovered evidence that the access key suRhn0DW7l4DZU was disabled and deleted, but were only viewing logs that contained the access_id, which was too limiting for a decisive conclusion of what caused the root problem. To get a better understanding of what occurred, we wanted to look at other messages that happened around the same time of the access key deletion and disablement.
 1. We clicked **Category Labs/Sumo_Logic** and from the dropdown chose **Surrounding Messages** and **+/- 1 Minute** to view the other log messages that occurred before and after. <br/> ![TSS_Surrounding_Log_messages.png](/img/kubernetes/TSS_Surrounding_Log_messages.png)  <br/> There were 5 messages that revealed what happened, reading the lines from the bottom to the top to discover the sequence of events leading up to the root cause of the authentication problem:
    * Line 5: User kenneth logs out.
@@ -72,4 +73,4 @@ After further investigation, we discovered that Kenneth left the company and wa
 
 ## More Information
 
-* [Explore navigation](/docs/dashboards/explore-view)
+* [Explore Monitoring Dashboards](/docs/dashboards/explore-view/#kubernetes-views)

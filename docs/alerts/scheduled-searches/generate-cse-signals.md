@@ -1,13 +1,13 @@
 ---
 id: generate-cse-signals
 title: Generate Cloud SIEM Signals With a Scheduled Search
-sidebar_label: Generate Cloud SIEM Signals With a Scheduled Search
+sidebar_label: Generate Cloud SIEM Signals
 description: You can generate a Cloud SIEM Signal with a scheduled search.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about creating a scheduled search that will trigger a Cloud SIEM Signal. Before you start using scheduled searches to create Cloud SIEM Signals, it is helpful to understand what Signals are, and how they relate to the generation of Cloud SIEM Insights. For information about how it all works see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). 
+This page has information about creating a scheduled search that will trigger a Cloud SIEM Signal. Before you start using Scheduled Searches to create Cloud SIEM Signals, it is helpful to understand what Signals are, and how they relate to the generation of Cloud SIEM Insights. For information about how it all works see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). 
 
 :::note
 For a more detailed description of the options you can configure for a scheduled search, see [Schedule a Search](schedule-search.md).
@@ -66,10 +66,10 @@ type you select. A field whose name does not match a Cloud SIEM attribute will n
 ## Scheduling the search
 
 1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" width="800"/>
-1. The **Save Item** popup appears. 
+1. The **Save Item** popup appears.
    :::note
    The name of your scheduled search will appear as the signal name in Cloud SIEM.
-   ::: 
+   :::
    <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
 1. Click **Schedule this search**.
 1. The **Save Item** popup prompts you to select a run frequency.<br/> ![run-frequency.png](/img/alerts/run-freq-signal-gen.png)

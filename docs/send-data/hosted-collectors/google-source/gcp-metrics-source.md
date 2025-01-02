@@ -62,8 +62,8 @@ If you create and manage all service accounts in one project which is different 
 
 For information on available metrics, see [GCP Metrics](https://cloud.google.com/monitoring/api/metrics_gcp).
 
-1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
-2. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 3. Click **Add Source** next to a Hosted Collector.
 4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" width="80"/>
 5. **Name**. Enter a name to display for the new source.

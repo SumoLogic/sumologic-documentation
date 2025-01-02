@@ -19,7 +19,7 @@ This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft
 
 We use the Telegraf agent for Host and Process metrics collection. Telegraf runs on the same system and uses the input plugins to obtain host and process metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic.
 
-The following input plugins are used by Sumo Logic
+The following input plugins are used by Sumo Logic:
 
 For Linux:
 * [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/README.md)
@@ -63,7 +63,7 @@ This section provides instructions for configuring metrics collection for the Su
         * URL - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
         * **Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
            * data_format = “carbon2” In the output plugins section, which is `[[outputs.sumologic]]`, This indicates that metrics should be sent in the carbon2 format to Sumo Logic.
-        * For other optional parameters refer to [the respective plugin](#input-plugins)documentation for configuring the input plugins for Telegraf.
+        * For other optional parameters refer to the respective plugin documentation [listed here](#collecting-metrics-for-host-and-processes) for configuring the input plugins for Telegraf.
         * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
@@ -137,7 +137,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 ### Troubleshooting
 
 * To identify the operating system version and name.
-   * For Windows machines, run the command in Powershell to get the OS Version.
+   * For Windows machines, run the command in PowerShell to get the OS Version.
      ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
@@ -154,7 +154,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 * If the telegraf conf changes are not reflecting, make sure to restart Telegraf using the command
     * Windows: `./telegraf.exe --service restart`
     * Linux: `sudo service telegraf restart`
-* If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](#input+plugins) documentation for more information.
+* If certain metrics are not coming you may have to run the telegraf agent as root. Check the respective plugin documentation [listed here](#collecting-metrics-for-host-and-processes) for more information.
 
 ## Sample queries
 
@@ -190,16 +190,16 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
    * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `'_sourceCategory=yourclustername/metrics'`.
    * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
-2. Go to Manage Data > Alerts > Monitors.
-3. Click Add.
-4. Click Import to import monitors from the JSON above.
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+3. Click **Add**.
+4. Click **Import** to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](#Alert_Configuration) of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/settings) document to enable monitors, to configure each monitor, to send notifications to teams or connections, see the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
 
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#from-the-preferences-page). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 1. **Download the Sumo Logic Terraform package for Host and Process alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
 1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/`. Edit the `host_and_processes.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
@@ -253,7 +253,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 #### Post Installation
 
-If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 ## Installing the Host and Process Metrics app
 
@@ -365,6 +365,17 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
 
+## Upgrade/Downgrade the Host and Process Metrics app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host and Process Metrics app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 
 ## Host and Process Metrics Alerts

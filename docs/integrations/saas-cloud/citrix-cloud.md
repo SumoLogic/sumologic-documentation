@@ -15,7 +15,7 @@ The Citrix Cloud is a platform that manages and hosts various Citrix cloud servi
 
 This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions#fields) documentation.
 
-### Sample log
+### Sample log messages
 
 ```json
 {
@@ -87,3 +87,15 @@ In addition to the above, the Dashboard provides a summary of all the Administra
 ### Client, Group Administrator Overview
 
 **Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
+
+## Upgrade/Downgrade the Citrix Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Citrix Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) JSON app helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
-We recommend using the Active Directory JSON app in combination with the Windows JSON App.Active Directory logs are sent to Sumo Logic through OpenTelemetry [windowseventlogreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
+We recommend using the Active Directory JSON app in combination with the Windows JSON app. Active Directory logs are sent to Sumo Logic through OpenTelemetry [windowseventlogreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Schematics.png' alt="Schematics" />
 

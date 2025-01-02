@@ -15,14 +15,14 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 
 ### Configure an Installed Collector
 
-1. In Sumo Logic core platform, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
 1. Download the appropriate collector for your operating system.
 1. Install the collector. Instructions for your preferred operating system and method of installation are available on the [Installed Collectors](/docs/send-data/installed-collectors) page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector popup** appears. <br/> <img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" width="500"/>
+1. The **Edit Collector popup** appears. <br/> <img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -36,17 +36,17 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes. <br/> <img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/> 
+1. The page refreshes. <br/> <img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more
     information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
 1. **Port**. Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configure-zscaler-nss) below.
+1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configurezscaler-nss) below.
 1. **Fields**. 
     1. If you have not configured the Installed Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you have not configured the Installed Collector to parse all sources in the collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Zscaler/Zscaler Nanolog Streaming Service/Zscaler Nanolog Streaming Service-LEEF.* 
@@ -60,6 +60,6 @@ In this step, you configure ZScaler NSS to send log messages to the Sumo Logic 
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log  Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
-1. On the **Log Mappings** page search for "Nanolog Streaming Service" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/zscaler-nss-record-volume.png')} alt="Zscaler record volume" width="600"/>   
-1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for ZScaler NSS security Records. <br/><img src={useBaseUrl('img/cse/zscaler-nss-search.png')} alt="Zscaler NSS search" width="400"/> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "Nanolog Streaming Service" and check the **Records** columns.
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for ZScaler NSS security records. <br/><img src={useBaseUrl('img/cse/zscaler-nss-search.png')} alt="Zscaler NSS search" style={{border: '1px solid gray'}} width="400"/>

@@ -19,7 +19,7 @@ With the Sumo Logic app for Miro, security teams can stay on top of potential se
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Log"
 {
@@ -54,7 +54,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
       "id": "450256789"
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory=miro
@@ -96,3 +96,15 @@ The **Miro - Security Events** dashboard provides a comprehensive overview of yo
 The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />
+
+## Upgrade/Downgrade the Miro app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Miro app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

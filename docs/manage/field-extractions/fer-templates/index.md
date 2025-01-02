@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 FER Templates are provided for common applications such as Apache Access, Akamai Cloud Monitor, AWS ELB, and Microsoft IIS logs. Rather than creating a parse expression from scratch, you can select a Template from the list, preview it, and then click to apply it.
 
-<img src={useBaseUrl('img/field-extraction-rules/FERTemplates.png')} alt="img/field-extraction-rules/FERTemplates.png" width="450"/>
+<img src={useBaseUrl('img/field-extraction-rules/FERTemplates.png')} alt="FER Templates" width="450"/>
 
 The template will overwrite any existing parse expression.
 

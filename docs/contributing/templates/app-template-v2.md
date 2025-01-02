@@ -97,3 +97,15 @@ The **Split - Overview** dashboard provides a quick snapshot of ....
 The **Split - Users and Groups** dashboard provides a quick snapshot of ....
 
 <!-- #example: The **Split - Users and Groups** dashboard offers concise statistical summaries pertaining to Split users and groups, including administrative actions taken concerning them.-->
+
+## Upgrade/Downgrade the Split app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Split app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

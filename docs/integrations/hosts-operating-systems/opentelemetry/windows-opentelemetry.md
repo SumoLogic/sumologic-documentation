@@ -20,11 +20,18 @@ The Windows app, which is based on the Windows event log format, consists of pre
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#windows-alerts). For details on creating custom monitors, refer to [Create monitors for Windows app](#create-monitors-for-windows-app).
+:::
+
 ## Fields Created in Sumo Logic for Windows
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of Windows app install if not already present. 
 
-- **`sumo.datasource`**. Has a fixed value of **windows**.
+- **`sumo.datasource`**. Has a fixed value of `windows`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host group is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed. 
 
 ## Log types
 
@@ -37,6 +44,7 @@ Standard Windows event channels include:
 - application
 
 ## Collection configuration and app installation
+
 :::note
 You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
@@ -126,6 +134,25 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 If you receive an error during installation that includes the message `failed to bind to address localhost`, change all instances of `localhost` to `127.0.0.1` in the YAML file. 
 :::
 
+## Sample log messages
+
+```json
+{
+	"record_id":"6316",
+	"channel":"Application",
+	"event_data":"",
+	"task":"0",
+	"provider":"{\"name\":\"Microsoft-Windows-Security-SPP\",\"guid\":\"{E23B33B0-C8C9-472C-A5F9-F2BDFEA0F156}\",\"event_source\":\"Software Protection Platform Service\"}",
+	"system_time":"2023-01-20T15:22:02+0000816Z",
+	"computer":"EC2AMAZ-T30T53R",
+	"opcode":"0",
+	"keywords":"Classic",
+	"message":"Offline downlevel migration succeeded.",
+	"event_id":"{\"id\":\"16394\",\"qualifiers\":\"49152\"}",
+	"level":"Information"
+}
+```
+
 ## Sample metrics message
 
 ```sql
@@ -157,13 +184,13 @@ If you receive an error during installation that includes the message `failed to
 
 ## Sample queries
 
-This sample metrics query is from the **Host Metric - CPU** dashboard > **CPU User Time** panel.
+This is a sample metrics query from the **CPU User Time** panel in the **Host Metric - CPU** dashboard.
 
 ```sql title="Metrics Query String"
 sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
 ```
 
-This sample log query is from the **Windows - Overview** dashboard > **System Restarts** panel.
+This is a sample log query from the **System Restarts** panel in the **Windows - Overview** dashboard.
 
 ```sql title="Log Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
@@ -174,26 +201,11 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 | count as Restarts
 ```
 
-## Sample logs
+## Viewing the Windows event log based dashboards
 
-```json
-{
-	"record_id":"6316",
-	"channel":"Application",
-	"event_data":"",
-	"task":"0",
-	"provider":"{\"name\":\"Microsoft-Windows-Security-SPP\",\"guid\":\"{E23B33B0-C8C9-472C-A5F9-F2BDFEA0F156}\",\"event_source\":\"Software Protection Platform Service\"}",
-	"system_time":"2023-01-20T15:22:02+0000816Z",
-	"computer":"EC2AMAZ-T30T53R",
-	"opcode":"0",
-	"keywords":"Classic",
-	"message":"Offline downlevel migration succeeded.",
-	"event_id":"{\"id\":\"16394\",\"qualifiers\":\"49152\"}",
-	"level":"Information"
-}
-```
-
-## Viewing Windows Event Log-Based dashboards
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Windows - Overview
 
@@ -251,12 +263,16 @@ The **Windows - Application** dashboard provides detailed information about inst
 Use this dashboard to:
 
 - Monitor Install and uninstall of applications performed on the system.
-- Monitor log levels (error, warning, information) through trends and quick snapshots.
+- Monitor log levels (error, warning, and information) through trends and quick snapshots.
 - Monitor various application-specific events happening through recent messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Application.png' alt="Windows - Application" />
 
-## Windows - Host Metric Based Dashboards 
+## Viewing the Windows host metric based dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Host Metrics - Overview
 
@@ -346,3 +362,17 @@ Use this dashboard to:
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
+
+## Create monitors for Windows app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows - High CPU Utilization Alert` | This alert gets triggered when cpu utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Windows - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Windows - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |

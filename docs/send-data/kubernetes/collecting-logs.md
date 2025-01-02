@@ -301,18 +301,40 @@ It's possible to customize the built-in Sumo Logic metadata (like [source name][
 
 ```yaml
 sumologic:
-  logs:
-    container|systemd|kubelet:
-      ## Set the _sourceHost metadata field in Sumo Logic.
-      sourceHost: ""
-      ## Set the _sourceName metadata field in Sumo Logic.
-      sourceName: "%{namespace}.%{pod}.%{container}"
-      ## Set the _sourceCategory metadata field in Sumo Logic.
-      sourceCategory: "%{namespace}/%{pod_name}"
-      ## Set the prefix, for _sourceCategory metadata.
-      sourceCategoryPrefix: "kubernetes/"
-      ## Used to replace - with another character.
-      sourceCategoryReplaceDash: "/"
+ clusterName: my-k8s-cluster
+ logs:
+   container:
+     enabled: true
+     ## Set the _sourceHost metadata field in Sumo Logic.
+     sourceHost: "%{node}"
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "%{namespace}.%{pod}.%{container}"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/%{namespace}/%{pod_name}"
+     ## Set the prefix, for _sourceCategory metadata. Not able to use variables for prefix
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   systemd:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_systemd"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/systemd"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   kubelet:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_kubelet"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/kubelet"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
 ```
 
 As can be seen in the above example, these fields can contain templates of the form `%{field_name}`, where `field_name` is the name of a resource attribute. Available resource attributes include the values of `sumologic.logs.fields`, which by default are:
@@ -504,9 +526,144 @@ sumologic:
             manual_prefix_regexp: (\\{\".*|\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}.*)
 ```
 
+## Sending data to multiple targets
+
+:::note
+This feature is available from version [v4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) of Kubernetes Helm Chart.
+:::
+
+It is possible to send logs to multiple locations. This section describes the following cases:
+
+- Send logs simultaneously to Sumo Logic and other locations.
+- Send all logs to Sumo Logic and part of it to other locations.
+- Send logs selectively to multiple locations.
+
+### Send logs simultaneously to Sumo Logic and other locations
+
+In order to send data to Sumo Logic and other locations (for example another Sumo Logic organization), `sumologic.logs.otelcol.extraExporters` should be used.
+
+With the following configuration, data will be sent to both default Sumo Logic organization and the production one:
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      extraExporters:
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
+```
+
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
+
+### Send all logs to Sumo Logic and a part of it to other locations
+
+If you want to send only specific parts of logs to another location, you should use `sumologic.logs.otelcol.routing.table` along with `sumologic.logs.otelcol.extraExporters`.
+
+In the following example, all logs are sent to default Sumo Logic organization, while only the logs from the `production` namespace are also sent to production Sumo Logic organization.
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      extraExporters:
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
+      routing:
+        table:
+          ## send all logs from `production` namespace to `sumologic/production` exporter
+          ## as `useDefaultExporters` is set to `true` (default), all logs will be sent to `sumologic` as well
+          - exporter: sumologic/production
+            statement: route() where resource.attributes["namespace"] == "production"
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
+```
+
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
+
+`sumologic.logs.otelcol.routing.table` is a list of maps, which consist of the keys `exporter` and `statement`.
+
+Logs are sent to `exporter` when `statement` is met. `exporter` should be defined in `sumologic.logs.otelcol.extraExporters`, or the default `sumologic` may be used. `statement` has to be written in [OpenTelemetry Transformation Language](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/routingprocessor/README.md#tech-preview-opentelemetry-transformation-language-statements-as-routing-conditions).
+
+:::note
+Remember to use [attributes after translation to Sumo Logic schema](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/sumologicprocessor#attribute-translation). For example, use `namespace` instead of `k8s.namespace.name`.
+:::
+
+:::note
+If a log matches multiple statements, it will be sent to all corresponding exporters. For example, the following routing table will send logs from the `production` namespace to `sumologic/production` and `sumologic/soc`:
+
+```yaml
+- exporter: sumologic/soc
+  statement: route() where resource.attributes["namespace"] == "production"
+- exporter: sumologic/production
+  statement: route() where resource.attributes["namespace"] == "production"
+```
+
+:::
+
+### Send logs selectively to multiple locations
+
+This scenario differs from the previous ones by not sending all logs to Sumo Logic. If you want to send some data to Sumo Logic and some (the same or other) data to other locations, you need to disable default exporters. Set `sumologic.logs.otelcol.useDefaultExporters` to `false,` and then set `sumologic.logs.otelcol.routing.fallbackExporters` to a list of exporters that are going to be used for the logs which do not match any of the routing table statements.
+
+In the following example, logs from the `production` namespace are going to be sent to the production Sumo Logic exporter, and all remaining logs will be sent to the default Sumo Logic exporter:
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      ## useDefaultExporters set to false to stop sending all logs to default exporters
+      useDefaultExporters: false
+      extraExporters:
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          ## use environmental variable to set endpoint
+          endpoint: ${PRODUCTION_ENDPOINT}
+      routing:
+        ## use sumologic as fallbackExporter, which means it will get all data which do not match any statement
+        fallbackExporters:
+          - sumologic
+        table:
+          ## send all logs from `production` namespace to `sumologic/production` exporter
+          - exporter: sumologic/production
+            statement: route() where resource.attributes["namespace"] == "production"
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        ## Set `PRODUCTION_ENDPOINT` env variable for `sumologic/production exporter` as `endpoint-production-logs` property of `sumologic-secrets` secret
+        - name: PRODUCTION_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secrets
+              key: endpoint-production-logs
+```
+
+For the example above, the `sumologic-secrets` secret with the `endpoint-production-logs` key is required in the Sumo Logic installation namespace.
+
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
-[source_name]: /docs/send-data/reference-information/metadata-naming-conventions.md#Source_Name
+[source_name]: /docs/send-data/reference-information/metadata-naming-conventions/#source-name
 [opentelemetry_processors]: https://opentelemetry.io/docs/collector/configuration/#processors
 [attributes_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/attributesprocessor/README.md
 [resource_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourceprocessor/README.md

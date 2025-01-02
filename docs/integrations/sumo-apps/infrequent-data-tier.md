@@ -9,10 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="75"/>
 
-The Infrequent Data Tier App provides visibility into the On-demand Search usage and costs associated with Infrequent Data Tier by providing intuitive pre-configured dashboard and searches. Infrequent Data Tiers are an economical, fully managed log analytics solution for high volume, infrequently accessed data. With Infrequent Data Tiers, organizations have a solution that can aggregate, store and analyze verbose sources such as App Debug, CDN, Load Balancer, and other infrequently accessed logs at a dramatically lower price point.
+The Infrequent Data Tier app provides visibility into the On-demand Search usage and costs associated with Infrequent Data Tier by providing intuitive pre-configured dashboard and searches. Infrequent Data Tiers are an economical, fully managed log analytics solution for high volume, infrequently accessed data. With Infrequent Data Tiers, organizations have a solution that can aggregate, store and analyze verbose sources such as App Debug, CDN, Load Balancer, and other infrequently accessed logs at a dramatically lower price point.
 
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
-
 
 ## Log types
 
@@ -43,7 +42,6 @@ _index=sumologic_search_usage_per_query \
 analytics_tier="Infrequent"
 ```
 
-
 ### Sample queries
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
@@ -56,7 +54,6 @@ _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_nam
 | sum (sizeInGB) as total_data_scanned_GB, count as query_count by _timeslice
 | fillmissing timeslice (1d)
 ```
-
 
 ## Prerequisites
 
@@ -83,6 +80,10 @@ Infrequent Data Tiers enable you to ingest log or machine data for a minimal cos
 
 [Infrequent Data Tiers](/docs/manage/partitions/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
 
+The Search Audit Index must be enabled by an administrator. To enable the Search Audit Index:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
+
 You can verify if you already have the Search Audit Index enabled by querying:
 ```sql
 _index=sumologic_search_usage_per_query
@@ -90,30 +91,17 @@ _index=sumologic_search_usage_per_query
 
 If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
 
+## Installing the Infrequent Data Tier app
 
-## Installing the Infrequent Data Tier App
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
-
-:::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
-:::
-
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
-
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing Infrequent Data Tier dashboards
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Panel_Filter.png')} alt="test" />
-
+<ViewDashboards/>
 
 ### Data Scanned Overview
 
@@ -150,8 +138,8 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Query_Analysis.png')} alt="IDT_Query_Analysis" />
 
-
 ### Credits Consumed
+
 The **Infrequent Data Tier - Credits Consumed** dashboard provides visibility into the total amount of Cloud Flex Credits your organization has consumed with infrequent queries. This allows you to monitor and control on-demand search costs for the Infrequent Tier.
 
 Use this dashboard to:
@@ -161,3 +149,15 @@ Use this dashboard to:
 * Identify the most expensive queries on the Infrequent Tier.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="IDT_Credits_Consumed" />
+
+## Upgrade/Downgrade the Infrequent Data Tier app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Infrequent Data Tier app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

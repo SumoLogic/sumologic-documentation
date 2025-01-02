@@ -6,7 +6,7 @@ description: Frequently asked questions about collecting data into Sumo Logic th
 ---
 
 :::sumo
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://community.sumologic.com/s/topic/0TOE0000000g6anOAA/Collect-Data).
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
@@ -102,7 +102,7 @@ When attempting to upgrade a Windows Collector from the UI, the upgrade fails an
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
-1. Download the [wrapper-dll.zip](/files/wrapper-dll.zip) file attached to this article, which includes the missing wrapper.dll files.
+1. Download the <a href="/files/wrapper-dll.zip" target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
 1. Stop the Sumo Logic Collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 
@@ -110,7 +110,9 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data** > **Collection** > **Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+
+     1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -546,7 +548,9 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic, select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. 
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -585,7 +589,7 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 

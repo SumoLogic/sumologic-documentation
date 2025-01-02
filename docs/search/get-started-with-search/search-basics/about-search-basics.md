@@ -19,7 +19,7 @@ How to search data using the Basic Search Mode in Sumo Logic.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -31,7 +31,7 @@ In the **Search** tab, a search query is typically formatted something like th
 
 Start with a basic search:
 
-1. Click **+ New** button in the tab bar and select **Log Search**.<br/>  ![new log search UI buttons.png](/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
 1. Enter a simple key term like "error" in the search field, or type an asterisk wildcard (`*`) to find all messages. 
 1. Hit **Enter** or click **Start**.
 1. Sumo Logic returns all the log entries containing the search term in the **Messages** tab below the histogram.
@@ -46,7 +46,7 @@ Here's an example:
 
 This query means:
 
-![query syntax](/img/reuse/query-search/query-syntax-new.png)
+![A diagram illustrating a Sumo Logic query. The query is '_sourcecategory=apache | parse "* - -" as src_ip | count by src_ip | sort_count'. The diagram breaks down the query into three parts: a keyword expression '_sourcecategory=apache' to specify the source category (in this case, a metadata field), parsing out the IP address into a field named 'src_ip' using an endpoint anchor 'parse "* - -" as src_ip', and counting and sorting the results 'count by src_ip | sort_count'.](/img/reuse/query-search/query-syntax-new.png)
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
@@ -61,6 +61,13 @@ This method lines up the pipes and makes your query much easier to read.
 :::note
 Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
 :::
+
+## Default data scope
+
+The data that is used to execute the query when there is no `_index`, `_sourcecategory`, `_view` , or metadata fields in the source expression of a query is called Default scope data.
+
+- For data-tier customers, the data in continuous tier is considered as default scope. For queries relying on default scope, example, `_index`, `_sourcecategory`, `_view` , or metadata fields, for example `error | count` or `*`, only continuous tier data will be considered for the query, as frequent and infrequent data is excluded from the default scope.
+- For [flex customers](/docs/manage/partitions/flex/create-edit-partition-flex), you can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition. For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). When you run the query without referring to `_index`, for example `error | count` or `*`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope.
 
 ## See also
 

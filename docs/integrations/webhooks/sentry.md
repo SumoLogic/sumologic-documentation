@@ -22,7 +22,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 - Comments
 - Errors
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>View sample log message</summary>
@@ -511,7 +511,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 ```
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/sentry" "project_slug"
@@ -582,3 +582,15 @@ The **Sentry - Overview** offers valuable insights and statistical information r
 The **Sentry - Tags** delivers valuable insights and statistical analysis of error events, including their categorization by tags and their trends over time.
 
 <img src={useBaseUrl('img/integrations/webhooks/Sentry-Tags.png')} style={{border: '1px solid black'}} alt="Sentry-Tags"/>
+
+## Upgrade/Downgrade the Sentry app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sentry app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

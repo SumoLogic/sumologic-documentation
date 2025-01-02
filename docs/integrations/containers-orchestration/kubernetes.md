@@ -61,7 +61,7 @@ getsockopt: connection refused"}
 This section contains instructions for collecting logs and metrics for the Sumo App for Kubernetes.
 
 :::note Prerequisites  
-Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
+Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards.
 * `cluster`
 * `container`
 * `deployment`
@@ -81,6 +81,8 @@ The Deployment Guide has information on advanced configurations, best practices,
 
 ## Installing the Kubernetes app
 
+### Method A: Installing app via command line using helm chart
+
 Now that you have set up the collection for Kubernetes app, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
 To install the app, do the following:
@@ -95,6 +97,9 @@ To install the app, do the following:
    :::
 6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
+### Method B: Importing a JSON file
+
+If you want to just update the dashboards, you can [download](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/kubernetes_application_plane_helm_chartv4.json) and import the json in your personal folder, see [Import and Export Content in the library](/docs/get-started/library/#import-and-export-content-in-the-library). This json is compatible with [helm chart v4.x](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main?tab=readme-ov-file#supported-versions).
 
 ## Installing Kubernetes Monitors
 
@@ -108,12 +113,12 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-3. Go to **Manage Data > Alerts > Monitors**.
-4. Click **Add Monitor**:<br/> ![add-monitor.png](/img/metrics/add-monitor.png)
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
 
 :::note
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
@@ -165,13 +170,13 @@ The monitors are disabled by default. Once you have installed the alerts using t
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    1. Run `terraform apply`.
-1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
-## Upgrading the Kubernetes app
+## Upgrade/Downgrade the Kubernetes app
 
 The current version of our app is not backwards compatible with older Helm Chart versions. Follow the below steps to upgrade.
 

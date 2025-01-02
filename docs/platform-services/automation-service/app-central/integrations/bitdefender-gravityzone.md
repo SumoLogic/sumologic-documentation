@@ -1,7 +1,6 @@
 ---
 title: Bitdefender GravityZone
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

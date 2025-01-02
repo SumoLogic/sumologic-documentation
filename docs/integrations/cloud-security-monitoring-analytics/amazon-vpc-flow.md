@@ -64,7 +64,7 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 
 ### Step 2: Configure hosted collector and HTTP source
 
-1. [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector)in Sumo Logic.
+1. [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)in Sumo Logic.
 2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. Under **Format**, enter: `epoch`.
@@ -74,17 +74,17 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 
 ### Step 3: Create AWS functions and resources  
 
-Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), starting with the [Download the CloudFormation template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Download_the_CloudFormation_template) step and ending with the [Dealing with alarms](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Dealing-with-alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
+Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), starting with the [Download the CloudFormation template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-2-download-the-cloudformation-template) step and ending with the [Dealing with alarms](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template#dealing-with-alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
 
 
 #### Configure LogFormat correctly (Required)  
 
-When you [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Create-a-stack-on-the-AWS-CloudFormation-console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
+When you [Create a stack on the AWS CloudFormation console](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation/#create-a-stack-on-the-aws-cloudformation-console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
 
 
 #### Environment Variables for VPC Flow log collection (Optional)
 
-When you [Configure environment variables for Lambda functions](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Configure_environment_variables_for_Lambda_functions), in addition to the variables listed, you can optionally also define the following environment variables.
+When you [Configure environment variables for Lambda functions](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template#configure-environment-variables-for-lambda-functions-optional), in addition to the variables listed, you can optionally also define the following environment variables.
 
 If you define the environment variables below, do it for both of the Lambda functions created by the CloudFormation template.
 
@@ -157,7 +157,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an Amazo
 
 1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
-3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
+3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.

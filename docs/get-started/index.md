@@ -1,7 +1,6 @@
 ---
 slug: /get-started
 title: Welcome to Sumo Logic
-tags: [get started, getting started]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

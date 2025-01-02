@@ -50,7 +50,7 @@ This app is tested with the following versions:
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for Varnish
+## Collecting logs and metrics for Varnish
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Varnish.
 
@@ -164,7 +164,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
         * `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
         * `cache_system: “varnish”`. This value identifies the web server system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
@@ -190,7 +190,7 @@ This section explains the steps to collect Varnish logs from a Kubernetes enviro
 * `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
 * `cache_system: “varnish”`. This value identifies the cache system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 2. (Optional) Collecting Varnish Logs from a Log File. Follow the steps below to capture Varnish logs from a log file on Kubernetes.
    1. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -211,7 +211,7 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
    4. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    5. Verify logs in Sumo Logic.
 3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for WebServer Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
@@ -244,7 +244,7 @@ Telegraf runs on the same system as Varnish, and uses the [Varnish input plugin]
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Varnish.
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) section of the Sumo Logic documentation.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
@@ -291,7 +291,7 @@ At this point, Varnish metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Varnish running on a non-Kubernetes environment for the Sumo Logic app for Varnish.
 
-By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
 
 
 1. **Configure logging in Varnish**. Varnish supports logging via the following methods: local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the below specified log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
@@ -329,11 +329,11 @@ At this point, Varnish logs should start flowing into Sumo Logic.
 
 ## Installing Varnish Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#Varnish-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#varnish-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
@@ -344,7 +344,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
    * For alerts applicable only to a specific cluster, your custom filter would be `cache_cluster=dev-varnish01`
    * For alerts applicable to all clusters that start with `varnish`-prod, your custom filter would be `cache_cluster=varnish-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `cache_cluster=dev-varnish01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. Go to **Manage Data > Alerts > Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click **Import.**
 6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
@@ -352,7 +352,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitor. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/` directory.
@@ -422,7 +422,7 @@ email_notifications = [
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Varnish cluster filter. Examples:
@@ -504,7 +504,7 @@ The **Varnish - Threat Intel** dashboard provides an at-a-glance view of threats
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
-* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threat-Intel.png')} alt="Varnish dashboard" />
 

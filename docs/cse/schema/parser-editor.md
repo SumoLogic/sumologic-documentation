@@ -30,13 +30,13 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
 
 ## Check parser code for mapping hints
 
-Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
+Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating records from the field dictionary the parser creates for log messages. 
 
 Make sure your parser code includes `MAPPER` statements that specify the vendor, product, and the event ID that the log messages to be parsed contain, and a `FORMAT` statement that defines the message format.
 
@@ -47,14 +47,14 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 ## Configure and test a custom parser
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" width="800"/>
-1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.
-1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
+1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
 1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options:
-   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](#using-sumo-log-search) below.
+   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo Logic log search](#using-sumo-logic-log-search) below.
    * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below.
    * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](#using-paste-logs) below. 
 
@@ -71,7 +71,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 This section describes the three methods of obtaining messages for use in testing your parser.
 
-### Using Sumo log search
+### Using Sumo Logic log search
 
 To import messages by running a Sumo Logic search:
 
@@ -155,8 +155,8 @@ Another common reason to set up a local configuration is to pre-parse the conten
 
 To create a local configuration:
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.
-1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
+1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" style={{border: '1px solid gray'}} width="800"/>
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/><img src={useBaseUrl('img/cse/system-parser-edit-button.png')} alt="System parser edit button" width="800"/>
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
@@ -167,38 +167,37 @@ You can move a parser from one location to another within the parser editor’s 
 
 ## Export and import a parser
 
-You can export a parser as JSON, and import it to another Sumo Logic
-org.
+You can export a parser as JSON, and import it to another Sumo Logic org.
 
 1. Navigate to the parser you want to export and choose **Export** from the three-dot kebab menu.
-1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export" width="600"/>
+1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export dialog" width="600"/>
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data > Logs > Parsers**.
 1. Navigate to the folder where you want to store the parser.
 1. Choose **Import** from the three-dot kebab menu.
-1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
+1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
 ## Setting Cloud SIEM log mapping information
 
-In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create Records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
+In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
 
-With some CloudTrail logs messages, you might want to create a different [Record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an Authorization Record is appropriate, while in others, an Audit or Audit Change Record would be a better fit. 
+With some CloudTrail logs messages, you might want to create a different [record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an authorization record is appropriate, while in others, an audit or audit change record would be a better fit. 
 
-In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a Cloud SIEM Record) will vary, depending on the Event ID in the message. For example, you may want to map data into the Cloud SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
+In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a Cloud SIEM record) will vary, depending on the Event ID in the message. For example, you may want to map data into the Cloud SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
 
 To create your mapping, see [Creating a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](#configuring-a-source-to-use-a-parser), below.
 
 ## Configuring a source to use a parser
 
-This section explains how to configure a Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a Field for the source: you'll create a `_parser` Field that defines the path to the parser. 
+This section explains how to configure a Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a field for the source: you'll create a `_parser` field that defines the path to the parser. 
 
 1. Navigate to your custom parser in the editor.
-1. Hover over the row that contains the parser.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" width="600"/>
-1. Click the three-dot kebab icon, and select **Copy Path** and save the path.
-1. In Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
+1. Hover over the row that contains the parser.
+1. Click the three-dot kebab icon, and select **Copy Path** and save the path.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" style={{border: '1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.<br/><img src={useBaseUrl('img/cse/cloudtrail-source.png')} alt="CloudTrail source" width="500"/>
 1. Click **+Add Field**. 
-1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
+1. Two blank fields appear, below any fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
 <br/>An orange icon indicates that the `_parser` field has not been created in your Sumo Logic core platform org yet.
 
 ## Parser templates
@@ -207,8 +206,7 @@ We provide a number of parsers to extract data for normalization (see [Parsers](
 
 ### Access parser templates
 
-1. Go to **Manage Data > Logs**.
-1. Select the **Parsers** tab.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
 1. Open the **System** folder.
 1. Scroll down to the **Parser Templates** folder and open it.
 1. Browse the templates. Available formats include:
@@ -236,6 +234,6 @@ Watch the following video for a walkthrough of the parser templates.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />

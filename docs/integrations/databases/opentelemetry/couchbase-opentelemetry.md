@@ -162,7 +162,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Logs
+## Sample log messages
 
 ```
 _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSERT on key <ud>key1</ud> for Keyspace default:beer-sample.inventory.hotel. Error - <ud>Duplicate Key key1</ud>
@@ -226,3 +226,20 @@ Use this dashboard to:
 - To understand user behavior accessing clusters and servers through Rest API.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-HTTP-Access.png' alt="Access" />
+
+## Create monitors for Couchbase app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Couchbase alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Couchbase - Bucket Not Ready` | This alert is triggered when a bucket in the Couchbase cluster is not ready. | Count `>` 0 | Count `<=` 0 |
+| `Couchbase - High Latency HTTP Requests` | This alert is triggered on high average latency for HTTP requests to the Couchbase. | Count `>` 1000 | Count `<=` 1000 |
+| `Couchbase - Node Down` | This alert is triggered when a node in the Couchbase cluster is down. | Count `>` 0 | Count `<=` 0 |
+| `Couchbase - Node Not Respond` | This alert is triggered when a node in the Couchbase cluster does not respond too many times. | Count `>=` 10 | Count `<` 10 |
+| `Couchbase - Too Many Error Queries on Buckets` | This alert is triggered when there are too many error queries on a bucket in a Couchbase cluster. | Count `>=` 1000 | Count `<` 1000 |
+| `Couchbase - Too Many Login Failures` | This alert is triggered when there are too many login failures to a node in a Couchbase cluster. | Count `>=` 1000 | Count `<` 1000 |

@@ -11,12 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
-
 ## Log types
 
 The Fastly app uses the following log types:
 * Fastly CDN logs
-* Fastly WAF Request and Debug logs. For information about WAF, logging see [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
+* Fastly WAF Request and Debug logs. For information about WAF logging, refer to the [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
 ### Sample queries
@@ -33,11 +32,9 @@ _sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | w
 _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
 ```
 
-
-## Collecting Logs for Fastly
+## Collecting logs for Fastly
 
 This section has instructions for setting up log collection for the Fastly app.  
-
 
 ### Step 1: Configure collector and source
 
@@ -51,89 +48,85 @@ In this step, you configure a collector and source to receive Fastly logs.
 
 In this step you add Sumo Logic as a logging endpoint for Fastly services, and configure it to receive CDN logs. The process is described in [Adding Sumo Logic as a logging endpoint](https://docs.fastly.com/guides/streaming-logs/log-streaming-sumologic#adding-sumo-logic-as-a-logging-endpoint) in Fastly help.
 
-If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#Step_3:_Collect_WAF_Request_logs) below.
+If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#step-3-collect-waf-request-logs) below.
 
 Ensure that the data is sent to Sumo Logic in [Log format version 2](https://docs.fastly.com/guides/streaming-logs/custom-log-formats#upgrading-endpoints-to-use-version-2-log-format). To check the format, see **Determine which log file format you are using** in Fastly help. Note, however, that all new logging endpoints use the version 2 custom log format by default.
 
 When you configure the Sumo Logic endpoint in Fastly:
 1. **Name**. Enter a name for the connection. For example, “Prod Fastly”.
-2. **Log format**. Use this format string, which generates the necessary JSON output:
-
+2. **Log format**. Enter the [Fastly log variables](https://docs.fastly.com/en/guides/useful-variables-to-log). Use this format string, which generates the necessary JSON output.
   <details>
-<summary>Click to expand snippet</summary>
-
-   ```
+  <summary>Click to expand snippet</summary>
+   ```json
    {
- "service_id":"%{req.service_id}V",
- "service_version":"%{fastly_info.version}V",
- "time_start":"%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
- "time_end":"%{end:%Y-%m-%dT%H:%M:%S%Z}t",
- "time_elapsed":%{time.elapsed.usec}V,
- "client_ip":"%{req.http.Fastly-Client-IP}V",
- "request":"%{req.request}V",
- "protocol":"%{req.proto}V",
- "host":"%{req.http.Fastly-Orig-Host}V",
- "origin_host":"%{req.http.Host}V",
- "url":"%{cstr_escape(req.url)}V",
- "is_ipv6":%{if(req.is_ipv6, "true", "false")}V,
- "is_tls":%{if(req.is_ssl, "true", "false")}V,
- "tls_client_protocol":"%{cstr_escape(tls.client.protocol)}V",
- "tls_client_servername":"%{cstr_escape(tls.client.servername)}V",
- "tls_client_cipher":"%{cstr_escape(tls.client.cipher)}V",
- "tls_client_cipher_sha":"%{cstr_escape(tls.client.ciphers_sha )}V",
- "tls_client_tlsexts_sha":"%{cstr_escape(tls.client.tlsexts_sha)}V",
- "is_h2":%{if(fastly_info.is_h2, "true", "false")}V,
- "is_h2_push":%{if(fastly_info.h2.is_push, "true", "false")}V,
- "h2_stream_id":"%{fastly_info.h2.stream_id}V",
- "request_referer":"%{cstr_escape(req.http.Referer)}V",
- "request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
- "request_accept_content":"%{cstr_escape(req.http.Accept)}V",
- "request_accept_language":"%{cstr_escape(req.http.Accept-Language)}V",
- "request_accept_encoding":"%{cstr_escape(req.http.Accept-Encoding)}V",
- "request_accept_charset":"%{cstr_escape(req.http.Accept-Charset)}V",
- "request_connection":"%{cstr_escape(req.http.Connection)}V",
- "request_dnt":"%{cstr_escape(req.http.DNT)}V",
- "request_forwarded":"%{cstr_escape(req.http.Forwarded)}V",
- "request_via":"%{cstr_escape(req.http.Via)}V",
- "request_cache_control":"%{cstr_escape(req.http.Cache-Control)}V",
- "request_x_requested_with":"%{cstr_escape(req.http.X-Requested-With)}V",
- "request_x_forwarded_for":"%{cstr_escape(req.http.X-Forwarded-For)}V",
- "status":"%{resp.status}V",
- "content_type":"%{cstr_escape(resp.http.Content-Type)}V",
- "cache_status":"%{regsub(fastly_info.state, "^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*", "\\2\\3")}V",
- "is_cacheable":%{if(fastly_info.state ~"^(HIT|MISS)$", "true", "false")}V,
- "response_age":"%{cstr_escape(resp.http.Age)}V",
- "response_cache_control":"%{cstr_escape(resp.http.Cache-Control)}V",
- "response_expires":"%{cstr_escape(resp.http.Expires)}V",
- "response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
- "response_tsv":"%{cstr_escape(resp.http.TSV)}V",
- "geo_datacenter":"%{server.datacenter}V",
- "geo_city":"%{geoip.city}V",
- "geo_country_code":"%{geoip.country_code}V",
- "geo_continent_code":"%{geoip.continent_code}V",
- "geo_region":"%{geoip.region}V",
- "req_header_size":%{req.header_bytes_read}V,
- "req_body_size":%{req.body_bytes_read}V,
- "resp_header_size":%{resp.header_bytes_written}V,
- "resp_body_size":%{resp.body_bytes_written}V,
- "socket_cwnd":%{client.socket.cwnd}V,
- "socket_nexthop":"%{client.socket.nexthop}V",
- "socket_tcpi_rcv_mss":%{client.socket.tcpi_rcv_mss}V,
- "socket_tcpi_snd_mss":%{client.socket.tcpi_snd_mss}V,
- "socket_tcpi_rtt":%{client.socket.tcpi_rtt}V,
- "socket_tcpi_rttvar":%{client.socket.tcpi_rttvar}V,
- "socket_tcpi_rcv_rtt":%{client.socket.tcpi_rcv_rtt}V,
- "socket_tcpi_rcv_space":%{client.socket.tcpi_rcv_space}V,
- "socket_tcpi_last_data_sent":%{client.socket.tcpi_last_data_sent}V,
- "socket_tcpi_total_retrans":%{client.socket.tcpi_total_retrans}V,
- "socket_tcpi_delta_retrans":%{client.socket.tcpi_delta_retrans}V,
- "socket_ploss":%{client.socket.ploss}V
-}
-   ```
-
+     "service_id": "%{req.service_id}V",
+     "service_version": "%{fastly_info.version}V",
+     "time_start": "%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
+     "time_end": "%{end:%Y-%m-%dT%H:%M:%S%Z}t",
+     "time_elapsed": "%{time.elapsed.usec}V",
+     "client_ip": "%{req.http.Fastly-Client-IP}V",
+     "request": "%{req.request}V",
+     "protocol": "%{req.proto}V",
+     "host": "%{req.http.Fastly-Orig-Host}V",
+     "origin_host": "%{req.http.Host}V",
+     "url": "%{cstr_escape(req.url)}V",
+     "is_ipv6": "%{if(req.is_ipv6, \"true\", \"false\")}V",
+     "is_tls": "%{if(req.is_ssl, \"true\", \"false\")}V",
+     "tls_client_protocol": "%{cstr_escape(tls.client.protocol)}V",
+     "tls_client_servername": "%{cstr_escape(tls.client.servername)}V",
+     "tls_client_cipher": "%{cstr_escape(tls.client.cipher)}V",
+     "tls_client_cipher_sha": "%{cstr_escape(tls.client.ciphers_sha)}V",
+     "tls_client_tlsexts_sha": "%{cstr_escape(tls.client.tlsexts_sha)}V",
+     "is_h2": "%{if(fastly_info.is_h2, \"true\", \"false\")}V",
+     "is_h2_push": "%{if(fastly_info.h2.is_push, \"true\", \"false\")}V",
+     "h2_stream_id": "%{fastly_info.h2.stream_id}V",
+     "request_referer": "%{cstr_escape(req.http.Referer)}V",
+     "request_user_agent": "%{cstr_escape(req.http.User-Agent)}V",
+     "request_accept_content": "%{cstr_escape(req.http.Accept)}V",
+     "request_accept_language": "%{cstr_escape(req.http.Accept-Language)}V",
+     "request_accept_encoding": "%{cstr_escape(req.http.Accept-Encoding)}V",
+     "request_accept_charset": "%{cstr_escape(req.http.Accept-Charset)}V",
+     "request_connection": "%{cstr_escape(req.http.Connection)}V",
+     "request_dnt": "%{cstr_escape(req.http.DNT)}V",
+     "request_forwarded": "%{cstr_escape(req.http.Forwarded)}V",
+     "request_via": "%{cstr_escape(req.http.Via)}V",
+     "request_cache_control": "%{cstr_escape(req.http.Cache-Control)}V",
+     "request_x_requested_with": "%{cstr_escape(req.http.X-Requested-With)}V",
+     "request_x_forwarded_for": "%{cstr_escape(req.http.X-Forwarded-For)}V",
+     "status": "%{resp.status}V",
+     "content_type": "%{cstr_escape(resp.http.Content-Type)}V",
+     "cache_status": "%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\")}V",
+     "is_cacheable": "%{if(fastly_info.state~\"^(HIT|MISS)$\", \"true\", \"false\")}V",
+     "response_age": "%{cstr_escape(resp.http.Age)}V",
+     "response_cache_control": "%{cstr_escape(resp.http.Cache-Control)}V",
+     "response_expires": "%{cstr_escape(resp.http.Expires)}V",
+     "response_last_modified": "%{cstr_escape(resp.http.Last-Modified)}V",
+     "response_tsv": "%{cstr_escape(resp.http.TSV)}V",
+     "geo_datacenter": "%{server.datacenter}V",
+     "geo_city": "%{client.geo.city}V",
+     "geo_country_code": "%{client.geo.country_code}V",
+     "geo_continent_code": "%{client.geo.continent_code}V",
+     "geo_region": "%{client.geo.region}V",
+     "req_header_size": "%{req.header_bytes_read}V",
+     "req_body_size": "%{req.body_bytes_read}V",
+     "resp_header_size": "%{resp.header_bytes_written}V",
+     "resp_body_size": "%{resp.body_bytes_written}V",
+     "socket_cwnd": "%{client.socket.cwnd}V",
+     "socket_nexthop": "%{client.socket.nexthop}V",
+     "socket_tcpi_rcv_mss": "%{client.socket.tcpi_rcv_mss}V",
+     "socket_tcpi_snd_mss": "%{client.socket.tcpi_snd_mss}V",
+     "socket_tcpi_rtt": "%{client.socket.tcpi_rtt}V",
+     "socket_tcpi_rttvar": "%{client.socket.tcpi_rttvar}V",
+     "socket_tcpi_rcv_rtt": "%{client.socket.tcpi_rcv_rtt}V",
+     "socket_tcpi_rcv_space": "%{client.socket.tcpi_rcv_space}V",
+     "socket_tcpi_last_data_sent": "%{client.socket.tcpi_last_data_sent}V",
+     "socket_tcpi_total_retrans": "%{client.socket.tcpi_total_retrans}V",
+     "socket_tcpi_delta_retrans": "%{client.socket.tcpi_delta_retrans}V",
+     "socket_ploss": "%{client.socket.ploss}V"
+  }
+  ```
   </details>
-
-3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#Step_1:_Configure_collector_and_source) above.
+3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#step-1-configure-collector-and-source) above.
 4. Click **Advanced options**.
 5. By default the log line format is set to **Classic**. Change it to **Blank.**
 6. Click the **Create** button to create the new logging endpoint.
@@ -142,158 +135,102 @@ When you configure the Sumo Logic endpoint in Fastly:
 
 ### Step 3: Collect WAF Request logs
 
-If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
+If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
 
-1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
-
-  <details>
-<summary>Click to expand snippet</summary>
-
-  ```
-  {
-	"service_id":"%{req.service_id}V",
-	"service_version":"%{fastly_info.version}V",
-	"time_start":"%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
-	"time_end":"%{end:%Y-%m-%dT%H:%M:%S%Z}t",
-	"time_elapsed":"%"{
-		"time.elapsed.usec"
-	}"V",
-	"client_ip":"%{req.http.Fastly-Client-IP}V",
-	"request":"%{req.request}V",
-	"protocol":"%{req.proto}V",
-	"host":"%{req.http.Fastly-Orig-Host}V",
-	"origin_host":"%{req.http.Host}V",
-	"url":"%{cstr_escape(req.url)}V",
-	"is_ipv6":"%"{
-		if(req.is_ipv6,
-		"true",
-		"false"")"
-	}"V",
-	"is_tls":"%"{
-		"if(req.is_ssl",
-		"true",
-		"false"")"
-	}"V",
-	"tls_client_protocol":"%{cstr_escape(tls.client.protocol)}V",
-	"tls_client_servername":"%{cstr_escape(tls.client.servername)}V",
-	"tls_client_cipher":"%{cstr_escape(tls.client.cipher)}V",
-	"tls_client_cipher_sha":"%{cstr_escape(tls.client.ciphers_sha)}V",
-	"tls_client_tlsexts_sha":"%{cstr_escape(tls.client.tlsexts_sha)}V",
-	"is_h2":"%"{
-		if(fastly_info.is_h2,
-		"true",
-		"false"")"
-	}"V",
-	"is_h2_push":"%"{
-		if(fastly_info.h2.is_push,
-		"true",
-		"false"")"
-	}"V",
-	"h2_stream_id":"%{fastly_info.h2.stream_id}V",
-	"request_referer":"%{cstr_escape(req.http.Referer)}V",
-	"request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
-	"request_accept_content":"%{cstr_escape(req.http.Accept)}V",
-	"request_accept_language":"%{cstr_escape(req.http.Accept-Language)}V",
-	"request_accept_encoding":"%{cstr_escape(req.http.Accept-Encoding)}V",
-	"request_accept_charset":"%{cstr_escape(req.http.Accept-Charset)}V",
-	"request_connection":"%{cstr_escape(req.http.Connection)}V",
-	"request_dnt":"%{cstr_escape(req.http.DNT)}V",
-	"request_forwarded":"%{cstr_escape(req.http.Forwarded)}V",
-	"request_via":"%{cstr_escape(req.http.Via)}V",
-	"request_cache_control":"%{cstr_escape(req.http.Cache-Control)}V",
-	"request_x_requested_with":"%{cstr_escape(req.http.X-Requested-With)}V",
-	"request_x_forwarded_for":"%{cstr_escape(req.http.X-Forwarded-For)}V",
-	"status":"%{resp.status}V",
-	"content_type":"%{cstr_escape(resp.http.Content-Type)}V",
-	"cache_status":"%{regsub(fastly_info.state,""^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*"","\\2\\3")}V",
-	"is_cacheable":"%"{
-		"if(fastly_info.state~""^(HIT|MISS)$",
-		"true",
-		"false"")"
-	}"V",
-	"response_age":"%{cstr_escape(resp.http.Age)}V",
-	"response_cache_control":"%{cstr_escape(resp.http.Cache-Control)}V",
-	"response_expires":"%{cstr_escape(resp.http.Expires)}V",
-	"response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
-	"response_tsv":"%{cstr_escape(resp.http.TSV)}V",
-	"geo_datacenter":"%{server.datacenter}V",
-	"geo_city":"%{geoip.city}V",
-	"geo_country_code":"%{geoip.country_code}V",
-	"geo_continent_code":"%{geoip.continent_code}V",
-	"geo_region":"%{geoip.region}V",
-	"req_header_size":"%"{
-		"req.header_bytes_read"
-	}"V",
-	"req_body_size":"%"{
-		"req.body_bytes_read"
-	}"V",
-	"resp_header_size":"%"{
-		"resp.header_bytes_written"
-	}"V",
-	"resp_body_size":"%"{
-		"resp.body_bytes_written"
-	}"V",
-	"socket_cwnd":"%"{
-		"client.socket.cwnd"
-	}"V",
-	"socket_nexthop":"%{client.socket.nexthop}V",
-	"socket_tcpi_rcv_mss":"%"{
-		"client.socket.tcpi_rcv_mss"
-	}"V",
-	"socket_tcpi_snd_mss":"%"{
-		"client.socket.tcpi_snd_mss"
-	}"V",
-	"socket_tcpi_rtt":"%"{
-		"client.socket.tcpi_rtt"
-	}"V",
-	"socket_tcpi_rttvar":"%"{
-		"client.socket.tcpi_rttvar"
-	}"V",
-	"socket_tcpi_rcv_rtt":"%"{
-		"client.socket.tcpi_rcv_rtt"
-	}"V",
-	"socket_tcpi_rcv_space":"%"{
-		"client.socket.tcpi_rcv_space"
-	}"V",
-	"socket_tcpi_last_data_sent":"%"{
-		"client.socket.tcpi_last_data_sent"
-	}"V",
-	"socket_tcpi_total_retrans":"%"{
-		"client.socket.tcpi_total_retrans"
-	}"V",
-	"socket_tcpi_delta_retrans":"%"{
-		"client.socket.tcpi_delta_retrans"
-	}"V",
-	"socket_ploss":"%"{
-		"client.socket.ploss"
-	}"V",
-	"type":"request_logs",
-	"request_id":"%{req.http.x-request-id}V",
-	"waf_logged":"%{waf.logged}V",
-	"waf_block":"%{waf.blocked}V",
-	"waf_failures":"%{waf.failures}V",
-	"waf_rule_id":"%{waf.rule_id}V",
-	"waf_severity":"%{waf.severity}V",
-	"waf_passed":"%{waf.passed}V",
-	"waf_logdata":"%{cstr_escape(waf.logdata)}V",
-	"waf_executed":"%{waf.executed}V",
-	"waf_anomaly_score":"%{waf.anomaly_score}V",
-	"waf_sql_score":"%{waf.sql_injection_score}V",
-	"waf_rfi_score":"%{waf.rfi_score}V",
-	"waf_lfi_score":"%{waf.lfi_score}V",
-	"waf_xss_score":"%{waf.xss_score}V",
-	"waf_http_score":"%{waf.http_violation_score}V",
-	"waf_php_score":"%{waf.php_injection_score}V",
-	"waf_rce_score":"%{waf.rce_score}V",
-	"waf_session_fixation_score":"%{waf.session_fixation_score}V",
-	"waf_message":"%{cstr_escape(waf.message)}V"
-}
-  ```
-
-  </details>
-
+1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#step-2-configure-endpoint-in-fastly-for-cdn-logs).
+    <details>
+    <summary>Click to expand snippet</summary>
+    ```json
+    {
+    "service_id": "%{req.service_id}V",
+    "service_version": "%{fastly_info.version}V",
+    "time_start": "%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
+    "time_end": "%{end:%Y-%m-%dT%H:%M:%S%Z}t",
+    "time_elapsed": "%{time.elapsed.usec}V",
+    "client_ip": "%{req.http.Fastly-Client-IP}V",
+    "request": "%{req.request}V",
+    "protocol": "%{req.proto}V",
+    "host": "%{req.http.Fastly-Orig-Host}V",
+    "origin_host": "%{req.http.Host}V",
+    "url": "%{cstr_escape(req.url)}V",
+    "is_ipv6": "%{if(req.is_ipv6, \"true\", \"false\")}V",
+    "is_tls": "%{if(req.is_ssl, \"true\", \"false\")}V",
+    "tls_client_protocol": "%{cstr_escape(tls.client.protocol)}V",
+    "tls_client_servername": "%{cstr_escape(tls.client.servername)}V",
+    "tls_client_cipher": "%{cstr_escape(tls.client.cipher)}V",
+    "tls_client_cipher_sha": "%{cstr_escape(tls.client.ciphers_sha)}V",
+    "tls_client_tlsexts_sha": "%{cstr_escape(tls.client.tlsexts_sha)}V",
+    "is_h2": "%{if(fastly_info.is_h2, \"true\", \"false\")}V",
+    "is_h2_push": "%{if(fastly_info.h2.is_push, \"true\", \"false\")}V",
+    "h2_stream_id": "%{fastly_info.h2.stream_id}V",
+    "request_referer": "%{cstr_escape(req.http.Referer)}V",
+    "request_user_agent": "%{cstr_escape(req.http.User-Agent)}V",
+    "request_accept_content": "%{cstr_escape(req.http.Accept)}V",
+    "request_accept_language": "%{cstr_escape(req.http.Accept-Language)}V",
+    "request_accept_encoding": "%{cstr_escape(req.http.Accept-Encoding)}V",
+    "request_accept_charset": "%{cstr_escape(req.http.Accept-Charset)}V",
+    "request_connection": "%{cstr_escape(req.http.Connection)}V",
+    "request_dnt": "%{cstr_escape(req.http.DNT)}V",
+    "request_forwarded": "%{cstr_escape(req.http.Forwarded)}V",
+    "request_via": "%{cstr_escape(req.http.Via)}V",
+    "request_cache_control": "%{cstr_escape(req.http.Cache-Control)}V",
+    "request_x_requested_with": "%{cstr_escape(req.http.X-Requested-With)}V",
+    "request_x_forwarded_for": "%{cstr_escape(req.http.X-Forwarded-For)}V",
+    "status": "%{resp.status}V",
+    "content_type": "%{cstr_escape(resp.http.Content-Type)}V",
+    "cache_status": "%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\")}V",
+    "is_cacheable": "%{if(fastly_info.state~\"^(HIT|MISS)$\", \"true\", \"false\")}V",
+    "response_age": "%{cstr_escape(resp.http.Age)}V",
+    "response_cache_control": "%{cstr_escape(resp.http.Cache-Control)}V",
+    "response_expires": "%{cstr_escape(resp.http.Expires)}V",
+    "response_last_modified": "%{cstr_escape(resp.http.Last-Modified)}V",
+    "response_tsv": "%{cstr_escape(resp.http.TSV)}V",
+    "geo_datacenter": "%{server.datacenter}V",
+    "geo_city": "%{client.geo.city}V",
+    "geo_country_code": "%{client.geo.country_code}V",
+    "geo_continent_code": "%{client.geo.continent_code}V",
+    "geo_region": "%{client.geo.region}V",
+    "req_header_size": "%{req.header_bytes_read}V",
+    "req_body_size": "%{req.body_bytes_read}V",
+    "resp_header_size": "%{resp.header_bytes_written}V",
+    "resp_body_size": "%{resp.body_bytes_written}V",
+    "socket_cwnd": "%{client.socket.cwnd}V",
+    "socket_nexthop": "%{client.socket.nexthop}V",
+    "socket_tcpi_rcv_mss": "%{client.socket.tcpi_rcv_mss}V",
+    "socket_tcpi_snd_mss": "%{client.socket.tcpi_snd_mss}V",
+    "socket_tcpi_rtt": "%{client.socket.tcpi_rtt}V",
+    "socket_tcpi_rttvar": "%{client.socket.tcpi_rttvar}V",
+    "socket_tcpi_rcv_rtt": "%{client.socket.tcpi_rcv_rtt}V",
+    "socket_tcpi_rcv_space": "%{client.socket.tcpi_rcv_space}V",
+    "socket_tcpi_last_data_sent": "%{client.socket.tcpi_last_data_sent}V",
+    "socket_tcpi_total_retrans": "%{client.socket.tcpi_total_retrans}V",
+    "socket_tcpi_delta_retrans": "%{client.socket.tcpi_delta_retrans}V",
+    "socket_ploss": "%{client.socket.ploss}V",
+    "type": "request_logs",
+    "request_id": "%{req.http.x-request-id}V",
+    "waf_logged": "%{waf.logged}V",
+    "waf_block": "%{waf.blocked}V",
+    "waf_failures": "%{waf.failures}V",
+    "waf_rule_id": "%{waf.rule_id}V",
+    "waf_severity": "%{waf.severity}V",
+    "waf_passed": "%{waf.passed}V",
+    "waf_logdata": "%{cstr_escape(waf.logdata)}V",
+    "waf_executed": "%{waf.executed}V",
+    "waf_anomaly_score": "%{waf.anomaly_score}V",
+    "waf_sql_score": "%{waf.sql_injection_score}V",
+    "waf_rfi_score": "%{waf.rfi_score}V",
+    "waf_lfi_score": "%{waf.lfi_score}V",
+    "waf_xss_score": "%{waf.xss_score}V",
+    "waf_http_score": "%{waf.http_violation_score}V",
+    "waf_php_score": "%{waf.php_injection_score}V",
+    "waf_rce_score": "%{waf.rce_score}V",
+    "waf_session_fixation_score": "%{waf.session_fixation_score}V",
+    "waf_message": "%{cstr_escape(waf.message)}V"
+    }
+    ```
+    </details>
 1. Point the logging endpoint to the `waf_debug_log` subroutine using curl, as described in [waf_debug_log](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging#waf_debug_log) in Fastly help.
-2. Create a request_id header to track a single request.
+1. Create a `request_id` header to track a single request.
 
 
 ### Step 4: Collect WAF Debug Logs
@@ -301,49 +238,49 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
 
 1. Configure another [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
-2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
+2. Create another logging endpoint in Fastly following the instructions [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs), but enter the JSON below in the **Log format** field.
 
   <details>
-<summary>Click to expand snippet</summary>
+  <summary>Click to expand snippet</summary>
 
-  ```
+  ```json
   {
-	"type":"debug_logs",
-	"service_id":"%{req.service_id}V",
-	"client_ip":"%{req.http.Fastly-Client-IP}V",
-	"request":"%{req.request}V",
-	"protocol":"%{req.proto}V",
-	"origin_host":"%{req.http.Host}V",
-	"url":"%{cstr_escape(req.url)}V",
-	"request_referer":"%{cstr_escape(req.http.Referer)}V",
-	"request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
-	"request_accept_content":"%{cstr_escape(req.http.Accept)}V",
-	"cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE|NONE)).*\", \"\\2\\3\")}V",
-	"geo_datacenter":"%{server.datacenter}V",
-	"geo_city":"%{geoip.city}V",
-	"geo_country_code":"%{geoip.country_code}V",
-	"geo_continent_code":"%{geoip.continent_code}V",
-	"geo_region":"%{geoip.region}V",
-	"request_id":"%{req.http.x-request-id}V",
-	"waf_logged":"%{waf.logged}V",
-	"waf_block":"%{waf.blocked}V",
-	"waf_failures":"%{waf.failures}V",
-	"waf_rule_id":"%{waf.rule_id}V",
-	"waf_severity":"%{waf.severity}V",
-	"waf_passed":"%{waf.passed}V",
-	"waf_logdata":"%{cstr_escape(waf.logdata)}V",
-	"waf_executed":"%{waf.executed}V",
-	"waf_anomaly_score":"%{waf.anomaly_score}V",
-	"waf_sql_score":"%{waf.sql_injection_score}V",
-	"waf_rfi_score":"%{waf.rfi_score}V",
-	"waf_lfi_score":"%{waf.lfi_score}V",
-	"waf_xss_score":"%{waf.xss_score}V",
-	"waf_http_score":"%{waf.http_violation_score}V",
-	"waf_php_score":"%{waf.php_injection_score}V",
-	"waf_rce_score":"%{waf.rce_score}V",
-	"waf_session_fixation_score":"%{waf.session_fixation_score}V",
-	"waf_message":"%{cstr_escape(waf.message)}V"
-}
+    "type": "debug_logs",
+    "service_id": "%{req.service_id}V",
+    "client_ip": "%{req.http.Fastly-Client-IP}V",
+    "request": "%{req.request}V",
+    "protocol": "%{req.proto}V",
+    "origin_host": "%{req.http.Host}V",
+    "url": "%{cstr_escape(req.url)}V",
+    "request_referer": "%{cstr_escape(req.http.Referer)}V",
+    "request_user_agent": "%{cstr_escape(req.http.User-Agent)}V",
+    "request_accept_content": "%{cstr_escape(req.http.Accept)}V",
+    "cache_status": "%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE|NONE)).*\", \"\\2\\3\")}V",
+    "geo_datacenter": "%{server.datacenter}V",
+    "geo_city": "%{client.geo.city}V",
+    "geo_country_code": "%{client.geo.country_code}V",
+    "geo_continent_code": "%{client.geo.continent_code}V",
+    "geo_region": "%{client.geo.region}V",
+    "request_id": "%{req.http.x-request-id}V",
+    "waf_logged": "%{waf.logged}V",
+    "waf_block": "%{waf.blocked}V",
+    "waf_failures": "%{waf.failures}V",
+    "waf_rule_id": "%{waf.rule_id}V",
+    "waf_severity": "%{waf.severity}V",
+    "waf_passed": "%{waf.passed}V",
+    "waf_logdata": "%{cstr_escape(waf.logdata)}V",
+    "waf_executed": "%{waf.executed}V",
+    "waf_anomaly_score": "%{waf.anomaly_score}V",
+    "waf_sql_score": "%{waf.sql_injection_score}V",
+    "waf_rfi_score": "%{waf.rfi_score}V",
+    "waf_lfi_score": "%{waf.lfi_score}V",
+    "waf_xss_score": "%{waf.xss_score}V",
+    "waf_http_score": "%{waf.http_violation_score}V",
+    "waf_php_score": "%{waf.php_injection_score}V",
+    "waf_rce_score": "%{waf.rce_score}V",
+    "waf_session_fixation_score": "%{waf.session_fixation_score}V",
+    "waf_message": "%{cstr_escape(waf.message)}V"
+  }
   ```
 
   </details>
@@ -359,30 +296,17 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
+## Installing the Fastly app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Fastly App
+<AppInstall2/>
 
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and dashboards to analyze your data.
+## Viewing the Fastly dashboards
 
-If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-To install the app:
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
-3. Supply the following information.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
-    4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-
-## Dashboards
-
-There are four dashboards for Fastly that you can configure to accommodate your individual reporting needs.
-
+<ViewDashboards/>
 
 ### CDN - Overview
 
@@ -401,7 +325,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 
 ### CDN - Origin Performance
 
-Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
+Focus in on Origin Host performance to check latencies, slow URLs, and error-causing URLs.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
@@ -511,3 +435,15 @@ See the overall Open Web Application Security Project (OWASP) anomaly score quar
     * **XSS (Cross-site Scripting)**
     * **SQL Injections.**
     * **Session Fixations.**
+
+## Upgrade/Downgrade the Fastly app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Fastly app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -25,57 +25,33 @@ The steps below are for the new Azure Management Console. For general steps for 
 :::
 
 1. Go into the Microsoft Azure Management Console and select **Azure Active Directory** in the left-side navigation pane.
-1. Select **Enterprise Applications**. 
-
-    ![enterprise-applications.png](/img/security/enterprise-applications.png)
+1. Select **Enterprise Applications**. <br/><img src={useBaseUrl('img/security/enterprise-applications.png')} alt="Enterprise applications selected" style={{border: '1px solid gray'}} width="800" />
 1. Select **Manage > All Applications.**
-1. Click **New application** at the top of the **All applications** blade. 
-
-    ![new-app-icon.png](/img/security/new-application-option.png)
+1. Click **New application** at the top of the **All applications** blade. <br/><img src={useBaseUrl('img/security/new-application-option.png')} alt="New application button" style={{border: '1px solid gray'}} width="800" />
 1. Search for **SumoLogic**.
-1. Select the **SumoLogic** tile.
-
-    ![sumo-logic-tile.png](/img/security/sumo-logic-tile.png)
-1. Enter a name for your application and click **Create**. Throughout this procedure, we refer to the application name as \<*app-name*\>.
-
-    ![create.png](/img/security/create.png)
-1. From the **Overview** tab, click **Get Started** in the **Set up single sign-on** tile.
-
-    ![get-started.png](/img/security/get-started.png)
-1. Click the **SAML** tile on the **Single sign-on** page.
-
-    ![saml-tile.png](/img/security/saml-tile.png)
-1. Click **Edit** in the **Basic SAML Configuration** page.
-
-    ![edit-basic-saml.png](/img/security/edit-basic-saml.png)
+1. Select the **SumoLogic** tile. <br/><img src={useBaseUrl('img/security/sumo-logic-tile.png')} alt="Sumo Logic tile" style={{border: '1px solid gray'}} width="800" />
+1. Enter a name for your application and click **Create**. Throughout this procedure, we refer to the application name as \<*app-name*\>. <br/><img src={useBaseUrl('img/security/create.png')} alt="Sumo Logic name field" style={{border: '1px solid gray'}} width="400" />
+1. From the **Overview** tab, click **Get Started** in the **Set up single sign-on** tile. <br/><img src={useBaseUrl('img/security/get-started.png')} alt="Get started link" style={{border: '1px solid gray'}} width="800" />
+1. Click the **SAML** tile on the **Single sign-on** page. <br/><img src={useBaseUrl('img/security/saml-tile.png')} alt="SAML tile" style={{border: '1px solid gray'}} width="800" />
+1. Click **Edit** in the **Basic SAML Configuration** page. <br/><img src={useBaseUrl('img/security/edit-basic-saml.png')} alt="Edit button" style={{border: '1px solid gray'}} width="800" />
 1. In the **Basic SAML Configuration** pane:
-
    1. Select **https://service.sumologic.com** as the default **Identifier (Entity ID)** in the list. (You'll update this in a later step.)
    1. Enter *https://service.sumologic.com* as the **Reply URL (Assertion Consumer Service URL)**. (You'll update this in a later step.)
    1. Click **Save** at the top of the pane, and then close the pane.
-1. In the **SAML Signing Certificate** tile, click the **Download** link for **Certificate (Base64)** to download the `<app-name>.cer` file.
-
-    ![download-cert.png](/img/security/download-cert.png)
+1. In the **SAML Signing Certificate** tile, click the **Download** link for **Certificate (Base64)** to download the `<app-name>.cer` file. <br/><img src={useBaseUrl('img/security/download-cert.png')} alt="Download link" style={{border: '1px solid gray'}} width="800" />
 1. In the **SAML Signing Certificate** tile, click the **Download** link for **Federation Metadata XML** to download the `<app-name>.xml` file.
 1. In the **Set Up `<app-name>`** section, copy and paste the contents of the following fields into a text document. You may need these values when in the next step.
-
    * Login URL
    * Azure AD identifier
-   * Logout URL
-
-    ![set-up-app.png](/img/security/set-up-app.png)
+   * Logout URL <br/><img src={useBaseUrl('img/security/set-up-app.png')} alt="Set up app section" style={{border: '1px solid gray'}} width="800" />
 
 Do **not** close the **Setup Single Sign-On with SAML** window, you will return later for additional configuration steps.
 
 ### Configure SAML in Sumo Logic
 
-1. Go to **Administration > Security > SAML**.
-1. Select an existing configuration, or click **Add Configuration** to create a new configuration.
-
-    ![add-configuration.png](/img/security/add-configuration.png)
-1. The **Add Configuration** page appears.
-
-    ![add-configuration-filled.png](/img/security/add-configuration-filled.png)    
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. Select an existing configuration, or click **Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/add-configuration.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="800" />
+1. The **Add Configuration** page appears. <br/><img src={useBaseUrl('img/security/add-configuration-filled.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name.** Enter a name to identify the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode.** Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
 1. Click the **Import Metadata XML** button.
@@ -91,51 +67,30 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
    1. **Disable Requested Authn Context**. Checkmark this option.
    1. **Select Binding Type**. Click **Post**.
    1. **Sign Authn Request**. Leave this option deselected.
-
 1. **Configure on-demand provisioning**. (Optional) If you configure on-demand provisioning, Sumo Logic automatically creates a user account the first time a user logs on to Sumo. To complete this procedure, you must supply the First Name and Last Name attributes Azure AD uses to identify users.
-
-   1. Click the **On Demand Provisioning** checkbox.
-
-        ![on-demand.png](/img/security/on-demand.png)
-
+   1. Click the **On Demand Provisioning** checkbox. <br/><img src={useBaseUrl('img/security/on-demand.png')} alt="On Demand Provisioning checkbox" style={{border: '1px solid gray'}} width="400" />
    1. **First Name Attribute**. You might need to provide the full attribute path, which can vary based on the ADFS version (the actual path can be seen in the SAML assertion). Here is an example:`http://schemas.microsoft.com/ws/2008/06/identity/claims/givenname`
    1. **Last Name Attribute**. You might need to provide the full attribute path, which can vary based on the ADFS version (the actual path can be seen in the SAML assertion). Here is an example:`http://schemas.microsoft.com/ws/2008/06/identity/claims/surname`
    1. **On Demand Provisioning Roles**. Specify the Sumo Logic roles you want to assign when user accounts are provisioned. (These roles must already exist in Sumo Logic.)
-
 1. **Configure logout page**. (Optional) Configure a logout page if you would like to point all Sumo users to a particular URL after logging out of Sumo Logic or after their session has timed out. You could choose your company's intranet, for example, or any other site that you'd prefer users in your organization access.
-
    1. Click the **Logout Page** checkbox.
    1. Enter the URL of the page to which you want to direct users after logging of Sumo.
-
 1. Click **Add** to save the configuration
 1. Select the new configuration from the **Configuration List**.
 1. Copy the following field values and save them in a text file. You'll need them in the steps to follow. 
-
    * **Assertion Consumer URL**
    * **Entity ID**
 
 ### Complete Azure configuration
 
 1. In Section 1, **Basic SAML Configuration**, edit the configuration.
-
-   1. **Identifier (Entity ID).** If you configured selected SP initiated login, replace *https://service.sumologic.com* with the Entity ID you copied in substep 14 of [Configure SAML in Sumo Logic](#configure-saml-in-sumo-logic).     
-
-    ![identifier-entity-id.png](/img/security/identifier-entity-id.png)
-
-    1. **Reply URL (Assertion Consumer URL)**. Replace *https://service.sumologic.com* with the Assertion Consumer URL you copied in substep 14 of [Configure SAML in Sumo Logic](#configure-saml-in-sumo-logic).
-
-    ![reply-URL.png](/img/security/reply-URL.png)
-
+   1. **Identifier (Entity ID).** If you configured selected SP initiated login, replace *https://service.sumologic.com* with the Entity ID you copied in substep 14 of [Configure SAML in Sumo Logic](#configure-saml-in-sumo-logic). <br/><img src={useBaseUrl('img/security/identifier-entity-id.png')} alt="Identifier (Entity ID)" style={{border: '1px solid gray'}} width="800" />
+    1. **Reply URL (Assertion Consumer URL)**. Replace *https://service.sumologic.com* with the Assertion Consumer URL you copied in substep 14 of [Configure SAML in Sumo Logic](#configure-saml-in-sumo-logic). <br/><img src={useBaseUrl('img/security/reply-URL.png')} alt="Reply URL (Assertion Consumer URL)" style={{border: '1px solid gray'}} width="800" />
     1. Click **Save**.
-
 1. In the left navigation pane, click **Properties** in the **Manage** section.
-
    1. **Enabled for users to sign in?** Enter *Yes*.
    1. **User assignment required?** Enter *Yes*. (This option controls whether a user must be assigned to this group or whether any user in the Azure AD tenant can use Sumo Logic. We recommend setting this to *Yes* as the Sumo environment has a finite number of users.
-   1. Click **Save**.    
-
-    ![properties.png](/img/security/properties.png)
-
+   1. Click **Save**. <br/><img src={useBaseUrl('img/security/properties.png')} alt="Properties tab" style={{border: '1px solid gray'}} width="800" />
 1. In the left navigation pane, click **Users and Groups** in the **Manage** section.
 1. Select **Add user/group**.
 1. Add the Users or Groups that should have access to login to Sumo Logic and then click **Assign**. 
@@ -165,14 +120,6 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 
 ### Test SAML Authentication
 
-1. On the Azure **Single Sign-on** page click **Test**.
-
-    ![test.png](/img/security/test.png)
-
-1. Click the **Sign in as current user** radio button and then **Test sign in**.
-
-    ![test-sign-in.png](/img/security/test-sign-in.png)
-
-1. You should be redirected and logged into your Sumo Logic account.  If you have enabled SP Initiated Login, you can also go to your Sumo Logic account subdomain login page and select the new SAML login option that appears. 
-
-    ![welcome-to-sumo.png](/img/security/login-page-sp-v2.png)
+1. On the Azure **Single Sign-on** page click **Test**. <br/><img src={useBaseUrl('img/security/test.png')} alt="Test button" style={{border: '1px solid gray'}} width="800" />
+1. Click the **Sign in as current user** radio button and then **Test sign in**. <br/><img src={useBaseUrl('img/security/test-sign-in.png')} alt="Test dialog" style={{border: '1px solid gray'}} width="800" />
+1. You should be redirected and logged into your Sumo Logic account.  If you have enabled SP Initiated Login, you can also go to your Sumo Logic account subdomain login page and select the new SAML login option that appears. <br/><img src={useBaseUrl('img/security/login-page-sp-v2.png')} alt="Sumo Logic sign in screen" style={{border: '1px solid gray'}} width="800" />

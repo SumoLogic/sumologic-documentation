@@ -121,21 +121,21 @@ _sourceCategory=msgip-app-src riskEventType
 | sort by _count
 ```
 
-## Collecting Logs for Microsoft Graph Identity Protection API
+## Collecting logs for Microsoft Graph Identity Protection API
 
 This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
 
-## Installing the Microsoft Graph Identity Protection App
+## Installing the Microsoft Graph Identity Protection app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Microsoft Graph Identity Protection Dashboards
+## Viewing Microsoft Graph Identity Protection dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-* You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Risk Detections
 
@@ -152,3 +152,15 @@ This dashboard provides insights into the risks detected in the organization. It
 This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />
+
+## Upgrade/Downgrade the Microsoft Graph Identity Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

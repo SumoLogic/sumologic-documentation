@@ -176,7 +176,7 @@ _sourceCategory=aws/guardduty
 
 </details>
 
-## Collecting Logs for the Amazon GuardDuty App
+## Collecting logs for the Amazon GuardDuty App
 
 This section has instructions for collecting logs for the Amazon GuardDuty App.
 
@@ -199,7 +199,7 @@ When you configure the HTTP Source, make a note of the HTTP Source Address URL. 
 
 ### Step 2: Deploy Sumo GuardDuty events processor
 
-In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
+In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](#collecting-logs-for-the-amazon-guardduty-app).
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for “sumologic-guardduty-events-processor”.

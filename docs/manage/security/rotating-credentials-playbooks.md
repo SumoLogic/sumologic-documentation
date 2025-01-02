@@ -18,7 +18,7 @@ Use the playbooks below to assist you in rotating your Sumo Logic [access keys](
 
 ### Rotate Sumo Logic access keys
 To properly rotate an access key:
-1. Identify the access keys that need to be retired/rotated. These can be located in **Administration > Security > Access Keys** in Sumo Logic.
+1. Identify the [access keys](/docs/manage/security/access-keys/) that need to be retired/rotated. 
 2. Identify where the access keys are used in any scripts/apps.
 3. Create a new access key in Sumo Logic and ensure that it is activated.
 4. Replace old key in any scripts/apps with new access key.
@@ -47,13 +47,14 @@ _index=sumologic_audit_events accessId api
 
 ## Rotate third-party credentials used in Webhook Connections playbook
 
-Use the playbooks below to assist you in rotating any third-party credentials used in [Webhook Connections](https://help-opensource.sumologic.com/docs/alerts/webhook-connections/). This includes general outbound webhooks and outbound connections to other services (Slack, Jira, PagerDuty, etc).
+Use the playbooks below to assist you in rotating any third-party credentials used in [Webhook Connections](/docs/alerts/webhook-connections/). This includes general outbound webhooks and outbound connections to other services (Slack, Jira, PagerDuty, etc).
 
 ### Rotating third-party credentials used in Webhook Connections
-To properly rotate these credentials:
-1. Identify the credentials that need to be retired/rotated. These can be located in **Manage Data > Monitoring > Connections**. Select any Connections defined in your Sumo Logic Account.
-2. For the Connections you have defined, create new access credentials where necessary (that is, API keys, passwords, authorization headers, etc).
-3. Replace the old access credentials with the newly created access credentials.
-4. Delete the old access credentials in the corresponding services you are making Connections to.
+To properly rotate these credentials, identify the credentials that need to be retired/rotated. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. Select any Connections defined in your Sumo Logic Account.
+1. For the Connections you have defined, create new access credentials where necessary (that is, API keys, passwords, authorization headers, etc).
+1. Replace the old access credentials with the newly created access credentials.
+1. Delete the old access credentials in the corresponding services you are making Connections to.
 
-For more details on configuring specific Webhook Connections, please see our help docs on [Webhook Connections](https://help-opensource.sumologic.com/docs/alerts/webhook-connections/) for the corresponding Webhooks that you use in Sumo Logic.
+For more details on configuring specific Webhook Connections, please see our help docs on [Webhook Connections](/docs/alerts/webhook-connections/) for the corresponding Webhooks that you use in Sumo Logic.

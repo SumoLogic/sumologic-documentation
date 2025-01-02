@@ -67,7 +67,7 @@ environment=* db_cluster=* db_system=mongodb  | json "log" as _rawlog nodrop
 | count by component
 ```
 
-## Collecting Logs and Metrics for MongoDB
+## Collecting logs and metrics for MongoDB
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for MongoDB.
 
@@ -181,7 +181,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
        * In the tags section (`[inputs.mongodb.tags]`):
          * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
          * `db_system: “mongodb”` - This value identifies the database system.
-   * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -215,7 +215,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
      * **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
        * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
        * `db_system: “mongodb”`. This value identifies the database system.
-     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 2. **Collecting MongoDB Logs from a Log File (Optional)**. Follow the steps below to capture MongoDB logs from a log file on Kubernetes.
    1. Determine the location of the MongoDB log file on Kubernetes. This can be determined from the MongoDB.conf for your MongoDB cluster along with the mounts on the MongoDB pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -235,7 +235,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
      ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
@@ -319,7 +319,7 @@ At this point, MongoDB metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for MongoDB running on a non-Kubernetes environment for the Sumo Logic app for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For more information, see [Installed Collector Requirements](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For more information, see [Installed Collector Requirements](/docs/get-started/system-requirements#installed-collector-requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
 
@@ -421,13 +421,13 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
 
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MongoDB/MongoDB.json) that describes the monitors.
 2. Replace `$$mongodb_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mongodb` or `db_cluster=dev-mongodb`. To configure the alerts for all of your clusters, set `$$mongodb_data_source` to blank (`""`).
-3. Go to **Manage Data > Alerts > Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click **Import**.
 6. On the **Import Content popup**, enter `MongoDB` in the Name field, paste in the JSON into the the popup, and click **Import**.  
@@ -435,7 +435,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration. After extracting the package , navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).

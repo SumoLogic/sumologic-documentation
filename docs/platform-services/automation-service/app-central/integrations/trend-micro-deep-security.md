@@ -1,7 +1,6 @@
 ---
 title: Trend Micro Deep Security
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

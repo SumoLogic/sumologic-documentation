@@ -1,10 +1,10 @@
 ---
 slug: /manage/manage-subscription
-title: Manage Subscription
+title: Manage Plan
 description: Learn about Sumo Logic account plans and types and about how to manage yours.
 ---
 
-The topics in this guide provide information on Sumo Logic service agreements and how to manage your account efficiently. 
+The topics in this guide provide information on Sumo Logic service agreements, setting up a plan, and managing your account. 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -13,26 +13,20 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/sumo-logic-credits-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Sumo Logic Credits Accounts</h4></a>
-  <p>View information on Sumo Logic Credits account, monitor usage, and manage account costs.</p>
+  <a href="/docs/manage/manage-subscription/sumo-logic-flex-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Flex Accounts</h4></a>
+  <p>Learn about Sumo Logic Flex accounts, monitoring usage and managing account costs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/cloud-flex-legacy-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Cloud Flex Legacy Accounts</h4></a>
-  <p>View information, monitor usage, and manage account costs on Cloud Flex legacy accounts.</p>
+  <a href="/docs/manage/manage-subscription/sumo-logic-credits-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Credits Accounts</h4></a>
+  <p>Learn about Sumo Logic Credits accounts, monitoring usage, and managing account costs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
   <p>Learn how to upgrade a Free or Trial account to an Essentials subscription.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade Your Cloud Flex Account</h4></a>
-  <p>Learn how to upgrade your Sumo Logic account.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -49,13 +43,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/create-manage-orgs-service-providers"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Organizations (Service Providers)</h4></a>
+  <a href="/docs/manage/manage-subscription/create-manage-orgs-service-providers"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Orgs (Service Providers)</h4></a>
   <p>Learn how to group, provision, centrally manage, and monitor credits usage of multiple orgs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/manage-org-settings"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Organizational Settings</h4></a>
+  <a href="/docs/manage/manage-subscription/manage-org-settings"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Org Settings</h4></a>
   <p>Learn how to update org names, define subdomain names, delete orgs, and change the account owner.</p>
   </div>
 </div>
@@ -75,6 +69,24 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/manage/manage-subscription/fedramp-capabilities"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>FedRAMP Capabilities</h4></a>
   <p>Learn the capabilities included with Sumo Logic’s FedRAMP solution.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/usage-management"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Usage Management</h4></a>
+  <p>Learn to set query-level budget to define spending limits for queries.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/cloud-flex-legacy-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Cloud Flex Legacy Accounts</h4></a>
+  <p>View information, monitor usage, and manage account costs on Cloud Flex legacy accounts.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Cloud Flex Legacy Account</h4></a>
+  <p>Learn how to upgrade a Cloud Flex legacy account.</p>
   </div>
 </div>
 </div>

@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Exchange Trace Logs Source collects email trace logs from the Office 365 reporting web service via the MessageTrace report under “Exchange reports”. Specific API reference information can be found [here](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -101,7 +97,7 @@ When you create a Microsoft Exchange Trace Logs Source, you add it to a Hosted C
 
 To configure a Microsoft Exchange Trace Logs Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Search for and select **MS Exchange Trace Logs**.
 4. Enter a **Name** for the Source. The description is optional.
@@ -125,19 +121,19 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 |:--|:--|:--|:--|:--|
 | schemaRef | JSON Object  | `{"type":"Microsoft Exchange Trace Logs"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| config | JSON Object | Configuration object | Yes | Source type specific values. |
 
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-exchange-trace-logs/example.json)
+<a href="/files/c2c/microsoft-exchange-trace-logs/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/microsoft-exchange-trace-logs/example.tf)
+<a href="/files/c2c/microsoft-exchange-trace-logs/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

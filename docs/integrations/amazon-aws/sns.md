@@ -73,14 +73,14 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-## Collecting Logs and Metrics for the Amazon SNS app
+## Collecting logs and metrics for the Amazon SNS app
 
 ### Collecting Metrics for Amazon SNS  
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
 3. Namespaces. Select **aws/sns**.
-4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
+4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
 5. Click **Save**.
 
 ### Collecting Amazon SNS Events using CloudTrail
@@ -94,7 +94,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
       * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
-    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
+    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
@@ -105,7 +105,9 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the `"topicname"` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 ### Field Extraction Rule(s)
 

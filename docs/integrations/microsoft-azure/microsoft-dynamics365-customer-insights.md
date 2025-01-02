@@ -37,19 +37,12 @@ Follow the [prerequisites](https://learn.microsoft.com/en-us/dynamics365/custome
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. Create an Event Hubs namespace as described in [step 2 of the prerequisites section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#prerequisites). Here, you do not have to create an Event Hub Instance in step 3 since `Microsoft Dynamics 365 Customer Insights` automatically creates the below two Event Hubs:
+1. Create an Event Hubs namespace as described in step 2 of [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration). Here, you do not have to create an Event Hub Instance in step 3 since `Microsoft Dynamics 365 Customer Insights` automatically creates the below two Event Hubs:
     * **insight-logs-audit**. It contains audit events.
     * **insight-logs-operational**. It contains operational events.
-2. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) for the entire namespace with the `Listen` claim or you can use the existing default `RootManageSharedAccessKey` policy. Copy the `Primary key` associated with this policy. For more details, refer to the [steps 4 and 5 of the prerequisites section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#prerequisites).
-3. Create two Azure Event Hubs Sources using the instructions described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubssource). You can add both of them to the same Hosted Collector. Provide `insight-logs-audit` and `insight-logs-operational` as `Event Hubs Instance Name` in the two Azure Event Hubs Sources, respectively.
+2. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) for the entire namespace with the `Listen` claim or you can use the existing default `RootManageSharedAccessKey` policy. Copy the `Primary key` associated with this policy. For more details, refer to steps 4 and 5 of the [Vendor configuration section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration).
+3. Create two Azure Event Hubs Sources using the instructions described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration). You can add both of them to the same Hosted Collector. Provide `insight-logs-audit` and `insight-logs-operational` as `Event Hubs Instance Name` in the two Azure Event Hubs Sources, respectively.
 4. To create the Diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/dynamics365/customer-insights/diagnostics#set-up-diagnostics-with-azure-monitor).
    1. Choose Event Hub as the `Resource type`.
    1. Select the Event Hub's `Subscription` name, `Resource group` name, and `Resource` name for the destination resource.
 
-### Troubleshooting
-
-### Azure Event Hubs Source
-
-Common error types are described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#error-types).
-
-You can try [restarting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#restarting-your-source) the source for `ThirdPartyConfig` errors.

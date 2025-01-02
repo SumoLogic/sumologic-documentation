@@ -22,10 +22,6 @@ The source will fetch complete vulnerability instance data that has been updated
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -53,7 +49,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-new-client.png>" width="600" />
 1. Provide a proper name and description and select the **spotlight-vulnerabilities:read** scope. Click on `ADD` to complete the process.
-1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike Spotlight source](#set-up-crowdstrike-spotlight-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-copy-creds.png>" width="600" />
+1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike Spotlight source](#source-configuration).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-copy-creds.png>" width="600" />
 
 #### Region
 
@@ -71,7 +67,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 When you create a CrowdStrike Spotlight Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike Spotlight Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike Spotlight** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -114,13 +110,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-spotlight/example.json)
+<a href="/files/c2c/crowdstrike-spotlight/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-spotlight/example.tf)
+<a href="/files/c2c/crowdstrike-spotlight/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

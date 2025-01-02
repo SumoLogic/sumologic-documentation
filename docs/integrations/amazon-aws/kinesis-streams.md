@@ -64,7 +64,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | count by error_code, error_msg, eventName, userName, sourceIPAddress
 ```
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams app
+## Collecting logs and metrics for the Amazon Kinesis - Streams app
 
 ### Collecting Metrics
 
@@ -158,3 +158,15 @@ See the details of the Kinesis metrics including the incoming bytes, incoming re
 **Get Records Success**. See the average of the metric get records success for the last 24 hours on a line chart.
 
 **Iterator Age (ms) by Stream and Shard**. See the maximum of the metric iterator age in milliseconds by stream and shard for the last 24 hours on a line chart.
+
+## Upgrade/Downgrade the Amazon Kinesis - Streams app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Kinesis - Streams app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

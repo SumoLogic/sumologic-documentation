@@ -51,7 +51,7 @@ This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
@@ -84,3 +84,15 @@ The **Symantec Web Security Service - Security Overview** dashboard provides a c
 ### Web Activity Overview
 
 The **Symantec Web Security Service - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>
+
+## Upgrade/Downgrade the Symantec Web Security Service app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Symantec Web Security Service app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

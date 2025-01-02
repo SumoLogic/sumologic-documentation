@@ -1,31 +1,38 @@
 ---
 id: audit
-title: Sumo Logic Audit App
+title: Sumo Logic Audit app
 sidebar_label: Audit
-description: The Audit App uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
+description: The Audit app uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Audit App uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
+The Sumo Logic Audit app uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
 :::info caution
 * Make sure that the Sumo auditing is enabled. If it is not, an administrator must enable it before you install the Audit app. For instructions, see [Enable and Manage Auditing](/docs/manage/security/audit-indexes/audit-index.md).  
 * Data is provided from the time the Sumo Auditing is enabled. Audit data is not backfilled to any time before the feature was enabled.
 :::
 
-## Installing the Sumo Logic Audit App
+## Installing the Sumo Logic Audit app
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
+
+## Create monitors for the Sumo Logic Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
 
 ## Viewing Sumo Logic Audit dashboards
 
-This section describes each of the dashboards in the Audit app.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### Account Management Overview
 
@@ -230,3 +237,15 @@ See information on scheduled searches that have been triggered, along with detai
 **Non-200 Status Codes by Name**. Details for non-200 status code results for Webhooks with saved search names and their respective counts.
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
+
+## Upgrade/Downgrade the Sumo Logic Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sumo Logic Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

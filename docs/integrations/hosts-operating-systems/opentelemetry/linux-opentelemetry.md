@@ -19,15 +19,21 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#linux-alerts). For details on creating custom monitors, refer to [Create monitors for Linux app](#create-monitors-for-linux-app).
+:::
+
 ## Fields Created in Sumo Logic for Linux
 
 Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
 
-### Across apps
-
-- **`sumo.datasource`** - has a fixed value of **linux**.
+- **`sumo.datasource`**. Has a fixed value of `linux`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the linux host cluster is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed.
 
 ## Prereqisites
+
 This app is based on the following log files from the Ubuntu Linux machine.
 
 - auth.log
@@ -164,7 +170,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)
 ```
 
-## Sample Metrics
+## Sample metrics
 
 ```json
 {
@@ -200,7 +206,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 
 ### Log query
 
-Logs query from the **Total Event Distribution** panel.
+This is a sample log query from the **Total Event Distribution** panel.
 
 ```sql
 %"sumo.datasource"=linux   
@@ -211,13 +217,17 @@ Logs query from the **Total Event Distribution** panel.
 
 ### Metrics query
 
-Metrics query from the **CPU Utilization Over Time** panel.
+This is a metrics query from the **CPU Utilization Over Time** panel.
 
 ```sql
 sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
-## Linux app dashboards
+## Viewing Linux dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Linux - Overview
 
@@ -274,15 +284,11 @@ Use this dashboard to:
 
 ### Host Metrics - TCP
 
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
-
-Use this dashboard to:
-
-- Identify abnormal spikes in inbound, outbound, open, or established connections.
+The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
 
-### The Process Metrics - Overview
+### Process Metrics - Overview
 
 The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
 
@@ -304,13 +310,11 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
 
-
 ### Linux - Event Sources
 
 The **Linux - Event Sources** dashboard provides information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png' alt="Linux - Event Sources" />
-
 
 ### Linux - Login Status
 
@@ -323,3 +327,17 @@ The **Linux - Login Status** dashboard provides information about logins to Linu
 The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
+
+## Create monitors for Linux app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Linux - High CPU Utilization Alert` | This alert gets triggered when CPU utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |

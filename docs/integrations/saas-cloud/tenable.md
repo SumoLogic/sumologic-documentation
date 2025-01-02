@@ -48,17 +48,33 @@ _sourceCategory=Tenable
 | json "description", "actor.name", "target.name", "action" as description, actor_name, target_name, action
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) for the Tenable app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Tenable source category, which you will need to use when installing the app. By following these steps, you can ensure that your Tenable app is properly integrated and configured to collect and analyze your Tenable data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Tenable app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
+:::important
+Use the [Cloud-to-Cloud Integration for Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Tenable app is properly integrated and configured to collect and analyze your Tenable data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Tenable dashboards​
 
@@ -74,3 +90,15 @@ The **Tenable - Overview** dashboard provides in-depth vulnerability assessments
 
 The **Tenable - Audit Activity** dashboard provides the user events data to monitor and analyze critical audit events within your organization using the Tenable Audit Events API.
 <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid gray'}} alt="Tenable-Audit-Activity" width="800"/>
+
+## Upgrade/Downgrade the Tenable app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Tenable app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

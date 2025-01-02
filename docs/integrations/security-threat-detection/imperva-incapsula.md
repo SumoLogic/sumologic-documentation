@@ -162,3 +162,15 @@ See the details of BOT access control in your WAF service including the city, co
 **User Agents Top Values**. See the top 10 user agents by count in the last 14 days on a bar chart.
 
 **Source IP Top Values**. See the top 10 source IP addresses by count in the last 14 days on a bar chart.
+
+## Upgrade/Downgrade the Imperva-Incapsula WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Imperva-Incapsula WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

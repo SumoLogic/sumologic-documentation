@@ -19,7 +19,7 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page click **Add**.
 1. Click **Slack**.
 1. In the **Create Connection** dialog, enter the **Name** of the Connection.
@@ -37,6 +37,10 @@ Slack offers a [Message Builder](https://api.slack.com/docs/messages/builder) wh
 ## Examples
 
 These examples are provided as a reference on Slack's supported Webhook payloads. Refer to Slack for further details on what their service supports and how to build payloads.
+
+:::info
+You can use `blocks` as an alternative to `attachments`. However, our default payload still uses `attachments`.
+:::
 
 ### Send Scheduled Search results
 
@@ -85,8 +89,8 @@ The underlined portion is the token that is needed for the Slack configuration. 
 
 ```json
 {
-"text": "{{Name}} ran over {{TriggerTimeRange}} at {{TriggerTime}}",
-"username": "Sumo Logic Alert"
+  "text": "{{Name}} ran over {{TriggerTimeRange}} at {{TriggerTime}}",
+  "username": "Sumo Logic Alert"
 }
 ```
 
@@ -94,28 +98,28 @@ Here is an example JSON payload using Slack's **attachments** parameter:
 
 ```json
 {
-     "attachments": [
-         {
-             "pretext": "Sumo Logic Alert: *{{Name}}*",
-             "fields": [
-                 {
-                     "title": "Description",
-                     "value": "{{Description}}"
-                 },
-                 {
-                     "title": "Query",
-                     "value": "<{{QueryUrl}}|{{Query}}>"
-                 },
-                 {
-                     "title": "Time Range",
-                     "value": "{{TriggerTimeRange}}"
-                 }
-             ],
-             "mrkdwn_in": ["text", "pretext"],
-             "color": "#29A1E6"
-         }
-     ]
- }
+  "attachments": [
+    {
+      "pretext": "Sumo Logic Alert: *{{Name}}*",
+      "fields": [
+        {
+          "title": "Description",
+          "value": "{{Description}}"
+        },
+        {
+          "title": "Query",
+          "value": "<{{QueryUrl}}|{{Query}}>"
+        },
+        {
+          "title": "Time Range",
+          "value": "{{TriggerTimeRange}}"
+        }
+      ],
+      "mrkdwn_in": ["text", "pretext"],
+      "color": "#29A1E6"
+    }
+  ]
+}
 ```
 
 ## Create an alert

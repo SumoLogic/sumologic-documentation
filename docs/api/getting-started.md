@@ -13,6 +13,8 @@ This guide describes API authentication and the Sumo Logic endpoints to use for 
 
 Sumo Logic APIs follow Representational State Transfer (REST) patterns and are optimized for ease of use and consistency. Our interactive API docs have been developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated. The API docs on this site serve as supplemental information.
 
+## Documentation
+
 To view our main docs, click the link below corresponding to your deployment. If you're not sure, see [How to determine your endpoint](#which-endpoint-should-i-should-use).
 
 | Deployment | API Docs URL                       |
@@ -24,6 +26,7 @@ To view our main docs, click the link below corresponding to your deployment. If
 | FED        | https://api.fed.sumologic.com/docs/ |
 | IN         | https://api.in.sumologic.com/docs/  |
 | JP         | https://api.jp.sumologic.com/docs/  |
+| KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
 
@@ -34,6 +37,10 @@ Sumo Logic supports the following options for API authentication:
 * Base64-encoded access id and access key
 
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
+
+:::info
+Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for. 
+:::
 
 ### Access ID and Access Key
 
@@ -148,6 +155,14 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://open-collectors.jp.sumologic.com</td>
   </tr>
   <tr>
+   <td>KR</td>
+   <td>https://service.kr.sumologic.com</td>
+   <td>https://api.kr.sumologic.com/api/</td>
+   <td>https://collectors.kr.sumologic.com</td>
+   <td>syslog.collection.kr.sumologic.com</td>
+   <td>https://open-collectors.kr.sumologic.com</td>
+  </tr>
+  <tr>
    <td>US1</td>
    <td>https://service.sumologic.com/</td>
    <td>https://api.sumologic.com/api/</td>
@@ -176,13 +191,13 @@ https://endpoint8.collection.us2.sumologic.com<br/>
 https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
-  </tr></small>
-</table>
-
+  </tr>
+  </small>
+  </table>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`,`kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
@@ -247,6 +262,6 @@ Clients must be prepared to handle such failures if they anticipate concurrent u
 
 ## Sumo Logic alerts from static IP addresses
 
-Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections#test-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.

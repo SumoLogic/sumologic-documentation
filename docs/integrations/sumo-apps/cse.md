@@ -18,7 +18,7 @@ Watch this micro lesson to learn more about the Enterprise Audit - Cloud SIEM ap
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -58,154 +58,158 @@ Cloud SIEM Insight activity is written to these Audit Event Index partitions:
 
 Logs written to either of the partitions above are assigned the source category cseinsight. Note that the Audit Event Index contains logs for a variety of Sumo Logic subsystems, so when searching either partition for Insights, include the source category in your search scope.
 
+## Install the Enterprise Audit - Cloud SIEM app
 
-## Install the App
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-1. From the App Catalog, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+<AppInstallNoDataSourceV2/>
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+## Viewing the Enterprise Audit - Cloud SIEM app dashboards
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-## View App Dashboards
+<ViewDashboards/>
 
 ### Insight Trainer
 
-This dashboard offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity Signals, resulting in generation of more meaningful Insights. For more information, see [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer).
+The **Cloud SIEM - Insight Trainer** dashboard offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity Signals, resulting in generation of more meaningful Insights. For more information, see [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer).
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-insight-trainer-dashboard.png')} alt="Cloud SIEM dashboard" />
 
 ### Insights Closed
 
-This dashboard displays metrics on closed Insights, including breakdowns by severity, resolution status, assignee, Entity type, Rule ID and more.
+The **Cloud SIEM - Insights Closed** dashboard displays metrics on closed Insights, including breakdowns by severity, resolution status, assignee, Entity type, Rule ID and more.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-closed.png')} alt="Cloud SIEM dashboard" />
 
 ### Insights Created
 
-This dashboard presents metrics about Insight creation in your environment. You can see information like how many insights have been created, average time to detection, and Insight Confidence statistics. There are breakdowns of Insights created by severity, primary Entity, rule ID, Entity type, and more.
+The **Cloud SIEM - Insights Created** dashboard presents metrics about Insight creation in your environment. You can see information like how many insights have been created, average time to detection, and Insight Confidence statistics. There are breakdowns of Insights created by severity, primary Entity, rule ID, Entity type, and more.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-created.png')} alt="Cloud SIEM dashboard" />
 
 ### Insights Overview
 
-This dashboard displays a high level view of Insight activity in your environment. You can see counts of Insights created and  closed over time, and the top Insights by Confidence Level.
+The **Cloud SIEM - Insights Overview** dashboard displays a high level view of Insight activity in your environment. You can see counts of Insights created and  closed over time, and the top Insights by Confidence Level.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-overview.png')} alt="Cloud SIEM dashboard" />
 
 ### Parsing and Mapping Troubleshooting
 
-This dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
+The **Cloud SIEM - Parsing and Mapping Troubleshooting** dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
 
 ### Rules and Mapping Changes
 
-This dashboard is useful for monitoring rule management activities. It has information about Cloud SIEM rules, including content management activities like rule creation, modification, and deletion. You can also see more detailed information about rule management events, such as the associated user, and the rule’s enablement and prototype status.
+The **Cloud SIEM - Rules and Mapping Changes** dashboard is useful for monitoring rule management activities. It has information about Cloud SIEM rules, including content management activities like rule creation, modification, and deletion. You can also see more detailed information about rule management events, such as the associated user, and the rule’s enablement and prototype status.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/rules-and-mapping-chanages.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Failed Records
 
-This dashboard is useful for understanding if you have messages or data sources for which  Cloud SIEM is unable to create normalized Records.
+The **Cloud SIEM - Record Analysis Failed Records** dashboard is useful for understanding if you have messages or data sources for which  Cloud SIEM is unable to create normalized Records.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Failed-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Audit Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Audit. Typically, this Record type is used for log sources that leave a basic audit trail.
+The **Cloud SIEM - Record Analysis Audit Records** dashboard displays metrics about Records created by Cloud SIEM of the type Audit. Typically, this Record type is used for log sources that leave a basic audit trail.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Audit-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Authentication Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Authentication. Typically, this Record type is used for log sources that report successful or unsuccessful authentication events.
+The **Cloud SIEM - Record Analysis Authentication Records** dashboard displays metrics about Records created by Cloud SIEM of the type Authentication. Typically, this Record type is used for log sources that report successful or unsuccessful authentication events.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Authentication-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Email Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Email. Typically, this Record type is used for log sources containing email information such as email protection applications and services.
+The **Cloud SIEM - Record Analysis Email Records** dashboard displays metrics about Records created by Cloud SIEM of the type Email. Typically, this Record type is used for log sources containing email information such as email protection applications and services.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Email-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Endpoint Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Endpoint. Typically, this Record type is used for messages from endpoint security services.
+The **Cloud SIEM - Record Analysis Endpoint Records** dashboard displays metrics about Records created by Cloud SIEM of the type Endpoint. Typically, this Record type is used for messages from endpoint security services.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Endpoint-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Network Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Network. Typically, this Record type is used for messages from log sources that describe network events.
+The **Cloud SIEM - Record Analysis Network Records** dashboard displays metrics about Records created by Cloud SIEM of the type Network. Typically, this Record type is used for messages from log sources that describe network events.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Network-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Notification Records
 
-This dashboard displays metrics about Records created by Cloud SIEM of the type Notification. Typically, this Record type is used for messages from services that issue notifications or alerts, like threat detection and response systems.
+The **Cloud SIEM - Record Analysis Notification Records** dashboard displays metrics about Records created by Cloud SIEM of the type Notification. Typically, this Record type is used for messages from services that issue notifications or alerts, like threat detection and response systems.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Notification-Records.png')} alt="Cloud SIEM dashboard" />
 
 ### Record Analysis Record Overview
 
-This dashboard provides an overview of Cloud SIEM Records by source, destination, volume,  and vendor and product.
+The **Cloud SIEM - Record Analysis Record Overview** dashboard provides an overview of Cloud SIEM Records by source, destination, volume,  and vendor and product.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Record-Overview.png')} alt="Cloud SIEM dashboard" />
 
 ### Signal Analysis
 
-This dashboard presents metrics about Signals that have been fired, including breakdowns by rule, host, and IP address.
+The **Cloud SIEM - Signal Analysis** dashboard presents metrics about Signals that have been fired, including breakdowns by rule, host, and IP address.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis.png')} alt="Cloud SIEM dashboard" />
 
 ### Signal Analysis Rules
 
-This dashboard provides trend analysis of triggered rules, rules by match expression and top rules triggered.
+The **Cloud SIEM - Signal Analysis Rules** dashboard provides trend analysis of triggered rules, rules by match expression and top rules triggered.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis-rules.png')} alt="Cloud SIEM dashboard" />
 
 ### Signal Monitoring
 
-This dashboard provides times-based metrics for Cloud SIEM Signals, and Signal disappearance metrics.
+The **Cloud SIEM - Signal Monitoring** dashboard provides times-based metrics for Cloud SIEM Signals, and Signal disappearance metrics.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signal-monitoring.png')} alt="Cloud SIEM dashboard" />
 
 ### Signals Overview
 
-This dashboard provides an overview of Signal activity, including Signal count over time, and a table of summary information for generated Signals.
+The **Cloud SIEM - Signal Overview** dashboard provides an overview of Signal activity, including Signal count over time, and a table of summary information for generated Signals.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signals-overview.png')} alt="Cloud SIEM dashboard" />
 
 ### Signals by Product
 
-This dashboard shows breakdowns of Signal by product and vendor.
+The **Cloud SIEM - Signals by Product** dashboard shows breakdowns of Signal by product and vendor.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signals-by-product.png')} alt="Cloud SIEM dashboard" />
 
 ### SIEM SOC Insights
 
-This dashboard shows breakdowns of SOC insights.
+The **Cloud SIEM - Signal SOC Insights** dashboard shows breakdowns of SOC insights.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-insights.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM SOC Insights"/>
 
 ### SOC Standup Overview
 
-This dashboard provides an overview of total alerts, infrequent alerts breakdown, trending alerts breakdown, and detailed daily alerts breakdow.
+The **Cloud SIEM - Signal Standup Overview** dashboard provides an overview of total alerts, infrequent alerts breakdown, trending alerts breakdown, and detailed daily alerts breakdow.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-standup-overview.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM SOC Standup Overview"/>
 
 ### User Telemetry
 
-This dashboard shows breakdowns of Cloud SIEM user telemetry.
+The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM user telemetry.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM User Telemetry"/>
+
+## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit - Cloud SIEM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

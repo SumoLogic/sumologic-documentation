@@ -71,7 +71,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort _count
 ```
 
-## Collecting Logs for the AWS Config App
+## Collecting logs for the AWS Config App
 
 ### Prerequisites
 
@@ -104,7 +104,7 @@ In Sumo Logic, create a [Hosted Collector](/docs/send-data/hosted-collectors/con
 
 ### Configure a Source
 
-Next, configure an [HTTP Source](/#Collect-logs-for-the-AWS-Config-App).
+Next, configure an [HTTP Source](#collecting-logs-for-the-aws-config-app).
 
 1. Configure the Source fields:
     1. Name. (Required) Eg. AWS Config
@@ -190,7 +190,7 @@ The AWS Config Overview dashboard runs in Live mode. Live mode dashboards automa
 
 ### AWS Overview - Interactive
 
-This dashboard is identical to the [AWS Config Overview](#AWS_Config_Overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
+This dashboard is identical to the [AWS Config Overview](#aws-config-overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
 
 
 ### Resource Modifications Details - Interactive

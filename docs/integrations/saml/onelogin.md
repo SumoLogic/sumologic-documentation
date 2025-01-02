@@ -29,7 +29,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 The Sumo Logic app for OneLogin uses event logs in NDJSON format.
 
-## Sample log message
+## Sample log messages
 
 Each event is a single-line JSON, containing information such as:
 
@@ -109,7 +109,7 @@ Each event is a single-line JSON, containing information such as:
 }
 ```
 
-## Sample query
+## Sample queries
 
 ```sql title="Name - Events by User"
 _sourceCategory=onelogin
@@ -182,3 +182,15 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 **User Modifications.** See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginSecurity.png')} alt="OneLogin" />
+
+## Upgrade/Downgrade the OneLogin app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the OneLogin app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

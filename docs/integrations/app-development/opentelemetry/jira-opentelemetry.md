@@ -30,9 +30,9 @@ This section provides instructions for configuring log collection for Jira runni
 Follow the instructions to set up log collection.
 
 The Jira app uses the following log types:
-- **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`,  in your JIRA Installation Directory.
+- **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`, in your Jira Installation Directory.
 - **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
-- **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your JIRA Installation Directory.
+- **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your Jira Installation Directory.
 - **Jira Webhooks**. Webhook events of types:
     - Issue
     - User
@@ -87,7 +87,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     - started (sprint_started)
     - closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the [HTTP source you created](#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Collection configuration and app installation
 

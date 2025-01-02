@@ -69,7 +69,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 Configure the webhook connection to trigger the AWS Lambda function.
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page, click **Add**.
 1. Click **AWS Lambda**.
 1. In the **Create Connection** dialog, enter:

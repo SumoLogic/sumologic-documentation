@@ -1,14 +1,16 @@
 ---
 slug: /integrations/security-threat-detection
 title: Security and Threat Detection
-description: Learn about Sumo apps for Security and Threat Detection.
+description: Learn how to use Sumo Logic apps for Security and Threat Detection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="45"/>
-
 Sumo Logic provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
+
+import CisNote from '../../reuse/cis-note.md';
+
+<CisNote/>
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
@@ -91,12 +93,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/keeper-security"><img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="thumbnail icon" width="125"/><h4>Keeper Security</h4></a>
-  <p>A guide to the Sumo Logic app for Keeper Security.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/integrations/security-threat-detection/netskope-legacy-collection"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope Legacy Collection</h4></a>
   <p>A guide to the Sumo Logic app for Netskope Legacy Collection.</p>
   </div>
@@ -111,18 +107,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/observable-networks"><img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="70"/><h4>Observable Networks</h4></a>
   <p>A guide to the Sumo Logic app for Observable Networks.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/palo-alto-networks-6"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Networks 6</h4></a>
-  <p>A guide to the Sumo Logic app for Palo Alto Networks 6.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/palo-alto-networks-8"><img src={useBaseUrl('img/integrations/security-threat-detection/pan8.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Networks 8</h4></a>
-  <p>A guide to the Sumo Logic app for Palo Alto Networks 8.</p>
   </div>
 </div>
 <div className="box smallbox card">

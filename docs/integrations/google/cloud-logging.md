@@ -14,7 +14,7 @@ Cloud Logging is a real-time log management system with storage, search, analysi
 ## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
-* [Audit Logs](https://docs.aws.amazon.com/appflow/latest/userguide/appflow-cloudtrail-logs.html)
+* [Audit Logs](https://cloud.google.com/logging/docs/audit)
 
 ## Setup
 

@@ -18,10 +18,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The AWS Cost Explorer Source collects cost and usage reports from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You have the option to collect from one or more specific [AWS cost types](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) and set how often reports are collected.
 
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -36,7 +32,7 @@ When you create an AWS Cost Explorer collector Source, you add it to an existing
 
 To configure an AWS Cost Explorer Source:
 
-1. On the **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **AWS Cost Explorer**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The **Description** is optional.
@@ -89,7 +85,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 |:--|:--|:--|:--|:--|
 | schemaRef | JSON Object  | `{"type":"AWS Cost Explorer"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| config | JSON Object | [Configuration object](#config-parameters) | Yes | Source type specific values. |
 
 ### Config Parameters
 
@@ -109,13 +105,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/aws-cost-explorer/example.json)
+<a href="/files/c2c/aws-cost-explorer/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/aws-cost-explorer/example.tf)
+<a href="/files/c2c/aws-cost-explorer/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

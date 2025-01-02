@@ -4,7 +4,7 @@ title: user.properties
 description: The user.properties file is used to pass Collector parameters for some installation methods.
 ---
 
-For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties) below.
+For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties-parameters) below.
 
 When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation. See [Parameters for the Command Line Installer](parameters-command-line-installer.md) for more information.
 
@@ -19,7 +19,7 @@ After downloading the collector binary package (e.g., tarball), create the `us
 To create `user.properties` manually:
 
 1. Use a text editor (or any similar program) to create a new file.
-1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties) below. Parameters are case sensitive.
+1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties-parameters) below. Parameters are case sensitive.
 1. Save the file to `CollectorInstallationDirectory/config/user.properties`.
 
 :::important
@@ -92,7 +92,7 @@ Key-value parameters (**key=value**). Add as needed.
 | `fields=[list of fields]` | Comma-separated list of key=value [fields](/docs/manage/fields) (metadata) to apply to the Collector.<br/>To assign an [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector use the field _budget with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of Dev_20GB, you would add:<br/>`fields=_budget=Dev_20GB` | No, use the [Collector Management API](/docs/api/collector-management) to modify. |
 | `fipsJce=true/false`<br/>Available on Collector version 19.253-3+ | Informs you if FIPS 140-2 compliant Java Cryptography Extension (JCE) is enabled. This option is only supported in specific deployments, ask your Sumo account representative for details. | No, requires a new installation. |
 | `hostName=hostname`<br/>Available on Collector version 19.182+. | The host name of the machine on which the collector is running. The host name can be a maximum of 128 characters. | No, use the [Collector Management API](/docs/api/collector-management) to modify. |
-| `name=name` | Sets the name of collector used on Sumo Logic. The name can be a maximum of 128 characters.<br/>If no name is provided and the hostname is unresolved the default name is `Collector`.<br/>If you are installing a collector that would have the same name as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name. | No, use [Edit the Collector](/docs/send-data/collection/edit-collector.md) or the [Collector Management API](/docs/api/collector-management#Collector-API-Methods-and-Examples) to modify |
+| `name=name` | Sets the name of collector used on Sumo Logic. The name can be a maximum of 128 characters.<br/>If no name is provided and the hostname is unresolved the default name is `Collector`.<br/>If you are installing a collector that would have the same name as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name. | No, use [Edit the Collector](/docs/send-data/collection/edit-collector.md) or the [Collector Management API](/docs/api/collector-management/collector-api-methods-examples) to modify |
 | `proxyHost=host` | Sets proxy host when a proxy server is used. | Yes, with Collector restart. |
 | `proxyNtlmDomain=NTLM domain` | Sets proxy NTLM domain when a proxy server is used with NTLM authentication. | Yes, with Collector restart. |
 | `proxyPassword=password` | Sets proxy password when a proxy server is used with authentication. | Yes, with Collector restart. |
@@ -103,8 +103,8 @@ Key-value parameters (**key=value**). Add as needed.
 | `syncSources=absolute filepath or folderpath` | Specifies either a single UTF-8 encoded JSON file, or a folder containing UTF-8 encoded JSON files, that define the Sources to configure upon Collector registration. The Source definitions will be continuously monitored and synchronized with the Collector's configuration.<br/>On Windows, the path value must be specified with double slashes, \\.<br/>The file must have a .json extension.<br/>For more information, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). | Yes, with Collector restart. |
 | `targetCPU=target`<br/>Available on Collector version 19.182+. | You can choose to set a CPU target to limit the amount of CPU processing a collector uses. The value must be expressed as a whole number percentage. For example:<br/>`targetCPU=20`<br/>The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see [Set the Collector CPU Usage Target](/docs/send-data/collection/set-collector-cpu-usage-target.md). | No, use the [Collector Management API](/docs/api/collector-management) to modify. |
 | `timeZone=timezone`<br/>Available on Collector version 19.182+. | The time zone to use when it is not extracted from the log timestamp. For example:<br/>`timeZone=America/Los_Angeles`<br/>For a list of possible values, refer to the "TZ" column in [this Wikipedia article](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). | No, use the [Collector Management API](/docs/api/collector-management) to modify. |
-| `token=token` | Either an [Installation Token](/docs/manage/security/installation-tokens.md) or Setup Wizard Token.<br/>This is not the encoded Token+URL. It is the decoded token only. [See how to decode the token](/docs/manage/security/installation-tokens/#userproperties). | No |
-| `url=collection endpoint` | Sets the [collection endpoint](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints) URL used to register the Collector. For example, if your account is in the US2 deployment:<br/>`url=https://collectors.us2.sumologic.com` | Yes, with Collector restart. |
+| `token=token` | An [Installation Token](/docs/manage/security/installation-tokens.md).<br/>This is not the encoded Token+URL. It is the decoded token only. [See how to decode the token](/docs/manage/security/installation-tokens/#userproperties). | No |
+| `url=collection endpoint` | Sets the [collection endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) URL used to register the Collector. For example, if your account is in the US2 deployment:<br/>`url=https://collectors.us2.sumologic.com` | Yes, with Collector restart. |
 
 ##  (Optional) JVM or wrapper configuration parameters
 

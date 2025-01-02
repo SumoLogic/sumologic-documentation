@@ -6,7 +6,12 @@ description: Webhook connections send alerts to third-party applications.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Our webhook connections send Sumo Logic alerts to third-party applications. To access them, go to **Manage Data** > **Monitoring** > **Connections**.
+Our webhook connections send Sumo Logic alerts to third-party applications.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access webhook connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access webhook connections, in the top menu select **Configuration** and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**.
+
 
 :::tip
 See also: [Webhook Integrations](/docs/integrations/webhooks).

@@ -17,7 +17,7 @@ The Sumo Logic app for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimiz
 
 The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
 
-### Sample log message 
+### Sample log messages
 
 ```json title="LTM Request Log"
 {
@@ -35,7 +35,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, a
 }
 ```
 
-### Sample query
+### Sample queries
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 
@@ -87,13 +87,13 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 #### Step 1: Create a Sumo Logic Hosted Collector
 
 1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics), configuring the Source Category with the string f5 in it (e.g., “f5/ltm”). Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: `https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==`.
+2. Add an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics), configuring the Source Category with the string f5 in it (e.g., “f5/ltm”). Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`.
 
-#### Step 2: Use AS3 Declarative language to define a logging profile on BIG-IP.
+#### Step 2: Use AS3 Declarative language to define a logging profile on BIG-IP
 
-Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile st BIG IP.
+Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile on BIG IP.
 
-Use the following curl cmd to set logging profile at BIG-IP. Replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT` in the following cmd:
+Use the following curl command to set logging profile at BIG-IP. Replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT` in the following command:
 
 ```bash
 curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@AS3Listener.json https://<BIG-IP IP>:<PORT>/mgmt/shared/appsvcs/declare | python -m json.tool
@@ -101,16 +101,13 @@ curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
-Download [Sumo Logic Consumer sumo.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST`.
+Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
 
-`SUMOLOGIC_SECRET_KEY` and `SUMOLOGIC_PATH` with values from Sumo logic HTTP URL created in step 1.
-
-Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==`, the above values are as follows:
+Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`
-* `SUMOLOGIC_SECRET_KEY`. `/receiver/v1/http/`
-* `SUMOLOGIC_PATH`. `Thisis4fakeendpoint4testing==`
+* `SUMOLOGIC_SECRET_KEY`. `test-endpoint`
 
-Now, using telemetry, we will define a [Sumo Logic sink](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumo-logic). This will enable us to forward statistics and events from the BIG-IP to Sumo Logic. Use the following curl cmd and replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT`.
+Now, using telemetry, we will define a [Sumo Logic sink](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumo-logic). This will enable us to forward statistics and events from the BIG-IP to Sumo Logic. Use the following curl command and replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT`.
 
 ```bash
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
@@ -180,3 +177,15 @@ Use this dashboard to:
 * Review user requests and application access by users.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
+
+## Upgrade/Downgrade the F5 - BIG-IP LTM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the F5 - BIG-IP LTM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

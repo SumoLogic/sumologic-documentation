@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
-[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM](/docs/integrations/web-servers/nginx-legacy)
+[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM](/docs/integrations/web-servers/nginx)
 application. It helps DevOps and infrastructure engineers to compare server, and user activity patterns associated with their Nginx servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Nginx clusters and avoid operational incidents arising from sub-optimal configurations of Nginx clusters. 
 
 | Dashboard | Description|
@@ -53,7 +53,7 @@ The following sample query is from the Average **Requests Per Second: My Company
 
 ## Configuring Log Collection for Global Intelligence for Nginx
 
-Follow the steps on the [Sumo Logic Nginx app](/docs/integrations/web-servers/nginx-legacy) to configure the log collection for Global Intelligence for Nginx app.
+Follow the steps on the [Sumo Logic Nginx app](/docs/integrations/web-servers/nginx) to configure the log collection for Global Intelligence for Nginx app.
 
 ## Installing the Global Intelligence for Nginx app
 
@@ -74,7 +74,7 @@ The **GI Nginx - 01 Golden Signals** dashboard tabulates requests per second, HT
 Use this dashboard to:
 
 * Compare requests per second, HTTP method mix and GB per request along with response types, errors and log levels distribution for your company’s Nginx servers versus all servers.
-* As noted [here](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers), Ngnix request rate is affected by: (a) CPUs allocated (b) data transferred  and (c) use of HTTPs. Assess if your Nginx request rates are significantly lower for a given server compared to other Nginx. If so, consult the Nginx documentation to determine if adequate CPU resources are allocated. Next, check if differences in HTTP method mix (greater share of POST over GET) or (greater) GB per request might explain lower request rates. Error rate differences compared to the benchmark might imply application incidents (for server-side error codes) or user / client side issues (for 4XX errors). Diagnose these further by correlating with application incidents, GB per request differences or other factors. 
+* As noted [here](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers), Nginx request rate is affected by: (a) CPUs allocated (b) data transferred  and (c) use of HTTPs. Assess if your Nginx request rates are significantly lower for a given server compared to other Nginx. If so, consult the Nginx documentation to determine if adequate CPU resources are allocated. Next, check if differences in HTTP method mix (greater share of POST over GET) or (greater) GB per request might explain lower request rates. Error rate differences compared to the benchmark might imply application incidents (for server-side error codes) or user / client side issues (for 4XX errors). Diagnose these further by correlating with application incidents, GB per request differences or other factors. 
 * Use the trend line panels for request rate, GB per request and errors to understand if your Nginx errors have a temporal pattern that might help explain differences compared to benchmarks. 
 
 ![golden signals.jpg](/img/global-intelligence/nginx-golden-signals.jpeg)
@@ -92,3 +92,15 @@ Use this dashboard to:
 * Diagnose deviations of your company compared to the benchmark by using the trend line panels for your company’s Nginx servers
 
 ![nginx-benchmarks](/img/global-intelligence/nginx-benchmarks.jpeg)
+
+## Upgrade/Downgrade the Global Intelligence for Nginx app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Global Intelligence for Nginx app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

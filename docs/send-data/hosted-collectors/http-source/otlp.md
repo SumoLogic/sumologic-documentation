@@ -22,7 +22,7 @@ As indicated [here](/docs/apm/traces/quickstart/#prerequisites), the following p
 
 To configure an OTLP/HTTP Source:
 
-1. In the Sumo Logic web interface, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **OTLP/HTTP**. <br/> <img src={useBaseUrl('img/send-data/OTLP-HTTP-source-icon.png')} alt="OTLP:HTTP source icon" width="100"/>
 1. Enter a **Name** for the Source. A description is optional. <br/> ![OTLP:HTTP basic configuration settings.png](/img/send-data/OTLP-HTTP-basic-configuration-settings.png)

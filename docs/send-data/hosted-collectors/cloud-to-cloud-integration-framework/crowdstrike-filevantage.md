@@ -21,10 +21,6 @@ The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by 
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -72,7 +68,7 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FileVantage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FileVantage Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FileVantage** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -107,16 +103,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | base_url | String | Yes | `null` | The API base url for the region of your CrowdStrike account. |  |
 | client_id | String | Yes | `null` | The CrowdStrike Client ID you want to use to authenticate collection requests. |  |
 | client_secret | String | Yes |  `null`| The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
-| pollingInterval | String | No | 15m | This sets how often the Source checks for data. |  |
+| pollingInterval | String | No | 15m | This sets how often the Source checks for data. The polling interval value should be atleast one minute. |  |
 
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-filevantage/example.json)
+<a href="/files/c2c/crowdstrike-filevantage/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/crowdstrike-filevantage/example.tf)
+<a href="/files/c2c/crowdstrike-filevantage/example.tf" target="_blank">Download example</a>
+
+### Limitation
+
+- This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.

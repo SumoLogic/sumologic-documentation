@@ -8,7 +8,12 @@
             "discoveryURL": "https://stix2.unit42.org/taxii/",
 			"useBasicAuth": true,
             "http_user": "user@acme.com",
-            "http_password": "****************************"
+            "http_password": "****************************",
+			"collectionNames": [
+				"collection1",
+				"collection2"
+			  ],
+			"pollingInterval": "1h"
 		},
 		"schemaRef":{
 			"type":"TAXII 1 Client"

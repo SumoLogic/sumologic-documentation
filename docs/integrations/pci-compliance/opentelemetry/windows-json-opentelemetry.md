@@ -143,7 +143,7 @@ sumo.datasource=windows deployment.environment={{deployment.environment}} host.g
 | sort by _timeslice
 ```
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {

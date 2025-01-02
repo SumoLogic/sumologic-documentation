@@ -1,7 +1,7 @@
 ---
 id: elastic-container-service
-title: Amazon Elastic Container Service (ECS)
-sidebar_label: Amazon ECS
+title: Amazon ECS without Container Insights and Traces
+sidebar_label: Amazon ECS without Container Insights and Traces
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
@@ -11,13 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic app for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The app also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-## Log and Metrics types
+We offer two different ECS versions, which have separate data collection steps:
+* **[Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/available-metrics.html) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
+* **[Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both EC2 and Fargate based ECS deployments. For instructions on collecting this data, refer to the [Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/).
 
-The app collects ECS logs and metrics for:
-* [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html).
-* [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html).
-   * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
-
+This page has instructions for collecting logs and metrics for the Amazon ECS app.
 
 ### Sample log messages
 
@@ -299,7 +297,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 
 1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 2. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
 6. **Name.** Enter a name to display for the new source.
@@ -321,7 +319,7 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
 2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 6. Select AWS CloudTrail source.
 7. **Name.** Enter a name to display for the new Source.

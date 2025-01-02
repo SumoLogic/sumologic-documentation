@@ -3,16 +3,17 @@ id: password-policy
 title: Password Policy Management APIs
 sidebar_label: Password Policy
 description: Use HTTP endpoints to manage your account's password policy.
-hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
 
 The Password Policy Management API allows you to manage the [password policy](/docs/manage/security/set-password-policy.md) for your Sumo Logic users.
 
-import ApiIntro from '../reuse/api-intro.md';
+## Documentation
 
 <ApiIntro/>
 
@@ -25,5 +26,15 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/passwordPolicy |
 | IN         | https://api.in.sumologic.com/docs/#tag/passwordPolicy  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/passwordPolicy  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/passwordPolicy  |
 | US1        | https://api.sumologic.com/docs/#tag/passwordPolicy     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/passwordPolicy |
+
+<!-- ## Required role capabilities
+
+<ApiRoles/>
+
+* Security
+    * Manage Password Policy
+
+-->

@@ -16,7 +16,7 @@ Local Windows Event Log Sources are only for collecting Windows Event Logs. All
 
 To configure a Local Windows Event Log Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 
 1. Find the name of the installed collector to which you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 
@@ -113,7 +113,7 @@ any time.
 
 ## Configuring sourceCategory using variables
 
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.

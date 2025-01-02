@@ -2,7 +2,8 @@
 slug: /send-data/installed-collectors
 title: Installed Collectors
 description: Learn how to install and configure Collectors to gather and send data to Sumo Logic.
-tags: [installed collectors]
+keywords:
+  - installed collector
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

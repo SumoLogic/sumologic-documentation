@@ -161,16 +161,17 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
-1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source**.
-2. Select **Syslog** for the Source type.
-3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
-4. For **Protocol** choose **TCP**.
-5. Enter the **Port** number for the Source to listen to (for example, 1514, but choose the correct port for your Collector).
-6. For **Source Category**, we recommend using **vcenter_log**.
-7. Under **Advanced**, set the following options:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Click **Add Source**.
+1. Select **Syslog** for the Source type.
+1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
+1. For **Protocol** choose **TCP**.
+1. Enter the **Port** number for the Source to listen to (for example, 1514, but choose the correct port for your Collector).
+1. For **Source Category**, we recommend using **vcenter_log**.
+1. Under **Advanced**, set the following options:
     * Select **Extract timestamp information from log file entries**.
     * Select **Ignore time zone from log file and instead use** and then choose **UTC** from the menu (as shown below).
-8. Click **Save**.
+1. Click **Save**.
 
 
 ### Step 2: Configure Logs to be Collected
@@ -178,13 +179,11 @@ A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog
 1. On the vMA, create a directory to hold all Sumo Logic scripts, found under [Sumo Logic Scripts for VMware](/docs/integrations/containers-orchestration/vmware-legacy). Name the directory **/var/log/vmware** or something similar.
 2. Download the Sumo Logic VMware scripts using the **vSphere5.0.gz** and **vSphere5.5.gz** links on [this](/docs/integrations/containers-orchestration/vmware-legacy) page, then put them in the directory you just created.
 3. We will assume the user account running the Sumo Logic vmware scripts  is the "vi-admin" user. This user account should not be a "root" user and should have full read write execute permissions to the directories where the **vSphere5.0.gz** and **vSphere5.5.gz** files are extracted. In the absence of adequate permissions, unexpected script errors will occur.
-4. Edit the **cron_vcenter_events.sh** script by changing the `SCRIPT_PATH` variable to reflect the absolute path where the script resides.
-
-If you have multiple vCenter servers, create a new line for each one. Make sure you add the credential for each server (as described in [Install vMA](#Step_1:_Install_vMA)).
-5. Test running the **query_vCenter.pl** script (that queries the vCenter Server for events) as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing). Use the following example command:
-```sql
-query_vCenter.pl -s [vcenterserver] -f output.txt
-```
+4. Edit the **cron_vcenter_events.sh** script by changing the `SCRIPT_PATH` variable to reflect the absolute path where the script resides. If you have multiple vCenter servers, create a new line for each one. Make sure you add the credential for each server (as described in [Install vMA](#install-the-vmware-legacy-app)).
+5. Test running the **query_vCenter.pl** script (that queries the vCenter Server for events) as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing). Use the following example command:
+   ```sql
+   query_vCenter.pl -s [vcenterserver] -f output.txt
+   ```
 6. Create a cron job to periodically run the **cron_vcenter_events.sh** script at the interval you'd like.
 
 You'll need to have the `LD_LIBRARY_PATH` env variable in the crontab line. For example, to run the job every two minutes, you'd use something like:
@@ -200,13 +199,14 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source** for your vCenter Server Collector.
-2. Select **Local File** for the Source type.
-3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
-4. For File Path, enter **/var/log/vmware/*.perf.out.**
-5. For **Source Category**, enter **esx_perf**.
-6. Under **Advanced**, make sure that **Timestamp Parsing** is selected. Then for **Time Zone** choose the time zone of the vMA virtual machine.
-7. Click **Save**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Click **Add Source** for your vCenter Server Collector.
+1. Select **Local File** for the Source type.
+1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
+1. For File Path, enter **/var/log/vmware/*.perf.out.**
+1. For **Source Category**, enter **esx_perf**.
+1. Under **Advanced**, make sure that **Timestamp Parsing** is selected. Then for **Time Zone** choose the time zone of the vMA virtual machine.
+1. Click **Save**.
 
 
 ### Step 2: Configure Performance Logs for Collection
@@ -215,7 +215,7 @@ Before collecting can begin, you'll need to invoke scripts to transform the perf
 
 1. On the vMA, create a directory to hold all scripts (for example, **/var/log/vmware**).
 2. Extract all files from the Zip bundle provided by Sumo Logic to the directory you just created. Edit the **vcenter.info** file so one vCenter Server and one username is on each line.
-For example: 
+For example:
 ```bash
 vcenter01.company.com "domain_name\user_name"
 ```
@@ -229,12 +229,12 @@ vcenter03.company.com "domain_name\user_name"
 ```
 
 3. Make sure there are no blank lines or header lines in the **vcenter.info** file.
-4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication. 
+4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication.
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
     * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
 
-Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing).
+Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing).
 ```bash
 $SCRIPT_PATH/getserver_perf.pl -type=vcenter -path=$SCRIPT_PATH -server_file=$SCRIPT_PATH/vcenter.info
 ```
@@ -290,7 +290,7 @@ query_vCenter.pl -s [vcenterserver] -f output.txt
 #target vCenter Server in your environment.
 ```
 
-In the standard output, you should see the query time range and the number of events collected. The events themselves are stored inside the **output.txt** file. If you're prompted to enter a username or password, it means that the credentials for the target vCenter Server are not set properly. By default, the first time **query_vCenter** is called, events from the past 24 hours are collected. If you want to collect events older than the past 24 hours, see [Collect Historical Events](#Collecting_Historical_Events).
+In the standard output, you should see the query time range and the number of events collected. The events themselves are stored inside the **output.txt** file. If you're prompted to enter a username or password, it means that the credentials for the target vCenter Server are not set properly. By default, the first time **query_vCenter** is called, events from the past 24 hours are collected. If you want to collect events older than the past 24 hours, see [Collect Historical Events](#collect-historical-events).
 
 Because the above information is logged into /var/log/message for cron jobs, it's a good idea to monitor /var/log/messages to make sure the collection CRON jobs work well.
 
@@ -318,7 +318,7 @@ vi-admin@vma1:~> export SCRIPT_PATH=/var/log/vmware
 ./query_vCenter.pl --server 192.168.23.242 --target vmahost:1514 --bT 2012-10-08T00:17:00.00Z
 ```
 
-Once this command completes successfully, you can begin to pick up ongoing events by setting up the CRON job as described in step 2 of [Collecting Event Messages](#Collecting_Event_Messages).
+Once this command completes successfully, you can begin to pick up ongoing events by setting up the CRON job as described in step 2 of [Collecting Event Messages](#collecting-event-messages).
 
 
 ## Segmenting Performance Collection

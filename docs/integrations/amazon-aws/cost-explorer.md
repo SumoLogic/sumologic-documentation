@@ -16,7 +16,7 @@ The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and man
 
 The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS Cost Explorer** source.
 
-### Sample Log
+### Sample log messages
 
 ```json
 {
@@ -51,11 +51,13 @@ account={{account}} region CostUsd CostType StartDate EndDate MetricType Granula
 
 ## Create a AWS Cost Explorer Collector Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Field-in-Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **account** and **linkedaccount** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the **account** and **linkedaccount** field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 ## Field Extraction Rules
 Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).

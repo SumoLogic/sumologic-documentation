@@ -7,7 +7,7 @@ description: Learn the benefits of Dashboard and how it seamlessly integrates lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/dashboards-new/about-dashboard-new/dashboards-new.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="icon" width="50"/>
 
 Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
@@ -27,7 +27,7 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [metrics query builder](/docs/metrics/metrics-queries/metrics-explorer/) with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard utilizes the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for Dashboard.
 
@@ -51,7 +51,7 @@ The following table shows the availability of features for Dashboard.
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-dashboard-new-to-explore) |
+| Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
@@ -77,7 +77,7 @@ Live mode restrictions do not apply to Dashboard. 
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard from the Search page.
 * Dashboard queries cannot return more than 1440 data points.
-  
+
 ## Rules
 
 * Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
@@ -91,13 +91,13 @@ Live mode restrictions do not apply to Dashboard. 
 
 Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
 
-There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
-<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
+<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
 
 ## Dark Theme
 
-Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
 
 ## Clickable Legend
 
-If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
+If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />

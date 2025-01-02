@@ -92,8 +92,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
 | Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
 | Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
-| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. | 
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | 
+| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. |
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. |
 
 ## Alerting
 
@@ -101,9 +101,9 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability | Description |
 | :-- | :-- |
-| View Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
-| Manage Monitors	| Users with this capability can create new folders and [Monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
-| Admin Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
+| View Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
+| Manage Monitors	| Users with this capability can create new folders and [monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
+| Admin Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
 | View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response#alert-page).|
 | View Muting Schedules	| Required for viewing the [Muting Schedules](/docs/alerts/monitors/muting-schedules) page and schedule definitions.|
 | Manage Muting Schedules	| Required for creating, editing, and deleting Muting Schedules.|
@@ -138,7 +138,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
 :::info
-This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below. 
+This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below.
 :::
 
 | Capability category | Capability | Description |
@@ -158,7 +158,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Triage | Edit | Create, edit,and delete triage events. |
 | Triage | Bulk physical delete | Perform bulk deletion of triage events. |
 | Folders | Edit | Create, edit, and delete folders. |
-| Attachments | Access | Access all [attachments](/docs/cloud-soar/main-menu/#attachments). |
+| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#documentation-tab). |
 | Attachments | Edit | Create, edit, and delete attachments. |
 | Incident Playbook | Access | Access all [incident playbooks](/docs/cloud-soar/incidents-triage/#playbooks). |
 | Incident Playbook | Edit | Create, edit, and delete incident playbooks. |
@@ -166,14 +166,14 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/global-functions-menu/#settings). |
-| User Management | Groups | Manage [groups](/docs/cloud-soar/global-functions-menu/#groups). |
-| Notification | Configure | Configure [notifications](/docs/cloud-soar/global-functions-menu/#notifications). |
-| Customization | Logo | Customize the [logo](/docs/cloud-soar/global-functions-menu/#logo). |
-| Customization | Fields | Customize [fields](/docs/cloud-soar/global-functions-menu/#custom-fields). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#settings). |
+| User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
+| Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
+| Customization | Logo | Customize the logo. |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
-| Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
+| Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#audit-and-information). |
 | Audit and Information | Audit Trail | View audit trail information. |
 | Audit and Information | Configure Audit Trail | Configure audit trail information. |
 | API | Use | Use [APIs](/docs/api/cloud-soar/). |
@@ -182,25 +182,25 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | API | Email Edit | Create, edit, and delete emails. |
 | Incident Templates | Access | Access all [incident templates](/docs/cloud-soar/automation/#incident-templates). |
 | Incident Templates | Configure | Configure templates. |
-| Automation Rules | Access | Access automation [rules](/docs/cloud-soar/automation/#rules). |
+| Automation Rules | Access | Access [automation rules](/docs/cloud-soar/automation/#automation-rules). |
 | Automation Rules | Configure | Configure automation rules. |
-| Entities | Access | Access all [entities](/docs/cloud-soar/main-menu/#entities). |
+| Entities | Access | Access all [entities](/docs/cloud-soar/incidents-triage/#entities). |
 | Entities | Manage | Manage entities. |
 | Entities | Bulk Physical Delete | Perform bulk deletion of entities. |
-| Report | Access | Access your [reports](/docs/cloud-soar/main-menu/#custom-reports). |
+| Report | Access | Access your [reports](/docs/cloud-soar/incidents-triage/#report). |
 | Report | Access all | Access all reports. |
-| Dashboard | Access | Access your [dashboards](/docs/cloud-soar/main-menu/#dashboards). |
+| Dashboard | Access | Access your [dashboards](/docs/cloud-soar/incidents-triage/#dashboards). |
 | Dashboard | Access all | Access all dashboards. |
-| Widgets | Use all | Use all [widgets](/docs/cloud-soar/main-menu/#create-widgets). |
+| Widgets | Use all | Use all [widgets](/docs/cloud-soar/incidents-triage/#create-widgets). |
 
 ### Legacy Cloud SOAR role capabilities
 
 :::info
-This section only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. 
+This section only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`.
 :::
 
 | Capability | Description |
-| :-- | :-- | 
+| :-- | :-- |
 | View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
 | Settings General | Access Cloud SOAR settings. |
 | Configure | Configure Cloud SOAR. |

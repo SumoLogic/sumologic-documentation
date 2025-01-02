@@ -1,7 +1,7 @@
 ---
 id: configuration
-title: Installed Collector Configuration
-description: Learn how to install and configure Collectors to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
+title: Configure an Installed Collector
+description: Learn how to install and configure an Installed Collector to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service.
@@ -10,7 +10,7 @@ As the name implies, an Installed Collector is installed in your environment, as
 
 A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-See [How to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
+See [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.
@@ -23,7 +23,7 @@ The maximum number of Collectors allowed per organization is 10,000.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -61,7 +61,7 @@ The columns are the Average CPU and Average Message Size.
 
 ### Number of Sources
 
-Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-collector) if needed.
+Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-for-collector) if needed.
 
 **1,000 events per second with 1 KB message size:**
 
@@ -178,7 +178,7 @@ Up to 4GB total disk space, including:
 * Up to 3GB for log data
 * Up to 1GB for metric data
 
-You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq#configure-limits-collector-caching).
+You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq/#configure-limits-for-collector-caching).
 
 #### Flushing mode
 

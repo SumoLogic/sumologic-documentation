@@ -1,6 +1,6 @@
 To configure an AWS Cost Explorer Source:
 
-1. On the **Manage Data** > **Collection** > **Collection**.
+1. O[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **AWS Cost Explorer**.<br/>  <img src="/img/send-data/aws-cost-explorer-icon.png" alt="aws-cost-explorer-icon" width="10%" />
 1. Enter a **Name** for the Source in the Sumo Logic console. The **Description** is optional.<br/>  <img src="/img/integrations/amazon-aws/cost-explorer-v2-1-1.png" alt="cost-explorer-v2-1-1.png" width="400" />

@@ -2,13 +2,13 @@
 id: microsoft-graph-azure-ad-reporting
 title: Microsoft Graph Azure AD Reporting
 sidebar_label: Microsoft Graph Azure AD Reporting
-description: The Sumo Logic App for MS Graph Azure AD Reporting helps you to monitor and analyze user activity, sign-in patterns and provisioning activities.
+description: The Sumo Logic app for MS Graph Azure AD Reporting helps you to monitor and analyze user activity, sign-in patterns and provisioning activities.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
-The Sumo Logic App for Microsoft Graph Azure AD Reporting enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. It helps you to gain insights into how your organization uses Azure AD and identify potential security issues.
+The Sumo Logic app for Microsoft Graph Azure AD Reporting enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. It helps you to gain insights into how your organization uses Azure AD and identify potential security issues.
 
 Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Analyze Audit Activities**. Provides real-time user activity for every resource category and shows the distribution of audits by operations and services.
@@ -18,14 +18,14 @@ Key features of the Microsoft Graph Azure AD Reporting app include:
 
 ## Log types
 
-The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0), [Sign-in](https://learn.microsoft.com/en-us/graph/api/resources/signin?view=graph-rest-1.0), and [Provisioning](https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0) activities.
+This app uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0), [Sign-in](https://learn.microsoft.com/en-us/graph/api/resources/signin?view=graph-rest-1.0), and [Provisioning](https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0) activities.
 
 ## Sample log messages
 
 <details>
-<summary>View Sample Log Message</summary>
+<summary>Audit Activity Message</summary>
 
-```json title="Audit Activity Message"
+```json
 {
   "id": "Directory_d4d04864-b03e-4a15-9899-cb36abd1e7d2_CYJZP_45515702",
   "category": "ApplicationManagement",
@@ -79,7 +79,12 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
   ]
 }
 ```
-```json title="Sign-In Activity"
+</details>
+
+<details>
+<summary>Sign-In Activity</summary>
+
+```json
 {
   "id": "66ea54eb-6301-4ee5-be62-ff5a759100",
   "createdDateTime": "2023-05-09T11:41:56.7381342Z",
@@ -145,8 +150,12 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
   ]
 }
 ```
+</details>
 
-```json title="Provisioning Activity"
+<details>
+<summary>Provisioning Activity</summary>
+
+```json
 {
   "id": "75b5b0ae-9fc5-8d0e-e0a9-7y6a4728de56",
   "activityDateTime": "2019-05-09T03:00:54Z",
@@ -289,34 +298,60 @@ _sourceCategory="azure_ad_reporting" "provisioningAction" "provisioningSteps" "p
 ```
 </details>
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/) source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Microsoft Graph Azure AD Reporting app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Azure AD Reporting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Azure AD Reporting app is properly integrated and configured to collect and analyze your Microsoft Graph Azure AD Reporting data.
+:::
 
-import AppInstall from '../../reuse/apps/app-install.md';
+### Create a new collector and install the app
 
-<AppInstall/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Viewing Microsoft Graph Azure AD Reporting dashboards​​
+<AppCollectionOPtion1/>
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+### Use an existing collector and install the app
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppCollectionOPtion2/>
 
-### Microsoft Graph Azure AD Reporting - Audits
+### Use an existing source and install the app
 
-**Microsoft Graph Azure AD Reporting - Audits** dashboard enables you to analyze the distribution of audit activities across resource categories, audit operations, and audit services. You can also view the distribution of user agents that perform audits and target resource types. This dashboard also highlights the most common reasons for activity failures. Additionally, it presents a summary of recent audit activities. Altogether this dashboard provides valuable insights into your organization's audit activity data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Audits.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Audits" width="750"/>
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-### Microsoft Graph Azure AD Reporting - Sign-Ins
+<AppCollectionOPtion3/>
 
-**Microsoft Graph Azure AD Reporting - Sign-Ins** dashboard provides valuable insights into your organization's sign-in activity data over time. It displays the geographical locations of sign-in activities, including those from high-risk countries. You can also see the distribution of interactive users and the client apps used for sign-in activities. The dashboard also highlights the most frequently accessed resources. Risk analysis is provided by showing the distribution of risk states, risk levels, and risk event types. Additionally, the reasons for risk detection are displayed. The dashboard also provides visibility into recent sign-in activities, making it a useful tool for monitoring and managing your organization's security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Sign-Ins.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Sign-Ins" width="750"/>
+## Viewing Microsoft Graph Azure AD Reporting dashboards
 
-### Microsoft Graph Azure AD Reporting - Provisioning Activities
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Microsoft Graph Azure AD Reporting - Provisioning Activities** dashboard provides valuable insights into all provisioning activities occurring in your account. It displays the average time for each provisioning activity and provides a distribution of provisioning activities by status, actions, and initiators. Additionally, you can view the most frequently used service principal during provisioning. The dashboard also gives you visibility into recent provisioning activities, making it a useful tool for monitoring and managing your organization's provisioning processes.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities" width="750"/>
+<ViewDashboards/>
+
+### Audits
+
+The **Microsoft Graph Azure AD Reporting - Audits** dashboard enables you to analyze the distribution of audit activities across resource categories, audit operations, and audit services. You can also view the distribution of user agents that perform audits and target resource types. This dashboard also highlights the most common reasons for activity failures. Additionally, it presents a summary of recent audit activities. Altogether this dashboard provides valuable insights into your organization's audit activity data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Audits.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Audits" width="750"/>
+
+### Sign-Ins
+
+The **Microsoft Graph Azure AD Reporting - Sign-Ins** dashboard provides valuable insights into your organization's sign-in activity data over time. It displays the geographical locations of sign-in activities, including those from high-risk countries. You can also see the distribution of interactive users and the client apps used for sign-in activities. The dashboard also highlights the most frequently accessed resources. Risk analysis is provided by showing the distribution of risk states, risk levels, and risk event types. Additionally, the reasons for risk detection are displayed. The dashboard also provides visibility into recent sign-in activities, making it a useful tool for monitoring and managing your organization's security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Sign-Ins.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Sign-Ins" width="750"/>
+
+### Provisioning Activities
+
+The **Microsoft Graph Azure AD Reporting - Provisioning Activities** dashboard provides valuable insights into all provisioning activities occurring in your account. It displays the average time for each provisioning activity and provides a distribution of provisioning activities by status, actions, and initiators. Additionally, you can view the most frequently used service principal during provisioning. The dashboard also gives you visibility into recent provisioning activities, making it a useful tool for monitoring and managing your organization's provisioning processes.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities" width="750"/>
+
+## Upgrade/Downgrade the Microsoft Graph Azure AD Reporting app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Azure AD Reporting app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

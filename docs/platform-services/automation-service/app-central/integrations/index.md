@@ -10,10 +10,10 @@ Our Automation Service and Cloud SOAR offer a comprehensive suite of integration
 Please refer to the individual integration documentation for detailed information on setup, usage, and features.
 
 :::note
-Some integrations are tailor-made for Cloud SOAR and are indicated as such within their respective documentation entries. These integrations only appear in the [Cloud SOAR App Central](/docs/cloud-soar/automation/#app-central).
+Some integrations are tailor-made for Cloud SOAR and are indicated as such within their respective documentation entries. These integrations only appear in the [App Central](/docs/cloud-soar/automation) in Cloud SOAR.
 :::
 
-## Integrations (325)
+## Integrations (336)
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

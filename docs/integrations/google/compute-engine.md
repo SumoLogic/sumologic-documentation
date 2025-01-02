@@ -14,7 +14,7 @@ Google Compute Engine is an Infrastructure as a Service (IaaS) component of Goog
 
 ## Log and metrics types
 
-The Sumo Logic app for Google Cloud Functions uses the following logs and metrics:
+The Sumo Logic app for Google Cloud Compute Engine uses the following logs and metrics:
 
 * [Google Cloud Audit Logs for Compute Engine](https://cloud.google.com/compute/docs/logging/audit-logging) - These logs provide information about Compute Engine API calls and operations.
 * [Compute Engine Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#compute_engine)
@@ -77,7 +77,7 @@ However, this is not recommended since you cannot define specific Source Categor
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 1. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" width="400"/>
@@ -95,7 +95,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ### Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#01Collect-Logs-for-the-Google-App-Engine-App).
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
 1. Create a Pub/Sub Topic in GCP. Refer to the [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
@@ -140,21 +140,21 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source).
 
 1. Setup the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. [Set up a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Compute Engine** as the service from the dropdown to get the Google Cloud Compute Engine metrics.
 
 ## Installing the Google Compute Engine app
 
 Now that you have set up collection for Google Compute Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Google Compute Engine dashboards
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<FilterDashboards/>
+<ViewDashboards/>
 
 ### Audit Logs
 
@@ -203,3 +203,15 @@ The **Google Cloud Compute Engine - Platform Logs** dashboard is based on Comput
 The **Google Cloud Compute Engine - Quota Overview** dashboard is based on significant quota-related metrics for the Compute engine. This dashboard provides insights into VPC-related quotas like instance usage, IP aliases, subnet range, and static route per VPC as well as aggregated. You can also monitor other quotas like regional concurrent operation, global concurrent operation, and inter-region egress bandwidth.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Quota-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Quota Overview" width="800"/>
+
+## Upgrade/Downgrade the Google Compute Engine app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Compute Engine app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

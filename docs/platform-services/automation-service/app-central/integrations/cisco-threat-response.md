@@ -1,7 +1,6 @@
 ---
 title: Cisco Threat Response
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

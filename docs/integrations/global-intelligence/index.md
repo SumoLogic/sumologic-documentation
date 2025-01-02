@@ -1,7 +1,6 @@
 ---
 slug: /integrations/global-intelligence
-title: Global Intelligence Service Apps
-sidebar_label: Global Intelligence Service
+title: Global Intelligence Service
 description: Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
 ---
 

@@ -3,7 +3,6 @@ slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
 description: Sumo Logic Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
-tags: [monitor, monitors]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,7 +26,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/alerts/monitors/settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Edit Monitor Settings</h4></a>
+  <a href="/docs/alerts/monitors/settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitor Settings</h4></a>
   <p>Learn how to view, create, manage, and organize Monitors.</p>
   </div>
 </div>
@@ -51,14 +50,32 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/alerts/monitors/alert-response-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response FAQ</h4></a>
+  <p>This topic lists the common FAQs regarding Alert Response.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/alerts/monitors/alert-grouping"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Grouping</h4></a>
 <p>Customize how your alerts are generated from monitors by specifying a grouping condition based on specific fields.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/alerts/monitors/alert-response-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response FAQ</h4></a>
-  <p>This topic lists the common FAQs regarding Alert Response.</p>
+  <a href="/docs/alerts/monitors/muting-schedules"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Muting Schedules</h4></a>
+  <p>Pause alert notifications from monitors according to the schedule that you define.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitor Log Ingestion and Alerts</h4></a>
+  <p>Add Scheduled Searches that monitor log ingestion and send alerts.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/use-playbooks-with-monitors"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Automated Playbooks in Monitors</h4></a>
+  <p>Learn how to use Automation Service playbooks with monitors.</p>
   </div>
 </div>
 </div>

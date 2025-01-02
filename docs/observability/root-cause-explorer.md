@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
+
+:::warning
+Root Cause Explorer has been [deprecated](/docs/observability/root-cause-explorer-deprecation). It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
+:::
+
+
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
 Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
@@ -42,7 +48,7 @@ Root Cause Explorer also supports:
 
 The screenshot below shows the Root Cause Explorer UI.
 
-![rce-top-entities.png](/img/rce/rce-top-entities.png)
+![rce-top-entities.png](/img/root-cause/rce-top-entities.png)
 
 ## Availability
 
@@ -65,7 +71,7 @@ EOIs are constructed based on modeling the periodicity of the underlying AWS C
 
 EOIs also leverage proprietary noise reduction rules curated by subject matter experts. One example of a rule is how long the system watches an anomalous metric before detecting an EOI. Similarly, EOIs on metrics that have an upper bound (for example, CPU utilization cannot exceed 100%) are subject to additional curation rules.
 
-![concept1.png](/img/rce/concept1.png)
+![concept1.png](/img/root-cause/concept1.png)
 
 ### Concept 2: Context and correlation of spikes are essential strategies for root cause exploration
 
@@ -94,7 +100,7 @@ If an AWS X-Ray source is configured, services show as entities in the entity di
 
 In large deployments, thousands of AWS CloudWatch, Tracing, or Kubernetes metrics may be anomalous over the course of an outage or incident, making it impossible for an on-call user to deduce which resource(s) may be related to the root cause. With the ability to correlate EOIs based on context, Root Cause Explorer can significantly accelerate incident triage and root cause isolation. 
 
-![concept2.png](/img/rce/concept2.png)
+![concept2.png](/img/root-cause/concept2.png)
 
 ### Concept 3: Connections between resources and services help pinpoint root cause
 
@@ -124,19 +130,19 @@ So, an EOI grouped on an API Gateway entity might consist of EOIs on entities de
 In such a case, the three EOIs would be grouped together, in conjunction with the entity/topology derived grouping.  
  
 
-![concept3.png](/img/rce/concept3.png)
+![concept3.png](/img/root-cause/concept3.png)
 
 ### Concept 4: Earlier spikes are closer to root cause
 
 In a complex system, resources or services that break at the early stages of an incident are closer to the probable cause than resources that experience spikes later. Root Cause Explorer exploits this insight to display spikes on a timeline. 
 
-![concept4.png](/img/rce/concept4.png)
+![concept4.png](/img/root-cause/concept4.png)
 
 ### Concept 5: Real root cause requires exploration of log and trace data
 
 Root Cause Explorer helps triage the first level of root cause which can then drive quick recovery. However, it is also important to understand what caused the system to get into the state that caused an incident. This often requires exploring logs associated with an application or microservice. In the example in the figure below, the real root cause for DynamoDB throttling spikes is a change in the Provisioned IOPS setting on a table. Lowering this setting, while lowering AWS costs, can also lead to throttling. Such a configuration change might be evident in AWS CloudTrail logs associated with DynamoDB. Likewise, services experiencing spikes may require the user to explore Traces associated with them to diagnose and troubleshoot further.
 
-![concept5.png](/img/rce/concept5.png)
+![concept5.png](/img/root-cause/concept5.png)
 
 ### Concept 6: Golden signals help organize root cause exploration
 
@@ -173,7 +179,7 @@ You can also adjust the timeline to match the context—for example, if you know
 
 In the screenshot below, an EOI on a DynamoDB is shown. Click an EOI bubble to view its details and the details of the underlying time series in the right-hand panel. Next, click the namespace filter and view the list of impacted namespaces with their count of EOIs. Pick the top namespaces based on EOI count—these represent the prime suspects with respect to the incident.
 
-![rce-summary-infrastructure2.png](/img/rce/rce-summary-infrastructure2.png)
+![rce-summary-infrastructure2.png](/img/root-cause/rce-summary-infrastructure2.png)
 
 Among the search filters in Root Cause Explorer, the Advanced Filters provide five dimensions you can use to narrow down EOIs, as shown below. Each dimension indicates the number of associated EOIs. The dimensions are:
 
@@ -189,12 +195,10 @@ This section describes the Root Cause Explorer UI and how to interact with it.
 
 ### Accessing Root Cause Explorer
 
-You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI, and by selecting Root Cause Explorer in the AWS Observability Explore UI from an Events of Interest dashboard panel as shown below.
+To open the Root Cause Explorer:
 
-To open the Root Cause Explorer from the Explore UI:
-
-1. Click **+ New** and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
-2. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.![rce](/img/rce/rce1.png)
+1. Go to the **Home** screen and select **Root Cause**.<br/> ![new root cause.png](/img/root-cause/new-explore.png)  
+2. Root Cause Explorer opens, displaying Events of Interest (EOIs) for the currently selected filters and time range.![rce](/img/root-cause/rce1.png)
 
     If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.
 
@@ -202,19 +206,19 @@ To open the Root Cause Explorer from the Explore UI:
 
 3. Click an EOI. Note that a popup, described below in [EOI stats](#eoi-stats), displays key information about the event. The right pane now contains a Summary tab and an Entities tab, described below in [Summary tab](#summary-tab) and [Entities tab](#entities-tab).  
 
-    ![rce2](/img/rce/rce2.png)
+    ![rce2](/img/root-cause/rce2.png)
 
 ### Search Filters for AWS and hosts
 
 The filters at the top of the Root Cause Explorer page allow you to filter the EOIs that appear. Correlation of Events of Interest at the application/service, Kubernetes, AWS and host layers of the stack is a key strategy for root cause analysis. Search filters allow users to analyze such correlations.
 
-![automatic-filters.png](/img/rce/automatic-filters.png)
+![automatic-filters.png](/img/root-cause/automatic-filters.png)
 
-The filters with an orange border on the left side, which refer to AWS infrastructure and hosts, are automatically set, based on the currently selected resource in the Explore hierarchy. The screenshot above has filters for **Region**, **Namespace**, and **Account**. If the currently selected resource in Explore is deeper in the hierarchy, one or more additional resource filters, for instance **Tablename**, would be visible. **Kubernetes** and **Trace** filters appear to the right of the resource type filters. An eye icon with a strikethrough indicates that the associated data is currently filtered, so that it not visualized. To toggle an individual filter on and off, you can use the eye icon in a chip. You can toggle all AWS, all K8S, or all Trace on or off using the controls in the  expanded filter area, shown in the screenshot in [Search filters for traces and Kubernetes](#search-filters-for-traces-and-kubernetes), below.
+The filters with an orange border on the left side, which refer to AWS infrastructure and hosts, are automatically set, based on the currently selected resource in the hierarchy. The screenshot above has filters for **Region**, **Namespace**, and **Account**. If the currently selected resource is deeper in the hierarchy, one or more additional resource filters, for instance **Tablename**, would be visible. **Kubernetes** and **Trace** filters appear to the right of the resource type filters. An eye icon with a strikethrough indicates that the associated data is currently filtered, so that it not visualized. To toggle an individual filter on and off, you can use the eye icon in a chip. You can toggle all AWS, all K8S, or all Trace on or off using the controls in the  expanded filter area, shown in the screenshot in [Search filters for traces and Kubernetes](#search-filters-for-traces-and-kubernetes), below.
 
 The numeric value to the right of a filter indicates how many Events of Interest are associated with a particular search filter. When you click on a filter, a popup lists the available resources of that resource type. A checkmark indicates that a resource is selected. You can add or remove a resource by clicking on the resource in the popup.
 
-![display-filter-details.png](/img/rce/display-filter-details.png)
+![display-filter-details.png](/img/root-cause/display-filter-details.png)
 
 The values shown for each resource in the popup are EOI counts. Filter counts behave as follows:
 
@@ -226,11 +230,11 @@ The values shown for each resource in the popup are EOI counts. Filter counts be
 
 To display additional filters, click the icon at the right end of the basic filters area.
 
-![advanced-filters-icon.png](/img/rce/advanced-filters-icon.png)
+![advanced-filters-icon.png](/img/root-cause/advanced-filters-icon.png)
 
 In the expanded filter area, additional filters appear. 
 
-![all-filters-displayed.png](/img/rce/all-filters-displayed.png)
+![all-filters-displayed.png](/img/root-cause/all-filters-displayed.png)
 
 They include:
 
@@ -248,7 +252,7 @@ They include:
 
 You can zoom in on a particular time range by dragging to select that range. To zoom out, click the magnifying glass icon in the upper right corner of the visualization.
 
-![zoom-in.png](/img/rce/zoom-in.png)
+![zoom-in.png](/img/root-cause/zoom-in.png)
 
 ### EOI stats 
 
@@ -261,19 +265,19 @@ The suffix for a stat indicates units of measure:
 * `​k` indicates thousands, or 10³
 * `M` indicates millions, or 10⁶
 
-![eoi-stats.png](/img/rce/eoi-stats.png)
+![eoi-stats.png](/img/root-cause/eoi-stats.png)
 
 ### Summary tab
 
 The **Summary** tab is available when an EOI is selected in the **Events of Interest: Drift and Duration by Time** pane. It displays a variety of facts about the EOI and visualizes key metrics for it. The metrics panel shows 1d and 7d timeshifted visualizations helping you visualize drift for metrics with daily or weekly periodicity.
 
-![summary-tab2.png](/img/rce/summary-tab2.png)
+![summary-tab2.png](/img/root-cause/summary-tab2.png)
 
 ### Entities tab
 
 The Entities tab is available when an EOI is selected in the Events of Interest: Drift and Duration by Time page. It is essential for users to pivot to logs, metrics, traces and related dashboards for the next step in troubleshooting.
 
-![entities-tab-annotated.png](/img/rce/entities-tab-annotated.png)
+![entities-tab-annotated.png](/img/root-cause/entities-tab-annotated.png)
 
 Things to note about the **Entities** tab:
 
@@ -285,11 +289,11 @@ Things to note about the **Entities** tab:
    * Run a log search on the Entity.
    * View traces that match the Entity.
    * Run a metrics query on the Entity.  
-        ![open-in-options.png](/img/rce/open-in-options.png)
+        ![open-in-options.png](/img/root-cause/open-in-options.png)
 
 1. The **Environment** section shows resources in the Entity’s resource hierarchy. You can click the control in the row for each resource to display key metrics for the resource, and use the **Open In** button to display the options described above.  
 
-    ![expanded-environment.png](/img/rce/expanded-environment.png)
+    ![expanded-environment.png](/img/root-cause/expanded-environment.png)
 
 ## Four-step troubleshooting methodology with example
 
@@ -306,7 +310,7 @@ In the figure below, imagine an on-call user supporting a mission-critical appli
 * EC2
 * DynamoDB
 
-![mission-crit-app.png](/img/rce/mission-crit-app.png)
+![mission-crit-app.png](/img/root-cause/mission-crit-app.png)
 
 In this scenario, a developer has reconfigured DynamoDB to use lower-provisioned IOPS (Input/Output Operations Per Second). As AWS charges for DynamoDB based on provisioned Read/Write Capacity Units, cost optimization could be a motivation for the developer to make the change. As load on the application increases, this change could result in spikes in the following CloudWatch metrics:
 
@@ -379,7 +383,7 @@ _view = sumologic_signals_anomalies
 | fields domain, metric, drift, tags, eventType
 ```
 
-![explore-eoi-fields](/img/rce/explore-eoi-fields.png)
+![explore-eoi-fields](/img/root-cause/explore-eoi-fields.png)
 
 #### Filter EOIs
 
@@ -392,7 +396,7 @@ _view = sumologic_signals_anomalies
 | fields domain, metric, drift, tags
 ```
 
-![filter-eois](/img/rce/filter-eois.png)
+![filter-eois](/img/root-cause/filter-eois.png)
 
 #### Count EOIs by golden signals
 
@@ -406,7 +410,7 @@ _view = sumologic_signals_anomalies
 | count by eventType
 ```
 
-![count-by-golden-signal](/img/rce/count-by-golden-signal.png)
+![count-by-golden-signal](/img/root-cause/count-by-golden-signal.png)
 
 #### See affected metrics
 
@@ -420,7 +424,7 @@ _view = sumologic_signals_anomalies
 | count by metric
 ```
 
-![affected-metrics](/img/rce/affected-metrics.png)
+![affected-metrics](/img/root-cause/affected-metrics.png)
 
 #### Count bottleneck events
 
@@ -434,7 +438,7 @@ _view = sumologic_signals_anomalies
 | count
 ```
 
-![count-bottleneck-events](/img/rce/count-bottleneck-events.png)
+![count-bottleneck-events](/img/root-cause/count-bottleneck-events.png)
 
 #### Explain recent EOIs based using available context 
 
@@ -446,7 +450,7 @@ _view=sumologic_signals_anomalies
 | logexplain  (now() - _messagetime < 2700000) on metric, eventType
 ```
 
-![logexplain](/img/rce/logexplain.png)
+![logexplain](/img/root-cause/logexplain.png)
 
 
 #### Return all EOIs by time slice
@@ -461,11 +465,11 @@ _view=sumologic_signals_anomalies
 | outlier _count
 ```
 
-![outlier.png](/img/rce/outlier.png)
+![outlier.png](/img/root-cause/outlier.png)
 
 #### Return entities with the most problems
 
-This query uses the [logreduce](/docs/search/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
+This query uses the [logreduce](/docs/search/behavior-insights/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
 
 ```sql
 _view=sumologic_signals_anomalies
@@ -474,7 +478,7 @@ _view=sumologic_signals_anomalies
 | logreduce values on metric, eventType, Cluster
 ```
 
-![most-problems.png](/img/rce/most-problems.png)
+![most-problems.png](/img/root-cause/most-problems.png)
 
 #### Explain what changed within a time window
 

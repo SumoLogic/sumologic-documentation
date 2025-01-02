@@ -29,7 +29,7 @@ To configure a Webhook connection, you must have a [Sumo Logic role](/docs/manag
 
 To set up a ServiceNow Webhook connection:
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page click **Add**.
 1. For **Connection Type**, select **ServiceNow**.<br/>![serviceNow icon.png](/img/connection-and-integration/serviceNow-icon.png)
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
@@ -81,7 +81,7 @@ With domain separation in ServiceNow, you can separate data, processes, and admi
 
 The first step for integrating ServiceNow with Sumo Logic is to configure one or more connections, which are HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections, depending on your organization's needs.
 
-1. In Sumo Logic, go to **Manage Data > Monitoring > Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the Connections page, click **Add**.
 1. For **Connection Type**, select **ServiceNow (Legacy)**.<br/>  ![serviceNow legacy icon.png](/img/connection-and-integration/serviceNow-legacy-icon.png)
 1. In the Create Connection dialog box, enter the **Name** of the connection.
@@ -92,7 +92,8 @@ The first step for integrating ServiceNow with Sumo Logic is to configure one 
 
 ## Edit connections
 
-Existing connections can be edited at any time through the **Manage Data** > **Monitoring** > **Connections** page.
+Existing connections can be edited at any time.
 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. Click **Edit** to the right of the name of the connection.
 1. Make any changes to the information, then click **Save**.

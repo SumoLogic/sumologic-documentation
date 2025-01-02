@@ -1,7 +1,6 @@
 ---
 title: Microsoft Teams
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -374,8 +373,7 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 
 ## Microsoft Teams in Automation Service and Cloud SOAR
 
-1. To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-5.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-6.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.
 1. Add two different resources for Application and Delegated context.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>

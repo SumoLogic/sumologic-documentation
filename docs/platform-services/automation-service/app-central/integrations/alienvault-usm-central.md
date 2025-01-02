@@ -1,7 +1,6 @@
 ---
 title: AlienVault USM Central
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -15,10 +15,10 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic Platform, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
-1. The **Add Hosted Collector** popup appears. <br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" width="500"/> 
+1. The **Add Hosted Collector** popup appears. <br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" style={{border: '1px solid gray'}} width="500"/> 
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -30,12 +30,12 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
 
 ### Configure a Cloud Syslog Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to the Hosted
     Collector.
 1. Select **Cloud Syslog**. 
-1. The page refreshes. <br/><img src={useBaseUrl('img/cse/cloud-syslog-source.png')} alt="Cloud syslog source" width="500"/>
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/cloud-syslog-source.png')} alt="Cloud syslog source" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
@@ -56,7 +56,7 @@ In this step you configure SentinelOne to send log messages to the Sumo Logic pl
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>  
-1. On the **Log Mappings** page search for "SentinelOne" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/sentinelone-record-volume.png')} alt="SentinelOne record volume" width="600"/>
-1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for SentinelOne security records.<br/><img src={useBaseUrl('img/cse/sentinelone-search.png')} alt="SentinelOne search" width="400"/> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "SentinelOne" and check the **Records** columns.
+1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for SentinelOne security records.<br/><img src={useBaseUrl('img/cse/sentinelone-search.png')} alt="SentinelOne search" style={{border: '1px solid gray'}} width="400"/> 
      

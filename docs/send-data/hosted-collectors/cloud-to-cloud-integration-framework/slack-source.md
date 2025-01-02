@@ -15,10 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -120,11 +116,11 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 
 ### Source configuration
 
-When you create a SailPoint Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Slack Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Duo Source:
+To configure a Slack Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Slack**.
 1. Enter a **Name** for the Source. The **Description** is optional.
@@ -140,13 +136,17 @@ To configure a Duo Source:
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/slack/example.json)
+<a href="/files/c2c/slack/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/slack/example.tf)
+<a href="/files/c2c/slack/example.tf" target="_blank">Download example</a>
+
+## Limitation 
+
+While ingesting web events, this source supports a maximum of 16,000 active Slack channels, exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type. Archived Slack channels are not supported while ingesting the web events.
 
 ## Troubleshoot
 

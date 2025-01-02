@@ -1,7 +1,6 @@
 ---
 title: ZeroFOX
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

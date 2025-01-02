@@ -19,10 +19,10 @@ In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log m
 
 #### Configure a hosted collector
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Click **Add Collector**.
 3. Click **Hosted Collector.**
-4. The **Add Hosted Collector** popup appears.<br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="add-hosted-collector" />
+4. The **Add Hosted Collector** popup appears.<br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add Hosted Collector dialog" style={{border: '1px solid gray'}} width="500" />
 5. **Name**. Provide a Name for the Collector.
 6. **Description**. (Optional)
 7. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
@@ -43,11 +43,11 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 5. Navigate to the Hosted Collector where you want to create the source.
 6. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 7. Select **Amazon S3**.
-8. The page refreshes.<br/> <img src={useBaseUrl('img/cse/s3-source.png')} alt="add-hosted-collector" />
+8. The page refreshes.<br/> <img src={useBaseUrl('img/cse/s3-source.png')} alt="Add Hosted Collector dialog" style={{border: '1px solid gray'}} width="600" />
 9. **Name**. Enter a name for the source.
 10. **Description**. (Optional)
 11. **S3 Region**. Choose the AWS Region the S3 bucket resides in.
@@ -58,8 +58,8 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
 16. **Fields**.
     * If you are not forwarding all sources in the hosted collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is _true_. This will ensure all logs for this source are forwarded to Cloud SIEM.
     * Add another field named `_parser` with value _/Parsers/System/VMware/Carbon Black Cloud_
-17. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#Step-1-Configure-collection))  is a prerequisite for role-based access
-    * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/> <img src={useBaseUrl('img/cse/role-arn.png')} alt="add-hosted-collector" />
+17. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-configure-collection))  is a prerequisite for role-based access
+    * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/> <img src={useBaseUrl('img/cse/role-arn.png')} alt="Role ARN field" style={{border: '1px solid gray'}} width="500" />
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 18. **Log File Discovery**. These settings allow Sumo Logic to automatically collect logs from the specified S3 bucket when an Amazon SNS message is received (highly recommended). Alternatively, an automatic scan interval for new log files can be configured.
 19. **Advanced Options for Logs.** For information about the optional advanced options you can configure, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
@@ -75,6 +75,6 @@ In this step you configure Carbon Black Cloud to send log messages to an S3 buck
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM.
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**. <br/> <img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="add-hosted-collector" />
-2. On the **Log Mappings** page search for Carbon Black Cloud and check under **Record Volume**.<br/> <img src={useBaseUrl('img/cse/carbon-black-records.png')} alt="carbon-black-records" />
-3. For a more granular look at the incoming Records, you can also search Sumo Logic for Carbon Black Cloud Records.<br/> <img src={useBaseUrl('img/cse/carbon-black-search.png')} alt="carbon-black-search" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+2. On the **Log Mappings** tab search for Carbon Black Cloud and check the **Records** columns.
+3. For a more granular look at the incoming records, you can also search Sumo Logic for Carbon Black Cloud records.<br/> <img src={useBaseUrl('img/cse/carbon-black-search.png')} alt="A Carbon Black query" style={{border: '1px solid gray'}} width="500" />

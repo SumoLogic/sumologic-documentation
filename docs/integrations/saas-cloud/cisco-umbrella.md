@@ -88,3 +88,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Cisco Umbrella - Proxy**. This dashboard provides insights into the traffic that has gone through Umbrella's Secure Web Gateway (SWG) or Selective Proxy. It gives you a clear view of the geographical location of the traffic sources, client requests by blocked or allowed actions, malware detections, blocked sources and URLs, anti-virus detections, traffic request/response size, and an overall traffic summary.
 By using the dashboard's filters, you can easily analyze the data by different key fields such as action, identity, malware, anti-virus detection, blocked category, referrer, and category.<br/><img src={useBaseUrl('img/integrations/saas-cloud/cisco-umbrella-proxy.png')} alt="cisco umbrella proxy" width="750"/>
+
+## Upgrade/Downgrade the Cisco Umbrella app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco Umbrella app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

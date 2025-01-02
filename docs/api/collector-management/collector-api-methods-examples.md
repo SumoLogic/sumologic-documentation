@@ -19,7 +19,7 @@ You need the [Manage or View Collectors role capability](/docs/manage/users-role
 
 See the following topics for additional information:
 
-* [API Authentication](/docs/api/getting-started#Authentication) for information on API authentication options.
+* [API Authentication](/docs/api/getting-started#authentication) for information on API authentication options.
 * [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of API endpoints to use to connect your API client to the Sumo Logic API.
 * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a description of Source parameters.
 * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.

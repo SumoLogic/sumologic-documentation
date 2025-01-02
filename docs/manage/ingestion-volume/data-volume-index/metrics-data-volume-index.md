@@ -23,9 +23,10 @@ period.
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "billedBytes", "spansCount"
 | timeslice 1h
-|sum(billedBytes) as %"billedBytes" by _timeslice
+| sum(billedBytes) as %"billedBytes" by _timeslice
 | predict %"billedBytes" by 1h model=ar, forecast=20
 | fields - billedBytes_error
 ```
@@ -57,13 +58,14 @@ This query returns the metric volume by source category.
 
 ```sql
 _index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
-| parse regex "\"(?<sourcecategory>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | sum(datapoints) as datapoints by sourcecategory
 ```
 
 It returns results like these:
 
-![metric-volume-source-category](/img/ingestion-volume/metric-volume-source-category.png)
+![metric-volume-source-category](/img/manage/ingestion-volume/metric-volume-source-category.png)
 
 ### Metric volume by collector
 
@@ -71,13 +73,14 @@ This query returns the metric volume by collector.
 
 ```sql
 _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | sum(datapoints) as datapoints by collector
 ```
 
 It returns results like these:
 
-![metric-volume-collector.png](/img/ingestion-volume/metric-volume-collector.png)
+![metric-volume-collector.png](/img/manage/ingestion-volume/metric-volume-collector.png)
 
 ### Metric volume for a specific collector
 
@@ -85,7 +88,8 @@ This query returns the metric volume for a specific Collector. The Collector nam
 
 ```sql
 _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})"
+| json field=data "dataPoints"
 | where collector= "<<collector_name>>"
 | sum(datapoints) as datapoints by collector
 | fields datapoints
@@ -95,9 +99,10 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
-```
+```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | timeslice 6h
 | sum(datapoints) as datapoints by _timeslice
 | outlier datapoints
@@ -109,9 +114,10 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 This query runs against the metrics volume index and uses the [predict](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
-```
+```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume datapoints
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "dataPoints"
 | timeslice 1h
 | sum(datapoints) as datapoints by _timeslice
 | predict datapoints by 1h model=ar, forecast=20

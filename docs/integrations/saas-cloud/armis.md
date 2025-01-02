@@ -183,7 +183,7 @@ _sourceCategory=ArmisDashboards id
 | count_distinct(id)
 ```
 
-## Collecting Logs for Armis API
+## Collecting logs for Armis API
 
 This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
 
@@ -207,3 +207,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Device Overview
 
 **Armis - Device Overview** dashboard. The dashboard provides a table view of last-seen devices with key information to protect your IT infrastructure and offers visibility into devices based on risk levels, types, and categories.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Device-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
+
+## Upgrade/Downgrade the Armis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Armis app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

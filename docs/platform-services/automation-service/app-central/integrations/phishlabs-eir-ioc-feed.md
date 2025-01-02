@@ -1,7 +1,6 @@
 ---
 title: PhishLabs EIR - IOC Feed
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -19,8 +18,7 @@ PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital
 
 ## PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-1.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-2.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-3.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="600"/>
 1. Populate all the required fields (\*) and then click **SAVE**.

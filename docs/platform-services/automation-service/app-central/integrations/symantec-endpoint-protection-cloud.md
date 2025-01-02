@@ -1,7 +1,6 @@
 ---
 title: Symantec Endpoint Protection Cloud
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

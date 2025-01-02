@@ -66,9 +66,13 @@ The following example shows the routing expression for the three custom Partitio
 
 ![routing-expression.png](/img/search/optimize/routing-expression.png)
 
-Here are simple steps to create the Dev Partition:
-
-![dev-partition](/img/search/optimize/dev-partition.gif)
+Here are simple steps to [create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition/) named Dev:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. Click **Add Partition**.
+1. In the **Name** field, enter `Dev`.
+1. In the **Routing Expression** field enter `_sourceCategory=Dev`.
+1. Select **Apply the retention period of sumologic_default**.
+1. Click **Save**.
 
 ## How can my team use Partitions?
 
@@ -76,9 +80,6 @@ Once created, Partitions can be used by anyone in your account, helping you redu
 
 ![reduce scope](/img/search/optimize/reduce-scope.png)
 
-Here's an example of a search using the Prod Partition to narrow the search scope:
-
-![prod partition](/img/search/optimize/prod-partition.gif)
 
 ## Best Practices when using Partitions
 

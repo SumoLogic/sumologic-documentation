@@ -6,10 +6,15 @@ description: Use Installation Tokens to register Installed Collectors.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
 
 Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating Access Keys in installation scripts since Installation Tokens are associated with your account instead of users.
+
+:::note
+Multiple collectors can use the installation token. Additionally, installation tokens are only used to initially register the collectors to the account, and are not used by the collector after that point. 
+:::
 
 ## Limitations
 
@@ -19,19 +24,24 @@ Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens
 
 ## Manage Installation Tokens
 
-Installation Tokens in your account are manageable at **Administration** > **Security** > **Installation Tokens**.
+Installation Tokens in your account are manageable on the Installation Tokens page.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Installation Tokens page, in the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
+ 
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 
-![Installation Tokens UI table.png](/img/security/installation-tokens/installation-tokens-table.png)
+<img src={useBaseUrl('img/security/installation-tokens/installation-tokens-table.png')} alt="Installation Tokens tab" style={{border: '1px solid gray'}} width="800" />
 
-The **Administration > Security > Installation Tokens** page displays the following information: 
+The Installation Tokens page displays the following information: 
 
-* **Status** shows a green checkmark ![green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![red circle white exclamation.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
+* **Status** shows a green checkmark ![Green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![Red circle with a white exclamation mark.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
-On the **Administration** > **Security** > **Installation Tokens** page, you can:
+On the Installation Tokens page, you can:
 
 * Click **+ Add Token** to add Installation Tokens.
 * Search Installation Tokens
@@ -41,12 +51,12 @@ On the **Administration** > **Security** > **Installation Tokens** page, you c
 
 For the Installation Tokens listed, select a row to view its details. A details pane appears to the right of the table where you can edit, deactivate, and delete the token.
 
-![token details pane.png](/img/security/installation-tokens/token-details-pane.png)
+<img src={useBaseUrl('img/security/installation-tokens/token-details-pane.png')} alt="Token details" style={{border: '1px solid gray'}} width="300" />
 
 ### Add Token
 
 1. Click the **+ Add Token** button on the top right of the table. A panel named **Create Installation Token** appears to the right of the table.
-1. Input a unique name and optionally provide a description, then click **Save**.<br/> ![create token.png](/img/security/installation-tokens/create-token.png)
+1. Input a unique name and optionally provide a description, then click **Save**.<br/><img src={useBaseUrl('img/security/installation-tokens/create-token.png')} alt="Create Installation Token panel" style={{border: '1px solid gray'}} width="300" />
 
 ### Deactivate Token
 
@@ -54,7 +64,7 @@ Deactivated tokens cannot be used to register Collectors. You can deactivate a
 
 Select **Deactivate** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
-![deactivate token.png](/img/security/installation-tokens/deactivate-token.png)
+<img src={useBaseUrl('img/security/installation-tokens/deactivate-token.png')} alt="Deactivate selected on the More Actions menu" style={{border: '1px solid gray'}} width="300" />
 
 ### Delete Token
 
@@ -62,7 +72,7 @@ Deleted tokens are removed from your account and cannot be used anymore. Since t
 
 Select **Delete Token** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
-![delete token.png](/img/security/installation-tokens/delete-token.png)
+<img src={useBaseUrl('img/security/installation-tokens/delete-token.png')} alt="Delete Token selected on the More Actions menu" style={{border: '1px solid gray'}} width="300" />
 
 ## Using Installation Tokens
 
@@ -81,19 +91,9 @@ sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken>
 Where `<installationToken>` is the **Token String** you want to use to register the Collector.
 
 
-### Setup Wizard UI installer
-
-To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard):
-
-1. Select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.<br/> ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
-1. Click next.
-1. In the input box, enter the **Token String** you want to use to register the Collector for a one-time token.
-1. Continue with the installation steps.
-
-
 ### user.properties
 
-To register an Installed Collector with [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md), you need to use the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
+To register an Installed Collector with [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md), you need to use the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. For example, you can use the following PowerShell commands to decode the base64 token:
 
 <Tabs
   defaultValue="mac"

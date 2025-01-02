@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/akamai-siem-api/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/akamai-siem-api/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/akamai-siem-api/example.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
@@ -20,10 +21,6 @@ The Akamai SIEM API Source provides a secure endpoint to receive security events
 
 :::info
 This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). If your Source exceeds this rate, [contact Sumo Logic support](https://support.sumologic.com) for alternative collection techniques.
-:::
-
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -44,14 +41,14 @@ When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Be
 
 To configure an Akamai SIEM API Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
 1. Search for and select **Akamai SIEM API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
-1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](#prerequisite-and-authentication)) collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.
-1. **Config IDs**. Provide at least one Security Configuration ID you got when you turned on the SIEM integration in Akamai. This was done in the [prerequisite and authentication](#prerequisite-and-authentication) section.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](#vendor-configuration)) collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.
+1. **Config IDs**. Provide at least one Security Configuration ID you got when you turned on the SIEM integration in Akamai. This was done in the [Vendor configuration](#vendor-configuration) section.
 1. **Parsing Options**. Select if you want to **Enable post processing** or **Disable all parsing**. The post processing options are **Decode httpMessage fields** and **Duplicate Events once for each rule associated with the event**. We recommend both parsing options when **Forward to SIEM** is enabled.
    * **Decode httpMessage fields** will decode the following fields from the `httpMessage` field of the [event](https://developer.akamai.com/api/cloud_security/siem/v1.html#event):
       * `httpMessage.requestHeaders`
@@ -278,7 +275,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 |:--|:--|:--|:--|:--|
 | schemaRef | JSON Object  | `{"type":"Akamai SIEM API"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| config | JSON Object | [Configuration object](#config-parameters) | Yes | Source type specific values. |
 
 ### Config Parameters
 
@@ -306,13 +303,23 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.json)
+<a href="/files/c2c/akamai-siem-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/akamai-siem-api/example.tf)
+<a href="/files/c2c/akamai-siem-api/example.tf" target="_blank">Download example</a>
+
+## Troubleshooting
+
+### Invalid URL escape Error
+
+The "**invalid URL escape**" error occurs when the Akamai API returns a URL-encoded string with improper `%` padding. For example, the string `%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3b%3bQm90X0FBNDY4OThENDg4MUY4OEIwNUEzMzA0RTA1QzAzREQw%3bODUgbWVzc2FnZSB1bml0cyBwZXIgc2Vjb25k%b` will result in the error "**invalid URL escape "%b"**". This is expected due to the improper `%` padding. To resolve this issue, contact [Akamai Support](https://www.akamai.com/global-services/support) and inform them about the improper `%` padding in the URL-encoded strings returned by their API.
+
+### Illegal base64 data error
+
+The "**illegal base64 data**" error occurs when the Akamai API returns base64-encoded strings containing invalid characters, such as spaces (` `). For example, the string `anNfcDdnXzYnIigpJiU8enp6PjxTY1JpUHQ UGxtQig5NTcxKTwvU2NSaVB0Pi5qcw==` will result in the error **illegal base64 data at input byte 35** due to the space character at the 35th byte. To resolve this issue, contact [Akamai Support](https://www.akamai.com/global-services/support) and inform them about the invalid characters in the base64-encoded strings returned by their API.
 
 ## FAQ
 

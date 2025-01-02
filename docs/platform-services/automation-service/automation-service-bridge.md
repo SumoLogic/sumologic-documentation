@@ -1,6 +1,6 @@
 ---
 id: automation-service-bridge
-title: Bridge for the Automation Service
+title: Automation Bridge
 sidebar_label: Automation Bridge
 description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
@@ -14,8 +14,8 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 ### Hardware requirements
 
 * OS:
-   * Ubuntu (18.04/20.04)
-   * CentOS 7
+   * Ubuntu 18.04, 20.04, or 24.04
+   * CentOS 7 or 8 (Version 8 is supported in a new beta release of the Automation Bridge)
    * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
@@ -82,14 +82,17 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
+:::info
+You must prefix your installation token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
+:::
+
 <img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" style={{border:'1px solid gray'}} width="800"/>
 
 ## Automation bridge installation
 
 ### Ubuntu
 
-1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
-1. Click **?** in the upper-right corner of the UI.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -100,8 +103,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
-1. Click **?** in the upper-right  corner of the UI.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
@@ -114,8 +116,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 1. Verify that the prefix name of the generated token respects the requirements (see [Get installation token](#get-installation-token)).
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
-   * `1SOAR_URL1`
-   * `1SOAR_TOKEN1`
+   * `SOAR_URL`
+   * `SOAR_TOKEN`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
 And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
@@ -125,10 +127,11 @@ An example of a configuration file would be:
 {
   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-  "SIEM_URL":"https://YOUR_CLOUD_SIEM_URL/sec",
+  "SIEM_URL":"The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector",
   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
+To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/). By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
 
 ### Bridge ALIAS
 
@@ -246,9 +249,9 @@ The automation bridge needs to be able to communicate with the Docker API to wor
 
 |Environment Variable |Description |Default   |
 |:------------------------------------|:---------------|:----------|
-|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
-|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
-|`SIEM_URL_HERE` | The HTTP Sumo Logic collector to send the bridge logs. | NONE |
+|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
+|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
+|`SIEM_URL_HERE` | The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector. | NONE |
 |`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 
 ### Methodologies

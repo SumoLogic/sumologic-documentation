@@ -2,32 +2,32 @@
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
-description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI.
+description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect.
 
-Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
+Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
 
-In addition to providing context to Cloud SIEM Insights and Entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table)
+In addition to providing context to Cloud SIEM insights and entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table).
 
 ## Inventory data in the Cloud SIEM UI
 
 The screenshots in this section show how Cloud SIEM presents inventory data in the UI.
 
-This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
+This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the entity.
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Cloud SIEM image" width="400" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Cloud SIEM image" width="400"/>
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Example inventory data on an entity" style={{border: '1px solid gray'}} width="400"/>
 
 ## About inventory data sources
 
-Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory Source Mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
+Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory source mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example, the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 

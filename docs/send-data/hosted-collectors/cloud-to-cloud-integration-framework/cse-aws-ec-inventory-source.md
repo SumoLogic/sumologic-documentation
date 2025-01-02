@@ -14,6 +14,7 @@ import MyComponentSource1 from '!!raw-loader!/files/c2c/cse-aws-ec-inventory/exa
 import TerraformExample1 from '!!raw-loader!/files/c2c/cse-aws-ec-inventory/example1.tf';
 import MyComponentSource2 from '!!raw-loader!/files/c2c/cse-aws-ec-inventory/example2.json';
 import TerraformExample2 from '!!raw-loader!/files/c2c/cse-aws-ec-inventory/example2.tf';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
@@ -21,10 +22,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
-
-:::note
-This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
 
 ## Data collected
 
@@ -56,12 +53,12 @@ When you create a Cloud SIEM AWS EC2 Inventory Source, you add it to a Hosted C
 
 To configure a Cloud SIEM AWS EC2 Inventory Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS EC2 Inventory**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. 
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -110,21 +107,21 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource1}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example1.json)
+<a href="/files/c2c/cse-aws-ec-inventory/example1.json" target="_blank">Download example</a>
 
 <CodeBlock language="json">{MyComponentSource2}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example2.json)
+<a href="/files/c2c/cse-aws-ec-inventory/example2.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample1}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example1.tf)
+<a href="/files/c2c/cse-aws-ec-inventory/example1.tf" target="_blank">Download example</a>
 
 <CodeBlock language="json">{TerraformExample2}</CodeBlock>
 
-[Download example](/files/c2c/cse-aws-ec-inventory/example2.tf)
+<a href="/files/c2c/cse-aws-ec-inventory/example2.tf" target="_blank">Download example</a>
 
 ## FAQ
 

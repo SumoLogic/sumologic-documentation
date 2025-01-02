@@ -23,9 +23,13 @@ The diagram below illustrates the components of the PostgreSQL collection for ea
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#postgresql-alerts). For details on creating custom monitors, refer to [Create monitors for PostgreSQL app](#create-monitors-for-postgresql-app).
+:::
+
 ## Fields creation in Sumo Logic for PostgreSQL
 
-Following are the tags that will be created as part of PostgreSQL App install if not already present: 
+Following are the tags that will be created as part of PostgreSQL app installation, if not already present: 
 
 - **db.cluster.name**. User configured. Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **db.system**. Has a fixed value of **postgresql**.
@@ -107,10 +111,10 @@ In this step, you will configure the yaml file required for Mysql collection.
 
 Below is the required input:
 
-- **Error Log Path**. enter the path of the error log file for your PostgreSQL instance.
-- **Endpoint**. enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
-- **UserName**. enter the PostgreSQL username.
-- **Password**. password for the user name which is being used for scrapping the PostgreSQL metrics.
+- **Error Log Path**. Enter the path of the error log file for your PostgreSQL instance.
+- **Endpoint**. Enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`.
+- **UserName**. Enter the PostgreSQL username.
+- **Password**. Password for the user name which is being used for scrapping the PostgreSQL metrics.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
@@ -196,10 +200,16 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample logs
+## Sample log messages
 
 ```sql
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+```
+
+## Sample metrics
+
+```sql
+{"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
 ```
 
 ## Sample queries
@@ -221,14 +231,11 @@ This sample query is from the **PostgreSQL - Database Metrics** dashboard, **Num
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count
 ```
 
-## Sample metrics
-
-```sql
-{"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
-```
-
-
 ## Viewing PostgreSQL dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -323,8 +330,26 @@ The **PostgreSQL - Relation Metrics** dashboard allows you to view and analyze t
 
 Use this dashboard to:
 
-- Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
+- Monitor PostgreSQL relation metrics (disk blocks, buffer hits, and hot updates) trends over time.
 - Monitor index scans and size to determine if executed queries are accessing them for a relation.
 - Track index utilization of existing indexes in a relation.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
+
+## Create monitors for PostgreSQL app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PostgreSQL alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `PostgreSQL - Access from Highly Malicious Sources Alert` | This alert gets triggered when a Postgres instance is accessed from known malicious IP addresses. | Count > = 1 | Count < 1 |
+| `PostgreSQL - High Rate of Statement Timeout Alert` | This alert gets triggered when we detect Postgres transactions show a high rate of statement timeouts. | Count > = 1 | Count < 1 |
+| `PostgreSQL - High Replication Lag Alert` | This alert gets triggered when we detect that the Postgres Replication lag (in bytes) is high. | Count > 10 | Count < = 10 |
+| `PostgreSQL - Instance Down Alert` | This alert gets triggered when the Postgres instance is down. | Count > = 1 | Count < 1 |
+| `PostgreSQL - SlowQueries Alert` | This alert gets triggered when we detect that the PostgreSQL instance is executing slow queries. | Count > 5 | Count < = 5 |
+| `Postgresql- Too Many Connections Alert` | PostgreSQL instance has too many connections. | Count > = 100 | Count < 100 |
+| `Postgresql - Too Many Locks Acquired Alert` | This alert gets triggered when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting `max_locks_per_transaction`. | Count > = 100 | Count < 100 |

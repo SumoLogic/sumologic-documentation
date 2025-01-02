@@ -42,7 +42,7 @@ Statistic=Sum _sourceHost=* _collector=* region=* targetgroup=* AvailabilityZone
 
 ## Viewing AWS Application Load Balancer dashboards
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 

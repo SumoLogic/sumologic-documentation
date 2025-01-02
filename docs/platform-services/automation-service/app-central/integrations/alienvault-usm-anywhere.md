@@ -1,7 +1,6 @@
 ---
 title: AlienVault USM Anywhere
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -116,7 +116,7 @@ On systems without systemd, the logs are available in the console output of the 
 On Windows, the logs are available in event viewer, or they can be listed using PowerShell:
 
 ```powershell
-Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Object -Property ReplacementStrings
+Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo |  Select-Object @{Name='TimeGenerated'; Expression={($_.TimeGenerated).ToString("yyyy-MM-dd HH:mm:ss")}}, ReplacementStrings |  Format-Table -Wrap
 ```
 
 </TabItem>
@@ -235,7 +235,7 @@ To work around this, you need to delete the existing collector registration and 
 1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 1. Remove the collector in Sumo Logic UI.
    1. Sign in to Sumo Logic platform.
-   1. Navigate to **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
    1. Find your collector.
 
 After that, the collector will register on the next run.

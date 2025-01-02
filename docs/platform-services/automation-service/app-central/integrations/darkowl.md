@@ -1,7 +1,6 @@
 ---
 title: DarkOwl
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

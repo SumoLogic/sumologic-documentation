@@ -8,15 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
-As **Cloud-to-Cloud Event Hub source** supports logs, you can migrate your [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor) (functions prefixed with SUMOAzureLogs). This source is available in all deployments, including FedRAMP.
+As **Cloud-to-Cloud Event Hub source** supports logs, you can migrate your [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source) (functions prefixed with SUMOAzureLogs). This source is available in all deployments, including FedRAMP.
 
 Cloud-to-Cloud sources have several advantages, including:
 * Less overhead of maintenance and upgrades, since cloud-to-cloud sources are upgraded automatically for bug fixes.
 * Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in your account while cloud-to-cloud sources are hosted in sumo logic infra. On the other hand, a cloud-to-cloud event hub source requires you to create only an event hub in your Azure account.
-
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
 
 ## Step 1. Choose a migration strategy
 
@@ -34,7 +30,7 @@ You need to manually delete resources (starting with the prefix Sumo) and cannot
 
 ### Strategy B. Creating new event hub namespaces
 
-If you want to create a new event hub namespace, see steps 1 to step 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
+If you want to create a new event hub namespace, see steps 1 to 3 in the [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
 
 :::note
 You need to first find out what all log types are exported to your event hub and recreate the diagnostic settings for the Azure services. Thus, we recommend creating new diagnostic settings for newer namespaces so that we can delete the older ones after verifying the new collection works without any latency.
@@ -52,7 +48,7 @@ After choosing one of the above two strategies, you will now have an event hub n
    4. Click **Create**.
 
 :::note
-Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-1-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
+Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-a-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
 :::
 
 ![consumer-groups.png](/img/send-data/consumer-groups.png)
@@ -61,7 +57,7 @@ After completing the above steps, you will have **Azure Event Hubs Namespace**, 
 
 ## Step 3. Create event hub cloud-to-cloud sources
 
-For each of the event hubs present in your namespace, you need to create a cloud-to-cloud source. For more information, see [Creating Azure Event Hub Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubssource) section.
+For each of the event hubs present in your namespace, you need to create a cloud-to-cloud source. For more information, see [Creating Azure Event Hub Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) section.
 
 :::note
 We recommend giving the same source category so that your custom dashboards or apps require no changes. You can verify whether the data comes from your source using `1_source metadata`.
@@ -73,7 +69,7 @@ After verifying that all the log types are ingesting in your new source, follow 
 
 ### Option A. By creating a new namespace
 
-If your resource group contains only resources created by the older ARM template, as shown below, and you have created a new namespace in a different resource group, see [Creating new event hub namespace](#strategy-2-creating-new-event-hub-namespaces) section in step 1.
+If your resource group contains only resources created by the older ARM template, as shown below, and you have created a new namespace in a different resource group, see [Creating new event hub namespace](#strategy-b-creating-new-event-hub-namespaces) section in step 1.
 
  ![resource-groups.png](/img/send-data/resource-groups.png)
 

@@ -5,6 +5,7 @@ description: Learn how to create and manage multiple Sumo Logic orgs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::note
 If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).
@@ -28,7 +29,7 @@ When you create a child org, you provision it with credits, based on the ingest 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
-Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration** > **Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
+Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## About Cloud SIEM provisioning
 
@@ -44,64 +45,114 @@ There are several role capabilities that are required to work with orgs:
 * **Create Trial Organizations**. This capability is required to create and provision trial organizations. 
 * **Upgrade Trial Organizations**. This capability is required to upgrade trial organizations. 
 
-## Create a child org
+## Create a new child organization
 
-This section has instructions for creating a child org. 
+This section has instructions for creating a new org.
 
-:::note
-After you create a child org, you can’t delete it.
+:::sumo Micro Lesson
+Creating a New Child Org
+<Iframe url="https://www.youtube.com/embed/omTHPAJ9dIg?si=m5dVp5oXu29wq4Pu"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 :::
 
-1. Go to **Administration > Organizations**.
-1. Click **+ Add Organization**.
-    ![orgs-page-6.png](/img/subscriptions/add-org.png)
-1. The **Create New Organization** pane appears.<br/>
-    ![create-new-org-2.png](/img/subscriptions/create-new-org.png)
-    :::note
-    The **Credits Usage** portion of the pane shows information you’ll want to know when you assign credits to the new org: **Total Credits Quota** is the total number of credits for your subscription; **Available Credits** is the number of credits that have not yet been allocated to child orgs.
-    :::
-   Enter the following:
-      * **Organization Name**. Enter a unique name for the org.
-      * **Account Owner Email**. Enter the name of the account owner.
-      * **Account Owner First Name**. Enter the account owner’s first name.
-      * **Account Owner Last Name**. Enter the account owner’s last name.
-      * **Deployment**. Select a Sumo Logic deployment from the list.
-        :::note
-        Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
-        :::
-      * **Plan Type**. Select your organization's plan type. 
-1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" />
-1. Enter the following:
-      * **Continuous Tier**. Enter estimated daily ingestion to the Continuous Tier.
-      * **Frequent Tier.** Enter estimated daily ingestion to the Frequent Tier.
-      * **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent Tier.
-      * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
-      * **Tracing**. Enter estimated daily ingestion of traces.
-1. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
-   1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
-   1. Enter a value in GB.
+:::note
+After you create a new org, you can’t delete it.
+:::
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="add-org" style={{border:'1px solid gray'}} width="800" />
+1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="create-new-org.png" style={{border:'1px solid gray'}} width="400" />
+
+### Allocate Credits
+
+1. **Plan Type**. Select your organization's plan type. 
+1. **Deployment**. Select a Sumo Logic deployment from the list.
       :::note
-      Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
+      Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied on the usage.
       :::
-1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/>
-1. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
-1.  The calculator now shows how many credits are associated with the ingestion volume and, as applicable, how many are due to the deployment factor—the upcharge based on the deployment where the org is located.
-1.  Click **Use This Allocation**.
+1. Click **Set Baseline**.
+      :::note
+      You need to set the baseline to allocate credits.
+      :::
+      <img src={useBaseUrl('img/manage/subscriptions/allocate-credits-set-baseline.png')} alt="allocate-credits-set-baseline" style={{border:'1px solid gray'}} width="450" />
+1. In the credits calculator, enter the following:
+      * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
+      * **Frequent Log Ingest.** Enter estimated daily ingestion to the Frequent Tier.
+      * **Infrequent Log Ingest.** Enter estimated daily ingestion to the Infrequent Tier.
+      * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
+      * **Tracing**. Enter estimated daily ingestion of traces.<br/> <img src={useBaseUrl('img/manage/subscriptions/credits-calculator.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
+1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+          :::note
+          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
+          :::
+1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
+1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
+1. Throttling limits displays the rate of ingestion. To learn more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
+1. Once you're finished adding the baseline, click **Done**.
+1. **Credits to be allocated**. The recommended credits for this child org will be displayed once you set the baseline. You can add or reduce the credit based on your requirement.
+1. **Remaining Credits (Parent)**. Total balance credits available in the parent org after using the credits for child org.
+
+### Basic Details
+
+1. **Organization Name**. Enter a unique name for the org.
+1. **Account Owner Email**. Enter the name of the account owner.
+1. **Account Owner First Name**. Enter the account owner’s first name.
+1. **Account Owner Last Name**. Enter the account owner’s last name.<br/> <img src={useBaseUrl('img/manage/subscriptions/basic-details.png')} alt="basic-details" style={{border:'1px solid gray'}} width="450" />
 
 ## Update an org's credits allocation
 
+:::sumo Micro Lesson
+Watch this micro lesson to learn more about managing a child org.
+<Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
+
+:::info
+If the org has already depleted its credits, you can see a red color warning icon in the **Usage %** column and a red-colored usage bar in the **Allocation & usage** section when you view the selected org.
+:::
+
 To change an org's credits allocation:
-1. Go to **Administration > Organizations**.
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
-3. The **Credits Calculator** appears.
-4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
+1. Under **Modify Allocation**, you can increase or decrease the credits based on your requirement.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
+      :::note
+      Ensure your total new allocation is not less than the consumed credits.
+      :::
+      You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period.
+
+      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
+      <br/>Click **View Details** to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+
+      **Example 2**: Suppose you need to increase credits for your child org. The image below shows that you have used 35 out of 31,026 credits allocated to your child org. To add more credits, select **Credits to be Added** and enter the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
+1. If you want to modify the baseline, click **View Baseline**. The credits calculator appears.
+      1. Click **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Based on the new baseline values, the calculator now shows the recommended credit allocation, suggesting how many credits you should add for the child org.<br/><img src={useBaseUrl('img/manage/subscriptions/edit-baseline-example.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Once you set the baseline, you can view the recommended value in the **Credits to be Added** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
+      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
+1. Click **Save** once you finish editing the credit values.
 
 ## Monitor Cloud SIEM provisioning
-Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
-<img src={useBaseUrl('img/cse/status.png')} alt="status" />
+Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+
+<img src={useBaseUrl('img/cse/status.png')} style={{border:'1px solid gray'}} alt="status" />
 
 ## Monitor credits allocation and usage
 
@@ -124,11 +175,11 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](sumo-logic-credits-accounts.md#monitoring-promotional-credit-usage).
+* **Promotional categories**. For more information, see [Promotional Credits](sumo-logic-credits-accounts.md#promotional-credits).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
-<img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid gray'}} />
+<img src={useBaseUrl('img/manage/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 ### View child credit usage by category
 
@@ -142,7 +193,7 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 
 By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
 
-<img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid gray'}} />
+<img src={useBaseUrl('img/manage/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
 
@@ -158,32 +209,33 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
 
-<img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid gray'}} />
+<img src={useBaseUrl('img/manage/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 ## Access a child org
 
 If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has been configured for a child org, and you have an account in the org, you can access it from the **Organizations** UI.
 
-1. Go to **Administration** > **Organizations**.
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" style={{border:'1px solid gray'}} width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/access-org.png')} alt="your description" style={{border:'1px solid gray'}} width="450"/>
 
 ## View child credits usage
 
-You can access the child credits usage for a selected organization from the **Organizations** UI. 
+You can access the child credits usage for a selected organization from the **Organizations** UI.
 
-1. Go to **Administration** > **Organizations**.
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the row for the org you want to access the credits usage.
-1. Scrow down to **Credits Usage**. You can see the total percentage of credits consumed out of the total number of credits allocated.
-1. Click **Open in Account Overview** for detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
+1. You can see the total percentage of credits consumed out of the total number of credits allocated in the **Allocation & usage** section.
+1. Click **Open in Account Overview** for a detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/manage/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
 
 ## View baselines
 
 Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
 
-1. Go to **Administration** > **Organizations**.
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the row for the org you want to check the baselines.
-1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
+1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
 
 ## Audit logging for organizations
 

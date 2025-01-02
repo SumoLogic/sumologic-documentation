@@ -15,10 +15,10 @@ In this step, you configure an HTTP Source to collect Signal Sciences WAF log me
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
-1. The **Add Hosted Collector** popup appears. <br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" width="500"/> 
+1. The **Add Hosted Collector** popup appears. <br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field  called `_sourceCategory`.
@@ -29,11 +29,11 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
-1. The page refreshes. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="HTTP source" width="600"/>
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="HTTP source" style={{border: '1px solid gray'}} width="600"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
@@ -55,12 +55,12 @@ For more information on Generic Webhooks refer to the [Generic Webhooks](https:/
 
 ## Step 3: Cloud SIEM Ingest Configuration
 
-In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
+In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configurecollection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  <br/><img src={useBaseUrl('img/cse/gear-sumo-link.png')} alt="Sumo Logic link" width="400"/>
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
-1. On the **Create Sumo Logic Mapping** popup:
-    * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.
+1. On the **Add Ingest Mapping** popup:
+    * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configurecollection). 
     * **Format**. Enter *JSON.*
     * **Vendor**. Enter *SignalSciences*.
     * **Product**. Enter *WAF*. 
@@ -71,7 +71,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
-1. On the **Log Mappings** page search for "Signal Sciences" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" width="600"/> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** page search for "Signal Sciences" and check the **Records** columns. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" style={{border: '1px solid gray'}} width="800"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records.  
      

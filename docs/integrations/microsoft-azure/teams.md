@@ -49,7 +49,7 @@ _sourceCategory="O365/General"
 | count by operation
 ```
 
-## Collecting Logs
+## Collecting logs
 
 This section has instructions for collecting logs for the Sumo App for Teams.
 

@@ -19,7 +19,7 @@ The App uses a Lambda function to collect assessment run events (notifications) 
 For more information on Amazon Inspector notifications, see:
 [Amazon Inspector Classic assessment templates and assessment runs](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
 
-## Sample Log
+## Sample log
 
 ```json title="Amazon Inspector CreateResourceGroup action"
 {
@@ -69,7 +69,7 @@ For more information on Amazon Inspector notifications, see:
 }
 ```
 
-## Collecting Data for the Amazon Inspector Classic App
+## Collecting data for the Amazon Inspector Classic app
 
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
 
@@ -171,15 +171,19 @@ Details are provided in the following sections.
 12. Click **Save**.
 
 
-## Installing the Amazon Inspector Classic App
+## Installing the Amazon Inspector Classic app
 
 Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Inspector Classic Dashboards
+## Viewing Inspector Classic dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -217,3 +221,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 **Finding Severity by Template and Run.** Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.
+
+## Upgrade/Downgrade the Amazon Inspector Classic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector Classic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

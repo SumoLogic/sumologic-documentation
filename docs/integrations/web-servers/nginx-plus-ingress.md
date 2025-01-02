@@ -61,7 +61,7 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 | sort _count
 ```
 
-## Collecting Logs and Metrics for Nginx Plus Ingress
+## Collecting logs and metrics for Nginx Plus Ingress
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus Ingress. This includes the following tasks:
 
@@ -125,15 +125,15 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 1. Download [this JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
 2. Replace **$$logs_data_source** with logs data source.
     * For example, `_sourceCategory=Labs/NginxIngress/Logs`
-3. Go to Manage Data > Alerts > Monitors.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 1. Click **Import** to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. See [Add a Monitor](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
+The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. See [Add a Monitor](/docs/alerts/monitors/create-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#from-the-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the `git clone` command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
@@ -187,7 +187,7 @@ email_notifications = [
    1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run `terraform init`. This will initialize Terraform and will download the required components.
    2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
    3. Run `terraform apply`.
-7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
+7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
@@ -254,7 +254,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Plus Ingress - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Threat-Intel.png')} alt="Nginx Plus Ingress" />
 

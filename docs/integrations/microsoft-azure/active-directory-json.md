@@ -130,3 +130,15 @@ Use this dashboard to:
 * Track IP addresses associated with failed activities.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
+
+## Upgrade/Downgrade the Active Directory JSON app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Active Directory JSON app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

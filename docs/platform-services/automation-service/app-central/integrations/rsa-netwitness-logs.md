@@ -1,7 +1,6 @@
 ---
 title: RSA NetWitness Logs
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

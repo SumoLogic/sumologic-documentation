@@ -2,8 +2,9 @@
 id: logs-to-metrics
 title: Logs-to-Metrics
 description: Set up rules to extract or create metrics from log data.
-tags: [logs to metrics, logs-to-metrics]
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Logs-to-Metrics feature allows you to extract or create metrics from log data:
 
@@ -48,7 +49,7 @@ Sumo will not allow you to save a Logs-to-Metrics rule that results in more than
 
 If, over time, the volume of unique time series returned by a Logs-to-Metrics rule grows to more than 30,000, Sumo will disable the rule. You can see that a rule is disabled on the Logs-to-Metrics page: a red icon appears to the left of the rule name.
 
-![disabled-ltm.png](/img/metrics/disabled-ltm.png)
+<img src={useBaseUrl('img/metrics/disabled-ltm.png')} alt="Disabled metrics" style={{border: '1px solid gray'}} width="400" />
 
 #### Audit logging
 
@@ -104,53 +105,38 @@ This section describes how to create a Logs-to-Metrics rule.
 You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
 :::
 
-1. Go to **Manage Data > Metrics > Logs-to-Metrics** in the Sumo web app. The page displays a list of existing Logs-to-Metrics rules.
-
-    ![logs-to-metrics-rules.png](/img/metrics/log-to-metrics-add.png)
-
-1. To create a new rule, click the plus sign (+) in the upper right of the page. The **Add Logs-to-Metrics Rule** page appears.
-
-    ![add-logs-to-metrics-rules.png](/img/metrics/add-logs-to-metrics-rules.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Logs-to-Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select **Configuration**, and then under **Metrics**, select **Logs to Metrics**. You can also click the **Go To...** menu at the top of the screen and select **Logs to Metrics**.  <br/>The page displays a list of existing Logs-to-Metrics rules. <br/><img src={useBaseUrl('img/metrics/log-to-metrics-add.png')} alt="Add button" style={{border: '1px solid gray'}} width="800" />
+1. To create a new rule, click **Add Logs-to-Metrics Rule** in the upper right of the page. The **Add Logs-to-Metrics Rule** page appears. <br/><img src={useBaseUrl('img/metrics/add-logs-to-metrics-rules.png')} alt="Add Logs-to-Metrics Rule" style={{border: '1px solid gray'}} width="500" />
 1. In the **Parse Log Messages** section:
-
-    1. **Rule Name**. Specify a rule name.
+    1. **Name**. Specify a rule name.
     1. **Scope**. Enter a query that returns the log messages from which you want to extract or calculate metrics. For best performance, enter a scope that returns only the log messages from which you want to create metrics. For example: `_sourceCategory=alert !info !warn ``error` Once you enter a valid scope, 10 recent matching log lines appear in the **Preview Parse Expression** section of the page.
-
         :::note
         The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally—the rule author’s role search query will not be applied.
         :::
-
-        ![preview-parse-expression.png](/img/metrics/preview-parse-expression.png)
-
     1. **Parse Expression**. Enter a parse expression to extract desired fields from the logs that match the scope query. The parse operators supported in logs to metrics rules are listed below. Other parse operators are not supported.
+         * `parse multi`
+         * `parse regex`
+         * `parse anchor`
+         * `parse nodrop`
+         * `csv`
+         * `double`
+         * `fields`
+         * `json`  (except for the `auto` option)
+         * `keyvalue`
 
-      * `parse multi`
-      * `parse regex`
-      * `parse anchor`
-      * `parse nodrop`
-      * `csv`
-      * `double`
-      * `fields`
-      * `json`  (except for the `auto` option)
-      * `keyvalue`
+        Here is an example of a parse expression:  
+         `parse "[hostId=*]" as hostid`  
 
-    Here is an example of a parse expression:  
+       <img src={useBaseUrl('img/metrics/preview-parse-expression.png')} alt="Preview parse expression" style={{border: '1px solid gray'}} width="600" />
 
-    `parse "[hostId=*]" as hostid`  
+1. After you enter a valid parse expression, extracted fields appear in the **Select Metrics and Dimensions** section of the page. In this section, you define the metrics and dimensions the rule will extract. Note that in addition to any fields you extracted with your parse expression, the following Sumo metadata fields are listed:
+         * `_sourceHost`
+         * `_source`
+         * `_sourceName`
+         * `_collector`
+         * `_sourceCategory` 
 
-    After you enter a valid parse expression, extracted fields appear in the **Select Metrics and Dimensions** section of the page. Note that in addition to any fields you extracted with your parse expression, the following Sumo metadata fields are listed:
-
-    * `_sourceHost`
-    * `_source`
-    * `_sourceName`
-    * `_collector`
-    * `_sourceCategory`
-
-    ![Select-Metrics-and-Dimensions.png](/img/metrics/Select-Metrics-and-Dimensions.png)
-
-1. On the **Select Metrics and Dimensions** section of the page, you define the metrics and dimensions the rule will extract. The selections in the screenshot below extract one dimension from matching log messages and create a metric from the count of matching log messages. 
-
-    ![mets-dims.png](/img/metrics/mets-dims.png)
+    <br/><img src={useBaseUrl('img/metrics/mets-dims.png')} alt="Select metrics and dimensions" style={{border: '1px solid gray'}} width="600" />
 
     1. Click the **Metrics** checkbox for a field that is a numerical value that you want to plot and analyze, such as latency. You can designate more than one field as a metric, as long as they are both numerical values. On the other hand, if your logs don’t contain embedded metrics, and you are creating a metric based on log count, you will not mark any of the fields as metrics. A field you select as a metric must contain a numerical value, otherwise it will not be extracted.
     1. Click the **Dimensions** checkbox for fields by which you’d like to query and aggregate metrics, for example, `hostId`. Configuring fields as dimensions is optional. Avoid selecting too many dimensions, as that will increase the number of unique metrics produced from the rule.
@@ -158,6 +144,6 @@ You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with t
 
 1. Click **Estimate DPM** to see how many data points per minute (DPM) your rule would have created in the last 60 minutes.
 
-    ![dpm.png](/img/metrics/dpm.png)
+    <img src={useBaseUrl('img/metrics/dpm.png')} alt="Data points per minute" style={{border: '1px solid gray'}} width="600" />
 
 1. Click **Save** to create the rule.

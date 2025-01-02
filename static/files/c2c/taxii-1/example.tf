@@ -11,7 +11,13 @@ resource "sumologic_cloud_to_cloud_source" "taxii2_source" {
             "discoveryURL": "https://stix2.unit42.org/taxii/",
             "useBasicAuth: true,
             "http_user": "user@acme.com",
-            "http_password": "****************************"
+            "http_password": "****************************",
+            "pollingInterval": "1h",
+            "collectionNames": [
+				      "collection1",
+				      "collection2"
+			      ]
+			      
   })
 }
 resource "sumologic_collector" "collector" {

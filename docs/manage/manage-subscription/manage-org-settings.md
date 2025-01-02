@@ -1,10 +1,11 @@
 ---
 id: manage-org-settings
 title: Manage Organizational Settings
+sidebar_label: Manage Org Settings
 description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
 keywords:
     - subdomain
-    - orgs 
+    - orgs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,24 +18,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex | Professional, Enterprise |
 | Cloud Flex Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab of the **Administration** > **Accounts** page. The options are at the top of the page under the details icon.
+This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
 
 For Cloud Flex Credits:
 
-![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
+<img src={useBaseUrl('img/manage/subscriptions/manage-org-links-cfc.png')} alt="Gear icon menu" style={{border: '1px solid gray'}} width="600" />
 
 For Cloud Flex:
 
-![manage-org-links.png](/img/subscriptions/manage-org-links.png)
+<img src={useBaseUrl('img/manage/subscriptions/manage-org-links.png')} alt="Manage Organization links" style={{border: '1px solid gray'}} width="600" />
 
 ## Change organization name
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. Access the appropriate menu for your [account type](#availability):
-     * Cloud Flex Credits: From the kebab menu at the top, select **Change Organization Name**.
+     * Cloud Flex Credits: From the gear icon menu at the top, select **Change Organization Name**.
      * Cloud Flex: At the top, select **Manage Organization > Change Organization Name**.
 1. At the prompt, enter a new organization name in the text field.
-1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" width="450"/>
+1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
 ## Change account owner
 
@@ -42,15 +43,15 @@ For Cloud Flex:
 After you make this change, you will not be able to edit the account owner.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
 1. Access the appropriate menu for your [account type](#availability):
-     * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Owner**.
+     * Cloud Flex Credits: From the gear icon menu at the top, select **Change Account Owner**.
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. In the prompt dialog, enter a new account owner in the text field.
-1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" width="450"/>
+1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ## Delete an organization
@@ -59,10 +60,10 @@ If the account owner leaves your organization and you cannot transfer the accoun
 You can only delete an organization for Free and Trial accounts.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
 1. From the details icon at the top, click **Delete Org.**
 1. In the prompt dialog, enter **DELETE** in the text field to confirm the action.
-1. Click **Delete**. <br/><img src={useBaseUrl('img/subscriptions/Delete_Organization_prompt.png')} alt="Delete_Organization_prompt.png" width="450"/>
+1. Click **Delete**. <br/><img src={useBaseUrl('img/manage/subscriptions/Delete_Organization_prompt.png')} alt="Delete_Organization_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
 
 ## Set up a custom subdomain
@@ -73,11 +74,7 @@ This section has instructions for setting up a custom subdomain for the URL you
 Custom subdomains are not currently available for Sumo Logic accounts created through third-party integrations that require authentication using those integrations, such as Heroku and Jfrog.
 :::
 
-By default, your Sumo Logic account has a "service" subdomain. For example, 
-
-```
-service.sumologic.com
-```  
+By default, your Sumo Logic account has a "service" subdomain. For example, `service.sumologic.com`.
 
 If you have multiple Sumo Logic accounts, you may find it useful to configure a custom subdomain for each of your Sumo Logic accounts.
 
@@ -103,10 +100,11 @@ Before changing your account subdomain, consider the following:  
 You must be the account owner of the Sumo Logic account to change the account subdomain.
 :::
 
-1. Go to **Administration** > **Account** and select the details icon at the top.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
+1. Select the details icon at the top.
 1. Access the appropriate menu for your [account type](#availability):
-     * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Subdomain**.
+     * Cloud Flex Credits: From the gear icon menu at the top, select **Change Account Subdomain**.
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
-1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/subscriptions/change-subdomain-name.png')} alt="change-subdomain-name.png"/>
+1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/manage/subscriptions/change-subdomain-name.png')} style={{border: '1px solid gray'}} alt="change-subdomain-name.png" width="700" />
 1. Click **Change Subdomain** Name to update the name.
 1. You will be automatically logged out and redirected to the new subdomain login page. 

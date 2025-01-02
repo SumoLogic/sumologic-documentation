@@ -5,7 +5,7 @@ sidebar_label: Metric Throttling
 description: Information about how Sumo throttles metric when your metrics ingestion exceeds your data points per minute (DPM)  burst limit.
 ---
 
-Metric data volume is measured in Data Points per Minute (DPM). The **Account Page** in the Sumo web app shows the DPM limit for your account and your average daily DPM for the current billing period.
+Metric data volume is measured in Data Points per Minute (DPM). The **Account Overview** page shows the DPM limit for your account and your average daily DPM for the current billing period.
 
 To allow for spikes in metrics ingestion, Sumo applies a multiplier to your DPM limit to allow you to send metrics at a higher rate, referred to as your burst rate, before Sumo starts to throttle your sources.
 

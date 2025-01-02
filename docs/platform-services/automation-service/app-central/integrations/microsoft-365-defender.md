@@ -1,7 +1,6 @@
 ---
 title: Microsoft 365 Defender
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

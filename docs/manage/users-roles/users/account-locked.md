@@ -16,6 +16,11 @@ If you try to log into your account several times and fail, you will be locked o
 
 Administrators can [unlock a user's account](/docs/manage/users-roles/roles/role-capabilities), though they are not required to do so. Your account will be unlocked once the lockout period has passed.
 
-You can always contact your administrator to determine the lockout period configured for your account if it has been customized. Lockout settings are configured by your Sumo Logic administrator via the **Administration > Security** > **Password Policy**.
+You can always contact your administrator to determine the lockout period configured for your account if it has been customized. Lockout settings are configured by your Sumo Logic administrator via the Password Policy page.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, in the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
+ 
 
 After the lockout time period has elapsed, request a password reset from the Sumo Logic login page, and a new temporary password will be emailed to you. You can then use this new password to log into your account.

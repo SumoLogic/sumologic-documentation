@@ -2,14 +2,14 @@
 id: cloud-functions
 title: Google Cloud Functions
 sidebar_label: Google Cloud Functions
-description: The Google Cloud Functions App enables you monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
+description: The Google Cloud Functions app enables you monitor your usage of Google Cloud Functions. The preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/functions.png')} alt="thumbnail icon" width="50"/>
 
-The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
+The Google Cloud Functions app enables you to monitor your usage of Google Cloud Functions. The preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
 
 ## Log and metric types
 
@@ -38,9 +38,9 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions function_name=* metric=function/execution_count statistic=average !status=ok | sum
 ```
 
-## Collecting logs for the Google Cloud Functions App
+## Collecting logs for the Google Cloud Functions app
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App.
+This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions app.
 
 ### Collection Process for GCP Services
 
@@ -74,7 +74,7 @@ However, this is not recommended since you cannot define specific Source Categor
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 1. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
@@ -133,24 +133,24 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 
 ## Collecting metrics for the Google Cloud Functions app
 
-For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+For metric collection in Sumo Logic use [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
-1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. Setup the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+1. [Setup a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
 
 ## Installing the Google Cloud Functions app
 
-Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and dashboards.
+Now that you have set up collection for Google Cloud Functions, install the Sumo Logic app to access the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Google Cloud Functions dashboards
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<FilterDashboards/>
+<ViewDashboards/>
 
 ### Performance Overview
 
@@ -175,3 +175,15 @@ The **Google Cloud Functions - Performance Details** dashboard is based on cloud
 The **Google Cloud Functions - Platform Logs** dashboard uses Google Cloud platform logs of cloud function, which writes logs to the stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs, we have panels giving insights into - execution status, listing top functions with a number of executions, average latency, error status, and recent failures.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Platform-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Platform Logs" width="800"/>
+
+## Upgrade/Downgrade the Google Cloud Functions app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud Functions app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

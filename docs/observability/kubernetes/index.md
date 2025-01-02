@@ -59,8 +59,8 @@ See the [Sumo Logic Kubernetes Collection Deployment Guide](/docs/send-data/kub
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshooting with Explore</h4></a>
-      <p>Explore navigation allows you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
+      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshoot with Kubernetes Views</h4></a>
+      <p>Kubernetes views allow you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
       </div>
     </div>
   </div>

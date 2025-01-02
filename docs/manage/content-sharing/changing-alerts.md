@@ -4,6 +4,8 @@ title: Changing Other Alerts
 description: You can modify or cancel alerts that are no longer valuable to your organization if you have Edit permission.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The ability to modify or turn off alerts created by another user is now possible with Content Sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable and with Content Sharing you can give that ability to another Role or user within your Organization.
 
 We strongly recommend sharing your scheduled searches with at least one Role or a user you trust to allow you more flexibility with alerts.
@@ -18,13 +20,9 @@ If you're using a search template with your saved search, you cannot modify the 
 
 To edit an alert:
 
-1. Go to the Sumo Logic library by clicking the folder icon in the Sumo Logic UI.
-
-    ![library-icon.png](/img/reuse/library-icon.png)
+1. Go to the Sumo Logic library by clicking the folder icon in the main Sumo Logic menu: <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" />
 
 1. Click in the search area to display a list of library object types, and choose **Scheduled Searches**. 
-
-    ![library-types.png](/img/content-sharing/library-types.png)
 
 1. Select the edit icon in the library for the scheduled search you'd like to edit. 
 

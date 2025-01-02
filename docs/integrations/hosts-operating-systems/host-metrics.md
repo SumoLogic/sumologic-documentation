@@ -23,7 +23,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors). Collec
 
 ### Configure a Source
 
-1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-app). Choose **Add Source** and select **Host Metrics** as the source type.
+1. Configure a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source). Choose **Add Source** and select **Host Metrics** as the source type.
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
@@ -42,7 +42,7 @@ Available metrics include:
 * Network
 * Disk
 
-The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#Collected_Metrics).
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
 
@@ -324,3 +324,15 @@ The supported filters are:
 * `_sourceHost`
 * `_source`
 * `_collector`
+
+## Upgrade/Downgrade the Host Metrics app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host Metrics app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

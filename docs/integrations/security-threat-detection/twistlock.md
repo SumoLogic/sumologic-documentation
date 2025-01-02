@@ -84,7 +84,7 @@ image_name="registry-auth.twistlock.com/tw_blm0yiaqqwvgimnirx1x0iczg9xoslag/twis
 compliance="0"
 ```
 
-### Sample query
+### Sample queries
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 
@@ -283,3 +283,16 @@ Use this dashboard to:
 * Monitor audit events for console administrative activities and defender audit events.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-runtime.png')} alt="Twistlock Dashboard" />
+
+
+## Upgrade/Downgrade the Twistlock/Twistlock Classic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Twistlock/Twistlock Classic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

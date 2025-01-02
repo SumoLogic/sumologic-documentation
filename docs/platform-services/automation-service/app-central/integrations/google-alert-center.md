@@ -1,7 +1,6 @@
 ---
 title: Google Alert Center
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

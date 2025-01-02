@@ -12,15 +12,12 @@
         "name":"TestSalesforceSrc",
         "client_secret":"********",
         "description":"Test Salesforce source",
-        "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9ZEdlgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
-        "user_token":"********",
+        "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9xxxxgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
         "inmemory_lookup":true,
-        "password":"********",
         "fields":{      
           "_siemForward":false
         },
         "category":"cnc/salesforce_logs",
-        "username":"testuser@sumologic.com",
         "start_time":"24 Hours ago"
       },
       "sourceType":"Universal"

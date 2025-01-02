@@ -1,7 +1,6 @@
 ---
 title: ThreatQ
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -36,8 +35,7 @@ The ThreatQ threat intelligence platform, automates the aggregation, operational
 
 ## ThreatQ in Sumo Logic SOAR
 
-1. To configure in the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click **Automation**.
-1. In the Automation section, in the top left menu, click **Integrations**.
+1. Access integrations in [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
 1. Populate all the required fields: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png')} style={{border:'1px solid gray'}} alt="threatq" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.

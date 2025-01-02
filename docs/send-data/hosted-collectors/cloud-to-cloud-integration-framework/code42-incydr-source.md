@@ -19,10 +19,6 @@ The Code42 Incydr is an insider risk management solution that allows you to dete
 
 Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
-
 ## Data collected
 
 | Polling Interval | Data |
@@ -50,7 +46,7 @@ The Code42 Incydr source requires you to provide the **Base URL**, **Client ID**
 When you create an Code42 Incydr source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Code42 Incydr Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Code42 Incydr**.
 1. Enter a **Name** for the source. The description is optional. 
@@ -75,7 +71,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Code42Incydr"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"Code42 Incydr"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -96,13 +92,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/code42-incydr/example.json)
+<a href="/files/c2c/code42-incydr/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/code42-incydr/example.tf)
+<a href="/files/c2c/code42-incydr/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

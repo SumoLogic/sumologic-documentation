@@ -15,7 +15,7 @@ Amazon Kinesis Data Firehose is an AWS service that can reliably load streaming 
 
 The following diagram shows the flow of data with an AWS Kinesis Firehose for Logs Source:
 
-![architecture](/img/send-data/kinesis-architecture.png)
+![A diagram showing the flow of logs from AWS CloudWatch to Sumo Logic via Kinesis Firehose. Logs go from AWS CloudWatch to Kinesis Firehose, then to Sumo Logic's AWS Kinesis Firehose for Logs source, with undelivered logs stored in AWS S3. The left side is labeled 'Customer AWS Account' and the right side 'Customer Sumo Org'.](/img/send-data/kinesis-architecture.png)
 
 :::note
 For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
@@ -27,19 +27,19 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**.   
 
-    ![AWS Kinesis Firehost for Logs Icon.png](/img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png)
+    ![Screenshot of AWS Kinesis Firehose for Logs Source icon](/img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png)
 
 1. Enter a **Name** for the Source. A description is optional.
 
-    ![AWS Kinesis logs source.png](/img/send-data/AWS-Kinesis-logs-source.png)
+    ![Screenshot of AWS Kinesis logs source options, including Name, Description, Source Category, and more.](/img/send-data/AWS-Kinesis-logs-source.png)
 
 1. (Optional) The **Enable S3 Replay** option allows you to collect any logs that were deemed undelivered by Kinesis.
 
-    ![s3 replay enabled on Kinesis Logs Source.png](/img/send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png)  
+    ![S3 replay enabled in Kinesis Logs Source options](/img/send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png)  
 
     Kinesis puts undelivered logs into a backup directory within your S3 bucket with the path `http-endpoint-failed/yyyy/MM/dd/00/` (`00` indicates UTC time zone). This is useful when you need to meet compliance requirements.
 
@@ -92,7 +92,7 @@ You can use the AWS console or our CloudFormation Template.
 
 ### CloudFormation Template
 
-[Download](https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml) our CloudFormation template and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
+Download <a href="/files/KinesisFirehoseCWLogs.template.yaml" target="_blank">KinesisFirehoseCWLogs.template.yaml</a>, our CloudFormation template, and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
 When you [Specify a stack name and parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) on the AWS CloudFormation console you'll provide the following:
 
@@ -112,7 +112,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 2. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
 3. To select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Amazon Data Firehose subscription filter**.
 4. In the Create Kinesis Firehose subscription filter page, go to the **Choose Destination** section and select the Current account. Then select the Kinesis Firehose delivery stream that was created in the above steps.
-5. Under **Grant permissions**, select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
+5. Under **Grant permissions**, select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the CloudFormation template, then the role name will contain the CloudFormation name followed by `-KinesisLogsRole-`.
 6. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
     - If no subscription filter pattern is provided, it will stream all the logs present in the log group.
@@ -121,7 +121,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 7. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.
 
 :::note
-With above configuration sample log with ```raw``` format will be ingested into sumo logic for Amazon RDS cloudWatch logs for postgreSQL.
+With above configuration sample log with `raw` format will be ingested into sumo logic for Amazon RDS cloudWatch logs for postgreSQL.
 ```json
 2024-01-13 11:02:19 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB
 ```
@@ -129,4 +129,4 @@ With above configuration sample log with ```raw``` format will be ingested into 
 
 #### Auto-subscribe other log groups to Kinesis Data Firehose
 
-If you want to collect logs from multiple Log Groups, you can subscribe additional Log Groups to the AWS Kinesis Firehose. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a AWS Kinesis Firehose stream](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination). When you edit the connector parameters, set the `DestinationArnType` parameter to <b>Kinesis</b>, the `DestinationArnValue` parameter to the AWS Kinesis Firehose stream ARN, and the `ARNRole` parameter to the role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
+If you want to collect logs from multiple Log Groups, you can subscribe additional Log Groups to the AWS Kinesis Firehose. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a AWS Kinesis Firehose stream](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination). When you edit the connector parameters, set the `DestinationArnType` parameter to <b>Kinesis</b>, the `DestinationArnValue` parameter to the AWS Kinesis Firehose stream ARN, and the `ARNRole` parameter to the role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the CloudFormation template, then the role name will contain the CloudFormation name followed by `-KinesisLogsRole-`.

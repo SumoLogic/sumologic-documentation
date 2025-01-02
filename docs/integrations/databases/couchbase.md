@@ -23,7 +23,7 @@ This app has been tested with the following Couchbase with Telegraf versions:
 Telegraf 1.14 default of Kubernetes Collection will not work.
 :::
 
-## Collecting Logs and Metrics for the Couchbase app
+## Collecting logs and metrics for the Couchbase app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Couchbase.
 
@@ -141,7 +141,7 @@ annotations:
     * `telegraf.influxdata.com/inputs`.- In the tags section (`[inputs.couchbase.tags]`):
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “couchbase”` - This value identifies the database system.
-  * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+  * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -177,8 +177,8 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
      * `db_system: “couchbase”` - This value identifies the database system.
-     See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+     See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app) here.
    4. Verify logs in Sumo Logic.
 2. **Collecting Couchbase Logs from a Log File on Kubernetes (optional)**.
    1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.
@@ -200,8 +200,8 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
 3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. Go to Manage Data > Logs > Field Extraction Rules.
-   2. Click the + Add button on the top right of the table.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+   2. Click the **+ Add Rule** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
       * **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -387,11 +387,11 @@ The next sections provides instructions for installing the Couchbase app, as wel
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your Couchbase clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
-For details on the individual alerts, see this [page](#Couchbase_Alerts).
+For details on the individual alerts, see [Couchbase Alerts](#couchbase-alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
 
 ### Method A: Importing a JSON file
@@ -401,14 +401,14 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
    1. For alerts applicable only to a specific cluster, your custom filter would be `'db_cluster=couchbase-standalone.01'`.
    2. For alerts applicable to all cluster that start with couchbase-standalone, your custom filter would be,`db_cluster=couchbase-standalone*`.
    3. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=couchbase-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
-3. Go to Manage Data > Alerts > Monitors.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**:
-5. Click Import and then copy-paste the above JSON to import monitors.
-6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors#add-a-monitor).
+5. Click **Import** and then copy-paste the above JSON to import monitors.
+6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings) to learn how to enable monitors to send notifications to teams or connections. See the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script method
 
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
 3. **Download the Sumo Logic Terraform package for Couchbase alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/`
@@ -470,7 +470,7 @@ email_notifications = [
 7. **Install the Alerts**. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/` and run `terraform init`. This will initialize Terraform and will download the required components.
 8. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
 9. Run `terraform apply`.
-10. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+10. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Couchbase app
@@ -485,7 +485,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
    Version selection is not available for all apps.
    :::
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom Couchbase cluster filter. Examples:
             1. For all Couchbase clusters `db_cluster=*`

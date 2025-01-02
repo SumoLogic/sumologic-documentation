@@ -27,7 +27,7 @@ The Sumo Logic app for Nginx Ingress assumes Prometheus format Metrics for Reque
 For more details on Nginx Ingress Metrics, see [Prometheus](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
 
 
-## Collecting Logs and Metrics for Nginx Ingress
+## Collecting logs and metrics for Nginx Ingress
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Ingress.
 
@@ -72,7 +72,7 @@ It’s assumed that you are using the latest helm chart version if not please up
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
 4. **Add an FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Webserver**.
@@ -92,7 +92,7 @@ It’s assumed that you are using the latest helm chart version if not please up
 
 ## Installing Nginx Ingress Monitors
 
-After [setting up collection](/docs/integrations/web-servers/nginx-legacy), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
+After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
@@ -106,16 +106,16 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
    * For alerts applicable only to a specific farm, your custom filter would be: `webserver_farm=nginx-ingress.01`
    * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
    * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1` AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
-3. Go to Manage Data > Alerts > Monitors.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx%20Ingress). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx Ingress.
@@ -175,7 +175,7 @@ email_notifications = [
     1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/` and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     3. Run `terraform apply`.
-7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 
 ## Installing the Nginx Ingress app
@@ -189,7 +189,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.**
    3. Choose **Enter a Custom Data Filter**, and enter a custom Nginx Ingress farm filter. Examples:
       1. For all Nginx Ingress farms: `webserver_farm=*`.
@@ -263,7 +263,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Ingress - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Threat-Intel.png')} alt="Nginx-Ingress-Threat-Intel" />
 

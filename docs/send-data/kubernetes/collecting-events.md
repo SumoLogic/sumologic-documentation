@@ -9,7 +9,7 @@ You can collect Kubernetes events from the Kubernetes API server and send them t
 
 This feature is enabled by default. To disable it, set the `sumologic.events.enabled` property to `false`.
 
-The event collector collects events by requesting all Kubernetes events from the Kubernetes API server. Note that the resource API used is [core v1][event_v1_core] and not [events.k8s.io/v1][event_events_k8s_io]. The events are sent as logs in their original JSON format to Sumo Logic.
+The event collector collects events by requesting all Kubernetes events from the Kubernetes API server. Note that the resource API used is [core v1](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#event-v1-core) and not [events.k8s.io/v1](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#event-v1-events-k8s-io). The events are sent as logs in their original JSON format to Sumo Logic.
 
 Example Kubernetes event:
 
@@ -56,11 +56,11 @@ Example Kubernetes event:
 
 ## Configuration
 
-Event collection configuration can be found under the `sumologic.events` key of the [values.yaml][values_yaml] file.
+Event collection configuration can be found under the `sumologic.events` key of the [values.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic/values.yaml) file.
 
 ### Setting source name and category
 
-It's possible to customize the [source name][source_name] and [category][source_category] for events:
+It's possible to customize the [source name][/docs/send-data/reference-information/metadata-naming-conventions/#source-name] and [category][/docs/send-data/reference-information/metadata-naming-conventions/#source-category] for events:
 
 ```yaml
 sumologic:
@@ -98,8 +98,3 @@ sumologic:
     enabled: false
 ```
 
-[event_v1_core]: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#event-v1-core
-[event_events_k8s_io]: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#event-v1-events-k8s-io
-[values_yaml]: https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic/values.yaml
-[source_category]: https://help.sumologic.com/docs/send-data/reference-information/metadata-naming-conventions/#source-category
-[source_name]: https://help.sumologic.com/docs/send-data/reference-information/metadata-naming-conventions/#source-name

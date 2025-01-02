@@ -28,7 +28,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 ## Configuring Log Collection and Deploying the App
 
 :::note
-If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and [install the Amazon GuardDuty Benchmark App](#installing-the-amazon-guardduty-benchmark-app) from the Sumo Logic App Catalog.
+If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and [install the Amazon GuardDuty Benchmark App](#configuring-log-collection-and-deploying-the-app) from the Sumo Logic App Catalog.
 :::
 
 :::note
@@ -54,13 +54,13 @@ This section shows you how to generate an access key and access ID for log colle
 In this step, you need to generate access key and access ID from the Sumo Logic console.
 
 To generate an access key and access ID, do the following:
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
+1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-an-access-key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
 ### Step 2: Deploy the Sumo Logic GuardDuty Benchmark SAM App
 
-In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#Process_overview).
+In this step, you deploy the SAM application, which creates the AWS resources described in the overview section at the beginning of this doc.
 
 To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 

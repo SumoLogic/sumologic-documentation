@@ -1,7 +1,6 @@
 ---
 title: F5 AWAF
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -35,8 +34,7 @@ F5 AWAF protects apps with behavioural analytics, proactive bot defence, and app
 
 ## F5 AWAF in Automation Service and Cloud SOAR
 
-1. To configure the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-3.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
-1. In the Automation section, in the top left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-4.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears search/look for the F5 AWAF integration and click on the row. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-5.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="700"/>
 1. The integration details will appear. Click on the **"+"** button to add new Resource.   
    * **Host**. IP where F5 AWAF is installed. 

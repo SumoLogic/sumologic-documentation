@@ -16,11 +16,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
 
-Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
-The Source integration ingests alert and device data from the Armis platform.
+Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business. The Source integration ingests alert and device data from the Armis platform.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::sumo Best Practice
+Armis and Sumo Logic recommend using the Armis SIEM Integration, which pushes logs from Armis to a Sumo Logic HTTP source. There is a known limitation with the Armis API’s time query parameters, which can result in missing logs when using the Cloud-to-Cloud source. To avoid this, we advise using the Armis-side integration instead.
 :::
 
 ## Data collected
@@ -47,7 +46,7 @@ To obtain an Armis auth token, follow the steps below:
 When you create an Armis Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Armis Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Armis**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -99,13 +98,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/armis-api/example.json)
+<a href="/files/c2c/armis-api/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/armis-api/example.tf)
+<a href="/files/c2c/armis-api/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

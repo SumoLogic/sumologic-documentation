@@ -1,7 +1,6 @@
 ---
 title: Devo
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

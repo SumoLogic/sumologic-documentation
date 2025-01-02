@@ -23,19 +23,16 @@ Follow the below instructions to chart aggregate the results:
 
 For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
-### New Visualizations
+### New Visualization
 
-Clicking the **New Visualizations** button will enable the new visualizations for your log search chart, also helping you to customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
+The **New Visualization** feature enables the new chart visualizations for your log search, allowing you customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 
-Charts will appear in classic visualization style by default. However, if you choose a new visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the new visualization.
+* **Data**. This section represents the data that has been used to plot the chart. Toggle the **Round data point** ON/OFF the round off to the value in tooltip.
+* **Visual Settings**. Allows you to further customize your chart. The other customizing properties include: [**Color Palette**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Fill Opacity**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Marker Type**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), and [**Dimensions**](/docs/dashboards/panels/modify-chart/#modifychart-axes) (x, y, and z).
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/new-visualizations.png')} alt="new-visualizations" style={{border:'1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties-new.png')} alt="log-query-charts-properties-new" style={{border:'1px solid black'}} width="800" />
 
-**Data** represents the data that has been used to plot chart, **Round data point** toggle button is used to turn ON/OFF the round off to the value in tooltip, and the **Visual Settings** options allow you to customize your chart. The other customizing properties include **[Display Overrides](/docs/dashboards/panels/modify-chart/#overridedashboard-displays)**, **[Axes](/docs/dashboards/panels/modify-chart/#modifychart-axes)**, **[Legend](/docs/dashboards/panels/modify-chart/#modifychart-legend)**, **Thresholds**, and **[JSON](/docs/dashboards/panels/modify-chart/#modifychart-legend)**.
-
-<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid gray'}} width="800" />
-
-If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.
+Charts will appear in **New Visualization** style by default. If you prefer to use the **Classic Visualization** UI, click the **Classic Visualizations** button, then in the popup window, click **Switch to Classic Visualizations** to proceed.  
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid gray'}} width="400" />
 

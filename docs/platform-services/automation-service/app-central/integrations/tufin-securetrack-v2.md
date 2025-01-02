@@ -1,7 +1,6 @@
 ---
 title: Tufin SecureTrack V2
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -24,8 +23,7 @@ Tufin SecureTrack is a security policy management solution that provides visibil
 
 ## Tufin SecureTrack V2 in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/tufin-securetrack-v2/tufin-securetrack-v2-1.png')} style={{border:'1px solid gray'}} alt="tufin-securetrack" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/tufin-securetrack-v2/tufin-securetrack-v2-2.png')} style={{border:'1px solid gray'}} alt="tufin-securetrack" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/tufin-securetrack-v2/tufin-securetrack-v2-3.png')} style={{border:'1px solid gray'}} alt="tufin-securetrack" width="400"/>
 1. Populate all the required fields (\*):

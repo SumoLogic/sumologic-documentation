@@ -27,7 +27,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Check box**. Check box is two words. Don't use checkbox.
 
-**Classic UI**. Use this term to distinguish the old UI.
+**Classic UI**. Use this term to clarify that you're talking about the legacy UI.
 
 **Click**. You click a UI element. Do not use "click on".
 
@@ -131,6 +131,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Operators**. When referring to a search operator, capitalize the operator's name only if it begins a sentence.
 
+**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
 ## P
 

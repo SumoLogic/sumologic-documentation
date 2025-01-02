@@ -12,14 +12,17 @@ The page has information about viewing information about the scheduled views con
 You must have a role that grants you the View Scheduled Views [role capability](view-list-scheduled-views.md) in order to view information about scheduled views.
 :::
 
-1. Go to **Manage Data** > **Logs** > **Scheduled Views**.<br/> ![Scheduled Views page.png](/img/scheduled-views/Scheduled-Views-page.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
+    * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+        :::note 
+        You can see the suggestions only if there are two or more responses for the same column or section. 
+        :::
     * **Status**. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
     * **Storage Consumed**. The total volume of uncompressed data ingested across the duration of the retention period.
     * **Retention Period**. The number of days configured as the retention period.
     * **Data Forwarding**. Indicates the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination if the scheduled view is configured to forward data to the S3 bucket.
-1. To view details of a scheduled view configuration, click the row that contains the view. <br/>![sched-view-more-options.png](/img/scheduled-views/sched-view-more-options.png)
-1. A pane pops up on the right side of the page with the following information.
+1. To view details of a scheduled view configuration, click the row containing the view. A pane will appear on the right side of the page with the following information.
     * **Name**. Displays the name of the scheduled view.
     * **Query**. The query that returns the data for the scheduled view.
     * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.

@@ -36,7 +36,7 @@ You can also customize the prefix for a query by specifying an alias. See the [A
 
 Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the menu.
 
-<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="img/search/timecompare/time-compare-UI-option-aug-24-2021.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/time-compare-UI-option-aug-24-2021.png')} alt="Time Compare button" width="400"/>
 
 The comparison results appear in a new column titled with the timeshift.
 
@@ -73,7 +73,7 @@ Do not alias `timeslice`, as we will use the `compare` operator.
 
 Then, from the **Time Compare** button, select **Custom**, and set the **Custom Time Compare** dialog settings to:
 
-<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="img/search/timecompare/7TimePeriod.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/7TimePeriod.png')} alt="Custom Time Compare dialog settings" width="400"/>
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
@@ -83,9 +83,9 @@ For more compare operator examples, see [Examples](./time-compare.md).
 
 ## Compare vs. LogCompare
 
-The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
+The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/behavior-insights/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
 
-* `compare` is used for aggregated numeric data (such as, for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
+* `compare` is used for aggregated numeric data (such as: for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
 * `logcompare` is used for log signature counts (used right after the first pipe).
 
 ## Compare Operator

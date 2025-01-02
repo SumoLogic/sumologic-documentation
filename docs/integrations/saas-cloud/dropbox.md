@@ -92,7 +92,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Active Team Members"
 _sourceCategory="dropboxSource"
@@ -112,7 +112,7 @@ _sourceCategory="dropboxSource"
 | sort by _timeslice
 ```
 
-## Collecting Logs for Dropbox app
+## Collecting logs for Dropbox app
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app.
 
@@ -145,3 +145,15 @@ The **Dropbox - Logins, Devices & Sessions** dashboard provides visibility into 
 ### Team Admin Actions
 
 The **Dropbox - Team Admin Actions** dashboard displays the most frequent actions performed by administrators and provides a table view of the top active admins along with their respective countries. It also shows all recent admin activities for easy monitoring.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-team-admin-actions.png')} alt="dropbox-team-admin-actions" width="900"/>
+
+## Upgrade/Downgrade the Dropbox app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Dropbox app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

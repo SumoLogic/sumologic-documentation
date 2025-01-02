@@ -20,11 +20,9 @@ outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | 
 
 Where:
 
-* `window` is the range over which to calculate the moving average and standard deviation of the time series. `window` can be specified with time units (s, m, h), or it can be specified without time units.  Default: 5m.
-:::note
-If you use `outlier` in the Classic Metrics UI, if you specify the `window` parameter without supplying a unit of time, the window duration applied will be in the units used in the [quantization](docs/metrics/introduction/metric-quantization.md) of the query.
+* `window` is the range over which to calculate the moving average and standard deviation of the time series. `window` can be specified with time units (s, m, h), or it can be specified without time units. Default: 5m.
 * `threshold` is the number of standard deviations from the moving average that defines the threshold band. Default: 3
-* `direction` specifies what deviation direction should trigger violations: positive deviations (+), negative deviations (-), or both (+-). Default: +-
+* `direction` specifies what deviation direction should trigger violations: positive deviations (`+`), negative deviations (`-`), or both (`+-`). Default: `+-`.
 
 ![outlier-operator.png](/img/metrics/outlier-operator.png)
 

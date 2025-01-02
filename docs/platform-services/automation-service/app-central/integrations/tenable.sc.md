@@ -1,7 +1,6 @@
 ---
 title: Tenable.sc
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

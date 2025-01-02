@@ -65,14 +65,14 @@ To create a server profile specifying  the log destination, do the following:
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
     1. **Name.** Sumo_CloudSyslog_EndPoint01
-    2. **Syslog Server.** URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    2. **Syslog Server.** URL from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     3. **Transport**. SSL
-    4. **Port**. Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    4. **Port**. Port from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     5. **Format**. IETF
     6. **Facility.** LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) log type:
 ```
-,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)>
 ```
 7. Click OK.
 8. Commit the changes.
@@ -89,7 +89,7 @@ To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as:
 `_sourceCategory = NW/PAN/V10`
 
 ### Sample log messages
@@ -198,3 +198,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 10 dashboards" />
+
+## Upgrade/Downgrade the PCI for Palo Alto Networks 10 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI for Palo Alto Networks 10 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -100,3 +100,15 @@ The **Druva - Alerts Overview** dashboard in the Druva app provides comprehensiv
 The **Druva - Backup and Restore Overview** dashboard offers a comprehensive view of backup, restore, and download events, providing valuable insights into your organization's data protection activities. The dashboard's widgets allow you to track and analyze these events, including the count and distribution of backup, restore, and download activities. You can closely monitor the most active users using the top users performing backup/restore activity widget.
 
 The trend of failed backup/restore/download events over time offers an overview of any issues, enabling you to quickly identify and resolve them. The geo-location widget tracks activity locations, helping you identify potential threats or vulnerabilities. With this dashboard, you can monitor your data protection activities closely, ensuring the smooth running of backup and restore processes and securing your data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-backup-and-restore.png')} alt="druva-backup-and-restore" width="750"/>
+
+## Upgrade/Downgrade the Druva app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Druva app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

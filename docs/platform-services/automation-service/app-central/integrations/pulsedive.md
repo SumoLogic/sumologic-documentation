@@ -1,7 +1,6 @@
 ---
 title: Pulsedive
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

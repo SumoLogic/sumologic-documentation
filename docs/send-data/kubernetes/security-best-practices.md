@@ -100,44 +100,45 @@ Metrics collection is done via the Prometheus protocol, which means that the met
 
 The metrics metadata enrichment service needs to be able to talk to the Sumo Logic backend receiver endpoints. It also needs to be able to access the Kubernetes API Server to obtain metadata.
 
+Finally, the metrics collector gets scrape targets from a target allocator service, and thus needs to access it as well.
+
 Example Kubernetes Network Policies restricting all but the necessary traffic for the metrics pipeline:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: prometheus
+  name: metrics-collector
   namespace: sumologic
 spec:
   podSelector:
     matchLabels:
-      app: prometheus
+      sumologic.com/app: otelcol
+      sumologic.com/component: metrics
   policyTypes:
     - Egress
-    - Ingress
-  ingress:
-    # Allow Prometheus to scrape metrics
-    - from:
-        - podSelector:
-            matchLabels:
-              app: prometheus
-      ports:
+  egress:
+    # Allow metrics collector to scrape metrics
+    - ports:
         - protocol: TCP
           port: 9090
-  egress:
-    # remote write to OpenTelemetry Collector
+    # Allow metrics collector to get targets from target allocator
     - to:
         - podSelector:
             matchLabels:
-              app: <release_name>-sumologic-otelcol-metrics
+              app.kubernetes.io/component: opentelemetry-targetallocator
       ports:
         - protocol: TCP
-          port: 9888
-    # scrape metrics
-    - ports:
+          port: 8080
+    # send data to OpenTelemetry Collector
+    - to:
+        - podSelector:
+            matchLabels:
+              sumologic.com/app: otelcol
+              sumologic.com/component: metrics
+      ports:
         - protocol: TCP
-          port: 2379
-          endPort: 24321
+          port: 8888
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy

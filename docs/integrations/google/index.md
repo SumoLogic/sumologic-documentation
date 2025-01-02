@@ -1,8 +1,7 @@
 ---
 slug: /integrations/google
-title: Sumo Logic Apps for Google
-sidebar_label: Google
-description: Docs for Sumo Logic apps for Google.
+title: Google
+description: Learn how to use the Sumo Logic apps for Google.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

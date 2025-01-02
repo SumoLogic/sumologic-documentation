@@ -35,7 +35,7 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 ### Set up collection
 
 1. Create an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source). Make a note of the **HTTP Source Address** for the source. You'll need it for the Cloudformation template below.
-2. Set up CloudWatch to stream logs to Kinesis Data Firehose using the [Cloudformation Template](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source#CloudFormation_Template)
+2. Set up CloudWatch to stream logs to Kinesis Data Firehose using the [Cloudformation Template](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source#cloudformation-template)
 3. In this step, enable DNS query logging, as described in [Managing Resolver query logging configurations](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logging-configurations-managing.html) in AWS help.
    * When you select the type of AWS resource to which you want Resolver to send query logs, choose **Kinesis Data Firehose delivery stream** as the Destination for the Query Logs.
    * Click **Browse streams** and select the Kinesis Data Firehose delivery stream that was created by the Sumo Logic CloudFormation template. It should start with ​​`Kinesis-Logs-<random-string>`.
@@ -166,3 +166,15 @@ Panels include:
 * Threat Table
 * Malicious URIs
 * Malicious IPs
+
+## Upgrade/Downgrade the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

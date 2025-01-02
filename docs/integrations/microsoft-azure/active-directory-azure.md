@@ -21,20 +21,16 @@ Only global administrators, security administrators, security readers, and repor
 
 The Sumo Logic app for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
 
-## Collect Logs for the Azure Active Directory app
+## Prerequisites
 
-Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
-
-- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
-- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
-
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
-
-### Prerequisites
-
-* An Azure subscription must be associated (attached) to AAD. For more information, see this [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+* An Azure subscription must be associated (attached) to AAD. For more information, see the [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 * To export Azure Activity logs to reports, be sure you have met the [Azure Active Directory requirements](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor).
 
+## Collect logs for the Azure Active Directory app
+
+To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+
+When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
 ### Export Azure Active Directory logs to Event Hub
 
@@ -49,11 +45,15 @@ While exporting logs for an Azure Active Directory app, do the following:
 
 Now that you have set up collection for the Azure Active Directory, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Azure Active Directory Dashboards
+## Viewing Azure Active Directory dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -266,3 +266,15 @@ See information about failure sign-in events in your Azure AD, including the geo
 **Sign in by Application.** Shows failure sign-in events by Application.
 
 **Anomaly in Total Login Count.** Shows any Anomaly in the total failure login count over 7 days.
+
+## Upgrade/Downgrade the Azure Active Directory app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Active Directory app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -4,7 +4,7 @@ title: Glossary
 description: This glossary provides an alphabetized list of technical term definitions used in Sumo Logic.
 ---
 
-This glossary defines Sumo Logic terms that you are likely to encounter when you read our documentation. It does not provide common industry terms unless those terms also represent Sumo Logic features. 
+This glossary defines Sumo Logic terms that you are likely to encounter when you read our documentation. It does not provide common industry terms unless those terms also represent Sumo Logic features.
 
 If you're looking for usage guidance, see [Word List](/docs/contributing/word-list).
 
@@ -34,7 +34,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
-**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur. 
+**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
 
 ## B
@@ -110,10 +110,6 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
-**[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
-
-
-
 
 ## F
 
@@ -178,11 +174,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local Configuration File Management allows you to set up and manage Sources on an Installed Collector using one or more JSON files.
 
-**[LogCompare](/docs/search/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
+**[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[Log overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations)**. A Sumo Logic feature you can use to run a log query on the metric query page and visualize the count of matching log messages on the metric chart.
-
-**[LogReduce](/docs/search/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+**[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
 
@@ -224,7 +218,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Organization](/docs/manage/manage-subscription/manage-org-settings/)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
-**[Outlier](/docs/search/search-query-language/search-operators/outlier/)**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the outlier operator to identify outliers in log data. In addition, Sumo Logic has a [metric outlier](/docs/metrics/metric-charts/metrics-outliers) feature that identifies metric data points that are outside the range of expected values.
+**Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](/docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
 
 
 
@@ -279,7 +273,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[SAML](/docs/manage/security/saml)**. Sumo Logic supports self-provisioning of Security Assertion Markup Language (SAML) to enable Single Sign-On (SSO). In addition to basic SAML configuration, you can choose optional on-demand user creation (via SAML 2.0 assertions), and designate custom log in and/or log out portals.
 
-**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can add a schedule to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
+**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can schedule it to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
 
 **[Scheduled View](/docs/manage/scheduled-views)**. A Scheduled View is a pre-aggregated index of a subset of data. After building a Scheduled View, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a Scheduled View contains an aggregate function, search results return much quicker. Additionally, queries run against a Scheduled View cannot time out. Queries that run against Views can be used in scheduled searches, Dashboards, and in ad hoc searches.
 

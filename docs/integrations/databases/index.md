@@ -1,17 +1,12 @@
 ---
 slug: /integrations/databases
-title: Sumo Logic Apps for Database Servers
-sidebar_label: Database Servers
-description: Docs for Sumo apps for database servers.
+title: Database Servers
+description: Learn how to use the Sumo Logic apps for database servers.
 ---
-
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/>
-
 This guide has documentation for Sumo apps for database servers.
-
 
 <div className="box-wrapper" >
 <div className="box smallbox card">

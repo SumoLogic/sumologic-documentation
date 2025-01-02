@@ -46,7 +46,7 @@ Host: broker-1 Name: /var/log/rabbitmq/rabbit.log Category: logfile
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for RabbitMQ
+## Collecting logs and metrics for RabbitMQ
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ.
 
@@ -163,7 +163,7 @@ Please enter values for the following parameters (marked in **`CHANGE_ME`** abov
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
         * `messaging_system: “rabbitmq”` - This value identifies the messaging system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -191,7 +191,7 @@ Enter in values for the following parameters (marked `CHANGE_ME` above):
 * `component: “messaging”`. This value is used by Sumo Logic apps to identify application components.
 * `messaging_system: “rabbitmq”`. This value identifies the messaging system.
 
-For all other parameters see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 2. **(Optional) Collecting RabbitMQ Logs from a Log File**. Follow the steps below to capture RabbitMQ logs from a log file on Kubernetes.
    1. Determine the location of the RabbitMQ log file on Kubernetes. This can be determined from the RabbitMQ.conf for your RabbitMQ cluster along with the mounts on the RabbitMQ pods.
@@ -317,7 +317,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 This section provides instructions for configuring log collection for RabbitMQ running on a non-Kubernetes environment for the Sumo Logic App for RabbitMQ.
 
-By default, RabbitMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, RabbitMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect RabbitMQ logs and follow the instructions below to set up log collection:
 
@@ -371,7 +371,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 
 #### Method A: Install Monitors by importing a JSON file
@@ -381,7 +381,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
    * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=dev-rabbitmq01`
    * For alerts applicable to all clusters that start with RabbitMQ-prod, your custom filter would be: `messaging_cluster=RabbitMQ-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=dev-rabbitmq01 AND environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-3. Go to **Manage Data > Alerts > Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click **Import**.
 6. On the **Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
@@ -389,7 +389,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 #### Method B: Install Monitors using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/RabbitMQ/ directory.
@@ -463,7 +463,7 @@ This section demonstrates how to install the RabbitMQ App.
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
       1. For all RabbitMQ clusters: `messaging_cluster=*`
       2. For a specific cluster: `messaging_cluster=rabbitmq.dev.01`

@@ -16,7 +16,7 @@ The simplest way to confirm that a Source is online, connected to Sumo Logic, a
 
 To view Source status in the Collectors Tab:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Scroll to the name of the Collector hosting the Script Source.
 1. Check to see the icon next to the Source. A green icon indicates that the Source is connected to Sumo Logic and that it's generating/collecting log data. A red icon that the Source is either not connected to Sumo Logic, or that there is an issue with the script that is preventing data from being collected.
 
