@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic Distribution for OpenTelemetry Collector now supports remote management, enabling you to configure and manage data collection directly from the Sumo Logic UI. With this feature, you can:  
 
 * **Simplify configuration**. Set up and manage data collection for multiple collectors without server access.  
-* **Streamline workflows**. Use tags to group collectors and apply centralized Source Templates, reducing redundancy and manual effort.  
+* **Streamline workflows**. Use tags to group collectors and apply centralized data source templates, reducing redundancy and manual effort.  
 * **Enhance automation**. Automatically monitor new servers by tagging them during setup.  
 * **Accelerate time to value**. Start collecting data in minutes with an intuitive UI and no need to manage configuration files.  
 
