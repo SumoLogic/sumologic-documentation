@@ -14,11 +14,14 @@ For non-aggregate queries, the Field Browser is useful for narrowing results on
 
 The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don’t change the way data is displayed in other user accounts.
 
-In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
+In addition to the fields found in your logs, the Field Browser shows **Time**, **Receipt Time**, and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
 
-:::info
-The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
-:::
+- **Messages** represents the collapsed version of the log message with each row showing up to 10 lines. 
+- **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting Extract timestamp information from log file entries in the Source configuration settings.
+- **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/) for details.
+  :::info
+  The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
+  :::
 
 ![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
 
