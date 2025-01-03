@@ -5,25 +5,19 @@ sidebar_label: Redis
 description: Learn about the Sumo Logic Redis source template for OpenTelemetry.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('/img/integrations/databases/redis.png')} alt="Thumbnail icon" width="30"/>
 
-The Redis source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of your redis logs to Sumo Logic.
+The Redis source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect your redis logs to Sumo Logic.
 
-## Fields creation in Sumo Logic for Local File
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
-- **`sumo.datasource`**. Fixed value of **localfile**.
+- **`sumo.datasource`**. Fixed value of **redis**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
 - **`db.cluster.name`**. User configured. Enter a uniquely identifiable name for your redis server cluster to show in the Sumo Logic dashboards.
 - **`db.node.name`**. Includes the value of the hostname of the machine which is being monitored.
@@ -35,7 +29,7 @@ import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collectio
 
 <LogsCollectionPrereqisites/>
 
-## Source template configuration
+## Configuring the Redis source template
 
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 

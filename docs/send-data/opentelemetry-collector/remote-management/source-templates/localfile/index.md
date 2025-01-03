@@ -1,15 +1,9 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/source-templates/localfile
-title: Local File Source Template
-sidebar_label: Local File
-description: Learn about the Sumo Logic Local File source template for OpenTelemetry.
+title: Localfile Source Template
+sidebar_label: localfile
+description: Learn about the Sumo Logic localfile source template for OpenTelemetry.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -17,11 +11,11 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-The Local File source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
+The localfile source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
 
-## Fields creation in Sumo Logic for Local File
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **localfile**.
 - **`deployment.environment`**. User configured field at the time of collector installation. This identifies the environment where the host resides. For example: `dev`, `prod`, or `qa`.
@@ -39,9 +33,9 @@ import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-co
 
 <OtelWindowsLogPrereq/>
 
-## Source template configuration
+## Configuring the localfile source template
 
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 
@@ -51,7 +45,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Local File Collection. Below are the inputs required for configuration:
+In this step, you will configure the yaml required for localfile collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.

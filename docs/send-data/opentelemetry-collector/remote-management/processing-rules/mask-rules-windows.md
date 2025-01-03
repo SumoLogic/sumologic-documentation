@@ -1,36 +1,40 @@
 ---
 id: mask-rules-windows
-title: Mask Rules for Windows Source Template (Beta)
-sidebar_label: Mask Rules for Windows
-description: Create a mask rule to replace an expression with a mask string.
+title: OpenTelemetry Remote Management Windows Source Template Mask Rules
+sidebar_label: Mask Rules - Windows Source Template
+description: Create an OpenTelemetry remote management Windows source template mask rule to replace an expression with a mask string.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 :::note
-This document only support masking logs for Windows source template. Refer to [Mask Rules](mask-rules.md) to mask logs for other source template.
+This document supports masking logs specifically for our [Windows source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows). For other source templates, refer to [Mask Rules](mask-rules.md).
 :::
 
-A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule, the selected key will have its value matched against a regex pattern, which will then be replaced with a mask string before being sent to Sumo Logic. You can provide a custom mask string or use the default string, `"#####"`.
+A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule:
 
-Ingestion volume is calculated after applying the mask filter. If masking reduces the log size, the smaller size will be considered against the ingestion limits. Masking is an effective method for reducing overall ingestion volume.
+* The selected key’s value is matched against a regular expression (regex).
+* The matching portion is replaced with a mask string before being sent to Sumo Logic.
+* You can provide a custom mask string or use the default mask string: `"#####"`.
 
-To mask specific fields in the Windows Event Log, the following inputs are required:
-- **Key**. This should point to the key in the Windows Event Log for which the value needs to be masked.  This key can be nested, with each level separated by a dot(.). For example, `provider.guid`.
-- **Regex**. This identifies the part of the string value that needs to be masked.
-- ** Replacement **. This is to get the string that will be substituted in place of the string that was selected through the regex expression.
+Masking is an effective method for reducing overall ingestion volume. Ingestion volume is calculated after applying the mask filter. If masking reduces the log size, the smaller size will be considered against the ingestion limits.
+
+## Examples
+
+### Masking inputs
+
+To mask specific fields in a Windows Event Log, the following inputs are required:
+- **Key**. This should point to the key in the Windows Event Log for which the value needs to be masked. This key can be nested, with each level separated by a dot (`.`). For example, `provider.guid`.
+- **Regex**. This pattern identifies the part of the string value that needs to be masked.
+- **Replacement**. The string to substitute for the matching portion identified by the regex.
 
 :::important
 Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
 :::
 
+### Masking numbers in a nested field
+
 For example, to mask numbers inside `guid` under `provider` field from this log:
 
-```
-{
+`{
   "record_id": 163054,
   "channel": "Security",
   "event_data": {
@@ -79,8 +83,7 @@ For example, to mask numbers inside `guid` under `provider` field from this log:
     "id": 4798
   },
   "level": "Information"
-}
-```
+}`
 
 You could use the following masking expression input:
 1. Key as `provider.guid`.
@@ -89,8 +92,7 @@ You could use the following masking expression input:
 
 Using the above masking options would provide the following result:
 
-```
-{
+`{
   "record_id": 163054,
   "channel": "Security",
   "event_data": {
@@ -139,17 +141,13 @@ Using the above masking options would provide the following result:
     "id": 4798
   },
   "level": "Information"
-}
-```
+}`
 
-:::note 
-- For masking, we use the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
-   - $ must be escaped as $$ to bypass environment variable substitution logic.
-   - To input a literal $, use $$$.
+## Rules and limitations
+
+- Masking utilizes the [replace_pattern](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md#replace_pattern) OTTL function. In this function:
+   - Escape `$` as `$$` to bypass environment variable substitution logic.
+   - Use `$$$` to include a literal `$`.
 - When masking strings containing special characters like double quotes (`"`) and backslashes (`\`), these characters will be escaped by a backslash when masking the logs.
-:::
-
-## Limitations
-
 - You can *only* mask the data which is a string in the Windows event log JSON.
-- You cannot mask a value which is nested inside any array.
+- You cannot mask a value that is nested inside any array.

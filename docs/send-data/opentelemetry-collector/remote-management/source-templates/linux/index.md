@@ -9,19 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
- <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="30"/>
 
 The Linux source template generates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Linux logs and host metrics for Sumo Logic.
 
-## Fields creation in Sumo Logic for Linux
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **linux**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the Linux system resides, such as `dev`, `prod`, or `qa`.
@@ -48,7 +42,7 @@ import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collectio
 
 <LogsCollectionPrereqisites/>
 
-## Source template configuration
+## Configuring the Linux source template
 
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 
@@ -66,14 +60,14 @@ In this step, you will configure the yaml required for Linux Collection. Below a
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
 
-#### Logs Collection
+#### Logs collection
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/linux.
 - **Logs**. The following fields are pre-populated with default paths, for common log files that are used in different Linux distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
 
-#### Metrics Collection
+#### Metrics collection
 - **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for CPU, memory, disk, load, file system, network, and paging are enabled and process metric collection is disabled.
 
-##### Enable process metric collection (Optional)
+##### Enable process metric collection (optional)
 
 import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
 

@@ -9,19 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
- <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="30"/>
 
 The Mac source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Mac logs and host metrics to Sumo Logic.
 
-## Fields creation in Sumo Logic for Mac
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **mac**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the Mac system resides, such as `dev`, `prod`, or `qa`.
@@ -36,7 +30,7 @@ Log collection is pre-populated with default paths for common mac system log fil
 ### For metrics collection
 Host metrics for CPU and disk are not supported by otel as of now.
 
-## Source template configuration
+## Configuring the Mac source template
 
 Follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
 
@@ -53,11 +47,11 @@ In this step, you will configure the yaml required for Mac Collection. Below are
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
 
-#### Logs Collection
+#### Logs collection
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/mac.
 - **Logs**. The following fields are pre-populated with default paths for common log files that are used in different Mac distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
 
-#### Metrics Collection
+#### Metrics collection
 - **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for memory, load, file system, network and paging are enabled and process metric collection is disabled.
 
 ##### Enable process metric collection (Optional)
