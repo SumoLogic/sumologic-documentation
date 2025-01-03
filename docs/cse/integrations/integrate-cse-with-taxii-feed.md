@@ -21,7 +21,7 @@ To integrate Cloud SIEM with a TAXII feed, you configure the URL of the TAXII pr
 
 ## Leveraging indicators in rules
 
-The integration allows you to enrich incoming Records with threat intel information, and leverage that information in Cloud SIEM Rules. How does that work? Cloud SIEM compares incoming Records with information from the threat feed. When there is a “match”, for instance when an IP address in a Record matches an IP address that the feed says is malicious, Cloud SIEM adds relevant information to that Record. Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM will also automatically create a Signal for any Record with a match from your threat feed. To leverage the information in a rule, you can extend your custom rule expression, or add a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the *About Cloud SIEM Rules* topic.
+The integration allows you to enrich incoming records with threat intel information, and leverage that information in Cloud SIEM rules. How does that work? Cloud SIEM compares incoming records with information from the threat feed. When there is a “match”, for instance when an IP address in a record matches an IP address that the feed says is malicious, Cloud SIEM adds relevant information to that record. Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM will also automatically create a signal for any record with a match from your threat feed. To leverage the information in a rule, you can extend your custom rule expression, or add a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the *About Cloud SIEM Rules* topic.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ Cloud SIEM supports TAXII v1.1 and v1.2. 
 
 ## Configure the integration
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. On the **Threat Intelligence** page, click **Add Source**.
 1. On the **Add New Source** popup, click **TAXII Feed**. <br/><img src={useBaseUrl('img/cse/taxii-feed-option.png')} alt="TAXII Feed option" style={{border: '1px solid gray'}} width="600"/>
 1. The **Add Source** page appears. <br/><img src={useBaseUrl('img/cse/add-new-source.png')} alt="Add new source" style={{border: '1px solid gray'}} width="600"/>

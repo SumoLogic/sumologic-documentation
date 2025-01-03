@@ -5,16 +5,29 @@ description: Learn how to save a custom dashboard and then share it with others.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-After you have created a custom Dashboard you may also want to share it with coworkers within your organization. This page walks you through these tasks.
+After you have created a custom dashboard you may also want to share it with coworkers within your organization. This page walks you through these tasks.
 
-Currently, you can only share a Dashboard within your organization.
+Currently, you can only share a dashboard within your organization.
 
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-Share a Dashboard Inside Your Organization.
+Share a dashboard inside your organization.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/n2s8bxaq6m?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Share a Dashboard (New) Inside Your Organization Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/nQOAYaMad4Q"
         width="854px"
         height="480px"
@@ -25,6 +38,8 @@ Share a Dashboard Inside Your Organization.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
 :::
 
 ## Sharing a dashboard within your organization

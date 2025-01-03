@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/sensors/sensor-download-locations"><img src={useBaseUrl('img/icons/operations/sensor.png')} alt="Database icon" width="40"/><h4>Sensor Download Locations</h4></a>
-  <p>Learn about where to download the Cloud SIEM Network sensor that's specific to your Cloud SIEM deployment.</p>
+  <p>Learn about where to download the Cloud SIEM Network Sensor that's specific to your Cloud SIEM deployment.</p>
   </div>
 </div>
 <div className="box smallbox card">
