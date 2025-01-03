@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
 ***Version: 1.10  
-Updated: Dec 11, 2024***
+Updated: Fri 03, 2025***
 
 Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
 
@@ -77,7 +77,7 @@ The following steps show how to create an Azure AD Application in order to work 
 	+ Added New Action: Get Member Groups
 * November 12, 2024 (v1.9)
     + Added New Action: Reset User Password
-+ December 11, 2024 (v1.10)
++ January 03, 2025 (v1.10)
     + Added New Action:
       + List Of Group Members
       + Remove Member From Group
