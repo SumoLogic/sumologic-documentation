@@ -40,7 +40,7 @@ The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https
 
 ### Vendor configuration
 
-The ZeroFox Threat Intel source requires you to provide your ZeroFox account **Username** and **Password**.
+The ZeroFox Threat Intel source requires you to provide your ZeroFox account username and password.
 
 ### Source configuration
 
