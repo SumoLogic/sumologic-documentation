@@ -25,7 +25,7 @@ With the new UI, you'll benefit from:
 * Stateful URLs that save your session and position when you log back in.
 * Use-case-driven navigation to help you quickly find the features you need.
 
-For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/).
+For a detailed list of updates, [view the release notes](/release-notes-service/2024/12/31/#february-23-2024-user-interface).
 
 ## Opt in
 

@@ -403,7 +403,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
@@ -687,6 +686,7 @@ module.exports = {
               items: [
                 'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
+                'send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration',
                 'send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq',
               ],
             },
