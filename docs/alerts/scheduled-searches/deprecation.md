@@ -15,7 +15,7 @@ Monitors provide the same functionality as a Real-Time Scheduled Search, but off
 * [Alert Grouping](/docs/alerts/monitors/alert-grouping/)
 * [Playbook Support](/docs/alerts/monitors/alert-response/#alert-details)
 * [Integration into our Alert Response Page](/docs/alerts/monitors/alert-response/)
-* [AI-Driven Alerting](/release-notes-service/2024/03/12/alerts/)
+* [AI-Driven Alerting](/release-notes-service/2024/12/31/#march-12-2024-alerts)
 
 Furthermore, Monitors will continue to be the focus area for our Product and Engineering Teams for features and enhancements regarding alerting.
 
