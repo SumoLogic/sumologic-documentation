@@ -90,13 +90,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-<a href="/files/c2c/ZeroFox-threat-intel/example.json" target="_blank">Download example</a>
+<a href="/files/c2c/zerofox/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-<a href="/files/c2c/ZeroFox-threat-intel/example.tf" target="_blank">Download example</a>
+<a href="/files/c2c/zerofox/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
