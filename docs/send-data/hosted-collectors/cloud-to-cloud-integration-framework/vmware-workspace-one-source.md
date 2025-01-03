@@ -34,7 +34,7 @@ The VMware Workspace One source supports [O-Auth-based authentication](https://d
 
 #### Endpoint URL
 
-Endpoint URL will be the domain URL of the VMware Workspace console. For example, `https://as135.awmdm.com`.
+Endpoint URL will be the domain URL of the VMware Workspace console.
 
 
 #### Auth URL
@@ -72,7 +72,7 @@ To configure a VMware Workspace One Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
-1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL. For example, `https://as135.awmdm.com`.
+1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL.
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
 1. **Client Secret**. Enter the Client Secret key of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `E2220271xxxxxxxxxxxxxxxxxxxxx4556634`.
@@ -98,7 +98,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"` |
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
-| requestEndpoint | String | Yes | `null` | The base URL to fetch the data from the VMware Workspace One source. | `https://as135.awmdm.com` |
+| requestEndpoint | String | Yes | `null` | The base URL to fetch the data from the VMware Workspace One source. |  |
 | authURL | String | Yes | `null` | The API URL to fetch the authentication token from the VMware Workspace One source. | `https://uat.uemauth.vmwservices.com` |
 | clientID | String | Yes | `null` | Client ID of your account. | `cfea26d59bd542488ea706b025564d42` |
 | clientSecret | String | Yes | `null` | Client Secret of your account. | `E2220271xxxxxxxxxxxxxxxxxxxxx4556634` |

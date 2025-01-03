@@ -34,6 +34,19 @@ To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation
 :::sumo quickstart
 Check out this overview video to get familiar with the New UI.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Sumo Logic's Unified Experience UI Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
@@ -43,7 +56,8 @@ Check out this overview video to get familiar with the New UI.
         position="relative"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        />     
+        />
+-->  
 :::   
 
 ## Home
