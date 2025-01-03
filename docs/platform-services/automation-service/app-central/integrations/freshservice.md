@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.6  
-Updated: Sept 11, 2024***
+***Version: 1.7  
+Updated: Sept 24, 2024***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -59,3 +59,4 @@ Ticketing System
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * July 11, 2023 (v1.5) - Removed leading/trailing spaces
 * Sept 11, 2024(v1.6) - Updated the Update Ticket action
+* Sept 24, 2024(v1.7) - Fixed error in the Update Ticket action
