@@ -12,7 +12,7 @@ As **Azure Event Hubs source** supports logs, you can migrate your [ARM-based Az
 
 Azure Event Hubs source have several advantages, including:
 * Less overhead of maintenance and upgrades, since Azure Event Hubs source are upgraded automatically for bug fixes.
-* Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in your account while sources are hosted in Sumo Logic infra that requires you to create only an event hub in your Azure account.
+* Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and Azure functions in your account while sources are hosted in Sumo Logic infrastructure that requires you to create only an Event Hub in your Azure account.
 
 ## Step 1. Choose a migration strategy
 
