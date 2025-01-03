@@ -12,7 +12,7 @@ This topic has information about setting up a *custom threat intelligence source
 
 You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
 
-### How Cloud SIEM uses indicators
+## How Cloud SIEM uses indicators
 
 When Cloud SIEM encounters an indicator from your threat source in an incoming
 record it adds relevant information to the record. Because threat intelligence
@@ -24,7 +24,7 @@ this way.
 Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Tuning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
-### Create a threat intelligence source from Cloud SIEM UI
+## Create a threat intelligence source from Cloud SIEM UI
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. Click **Add Source** on the **Threat Intelligence** page. 
@@ -33,6 +33,8 @@ Rule authors can also write rules that look for threat intelligence information 
 1. Click **Add Custom Source**.
 
 Your new source should now appear on the **Threat Intelligence** page.
+
+## Add threat indicators
 
 ### Enter indicators manually
 
@@ -87,5 +89,10 @@ value,description,expires,active
 
 ### Manage sources and indicators using APIs
 
-You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
- 
+You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).
+
+## Search indicators
+
+To search threat indicators, click the **Search All Indicators** button at the top of the **Threat Intelligence** page. 
+
+You can search using the same functionality available for other Cloud SIEM searches, including regular expressions. For more information, see [Filter and Search Cloud SIEM List Pages](/docs/cse/administration/filter-search).
