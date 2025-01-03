@@ -477,6 +477,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
               ],
             },

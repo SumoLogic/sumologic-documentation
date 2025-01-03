@@ -555,6 +555,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/ZeroFox_logo.png')} alt="Thumbnail icon" width="45"/><h4>ZeroFox</h4></a>
+        <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="45"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
         </div>
