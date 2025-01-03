@@ -19,9 +19,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ZeroFox_logo.png')} alt="ZeroFox-threat-intel.png" width="100" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZeroFox_logo.png')} alt="ZeroFox-threat-intel.png" width="50" />
 
-ZeroFox is a cybersecurity firm specializing in providing cyber threat intelligence services. 
+ZeroFox is a cybersecurity firm specializing in providing cyber threat intelligence services.
 
 The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https://api.zerofox.com/cti/docs/) and sends them to Sumo Logic as normalized threat indicators for analysis.
 
@@ -40,7 +40,7 @@ The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https
 
 ### Vendor configuration
 
-The ZeroFox Threat Intel source requires you to provide your ZeroFox account **Username** and **Password**. 
+The ZeroFox Threat Intel source requires you to provide your ZeroFox account **Username** and **Password**.
 
 ### Source configuration
 
@@ -65,7 +65,7 @@ To configure an ZeroFox Threat Intel source:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter  | Type        | Value                                         | Required | Description                      |
 |:-----------|:------------|:----------------------------------------------|:---------|:---------------------------------|
