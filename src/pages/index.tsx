@@ -8,27 +8,19 @@ import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
-import { SvgIcon } from '@mui/material';
-
-const ChatIcon = (props) => (
-  <SvgIcon {...props} viewBox="0 0 27 27" sx={{ bgcolor: '#0045BE', borderRadius: '50%', padding: '3px' }}>
-    <path
-      fill="none"
-      stroke="white"
-      strokeWidth="2"
-      d="M18 3H9C5.5 3 3 5.5 3 9V14C3 18 5.5 20.5 9 20.5H13.5L19 25V20.5H18C22 20.5 24.5 18 24.5 14V9C24.5 5.5 22 3 18 3Z"
-    />
-  </SvgIcon>
-);
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
 
   const questions = [
-    '✨ How do I set up alerts?',
-    '✨ What types of logs can I analyze?',
-    '✨ How do I secure my environment?',
-    '✨ How to navigate dashboards.'
+    '✨ timestamps',
+    '✨ how do you write a log search query?',
+    '✨ how do I set up alerts?',
+    '✨ what types of logs can I analyze?',
+    '✨ what is copilot?',
+    '✨ cloud siem',
+    '✨ how do I change my password?',
+    '✨ what is the parse operator?'
   ];
 
   useEffect(() => {
@@ -48,7 +40,7 @@ export const Home = () => {
           isOpenByDefault: true,
           botUrlPath: 'nova',
           showNewChat: true,
-          parentElementId: 'inline-chatbot-container',
+          parentElementId: 'inline-berry-chatbot-container',
         });
       };
 
@@ -73,42 +65,20 @@ export const Home = () => {
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
-        {/* Header */}
-        <Typography
-          bgcolor='#0045BE'
-          color='#e3e3e3'
-          fontFamily='Lab Grotesque'
-          fontSize={28}
-          fontWeight={700}
-          pt={3}
-          px={2}
-          pb={1}
-          sx={{
-            backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
-          }}
-          textAlign='center'
-        >
-          <Box
-            component={SumoLogicDocsLogo}
-            alt="Sumo Logic Docs logo"
-            role="<img>"
-            aria-hidden="true"
-            height={{
-              md: 36,
-              xs: 28,
-            }}
-            width='100%'
-          />
-        </Typography>
+
 
         {/* Suggested Questions */}
         <Box sx={{ width: '100%', background: '#2a2a2a', color: '#fff', py: 4 }}>
+
           <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-            <Typography variant="h4" fontFamily="Lab Grotesque" fontWeight={600} mb={1} sx={{ background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Your Sumo Docs assistant is here to help!
+          <Typography variant="h4" fontWeight={600} mt={1} mb={3}>
+            Sumo Logic Documentation
+          </Typography>
+            <Typography variant="h5" fontFamily="Lab Grotesque" fontWeight={300} mb={2} sx={{ background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Our Docs Assistant is here to help!
             </Typography>
-            <Typography fontFamily="Lab Grotesque" fontSize={15} fontWeight={300} mb={2}>
-              Ask me a question! Try these to get started:
+            <Typography fontFamily="Lab Grotesque" fontSize={13} fontWeight={300} mb={2}>
+              Ask me anything! You can type full questions, sentences, or just keywords, and I'll help you find the information you need. Try these to get started:
             </Typography>
             <Stack
             direction="row"
@@ -146,7 +116,7 @@ export const Home = () => {
   </Stack>
 
             {/* Inline Chatbot Container */}
-            <Box id="inline-chatbot-container" sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}>
+            <Box id="inline-berry-chatbot-container" sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}>
             {/* The chatbot will render here */}
             </Box>
           </Container>

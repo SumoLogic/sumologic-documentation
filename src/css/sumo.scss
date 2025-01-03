@@ -227,13 +227,14 @@ html[data-theme='light'] {
   min-width: 100px;
 }
 
-/* Example: Force global styles back to normal */
+/* Berry CSS override to force global styles back to normal */
 body, .MuiTypography-root, button, input, select, textarea {
   font-family: 'Lab Grotesque', sans-serif !important;
 }
 
-#inline-chatbot-container iframe {
-  height: 500px !important;
+/* Berry chatbot */
+#inline-berry-chatbot-container iframe {
+  height: 600px !important;
 }
 
 //GitHub icon
