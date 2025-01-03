@@ -14,7 +14,7 @@ The Sumo Logic app for Jamf empowers IT administrators and security analysts wit
 The app also highlights trends in device usage, audit events, and management policy adoption, ensuring seamless tracking of compliance and security metrics. By integrating with Jamf, the app offers a centralized view to detect, investigate, and respond effectively to threats and operational inefficiencies, making it an essential tool for maintaining the integrity of your Jamf managed environment.
 
 :::info
-This app includes [built-in monitors](#jamf-monitors). For details on creating custom monitors, refer to the [Create monitors for Jamf app](#create-monitors-for-jamf-app).
+This app includes [built-in monitors](#jamf-monitors). For details on creating custom monitors, refer to the [Create monitors for Jamf app](#create-monitors-for-the-jamf-app).
 :::
 
 ## Log types
