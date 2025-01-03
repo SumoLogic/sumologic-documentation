@@ -2,26 +2,29 @@
 id: trend-micro-vision-one
 title: Trend Micro Vision One
 sidebar_label: Trend Micro Vision One
-description: The Trend Micro Vision One App for Sumo Logic is designed to enhance the efficiency and effectiveness of security teams, offering a powerful solution for proactive threat monitoring and rapid incident response.
+description: The Trend Micro Vision One app for Sumo Logic is designed to enhance the efficiency and effectiveness of security teams, offering a powerful solution for proactive threat monitoring and rapid incident response.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="Trend-Micro-Vision-One-icon" width="50" />
 
-The Trend Micro Vision One App for Sumo Logic is designed to enhance the efficiency and effectiveness of security teams, offering a powerful solution for proactive threat monitoring and rapid incident response. With this app, users gain real-time visibility into security events and incidents within their organization's infrastructure, allowing them to detect and react to potential threats quickly. It offers a suite of interactive dashboards with pre-configured visual tools like charts, graphs, and tables that provide a thorough view of all alerts and indicators. These features make it easier for teams to discern trends, patterns, and anomalies in their security data, ultimately strengthening their organization's security posture and protecting against advanced threats and attacks.
+The Trend Micro Vision One app for Sumo Logic is designed to enhance the efficiency and effectiveness of security teams, offering a powerful solution for proactive threat monitoring and rapid incident response. With this app, users gain real-time visibility into security events and incidents within their organization's infrastructure, allowing them to detect and react to potential threats quickly. It offers a suite of interactive dashboards with pre-configured visual tools like charts, graphs, and tables that provide a thorough view of all alerts and indicators. These features make it easier for teams to discern trends, patterns, and anomalies in their security data, ultimately strengthening their organization's security posture and protecting against advanced threats and attacks.
 
 :::info
-This app includes [built-in monitors](#trend-micro-vision-one-monitors). For details on creating custom monitors, refer to [Create monitors for Trend Micro Vision One app](#create-monitors-for-trend-micro-vision-one-app).
+This app includes [built-in monitors](#trend-micro-vision-one-monitors). For details on creating custom monitors, refer to the [Create monitors for Trend Micro Vision One app](#create-monitors-for-the-trend-micro-vision-one-app).
 :::
 
 ## Log types
 
 This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert logs](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source/) from the Trend Micro platform.
 
-## Sample log messages
+## Sample log message
 
-```json title="Alert Log"
+<details>
+<summary>Alert Log</summary>
+    
+```json
 {
     "schemaVersion": "1.15",
     "id": "WB-13276-20241108-00002",
@@ -189,6 +192,8 @@ This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert log
     ]
 }
 ```
+<details>
+    
 ## Sample queries
 
 ```sql title="Total Alerts"
@@ -236,6 +241,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Overview
 
 The **Trend Micro Vision One - Overview** dashboard provides details on security alerts, their severity, status, and distribution across different categories and time periods. 
+
 Use this dashboard to:
 - Monitor the number and severity of security alerts in real-time, allowing for quick identification of high-priority threats.
 - Analyze the distribution of alerts by provider, status, and investigation result to prioritize response efforts and allocate resources effectively.
@@ -243,7 +249,7 @@ Use this dashboard to:
 - Review the top affected entities and detection models to focus on the most critical assets and effective detection mechanisms.
 <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/TrendMicroVisionOne/Trend-Micro-Vision-One-Overview.png' alt="Trend-Micro-Vision-One-Overview" />
 
-## Create monitors for Trend Micro Vision One app
+## Create monitors for the Trend Micro Vision One app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
@@ -255,14 +261,13 @@ The Trend Micro Vision One monitors serve as a security tool, concentrating on o
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Trend Micro Vision One - Credential Dumping Detection` | Detects techniques aligned with MITRE ATT&CK `T1003` (Credential Dumping) for early detection of compromised credentials. | Critical | Count > 0 |
-| `Trend Micro Vision One - Critical Severity Alerts` | Provides immediate visibility into critical and high-severity alerts that need urgent attention. | Critical | Count > 0|
-| `Trend Micro Vision One - Endpoint Infection Impact Scope` | Tracks threats affecting multiple endpoints, allowing teams to respond to potential spread. | Critical | Count > 0|
-| `Trend Micro Vision One - Hacking Tools Detected and Blocked` | Monitors unauthorized tools such as Mimikatz used for reconnaissance or attacks. | Critical | Count > 0|
-| `Trend Micro Vision One -  Unresolved Alerts Aging Beyond SLA` | Identifies overdue alerts that require escalation or follow-up. | Critical | Count > 0|
+| `Trend Micro Vision One - Credential Dumping Detection` | This alert is triggered if techniques aligned with MITRE ATT&CK `T1003` (Credential Dumping) is detected. Helps for early detection of compromised credentials. | Critical | Count > 0 |
+| `Trend Micro Vision One - Critical Severity Alerts` | This alert is triggered if critical and high-severity alerts are detected that need urgent attention. | Critical | Count > 0|
+| `Trend Micro Vision One - Endpoint Infection Impact Scope` | This alert is triggered if threats affecting multiple endpoints is detected. This helps teams to respond to potential spread. | Critical | Count > 0|
+| `Trend Micro Vision One - Hacking Tools Detected and Blocked` | This alert is triggered if any unauthorized tools such as Mimikatz used for reconnaissance or attacks is identified. | Critical | Count > 0|
+| `Trend Micro Vision One -  Unresolved Alerts Aging Beyond SLA` | This alert is triggered if any overdue alerts that require escalation or follow-up is identified. | Critical | Count > 0|
 
-
-## Upgrading the Trend Micro Vision One app (Optional)
+## Upgrading/Downgrading the Trend Micro Vision One app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
