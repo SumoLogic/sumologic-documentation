@@ -192,7 +192,7 @@ This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert log
     ]
 }
 ```
-<details>
+</details>
     
 ## Sample queries
 
