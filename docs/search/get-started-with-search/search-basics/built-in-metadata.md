@@ -5,10 +5,26 @@ description: Metadata tags are attached to your log messages at ingest, which is
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in
 many ways, such as the user interface when managing Collection, and can be referenced in search queries.
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/sibzw75hsu?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Built-in Metadata Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/HNsXN5RoPwo"
         width="854px"
         height="480px"
@@ -19,8 +35,9 @@ many ways, such as the user interface when managing Collection, and can be refer
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 #### Built-in metadata fields
 

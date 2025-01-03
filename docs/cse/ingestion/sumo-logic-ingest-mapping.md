@@ -6,15 +6,31 @@ description: Learn how to configure Sumo Logic and Cloud SIEM to enable Sumo Log
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
-This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
+This topic has instructions for creating a Cloud SIEM ingest mapping for a data source. An ingest mapping gives Cloud SIEM the information it needs in order to map message fields to record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
 
 :::note
 The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/).
 :::
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
 
+<Iframe url="https://fast.wistia.net/embed/iframe/vv7p1hquqj?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Preprocessing Data for Ingestion into Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/luPl_IB9b8A?rel=0"
         width="854px"
         height="480px"
@@ -25,11 +41,24 @@ Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
 
 Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
 
+<Iframe url="https://fast.wistia.net/embed/iframe/krg64dumyv?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Forward data from Sumo Logic to Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/XCcu-YU9B5U?rel=0"
         width="854px"
         height="480px"
@@ -40,7 +69,9 @@ Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
+:::
 
 ## Before you start
 
@@ -59,8 +90,7 @@ You need to know how your messages are formatted. Cloud SIEM supports messages i
 * Structured syslog data (key-value pairs) with a syslog header
 * Microsoft Windows event logs in XML format
 * Winlogbeats
-* Messages that have been processed by Sumo Logic [Field Extraction
-    Rules](/docs/manage/field-extractions).
+* Messages that have been processed by Sumo Logic [Field Extraction Rules](/docs/manage/field-extractions).
 
 ### Determining Product, Vendor, and Event ID pattern
 

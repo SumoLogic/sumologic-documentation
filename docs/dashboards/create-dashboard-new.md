@@ -11,8 +11,23 @@ This page demonstrates how to create a Dashboard, add a query, and then add the
 
 Dashboard allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard template capabilities provide for easier data scoping and intuitive chart creation.
 
+:::sumo Micro Lesson
+
 Rather watch a short micro lesson video?
 
+<Iframe url="https://fast.wistia.net/embed/iframe/xqz4whg781?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Create a Simple Dashboard Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!--
 <Iframe url="https://www.youtube.com/embed/A-O_E-NbxN8"
         width="854px"
         height="480px"
@@ -23,7 +38,9 @@ Rather watch a short micro lesson video?
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
+:::
 
 ## Dashboard AutoSave
 

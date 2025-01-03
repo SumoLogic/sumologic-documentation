@@ -33,8 +33,8 @@ Sumo Credit is a unit of measure used to flexibly pay for any products (e.g., lo
 Steps to upgrade:
 
 1. Navigate to the **Manage Plan** page.
-   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration** > **Account** > **Manage Plan**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration** > **Manage Plan**.
+   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.  
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Manage Plan**.
 
 1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).

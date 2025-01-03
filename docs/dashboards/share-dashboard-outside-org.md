@@ -22,7 +22,7 @@ Before you share a dashboard with users external to your organization, you must 
 
 In this step, you'll enable the ability to share dashboards outside your organization. You must have admin privileges to enable the policy.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration** > **Security** > **Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.   
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.   
 1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
