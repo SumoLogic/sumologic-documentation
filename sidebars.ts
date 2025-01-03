@@ -2486,6 +2486,7 @@ integrations: [
           'integrations/saas-cloud/sophos',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
