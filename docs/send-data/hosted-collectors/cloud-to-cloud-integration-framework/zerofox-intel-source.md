@@ -13,12 +13,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/zerofox/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/zerofox/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZeroFox_logo.png')} alt="ZeroFox-threat-intel.png" width="50" />
 
 ZeroFox is a cybersecurity firm specializing in providing cyber threat intelligence services.
