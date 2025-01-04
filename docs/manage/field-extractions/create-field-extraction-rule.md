@@ -18,17 +18,30 @@ Fields specified in field extraction rules are automatically added and enabled i
 
 Learn how to create a FER through our video, "Creating a Field Extraction Rule".
 
-<Iframe url="https://www.youtube.com/embed/QWm8hR7SmxE"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/gblp7cpvxs?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Creating a Field Extraction Rule Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+<!-- old
+<Iframe url="https://www.youtube.com/embed/QWm8hR7SmxE"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+-->
 :::
 
 ## Creating a new Field Extraction Rule

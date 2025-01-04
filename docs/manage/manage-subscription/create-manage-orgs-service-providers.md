@@ -164,6 +164,20 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 
 :::sumo Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Managing Orgs with Flexible Credits Allocation Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
         width="854px"
         height="480px"
@@ -174,6 +188,8 @@ Watch this micro lesson to learn more about managing a child org.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
 :::
 
 :::info

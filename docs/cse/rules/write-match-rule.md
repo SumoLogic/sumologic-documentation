@@ -7,6 +7,7 @@ description: Learn how to write a match rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import Iframe from 'react-iframe'; 
 
 This topic has information about match rules and how to create them in the Cloud SIEM UI.
 
@@ -28,8 +29,23 @@ metadata_vendor = 'Amazon AWS' AND metadata_product = 'CloudTrail' AND metadata_
 
 This rule fires a signal each time a UserPoolClient, which has permission to call unauthenticated API operations, is created.
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to create a match rule.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/3phxuh3pta?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Create a Cloud SIEM Match Rule Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/l7xOBls1ROE?rel=0"
         width="854px"
         height="480px"
@@ -40,8 +56,9 @@ Watch this micro lesson to learn how to create a match rule.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 ## Create a match rule
 
