@@ -114,7 +114,7 @@ Below is a list of Sumo Logic recommended configuration examples for specific th
 | Vendor | Notes |
 | :-- | :-- |
 | <a href="/files/c2c/taxii-1/alien-vault-config.json" target="_blank">AlienVault</a> | Use your API key as the HTTP username and leave the password blank. |
-| <a href="/files/c2c/taxii-1/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and use any non-empty string as username. The Recorded Future TAXII v1 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists), as well as collections for each risk rule. More information can be found on the [Recorded Future Support portal](https://support.recordedfuture.com/hc/en-us/articles/115004303128-TAXII-V1-service). |
+| <a href="/files/c2c/taxii-1/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. The Recorded Future TAXII v1 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists), as well as collections for each risk rule. More information can be found on the [Recorded Future Support portal](https://support.recordedfuture.com/hc/en-us/articles/115004303128-TAXII-V1-service). |
 
 ## FAQ
 

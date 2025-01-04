@@ -3467,7 +3467,7 @@
   "/docs/releasenotes/service": "/release-notes-service",
   "/release-notes-service/welcome": "/release-notes-service",
   "/release-notes-service/2023/11/27/cis-for-aws": "/release-notes-service/2023/12/31/#november-27-2023-apps",
-  "/release-notes-service/2042/06/10/manage": "/release-notes-service/2024/06/10/manage",
+  "/release-notes-service/2042/06/10/manage": "/release-notes-service/2024/12/31",
   "/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub": "/docs/integrations/microsoft-azure/audit",
   "/Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/",
   "/Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor",
@@ -4207,5 +4207,6 @@
   "/docs/search/logreduce/detect-patterns-with-logreduce": "/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce",
   "/docs/search/logreduce/influence-the-logreduce-outcome": "/docs/search/behavior-insights/logreduce/influence-the-logreduce-outcome",
   "/docs/search/logreduce/understand-the-logreduce-relevance-column": "/docs/search/behavior-insights/logreduce/understand-the-logreduce-relevance-column",
-  "/docs/search/behavior-insights/logreduce-values": "/docs/search/behavior-insights/logreduce/logreduce-values"
+  "/docs/search/behavior-insights/logreduce-values": "/docs/search/behavior-insights/logreduce/logreduce-values",
+  "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration":"/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration"
 }
