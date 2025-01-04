@@ -21,7 +21,7 @@
     "@docusaurus/bundler": "3.6.3",
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/cssnano-preset": "3.6.3",
-    "@docusaurus/faster": "^3.6.3",
+    "@docusaurus/faster": "^3.7.0",
     "@docusaurus/plugin-client-redirects": "3.6.3",
     "@docusaurus/plugin-content-blog": "^3.6.3",
     "@docusaurus/plugin-debug": "3.6.3",
