@@ -826,7 +826,7 @@ This section describes the monitors provided with the MySQL app. These monitors 
 
 Here are the Telegraf metrics for MySQL collected by the MySQL app.
 
-<table><small>
+<table>
   <tr>
    <td>mysql_aborted_clients<br/>
 mysql_aborted_connects<br/>
@@ -927,5 +927,5 @@ mysql_threads_connected<br/>
 mysql_threads_created<br/>
 mysql_threads_running<br/>
 mysql_uptime</td>
-  </tr></small>
+  </tr>
 </table>
