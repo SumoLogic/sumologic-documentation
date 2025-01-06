@@ -52,14 +52,16 @@ Match lists are for when you want to use the existence or absence of an indicato
 
 Cloud SIEM uses suppressed lists similar to how it uses [match lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming record, it compares the entries in each suppressed list to record fields of the same type as the target column of the suppressed list. For example, given a suppressed list whose target column is **Domain**, Cloud SIEM will compare items on that list only to record fields that contain domains.
 
-When a record contains a value that matches one or more suppressed lists, two fields in the record get populated:
+Keep in mind:
+* Suppression lists will suppress any signal where the suppressed indicator is present, regardless of the primary entity in the signal.
+* Entity suppression will only suppress the signal if the suppressed entity is the primary signal.
+* If any entities within the record match items listed in a suppressed list, suppressed signals will be generated for those entities across all rules. Consequently, these signals will not affect the entity's Activity Score or contribute to insight generation.
 
+When a record contains a value that matches one or more suppressed lists, two fields in the record get populated:
 * `listMatches`. Cloud SIEM adds the names of the suppressed lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the SourceIP address in the “vuln_scanners” suppressed list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
 * `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s SourceIp is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” suppressed list, the `matchedItems` field would look like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within records, you can reference it downstream in both rules and search.
-
-**If any entities within the record match items listed in a suppressed list, suppressed signals will be generated for those entities across all rules**. Consequently, these signals will not affect the entity's Activity Score or contribute to insight generation.
 
 For more information about signal Suppression mechanisms, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
 
