@@ -114,7 +114,7 @@ In this step, you configure four local file sources, one for each log source lis
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix **artifactory/console** must be used.
 
-<table><small>
+<table>
   <tr>
    <td><strong>Log source</strong></td>
    <td><strong>File Path</strong></td>
@@ -139,7 +139,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
    <td>Traffic</td>
    <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log</td>
    <td>artifactory/traffic</td>
-  </tr></small>
+  </tr>
 </table>
 
 :::note
@@ -297,7 +297,7 @@ import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <JfrogNon/>
 
-## Upgrading the Artifactory app (Optional)
+## Upgrade/Downgrade the Artifactory app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

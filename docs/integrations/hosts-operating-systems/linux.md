@@ -294,7 +294,7 @@ _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "term
 | where process_name !=""
 ```
 
-## Upgrading the Linux app (Optional)
+## Upgrade/Downgrade the Linux app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

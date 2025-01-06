@@ -4,8 +4,8 @@ title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
-:::note
-You're viewing our legacy account page. Refer to our newer [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts) docs for the latest information.
+:::note legacy account type
+We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
 
 Sumo Logic provides flexible account types within its Cloud Flex Legacy packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
@@ -41,7 +41,7 @@ The following table provides a summary list of key features by package accounts.
 | Log Data retention (Classic Accounts) | 7 days | 30 days | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Data volume | 500MB per day | 1GB per day* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [LogReduce](/docs/search/logreduce)  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [LogReduce](/docs/search/behavior-insights/logreduce)  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Lookup Tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
 | Metrics |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Metrics data retention |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |

@@ -69,7 +69,11 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ## Monitors page
 
-The Monitors page allows you to view, create, and manage Monitors. You can create and organize your Monitors into folders. To access the page go to **Manage Data** \> **Monitoring** \> **Monitors**.
+The Monitors page allows you to view, create, and manage Monitors. You can create and organize your Monitors into folders. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access monitors, in the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui). To access monitors, in the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 
 ![monitors page](/img/alerts/monitors/monitors-page.png)
 
@@ -142,7 +146,7 @@ Under the **More Actions** menu you can:
 
 ## Add a monitor
 
-On the Monitors page (to access the page go to **Manage Data** \> **Monitoring** \> **Monitors**) click on the **Add** button then **New Monitor** to add a new Monitor. The creation dialog box will appear.
+On the Monitors page, click on the **Add** button then **New Monitor** to add a new Monitor. The creation dialog box will appear.
 
 You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
 

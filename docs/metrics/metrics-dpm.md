@@ -7,7 +7,7 @@ description: Metrics Data Ingestion allows you to view metrics ingest volumes ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can view your metrics data ingestion volume on the **Metrics Data Ingestion** page. This page provides a granular breakdown of your metrics ingestion and credits used. You can track consumption by individual metric names, or by specific dimensions and sources. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary action. 
+You can view your metrics data ingestion volume on the **Metrics Data Ingestion** page. This page provides a granular breakdown of your metrics ingestion. You can track consumption by individual metric names, or by specific dimensions and sources. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary action. 
 
 Understanding the volume of metrics that you are ingesting is important because when you exceed the credit limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 

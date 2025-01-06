@@ -102,11 +102,6 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/ingest-budget-v1"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Ingest Budget V1</h4></a>    
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/api/ingest-budget-v2"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Ingest Budget V2</h4></a>    
   </div>
 </div>
@@ -198,6 +193,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/saml-configuration"><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Thumbnail icon" width="50"/><h4>SAML Configuration</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

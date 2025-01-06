@@ -93,7 +93,7 @@ Use this dashboard to:
 
 ![nginx-benchmarks](/img/global-intelligence/nginx-benchmarks.jpeg)
 
-## Upgrading the Global Intelligence for Nginx app (Optional)
+## Upgrade/Downgrade the Global Intelligence for Nginx app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -71,7 +71,7 @@ To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com
 Once you have deployed the App Connector, you'll need to configure log receivers to send logs to the Sumo Logic cloud syslog endpoint by doing the following:
 
 1. Log in to your ZPA system.
-2. Go to **Administration** > **Log Receivers**.
+2. Go to **Administration > Log Receivers**.
 3. Click **Add Log Receiver**.
 4. In the **Add Log Receiver** window, configure the following tabs:
     1. [Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver#Step1)
@@ -181,7 +181,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
 
-## Upgrading the Zscaler Private Access app (optional)
+## Upgrade/Downgrade the Zscaler Private Access app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

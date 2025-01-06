@@ -14,8 +14,19 @@ import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-Managing Access Keys (how to).
+<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="title"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+<!-- old
 <Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
         width="854px"
         height="480px"
@@ -26,6 +37,7 @@ Managing Access Keys (how to).
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -33,7 +45,7 @@ Managing Access Keys (how to).
 
 * You'll need the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security) to create an access key.
 * You'll need the [**Manage Access Keys** capability](/docs/manage/users-roles/roles/role-capabilities#security) to manage access keys created by other users in your org.
-
+* Access keys use the permissions of the user running the key. The user utilizing an access key must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the access key is needed for. 
 
 ## Create an access key
 

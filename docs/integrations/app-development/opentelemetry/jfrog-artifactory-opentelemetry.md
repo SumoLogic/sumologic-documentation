@@ -15,11 +15,15 @@ The Sumo Logic app for Artifactory provides insight into your [JFrog Artifactory
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Schematics.png' alt="Artifactory-Schematics" />
 
+:::info
+This app includes [built-in monitors](#jfrog-artifactory-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
+:::
+
 ## Fields creation in Sumo Logic for Artifactory
 
 Following are the Tags which will be created as part of Artifactory app install if not already present.
 
-* `sumo.datasource`. Has fixed value of **artifactory**
+* `sumo.datasource`. Has fixed value of **artifactory**.
 
 ## Prerequisites
 
@@ -244,3 +248,21 @@ import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
 import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>
+
+## Create monitors for JFrog Artifactory app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### JFrog Artifactory alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Artifactory - Excessive Denied Login Attempts` | This alert is triggered when there are multiple denied login attempts from the same IP or user. | Count `>` 5 | Count `<=` 5 |
+| `Artifactory - High 4xx Status Codes` | This alert is triggered when there's a high number of HTTP 4xx error responses. | Count `>` 10 | Count `<=` 10 |
+| `Artifactory - High 5xx Status Codes` | This alert is triggered when there's a high number of HTTP 5xx error responses. | Count `>` 10 | Count `<=` 10 |
+| `Artifactory - High Denied Deploys to Cached Repos` | This alert is triggered when there's a high number of denied deploy attempts to cached repositories. | Count `>` 5 | Count `<=` 5 |
+| `Artifactory - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count `>` 5 | Count `<=` 5 |
+| `Artifactory - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count `>` 5 | Count `<=` 5 |
+| `Artifactory - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count `>` 5 | Count `<=` 5 |

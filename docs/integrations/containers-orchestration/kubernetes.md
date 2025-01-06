@@ -176,7 +176,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
-## Upgrading the Kubernetes app
+## Upgrade/Downgrade the Kubernetes app
 
 The current version of our app is not backwards compatible with older Helm Chart versions. Follow the below steps to upgrade.
 

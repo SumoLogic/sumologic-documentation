@@ -228,7 +228,7 @@ Advanced configuration can be used with all JFrog Xray script-based collection c
 
 This section provides a list of variables for Jfrog Xray that you can define in the configuration file.
 
-<table><small>
+<table>
   <tr>
    <td>Variable   </td>
    <td>Usage   </td>
@@ -272,7 +272,7 @@ This section provides a list of variables for Jfrog Xray that you can define in 
   <tr>
    <td>HTTP_LOGS_ENDPOINT in SumoLogic sectio   </td>
    <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.   </td>
-  </tr></small>
+  </tr>
 </table>
 
 </details>
@@ -369,7 +369,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
 
-## Upgrading the JFrog Xray app (Optional)
+## Upgrade/Downgrade the JFrog Xray app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

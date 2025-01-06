@@ -142,7 +142,7 @@ The **Neoload - Test Run Details** dashboard offers a comprehensive overview of 
 
 <img src={useBaseUrl('img/integrations/webhooks/neoload_testRunDetails.png')} style={{border: '1px solid black'}} alt="Neoload - Test Run Details"/>
 
-## Upgrading the NeoLoad app (Optional)
+## Upgrade/Downgrade the NeoLoad app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

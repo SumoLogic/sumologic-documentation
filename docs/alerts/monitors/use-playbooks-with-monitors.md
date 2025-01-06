@@ -6,6 +6,7 @@ description: Learn how to use Automation Service playbooks with monitors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 This article describes how to configure automated playbooks in monitors. An *automated playbook* is a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/), and is a predefined set of actions and conditional statements that run in an automated workflow to respond to an event. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event.
 
@@ -83,21 +84,34 @@ An anomaly monitor is triggered when unusual conditions are detected. Anomaly mo
 Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
+:::sumo Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: AI-driven Alerting Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/nMRoYb1YCfg?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
-import Iframe from 'react-iframe';
-
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+-->
+:::
 
 To create an anomaly monitor that runs an automated playbook in response to an alert:
 
@@ -155,7 +169,7 @@ Some integrations that have useful actions for monitors include:
 
 ### Pass custom fields from a monitor to playbooks
 
-Results from an alert query are passed to a playbook through the [automation payload](/docs/alerts/monitors/automation-payload-variables/). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node.
+Results from an alert query are passed to a playbook through the [alert payload](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node.
 
 :::note
 You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the monitor configuration to pass fields from the query to the playbook.
@@ -165,12 +179,12 @@ You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the moni
 
 1. Click **Edit** on the Start Node.
 1. Select **Alert** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_alert.png')} alt="Payload parameters from an alert" style={{border: '1px solid gray'}} width="700" />
-1. The parameters from the default [automation payload variables](/docs/alerts/monitors/automation-payload-variables/) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
+1. The parameters from the default [alert payload variables](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
 
-#### Configure Parameters from a JSON Payload
+#### Configure parameters from a JSON payload
 
 1. Click **Edit** on the Start Node.
 1. Select **Parse from Json** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_json.png')} alt="Payload parameters from a Json payload" style={{border: '1px solid gray'}} width="700" />
-1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/alerts/monitors/automation-payload-variables/#view-playbook-payload).
+1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload).
 1. Paste the payload into the **Enter Json payload** text box and click **Parse**. The fields from the payload will be auto parsed to parameters. <br/><img src={useBaseUrl('img/alerts/parse_from_json_payload.png')} alt="Parse from Json payload" style={{border: '1px solid gray'}} width="700" />
 1. Add or remove parameters based on the playbook requirements and click **Update**. <br/><img src={useBaseUrl('img/alerts/parse_from_json_parameters.png')} alt="Json Payload parameters" style={{border: '1px solid gray'}} width="700" />

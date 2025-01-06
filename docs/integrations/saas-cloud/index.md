@@ -59,6 +59,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/atlassian"><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon.png" width="60" /><h4>Atlassian</h4></a>
+  <p>Monitor and analyze the critical events of Atlassian data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/box"><img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
   <p>Gain insight into user behavior patterns and resources.</p>
   </div>
@@ -67,6 +73,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/cato-networks"><img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="icon" width="80"/><h4>Cato Networks</h4></a>
   <p>Gain insight into the events and identify potential security threats with admin activities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/cisco-amp"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
+  <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -95,8 +107,26 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
+  <p>Monitor and analyze file integrity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike FDR Host Inventory</h4></a>
   <p>Monitor and manage your device security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-spotlight"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Spotlight</h4></a>
+  <p>Gather real-time visibility into the vulnerabilities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/digital-guardian-arc"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
+  <p>Monitor, detect, and respond to critical events.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -137,8 +167,20 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
+  <p>Identify security threats by analyzing threat events and device events.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="160" /><h4>KnowBe4</h4></a>
   <p>Monitor and analyze KnowBe4 Phishing Security logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/lastpass"><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="60" /><h4>LastPass</h4></a>
+  <p>Identify security threats by analyzing audit events.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -270,6 +312,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/trend-micro-vision-one"><img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="icon" width="140"/><h4>Trend Micro Vision One</h4></a>
+  <p>Analyze alert logs to detect potential security risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/webex"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="icon" width="70"/><h4>Webex</h4></a>
   <p>Monitor and analyse Webex security events, user activities, and system health.</p>
   </div>
@@ -278,6 +326,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/workday"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="icon" width="50"/><h4>Workday</h4></a>
   <p>Monitor Workday login activity, user activity, and admin activity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/zendesk"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="icon" width="70"/><h4>Zendesk</h4></a>
+  <p>Identify security threats by analyzing audit logs.</p>
   </div>
 </div>
 <div className="box smallbox card">

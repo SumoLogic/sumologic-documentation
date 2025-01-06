@@ -22,13 +22,13 @@ The Automation Service is a subset of automation capabilities adapted from Cloud
 ## Benefits
 
 * The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 
-* Enrichment actions can be used to gather additional information about an Entity or Insight, including threat indicators.
+* Enrichment actions can be used to gather additional information about an entity or insight, including threat indicators.
 * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Sumo Logic core platform, Slack, Microsoft Teams, Jira, email, and so on.
-* Automations can be triggered automatically when an Insight is created or closed. For example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
-  1. Changes the Insight state to “In Progress”.
-  1. Assigns the Insight.
-  1. Sends a (customized) email with information about the Insight and indicator.
-  1. Creates a Slack channel for the Insight.
+* Automations can be triggered automatically when an insight is created or closed. For example, you could define a playbook that is executed automatically when an insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
+  1. Changes the insight state to “In Progress”.
+  1. Assigns the insight.
+  1. Sends a (customized) email with information about the insight and indicator.
+  1. Creates a Slack channel for the insight.
   1. Invites certain people to the Slack channel.
 
 :::note
@@ -46,13 +46,13 @@ Before you can access the Automation Service from Cloud SIEM, you must first [co
 :::
 
 1. To access the Automation Service from Cloud SIEM:
-   1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>The list of available Cloud SIEM automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
-   1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> <br/>The Automation Service screen displays: <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border: '1px solid gray'}} width="800"/>
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>The list of available Cloud SIEM automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
+   1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="300"/> <br/>The Automation Service screen displays: <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border: '1px solid gray'}} width="800"/>
      :::note
      You can also launch the Automation Service by selecting **Automation** from the main menu: <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="200"/> <br/>If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
      :::
 1. Now that you are in the Automation Service, let's explore a little to see how playbooks run actions that are provided by integrations. Open a [playbook](/docs/platform-services/automation-service/automation-service-playbooks) to see the actions it runs. Click an action to view the integration resource that provides it. In the example below, notice that in the **Send Insight Slack Notification** playbook, the **Slack resource** provides the **Get User** action.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" style={{border: '1px solid gray'}} width="800"/>
-1. Now that we know the resource that provides the action, let's look for the integration that contains that resource. In our case, we're looking for the integration with the Slack resource. Click [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations) in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" style={{border: '1px solid gray'}} width="800"/>
+1. Now that we know the resource that provides the action, let's look for the integration that contains that resource. In our case, we're looking for the integration with the Slack resource. Click [**Cloud SIEM > Integrations**](/docs/platform-services/automation-service/automation-service-integrations) in the left navigation bar.
 1. If we open the **Slack** integration, we see the **Get User** action used in the **Send Insight Slack Notification** playbook. Now you know how integrations provide actions that are run in playbooks. <br/><img src={useBaseUrl('img/cse/automations-resource-example.png')} alt="Resource example" style={{border: '1px solid gray'}} width="700"/>
 
 To learn how to create automations in Cloud SIEM that run playbooks from the Automation Service, see [Automations in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem).
@@ -62,7 +62,7 @@ To learn how to create automations in Cloud SIEM that run playbooks from the Aut
 ### Configure role capabilities for Cloud SIEM automation
 
 Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. 
-1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of Cloud SIEM automation. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
@@ -81,7 +81,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
 * `POST /automations`. Create an automation
-* `POST /automations/execute`. Run one or more automations against one or more Entities/Insights
+* `POST /automations/execute`. Run one or more automations against one or more entities/insights
 * `DELETE /automations/{id}`. Delete an automation
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation

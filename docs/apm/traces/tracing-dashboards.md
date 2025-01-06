@@ -34,21 +34,26 @@ Tracing metrics retention has [default metrics retention](/docs/apm/traces/view
 
 ## Installing the Tracing App (Optional)
 
-The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Admin Recommended** folder and is automatically available for all users in the organization.
+The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Installed Apps** folder and is automatically available for all users in the organization.
 
 :::note
-Do not modify or delete content in the **Admin Recommended** folder as it is maintained and updated automatically. If for any reason this gets removed, you can install the App manually from App Catalog.
+Do not modify or delete content in the **Installed Apps** folder as it is maintained by Sumo Logic. If for any reason this gets removed, you can install the App manually from App Catalog.
 :::
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-1. From the **App Catalog**, search for and select the **Tracing - Application Services Health** app.<br/> ![install-tracing-app.png](/img/apm/traces/install-tracing-app.png)
-2. To install the app, click the **Add to Library** button and complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder), or click **New Folder** to add a new folder.<br/> ![Trace app two.png](/img/apm/traces/Trace-app-two.png)
-3. Click **Add to Library**.
+## Upgrade/Downgrade the Tracing App (Optional)
 
-Once an app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Tracing App (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 
 ## Dashboard Panels
 
