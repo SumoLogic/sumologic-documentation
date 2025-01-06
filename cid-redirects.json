@@ -1618,6 +1618,7 @@
   "/cid/10195": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source",
   "/cid/10196": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source",
   "/cid/10122": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source",
+  "/cid/10124": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source",
   "/cid/10125": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source",
   "/cid/10127": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source",
   "/cid/10126": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source",

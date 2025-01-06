@@ -88,7 +88,7 @@ Sumo Logic has several deployments that are assigned depending on the geographic
 
 Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct your API client to the correct Sumo Logic API URL.
 
-<table><small>
+<table>
   <tr>
    <td>Deployment</td>
    <td>Service Endpoint (login URL)</td>
@@ -192,7 +192,7 @@ https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
   </tr>
-  </small>
+  
   </table>
 
 ### Which endpoint should I should use?
