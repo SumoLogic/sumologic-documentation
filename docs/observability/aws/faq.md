@@ -69,21 +69,6 @@ For full functionality of the out-of-the-box dashboards, the solution requires C
 
 Any Sumo Logic customer can leverage Sumo Logic AWS Observability solution features. 
 
-### Is there a demo of the solution?
-
-See the Sumo Logic AWS Observability video below for a demo of the solution.
-
-<Iframe url="https://www.youtube.com/embed/H-vRSHPzvz4?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
 ## Setup and Deployment
 
 See the following frequently asked questions (FAQs), and see [Deploy AWS Observability](/docs/observability/aws/deploy-use-aws-observability) for requirements

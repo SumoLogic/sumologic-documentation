@@ -10,8 +10,20 @@ This page has information about how to search different Data Tiers, and when yo
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
-Searching Data Tiers.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Searching Data Tiers Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
         width="854px"
         height="480px"
@@ -22,6 +34,7 @@ Searching Data Tiers.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
