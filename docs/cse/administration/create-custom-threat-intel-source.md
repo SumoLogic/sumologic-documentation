@@ -41,7 +41,7 @@ Rule authors can also write rules that look for threat intelligence information 
 
 Your new source should now appear on the **Threat Intelligence** page.
 
-## Add indicators
+## Add threat indicators
 
 ### Enter indicators manually
 
@@ -96,5 +96,10 @@ value,description,expires,active
 
 ### Manage sources and indicators using APIs
 
-You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
- 
+You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).
+
+## Search indicators
+
+To search threat indicators, click the **Search All Indicators** button at the top of the **Threat Intelligence** page. 
+
+You can search using the same functionality available for other Cloud SIEM searches, including regular expressions. For more information, see [Filter and Search Cloud SIEM List Pages](/docs/cse/administration/filter-search).
