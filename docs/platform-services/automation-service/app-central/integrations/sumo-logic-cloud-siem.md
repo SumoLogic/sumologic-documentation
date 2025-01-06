@@ -18,7 +18,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 * **Add Enrichment Entity** *(Notification)* - Add enrichments to Entity.
 * **Add Enrichment Insight** *(Notification)* - Add enrichments to Insights.
 * **Add Enrichment Signal** *(Notification)* - Add enrichments to Signal.
-* **Add Match List Item** (*Notification*) - Add Item to Match List.
+* **Add Match List Item** (*Notification*) - Add item to Match List.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
