@@ -747,7 +747,7 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 <details>
 <summary>Click to expand. Here are the metrics available for Apache.</summary>
 
-<table><small>
+<table>
   <tr>
    <td><strong>List of Apache Telegraf metrics</strong></td>
   </tr>
@@ -846,7 +846,7 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
   </tr>
   <tr>
    <td><code>apache_scboard_waiting</code>   </td>
-  </tr></small>
+  </tr>
 </table>
 
 </details>
