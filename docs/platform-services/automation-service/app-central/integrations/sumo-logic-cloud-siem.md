@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.14  
-Updated: Jul 3, 2024***
+***Version: 1.15  
+Updated: Jan 6, 2025***
 
 Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
@@ -18,6 +18,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 * **Add Enrichment Entity** *(Notification)* - Add enrichments to Entity.
 * **Add Enrichment Insight** *(Notification)* - Add enrichments to Insights.
 * **Add Enrichment Signal** *(Notification)* - Add enrichments to Signal.
+* **Add Match List Item** (*Notification*) - Add Item to Match List.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
@@ -123,3 +124,6 @@ SIEM
   * Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
 * July 3, 2024 (v1.14)
   * Update `check_not_null_field` in Close Insight Trigger
+* January 6, 2025 (v1.15)
+  * New Action added:
+    - Add Match List Item
