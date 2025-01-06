@@ -5,7 +5,7 @@ resource "sumologic_cloud_to_cloud_source" "vmware-workspace-one-source" {
   }
   config = jsonencode({
                         "name": "VMWare Workspace One",
-                        "requestEndpoint": "https://as135.awmdm.com",
+                        "requestEndpoint": "https://abc123.abcd.com",
                         "authURL": "https://uat.uemauth.vmwservices.com",
                         "clientID": "3xxxx62vvccbv4f6fbaxxxxxxx748e201",
                         "clientSecret": "678adsfsxxxxxxxxxxxxxxxxfsf1",
