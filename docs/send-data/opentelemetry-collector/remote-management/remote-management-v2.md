@@ -107,3 +107,37 @@ To delete a source template:
 1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the source template that you need to delete, and click the **Delete** button. Or, click the kebab menu against the selected source template and click **Delete** from the dropdown.
 1. The source template will be deleted and removed from the **Source Template** page.
+
+## Add a collector tag
+
+There are two ways to add collector tags: by adding them while [creating the OTEL collector](#step-1-collector-installation) or after creating the collector.
+
+Follow the below steps to add a collector tag after creating the OTEL collector:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu, select **Configuration** and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. Navigate and click on the required collector where you need to add the collector tags.
+1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
+1. In the edit window, click **+ Add tags**.
+1. Add the required tags and click **Proceed**.
+1. A new **Update Collector Tag(s)** window will appear, where you can click on the **click here** button to understand the impact of this update. 
+1. You will be redirected to a **Mapped Source Template** section, which displays the mapped Source Templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped Source Template for the collector.
+1. If there are any incompatible Source Template(s), [Upgrade the source template](#upgrade-the-source-template).
+1. Once the Source Template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.
+
+## Edit/Delete a collector tag
+
+:::note
+- For default collector tags, you will only be allowed to edit the **Values**.
+- System collector tags like *sumo.disco.enabled* cannot be edited.
+:::
+
+Follow the below steps to edit/delete a collector tag:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. Navigate and click on the required collector where you need to add the collector tags.
+1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
+1. In the edit window, edit/delete the required tags and click **Proceed**.
+1. A new **Update Collector Tag(s)** window will appear, where you can click on the **click here** button to understand the impact of this update. 
+1. You will be redirected to a **Mapped Source Template** section, which will display the mapped Source Templates for the collector tags edited/deleted. This window also displays the **Compatible** and **Incompatible Version** details for the mapped Source Template for the Collector.
+1. If there are any incompatible Source Templates, [Upgrade the source template](#upgrade-the-source-template).
+1. Once the Source Template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.
