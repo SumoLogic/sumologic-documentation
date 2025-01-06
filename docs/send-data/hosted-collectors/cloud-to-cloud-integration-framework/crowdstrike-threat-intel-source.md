@@ -5,8 +5,15 @@ sidebar_label: CrowdStrike Threat Intel
 tags:
   - cloud-to-cloud
   - crowdstrike-threat-intel
-description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.
+description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike platform.
 ---
+
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/crowdstrike-threat-intel/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-threat-intel/example.json';
@@ -64,12 +71,12 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 
 ### Source configuration
 
-When you create a CrowdStrike Spotlight Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a CrowdStrike Threat Intel Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure the CrowdStrike Spotlight Source:
+To configure the CrowdStrike Threat Intel Source:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **CrowdStrike Spotlight** icon.
+1. Search for and select **CrowdStrike Threat Intel** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`. 
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.

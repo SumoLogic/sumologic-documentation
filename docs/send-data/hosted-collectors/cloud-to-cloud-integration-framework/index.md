@@ -217,12 +217,14 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
+<!--
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
   <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
   </div>
 </div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
