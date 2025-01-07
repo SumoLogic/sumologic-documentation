@@ -74,7 +74,7 @@ After configuring data collection, you can monitor the collected Apache error lo
 
 ### Add a collector tag
 
-There are place ways to add collector tags: [while creating the OTEL collector](#step-1-collector-installation) and after creating the collector. To add a collector tag after the collector is created:
+There are place ways to add collector tags: [while creating the OTEL collector](#step-1-install-and-tag-collectors) and after creating the collector. To add a collector tag after the collector is created:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu, select **Configuration** and then under **Data Collection**, select **OpenTelemetry Collection**.
 1. Click on the required collector where you need to add collector tags.
@@ -83,7 +83,7 @@ There are place ways to add collector tags: [while creating the OTEL collector](
 1. Add the required tags and click **Proceed**.
 1. A new **Update Collector Tag(s)** window appears. Click the **click here** link to understand the impact of this update.
 1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.
-1. If there are any incompatible source templates, [upgrade the source template](#upgrade-the-source-template) to ensure compatibility.
+1. If there are any incompatible source templates, [upgrade the source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#upgrade-a-source-template) to ensure compatibility.
 1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.
 
 ### Edit or delete a collector tag
@@ -101,7 +101,7 @@ To edit or delete a collector tag:
 1. Edit or delete the required tags and click **Proceed**.
 1. A new **Update Collector Tag(s)** window appears. Click the **click here** button to see the impact of this update.
 1. You will be redirected to a **Mapped Source Template** section, which displays the mapped source templates for the edited or deleted collector tags, along with **Compatible** and **Incompatible Version** details.
-1. If any source template is incompatible, [upgrade the source template](#upgrade-the-source-template).
+1. If find you find an incompatible source template, [upgrade the source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#upgrade-a-source-template).
 1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.
 
 ## Source templates
