@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ZeroFox_logo.png')} alt="ZeroFox-threat-intel.png" width="50" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/zerofox_logo.png')} alt="ZeroFox-threat-intel.png" width="50" />
 
 ZeroFox is a cybersecurity firm specializing in providing cyber threat intelligence services.
 
