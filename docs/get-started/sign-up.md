@@ -85,7 +85,7 @@ To sign up through AWS Marketplace:
 1. Configure your free trial contract and click **Subscribe**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_create_contract.png')} alt="Create contract" style={{border: '1px solid gray'}} width="800" />
 1. After the subscription finishes processing, you can set up your account.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_setup_new.png')} alt="Set up your account" style={{border: '1px solid gray'}} width="800" />
 1. You are redirected to Sumo Logic to complete your account creation:
-    - **Email**. Enter an email address for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace requires a new email to create a separate Sumo Logic organization.
+    - **Email**. Enter a business email address for your account (personal email addresses such as Gmail are not supported). If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace requires a new email to create a separate Sumo Logic organization.
       :::note
       Personal email addresses such as Gmail or Yahoo are not supported.
       :::
