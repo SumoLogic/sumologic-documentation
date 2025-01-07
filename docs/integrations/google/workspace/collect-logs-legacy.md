@@ -157,78 +157,20 @@ In the future, if Google adds a new alert type do the following to add new alert
 
 This section provides a list of environment variables for Google Workspace Alert Center and their usage. For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-<table>
-  <tr>
-   <td>Environment Variable </td>
-   <td>Usage </td>
-  </tr>
-  <tr>
-   <td><code>ALERT_TYPES</code></td>
-   <td><p>"Customer takeout initiated"</p>
-<p>"Misconfigured whitelist"</p>
-<p>"User reported phishing"</p>
-<p>"User reported spam spike"</p>
-<p>"Suspicious message reported"</p>
-<p>"Phishing reclassification"</p>
-<p>"Malware reclassification"</p>
-<p>"Leaked password"</p>
-<p>"Suspicious login"</p>
-<p>"Suspicious login (less secure app)"</p>
-<p>"Suspicious programmatic login"</p>
-<p>"User suspended"</p>
-<p>"User suspended (spam)"</p>
-<p>"User suspended (spam through relay)"</p>
-<p>"User suspended (suspicious activity)"</p>
-<p>"Google Operations"</p>
-<p>"Government attack warning"</p>
-<p>"Device compromised"</p>
-<p>"Suspicious activity"</p></td>
-  </tr>
-  <tr>
-   <td><code>BACKFILL_DAYS</code></td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.</td>
-  </tr>
-  <tr>
-   <td><code>PAGINATION_LIMIT</code></td>
-   <td>Number of events to fetch in a single API call.</td>
-  </tr>
-  <tr>
-   <td><code>LOG_FORMAT</code></td>
-   <td>Log format used by the python logging module to write logs in a file.   </td>
-  </tr>
-  <tr>
-   <td><code>ENABLE_LOGFILE</code></td>
-   <td>Set to TRUE to write all logs and errors to a log file. </td>
-  </tr>
-  <tr>
-   <td><code>ENABLE_CONSOLE_LOG</code></td>
-   <td>Enables printing logs in a console.   </td>
-  </tr>
-  <tr>
-   <td><code>LOG_FILEPATH</code></td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
-  </tr>
-  <tr>
-   <td><code>NUM_WORKERS</code> </td>
-   <td>Number of threads to spawn for API calls.   </td>
-  </tr>
-  <tr>
-   <td><code>MAX_RETRY</code>   </td>
-   <td>Number of retries to attempt in case of request failure.   </td>
-  </tr>
-  <tr>
-   <td><code>BACKOFF_FACTOR</code> </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
-  </tr>
-  <tr>
-   <td><code>TIMEOUT</code></td>
-   <td>Request time out used by the requests library. </td>
-  </tr>
-  <tr>
-   <td><code>SUMO_ENDPOINT</code>   </td>
-   <td>HTTP source endpoint url created in Sumo Logic. </td>
-  </tr>
-</table>
+| Environment Variable   | Usage        |
+|:-----------|:-----------|
+| `ALERT_TYPES`          | "Customer takeout initiated"<br/>"Misconfigured whitelist"<br/>"User reported phishing"<br/>"User reported spam spike"<br/>"Suspicious message reported"<br/>"Phishing reclassification"<br/>"Malware reclassification"<br/>"Leaked password"<br/>"Suspicious login"<br/>"Suspicious login (less secure app)"<br/>"Suspicious programmatic login"<br/>"User suspended"<br/>"User suspended (spam)"<br/>"User suspended (spam through relay)"<br/>"User suspended (suspicious activity)"<br/>"Google Operations"<br/>"Government attack warning"<br/>"Device compromised"<br/>"Suspicious activity" |
+| `BACKFILL_DAYS`        | Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.                                                                                                                              |
+| `PAGINATION_LIMIT`     | Number of events to fetch in a single API call.                                                                                                                                                                                                          |
+| `LOG_FORMAT`           | Log format used by the Python logging module to write logs in a file.                                                                                                                                                                                   |
+| `ENABLE_LOGFILE`       | Set to TRUE to write all logs and errors to a log file.                                                                                                                                                                                                  |
+| `ENABLE_CONSOLE_LOG`   | Enables printing logs in a console.                                                                                                                                                                                                                      |
+| `LOG_FILEPATH`         | Path of the log file used when ENABLE_LOGFILE is set to TRUE.                                                                                                                                                                                            |
+| `NUM_WORKERS`          | Number of threads to spawn for API calls.                                                                                                                                                                                                               |
+| `MAX_RETRY`            | Number of retries to attempt in case of request failure.                                                                                                                                                                                                |
+| `BACKOFF_FACTOR`       | A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then `sleep()` will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.                                                                                     |
+| `TIMEOUT`              | Request timeout used by the `requests` library.                                                                                                                                                                                                         |
+| `SUMO_ENDPOINT`        | HTTP source endpoint URL created in Sumo Logic.                                                                                                                                                                                                         |
 
 #### Troubleshooting the GCP Function
 
@@ -298,78 +240,20 @@ This section provides a list of environment variables for Google Workspace Alert
 
 For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-<table>
-  <tr>
-   <td>Environment Variable</td>
-   <td>Usage </td>
-  </tr>
-  <tr>
-   <td><code>ALERT_TYPES</code></td>
-   <td>"Customer takeout initiated"
-<p>"Misconfigured whitelist"</p>
-<p>"User reported phishing"</p>
-<p>"User reported spam spike"</p>
-<p>"Suspicious message reported"</p>
-<p>"Phishing reclassification"</p>
-<p>"Malware reclassification"</p>
-<p>"Leaked password"</p>
-<p>"Suspicious login"</p>
-<p>"Suspicious login (less secure app)"</p>
-<p>"Suspicious programmatic login"</p>
-<p>"User suspended"</p>
-<p>"User suspended (spam)"</p>
-<p>"User suspended (spam through relay)"</p>
-<p>"User suspended (suspicious activity)"</p>
-<p>"Google Operations"</p>
-<p>"Government attack warning"</p>
-<p>"Device compromised"</p>
-<p>"Suspicious activity"</p> </td>
-  </tr>
-  <tr>
-   <td><code>BACKFILL_DAYS</code> </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.   </td>
-  </tr>
-  <tr>
-   <td><code>PAGINATION_LIMIT</code>   </td>
-   <td>Number of events to fetch in a single API call.   </td>
-  </tr>
-  <tr>
-   <td><code>LOG_FORMAT</code>   </td>
-   <td>Log format used by the python logging module to write logs in a file.   </td>
-  </tr>
-  <tr>
-   <td><code>ENABLE_LOGFILE</code>   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.   </td>
-  </tr>
-  <tr>
-   <td><code>ENABLE_CONSOLE_LOG</code>   </td>
-   <td>Enables printing logs in a console.   </td>
-  </tr>
-  <tr>
-   <td><code>LOG_FILEPATH</code>   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
-  </tr>
-  <tr>
-   <td><code>NUM_WORKERS</code>   </td>
-   <td>Number of threads to spawn for API calls.   </td>
-  </tr>
-  <tr>
-   <td><code>MAX_RETRY</code>   </td>
-   <td>Number of retries to attempt in case of request failure.   </td>
-  </tr>
-  <tr>
-   <td><code>BACKOFF_FACTOR</code>   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
-  </tr>
-  <tr>
-   <td><code>TIMEOUT</code> </td>
-   <td>Request time out used by the requests library.</td>
-  </tr>
-  <tr>
-   <td><code>SUMO_ENDPOINT</code> </td>
-   <td>HTTP source endpoint url created in Sumo Logic.</td>
-  </tr>
-</table>
+| Environment Variable   | Usage             |
+|:-----------|:-----------|
+| `ALERT_TYPES`          | "Customer takeout initiated"<br/>"Misconfigured whitelist"<br/>"User reported phishing"<br/>"User reported spam spike"<br/>"Suspicious message reported"<br/>"Phishing reclassification"<br/>"Malware reclassification"<br/>"Leaked password"<br/>"Suspicious login"<br/>"Suspicious login (less secure app)"<br/>"Suspicious programmatic login"<br/>"User suspended"<br/>"User suspended (spam)"<br/>"User suspended (spam through relay)"<br/>"User suspended (suspicious activity)"<br/>"Google Operations"<br/>"Government attack warning"<br/>"Device compromised"<br/>"Suspicious activity" |
+| `BACKFILL_DAYS`        | Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.                                                                                                                              |
+| `PAGINATION_LIMIT`     | Number of events to fetch in a single API call.                                                                                                                                                                                                          |
+| `LOG_FORMAT`           | Log format used by the Python logging module to write logs in a file.                                                                                                                                                                                   |
+| `ENABLE_LOGFILE`       | Set to TRUE to write all logs and errors to a log file.                                                                                                                                                                                                  |
+| `ENABLE_CONSOLE_LOG`   | Enables printing logs in a console.                                                                                                                                                                                                                      |
+| `LOG_FILEPATH`         | Path of the log file used when ENABLE_LOGFILE is set to TRUE.                                                                                                                                                                                            |
+| `NUM_WORKERS`          | Number of threads to spawn for API calls.                                                                                                                                                                                                               |
+| `MAX_RETRY`            | Number of retries to attempt in case of request failure.                                                                                                                                                                                                |
+| `BACKOFF_FACTOR`       | A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then `sleep()` will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.                                                                                     |
+| `TIMEOUT`              | Request timeout used by the `requests` library.                                                                                                                                                                                                         |
+| `SUMO_ENDPOINT`        | HTTP source endpoint URL created in Sumo Logic.                                                                                                                                                                                                         |
 
 
 #### Troubleshooting
