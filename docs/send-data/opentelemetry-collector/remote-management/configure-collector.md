@@ -1,7 +1,7 @@
 ---
-id: install-tag-collector
-title: Install and Tag Your OpenTelemetry Collector for Remote Management
-sidebar_label: Install and Tag Your OpenTelemetry Collector
+id: configure-collector
+title: Configure OpenTelemetry Collector for Remote Management
+sidebar_label: Configure OpenTelemetry Collector
 description: Learn how to install and tag Your OpenTelemetry Collector to set up remote management of data collection.
 ---
 

@@ -29,7 +29,7 @@ Source templates are useful for managing data collection in scenarios like:
 
 ## Prequisites
 
-Read up on how to [configure your OpenTelemetry collector for remote management](/docs/send-data/opentelemetry-collector/remote-management/install-tag-collector).
+Read up on how to [configure your OpenTelemetry collector for remote management](/docs/send-data/opentelemetry-collector/remote-management/configure-collector).
 
 ## Create a new source template
 
