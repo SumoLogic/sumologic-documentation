@@ -169,128 +169,23 @@ The following IOC types are available from CrowdStrike:
 
 #### Can you provide samples for the different IOC types?
 
-<table><small>
-  <tr>
-   <td>
-    IOC Type
-   </td>
-   <td>
-    IOC
-   </td>
-  </tr>
-  <tr>
-   <td>
-    SHA256
-   </td>
-   <td>
-    6c1bce76f4d2358656132b6b1d471571820688ccdbaca0d86d0ca082b9390536
-   </td>
-  </tr>
-  <tr>
-   <td>
-    SHA256
-   </td>
-   <td>
-    b101cd29e18a515753409ae86ce68a4cedbe0d640d385eb24b9bbb69cf8186ae
-   </td>
-  </tr>
-  <tr>
-   <td>
-    IP Address
-   </td>
-   <td>
-    84.112.91.96
-   </td>
-  </tr>
-  <tr>
-   <td>
-    IP Address
-   </td>
-   <td>
-    158.69.196.112
-   </td>
-  </tr>
-  <tr>
-   <td>
-    File
-   </td>
-   <td>
-    updater.exe
-   </td>
-  </tr>
-  <tr>
-   <td>
-    File
-   </td>
-   <td>
-    0.exe
-   </td>
-  </tr>
-  <tr>
-   <td>
-    URL
-   </td>
-   <td>
-    <a href="http://tycahatit.ru/zapoy/gate.php">http://tycahatit.ru/zapoy/gate.php</a>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    URL
-   </td>
-   <td>
-    <a href="http://ningwitjohnno.ru/zapoy/gate.php">http://ningwitjohnno.ru/zapoy/gate.php</a>
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Domain
-   </td>
-   <td>
-    9jdco01e.ru
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Domain
-   </td>
-   <td>
-    ningwitjohnno.ru
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Email
-   </td>
-   <td>
-    sherigerber@mail.ru
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Email
-   </td>
-   <td>
-    nosiwdcd5@outlook.com
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Hash MD5
-   </td>
-   <td>
-    9da2a54e98ddb9a0adb4ace3dda4d8e0
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Hash MD5
-   </td>
-   <td>
-    832efb3fce4b1e16d610d5856f1401bb
-   </td>
-  </tr></small>
-</table>
+| IOC Type    | IOC                                              |
+|:------------|:-------------------------------------------------|
+| SHA256      | `6c1bce76f4d2358656132b6b1d471571820688ccdbaca0d86d0ca082b9390536` |
+| SHA256      | `b101cd29e18a515753409ae86ce68a4cedbe0d640d385eb24b9bbb69cf8186ae` |
+| IP Address  | `84.112.91.96`                                     |
+| IP Address  | `158.69.196.112`                                   |
+| File        | `updater.exe`                                      |
+| File        | `0.exe`                                            |
+| URL         | `http://tycahatit.ru/zapoy/gate.php` |
+| URL         | `http://ningwitjohnno.ru/zapoy/gate.php` |
+| Domain      | `9jdco01e.ru`                                     |
+| Domain      | `ningwitjohnno.ru `                                |
+| Email       | `sherigerber@mail.ru`                              |
+| Email       | `nosiwdcd5@outlook.com`                            |
+| Hash MD5    | `9da2a54e98ddb9a0adb4ace3dda4d8e0`                 |
+| Hash MD5    | `832efb3fce4b1e16d610d5856f1401bb`                 |
+
 
 #### Do IOCs and Threats expire?
 
