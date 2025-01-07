@@ -4,6 +4,9 @@ title: Configure an Installed Collector
 description: Learn how to install and configure an Installed Collector to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 
+
+import Iframe from 'react-iframe';
+
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service.
 
 As the name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
@@ -16,6 +19,21 @@ See [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collecto
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/22427pvuhh?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Installed Collector Overview Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/QxGCrxbJ1Vs"
         width="854px"
         height="480px"
@@ -26,8 +44,9 @@ The maximum number of Collectors allowed per organization is 10,000.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ## CPU usage guidelines
 

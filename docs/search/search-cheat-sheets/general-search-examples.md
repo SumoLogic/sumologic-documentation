@@ -5,10 +5,6 @@ sidebar_label: General Search Examples
 description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.
 ---
 
-:::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI).  
-:::
-
 The examples use this sample Apache log message where applicable:
 
 ```sh

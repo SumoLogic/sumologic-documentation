@@ -84,21 +84,6 @@ Example:
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 
-:::sumo Micro Lesson
-Here's a step-by-step tutorial about creating Sumo Logic queries.
-
-<Iframe url="https://www.youtube.com/embed/nGRXj1w4juU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-:::
-
 :::sumo
 For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/support/s/topiccatalog).
 :::

@@ -123,12 +123,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs C2C Source Migration</h4></a>
-  <p>This source is available in all deployments, including FedRAMP.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source"><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="80" /><h4>Box</h4></a>
   <p>The Box API integration ingests events from the GetEvents API.</p>
   </div>
@@ -223,6 +217,14 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
+<!--
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
+  <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
+  </div>
+</div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>

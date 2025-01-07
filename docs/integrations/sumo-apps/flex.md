@@ -11,8 +11,22 @@ import Iframe from 'react-iframe';
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
-<details>
-<summary><strong>Micro Lesson</strong>: Viewing the Flex App Dashboards</summary>
+:::sumo Micro Lesson
+Learn how to view the Flex app dashboards.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/5nbwkw5y46??web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Viewing the Flex App Dashboards Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/kn3SVhAIwDk?si=nMQBWvp5Ruo-nOaB"
         width="854px"
         height="480px"
@@ -23,7 +37,9 @@ With Sumo Logic Flex, you gain an efficient and centralized log analytics framew
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-</details>
+-->
+
+:::
     
 ## Log types
 

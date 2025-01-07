@@ -23,23 +23,6 @@ If you haven't found the answer to your question in our online help documentatio
 
 On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
 
-:::sumo Contacting Support
-Depending on your account type, you can also log a ticket with our support engineers.
-
-<Iframe url="https://www.youtube.com/embed/9tpq1XFhcMU"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-:::
-
-
 ### Terms and conditions
 
 For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
