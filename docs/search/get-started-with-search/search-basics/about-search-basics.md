@@ -12,6 +12,19 @@ import Iframe from 'react-iframe';
 
 How to search data using the Basic Search Mode in Sumo Logic.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/deo5m3f7jy?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Basic Search Mode Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/Ps2YperJyZo?rel=0"
         width="854px"
         height="480px"
@@ -22,6 +35,7 @@ How to search data using the Basic Search Mode in Sumo Logic.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

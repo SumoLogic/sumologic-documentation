@@ -28,8 +28,22 @@ Incidents are events that require investigation and remediation. Incidents are a
 
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access incidents, in the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
 
+:::sumo Micro Lesson
 Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/faxotvoq3j?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SOAR Incidents Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA?rel=0"
         width="854px"
         height="480px"
@@ -40,7 +54,9 @@ Watch this micro lesson to learn more about incidents in Cloud SOAR.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+--> 
 
+:::
 ### Filter incidents
 
 The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the incident IDs will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
@@ -317,8 +333,23 @@ To explore entities:
 
 Cloud SOAR's **Dashboards** section highlights the most important pieces of data to the user or investigator who is logged into the platform. This data is presented through the use of multiple widgets that you can add, remove, and customize to include all data relevant to your job functions and duties.
 
+:::sumo Micro Lesson
+
 Watch the following micro lesson to learn about dashboards.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/gqclutn3d1?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SOAR Dashboards &amp; KPI Reports Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/NRdtAvxhuOY?rel=0"
      width="854px"
      height="480px"
@@ -329,6 +360,9 @@ Watch the following micro lesson to learn about dashboards.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 ### Create a dashboard
 

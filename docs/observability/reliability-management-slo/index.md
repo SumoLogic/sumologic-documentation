@@ -10,16 +10,27 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 A reliable end user experience is the key goal for observability. In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
 
 This guide provides an overview of Sumo Logic Reliability Management using Service-Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
-import Iframe from 'react-iframe';
-
 :::sumo Micro Lesson
-Reliability Management Using SLOs.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/3rztup8x53?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Reliability Management Using SLOs Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/jCGqfqEDXto?rel=0"
         width="854px"
         height="480px"
@@ -30,6 +41,7 @@ Reliability Management Using SLOs.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

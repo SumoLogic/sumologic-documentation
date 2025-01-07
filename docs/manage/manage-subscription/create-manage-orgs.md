@@ -50,7 +50,21 @@ There are several role capabilities that are required to work with orgs:
 This section has instructions for creating a new org.
 
 :::sumo Micro Lesson
-Creating a New Child Org
+Learn how to create a new child organization.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/hdr7wf9hin?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Creating a New Child Org Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/omTHPAJ9dIg?si=m5dVp5oXu29wq4Pu"
         width="854px"
         height="480px"
@@ -61,6 +75,8 @@ Creating a New Child Org
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
 :::
 
 :::note
@@ -111,6 +127,20 @@ After you create a new org, you can’t delete it.
 
 :::sumo Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Managing Orgs with Flexible Credits Allocation Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
         width="854px"
         height="480px"
@@ -121,6 +151,8 @@ Watch this micro lesson to learn more about managing a child org.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
 :::
 
 :::info
