@@ -30,7 +30,7 @@ You can also add threat intelligence indicators using a collector or the API. Se
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see [CrowdStrike Threat Intelligence](/docs/security/threat-intelligence/crowdstrike-threat-intelligence/).
+* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see/docs/security/threat-intelligence/threat-intelligence-mapping/#crowdstrike-mapping/docs/security/threat-intelligence/crowdstrike-threat-intelligence/).
 * The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
 :::
 

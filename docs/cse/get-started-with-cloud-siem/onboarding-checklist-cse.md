@@ -130,16 +130,16 @@ Perform the following tasks to install security apps that provide data to Cloud 
 
 Install the Cloud SIEM App to monitor data that is parsed, along with all the signals and insights that records generate. The app contains multiple folders of searches and dashboards related to Cloud SIEM.
 
-Also install any out-of-the-box apps or dashboards for security data sources we support, including CrowdStrike’s Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
+Also install any out-of-the-box apps or dashboards for security data sources we support, including the Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
 
 See:
 * [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/)
 * [Security and Threat Detection](/docs/integrations/security-threat-detection/)
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
 
-#### Import Crowdstrike threat intel searches
+#### Import threat intel searches
 
-You can configure Crowdstrike threat indicator matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
+You can configure Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
 
 See:
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
@@ -169,7 +169,7 @@ See: [Create and Use Network Blocks](/docs/cse/administration/create-use-network
 
 ### Configure threat intel feeds
 
-Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, etc), you can configure these too.
+Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, and so on), you can configure these too.
 
 See: [Manage Threat Intelligence Indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/)
 
