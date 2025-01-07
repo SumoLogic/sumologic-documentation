@@ -125,7 +125,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
               items:[
-                'send-data/opentelemetry-collector/remote-management/overview',
+                'send-data/opentelemetry-collector/remote-management/install-tag-collector',
                 {
                   type: 'category',
                   label: 'Source Templates',
@@ -133,7 +133,7 @@ module.exports = {
                   collapsed: true,
                   link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
                   items:[
-                    'send-data/opentelemetry-collector/remote-management/source-templates/create-source-template',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates',
                     {
                       type: 'category',
                       label: 'Apache',

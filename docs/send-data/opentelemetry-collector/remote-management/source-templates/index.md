@@ -13,7 +13,7 @@ In this section, we'll show you how to set up source templates for the following
 <div className="box-wrapper" >
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/create-source-template"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Create a Source Template</h4></a>
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Managing Source Templates</h4></a>
     </div>
   </div>
   <div className="box smallbox card">

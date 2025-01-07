@@ -11,6 +11,12 @@ The Sumo Logic Distribution for OpenTelemetry Collector simplifies remote manage
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
+ <div className="box smallbox card">
+ <div className="container">
+  <a href="/docs/send-data/opentelemetry-collector/remote-management/install-tag-collector"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Install and Tag Your OpenTelemetry Collector</h4></a>
+  <p>Learn how to install and tag your OTel Collector for remote management of data collection.</p>
+  </div>
+</div>
   <div className="box smallbox card">
   <div className="container">
     <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
@@ -20,7 +26,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
-      <p>Use processing rules for an OpenTelemetry agent with Sumo Logic OpenTelemetry remote management source templates.</p>
+      <p>Use processing rules for an OpenTelemetry agent with remote management source templates.</p>
     </div>
   </div>
 </div>
