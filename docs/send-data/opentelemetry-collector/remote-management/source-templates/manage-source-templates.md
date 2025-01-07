@@ -27,7 +27,7 @@ Source templates are useful for managing data collection in scenarios like:
 * Collecting metrics from a fleet of containers
 * Aggregating error logs from distributed services
 
-## Prequisites
+## Prerequisites
 
 Read up on how to [configure your OpenTelemetry collector for remote management](/docs/send-data/opentelemetry-collector/remote-management/configure-collector).
 
