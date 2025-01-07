@@ -80,7 +80,7 @@ Signing up for a Sumo Logic account through the AWS Marketplace creates a new Su
 
 To sign up through AWS Marketplace:
 
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace), search for "Sumo Logic", and click the free trial option.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace), search for "Sumo Logic", and then click the subscription option of you choice. To sign up with an initial 30-day free trial, select **Sumo Logic Log Analytics Platform (Pay-As-You-Go with 30-day Free Trial)** highlighted below.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
 1. Click **View purchase options**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_view_purchase_options.png')} alt="View purchase options" style={{border: '1px solid gray'}} width="800" />
 1. Configure your free trial contract and click **Subscribe**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_create_contract.png')} alt="Create contract" style={{border: '1px solid gray'}} width="800" />
 1. After the subscription finishes processing, you can set up your account.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_setup_new.png')} alt="Set up your account" style={{border: '1px solid gray'}} width="800" />
@@ -91,7 +91,8 @@ To sign up through AWS Marketplace:
       :::
     - **Region**. Select your region: North America, Europe, or Australia.
     - **Service License Agreement**. Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the [activation process](#activate-your-account).
+1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the [activation process](#activate-your-account)
+1. At the end of the 30-day trial period for the Sumo Logic Log Analytics Platform (Pay-As-You-Go with 30-day Free Trial), the subscription converts to the paid subscription billed monthly based on actual usage.
 
 ### Upgrade your account
 
