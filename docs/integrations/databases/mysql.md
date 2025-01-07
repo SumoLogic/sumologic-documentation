@@ -194,7 +194,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 The diagram below illustrates how data is collected from MySQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
- <br/><img src={useBaseUrl('img/integrations/databases/k8s-flow.png')} alt="K8s flow" />
+<br/><img src={useBaseUrl('img/integrations/databases/k8s-flow.png')} alt="K8s flow" />
 
 The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from MySQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: that is, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
 Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
@@ -346,7 +346,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 </details>
 
 2. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add**.
    3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
@@ -574,7 +574,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
 2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 4. Click **Add**.
 5. Click **Import.**
 6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
