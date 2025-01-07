@@ -23,7 +23,7 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
   :::
 
-![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
+<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="FB_Field-Browser_Display-Fields" width="300"/>
 
 - A. Search for fields by entering text in this field.
 - B. List of Fields shown in the Messages tab.
@@ -32,8 +32,10 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
 - E. Indicates the field contains a text string.
 - F. Indicates the field contains numerical data.
 - G. Click to save the settings for this search.
-- H. Displays the count of a field. Available for non-aggregate queries only.
-- I. Tilde (`~`) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
+- H. Displays the count of a field. Available for non-aggregate queries only. 
+      :::note
+      Tilde (`~`) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
+      :::
 
 ## Search for fields
 
