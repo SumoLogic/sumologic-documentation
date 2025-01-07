@@ -37,7 +37,7 @@ With the NLB-created and ALB-registered as a target, requests over AWS PrivateL
 
 Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region where the Sumo Logic PrivateLink endpoint service is set up, you need to set up VPC peering. Either way, you need to create an endpoint.
 
-<table><small>
+<table>
   <tr>
     <td><strong>Deployment</strong></td>
     <td><strong>Collection Endpoint</strong></td>
@@ -119,7 +119,7 @@ https://endpoint9.collection.us2.sumologic.com</td>
     <td>https://open-collectors.us2.sumologic.com</td>
     <td>us-west-2</td>
   </tr>
-</small></table>
+</table>
 
 ### Create an endpoint to connect with the Sumo Logic endpoint service
 
