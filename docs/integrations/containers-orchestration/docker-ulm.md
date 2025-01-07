@@ -126,7 +126,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 There will be no **Network** metrics if you use the `host` network mode for the container.
 :::
 
-<table>
+<table><small>
   <tr>
    <td><strong>Metrics Name</strong></td>
    <td><strong>Unit</strong></td>
@@ -451,7 +451,7 @@ There will be no **Network** metrics if you use the `host` network mode for the 
    <td>current </td>
    <td>Count </td>
    <td>Number of PIDs (Not available on Windows) </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -491,7 +491,7 @@ The table below defines the types of variables you can use.
 
 Docker engine event log data doesn't support the tagging with metadata.
 
-<table>
+<table><small>
   <tr>
    <td><strong>Namespace/VAR_TYPE</strong> </td>
    <td><strong>Description</strong> </td>
@@ -521,7 +521,7 @@ Docker engine event log data doesn't support the tagging with metadata.
    <td>User-defined container environment variables that are set with <code>--env|-e</code> flags when starting a container. </td>
    <td>The name of the variable.
 <br/>Dot characters (<code>.</code>) are not supported. </td>
-  </tr>
+  </tr></small>
 </table>
 
 

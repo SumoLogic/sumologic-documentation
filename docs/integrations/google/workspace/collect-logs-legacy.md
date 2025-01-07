@@ -157,7 +157,7 @@ In the future, if Google adds a new alert type do the following to add new alert
 
 This section provides a list of environment variables for Google Workspace Alert Center and their usage. For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-<table>
+<table><small>
   <tr>
    <td>Environment Variable </td>
    <td>Usage </td>
@@ -227,7 +227,7 @@ This section provides a list of environment variables for Google Workspace Alert
   <tr>
    <td><code>SUMO_ENDPOINT</code>   </td>
    <td>HTTP source endpoint url created in Sumo Logic. </td>
-  </tr>
+  </tr></small>
 </table>
 
 #### Troubleshooting the GCP Function
@@ -298,7 +298,7 @@ This section provides a list of environment variables for Google Workspace Alert
 
 For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-<table>
+<table><small>
   <tr>
    <td>Environment Variable</td>
    <td>Usage </td>
@@ -368,7 +368,7 @@ For information on how to set these environment variables, refer to this [Google
   <tr>
    <td><code>SUMO_ENDPOINT</code> </td>
    <td>HTTP source endpoint url created in Sumo Logic.</td>
-  </tr>
+  </tr></small>
 </table>
 
 
