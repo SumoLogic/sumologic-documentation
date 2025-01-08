@@ -5,9 +5,9 @@ sidebar_label: macro
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The `macro` operator allows you to reuse portions of a search query across multiple queries. Additionally, this operator includes arguments and performs its respective evaluation of the arguments.
+The `macro` operator provides a means for you to reference set of query language syntax using a macro keyword across multiple queries. Additionally, if required you can include arguments and performs its respective evaluation of the arguments to this operator.
 
-To use `macro` the operator, reference it in your query with backticks (``). Macros can also be nested, enabling complex query reuse:
+To use the `macro` operator, reference it in your query with backticks (``). Macros can also be nested, enabling complex query reuse:
 * **Nested Macros**. A macro referenced inside another macro.
 * **Inner Macro**. A macro used within the context of another macro query.
 * **Outer Macro**. The macro that references an inner macro.
@@ -41,6 +41,7 @@ To create a macro, follow the steps below:
 
 - You can create a maximum of 50 macros.
 - You can add a maximum of 5 arguments.
+- You cannot edit or delete the macro. Submit a customer request to Sumo Logic if you still need to edit or delete a macro.
 
 ### Example without arguments
 
