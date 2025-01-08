@@ -17,7 +17,7 @@ The Threat Intel Quick Analysis app can be used for any type of logs, regardless
 
 ## Installing the Threat Intel Quick Analysis app
 
-This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](#threat-intel-optimization). Alternatively, you can run this app on smaller and more specific data streams.
+This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel optimization](#threat-intel-optimization). Alternatively, you can run this app on smaller and more specific data streams.
 
 This section provides instructions on how to install the Threat Intel Quick Analysis app, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
@@ -65,7 +65,7 @@ _sourceCategory=<source-category-name>
 
 |sum (ip_count) as threat_count
 ```
-<!--
+
 ### Field Extraction Rule
 
 Use [Field Extraction Rules (FER)]((/docs/manage/field-extractions/create-field-extraction-rule)) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
@@ -76,12 +76,10 @@ Use [Field Extraction Rules (FER)]((/docs/manage/field-extractions/create-field-
    ```
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
-   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
-   | json field=raw "labels[*].name" as label_name
-   | replace(label_name, "\\/","->") as label_name
-   | replace(label_name, "\""," ") as label_name
-   | where  type="ip_address" and !isNull(malicious_confidence)
-   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | threatlookup singleIndicator src_ip
+   | parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
+   | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+   | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
    ```
@@ -92,21 +90,19 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
    ```
-   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
-   | json field=raw "labels[*].name" as label_name
-   | replace(label_name, "\\/","->") as label_name
-   | replace(label_name, "\""," ") as label_name
-   | where  type="ip_address" and !isNull(malicious_confidence)
-   | if (isEmpty(actor), "Unassigned", actor) as Actor
-   | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
-   | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
+    _sourceCategory=cylance
+    | threatlookup singleIndicator src_ip
+    | parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
+    | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+    | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
+    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
 1. Now, you can run your Threat Intel query on top of this view:
      ```sql
      _view=cylance_threat
      | count by src_ip
      ```
--->
 
 ## Threat Intel FAQ
 
@@ -132,6 +128,18 @@ No. No results in your dashboards can mean that nothing has been identified as a
 
 It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase).
 
+#### I already have parsed fields such as IPs, domain, URL, Email, or File Name. Can I use them with this App, instead of parsing each log line again?
+Yes, you can customize the query with in the App. For example:
+
+```
+_sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
+| where Your_IP != "0.0.0.0" and Your_IP != "127.0.0.1"
+| threatlookup singleIndicator Your_IP
+| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| count by Actor
+```
+
 #### Should I use all logs (`*`) with this app or subset of logs?
 
 You can use (`*`) to scan all of your ingested logs for threat, but depending on the volume of logs it can impact the performance of the search query and the app.
@@ -140,7 +148,7 @@ For optimal performance, use a subset of the logs. For example:
 ```
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 ```
-<!--
+
 #### I am seeing noisy results in the lookup service, what do I do?
 
 * Use filters to remove as much of the noise as possible (for example, use the `NOT` clause before passing tuples to the lookup operator).
@@ -149,19 +157,17 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 ```
 | parse regex "(?\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-| json field=raw "labels[*].name" as label_name
-| replace(label_name, "\\/","->") as label_name
-| replace(label_name, "\""," ") as label_name
-| where type="ip_address" and !isNull(malicious_confidence)
+| threatlookup singleIndicator ip_address
+| parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
+| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
 | where !(label_name matches "*TorProxy*")
-| if (isEmpty(actor), "Unassigned", actor) as Actor
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
 | count by ip_address, malicious_confidence, Actor,  _source, label_name
 | sort by _count
 ```
 
 Threat Intel Quick Analysis app is a good starting point, but you will have to customize the queries powering the app for your own particular use.
--->
 
 #### Can I use Scheduled Search with threat lookup service? If yes, what is the Run Frequency (time) I can use?
 

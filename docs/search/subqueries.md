@@ -385,8 +385,8 @@ _sourceCategory=weblogs
 | json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
 | where connectionDirection = "OUTBOUND"
 | json field=remoteipdetails "ipAddressV4" as src_ip
-| lookup type, actor, raw, threatlevel from sumo://threat/cs on src_ip=threat
-| where threatlevel = "high"
+| threatlookup singleIndicator threat| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
+| where malicious_confidence = "high"
 | compose src_ip]
 ```
 

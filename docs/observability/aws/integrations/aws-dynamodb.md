@@ -60,12 +60,9 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where Region matches "*" and tolowercase(entity) matches "*"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-| json field=raw "labels[*].name" as label_name
-| replace(label_name, "\\/","->") as label_name
-| replace(label_name, "\""," ") as label_name
-| where  type="ip_address" and !isNull(malicious_confidence)
-| if (isEmpty(actor), "Unassigned", actor) as Actor
+| threatlookup singleIndicator ip_address
+| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
 | sum (ip_count) as threat_count
 ```
 
