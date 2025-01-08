@@ -227,12 +227,7 @@ html[data-theme='light'] {
   min-width: 100px;
 }
 
-/* Berry CSS override to force global styles back to normal */
-body, .MuiTypography-root, button, input, select, textarea {
-  font-family: 'Lab Grotesque', sans-serif !important;
-}
-
-/* Berry chatbot */
+/* Berry chatbot inline height */
 #inline-berry-chatbot-container iframe {
   height: 600px !important;
 }

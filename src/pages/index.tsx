@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
-import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+  Switch
+} from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
+import { LightMode, DarkMode } from '@mui/icons-material'; // <-- Icons
 import bgImage from '../../static/img/hero-secondary-background.webp';
 import heroImage from '../../static/img/hero-secondary-graphic.webp';
 import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
@@ -11,6 +22,9 @@ import ErrorBoundary from '../components/ErrorBoundary';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
+
+  // Track whether we're in dark mode:
+  const [isDark, setIsDark] = useState(false);
 
   const questions = [
     '✨ timestamps',
@@ -41,6 +55,8 @@ export const Home = () => {
           botUrlPath: 'nova',
           showNewChat: true,
           parentElementId: 'inline-berry-chatbot-container',
+          // If you want to start in dark mode by default, uncomment:
+          // colorMode: 'dark',
         });
       };
 
@@ -48,6 +64,7 @@ export const Home = () => {
     }
   }, []);
 
+  // Send a question to Berry:
   const handleQuestionClick = (question) => {
     if (window.Berry) {
       if (window.Berry.sendMessage) {
@@ -59,68 +76,125 @@ export const Home = () => {
     }
   };
 
+  // Toggle Berry's theme on switch change:
+  const handleToggle = (event) => {
+    const newValue = event.target.checked; // true = dark mode, false = light mode
+    setIsDark(newValue);
+
+    if (window.Berry && window.Berry.update) {
+      window.Berry.update({
+        colorMode: newValue ? 'dark' : 'light'
+      });
+    }
+  };
+
   return (
     <ErrorBoundary>
       <Layout
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
-
-
         {/* Suggested Questions */}
         <Box sx={{ width: '100%', background: '#2a2a2a', color: '#fff', py: 4 }}>
-
           <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h4" fontWeight={600} mt={1} mb={3}>
-            Sumo Logic Documentation
-          </Typography>
-            <Typography variant="h5" fontFamily="Lab Grotesque" fontWeight={300} mb={2} sx={{ background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <Box
+              component={SumoLogicDocsLogo}
+              alt="Sumo Logic Docs logo"
+              role="<img>"
+              aria-hidden="true"
+              height={{
+                md: 30,
+                xs: 22,
+              }}
+              width='100%'
+            />
+            <Typography
+              fontFamily="Lab Grotesque"
+              variant='h3'
+              fontSize={32}
+              fontWeight={700}
+              mt={2}
+              mb={2}
+              sx={{
+                background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               Our Docs Assistant is here to help!
             </Typography>
-            <Typography fontFamily="Lab Grotesque" fontSize={13} fontWeight={300} mb={2}>
+            <Typography
+              fontFamily="Lab Grotesque"
+              fontSize={13}
+              fontWeight={300}
+              mb={2}
+            >
               Ask me anything! You can type full questions, sentences, or just keywords, and I'll help you find the information you need. Try these to get started:
             </Typography>
             <Stack
-            direction="row"
-            spacing={1} // Reduced horizontal spacing between buttons
-            justifyContent="center"
-            flexWrap="wrap"
-            rowGap={1} // Reduced vertical spacing between rows
+              direction="row"
+              spacing={1}
+              justifyContent="center"
+              flexWrap="wrap"
+              rowGap={1}
             >
-
-    {questions.map((question, index) => (
-      <Button
-        key={index}
-        onClick={() => handleQuestionClick(question)}
-        variant="outlined"
-        sx={{
-          bgcolor: 'transparent',
-          color: '#DDDDDD',
-          fontFamily: 'Lab Grotesque',
-          borderColor: '#808080',
-          borderRadius: '5px',
-          textTransform: 'lowercase',
-          fontSize: '12px',
-          fontWeight: '300',
-          padding: '4px 6px',
-          minWidth: 'auto',
-          '&:hover': {
-            bgcolor: '#2a2a2a',
-            color: '#DDDDDD',
-          },
-        }}
-      >
-        {question}
-      </Button>
-    ))}
-  </Stack>
+              {questions.map((question, index) => (
+                <Button
+                  key={index}
+                  onClick={() => handleQuestionClick(question)}
+                  variant="outlined"
+                  sx={{
+                    bgcolor: 'transparent',
+                    color: '#DDDDDD',
+                    fontFamily: 'Lab Grotesque',
+                    borderColor: '#808080',
+                    borderRadius: '5px',
+                    textTransform: 'lowercase',
+                    fontSize: '12px',
+                    fontWeight: '300',
+                    padding: '4px 6px',
+                    minWidth: 'auto',
+                    '&:hover': {
+                      bgcolor: '#2a2a2a',
+                      color: '#DDDDDD',
+                    },
+                  }}
+                >
+                  {question}
+                </Button>
+              ))}
+            </Stack>
 
             {/* Inline Chatbot Container */}
-            <Box id="inline-berry-chatbot-container" sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}>
-            {/* The chatbot will render here */}
+            <Box
+              id="inline-berry-chatbot-container"
+              sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}
+            >
+              {/* Berry chatbot will render here */}
             </Box>
+
+            {/* Light/Dark Toggle Switch with icons */}
+            <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+              {/* Label: Light */}
+              <Typography variant="body2" color="#fff">
+                Light
+              </Typography>
+              <Switch
+                checked={isDark}
+                onChange={handleToggle}
+                color="default"
+                // Sun icon when off (light), moon icon when on (dark)
+                icon={<LightMode />}      // Unchecked icon
+                checkedIcon={<DarkMode />} // Checked icon
+              />
+              {/* Label: Dark */}
+              <Typography variant="body2" color="#fff">
+                Dark
+              </Typography>
+            </Stack>
           </Container>
         </Box>
+
         {/* Hero */}
         <Stack
           sx={{
@@ -158,10 +232,7 @@ export const Home = () => {
               }}
               height='100%'
             >
-              <Grid
-                item
-                md={6}
-              >
+              <Grid item md={6}>
                 <Stack
                   alignItems={{
                     md: 'flex-start',
@@ -258,7 +329,6 @@ export const Home = () => {
 
         {/* Main */}
         <Container maxWidth='xl'>
-
           {/* Product Guides */}
           <Stack
             alignItems='center'
@@ -335,7 +405,7 @@ export const Home = () => {
                   {
                     label: 'Other Solutions',
                   },
-                ].map(({ label, ...rest }, index) => (
+                ].map(({ label }, index) => (
                   <Tab
                     key={label}
                     label={label}
@@ -345,40 +415,40 @@ export const Home = () => {
                       fontWeight: 'bold',
                     }}
                     value={String(index)}
-                    {...rest}
                   />
                 ))}
               </Tabs>
-              {features.map((feature, index) => tab === String(index) && (
-                <Grid
-                  component={TabPanel}
-                  container
-                  direction='row'
-                  justifyContent='center'
-                  key={index}
-                  py={6}
-                  spacing={4}
-                  value={String(index)}
-                >
-                  {feature.map((config) => (
-                    <Grid
-                      item
-                      key={config.link}
-                      lg={4}
-                      md={6}
-                      xs={12}
-                    >
-                      <Feature
-                        length={feature.length}
-                        {...config}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
+              {features.map((feature, index) => (
+                tab === String(index) && (
+                  <Grid
+                    component={TabPanel}
+                    container
+                    direction='row'
+                    justifyContent='center'
+                    key={index}
+                    py={6}
+                    spacing={4}
+                    value={String(index)}
+                  >
+                    {feature.map((config) => (
+                      <Grid
+                        item
+                        key={config.link}
+                        lg={4}
+                        md={6}
+                        xs={12}
+                      >
+                        <Feature
+                          length={feature.length}
+                          {...config}
+                        />
+                      </Grid>
+                    ))}
+                  </Grid>
+                )
               ))}
             </TabContext>
           </Stack>
-
         </Container>
       </Layout>
     </ErrorBoundary>
