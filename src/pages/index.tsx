@@ -8,6 +8,7 @@ import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Berry from '../components/Berry';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -23,38 +24,10 @@ export const Home = () => {
     '✨ what is the parse operator?'
   ];
 
-  useEffect(() => {
-    if (!document.getElementById('berry-widget-script')) {
-      const script = document.createElement('script');
-      script.id = 'berry-widget-script';
-      script.src = 'https://www.berryapp.io/js/berry-widget.min.js';
-      script.async = true;
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        const widgetJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MjU5NDg5MTcsImV4cCI6MTc0MTYwODkxNywiYXVkIjoiV2lkZ2V0SW5pdGlhbGl6YXRpb24iLCJvcmdhbml6YXRpb25JZCI6NjN9.oJEGkGq1q3uFD66J916f_ZBrqQjPHP9orUOKFxInG38';
-        window.Berry.init({
-          token: widgetJwt,
-          primaryColor: '#021b9a',
-          position: { side: 'right', offsetX: 25, offsetY: 100 },
-          isOpenByDefault: true,
-          botUrlPath: 'nova',
-          showNewChat: true,
-          parentElementId: 'inline-berry-chatbot-container',
-        });
-      };
-
-      script.onerror = () => console.error('Failed to load Berry widget script');
-    }
-  }, []);
-
   const handleQuestionClick = (question) => {
     if (window.Berry) {
       if (window.Berry.sendMessage) {
         window.Berry.sendMessage(question);
-      }
-      if (window.Berry.open) {
-        window.Berry.open();
       }
     }
   };
@@ -66,6 +39,7 @@ export const Home = () => {
         title='Home'
       >
 
+        <Berry mode='inline' />
 
         {/* Suggested Questions */}
         <Box sx={{ width: '100%', background: '#2a2a2a', color: '#fff', py: 4 }}>
