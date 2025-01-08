@@ -30,27 +30,25 @@ By associating source templates with collector tags—a process called *Collecto
 * Simplifying migration from legacy monitoring solutions
 * Monitoring error logs across multiple Apache servers
 
-## How it works
+## Setup workflow
 
-To illustrate the setup and configuration process, let's walk through an example scenario where you'd need to monitor Apache error logs from 50 Linux servers.
+To illustrate the setup and configuration process, we'll use an example scenario where you'd need to monitor Apache error logs from 50 Linux servers.
 
 ### Step 1: Install and tag collectors
 
-First, you'll need to install the OpenTelemetry collectors on each of the 50 servers and tag them to indicate that they are running Apache.
+First, you'll need to install the OpenTelemetry collectors on each of the 50 Linux servers and tag them to indicate that they are running Apache.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**.
-1. On the **OpenTelemetry Collection** page, click **Add Collector**.
-1. In the **Set up Collector** step, choose **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="Screenshot showing the Linux installation options for the collector" style={{border: '1px solid gray'}} width="800"/>
-1. Enter your **Installation Token**.
-1. Under **Tag data on Collector level**, add a new tag, `“application = Apache”`, to identify these collectors as having Apache running on them.
-1. Leave the **Collector Settings** at their default values to configure collectors as remotely managed.
-1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="Screenshot showing the terminal command to install the collector" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**.
+1. On the **OpenTelemetry Collection** page, click **+ Add Collector**.
+1. In the **Set up Collector** step:
+   1. Choose your platform (in this example, **Linux**).
+   1. Enter your **Installation Token**.
+   1. Under **Tag data on Collector level**, add a new tag to identify these collectors as having Apache running on them (we'll use `application = Apache`).
+   1. Leave the **Collector Settings** (**Ephemeral** and **Locally Manage Collector**) at their default values to configure collectors as remotely managed.
+   1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.
 1. After installation is complete, click **Next** to proceed.
-1. On the next screen, you will see a list of available source templates. Select the **Apache Source Template** to apply the source template to start collecting logs from all linked collectors, then proceed with the data configuration.
-
-To revisit this screen later, navigate to:
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic): In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
-* [**New UI**](/docs/get-started/sumo-logic-ui): In the Sumo Logic top menu select **Configuration**, and then under **Data Collection**, select **Source Template**.  
+1. On the next screen, you will see a list of available source templates. For this example, we'll select **Apache Source Template** to apply the source template to start collecting logs from all linked collectors, then proceed with the data configuration.<br/><img src={useBaseUrl('img/send-data/source-template.png')} alt="source template page" style={{border: '1px solid gray'}} width="700"/>
+   * To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), in the main Sumo Logic menu, select **Manage Data > Collection > Source Template > + Add Source Template**. From the [**New UI**](/docs/get-started/sumo-logic-ui), in the Sumo Logic top menu, select **Configuration** > **Source Template** > **+ Add Source Template**.  
 
 
 ### Step 2: Configure data collection
@@ -62,22 +60,22 @@ A new source template will always be created with the latest version of the sour
 Follow the below steps to create a data collection configuration to gather the required logs and link them to all the collectors with the help of collector tags:
 
 1. Complete the source template form with the name and file path for your error logs, then click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Screenshot of the file path configuration for Apache logs" style={{border: '1px solid gray'}} width="700"/>
-1. Under **Link Collectors**, add the tag `"application = Apache"`.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
-1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created source template.<br/><img src={useBaseUrl('img/send-data/preview-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
+1. Under **Link Collectors** > **Select by Collector Tags**, add the tag `application = Apache`.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
+1. Preview and confirm the collectors that will be linked to the newly created source template.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="600"/><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Next** to complete source template creation. The system will apply the configuration to all linked collectors and start collecting Apache error logs.
 
 ### Step 3: Monitor logs
 
-After configuring data collection, you can monitor the collected Apache error logs using the [Log Search](/docs/search) and leverage [Dashboards](/docs/dashboards) to analyze the logs and gain insights from your Apache servers.
+Use [Log Search](/docs/search) and [Dashboards](/docs/dashboards) to monitor and analyze your collected data. In the example above, you'd look at your collected error logs and gain insights from your Apache servers.
 
 ## Collector tags
 
 ### Add a collector tag
 
-There are place ways to add collector tags: [while creating the OTEL collector](#step-1-install-and-tag-collectors) and after creating the collector. To add a collector tag after the collector is created:
+You can add collector tags [during OTEL collector setup](#step-1-install-and-tag-collectors) or after creation:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu, select **Configuration** and then under **Data Collection**, select **OpenTelemetry Collection**.
-1. Click on the required collector where you need to add collector tags.
+1. Navigate to the **OpenTelemetry Collection** page.
+1. Click on the desired collector where you need to add collector tags.
 1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
 1. In the edit window, click **+ Add tags**.
 1. Add the required tags and click **Proceed**.
@@ -95,8 +93,8 @@ There are place ways to add collector tags: [while creating the OTEL collector](
 
 To edit or delete a collector tag:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection**, select **OpenTelemetry Collection**.
-1. Click on the required collector where you need to add the collector tags.
+1. Go to the **OpenTelemetry Collection** page.
+1. Click on the desired collector where you need to add the collector tags.
 1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
 1. Edit or delete the required tags and click **Proceed**.
 1. A new **Update Collector Tag(s)** window appears. Click the **click here** button to see the impact of this update.
@@ -106,4 +104,4 @@ To edit or delete a collector tag:
 
 ## Source templates
 
-See [Managing Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates) to learn how to create and manage OpenTelemetry remote management source templates.
+See [Managing OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates) to learn how to create and modify your source templates.
