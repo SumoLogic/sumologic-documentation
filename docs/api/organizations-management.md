@@ -28,7 +28,9 @@ With the Organizations Management API, you can get the credits usage details of 
 | JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/orgsManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement<br/>https://organizations.sumologic.com/docs/#tag/organizationsManagement* <br/><small> *This assembly is exclusive to the US2 deployment and is designed to manage APIs for Sumo Logic orgs that are not tied to a specific deployment. For example, a parent organization might have child organizations across different deployments. As a result, the [List Organizations API](https://organizations.sumologic.com/docs/#operation/listOrganizations), which lists child organizations, is included in this assembly to accommodate child organizations spread across multiple deployments.</small> |
+| US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement<br/>https://organizations.sumologic.com/docs/#tag/organizationsManagement <sup>`*`</sup> |
+
+<sup>`*`</sup> This assembly is exclusive to the US2 deployment and manages APIs for Sumo Logic orgs not tied to a specific deployment, such as parent orgs with child orgs across multiple deployments. It includes the [List Organizations API](https://organizations.sumologic.com/docs/#operation/listOrganizations) to support this setup.
 
 <!-- ## Required role capabilities
 
