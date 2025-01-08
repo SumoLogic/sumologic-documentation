@@ -132,7 +132,6 @@ No. No results in your dashboards can mean that nothing has been identified as a
 
 It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase).
 
-
 #### Should I use all logs (`*`) with this app or subset of logs?
 
 You can use (`*`) to scan all of your ingested logs for threat, but depending on the volume of logs it can impact the performance of the search query and the app.
