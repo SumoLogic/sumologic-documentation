@@ -68,7 +68,7 @@ _sourceCategory=<source-category-name>
 
 ### Field Extraction Rule
 
-Use [Field Extraction Rules (FER)]((/docs/manage/field-extractions/create-field-extraction-rule)) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
+Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-extraction-rule) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
 
 1. Create the FER For example, for Cylance Security Events, create and use the following Field Extraction Rule:
    ```sql
