@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  Tab,
-  Tabs,
-  Typography,
-  Switch
-} from '@mui/material';
+import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography, Switch } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import { LightMode, DarkMode } from '@mui/icons-material'; // <-- Icons
 import bgImage from '../../static/img/hero-secondary-background.webp';
@@ -55,7 +45,7 @@ export const Home = () => {
           botUrlPath: 'nova',
           showNewChat: true,
           parentElementId: 'inline-berry-chatbot-container',
-          // If you want to start in dark mode by default, uncomment:
+          // If we want to start in dark mode by default, uncomment:
           // colorMode: 'dark',
         });
       };
@@ -150,7 +140,7 @@ export const Home = () => {
                     borderColor: '#808080',
                     borderRadius: '5px',
                     textTransform: 'lowercase',
-                    fontSize: '12px',
+                    fontSize: '13px',
                     fontWeight: '300',
                     padding: '4px 6px',
                     minWidth: 'auto',
