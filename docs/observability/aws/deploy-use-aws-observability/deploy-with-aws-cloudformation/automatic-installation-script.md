@@ -13,24 +13,16 @@ This is a simplified method of deploying AWS Observability using default paramet
 If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md).
 :::
 
-## Prerequisite
+## Prerequisites
 
 AWS CLI should be pre-installed on the system where the script is supposed to be executed.
 
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
 * [Configure AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) to use AWS profiles.
-* Select/Change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution.
-
-<details>
-<summary>Example: How to change your default AWS region to us-west-1</summary>
-
-Run the following command with AWS region as us-west-1:
-```sh
-aws configure set region us-west-1
-```
-</details>
-
-
+* Select/change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution. For example, if you wanted to change your default AWS region to us-west-1:
+   ```
+   aws configure set region us-west-1
+   ```
 
 ## Input Parameters  
 
@@ -70,8 +62,8 @@ chmod +x DeployAWSOPosix.sh
 
 ## Appendix I
 
-| **Parameter**                                            | **Default Value**                                                                                          |
-|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Parameter    | Default Value  |
+|:----------------------------|:-------------------|
 | Sumo Logic Deployment Name                              | This will be evaluated when the script is executed                                                        |
 | Sumo Logic Access ID                                    | Will be given by the User                                                                                  |
 | Sumo Logic Access Key                                   | Will be given by the user                                                                                  |
