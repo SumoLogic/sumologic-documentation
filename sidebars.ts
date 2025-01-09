@@ -125,7 +125,6 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
               items:[
-                'send-data/opentelemetry-collector/remote-management/configure-collector',
                 {
                   type: 'category',
                   label: 'Source Templates',
