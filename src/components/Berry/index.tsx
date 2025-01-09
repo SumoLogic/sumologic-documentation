@@ -5,7 +5,36 @@ export interface BerryProps {
     mode: BerryMode;
 };
 
+declare global {
+  interface Window {
+    Berry: any;
+  }
+}
+
 export default function Berry({ mode }: BerryProps) {
+     useEffect(() => {
+        function onColorModeChange(newColorMode) {
+          if (!window.Berry) {
+            return;
+          }
+          
+          window.Berry.update({
+            colorMode: newColorMode,
+          })
+        }
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-theme') {
+              const newColorMode = getCurrentColorMode();
+              onColorModeChange(newColorMode);
+            }
+          });
+        });
+
+        observer.observe(document.documentElement, { attributes: true });
+      }, []);
+
     useEffect(() => {
         loadBerry(mode);
     }, [mode]);
@@ -35,9 +64,24 @@ function initBerry(mode: BerryMode) {
       console.error("Berry not defined");
       return;
     }
+
+    const colorMode = getCurrentColorMode();
+    const config = {
+        ...(mode === 'inline' ? inlineConfig : popupConfig),
+        colorMode: colorMode,
+    };
   
-    window.Berry.init(mode === 'inline' ? inlineConfig : popupConfig);
+    window.Berry.init(config);
   };
+
+  function getCurrentColorMode(): 'light' | 'dark' {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'light' || theme === 'dark') {
+      return theme;
+    } else {
+      return 'light';
+    }
+  }
   
 
   const commonConfig = {
@@ -53,7 +97,8 @@ function initBerry(mode: BerryMode) {
     isOpenByDefault: true,
     parentElementId: 'inline-berry-chatbot-container',
     hideToggle: true,
-    height: 850,
+    height: 700,
+    showResize: false,
   }
 
   const popupConfig = {
