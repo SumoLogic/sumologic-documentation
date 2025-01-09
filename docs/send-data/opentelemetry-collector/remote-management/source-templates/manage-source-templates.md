@@ -27,10 +27,6 @@ Source templates are useful for managing data collection in scenarios like:
 * Collecting metrics from a fleet of containers
 * Aggregating error logs from distributed services
 
-## Prerequisites
-
-Read up on how to [configure your OpenTelemetry collector for remote management](/docs/send-data/opentelemetry-collector/remote-management/configure-collector).
-
 ## Create a new source template
 
 1. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), go to **Manage Data > Collection > Source Template**. Or, from the [**New UI**](/docs/get-started/sumo-logic-ui), go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.
