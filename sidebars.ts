@@ -203,16 +203,16 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
                       ]
                     },
-                    {
-                      type: 'category',
-                      label: 'PostgreSQL',
-                      collapsible: true,
-                      collapsed: true,
-                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/index'},
-                      items:[
+                    //{
+                      //type: 'category',
+                      //label: 'PostgreSQL',
+                      //collapsible: true,
+                      //collapsed: true,
+                      //link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/index'},
+                      //items:[
                         //'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/changelog',
-                      ]
-                    },
+                      //]
+                    //},
                     {
                       type: 'category',
                       label: 'RabbitMQ',
