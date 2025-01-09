@@ -287,8 +287,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Puppet - Catalog Compilation Performance` | This alert is triggered when average time taken to compile Puppet catalogs is greater than given value (Default 30 seconds). Extended compilation times can indicate Puppet master performance issues, complex catalogs, or resource constraints. | Count `>=` 30 | Count `<` 30 |
-| `Puppet - Erroneous Nodes` | This alert is triggered when a node has error more errors then given value (Default 5) | Count `>=` 5 | Count `<` 5 |
-| `Puppet - Error Pattern Analysis` | This alert is triggered when Puppet error logs show recurring patterns that may indicate issues, helping detect problems that need investigation. | Count `>=` 20 | Count `<` 20 |
-| `Puppet - Resource Status Failures` | This alert is triggered when there are specific resource failures greater than given value (Default 5). | Count `>=` 5 | Count `<` 5 |
-
+| `Puppet - Catalog Compilation Performance` | This alert is triggered when average time taken to compile Puppet catalogs is greater than given value (Default 30 seconds). Extended compilation times can indicate Puppet master performance issues, complex catalogs, or resource constraints. | Count \>= 30 | Count \< 30 |
+| `Puppet - Erroneous Nodes` | This alert is triggered when a node has error more errors then given value (Default 5) | Count \>= 5 | Count \< 5 |
+| `Puppet - Error Pattern Analysis` | This alert is triggered when Puppet error logs show recurring patterns that may indicate issues, helping detect problems that need investigation. | Count \>= 20 | Count \< 20 |
+| `Puppet - Resource Status Failures` | This alert is triggered when there are specific resource failures greater than given value (Default 5). | Count \>= 5 | Count \< 5 |
