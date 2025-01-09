@@ -17,8 +17,8 @@ By associating source templates with collector tags—a process called *collecto
 **Key benefits of remote management**
 
 * Simplified setup and configuration via the Sumo Logic UI
-* [Tag-based collector grouping](#collector-tags) for efficient data collection
-* Centralized configuration using [source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates)
+* Tag-based collector grouping for efficient data collection
+* Centralized configuration using source templates
 * No server access required after installation
 * Faster time to value and reduced manual errors
 
