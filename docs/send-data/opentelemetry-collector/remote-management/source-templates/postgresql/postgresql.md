@@ -36,6 +36,10 @@ The PostgreSQL metrics [receiver](https://github.com/open-telemetry/opentelemetr
 
 The monitoring user which is used in the source template must be granted permission to SELECT permission for [pg_stat_database](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-DATABASE-VIEW).
 
+:::note
+For SumoLogic OpenTelemetry collector version below 0.116 metric collection will work only for PostgreSQL version 16 and below. With Sumo Logic OpenTelemetry collector version 0.116 and above metric collection will work for Postgresql version 17 as well. 
+:::
+
 ### For logs collection
 
 Configure logging in PostgreSQL:
