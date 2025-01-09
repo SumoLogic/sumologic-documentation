@@ -53,6 +53,7 @@ function initBerry(mode: BerryMode) {
     isOpenByDefault: true,
     parentElementId: 'inline-berry-chatbot-container',
     hideToggle: true,
+    height: 850,
   }
 
   const popupConfig = {
