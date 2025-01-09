@@ -35,25 +35,35 @@ Read up on how to [configure your OpenTelemetry collector for remote management]
 
 1. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), go to **Manage Data > Collection > Source Template**. Or, from the [**New UI**](/docs/get-started/sumo-logic-ui), go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.
 1. Click **Create Source Template** > **Add Source Template** and fill in the required details, such as name and configuration settings. When you're done, click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="500"/>
-1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.
-1. Navigate to **Preview Collector(s)** to view details about the compatibility of the collectors and the collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get a separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
+1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
+1. Navigate to **Preview Collector(s)** to view details about the compatibility of the collectors and the collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get separate preview sections for the collectors identified by collector name and collector tags.<br/> ![Screenshot showing the linked collectors preview](/img/send-data/preview-collectors1.png)<br/>![Screenshot showing the linked collectors preview](/img/send-data/preview-collectors2.png)
     :::note
-    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="800"/>
+    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="700"/>
     :::
 1. Click **Next** to complete source template creation. In the background, the system will apply the configuration to all the compatible linked collectors and starts collecting the required files.
 1. Apply the source template to the linked collectors and manage or update it as needed.
 
 Use our [Log Search](/docs/search) and [dashboards](/docs/dashboards) to monitor and analyze your collected logs.
 
+### Example: Apache error logs
 
-### Example scenario: Nginx access logs
+To illustrate the setup and configuration process, we'll use an example scenario where you'd need to monitor Apache error logs from 50 Linux servers.
+
+First, you'll need to install the OpenTelemetry collectors on each of the 50 Linux servers and add a uniquely identifiable tag to indicate that they are running Apache.
+
+1. **Create source template**. Name it `Apache Error Logs` and specify the log file path.
+2. **Link collectors**. Under **Collector Tags**, tag your web servers with `application = Apache` and link these collectors to the source template.
+3. **Deploy**. Apply the source template to start collecting logs from all linked collectors.
+4. **Monitor**. Use Log Search, Metrics, and Dashboards to look at your collected error logs and gain insights from your Apache servers.
+
+### Example: Nginx access logs
 
 To monitor Nginx access logs from a group of web servers:
 
 1. **Create source template**. Name it `Nginx Access Logs` and specify the log file path.
-2. **Link collectors**. Tag your web servers with `application=nginx` and link these collectors to the source template.
+2. **Link collectors**. Under **Collector Tags**, tag your web servers with `application=nginx` and link these collectors to the source template.
 3. **Deploy**. Apply the source template to start collecting logs from all linked collectors.
-4. **Monitor**. Use our [Log Search](/docs/search) and [Dashboards](/docs/dashboards) to monitor and analyze the collected Nginx access logs.
+4. **Monitor**. Use Log Search, Metrics, and Dashboards to monitor and analyze the collected Nginx access logs.
 
 :::tip
 For more details on source templates, see [Installed Collector Sources](/docs/send-data/installed-collectors/sources).
