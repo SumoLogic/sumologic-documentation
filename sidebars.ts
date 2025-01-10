@@ -118,146 +118,147 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
-//            {
-//              type: 'category',
-//              label: 'Remote Management',
-//              collapsible: true,
-//              collapsed: true,
-//              link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
-//              items:[
-//                {
-//                  type: 'category',
-//                  label: 'Processing Rules',
-//                  collapsible: true,
-//                  collapsed: true,
-//                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
-//                  items:[
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules',
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
-//                  ],
-//                },
-//                {
-//                  type: 'category',
-//                  label: 'Source Templates',
-//                  collapsible: true,
-//                  collapsed: true,
-//                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
-//                  items:[
-//                    {
-//                      type: 'category',
-//                      label: 'Apache',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Docker',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/docker/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Kafka',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/kafka/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Linux',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/linux/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/linux/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Localfile',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/localfile/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/localfile/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Mac',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mac/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/mac/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Nginx',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'RabbitMQ',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Redis',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/redis/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/redis/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Syslog',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/syslog/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/syslog/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Windows',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/windows/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
-//                      ]
-//                    },
-//                  ],
-//                },
-//              ],
-//            },
+            {
+              type: 'category',
+              label: 'Remote Management',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
+              items:[
+                {
+                  type: 'category',
+                  label: 'Source Templates',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates',
+                    {
+                      type: 'category',
+                      label: 'Apache',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Docker',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/docker/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Kafka',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/kafka/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Linux',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/linux/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/linux/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Localfile',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/localfile/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/localfile/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Mac',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mac/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/mac/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Nginx',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'RabbitMQ',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Redis',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/redis/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/redis/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Syslog',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/syslog/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/syslog/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Windows',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/windows/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
+                      ]
+                    },
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Processing Rules',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',
+                  ],
+                },
+              ],
+            },
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
@@ -419,6 +420,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
@@ -2487,6 +2489,7 @@ integrations: [
           'integrations/saas-cloud/sophos',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',

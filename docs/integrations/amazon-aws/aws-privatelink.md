@@ -13,18 +13,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet. 
+Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
 
-Following sources are supported for AWS PrivateLink: 
+Following sources are supported for AWS PrivateLink:
 
 - **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to Sumo Logic.
 - **Sumo Logic OpenTelemetry Distro Collector sources**. Data collected on OpenTelemetry Distro collectors deployed on customer VPC and sent to Sumo Logic.
 - **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
-- **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter). 
+- **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter).
 
-The following sources are not supported for AWS PrivateLink: 
+The following sources are not supported for AWS PrivateLink:
 
-- Cloud Syslog 
+- Cloud Syslog
 - AWS S3
 - AWS Cloudwatch source
 - RUM sources
@@ -120,6 +120,7 @@ https://endpoint9.collection.us2.sumologic.com</td>
     <td>us-west-2</td>
   </tr>
 </small></table>
+
 
 ### Create an endpoint to connect with the Sumo Logic endpoint service
 
