@@ -240,7 +240,7 @@ Use this dashboard to:
 
 ### Events Overview
 
-Symantec Endpoint Security - Events Overview dashboard provides details on security events, their severity, types, and geographical distribution across the protected endpoints.
+The **Symantec Endpoint Security - Events Overview** dashboard provides details on security events, their severity, types, and geographical distribution across the protected endpoints.
 
 Use this dashboard to:
 * Quickly assess the overall security posture by viewing the total events, high severity events, and suspicious files counts at the top of the dashboard.
