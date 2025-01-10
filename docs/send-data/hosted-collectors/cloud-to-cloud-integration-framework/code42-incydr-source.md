@@ -23,7 +23,9 @@ Code42 Incydr source is used to analyze and fetch sessions, file events, and aud
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Sessions](https://developer.code42.com/api/#tag/Alerts-and-Sessions/operation/SearchSessions), [File Events](https://developer.code42.com/api/#tag/File-Events/operation/searchEvents), and [Audit Logs](https://developer.code42.com/api/#tag/Audit-Log/operation/searchAuditLog) |
+| 5 minutes | [Sessions](https://developer.code42.com/api/#tag/Alerts-and-Sessions/operation/SearchSessions) |
+| 5 minutes | [File Events](https://developer.code42.com/api/#tag/File-Events/operation/searchEvents) |
+| 5 minutes | [Audit Logs](https://developer.code42.com/api/#tag/Audit-Log/operation/searchAuditLog) |
 
 ## Setup
 
