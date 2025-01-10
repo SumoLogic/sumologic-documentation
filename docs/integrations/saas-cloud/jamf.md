@@ -2,16 +2,14 @@
 id: jamf
 title: Jamf
 sidebar_label: Jamf
-description: The Sumo Logic app for Jamf is designed to empower IT administrators and security analysts with critical insights into their organization's Jamf environment.
+description: The Sumo Logic App for Jamf provides IT and security analysts with comprehensive visibility into their organization's Jamf-managed Apple device environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jamf.png')} alt="jamf" width="85"/>
 
-The Sumo Logic app for Jamf empowers IT administrators and security analysts with critical insights into their organization's Jamf environment. It monitors device inventory, management activities, and security configurations. With pre-built dashboards, the app enables users to track key metrics, such as device compliance, software deployments, command statuses, and security risks. Analysts can quickly identify anomalous behaviors, such as devices with expired certificates, risky geo-locations, or failed management actions, through detailed visualizations. 
-
-The app also highlights trends in device usage, audit events, and management policy adoption, ensuring seamless tracking of compliance and security metrics. By integrating with Jamf, the app offers a centralized view to detect, investigate, and respond effectively to threats and operational inefficiencies, making it an essential tool for maintaining the integrity of your Jamf managed environment.
+The Sumo Logic App for Jamf provides IT and security analysts with comprehensive visibility into their organization's Jamf-managed Apple device environment. This app facilitates real-time monitoring of inventory, activity, and management-related metrics across devices. It tracks key security and compliance indicators such as supervised devices, unencrypted disks, expired certificates, and software vulnerabilities. With its powerful dashboards, analysts can identify and address potential risks like unapproved software, failed policies, or devices with harmful applications. The app offers detailed visualizations of device statuses, geographic trends, and audit events, enabling efficient detection and investigation of anomalies. By integrating seamlessly with Jamf, this app empowers organizations to enforce security policies, ensure compliance, and maintain an optimized device fleet.
 
 :::info
 This app includes [built-in monitors](#jamf-monitors). For details on creating custom monitors, refer to the [Create monitors for Jamf app](#create-monitors-for-the-jamf-app).
@@ -817,41 +815,51 @@ This app uses Sumo Logic’s [Jamf Source](/docs/send-data/hosted-collectors/clo
 
 ### Sample queries
 
-```sql title="Active Devices over Time"
+```sql title="Total Devices"
 _sourceCategory="Labs/Jamf" !computer_history !computer_management
 | parse regex "^\{\s*\"id\"\s*:\s*\"(?<device_id>\d+)\",.*" nodrop
 | parse regex ".*\"platform\"\s*:\s*\"(?<platform>[^,]+)\",.*" nodrop
-| parse regex ".*\"lastContactTime\"\s*:\s*\"(?<time>[^,]+)\",.*" nodrop
 
 // global filters
 | where platform matches "{{platform}}"
+| where device_id matches "{{device_id}}"
 
-| parseDate(time, "yyyy-MM-dd'T'HH:mm:ss.SSS") as _timeslice 
-| timeslice 1d
-| count by device_id, _timeslice
-| count as frequency by _timeslice
-| fillmissing timeslice
+| count by device_id
+| count as num_devices
 ```
 
-```sql title="Most Installed Applications"
+```sql title="Top 10 Installed Applications"
 _sourceCategory="Labs/Jamf" computer_history
 | json "computer_history.general.id", "computer_history.general.name", "computer_history.general.mac_address", "computer_history.general.serial_number", "computer_history.mac_app_store_applications.installed[*]" as device_id, device_name, mac_address, serial_number, installed_apps nodrop
 | where !(installed_apps matches "[]")
-| extract field=installed_apps "(?<apps>\{[^}]*\})" multi
+
+// global filters
+| where device_id matches "{{device_id}}"
+
+| parse regex field=installed_apps "(?<apps>\{[^}]*\})" multi
 | json field=apps "name" as name nodrop
+
 | count by name, device_id
-| count as frequency by name
-| sort by frequency, name
+| count as num_devices by name
+| top 10 name by num_devices
+| sort by num_devices, name
 ```
 
 ```sql title="Unique Configured OS Profiles"
 _sourceCategory="Labs/Jamf" computer_management
 | json "computer_management.general.id", "computer_management.general.name", "computer_management.general.mac_address", "computer_management.general.serial_number", "computer_management.os_x_configuration_profiles[*]" as device_id, device_name, mac_address, serial_number, os_configured_profiles nodrop
 | where !(os_configured_profiles matches "[]")
-| extract field=os_configured_profiles "(?<os_configured_profiles_logs>\{[^}]*\})" multi
+
+// global filters
+| where device_id matches "{{device_id}}"
+
+| first(os_configured_profiles) as latest_os_configured_profiles by device_id
+
+| parse regex field=latest_os_configured_profiles "(?<os_configured_profiles_logs>\{[^}]*\})" multi
 | json field=os_configured_profiles_logs "name" as profile_name nodrop
+
 | count by profile_name
-| count as frequency
+| count as num_profiles
 ```
 
 ## Set up collection
@@ -872,15 +880,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Inventory Overview
 
-The **Jamf - Inventory Overview** dashboard provides a comprehensive summary of your organization's device inventory and its compliance status. It tracks metrics such as total devices, supervised devices, and those with declarative device management enabled. Key security insights include identifying devices with expired certificates, disabled firewalls, and risky geo-locations. The dashboard also provides detailed breakdowns by platform, management status, and geo-locations. Additional panels display disk encryption, security configurations, and device hardware/software details, enabling IT administrators to maintain robust security standards and operational efficiency across the fleet. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Inventory-Overview.png')} alt="Jamf-Inventory Overview" style={{border: '1px solid gray'}} width="800" />
+The **Jamf - Inventory Overview** dashboard provides a comprehensive summary of the organization's Apple device inventory. It tracks total devices, their management statuses, and critical security metrics like unencrypted disks, expired certificates, and devices with firewall off. Analysts can visualize device distribution by platform, monitor geolocation trends, and detect vulnerable or embargoed devices. The dashboard highlights devices with expiring certificates, recently enrolled configurations, and unencrypted disks, offering actionable insights to maintain security and compliance. Additionally, it tracks the top OS versions, licensed software, and recent software updates to ensure devices stay up-to-date and secure. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Inventory-Overview.png')} alt="Jamf-Inventory Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Activity Overview
 
-The **Jamf - Activity Overview** dashboard focuses on monitoring operational activities and device commands within your Jamf environment. It tracks the total number of completed, pending, and failed commands and application deployments. The dashboard provides visibility into key events like audit logs, Casper Remote and Imaging statuses, and policy execution. Screen sharing and login activities are visualized over time to identify unusual patterns. Recent audit and policy events are highlighted to ensure timely responses to potential issues. This dashboard is crucial for identifying inefficiencies, troubleshooting failures, and ensuring smooth device management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Activity-Overview.png')} alt="Jamf-Activity Overview" style={{border: '1px solid gray'}} width="800" />
+The **Jamf - Activity Overview** dashboard focuses on monitoring command and application statuses, policy executions, and user activity. It highlights the top completed, pending, and failed commands, as well as devices with frequent command or application failures. Analysts can explore trends in policy failures over time, identify devices with problematic screen-sharing events, and monitor Casper Remote and Imaging events. This dashboard provides critical insights into operational issues, enabling timely resolution of failed policies, commands, and application installations to ensure seamless device management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Activity-Overview.png')} alt="Jamf-Activity Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Management Overview
 
-The **Jamf - Management Overview** dashboard offers insights into the management policies and configurations within your Jamf environment. It highlights the top apps, eBooks, restricted software, and patch policies to understand their adoption and impact. Panels display metrics on applications and OS configuration profiles by devices, providing a detailed view of policy distribution. Additionally, it offers information on management policy details and patch reporting for software. This dashboard enables administrators to ensure consistent policy enforcement, track usage trends, and maintain an optimized and secure managed environment. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Management-Overview.png')} alt="Jamf-Management Overview" style={{border: '1px solid gray'}} width="800" />
+The **Jamf - Management Overview** dashboard delivers an in-depth view of management configurations across the organization's device fleet. It tracks unique configured OS profiles, policies, restricted software, and harmful applications. Analysts can identify devices running outdated software versions or those impacted by harmful profiles or applications. The dashboard also provides a detailed breakdown of management policies, top apps, and OS configuration profiles, ensuring that administrators maintain an optimized and secure management environment. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jamf/Jamf-Management-Overview.png')} alt="Jamf-Management Overview" style={{border: '1px solid gray'}} width="800" />
  
 ## Create monitors for the Jamf app
 
@@ -892,12 +900,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Jamf - Devices from Embargoed Locations` | This alert is triggered if devices accessing the network from high-risk geo-locations are identified. Helps investigate and mitigate potential unauthorized or suspicious activities. | Count `>` 0 | Count `<=` 0 |
-| `Jamf - FileVault Disabled` | This alert is triggered if devices with FileVault disabled are identified, identifying potential risks to data encryption and compliance. Ensures devices meet security standards to protect sensitive information. | Count `>` 0 | Count `<=` 0 |
-| `Jamf - Firewall Disabled` | This alert is triggered if devices with disabled firewalls are identified, exposing them to network threats. Ensures adherence to organizational policies for network security. | Count `>` 0 | Count `<=` 0 |
-| `Jamf - Inactive Devices from 30 Days` | This alert is triggered if devices are inactive for 30 days, identifying potential unused assets. Helps ensure device inventory is current and actively managed. | Count `>` 0 | Count `<=` 0 |
-| `Jamf - Outdated Devices from 30 Days` | This alert is triggered if devices are running with outdated software or OS for over 30 days. Supports timely updates to maintain security and compatibility. | Count `>` 0 | Count `<=` 0 |
-| `Jamf - System Integrity Protection (SIP) Status Disabled` | This alert is triggered if devices with SIP disabled are detected, highlighting security vulnerabilities. Helps maintain system integrity by enforcing critical macOS protection features. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - Devices from Embargoed Locations` | Monitors devices accessed from high-risk geographic locations, enabling analysts to detect and investigate potential security threats. This monitor helps track unusual or suspicious device usage patterns and ensures compliance with geolocation-based security policies. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - Devices with 0 security score` | Tracks devices with no assigned security score, highlighting unmanaged or non-compliant devices. This monitor ensures analysts can identify and prioritize addressing security gaps in the organization’s fleet. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - FileVault Disabled` | Identifies devices where FileVault encryption is disabled, posing a risk of data theft. This monitor ensures that disk encryption policies are enforced to protect sensitive organizational data. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - Firewall Disabled` | Detects devices with the firewall turned off, exposing them to network-based threats. This monitor helps enforce network security policies and minimizes the risk of unauthorized access. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - High Command Failures` | Highlights devices with repeated command execution failures, signaling possible operational issues. This monitor allows timely investigation and resolution of command failures to maintain device functionality. | Count `>` 50 | Count `<=` 50 |
+| `Jamf - High Policy Failures` | Monitors devices experiencing frequent policy application failures, which may lead to compliance risks. This monitor ensures that all devices adhere to organizational security and management policies. | Count `>` 50 | Count `<=` 50 |
+| `Jamf - Inactive Devices from 30 Days` | Identifies devices that have been inactive for over 30 days, signaling potential operational inefficiencies or security concerns. This monitor helps organizations track and optimize device utilization. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - Outdated Devices from 30 Days` | Tracks devices running outdated software or configurations for over 30 days, increasing vulnerability risks. This monitor ensures timely updates and adherence to security standards. | Count `>` 0 | Count `<=` 0 |
+| `Jamf - System Integrity Protection (SIP) Status Disabled` | Detects devices with SIP disabled, compromising macOS security features. This monitor ensures SIP remains enabled to safeguard devices from unauthorized modifications and vulnerabilities. | Count `>` 0 | Count `<=` 0 |
 
 ## Upgrade/Downgrade the Jamf app (Optional)
 
