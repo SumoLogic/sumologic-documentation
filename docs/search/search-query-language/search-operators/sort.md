@@ -15,6 +15,10 @@ sort by <field> (displays results as descending, by default)
 ```
 
 ```sql
+order by <field> (displays results as descending, by default)
+```
+
+```sql
 sort by +<field> (displays results as ascending)
 ```
 
@@ -49,6 +53,11 @@ status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort 
 
 ```sql
 ... | count user | sort by _count asc
+```
+
+```sql
+| parse "GET * " as url | count by url | order by _count
+| order by _count asc
 ```
 
 ### Top 10 pages by page hits
