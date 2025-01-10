@@ -227,7 +227,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Incidents Overview
 
-Symantec Endpoint Security - Incidents Overview dashboard provides details on security incidents, their severity, priority, and current status across your endpoint environment.
+The **Symantec Endpoint Security - Incidents Overview** dashboard provides details on security incidents, their severity, priority, and current status across your endpoint environment.
 
 Use this dashboard to:
 * Quickly assess the overall security posture by viewing the number of total, open, high severity, and high priority incidents.
