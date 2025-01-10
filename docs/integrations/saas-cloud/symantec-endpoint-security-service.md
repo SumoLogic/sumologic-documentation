@@ -1,7 +1,7 @@
 ---
 id: symantec-endpoint-security-service
-title: Symantec Endpoint Security Service
-sidebar_label: Symantec Endpoint Security Service
+title: Symantec Endpoint Security
+sidebar_label: Symantec Endpoint Security
 description: The Sumo Logic app for Symantec Web Security provides real-time insights into the log data by leveraging the Symantec Endpoint Security Service.
 ---
 
@@ -20,7 +20,7 @@ This app includes [built-in monitors](#symantec-endpoint-security-monitors). For
 
 This app uses [Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/) to collect Incidents and Event Logs from Symantec Endpoint Security.
 
-## Sample log message
+### Sample log message
 
 <details>
 <summary>Incident Log</summary>
@@ -142,7 +142,7 @@ This app uses [Symantec Endpoint Security Source](/docs/send-data/hosted-collect
 ```
 </details>
 
-## Sample queries
+### Sample queries
 
 ```sql title="Incidents by Severity"
 _sourceCategory="Labs/SES" !device_uid
@@ -211,15 +211,15 @@ _sourceCategory="Labs/SES" device_uid
 
 ## Set up collection
 
-To set up the [Cloud-to-Cloud Integration for Symantec Endpoint Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/), follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Endpoint Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Endpoint Security Service app is properly integrated and configured to collect and analyze your Symantec Endpoint Security Service data.
+To set up the [Cloud-to-Cloud Integration for Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/), follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Endpoint Security Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Endpoint Security app is properly integrated and configured to collect and analyze your Symantec Endpoint Security data.
 
-## Installing the Symantec Endpoint Security Service app
+## Installing the Symantec Endpoint Security app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing the Symantec Endpoint Security Service dashboards
+## Viewing the Symantec Endpoint Security dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -227,11 +227,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Incidents Overview
 
-The **Symantec Endpoint Security Service - Incidents Overview** dashboard provides a detailed view of endpoint incidents through various widgets. These widgets display data such as the total number of incidents, total count of open incidents, high severity incidents, high priority incidents, cynic detection, newly identified incidents, unknown incidents, incidents distribution by event type, severity, category, conclusion, detection type, state, priority, and suspected breach. Additionally, it includes incident resolution rates, incidents over time, average resolution time of incidents, sandbox detections over time, summaries of all incidents, unresolved incidents, and remediation specifics. This enables administrators to monitor and manage endpoint security effectively in real time, promptly identifying and addressing potential incidents.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Incidents-Overview.png')} alt="Symantec-Endpoint-Security-Service-Incidents-Overview" width="800"/>
+The **Symantec Endpoint Security - Incidents Overview** dashboard provides a detailed view of endpoint incidents through various widgets. These widgets display data such as the total number of incidents, total count of open incidents, high severity incidents, high priority incidents, cynic detection, newly identified incidents, unknown incidents, incidents distribution by event type, severity, category, conclusion, detection type, state, priority, and suspected breach. Additionally, it includes incident resolution rates, incidents over time, average resolution time of incidents, sandbox detections over time, summaries of all incidents, unresolved incidents, and remediation specifics. This enables administrators to monitor and manage endpoint security effectively in real time, promptly identifying and addressing potential incidents.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Incidents-Overview.png')} alt="Symantec-Endpoint-Security-Incidents-Overview" width="800"/>
 
 ### Events Overview
 
-The **Symantec Endpoint Security Service - Events Overview** The "Symantec Endpoint Security - Events Overview" dashboard provides a comprehensive view of endpoint security status through various widgets. These widgets display key data such as the total number of events, high severity events, suspicious files, event distribution based on severity, category, event type, EDR event type, affected endpoints, top users linked to events, top malicious files, top SHA256 of files, top affected IPs, events over time, sandbox file detection events over time, and summaries of malicious files, events, hosts, threats, and incidents with the device. The dashboard also includes information on geographic locations of affected endpoints, and helps administrators monitor, manage, and respond to security threats in real time. This enables businesses to secure endpoints and defend against a wide range of threats.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Events-Overview.png')} alt="Symantec-Endpoint-Security-Service-Events-Overview" width="800"/>
+The **Symantec Endpoint Security - Events Overview** The "Symantec Endpoint Security - Events Overview" dashboard provides a comprehensive view of endpoint security status through various widgets. These widgets display key data such as the total number of events, high severity events, suspicious files, event distribution based on severity, category, event type, EDR event type, affected endpoints, top users linked to events, top malicious files, top SHA256 of files, top affected IPs, events over time, sandbox file detection events over time, and summaries of malicious files, events, hosts, threats, and incidents with the device. The dashboard also includes information on geographic locations of affected endpoints, and helps administrators monitor, manage, and respond to security threats in real time. This enables businesses to secure endpoints and defend against a wide range of threats.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Events-Overview.png')} alt="Symantec-Endpoint-Security-Events-Overview" width="800"/>
 
 ## Create monitors for Symantec Endpoint Security app
 
@@ -253,13 +253,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Spike in Impacted Devices Count` | This alert is triggered when a spike is detected in the number of impacted devices. It helps you to monitor and stop potentially harmful devices, enhancing your ability to identify suspicious activity. | Critical | Count > 0 |
 | `Unresolved Incident Aging Beyond 7 days` | This alert is triggered when an incident is created and remains unresolved for 7 days. It helps you to monitor pending incidents for an extended period, enhancing your ability to identify suspicious activity. | Critical | Count > 0 |
 
-## Upgrade/Downgrade the Symantec Endpoint Security Service app (Optional)
+## Upgrade/Downgrade the Symantec Endpoint Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Symantec Endpoint Security Service app (Optional)
+## Uninstalling the Symantec Endpoint Security app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
