@@ -6,7 +6,7 @@ sidebar_label: sort
 
 The `sort` operator orders aggregated search results. The default sort order is descending. Then you can use the top or limit operators to reduce the number of sorted results returned.
 
-Order is also synonymous with sort. You can use them interchangeably in your queries.
+The `order` operator is synonymous with the `sort` operator. You can use them interchangeably in your queries.
 
 ## Syntax
 
