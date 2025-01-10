@@ -18,7 +18,7 @@ This app includes [built-in monitors](#symantec-endpoint-security-monitors). For
 
 ## Log types
 
-This app uses [Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/) to collect Incidents and Event Logs from Symantec Endpoint Security.
+This app uses [Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/) to collect the incidents and event logs from the Symantec Endpoint Security platform.
 
 ### Sample log message
 
