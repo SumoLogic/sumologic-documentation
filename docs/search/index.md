@@ -73,7 +73,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/faqdocs/search/optimize-search-partitions"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Your Search with Partitions</h4></a>
+  <a href="/docs/search/optimize-search-partitions"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Your Search with Partitions</h4></a>
   <p>Optimize your search with partitions, which store your data in an index separate from the rest of your account's data.</p>
   </div>
 </div>
