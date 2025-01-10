@@ -233,7 +233,7 @@ Use this dashboard to:
 * Quickly assess the overall security posture by viewing the number of total, open, high severity, and high priority incidents.
 * Identify trends in incident types and categories to focus on areas requiring immediate attention or process improvements.
 * Monitor incident resolution times and track the progress of open incidents to ensure timely response and remediation.
-* Prioritze incidents by severity and priority to allocate resources effectively and address the most critical threats first.
+* Prioritize incidents by severity and priority to allocate resources effectively and address the most critical threats first.
 * Analyze the distribution of incidents across different states and detection types to understand the lifecycle of security events in your environment.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Incidents-Overview.png')} alt="Symantec Endpoint Security - Incidents Overview" style={{border: '1px solid gray'}} width="800" />
