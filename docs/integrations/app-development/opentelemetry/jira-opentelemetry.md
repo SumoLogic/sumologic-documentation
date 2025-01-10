@@ -289,7 +289,7 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Jira - Abnormal Session Creation Rate Alert` | This alert is triggered when there are unusual patterns in session creation/destruction that might indicate security issues or system problems | Count >= 1 | Count < 1 |
+| `Jira - Abnormal Session Creation Rate Alert` | This alert is triggered when there are unusual patterns in session creation/destruction that might indicate security issues or system problems. | Count >= 1 | Count < 1 |
 | `Jira - High Average Response Time Alert` | This alert is triggered when elevated response times in Jira are detected, indicating potential performance degradation. | Count >= 5000 | Count < 5000 |
 | `Jira - High HTTP 4xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 4xx errors to detect service disruptions | Count >= 50 | Count < 50 |
 | `Jira - High HTTP 5xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 5xx errors to detect service disruptions | Count >= 50 | Count < 50 |
