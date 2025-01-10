@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 
-Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs from the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
+Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs using the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
 
 ## Data collected
 
