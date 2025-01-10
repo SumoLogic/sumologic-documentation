@@ -227,11 +227,28 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Incidents Overview
 
-The **Symantec Endpoint Security - Incidents Overview** dashboard provides a detailed view of endpoint incidents through various widgets. These widgets display data such as the total number of incidents, total count of open incidents, high severity incidents, high priority incidents, cynic detection, newly identified incidents, unknown incidents, incidents distribution by event type, severity, category, conclusion, detection type, state, priority, and suspected breach. Additionally, it includes incident resolution rates, incidents over time, average resolution time of incidents, sandbox detections over time, summaries of all incidents, unresolved incidents, and remediation specifics. This enables administrators to monitor and manage endpoint security effectively in real time, promptly identifying and addressing potential incidents.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Incidents-Overview.png')} alt="Symantec-Endpoint-Security-Incidents-Overview" width="800"/>
+Symantec Endpoint Security - Incidents Overview dashboard provides details on security incidents, their severity, priority, and current status across your endpoint environment.
+
+Use this dashboard to:
+* Quickly assess the overall security posture by viewing the number of total, open, high severity, and high priority incidents.
+* Identify trends in incident types and categories to focus on areas requiring immediate attention or process improvements.
+* Monitor incident resolution times and track the progress of open incidents to ensure timely response and remediation.
+* Prioritze incidents by severity and priority to allocate resources effectively and address the most critical threats first.
+* Analyze the distribution of incidents across different states and detection types to understand the lifecycle of security events in your environment.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Incidents-Overview.png')} alt="Symantec Endpoint Security - Incidents Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Events Overview
 
-The **Symantec Endpoint Security - Events Overview** The "Symantec Endpoint Security - Events Overview" dashboard provides a comprehensive view of endpoint security status through various widgets. These widgets display key data such as the total number of events, high-severity events, suspicious files, event distribution based on severity, category, event type, EDR event type, affected endpoints, top users linked to events, top malicious files, top SHA256 of files, top affected IPs, events over time, sandbox file detection events over time, and summaries of malicious files, events, hosts, threats, and incidents with the device. The dashboard also includes information on the geographic locations of affected endpoints and helps administrators monitor, manage, and respond to security threats in real-time. This enables businesses to secure endpoints and defend against various threats.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Events-Overview.png')} alt="Symantec-Endpoint-Security-Events-Overview" width="800"/>
+Symantec Endpoint Security - Events Overview dashboard provides details on security events, their severity, types, and geographical distribution across the protected endpoints.
+
+Use this dashboard to:
+* Quickly assess the overall security posture by viewing the total events, high severity events, and suspicious files counts at the top of the dashboard.
+* Analyze event trends over time and identify peak periods of security incidents using the Events Over Time graph.
+* Identify the most affected devices, allowing for targeted investigation and remediation of compromised assets.
+* Visualize the geographical distribution of affected devices and event locations to detect potential regional attack patterns or vulnerabilities.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Symantec+Endpoint+Security+Service/Symantec-Endpoint-Security-Events-Overview.png')} alt="Symantec Endpoint Security - Events Overview" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Symantec Endpoint Security app
 
@@ -243,7 +260,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Embargoed Device` | This alert is triggered when a device is associated with multiple incidents. It helps you to monitor and stop potentially harmful devices, enhancing your ability to identify suspicious activity. | Critical | Count > 0 |
+| `Devices With Multiple Incidents` | This alert is triggered when a device is associated with multiple incidents. It helps you to monitor and stop potentially harmful devices, enhancing your ability to identify suspicious activity. | Critical | Count > 0 |
 | `File Execution in Suspicious Path` | This alert is triggered when some file activity happens from the suspicious file path. It helps you to monitor activity from unusual or suspicious file paths, enhancing your ability to identify suspicious activity. | Critical | Count > 0 |
 | `High Priority or Severity Incidents Detected` | This alert is triggered when an incident is created with high priority or severity. It helps you to monitor and stop potentially harmful events that could compromise endpoint security. | Critical | Count > 0 |
 | `High-Risk Threat Detected by Cynic` | This alert is triggered when a high-risk threat is detected by the cynic. It allows you to quickly identify endpoints with a high concentration of threat activity, enabling swift action to contain and remediate potential infections. | Critical | Count > 0 |
