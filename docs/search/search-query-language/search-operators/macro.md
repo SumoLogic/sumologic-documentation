@@ -13,7 +13,7 @@ To use the `macro` operator, reference it in your query with backticks (``). Mac
 * **Outer Macro**. The macro that references an inner macro.
 
 :::note
-- Only **Administrators** and **Users** with access to **Query Reference** will be able to run queries using macros.
+- Only **Administrators** and **Users** with access to **Query Reference** can run queries using macros.
 - Only users with **Administrator** access can create macros.
 :::
 
