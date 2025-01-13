@@ -862,15 +862,33 @@ _sourceCategory="Labs/Jamf" computer_management
 | count as num_profiles
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for Jamf Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Jamf app is properly integrated and configured to collect and analyze your Jamf data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Jamf app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Jamf Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Jamf app is properly integrated and configured to collect and analyze your Jamf data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing the Jamf dashboards
 

@@ -209,15 +209,33 @@ _sourceCategory="Labs/SES" device_uid
 | limit 10
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [Cloud-to-Cloud Integration for Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/), follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Endpoint Security Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Endpoint Security app is properly integrated and configured to collect and analyze your Symantec Endpoint Security data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Symantec Endpoint Security app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Symantec Endpoint Security Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Symantec Endpoint Security app is properly integrated and configured to collect and analyze your Symantec Endpoint Security data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing the Symantec Endpoint Security dashboards
 
