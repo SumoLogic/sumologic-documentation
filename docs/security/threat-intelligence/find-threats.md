@@ -34,9 +34,9 @@ To see `threatlookup` used in a query:
 1. Navigate to a dashboard, such as **Overview**.
 1. Click the three-dot kebab in the upper-right corner of the dashboard panel.
 1. Select **Open in Log Search**. 
-1. Look for `threatlookup` used in a query. 
+1. Look for `threatlookup` used in the query. 
 
-For example, here is the query used for the **Threat Count** panel in the [Threat Intel Quick Analysis - IP](#ip) dashboard:
+For example, here is the query used for the **Threat Count** panel in the **Threat Intel Quick Analysis - IP** dashboard:
 
 ```
 _sourceCategory=<source-category-name> 
