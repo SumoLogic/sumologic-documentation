@@ -6,7 +6,7 @@ description: Content Sharing allows you to selectively share and collaborate on 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to transfer ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you can now choose how widely shared your content is within your Org.
+Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to share ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you can now choose how widely shared your content is within your organization.
 
 You can share log searches, metric searches, dashboards, and folders with a user, a role, or combinations of the two. You can edit the sharing permissions at any time and share and revoke as needed from the **Share** dialog:  
 
@@ -56,7 +56,7 @@ To share content from the left navigation bar or the Library:
 
     <img src={useBaseUrl('img/content-sharing/PermissionsShare.png')} alt="Permissions share" width="600"/>
 
-## Navigate Content Sharing Tabs
+## Navigate content sharing tabs
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
@@ -64,7 +64,7 @@ import UiElements from '../../reuse/ui-elements.md';
 
 <UiElements/>
 
-## Available Permission Levels
+## Available permission levels
 
 You can share your content with specific users or roles. As a best practice we recommend sharing at the search or dashboard level, or if you want to share a folder, share a subfolder. All contents of the folder are shared, you can’t exclude a particular content item in a folder as private content.
 
