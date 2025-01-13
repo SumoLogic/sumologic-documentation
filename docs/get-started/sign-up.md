@@ -39,6 +39,10 @@ Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, 
 * For AWS, you'll deploy a single account with CloudFormation Template, CLI, or Terraform.
 * For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
 
+:::info
+You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find easy-to-follow setup guides.
+:::
+
 When the installation is complete, click **Start using Sumo**.
 
 Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install more apps from the App Catalog, and more.
