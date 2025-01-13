@@ -44,26 +44,26 @@ Query used to filter the result set.
 
 Building the query:
 
-Syntax: &lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;.
+Syntax: `<col_name><operator><value>`
 
-* &lt;col\_name&gt;: Name of the table column to filter against.
-* &lt;operator&gt;: Supports the following values:  
-=: Exactly matches &lt;value&gt;.  
-!=: Does not match &lt;value&gt;.  
-^: Logically AND multiple query statements.  
-^OR: Logically OR multiple query statements.  
-LIKE: &lt;col\_name&gt; contains the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.  
-STARTSWITH: &lt;col\_name&gt; starts with the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.  
-ENDSWITH: &lt;col\_name&gt; ends with the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.
-* &lt;value&gt;: Value to match against.
+* `<col_name>`: Name of the table column to filter against.
+* `<operator>`: Supports the following values:  
+   * `=:` Exactly matches `<value>`.  
+   * `!=`: Does not match `<value>`.  
+   * `^`: Logically AND multiple query statements.  
+   * `^OR`: Logically OR multiple query statements.  
+   * `LIKE`: `<col_name>` contains the specified string. Only works for `<col_name>` fields whose data type is string.  
+   * `STARTSWITH`: `<col_name>` starts with the specified string. Only works for `<col_name>` fields whose data type is string.  
+   * `ENDSWITH`: `<col_name>` ends with the specified string. Only works for `<col_name>` fields whose data type is string.
+* `<value>`: Value to match against.
 
 All parameters are case-sensitive. 
 
 Queries can contain more than one entry. 
 
-For example: &lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;[&lt;operator&gt;&lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;]
+For example: `<col_name><operator><value>[<operator><col_name><operator><value>]`
 
-For more info please check the official API doc: &lt;https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-GET&gt;
+For more information check the [ServiceNow API documentation](https://developer.servicenow.com/dev.do#!/reference/api/xanadu/rest/c_TableAPI#table-GET). 
 
 **Create Ticket** 
 
