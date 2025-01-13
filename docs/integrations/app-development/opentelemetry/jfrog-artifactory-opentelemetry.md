@@ -259,10 +259,10 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Artifactory - Excessive Denied Login Attempts` | This alert is triggered when there are multiple denied login attempts from the same IP or user. | Count `>` 5 | Count `<=` 5 |
-| `Artifactory - High 4xx Status Codes` | This alert is triggered when there's a high number of HTTP 4xx error responses. | Count `>` 10 | Count `<=` 10 |
-| `Artifactory - High 5xx Status Codes` | This alert is triggered when there's a high number of HTTP 5xx error responses. | Count `>` 10 | Count `<=` 10 |
-| `Artifactory - High Denied Deploys to Cached Repos` | This alert is triggered when there's a high number of denied deploy attempts to cached repositories. | Count `>` 5 | Count `<=` 5 |
-| `Artifactory - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count `>` 5 | Count `<=` 5 |
-| `Artifactory - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count `>` 5 | Count `<=` 5 |
-| `Artifactory - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count `>` 5 | Count `<=` 5 |
+| `Artifactory - Excessive Denied Login Attempts` | This alert is triggered when there are multiple denied login attempts from the same IP or user. | Count > 5 | Count \<= 5 |
+| `Artifactory - High 4xx Status Codes` | This alert is triggered when there's a high number of HTTP 4xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory - High 5xx Status Codes` | This alert is triggered when there's a high number of HTTP 5xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory - High Denied Deploys to Cached Repos` | This alert is triggered when there's a high number of denied deploy attempts to cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count > 5 | Count \<= 5 |
+| `Artifactory - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count > 5 | Count \<= 5 |
