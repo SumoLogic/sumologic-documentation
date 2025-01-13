@@ -6,48 +6,42 @@ sidebar_label: Remote Management
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) simplifies remote management of data collection by enabling setup and configuration from the Sumo Logic UI, deployment to multiple collectors at once, and centralized management of data configurations using source templates.
+The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) simplifies remote management of data collection by enabling setup and configuration from the Sumo Logic UI, deploying to multiple collectors at once, data filtering with remote processing rules, and centralized management of data configurations using source templates.
 
-You can tag your OpenTelemetry collectors to categorize and group them. These tags are enriched in your data so you can use them in dashboards and searches.
+**Key features**
 
-Remote management data configuration is handled using source templates. This feature extends our [Installed Collector](/docs/send-data/installed-collectors/sources) source template to support multiple collectors.
+* **Tagging collectors**. Tag your OpenTelemetry collectors to categorize and group them. These tags enrich your data, allowing you to use them effectively in dashboards and searches.
+* **Source templates for configuration**. Remote management data configuration is handled using source templates, an enhancement of our [Installed Collector source template](/docs/send-data/installed-collectors/sources), supporting multiple collectors. By associating source templates with collector tags—a process called *collector linking*—you reduce redundancy and streamline configuration management across your environment.
+* **Flexible data processing**. Transform, filter, and enhance data centrally using processing rules to ensure consistency across multiple collectors.
 
-By associating source templates with collector tags—a process called *collector linking*—you reduce redundancy in data collection setup and streamline configuration management across your environment.
+**Remote management benefits**
 
-**Key benefits of remote management**
-
-* Simplified setup and configuration via the Sumo Logic UI
-* Tag-based collector grouping for efficient data collection
-* Centralized configuration using source templates
-* No server access required after installation
-* Faster time to value and reduced manual errors
+* **Simplified setup and configuration**. Manage collectors directly from the Sumo Logic UI.
+* **Tag-based grouping**. Efficiently organize and group collectors using tags.
+* **Centralized configuration**. Manage data configurations for multiple collectors in one place.
+* **No server access required**. Once installed, no direct server access is needed.
+* **Improved efficiency**. Achieve faster time to value and reduce manual errors.
 
 **Common use cases**
 
-* Grouping collectors by environment (for example, production, staging)
-* Expanding data collection for new services with minimal effort
-* Simplifying migration from legacy monitoring solutions
-* Monitoring error logs across multiple Apache servers
+* **Environment grouping**. Organize collectors by environment, such as production or staging.
+* **Data collection expansion**. Quickly scale data collection for new services.
+* **Legacy migration**. Simplify transitions from legacy monitoring solutions.
+* **Centralized log monitoring**. Monitor error logs across multiple Apache servers.
 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
- <div className="box smallbox card">
- <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/remote-management/install-tag-collector"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Install and Tag Your OpenTelemetry Collector</h4></a>
-  <p>Learn how to install and tag your OTel Collector for remote management of data collection.</p>
-  </div>
-</div>
   <div className="box smallbox card">
   <div className="container">
     <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
-    <p>Learn how to create and modify your OpenTelemetry Remote Management source templates.</p>
+    <p>Learn how to create and modify your OpenTelemetry Remote Management source templates to optimize data collection and configuration.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
-      <p>Use processing rules for an OpenTelemetry agent with remote management source templates.</p>
+      <p>Discover how to apply processing rules for an OpenTelemetry agent using remote management source templates to enhance data handling.</p>
     </div>
   </div>
 </div>
