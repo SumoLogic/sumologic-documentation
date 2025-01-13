@@ -27,9 +27,11 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Threat Intel optimization
 
-The Threat Intel Quick Analysis app provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your threat intel queries:
+The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
 
-* Filter out unwanted logs before you use the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/)
+You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your threat intel queries:
+
+* Filter out unwanted logs before you use the `threatlookup` search operator
 * Use keywords
 * Use the `where` operator
 * Use general search optimization [rules](/docs/search/get-started-with-search/build-search/best-practices-search.md)

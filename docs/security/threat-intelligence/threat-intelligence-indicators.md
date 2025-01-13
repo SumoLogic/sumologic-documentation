@@ -6,6 +6,7 @@ description: Learn how to add and manage indicators from threat intelligence sou
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
 
 The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence data store. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources, including TAXII, ThreatQ, iDefense, and many others. Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
 
@@ -19,7 +20,6 @@ You can also add threat intelligence indicators using a collector or the API. Se
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
  
-
 <img src={useBaseUrl('img/security/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 1. **+ Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
@@ -36,16 +36,16 @@ You can also add threat intelligence indicators using a collector or the API. Se
 
 ## Add indicators in the Threat Intelligence tab
 
-To add threat intelligence indicators in the **Threat Intelligence** tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+You can add threat intelligence indicators using a collector, API, or the **Threat Intelligence** tab. This section describes how to add indicators in the **Threat Intelligence** tab. For information on the other methods, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+
+<CloudSIEMThreatIntelNote/>
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. Click **+ Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
-1. Select the format of the file to be uploaded:
+1. Select the format of the file to be uploaded (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
     * **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
-
-    See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file.
 1. Click **Upload** to upload the file. 
 1. Click **Import**. 
 

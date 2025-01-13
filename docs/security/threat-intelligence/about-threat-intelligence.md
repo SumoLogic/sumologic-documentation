@@ -7,12 +7,15 @@ description: Introduction to Sumo Logic's threat intelligence capabilities.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
 
 Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis. 
 
 Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
 Once you [ingest indicators](#ingest-threat-intelligence-indicators) and they appear on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab), you can use them to search logs for threats. See [Find threats with log queries](/docs/security/threat-intelligence/find-threats/) to learn how. 
+
+<CloudSIEMThreatIntelNote/>
 
 Watch this micro lesson to learn about Sumo Logic's threat intelligence features.
 
@@ -46,7 +49,6 @@ You do not need to be assigned these role capabilities to [find threats with log
 ### Ingest threat intelligence indicators
 
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
-* **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab).
 * **A collector**. See:
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
@@ -58,14 +60,16 @@ To search logs that contain correlations to threat intelligence indicators, you 
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
+* **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab).
 
 See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the **Threat Intelligence** tab or APIs.
+
+<CloudSIEMThreatIntelNote/>
 
 :::note
 * Sumo Logic's threat intelligence data store only ingests simple threat indicators, not complex indicators that outline a series of steps or entities that make up an attack. Nor does it ingest actors, malware, or other object types. 
 * The limit of the number of indicators that can be uploaded in one API call is 100.
 * When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
-
 :::
 
 ## Typical workflow
