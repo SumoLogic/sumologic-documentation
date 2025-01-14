@@ -36,16 +36,14 @@ Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sam
 ### Set up data collection
 
 Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
-* For AWS, you'll deploy a single account with CloudFormation Template, CLI, or Terraform.
+* For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
 * For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
 
-:::info
-You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find easy-to-follow setup guides.
-:::
+You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and follow easy-to-use setup guides for installation.
 
 When the installation is complete, click **Start using Sumo**.
 
-Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install more apps from the App Catalog, and more.
+Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
 
 ### Upgrade or continue with Free account
 
