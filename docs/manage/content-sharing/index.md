@@ -6,7 +6,7 @@ description: Content Sharing allows you to selectively share and collaborate on 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to share ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you can now choose how widely shared your content is within your organization.
+Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to share ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you have the flexibility to control how broadly your content is shared within your organization.
 
 You can share log searches, metric searches, dashboards, and folders with a user, a role, or combinations of the two. You can edit the sharing permissions at any time and share and revoke as needed from the **Share** dialog:  
 
