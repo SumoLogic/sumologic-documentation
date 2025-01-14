@@ -15,6 +15,8 @@ Mappers are a critical component in the Cloud SIEM data ingestion pipeline. They
 * Determine the entities present in the record.
 * Support the creation of high-fidelity detection rules.
 
+For information about creating log mappers, see [Create a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping/). For more general information about log mapping, and how it fits into the record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+
 ## Interpreting record failures and issues
 
 ### Failed Records dashboard
