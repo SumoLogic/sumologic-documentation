@@ -1769,6 +1769,7 @@
   "/cid/10337": "/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog",
   "/cid/10338": "/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog",
   "/cid/10339": "/docs/send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog",
+  "/cid/10822": "/docs/manage/manage-subscription/create-manage-orgs-flex",
   "/cid/10817": "/docs/integrations/sumo-apps/cse",
   "/cid/10818": "/docs/integrations/sumo-apps/cse",
   "/cid/1082": "/docs/metrics/introduction/get-started-metrics",
