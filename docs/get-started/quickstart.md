@@ -29,7 +29,7 @@ You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-star
 
 With your [Sumo Logic trial](/docs/get-started/sign-up), you can access preloaded placeholder Kickstart Data to explore Sumo Logic instantly prior to setting up your own data. This feature helps trial users see immediate value and bypass setup barriers like firewall and security configurations.
 
-:::warning limited availability
+:::warning limitations
 * Your trial workflow—Kickstart Data or custom data—is automatically determined by marketing-based user profiling. Manual selection of a workflow is not currently supported.
 * This feature is only available to select trial users during the initial rollout phase.
 :::
