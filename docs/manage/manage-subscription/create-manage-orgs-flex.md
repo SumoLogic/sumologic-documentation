@@ -32,7 +32,7 @@ You can enable and provision Cloud SIEM for a child org. Note that the process o
 
 ## Requirements for creating and managing orgs
 
-There are several role capabilities that are required to work with orgs:
+There are several [role capabilities](/docs/manage/users-roles/roles/role-capabilities) that are required to work with orgs:
 
 * **View Organizations**. This capability is required to view the Organizations UI.
 * **Create Organizations**. This capability is required to create or provision child organizations.
