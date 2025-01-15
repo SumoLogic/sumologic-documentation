@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Credits | Essentials, Enterprise Suite Flex |
 
 :::note
-This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic Account Executive.
+This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic account executive.
 :::
 
 This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) feature for Flex, which you can use to create and manage orgs. The term *parent org* refers to the organization from which you create a new organization, while *child orgs* are the organizations you create.
