@@ -120,16 +120,33 @@ _sourceCategory=msgip-app-src riskEventType
 | count(risk_id) by risk_level
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting logs for Microsoft Graph Identity Protection API
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Microsoft Graph Identity Protection app
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Identity Protection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Identity Protection app is properly integrated and configured to collect and analyze your Microsoft Graph Identity Protection data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Microsoft Graph Identity Protection dashboards
 

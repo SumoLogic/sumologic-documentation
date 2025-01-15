@@ -53,15 +53,33 @@ _sourceCategory="Labs/Zendesk"
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [Zendesk Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source) for the Zendesk app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Zendesk Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Zendesk app is properly integrated and configured to collect and analyze your Zendesk data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Zendesk app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Zendesk](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Zendesk app is properly integrated and configured to collect and analyze your Zendesk data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Zendesk dashboards​​
 
@@ -87,7 +105,6 @@ The Zendesk Monitors serve as a security tool, concentrating on observing essent
 |:--|:--|:--|:--|
 | `Zendesk - Audits from Risky Locations` | This alert is triggered when audit events, such as user actions or configuration changes are performed from geographical locations identified as high-risk. These risky locations may correlate with regions known for cyberattacks or unauthorized activity, making it crucial to investigate these events for potential security risks. | Critical | Count > 0 | 
 | `Zendesk - Impossible Login Events` | This alert notifies you of login attempts that are classified as *impossible*. This could mean logins from multiple geographically distant locations within a short time frame or logins from suspicious devices. Impossible login events often signal a compromise in account security, warranting immediate investigation to ensure no unauthorized access has occurred | Critical | Count > 0|
-
 
 ## Upgrading the Zendesk app (Optional)
 
