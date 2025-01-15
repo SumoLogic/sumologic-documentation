@@ -77,6 +77,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/cisco-amp"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
+  <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/cisco-meraki-c2c"><img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="icon" width="70"/><h4>Cisco Meraki - C2C</h4></a>
   <p>Gain insights into the events and identify potential network events along with admin activities.</p>
   </div>
@@ -101,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
+  <p>Monitor and analyze file integrity.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike FDR Host Inventory</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
@@ -109,6 +121,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-spotlight"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Spotlight</h4></a>
   <p>Gather real-time visibility into the vulnerabilities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/digital-guardian-arc"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
+  <p>Monitor, detect, and respond to critical events.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -145,6 +163,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/istio"><img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="icon" width="70"/><h4>Istio</h4></a>
   <p>Gain visibility into your Istio and control plane component performance.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/jamf"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="100"/><h4>Jamf</h4></a>
+  <p>Get critical insights into your organization's Jamf environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -279,7 +303,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Identify security threats by analyzing alerts and events logs.</p>
   </div>
 </div>
-
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/symantec-endpoint-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Endpoint Security Service</h4></a>
+  <p>Gain insights into the log data and identify potential security threats.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-web-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Web Security Service</h4></a>
@@ -290,6 +319,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
   <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/trend-micro-vision-one"><img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="icon" width="140"/><h4>Trend Micro Vision One</h4></a>
+  <p>Analyze alert logs to detect potential security risks.</p>
   </div>
 </div>
 <div className="box smallbox card">

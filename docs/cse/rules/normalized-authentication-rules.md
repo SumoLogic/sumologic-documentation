@@ -2,17 +2,17 @@
 id: normalized-authentication-rules
 title: Normalized Authentication Rules
 sidebar_label: Normalized Authentication Rules
-description: Cloud SIEM's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
+description: Cloud SIEM's normalized authentication rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
+*Normalized authentication rules* detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
 
 ## Requirements and prerequisites
 
-Out of the box, the Normalized Authentication Rules support a variety of data sources, ranging from cloud-based authentication services like AWS
+Out of the box, the normalized authentication rules support a variety of data sources, ranging from cloud-based authentication services like AWS
 CloudTrail, VPN authentication services like Cisco ASA, and OS-based authentication like that provided by Windows and Linux. 
 
 For the rules to support a particular product or service, the log mapping for that service must map several fields correctly.
@@ -23,8 +23,8 @@ The mapping requirements are:
 
 | Output field | Mapping requirement |
 |:--|:--|
-| `objectType` | This field is populated as a result of the value selected for the Record Type in the log mapping. It must be set to *Authentication*. |
-| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in Normalized Authentication Rules, below. |
+| `objectType` | This field is populated as a result of the value selected for the record Type in the log mapping. It must be set to *Authentication*. |
+| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized authentication rules](#normalized-authentication-rules), below. |
 | `success` | Set to *true* if the logon was successful, or *false* if it was not.  |
 | `mfa` | If the log message contains a field that indicates multi-factor authentication usage, set `mfa` to *true* if MFA is used or *false* if not. |
 | `user_username ` | `user_username` must be mapped to the input field that contains the user identity. If an alternative input field also contains the user identity, that field should be mapped as an alternate input field. |
@@ -36,7 +36,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 
 <img src={useBaseUrl('img/cse/auth-rule-mapping-1.png')} alt="Authentication rule mapping" width="600"/>
 
-## Normalized Authentication Rules
+## Normalized authentication rules
 
 * Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to exclude the data source so that messages from it won’t be processed by this rule. 
 * Brute Force Attempt - Detects multiple failed login attempts for the same username over a 24 hour timeframe. This is designed to catch both slow and quick brute force type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.

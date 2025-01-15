@@ -63,15 +63,33 @@ _sourceCategory="asana-app"
 | sort by frequency
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) for the Asana app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Asana Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Asana app is properly integrated and configured to collect and analyze your Asana data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Asana app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Asana](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Asana app is properly integrated and configured to collect and analyze your Asana data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Asana dashboards
 

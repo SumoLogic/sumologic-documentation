@@ -19,14 +19,14 @@ This app includes [built-in monitors](#crowdstrike-spotlight-monitors). For deta
 
 ## Log types
 
-This app uses Sumo Logic’s CrowdStrike Spotlight Source to collect [Vulnerability Logs](https://falcon.crowdstrike.com/documentation/98/spotlight-apis) from CrowdStrike Spotlight platform.
+This app uses Sumo Logic’s CrowdStrike Spotlight Source to collect [Vulnerability Logs](https://falcon.crowdstrike.com/documentation/98/spotlight-apis) from the CrowdStrike Spotlight platform.
 
 ## Sample log messages
 
 <details>
-<summary>Click to expand</summary>
+<summary>Vulnerability Log</summary>
 
-```json title="Vulnerability Log"
+```json
 {
     "id": "d5bde2e631d14103970a27924943a07c_9e90a7c915043320bbfc1534f438a60c",
     "cid": "2ae7654232b94d7c99305e5bc5484ed1",
@@ -393,17 +393,35 @@ _sourceCategory="Labs/CrowdstrikeSpotlight"
 
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [CrowdStrike Spotlight Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source) for the CrowdStrike Spotlight app, follow the instructions provided. These instructions will guide you through the process of creating a source using the CrowdStrike Spotlight Source category, which you will need to use when installing the app. By following these steps, you can ensure that your CrowdStrike Spotlight app is properly integrated and configured to collect and analyze your CrowdStrike Spotlight data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the CrowdStrike Spotlight app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for CrowdStrike Spotlight](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike Spotlight app is properly integrated and configured to collect and analyze your CrowdStrike Spotlight data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Viewing CrowdStrike Spotlight dashboards​​
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the CrowdStrike Spotlight dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -411,7 +429,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The CrowdStrike Spotlight - Overview dashboard provides security analysts with a comprehensive view of vulnerabilities across the organization's assets. Key panels display active vulnerabilities, closed vulnerabilities, and affected hosts, allowing for quick identification of critical security issues. 
+The **CrowdStrike Spotlight - Overview** dashboard provides security analysts with a comprehensive view of vulnerabilities across the organization's assets. Key panels display active vulnerabilities, closed vulnerabilities, and affected hosts, allowing for quick identification of critical security issues. 
 
 The dashboard categorizes vulnerabilities by severity (Critical, High, Medium, and Low), operating system type (Windows and Linux), and internet exposure, helping analysts prioritize threats based on risk factors. Geolocation data highlights the location of the most severe vulnerabilities aiding in threat localization. The panel showing vulnerabilities by remediation level tracks the organization's progress in resolving these issues. 
 

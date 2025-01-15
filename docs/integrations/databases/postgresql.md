@@ -615,150 +615,6 @@ Use this dashboard to:
 * Monitor sequential scans and index scans and determine if executed queries are accessing them for a relation.
 * Track index utilization of existing indexes in a relation.
 
-## PostgreSQL Metrics
-
-Here are the metrics available for PostgreSQL.
-
-<table><small>
-  <tr>
-   <td>PostgreSQL Metrics List</td>
-  </tr>
-  <tr>
-   <td>postgresql_numbackends</td>
-  </tr>
-  <tr>
-   <td>postgresql_xact_commit</td>
-  </tr>
-  <tr>
-   <td>postgresql_xact_rollback</td>
-  </tr>
-  <tr>
-   <td>postgresql_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_inserted   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_updated   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_deleted   </td>
-  </tr>
-  <tr>
-   <td>postgresql_deadlocks   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_fetched   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_returned   </td>
-  </tr>
-  <tr>
-   <td>postgresql_checkpoints_timed   </td>
-  </tr>
-  <tr>
-   <td>postgresql_checkpoints_req   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_checkpoint   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_clean   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_backend   </td>
-  </tr>
-  <tr>
-   <td>postgresql_stat_ssl_compression_count   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replication_delay   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replication_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replay_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_flush_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_write_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_db_size   </td>
-  </tr>
-  <tr>
-   <td>postgresql_num_locks </td>
-  </tr>
-  <tr>
-   <td>postgresql_seq_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_seq_tup_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_fetch   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_ins   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_upd   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_del   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_hot_upd   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_live_tup   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_dead_tup</td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_fetch   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_read </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_heap_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_heap_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_index_size   </td>
-  </tr>
-  <tr>
-   <td>postgresql_table_size   </td>
-  </tr></small>
-</table>
 
 
 ## PostgreSQL Alerts
@@ -767,17 +623,71 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 **Sumo Logic provides the following out-of-the-box alerts for PostgreSQL:**
 
-The  metrics queries are derived as per[ Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
+The metrics queries are derived as per [Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
 
 | Alert Name                                        | Alert Description and conditions                                                                                                                                                                                                | Alert Condition                                                                                            | Recover Condition                 |
 |:---------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:-----------------------------------|
-| PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | `>=`1                                                                                                        | < 1                               |
-| PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | `>=` 90                                                                                                      | < 90                              |
-| PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | `>=` 1                                                                                                       | < 1                               |
-| PostgreSQL - Commit Rate Low                      | This alert fires when we detect that Postgres seems to be processing very few transactions.                                                                                                                                     | commit rate < 10                                                                                           | commit rate `>=` 10                 |
+| PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | \>= 1                                                                                                        | < 1                               |
+| PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | \>= 90                                                                                                      | < 90                              |
+| PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | \>= 1                                                                                                       | < 1                               |
+| PostgreSQL - Commit Rate Low                      | This alert fires when we detect that Postgres seems to be processing very few transactions.                                                                                                                                     | commit rate < 10                                                                                           | commit rate \>= 10                 |
 | PostgreSQL - High Rate of Statement Timeout       | This alert fires when we detect Postgres transactions show a high rate of statement timeouts                | timeout rate > 3                                                                                           | timeout rate < 3                  |
-| PostgreSQL - High Rate Deadlock                   | This alert fires when we detect deadlocks in a Postgres instance     | deadlock rate `>=`1          | deadlock rate `<`1                  |
+| PostgreSQL - High Rate Deadlock                   | This alert fires when we detect deadlocks in a Postgres instance     | deadlock rate \>= 1          | deadlock rate \< 1                  |
 | PostgreSQL - High Replication Lag                 | This alert fires when we detect that the Postgres Replication lag (in bytes) is high.                                                                                                                                           | > 1000000000 bytes                                                                                         | < 1000000000 bytes                |
-| PostgreSQL - SSL Compression Active               | This alert fires when we detect database connections with SSL compression are enabled. This may add significant jitter in replication delay. Replicas should turn off SSL compression via `sslcompression=0` in `recovery.conf` | > 0                 | `<=` 0                              |
+| PostgreSQL - SSL Compression Active               | This alert fires when we detect database connections with SSL compression are enabled. This may add significant jitter in replication delay. Replicas should turn off SSL compression via `sslcompression=0` in `recovery.conf` | > 0                 | \<= 0                              |
 | PostgreSQL - Too Many Locks Acquired              | This alert fires when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting max_locks_per_transaction.                              | > 20 percent of max allowed locks assuming default max connection = 100 and max_locks per transaction = 64 | < 20 percent of max allowed locks |
-| PostgreSQL - Access from Highly Malicious Sources | This alert will fire when a Postgres instance is accessed from known malicious IP addresses.                                                                                                                                    | > 0                                                                                                        | `<=` 0                              |
+| PostgreSQL - Access from Highly Malicious Sources | This alert will fire when a Postgres instance is accessed from known malicious IP addresses.                                                                                                                                    | > 0                                                                                                        | \<= 0                              |
+
+
+## PostgreSQL Metrics
+
+<details>
+<summary>Here are the metrics available for PostgreSQL (click to expand).</summary>
+
+postgresql_numbackends<br/>
+postgresql_xact_commit<br/>
+postgresql_xact_rollback<br/>
+postgresql_blks_read<br/>
+postgresql_blks_hit<br/>
+postgresql_tup_inserted<br/>
+postgresql_tup_updated<br/>
+postgresql_tup_deleted<br/>
+postgresql_deadlocks<br/>
+postgresql_tup_fetched<br/>
+postgresql_tup_returned<br/>
+postgresql_checkpoints_timed<br/>
+postgresql_checkpoints_req<br/>
+postgresql_buffers_checkpoint<br/>
+postgresql_buffers_clean<br/>
+postgresql_buffers_backend<br/>
+postgresql_stat_ssl_compression_count<br/>
+postgresql_replication_delay<br/>
+postgresql_replication_lag<br/>
+postgresql_replay_lag<br/>
+postgresql_flush_lag<br/>
+postgresql_write_lag<br/>
+postgresql_db_size<br/>
+postgresql_num_locks<br/>
+postgresql_seq_scan<br/>
+postgresql_seq_tup_read<br/>
+postgresql_idx_scan<br/>
+postgresql_idx_tup_fetch<br/>
+postgresql_n_tup_ins<br/>
+postgresql_n_tup_upd<br/>
+postgresql_n_tup_del<br/>
+postgresql_n_tup_hot_upd<br/>
+postgresql_n_live_tup<br/>
+postgresql_n_dead_tup<br/>
+postgresql_idx_scan<br/>
+postgresql_idx_tup_read<br/>
+postgresql_idx_tup_fetch<br/>
+postgresql_idx_blks_read<br/>
+postgresql_idx_blks_hit<br/>
+postgresql_heap_blks_read<br/>
+postgresql_heap_blks_hit<br/>
+postgresql_idx_blks_read<br/>
+postgresql_idx_blks_hit<br/>
+postgresql_index_size<br/>
+postgresql_table_size<br/>
+
+</details>

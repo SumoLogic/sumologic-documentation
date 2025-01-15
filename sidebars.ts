@@ -23,12 +23,12 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
-        'get-started/sumo-logic-ui',
-        'get-started/sumo-logic-ui-classic',
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
+        'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-classic',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
@@ -118,146 +118,147 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
-//            {
-//              type: 'category',
-//              label: 'Remote Management',
-//              collapsible: true,
-//              collapsed: true,
-//              link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
-//              items:[
-//                {
-//                  type: 'category',
-//                  label: 'Processing Rules',
-//                  collapsible: true,
-//                  collapsed: true,
-//                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
-//                  items:[
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules',
-//                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
-//                  ],
-//                },
-//                {
-//                  type: 'category',
-//                  label: 'Source Templates',
-//                  collapsible: true,
-//                  collapsed: true,
-//                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
-//                  items:[
-//                    {
-//                      type: 'category',
-//                      label: 'Apache',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Docker',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/docker/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Kafka',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/kafka/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Linux',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/linux/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/linux/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Localfile',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/localfile/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/localfile/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Mac',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mac/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/mac/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Nginx',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'RabbitMQ',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Redis',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/redis/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/redis/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Syslog',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/syslog/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/syslog/changelog',
-//                      ]
-//                    },
-//                    {
-//                      type: 'category',
-//                      label: 'Windows',
-//                      collapsible: true,
-//                      collapsed: true,
-//                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/windows/index'},
-//                      items:[
-//                        'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
-//                      ]
-//                    },
-//                  ],
-//                },
-//              ],
-//            },
+            {
+              type: 'category',
+              label: 'Remote Management',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/index'},
+              items:[
+                {
+                  type: 'category',
+                  label: 'Source Templates',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates',
+                    {
+                      type: 'category',
+                      label: 'Apache',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Docker',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/docker/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/docker/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Kafka',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/kafka/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/kafka/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Linux',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/linux/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/linux/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Localfile',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/localfile/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/localfile/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Mac',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mac/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/mac/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Nginx',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'RabbitMQ',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Redis',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/redis/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/redis/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Syslog',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/syslog/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/syslog/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Windows',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/windows/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
+                      ]
+                    },
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Processing Rules',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
+                  items:[
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',
+                  ],
+                },
+              ],
+            },
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
@@ -403,7 +404,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
@@ -420,11 +420,13 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
@@ -432,6 +434,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                // 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
@@ -468,6 +471,9 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
@@ -680,6 +686,7 @@ module.exports = {
               items: [
                 'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
+                'send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration',
                 'send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq',
               ],
             },
@@ -771,13 +778,12 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage Account',
+    label: 'Manage Data and Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
     items: [
       'manage/fields',
-      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -855,6 +861,22 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Scheduled Views',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/scheduled-views/index'},
+      items: [
+        'manage/scheduled-views/add-scheduled-view',
+        'manage/scheduled-views/pause-disable-scheduled-views',
+        'manage/scheduled-views/run-search-against-scheduled-view',
+        'manage/scheduled-views/scheduled-view-lag-time',
+        'manage/scheduled-views/scheduled-views-best-practices',
+        'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
+    'manage/health-events',
+    {
+      type: 'category',
       label: 'Users and Roles',
       collapsible: true,
       collapsed: true,
@@ -897,36 +919,24 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Manage Subscription',
+      label: 'Manage Plan',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
         'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
         'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/usage-management',
+        'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
-        'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/usage-management',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Content Sharing',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/content-sharing/index'},
-      items: [
-        'manage/content-sharing/admin-mode',
-        'manage/content-sharing/changing-alerts',
-        'manage/content-sharing/content-sharing-faq',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
       ]
     },
     {
@@ -940,16 +950,6 @@ module.exports = {
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Data Archiving',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/data-archiving/index'},
-      items: [
-        'manage/data-archiving/archive',
       ]
     },
     {
@@ -979,36 +979,11 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
+            'manage/ingestion-volume/ingest-budgets/daily-volume',
             'manage/ingestion-volume/ingest-budgets/minute-volume',
-          {
-            type: 'category',
-            label: 'Daily Volume',
-            collapsible: true,
-            collapsed: true,
-            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
-            items: [
-              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
-              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
-            ]
-          },
         ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Scheduled Views',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/scheduled-views/index'},
-      items: [
-        'manage/scheduled-views/add-scheduled-view',
-        'manage/scheduled-views/pause-disable-scheduled-views',
-        'manage/scheduled-views/run-search-against-scheduled-view',
-        'manage/scheduled-views/scheduled-view-lag-time',
-        'manage/scheduled-views/scheduled-views-best-practices',
-        'manage/scheduled-views/view-list-scheduled-views',
       ]
     },
     {
@@ -1062,6 +1037,28 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Content Sharing',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/content-sharing/index'},
+       items: [
+         'manage/content-sharing/admin-mode',
+         'manage/content-sharing/changing-alerts',
+         'manage/content-sharing/content-sharing-faq',
+       ]
+     },
+     {
+       type: 'category',
+       label: 'Data Archiving',
+       collapsible: true,
+       collapsed: true,
+       link: {type: 'doc', id: 'manage/data-archiving/index'},
+       items: [
+         'manage/data-archiving/archive',
        ]
      },
    ],
@@ -1532,9 +1529,23 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/behavior-insights/index'},
       items: [
+        'search/behavior-insights/logcompare',
+        {
+          type: 'category',
+          label: 'LogReduce',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'search/behavior-insights/logreduce/index'},
+          items: [
+            'search/behavior-insights/logreduce/logreduce-operator',
+            'search/behavior-insights/logreduce/detect-patterns-with-logreduce',
+            'search/behavior-insights/logreduce/logreduce-keys',
+            'search/behavior-insights/logreduce/logreduce-values',
+            'search/behavior-insights/logreduce/understand-the-logreduce-relevance-column',
+            'search/behavior-insights/logreduce/influence-the-logreduce-outcome',
+          ],
+        },
         'search/behavior-insights/logexplain',
-        'search/behavior-insights/logreduce-keys',
-        'search/behavior-insights/logreduce-values',
       ],
     },
     {
@@ -1552,20 +1563,6 @@ module.exports = {
         'search/live-tail/live-tail-show-in-search',
         'search/live-tail/multiple-live-tails',
         'search/live-tail/troubleshooting-live-tail',
-      ],
-    },
-    'search/logcompare',
-    {
-      type: 'category',
-      label: 'LogReduce',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/logreduce/index'},
-      items: [
-        'search/logreduce/logreduce-operator',
-        'search/logreduce/detect-patterns-with-logreduce',
-        'search/logreduce/influence-the-logreduce-outcome',
-        'search/logreduce/understand-the-logreduce-relevance-column',
       ],
     },
     'search/time-compare',
@@ -2146,6 +2143,7 @@ integrations: [
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
+         'integrations/microsoft-azure/microsoft-defender-for-cloud',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
@@ -2450,20 +2448,24 @@ integrations: [
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/crowdstrike-falcon-filevantage',
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/datadog',
-          'integrations/saas-cloud/druva',
+          'integrations/saas-cloud/digital-guardian-arc',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva',
           'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/jamf',
           'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
@@ -2486,8 +2488,10 @@ integrations: [
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/sophos',
+          'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
@@ -2670,8 +2674,6 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
       items: [
-        'cse/introduction-to-cloud-siem',
-        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2679,9 +2681,13 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/get-started-with-cloud-siem/index'},
           items: [
+            'cse/get-started-with-cloud-siem/cloud-siem-ui',
+            'cse/get-started-with-cloud-siem/intro-for-analysts',
+            'cse/get-started-with-cloud-siem/intro-for-administrators',
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
         },
@@ -2968,7 +2974,6 @@ integrations: [
         'api/field-management',
         'api/folder-management',
         'api/health-events',
-        'api/ingest-budget-v1',
         'api/ingest-budget-v2',
         'api/log-searches',
         'api/log-search-estimated-usage',

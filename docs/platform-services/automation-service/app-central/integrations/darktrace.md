@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darktrace.png')} alt="darktrace" width="100"/>
 
-***Version: 1.6  
-Updated: Mar 4, 2024***
+***Version: 1.7  
+Updated: Jan 10, 2025***
 
 Perform threat intelligence evidence gathering with Darktrace.
 
@@ -45,3 +45,4 @@ Perform threat intelligence evidence gathering with Darktrace.
     + Updated resource: Resolved bug related to integration resource
 * February 28, 2024 (v1.5) - Updated code for compatibility with Python 3.12
 * March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12
+* January 10, 2025 (v1.7) - Fixed timedelta related error in all actions

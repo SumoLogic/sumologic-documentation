@@ -72,17 +72,35 @@ _sourceCategory=cm_con2006 wiredMacs
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions provided at [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source). These instructions will guide you through the process of creating a source using the Cisco Meraki source category, which you will need to use when installing the app. By following these steps, you can ensure that your Cisco Meraki - C2C app is properly integrated and configured to collect and analyze your Cisco Meraki data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Cisco Meraki - C2C app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Cisco Meraki](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Cisco Meraki app is properly integrated and configured to collect and analyze your Cisco Meraki data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Viewing Cisco Meraki - C2C dashboards​
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Cisco Meraki - C2C dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
