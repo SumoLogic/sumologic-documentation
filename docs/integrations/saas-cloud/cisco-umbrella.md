@@ -63,8 +63,8 @@ Collection from a Cisco-managed S3 bucket has the following limitations:
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
 * Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
-  * Bucket Name: 'cisco-managed-us-east-1'
-  * Path Expression: '987654321_12e34c..../*'
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
 
 
 By having all your logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage. Or, ingest the logs through your SIEM or another security tool to determine if any security events in these Umbrella logs coincide with events in other security tools.
