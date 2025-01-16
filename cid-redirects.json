@@ -4030,7 +4030,7 @@
   "/Start-Here/01About-Sumo-Logic/System-Requirements/Supported-Browsers": "/docs/get-started/system-requirements",
   "/Start-Here/01About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements": "/docs/get-started/system-requirements",
   "/Traces/02Working_with_Tracing_data/Spans": "/docs/apm/traces/search-query-language-support-for-traces",
-  "/Traces/02Working_with_Tracing_data/Search_Query_Language_support_for_Traces"
+  "/Traces/02Working_with_Tracing_data/Search_Query_Language_support_for_Traces",
   "/Traces/Getting_Started_with_Transaction_Tracing": "/docs/apm/traces/get-started-transaction-tracing",
   "/Traces/Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments",
   "/Traces/Getting_Started_with_Transaction_Tracing/Working_with_spans_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
