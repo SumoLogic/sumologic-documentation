@@ -931,6 +931,7 @@ module.exports = {
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
         'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/manage-orgs-for-mssps',
         'manage/manage-subscription/usage-management',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
