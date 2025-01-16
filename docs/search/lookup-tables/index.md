@@ -15,13 +15,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/lookup-tables/create-lookup-table"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create a Lookup Table</h4></a>
+  <a href={useBaseUrl('docs/search/lookup-tables/create-lookup-table')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create a Lookup Table</h4></a>
   <p>Learn about Lookup Tables and how to create and manage them.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/lookup-tables/manage-update-lookup-tables"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage and Update Lookup Tables</h4></a>
+  <a href={useBaseUrl('docs/search/lookup-tables/manage-update-lookup-tables')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage and Update Lookup Tables</h4></a>
   <p>Learn how to update, export, and share Lookup Tables.</p>
   </div>
 </div>

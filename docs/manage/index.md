@@ -78,7 +78,7 @@ This topic describes features and options that give you administration over acco
 <!-- Unhide this when it goes GA
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/deletion-requests"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Deletion Requests</h4></a>
+  <a href={useBaseUrl('docs/manage/deletion-requests')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Deletion Requests</h4></a>
   <p>Remove sensitive or inadvertently ingested data from your account.</p>
   </div>
 </div>

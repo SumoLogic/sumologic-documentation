@@ -22,13 +22,13 @@ See the following articles for the vendors and products that Sumo Logic integrat
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/product-list/product-list-a-l"><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Product List A-L</h4></a>
+  <a href={useBaseUrl('docs/integrations/product-list/product-list-a-l')}><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Product List A-L</h4></a>
   <p>List of vendors and products A-L that Sumo Logic integrates with.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/product-list/product-list-m-z"><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Product List M-Z</h4></a>
+  <a href={useBaseUrl('docs/integrations/product-list/product-list-m-z')}><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Product List M-Z</h4></a>
   <p>List of vendors and products M-Z that Sumo Logic integrates with.</p>
   </div>
 </div>

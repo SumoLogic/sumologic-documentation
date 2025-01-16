@@ -13,49 +13,49 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/best-practices-search"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Best Practices for Searches</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/best-practices-search')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Best Practices for Searches</h4></a>
   <p>Learn to get the most out of searches using these easy-to-follow rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Dynamic Parsing</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Dynamic Parsing</h4></a>
   <p>Learn how to view fields from JSON logs without having to manually specify parsing logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/keyword-search-expressions"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Keyword Search Expressions</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/keyword-search-expressions')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Keyword Search Expressions</h4></a>
   <p>Learn how to define the scope of data for the query.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/search-syntax-overview"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Search Syntax Overview</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/search-syntax-overview')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Search Syntax Overview</h4></a>
   <p>Learn about query syntax and how to construct a search.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/search-templates"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Search Templates</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/search-templates')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Search Templates</h4></a>
   <p>Learn how to simplify searches for your users by giving them a few easy input choices.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/set-time-range"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Set the Time Range</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/set-time-range')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Set the Time Range</h4></a>
   <p>Learn how to adjust the time range for searches and metrics to get the most useful information.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/use-receipt-time"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use Receipt Time</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-receipt-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use Receipt Time</h4></a>
   <p>Learn how to display search data in the order that Collectors received the messages.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/build-search/use-url-to-run-search"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use a URL to Run a Search</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-url-to-run-search')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use a URL to Run a Search</h4></a>
   <p>Learn how to create a custom URL to launch a log search in Sumo Logic.</p>
   </div>
 </div>
