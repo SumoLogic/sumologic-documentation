@@ -6,7 +6,15 @@ description: Use Sumo Logic processing rules for an OpenTelemetry agent with an 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use our OpenTelemetry Collector remote management (OTRM) source template processing rules to filter and mask data sent to Sumo Logic from OpenTelemetry Collector. The collector itself is remotely managed by Sumo Logic.
+Use OpenTelemetry Collector remote management (OTRM) source template processing rules to filter and mask data sent from the OpenTelemetry Collector to Sumo Logic. The collector itself is remotely managed by Sumo Logic.
+
+Processing rules allow you to define conditions and actions for transforming or filtering data within the OpenTelemetry Collector. With remote management, you can:
+
+* Apply rules at the collector level for specific data sources.
+* Enhance data processing by adding metadata, filtering unwanted logs, or standardizing formats.
+* Manage rules centrally through source templates, ensuring consistency across multiple collectors.
+
+To configure processing rules, navigate to the remote management section in the Sumo Logic UI, select the desired source template, and define the rules under the processing section.
 
 In this section, we'll introduce the following concepts:
 
