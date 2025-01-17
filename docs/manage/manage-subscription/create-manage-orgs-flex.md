@@ -10,13 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 | Account Type | Account Level |
 |:--|:--|
-| Credits | Essentials, Enterprise Suite Flex |
+| Credits | Enterprise Suite Flex |
 
 :::note
 This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic account executive.
 :::
 
-This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) feature for Flex, which you can use to create and manage orgs. The term *parent org* refers to the organization from which you create a new organization, while *child orgs* are the organizations you create.
+This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) feature for Flex licensing, which you can use to create and manage orgs. The term *parent org* refers to the organization from which you create a new organization, while *child orgs* are the organizations you create.
 
 Sumo Orgs allows you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
@@ -24,7 +24,7 @@ When you create a child org, you provision it with credits, based on the ingest 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
-Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
+Users that have the required [role capabilities](#requirements-for-creating-and-managing-orgs) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## About Cloud SIEM provisioning
 
@@ -45,7 +45,7 @@ There are several [role capabilities](/docs/manage/users-roles/roles/role-capabi
 This section has instructions for creating a new org.
 
 :::note
-After you create a new org, you can’t delete it.
+You cannot delete a new child org once it is created.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
@@ -66,7 +66,10 @@ After you create a new org, you can’t delete it.
       <img src={useBaseUrl('img/manage/subscriptions/allocate-credits-set-baseline.png')} alt="allocate-credits-set-baseline" style={{border:'1px solid gray'}} width="450" />
 1. In the credits calculator, enter the following:
       * **Average daily ingestion**. Enter the average daily ingestion of the Flex data.
-      * **Estimated Scans per GB of ingested data**. Set the amount of data to be scanned from the ingested data. Default is set to 500 GB.
+      * **Estimated Scans per GB of ingested data**. Adjust the toggle bar to set the number of times you expect the data to be scanned. The default setting is 500X, which means the 1 GB of ingested data will be scanned 500 times. You can set this number based on your analytic usage profile. 
+            - Set the value between 500-750 if your analytic usage profile is **Low**.
+            - Set the value between 750-1500 if your analytic usage profile is **Medium**.
+            - Set the value between 1500-2000 if your analytic usage profile is **High**.
       * **Traces Ingest**. Enter estimated daily ingestion of traces.
       * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.<br/> <img src={useBaseUrl('img/manage/subscriptions/credits-calculator-flex.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
 1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
@@ -109,6 +112,7 @@ To change an org's credits allocation:
       **Example 2**: Suppose you need to increase credits for your child org. The image below shows that you have used 35 out of 31,026 credits allocated to your child org. To add more credits, select **Credits to be Added** and enter the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
 1. If you want to modify the baseline, click **View Baseline**. The credits calculator appears.
       1. Click **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2-flex.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Depending on the new baseline values, the calculator now shows the recommended credit allocation, which provides a suggestion on how many credits you would need to add for the child org.
       1. Once you set the baseline, you can view the recommended value in the **Credits to be Added** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
       1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
 1. Click **Save** once you finish editing the credit values.
