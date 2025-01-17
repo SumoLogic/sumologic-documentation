@@ -56,9 +56,16 @@ The Cisco Umbrella app offers logging to Amazon S3 as it has the ability to uplo
 
  <img src={useBaseUrl('img/integrations/saas-cloud/options-aws-s3.png')} alt="options aws s3 cisco" width="750"/>
 
-:::note
-If you're collecting from a Cisco Umbrella bucket, SNS Subscription Endpoint is not supported. For more information, see important note on using the [Sumo Logic Amazon S3 source for the Cisco-Managed S3 bucket](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#cisco-umbrella)
-:::
+Collection from a Cisco-managed S3 bucket has the following limitations:
+
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
+* Access must be provided with an Access ID and Key. Role-based access is not supported.
+* Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
+
 
 By having all your logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage. Or, ingest the logs through your SIEM or another security tool to determine if any security events in these Umbrella logs coincide with events in other security tools.
 
