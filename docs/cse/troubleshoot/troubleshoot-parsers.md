@@ -85,7 +85,7 @@ Common failure types:
 Common errors:
 * `Fatal: /Parsers/System/Vendor/Product Name did not produce an event.`
 <br/>Indicates the parser is likely failing immediately.
-* `Fatal: /Parsers/System/Vendor/Product Name parse failed`
+* `Fatal: /Parsers/System/Vendor/Product Name parse failed.`
 <br/>Indicates the parser is likely failing immediately.
 * `Fatal:/Parsers/System/Vendor/Product Name - transform_name - none of the transforms in cascade successfully parsed event (transform_name_1, transform_name_2).`
 <br/>Indicates a specific component of the parser is failing. This case indicates a transform cascade in which logs may be partially parsed but are failing further into processing.
