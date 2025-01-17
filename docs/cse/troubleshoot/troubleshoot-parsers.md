@@ -93,7 +93,7 @@ Common errors:
 <br/>Indicates a specific transform within a parser is failing. Logs may be partially parsed, but are failing further into processing.
 * `Fatal:/Parsers/System/Vendor/Product Name- transform_name  - no value found in required transform target field parsed_field_name.`
 <br/>Indicates a required key value pair is missing from the parsed log and the log is failing to parse as a result.
-* `Fatal:/Parsers/System/Vendor/Product Name- wrapper did not return the wrapped log entry`
+* `Fatal:/Parsers/System/Vendor/Product Name- wrapper did not return the wrapped log entry.`
 <br/>A parser utilizing a wrapper transform did not find the log that is supposed to be present, causing the parser failure.
 
 #### Check for recent changes
