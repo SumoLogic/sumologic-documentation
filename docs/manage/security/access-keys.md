@@ -4,44 +4,12 @@ title: Access Keys
 description: Access keys allow you to securely register new Collectors or access Sumo Logic APIs.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 In Sumo Logic, you'll need an access key to:
 
 * **Register new Collectors**. When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
 * **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
-
-import Iframe from 'react-iframe';
-
-<!-- outdated
-:::sumo Micro Lesson
-
-<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
-  width="854px"
-  height="480px"
-  title="title"
-  id="wistiaVideo"
-  className="video-container"
-  display="initial"
-  position="relative"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-/>
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
-:::
--->
 
 ## Prerequisites
 
