@@ -100,7 +100,7 @@ For this example, let's assume no mapping matched `logType=json`, `vendor=micros
 A common mapping issue is where a record is created but certain fields are not normalized and are potentially causing downstream issues, such as false-negative or false-positive signals, or causing searches based on records to fail in some way.
 
 1. Analyze the record. 
-   1. Determine what field(s) are missing. For example, `user_username` is not mapped, preventing the record from being considered for signals and correlation into insights
+   1. Determine what field(s) are missing. For example, `user_username` is not mapped, preventing the record from being considered for signals and correlation into insights.
    1. Determine where does the data exist in the parsed log. Use the "fields" element in the record, which contains all parsed key value pairs from the original log, to find the location where the field needs to be mapped from. Note the key name.
 1. Analyze and correct the mapper.
    1. Determine which mapper a record is mapped from using `metadata_mapperName` or `metadata_mapperUid`.
