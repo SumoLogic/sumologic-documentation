@@ -305,3 +305,18 @@ The **WWindows - Security Monitoring - Critical Events** dashboard provides anal
 The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor windows events provided by computer, channel, and provider. This dashboard also provides additional information on computer reboots.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid gray'}} alt="Windows-Security-Monitoring-Inventory" />
+
+
+## Create monitors for Windows - Cloud Security Monitoring and Analytics - OpenTelemetry app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows - Cloud Security Monitoring and Analytics - OpenTelemetry Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows CSMA - Audit Log Tampering Detection` | This alert is triggered when attempts to clear or tamper with Windows audit logs are detected, indicating potential attempts to cover malicious activities. | Count >= 1 | Count < 1 |
+| `Windows CSMA - Failed Authentication Spike` | This alert is triggered when unusual spikes in failed authentication attempts are detected, indicating potential brute force attacks. | Count >= 10 | Count < 10 |
+| `Windows CSMA - Windows Update Failures` | This alert is triggered when repeated Windows Update failures are detected, indicating potential vulnerabilities to known exploits. | Count >= 3 | Count < 3 |
