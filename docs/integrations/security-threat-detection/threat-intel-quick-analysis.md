@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
 
-The Threat Intel Quick Analysis app correlates [threat intelligence](/docs/security/threat-intelligence/) data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis app scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and **email**.
+The Threat Intel Quick Analysis app correlates [threat intelligence](/docs/security/threat-intelligence/) data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis app scans selected logs for threats based on IP, URL, domain, SHA-256 hashes, and email.
 
 ## Log types
 
-The Threat Intel Quick Analysis app can be used for any type of logs, regardless of format. Ideal log sources should include **IP**, **URL**, **domain**, **Hash 256**, and/or **email** information.
+The Threat Intel Quick Analysis app can be used for any type of logs, regardless of format. Ideal log sources should include IP, URL, domain, SHA-256 hashes, and/or email information.
 
 ## Installing the Threat Intel Quick Analysis app
 
@@ -26,6 +26,24 @@ import AppInstall from '../../reuse/apps/app-install.md';
 <AppInstall/>
 
 ## Threat Intel optimization
+
+The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your Threat Intel queries:
+
+Filter out unwanted logs before you use lookup operator
+* Use keywords
+* Use the where operator
+* Use general search optimization rules
+
+For example:
+```
+_sourceCategory=cylance "IP Address"
+| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| where !isNull(ip_address)
+| where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+```
+
+<!-- Replace section content with this after `sumo://threat/cs` is replaced by `threatlookup`:
 
 The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
 
@@ -67,15 +85,28 @@ _sourceCategory=<source-category-name>
 
 |sum (ip_count) as threat_count
 ```
+-->
 
 ### Field Extraction Rule
 
-Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-extraction-rule) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
+Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-extraction-rule) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with lookup operator.
 
 1. Create the FER For example, for Cylance Security Events, create and use the following Field Extraction Rule:
    ```sql
    parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected
    ```
+1. Customize your query so you can use parsed fields from FER with the lookup operator, where src_ip is the parsed field from FER (see step # 1). For example:
+   ```
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
+   | json field=raw "labels[*].name" as label_name
+   | replace(label_name, "\\/","->") as label_name
+   | replace(label_name, "\""," ") as label_name
+   | where  type="ip_address" and !isNull(malicious_confidence)
+   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
+   | sort by threat_count
+   ``` 
+<!-- Replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
    | threatlookup singleIndicator src_ip
@@ -85,12 +116,24 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
    ```
+-->
 
 ### Scheduled view
 
 Use scheduled views with the threat lookup operator to find threats. Scheduled view reduces aggregate data down to the bare minimum, so they contain only the raw results that you need to generate your data. Queries that run against scheduled views return search results much faster because the data is pre-aggregated before the query is run. And a scheduled view query runs continuously, once per minute.
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
+   ```
+   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
+   | json field=raw "labels[*].name" as label_name
+   | replace(label_name, "\\/","->") as label_name
+   | replace(label_name, "\""," ") as label_name
+   | where  type="ip_address" and !isNull(malicious_confidence)
+   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
+   | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
+   ```
+<!-- Replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
@@ -100,11 +143,14 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
     | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
     | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
+   -->
 1. Now, you can run your Threat Intel query on top of this view:
      ```sql
      _view=cylance_threat
      | count by src_ip
      ```
+
+<!-- Hide this FAQ section until after `sumo://threat/cs` is replaced by `threatlookup`:
 
 ## Threat Intel FAQ
 
@@ -131,7 +177,7 @@ No. No results in your dashboards can mean that nothing has been identified as a
 It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase).
 
 #### I already have parsed fields such as IPs, domain, URL, Email, or File Name. Can I use them with this App, instead of parsing each log line again?
-Yes, you can customize the query with in the App. For example:
+Yes, you can customize the query in the app. For example:
 
 ```
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
@@ -178,6 +224,8 @@ Yes, you can run scheduled searches that can be set up with a run frequency of R
 #### What do I do if I find a bad IP (malicious level = high)?
 
 You can further investigate bad IP triggers by updating your query to check the port as well and see if it is also identified as a malicious port.
+
+-->
 
 ## Viewing Threat Intel Quick Analysis dashboards
 
@@ -259,14 +307,14 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 
 ### Hash 256
 
-See the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+See the frequency of SHA-256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
 
-* **Threat Count.** Count of total Hash 256 threats over the last 15 minutes.
-* **Threats by Malicious Confidence.** Qualifies Hash 256 threats for the last 60 minutes  into High, Medium, Low, Unverified, according to Sumo Logic's machine learning engine and displayed as a pie chart.
-* **Threat Breakdown by Sources.** Pie chart of Hash 256 threats over the last 60 minutes broken down by source.
-* **Threats Over Time.** Line chart of the number of Hash 256 threats over the last 60 minutes.
-* **Threat Breakdown by Source.** Line chart of the number of Hash 256 threats over the last 60 minutes, broken down by source.
-* **Threats by Actor.** Identifies Actors, if any, that can be attributed to Hash 256 threats over the last 15 minutes. Actors are identified individuals, groups or nation-states associated to threats.
-* **Threat Table.** Aggregation Table of Hash 256 threats over the last 15 minutes.
+* **Threat Count.** Count of total SHA-256 threats over the last 15 minutes.
+* **Threats by Malicious Confidence.** Qualifies SHA-256 threats for the last 60 minutes  into High, Medium, Low, Unverified, according to Sumo Logic's machine learning engine and displayed as a pie chart.
+* **Threat Breakdown by Sources.** Pie chart of SHA-256 threats over the last 60 minutes broken down by source.
+* **Threats Over Time.** Line chart of the number of SHA-256 threats over the last 60 minutes.
+* **Threat Breakdown by Source.** Line chart of the number of SHA-256 threats over the last 60 minutes, broken down by source.
+* **Threats by Actor.** Identifies Actors, if any, that can be attributed to SHA-256 threats over the last 15 minutes. Actors are identified individuals, groups or nation-states associated to threats.
+* **Threat Table.** Aggregation Table of SHA-256 threats over the last 15 minutes.
