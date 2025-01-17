@@ -248,7 +248,7 @@ You select the initial object to use for the payload when you [create a playbook
     * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). 
 
 :::note
-If you are using [nested playbook nodes](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook), then you will need to configure the parameters of the Start Node in the child playbook to include the outputs of the parent playbook that are passed to the child playbook. It is not recommended to use parameter arrays (i.e. signals[].id) as the Start Node parameters for the child playbook, as you should use a standard parameter names instead (i.e. signals.id).
+If you are using [nested playbook nodes](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook), then you will need to configure the parameters of the Start Node in the child playbook to include the outputs of the parent playbook that are passed to the child playbook. It is not recommended to use parameter arrays (for example, `signals[].id`) as the Start Node parameters for the child playbook; you should use a standard parameter names instead (for example, `signals.id`).
 :::
 
 Following are examples of payloads from different trigger types:
