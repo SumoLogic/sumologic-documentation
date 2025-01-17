@@ -26,25 +26,28 @@ To see the custom columns that have been defined in your environment:
 
 ## Create a Custom Column
 
-1. On the **Custom Columns** page, click **Create**.
-1. The **Create Match List Column** popup appears. <br/><img src={useBaseUrl('img/cse/create-column.png')} alt="Create column" style={{border: '1px solid gray'}} width="400"/>
+1. On the **Custom Columns** page, click **Add Custom Column**.
+1. The **Add Custom Column** popup appears. <br/><img src={useBaseUrl('img/cse/create-column.png')} alt="Create column" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the custom column.
-1. **Fields**. Click the chevron icon to display a selector list of Cloud SIEM attributes. You can select multiple attributes. If multiple attributes are selected, the match list will match if the list item value matches a record value for any of the custom column attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
-1. Click **Create** to add the new column.
+1. **Fields**. Click to display a selector list of Cloud SIEM attributes. You can select multiple attributes. If multiple attributes are selected, the match list will match if the list item value matches a record value for any of the custom column attributes. Click **Show Field Guide** to view more information about attributes, such as data type. 
+1. Click **Save** to add the new column.
 
 ## Edit a custom column
 
 1. On the **Custom Columns** page, click the custom column name or the edit icon in the row for the column.
-1. Make your changes on the **Edit Match List Column** popup.
-1. Click **Update** to save the changes.
+1. Click **Edit**. 
+1. Make your changes on the edit popup.
+1. Click **Save** to save the changes.
 
 ## Delete a custom column
 
-1. On the **Custom Columns** page, click the trash can icon in the row for the column you want to delete.
-1. On the **Delete column** popup, click confirmation popup **Yes, Delete Column**.
+1. On the **Custom Columns** page, hover your mouse over a custom column in the list.
+1. Click the three-dot kebab button on the far right of the item. 
+1. Select **Delete**.
+1. On the delete confirmation popup, click **Delete**
 
 ## Create a match list with a custom column
 
-Follow the instructions in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list), and select the desired column in the **Custom** section of the **Target Column** selector list.
-
-<img src={useBaseUrl('img/cse//target-column-selector.png')} alt="Target column selector" style={{border: '1px solid gray'}} width="400"/>
+1. Follow the instructions in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list/#create-a-match-list).
+1. In the **Add Match List** dialog, click **Target Column**. A list of available target column values appears.
+1. Select the desired column in the **Custom** section of the selector list.<br/><img src={useBaseUrl('img/cse//target-column-selector.png')} alt="Target column selector" style={{border: '1px solid gray'}} width="400"/>

@@ -18,11 +18,11 @@ Here’s a use case for using a match list to define an allow list:  Vulnerabil
 There’s no reason you can’t use a match list to define “deny lists” of items. However, Cloud SIEM’s threat intel feature is designed for exactly that purpose. Most of the time, but not always, you should use threat intel lists for negative indicators. For more information, see [Match lists or threat intel: which to use?](#match-listor-threat-intel-which-to-use).
 :::
 
-Here’s an example of a match list in the Cloud SIEM UI. It is a list of trusted domains.  
+Here are some match lists in the Cloud SIEM UI.  
 
 <img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" style={{border: '1px solid gray'}} width="800"/>
 
-Note that the match list has a **Target Column**, which you define when you create the list. The Target Column indicates what type of record fields should be compared to the match list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are match lists Used?](#how-are-match-lists-used)
+Note that each match list has a **Target Column**, which you define when you create the list. The Target Column indicates what type of record fields should be compared to the match list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are match lists Used?](#how-are-match-lists-used)
 
 ## Built-in rules refer to standard match list names
 
@@ -82,24 +82,24 @@ You can also create and manage match lists with Cloud SIEM's REST [API](/docs/cs
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Match Lists**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. 
-1. Click **Create**.
-1. On the **New Match List** popup, enter the following:
+1. Click **Add Match List**.
+1. On the **Add Match List** popup, enter the following:
     1. **Name**. Name of the Match list. If you are creating a standard match list, make sure the name matches the standard match list name. For more information, see [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
     1. **Description**. Enter a description for the list. Descriptions for standard match lists can be found in [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).
-    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
     1. **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard match lists can be found in [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists). <br/>
         :::note
         Once you create a match list, it's not possible to change its **Target Column**.
         :::
-    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/new-match-list.png')} alt="New match list" style={{border: '1px solid gray'}} width="400"/>
+    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
+    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/new-match-list.png')} alt="New match list" style={{border: '1px solid gray'}} width="400"/>
 1. The match list now appears on the **Match Lists** page.
 1. Click the name of the match list to open it.
-1. On the **Match List > Details** page, click **Add List Item**.
-1. On the **New Match List Item** popup, enter:
+1. On the **Match Lists > Details** page, click **Add Match List Item**.
+1. On the **Add Match List Item** popup, enter:
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.
    * **Description**. (Optional) Enter a description of the entity instance you entered.
    * **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   * Click **Add** to add the item to the list.
+   * Click **Save** to add the item to the list.
 1. The item now appears in the match list.
 
 ## Import a match list
