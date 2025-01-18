@@ -244,8 +244,12 @@ You select the initial object to use for the payload when you [create a playbook
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Entity**. An [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
-    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
+    * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook). You can also select this option if you want to pass a custom payload from an alert.
     * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). 
+
+:::note
+If you are using [nested playbook nodes](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-playbook-node-to-a-playbook), then you will need to configure the parameters of the Start Node in the child playbook to include the outputs of the parent playbook that are passed to the child playbook. It is not recommended to use parameter arrays (for example, `signals[].id`) as the Start Node parameters for the child playbook; you should use a standard parameter names instead (for example, `signals.id`).
+:::
 
 Following are examples of payloads from different trigger types:
 * [Alert payload](#alert-payload)
