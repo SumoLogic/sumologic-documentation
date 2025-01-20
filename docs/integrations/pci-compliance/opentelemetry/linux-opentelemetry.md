@@ -221,13 +221,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>
 
-## Create monitors for PCI Compliance for Linux - OpenTelemetry app
+## Create monitors for PCI Compliance for Linux app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### PCI Compliance for Linux - OpenTelemetry Alerts
+### PCI Compliance for Linux alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
