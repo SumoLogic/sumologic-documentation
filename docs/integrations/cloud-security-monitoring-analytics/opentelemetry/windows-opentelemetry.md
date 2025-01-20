@@ -307,13 +307,13 @@ The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid gray'}} alt="Windows-Security-Monitoring-Inventory" />
 
 
-## Create monitors for Windows - Cloud Security Monitoring and Analytics - OpenTelemetry app
+## Create monitors for Windows - Cloud Security Monitoring and Analytics app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Windows - Cloud Security Monitoring and Analytics - OpenTelemetry Alerts
+### Windows - Cloud Security Monitoring and Analytics alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
