@@ -317,6 +317,6 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Windows CSMA - Audit Log Tampering Detection` | This alert is triggered when attempts to clear or tamper with Windows audit logs are detected, indicating potential attempts to cover malicious activities. | Count >= 1 | Count < 1 |
+| `Windows CSMA - Audit Log Tampering Detection` | This alert is triggered when attempt is detected to clear or tamper with Windows audit logs, indicating potential attempts to cover malicious activities. | Count >= 1 | Count < 1 |
 | `Windows CSMA - Failed Authentication Spike` | This alert is triggered when unusual spikes in failed authentication attempts are detected, indicating potential brute force attacks. | Count >= 10 | Count < 10 |
 | `Windows CSMA - Windows Update Failures` | This alert is triggered when repeated Windows Update failures are detected, indicating potential vulnerabilities to known exploits. | Count >= 3 | Count < 3 |
