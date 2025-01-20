@@ -265,13 +265,13 @@ Track your Windows Update activities.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/Windows-PCI-Req-06-Windows-Updates-Activity.png' alt="Windows - PCI Req 06 - Windows Updates Activity" />
 
-## Create monitors for PCI Compliance For Windows JSON - OpenTelemetry app
+## Create monitors for PCI Compliance For Windows JSON app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### PCI Compliance For Windows JSON - OpenTelemetry Alerts
+### PCI Compliance For Windows JSON alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
