@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="icon" width="45"/>
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Services, go to the **Home** screen and select **Services**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Services, go to the **Home** screen and select **Services**. To create new Services, click **New** at the top of the screen and select **Services**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Services, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**. 
  
