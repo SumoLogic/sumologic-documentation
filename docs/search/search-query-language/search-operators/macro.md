@@ -49,6 +49,7 @@ To create a macro, follow the steps below:
 - You can create a maximum of 50 macros.
 - You can add a maximum of 5 arguments.
 - You cannot edit or delete the macro. Submit a customer request to Sumo Logic if you still need to edit or delete a macro.
+- You are only allowed to use single expression.
 - You can only use the below listed argument validations:
   - `isValidIpV4`
   - `contains`
