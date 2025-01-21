@@ -38,15 +38,13 @@ Select the documentation link for your deployment:
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Download Search Results
     * View Collectors
-
--->
 
 ## Endpoints for API access  
 

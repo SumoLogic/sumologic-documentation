@@ -74,10 +74,9 @@ For example, consider you are interested in querying upon audit logs with change
 | count by eventTime, eventName, actor, role_name, created_log_analytics_filter, created_audit_data_filter, updated_log_analytics_filter, updated_log_analytics_filter
 ```
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * User Management (all role capabilities)
 
--->
