@@ -332,11 +332,5 @@ The following attributes are required:
          * `url:value`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
          * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
-       * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Following are valid values:
-          * `stix`. Specifies the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
-          * `pcre`. Specifies the [PCRE](https://www.pcre.org/) language.
-          * `sigma`. Specifies the [SIGMA](https://sigmahq.io/) language.
-          * `snort`. Specifies the [SNORT](https://www.snort.org/) language.
-          * `suricata`. Specifies the [SURICATA](https://suricata-ids.org/) language.
-          * `yara`. Specifies the [YARA](https://virustotal.github.io/yara/) language.
+       * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
