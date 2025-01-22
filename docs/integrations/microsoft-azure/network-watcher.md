@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network. This App provides preconfigured Dashboards that allow you to monitor inbound traffic, outliers in traffic flow, and denied traffic flows.
 
+:::info
+On 30 September 2027, Network security group (NSG) flow logs in Azure Network Watcher will be retired. As part of this retirement, you'll no longer be able to create new NSG flow logs starting 30 June 2025. To avoid service disruptions, [migrate your existing NSG flow logs configuration to Virtual Network Flow Logs](https://learn.microsoft.com/en-gb/azure/network-watcher/nsg-flow-logs-migrate). You can then, configure [collection for Virtual Network Flow logs](/docs/integrations/microsoft-azure/azure-virtual-network.md#setup) and install the new Sumo Logic app for [Azure Virtual Network](/docs/integrations/microsoft-azure/azure-virtual-network.md).
+:::
+
 ## Log types
 
 The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) flow logs. NSG flow logs provide ingress and egress IP traffic flow with the following information:
