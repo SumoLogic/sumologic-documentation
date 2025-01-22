@@ -5,10 +5,11 @@ sidebar_label: Changelog
 description: Changelog for Apache source template for OpenTelemetry.
 ---
 
-## [3.1.1] - 2024-12-10
+## [3.1.1] - 2025-01-24
 
 ### Fixed
 - Security issue
+- Schema validations
 
 ## [3.1.0] - 2024-10-26
 
