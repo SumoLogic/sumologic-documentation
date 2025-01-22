@@ -46,14 +46,13 @@ This API manages your OpenTelemetry collectors.
 | US2 | https://api.us2.sumologic.com/docs/#tag/otCollectorManagementExternal |
 
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Collectors
     * View Collectors
--->
 
 ## Guide contents
 

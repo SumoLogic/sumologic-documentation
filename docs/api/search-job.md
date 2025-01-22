@@ -31,7 +31,7 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -41,7 +41,6 @@ The Search Job API is available to Enterprise accounts.
 * Security
     * Manage Access Keys
 
--->
 
 ## Endpoints for API access
 

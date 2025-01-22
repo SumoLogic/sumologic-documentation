@@ -30,10 +30,8 @@ The Policies Management API allows you to control the security and share setting
 | US1        | https://api.sumologic.com/docs/#tag/policiesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/policiesManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Security (all role capabilities)
-
--->
