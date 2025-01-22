@@ -60,8 +60,7 @@ enable signal generation:
 
 ### Renaming message fields
 
-When you configure a Scheduled Search to create Cloud SIEM signals, you are prompted to select a [Cloud SIEM record type](/docs/cse/schema/cse-record-types/). The fields returned by your search must match an attribute in the record
-type you select. A field whose name does not match a Cloud SIEM attribute will not be populated in the record created from the Schedule Search results. For more about Cloud SIEM attribute names, see [Attributes You Can Map to Records](/docs/cse/schema/attributes-map-to-records/).
+When you configure a Scheduled Search to create Cloud SIEM signals, you are prompted to select a [Cloud SIEM record type](/docs/cse/schema/cse-record-types/). The fields returned by your search must match an attribute in the record type you select. A field whose name does not match a Cloud SIEM attribute will not be populated in the record created from the Schedule Search results. For more about Cloud SIEM attribute names, see [Attributes You Can Map to Records](/docs/cse/schema/attributes-map-to-records/).
 
 ## Scheduling the search
 
