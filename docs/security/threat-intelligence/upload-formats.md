@@ -28,7 +28,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0001",
      "indicator": "192.0.2.0",
      "type": "ipv4-addr:value",
-     "source": "FreeTAXII",
+     "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -44,7 +44,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0002",
      "indicator": "192.0.2.1",
      "type": "ipv4-addr:value",
-     "source": "FreeTAXII",
+     "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -77,7 +77,7 @@ The following attributes are required:
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
        * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [View threat indicators in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
@@ -111,8 +111,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
-0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
+0001,192.0.2.0,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 #### Upload with the API
@@ -121,8 +121,8 @@ If uploading a CSV file using the API, the file should be contained in a JSON ob
 
 ```
 {
- "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
-0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
+0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
 }
 ```
 
@@ -145,7 +145,7 @@ Columns for the following attributes are required in the upload file:
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
@@ -260,7 +260,7 @@ As shown in the following example, if uploading via the API you must add the `so
 
 ```json
 {
- "source": "FreeTAXII",
+ "source": "TAXII2Source",
  "indicators": [
    {
      "type": "indicator",

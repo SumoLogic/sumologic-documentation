@@ -28,7 +28,7 @@ Where:
    If there's still a tie at this point, the system picks the indicator the back-end database returned first.
 
 * `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, all matching indicators are returned.
+* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, only active matching indicators are returned.
 * `<indicator_value_field>` is the indicator to look up. 
 * `<optional_indicator_value_field>` is used to add more indicators to look up.
 
@@ -114,7 +114,7 @@ You can run the `threatlookup` search operator with the [`cat` search operator](
 cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
 ```
 ```
-cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
+cat sumo://threat-intel  | where _threatlookup.source = "TAXII2Source" and _threatlookup.indicator = "192.0.2.0"
 ```
 
 In the `cat` output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
