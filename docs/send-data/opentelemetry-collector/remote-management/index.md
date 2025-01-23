@@ -44,4 +44,10 @@ In this section, we'll introduce the following concepts:
       <p>Discover how to apply processing rules for an OpenTelemetry agent using remote management source templates to enhance data handling.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
+      <p>Find solutions to common issues with the OpenTelemetry remote management collector.</p>
+    </div>
+  </div>
 </div>

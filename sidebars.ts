@@ -257,6 +257,7 @@ module.exports = {
                     'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',
                   ],
                 },
+                'send-data/opentelemetry-collector/remote-management/troubleshooting',
               ],
             },
             'send-data/opentelemetry-collector/auto-discovery',
