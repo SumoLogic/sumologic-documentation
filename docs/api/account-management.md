@@ -31,11 +31,8 @@ The Account Management API allows you to manage the custom subdomain for the URL
 | US1        | https://api.sumologic.com/docs/#tag/accountManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accountManagement |
 
-
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 * Data Management
     * View Account Overview
-
--->

@@ -134,9 +134,9 @@ This section describes what [match lists](/docs/cse/match-lists-suppressed-lists
 
 Match lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a match list in the Cloud SIEM UI. 
+Here are some match lists in Cloud SIEM.   
 
-<img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
+<img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" width="800"/>
 
 You can take advantage of match lists in rules, but match lists actually come into play when records are ingested. Here’s how it works:  When a record is ingested, Cloud SIEM compares the entries in all match lists to fields in the record. Of course, Cloud SIEM doesn’t compare the entries in a given match list to all fields in a record; it wouldn’t make sense to compare a domain name to an IP address. You could say that Cloud SIEM understands the difference between apples and oranges: Cloud SIEM distinguishes which record fields contain IP addresses, which contain domain name and so on. So, Cloud SIEM compares a match list of IP addresses to record fields that contain IP addresses. Similarly, Cloud SIEMs compares a match list of usernames to record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
 

@@ -49,6 +49,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/manage/manage-subscription/create-manage-orgs-flex"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Orgs (Flex)</h4></a>
+  <p>Learn how to create and manage multiple Sumo Logic Orgs with Flex data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/manage/manage-subscription/manage-org-settings"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Org Settings</h4></a>
   <p>Learn how to update org names, define subdomain names, delete orgs, and change the account owner.</p>
   </div>
