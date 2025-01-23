@@ -5,7 +5,7 @@ description: Control the capacity of daily log ingestion volume sent to Sumo Log
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section describes how to set up ingest budgets to control your ingestion better for daily volume or safe guard against throttling with minute granularity.
+This section describes how to set up ingest budgets to control your ingestion better for daily volume or safeguard against throttling with minute granularity.
 
 ## Guide contents
 

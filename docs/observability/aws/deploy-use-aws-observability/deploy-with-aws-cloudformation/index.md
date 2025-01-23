@@ -17,6 +17,10 @@ Click [here](https://youtu.be/aqngY0lUWUI) to view a microlesson on deploying th
 
 ## Before you start
 
+:::info
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
+:::
+
 If this is the first time you've deployed the AWS Observability Solution, read the [Before You Deploy](../before-you-deploy.md) topic for information about:
 
 * Prerequisites for installing the solution.
@@ -56,7 +60,7 @@ The below tables displays the response for each text box in this section.
 | Prompt | Guideline |
 |:--|:--|
 | Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
-| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys.md) for more information. |
+| Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |

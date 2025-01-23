@@ -30,12 +30,10 @@ The Partitions Management API allows you to improve search performance by search
 | US1        | https://api.sumologic.com/docs/#tag/partitionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/partitionManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Partitions
     * View Partitions
-
--->

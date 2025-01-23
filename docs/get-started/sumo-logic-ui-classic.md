@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-ui-classic
 title: Tour the Sumo Logic Classic UI
-sidebar_label: Sumo Logic UI (Classic)
+sidebar_label: Tour the Sumo UI (Classic)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
@@ -208,7 +208,6 @@ To manage your personal Sumo Logic account preferences, do the following:
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
     * **My Profile**: username and password
     * **My Security Settings**: enable and disable 2-step verification
-    * **My Access Keys**: add, edit, and remove access keys
     * **My Preferences**: your account session settings
 
 For more information, see the [Preferences Page](account-settings-preferences.md).

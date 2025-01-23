@@ -81,7 +81,7 @@ In this step, you set up the AWS Metric Streams service to stream metrics to Kin
 
 ## Filter CloudWatch metrics during ingestion
 
-You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics. You can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
+You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics or by using AWS Tag Filters above. While using filters on Metrics Streams in AWS, you can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
 
 :::note
 Inclusive and exclusive filters can’t be combined. You can choose namespaces to exclude or namespaces to include, but not both.
