@@ -1,10 +1,10 @@
 ---
 id: troubleshooting
 title: Troubleshooting
-description: Learn about common troubleshooting scenarios of Sumo Logic OpenTelemetry memote management.
+description: Learn about common troubleshooting scenarios of Sumo Logic OpenTelemetry collector remote management.
 ---
 
-This document contains common troubleshooting scenarios about the Sumo Logic OpenTelemetry remote management collector.
+This document contains common troubleshooting scenarios about the Sumo Logic OpenTelemetry collector remote management.
 
 ## Source template specific issues
 

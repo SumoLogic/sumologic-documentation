@@ -47,7 +47,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/remote-management/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
-      <p>Find solutions to common issues with the OpenTelemetry remote management collector.</p>
+      <p>Find solutions to common issues with the OpenTelemetry collector remote management.</p>
     </div>
   </div>
 </div>
