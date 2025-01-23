@@ -18,9 +18,9 @@ Here’s a use case for using a match list to define an allow list:  Vulnerabil
 There’s no reason you can’t use a match list to define “deny lists” of items. However, Cloud SIEM’s threat intel feature is designed for exactly that purpose. Most of the time, but not always, you should use threat intel lists for negative indicators. For more information, see [Match lists or threat intel: which to use?](#match-listor-threat-intel-which-to-use).
 :::
 
-Here are some match lists in the Cloud SIEM UI.  
+Here are some match lists in Cloud SIEM.  
 
-<img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" style={{border: '1px solid gray'}} width="800"/>
 
 Note that each match list has a **Target Column**, which you define when you create the list. The Target Column indicates what type of record fields should be compared to the match list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are match lists Used?](#how-are-match-lists-used)
 

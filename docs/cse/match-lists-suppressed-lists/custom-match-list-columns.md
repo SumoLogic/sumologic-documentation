@@ -50,4 +50,4 @@ To see the custom columns that have been defined in your environment:
 
 1. Follow the instructions in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list/#create-a-match-list).
 1. In the **Add Match List** dialog, click **Target Column**. A list of available target column values appears.
-1. Select the desired column in the **Custom** section of the selector list.<br/><img src={useBaseUrl('img/cse//target-column-selector.png')} alt="Target column selector" style={{border: '1px solid gray'}} width="400"/>
+1. Select the desired column in the **Custom** section of the selector list.<br/><img src={useBaseUrl('img/cse/target-column-selector.png')} alt="Target column selector" style={{border: '1px solid gray'}} width="400"/>
