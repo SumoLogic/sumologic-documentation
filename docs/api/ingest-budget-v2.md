@@ -41,13 +41,11 @@ Ingest Budget Management V1 APIs have been removed and are no longer supported.
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Ingest Budgets
-
--->
 
 To manage ingest budgets, you must have the **Manage Ingest Budgets** role capability. Enabling this will automatically enable the **Manage Collectors** capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
