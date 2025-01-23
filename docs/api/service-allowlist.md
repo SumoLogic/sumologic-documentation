@@ -30,11 +30,10 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 | US1        | https://api.sumologic.com/docs/#tag/serviceAllowlistManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Security
     * Allowlist IP Addresses
 
--->
