@@ -32,8 +32,10 @@ Failed to start service: invalid configuration: no receiver configuration specif
 
 #### Solution
 
-1. Make sure that you have selected the **Event Channels/Scrappers** suboptions for the source template config.
-2. Make sure that you have applied the **OpAMP** agent remote config.
+1. Make sure that you have selected the **Event Channels/Scrappers** sub-options for the source template config.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
+1. Update the invalid inputs, delete invalid configuration source templates, or unlink the agent from UI.
+1. Restart the agent.
 
 ### Apache: Missing hostname / Invalid hostname
 
@@ -46,8 +48,8 @@ Failed to apply OpAMP agent remote config   {"kind": "extension", "name": "opamp
 #### Solution
 
 1. Ensure that you have satisfied the [Apache source template pre-requisites](/docs/send-data/opentelemetry-collector/remote-management/source-templates/apache/#prerequisites).
-1. Delete the invalid configuration from the machine path `/etc/otelcol-sumo/opamp.d`.
-1. Update the invalid inputs, delete invalid configuration source templates, or  unlink the agent from UI.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
+1. Update the invalid inputs, delete invalid configuration source templates, or unlink the agent from UI.
 1. Restart the agent.
 
 ### Syslog: Failed to listen on interface
@@ -61,7 +63,7 @@ Jan 17 11:34:14 ip-***-***-***-*** otelcol-sumo.sh[1234]: 2025/01/17 11:34:14 co
 
 #### Solution
 
-1. Delete the invalid configuration from the machine path `/etc/otelcol-sumo/opamp.d`.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
 1. Update the invalid inputs (Ensure that valid ports have the right permissions), delete invalid configuration source templates, or unlink the agent from UI.
 1. Restart the agent.
 
@@ -96,14 +98,14 @@ collector server run finished with error: failed to setup configuration componen
 #### Solution
 
 1. Ensure the rules comply with [RE2 syntax](https://github.com/google/re2/wiki/Syntax). 
-1. Delete the invalid configuration from the machine path `etc/otelcol-sumo/opamp.d`.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
 1. Update the invalid inputs, delete invalid configuration source templates, or unlink the agent from UI. For example, replace the invalid regex with valid regex.
 
 ## Agent crashes completely
 
 If there is a runtime error that leads the agent crash unexpectedly, follow the below steps to rectify the issue:
 
-1. Delete the invalid configuration from the machine path `/etc/otelcol-sumo/opamp.d`.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
 1. Update the invalid inputs, delete invalid configuration source templates, or unlink the agent from UI.
 1. Restart the agent.
 
@@ -111,7 +113,7 @@ If there is a runtime error that leads the agent crash unexpectedly, follow the 
 
 If the agent repeatedly fails to process the effective configuration, it will be unable to perform any other operations, including sending heartbeat signals to the server. The server may interpret the absence of these heartbeats as an indication that the agent is offline, which can complicate recovery efforts. To resolve this issue, follow the below-mentioned steps:
 
-1. Delete the invalid configuration from the machine path `/etc/otelcol-sumo/opamp.d`.
+1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
 1. Update the invalid inputs, delete invalid configuration source templates, or unlink the agent from the user interface.
 1. Restart the agent.
 
