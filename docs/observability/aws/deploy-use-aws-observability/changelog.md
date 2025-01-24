@@ -9,7 +9,7 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
-## v2.11.0, 15-Jan-2025
+## v2.11.0, 24-Jan-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.11.0/sumologic_observability.master.template.yaml`
 
 AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
@@ -21,8 +21,9 @@ New Feature:
 * Added support to collect custom metrics namespaces.
 * Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
 * Added support to filter AWS CloudWatch metrics based on AWS tags.
-* Updated cloudformation helper function with Python Runtime to v3.13.
-* Updated SAM apps with Python Lambda runtime v3.13 and library updates to handle any CVE’s.
+* Updated cloudformation helper function with Lambda Runtime to python v3.13.
+* Updated SAM Lambda runtime to python v3.13 with latest library updates.
+* Updated Telemetry Lambda Runtime to python v3.13 with latest library updates.
 
 ## v2.10.0, 4-Sept-2024
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml`
