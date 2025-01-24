@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the round trip time, failed pings, inbound dropped packets, and inbound bytes.
+[Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the outgoing and incoming traffic flows, dropped packets, bandwidth consumption, verifying network isolation and compliance.
 
 ## Logs and metric types
 
@@ -95,9 +95,66 @@ You must explicitly enable diagnostic settings and network flow logs for each Vi
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VirtualNetwork/Metrics` and `Azure/VirtualNetwork/Logs`.
 
+### Configure field in field schema
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
+1. Search for following fields:
+   - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+   - `location`. The region to which the resource name belongs to.
+   - `subscription_id`. Id associated with a subscription where resource is present.
+   - `resource_group`. The resource group name where the Azure resource is present.
+   - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
+   - `resource_type`. Azure resource type (for ex storageaccounts).
+   - `resource_name`. The name of the resource (for ex storage account name).
+
+3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
+
+### Configure Field Extraction Rules
+
+Create a Field Extraction Rule (FER) for Azure Virtual Network by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
+
+* **Target Resource Extraction FER**
+
+   ```sql
+   Rule Name: AzureVirtualNetworkTargetResourceIdExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=* FlowLogFlowEvent
+   ```
+
+   ```sql title="Parse Expression"
+   json field=_raw "target_resource_id", "category", "flow_log_resource_id"
+   | where category="FlowLogFlowEvent"
+   | toUpperCase(target_resource_id) as target_resource_id
+   | parse field=target_resource_id "/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*" as subscription_id, resource_group, provider_name, resource_type, resource_name
+   | parse field=resource_name "*/SUBNETS/*" as vnet_name, subnet_name nodrop
+   | parse field=flow_log_resource_id "NETWORKWATCHERS/NETWORKWATCHER_*/" as region_name nodrop
+   | if (!isBlank(region_name), toLowerCase(region_name), "global") as location
+   | if (resource_name matches /SUBNETS/, "SUBNETS", resource_type) as resource_type
+   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name
+   ```
+
+### Configure metric rules
+
+  * **Azure Observability Metadata Extraction Azure Virtual Network**
+
+      In case this rule is already exists then no need to create again.
+```sql
+Rule Name: AzureObservabilityMetadataExtractionAzureVirtualNetwork
+```
+
+```sql title="Metric match expression"
+resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/MICROSOFT.NETWORK/VIRTUALNETWORKS/* tenant_name=*
+```
+| Fields extracted | Metric rule    |
+|------------------|----------------|
+| subscription_id  | $resourceId._1 |
+| resource_group   | $resourceId._2 |
+| provider_name    | MICROSOFT.NETWORK |
+| resource_type    | VIRTUALNETWORKS |
+| resource_name    | $resourceId._3 |
+
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. This step is required only for DDOS related metrics which comes after enabling DDOS protection in your virtual network.
 
 1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
@@ -107,6 +164,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Select `AllMetrics`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
+5. Enable the `DDOS protection` by following the instructions in Azure [documentation](https://learn.microsoft.com/en-us/azure/ddos-protection/manage-ddos-protection#enable-for-an-existing-virtual-network)
 
 ### Configure logs collection
 
@@ -117,6 +175,10 @@ Before you begin configuring Virtual Network Flow Log collection, make sure the 
 * Your Storage Account must be of type General-purpose v2 or Blob storage.
 * Your Network Security Group and Storage Account should be in same resource location.
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
+* Location: The storage account must be in the same region as the virtual network.
+* Subscription: The storage account must be in the same subscription of the virtual network or in a subscription associated with the same Microsoft Entra tenant of the virtual network's subscription.
+* Performance tier: The storage account must be standard. Premium storage accounts aren't supported.
+* Self-managed key rotation: If you change or rotate the access keys to your storage account, virtual network flow logs stop working. To fix this problem, you must disable and then re-enable virtual network flow logs.
 
 Resource group names should not contains underscores (`_`).
 
@@ -162,6 +224,8 @@ Follow the steps detailed in the [Microsoft Azure Virtual Network documentation]
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network/virtualnetworkflowlogs.png')} alt="Configure Virtual Network Flow Logs" style={{border: '1px solid gray'}} width="800" />
 
+If you have multiple virtual networks, you can configure virtual network flow logs using a [built-in policy](https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-policy#deploy-and-configure-virtual-network-flow-logs-using-a-built-in-policy) for each location and subscriptions.
+
 #### Activity logs
 
 To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
@@ -169,6 +233,8 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 :::note
 Since this source includes logs from multiple regions, avoid tagging it with a location tag.
 :::
+
+In order to find virtual networks without any flow log resource, you can audit flow logs configuration for virtual networks using a [built-in policy](https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-policy#audit-flow-logs-configuration-for-virtual-networks-using-a-built-in-policy).
 
 
 ## Installing the Azure Virtual Network app
@@ -184,6 +250,76 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
+
+### Overview
+
+**Azure Virtual Network - Overview** dashboard provides details on network traffic flows, including accepted and rejected connections, geographical distribution, and data access patterns across different network boundaries.
+
+Use this dashboard to:
+* Monitor the geographical distribution of source and destination traffic to identify unusual patterns or potential security threats.
+* Analyze the ratio of accepted to rejected flows and investigate top rejected destination ports to troubleshoot connectivity issues.
+* Compare current network usage with historical averages to detect anomalies or capacity planning needs.
+* Examine boundary crossing data access between North-South and East-West to optimize network segmentation and security policies.
+* Identify top resources by bytes sent and top TCP destination ports to prioritize network optimization efforts.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Overview.png')} alt="Azure Virtual Network - Overview" style={{border: '1px solid gray'}} width="800" />
+
+### Accepted Traffic Flow
+
+**Azure Virtual Network - Accepted Traffic Flow** dashboard provides details on incoming and outgoing network traffic, packet flows, and security group rules applied on traffic flows.
+
+Use this dashboard to:
+* Visualize and compare incoming and outgoing traffic patterns across different geographical locations to identify potential network bottlenecks or unusual activity.
+* Monitor accepted flow traffic by resource name over time to detect spikes or drops in network usage that may indicate performance issues or security concerns.
+* Analyze the top accepted source and destination IP addresses and ports to understand common traffic patterns and potentially identify unauthorized or suspicious connections.
+* Review accepted flow traffic by resource name and ACL to ensure proper network security group rules are in place and functioning as expected.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Accepted-Traffic-Flow.png')} alt="Azure Virtual Network - Accepted Traffic Flow" style={{border: '1px solid gray'}} width="800" />
+
+### Administrative Operations
+
+**Azure Virtual Network - Administrative Operations** dashboard provides details on various administrative actions performed on Azure Virtual Network resources, including their operation types, status, and associated errors.
+
+Use this dashboard to:
+* Monitor the distribution of operation types (Read, Write, Delete) to understand the most common actions being performed on your virtual network resources.
+* Identify potential issues by analyzing the distribution of operation statuses, focusing on failures and their causes.
+* Track user and application activity by examining the breakdown of operations per entity, helping to detect unusual patterns or unauthorized access.
+* Investigate specific errors by reviewing the top operations causing issues, allowing for quick troubleshooting and resolution.
+* Audit recent write and delete operations, ensuring compliance with organizational policies and detecting any suspicious activities.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Administrative-Operations.png')} alt="Azure Virtual Network - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+
+### Policy and Recommendations
+
+**Azure Virtual Network - Policy and Recommendations** dashboard provides details on policy events and recommendations for Azure Virtual Networks.
+
+Use this dashboard to:
+* Monitor and analyze successful and failed policy events across your Azure Virtual Network resources.
+* Identify potential security risks by correlating failed policy events with specific resource groups and locations.
+* Review and act on recommendations to improve operational excellence and security of your Azure Virtual Network infrastructure.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Policy-and-Recommendations.png')} alt="Azure Virtual Network - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
+
+### DDOS Protection
+
+**Azure Virtual Network - DDOS Protection** dashboard provides details on DDoS attacks and packet rates for virtual networks in Azure. Use this dashboard to:
+* Monitor the occurrence of DDoS attacks on your virtual networks and track their frequency over time.
+* Analyze the overall packet rate during DDoS attacks to assess the scale and impact of the attack.
+* Compare TCP and UDP packet rates during an attack to identify the type of DDoS attack and tailor your mitigation strategies accordingly.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-DDOS-Protection.png')} alt="Azure Virtual Network - DDOS Protection" style={{border: '1px solid gray'}} width="800" />
+
+### Denied Traffic Flow
+
+**Azure Virtual Network - Denied Traffic Flow** dashboard provides details on blocked network traffic across your Azure virtual networks, including geographical distribution, resource-specific denials, and encryption status.
+
+Use this dashboard to:
+* Identify geographical hotspots of denied traffic to pinpoint potential security threats or misconfigurations in specific regions.
+* Analyze denied traffic patterns by subnets, virtual networks, network interfaces to fine-tune your network security group rules and access control lists.
+* Monitor encryption-related traffic denials to ensure proper implementation of encryption policies across your virtual network.
+* Correlate spikes in denied traffic flow with specific source and destination IP addresses to investigate potential security incidents.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Denied-Traffic-Flow.png')} alt="Azure Virtual Network - Denied Traffic Flow" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrade/Downgrade the Azure Virtual Network app (optional)
 
