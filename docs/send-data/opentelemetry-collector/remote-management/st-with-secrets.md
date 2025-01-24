@@ -81,8 +81,8 @@ This file is accessible to user/group created while OpenTelemetry collector is i
 ## Windows
 1. On your windows machine, open Registry Editor
 2. Go to `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OtelcolSumo`
-3. Right click on the right pane and select `New > Multi-String Value`. You can name this anything
-4. Right click on newly created entity in the step above and select `modify`
+3. Right click on the right pane and select `New > Multi-String Value`. You need to name this as `environment`
+4. Right click on newly created entity `environment` in the step above and select `modify`
 5. You can set the environment variable as per your needs. For example in the below screenshot we have set `TEST_VAR` env variable with value `sumoemp`:
 <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/set_env_varibale_windows.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 6. Click on **OK**.
