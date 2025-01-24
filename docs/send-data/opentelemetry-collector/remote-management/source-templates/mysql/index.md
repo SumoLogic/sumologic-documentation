@@ -1,5 +1,5 @@
 ---
-id: mysql
+slug: /send-data/opentelemetry-collector/remote-management/source-templates/mysql
 title: MySQL Source Template
 sidebar_label: MySQL
 description: Learn about the Sumo Logic MySQL source template for OpenTelemetry.

@@ -1,5 +1,5 @@
 ---
-id: elasticsearch
+slug: /send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch
 title: Elasticsearch Source Template
 sidebar_label: Elasticsearch
 description: Learn about the Sumo Logic Elasticsearch source template for OpenTelemetry.
