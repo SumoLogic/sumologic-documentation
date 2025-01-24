@@ -21,6 +21,8 @@ New Feature:
 * Added support to collect custom metrics namespaces.
 * Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
 * Added support to filter AWS CloudWatch metrics based on AWS tags.
+
+Updates:
 * Updated cloudformation helper function with Lambda Runtime to python v3.13.
 * Updated SAM Lambda runtime to python v3.13 with latest library updates.
 * Updated Telemetry Lambda Runtime to python v3.13 with latest library updates.
