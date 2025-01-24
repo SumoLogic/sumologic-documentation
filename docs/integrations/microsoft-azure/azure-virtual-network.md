@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the round trip time, failed pings, inbound dropped packets, and inbound bytes.
 
-## Logs and Metric types
+## Logs and metric types
 
 For Azure Virtual Network, you can collect the following logs and metrics:
 
@@ -99,16 +99,14 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. Create hosted collector and tag tenant_name field
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
+1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select `AllMetrics`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-4. Tag the location field in the source with right location value.
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
+4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
@@ -124,8 +122,8 @@ Resource group names should not contains underscores (`_`).
 
 #### Step 1: Configure Azure Storage Account
 
-In this step you configure a storage account to which you will export monitoring data for your Azure service.
-The storage account must be a General-purpose v2 (GPv2) storage account. If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [step 2](#step-2-configure-an-http-source).
+In this step, you'll configure a storage account to export monitoring data for your Azure service.
+The storage account must be a General-purpose v2 (GPv2) storage account. If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name, and container name, and proceed to [step 2](#step-2-configure-an-http-source).
 
 To configure an Azure storage account, do the following:
 
@@ -154,8 +152,7 @@ To configure an HTTP source for Azure, do the following:
 
 #### Step 3: Configure Azure Resources using ARM template
 
-To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage(block blobs)](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template).
-If you want to collect only flow logs from the storage account then you can add the filter `/blobServices/default/containers/insights-logs-flowlogflowevent/`.
+To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage(block blobs)](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template). If you want to collect only flow logs from the storage account, you can add the filter `/blobServices/default/containers/insights-logs-flowlogflowevent/`.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network/networkflowlogs-template-deployment.png')} alt="Configure ARM Template for Azure Blob Storage(block blobs) collection" style={{border: '1px solid gray'}} width="800" />
 
@@ -165,12 +162,12 @@ Follow the steps detailed in the [Microsoft Azure Virtual Network documentation]
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network/virtualnetworkflowlogs.png')} alt="Configure Virtual Network Flow Logs" style={{border: '1px solid gray'}} width="800" />
 
-#### Activity Logs
+#### Activity logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
 
 :::note
-Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
+Since this source includes logs from multiple regions, avoid tagging it with a location tag.
 :::
 
 
