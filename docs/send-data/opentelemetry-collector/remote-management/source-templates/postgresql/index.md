@@ -30,11 +30,9 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ### For metrics collection
 
-The PostgreSQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) collects metrics by querying the PostgreSQL [statistics collector](https://www.postgresql.org/docs/13/monitoring-stats.html).
-
-The monitoring user which is used in the source template must be granted permission to SELECT permission for [pg_stat_database](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-DATABASE-VIEW).
-
-Make sure to set the password of PostgreSQL user as an environment variable for OpenTelemetry agent. Details steps to set the environment variable for OpenTelemetry collector are available in [this](../../st-with-secrets.md) page.
+- The PostgreSQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) collects metrics by querying the PostgreSQL [statistics collector](https://www.postgresql.org/docs/13/monitoring-stats.html).
+- The monitoring user which is used in the source template must be granted permission to SELECT permission for [pg_stat_database](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-DATABASE-VIEW).
+- Make sure to set the password of PostgreSQL user as an environment variable for OpenTelemetry agent, refer to the [Setting Environment variable with secret values for Source Template](../../st-with-secrets.md).
 
 :::note
 For SumoLogic OpenTelemetry collector version below 0.116 metric collection will work only for PostgreSQL version 16 and below. With Sumo Logic OpenTelemetry collector version 0.116 and above metric collection will work for PostgreSQL version 17 as well.
@@ -72,7 +70,8 @@ Ensure that the otelcol has adequate permissions to access all log file paths. E
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
 ```
 
-import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
+
 <LogsCollectionPrereqisites/>
 
 import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-collection-prerequisite-windows.md';
