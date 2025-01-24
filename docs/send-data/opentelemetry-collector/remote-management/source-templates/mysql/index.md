@@ -32,9 +32,9 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 ### For metrics collection
 
-The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver) collects metrics by querying MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
+- The MySQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver) collects metrics by querying MySQL's global status and InnoDB tables. This app has been tested with following MySQL versions: 8.0
 
-Make sure to set the password of MySQL user as an environment variable for OpenTelemetry agent. Details steps to set the environment variable for OpenTelemetry collector are available in [this](../../st-with-secrets.md) page
+- Make sure to set the password of MySQL user as an environment variable for OpenTelemetry agent, refer to the [Setting Environment variable with secret values for Source Template](../../st-with-secrets.md).
 
 ### For logs collection
 
