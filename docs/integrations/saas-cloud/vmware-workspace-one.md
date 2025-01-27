@@ -19,7 +19,7 @@ This app includes [built-in monitors](#vmware-workspace-one-monitors). For detai
 
 ## Log types
 
-This app uses Sumo Logic’s VMware Workspace ONE Source to collect [audit logs](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source/) from the VMware Workspace ONE platform.
+This app uses Sumo Logic’s [VMware Workspace ONE Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source/) to collect audit logs from the VMware Workspace ONE platform.
 
 ## Sample log message
 
