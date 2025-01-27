@@ -696,9 +696,9 @@ Then, look at the Sumo Logic Mock logs:
 2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-7, span_id: 34b7b7f27d6a9d86, parent_span_id: 2ef9759def53f709, trace_id: f7563cc4ef721e1d14974eea71e20b55
 ```
 
-## Collecting traces
+### Auto-instrumentation (tracing)
 
-The environment variables that java autoinstrumentation injects a pod with look like below
+The environment variables injected into a pod by Java auto-instrumentation are shown below.
 
 ```yaml
 Environment:
@@ -718,7 +718,9 @@ Environment:
 ```
 
 :::note
-Please ensure that the OTEL_EXPORTER_OTLP_ENDPOINT is set to http://sumo-sumologic-otelagent.observability:4318
+Ensure that the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable is set to `http://sumo-sumologic-otelagent.observability:4318` to allow proper communication with the OpenTelemetry Collector.
+
+Where `sumo` is the release name and `observability` is the release namespace.
 :::
 
 ## Collecting events
