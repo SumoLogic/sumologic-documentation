@@ -160,15 +160,33 @@ _sourcecategory = "VMWare"
 | json "DeviceNetworkInfo[0].IPAddress" as ip nodrop
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [VMware Workspace ONE Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source) for the VMware Workspace ONE app, follow the instructions provided. These instructions will guide you through the process of creating a source using the VMware Workspace ONE Source category, which you will need to use when installing the app. By following these steps, you can ensure that your VMware Workspace ONE app is properly integrated and configured to collect and analyze your Alerts data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the VMware Workspace ONE app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for VMware Workspace ONE Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your VMware Workspace ONE app is properly integrated and configured to collect and analyze your VMware Workspace ONE data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing the VMware Workspace ONE dashboards​​
 
