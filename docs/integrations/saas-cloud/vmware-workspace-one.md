@@ -193,7 +193,7 @@ The VMware Workspace ONE monitors serve as a security tool, concentrating on obs
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Compromised Devices` | This monitor identifies devices marked as compromised in Workspace ONE. It monitors the `compromised_status` field to trigger when devices are flagged as compromised, enabling analysts to take immediate action to secure affected devices. | Critical | Count > 0 |
-| `Non-Compliance Devices` | This monitor detects devices that fail to meet compliance standards based on the `compliance_status` field. It helps ensure devices adhere to organizational policies and regulatory requirements. | Critical | Count > 0|
+| `Non-Compliance Devices` | This alert is triggered when devices do not meet compliance standards as indicated by the `compliance_status` field. It ensures that devices adhere to organizational policies and regulatory requirements. | Critical | Count > 0|
 | `Roaming Devices from Embargoed Countries` | This alert activates when devices are identified roaming in restricted or embargoed regions. It helps mitigate risks linked to unauthorized device movement in high-risk areas. | Critical | Count > 0|
 
 ## Upgrading/Downgrading the VMware Workspace ONE app (Optional)
