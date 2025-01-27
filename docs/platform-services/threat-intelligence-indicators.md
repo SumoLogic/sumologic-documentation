@@ -142,6 +142,10 @@ You do not have to wait until indicators reach the end of their retention period
 
 ## Find threats with log queries
 
+:::warning
+The `threatlookup` search operator has been temporarily disabled as of January 27, 2025. 
+:::
+
 Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator.
 
 The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50):
