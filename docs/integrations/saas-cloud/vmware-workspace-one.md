@@ -188,7 +188,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### VMware Workspace ONE monitors
 
-The VMware Workspace ONE monitors serve as a security tool, concentrating on observing essential operations and unusual occurrences within the VMware Workspace ONE Platform. These notifications offer instantaneous insight into significant events, allowing security personnel to swiftly react to deviations or breaches.
+The VMware Workspace ONE monitors act as a security tool that focuses on tracking critical operations and identifying unusual activities within the VMware Workspace ONE platform. These notifications provide real-time insights into significant events, enabling security personnel to quickly respond to any deviations or breaches.
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
