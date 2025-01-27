@@ -59,7 +59,7 @@ To create the query size limit using the **Advanced** configuration:
     - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. 
     - **Time-phased budgets**. Select **Daily**, **Weekly**, or **Monthly** from the **Budget Type** dropdown and enter the maximum amount of budget in GB. You can set a single shared budget for an entire group by selecting the **Capacity for the Group** option, whereas, you can set a budget for individual user in the selected scope by selecting the **Capacity per User** option.
     :::note
-    - For **Daily** budgets, the capacity resets at midnight PST.
+    - For **Daily** budgets, the capacity resets every day at midnight (00:00 PST).
     - For **Weekly** budgets, the capacity resets on Monday at 00:00 PST.
     - For **Monthly** budgets, the capacity resets on the 1st day of every calendar month at 00:00 PST.
     :::
