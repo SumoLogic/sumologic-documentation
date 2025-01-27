@@ -101,3 +101,20 @@ Dashboards have two themes available: Light mode (which is the default) and Dar
 ## Clickable Legend
 
 If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
+
+## Dashboard Information
+
+The dashboard information popup provides insights into the scan costs associated with log-based queries that run within dashboards.
+
+To view the dashboard information, follow the steps below:
+1. Open the dashboard for which you need to view the information.
+2. Click the three-dot kebab menu icon in the top right corner of the dashboard and select **Dashboard Info** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info.png')} alt="dashboard_info" style={{border: '1px solid gray'}} width="230"/>
+3. A popup pane will appear, displaying the following dashboard information:<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info_panel.png')} alt="dashboard_info_panel" style={{border: '1px solid gray'}} width="600"/>
+    - **Dashboard Name**. Name of the dashboard.
+    - **Created By**. The user who created the dashboard. 
+    - **Default Time Range**. The time range selected for the dashboard.
+    - **Start**. The current start time based on the selected time range.
+    - **End**. The current end time based on the selected time range.
+    - **Timezone**. The timezone for the set time range.
+    - **Scanned Bytes**. The total amount of data scanned in bytes.
+    - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
