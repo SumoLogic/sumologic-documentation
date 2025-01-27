@@ -2,7 +2,7 @@
 id: vmware-workspace-one
 title: VMware Workspace ONE
 sidebar_label: VMware Workspace ONE
-description: The VMware Workspace ONE app for Sumo Logic helps security analysts monitor device compliance, encryption, and security status, offering a powerful solution for analysing spot risks, enforce policies, and keep devices secure.
+description: The VMware Workspace ONE app for Sumo Logic helps security analysts with valuable insights into various security and compliance aspects.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
