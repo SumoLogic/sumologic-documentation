@@ -9,7 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="50" />
 
-The Sumo Logic App for VMware Workspace ONE helps security analysts monitor device compliance, encryption, and security status. It offers dashboards that show non-compliant or compromised device, and data encryption gaps. Geolocation panels track device locations and flag roaming in restricted areas. Out-of-the-box alerts notify analysts about security issues like compromised devices, non-compliance, and unauthorized roaming. These features help analysts spot address risks, enforce security policies, and maintain a secure enterprise device ecosystem.
+The Sumo Logic app for VMware Workspace ONE helps security analysts in monitoring device compliance, encryption, and overall security status. It provides dashboards that display non-compliant or compromised devices, along with data encryption deficiencies. Additionally, geolocation panels track device locations and identify instances of roaming in restricted areas. 
+
+The app includes out-of-the-box alerts that notify analysts about critical security issues, such as compromised devices, non-compliance, and unauthorized roaming. These features enable analysts to identify and address risks, enforce security policies, and maintain a secure ecosystem for enterprise devices.
 
 :::info
 This app includes [built-in monitors](#vmware-workspace-one-monitors). For details on creating custom monitors, refer to the [Create monitors for VMware Workspace ONE app](#create-monitors-for-the-vmware-workspace-one-app).
