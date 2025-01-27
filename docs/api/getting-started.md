@@ -42,7 +42,7 @@ See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an
 Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for. 
 :::
 
-### Access ID and Access Key
+### Access ID and access key
 
 When you have an `accessId` and `accessKey`, you can execute requests like the following:
 
@@ -80,7 +80,7 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 ```
 
 
-## Sumo Logic Endpoints by Deployment and Firewall Security
+## Sumo Logic endpoints by deployment and firewall security
 
 <img src={useBaseUrl('img/icons/operations/firewall.png')} alt="icon" width="50"/>
 
@@ -218,17 +218,17 @@ For collection to work, your firewall must allow outbound traffic to Sumo Logic.
 * If your firewall doesn’t allow DNS entries, you must allowlist all of the IP addresses for your deployment region. The addresses to allowlist depend on your Sumo Logic deployment.
    * To determine the IP addresses that require allowlisting, download the JSON object provided by Amazon Web Services (AWS). Amazon advises that this file will change several times a week. For details on how the file is updated, its usage, its syntax, and how to download the JSON file, see [AWS IP Address Ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 
-### FedRAMP Deployment
+### FedRAMP deployment
 
 Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2, except that FedRAMP is certified to comply with the United States Standards for Security Categorization of Federal Information and Information Systems ([FIPS-199](https://en.wikipedia.org/wiki/FIPS_199)). In this deployment, we adhere to specific security requirements that are required for handling, storing, and transmitting data classified in the "Moderate" impact level.
 
-### AWS Region by Sumo Deployment
+### AWS region by Sumo Logic deployment
 
 import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
 <AwsRegion/>
 
-## Status Codes
+## Status codes
 
 Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
 
@@ -251,7 +251,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
 
 If a rate is exceeded, a `rate limit exceeded 429` status code is returned.
 
-## Versioning and Conflict Detection  
+## Versioning and conflict detection  
 
 The [Collector Management API](/docs/api/collector-management) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity.
 
