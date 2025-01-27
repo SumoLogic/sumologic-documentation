@@ -257,10 +257,10 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 Use this dashboard to:
 * Monitor the geographical distribution of source and destination traffic to identify unusual patterns or potential security threats.
-* Analyze the ratio of accepted to rejected flows and investigate top rejected destination ports to troubleshoot connectivity issues.
-* Compare current network usage with historical averages to detect anomalies or capacity planning needs.
-* Examine boundary crossing data access between North-South and East-West to optimize network segmentation and security policies.
-* Identify top resources by bytes sent and top TCP destination ports to prioritize network optimization efforts.
+* Analyze the accepted to rejected flows ratio, and investigate the top rejected destination ports to troubleshoot connectivity issues.
+* Compare the current network usage with historical averages to detect anomalies or assess capacity planning needs.
+* Examine data access across borders, both North-South and East-West, to optimize network segmentation and security policies.
+* Identify top resources by bytes sent and the top TCP destination ports to prioritize network optimization efforts.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Overview.png')} alt="Azure Virtual Network - Overview" style={{border: '1px solid gray'}} width="800" />
 
@@ -269,10 +269,10 @@ Use this dashboard to:
 **Azure Virtual Network - Accepted Traffic Flow** dashboard provides details on incoming and outgoing network traffic, packet flows, and security group rules applied on traffic flows.
 
 Use this dashboard to:
-* Visualize and compare incoming and outgoing traffic patterns across different geographical locations to identify potential network bottlenecks or unusual activity.
-* Monitor accepted flow traffic by resource name over time to detect spikes or drops in network usage that may indicate performance issues or security concerns.
+* Visualize and compare incoming and outgoing traffic patterns across various geographical locations to identify potential network bottlenecks or unusual activity.
+* Monitor accepted flow traffic by resource name over time to detect spikes or drops in network usage, which could indicate performance issues or security concerns.
 * Analyze the top accepted source and destination IP addresses and ports to understand common traffic patterns and potentially identify unauthorized or suspicious connections.
-* Review accepted flow traffic by resource name and ACL to ensure proper network security group rules are in place and functioning as expected.
+* Review accepted flow traffic by resource name and Access Control List (ACL) to ensure that network security group rules are properly configured and functioning as intended.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Accepted-Traffic-Flow.png')} alt="Azure Virtual Network - Accepted Traffic Flow" style={{border: '1px solid gray'}} width="800" />
 
@@ -281,11 +281,11 @@ Use this dashboard to:
 **Azure Virtual Network - Administrative Operations** dashboard provides details on various administrative actions performed on Azure Virtual Network resources, including their operation types, status, and associated errors.
 
 Use this dashboard to:
-* Monitor the distribution of operation types (Read, Write, Delete) to understand the most common actions being performed on your virtual network resources.
-* Identify potential issues by analyzing the distribution of operation statuses, focusing on failures and their causes.
+* Monitor the distribution of operation types (Read, Write, Delete) to understand the most common actions performed on your virtual network resources.
+* Analyze the distribution of operation statuses to identify potential issues, focusing on failures and their root causes.
 * Track user and application activity by examining the breakdown of operations per entity, helping to detect unusual patterns or unauthorized access.
-* Investigate specific errors by reviewing the top operations causing issues, allowing for quick troubleshooting and resolution.
-* Audit recent write and delete operations, ensuring compliance with organizational policies and detecting any suspicious activities.
+* Investigate specific errors by reviewing the top operations causing issues, enabling swift troubleshooting and resolution.
+* Audit recent write and delete operations to ensure compliance with organizational policies and detect any suspicious activities.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Administrative-Operations.png')} alt="Azure Virtual Network - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
@@ -294,18 +294,18 @@ Use this dashboard to:
 **Azure Virtual Network - Policy and Recommendations** dashboard provides details on policy events and recommendations for Azure Virtual Networks.
 
 Use this dashboard to:
-* Monitor and analyze successful and failed policy events across your Azure Virtual Network resources.
-* Identify potential security risks by correlating failed policy events with specific resource groups and locations.
-* Review and act on recommendations to improve operational excellence and security of your Azure Virtual Network infrastructure.
+* Monitor and analyze both successful and failed policy events across your Azure Virtual Network resources to ensure compliance and security.
+* Identify potential security risks by correlating failed policy events with specific resource groups and locations, enabling targeted mitigation.
+* Review and implement recommendations to enhance the operational excellence and security of your Azure Virtual Network infrastructure.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Policy-and-Recommendations.png')} alt="Azure Virtual Network - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### DDOS Protection
 
 **Azure Virtual Network - DDOS Protection** dashboard provides details on DDoS attacks and packet rates for virtual networks in Azure. Use this dashboard to:
-* Monitor the occurrence of DDoS attacks on your virtual networks and track their frequency over time.
-* Analyze the overall packet rate during DDoS attacks to assess the scale and impact of the attack.
-* Compare TCP and UDP packet rates during an attack to identify the type of DDoS attack and tailor your mitigation strategies accordingly.
+* Monitor and track the frequency of DDoS attacks on your virtual networks over time to assess ongoing threats.
+* Analyze the overall packet rate during DDoS attacks to gauge the scale and impact of the attack.
+* Compare TCP and UDP packet rates during an attack to determine the attack type, allowing you to tailor your mitigation strategies more effectively.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-DDOS-Protection.png')} alt="Azure Virtual Network - DDOS Protection" style={{border: '1px solid gray'}} width="800" />
 
@@ -314,8 +314,8 @@ Use this dashboard to:
 **Azure Virtual Network - Denied Traffic Flow** dashboard provides details on blocked network traffic across your Azure virtual networks, including geographical distribution, resource-specific denials, and encryption status.
 
 Use this dashboard to:
-* Identify geographical hotspots of denied traffic to pinpoint potential security threats or misconfigurations in specific regions.
-* Analyze denied traffic patterns by subnets, virtual networks, network interfaces to fine-tune your network security group rules and access control lists.
+* Identify geographical hotspots of denied traffic to pinpoint potential security threats or misconfigurations within specific regions.
+* Analyze denied traffic patterns by subnet, virtual network, and network interface to refine your network security group rules and access control lists.
 * Monitor encryption-related traffic denials to ensure proper implementation of encryption policies across your virtual network.
 * Correlate spikes in denied traffic flow with specific source and destination IP addresses to investigate potential security incidents.
 
