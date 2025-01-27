@@ -58,6 +58,11 @@ To create the query size limit using the **Advanced** configuration:
 1. **Capacity**. You can set either query level or time-phased budgets. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
     - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. 
     - **Time-phased budgets**. Select **Daily**, **Weekly**, or **Monthly** from the **Budget Type** dropdown and enter the maximum amount of budget in GB. You can set a single shared budget for an entire group by selecting the **Capacity for the Group** option, whereas, you can set a budget for individual user in the selected scope by selecting the **Capacity per User** option.
+    :::note
+    - For **Daily** budgets, the capacity resets at midnight PST.
+    - For **Weekly** budgets, the capacity resets on Monday at 00:00 PST.
+    - For **Monthly** budgets, the capacity resets on the 1st day of every calendar month at 00:00 PST.
+    :::
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
     - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
@@ -88,7 +93,7 @@ To view the selected scan budget:
   - **Delete**. Click the **Delete** button to delete the selected scan budget.
   - **View violations**. Sumo Logic recommends a GB value per query as per the 95th percentile to be within the safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit.
   - **Budget Type**. Defines the type of budget set: Query level or time-phased budgets.
-    - **Per Query Budget**. Limits the data (in GBs) that a single query can consume.
+    - **Per Query Budget**. Limits the data (in GBs) that a single query can consume. If the query size exceeds the set limit, you will not be able to continue scanning until they are within the query size limit.
     - **Time phased budgets**. Limits the data (in GBs) that a single user or a group can consume based on the time phase selected while creating the budget.
   - **Status**. Describes if the scan budget is active or inactive.
   - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for Data tier this is shown as **Infrequent Scan**.
@@ -101,7 +106,7 @@ To view the selected scan budget:
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
 
-## FAQ
+## FAQs
 
 ### Handle overlapping budgets
 
@@ -110,3 +115,18 @@ When you configure multiple budgets for the same user, the scope with the larges
 ### Exceeding the scan budget 
 
 When you perform a log search, if the results exceed the specified capacity limit, an error message will be displayed with no results. For example, consider you set a budget of 1 GB/query, and when your log search results exceed the set budget limit, an error message will be displayed as shown below.<br/><img src={useBaseUrl('/img/manage/account/exceed-scan-budget-warning.png')} alt="exceed-scan-budget-warning" style={{border:'1px solid gray'}} width="800"/>
+
+## Update the budget time window, applied on, capacity, or action
+
+- Changing the time window (for example, from Daily to Weekly) resets budget usage, and the new configuration is applied immediately.
+- Adjusting the **Applied on** setting (for example, from Capacity for the Group to Capacity per User) resets budget usage, with the updated configuration taking effect immediately.
+- Updating the budget **Capacity** (for example, from 10GB to 20GB) applies the new limit instantly, with error and warning messages reflecting the changes.
+- Modifying the budget **Action** (for example, from StopForegroundScan to Warn) updates the system behavior immediately, issuing a warning message when the new threshold is breached.
+
+## Manage new user addition to an existing budget
+
+If you are added to an existing budget as a new user, your usage will draw from the remaining capacity, aligned with the updated configuration and the specified limits for your role.
+
+## Handling budgets in relation to each other
+
+Each budget type (daily, weekly, monthly, or query) is treated independently, without conflicts between them. Usage is evaluated based on the maximum capacity defined for each budget type. For example, if the daily budget is exceeded and a Stop action is triggered, the user will be blocked from scanning until the daily budget resets, regardless of any remaining capacity in the monthly budget.
