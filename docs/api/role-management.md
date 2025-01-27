@@ -32,10 +32,8 @@ To manage roles, you must have an administrator role or your role must have been
 | US1        | https://api.sumologic.com/docs/#tag/roleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/roleManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * User Management (all role capabilities)
-
--->

@@ -10,9 +10,10 @@ resource "sumologic_cloud_to_cloud_source" "dragos-source" {
                 "apiSecret": "xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx",
                 "collectVulnerability": true,
                 "collectAddress": true,
+                "collectNotification": false,
                 "collectZone": false,
                 "collectAsset": false,
-                "pollingIntervalVulnerabilityMin": "24h",
+                "pollingIntervalVulnerabilityMin": "60m",
                 "pollingIntervalAddressesHour": "5h"
                 })
 }
