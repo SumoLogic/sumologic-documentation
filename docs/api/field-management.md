@@ -30,7 +30,7 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
 | US1        | https://api.sumologic.com/docs/#tag/fieldManagementV1     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/fieldManagementV1 |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -39,5 +39,3 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
     * Manage Fields
     * View Field Extraction Rules
     * View Fields
-
--->

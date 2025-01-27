@@ -34,12 +34,10 @@ You need the [Manage or View Collectors role capability](/docs/manage/users-role
 | US1        | https://api.sumologic.com/docs/#tag/archiveManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/archiveManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Collectors
     * View Collectors
-
--->

@@ -10,6 +10,7 @@
 			"detailed_raw_events": false,
 			"aggregated_policy_audits": false,
 			"policy_audit_raw_events": false,
+			"aggregated_events": false,
 			"polling_interval": 600
 		},
 		"schemaRef": {
