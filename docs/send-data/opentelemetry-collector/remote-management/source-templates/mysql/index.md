@@ -97,7 +97,7 @@ import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-a
 
 <OtelLogAdvanceOption/>
 
-**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../processing-rules/index.md).
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
