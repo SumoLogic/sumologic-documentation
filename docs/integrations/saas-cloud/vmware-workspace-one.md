@@ -178,7 +178,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **VMware Workspace ONE - Overview** dashboard provides detils on compromised statuses, gaps in data encryption, device compliance, and geographical distribution of devices. This dashboards provides insights into non-compliant devices and users, compromised devices and users, and non data encrypted devices and users. Geolocation panels provide visibility into device locations and highlight roaming in embargoed regions.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/VMWare+Workspace+ONE/VMWare+Workspace+ONE+-+Overview.png' alt="VMware-Workspace-ONE-Overview" />
+The **VMware Workspace ONE - Overview** dashboard provides valuable insights into various security and compliance aspects. It displays the device information that has compromised statuses, gaps in data encryption, and device compliance. This dashboard provides insights into non-compliant devices and users, compromised devices and users, and non-data encrypted devices and users. Additionally, the geolocation panels provide a clear view of device locations and reveal any instances of roaming in restricted regions.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/VMWare+Workspace+ONE/VMWare+Workspace+ONE+-+Overview.png' alt="VMware-Workspace-ONE-Overview" />
 
 ## Create monitors for the VMware Workspace ONE app
 
