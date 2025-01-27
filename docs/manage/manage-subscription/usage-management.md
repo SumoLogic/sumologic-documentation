@@ -61,7 +61,7 @@ To create the query size limit using the **Advanced** configuration:
     :::note
     - For **Daily** budgets, the capacity resets every day at midnight (00:00 PST).
     - For **Weekly** budgets, the capacity resets on Monday at 00:00 PST.
-    - For **Monthly** budgets, the capacity resets on the 1st day of every calendar month at 00:00 PST.
+    - For **Monthly** budgets, the capacity resets on the first day of each calendar month at 00:00 PST.
     :::
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
