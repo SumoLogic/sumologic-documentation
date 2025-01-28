@@ -1,15 +1,15 @@
 ---
 id: introduction
-title: Introduction to Additional Security Features
+title: Introduction to Logs for Security
 sidebar_label: Introduction
-description: Learn basic concepts about supplemental security features of Sumo Logic. 
+description: Learn basic concepts about using logs for security use cases. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/) are Sumo Logic's primary security solutions. But Sumo Logic offers additional security features, including apps, customizable dashboards, and tools to analyze your security data. These allow you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
+Sumo Logic permits you to leverage logs for security use cases, and includes apps, customizable dashboards, and tools to analyze your security data. This allows you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
-You can use Sumo Logic for:
+You can use Sumo Logic logs for:
 * [Threat detection and investigation](/docs/security/additional-security-features/threat-detection-and-investigation). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
 * [Security data lake storage](/docs/security/additional-security-features/data-lake). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
 * [Audit and compliance](/docs/security/additional-security-features/audit-and-compliance). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.

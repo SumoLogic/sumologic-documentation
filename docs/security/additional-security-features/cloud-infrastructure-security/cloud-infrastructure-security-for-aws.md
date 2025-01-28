@@ -570,7 +570,7 @@ Following are saved searches included with the solution:
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
