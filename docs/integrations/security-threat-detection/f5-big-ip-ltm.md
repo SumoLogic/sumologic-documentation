@@ -118,7 +118,7 @@ Contact F5 support team if the above curl commands return an error.
 
 To being collecting telemetry, the logging profiles (LTM and ASM) created by AS3 in step 2 need to be assigned to the BIG-IP virtual server(s).
 
-**Associate LTM logging profile**
+Follow the below steps to associate LTM logging profile:
 
 1. From the BIG-IP console UI, navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step1.png')} alt="console UI" style={{border: '1px solid gray'}} width="500" />
 1. Select and open the virtual server(s) to update their properties. Change the virtual server configuration setting from **Basic** to **Advanced** to expose the logging properties.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step2.png')} alt="server config" style={{border: '1px solid gray'}} width="500" />
