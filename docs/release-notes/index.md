@@ -8,6 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
+Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Explore the individual release notes pages to see what's new, and consider subscribing to the RSS feeds for automatic updates.
+
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
@@ -30,7 +32,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <div className="box smallbox card">
   <div className="container">
   <a href="/release-notes-collector"><img src={useBaseUrl('img/icons/new-releases.png')} alt="icon" width="40"/><h4>Collector</h4></a>
-  <p>New Collector features and relevant bug fixes for each release<sup><a href="#fn1" id="ref1">1</a></sup>.</p>
+  <p>Latest features and bug fixes for Installed Collectors. To access new features, upgrade using <a href="/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url">Static URLs</a>, <a href="/docs/send-data/collection/upgrade-collectors">Sumo Logic</a>, <a href="/docs/send-data/collection/upgrade-collectors">Command Line</a>, <a href="/docs/api/collector-management/upgrade-downgrade-collectors">Collector Management API</a>.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -39,12 +41,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <p>New features and changes to our APIs, Collector management, and Live Tail CLI.</p>
   </div>
 </div>
-</div>
-
-<br>
-</br>
-<div id="footnotes">
-    <ol>
-        <li id="fn1">To use new Collector features mentioned here, you'll need to upgrade your Installed Collector software in one of the following ways:<ul><li> [Using Static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url)</li><li> [Using Sumo Logic](/docs/send-data/collection/upgrade-collectors)</li><li> [Using the Command Line](/docs/send-data/collection/upgrade-collectors)</li><li> [Using Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors)</li></ul></li>
-    </ol>
 </div>
