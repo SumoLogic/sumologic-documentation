@@ -108,7 +108,7 @@ The dashboard information popup provides insights into the scan costs associated
 
 To view the dashboard information, follow the steps below:
 1. Open the dashboard for which you need to view the information.
-2. Click the three-dot kebab menu icon in the top right corner of the dashboard and select **Dashboard Info** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info.png')} alt="dashboard_info" style={{border: '1px solid gray'}} width="230"/>
+2. Click the three-dot kebab menu icon in the top right corner of the dashboard and select **Info** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info.png')} alt="dashboard_info" style={{border: '1px solid gray'}} width="230"/>
 3. A popup pane will appear, displaying the following dashboard information:<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info_panel.png')} alt="dashboard_info_panel" style={{border: '1px solid gray'}} width="600"/>
     - **Dashboard Name**. Name of the dashboard.
     - **Created By**. The user who created the dashboard. 
