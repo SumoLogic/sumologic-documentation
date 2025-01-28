@@ -128,7 +128,8 @@ Follow the below steps to associate LTM logging profile:
 Follow the below steps to associate ASM logging profile:
 
 1. After assigning the LTM logging profile to the virtual server, navigate to the **Security** tab and select **Policies** to access the virtual server’s security policy settings.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step5.png')} alt="security" style={{border: '1px solid gray'}} width="500" />
-1. Enable logging and assign the previously created ASM logging profile, and then select **Update** to save the configuration changes.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step6.png')} alt="assign ASM logging profil" style={{border: '1px solid gray'}} width="500" />
+1. In the **Log Profile**, enable logging and assign the previously created ASM logging profile. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step6.png')} alt="assign ASM logging profil" style={{border: '1px solid gray'}} width="500" />
+1. Click **Update** to save the configuration changes.
 
 ## Installing the F5 - BIG-IP LTM app
 
