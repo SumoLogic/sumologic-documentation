@@ -131,4 +131,4 @@ Create a public or private channel, Send messages or Files to channels or Users 
     * Updated Integration File - Added Token Type and Team ID arg. 
     * Updated actions - Create Channel, List Channel, Get Channel, List Users, Send Message, Ask Questions, Ask For User Email (added team_id arg if using org level token)
 * January 27, 2025 (v1.12)
-    * Updated actions: Send Message, Ask Question, Ask For User Email (Added a fix to support Slack channel and user mentions (e.g., `<!here>`, `<!channel>`) ensuring proper formatting in messages.)
+    * Updated actions: Send Message, Ask Question, Ask For User Email (added a fix to support Slack channel and user mentions, for example `<!here>` and `<!channel>`, ensuring proper formatting in messages).
