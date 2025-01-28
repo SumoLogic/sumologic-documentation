@@ -115,6 +115,6 @@ To view the dashboard information, follow the steps below:
     - **Default Time Range**. The time range selected for the dashboard.
     - **Start**. The current start time based on the selected time range.
     - **End**. The current end time based on the selected time range.
-    - **Timezone**. The timezone for the set time range.
+    - **Time Zone**. The time zone for the set time range.
     - **Scanned Bytes**. The total amount of data scanned in bytes.
     - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
