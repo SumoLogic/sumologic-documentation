@@ -69,10 +69,4 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
   <p>Learn how to import YARA rules from GitHub into Cloud SIEM.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cse/schema/parser-troubleshooting-tips"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parser Troubleshooting</h4></a>
-  <p>Learn how to troubleshoot problems with parsers.</p>
-  </div>
-</div>
 </div>

@@ -307,8 +307,8 @@ In collector version 19.216-22 and later, when you configure the sourceCategory 
 You build templates for sourceCategory and sourceHost specifying component variables in this form: `{{NAMESPACE.VAR_NAME}}`.
 
 Where:
-* `NAMESPACE` is a namespace that indicates the variable type. 
-* `VAR_NAME` is the variable name.  These are case-sensitive.
+* `NAMESPACE` is a namespace that indicates the variable type.
+* `VAR_NAME` is the variable name. These are case-sensitive.
 
 The table below defines the types of variables you can use.
 
