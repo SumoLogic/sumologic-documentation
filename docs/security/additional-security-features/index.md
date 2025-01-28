@@ -46,7 +46,7 @@ This section contains the following topics:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/security/additional-security-features/cloud-infrastructure-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Cloud Infrastructure Security</h4></a>
-  <p>Learn about using Sumo Logic for cloud infrastructure security.</p>
+  <p>Learn how to secure your cloud infrastructure.</p>
   </div>
 </div>
 </div>

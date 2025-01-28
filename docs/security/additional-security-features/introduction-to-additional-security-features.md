@@ -14,6 +14,7 @@ You can use Sumo Logic logs for:
 * [Security data lake storage](/docs/security/additional-security-features/data-lake). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
 * [Audit and compliance](/docs/security/additional-security-features/audit-and-compliance). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
 * [Application security](/docs/security/additional-security-features/application-security). Monitor your software development pipeline to ensure it is secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
+* [Cloud infrastructure security](/docs/security/additional-security-features/cloud-infrastructure-security/). Monitor the health of your cloud infrastructure via a unified security and compliance audit view. 
 
 ## The Sumo Logic data pipeline
 
