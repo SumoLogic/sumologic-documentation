@@ -113,7 +113,7 @@ Now, using telemetry, we will define a [Sumo Logic sink](https://clouddocs.f5.co
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
 ```
 :::note
-Contact F5 Support if the above cURL commands return an error.
+Contact F5 support team if the above curl commands return an error.
 :::
 
 The logging profiles (LTM and ASM) created by AS3 in step 2 need to be assigned to the BIG-IP virtual server(s). Follow the steps below to begin collecting telemetry:
