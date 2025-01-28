@@ -116,7 +116,7 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 Contact F5 support team if the above curl commands return an error.
 :::
 
-To begin collecting telemetry, the logging profiles (LTM and ASM) created by AS3 in step 2 need to be assigned to the BIG-IP virtual server(s).
+To begin collecting telemetry, the logging profiles (LTM and ASM) created by AS3 in [step 2](#step-2-use-as3-declarative-language-to-define-a-logging-profile-on-big-ip) need to be assigned to the BIG-IP virtual server(s).
 
 Follow the below steps to associate LTM logging profile:
 
