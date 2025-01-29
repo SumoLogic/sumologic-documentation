@@ -429,106 +429,6 @@ After determining the location of conf file, modify the **redis.conf** configura
 </TabItem>
 </Tabs>
 
-## Installing Redis Monitors/Alerts
-
-:::note
-This step is not needed if you are using the application components solution terraform script.
-:::  
-
-This section has instructions for installing the Sumo app and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis app** section.
-
-Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
-
-For details on the individual monitors, please see [Alerts](#redis-alerts).
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing them via a JSON or via a Terraform script.
-
-:::note
-There are limits for how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
-:::  
-
-### Method A: Importing a JSON file
-
-1. Download a [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis) that describes the monitors. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Redis clusters, the data for which has been collected via the instructions in the previous sections.,  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=redis` with `<Your Custom Filter> db_system=redis`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=redis-.prod.01`.
-   * For alerts applicable to all clusters that start with `redis-prod`, your custom filter would be: `db_cluster=redis-prod*`.
-   * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=redis-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
-3. Click **Add**.
-4. Click **Import** to import monitors from the JSON above.
-
-:::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#monitor-details-pane) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
-:::
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
-4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/
-
-Edit the redis.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `redis_cluster_filter`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=redis-.prod.01`.
-   * For alerts applicable to all clusters that start with redis-prod, your custom filter would be: `db_cluster=redis-prod*`.
-   * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=redis-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-   All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-   By default, the monitors are configured in a monitor folder called “Redis”, if you would like to change the name of the folder, update the monitor folder name in this file.
-
-   If you would like the alerts to send email or connection notifications, configure these in the file **redis_notifications.auto.tfvars**. For configuration examples, refer to the next section.
-
-5. Email and Connection Notification Configuration Examples. To configure notifications, modify the file redis_notifications.auto.tfvars file and fill in the connection_notifications See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install the Monitors.
-   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor).
-
-
 ## Installing the Redis app
 
 This section demonstrates how to install the Redis ULM app.
@@ -609,9 +509,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/redis-command_stats_deltas.png')} alt="Redis dashboards" />
 
-## Redis Alerts
+## Create monitors for Redis app
 
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Redis alerts
 
 <table>
   <tr>

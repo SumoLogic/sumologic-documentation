@@ -522,91 +522,7 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## Installing Cassandra Monitors
 
-:::note
-This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
-:::
-
-To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script.
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Cassandra Alerts](#cassandra-alerts).
-
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Cassandra clusters, the data for which has been collected via the instructions in the previous sections.  
-
-   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
-     * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=dev-cassandra-01`.
-     * For alerts applicable to all clusters that start with `cassandra-prod`, your custom filter would be: `db_cluster=cassandra-prod*`.
-     * For alerts applicable to specific clusters, within a production environment, your custom filter would be:`db_cluster=dev-cassandra-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click **Import**.
-6. On the **Import Content popup**, enter **Cassandra** in the Name field, paste the JSON into the popup, and click **Import**.
-7. The monitors are created in a "Cassandra" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-### Method B: Using a Terraform script
-
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
-3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory.
-5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-6. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `cassandra_data_source` variable. For example:
-   * To configure alerts for a specific cluster, set `cassandra_data_source` to something like `db_cluster=cassandra.prod.01`
-   * To configure alerts for all clusters in an environment, set `cassandra_data_source` to something like `environment=prod`
-   * To configure alerts for multiple clusters using a wildcard, set `cassandra_data_source` to something like `db_cluster=cassandra-prod*`
-   * To configure alerts for...A specific clusters within a specific environment, set `cassandra_data_source` to something like `db_cluster=cassandra-1` and `environment=prod`. This assumes you have configured and applied Fields as described [Configure Fields in Sumo Logic](#step-1-configure-fields-in-sumo-logic) step.
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "Cassandra" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the `Cassandra.auto.tfvars` file.
-
-7. If you want your alerts to send email or connection notifications, edit the `Cassandra_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
-
-  In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-8. To install the Monitors, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory and run `terraform init`. This will initialize Terraform and download the required components.
-9. Run `terraform plan` to view the monitors that Terraform will create or modify.
-10. Run `terraform apply`.
 
 ## Installing the Cassandra app
 
@@ -739,7 +655,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/Cassandra-Write-Path.png')} alt="Cassandra dashboards" />
 
-## Cassandra Alerts
+## Create monitors for Cassandra app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cassandra Alerts
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Cassandra cluster is available and performing as expected.
 
