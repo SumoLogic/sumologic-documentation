@@ -28,7 +28,7 @@ With Flex Pricing, there is no cost to ingest and index log data, and no require
 
 Yes, you can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control) to restrict access to partitions in Flex. Although you can’t use a role search filter to restrict access to a partition by name, you can filter by the metadata that forms the routing expression for a partition.
 
-For example, if you want to strict access to a partition whose routing expression is:
+For example, if you want to restrict access to a partition whose routing expression is:
 
 ```
 _sourceCategory=staging/*

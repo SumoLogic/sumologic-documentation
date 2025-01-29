@@ -5,7 +5,7 @@ sidebar_label: Log Operators
 description: The Search Operators cheat sheet provides a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.
 ---
 
-The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a step-by-step video and tutorial about creating queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI). For a complete list of Sumo Logic Search operators, download the <a href="/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
+The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a complete list of Sumo Logic Search operators, download the <a href="/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
 
 The following tables provide a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions.  
 
@@ -382,7 +382,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| count by _sourceCategory<br/>| sort by _count<br/>| limit 5</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/logcompare">logcompare</a></td>
+   <td><a href="/docs/search/behavior-insights/logcompare">logcompare</a></td>
    <td>The logcompare operator allows you to compare two sets of logs: baseline (historical) and target (current). To run a LogCompare operation, you can use the <strong>LogCompare</strong> button on the <strong>Messages</strong> tab to generate a properly formatted query.</td>
    <td>_count<br/>_deltaPercentage<br/>_anomalyScore<br/>_isNew</td>
    <td>Not supported in Dashboards.</td>
@@ -396,21 +396,21 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>_sourceCategory=stream <br/>| if(_raw matches "error", 1, 0) as hasError<br/>| logexplain hasError == 1 on _sourceHost</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/logreduce">logreduce</a></td>
+   <td><a href="/docs/search/behavior-insights/logreduce">logreduce</a></td>
    <td>The LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the <strong>LogReduce</strong> button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website. (Formerly Summarize.)</td>
    <td></td>
    <td>Not supported in Dashboards.</td>
    <td><code>| logreduce</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/logreduce">logreduce keys</a></td>
-   <td>The logreduce<strong> k</strong>eys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
+   <td><a href="/docs/search/behavior-insights/logreduce/logreduce-keys">logreduce keys</a></td>
+   <td>The logreduce keys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
    <td>_signature_id<br/>_schema<br/>_count</td>
    <td></td>
    <td><code>_sourcecategory="Labs/AWS/GuardDuty_V8"<br/>| json keys "region", "partition", "resource"<br/>| logreduce keys field=resource</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/logreduce">logreduce values</a></td>
+   <td><a href="/docs/search/behavior-insights/logreduce/logreduce-values">logreduce values</a></td>
    <td>The logreduce values operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_cluster_id<br/>_signature<br/>_count</td>
    <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.</td>

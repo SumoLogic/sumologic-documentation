@@ -5,7 +5,7 @@ sidebar_label: Code42 Incydr
 tags:
   - cloud-to-cloud
   - code42-incydr
-description: Learn how to collect alerts, file events, and audit logs from the Code42 Incydr.
+description: Learn how to collect sessions, file events, and audit logs from the Code42 Incydr.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/code42-incydr/example.json';
@@ -17,13 +17,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 
-Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
+Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs using the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts, File Events, and Audit Logs (Audit Events)](https://developer.code42.com/api) |
+| 5 minutes | [Sessions](https://developer.code42.com/api/#tag/Alerts-and-Sessions/operation/SearchSessions) |
+| 5 minutes | [File Events](https://developer.code42.com/api/#tag/File-Events/operation/searchEvents) |
+| 5 minutes | [Audit Logs](https://developer.code42.com/api/#tag/Audit-Log/operation/searchAuditLog) |
 
 ## Setup
 

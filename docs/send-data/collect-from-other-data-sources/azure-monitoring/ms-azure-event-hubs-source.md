@@ -7,10 +7,6 @@ description: The Azure Event Hubs Source for Logs provides a secure endpoint to 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
-:::note
-- For higher data ingestion speed and scalability, this collection method is preferred over our similar [Azure Event Hubs cloud-to-cloud source collection method](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source).
-- Azure Event Hubs for Logs does not support IP restrictions. We recommend using the [Azure Event Hubs cloud-to-cloud source collection method](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) if you require higher throughput and have IP address restrictions on Event Hubs. 
-:::
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 

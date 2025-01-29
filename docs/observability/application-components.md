@@ -49,7 +49,7 @@ The Terraform script performs the following actions:
    * Manage connections
    * Manage Content<br/>
    If you want to deploy in the Admin Recommended folder, you may need the [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/security/access-keys#from-the-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Using instructions in [Access Keys](/docs/manage/security/access-keys), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 

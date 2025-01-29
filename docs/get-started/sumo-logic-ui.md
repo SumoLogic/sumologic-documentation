@@ -25,7 +25,7 @@ With the new UI, you'll benefit from:
 * Stateful URLs that save your session and position when you log back in.
 * Use-case-driven navigation to help you quickly find the features you need.
 
-For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/).
+For a detailed list of updates, [view the release notes](/release-notes-service/2024/12/31/#february-23-2024-user-interface).
 
 ## Opt in
 
@@ -34,6 +34,19 @@ To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation
 :::sumo quickstart
 Check out this overview video to get familiar with the New UI.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Sumo Logic's Unified Experience UI Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
@@ -43,7 +56,8 @@ Check out this overview video to get familiar with the New UI.
         position="relative"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        />     
+        />
+-->  
 :::   
 
 ## Home
@@ -114,7 +128,6 @@ To manage your personal Sumo account preferences:
 1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
-    * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
