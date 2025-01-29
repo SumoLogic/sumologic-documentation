@@ -329,6 +329,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
+  <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/webex"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="icon" width="70"/><h4>Webex</h4></a>
   <p>Monitor and analyse Webex security events, user activities, and system health.</p>
   </div>
