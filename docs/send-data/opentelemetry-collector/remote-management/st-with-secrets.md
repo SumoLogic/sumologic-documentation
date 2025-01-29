@@ -1,8 +1,8 @@
 ---
 id: st-with-secrets
-title: Setting Environment variable with secret values for Source Template
+title: Setting Environment Variables with Secret Values for Source Templates
 sidebar_label: Setting env variables
-description: Steps for setting environment variable with secret value which can be used by source template at runtime in a remotely managed opentelemetry collector.
+description: Steps for setting environment variable with secret value which can be used by source template at runtime in a remotely managed OpenTelemetry collector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,28 +13,25 @@ import TabItem from '@theme/TabItem';
   <meta name="robots" content="noindex" />
 </head>
 
-Certain source template use receiver which use secret/sensitive values like password to pull the data from service and send it to Sumo Logic using OpenTelemetry collector. For example [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) uses PostgreSQL username and password to bring in metrics from PostgreSQL instance. 
+Certain source template use receiver which use secret/sensitive values like password to pull the data from service and send it to Sumo Logic using OpenTelemetry collector. For example, [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) uses PostgreSQL username and password to bring in metrics from PostgreSQL instance. 
 
-Below are the steps to make things work for such source templates : 
+Below are the steps to make things work for such source templates:
 
-1. Set env variable in OpenTelemetry Collector process. For example : SECRET_ENV_VAR=Welcome@123 . Where SECRET_ENV_VAR is the variable name and Welcome@123 is password.
-2. ST creation : While creating the source template you will need to provide the environment variable name instead of the actual password. In this case : SECRET_ENV_VAR and this will be part of the source template referring to the value of the environment variable like: 
-`password: ${env:SECRET_ENV_VAR}`
+1. Set env variable in OpenTelemetry Collector process. For example: `SECRET_ENV_VAR=Welcome@123`, where `SECRET_ENV_VAR` is the variable name and `Welcome@123` is the password.
+2. ST creation: While creating the source template you will need to provide the environment variable name instead of the actual password. In this case: `SECRET_ENV_VAR` and this will be part of the source template referring to the value of the environment variable like: `password: ${env:SECRET_ENV_VAR}`.
 3. Once this source template gets pushed to the respective OpenTelemetry collector, the environment variable will get resolved at runtime and will be substituted with the actual password value to make the config work and pull the data to send it to Sumo Logic.
 
-This way your secret data is not shared with Sumo Logic.
+This way, your secret data is not shared with Sumo Logic.
 
-Below are the steps to set the environment variable in different operating systems : 
+Below are the steps to set the environment variable in different operating systems:
 
 ## Linux
-1. Under "/etc/otelcol-sumo/env" you will have `token.env` file. You can set an environment variable in this. For example
-`ENV_KEY=password`
-:::note
-This file is accessible to user/group created while OpenTelemetry collector is installed which is `otelcol-sumo`. You can use this user or any other admin user to access/edit token.env file.
-:::
-2. Restart the agent to load the newly added env variables to the OTRM agent process. Using the command : 
-`sudo systemctl restart otelcol-sumo`
-3. Create a ST referring to above env variable (ENV_KEY) for password which will get remotely pushed to the OTRM agent.
+1. Under "/etc/otelcol-sumo/env" you will have `token.env` file. You can set an environment variable in this. For exampl: `ENV_KEY=password`.
+   :::note
+   This file is accessible to the `otelcol-sumo` user/group, which is created during the OpenTelemetry Collector installation. You can use this user or any other admin user to access or edit the `token.env` file.
+   :::
+2. Restart the agent to load the newly added env variables to the OTRM agent process using the command: `sudo systemctl restart otelcol-sumo`.
+3. Create a ST referring to above env variable (`ENV_KEY`) for password, which will get remotely pushed to the OTRM agent.
 
 ## Mac
 - You can set an environment variable in the OpenTelemetry agent by making changes to `/Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist`. 
@@ -75,7 +72,7 @@ This file is accessible to user/group created while OpenTelemetry collector is i
 </dict>
 </plist>
 ```
-- You then need to restart the OpenTelemetry collector on your mac machine using the below command : 
+- You then need to restart the OpenTelemetry collector on your Mac machine using the below command: 
 `sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist && sudo launchctl load -w /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist`
 
 ## Windows

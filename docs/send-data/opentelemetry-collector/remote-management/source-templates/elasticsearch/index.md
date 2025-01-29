@@ -29,7 +29,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 - The Elasticsearch metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/elasticsearchreceiver) queries the Elasticsearch [node stats](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html), [cluster health](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html) and [index stats](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-stats.html) endpoints in order to scrape metrics from a running Elasticsearch cluster. This receiver supports Elasticsearch versions 7.9+
 
-- Make sure to set the password of Elasticsearch user as an environment variable for OpenTelemetry agent, refer to the [Setting Environment variable with secret values for Source Template](../../st-with-secrets.md).
+- Make sure to set the Elasticsearch user's password as an environment variable for OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates.](../../st-with-secrets.md).
 
 ### For logs collection
 
