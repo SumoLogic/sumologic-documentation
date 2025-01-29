@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Docker source template for OpenTelemetry.
 ---
 
-## [2.1.1] - 2025-01-24
+## [2.1.1] - 2025-01-27
 
 ### Fixed
 - Security issue
