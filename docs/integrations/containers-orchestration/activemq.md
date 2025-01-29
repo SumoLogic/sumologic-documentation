@@ -55,7 +55,7 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 ### Step 1: Fields in Sumo Logic
 
-Following fields will be created as part of app installation process, For information on setting up fields, see [Sumo Logic Fields](https://help.sumologic.com/docs/manage/fields/)
+Following [fields](https://help.sumologic.com/docs/manage/fields/) will be created as part of app installation process.
 <Tabs
   groupId="k8s-nonk8s"
   defaultValue="k8s"
