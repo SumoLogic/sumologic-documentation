@@ -558,91 +558,6 @@ At this point, MySQL slow query logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## Installing MySQL Monitors
-
-The next few sections provide instructions for installing Sumo Logic Monitors for MySQL, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in Collecting MySQL Logs and Metrics.
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MySQL cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MySQL Alerts](#mysql-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability.
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
-
-### Method A: Install Monitors by importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
-2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
-4. Click **Add**.
-5. Click **Import.**
-6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
-7. The monitors are created in a "MySQL" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-
-### Method B: Using a Terraform script
-
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
-4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
-   1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-    ```sql
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-   2. The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `mysql_data_source` variable. For example:
-     * To configure alerts for a specific cluster, set `mysql_data_source` to something like `db_cluster=mysql.prod.01`
-     * To configure alerts for all clusters in an environment Set mysql_data_source to something like `environment=prod`
-     * To configure alerts for...Multiple clusters using a wildcard, set `mysql_data_source` to something like `db_cluster=mysql-prod*`
-      * To configure alerts for a specific cluster within a specific environment, set `mysql_data_source` to something like `db_cluster=mysql-1` and `environment=prod`. This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for MySQL topic.
-
-  All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "MySQL" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `mysql.auto.tfvars` file.
-
-5. If you want the alerts to send email or connection notifications, edit the `mysql_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
-
-In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-```sql title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```sql title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install Monitors.
-   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory and run `terraform init`. This will initialize Terraform and download the required components.
-   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
-
-
 ## Installing the MySQL app  
 
 Now that you have set up collection for MySQL, install the Sumo Logic app for MySQL to use the preconfigured searches and dashboards that provide insight into your data.
@@ -736,9 +651,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Performance-Schema-Metrics.png')} alt="MySQL dashboard" />
 
-## MySQL Alerts
+## Create monitors for MySQL app
 
-This section describes the monitors provided with the MySQL app. These monitors are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### MySQL alerts
 
 | Monitor name                          | Monitor description             | Alert Condition | Recovery Condition |
 |:------------|:-----------------------------|:----------------|:-------------------|

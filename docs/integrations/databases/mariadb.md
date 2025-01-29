@@ -429,91 +429,6 @@ At this point, Telegraf should start collecting the MariaDB metrics and forward 
 </TabItem>
 </Tabs>
 
-
-## Installing the MariaDB Monitors
-
-The next few sections provide instructions for installing the MariaDB Monitors app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described in the Collect Logs and Metrics for the MariaDB app page.
-
-#### Pre-Packaged Alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. See [Alerts](#mariadb-alerts) for more information.
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all MariaDB clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=mariadb` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be  `db_cluster=mariadb-prod.01`.
-   * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be `db_cluster=mariadb-prod*`.
-   * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=mariadb-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click Import and then copy-paste the above JSON to import monitors.
-6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor).
-
-### Method B: Using a Terraform script
-
-1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
-3. **Download the Sumo Logic Terraform package for MariaDB alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration.** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/MariaDB/`. Edit the **MariaDB.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-  ```bash
-  access_id   = "<SUMOLOGIC ACCESS ID>"
-  access_key  = "<SUMOLOGIC ACCESS KEY>"
-  environment = "<SUMOLOGIC DEPLOYMENT>"
-  ```
-  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `mariadb_data_source`. Custom filter examples:
-    * For a specific cluster, your custom filter would be `db_cluster=mariadb.prod.01`
-    * For all clusters in an environment, your custom filter would be `environment=prod`
-    * For alerts applicable to all clusters that start with `mariadb-prod`, your custom filter would be `db_cluster=mariadb-prod*`
-    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=mariadb-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-  All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-  By default, the monitors are configured in a monitor folder called “MariaDB”. If you would like to change the name of the folder, update the monitor folder name in “folder” key at `MariaDB.auto.tfvars` file. If you would like the alerts to send email or connection notifications, configure these in the file `MariaDB_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-5. **Email and Connection Notification Configuration Examples**. Modify the file `MariaDB_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
-```sql title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```sql title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. **Install the Alerts**. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run `terraform init`. This will initialize Terraform and will download the required components.
-    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-    2. Run `terraform apply`.
-7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
 ## Installing the MariaDB app
 
 This section demonstrates how to install the MariaDB app. To install the app:
@@ -646,11 +561,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB/MariaDB-Table-Peformance-Metrics.png')} alt="mariadb dashboards" />
 
-## MariaDB Alerts
+## Create monitors for MariaDB app
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the MariaDB Database are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-Sumo Logic provides the following out-of-the-box alerts:
+<CreateMonitors/>
+
+### MariaDB alerts
 
 | Alert Type (Metrics/Logs) | Alert Name                                           | Alert Description                                                                                                                                        | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---------------------------|:------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|:-----------------|:-------------------|
