@@ -12,6 +12,7 @@ resource "sumologic_cloud_to_cloud_source" "cyberark_test_source" {
 			"detailed_raw_events": false,
 			"aggregated_policy_audits": false,
 			"policy_audit_raw_events": false,
+			"aggregated_events": false,
 			"polling_interval": 600
   })
 }

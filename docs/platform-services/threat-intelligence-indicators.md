@@ -142,6 +142,10 @@ You do not have to wait until indicators reach the end of their retention period
 
 ## Find threats with log queries
 
+:::warning
+The `threatlookup` search operator has been temporarily disabled as of January 27, 2025. 
+:::
+
 Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator.
 
 The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50):
@@ -172,7 +176,7 @@ Where:
    If there's still a tie at this point, the system picks the indicator the back-end database returned first.
 
 * `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, all matching indicators are returned.
+* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, only active matching indicators are returned.
 * `<indicator_value_field>` is the indicator to look up.
 * `<optional_indicator_value_field>` is used to add more indicators to look up.
 
@@ -267,7 +271,7 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="TAXII2Source")`
 * `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
@@ -327,7 +331,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0001",
      "indicator": "192.0.2.0",
      "type": "ipv4-addr:value",
-     "source": "FreeTAXII",
+     "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -343,7 +347,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0002",
      "indicator": "192.0.2.1",
      "type": "ipv4-addr:value",
-     "source": "FreeTAXII",
+     "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -376,7 +380,7 @@ The following attributes are required:
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
        * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
@@ -410,8 +414,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
-0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
+0001,192.0.2.0,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 ##### Upload with the API
@@ -420,8 +424,8 @@ If uploading a CSV file using the API, the file should be contained in a JSON ob
 
 ```
 {
- "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
-0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
+0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
 }
 ```
 
@@ -444,7 +448,7 @@ Columns for the following attributes are required in the upload file:
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
@@ -559,7 +563,7 @@ As shown in the following example, if uploading via the API you must add the `so
 
 ```
 {
- "source": "FreeTAXII",
+ "source": "TAXII 2 Source",
  "indicators": [
    {
      "type": "indicator",
@@ -631,11 +635,5 @@ The following attributes are required:
          * `url:value`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
          * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
-       * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Following are valid values:
-          * `stix`. Specifies the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
-          * `pcre`. Specifies the [PCRE](https://www.pcre.org/) language.
-          * `sigma`. Specifies the [SIGMA](https://sigmahq.io/) language.
-          * `snort`. Specifies the [SNORT](https://www.snort.org/) language.
-          * `suricata`. Specifies the [SURICATA](https://suricata-ids.org/) language.
-          * `yara`. Specifies the [YARA](https://virustotal.github.io/yara/) language.
+       * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.

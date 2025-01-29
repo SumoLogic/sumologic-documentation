@@ -81,7 +81,7 @@ The tuning expression is AND’d with the rule expression—the rule will only g
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
-You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
+You create tuning expressions on the **Rule Tuning** page. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
 
 ## "On Entity" configuration
 
@@ -134,9 +134,9 @@ This section describes what [match lists](/docs/cse/match-lists-suppressed-lists
 
 Match lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a match list in the Cloud SIEM UI. 
+Here are some match lists in Cloud SIEM.   
 
-<img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
+<img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" width="800"/>
 
 You can take advantage of match lists in rules, but match lists actually come into play when records are ingested. Here’s how it works:  When a record is ingested, Cloud SIEM compares the entries in all match lists to fields in the record. Of course, Cloud SIEM doesn’t compare the entries in a given match list to all fields in a record; it wouldn’t make sense to compare a domain name to an IP address. You could say that Cloud SIEM understands the difference between apples and oranges: Cloud SIEM distinguishes which record fields contain IP addresses, which contain domain name and so on. So, Cloud SIEM compares a match list of IP addresses to record fields that contain IP addresses. Similarly, Cloud SIEMs compares a match list of usernames to record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
 

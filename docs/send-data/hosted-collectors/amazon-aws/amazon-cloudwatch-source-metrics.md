@@ -73,7 +73,8 @@ AWS tag filtering is supported for the following AWS namespaces.
 * AWS/ES
 * AWS/Firehose
 * AWS/Inspector
-* AWS/Kinesis	AWS/KinesisAnalytics
+* AWS/Kinesis
+* AWS/KinesisAnalytics
 * AWS/KinesisVideo
 * AWS/KMS
 * AWS/Lambda

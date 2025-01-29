@@ -31,7 +31,7 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -41,7 +41,6 @@ The Search Job API is available to Enterprise accounts.
 * Security
     * Manage Access Keys
 
--->
 
 ## Endpoints for API access
 
@@ -621,7 +620,7 @@ The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which a
 ### Page through the records found by a Search Job
 
 <details>
-<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET]&limit=&#123;LIMIT&#125;</code></summary>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
 <p/>
 
 The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
