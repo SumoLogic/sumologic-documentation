@@ -20,7 +20,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Application observability](/docs/observability/application-components/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
 | Abilities - Solutions | [AWS observability](/docs/observability/aws/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
-| Abilities - Solutions | [Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Abilities - Solutions | [Logs for Security](/docs/security/additional-security-features/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Cloud SIEM](/docs/cse/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)
 | Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
