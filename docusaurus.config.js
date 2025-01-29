@@ -363,7 +363,6 @@ module.exports = {
                 label: 'Platform Services',
                 icon: 'settings_suggest',
               },
-
               {
                 type: 'docSidebar',
                 sidebarId: 'apm',
