@@ -80,17 +80,17 @@ This file is accessible to user/group created while OpenTelemetry collector is i
 
 ## Windows
 
-1. On your windows machine, open Registry Editor.
+1. On your Windows machine, open the Registry Editor.
 2. Go to `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OtelcolSumo`.
-3. Right click on the right pane and select `New > Multi-String Value`. You need to name this as `environment`.
-4. Right click on newly created entity `environment` in the step above and select `modify`
-5. You can set the environment variable as per your needs. For example in the below screenshot we have set `TEST_VAR` env variable with value `sumoemp`:<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/set_env_varibale_windows.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
+3. Right-click on the right pane and select **New** > **Multi-String Value**. You need to name this as `environment`.
+4. Right click on newly created entity `environment` in the step above and select `modify`.
+5. You can set the environment variable as per your needs. For example, in the below screenshot, we have set `TEST_VAR` env variable with value `sumoemp`:<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/set_env_varibale_windows.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 6. Click on **OK**.
-7. **Optional Step** Since by default the variable set as part of registry are visible to all user, you can follow the below steps to manage the ACL of the service registry and environment variable set in above steps : 
-    - Right click on OtelcolSumo service in the left pane of the registry editor and click on permissions
-    - Go to advance section by pressing Advanced button 
-    - Since the permissions are inherited by services from its parent by default, you will need to disable inheritance in the Advanced Security Settings popup.
-    - While disabling inheritance you will get two options to either convert inherited permission or to remove inherit permissions and create the permission list from scrath. You can choose either of the two depending on your case.  
-    - You can then edit Users from this list to ensure appropriate access of this registry and environment variable set under it.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/ACL_windows_registry.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
+7. (Optional step) By default, any variables stored in the registry are visible to all users. To control visibility and permissions, follow the steps below to manage the ACLs for both the service registry and the environment variables you set previously.
+    1. Right-click on OtelcolSumo service in the left pane of the registry editor and click on permissions.
+    1. Go to the advanced section by pressing the Advanced button.
+    1. Since the permissions are inherited by services from its parent by default, you will need to disable inheritance in the Advanced Security Settings popup.
+    1. When you disable inheritance, you’ll be given two options: you can either convert the existing inherited permissions, or remove them entirely and build a new permission list from scratch. Choose whichever option best fits your requirements. 
+    1. You can then edit Users from this list to ensure appropriate access of this registry and environment variable set under it.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/ACL_windows_registry.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 8. Restart the windows agent using the below command: 
 `Restart-Service -Name OtelcolSumo` 
