@@ -223,9 +223,9 @@ Refer to the documentation for the app you're using. App Components Solution cur
 * [Oracle](/docs/integrations/databases/oracle)
 
 
-### Configure Fields in Sumo Logic
+### Fields in Sumo Logic
 
-Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](/docs/manage/fields) topic.
+The following Fields will be created in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](/docs/manage/fields) topic.
 
 * `component`
 * `environment`

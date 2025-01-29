@@ -41,7 +41,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you're using Cassandra in a Kubernetes environment, create the fields:
+If you're using Cassandra in a Kubernetes environment, then these fields will be created:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -53,7 +53,7 @@ If you're using Cassandra in a Kubernetes environment, create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you're using Cassandra in a non-Kubernetes environment, create the fields:
+If you're using Cassandra in a non-Kubernetes environment, then these fields will be created:
 * `component`
 * `environment`
 * `db_system`

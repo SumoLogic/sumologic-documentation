@@ -41,7 +41,7 @@ Create the following Fields in Sumo Logic prior to configuring the collection. T
 
 <TabItem value="k8s">
 
-If you're using Couchbase in a Kubernetes environment, create the fields:
+If you're using Couchbase in a Kubernetes environment, then these fields will be created:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -51,7 +51,7 @@ If you're using Couchbase in a Kubernetes environment, create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you're using Couchbase in a non-Kubernetes environment, create the fields:
+If you're using Couchbase in a non-Kubernetes environment, then these fields will be created:
 
 * `component`
 * `environment`
