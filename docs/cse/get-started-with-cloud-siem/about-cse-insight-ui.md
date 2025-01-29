@@ -74,13 +74,11 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
-### Multi-insights list page
+### View insights in child organizations
 
-We offer an insights list page where you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
+If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
 
-This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can use also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
-
-The multi-insights list page requires a special environment be set up for it. To have a multi-insights list page set up for your company, contact your Sumo Logic account representative, or contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
+For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
 
 ## Insight details page
 

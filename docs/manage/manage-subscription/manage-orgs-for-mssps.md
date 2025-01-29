@@ -29,4 +29,10 @@ If you want to ensure that content in one organization is copied to other organi
 * When items with the same name already exist in the child organizations, they will be replaced.
 * When errors occur during syncing, attached items will be skipped. After the rest of the items are synchronized, you can investigate the errors in log search and try again.
 
+## Multi-insights list page in Cloud SIEM
 
+If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the [insights list page in Cloud SIEM](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insights-list-page) shows all insights across all your child organizations.
+
+This multi-insights list page (also known as a "federated" page) shows insights just as in a normal insights list page. However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the board view on the multi-insights page to move insights to different statuses.
+
+To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-manage-orgs/) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
