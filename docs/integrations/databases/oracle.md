@@ -252,27 +252,7 @@ annotations:
 2. The Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 
-**Add an FER to normalize the fields in Kubernetes environments**
-
-This step is not needed if you're using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-1. Click the **+Add** button on the top right of the table.
-1. The **Add Field Extraction Rule** form will appear. Enter the following options:
-   1. **Rule Name**. Enter the name as **App Observability - database**.
-   2. **Applied At**. Choose **Ingest Time**.
-   3. **Scope**. Select **Specific Data**.
-   4. **Scope**: Enter the following keyword search expression.
-   ```sql
-   pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
-   ```
-   5. **Parse Expression**. Enter the following parse expression.
-   ```sql
-   if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-   | pod_labels_component as component
-   | pod_labels_db_system as db_system
-   | if(!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-   ```
-1. Click **Save** to create the rule.
+**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityOracleDatabaseFER**.
 
 </TabItem>
 <TabItem value="non-k8s">

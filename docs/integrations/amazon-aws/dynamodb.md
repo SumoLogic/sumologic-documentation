@@ -113,20 +113,7 @@ The “**tablename**” field will be created.
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "dynamodb.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "requestParameters.tableName", "recipientAccountId" as eventSource, region, tablename, accountid nodrop
-| where eventSource = "dynamodb.amazonaws.com"
-| "aws/dynamodb" as namespace
-| tolowercase(tablename) as tablename
-| fields region, namespace, tablename, accountid
-```
+Field Extraction Rule for CloudTrail Logs are automatically created for Database Application Components named as **AwsObservabilityDynamoDBCloudTrailLogsFER**.
 
 
 ### Centralized AWS CloudTrail Log Collection

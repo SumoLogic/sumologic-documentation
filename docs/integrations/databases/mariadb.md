@@ -200,27 +200,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the **+ Add** button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear:
-   4. Enter the following options:
-      * **Rule Name**. Enter the name as **App Observability - database**.
-      * **Applied At.** Choose **Ingest Time**
-      * **Scope**. Select **Specific Data**
-      * **Scope**. Enter the following keyword search expression:
-      ```sql
-      pod_labels_environment=* pod_labels_component=database
-      pod_labels_db_cluster=* pod_labels_db_system=*
-      ```
-      * **Parse Expression**. Enter the following parse expression:
-      ```sql
-      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-       | pod_labels_component as component
-       | pod_labels_db_system as db_system
-       | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-      ```
-   5. Click **Save** to create the rule.
+3. **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityMariaDBDatabaseFER**.
 
 
 </TabItem>
