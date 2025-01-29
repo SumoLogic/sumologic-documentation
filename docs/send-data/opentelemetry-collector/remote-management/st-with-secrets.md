@@ -20,6 +20,10 @@ Below are the steps to make things work for such source templates:
 1. Set env variable in OpenTelemetry Collector process. For example: `SECRET_ENV_VAR=Welcome@123`, where `SECRET_ENV_VAR` is the variable name and `Welcome@123` is the password.
 2. ST creation: While creating the source template you will need to provide the environment variable name instead of the actual password. In this case: `SECRET_ENV_VAR` and this will be part of the source template referring to the value of the environment variable like: `password: ${env:SECRET_ENV_VAR}`.
 3. Once this source template gets pushed to the respective OpenTelemetry collector, the environment variable will get resolved at runtime and will be substituted with the actual password value to make the config work and pull the data to send it to Sumo Logic.
+^[a-zA-Z_][a-zA-Z0-9_]*$
+:::note
+Environment variable can start with small or capital character or an underscore(_) followed by any letters(small or capital), numbers and underscore. 
+:::
 
 This way, your secret data is not shared with Sumo Logic.
 
@@ -79,7 +83,7 @@ Below are the steps to set the environment variable in different operating syste
 
 1. On your Windows machine, open the Registry Editor.
 2. Go to `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OtelcolSumo`.
-3. Right-click on the right pane and select **New** > **Multi-String Value**. You need to name this as `environment`.
+3. Right-click on the right pane and select **New** > **Multi-String Value**. You must name this as `environment`.
 4. Right click on newly created entity `environment` in the step above and select `modify`.
 5. You can set the environment variable as per your needs. For example, in the below screenshot, we have set `TEST_VAR` env variable with value `sumoemp`:<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/set_env_varibale_windows.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 6. Click on **OK**.
