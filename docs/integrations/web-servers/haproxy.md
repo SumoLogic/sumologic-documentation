@@ -77,39 +77,20 @@ This section provides instructions for configuring logs and metrics collection f
 
 Configuring log and metric collection for the HAProxy app includes the following tasks:
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using HAProxy in a Kubernetes environment, create the fields:
-  * `pod_labels_component`
-  * `pod_labels_environment`
-  * `pod_labels_proxy_system`
-  * `pod_labels_proxy_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using HAProxy in a non-Kubernetes environment, create the fields:
+Following fields will always be created automatically as a part of app installation process:
   * `component`
   * `environment`
   * `proxy_system`
   * `proxy_cluster`
   * `pod`
 
-</TabItem>
-</Tabs>
-
+If you're using Apache in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+  * `pod_labels_component`
+  * `pod_labels_environment`
+  * `pod_labels_proxy_system`
+  * `pod_labels_proxy_cluster`
 
 ### Step 2: Configure Collection for HAProxy
 
@@ -222,28 +203,7 @@ This section explains the steps to collect HAProxy logs from a Kubernetes enviro
    kubectl describe pod <haproxy_pod_name>
    ```
   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear.
-   4. Enter the following options:
-    * **Rule Name**. Enter the name as **App Observability - Proxy**.
-    * **Applied At.** Choose **Ingest Time**
-    * **Scope**. Select **Specific Data**
-    * **Scope**: Enter the following keyword search expression:  
-    ```sql
-    pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_system=* pod_labels_proxy_cluster=*
-    ```
-    * **Parse Expression**. Enter the following parse expression:
-    ```sql
-    | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-    | pod_labels_component as component
-    | pod_labels_proxy_system as proxy_system
-    | pod_labels_proxy_cluster as proxy_cluster
-    ```
-   5. Click **Save** to create the rule.
-
-
+1. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Proxy Application Components named as **AppObservabilityHaproxyFER**
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -428,95 +388,6 @@ Verify logs are flowing into Sumo Logic by running the following logs query:
 component="proxy" proxy_cluster="<Your-HAProxy-Server>" proxy_system="haproxy"
 ```
 
-## Installing the HAProxy Monitors
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability. You can install by importing a JSON file or using a Terraform script.
-
-:::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
-:::
-
-### Method A: Import a JSON file
-
-Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/haproxy/haproxy.json) that describes the monitors. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/haproxy/haproxy.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all HAProxy clusters, the data for which has been collected via the instructions in the previous sections.  
-
-However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `proxy_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
-* For alerts applicable only to a specific cluster, your custom filter would be: `proxy_cluster=dev-haproxy01`
-* For alerts applicable to all clusters that start with `haproxy-prod`: `proxy_cluster=haproxy-prod*`
-* For alerts applicable to a specific cluster within a production environment: `proxy_cluster=dev-haproxy01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-2. Click **Add**.
-3. Click **Import**.
-4. On the **Import Content popup**, enter **HAProxy** in the Name field, paste in the JSON into the the popup, and click **Import**.
-5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-### Method 2: Use a Terraform script
-
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-```sql
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `haproxy_data_source` variable. For example:
-* To configure alerts for A specific cluster, set `haproxy_data_source` to something like `proxy_cluster=haproxy.prod.01`
-* To configure alerts for All clusters in an environment, set `haproxy_data_source` to something like `environment=prod`
-* To configure alerts for Multiple clusters using a wildcard, set `haproxy_data_source` to something like `proxy_cluster=haproxy-prod*`
-* To configure alerts for A specific cluster within a specific environment, set `haproxy_data_source` to something like `proxy_cluster=haproxy-1` and `environment=prod`. This assumes you have configured and applied Fields as described in [Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for HAProxy](#step-1-configure-fields-in-sumo-logic).
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to false.
-
-By default, the monitors will be located in a "HAProxy" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the `haproxy.auto.tfvars` file.
-
-5. If you want the alerts to send email or connection notifications, edit the `haproxy_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
-
-In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Installing Monitors:
-   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/` directory and run `terraform init`. This will initialize Terraform and download the required components.
-   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
-
-
 ## Installing the HAProxy app
 
 Now that you have set up collection for HAProxy, you can install the HAProxy app to use the pre-configured searches and dashboard that provide insight into your data.
@@ -631,6 +502,20 @@ Use this dashboard to:
 * To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('img/integrations/web-servers/HAProxy-WebServerOperations.png')} alt="test" />
+
+## Installing the HAProxy Monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
+
+:::note permissions required
+To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
+:::
+
+:::note
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+:::
 
 ## HAProxy Alerts
 

@@ -114,37 +114,21 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Apache in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Apache in a non-Kubernetes environment, create the fields:
+Following fields will always be created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 
-</TabItem>
-</Tabs>
+If you're using Apache in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
+
+For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Your Environment for Apache Logs and Metrics Collection
 
@@ -262,30 +246,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
    kubectl describe pod <apache_pod_name>
    ```
    The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
-2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Web Server Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the **+ Add** button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear. Enter the following options:
-     * **Rule Name**: Enter the name as **App Observability - Webserver**
-     * **Applied At:** Choose **Ingest Time**
-     * **Scope**: Select **Specific Data** and enter the following keyword search expression:
-     ```sql
-     pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_system=* pod_labels_webserver_farm=*
-     ```
-     * **Parse Expression:** Enter the following parse expression:
-     ```sql
-     if (!isEmpty(pod_labels_environment),  pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_webserver_system as webserver_system
-     | pod_labels_webserver_farm as webserver_farm
-     ```
-   4. Click **Save** to create the rule.
-   5. Verify logs are flowing into Sumo Logic by running the following logs query:
-    ```sql
-    component=webserver webserver_system=apache \
-    webserver_farm=<your_apache_webserver_farmname>
-    ```
-
+2. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Web Server Application Components named as **AppObservabilityApacheWebserverFER**
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -442,89 +403,6 @@ For error logs, following directives are to be noted:
 </TabItem>
 </Tabs>
 
-## Installing Apache Monitors
-
-This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
-
-Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
-
-For details about individual alerts, see [Apache Alerts](#apache-alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor).
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/apache/apache.json) that describes the monitors.
-2. In the json file, replace `$$apache_data_source` with a custom source filter like `webserver_farm=dev-apache` for setting up alerts for a specific web server farm. If you want to configure this for all your web server farms you can find and replace `$$apache_data_source` with blank `“”`.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click **Import** and then copy paste the above JSON to import monitors. Name will be the folder name.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-
-### Method B: Using a Terraform script
-
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/apache/`.
-   1. Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-    ```bash
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-   2. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific web server farm or environments, update the variable `apache_data_source`. Custom filter examples:
-      * A specific web server farm `webserver_farm=apache.prod.01`
-      * All web server farms in an environment `environment=prod`
-      * For alerts applicable to all web server farms that start with apache-prod: `webserver_farm=apache-prod*`
-      * For alerts applicable to a specific web server farm within a production environment: `webserver_farm=apache-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-  All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **`monitors_disabled`** to **`false`** in **apache.auto.tfvars** file.
-
-  By default, the monitors are configured in a monitor **folder** called “**Apache**”, if you would like to change the name of the folder, update the monitor folder name in “**folder**” key at **apache.auto.tfvars** file.
-
-5. If you would like the alerts to send email or connection notifications, modify the file **apache_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Email Notifications Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-6. Install the Alerts.
-   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**apache**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-
 ## Installing the Apache app
 
 Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic app for Apache to use the pre-configured Searches and dashboards.
@@ -678,6 +556,23 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
+## Installing Apache Monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
+
+Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
+
+For details about individual alerts, see [Apache Alerts](#apache-alerts).
+
+:::note permissions required
+To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
+:::
+
+:::note
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
+:::
 
 ## Apache Alerts
 
