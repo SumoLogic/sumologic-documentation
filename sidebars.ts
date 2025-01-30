@@ -2080,6 +2080,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws'
       ],
      },
      {
@@ -2660,13 +2661,27 @@ integrations: [
     },
     {
       type: 'category',
-      label: 'Cloud Infrastructure Security',
+      label: 'Logs for Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'security/cloud-infrastructure-security/index'},
+      link: {type: 'doc', id: 'security/additional-security-features/index'},
       items: [
-        'security/cloud-infrastructure-security/introduction',
-        'security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
+        'security/additional-security-features/introduction',
+        'security/additional-security-features/threat-detection-and-investigation',
+        'security/additional-security-features/data-lake',
+        'security/additional-security-features/audit-and-compliance',
+        'security/additional-security-features/application-security',
+        {
+          type: 'category',
+          label: 'Cloud Infrastructure Security',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'security/additional-security-features/cloud-infrastructure-security/index'},
+          items: [
+            'security/additional-security-features/cloud-infrastructure-security/introduction',
+            'security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
+          ],
+        },
       ],
     },
     {
@@ -2933,20 +2948,6 @@ integrations: [
             'cloud-soar/legacy/legacy-cloud-soar-apis',
         ],
       },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Additional Security Features',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'security/additional-security-features/index'},
-      items: [
-        'security/additional-security-features/introduction',
-        'security/additional-security-features/threat-detection-and-investigation',
-        'security/additional-security-features/data-lake',
-        'security/additional-security-features/audit-and-compliance',
-        'security/additional-security-features/application-security',
       ],
     },
   ],

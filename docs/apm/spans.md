@@ -4,17 +4,19 @@ title: Span Analytics and Queries
 description: Learn how to use the Spans page to explore your span data.
 ---
 
-The **Spans** page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services.
+Sumo Logic Span Analytics enables you to filter and aggregate trace data at the raw span level, providing insights into the performance and behavior of your application services.  
 
-## Spans page
+With its intuitive interface, Span Analytics allows you to:  
+* Filter and inspect tracing data in detail.  
+* Explore span metadata through a structured facets list.  
+* Aggregate by any custom dimension or tag to generate charts and tables.  
 
-To access Spans:
+To access span analytics:
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Traces** > **Span Analytics**.
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and click **Traces**. In the new page, click the **Traces** dropdown menu and select **Span Analytics**.
+* [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**.
-
-A new Spans page opens. Data is displayed once you run a query.
+A new **Spans** page opens. Data is displayed once you run a query.
 
 ![Spans page](/img/apm/spans-page.png)
 
@@ -60,7 +62,6 @@ This micro lesson provides an overview of Span Analytics, and describes the term
 :::
 
 
-
 ## Spans query
 
 You can build a spans query using the provided input fields. By default, you'll see an input for **Filters** and **Visualize**.
@@ -71,17 +72,17 @@ Once you click the text area of an input field, you'll get a dropdown menu that 
 
 ![dropdown for spans filter](/img/apm/dropdown-for-spans-filter.png)
 
+### Filters
+
 **Filters** narrow the scope of the query. Enter metadata values that match the data you want to search. You can add multiple filters to focus on specific data.
 
 :::note
-Each Trace includes up to 10,000 spans to better support monitoring for long-running and complex transactions. New spans can increase credits consumption.
+Each trace includes up to 10,000 spans to better support monitoring for long-running and complex transactions. New spans can increase credits consumption.
 :::
 
-### Aggregate your data
+### Visualize your data
 
 Aggregating raw spans helps you gain deeper insights by selecting the subject you want to visualize and the type of aggregation to apply.
-
-#### Visualize
 
 The **Visualize** option determines how to aggregate the filtered data. The default aggregation methods are:
 
@@ -92,7 +93,7 @@ You can use custom numeric metrics from your data by entering the name of the sp
 
 You can visualize multiple metrics simultaneously.
 
-#### Grouping and limiting results
+### Group and limit results
 
 If you define **Visualize**, an option to set **Group By** appears, allowing you to organize aggregated results grouped by time or other fields.
 * To display a time series, you need to Group By time and select the granularity.
@@ -131,7 +132,7 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
 
-![messages results](/img/apm/messages-results.png)
+![messages results](/img/apm/spans-messages-results.png)
 
 * To move a column left or right, hold click and drag it to a different location in the table.
 * To adjust column width, click and drag the vertical line in between the columns.<br/> ![resize column](/img/search/get-started-search/search-page/resize-column.png)
@@ -154,21 +155,21 @@ The content of the Facets panel is affected by your current active filters and t
 
 ### Aggregates tab
 
-The Aggregates tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
+The **Aggregates** tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
 
 ![spans-aggregates-visualize](/img/apm/spans-aggregates-visualize.png)
 
-## Add to Dashboard
+#### Add to Dashboard
 
-You can add to Dashboard as long as your total dashboard-originated `_trace_spans `read volume does not exceed 200x of your tracing ingest. Contact your Sumo Logic representative for paid subscription service options for volume requirements exceeding 200x of your tracing ingest.
+You can add to a dashboard as long as your total dashboard-originated `_trace_spans` read volume does not exceed 200x of your tracing ingest. Contact your Sumo Logic representative for paid subscription service options for volume requirements exceeding 200x of your tracing ingest.
 
-To add your aggregated span data to a Dashboard:
+To add your aggregated span data to a dashboard:
 
 1. Click the three-dot kebab menu icon and select **Add to Dashboard**.<br/>  ![add-to-dashboard-spans](/img/apm/spans-add-to-dashboard.png)
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you'll have an option to select **Create New Dashboard** with your name.<br/>  ![span-dashboard](/img/apm/span-dashboard.png)
-1. Click **Add** when you're done assigning which Dashboard to add the Panel to.
+1. In the **Add Panel to Dashboard** window, provide a **Panel Title** and enter an existing **Dashboard** name or add to a newly created a new one, as seen in this screenshot.<br/> ![span-dashboard](/img/apm/span-dashboard.png)
+1. When you're done assigning the panel to a dashboard, click **Add**.
 
-## Open in Search
+#### Open in Search
 
 To further enhance your query, you can use the [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) for more advanced use cases by opening a Search of your spans. Click the three-dot kebab menu icon and select **Open in Search**.  
 
@@ -198,9 +199,9 @@ It’s now easier than ever to drill down into the information you care about. N
 
 The number of cases you can realize with this is unlimited. In addition to the above examples, you can aggregate and visualize the content of custom metrics in your spans, and filter and break them down by any field, including custom tags. These can all be presented in any of the available chart visualizations.
 
-If any further query customization is required, you can click the [**Open in Search**](#open-in-search) button to edit your query, making it a great place to start queries in a way that still allows further technical refinement. Especially if you try to solve a use case that requires more than the current functionality of the Spans page, such as the following:
+To further customize your query, click [Open in Search](#open-in-search) to edit. Spans makes it a great place to start queries in a way that still allows further technical refinement. Especially if you try to solve a use case that requires more than the current functionality of the Spans page, such as the following:
 
 1. A stacked time-series chart with more than two non-time dimensions. You can only set **Group By** to **Time** and a single dimension.
 1. Visualize multiple series with more than one count operation.
-1. Use OR operations in filters. Filters are concatenated using AND logic.
+1. Use `OR` operations in filters. Filters are concatenated using `AND` logic.
 1. Use mathematical operations between metrics.

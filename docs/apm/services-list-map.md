@@ -8,57 +8,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/apm/services-map-icon.png')} alt="icon" width="45"/>
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Services, go to the **Home** screen and select **Traces** > **Services**.
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access Services, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**.
-
-
-## Services list view
-
-The **Services List** view provides a compact, high-level overview of your application service health insights, alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
-
-<img src={useBaseUrl('/img/apm/services-list-filters.png')} alt="services-list-filters" style={{border: '1px solid gray'}} width="800"/>
-
-KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
-
-### Alerts
-
-**Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given service.
-
-The **Alert status** column displays the most severe alert status along with the total number of alerts associated with a given service.
-
-To view alert details, click on a row and view it in the right-hand-side panel.
-
-In addition, you can narrow down the list of visible services by the type of active alerts for a given service. Service List can filter based on the following alert statuses:
-
-- Critical
-- Warning
-- Missing Data
-- Normal
-
-A service is displayed in the list if at least one of the alerts is in the selected state.
-
-### General settings
-
-Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
-
-<img src={useBaseUrl('img/apm/services-list-settings.png')} style={{border: '1px solid gray'}} alt="services-list-settings" />
-
-:::note
-Your Services List and Map settings are specific to you (not your team) and will be preserved in your browser's local storage.
-:::
-
-### Columns display settings
-
-Display and hide columns using **Columns Display Settings**.
-
-![services-list-display](/img/apm/services-list-display.png)
+To access the services list and services map features:
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Traces** > **Services**.
+* [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**.
 
 ## Services map view
 
 The **Services Map** view visually maps out your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health and load of each microservice is reflected in size and color to help you spot potential problems and bottlenecks in your application infrastructure.
 
-Services Maps are built automatically from distributed tracing data in real time as it arrives in Sumo Logic. You can:
+Services maps are built automatically from distributed tracing data in real time as it arrives in Sumo Logic. You can:
 
 * Zoom in on the map to see a more granular level of detail, or zoom out to get a higher-level overview
 * Hover over a service to see its connections to other services and the last 15 minutes of activity in terms of latency, requests, and errors
@@ -69,11 +27,9 @@ Services Maps are built automatically from distributed tracing data in real time
 
 <img src={useBaseUrl('img/apm/traces/services-map.png')} style={{border: '1px solid gray'}} alt="services-map" width="800"/>
 
-### General settings
+### Settings
 
-Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
-
-<img src={useBaseUrl('img/apm/traces/settings-general.png')} style={{border: '1px solid gray'}} alt="service map gear icon for settings" width="300"/>
+Use the **General Settings** to configure [anomaly detection](#anomaly-detection).<br/><img src={useBaseUrl('img/apm/traces/settings-general.png')} style={{border: '1px solid gray'}} alt="service map gear icon for settings" width="300"/>
 
 ### Map legend
 
@@ -91,6 +47,36 @@ Configure anomaly detection in **General Settings** ([learn more](#anomaly-detec
   * Arrows map out connection activity between services and their presence from the last 72 hours.
   * Circle and arrows with dotted lines represent services or connections that have been inactive an hour or more.
 * **Size** of services: Size is based on service activity, where large circles are more active compared to smaller circles that are less active.  
+
+## Services list view
+
+The **Services List** view provides a compact, high-level overview of your application service health insights, alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
+
+<img src={useBaseUrl('/img/apm/services-list-filters.png')} alt="services-list-filters" style={{border: '1px solid gray'}} width="800"/>
+
+KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
+
+### Alerts
+
+Alerts in the Service List are displayed based on the configured [monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given service.
+
+The **Alert Status** column displays the most severe alert status along with the total number of alerts associated with a given service.
+
+To view an alert's details, click on a row and view it in the right-hand-side panel.
+
+Additionally, you can narrow down the list of visible services by the type of active alerts for a given service. Service List can filter based on the following alert statuses:
+
+- Critical
+- Warning
+- Missing Data
+- Normal
+
+A service is displayed in the list if at least one of the alerts is in the selected state.
+
+### Settings
+
+* Use the general settings to configure [anomaly detection](#anomaly-detection).<br/><img src={useBaseUrl('img/apm/services-list-settings.png')} style={{border: '1px solid gray'}} alt="services-list-settings" width="300" />
+* Use the columns display settings to display and hide columns.<br/><img src={useBaseUrl('img/apm/services-list-display.png')} style={{border: '1px solid gray'}} alt="services-list-settings" width="300" />
 
 ## Anomaly detection
 
@@ -116,7 +102,7 @@ If the **Alerts** option is enabled, the status of a service will be influenced 
 
 <img src={useBaseUrl('/img/apm/enable-alerts.png')} alt="alerts_host_list" style={{border: '1px solid gray'}} width="400"/>
 
-## Services dashboard panels
+## Add services panel to dashboard
 
 The **Services Map** and **Services List** panels, available out of the box, enable you to explore your application environment and review all traces from a dashboard. You can duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
