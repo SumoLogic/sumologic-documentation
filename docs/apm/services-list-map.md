@@ -25,7 +25,7 @@ Services maps are built automatically from distributed tracing data in real time
 * Filter by environment (up to 10 values), if your tracing data has the deployment environment tag (`deployment.environment=[environment]`)
 * Search for a service by name
 
-<img src={useBaseUrl('img/apm/traces/services-map.png')} style={{border: '1px solid gray'}} alt="services-map" width="800"/>
+<img src={useBaseUrl('img/apm/services-map.png')} style={{border: '1px solid gray'}} alt="services-map" width="800"/>
 
 ### Settings
 
@@ -33,7 +33,7 @@ Use the **General Settings** to configure [anomaly detection](#anomaly-detection
 
 ### Map legend
 
-<img src={useBaseUrl('img/apm/traces/services-map-legend.png')} style={{border: '1px solid gray'}} alt="services-map-legend" width="500"/>
+<img src={useBaseUrl('img/apm/services-map-legend.png')} style={{border: '1px solid gray'}} alt="services-map-legend" width="500"/>
 
 * **Color** of services:
   * Red represents anomalies.
