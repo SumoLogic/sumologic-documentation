@@ -86,7 +86,7 @@ Following fields will always be created automatically as a part of app installat
   * `proxy_cluster`
   * `pod`
 
-If you're using Apache in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+If you're using Haproxy in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
   * `pod_labels_component`
   * `pod_labels_environment`
   * `pod_labels_proxy_system`
