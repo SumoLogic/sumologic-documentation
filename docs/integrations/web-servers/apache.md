@@ -579,60 +579,17 @@ There are limits to how many alerts can be enabled. For more information, see [M
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 <details>
-<summary>Click to expand. Here are the alerts available for Apache.</summary>
+<summary>Here are the alerts available for Apache (click to expand).</summary>
 
-<table>
-  <tr>
-   <td>Alert Name   </td>
-   <td>Alert Description   </td>
-   <td>Alert Condition   </td>
-   <td>Recover Condition   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - Critical Error Messages   </td>
-   <td rowspan="2" >This alert fires when we detect critical error messages for a given Apache server.</td>
-   <td rowspan="2" >&#62; 0 </td>
-   <td rowspan="2" >0 </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - Access from Highly Malicious Sources </td>
-   <td rowspan="2" >This alert fires when an Apache is accessed from highly malicious IP addresses.   </td>
-   <td rowspan="2" >&#62; 0   </td>
-   <td rowspan="2" >0   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - High Client (HTTP 4xx) Error Rate </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.   </td>
-   <td rowspan="2" > &#62; 0   </td>
-   <td rowspan="2" >0   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - High Server (HTTP 5xx) Error Rate   </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.   </td>
-   <td rowspan="2" > &#62;0 </td>
-   <td rowspan="2" >0   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td>Apache - High CPU Utilization   </td>
-   <td>This alert fires when the average CPU utilization within a 5 minute interval for an Apache Webserver farm instance is high (&#62;&#61;85%).   </td>
-   <td> &#62;&#61;85 </td>
-   <td>&#60;85   </td>
-  </tr>
-  <tr>
-   <td>Apache - Server Restarted</td>
-   <td>This alert fires when we detect low uptime (&#60; &#61; 10 minutes) for a given Apache server within a 5 minute interval.   </td>
-   <td> &#60;&#61;600</td>
-   <td> &#62;600</td>
-  </tr>
-</table>
+| Alert Name       | Alert Description  | Alert Condition | Recover Condition |
+|:----------------|:-------------------|:-----------------|:-------------------|
+| Apache - Critical Error Messages      | This alert fires when we detect critical error messages for a given Apache server.                        | > 0             | 0                 |
+| Apache - Access from Highly Malicious Sources | This alert fires when an Apache is accessed from highly malicious IP addresses.                            | > 0             | 0                 |
+| Apache - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.                | > 0             | 0                 |
+| Apache - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.                | > 0             | 0                 |
+| Apache - High CPU Utilization         | This alert fires when the average CPU utilization within a 5-minute interval for an Apache Webserver farm instance is high (>= 85%). | \>= 85           | < 85              |
+| Apache - Server Restarted             | This alert fires when we detect low uptime (\<= 10 minutes) for a given Apache server within a 5-minute interval. | \<= 600          | > 600             |
+
 
 </details>
 
@@ -640,108 +597,39 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 ## Apache Metrics
 
 <details>
-<summary>Click to expand. Here are the metrics available for Apache.</summary>
+<summary>Here are the metrics available for Apache (click to expand).</summary>
 
-<table><small>
-  <tr>
-   <td><strong>List of Apache Telegraf metrics</strong></td>
-  </tr>
-  <tr>
-   <td><code>apache_BusyWorkers</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_BytesPerReq</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_BytesPerSec</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUChildrenSystem</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUChildrenUser</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPULoad</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUSystem</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUUser</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_DurationPerReq</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_IdleWorkers</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load1</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load5</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load15</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_ParentServerConfigGeneration</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_ParentServerMPMGeneration</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_ReqPerSec</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_ServerUptimeSeconds</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalAccesses</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalDuration</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalkBytes</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Uptime</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_closing</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_dnslookup</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_finishing</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_idle_cleanup</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_keepalive</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_logging</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_open</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_reading</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_sending</code> </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_starting</code>   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_waiting</code>   </td>
-  </tr></small>
-</table>
+apache_BusyWorkers<br/>
+apache_BytesPerReq<br/>
+apache_BytesPerSec<br/>
+apache_CPUChildrenSystem<br/>
+apache_CPUChildrenUser<br/>
+apache_CPULoad<br/>
+apache_CPUSystem<br/>
+apache_CPUUser<br/>
+apache_DurationPerReq<br/>
+apache_IdleWorkers<br/>
+apache_Load1<br/>
+apache_Load5<br/>
+apache_Load15<br/>
+apache_ParentServerConfigGeneration<br/>
+apache_ParentServerMPMGeneration<br/>
+apache_ReqPerSec<br/>
+apache_ServerUptimeSeconds<br/>
+apache_TotalAccesses<br/>
+apache_TotalDuration<br/>
+apache_TotalkBytes<br/>
+apache_Uptime<br/>
+apache_scboard_closing<br/>
+apache_scboard_dnslookup<br/>
+apache_scboard_finishing<br/>
+apache_scboard_idle_cleanup<br/>
+apache_scboard_keepalive<br/>
+apache_scboard_logging<br/>
+apache_scboard_open<br/>
+apache_scboard_reading<br/>
+apache_scboard_sending<br/>
+apache_scboard_starting<br/>
+apache_scboard_waiting<br/>
 
 </details>

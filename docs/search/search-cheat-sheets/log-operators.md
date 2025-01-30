@@ -5,7 +5,7 @@ sidebar_label: Log Operators
 description: The Search Operators cheat sheet provides a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.
 ---
 
-The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a step-by-step video and tutorial about creating queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI). For a complete list of Sumo Logic Search operators, download the <a href="/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
+The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a complete list of Sumo Logic Search operators, download the <a href="/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
 
 The following tables provide a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions.  
 
@@ -453,7 +453,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/now">now</a></td>
-   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatDate">formatDate</a> operator to get the formatted current time.</td>
+   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatdate">formatDate</a> operator to get the formatted current time.</td>
    <td></td>
    <td>Can be used in Dashboard Panels, but the <code>now()</code> time presented in Live mode (the time the data is processed) doesn't match the search time, so the results are different.<br/>
    The results for search could be hours or days later than the time presented in Live mode.</td>

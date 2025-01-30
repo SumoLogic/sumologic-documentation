@@ -6,6 +6,7 @@ description: Rule tuning expressions allow you to tailor the logic of a built-in
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This topic has instructions for creating and using tuning expressions for rules.
 
@@ -41,8 +42,23 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to create a rule tuning expression.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/ds88r31lqp?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Rule Tuning in Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/3BUKLtJtPI8?rel=0"
         width="854px"
         height="480px"
@@ -53,15 +69,16 @@ Watch this micro lesson to learn how to create a rule tuning expression.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 ## Create a tuning expression
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
-1. On the **Rule Tuning** page, click **Create**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. The **New Rule Tuning Expression** page appears.
-    <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" style={{border: '1px solid gray'}} width="800"/>
+    <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Empty screen to create a rule tuning expression" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
 1. **Description**. Enter a description of the tuning expression.
 1. In the **Tune [selected|all] Rules** section:
@@ -87,14 +104,11 @@ You can also create new tuning expression and apply existing tuning expressions
 
 When you create a tuning expression it is enabled by default. If you disable a tuning expression, rules that it is applied to will behave as if the tuning expression does not exist. 
 
-You can toggle the enablement state of a tuning expression on the **Rule Tuning** page using the control to the left of the delete icon.
+<img src={useBaseUrl('img/cse/enable-on-list.png')} alt="Enable on list page" style={{border: '1px solid gray'}} width="600"/>
 
-<img src={useBaseUrl('img/cse/enable-on-list.png')} alt="Enable on list page" style={{border: '1px solid gray'}} width="800"/>
+You can toggle the enablement state on the details page for a tuning expression.
 
-You can also toggle the enablement state on the details page for a tuning expression.
-
-<img src={useBaseUrl('img/cse/enable-on-details.png')} alt="Enable on details page" style={{border: '1px solid gray'}} width="800"/>
-
+<img src={useBaseUrl('img/cse/enable-on-details.png')} alt="Enable on details page" style={{border: '1px solid gray'}} width="600"/>
 
 ## Testing tuning expressions
 

@@ -7,6 +7,7 @@ description: Learn how to write an aggregation rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import Iframe from 'react-iframe';
 
 This topic has information about Cloud SIEM aggregation rules and how to write them.
 
@@ -37,8 +38,23 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 
 <img src={useBaseUrl('img/cse/agg-rule.png')} alt="If Triggered section of an aggregation rule" style={{border: '1px solid gray'}} width="400"/>
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn how to create an aggregation rule.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/oxlwsxd0b7?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Create an Aggregation Rule in Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/XaqQES5suWQ?rel=0"
         width="854px"
         height="480px"
@@ -49,9 +65,9 @@ Watch this micro lesson to learn how to create an aggregation rule.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
-
+:::
 
 ## Create an aggregation rule
 
