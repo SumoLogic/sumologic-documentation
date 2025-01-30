@@ -55,35 +55,22 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 ### Step 1: Fields in Sumo Logic
 
-Following [fields](https://help.sumologic.com/docs/manage/fields/) will be created as part of app installation process.
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
+Following [fields](https://help.sumologic.com/docs/manage/fields/) will always be created automatically as a part of app installation process:
 
-<TabItem value="k8s">
-
-If you're using ActiveMQ in a Kubernetes environment, then these fields will be created:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_messaging_system`
 * `pod_labels_messaging_cluster`
 
-</TabItem>
-<TabItem value="non-k8s">
 
-If you're using ActiveMQ in a non-Kubernetes environment, then these fields will be created:
+If you're using ActiveMQ in a non-Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `messaging_system`
 * `messaging_cluster`
 * `pod`
 
-</TabItem>
-</Tabs>
+For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 
 ### Step 2: Configure ActiveMQ Logs and Metrics Collection
@@ -269,7 +256,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
-3. **FERs to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Messaging Application Components named as **App Observability - Messaging**
+3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created with named as **AppObservabilityMessagingActiveMQFER**
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -440,7 +427,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-
+  10. There are limits to how many alerts can be enabled
 
 ### ActiveMQ alerts
 
