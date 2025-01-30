@@ -112,7 +112,7 @@ To view the dashboard information, follow the steps below:
 3. A popup pane will appear, displaying the following dashboard information:<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info_panel.png')} alt="dashboard_info_panel" style={{border: '1px solid gray'}} width="600"/>
     - **Dashboard Name**. Name of the dashboard.
     - **Created By**. The user who created the dashboard. 
-    - **Default Time Range**. The time range selected for the dashboard.
+    - **Time Range Expression**. The time range selected for the dashboard.
     - **Start**. The current start time based on the selected time range.
     - **End**. The current end time based on the selected time range.
     - **Time Zone**. The time zone for the set time range.
