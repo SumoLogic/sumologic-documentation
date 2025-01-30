@@ -77,16 +77,16 @@ This section provides instructions for configuring logs and metrics collection f
 
 Configuring log and metric collection for the HAProxy app includes the following tasks:
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
   * `component`
   * `environment`
   * `proxy_system`
   * `proxy_cluster`
   * `pod`
 
-If you're using Haproxy in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using Haproxy in the Kubernetes environment, these following additional fields will be created by default as a part of app installation process:
   * `pod_labels_component`
   * `pod_labels_environment`
   * `pod_labels_proxy_system`
@@ -203,7 +203,9 @@ This section explains the steps to collect HAProxy logs from a Kubernetes enviro
    kubectl describe pod <haproxy_pod_name>
    ```
   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-1. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Proxy Application Components named as **AppObservabilityHaproxyFER**
+<br />
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Proxy Application Components named as **AppObservabilityHaproxyFER**
+<br />
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -505,17 +507,15 @@ Use this dashboard to:
 
 ## Installing the HAProxy Monitors
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
+
 
 ## HAProxy Alerts
 

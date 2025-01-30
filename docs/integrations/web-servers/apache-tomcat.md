@@ -19,22 +19,22 @@ Before installing the Sumo Logic app, Apache Tomcat must be set up and configure
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Apache Tomcat. Configuring log and metric collection for the Apache Tomcat app includes the following tasks.
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 * `pod`
 
-If you're using Apache Tomcat in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using Apache Tomcat in the Kubernetes environment, these following additional fields will be created by default as a part of app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
 * `pod_labels_webserver_farm`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Apache Tomcat
 
@@ -48,7 +48,7 @@ For information on setting up fields, see [Sumo Logic Fields](/docs/manage/field
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in the Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
 <img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="apache-k8s" />
 
@@ -256,7 +256,8 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 1. Verify logs in Sumo Logic.
 
-1. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
+<br />**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
+<br />
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -721,23 +722,16 @@ To help determine if the Apache Tomcat server is available and performing well, 
 
 ## Installing Apache Tomcat Monitors
 
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Apache Tomcat Alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
+
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
-
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
-
 
 ## Apache Tomcat Alerts
-
-The alerts are built based on metrics datasets and have preset thresholds.
-
 
 <table>
   <tr>

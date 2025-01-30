@@ -493,16 +493,11 @@ Use this dashboard to:
 
 ## Installing Nginx Plus Monitors
 
-To install these alerts, you need to have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 
 ## Nginx Plus Alerts

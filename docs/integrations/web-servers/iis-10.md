@@ -42,7 +42,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-### Fields in Sumo Logic
+### Configure fields in Sumo Logic
 
 Following fields will be created automatically as a part of app installation process:
 * `component`
@@ -608,12 +608,9 @@ Use this dashboard to monitor the following key metrics:
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 
 ## Using IIS Alerts

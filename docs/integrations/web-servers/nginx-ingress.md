@@ -31,13 +31,13 @@ For more details on Nginx Ingress Metrics, see [Prometheus](https://docs.nginx.c
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Ingress.
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
+In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
 Configuring log and metric collection for the Nginx Ingress app includes the following tasks:
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-If you're using Nginx Ingress in a Kubernetes environment, Following fields will be created automatically as a part of app installation process:
+Additionally, if you are using Nginx Ingress in the Kubernetes environment, Following fields will be created automatically as a part of app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -68,8 +68,9 @@ It’s assumed that you are using the latest helm chart version if not please up
   **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
-4. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxIngressWebserverFER**
-
+<br />
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxIngressWebserverFER**
+<br />
 ## Installing the Nginx Ingress app
 
 This section demonstrates how to install the Nginx Ingress app. These instructions assume you have already set up the collection as described above.
@@ -221,16 +222,13 @@ Use this dashboard to:
 
 ## Installing Nginx Ingress Monitors
 
-After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
+After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
 
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 
 ## Nginx Ingress Alerts

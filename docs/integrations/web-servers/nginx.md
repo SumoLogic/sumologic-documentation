@@ -54,16 +54,16 @@ Learn to set up NGINX for non-Kubernetes Sources.
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 * `pod`
 
-If you're using Nginx in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using Nginx in the Kubernetes environment, these following additional fields will be created by default as a part of app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
@@ -197,7 +197,9 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxWebserverFER**
+<br />
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxWebserverFER**
+<br />
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -483,12 +485,9 @@ Use this dashboard to:
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 
 To view the full list, see [Nginx](#nginx-alerts).
