@@ -912,6 +912,30 @@ Delete the pod forcefully by adding `--force --grace-period=0` to the `kubectl d
 
 If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our collection process.
 
+### Incorrect CRDs
+
+If you receive errors similar to below, this typically points to a schema (CRD) that’s out of date. Ensure you have the correct CRDs applied in the cluster.
+
+```
+unmarshal errors: field collector_selector not found in type config.Config
+```
+
+### HorizontalPodAutoscaler (Metrics Server Disabled)
+
+If you receive warning events similar to below, this typically means that the HorizontalPodAutoscaler (HPA) cannot connect to the metrics-server or the metrics-server is disabled.
+
+```
+Warning   FailedGetResourceMetric   horizontalpodautoscaler/sumo-logic-sumologic-otelcol-metrics           failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server could not find the requested resource (get pods.metrics.k8s.io)
+```
+
+To resolve this, you can try enabling the metrics-server manually in the helm chart configuration:
+
+```yaml
+metrics-server:
+  enabled: true
+```
+
+
 ### Falco and Google Kubernetes Engine (GKE)
 
 `Google Kubernetes Engine (GKE)` uses Container-Optimized OS (COS) as the default operating system for its worker node pools. COS is a security-enhanced operating system that limits access to certain parts of the underlying OS. Because of this security constraint, Falco cannot insert its kernel module to process events for system calls. However, COS provides the ability to use extended Berkeley Packet Filter (eBPF) to supply the stream of system calls to the Falco engine. eBPF is currently only supported on GKE and COS. For more information, see [Falco documentation](https://falco.org/docs/getting-started/third-party/#gke).
