@@ -429,6 +429,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 <CreateMonitors/>
   10. There are limits to how many alerts can be enabled
 
+:::note permissions required
+To install these monitors, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
+:::
+
 ### ActiveMQ alerts
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |

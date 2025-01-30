@@ -77,7 +77,7 @@ Following [fields](https://help.sumologic.com/docs/manage/fields/) will always b
 * `pod_labels_messaging_cluster`
 
 
-If you're using ActiveMQ in a non-Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+If you're using Kafka in a non-Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `messaging_system`
