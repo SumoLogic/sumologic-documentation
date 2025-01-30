@@ -4,6 +4,8 @@ title: Span Analytics and Queries
 description: Learn how to use the Spans page to explore your span data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic Span Analytics enables you to filter and aggregate trace data at the raw span level, providing insights into the performance and behavior of your application services.  
 
 With its intuitive interface, Span Analytics allows you to:  
@@ -112,7 +114,7 @@ When you run a query using **Visualize** and/or **Group By**, the results tab au
 
 You set the time range of the query at the top right of the Spans page, above the search button. Tracing data retention in `_trace_spans` index is the same as default log index retention. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details.  
 
-![spans time range](/img/apm/spans-time-range.png)
+<img src={useBaseUrl('img/apm/spans-time-range.png')} alt="Spans time range" style={{border: '1px solid gray'}} width="200" />
 
 ### Run query
 
