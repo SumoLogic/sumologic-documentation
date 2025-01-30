@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-Cloud Infrastructure Security for AWS provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
+The Cloud Infrastructure Security for AWS app provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
@@ -189,7 +189,7 @@ When you deploy the solution, consider the following.
 
 #### Do you already have the required sources? 
 
-When you deploy, you are given the option to create the Sumo Logic sources that the solution applications rely upon. If you have already configured those sources, you do not have to create new ones. You can just provide the URLs of the relevant Sumo Logic sources as part of the configuration. See [Install Cloud Infrastructure Security for AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#install-cloud-infrastructure-security-for-aws) below.
+When you deploy, you are given the option to create the Sumo Logic sources that the solution applications rely upon. If you have already configured those sources, you do not have to create new ones. You can just provide the URLs of the relevant Sumo Logic sources as part of the configuration. See [Install Cloud Infrastructure Security for AWS](#install-cloud-infrastructure-security-for-aws) below.
 
 :::note
 If you use existing sources rather than create new ones, it is not necessary to modify the existing metadata and source categories associated with the sources. The metadata that the solution depends on will be added to the sources at deployment time. 
@@ -205,7 +205,7 @@ You can deploy Cloud Infrastructure Security to a single account or all accounts
 
 #### Multi-region enablement 
 
-Cloud Infrastructure Security supports collecting data from multiple regions if you have any of the following services running in multiple regions in your AWS infrastructure. You can enable multiple regions when you perform the steps in the [Create new source: Deploy AWS](/docs/security/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/#create-new-source-deploy-aws) section below.
+Cloud Infrastructure Security supports collecting data from multiple regions if you have any of the following services running in multiple regions in your AWS infrastructure. You can enable multiple regions when you perform the steps in the [Create new source: Deploy AWS](#create-new-source-deploy-aws) section below.
 
 ##### GuardDuty
 
@@ -570,7 +570,7 @@ Following are saved searches included with the solution:
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
