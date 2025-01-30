@@ -30,7 +30,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 <div className="box smallbox card">
   <div className="container">
   <a href="/release-notes-collector"><img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="40"/><h4>Collector   <img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="40"/></h4></a>
-  <p>Latest features and bug fixes for Installed Collectors. To access new features, upgrade using <a href="/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url">Static URLs</a>, <a href="/docs/send-data/collection/upgrade-collectors">Sumo Logic</a>, <a href="/docs/send-data/collection/upgrade-collectors">Command Line</a>, <a href="/docs/api/collector-management/upgrade-downgrade-collectors">Collector Management API</a>.</p>
+  <p>Latest features and bug fixes for Installed Collectors. To access new features, upgrade using <a href="/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url">Static URLs</a>, <a href="/docs/send-data/collection/upgrade-collectors">Sumo Logic</a>, <a href="/docs/send-data/collection/upgrade-collectors">Command Line</a>, or <a href="/docs/api/collector-management/upgrade-downgrade-collectors">Collector Management API</a>.</p>
   </div>
 </div>
 <div className="box smallbox card">
