@@ -140,34 +140,9 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 
 Configuring log and metric collection for the MySQL app includes the following tasks.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using MySQL in a Kubernetes environment, then these fields will be created:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-* `pod_labels_db_cluster_address`
-* `pod_labels_db_cluster_port`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using MySQL in a non-Kubernetes environment, then these fields will be created:
-
+Following fields will always be created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `db_system`
@@ -175,8 +150,15 @@ If you're using MySQL in a non-Kubernetes environment, then these fields will be
 * `db_cluster_address`
 * `db_cluster_port`
 
-</TabItem>
-</Tabs>
+If you're using MySQL in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure MySQL Logs and Metrics Collection
 

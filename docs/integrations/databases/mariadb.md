@@ -22,21 +22,17 @@ This app is tested with the following MariaDB versions:
 
 Configuring log and metric collection for the MariaDB app includes the following tasks.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Fields in Sumo Logic
 
-Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+Following fields will always be created automatically as a part of app installation process:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
 
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using MariaDB in a Kubernetes environment, then these fields will be created:
+If you're using MariaDB in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -45,20 +41,7 @@ If you're using MariaDB in a Kubernetes environment, then these fields will be c
 * `pod_labels_db_cluster_port`
 
 
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using MariaDB in a non-Kubernetes environment, then these fields will be created:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-</TabItem>
-</Tabs>
-
+For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection
 

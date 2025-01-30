@@ -52,40 +52,22 @@ Jun 23 07:35:01 node03 memcached: \
 
 Configuring log and metric collection for the Memcached app includes the following tasks.
 
+### Step 1: Fields in Sumo Logic
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Memcached in a Kubernetes environment, then these fields will be created:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Memcached in a non-Kubernetes environment, then these fields will be created:
+Following fields will always be created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `db_system`
 * `db_cluster`
 * `pod`
 
-</TabItem>
-</Tabs>
+If you're using Memcached in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
 
+For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Logs and Metrics Collection for Memcached
 
