@@ -77,7 +77,7 @@ Agent Health Warning on UI : agent disconnected from opamp server.
 
 #### Solution
 
-- Restart the agent.
+Restart the agent.
 
 ## Failed to apply OpAMP agent remote config
 
