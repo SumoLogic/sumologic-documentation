@@ -9,8 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights" width="100"/>
 
-The Sumo Logic App for JumpCloud Directory Insights helps IT admins and security analysts track user activities, authentication events, and security actions in JumpCloud-managed environment. By using JumpCloud Directory Insights logs, the app allows them to monitor access, detect anomalies, and respond to security threats efficiently.
-With pre-configured dashboards, the app delivers insights into user authentication trends, directory modifications, policy enforcement, and security incidents. Analysts can track failed login attempts, privileged access changes, and account lockouts in real-time to improve security and ensure organizational policy compliance.
+The Sumo Logic app for JumpCloud Directory Insights provides comprehensive visibility into user activities, authentication events, and security actions in the JumpCloud managed environment. By using JumpCloud Directory Insights logs, this app enables IT administrators and security analysts to monitor access, detect anomalies, and respond to security threats efficiently.
+
+With pre-configured dashboards, the app delivers insights into user authentication trends, directory modifications, policy enforcement, and security incidents. Analysts can track failed login attempts, privileged access changes, and account lockouts in real time to improve security and ensure organizational policy compliance.
 
 :::info
 This app includes [built-in monitors](#jumpcloud-directory-insights-monitors). For details on creating custom monitors, refer to the [Create monitors for JumpCloud Directory Insights app](#create-monitors-for-the-jumpcloud-directory-insights-app).
@@ -20,7 +21,7 @@ This app includes [built-in monitors](#jumpcloud-directory-insights-monitors). F
 
 This app uses Sumo Logic’s [JumpCloud Directory Insights Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source/) to collect the logs from the JumpCloud Directory Insights platform.
 
-### Sample log messages
+### Sample log message
 
 <details>
 <summary>Event Log</summary>
@@ -245,19 +246,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **JumpCloud Directory Insights - Overview** dashboard provides the following key metrics:
-- A comprehensive view of the directory activity (user logins, admin changes, system updates).
-- Tracking of successful and failed logins over time to help IT teams spot patterns.
-- Insights into user provisioning, deprovisioning, and group membership changes, with visibility into directory structure updates.
-- Monitoring of administrator actions like password resets and policy modifications.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Overview.png')} alt="JumpCloud Directory Insights-Overview" style={{border: '1px solid gray'}} width="800" />
+The **JumpCloud Directory Insights - Overview** dashboard provides a comprehensive view of directory activity, including user authentications, administrative changes, and system modifications. It highlights authentication trends by tracking successful and failed logins over time, helping IT teams identify patterns. This dashboard also provides insights into user provisioning, de-provisioning, and group membership changes, offering visibility into directory structure updates. Additionally, it includes administrator actions such as password resets and policy modifications to monitor privileged activities.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Overview.png')} alt="JumpCloud Directory Insights-Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Security Overview
 
-The **JumpCloud Directory Insights - Security Overview** dashboard provides the following key metrics:
-- Tracking of security events like failed logins, account lockouts, and privilege escalations.
-- Geographic insights into authentication activities to spot suspicious login locations.
-- Tracking of high-risk events such as MFA failures and unauthorized access attempts to enhance security monitoring.
-- Analysis of login behaviors and access trends to help security teams identify threats and enforce compliance policies.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights-Security Overview" style={{border: '1px solid gray'}} width="800" />
+The **JumpCloud Directory Insights - Security Overview** dashboard focuses on security-related events, emphasizing failed login attempts, account lockouts, and privilege escalations. It provides geographic insights into authentication activities, helping you to detect suspicious login locations. This dashboard also tracks high-risk events such as MFA failures and unauthorized access attempts to enhance security monitoring. By analyzing login behaviors and access trends, it helps security teams identify potential threats and enforce compliance policies.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights-Security Overview" style={{border: '1px solid gray'}} width="800" />
  
 ## Create monitors for the JumpCloud Directory Insights app
 
@@ -270,9 +267,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
 |:--|:--|:--|:--|
 | `JumpCloud Directory Insights - Alerts Created` | This alert is triggered when potential security risks, configuration issues, or critical system events requiring investigation are identified. | Critical | Count > 3 |
-| `JumpCloud Directory Insights - Disabled MFA` | This alert is triggered when unauthorized flags or accidental removal of MFA, which could expose accounts to compromise, are identified. Immediate review is recommended to ensure compliance and security. | Critical | Count > 0 |
-| `JumpCloud Directory Insights - Events from Embargoed Locations` | This alert is triggered when logins or actions from embargoed locations, suggesting potential unauthorized access, are detected. Investigate to confirm legitimacy or block malicious actors. | Critical | Count > 0 |
-| `JumpCloud Directory Insights - Impossible Logins` | This alert is triggered when the user account is compromised. For example, a user logging in from two distant locations consecutively. Urgent investigation is required to rule out credential theft. | Critical | Count > 0 |
+| `JumpCloud Directory Insights - Disabled MFA` | This alert is triggered when unauthorized flags or accidental removal of MFA are identified. This could expose accounts to compromise and immediate review is recommended to ensure compliance and security. | Critical | Count > 0 |
+| `JumpCloud Directory Insights - Events from Embargoed Locations` | This alert is triggered when logins or actions from embargoed locations are detected, suggesting potential unauthorized access. Investigate to confirm legitimacy or block malicious actors. | Critical | Count > 0 |
+| `JumpCloud Directory Insights - Impossible Logins` | This alert is triggered when the user account is compromised. For example, a user logging in from two distant locations consecutively. Immediate investigation is required to rule out credential theft. | Critical | Count > 0 |
 | `JumpCloud Directory Insights - Unsuccessful Logins` | This alert is triggered when credentials are misconfigured, or when brute-force attacks and credential stuffing are detected. Review source IPs and lock accounts if suspicious activity is confirmed. | Critical | Count > 1 |
 | `JumpCloud Directory Insights - Unsuccessful SSOs` | This alert is triggered by misconfigurations in identity providers or malicious attempts to bypass SSO. Check SSO logs to identify the cause or any threats. | Critical | Count > 1 |
 
