@@ -453,7 +453,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/now">now</a></td>
-   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatDate">formatDate</a> operator to get the formatted current time.</td>
+   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatdate">formatDate</a> operator to get the formatted current time.</td>
    <td></td>
    <td>Can be used in Dashboard Panels, but the <code>now()</code> time presented in Live mode (the time the data is processed) doesn't match the search time, so the results are different.<br/>
    The results for search could be hours or days later than the time presented in Live mode.</td>
