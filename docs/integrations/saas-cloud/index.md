@@ -173,6 +173,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
+  <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
   <p>Identify security threats by analyzing threat events and device events.</p>
   </div>
@@ -325,6 +331,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/trend-micro-vision-one"><img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="icon" width="140"/><h4>Trend Micro Vision One</h4></a>
   <p>Analyze alert logs to detect potential security risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
+  <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
   </div>
 </div>
 <div className="box smallbox card">
