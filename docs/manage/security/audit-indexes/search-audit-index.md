@@ -1,12 +1,12 @@
 ---
 id: search-audit-index
 title: Search Audit Index
-description: The Search Audit Index provides event logs on search usage and activities for your account. 
+description: The Search Audit Index provides event logs on search usage and activities for your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. 
+The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more.
 
 To visualize your Search Audit Index data, download the [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit), which provides pre-built dashboards and reports to help you analyze your current search use and identify areas for improvement.
 
@@ -25,7 +25,7 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 :::note
@@ -91,4 +91,4 @@ The table below shows the possible values for the `query_type` field.
 | Sumo Internal | The Internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
 | Auto Refresh Dashboard | Search queries used to power auto refresh dashboard panels. |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
-| Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/traces/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
+| Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
