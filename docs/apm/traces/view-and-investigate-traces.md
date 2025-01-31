@@ -143,7 +143,7 @@ In the **Traces matching queries** table, Traces are displayed in the following
 | Started At | `07/27/2020 09:01:04.533` | When the trace started. |
 | Duration | `12.582 ms` | The amount of time the trace spans.  |
 | Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/apm/span-hover-view.png) |
 | Number of errors | `0` | The number of errors in the trace. |
 | Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/apm/traces/similar-traces-menu.png) |
 
@@ -205,10 +205,10 @@ The Metadata includes a [Span Event](#span-events) section.
 
 Span Events describe and contextualize the work being done under a span by tracing and displaying that data in Trace Views. Events are optional time-stamped strings, which are made up of timestamp, name, and (optional) key-value pair attributes.
 
-![span-event-select.png](/img/apm/traces/span-event-select.png)
+![span-event-select.png](/img/apm/span-event-select.png)
 
-You can also get to the **Metadata** tab > **Span Events** section by selecting a span event marker ![span-event-marker.png](/img/apm/traces/span-event-marker.png) in the timeline or a span with an event. <br/>
-![span-event-markers.gif](/img/apm/traces/span-event-markers.gif)
+You can also get to the **Metadata** tab > **Span Events** section by selecting a span event marker ![span-event-marker.png](/img/apm/span-event-marker.png) in the timeline or a span with an event. <br/>
+![span-event-markers.gif](/img/apm/span-event-markers.gif)
 
 Span Event data includes:
 
@@ -224,9 +224,9 @@ Each event tracks a marker in the span timeline showing the start, end, and amou
 
 If additional information is available that may be too large for the tab view area, such as a metric attributes and error message, the **Details** link displays. Click to review this information.
 
-![span-event-more1.png](/img/apm/traces/span-event-more1.png)
+![span-event-more1.png](/img/apm/span-event-more1.png)
 
-![span-event-more2.png](/img/apm/traces/span-event-more2.png)
+![span-event-more2.png](/img/apm/span-event-more2.png)
 
 
 You can also manually create Span Events, such as this [example from Ruby](https://opentelemetry.io/docs/instrumentation/ruby/events/). 
