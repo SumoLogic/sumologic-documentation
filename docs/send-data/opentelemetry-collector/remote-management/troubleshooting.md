@@ -86,7 +86,7 @@ Restart the agent.
 Error message 1:
 
 `
-Failed to apply OpAMP agent remote config        {"kind": "extension", "name": "opamp", "error": "cannot save the OpAMP effective config to /etc/otelcol-sumo/opamp.d: cannot validate config: processors::filter/logs/5c4f1d86-7946-4174-952f-bb52f016d2cd: unable to parse OTTL condition \"IsMatch(body, \\\"~!@#$%^&*()_+{}|:\\\\\\\"<>?/.,';\\\\\\\\][=-`\\\")\": couldn't create function: the pattern supplied to IsMatch is not a valid regexp pattern: error parsing regexp: missing closing ]: [=-``"}
+Failed to apply OpAMP agent remote config        {"kind": "extension", "name": "opamp", "error": "cannot save the OpAMP effective config to /etc/otelcol-sumo/opamp.d: cannot validate config: processors::filter/logs/5c4f1d86-7946-4174-952f-bb52f016d2cd: unable to parse OTTL condition \"IsMatch(body, \\\"~!@#$%^&*()_+{}|:\\\\\\\"<>?/.,';\\\\\\\\][=-`\\\")\": couldn't create function: the pattern supplied to IsMatch is not a valid regexp pattern: error parsing regexp: missing closing ]: [=-""}
 `
 
 Error message 2:
