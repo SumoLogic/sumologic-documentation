@@ -64,7 +64,7 @@ Jan 17 11:34:14 ip-***-***-***-*** otelcol-sumo.sh[1234]: 2025/01/17 11:34:14 co
 #### Solution
 
 1. Delete the invalid configuration from machine path `/etc/otelcol-sumo/opamp.d` for Linux/Mac operating system or `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\opamp.d` for Windows operating system.
-1. Update the invalid inputs (Ensure that valid ports have the right permissions), delete invalid configuration source templates, or unlink the agent from UI.
+1. Update the invalid inputs (ensure that valid ports have the right permissions), delete invalid configuration source templates, or unlink the agent from UI.
 1. Restart the agent.
 
 ## Agent disconnected from opamp server
