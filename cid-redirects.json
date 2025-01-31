@@ -4248,5 +4248,6 @@
   "/docs/search/logreduce/influence-the-logreduce-outcome": "/docs/search/behavior-insights/logreduce/influence-the-logreduce-outcome",
   "/docs/search/logreduce/understand-the-logreduce-relevance-column": "/docs/search/behavior-insights/logreduce/understand-the-logreduce-relevance-column",
   "/docs/search/behavior-insights/logreduce-values": "/docs/search/behavior-insights/logreduce/logreduce-values",
-  "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration":"/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration"
+  "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration":"/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration",
+  "/docs/integrations/amazon-aws/elastic-load-balancing":"/docs/integrations/amazon-aws/classic-load-balancer"
 }
