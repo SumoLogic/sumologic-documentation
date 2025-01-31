@@ -2970,21 +2970,7 @@ integrations: [
         'security/threat-intelligence/upload-formats',
         'security/threat-intelligence/threat-intelligence-mapping',
       ],
-    },
-    {
-      type: 'category',
-      label: 'Additional Security Features',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'security/additional-security-features/index'},
-      items: [
-        'security/additional-security-features/introduction',
-        'security/additional-security-features/threat-detection-and-investigation',
-        'security/additional-security-features/data-lake',
-        'security/additional-security-features/audit-and-compliance',
-        'security/additional-security-features/application-security', 
-       ],
-    },    
+    },  
   ],
   api: [
     {

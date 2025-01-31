@@ -45,7 +45,7 @@ You can add threat intelligence indicators using a collector, API, or the **Thre
 1. Select the format of the file to be uploaded (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
-    * **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
+    <!-- * **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided. -->
 1. Click **Upload** to upload the file. 
 1. Click **Import**. 
 
