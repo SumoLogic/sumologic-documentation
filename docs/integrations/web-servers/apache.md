@@ -122,7 +122,7 @@ As part of the app installation process, the following fields will created by de
 * `webserver_system`
 * `webserver_farm`
 
-Additionally, if you are using Apache in the Kubernetes environment, these following additional fields will be created by default as a part of app installation process:
+Additionally, if you are using Apache in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
@@ -246,9 +246,9 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
    kubectl describe pod <apache_pod_name>
    ```
    The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
-<br />
+<br/>
 **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Web Server Application Components named as **AppObservabilityApacheWebserverFER**
-<br />
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">

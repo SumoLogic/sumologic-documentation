@@ -28,7 +28,7 @@ As part of the app installation process, the following fields will created by de
 * `webserver_farm`
 * `pod`
 
-Additionally, if you are using Apache Tomcat in the Kubernetes environment, these following additional fields will be created by default as a part of app installation process:
+Additionally, if you are using Apache Tomcat in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
@@ -256,8 +256,8 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 1. Verify logs in Sumo Logic.
 
-<br />**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
-<br />
+<br/>**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">

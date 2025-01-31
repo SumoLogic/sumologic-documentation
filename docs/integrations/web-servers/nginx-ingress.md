@@ -37,7 +37,7 @@ Configuring log and metric collection for the Nginx Ingress app includes the fol
 
 ### Step 1: Configure fields in Sumo Logic
 
-Additionally, if you are using Nginx Ingress in the Kubernetes environment, Following fields will be created automatically as a part of app installation process:
+Additionally, if you are using Nginx Ingress in the Kubernetes environment, Following fields will be created automatically as a part of the app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -68,9 +68,9 @@ It’s assumed that you are using the latest helm chart version if not please up
   **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
-<br />
+<br/>
 **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxIngressWebserverFER**
-<br />
+<br/>
 ## Installing the Nginx Ingress app
 
 This section demonstrates how to install the Nginx Ingress app. These instructions assume you have already set up the collection as described above.
