@@ -273,6 +273,7 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
                       ]
                     },
+                    'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
                   ],
                 },
                 {

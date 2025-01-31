@@ -32,7 +32,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 
 - The PostgreSQL metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) collects metrics by querying the PostgreSQL [statistics collector](https://www.postgresql.org/docs/13/monitoring-stats.html).
 - The monitoring user which is used in the source template must be granted permission to SELECT permission for [pg_stat_database](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-DATABASE-VIEW).
-- Make sure to set the PostgreSQL user's password as an environment variable for the OpenTelemetry agent. Refer to [Setting Environment Variables with Secret Values for Source Templates](../../st-with-secrets.md).
+- Make sure to set the PostgreSQL user's password as an environment variable for the OpenTelemetry agent. Refer to [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md).
 
 :::note
 For Sumo Logic OpenTelemetry Collector versions below 0.116, metric collection supports only PostgreSQL version 16 and earlier. With Sumo Logic OpenTelemetry collector version 0.116 and above, metric collection also supports PostgreSQL version 17.
