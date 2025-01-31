@@ -8,7 +8,7 @@ This document contains common troubleshooting scenarios about the Sumo Logic Ope
 
 ## Source template specific issues
 
-### Docker: Path Permission Denied
+### Docker: Path permission denied
 
 #### Error message
 
