@@ -19,7 +19,7 @@ This app includes [built-in monitors](#jumpcloud-directory-insights-monitors). F
 
 ## Log types
 
-This app uses Sumo Logic’s [JumpCloud Directory Insights Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source/) to collect the logs from the JumpCloud Directory Insights platform.
+This app uses Sumo Logic’s [JumpCloud Directory Insights Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source) to collect the logs from the JumpCloud Directory Insights platform.
 
 ### Sample log message
 
