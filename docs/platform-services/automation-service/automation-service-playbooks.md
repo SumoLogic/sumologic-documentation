@@ -680,7 +680,7 @@ Following are examples of payloads from different trigger types:
 
 ## Handling arrays in playbooks
 
- An array is a group of related data values that are grouped. When you are handling output from a playbook action, you may want to treat the entire array as a single item you want to pass to the next action, or you may want to treat each element in the array as a separate item. In playbooks you can do either.
+An array is a collection of related data values grouped together. When you are handling output from a playbook action, you may want to treat the entire array as a single item you want to pass to the next action, or you may want to treat each element in the array as a separate item. In playbooks, you can do either.
 
 ### Arrays in text boxes
 
