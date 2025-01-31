@@ -55,7 +55,7 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 ### Step 1: Fields in Sumo Logic
 
-Following [fields](https://help.sumologic.com/docs/manage/fields/) will always be created automatically as a part of app installation process:
+The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -70,7 +70,7 @@ If you're using ActiveMQ in a non-Kubernetes environment, these additional field
 * `messaging_cluster`
 * `pod`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 
 ### Step 2: Configure ActiveMQ Logs and Metrics Collection
@@ -222,7 +222,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
       messaging_system: "activemq"
           messaging_cluster: "activemq_on_k8s_CHANGE_ME"
     ```
-   2. Enter in values for the following parameters (marked in `CHANGE_ME` above):
+   1. Enter in values for the following parameters (marked in `CHANGE_ME` above):
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
@@ -237,7 +237,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
 
    * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
-2. **(Optional) Collecting ActiveMQ Logs from a Log File**. If your ActiveMQ chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
+1. **(Optional) Collecting ActiveMQ Logs from a Log File**. If your ActiveMQ chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
    1. Determine the location of the ActiveMQ log file on Kubernetes. This can be determined from the log4j.properties for your ActiveMQ cluster along with the mounts on the ActiveMQ pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    3. Add the following annotation in addition to the existing annotations.
@@ -250,13 +250,13 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     annotations:
           tailing-sidecar: sidecarconfig;data:/opt/activemq/data/activemq.log
     ```
-   4. Make sure that the ActiveMQ pods are running and annotations are applied by using the command:
+   1. Make sure that the ActiveMQ pods are running and annotations are applied by using the command:
     ```bash
     kubectl describe pod <ActiveMQ_pod_name>
     ```
-   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+   1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
-3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created with named as **AppObservabilityMessagingActiveMQFER**
+1. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule is automatically created named **AppObservabilityMessagingActiveMQFER**
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -427,7 +427,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-  10. There are limits to how many alerts can be enabled
+There are limits to how many alerts can be enabled
 
 :::note permissions required
 To install these monitors, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).

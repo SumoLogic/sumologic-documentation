@@ -69,7 +69,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Fields in Sumo Logic
 
-Following [fields](https://help.sumologic.com/docs/manage/fields/) will always be created automatically as a part of app installation process:
+The following [fields](https://help.sumologic.com/docs/manage/fields/) will always be created automatically as a part of the app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -77,14 +77,14 @@ Following [fields](https://help.sumologic.com/docs/manage/fields/) will always b
 * `pod_labels_messaging_cluster`
 
 
-If you're using Kafka in a non-Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+If you're using Kafka in a non-Kubernetes environment, these additional fields will get created automatically as a part of the app installation process:
 * `component`
 * `environment`
 * `messaging_system`
 * `messaging_cluster`
 * `pod`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Configure Collection for Kafka
 
@@ -216,7 +216,7 @@ This section explains the steps to collect Kafka logs from a Kubernetes environm
     kubectl describe pod <Kafka_pod_name>
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created with named as **AppObservabilityMessagingKafkaFER**
+3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule is automatically created named **AppObservabilityMessagingKafkaFER**
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -602,12 +602,13 @@ Use this dashboard to:
 
 ## Kafka Alerts
 
-#### Pre-Packaged Alerts
+#### Pre-packaged alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-
-* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
+:::note
+There are limits to how many alerts can be enabled. See [Monitors FAQ](/docs/alerts/monitors/monitor-faq) for details.
+::: 
 :::note permissions required
 To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
 :::
