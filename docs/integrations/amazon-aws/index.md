@@ -380,4 +380,11 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     <p>A guide to the Sumo Logic app for AWS Threat Intel.</p>
 </div>    
 </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href="/docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws">Cloud Infrastructure Security for AWS</a></h4>
+    <p>A guide to our Cloud Infrastructure Security for AWS app.</p>
+  </div>    
+</div>
 </div>

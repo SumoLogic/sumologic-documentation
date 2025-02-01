@@ -88,12 +88,6 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
    <td>ap-northeast-2</td>
   </tr>
   <tr>
-    <td>KR</td>
-    <td>https://collectors.kr.sumologic.com</td>
-    <td>https://open-collectors.kr.sumologic.com</td>
-    <td>ap-northeast-2</td>
-  </tr>
-  <tr>
     <td>US1</td>
     <td>https://collectors.sumologic.com<br/>
     https://endpoint1.collection.sumologic.com<br/>

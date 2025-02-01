@@ -5,6 +5,12 @@ sidebar_label: Changelog
 description: Changelog for Kafka source template for OpenTelemetry.
 ---
 
+## [2.1.1] - 2025-01-27
+
+### Fixed
+- Security issue
+- Schema validations
+
 ## [2.1.0] - 2024-10-26
 
 ### Added
