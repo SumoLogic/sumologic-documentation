@@ -30,12 +30,10 @@ The [Access Keys](/docs/manage/security/access-keys) Management API allows you t
 | US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Security
     * Create Access Keys
     * Manage Access Keys
-
--->

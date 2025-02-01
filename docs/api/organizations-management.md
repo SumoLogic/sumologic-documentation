@@ -32,10 +32,9 @@ With the Organizations Management API, you can get the credits usage details of 
 
 <sup>`*`</sup> This assembly is exclusive to the US2 deployment and manages APIs for Sumo Logic orgs not tied to a specific deployment, such as parent orgs with child orgs across multiple deployments. It includes the [List Organizations API](https://organizations.sumologic.com/docs/#operation/listOrganizations) to support this setup.
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Organizations (all role capabilities)
 
--->

@@ -31,7 +31,7 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -41,7 +41,6 @@ The Search Job API is available to Enterprise accounts.
 * Security
     * Manage Access Keys
 
--->
 
 ## Endpoints for API access
 
@@ -343,6 +342,7 @@ This is the formatted result document:
 
 ```json
 {
+   "warning":"",
    "state":"DONE GATHERING RESULTS",
    "messageCount":90,
    "histogramBuckets":[
@@ -356,7 +356,6 @@ This is the formatted result document:
          "count":1,
          "startTimestamp":1359405480000
       },
-      ...
       {
          "length":60000,
          "count":1,
@@ -367,7 +366,10 @@ This is the formatted result document:
    ],
    "pendingWarnings":[
    ],
-   "recordCount":1
+   "recordCount":1,
+   "usageDetails":{
+      "dataScannedInBytes":0
+      }
 }
 ```
 
@@ -385,11 +387,15 @@ Notice that the state of the sample search job is DONE GATHERING RESULTS. The fo
 
 #### More about results
 
+The **warnings** value contains the detailed information about the warning while obtaining the current status of a search job.
+
 The **messageCount** and **recordCount** values indicate the number of messages and records found or produced so far. Messages are raw log messages and records are aggregated data.
 
 For queries that do not contain an aggregation operator, only messages are returned. If the query contains an aggregation, for example, **count by _sourceCategory**, then the messages are returned along with records resulting from the aggregation (similar to what a SQL database would return).
 
 The **pendingErrors** and **pendingWarnings** values contain any pending error or warning strings that have accumulated since the last time the status was requested.
+
+The **usageDetails** value contains the amount of data scanned in bytes details.
 
 Errors and warnings are not cumulative. If you need to retain the errors and warnings, store them locally.
 
@@ -468,6 +474,7 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 
 ```json
 {
+   "warning": "",
    "fields":[
       {
          "name":"_messageid",
@@ -595,6 +602,7 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 
 The result contains two lists, **fields** and **messages**.
 
+* ***warnings** contains the detailed information about the warning while paging through the messages found by a search job.
 * **fields** contains a list of all the fields defined for each of the messages returned. For each field, the field name and field type are returned.
 * **messages** contains a list of maps, one map per message. Each **map** maps from the fields described in the fields list to the actual value for the message.
 
@@ -612,7 +620,7 @@ The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which a
 ### Page through the records found by a Search Job
 
 <details>
-<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET]&limit=&#123;LIMIT&#125;</code></summary>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
 <p/>
 
 The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
@@ -666,6 +674,7 @@ This is the formatted result document:
 
 ```json
 {
+   "warning": "",
    "fields":[
       {
          "name":"_sourceCategory",
@@ -690,6 +699,8 @@ This is the formatted result document:
 ```
 
 The returned document is similar to the one returned for the message paging API. The schema of the records returned is described by the list of fields as part of the fields element. The records themselves are a list of maps.
+
+The ***warnings** contains the detailed information about the warning while paging through the records found by a Search Job.
 
 </details>
 
@@ -828,10 +839,12 @@ Example error response:
 
 ```json
 {
-  "status" : 400,
-  "id" : "IUUQI-DGH5I-TJ045",
-  "code" : "searchjob.invalid.timestamp.from",
-  "message" : "The 'from' field contains an invalid time."
+  "warning": "A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request",
+  "id": "IUUQI-DGH5I-TJ045",
+  "link": {
+    "rel": "self",
+    "href": "https://api.sumologic.com/api/v1/search/jobs/IUUQI-DGH5I-TJ045"
+  }
 }
 ```
 

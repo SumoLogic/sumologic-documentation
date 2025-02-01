@@ -30,10 +30,8 @@ The User Management API allows you to [manage user accounts](/docs/manage/users-
 | US1        | https://api.sumologic.com/docs/#tag/userManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/userManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * User Management (all role capabilities)
-
--->
