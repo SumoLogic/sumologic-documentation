@@ -34,19 +34,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
   <div className="box smallbox card">
   <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
+    <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/remote-management/source-templates')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Source Templates</h4></a>
     <p>Learn how to create and modify your OpenTelemetry Remote Management source templates to optimize data collection and configuration.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/remote-management/processing-rules')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Processing Rules</h4></a>
       <p>Discover how to apply processing rules for an OpenTelemetry agent using remote management source templates to enhance data handling.</p>
     </div>
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/remote-management/troubleshooting')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
       <p>Find solutions to common issues with the OpenTelemetry collector remote management.</p>
     </div>
   </div>
