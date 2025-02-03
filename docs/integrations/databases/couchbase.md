@@ -27,23 +27,23 @@ Telegraf 1.14 default of Kubernetes Collection will not work.
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Couchbase.
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `db_system`
 * `db_cluster`
 * `pod`
 
-If you're using Couchbase in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using Redis in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
 
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Couchbase
 
@@ -182,7 +182,9 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityCouchbaseDatabaseFER**.
+
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityCouchbaseDatabaseFER**.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -456,7 +458,7 @@ The **Couchbase -  Events** dashboard provides insights into events from couchba
 Use this dashboard to:
 * To audit the activities happening in the cluster. This helps to determine what activities have occurred in the system, helping to control system security.
 
-<img src={useBaseUrl('img/integrations/databases/Couchbase-Events.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Events.png')} alt="Couchbase dashboards" />
 
 ### HTTP Access
 
@@ -465,13 +467,20 @@ The **Couchbase -  HTTP Access** dashboard provides insights into HTTP Rest API 
 Use this dashboard to:
 * To understand user behavior accessing clusters and servers through Rest API.
 
-<img src={useBaseUrl('img/integrations/databases/Couchbase-HTTP-Access.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Couchbase-HTTP-Access.png')} alt="Couchbase dashboards" />
 
 ## Create monitors for Couchbase app
+
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Couchbase cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Couchbase Alerts](/docs/integrations/databases/couchbase#couchbase-alerts).
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Couchbase Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 
 ### Couchbase alerts
 

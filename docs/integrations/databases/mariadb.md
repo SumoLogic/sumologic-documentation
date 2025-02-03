@@ -22,9 +22,9 @@ This app is tested with the following MariaDB versions:
 
 Configuring log and metric collection for the MariaDB app includes the following tasks.
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `db_system`
@@ -32,7 +32,7 @@ Following fields will always be created automatically as a part of app installat
 * `db_cluster_address`
 * `db_cluster_port`
 
-If you're using MariaDB in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using MariaDB in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -41,7 +41,7 @@ If you're using MariaDB in a Kubernetes environment, these additional fields wil
 * `pod_labels_db_cluster_port`
 
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection
 
@@ -183,8 +183,10 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityMariaDBDatabaseFER**.
 
+
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityMariaDBDatabaseFER**.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -526,9 +528,16 @@ Use this dashboard to:
 
 ## Create monitors for MariaDB app
 
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an MariaDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [MariaDB Alerts](/docs/integrations/databases/mariadb#mariadb-alerts).
+
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the MariaDB Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 
 ### MariaDB alerts
 

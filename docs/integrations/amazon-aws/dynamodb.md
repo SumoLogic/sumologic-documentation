@@ -107,12 +107,12 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 2. Click **Save**.
 
 
-### Fields in Sumo Logic
+### Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `tablename`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Field Extraction Rule(s)
 

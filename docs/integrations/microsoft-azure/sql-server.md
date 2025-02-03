@@ -21,9 +21,9 @@ This App has been tested with following SQL Server versions:
 
 This section provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `db_system`
@@ -31,7 +31,8 @@ Following fields will always be created automatically as a part of app installat
 * `db_cluster_address`
 * `db_cluster_port`
 
-If you're using SQL Server in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using SQL Server in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -39,7 +40,7 @@ If you're using SQL Server in a Kubernetes environment, these additional fields 
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Collect Logs and Metrics
 Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
@@ -210,7 +211,9 @@ kubectl describe pod <SQLserver_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
-4. **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilitySQLServerDatabaseFER**.
+
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilitySQLServerDatabaseFER**.
+</br>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -480,9 +483,16 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 
 ## Create monitors for Microsoft SQL Server app
 
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an SQL Server cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [SQL Server Alerts](/docs/integrations/microsoft-azure/sql-server#microsoft-sql-server-alerts).
+
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the SQL Server Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 
 ### Microsoft SQL Server alerts
 

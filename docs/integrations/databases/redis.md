@@ -72,9 +72,9 @@ This sample Query is from the the **Redis - Logs** dashboard > **Logs** panel.
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Redis. Configuring log and metric collection for the Redis ULM app includes the following tasks:
 
 
-### Step 1: Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Following fields will always be created automatically as a part of app installation process:
+As part of the app installation process, the following fields will created by default:
 * `component`
 * `environment`
 * `db_system`
@@ -83,7 +83,7 @@ Following fields will always be created automatically as a part of app installat
 * `db_cluster_port`
 
 
-If you're using Redis in a Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
+Additionally, if you are using Redis in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -93,7 +93,7 @@ If you're using Redis in a Kubernetes environment, these additional fields will 
 
 
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Redis
 
@@ -226,7 +226,9 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
     kubectl describe pod <redis_pod_name>
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityRedisDatabaseFER**.
+
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityRedisDatabaseFER**.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -475,10 +477,16 @@ Use this dashboard to:
 
 ## Create monitors for Redis app
 
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Redis cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Redis Alerts](/docs/integrations/databases/redis#redis-alerts).
+
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Redis Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 ### Redis alerts
 
 <table>
