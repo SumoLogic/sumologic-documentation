@@ -9,7 +9,7 @@ You can use the `quantize` operator to control the Sumo’s quantization behavio
 You can specify:
 
 * The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction/metric-quantization.md).  
-* The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg, min, max, sum,` or `count`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
+* The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg`, `min`, `max`, `sum`, `count`, or `rate`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
 
 ## Syntax
 
@@ -20,7 +20,7 @@ quantize [to INTERVAL] [using ROLLUP] [drop last]
 where:
 
 * `INTERVAL` is the duration over which you want to quantize the metrics, in seconds (`s`), minutes (`m`), hours (`h`), or days (`d`).
-* `ROLLUP` is  `avg, min, max, sum`, or `count`.
+* `ROLLUP` is  `avg`, `min`, `max`, `sum`, `count`, or `rate`.
 * `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range.
 * At least one of the `to INTERVAL` or `using ROLLUP` clauses needs to be present.
 
