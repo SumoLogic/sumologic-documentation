@@ -276,7 +276,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 
 **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for WebServer Application Components. To do so:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
 2. Click the + Add button on the top right of the table.
 3. The **Add Field Extraction Rule** form will appear:
 4. Enter the following options:
@@ -615,7 +615,7 @@ Custom filter examples:
 2. For alerts applicable to all webserver farms that start with tomcat-prod, your custom filter would be: `webserver_farm=tomcat-prod*`
 3. For alerts applicable to a specific webserver farm, within a production environment, your custom filter would be: `webserver_farm=dev-tomcat-01 AND environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 2. Click **Add**.
 3. Click **Import**.
 4. On the **Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
@@ -625,7 +625,7 @@ Custom filter examples:
 
 Step 1: Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
 
 Step 2: Download and install Terraform
 
@@ -737,11 +737,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.**
      * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
      * For all Apache Tomcat webserver farms webserver_farm=*
-     * For a specific webserver farms: webserver_farm=tomcat.dev.01. 
+     * For a specific webserver farms: webserver_farm=tomcat.dev.01.
      * Clusters within a specific environment: `webserver_farm=tomcat-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)  
 4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.

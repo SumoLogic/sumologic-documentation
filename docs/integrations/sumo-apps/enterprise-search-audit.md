@@ -86,7 +86,7 @@ To identify queries that span large time periods and are likely to be performanc
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="Enterprise Search Audit - Queries Characteristics and Opportunities to Improve" />
 
-## Upgrading the Enterprise Search Audit app (Optional)
+## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

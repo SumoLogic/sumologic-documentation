@@ -29,7 +29,7 @@ To optimize search performance you can manually set up Dynamic Parsing by defin
 
 Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will not be applicable.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
 1. Click **+ Add** at top right of the table to create an FER.  
 
     ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
@@ -37,9 +37,7 @@ Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which 
 1. Enter the following options:
 
     * **Rule Name**. Type a name that makes it easy to identify the rule.
-
     * **Applied At**. Select **Run Time**.
-
     * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
 
         Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
@@ -111,7 +109,9 @@ Search results table:
     * The query `_sourceCategory = A or _sourceCategory = B` is applied, only within the log lines that fall within `_sourceCategory = A`, while the remaining log lines are not parsed by this Run Time FER.
 
 1. If a field does not exist in the schema of the log message, null results are displayed for the field (instead of erroring out).
-
+    :::note
+    When a field contains null values, dynamic parsing attempts to interpret those values and assigns them a string data type. This can create issues if you expect different data types for that field. To resolve the issue, use `field=*` in the source expression to eliminate null values.
+    :::
 1. Ingest Time FERs take precedence for field assignments. A Run Time FER will not override a field assignment from an Ingest Time FER.  
 
     Conflicts between Ingest and Run Time fields are evaluated by each log line in the following ways:

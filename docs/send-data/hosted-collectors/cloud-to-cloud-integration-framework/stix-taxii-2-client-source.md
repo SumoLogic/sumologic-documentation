@@ -47,7 +47,7 @@ The threat intel vendor must follow the STIX/TAXII 2.0 or 2.1 standard.
 When you create an TAXII 2 Client Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a TAXII 2 Client Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **TAXII 2 Client**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -55,7 +55,7 @@ To configure a TAXII 2 Client Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
+1. **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
 1. **Authentication**. Select the authentication type:
    * **Basic**. Provide your vendor username and password.
    * **API Key**. Provide:
@@ -111,6 +111,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
 <a href="/files/c2c/taxii-2/example.tf" target="_blank">Download example</a>
+
+### Recommended configurations
+
+Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
+
+| Vendor | Notes |
+| :-- | :-- |
+| <a href="/files/c2c/taxii-2/cisa-dhs-config.json" target="_blank">CISA DHS Automated Indicator Sharing (AIS)</a> | No authentication setup is required. Sumo Logic uses it's own certificates for authentication. |
+| <a href="/files/c2c/taxii-2/cybersixgill-config.json" target="_blank">Cybersixgill</a> | Be sure to specify collection `102` in the configuration. |
+| <a href="/files/c2c/taxii-2/dragos-config.json" target="_blank">Dragos</a> |
+| <a href="/files/c2c/taxii-2/eclecticiq-config.json" target="_blank">Eclecticiq</a> | |
+| <a href="/files/c2c/taxii-2/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. Currently, the Recorded Future TAXII v2 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists). For more specific risk lists based on an individual risk rule, use Recorded Future’s TAXII v1 service. |
+| <a href="/files/c2c/taxii-2/palo-alto-unit42-config.json" target="_blank">PaloAlto Unit42</a> | |
 
 ## FAQ
 

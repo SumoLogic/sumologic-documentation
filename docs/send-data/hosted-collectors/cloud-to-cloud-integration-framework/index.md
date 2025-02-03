@@ -105,6 +105,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source"><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="icon" width="40"/><h4>Automox Source</h4></a>
+  <p>Learn how to retrieve all events objects, audit trail events, and device inventory details into the Sumo Logic environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source"><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="icon" width="50"/><h4>AWS Cost Explorer</h4></a>
   <p>Learn to collect cost and usage reports from AWS Cost Explorer Source.</p>
   </div>
@@ -113,12 +119,6 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs</h4></a>
   <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs C2C Source Migration</h4></a>
-  <p>This source is available in all deployments, including FedRAMP.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -183,12 +183,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="100"/><h4>CloudQuery</h4></a>
-  <p>Provides a secure endpoint to receive data from CloudQuery.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
@@ -223,6 +217,14 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
+<!--
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
+  <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
+  </div>
+</div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
@@ -237,8 +239,20 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="45"/><h4>Digital Guardian</h4></a>
+  <p>Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source"><img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="45"/><h4>DocuSign</h4></a>
   <p>Learn how to collect customer event data from the DocuSign and send it to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
+  <p>Learn how to collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -289,6 +303,14 @@ In this section, we'll introduce the following concepts:
   <p>Collects a list of users from the Google Workspace Users API.</p>
   </div>
 </div>
+<!--
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel471 Threat Intel</h4></a>
+  <p>Learn to collect threat indicators from the Intel471 platform.</p>
+  </div>
+</div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
@@ -315,8 +337,20 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="75"/><h4>Kandji Source</h4></a>
+  <p>Learn how to collect threat details, devices list, device activities, and device details from the Kandji platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="120"/><h4>KnowBe4 API Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source"><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="50"/><h4>LastPass Source</h4></a>
+  <p>Collects audit reporting events from the LastPass platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -435,6 +469,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
+        <p>Learn how to collect events from Smartsheet platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
         </div>
@@ -461,6 +501,30 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="80"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source"><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Thumbnail icon" width="150"/><h4>Trend Micro</h4></a>
+        <p>Learn how to collect alert details from Trend Micro platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="80"/><h4>Trust Login</h4></a>
+        <p>Learn how to collect report logs from Trust Login platform.</p>
+        </div>
+      </div>
+            <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="Thumbnail icon" width="60"/><h4>VMware Workspace One</h4></a>
+        <p> Learn how to collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

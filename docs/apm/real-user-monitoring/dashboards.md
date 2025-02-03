@@ -8,26 +8,34 @@ description: Learn how to use the Sumo Logic Real User Monitoring (RUM) Dashboar
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-## RUM App
+## Installing the RUM App (Optional)
 
-Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
+Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
 
-The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
+The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Installed Apps** folder. Do not modify or delete content in this folder, as it is maintained by Sumo Logic.
 
-If your RUM app is removed accidentally, you'll need to install it manually:
+If your RUM app is removed accidentally, you'll need to install it manually
 
-1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
-1. Click **Add to Library**.
-1. Provide an **App Name**. You can retain the existing name or enter a name of your choice for the app.
-1. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-1. Click **Add to Library**.
-1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
+import AppInstall from '../../reuse/apps/app-install-v2.md';
+
+## Upgrade/Downgrade the RUM App (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the RUM App (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 
 ## Using Real User Monitoring view
 
 Once the RUM app has been installed, use the Real User Monitoring view to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.<!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  
 1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
 1. Set your desired filters. RUM data is organized on five levels:
    * **Application**. corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.

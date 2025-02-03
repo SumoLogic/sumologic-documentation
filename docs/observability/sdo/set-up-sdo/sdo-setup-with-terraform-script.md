@@ -240,7 +240,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 
 ### Bitbucket for build and deploy
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
  * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/bitbucket#collecting-logs-for-bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
@@ -248,7 +248,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 ### Jenkins for build and deploy
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins)
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin:
    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins), and optionally [Optional - Advance Configuration](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) to configure the Jenkins Sumo Logic plugin.

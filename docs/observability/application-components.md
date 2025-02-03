@@ -49,7 +49,7 @@ The Terraform script performs the following actions:
    * Manage connections
    * Manage Content<br/>
    If you want to deploy in the Admin Recommended folder, you may need the [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/security/access-keys#from-the-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Using instructions in [Access Keys](/docs/manage/security/access-keys), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -261,7 +261,7 @@ This section shows how to use the [monitoring dashboards](/docs/dashboards/explo
 ### Navigate Application Components View
 
 To open the Application Components View:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
 1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the panel.
 1. Select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.

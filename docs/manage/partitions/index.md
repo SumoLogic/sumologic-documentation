@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+ 
 
 A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
 
@@ -30,8 +30,23 @@ Partitions ingest your messages in real time. They differ from scheduled views i
 
 You define the data that will reside in a partition by defining a routing expression, which is similar to a log query, but with certain restrictions in terms of the operators you can include. Each partition's routing expression is applied to all messages as they are ingested to Sumo Logic. If a message matches the partition’s routing expression, it is added to the partition.
 
-## Micro Lesson: Partitions Basics
+## Micro Lesson: Partitions basics
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/p0xs5l91jq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Partitions Basics (New UI) Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/kpQLFVT4uE8"
         width="854px"
         height="480px"
@@ -42,7 +57,9 @@ You define the data that will reside in a partition by defining a routing expres
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
+:::
 
 ## Limitations 
 
@@ -70,7 +87,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Rentention</h4></a>
+  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
   <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
   </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 id: account-settings-preferences
 title: Setting Account Preferences and Credentials
-sidebar_label: Account Preferences
+sidebar_label: Account preferences
 description: Update and manage your Sumo Logic account.
 ---
 
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and do not affect other users in your organization.
 
 To access preferences:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Update your preferences as needed. <br/><img src={useBaseUrl('img/get-started/preference-settings.png')} alt="Preferences" style={{border: '1px solid gray'}} width="600" />
 
 ## My Profile
@@ -30,7 +30,7 @@ Under **My Profile**, the following information is displayed:
 
 As a Sumo Logic user, you can change your own email address as necessary.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Under the **My Profile** section, click **Change Email**.<br/>![Change email](/img/get-started/change-email.png)
 1. In the **Change Email Address** dialog, enter your new email address, and then follow the verification steps.
 
@@ -38,7 +38,7 @@ As a Sumo Logic user, you can change your own email address as necessary.
 
 To change your password:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
 1. Under **My Profile**, click **Change Password**.
 1. Enter your current password, and then enter the new password twice to verify it.
 1. Click **OK** to finish resetting your password.
@@ -65,10 +65,6 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
     - For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
 1. Scan the QR code displayed on your screen with your TOTP App.
 1. After the TOTP App is configured, enter two consecutive authentication codes.
-
-## My Access Keys
-
-In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 

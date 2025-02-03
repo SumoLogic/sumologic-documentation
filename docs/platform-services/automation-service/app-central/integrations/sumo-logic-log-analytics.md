@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-log-analytics" width="100"/>
 
-***Version: 1.23  
-Updated: Apr 5, 2024***
+***Version: 1.24  
+Updated: Dec 12, 2024***
 
 Integration with Sumo Logic platform for logs, metrics, and monitors.
 
@@ -23,14 +23,11 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
 
 ## Sumo Logic Log Analytics configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
-1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="600"/>
-1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
-1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
-   :::note
-   They won't be available again once you close this screen.
-   :::
-1. Click **Done** after you copy the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
+[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
+
+:::note
+The ID and key won't be available again once you close the confirmation screen.
+:::
 
 ## Sumo Logic Log Analytics in Automation Service and Cloud SOAR
 
@@ -100,3 +97,8 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
     + Search Sumo Logic Action updated:
         - If the Aggregates field is selected, the action will fetch only aggregates. If the Aggregates field is not selected, it will fetch only messages.
         - Added a new field *Escape Backslashes* if selected it will Escape all Backslashes in Query
+* December 12, 2024 (v1.24)
+    + Updated Actions: (Fixed Authentication Issue)
+      + **Search Sumo Logic** Action
+      + **Search Sumo Logic Daemon** Action
+      + **Aggregates Sumo Logic Daemon** Action

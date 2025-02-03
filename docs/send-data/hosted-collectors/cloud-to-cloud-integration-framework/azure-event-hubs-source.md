@@ -15,7 +15,7 @@ import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Event Hubs Source for Logs ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) if you require higher throughput. The only caveat is this Cloud-to-Cloud collection method supports IP restrictions and the [Azure Event Hubs Source for Logs ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) does not. If you require higher throughput and have IP address restrictions on Event Hubs, then we recommend splitting your Event Hubs into smaller namespaces keeping within the 1MB/S (86GB/day) limit and create this Cloud-to-Cloud collection method for each namespace.
+Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
@@ -23,7 +23,7 @@ Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection metho
 This cloud-to-cloud Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip Migrating to C2C
-See [Migrating from Azure Function-Based Collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+See [Migrating from ARM based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration).
 :::
 
 ## Data collected
@@ -67,7 +67,7 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Search for and select **Azure Event Hubs**.
 1. Enter a **Name** for the Source. The description is optional.

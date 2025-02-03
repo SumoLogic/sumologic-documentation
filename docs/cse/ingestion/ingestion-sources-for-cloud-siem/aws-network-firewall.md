@@ -20,7 +20,7 @@ In this step, you configure an HTTP Source to collect AWS Network Firewall messa
 
 ### Configure a Hosted Collector
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.<br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" style={{border: '1px solid gray'}} width="600"/>
@@ -37,7 +37,7 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
 
 ### Configure an AWS S3 Source
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.   
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select Amazon S3. 
@@ -61,8 +61,8 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  Kanso--> 
-1. On the **Log Mappings** page search for "AWS Network Firewall " and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/AWS-network-firewall-record-volume.png')} alt="AWS Network Firewall record volume" style={{border: '1px solid gray'}} width="600"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "AWS Network Firewall " and check the **Records** columns.
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for AWS Network Firewall security records. <br/><img src={useBaseUrl('img/cse/AWS-network-firewall-search.png')} alt="AWS Firewall search" style={{border: '1px solid gray'}} width="600"/>
 
 

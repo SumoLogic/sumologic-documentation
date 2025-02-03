@@ -129,7 +129,7 @@ When you configure the HTTP source, make sure to save the HTTP Source Address UR
 
 To add a hosted collector and HTTP source:
 1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Create a new HTTP source on the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+2. Create a new HTTP source on the hosted collector created above by following instructions in [HTTP Logs and Metrics Source]](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
 ### Step 5: Set up a collection method for JFrog Xray
@@ -228,52 +228,19 @@ Advanced configuration can be used with all JFrog Xray script-based collection c
 
 This section provides a list of variables for Jfrog Xray that you can define in the configuration file.
 
-<table><small>
-  <tr>
-   <td>Variable   </td>
-   <td>Usage   </td>
-  </tr>
-  <tr>
-   <td>BACKFILL_DAYS in Collection Section   </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.   </td>
-  </tr>
-  <tr>
-   <td>LOG_FORMAT in Logging Section   </td>
-   <td>Log format used by the python logging module to write logs in a file.   </td>
-  </tr>
-  <tr>
-   <td>ENABLE_LOGFILE in Logging Section   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.   </td>
-  </tr>
-  <tr>
-   <td>ENABLE_CONSOLE_LOG  in Logging Section   </td>
-   <td>Enables printing logs in a console.   </td>
-  </tr>
-  <tr>
-   <td>LOG_FILEPATH in Logging Section   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
-  </tr>
-  <tr>
-   <td>NUM_WORKERS in Collection Section   </td>
-   <td>Number of threads to spawn for API calls.   </td>
-  </tr>
-  <tr>
-   <td>MAX_RETRY in Collection Section   </td>
-   <td>Number of retries to attempt in case of request failure.   </td>
-  </tr>
-  <tr>
-   <td>BACKOFF_FACTOR in Collection Section   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.   </td>
-  </tr>
-  <tr>
-   <td>TIMEOUT in Collection Section   </td>
-   <td>Request time out used by the requests library.   </td>
-  </tr>
-  <tr>
-   <td>HTTP_LOGS_ENDPOINT in SumoLogic sectio   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.   </td>
-  </tr></small>
-</table>
+| Variable                          | Usage                                                                                          |
+|:----|:-----------------------|
+| BACKFILL_DAYS in Collection Section   | Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today. |
+| LOG_FORMAT in Logging Section         | Log format used by the Python logging module to write logs in a file.                             |
+| ENABLE_LOGFILE in Logging Section     | Set to TRUE to write all logs and errors to a log file.                                           |
+| ENABLE_CONSOLE_LOG in Logging Section | Enables printing logs in a console.                                                              |
+| LOG_FILEPATH in Logging Section       | Path of the log file used when ENABLE_LOGFILE is set to TRUE.                                     |
+| NUM_WORKERS in Collection Section     | Number of threads to spawn for API calls.                                                        |
+| MAX_RETRY in Collection Section       | Number of retries to attempt in case of request failure.                                          |
+| BACKOFF_FACTOR in Collection Section  | A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. |
+| TIMEOUT in Collection Section         | Request timeout used by the requests library.                                                    |
+| HTTP_LOGS_ENDPOINT in Sumo Logic Section | HTTP source endpoint URL created in Sumo Logic for ingesting logs.                               |
+
 
 </details>
 
@@ -369,7 +336,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-xray-vulnerable-artifacts.png')} alt="jfrog xray" />
 
-## Upgrading the JFrog Xray app (Optional)
+## Upgrade/Downgrade the JFrog Xray app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -30,7 +30,7 @@ The following table lists the available options for an SLO:
 
 ## Create an SLO (General)
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.  
 2. Click **Add** > **New SLO**. Optionally, you can also:
    * Create folders to manage your SLOs.
    * Import an SLO. <br/>To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
@@ -117,7 +117,7 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 
 To create an SLO from the **Metrics** page:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Metrics**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  
 1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
 1. Click the three-dot kebab icon, then select **Create an SLO**.
 1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
@@ -136,7 +136,7 @@ As an example, say you have an existing Monitor that fires a **Critical** alert 
 Your Monitor must be in an **active** state.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
 1. Click on any active Monitor to open its panel.
 1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/>   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" width="500"/><br/>
 This will open the **New SLO** window.
@@ -174,11 +174,11 @@ You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://regis
 
 Below are some best practices for managing your SLOs. 
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
 
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
- Kanso-->
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
+ 
 
 ### Tags and Filters
 

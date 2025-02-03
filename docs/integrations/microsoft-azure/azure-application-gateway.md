@@ -43,7 +43,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure field in field schema
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the following fields:
    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
    - `location`. The region to which the resource name belongs to.
@@ -86,7 +86,8 @@ Create the following field extraction rules (FER) for Azure Storage by following
    ```
 
    ```sql title="Parse Expression"
-   json "resourceId"
+   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId
    | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
    | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -129,6 +130,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-metrics.png')} alt="Azure application gateway metrics" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
@@ -140,8 +142,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure application gateway account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
-   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-logs.png')} alt="Azure Application Gateway logs" style={{border: '1px solid gray'}} width="800" /> 
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-logs.png')} alt="Azure Application Gateway logs" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" /> 
 
 :::note
 WAF logs and metrics will be available for WAF V2 tier and only after a WAF Policy has been associated with application gateway. Refer to the azure docs for more information.
@@ -230,7 +232,7 @@ The **Azure Application Gateway - Traffic** dashboard provides details into the 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure Application Gateway app (optional)
+## Upgrade/Downgrade the Azure Application Gateway app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -51,7 +51,7 @@ There are several scenarios here, depending on the exact use case:
 Recording rule metrics removed in version 4 were used in the Sumo Kubernetes App. A new version of the App must be installed to ensure
 compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
 
-[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgrading-the-kubernetes-app
+[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgradedowngrade-the-kubernetes-app
 
 #### Using the new app with v3
 
@@ -174,6 +174,9 @@ Once you've taken care of any manual steps necessary for your configuration, run
 ```bash
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=4.0.0 -f new-values.yaml
 ```
+:::note
+Make sure to replace `--version=4.0.0` with the version of the helm chart you prefer to use. The latest release can be found in our [Sumo Logic Kubernetes Collection GitHub Repository](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases).
+:::
 
 After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they do not require additional action.
 

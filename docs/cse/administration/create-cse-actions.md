@@ -2,20 +2,21 @@
 id: create-cse-actions
 title: Create Cloud SIEM Actions
 sidebar_label: Create Cloud SIEM Actions
-description: You can use Cloud SIEM Actions to issue notifications to another service when certain events occur in Cloud SIEM.
+description: You can use Cloud SIEM actions to issue notifications to another service when certain events occur in Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
-This topic has instructions for configuring Cloud SIEM Actions.
+This topic has instructions for configuring Cloud SIEM actions.
 
 :::warning
-In the future, Cloud SIEM Actions will be deprecated because comparable behavior is available in the Automation Service. Although Cloud SIEM Actions are still supported, we recommend you use the Automation Service to perform actions. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+In the future, Cloud SIEM actions will be deprecated because comparable behavior is available in the Automation Service. Although Cloud SIEM actions are still supported, we recommend you use the Automation Service to perform actions. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
-## About Cloud SIEM Actions
+## About Cloud SIEM actions
 
-You can use Cloud SIEM Actions to issue a notification to another service when certain events occur in Cloud SIEM. The supported Action types are:
+You can use Cloud SIEM actions to issue a notification to another service when certain events occur in Cloud SIEM. The supported action types are:
 
 * AWS Simple Notification Service (SNS)
 * Demisto (Cortex XSOAR)
@@ -25,12 +26,27 @@ You can use Cloud SIEM Actions to issue a notification to another service when c
 * PagerDuty
 * Recorded Future
 * Slack
-* Slack Webhook
+* Slack webhook
 
-An Action can be configured for Insight-related activity as described below in [Insight Actions](#insight-actions). You can also configure an Action to be run when a rule is automatically disabled, as described below in [Rule Actions](#rule-actions).
+An action can be configured for insight-related activity as described below in [Insight actions](#insight-actions). You can also configure an action to be run when a rule is automatically disabled, as described below in [Rule actions](#rule-actions).
 
-Watch this micro lesson to learn how to configure an Action.
+:::sumo Micro Lesson
 
+Watch this micro lesson to learn how to configure an action.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ovjy40b1vb?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Configure the Actions Button in Cloud SIEM Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
         width="854px"
         height="480px"
@@ -41,42 +57,42 @@ Watch this micro lesson to learn how to configure an Action.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
-
-
-## Insight Actions
-
-You can configure an Action to send information about an Insight to another system, automatically when the Insight is created or on-demand from the Insight's **Actions** menu, and in the case of an HTTP POST v2 Action, when an Insight is closed.
-
-What gets sent to the target system depends on the Action type. For some types—Slack, Microsoft Teams, and PagerDuty—the notification contains a summary of the Insight with the following information:
-
-* The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
-* A link to the Insight in Cloud SIEM. <br/><img src={useBaseUrl('img/cse/received-email.png')} alt="Example notification" width="600" />
-
-For the other Action types—AWS Simple Notification Service (SNS), Demisto (Cortex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
-
-## Sensor Actions
-You can configure an Action to send a notification when any Network Sensor goes offline.
-
-## Rule Actions
-
-You can configure an Action to send a notification when a rule is automatically disabled. (Cloud SIEM automatically disables rules that generate too many Signals, more than 100K in an hour, or 1 million in 24 hours.)
-
-:::note
-A Rule Action doesn't fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
 :::
 
-The notification sent by a Rule Action contains the name of the rule and the reason it was disabled.
+## Insight actions
 
-## Create an Action
+You can configure an action to send information about an insight to another system, automatically when the insight is created or on-demand from the insight's **Actions** menu, and in the case of an HTTP POST v2 action, when an insight is closed.
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. Kanso-->
-1. On the **Actions** page, click **Create**.
-1. The **Create Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create Action dialog" style={{border: '1px solid gray'}} width="500" />
-1. **Name**. Enter a name that communicates what the Action does.
-1. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
+What gets sent to the target system depends on the action type. For some types—Slack, Microsoft Teams, and PagerDuty—the notification contains a summary of the insight with the following information:
+
+* The entity the insight fired on.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the insight ID, which indicates which stage of the MITRE framework the insight relates to. 
+* A link to the insight in Cloud SIEM. 
+
+For the other action types—AWS Simple Notification Service (SNS), Demisto (Cortex XSOAR), HTTP POST v2, and Slack webhook—the notification includes the insight itself in JSON format, and in some cases signals or records, depending on how you configure the action.
+
+## Sensor actions
+You can configure an action to send a notification when any Network Sensor goes offline.
+
+## Rule actions
+
+You can configure an action to send a notification when a rule is automatically disabled. (Cloud SIEM automatically disables rules that generate too many signals, more than 100K in an hour, or 1 million in 24 hours.)
+
+:::note
+A rule action doesn't fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
+:::
+
+The notification sent by a rule action contains the name of the rule and the reason it was disabled.
+
+## Create an action
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. On the **Actions** tab, click **+ Add Action**.
+1. The **Add Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create action dialog" style={{border: '1px solid gray'}} width="400" />
+1. **Name**. Enter a name that communicates what the action does.
+1. **Action Type**. Choose one of the following options, and follow the instructions for that action type to complete creating your action.
     * [AWS Simple Notification Service](#aws-simple-notification-service-sns)
     * [Demisto](#demistocortex-xsoar)
     * [Email](#email)
@@ -87,14 +103,16 @@ The notification sent by a Rule Action contains the name of the rule and the re
     * [Slack](#slack)
     * [Slack Webhook](#slack-webhook)
 1. **Notifications**. 
-    * **Insight**. Click **When Created** to automatically generate a notification when any Insight is created, **When Closed** to automatically generate a notification when any Insight is closed, or **On Demand** to add the Action as an option in the **Actions** menu on the Insight details page. 
+    * **Insight**. Click **When Created** to automatically generate a notification when any insight is created, **When Closed** to automatically generate a notification when any insight is closed, or **On Demand** to add the Action as an option in the **Actions** menu on the insight details page. 
     * **Sensor**. Click **When Offline** to to automatically generate notifications when any sensor goes offline.
     * **Rule**. Click **When Automatically Disabled** to generate a notification when Cloud SIEM disables a rule.
 1. **Active**. Move the slider to the right if you’d like the Action to be enabled upon creation.
 
+Continue filling out the dialog box depending on the type of action you are creating.
+
 ### AWS Simple Notification Service (SNS)
 
-When you run this Action type for an Insight, Cloud SIEM sends the full Insight in JSON format to SNS.
+When you run this action type for an insight, Cloud SIEM sends the full insight in JSON format to the AWS Simple Notification Service (SNS).
 
 You can configure the action to authenticate with SNS using your AWS Access Key and Secret Access Key, or using the **AssumeRole** method.
 
@@ -103,40 +121,40 @@ You can configure the action to authenticate with SNS using your AWS Access Key 
 1. **Assume Role ARN**. Enter the AssumeRole ARN, if that's how you want to authenticate. Enter the Sumo Logic AWS account ID. For the Sumo Logic ID, see [Create a role manually using the AWS console](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product#create-a-role-manually-using-the-aws-console).
 1. **Topic ARN**. Enter the ARN of the SNS topic.
 1. **Region**. Enter the AWS region for the SNS topic. 
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/sns.png')} alt="AWS simple notification service action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.  
 
 ### Demisto (Cortex XSOAR)
 
-When you run this Action type for an Insight, Cloud SIEM sends the full Insight in JSON format to Demisto.
+When you run this action type for an insight, Cloud SIEM sends the full insight in JSON format to Demisto.
 
 1. **API Key**. Enter your Demisto API Key.
 1. **URL**. Enter the URL of your Demisto API endpoint.
 1. **Client Certificate**. Upload your client certificate for accessing the Demisto API endpoint.
 1. **Create Incident API Endpoint**. Select `/incident/json`.
 1. **Extra Headers**. Enter any additional headers you want to send, as line-delimited key:value pairs.
-1. **Exclude Records**. Move the slider to the right if you don’t want to include Records in the notification.
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/demisto-action.png')} alt="Example Demisto action" style={{border: '1px solid gray'}} width="500" />
+1. **Exclude Records**. Move the slider to the right if you don’t want to include records in the notification.
+1. Click **Create**. 
 
 ### Email
 
-This Action type sends an email notification.
+This action type sends an email notification.
 
 1. **Recipients**. Enter a comma-separated list of the email addresses to send the notification to.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/email-action.png')} alt="Example email action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. 
 
-When this Action runs on an Insight, the email notification contains:
+When this action runs on an insight, the email notification contains:
 
-* The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to.
-* A link to the Insight in Cloud SIEM.
+* The entity the insight fired on.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the insight ID, which indicates which stage of the MITRE framework the insight relates to.
+* A link to the insight in Cloud SIEM.
 
 ### HTTP POST v2
 
-This Action type sends a HTTP POST notification. For an Insight Action, the notification contains the full Insight in JSON format. You can optionally configure the Action to send the Signals and Records associated with the Insight as well.
+This action type sends a HTTP POST notification. For an insight action, the notification contains the full insight in JSON format. You can optionally configure the action to send the signals and records associated with the insight as well.
 
 The output of the HTTP POST notification is the same as the JSON output from the `/insight/:id` API endpoint. For information about accessing API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).
 
-Once you select HTTP POST v2  in the Type field a new **Notification** option—**When Closed**—appears, as highlighted in the screenshot below. Choose this if you want to send a notification when an Insight is closed
+Once you select HTTP POST v2  in the Type field a new **Notification** option—**When Closed**—appears, as highlighted in the screenshot below. Choose this if you want to send a notification when an insight is closed
 in Cloud SIEM.
 
 1. **URL**. The URL to send the POST to.
@@ -146,43 +164,43 @@ in Cloud SIEM.
 1. **Username**. The username to use to access the URL.
 1. **Password**. The password to use to access the URL.
 1. **Extra Headers**. Additional HTTP headers to send with the POST.
-1. **Include Signals**. Move the slider to the right to send the Signals associated with the Insight in the POST. 
-1. **Include Records**. Move the slider to the right to send the Records associated with the Signal in the POST. 
-1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected Record fields to include (instead of all Record fields).
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/http-post-v2.png')} alt="Example HTTP Post V2 action" style={{border: '1px solid gray'}} width="500" />
+1. **Include Signals**. Move the slider to the right to send the signals associated with the insight in the POST. 
+1. **Include Records**. Move the slider to the right to send the records associated with the signal in the POST. 
+1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected record fields to include (instead of all record fields).
+1. Click **Create**. 
 
 ### Microsoft Teams
 
-This Action type sends a Webhook notification to Microsoft Teams.
+This action type sends a webhook notification to Microsoft Teams.
 
-#### Configure Webhook connection in Microsoft Teams
+#### Configure webhook connection in Microsoft Teams
 
-Create a Webhook connection for the Microsoft Teams channel to which emails should be sent. Follow the instructions in [Create Incoming Webhooks](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft help.
+Create a webhook connection for the Microsoft Teams channel to which emails should be sent. Follow the instructions in [Create Incoming Webhooks](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft help.
 
-#### Configure Action in Cloud SIEM
+#### Configure action in Cloud SIEM
 
-1. **URL**. Enter the URL for the Webhook connection you created above. 
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/microsoft-teams.png')} alt="Example Microsoft Teams action" style={{border: '1px solid gray'}} width="500" />
+1. **URL**. Enter the URL for the webhook connection you created above. 
+1. Click **Create**. 
 
 ### PagerDuty
 
-This Action types sends a notification to PagerDuty.
+This action types sends a notification to PagerDuty.
 
 1. **Service Key**. Enter your PagerDuty service key.
 1. **Subdomain**. Enter your PagerDuty account subdomain.
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/pagerduty.png')} alt="Example PagerDuty action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**. 
 
 The notification contains:
 
-* The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. 
-* A link to the Insight in Cloud SIEM.
+* The entity the insight fired on.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the insight ID, which indicates which stage of the MITRE framework the insight relates to. 
+* A link to the insight in Cloud SIEM.
 
 ### Recorded Future
 
 Recorded Future (RF) provides contextual Threat Intelligence through indicator lookups using a cloud-accessible API.
 
-The Cloud SIEM Recorded Future Action runs lookups on Record fields that contain IP addresses, domains, and hashes encountered in Insights, Signals, or both, depending on how you configure the Action. The lookup result is added as an enrichment to Insights, Signals, or both. 
+The Cloud SIEM Recorded Future action runs lookups on record fields that contain IP addresses, domains, and hashes encountered in insights, signals, or both, depending on how you configure the action. The lookup result is added as an enrichment to insights, signals, or both. 
 
 Lookups will consume RF API credits.
 
@@ -192,45 +210,43 @@ Lookups will consume RF API credits.
 1. On the **Generate New Token** page:
     1. **Name**. Enter a name for the token. 
     1. **Integration**. Select “Sumologic” from the list of integrations.
-1. Click **Generate**.  <br/><img src={useBaseUrl('img/cse/rf-api-token.png')} alt="Generate New API token dialog" style={{border: '1px solid gray'}} width="400" />
+1. Click **Generate**.
 1. Copy and save the token.
 
-#### Create Action in Cloud SIEM
+#### Create action in Cloud SIEM
 
 1. **API Key**. Enter the Recorded Future API token you generated for the Sumo Logic integration. 
-1. **Enrich Insights**. Move the slider to the right to enrich Insights.
-1. **Enrich Signals of Insights**. Move the slider to the right to enrich Signals.
-1. Click **Create**.<br/><img src={useBaseUrl('img/cse/recorded-future.png')} alt="Example recorded Future action" style={{border: '1px solid gray'}} width="500" />
+1. **Enrich Insights**. Move the slider to the right to enrich insights.
+1. **Enrich Signals of Insights**. Move the slider to the right to enrich signals.
+1. Click **Create**.
 
 ####  View Recorded Future Enrichments
 
-To view an Enrichment that’s been added to an Insight or Signal, navigate to the item and select the **Enrichments** tab.
-
-<img src={useBaseUrl('img/cse/rf-enrichments.png')} alt="Example recorded Future enrichments" style={{border: '1px solid gray'}} width="600" />
+To view an Enrichment that’s been added to an insight or signal, navigate to the item and select the [**Enrichments**](/docs/cse/integrations/enrichments-and-indicators/#enrichments) tab.
 
 ### Slack
 
-This Action type sends a message to a Slack channel.
+This action type sends a message to a Slack channel.
 
 1. **API Key**. Enter your Slack API key.
 1. **Channel**. Enter the Slack Channel that messages should go to.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack.png')} alt="Example Slack action" style={{border: '1px solid gray'}} width="500" />
+1. Click **Create**.
 
-If the Action was run on an Insight, the message contains:
+If the action was run on an insight, the message contains:
 
-* The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. 
-* A link to the Insight in Cloud SIEM.
+* The entity the insight fired on.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the insight ID, which indicates which stage of the MITRE framework the insight relates to. 
+* A link to the insight in Cloud SIEM.
 
-### Slack Webhook
+### Slack webhook
 
-When you run this Action type on an Insight, Cloud SIEM sends the complete Insight in JSON format to a Slack channel.
+When you run this action type on an insight, Cloud SIEM sends the complete insight in JSON format to a Slack channel.
 
-#### Configure Webhook connection in Slack
+#### Configure webhook connection in Slack
 
-Create a Webhook connection for the Slack channel to which Insights should be sent. Follow the instructions in [Sending messages using Incoming Webhooks](https://api.slack.com/messaging/webhooks) in Slack help.
+Create a webhook connection for the Slack channel to which insights should be sent. Follow the instructions in [Sending messages using Incoming Webhooks](https://api.slack.com/messaging/webhooks) in Slack help.
 
-#### Configure Action in Cloud SIEM
+#### Configure action in Cloud SIEM
 
-1. **Webhook URL**. Enter the URL of the Webhook you created above.
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/slack-webhook.png')} alt="Example Slack webhook action" style={{border: '1px solid gray'}} width="500" />
+1. **Webhook URL**. Enter the URL of the webhook you created above.
+1. Click **Create**.

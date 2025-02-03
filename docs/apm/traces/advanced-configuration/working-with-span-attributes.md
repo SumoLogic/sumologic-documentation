@@ -19,7 +19,7 @@ You can collect logs with traces attached to them by [inserting `spanid` and `t
 
 and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking on the span.
 
-![span logs in details pane.png](/img/traces/span-logs-in-details-pane.png)
+![span logs in details pane.png](/img/apm/span-logs-in-details-pane.png)
 
 ## Working with attributes on OpenTelemetry collector
 

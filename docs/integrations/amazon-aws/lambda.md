@@ -200,29 +200,12 @@ To collect the metrics in Sumo Logic, follow the steps below:
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
 
-<table><small>
-  <tr>
-   <td>Metric   </td>
-   <td>Description   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrentExecutions</strong> </td>
-   <td>Concurrent Executions using Provisioned Concurrency   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencyUtilization</strong>   </td>
-   <td>Fraction of Provisioned Concurrency in use   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencyInvocations</strong>   </td>
-   <td>Number of Invocations using Provisioned Concurrency   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>   </td>
-   <td>Number of Invocations that are above Provisioned Concurrency   </td>
-  </tr></small>
-</table>
-
+| Metric                               | Description                                     |
+|:-----------|:-------------------------|
+| **ProvisionedConcurrentExecutions**      | Concurrent Executions using Provisioned Concurrency |
+| **ProvisionedConcurrencyUtilization**    | Fraction of Provisioned Concurrency in use         |
+| **ProvisionedConcurrencyInvocations**    | Number of Invocations using Provisioned Concurrency |
+| **ProvisionedConcurrencySpilloverInvocations** | Number of Invocations that are above Provisioned Concurrency |
 
 These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
 
@@ -230,8 +213,8 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 ### Field in Field Schema
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the “**functionname**” field. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
+1. Search for the “**functionname**” field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 

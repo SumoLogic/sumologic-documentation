@@ -113,7 +113,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
 
@@ -123,7 +123,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
 1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
 1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
@@ -176,7 +176,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
-## Upgrading the Kubernetes app
+## Upgrade/Downgrade the Kubernetes app
 
 The current version of our app is not backwards compatible with older Helm Chart versions. Follow the below steps to upgrade.
 

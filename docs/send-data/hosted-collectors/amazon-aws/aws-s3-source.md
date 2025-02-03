@@ -63,11 +63,13 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 
 Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from these buckets has the following limitations:
 
-* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
-* S3 Event Notifications Integration is not supported.
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
-* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*`
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
 
 ## S3 Event Notifications Integration
 
@@ -79,22 +81,9 @@ Enabling event based notifications is an S3 bucket-level operation that subscrib
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
-<Iframe url="https://www.youtube.com/embed/2vtjPfHQK1Q"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
 ## Create an Amazon S3 Source
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
@@ -221,7 +210,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 

@@ -13,18 +13,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet. 
+Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
 
-Following sources are supported for AWS PrivateLink: 
+Following sources are supported for AWS PrivateLink:
 
 - **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to Sumo Logic.
 - **Sumo Logic OpenTelemetry Distro Collector sources**. Data collected on OpenTelemetry Distro collectors deployed on customer VPC and sent to Sumo Logic.
 - **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
-- **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter). 
+- **OTLP Source**. An [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry collectors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter).
 
-The following sources are not supported for AWS PrivateLink: 
+The following sources are not supported for AWS PrivateLink:
 
-- Cloud Syslog 
+- Cloud Syslog
 - AWS S3
 - AWS Cloudwatch source
 - RUM sources
@@ -88,12 +88,6 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
    <td>ap-northeast-2</td>
   </tr>
   <tr>
-    <td>KR</td>
-    <td>https://collectors.kr.sumologic.com</td>
-    <td>https://open-collectors.kr.sumologic.com</td>
-    <td>ap-northeast-2</td>
-  </tr>
-  <tr>
     <td>US1</td>
     <td>https://collectors.sumologic.com<br/>
     https://endpoint1.collection.sumologic.com<br/>
@@ -121,22 +115,23 @@ https://endpoint9.collection.us2.sumologic.com</td>
   </tr>
 </small></table>
 
+
 ### Create an endpoint to connect with the Sumo Logic endpoint service
 
 * The service name is provided by Sumo Logic and will accept the endpoint connection request once we know you initiated the connection.
 * Select the VPC where the Sumo Logic collector will be installed or where HTTP requests will be made for HTTP Sources.
 
-  <img src={useBaseUrl('img/beta/create-endpoint.png')} alt="CreateEndpoint" width="500"/>
+  <img src={useBaseUrl('img/integrations/amazon-aws/privatelink-create-endpoint.png')} alt="CreateEndpoint" width="500"/>
 
 ### No VPC Peering
 
 If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
-![Endpoint](/img/beta/endpoints.png)
+![Endpoint](/img/integrations/amazon-aws/privatelink-endpoints.png)
 
 Check the box to enable private DNS names.
 
-<img src={useBaseUrl('img/beta/dns-checkbox.png')} alt="DnsCheckpoint" width="550"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/privatelink-dns-checkbox.png')} alt="DnsCheckpoint" width="550"/>
 
 ### VPC Peering
 
@@ -144,5 +139,5 @@ If the VPC is not in the same [AWS region as your deployment](/docs/api/getti
 
 1. Create the VPC peering connection between the region for the client-side VPC and the region where the Sumo Logic PrivateLink service is configured.
 2. Create a Route53 private hosted zone. Select the VPC peered in the region where our server-side region is located.
-3. With the created private hosted zone, add an **A** record. Select the peered VPC in region **us-west-2**, where the Sumo Logic server-side infrastructure is located.<br/> ![QuickRecord](/img/beta/quickcreaterecord.png)
+3. With the created private hosted zone, add an **A** record. Select the peered VPC in region **us-west-2**, where the Sumo Logic server-side infrastructure is located.<br/> ![QuickRecord](/img/integrations/amazon-aws/privatelink-quickcreaterecord.png)
 4. Add the other peered VPC in the other region into the Route53-hosted zone.

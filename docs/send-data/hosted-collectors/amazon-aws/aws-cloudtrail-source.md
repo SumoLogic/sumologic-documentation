@@ -6,6 +6,7 @@ description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="50"/>
 
@@ -15,12 +16,21 @@ AWS CloudTrail records API calls made to AWS. This includes calls made using the
 You need to know where your CloudTrail log files are stored so you can provide the path to the AWS CloudTrail Source. Refer to AWS Documentation for [finding your CloudTrail log files](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html).
 :::
 
+:::sumo Tutorial
 
-import Iframe from 'react-iframe';
+<Iframe url="https://fast.wistia.net/embed/iframe/inopluxjef?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Set up an AWS CloudTrail Source Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-:::sumo Micro Lesson
-Tutorial: Set up an AWS CloudTrail Source.
-
+<!-- old
 <Iframe url="https://www.youtube.com/embed/SQMzez_9PiU?rel=0"
         width="854px"
         height="480px"
@@ -31,6 +41,7 @@ Tutorial: Set up an AWS CloudTrail Source.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -40,7 +51,7 @@ Tutorial: Set up an AWS CloudTrail Source.
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket for you if you so choose.
 1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket created or used above.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Select the hosted Collector for which you want to add the Source, and click **Add Source**. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Select **AWS CloudTrail**.
 1. The page refreshes. <br/> ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)

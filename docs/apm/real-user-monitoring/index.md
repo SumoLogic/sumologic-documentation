@@ -26,6 +26,19 @@ All data collected is compatible with OpenTelemetry and doesn't use proprietary 
 :::sumo Micro Lesson
 See Real User Monitoring in action.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/jfptjgwql1?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Real User Monitoring (RUM) 2.0 Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/3EMl3jyoZjA?rel=0"
         width="854px"
         height="480px"
@@ -36,6 +49,7 @@ See Real User Monitoring in action.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -47,10 +61,10 @@ See Real User Monitoring in action.
 
 Access Traces to confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**.
-<!--Kanso
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
+ 
 
 ## Guides
 
