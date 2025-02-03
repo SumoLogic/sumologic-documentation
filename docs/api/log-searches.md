@@ -32,12 +32,10 @@ Whether you're running ad hoc searches during a forensic investigation or runnin
 | US1        | https://api.sumologic.com/docs/#tag/logSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Download Search Results
     * View Collectors
-
--->

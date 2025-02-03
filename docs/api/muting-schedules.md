@@ -30,10 +30,8 @@ The Muting Schedules Management API allows you to pause alert notifications from
 | US1        | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Alerting (all role capabilities)
-
--->

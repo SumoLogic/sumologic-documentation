@@ -30,7 +30,7 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
 | US1        | https://api.sumologic.com/docs/#tag/lookupManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/lookupManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -38,5 +38,3 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
     * Download Search Results
     * Manage Content
     * View Collectors
-
--->
