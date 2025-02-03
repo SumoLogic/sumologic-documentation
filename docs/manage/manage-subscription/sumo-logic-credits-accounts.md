@@ -56,7 +56,7 @@ Essentials accounts scale to meet your growing needs for user licenses, data ret
 * **Collaborate**. Advanced team collaboration features.
 * **Orchestrate**. Designed for organizations requiring robust workflows and automation.
 
-For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
+For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
 
 ### Enterprise Operations
 

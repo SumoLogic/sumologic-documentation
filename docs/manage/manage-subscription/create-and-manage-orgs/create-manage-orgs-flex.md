@@ -127,7 +127,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Data Forwarding**. For more information, see [Data Forwarding](/docs/manage/data-forwarding/).
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
-* **Promotional categories**. For more information, see [Promotional Credits](sumo-logic-credits-accounts.md#promotional-credits).
+* **Promotional categories**. For more information, see [Promotional Credits](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account#promotional-credits).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
