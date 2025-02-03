@@ -37,7 +37,7 @@ Configuring log and metric collection for the Nginx Ingress app includes the fol
 
 ### Step 1: Configure fields in Sumo Logic
 
-Additionally, if you are using Nginx Ingress in the Kubernetes environment, Following fields will be created automatically as a part of the app installation process:
+Additionally, if you're using Nginx Ingress in the Kubernetes environment, the following fields will be created automatically during the app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -69,7 +69,7 @@ It’s assumed that you are using the latest helm chart version if not please up
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
 <br/>
-**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Nginx Application Components named as **AppObservabilityNginxIngressWebserverFER**
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityNginxIngressWebserverFER** is automatically created for Nginx Application Components.
 <br/>
 ## Installing the Nginx Ingress app
 
@@ -220,14 +220,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Controller-Metrics.png')} alt="Nginx-Ingress-Controller-Metrics" />
 
-## Installing Nginx Ingress Monitors
+## Installing Nginx Ingress monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
 
 :::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Ingress alerts.
 - You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 

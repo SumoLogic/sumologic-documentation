@@ -604,12 +604,12 @@ Use this dashboard to monitor the following key metrics:
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Service.png')} alt="IIS-Web-Service" />
 
 
-## Installing IIS Monitors
+## Installing IIS monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 :::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the IIS alerts.
 - You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 

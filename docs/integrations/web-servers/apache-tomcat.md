@@ -21,20 +21,20 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure fields in Sumo Logic
 
-As part of the app installation process, the following fields will created by default:
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 * `pod`
 
-Additionally, if you are using Apache Tomcat in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+Additionally, if you are using Apache Tomcat in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
 * `pod_labels_webserver_farm`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Apache Tomcat
 
@@ -720,14 +720,14 @@ The **Apache Tomcat  - MemoryPool** dashboard provides a memory of your JMX Apac
 
 To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors) are provided with out-of-box alerts.
 
-## Installing Apache Tomcat Monitors
+## Installing Apache Tomcat monitors
 
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Apache Tomcat Alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Apache Tomcat alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 :::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat alerts.
 - You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 

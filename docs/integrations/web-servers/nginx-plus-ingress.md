@@ -114,10 +114,6 @@ Use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-## Installing Nginx Plus Ingress Monitors
-
-To install these alerts, you need to have the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
-
 ## Installing the Nginx Plus Ingress app
 
 import AppInstall from '../../reuse/apps/app-install.md';
@@ -301,12 +297,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Zones.png')} alt="Nginx Plus Ingress" />
 
-## Installing Nginx Plus Monitors
+## Installing Nginx Plus Ingress monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 :::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Plus Ingress alerts.
 - You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 

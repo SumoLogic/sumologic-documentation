@@ -116,19 +116,19 @@ This section provides instructions for configuring log and metrics collection fo
 
 ### Step 1: Configure fields in Sumo Logic
 
-As part of the app installation process, the following fields will created by default:
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 
-Additionally, if you are using Apache in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
 * `pod_labels_webserver_farm`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Your Environment for Apache Logs and Metrics Collection
 
@@ -247,7 +247,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
    ```
    The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 <br/>
-**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Web Server Application Components named as **AppObservabilityApacheWebserverFER**
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityApacheWebserverFER** is automatically created for Apache Web Server Application Components.
 <br/>
 
 </TabItem>
@@ -559,18 +559,18 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
-## Installing Apache Monitors
+## Installing Apache monitors
 
 This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
 
 Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
 
-For details about individual alerts, see [Apache Alerts](#apache-alerts).
+For details about individual alerts, see [Apache alerts](#apache-alerts).
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 :::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat Alerts.
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache alerts.
 - You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
 :::
 
