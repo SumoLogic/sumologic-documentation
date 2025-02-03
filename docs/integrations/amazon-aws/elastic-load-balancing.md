@@ -51,7 +51,7 @@ _sourceCategory=elb*
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account at any time.
 
 ### Prerequisites
 

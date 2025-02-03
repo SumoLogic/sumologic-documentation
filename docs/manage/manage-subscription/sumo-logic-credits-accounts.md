@@ -29,7 +29,7 @@ Free accounts offer access to most Sumo Logic features with the following limita
 - **Retention**. 7-day log retention.
 - **Users**. Limited to three users.
 
-Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account).
+Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account).
 
 :::note
 Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
