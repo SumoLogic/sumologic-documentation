@@ -213,7 +213,6 @@ kubectl describe pod <SQLserver_pod_name>
 3. Verify logs in Sumo Logic.
 
 <br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilitySQLServerDatabaseFER**.
-</br>
 
 </TabItem>
 <TabItem value="non-k8s">
