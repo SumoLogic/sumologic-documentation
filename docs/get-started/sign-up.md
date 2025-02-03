@@ -29,13 +29,21 @@ The activation link expires after 3 days. If it expires, you’ll need to comple
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 1. Follow the setup guide to install a data collector and start ingesting data.
 
-### Set up Collector
+:::tip
+Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from which you want to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" style={{border: '1px solid gray'}} width="400" />
-1. Copy, paste, and run the provided command in your Terminal or PowerShell to install the OpenTelemetry collector and relevant dashboards.
-1. When the installation is complete, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" style={{border: '1px solid gray'}} width="500" />
+### Set up data collection
 
-Next, you'll be taken to your onboarding checklist guide, where you can view dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
+Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
+* For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
+* For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
+
+You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and follow easy-to-use setup guides for installation.
+
+When the installation is complete, click **Start using Sumo**.
+
+Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
 
 ### Upgrade or continue with Free account
 
@@ -122,16 +130,10 @@ For example, for 10GB/Day:
 - If the billing cycle is 30 days, the Reserved Capacity is 300GB.
 - If the billing cycle is 31 days, the Reserved Capacity is 310GB.
 
-## Kickstart your Sumo Logic experience with placeholder data  
 
-Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. With Kickstart Data, you can immediately dive into Sumo Logic's features—like Log Search, Alerts, and Dashboards—without needing to set up your own data sources.  
+## Next steps
 
-Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. For more details, see our [Quickstart Guide](/docs/get-started/quickstart).
-
-
-## Resources
-
-* [Sumo Logic Quickstart](/docs/get-started/quickstart)
-* [Onboarding checklists](/docs/get-started/onboarding-checklists)
+* [Quickstart Guide](/docs/get-started/quickstart)
+* [Onboarding Checklists](/docs/get-started/onboarding-checklists)
 * [Free Training and Certification](/docs/get-started/training-certification-faq)
-* [Sumo Logic terms and conditions](https://www.sumologic.com/support-terms)
+* [Sumo Logic Terms and Conditions](https://www.sumologic.com/support-terms)
