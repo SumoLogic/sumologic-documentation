@@ -32,20 +32,6 @@ We refer to your estimates of ingest capacity required for each product variable
 
 Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
-## About Cloud SIEM provisioning
-
-You can enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. For more information, see [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
-
-## Requirements for creating and managing orgs
-
-There are several role capabilities that are required to work with orgs:
-
-* **View Organizations**. This capability is required to view the Organizations UI.
-* **Create Organizations**. This capability is required to create or provision child organizations.
-* **Change Credits Allocation**. This capability is required to change the credits allocation and baselines for a child organization. 
-* **Create Trial Organizations**. This capability is required to create and provision trial organizations. 
-* **Upgrade Trial Organizations**. This capability is required to upgrade trial organizations. 
-
 ## Create a new child organization
 
 This section has instructions for creating a new org.
@@ -182,7 +168,7 @@ To change an org's credits allocation:
 
 ## Monitor Cloud SIEM provisioning
 
-Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+You can also enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} style={{border:'1px solid gray'}} alt="status" />
 
@@ -242,32 +228,6 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
 
 <img src={useBaseUrl('img/manage/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid gray'}} />
-
-## Access a child org
-
-If a [custom subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings#set-up-a-customsubdomain) has been configured for a child org, and you have an account in the org, you can access it from the **Organizations** UI.
-
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
-1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/access-org.png')} alt="your description" style={{border:'1px solid gray'}} width="450"/>
-
-## View child credits usage
-
-You can access the child credits usage for a selected organization from the **Organizations** UI.
-
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
-1. Click the row for the org you want to access the credits usage.
-1. You can see the total percentage of credits consumed out of the total number of credits allocated in the **Allocation & usage** section.
-1. Click **Open in Account Overview** for a detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/manage/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
-
-## View baselines
-
-Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
-
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
-1. Click the row for the org you want to check the baselines.
-1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/> <br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
 
 ## Audit logging for organizations
 
