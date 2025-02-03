@@ -1,6 +1,7 @@
 ---
 id: create-manage-orgs-flex
 title: Create and Manage Orgs (Flex)
+sidebar_label: Flex Accounts
 description: Learn how to create and manage multiple Sumo Logic orgs (Flex).
 ---
 

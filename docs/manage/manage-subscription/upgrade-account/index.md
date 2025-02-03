@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 
-<div>
+<div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>

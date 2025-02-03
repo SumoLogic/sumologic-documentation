@@ -1,6 +1,7 @@
 ---
 id: create-manage-orgs
 title: Create and Manage Orgs
+sidebar_label: Credits Accounts
 description: Learn how to create and manage multiple Sumo Logic orgs.
 ---
 

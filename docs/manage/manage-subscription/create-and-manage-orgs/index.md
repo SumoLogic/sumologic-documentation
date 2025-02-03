@@ -4,13 +4,13 @@ title: Create and Manage Orgs
 description: Learn about how to upgrade your Sumo Logic account plans.
 ---
 
-The topics in this guide provide information on how to create and manage your Sumo Logic orgs.. 
+The topics in this guide provide information on how to create and manage your Sumo Logic orgs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 
-<div>
+<div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Orgs</h4></a>
