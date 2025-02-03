@@ -50,24 +50,22 @@ Host: broker-1 Name: /var/log/rabbitmq/rabbit.log Category: logfile
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ.
 
+### Step 1: Configure fields in Sumo Logic
 
-### Step 1: Fields in Sumo Logic
-
-The following [fields](https://help.sumologic.com/docs/manage/fields/) will always be created automatically as a part of the app installation process:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-If you're using RabbitMQ in a non-Kubernetes environment, these additional fields will get created automatically as a part of the app installation process:
+The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
 * `component`
 * `environment`
 * `messaging_system`
 * `messaging_cluster`
 * `pod`
 
-For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+If you're using RabbitMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for RabbitMQ
 
@@ -195,7 +193,7 @@ For all other parameters see [this doc](/docs/send-data/collect-from-other-data-
 kubectl describe pod <RabbitMQ_pod_name>
 ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule is automatically created named **AppObservabilityMessagingRabbitMQFER**
+3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMessagingRabbitMQFER** is automatically created.
 
 </TabItem>
 <TabItem value="non-k8s">

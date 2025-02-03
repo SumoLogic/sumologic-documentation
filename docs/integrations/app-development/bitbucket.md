@@ -125,7 +125,6 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Bi
 8. **Triggers** - Click on Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 9. Click **Save**
 
-
 ### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
 
 A Bitbucket pipe needs to be configured to send code deploy status to Sumo Logic. Add the following pipe code to the step section of your deployment part of the `bitbucket-pipelines.yml` file. Replace `SUMOLOGIC_HTTP_URL` with HTTP Source URL configured in Step 1.
@@ -141,12 +140,9 @@ If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` 
 
 For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
 
-
 ### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type is automatically added to the [Fields](/docs/manage/fields) during installation of the app.
-
-
+To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the Bitbucket App
 

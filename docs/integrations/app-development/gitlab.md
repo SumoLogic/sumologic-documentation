@@ -93,9 +93,7 @@ Refer to the [GitLab Webhooks documentation](https://docs.gitlab.com/ee/user/pro
 
 ### Step 3: Enable GitLab Event tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type is automatically added to the [Fields](/docs/manage/fields) during installation of the app.
-
-
+To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitLab App
 

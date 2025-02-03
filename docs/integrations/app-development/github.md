@@ -158,8 +158,7 @@ To configure a GitHub Webhook:
 
 ### Enable GitHub Event tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type is automatically added to the [Fields](/docs/manage/fields) during installation of the app.
-
+To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitHub App
 

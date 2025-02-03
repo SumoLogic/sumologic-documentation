@@ -51,24 +51,22 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 This App has been tested with following ActiveMQ versions:
 * 5.16.2.
 
+### Step 1: Configure fields in Sumo Logic
+
 Configuring log and metric collection for the ActiveMQ App includes the following tasks:
 
-### Step 1: Fields in Sumo Logic
-
 The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-
-If you're using ActiveMQ in a non-Kubernetes environment, these additional fields will get created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `messaging_system`
 * `messaging_cluster`
 * `pod`
+
+If you're using ActiveMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
 For information on setting up fields, see [Fields](/docs/manage/fields).
 
@@ -250,7 +248,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     annotations:
           tailing-sidecar: sidecarconfig;data:/opt/activemq/data/activemq.log
     ```
-   1. Make sure that the ActiveMQ pods are running and annotations are applied by using the command:
+   1. Ensure that the ActiveMQ pods are running and annotations are applied by using the command:
     ```bash
     kubectl describe pod <ActiveMQ_pod_name>
     ```
@@ -427,7 +425,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-There are limits to how many alerts can be enabled
+There are limits to how many alerts can be enabled.
 
 :::note permissions required
 To install these monitors, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
