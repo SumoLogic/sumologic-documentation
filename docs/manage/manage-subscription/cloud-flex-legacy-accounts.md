@@ -136,7 +136,7 @@ You must have a role that grants you the [Account Overview capability](/docs/man
 :::
 ![CloudFlex-AccountPage.png](/img/manage/subscriptions/cloud-flex-account-page.png)
 :::note
-If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization](manage-org-settings.md).
+If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
 :::
 ![manage-org-links.png](/img/manage/subscriptions/manage-org-links.png)
 

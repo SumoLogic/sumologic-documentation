@@ -925,6 +925,8 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
+        'manage/manage-subscription/sumo-logic-credits-accounts',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
         {
           type: 'category',
           label: 'Create and Manage Orgs',
@@ -935,6 +937,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
+            'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
           ],
         },
         {
@@ -948,10 +951,7 @@ module.exports = {
             'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
           ],
         },
-        'manage/manage-subscription/sumo-logic-flex-accounts',
-        'manage/manage-subscription/sumo-logic-credits-accounts',
         'manage/manage-subscription/manage-billing-information',
-        'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/usage-management',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',

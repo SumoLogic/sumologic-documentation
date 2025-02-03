@@ -4254,5 +4254,6 @@
   "/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account": "/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account",
   "/docs/manage/manage-subscription/create-manage-orgs": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs",
   "/docs/manage/manage-subscription/create-manage-orgs-service-providers": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
-  "/docs/manage/manage-subscription/create-manage-orgs-flex": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers"
+  "/docs/manage/manage-subscription/create-manage-orgs-flex": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
+  "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings"
 }
