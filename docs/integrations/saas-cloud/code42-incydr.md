@@ -450,7 +450,7 @@ The **Code42 Incydr - Audits Overview** dashboard is a centralized platform that
 
 ### File Events
 
-The **Code42 Incydr - File Events** dashboard is a security command center that tracks all file events within the organization, providing detailed metrics on total and severe events, as well as specific user and file activites, enabling identification of potential data breaches and insider threats. The dashboard displays the sources of file events, including OS-specific insights, and highlights geographic risk, particularly from embargoed areas. With real-time data and detection of anomalies in file behavior, security teams can efficiently monitor, analyze, and respond to the dynamic data movement and access.
+The **Code42 Incydr - File Events** dashboard is a security command center that tracks all file events within the organization, providing detailed metrics on total and severe events, as well as specific user and file activities, enabling identification of potential data breaches and insider threats. The dashboard displays the sources of file events, including OS-specific insights, and highlights geographic risk, particularly from embargoed areas. With real-time data and detection of anomalies in file behavior, security teams can efficiently monitor, analyze, and respond to the dynamic data movement and access.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Code42-Incydr/Code42+Incydr+-+File+Events.png')} alt="File Events dashboard" />
 
