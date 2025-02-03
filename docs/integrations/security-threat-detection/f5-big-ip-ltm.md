@@ -91,7 +91,7 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 
 #### Step 2: Use AS3 Declarative language to define a logging profile on BIG-IP
 
-Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile on BIG IP.
+Download [AS3Listener.json from here](https://sumologic-app-data.s3.us-east-1.amazonaws.com/F5LTM/V1/AS3Listener.json), and we will use it to define the logging profile on BIG IP.
 
 Use the following curl command to set logging profile at BIG-IP. Replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT` in the following command:
 
@@ -101,7 +101,7 @@ curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
-Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
+Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.us-east-1.amazonaws.com/F5LTM/V1/sumo..json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
 
 Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`
@@ -115,6 +115,8 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 :::note
 Contact F5 support team if the above curl commands return an error.
 :::
+
+#### Associate logging profiles with virtual servers
 
 To begin collecting telemetry, the logging profiles (LTM and ASM) created by AS3 in [step 2](#step-2-use-as3-declarative-language-to-define-a-logging-profile-on-big-ip) need to be assigned to the BIG-IP virtual server(s).
 
