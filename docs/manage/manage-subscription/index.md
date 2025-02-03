@@ -37,12 +37,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/manage-org-settings"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Org Settings</h4></a>
-  <p>Learn how to update org names, define subdomain names, delete orgs, and change the account owner.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/manage/manage-subscription/beta-opt-in"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Beta Participation Opt-In</h4></a>
   <p>Learn how to opt in for Sumo Logic pre-release programs.</p>
   </div>
