@@ -218,7 +218,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
      ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    
-<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityMongoDBDatabaseFER**.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMongoDBDatabaseFER** is automatically created for Database Application Components.
 <br/>
 
 </TabItem>
