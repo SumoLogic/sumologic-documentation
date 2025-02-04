@@ -42,7 +42,8 @@ The **Bearer Token** is the API security token used to authenticate with Sysdig 
 
 Follow the steps below to retrieve the Sysdig API token:
 
-1. Log in to **Sysdig Secure** and then select **Settings** from the user menu.
+1. Sign in to **Sysdig Secure** platform .
+1. Select **Settings** from the **User Menu**.
 1. Click **User Profile** to view the **Sysdig Secure API** token in the UI.
 1. Copy the token or click the **Reset Token** button to generate a new one.
 
