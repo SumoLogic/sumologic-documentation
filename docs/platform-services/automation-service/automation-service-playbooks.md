@@ -212,11 +212,11 @@ A filter node filters results from the preceding action based on the condition y
 
 ### Autosave
 
-Every time you edit a playbook draft, it is automatically saved, and the following notification briefly appears in the lower right corner of the playbook screen:<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} width="200"/>
+Every time you edit a playbook draft, the draft is automatically saved, and the following notification briefly appears in the lower right corner of the playbook screen:<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} width="200"/>
 
 When the automatic save is complete, the following notification lets you know.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-2.png')} alt="Playbook autosave complete" style={{border:'1px solid gray'}} width="200"/>
 
-Autosave means that all your updates to the draft are saved without your having to publish the playbook. To enable or disable autosave, use [playbook preferences](#playbook-preferences).
+To enable or disable autosave, use [playbook preferences](#playbook-preferences).
 
 ### Versions
 
@@ -233,7 +233,7 @@ Every time you publish a playbook, a new version of the playbook is retained. In
 
 ### Autosave preference
 
-Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved. For more information, see [Autosave](#autosave).
+Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
 ## Import and export playbooks
 
