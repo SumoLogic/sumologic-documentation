@@ -47,7 +47,7 @@ Additionally, if you're using Redis in the Kubernetes environment, the following
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Cassandra
 
