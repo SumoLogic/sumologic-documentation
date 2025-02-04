@@ -67,7 +67,7 @@ Additionally, if you are using Memcached in the Kubernetes environment, the foll
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Logs and Metrics Collection for Memcached
 
