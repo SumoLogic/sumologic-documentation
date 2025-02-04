@@ -61,7 +61,7 @@ As part of the app installation process, the following fields will created by de
 * `db_cluster`
 * `pod`
 
-Additionally, if you are using Memcached in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+Additionally, if you are using Memcached in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
