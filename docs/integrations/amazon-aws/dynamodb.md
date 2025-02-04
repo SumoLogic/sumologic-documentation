@@ -107,16 +107,29 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 2. Click **Save**.
 
 
-### Configure fields in Sumo Logic
+### Field in Field Schema
 
-As part of the app installation process, the following fields will be created by default:
-* `tablename`
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the “**tablename**” field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
-For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Field Extraction Rule(s)
 
-A Field Extraction Rule for CloudTrail Logs is automatically created for Database Application Components, named **AwsObservabilityDynamoDBCloudTrailLogsFER**.
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+
+```sql
+Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data):
+account=* eventname eventsource "dynamodb.amazonaws.com"
+Parse Expression:
+| json "eventSource", "awsRegion", "requestParameters.tableName", "recipientAccountId" as eventSource, region, tablename, accountid nodrop
+| where eventSource = "dynamodb.amazonaws.com"
+| "aws/dynamodb" as namespace
+| tolowercase(tablename) as tablename
+| fields region, namespace, tablename, accountid
+```
 
 
 ### Centralized AWS CloudTrail Log Collection
