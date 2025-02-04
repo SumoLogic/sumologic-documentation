@@ -179,6 +179,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
+  <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/kandji"><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="100" /><h4>Kandji</h4></a>
   <p>Identify security threats by analyzing threat events and device events.</p>
   </div>
