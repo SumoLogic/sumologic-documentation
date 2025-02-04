@@ -9,10 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 Certain source template use receiver which use secret/sensitive values like password to pull the data from service and send it to Sumo Logic using OpenTelemetry collector. For example, [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) uses PostgreSQL username and password to bring in metrics from PostgreSQL instance. 
 
 Below are the steps to make things work for such source templates:
