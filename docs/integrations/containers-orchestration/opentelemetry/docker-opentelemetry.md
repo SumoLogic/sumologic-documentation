@@ -15,14 +15,14 @@ The Sumo Logic app for Docker is a unified logs and metrics app that enables you
 
 The Sumo Logic OpenTelemetry collector will run on the same host as Docker and collects Docker metric and container event logs.
 
-- Docker metrics are collected using the [Docker receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/dockerstatsreceiver) and sent to Sumo Logic through the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter).
+- Docker metrics are collected using the [Dockerstats receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/dockerstatsreceiver) and sent to Sumo Logic through the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter).
 - Docker container event logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 :::info
 The Sumo Logic app for Docker supports Docker version `23.0.2`.
 :::
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Schematics.png')} alt="Docker-Schematics"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Docker-OpenTelemetry/Docker.png' alt="Dockerstats-Schematics"/>
 
 :::info
 This app includes [built-in monitors](#docker-alerts). For details on creating custom monitors, refer to [Create monitors for Docker app](#create-monitors-for-docker-app).
