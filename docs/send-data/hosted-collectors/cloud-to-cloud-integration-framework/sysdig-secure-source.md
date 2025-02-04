@@ -38,7 +38,7 @@ The **Base URL** is the Sysdig Secure domain URL that corresponds to the region 
 
 #### Bearer token
 
-The **Bearer Token** is the API security token used to authenticate with Sysdig HTTP API.
+The **Bearer Token** is the API security token used to authenticate with Sysdig HTTP API. Follow the steps below to retrieve the Sysdig API token:
 
 Follow the steps below to retrieve the Sysdig API token:
 
