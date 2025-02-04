@@ -2077,7 +2077,6 @@ integrations: [
         'integrations/amazon-aws/cost-explorer',
         'integrations/amazon-aws/ec2-cloudwatch-metrics',
         'integrations/amazon-aws/ec2-host-metrics',
-        'integrations/amazon-aws/elastic-load-balancing',
         'integrations/amazon-aws/lambda',
         'integrations/amazon-aws/network-firewall',
         'integrations/amazon-aws/network-load-balancer',
