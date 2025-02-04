@@ -142,7 +142,7 @@ Configuring log and metric collection for the MySQL app includes the following t
 
 ### Step 1: Configure fields in Sumo Logic
 
-As part of the app installation process, the following fields will created by default:
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `db_system`
