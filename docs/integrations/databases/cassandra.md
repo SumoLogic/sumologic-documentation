@@ -247,7 +247,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
    6. Verify logs in Sumo Logic.
 
 
-<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityCassandraDatabaseFER**.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityCassandraDatabaseFER** is automatically created for Database Application Components.
 <br/>
 
 </TabItem>
