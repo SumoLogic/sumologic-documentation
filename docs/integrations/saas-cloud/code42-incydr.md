@@ -2,7 +2,7 @@
 id: code42-incydr
 title: Code42 Incydr
 sidebar_label: Code42 Incydr
-description: The Code42 Incydr app enables security teams to monitor, detect, and respond to potential data threats across an organization, combining insightful dashboards that cover audits, file events, and user sessions.
+description: The Sumo Logic app for Code42 Incydr allows security teams to monitor, detect, and respond to potential data threats throughout an organization. It features insightful dashboards by gathering audit logs, file events, and user session data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
