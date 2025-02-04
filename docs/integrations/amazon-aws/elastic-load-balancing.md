@@ -174,3 +174,4 @@ The Sumo Logic App for AWS Elastic Load Balancing helps you monitor the overall 
 **Backend Instance and Load Balancer 5XX Status Codes by Domain.** Shows the time error(s) occurred in a domain, along with the load balancer and backed instance associated with domain.
 
 **Backend Instance and Load Balancer 5XX Status Codes by Client.** Shows the time error(s) occurred at an IP, along with the load balancer and backed instance associated with the client IP.
+
