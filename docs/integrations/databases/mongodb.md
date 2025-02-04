@@ -86,7 +86,7 @@ Additionally, if you are using Redis in the Kubernetes environment, the followin
 * `pod_labels_db_cluster`
 
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 
 ### Step 2: Configure Collection for MongoDB
