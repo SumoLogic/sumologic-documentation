@@ -116,7 +116,7 @@ For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Field Extraction Rule(s)
 
-Field Extraction Rule for CloudTrail Logs are automatically created for Database Application Components named as **AwsObservabilityDynamoDBCloudTrailLogsFER**.
+A Field Extraction Rule for CloudTrail Logs is automatically created for Database Application Components, named **AwsObservabilityDynamoDBCloudTrailLogsFER**.
 
 
 ### Centralized AWS CloudTrail Log Collection
