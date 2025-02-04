@@ -225,7 +225,7 @@ Refer to the documentation for the app you're using. App Components Solution cur
 
 ### Configure fields in Sumo Logic
 
-As part of the app installation process, the following fields will created by default:
+As part of the app installation process, the following fields will be created by default:
 
 * `component`
 * `environment`
