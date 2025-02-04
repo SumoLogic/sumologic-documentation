@@ -444,7 +444,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Audits Overview
 
-The **Code42 Incydr - Audits Overview** dashboard is a centralized platform that provides a snapshot of auditing activities in your organization. It tracks key metrics like total audits, trends, and success rates over time. It also highlights the most active users in the auditing process and common audit types being performed, offering insights into potential risk areas. The dashboard also segments data by user roles, search queries, and geographical locations, including embargoed areas, to show how information is accessed and monitored. It lists the top auditing tools and provides updates on recent system audits and alerts, keeping stakeholders informed about data security and compliance.
+The **Code42 Incydr - Audits Overview** dashboard provides a snapshot of auditing activities in your organization. It tracks key metrics like total audits, trends, and success rates over time. It also highlights the most active users in the auditing process and common audit types performed, offering insights into potential risk areas. The dashboard also segments data by user roles, search queries, and geographical locations, including embargoed areas, to show how information is accessed and monitored. It lists the top auditing tools and provides updates on recent system audits and alerts, keeping stakeholders informed about data security and compliance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Code42-Incydr/Code42+Incydr+-+Audits+Overview.png')} alt="Audits Overview dashboard" />
 
