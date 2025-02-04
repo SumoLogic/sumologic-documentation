@@ -23,7 +23,9 @@ To manage and/or view monitors, you'll need the **Manage** and **View Monitor
 
 The frequency at which a monitor executes depends on various factors, such as the underlying query, the operators used, and the detection window. This frequency can range from a few seconds to several minutes.
 
-For example, if the detection window of your alert is one day, it will be evaluated every few minutes. Conversely, if the detection window of the monitor is 15 minutes, it will be evaluated every few seconds.
+For example, if the detection window of your alert is 1 Day, it will be evaluated every few minutes. Conversely, if the detection window of the monitor is 15 Minutes, it will be evaluated every few seconds.
+
+See [Trigger Type (Logs)](/docs/alerts/monitors/create-monitor/#trigger-type-logs) and [Trigger Type (Metrics)](/docs/alerts/monitors/create-monitor/#trigger-type-metrics) for more information.
 
 ### Log monitors
 

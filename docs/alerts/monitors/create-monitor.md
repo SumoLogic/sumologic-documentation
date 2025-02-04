@@ -166,13 +166,20 @@ You can set a logs monitor trigger to alert based on the following:
 
 Triggers are evaluated by balancing the requirement of timely alert notifications while ensuring that monitor data is indeed available to evaluate trigger conditions.
 
-* For [static logs monitors](#static-detection-method), triggers are similar to "Alert when the result is greater than _ within Y Minutes". The triggers are evaluated periodically as below.
-   | When detection window (Y) is | Evaluate trigger every |
-   |:-----------------------------|:-----------------------|
-   | 15m or less | 1m  |
-   | 15m to 1h     | 2m  |
-   | 1h to 6h      | 10m |
-   | Greater than 6h   | 20m |
+* For [static logs monitors](#static-detection-method), you can control trigger monitor evaluation frequency using the options below. If `Alert when result is <greater/less> than <_> within <X>. Evaluate trigger every <Y>.`:
+   | When detection window (X) is | Evaluate trigger every (Y) |
+   |:-----|:-----------------------|
+   | 2m   | 1m, 2m  |
+   | 5m   | 1m, 2m, 5m |
+   | 10m  | 1m, 2m, 5m, 10m |
+   | 15m  | 1m, 2m, 5m, 10m |
+   | 30m  | 2m, 5m, 10m, 20m |
+   | 1h   | 2m, 5m, 10m, 20m |
+   | 3h   | 10m, 20m, 40m, 1h |
+   | 6h   | 10m, 20m, 40m, 1h |
+   | 12h  | 20m, 40m, 1h |
+   | 24h  | 20m, 40m, 1h |
+   | 7d   | 20m, 40m, 1h |
 * For [anomaly logs monitors](#anomaly-detection-method), triggers are evaluated every `timeslice` as specified in the monitor query. For example, the below query is evaluated every 2 minutes.
    ```
    _sourceCategory=Labs/Apache/Access
@@ -187,7 +194,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 Hour, you can set a resolution window of 15 Minutes. Once the resolution window is continuously satisfied for 15 Minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
@@ -195,13 +202,18 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 <img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
 
-`Alert when result is <threshold type> <threshold> within <time range>`
+`Alert when result is <threshold type> <threshold> within <time range - trigger>. Evaluate every <time range - frequency>.`
 
 | Parameter | Description |
 |:--|:--|
 | `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
-| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+| `<time range - trigger>` | The duration of time to evaluate. Values range from 2 Minutes to 24 Hours (or 7 Days, by request only). |
+| `<time range - frequency>` | The frequency that the monitor is evaluated. |
+
+After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
+
+<img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data" style={{border: '1px solid gray'}} width="700"/>
 
 The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly.
 
@@ -211,11 +223,12 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 <img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
 
-`Alert when missing data within <time range>`
+`Alert when missing data within <time range>. Evaluate every <time range - frequency>.`
 
 | Parameter | Description |
 |:--|:--|
-| `<time range>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+| `<time range - trigger>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
+| `<time range - frequency>` | The frequency that the monitor is evaluated. |
 
 For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
@@ -270,7 +283,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-2.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 

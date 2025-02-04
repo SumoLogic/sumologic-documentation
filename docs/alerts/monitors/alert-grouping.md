@@ -20,7 +20,7 @@ Alert grouping works for both logs and metrics monitors.
 
 ### Metrics
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of monitor.
 4. Enter your metrics query, then select your desired alert grouping option.
@@ -32,15 +32,13 @@ Alert grouping works for both logs and metrics monitors.
 
 ### Logs
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 2. Click **Add a New monitor**.
 3. Select **Logs** as the type of monitor.
 4. Enter your logs query, then select your desired alert grouping option:
    * **One alert per monitor**. Choose this option if you want to only receive a single alert for the entire monitor.
    * **One alert per [group]**. Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/alerts/monitors/setup-logs.png')} alt="setup-logs.png" style={{border: '1px solid gray'}} width="800" />
 5. Configure the rest of your alert condition per standard procedure. Refer to [Monitors](/docs/alerts/monitors) for more details.
-
-The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
 
 ## Set a Muting Schedule for an alert group
 
