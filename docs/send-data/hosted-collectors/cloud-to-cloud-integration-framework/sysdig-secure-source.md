@@ -87,7 +87,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | baseURL | String | Yes | `null` | The Sysdig base URL of your region. | `https://api.us2.sysdig.com` |
-| apiToken | String | Yes | `null` | The API Token of your Sysdig account. | `t3fPdsbxxxxxxxxxp4D6hbi4` |
+| apiToken | String | Yes | `null` | The API token of your Sysdig account. | `t3fPdsbxxxxxxxxxp4D6hbi4` |
 | filters | Array | No | `null` | An array of key-value pairs to filter the data. For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter. |  |
 
 ### JSON example
