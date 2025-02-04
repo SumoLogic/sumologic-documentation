@@ -185,7 +185,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
    6. Verify logs in Sumo Logic.
 
 
-<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityMariaDBDatabaseFER**.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMariaDBDatabaseFER** is automatically created for Database Application Components.
 <br/>
 
 </TabItem>
