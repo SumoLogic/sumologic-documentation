@@ -34,7 +34,7 @@ The Sysdig Secure Source supports API token-based authentication and requires yo
 
 #### Base URL
 
-The **Base URL** is the Sysdig Secure domain URL that corresponds to the region in which the account is created. For example, `https:<hostname>`.
+The **Base URL** is the Sysdig Secure domain URL that corresponds to the region in which the account is created. For example, `https://api.us2.sysdig.com`.
 
 #### Bearer token
 
