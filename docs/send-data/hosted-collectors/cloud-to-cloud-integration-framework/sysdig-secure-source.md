@@ -65,6 +65,7 @@ To configure a Sysdig Secure Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Base URL**. Enter the [Sysdig Secure platform](#base-url) Base URL. For example, `https://api.us2.sysdig.com`.
 1. **Bearer Token**. Enter the Sysdig Secure API token collected from the [Sysdig Secure](#bearer-token) platform. For example, `t3fPdsbxxxxxxxxxp4D6hbi4`.
+1. (Optional) **Filters**. Click the **+Add** button to define the filters you want to associate. Each filter needs a **Field Name** (key) and **Field Value** (value). For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
