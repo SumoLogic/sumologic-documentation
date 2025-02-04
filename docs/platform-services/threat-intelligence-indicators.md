@@ -101,7 +101,7 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file.
     * **CSV**. A comma-separated value (CSV) file.
-    * **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided.
+    <!--* **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided.-->
 
    See [Upload formats](#upload-formats) for the format to use in the file.
 1. Click **Upload** to upload the file.
@@ -499,7 +499,7 @@ Also note that if your STIX file includes lines like these at the top...
 
 
 #### Example files
-
+<!--
 ##### Upload with the UI
 
 Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI.
@@ -556,7 +556,7 @@ If you are uploading via the UI, do not include the `source` value in the file, 
  ```
 
 ##### Upload with the API
-
+-->
 Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API.
 
 As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
