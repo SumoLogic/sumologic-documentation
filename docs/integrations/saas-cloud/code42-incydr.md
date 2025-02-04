@@ -17,7 +17,7 @@ This app includes [built-in monitors](#code42-incydr-monitors). For details on c
 
 ## Log types
 
-This app uses Sumo Logic’s [Code42 Incydr Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source/) to collect audits, file events, and session logs from Code42 Incydr platform.
+This app uses Sumo Logic’s [Code42 Incydr Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source/) to collect audits, file events, and session logs from the Code42 Incydr platform.
 
 ### Sample log messages
 
