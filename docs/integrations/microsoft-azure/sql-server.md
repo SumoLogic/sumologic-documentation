@@ -31,7 +31,7 @@ As part of the app installation process, the following fields will be created by
 * `db_cluster_address`
 * `db_cluster_port`
 
-Additionally, if you are using SQL Server in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+Additionally, if you are using SQL Server in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -40,7 +40,7 @@ Additionally, if you are using SQL Server in the Kubernetes environment, these f
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Collect Logs and Metrics
 Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
@@ -212,7 +212,7 @@ kubectl describe pod <SQLserver_pod_name>
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 
-<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilitySQLServerDatabaseFER**.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilitySQLServerDatabaseFER** is automatically created for Database Application Components.
 
 </TabItem>
 <TabItem value="non-k8s">

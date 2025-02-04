@@ -36,7 +36,7 @@ As part of the app installation process, the following fields will be created by
 * `db_cluster_address`
 * `db_cluster_port`
 
-Additionally, if you are using Oracle in the Kubernetes environment, these following additional fields will be created by default as a part of the app installation process:
+Additionally, if you are using Oracle in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -44,7 +44,7 @@ Additionally, if you are using Oracle in the Kubernetes environment, these follo
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 
 ### Step 2: Configure Oracle Logs and Metrics Collection  
@@ -229,7 +229,7 @@ annotations:
 2. The Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 
-<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we will have Field Extraction Rule automatically created for Database Application Components named as **AppObservabilityOracleDatabaseFER**.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named  **AppObservabilityOracleDatabaseFER** is automatically created for Database Application Components.
 <br/>
 
 </TabItem>

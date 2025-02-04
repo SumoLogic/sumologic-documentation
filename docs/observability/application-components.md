@@ -234,7 +234,7 @@ As part of the app installation process, the following fields will be created by
 * `db_cluster_address`
 * `db_cluster_port`
 
-To learn more about setting up fields, refer to [Sumo Logic Fields](/docs/manage/fields).
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Configuring or updating email notifications
 
