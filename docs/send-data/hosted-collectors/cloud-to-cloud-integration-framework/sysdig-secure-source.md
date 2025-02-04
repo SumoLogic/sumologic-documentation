@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="125"/>
 
-Sysdig Secure is a security platform that helps monitor and protect cloud-native environments, especially those using mordern containers and Kubernetes. It helps organizations detect, prevent, and respond to security threats while ensuring compliance in real-time.
+Sysdig Secure is a comprehensive security platform that provides continuous security and compliance monitoring for cloud-native environments. This is designed specifically to address the security needs of modern containerised and Kubernetes infrastructures. Sysdig Secure enables organisations to detect, prevent, and respond to security threats and ensure compliance in real-time.
 
 ## Data collected
 
