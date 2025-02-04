@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic app for Code42 Incydr helps security teams monitor, detect, and respond to data threats within an organization. It provides dashboards for tracking audits, file events, and user sessions. With features to identify risky file activities and monitor user behavior, it helps prevent data leaks and intellectual property theft. Incydr also offers comprehensive analysis into user actions, risk patterns, and geolocation, giving security professionals the information needed to protect against insider threats and ensure data security and compliance standards.
 
 :::info
-This app includes [built-in monitors](#code42-incydr-monitors). For details on creating custom monitors, refer to the [Create monitors for Code42 Incydr app](#create-monitors-for-code42-incydr-app).
+This app includes [built-in monitors](#code42-incydr-monitors). For details on creating custom monitors, refer to [Create monitors for Code42 Incydr app](#create-monitors-for-code42-incydr-app).
 :::
 
 ## Log types
