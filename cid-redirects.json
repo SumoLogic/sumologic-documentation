@@ -1848,6 +1848,7 @@
   "/cid/19665": "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud",
   "/cid/1966": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source",
   "/cid/1987": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source",
+  "/cid/1996": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source",
   "/cid/1257": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source",
   "/cid/1967": "/docs/integrations/web-servers/iis-10",
   "/cid/1968": "/docs/integrations/partner-ecosystem-apps/",

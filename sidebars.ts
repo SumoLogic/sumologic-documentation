@@ -469,6 +469,7 @@ module.exports = {
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
