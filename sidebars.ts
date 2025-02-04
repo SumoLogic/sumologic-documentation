@@ -1036,6 +1036,7 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
+        'manage/security/service-accounts',
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
