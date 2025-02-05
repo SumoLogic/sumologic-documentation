@@ -111,9 +111,8 @@ To change an org's credits allocation:
 
       **Example 2**: Suppose you need to increase credits for your child org. The image below shows that you have used 35 out of 31,026 credits allocated to your child org. To add more credits, select **Credits to be Added** and enter the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
 1. If you want to modify the baseline, click **View Baseline**. The credits calculator appears.
-      1. Click **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2-flex.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-      1. Depending on the new baseline values, the calculator now shows the recommended credit allocation, which provides a suggestion on how many credits you would need to add for the child org.
-      1. Once you set the baseline, you can view the recommended value in the **Credits to be Added** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
+      1. Click **Edit** and follow the [step 4 in Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2-flex.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
       1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
