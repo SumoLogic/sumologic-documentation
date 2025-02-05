@@ -4256,5 +4256,5 @@
   "/docs/manage/manage-subscription/create-manage-orgs-service-providers": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
   "/docs/manage/manage-subscription/create-manage-orgs-flex": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
   "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings",
-  "/docs/integrations/amazon-aws/elastic-load-balancing":"/docs/integrations/amazon-aws/classic-load-balancer"
+  "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer"
 }
