@@ -25,7 +25,7 @@ When you create a child org, you provision it with credits, based on the ingest 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
-Users that have the required [role capabilities](#requirements-for-creating-and-managing-orgs) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
+Users that have the required [role capabilities](/docs/manage/manage-subscription/create-and-manage-orgs#requirements-for-creating-and-managing-orgs) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## Create a new child organization
 
@@ -127,7 +127,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Data Forwarding**. For more information, see [Data Forwarding](/docs/manage/data-forwarding/).
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
-* **Promotional categories**. For more information, see [Promotional Credits](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account#promotional-credits).
+* **Promotional categories**. For more information, see [Promotional Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
