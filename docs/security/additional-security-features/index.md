@@ -5,10 +5,7 @@ title: Logs for Security
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides features that let you use logs for security use cases. You can use these features to:
-
-* Collect security log and event data from your infrastructure and applications, on-premises and in-cloud.
-* Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
+"Logs for Security" is Sumo Logic's full set of features that leverage logs for security use cases. First, you collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Then, you analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 
 This section contains the following topics:
 
