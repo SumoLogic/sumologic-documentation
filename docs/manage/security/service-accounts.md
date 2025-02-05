@@ -6,25 +6,56 @@ description: Service accounts allow you to create access keys that can be used i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A service account allows you to create [access keys](/docs/manage/security/access-keys/) that can be used in scripts or automation. Because access keys in a service account are not tied to an individual user, they can continue to be used even if the person who created the service account leaves the organization. Service accounts are an ideal way to ensure continuity of operation for critical services.
+A service account allows you to create [access keys](/docs/manage/security/access-keys/) that can be used in scripts or automation. You can use a service account to create multiple access keys. Because access keys in a service account are not tied to an individual user, they can continue to be used even if the creator’s user account is deactivated or deleted. Service accounts are an ideal way to ensure continuity of operation for critical services. 
 
-You might want to use services accounts to provide access keys for:
-* Infrastructure as code (such as Terraform).
+You can use services accounts to provide authentication for operations such as:
+* Infrastructure as code (for example, Terraform).
 * SCIM user and role management from an identity provider.
 * Third party integrations.
 
 ## Prerequisites
 
-You'll need the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities#security):
-* **Create Access Keys** to create access keys on service accounts.
-* **Manage Access Keys** to deactivate, reactivate, or delete access keys on service accounts.
-
-Only administrators can create service accounts. If you are unsure whether you are an administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
+* To work with service accounts, you'll need the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities#security):
+   * **Create Access Keys** to create access keys on service accounts.
+   * **Manage Access Keys** to deactivate, reactivate, or delete access keys on service accounts.
+* Only administrators can create service accounts. If you are unsure whether you are an administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
+* Service accounts use the permissions of the roles they are assigned. A service account must have the role capabilities needed to execute the tasks its access keys are needed for.
 
 ## Create a service account
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
-1. At the top right of the table, click **+ Add Service Account**. 
+1. On the **Service Accounts** tab, click **+ Add Service Account**.<br/><img src={useBaseUrl('/img/security/service-accounts-page.png')} alt="Service Accounts tab" style={{border: '1px solid gray'}} width="700"/>
+<br/>The **Add Service Account** window appears.<br/><img src={useBaseUrl('/img/security/add-service-account.png')} alt="Add Service Account window" style={{border: '1px solid gray'}} width="300"/>
+1. **Name**. Enter a name for your service account. Make it descriptive enough so that others will be able to tell what its purpose is.
+1. **Email**. Enter an email to associate with the service account. It should be an email monitored by an organization rather than an email for an individual, so that it is not dependent on use by a single person.
+1. **Roles**. Select the roles to assign to the service account. A service account must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks its access keys are needed for. For example, if an access key associated with a service account needs be able to manage monitors, not only does the access key need the scopes to manage monitors, but the service account itself also needs to have the role capabilities to manage monitors. 
+   :::tip
+   Remember that the purpose of access key scopes is to limit authorization to only the permissions allowed by the scope. Therefore, you *may* also want to ensure that the roles assigned to the service account are also limited to only the authorization needed by the access keys on the service account.
+   :::
+1. Click **Save**.
 
+### Add an access key to a service account
 
-## Edit, deactivate, or delete a service account
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. Select a service account.
+1. Click **Add Access Key**.<br/><img src={useBaseUrl('/img/security/service-account-details.png')} alt="Add Access Key button on service account details pane" style={{border: '1px solid gray'}} width="300"/>
+1. The **Add New Access Key** window appears. Follow the steps to add an access key as described in [Create an access key](/docs/manage/security/access-keys/#create-an-access-key).
+
+:::note
+Any access keys you add on a service account appear on the [**Access Keys** tab](/docs/manage/security/access-keys/#from-the-access-keys-tab).
+:::
+
+## Modify a service account
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. Hover your mouse over a service account and click the three-dot kebab icon to reveal the modification options.<br/><img src={useBaseUrl('/img/security/modify-options-for-service-accounts.png')} alt="Edit a service account" style={{border: '1px solid gray'}} width="700"/>
+
+:::warning
+When a service account is deactivated, the access keys on the service account are also deactivated. For more information about deactivation, see [Access Keys deactivation policy](/docs/manage/security/access-keys/#access-keys-deactivation-policy).
+:::
+
+## Edit, deactivate, or delete an access key on a service account
+
+If instead of modifying a service account itself you want to modify only the access keys on the service account, open the service account, hover your mouse over an access key, and click the three-dot kebab icon to reveal the modification options.
+
+<img src={useBaseUrl('/img/security/edit-access-keys-on-service-account.png')} alt="Edit access keys on a service account" style={{border: '1px solid gray'}} width="300"/>

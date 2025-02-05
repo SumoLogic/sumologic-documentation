@@ -10,6 +10,7 @@ In Sumo Logic, you'll need an access key to:
 
 * **Register new Collectors**. When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
 * **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
+* **Run scripts or automation**. Create access keys on [service accounts](/docs/manage/security/service-accounts) to provide authentication for scripts or automation.
 
 ## Prerequisites
 
@@ -19,10 +20,10 @@ In Sumo Logic, you'll need an access key to:
 
 ## Create an access key
 
-### From the Personal Access Keys page
+### From the Personal Access Keys tab
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences > Personal Access Keys**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**.
-1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys page" style={{border: '1px solid gray'}} width="800"/><br/>The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
+1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/><br/>The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for your access key.  
 1. **Allowed CORS Domains (optional)**. Create an allowlist of domains from which the access key can be used to access Sumo Logic APIs. For more information, see [CORS support](#cors-support). 
     :::note
@@ -41,15 +42,24 @@ In Sumo Logic, you'll need an access key to:
    After you click **Done**, you will not be able to recover this Access ID and Access Key.
    :::
 
-All personal access keys created in the organization are displayed in the **Access Keys** page, described next. 
+All personal access keys created in the organization are displayed in the **Access Keys** tab, described next. 
 
-### From the Access Keys page
+### From the Access Keys tab
 
-Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys page](#from-the-personal-access-keys-page).
+Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys tab](#from-the-personal-access-keys-tab).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**.
-1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." width="700"/>
-1. Follow the steps in the [previous section](#from-the-personal-access-keys-page), starting with step 3.
+1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." style={{border: '1px solid gray'}} width="700"/>
+1. Follow the steps in [From the Personal Access Keys tab](#from-the-personal-access-keys-tab) section above, starting with step 3.
+
+### From a Service Account
+
+Administrators can create access keys on a [service account](/docs/manage/security/service-accounts) for use in scripts or automation.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. Select a service account.
+1. Click **Add Access Key**.<br/><img src={useBaseUrl('/img/security/service-account-details.png')} alt="Add Access Key button on service account details pane" style={{border: '1px solid gray'}} width="300"/>
+1. Follow the steps in [From the Personal Access Keys tab](#from-the-personal-access-keys-tab) section above, starting with step 3.
 
 #### CORS support
 
@@ -89,7 +99,7 @@ an Access-Control-Allow-Origin header.
 If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can edit, deactivate, and delete any access keys created by other users in your organization.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. 
-1. Hover your mouse over an access key and click the three-dot kebab icon. This reveals the same modification options that appear on the **Personal Access Key** page, [as described above](#edit-deactivate-or-delete-access-keys).
+1. Hover your mouse over an access key and click the three-dot kebab icon. This reveals the same modification options that appear on the **Personal Access Key** tab, [as described above](#edit-deactivate-or-delete-access-keys).
 
 ### Access Keys deactivation policy
 

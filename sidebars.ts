@@ -999,6 +999,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
@@ -1036,7 +1037,6 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
-        'manage/security/service-accounts',
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
