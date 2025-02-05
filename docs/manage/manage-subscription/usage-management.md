@@ -108,7 +108,7 @@ To view the selected scan budget:
 
 ## FAQs
 
-### Handle overlapping budgets
+### Handling overlapping budgets
 
 When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence. 
 
@@ -116,17 +116,23 @@ When you configure multiple budgets for the same user, the scope with the larges
 
 When you perform a log search, if the results exceed the specified capacity limit, an error message will be displayed with no results. For example, consider you set a budget of 1 GB/query, and when your log search results exceed the set budget limit, an error message will be displayed as shown below.<br/><img src={useBaseUrl('/img/manage/account/exceed-scan-budget-warning.png')} alt="exceed-scan-budget-warning" style={{border:'1px solid gray'}} width="800"/>
 
-## Update the budget time window, applied on, capacity, or action
+### Update the budget time window, applied on, capacity, or action
 
 - Changing the time window (for example, from Daily to Weekly) resets budget usage, and the new configuration is applied immediately.
 - Adjusting the **Applied on** setting (for example, from Capacity for the Group to Capacity per User) resets budget usage, with the updated configuration taking effect immediately.
 - Updating the budget **Capacity** (for example, from 10GB to 20GB) applies the new limit instantly, with error and warning messages reflecting the changes.
 - Modifying the budget **Action** (for example, from StopForegroundScan to Warn) updates the system behavior immediately, issuing a warning message when the new threshold is breached.
 
-## Manage new user addition to an existing budget
+### Manage new user addition to an existing budget
 
 If you are added to an existing budget as a new user, your usage will draw from the remaining capacity, aligned with the updated configuration and the specified limits for your role.
 
-## Handling budgets in relation to each other
+### Breaching the query size limit
 
 Each budget type (daily, weekly, monthly, or query) is treated independently, without conflicts between them. Usage is evaluated based on the maximum capacity defined for each budget type. For example, if the daily budget is exceeded and a Stop action is triggered, the user will be blocked from scanning until the daily budget resets, regardless of any remaining capacity in the monthly budget.
+
+### Usage attribution across multiple budget types
+
+As long as you are within the limits of each budget type, usage will be attributed independently to each budget type. If you exceed any one budget type, the action for that budget will be applied. But usage will still be reported to other budgets if they have available capacity. For example, if the daily limit and monthly limit is set to 100GB and 300GB respectively, and if you have used 50 GB of your daily limit, then this usage will be reported to both the daily and monthly budgets as long as they are within their capacity. The query budget only tracks the size in GB per query, so the user will still be within the query budget if the query size limit is not breached.
+
+
