@@ -8,6 +8,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) simplifies remote management of data collection by enabling setup and configuration from the Sumo Logic UI, deploying to multiple collectors at once, data filtering with remote processing rules, and centralized management of data configurations using source templates.
 
+:::sumo Micro lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/o7g9pe3c4t?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="MicroLesson - Open Telemetry Collector Remote Management Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
+  
 **Key features**
 
 * **Tagging collectors**. Tag your OpenTelemetry collectors to categorize and group them. These tags enrich your data, allowing you to use them effectively in dashboards and searches.
