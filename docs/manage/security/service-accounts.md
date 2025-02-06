@@ -56,6 +56,6 @@ When a service account is deactivated, the access keys on the service account ar
 
 ## Edit, deactivate, or delete an access key on a service account
 
-If instead of modifying a service account itself you want to modify only the access keys on the service account, open the service account, hover your mouse over an access key, and click the three-dot kebab icon to reveal the modification options.
+To modify only the access keys on a service account (rather than the service account itself), open the service account, hover over an access key, and click the three-dot kebab icon to reveal modification options.
 
 <img src={useBaseUrl('/img/security/edit-access-keys-on-service-account.png')} alt="Edit access keys on a service account" style={{border: '1px solid gray'}} width="300"/>
