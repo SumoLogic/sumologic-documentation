@@ -54,7 +54,9 @@ If you want to ensure that content in one organization is copied to other organi
    * **Rule Tuning Expressions**
 1. Select individual items to be synced, or all items.
 1. Click **Sync Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Sync Selected Items button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Sync Selected Items** box, click **Selected Organizations** to select the organizations to sync the selected items to. <br/>You can select **All Child Organizations**, a single child organization, or multiple child organizations. If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to sync to all organizations except those you select.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="400"/>
+1. On the **Sync Selected Items** box, click **Desinations** to select the organizations to sync the selected items to. You can sync to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Sync Selected Items dialog" style={{border: '1px solid gray'}} width="400"/><br/>Tips: 
+   * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to sync to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="150"/>
+   * When you sync rule tuning expressions, select **Include Associated Cloud SIEM Rules** to also sync all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
 1. Click **Sync**. A **Syncing in progress** dialog is displayed. 
 
 ### How syncing works
