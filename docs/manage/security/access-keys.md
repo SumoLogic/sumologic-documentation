@@ -113,3 +113,13 @@ To configure the Access Keys deactivation policy:
     :::note
     This section is visible to Administrators only.
     :::
+
+## Audit logging for access key activity
+
+Access key events are recorded in the Audit Event Index. To search for for access key events, run this query:
+
+```
+_index=sumologic_audit_events _sourceCategory=accessKeys
+```
+
+For more information about audit logging, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/).
