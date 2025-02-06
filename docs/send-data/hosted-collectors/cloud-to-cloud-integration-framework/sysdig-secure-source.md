@@ -21,10 +21,10 @@ Sysdig Secure is a comprehensive security platform that provides continuous secu
 
 ## Data collected
 
-| Polling Interval | Data | Description |
-| :--- | :--- | :--- |
-| 24 hours | Runtime Scan Result | Provides a list of runtime scan results discovered by the runtime scanner. |
-| 5 minutes | Full Scan Result | Provides the full scan details of the provided scan result ID. |
+| Polling Interval | Data |
+| :--- | :--- |
+| 24 hours | [Runtime Scan Result](https://us2.app.sysdig.com/apidocs/secure/#tag/Vulnerability-Management/operation/ScannerAPIServiceListRuntimeResults) |
+| 5 minutes | [Full Scan Result](https://us2.app.sysdig.com/apidocs/secure/#tag/Vulnerability-Management/operation/GetSecureVulnerabilityV1ResultsResultId) |
 
 ## Setup
 
