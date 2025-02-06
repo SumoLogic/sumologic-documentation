@@ -91,9 +91,9 @@ Choose one of the following methods to configure the JFrog Xray source and insta
 
 <Tabs
   className="unique-tabs"
-  defaultValue="Cloud-to-Cloud source setup and app installation"
+  defaultValue="Cloud-to-cloud source setup and app installation"
   values={[
-    {label: 'Cloud-to-Cloud source setup and app installation', value: 'Cloud-to-cloud source setup and app installation'},
+    {label: 'Cloud-to-cloud source setup and app installation', value: 'Cloud-to-cloud source setup and app installation'},
     {label: 'HTTP source setup and app installation', value: 'HTTP source setup and app installation'}
   ]}>
 
