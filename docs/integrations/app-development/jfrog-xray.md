@@ -180,7 +180,7 @@ To deploy the Sumo Logic JFrog xray SAM Application, do the following:
 1. Search for **sumologic-jfrog-xray** and make sure  the checkbox **Show apps that create custom IAM roles or resource policies** is checked, and click the app link when it appears.
 1. When the page for the Sumo app appears, click **Deploy**.
 1. Go to the **AWS Lambda > Functions >** **Application Settings** panel, and enter parameters for the following fields:
-  * **HTTPLogsEndpoint**: Copy and paste the URL for the HTTP log source from [Step 4](#step-4-add-hosted-collector-and-http-source).
+  * **HTTPLogsEndpoint**. Copy and paste the URL for the HTTP log source from [Step 4](#step-4-add-hosted-collector-and-http-source).
   * **Hostname**: Copy and paste the Hostname from [Step 1](#step-1-collect-jfrog-xray-instance-details).
   * **Port**: Copy and paste the Port from [Step 1](#step-1-collect-jfrog-xray-instance-details).
   * **Username**: Copy and paste the Username from [Step 1](#step-1-collect-jfrog-xray-instance-details).
