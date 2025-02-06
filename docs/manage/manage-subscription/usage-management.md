@@ -112,7 +112,7 @@ To view the selected scan budget:
 
 When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence. 
 
-### Exceeding the scan budget 
+### Exceeding the scan budget query limit
 
 When you perform a log search, if the results exceed the specified capacity limit, an error message will be displayed with no results. For example, consider you set a budget of 1 GB/query, and when your log search results exceed the set budget limit, an error message will be displayed as shown below.<br/><img src={useBaseUrl('/img/manage/account/exceed-scan-budget-warning.png')} alt="exceed-scan-budget-warning" style={{border:'1px solid gray'}} width="800"/>
 
