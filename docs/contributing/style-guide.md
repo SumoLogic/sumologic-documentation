@@ -1533,6 +1533,10 @@ If you need to use mouse actions to be specific, use:
 
 ## Videos
 
+:::note
+While embeding the video, always define the Iframe component by including `import Iframe from 'react-iframe';` with the markdown.
+:::
+
 ### YouTube
 
 To embed a YouTube video on a doc:
@@ -1629,7 +1633,7 @@ You can use similar coding to embed videos from other vendors than YouTube. Foll
 </TabItem>
 <TabItem value="Result">
 
-<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+<Iframe url="https://fast.wistia.net/embed/iframe/<videoID>?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
   id="wistiaVideo"
@@ -1643,5 +1647,5 @@ You can use similar coding to embed videos from other vendors than YouTube. Foll
 </Tabs>
 
 :::note
-Typically you must include `import Iframe from 'react-iframe';` with the markdown. It is not included in the example above because it was already called in the previous markdown for YouTube.
+In the `url` key, replace the <videoID> with the ID number you find in the Wista video URL. For example, if the video URL is `https://sumo-logic.wistia.com/medias/abcd0123`, replace <videoID> with `abcd0123`.
 :::
