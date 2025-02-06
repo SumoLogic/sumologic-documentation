@@ -40,7 +40,7 @@ The **Base URL** is the Sysdig Secure domain URL that corresponds to the region 
 
 The **Bearer Token** is the API security token used to authenticate with Sysdig HTTP API. Follow the steps below to collect your Sysdig API token:
 
-1. Sign in to **Sysdig Secure** platform .
+1. Sign in to the **Sysdig Secure** platform.
 1. Select **Settings** from the **User Menu**.
 1. In the **Settings** page, select **User Profile** to view the Sysdig Secure API token in the UI.
 1. Copy the token or click the **Reset Token** button to generate a new one.
