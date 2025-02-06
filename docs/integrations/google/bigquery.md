@@ -38,7 +38,7 @@ Choose one of the following methods to configure the Google BigQuery source and 
   className="unique-tabs"
   defaultValue="Cloud-to-cloud source setup and app installation"
   values={[
-    {label: 'Cloud-to-cloud source setup and app installation', value: 'Cloud-to-cloud source setup and app installation'},
+    {label: 'Cloud-to-Cloud source setup and app installation', value: 'Cloud-to-Cloud source setup and app installation'},
     {label: 'HTTP source setup and app installation', value: 'HTTP source setup and app installation'}
   ]}>
 
