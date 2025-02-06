@@ -66,4 +66,6 @@ Service account events are recorded in the Audit Event Index as user events. To 
 _index=sumologic_audit_events _sourceCategory=users
 ```
 
+Service account events will return with `subsystem` shown as `serviceAccounts`.
+
 For more information about audit logging, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/).
