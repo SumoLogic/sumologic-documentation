@@ -19,7 +19,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/create-use-network-blocks"><img src={useBaseUrl('img/icons/operations/microservices.png')} alt="Network icon" width="40"/><h4>Network Blocks</h4></a>
-  <p>Learn about Network Blocks, their purpose, and instructions for setting them up and using them.</p>
+  <p>Learn about network blocks, their purpose, and instructions for setting them up and using them.</p>
   </div>
 </div>
 <div className="box smallbox card">
