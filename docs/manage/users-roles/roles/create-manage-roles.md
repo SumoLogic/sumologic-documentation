@@ -35,7 +35,7 @@ To create a role:
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes.
       :::warning
-      Use **Deny few indexes** with caution. We do not recommend filtering to deny access. That's because if multiple roles are applied to a user, a situation can arise where one role denies access to a certain area, but another role allows access to that same area. Therefore, if possible, apply filtering that allows access rather than denies access. For more information, see [Index Access behavior when a user has multiple roles](#index-access-behavior-when-a-user-has-multiple-roles) below. 
+      Use **Deny few indexes** with caution. We do not recommend filtering to deny access, as conflicting roles can create access inconsistencies—one role may deny access while another grants it. Whenever possible, apply filtering to allow access rather than deny it. This ensures roles work additively for more predictable access management.  For more information, see [Index Access behavior when a user has multiple roles](#index-access-behavior-when-a-user-has-multiple-roles) below.
       :::
 1. **Capabilities**. In this section, click the checkbox beside each capability you want to grant to users with this role. For information about what each capability enables, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 1. Click **Save**. 
