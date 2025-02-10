@@ -110,9 +110,8 @@ You can add collector tags during OTEL collector setup as described in the previ
 1. Navigate to the **OpenTelemetry Collection** page.
 1. Click on the desired collector where you need to add collector tags.
 1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
-1. In the edit window, click **+ Add tags**.
-1. Add/Update/Delete the required tags and click **Proceed**.
-1. A new **Update Collector Tag(s)** window appears. Click the **click here** link to understand the impact of this update.
-1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.
+1. In the edit window, click **+ Add tags** to add new tag or Update/Delete the required tags and click **Proceed**.<br/><img src={useBaseUrl('img/send-data/add-delete-update-tags.png')} alt="add-delete-update-tags" style={{border:'1px solid gray'}} width="500"/>
+1. A new **Update Collector Tag(s)** window appears. Click the **click here** link to understand the impact of this update.<br/><img src={useBaseUrl('img/send-data/update-tags-click-here.png')} alt="update-tags-click-here" style={{border:'1px solid gray'}} width="500"/>
+1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.<br/><img src={useBaseUrl('img/send-data/mapped-source-templates.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500"/>
 1. If there are any incompatible source templates, [upgrade the source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#upgrade-a-source-template) to ensure compatibility.
-1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm** to add/update/delete the new collector tag.
+1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm** to add/update/delete the new collector tag.<br/><img src={useBaseUrl('img/send-data/confirm-the-tags.png')} alt="confirm-the-tags" style={{border:'1px solid gray'}} width="500"/>
