@@ -8,50 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
 This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
-
-## Understanding search filters
-
-A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. Here is a simple role filter:
-
-```sql
-_sourceCategory=labs*
-```
-
-This filter grants access to logs whose `_sourceCategory` begins with the string “labs”. (Logs whose `_sourceCategory` don’t start with “labs” won’t be accessible.)
-
-When a user with this filter enters a query like:
-
-```sql
-_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count
-```
-
-Sumo Logic silently (it’s transparent to the user) adds the role filter to the beginning of the query with an `AND`:
-
-```sql
-_sourceCategory=labs* AND (_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count)
-```
-
-<!-- Hiding the following for work on DOCS-680
-The example above positively grants access to log data. You can do the opposite: explicitly deny access to data, with an exclamation point (!). For example:
-
-```
-!_sourceCategory=JobX*
-```
-
-The role filter above denies access to log data whose  `_sourceCategory` begins with “JobX”. (Access to log data with other source category values is not restricted.)
--->
-
-The examples above are simple: they involve a single role, and hence a single role filter. 
-
-Typically however, a Sumo Logic user will have multiple roles. If a user has multiple roles, Sumo Logic `OR`s the several role filters and prepends that expression to the user’s queries with an `AND`, as discussed in [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
   
 ## Search filter basics
 
-The sections below list search filter limitations, and describe how you can use keywords, wildcards, metadata, and logical operators in filters. 
+A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. 
 
-The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you will likely assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
+The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you may assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
 
 ### Search filter limitations
+
+The sections below list search filter limitations, and describe how you can use keywords, wildcards, metadata, and logical operators in filters. 
 
 * Role filters should include only keyword expressions or built-in metadata field expressions using these fields: `_sourcecategory`, `_collector`, `_source`, `_sourcename`, `_sourcehost`.
 * Using `_index` or `_view` in a role filter scope is not supported.

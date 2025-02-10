@@ -79,7 +79,7 @@ However, if a user is assigned multiple roles that each have different Index Acc
 
 ## Test a role's log access rights
 
-To test a role to see if it displays the expected log access behavior, select a role and click **Emulate log search**.
+To test a role to see if it displays the expected log access behavior, select a role and click **Emulate log search**. (You can also test a user. See [Test a user's log access rights](/docs/manage/users-roles/users/create-edit-users/#test-a-users-log-access-rights).)
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Select a role. 
