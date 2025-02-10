@@ -40,6 +40,8 @@ Alert grouping works for both logs and metrics monitors.
    * **One alert per [group]**. Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/alerts/monitors/setup-logs.png')} alt="setup-logs.png" style={{border: '1px solid gray'}} width="800" />
 5. Configure the rest of your alert condition per standard procedure. Refer to [Monitors](/docs/alerts/monitors) for more details.
 
+The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
+
 ## Set a Muting Schedule for an alert group
 
 Optionally, you can apply a Muting Schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
