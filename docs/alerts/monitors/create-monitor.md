@@ -194,7 +194,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 Hour, you can set a resolution window of 15 Minutes. Once the resolution window is continuously satisfied for 15 Minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
