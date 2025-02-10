@@ -88,6 +88,23 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetrycollector.yaml`
 ```
 
+:::note
+Starting v4.12.0, please use the CRDs below
+:::
+
+```shell
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetryinstrumentation.yaml --force-conflicts
+
+kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io \
+  meta.helm.sh/release-name=${RELEASE_NAME} \
+  meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
+```
+
 ### How to revert to the v3 defaults
 
 Set the following in your configuration:
@@ -106,6 +123,28 @@ kube-prometheus-stack:
     enabled: true
   prometheusOperator:
     enabled: true
+```
+
+Starting v4.12.0, please use the configuration below
+
+```yaml
+sumologic:
+  metrics:
+    collector:
+      otelcol:
+        enabled: false
+    remoteWriteProxy:
+      enabled: true
+
+kube-prometheus-stack:
+  prometheus:
+    enabled: true
+  prometheusOperator:
+    enabled: true
+
+opentelemetry-operator:
+  crds:
+    create: true
 ```
 
 ## Remove remaining Fluent Bit and Fluentd configuration
