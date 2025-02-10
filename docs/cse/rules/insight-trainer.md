@@ -66,7 +66,7 @@ The dashboard makes two kinds of suggestions, either a “tunability” score to
 
 ## Cloud SIEM - Insight Trainer page
 
-After installing the [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse), access the [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
+After installing the [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse), access the [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
 
 The dashboard has the following sections:
 * [Filters](#filters)
