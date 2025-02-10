@@ -1,3 +1,3 @@
 :::tip
-As a rule, you should avoid "role stacking" and provide all the access needed for a user in a single role. That is because when roles are stacked, conflicts can arise between the access provided by different roles. However, if you do "stack roles", we recommend that you use filtering to allow access rather than deny access. This way, each additional role allows more access, and conflicts are avoided that could arise from combining "allow access" and "deny access" filters from different roles.
+As a best practice, avoid "role stacking" and assign all necessary access within a single role to prevent conflicts. When multiple roles are applied, conflicting permissions can arise. However, if role stacking is necessary, use filtering to allow access rather than deny it. This way, each additional role expands access rather than creating conflicts between "allow" and "deny" filters from different roles.
 :::
