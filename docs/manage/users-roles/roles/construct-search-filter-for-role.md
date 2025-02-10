@@ -164,7 +164,7 @@ When a user with that role filter runs a query, Sumo Logic runs it like this:
 ```
 
 :::warning
-Although we provide this an example to show that it's possible, we do not recommend filtering to deny access. That's because if multiple roles are applied to a user, a situation can arise where one role denies access to a certain area, but another role allows access to that same area. Therefore, if possible, always apply filtering that allows access rather than denies access. Then roles can be used in an additive way to build access for users.
+Although this example demonstrates that filtering to deny access is possible, we do not recommend it. If a user has multiple roles, one role may deny access to an area while another grants access, leading to conflicts. To avoid this, use filtering to allow access rather than deny it. This ensures roles work additively, making access management more predictable.
 :::
 
 ## Multiple role filters and filter precedence
