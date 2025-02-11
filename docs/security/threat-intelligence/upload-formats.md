@@ -71,6 +71,7 @@ The following attributes are required:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -104,33 +105,18 @@ The following attributes are required:
 
 Comma-separated value (CSV) is a standard format for data upload.
 
-### Example files
+### Example file
 
-#### Upload with the UI
-
-If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
+When uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
 0001,192.0.2.0,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
 0002,192.0.2.1,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
-#### Upload with the API
-
-If uploading a CSV file using the API, the file should be contained in a JSON object like this:
-
-```
-{
- "csv": "0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
-0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
-}
-```
-
-For other examples for uploading CSV files using the API, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) and the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators).
-
 ### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v).
 
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
@@ -139,6 +125,7 @@ Columns for the following attributes are required in the upload file:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -195,66 +182,9 @@ Also note that if your STIX file includes lines like these at the top...
 ```
 
 
-### Example files
-<!--
-#### Upload with the UI
+### Example file
 
-Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI.
-
-If you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab).
-
-```
-[
-   {
-     "type": "indicator",
-     "spec_version": "2.1",
-     "id": "0001",
-     "created": "2023-03-21T12:00:00.000Z",
-     "modified": "2023-03-21T12:00:00.000Z",
-     "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.0']",
-     "pattern_type": "stix",
-     "pattern_version": "string",
-     "valid_from": "2023-03-21T12:00:00.000Z",
-     "valid_until": "2025-03-21T12:00:00.000Z",
-     "indicator_types": [
-       "malicious-activity"
-     ],
-     "kill_chain_phases": [
-       {
-         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
-         "phase_name": "reconnaissance"
-       }
-     ]
-   },
-   {
-     "type": "indicator",
-     "spec_version": "2.1",
-     "id": "0002",
-     "created": "2023-03-21T12:00:00.000Z",
-     "modified": "2023-03-21T12:00:00.000Z",
-     "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.1']",
-     "pattern_type": "stix",
-     "pattern_version": "string",
-     "valid_from": "2023-03-21T12:00:00.000Z",
-     "valid_until": "2025-03-21T12:00:00.000Z",
-     "indicator_types": [
-       "malicious-activity"
-     ],
-     "kill_chain_phases": [
-       {
-         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
-         "phase_name": "reconnaissance"
-       }
-     ]
-   }
- ]
- ```
-
-#### Upload with the API
--->
-Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API.
+Following is an example threat indicator file in STIX 2.1 JSON format when you're uploading a file with the API.
 
 As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
 
@@ -320,10 +250,10 @@ The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
        * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified.
-       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). <br/>For example, `[ file:hashes.'SHA-256' = '4bac393bdd' ]`. Following are valid values:
+       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
          * `domain-name:value`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr:value`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `file:name`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `ipv4-addr:value`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr:value`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
