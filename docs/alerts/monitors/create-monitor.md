@@ -221,7 +221,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 <img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
 
-`Alert when missing data within <time range>. Evaluate every <time range - frequency>.`
+`Alert when missing data within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
 | Parameter | Description |
 |:--|:--|
