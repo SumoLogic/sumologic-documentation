@@ -332,12 +332,12 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 ## Notification preferences
 
-Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
+Alert notification preferences give you granular control over specific monitor activity you want to follow. For more information, see [alert preferences](/docs/get-started/account-settings-preferences/#alerts).<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
 2. Click on any of the following checkboxes to enable your desired preferences:
-   * **Display alert badge when my subscribed monitors are triggered**. the bell icon is displayed in the top nav
-   * **Notify about only subscribed monitors**. the bell icon will only push notifications for monitors you're subscribed to
-   * **Enable "Active alerts only" as default filter**. your Alerts list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
-   * **Enable "My subscriptions" as default filter**. your Alerts list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
+   * **Display alert badge when my subscribed monitors are triggered**. The alerts badge icon is displayed in the UI.
+   * **Notify about only subscribed monitors**. You receive notifications only for monitors you're subscribed to.
+   * **Enable "Active alerts only" as default filter**. By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+   * **Enable "My subscriptions" as default filter**. By default, your alerts list only displays alerts you're subscribed to.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
 3. Click **Save** when you're done.

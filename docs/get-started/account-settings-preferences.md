@@ -70,7 +70,9 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 
 Preference settings are only changed for your personal account; they do not affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
 
-### Default Timezone
+### Timezone and Date Format
+
+#### Default Timezone
 
 If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization.
 
@@ -80,7 +82,7 @@ This option overrides the timezone set in your web browser, and affects all hour
 
 This setting is enabled by default. To not show the timezone offset in displayed timestamps, deselect this checkbox.
 
-### Date format
+#### Date format
 
 Select from the following international date format options:
 * Use the browser's default date format.
@@ -92,15 +94,13 @@ Select from the following international date format options:
 If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
 :::
 
-### Web session Timeout
+### General Settings
 
-Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
-
-### Receive email notifications whenever content is shared with you
+#### Receive email notifications whenever content is shared with you
 
 Receive an email when [content is shared with you in Sumo Logic](/docs/manage/content-sharing/), such as log searches, metric searches, dashboards, and folders.
 
-### Enable keyboard shortcuts
+#### Enable keyboard shortcuts
 
 [Keyboard shortcuts](/docs/get-started/keyboard-shortcuts) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the checkbox.
 
@@ -108,21 +108,9 @@ Receive an email when [content is shared with you in Sumo Logic](/docs/manage/co
 Keyboard shortcuts are disabled when typing in the [search text box].
 :::
 
-### Automatically run the search after selecting it from a list of saved searches
+### Web Session Timeout
 
-Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you'd like to start the search manually.
-
-### Show confirmation dialog when closing a search tab
-
-On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this checkbox.
-
-### Enable autocomplete
-
-Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
-
-### Reopen previous tabs upon login
-
-If you want to reopen the tabs from your previous session when you login to a new session, select this checkbox.
+Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
 
 ### Theme
 
@@ -137,11 +125,49 @@ You can also set a dark them or light theme for dashboards. See [Dark Theme](/do
 ### Query Editing
 
 Select one of the following options:
-- `<Enter>` runs the query, `<Alt>` `<Enter>` creates a new line.
-- `<Alt>` `<Enter>` runs the query, `<Enter>` creates a new line.
+- **Return to run**. `<Enter>` runs the query, `<Alt>` `<Enter>` creates a new line.
+- **Command + Return to run**. `<Alt>` `<Enter>` runs the query, `<Enter>` creates a new line.
 
 If you have changed any settings, click **Save**.
 
-### Alert Notifications and Alerts List
+### Log Search
 
-See [Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+#### Show confirmation dialog when closing a tab
+
+On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this checkbox.
+
+#### Enable autocomplete
+
+Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
+
+#### Automatically run the search after selecting it from a list of saved searches
+
+Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you'd like to start the search manually.
+
+### Alerts
+
+Select these preferences to manage how alerts are handled. For more information, see [Notification preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+
+#### Display alert badge when my subscribed monitors are triggered
+
+Select this option to display a badge icon in the UI when you receive an alert for a monitor you're subscribed to.
+
+#### Notify about only subscribed monitors
+
+Select this option to receive notifications only for monitors you're subscribed to.
+
+#### Enable "Active alerts only" as default filter
+
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.
+
+#### Enable "My subscriptions" as default filter
+
+By default, alerts you are subscribed to will appear in your alerts list.
+
+### New UI
+
+#### Open navigation menu links in a new tab by default
+
+By default, a new tab opens every time you select a menu link in the left navigation pane. 
+
+Selecting this option hides the **Open in New Tab** button on menu items. <br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="100" />
