@@ -207,7 +207,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 | `<threshold type>` | How you want the value compared. Select **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | `<threshold>` | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
 | `<time range - trigger>` | The duration of time to evaluate. Values range from 2 Minutes to 24 Hours (or 7 Days, by request only). |
-| `<time range - frequency>` | The frequency that the monitor is evaluated. |
+| `<trigger - frequency>` | The frequency that the trigger is evaluated. |
 
 After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
 
