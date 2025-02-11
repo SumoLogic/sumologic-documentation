@@ -241,7 +241,7 @@ The **Cloud SIEM - Rules and Mapping Changes** dashboard is useful for monitorin
 
 ### Cloud SIEM - Security Operations Overview
 
-The  **Cloud SIEM - Security Operations Overview** dashboard explores Cloud SIEM insights using Sumo Logic audit events.
+The **Cloud SIEM - Security Operations Overview** dashboard explores Cloud SIEM insights using Sumo Logic audit events.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-security-operations-overview-dashboard.png')} alt="Cloud SIEM - Security Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
