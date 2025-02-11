@@ -166,8 +166,6 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Trust Login alerts
 
-The Trend Micro Vision One monitors serve as a security tool, concentrating on observing essential operations and unusual occurrences within the Trend Micro Platform. These notifications offer instantaneous insight into significant events, allowing security personnel to swiftly react to deviations or breaches.
-
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Unusual account status changes` | This alert is triggered when an unusual event is performed frequently. This alert helps detect potential security threats like account takeovers or insider threats. | Critical | Count > 3 |
