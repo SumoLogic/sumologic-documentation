@@ -55,6 +55,17 @@ which provides results like:
 | lookup raw from sumo://threat/cs on threat = hash{code}
 ```
 
+<!-- Replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sql
+*
+| limit 1
+| toLowerCase ("B101CD29E18A515753409AE86CE68A4CEDBE0D640D385EB24B9BBB69CF8186AE") as hash
+| count hash
+| fields -_count
+| threatlookup singleIndicator hash{code}
+```
+-->
+
 ### Using toUpperCase with the count operator
 
 This query also returns all matching `_sourceHost` values in upper case letters, using the count operator.
