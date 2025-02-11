@@ -185,7 +185,7 @@ To deploy the Sumo Logic JFrog xray SAM Application, do the following:
   * **Port**. Copy and paste the Port from [Step 1](#step-1-collect-jfrog-xray-instance-details).
   * **Username**. Copy and paste the Username from [Step 1](#step-1-collect-jfrog-xray-instance-details).
   * **Password**. Copy and paste the Password from [Step 1](#step-1-collect-jfrog-xray-instance-details).
-5. Click **Deploy.**
+5. Click **Deploy**.
 
 #### Optional - Configure multiple JFrog Xray instances
 
