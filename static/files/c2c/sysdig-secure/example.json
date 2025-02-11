@@ -1,0 +1,19 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                	"name": "Sysdig",
+  					"baseURL": "https://us2.app.sysdig.com",
+  					"bearerToken": "wdwxxxxxqwedwedxxxxxqewdxxxxxxqwedxxxx",
+  					"scope": [
+    			        		{
+      				            "fieldName": "Field",
+      				            "fieldValue": "Value"
+    			        		}
+  			        		]
+},
+		            "schemaRef": {
+            		            "type": "Sysdig"
+        	                     },
+        	        "sourceType": "Universal"
+}}
