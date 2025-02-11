@@ -127,7 +127,7 @@ The **Cloud SIEM - Failed Records Analysis** dashboard provides a summary of fai
 
 ### Cloud SIEM - Insight Explorer
 
-The **Cloud SIEM - Insight Explorer**  dashboard provides details of an insight.
+The **Cloud SIEM - Insight Explorer** dashboard provides details of an insight.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-insight-explorer-dashboard.png')} alt="Cloud SIEM - Insight Explorer dashboard" style={{border: '1px solid gray'}} width="800" />
 
