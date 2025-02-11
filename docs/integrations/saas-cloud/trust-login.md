@@ -2,14 +2,14 @@
 id: trust-login
 title: Trust Login
 sidebar_label: Trust Login
-description: The Trust Login app for Sumo Logic provides security analysts with insights into authentication events, user activities, and potential security threats.
+description: The Trust Login app for Sumo Logic provides security analysts with an overview of the authentication events, user activities, and potential security threats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust-Login-icon" width="50" />
 
-The Trust Login app for Sumo Logic helps security analysts monitor authentication events, user activities, and potential security threats. It provides real-time tracking of login attempts, account changes, and policy updates to detect anomalies. Dashboards offer event breakdowns, trends, and time-based comparisons for faster incident response and investigations. Geo-location tracking identifies login attempts from high-risk regions, improving threat detection, while the app's alert mechanism highlight unusual activities, like suspicious logins and geo-location events, enabling proactive threat mitigation. By centralizing security insights, the app improves visibility, streamlines investigations, and strengthens security.
+The Sumo Logic app for Trust Login assists security analysts in monitoring authentication events, user activities, and potential security threats. It tracks login attempts, account changes, and policy updates in real-time to detect anomalies. The Trust Login dashboard offers insights into event breakdowns, trends, and time-based comparisons for faster incident response and investigations. The geo-location metrics identify login attempts from high-risk regions, improving threat detection, and the alert mechanism highlights unusual activities, like suspicious logins and geo-location events, enabling proactive threat mitigation. By centralizing security insights, the app improves visibility, streamlines investigations, and strengthens security.
 
 :::info
 This app includes [built-in monitors](#trust-login-alerts). For details on creating custom monitors, refer to the [Create monitors for Trust Login app](#create-monitors-for-the-trust-login-app).
@@ -156,7 +156,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Events Overview
 
-The **Trust Login - Events Overview** dashboard provides security analysts an overview of authentication events, user activities, and system changes. It features visualizations like event breakdowns, trends, and geo-location tracking to help detect suspicious behavior.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trust+Login/Trust+Login+-+Events+Overview.png' alt="Trust-Login-Events-Overview" />
+The **Trust Login - Events Overview** dashboard provides a snapshot of the authentication events, user activities, and system changes. It includes visuals like event breakdowns, trends, and geo-location monitoring to detect suspicious behavior in your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trust+Login/Trust+Login+-+Events+Overview.png' alt="Trust-Login-Events-Overview" />
 
 ## Create monitors for the Trust Login app
 
@@ -170,8 +170,8 @@ The Trend Micro Vision One monitors serve as a security tool, concentrating on o
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Unusual account status changes` | This alert is triggered when an unusual event is performed frequently. It can help detect potential security threats like account takeovers or insider threats. | Critical | Count > 3 |
-| `Embargoed Geo Location of Events` | This alert is triggered when an event is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Critical | Count > 0|
+| `Unusual account status changes` | This alert is triggered when an unusual event is performed frequently. This alert helps detect potential security threats like account takeovers or insider threats. | Critical | Count > 3 |
+| `Embargoed Geo Location of Events` | This alert is triggered when an event is detected from a location identified as high-risk. This alert helps you monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Critical | Count > 0|
 
 ## Upgrading/Downgrading the Trust Login app (Optional)
 
