@@ -155,6 +155,16 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'Elasticsearch',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Kafka',
                       collapsible: true,
                       collapsed: true,
@@ -195,12 +205,32 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'MySQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mysql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/mysql/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Nginx',
                       collapsible: true,
                       collapsed: true,
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
                       items:[
                         'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'PostgreSQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/changelog',
                       ]
                     },
                     {
@@ -243,6 +273,7 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
                       ]
                     },
+                    'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
                   ],
                 },
                 {
