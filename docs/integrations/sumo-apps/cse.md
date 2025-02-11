@@ -163,7 +163,7 @@ The **Cloud SIEM - Insights Overview** dashboard displays a high level view of i
 
 ### Cloud SIEM - Overview
 
-The ** Cloud SIEM - Overview** dashboard provides metrics related to insight, signals and records. Use dashboard filters to look for specific insight, signals and records.
+The **Cloud SIEM - Overview** dashboard provides metrics related to insight, signals and records. Use dashboard filters to look for specific insight, signals and records.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-overview-dashboard.png')} alt="Cloud SIEM - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
