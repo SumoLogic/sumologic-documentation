@@ -7,14 +7,18 @@ description: Learn basic concepts about using logs for security use cases.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic permits you to leverage logs for security use cases, and includes apps, customizable dashboards, and tools to analyze your security data. This allows you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
+"Logs for Security" is Sumo Logic's full set of features that leverage logs for security use cases. These features includes apps, customizable dashboards, and tools to analyze your security data. This allows you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
 You can use Sumo Logic logs for:
 * [Threat detection and investigation](/docs/security/additional-security-features/threat-detection-and-investigation). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
 * [Security data lake storage](/docs/security/additional-security-features/data-lake). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
 * [Audit and compliance](/docs/security/additional-security-features/audit-and-compliance). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
 * [Application security](/docs/security/additional-security-features/application-security). Monitor your software development pipeline to ensure it is secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
-* [Cloud infrastructure security](/docs/security/additional-security-features/cloud-infrastructure-security/). Monitor the health of your cloud infrastructure via a unified security and compliance audit view. 
+* [Cloud infrastructure security](/docs/security/additional-security-features/cloud-infrastructure-security/). Monitor the health of your cloud infrastructure via a unified security and compliance audit view.
+
+:::note
+After you have collected logs for security, you can use them with [Cloud SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
+:::
 
 ## The Sumo Logic data pipeline
 

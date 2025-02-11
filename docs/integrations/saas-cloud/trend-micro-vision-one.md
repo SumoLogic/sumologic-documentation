@@ -222,15 +222,33 @@ _sourceCategory="Labs/TrendMicroVisionOne"
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [Trend Micro Vision One Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source) for the Trend Micro Vision One app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Trend Micro Vision One Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Trend Micro Vision One app is properly integrated and configured to collect and analyze your Alerts data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Trend Micro Vision One app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Trend Micro Vision One](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Trend Micro Vision One app is properly integrated and configured to collect and analyze your Trend Micro Vision One data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing the Trend Micro Vision One dashboards​​
 

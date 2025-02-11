@@ -107,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/code42-incydr"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
+  <p>Monitor, detect, and respond to potential data threats on your Code42 Incydr platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
   <p>Monitor and analyze file integrity.</p>
   </div>
@@ -169,6 +175,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/jamf"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="100"/><h4>Jamf</h4></a>
   <p>Get critical insights into your organization's Jamf environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
+  <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
