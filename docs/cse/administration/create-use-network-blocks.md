@@ -50,13 +50,14 @@ When Cloud SIEM looks for the network block address `10.128.0.1`, it will ret
 
 Follow these instructions to create a network block using the Cloud SIEM UI. For information about creating multiple network blocks by file upload, see [Upload a CSV file of network blocks](#upload-a-csv-file-of-network-blocks).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. 
-1. On the **Create Network Block** popup:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**.
+1. Click **Add Network Block**.
+1. On the **Add Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the network block.
     1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](#using-enrichment-fields), below.
     1. **Suppress Signals**. Leave the toggle switched to the left (red) if you do not want to suppress signals on IP addresses in the network block. Otherwise, switch the toggle to the right (green).
-    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" style={{border: '1px solid gray'}} width="400"/>
+    1. Click **Save**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" style={{border: '1px solid gray'}} width="400"/>
 
 ## Upload a CSV file of network blocks
 
