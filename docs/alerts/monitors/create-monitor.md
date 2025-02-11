@@ -226,7 +226,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 | Parameter | Description |
 |:--|:--|
 | `<time range - trigger>` | The duration of time to evaluate (values range from 5 minutes to 24 hours). |
-| `<time range - frequency>` | The frequency that the monitor is evaluated. |
+| `<trigger - frequency>` | The frequency that the trigger is evaluated. |
 
 For recovery, Sumo Logic will automatically resolve the incident when the resolution condition is satisfied.
 
