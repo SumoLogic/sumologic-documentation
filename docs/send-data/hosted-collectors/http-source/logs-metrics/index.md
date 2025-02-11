@@ -52,7 +52,6 @@ To configure an HTTP Logs and Metrics Source:
 * Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
 :::
 
-
 ## Upload data to the HTTP Logs and Metrics Source
 
 You can upload both logs and supported metric types to an HTTP Source. There are different requirements depending on whether you are uploading logs or metrics to the Source. 
@@ -68,12 +67,20 @@ To ensure the appropriate Access-Control-\* response headers are set, make sure�
 
 ## Compressed Data
 
-You can send Sumo plain, uncompressed data (such as plain text) or you can send data that has been compressed by either the "deflate" or the "gzip" method. Compressed data can only be sent with the POST method. You can compress log data or metric data prior to upload.
+:::note
+We strongly recommend sending compressed data to Sumo Logic, as it reduces network usage and ensures faster message delivery.
+:::
 
-To send a compressed payload, specify a value of gzip (for gzip-compressed) or deflate (for zlib-compressed) in the Content-Encoding header of your request, and include the compressed data as the request body.
+You can compress log or metric data prior to upload. Sumo Logic provides two methods to compress your data: the "deflate" or the "gzip" method. In the Content-Encoding header of your request, specify a value of gzip (for gzip-compressed) or deflate (for zlib-compressed) and include the compressed data as the request body.
+
+Below are the key benefits that you can obtain by sending compressed data:
+
+- **Reduced network usage**. Lower data transfer volume, which leads to improved Send API response time and reduced network transfer costs.
+- **Faster message delivery**. Improved efficiency ensures messages are received more quickly at Sumo Logic.
 
 :::important
-Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate. 
+- Compressed data can only be sent with the POST method. 
+- Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate. 
 :::
 
 ## Access a Source's URL
