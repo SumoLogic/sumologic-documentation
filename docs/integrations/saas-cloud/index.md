@@ -341,6 +341,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/trust-login"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="icon" width="100"/><h4>Trust Login</h4></a>
+  <p>Analyze authentication events, user activities, and potential security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
   <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
   </div>
