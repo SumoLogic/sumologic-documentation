@@ -102,15 +102,15 @@ Receive an email when [content is shared with you in Sumo Logic](/docs/manage/co
 
 #### Enable keyboard shortcuts
 
-[Keyboard shortcuts](/docs/get-started/keyboard-shortcuts) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the checkbox.
+[Keyboard shortcuts](/docs/get-started/keyboard-shortcuts) are enabled by default. Press ? to see the list of shortcuts. Deselect the checkbox to disable keyboard shortcuts (for example, if they conflict with an international keyboard).
 
 :::note
-Keyboard shortcuts are disabled when typing in the [search text box].
+Keyboard shortcuts are disabled when typing in the [search text box](/docs/search/get-started-with-search/search-page/).
 :::
 
 ### Web Session Timeout
 
-Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
+Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access/).
 
 ### Theme
 
