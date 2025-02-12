@@ -100,16 +100,16 @@ You cannot upgrade a source template if there are any incompatible collector ver
 With remote management, you can tag your [OpenTelemetry Collectors](/docs/send-data/opentelemetry-collector) to categorize and group them. These tags are also enriched in your data, enabling you to use them in your dashboards and searches.
 
 :::note
-- Collector tags will only be editable for collectors with version `0.144` and above.
+- Collector tags will only be editable for collectors with version `0.114.0` and above.
 - For default collector tags, you can only edit the **Values**.
 - System collector tags like `sumo.disco.enabled` cannot be added/updated/deleted.
 :::
 
 You can add collector tags during OTEL collector setup as described in the previous section. Follow the below steps to add/update/delete the collector tags after creation:
 
-1. Navigate to the **OpenTelemetry Collection** page.
+1. Navigate to the **OpenTelemetry Collection** page.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collection.png')} alt="opentelemetry-collection" style={{border:'1px solid gray'}} width="700"/>
 1. Click on the desired collector where you need to add collector tags.
-1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.
+1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.<br/><img src={useBaseUrl('img/send-data/collector-tags-edit.png')} alt="collector-tags-edit" style={{border:'1px solid gray'}} width="500"/>
 1. In the edit window, click **+ Add tags** to add new tag or Update/Delete the required tags and click **Proceed**.<br/><img src={useBaseUrl('img/send-data/add-delete-update-tags.png')} alt="add-delete-update-tags" style={{border:'1px solid gray'}} width="500"/>
 1. A new **Update Collector Tag(s)** window appears. Click the **click here** link to understand the impact of this update.<br/><img src={useBaseUrl('img/send-data/update-tags-click-here.png')} alt="update-tags-click-here" style={{border:'1px solid gray'}} width="500"/>
 1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.<br/><img src={useBaseUrl('img/send-data/mapped-source-templates.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500"/>
