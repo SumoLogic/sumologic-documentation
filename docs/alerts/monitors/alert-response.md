@@ -332,7 +332,7 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 ## Notification preferences
 
-Alert notification preferences give you granular control over specific monitor activity you want to follow. For more information, see [alert preferences](/docs/get-started/account-settings-preferences/#alerts).<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
+Alert notification preferences give you granular control over specific monitor activity you want to follow. For more information, see [Alert preferences](/docs/get-started/account-settings-preferences/#alerts).<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
 2. Click on any of the following checkboxes to enable your desired preferences:
