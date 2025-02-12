@@ -746,7 +746,7 @@ html[data-theme='light'] .alert--secondary {
 }
 
 // SUMO
-html[data-theme='dark'] .admonition--sumo {
+html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
@@ -766,7 +766,7 @@ html[data-theme='dark'] .admonition--sumo {
   }
 }
 
-html[data-theme='light'] .admonition--sumo {
+html[data-theme='light'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.05);
   color: #000046;
   --ifm-alert-color: #000099;
