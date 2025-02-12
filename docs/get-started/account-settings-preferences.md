@@ -170,4 +170,8 @@ By default, alerts you are subscribed to will appear in your alerts list.
 
 By default, a new tab opens every time you select a menu link in the left navigation pane. 
 
-Selecting this option hides the **Open in New Tab** button on menu items. <br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="100" />
+:::tip
+Selecting this preference hides the **Open in New Tab** button on navigation menu links. <br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="100" />
+
+However, the **Open in New Tab** button will still appear on menu items with subfolders. This allows you to either click the menu item to see its subfolders, or to click the **Open in New Tab** to open the menu item in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="200" />
+:::
