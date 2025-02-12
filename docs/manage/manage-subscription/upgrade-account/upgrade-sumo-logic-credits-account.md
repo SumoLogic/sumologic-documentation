@@ -71,4 +71,4 @@ If your needs exceed Essentials plan capabilities, contact [Sales](https://www.s
 
 ## Cancel your account
 
-Looking to cancel your Sumo Logic subscription? See [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
+Looking to cancel your Sumo Logic subscription? See [Close or Cancel a Sumo Logic Account](/docs/manage/manage-subscription/close-cancel-sumo-account).

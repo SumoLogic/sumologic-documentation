@@ -20,7 +20,7 @@ At this time, an administrator can:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**.  <br/><img src={useBaseUrl('img/users-roles/user-options-menu.png')} alt="Kebab menu option highlighted on Users page" style={{border: '1px solid gray'}} width="700" />
 1. Select the row for the user you want to unlock and choose **Unlock** from the three-dot kebab options menu.
     :::note
-    If you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
+    If you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](/docs/manage/security/saml/set-up-saml).
     :::
 1. The user's account is unlocked, and Sumo Logic automatically sends an email to alert the user. 
    :::note

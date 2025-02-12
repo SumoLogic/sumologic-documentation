@@ -80,7 +80,7 @@ If you have multiple Sumo Logic accounts, you may find it useful to configure a 
 
 Custom subdomains can help ensure that requests are authenticated to the right account when links are received. Once configured by your account owner, your custom subdomain will be used in the links Sumo generates when you share queries or dashboards, or the links in alerts and other emails you may receive from your account. These subdomain-enabled links will direct the user to the specified account for authentication.
 
-When you use custom subdomains in combination with SAML integrations [configured with SP initiated login](../security/saml/set-up-saml.md), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
+When you use custom subdomains in combination with SAML integrations [configured with SP initiated login](/docs/manage/security/saml/set-up-saml), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
 
 ### Key considerations
 
