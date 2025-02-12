@@ -7,13 +7,20 @@ description: Get to know the Sumo Logic platform user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::warning Transition to the New UI
-The Classic UI will be retired in early 2025. To ensure you have access to the latest features and updates, we recommend transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) at your earliest convenience.
+:::warning Classic UI retirement notice
+The Classic UI will be retired in spring 2025 and will no longer receive updates. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
 :::
 
 This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
 
 <img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
+
+## Switching between Classic and New UI
+
+If you're using the New UI and need to navigate back to the Classic UI, follow these steps:
+
+1. Open the left navigation panel.
+1. Click **Return to classic UI**.
 
 ## Using the left navigation bar
 
