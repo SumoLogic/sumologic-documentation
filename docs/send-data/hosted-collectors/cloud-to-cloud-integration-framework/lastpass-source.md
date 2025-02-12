@@ -68,7 +68,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | cid | Integer | Yes | `null` | The CID account number collected from the LastPass platform. |  |
 | apiSecret | String | Yes | `null` | The API Secret ID collected from the LastPass platform. |  |
-| timeZone | String | No | UTC | Timezone of Admin LastPass account. |
+| timeZone | String | No | ` ` | Timezone of Admin LastPass account. |
 | pollingIntervalMinutes | Integer | No | 5 | How frequently the integration should poll to LastPass. <br /> **Options**: 5m, 10m, 15m, 30m, 1h, or 24h. |  |
 
 ### JSON example
