@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has information about sending log messages collected by a Sumo Logic Source or Cloud-to-Cloud Connector on to Cloud SIEM to be transformed into records. 
 
 :::note
-Cloud SIEM must be enabled in your Sumo Logic account in order to send data from Sumo Logic to Cloud SIEM. If it isn’t, contact your Sumo Logic Technical Account Manager or Sales Engineer.
+Cloud SIEM must be enabled in your Sumo Logic account in order to send data from Sumo Logic to Cloud SIEM. If it isn’t, contact your Sumo Logic Technical Account Engineer or Sales Engineer.
 :::
 
 The process consists of configuring a source or collector to forward messages to Cloud SIEM, and ensuring that the forwarded messages are correctly tagged with the information Cloud SIEM needs in order to map messages fields to record attributes. These are referred to as *mapping hints*, and include: Format, Vendor, Product, and an Event ID template.
