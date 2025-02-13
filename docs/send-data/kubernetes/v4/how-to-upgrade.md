@@ -81,8 +81,20 @@ kube-prometheus-stack:
 #### Update custom resource definition for OpenTelemetry operator
 
 :::note
-Starting v4.12.0, please use the CRDs below
+Starting v4.12.0, please follow the steps below
 :::
+
+Delete any existing CRDs
+
+```shell
+kubectl delete crd instrumentations.opentelemetry.io
+
+kubectl delete crd opentelemetrycollectors.opentelemetry.io
+
+kubectl delete crd opampbridges.opentelemetry.io
+```
+
+Install the CRDs below
 
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
@@ -98,6 +110,7 @@ Then, annotate and label these CRDs as below
 kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io \
   meta.helm.sh/release-name=${RELEASE_NAME} \
   meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+  
 kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
 ```
 
