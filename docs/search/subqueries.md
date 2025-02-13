@@ -376,7 +376,7 @@ _sourceCategory=search "error while retrying to deploy index"
 
 ### Check Malicious Activity with Subquery
 
-The following search allows a security analyst how to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a CrowdStrike Threat feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
+The following search allows a security analyst to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a CrowdStrike Threat feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
 
 ```sql
 _sourceCategory=weblogs

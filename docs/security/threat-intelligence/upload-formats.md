@@ -27,7 +27,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
    {
      "id": "0001",
      "indicator": "192.0.2.0",
-     "type": "ipv4-addr:value",
+     "type": "ipv4-addr",
      "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
@@ -43,7 +43,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
    {
      "id": "0002",
      "indicator": "192.0.2.1",
-     "type": "ipv4-addr:value",
+     "type": "ipv4-addr",
      "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
@@ -110,8 +110,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 When uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
-0002,192.0.2.1,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
+0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 ### Required attributes
@@ -199,7 +199,7 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern": "[ipv4-addr = '192.0.2.0']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -221,7 +221,7 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern": "[ipv4-addr = '192.0.2.1']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -251,15 +251,15 @@ The following attributes are required:
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
        * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified.
        * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
-         * `domain-name:value`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
-         * `email-addr:value`. Email address. (Entity type in Cloud SIEM is `_email`.)
+         * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
+         * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `file:name`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `ipv4-addr:value`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `ipv6-addr:value`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `mac-addr:value`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
+         * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process:name`. Process name. (Entity type in Cloud SIEM is `_process`.)
-         * `url:value`. URL. (Entity type in Cloud SIEM is `_url`.)
+         * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
          * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
        * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.

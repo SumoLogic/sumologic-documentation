@@ -77,7 +77,7 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 | threatlookup singleIndicator ip_address
-| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
 | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
 | sum (ip_count) as threat_count
 ```

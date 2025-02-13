@@ -111,7 +111,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    ```
    | threatlookup singleIndicator src_ip
    | parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
-   | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+   | where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
    | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
@@ -138,7 +138,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
     | parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
-    | where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+    | where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
     | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
     | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
     | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
@@ -183,7 +183,7 @@ Yes, you can customize the query in the app. For example:
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 | where Your_IP != "0.0.0.0" and Your_IP != "127.0.0.1"
 | threatlookup singleIndicator Your_IP
-| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
 | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
 | count by Actor
 ```
@@ -207,7 +207,7 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | threatlookup singleIndicator ip_address
 | parse regex field=%"_threatlookup.fields" "labels.[^.]+.name\":\"(?<label_name>[^\"]+)\""  multi
-| where (_threatlookup.type="ipv4-addr:value" or _threatlookup.type="ipv6-addr:value") and !isNull(_threatlookup.confidence)
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
 | where !(label_name matches "*TorProxy*")
 | if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
 | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence

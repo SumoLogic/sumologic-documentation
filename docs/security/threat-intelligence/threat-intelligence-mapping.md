@@ -32,10 +32,10 @@ The CrowdStrike `type` object is mapped to the following normalized type values:
 | CrowdStrike type | Normalized type in "s_CrowdStrike" source |
 |:--|:--|
 | `binary_string` | `artifact:payload_bin` | 
-| `bitcoin_address` | `url:value` | 
-| `ip_address` | `ipv4-addr:value` / `ipv6-addr:value` |
-| `domain` |  `domain-name:value` | 
-| `email_address` | `email-add:value` | 
+| `bitcoin_address` | `url` | 
+| `ip_address` | `ipv4-addr` / `ipv6-addr` |
+| `domain` |  `domain-name` | 
+| `email_address` | `email-add` | 
 | `file_path` | `file:name` | 
 | `file_name` | `file:name` | 
 | `hash_md5` | `file:hashes.'MD5'` | 
@@ -43,7 +43,7 @@ The CrowdStrike `type` object is mapped to the following normalized type values:
 | `hash_sha256` | `file:hashes.'SHA-256'` | 
 | `mutex_name` | `mutex:name` | 
 | `service_name` | `process:name` | 
-| `url` | `url:value` | 
+| `url` | `url` | 
 | `username` | `user-account:user_id` | 
 | `user_agent` | `http-request-ext:request_header.'User-Agent'` | 
 | `x509_subject` | `x509-certificate:serial_number` | 
