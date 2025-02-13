@@ -1,7 +1,7 @@
 ---
 slug: /manage/manage-subscription/create-and-manage-orgs
 title: Create and Manage Orgs
-description: Learn about how to upgrade your Sumo Logic account plans.
+description: Learn how to create and manage your Sumo Logic organizations.
 ---
 
 The topics in this guide provide information on how to create and manage your Sumo Logic orgs.
