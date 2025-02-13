@@ -5,10 +5,11 @@
             "type": "LastPass"
         },
         "config": {
-                "name": "lastpass",
-                "cid": "*****",
-                "apiSecret": "***********",
-                "pollingInterval": 5
+            "name": "lastpass",
+            "cid": "*****",
+            "apiSecret": "***********",
+            "timeZone": "UTC",
+            "pollingInterval": 5
         },
         "sourceType": "Universal"
     }
