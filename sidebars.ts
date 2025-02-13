@@ -927,7 +927,8 @@ module.exports = {
       items: [
         'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
+        'manage/manage-subscription/upgrade-sumo-logic-flex-account',
+        'manage/manage-subscription/upgrade-credits-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',

@@ -25,8 +25,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
-  <p>Learn how to upgrade a Free or Trial account to an Essentials subscription.</p>
+  <a href="/docs/manage/manage-subscription/upgrade-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
+  <p>Learn how to upgrade a Free or Trial account to an Essentials subscription (Credits Account).</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/upgrade-sumo-logic-flex-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
+  <p>Learn how to upgrade a Free or Trial account to an Essentials subscription (Flex Account).</p>
   </div>
 </div>
 <div className="box smallbox card">
