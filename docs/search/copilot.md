@@ -59,7 +59,6 @@ Sumo Logic Copilot leverages foundational models provided by Amazon Bedrock, inh
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
-
 * **Customer data privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
 * **AI provider**. Copilot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
@@ -86,7 +85,7 @@ From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **
 
 From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-### Step 2: Review and adjust the auto-selected source  
+### Step 2: Review and adjust the auto-selected source
 
 Copilot automatically selects a source category based on its assessment of user intent. Review the selection and adjust it if needed. You can also manually enter a source expression to define the scope of your exploration.  
 
@@ -241,7 +240,7 @@ To start a fresh exploration, click **New Conversation**. This clears your curre
 
 ### Step 4: Open in Log Search
 
-Opening a Log Search from Copilot will copy your query over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can then continue investigating, save the search, and remediate.
+You can open your query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality. This allows you to continue investigating, refine your query, save the search, or take action as needed.
 
 There are two ways to do this:
 
