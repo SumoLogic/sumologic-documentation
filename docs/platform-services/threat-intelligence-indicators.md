@@ -259,7 +259,7 @@ The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Clou
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma separated [entity field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md). At least one field name is required. 
+* `<fields>` is a list of comma-separated [entity field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md). At least one field name is required. 
 * `<filters>` is a logical expression using [indicator attributes](/docs/platform-services/threat-intelligence-indicators/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
    * `actors`
    * `confidence`
