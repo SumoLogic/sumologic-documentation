@@ -40,12 +40,6 @@ Please follow instructions below to install the appropriate CRD versions
 #### CRDs to install (v4.12.0 and later)
 
 ```shell
-kubectl delete crd instrumentations.opentelemetry.io
-
-kubectl delete crd opentelemetrycollectors.opentelemetry.io
-
-kubectl delete crd opampbridges.opentelemetry.io
-
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
 
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
@@ -59,6 +53,7 @@ Then, annotate and label these CRDs as below
 kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io \
   meta.helm.sh/release-name=${RELEASE_NAME} \
   meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+
 kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
 ```
 
