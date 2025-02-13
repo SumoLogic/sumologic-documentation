@@ -82,9 +82,9 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot:
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
 ### Step 2: Review and adjust the auto-selected source  
 
@@ -92,7 +92,7 @@ Copilot automatically selects a source category based on its assessment of user 
 
 For example, to explore AWS WAF logs, select the appropriate source. For indexes, use `_index=<index name>`. Autocompletion is supported—start typing a few words to see source suggestions and choose one.
 
-<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="700" />
 
 ### Step 3: Execute a query
 
@@ -102,7 +102,7 @@ Click on any of the prebuilt **Suggestions** prompts to launch your investigatio
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
-<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Ask a question
 
@@ -125,7 +125,7 @@ In the **Ask Something...** field, you can manually enter a natural language pro
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
-Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/periods-query-syntax.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Tips and tricks
 
@@ -223,10 +223,6 @@ _sourceCategory=* "{" "}"
 
 If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding a left curly brace (`{`) to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 
-#### Edit Title
-
-Copilot automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
-
 #### History
 
 The conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities.
@@ -249,8 +245,8 @@ Opening a Log Search from Copilot will copy your query over to a new log search,
 
 There are two ways to do this:
 
-* From your conversation, click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search1.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
-* From your conversation history, hover over any row, then click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search2.png')} alt="Open Copilot query in log search from History" style={{border: '1px solid gray'}} width="800" />
+* From your conversation, click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search1.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
+* From your conversation history, hover over any row, then click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search2.png')} alt="Open Copilot query in log search from History" style={{border: '1px solid gray'}} width="800" />
 
 ## Example queries
 
