@@ -80,6 +80,31 @@ kube-prometheus-stack:
 
 #### Update custom resource definition for OpenTelemetry operator
 
+:::note
+Starting v4.12.0, please use the CRDs below
+:::
+
+```shell
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetryinstrumentation.yaml --force-conflicts
+```
+
+Then, annotate and label these CRDs as below
+
+```shell
+kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io \
+  meta.helm.sh/release-name=${RELEASE_NAME} \
+  meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
+```
+
+:::note
+CRDs prior to v4.12.0 are below
+:::
+
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
 
@@ -106,6 +131,28 @@ kube-prometheus-stack:
     enabled: true
   prometheusOperator:
     enabled: true
+```
+
+Starting v4.12.0, please use the configuration below
+
+```yaml
+sumologic:
+  metrics:
+    collector:
+      otelcol:
+        enabled: false
+    remoteWriteProxy:
+      enabled: true
+
+kube-prometheus-stack:
+  prometheus:
+    enabled: true
+  prometheusOperator:
+    enabled: true
+
+opentelemetry-operator:
+  crds:
+    create: true
 ```
 
 ## Remove remaining Fluent Bit and Fluentd configuration
