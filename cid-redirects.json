@@ -4251,5 +4251,6 @@
   "/docs/search/logreduce/understand-the-logreduce-relevance-column": "/docs/search/behavior-insights/logreduce/understand-the-logreduce-relevance-column",
   "/docs/search/behavior-insights/logreduce-values": "/docs/search/behavior-insights/logreduce/logreduce-values",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration":"/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration",
-  "/docs/integrations/amazon-aws/elastic-load-balancing":"/docs/integrations/amazon-aws/classic-load-balancer"
+  "/docs/integrations/amazon-aws/elastic-load-balancing":"/docs/integrations/amazon-aws/classic-load-balancer",
+  "/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account":"/docs/manage/manage-subscription/upgrade-sumo-logic-flex-account"
 }
