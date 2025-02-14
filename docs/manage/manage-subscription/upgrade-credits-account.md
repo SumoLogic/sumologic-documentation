@@ -44,7 +44,7 @@ You can switch between Essentials plans or update billing cycles as needed. Chan
 
 The table below explains our Essentials plan billing plan change policies.
 
-| Plan Type           | Immediate Plan Change Allowed? | What Happens at 100% Credit Depletion? | When are Overages Charged?            | When are Plan Changes Charged?               |
+| Plan type           | Immediate plan change allowed? | What happens at 100% credit depletion? | When are overages charged?            | When are plan changes charged?               |
 |:--------------------------|:------------------------------------|:--------------------------------------------|:-------------------------------------------|:--------------------------------------------------|
 | **Month-to-month**       | Yes                                | Overage allowed                            | At the start of the next billing cycle     | At the start of the next billing cycle           |
 | **Month-to-annual**      | No                                 | Overage allowed                            | At the start of the next billing cycle     | At the start of the next billing cycle           |
