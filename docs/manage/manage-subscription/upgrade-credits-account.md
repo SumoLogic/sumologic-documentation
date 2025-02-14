@@ -31,7 +31,7 @@ Sumo Credit is a unit of measure used to flexibly pay for any products (for exam
 Follow the below steps to upgrade from a Free or Trial Credits account to an Essentials plan:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Manage Plan**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Manage Plan**. You can also click the **Go To...** menu at the top of the screen and select **Manage Plan**.
-1. Click **Upgrade** in Essentials card to upgrade your plan to Essentials.<br/><img src={useBaseUrl('img/manage/subscriptions/upgrade-free-to-essentials-credits.png')} alt="upgrade-free-to-essentials-credits" style={{border: '1px solid gray'}} width="800" />
+1. Click **Upgrade** in the Essentials card to upgrade your plan to Essentials.<br/><img src={useBaseUrl('img/manage/subscriptions/upgrade-free-to-essentials-credits.png')} alt="upgrade-free-to-essentials-credits" style={{border: '1px solid gray'}} width="800" />
     :::note
     Contact Sumo Logic sales team if you want to upgrade your plan to Enterprise Suite, and for any additional services.
     :::
