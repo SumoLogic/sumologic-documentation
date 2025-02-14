@@ -10,7 +10,7 @@ import ApiErrors from '../reuse/api-errors.md';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/apm/services-map-icon.png')} alt="Thumbnail icon" width="50"/>
 
 The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information, see [Service Map](/docs/apm/services-list-map).
 

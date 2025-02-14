@@ -78,7 +78,7 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 
 If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
 
-For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
+For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
 
 ## Insight details page
 

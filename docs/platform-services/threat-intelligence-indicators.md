@@ -48,7 +48,7 @@ To search logs that contain correlations to threat intelligence indicators, you 
    * [ZeroFox Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source)
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
-   * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
+   <!-- * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) -->
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 
 See [Upload formats](#upload-formats) for the format to use when uploading indicators using the Threat Intelligence tab or APIs.
@@ -259,8 +259,18 @@ The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Clou
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
-* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
+* `<fields>` is a list of comma-separated [entity field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md). At least one field name is required. 
+* `<filters>` is a logical expression using [indicator attributes](/docs/platform-services/threat-intelligence-indicators/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+   * `actors`
+   * `confidence`
+   * `id`
+   * `indicator`
+   * `killChain`
+   * `source`
+   * `threatType`
+   * `type`
+   * `validFrom`
+   * `validUntil`
 * `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -270,9 +280,10 @@ Parameters:
 
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
+* `hasThreatMatch([srcDevice_ip], type="ipv4-addr")`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="TAXII2Source")`
-* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
 
@@ -330,7 +341,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
    {
      "id": "0001",
      "indicator": "192.0.2.0",
-     "type": "ipv4-addr:value",
+     "type": "ipv4-addr",
      "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
@@ -346,7 +357,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
    {
      "id": "0002",
      "indicator": "192.0.2.1",
-     "type": "ipv4-addr:value",
+     "type": "ipv4-addr",
      "source": "TAXII2Source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
@@ -374,6 +385,7 @@ The following attributes are required:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -414,8 +426,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
-0002,192.0.2.1,ipv4-addr:value,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
+0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 ##### Upload with the API
@@ -429,11 +441,11 @@ If uploading a CSV file using the API, the file should be contained in a JSON ob
 }
 ```
 
-For other examples for uploading CSV files using the API, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) and the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators).
+<!-- For other examples for uploading CSV files using the API, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) and the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators). -->
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). <!-- Also see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource. -->
 
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
@@ -442,6 +454,7 @@ Columns for the following attributes are required in the upload file:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -515,7 +528,7 @@ If you are uploading via the UI, do not include the `source` value in the file, 
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern": "[ipv4-addr = '192.0.2.0']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -537,7 +550,7 @@ If you are uploading via the UI, do not include the `source` value in the file, 
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern": "[ipv4-addr = '192.0.2.1']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -572,7 +585,7 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern": "[ipv4-addr = '192.0.2.0']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -594,7 +607,7 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern": "[ipv4-addr = '192.0.2.1']",
      "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
@@ -623,16 +636,16 @@ The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
        * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified.
-       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). <br/>For example, `[ file:hashes.'SHA-256' = '4bac393bdd' ]`. Following are valid values:
-         * `domain-name:value`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
-         * `email-addr:value`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)
+       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
+         * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
+         * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '4bac393bdd']`.
          * `file:name`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `ipv4-addr:value`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `ipv6-addr:value`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `mac-addr:value`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
+         * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process:name`. Process name. (Entity type in Cloud SIEM is `_process`.)
-         * `url:value`. URL. (Entity type in Cloud SIEM is `_url`.)
+         * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
          * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
        * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
