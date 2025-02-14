@@ -15,7 +15,7 @@ You must be an account *administrator* to upgrade your Sumo Logic plan.
 
 ## Upgrade a Free or Trial Credits account to Essentials
 
-Using our self-service checkout, you can upgrade for an Essentials plan in minutes using a credit card—no need to interact with the sales team.
+Using our self-service checkout, you can upgrade to an Essentials plan in minutes using a credit card—no need to interact with the sales team.
 
 Essentials plans is ideal for:  
 - Small to medium-sized businesses seeking quick and independent onboarding.  
