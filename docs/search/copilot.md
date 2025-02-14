@@ -59,7 +59,6 @@ Sumo Logic Copilot leverages foundational models provided by Amazon Bedrock, inh
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
-
 * **Customer data privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
 * **AI provider**. Copilot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
@@ -82,17 +81,17 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot:
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-### Step 2: Review and adjust the auto-selected source  
+### Step 2: Review and adjust the auto-selected source
 
 Copilot automatically selects a source category based on its assessment of user intent. Review the selection and adjust it if needed. You can also manually enter a source expression to define the scope of your exploration.  
 
 For example, to explore AWS WAF logs, select the appropriate source. For indexes, use `_index=<index name>`. Autocompletion is supported—start typing a few words to see source suggestions and choose one.
 
-<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="700" />
 
 ### Step 3: Execute a query
 
@@ -102,7 +101,7 @@ Click on any of the prebuilt **Suggestions** prompts to launch your investigatio
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
-<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Ask a question
 
@@ -125,7 +124,7 @@ In the **Ask Something...** field, you can manually enter a natural language pro
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
-Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/periods-query-syntax.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Tips and tricks
 
@@ -245,12 +244,12 @@ To start a fresh exploration, click **New Conversation**. This clears your curre
 
 ### Step 4: Open in Log Search
 
-Opening a Log Search from Copilot will copy your query over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can then continue investigating, save the search, and remediate.
+You can open your Copilot query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality, allowing you to investigate further, refine your query, save the search, and take action as needed.
 
 There are two ways to do this:
 
-* From your conversation, click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search1.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
-* From your conversation history, hover over any row, then click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search2.png')} alt="Open Copilot query in log search from History" style={{border: '1px solid gray'}} width="800" />
+* From your conversation, click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search1.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
+* From your conversation history, hover over any row, then click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search2.png')} alt="Open Copilot query in log search from History" style={{border: '1px solid gray'}} width="800" />
 
 ## Example queries
 
