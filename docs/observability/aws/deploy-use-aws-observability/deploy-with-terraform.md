@@ -1675,7 +1675,9 @@ The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and inst
 Invalid IAM role OR AccessDenied
 ```
 #### Solution
-For access keys activation, refer to [Edit, deactivate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivate-or-delete-access-keys) or for permissions issue, refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) 
+
+- Refer to [Edit, deactivate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivate-or-delete-access-keys) for access keys activation. 
+- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
 
 ### Argument named *managed_apps* is not expected
 #### Error Message
