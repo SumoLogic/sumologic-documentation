@@ -24,7 +24,7 @@ Essentials plans is ideal for:
 <details>
 <summary>What's a Sumo Credit?</summary>
 
-Sumo Credit is a unit of measure used to flexibly pay for any products (for example; logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
+Sumo Credit is a unit of measure used to flexibly pay for any products (for example, logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
 
 </details>
 
