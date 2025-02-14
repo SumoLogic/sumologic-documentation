@@ -957,8 +957,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/upgrade-sumo-logic-flex-account',
-        'manage/manage-subscription/upgrade-credits-account',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/cloud-flex-legacy-accounts',
         {
           type: 'category',
@@ -980,7 +979,8 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/manage-subscription/upgrade-account/index'},
           items: [
-            'manage/manage-subscription/upgrade-account/upgrade-sumo-logic-credits-account',
+            'manage/manage-subscription/upgrade-account/upgrade-credits-account',
+            'manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account',
             'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
           ],
         },
