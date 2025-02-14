@@ -217,7 +217,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/service-map"><img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
+  <a href="/docs/api/service-map"><img src={useBaseUrl('img/apm/services-map-icon.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

@@ -29,7 +29,7 @@ Free accounts offer access to most Sumo Logic features with the following limita
 - **Retention**. 7-day log retention.
 - **Users**. Limited to three users.
 
-Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-credits-account).
+Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 
 :::note
 Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
@@ -56,7 +56,7 @@ Essentials accounts scale to meet your growing needs for user licenses, data ret
 * **Collaborate**. Advanced team collaboration features.
 * **Orchestrate**. Designed for organizations requiring robust workflows and automation.
 
-For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
+For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
 
 ### Enterprise Operations
 
