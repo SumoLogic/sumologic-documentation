@@ -7,20 +7,15 @@ description: Get to know the Sumo Logic platform user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::warning Classic UI retirement notice
-The Classic UI will be retired in spring 2025 and will no longer receive updates. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
-:::
-
 This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
 
 <img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
 
-## Switching between Classic and New UI
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
 
-If you're using the New UI and need to navigate back to the Classic UI, follow these steps:
+## Switching between the Classic and New UI
 
-1. Open the left navigation panel.
-1. Click **Return to classic UI**.
+If you're using the New UI and need to navigate back to the Classic UI, click the **Return to classic UI** option in the left navigation menu. And to switch back to the New UI, follow the same steps, selecting **Switch to New UI** instead.
 
 ## Using the left navigation bar
 
@@ -37,8 +32,7 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 ### Search and switch browsing modes
 
-The top of the left nav bar is where you can search for content and
-users and easily switch browsing modes. 
+The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
 * Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)

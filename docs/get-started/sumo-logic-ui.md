@@ -6,7 +6,7 @@ description: Get to know the Sumo Logic platform user interface.
 ---
 
 <!--
-When officially GA'd (est. April 2025):
+When officially GA'd (est. Apr-Aug 2025):
 retire the Classic UI version
 add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
@@ -55,9 +55,7 @@ Watch this quick overview video to explore the key features of the New UI.
 :::
 
 :::warning Classic UI retirement notice
-The Classic UI will be retired in spring 2025 and will no longer receive updates. For the best experience, we strongly recommend using the New UI.  
-
-Need to reference the old interface? See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic).
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the best experience, we strongly recommend using the New UI. Need to reference the old interface? See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic).
 :::
 
 
@@ -302,7 +300,7 @@ If you switch back to the Classic UI, you will not have access to:
 * Stateful URLs that save your session and make sharing easier.
 * More intuitive navigation for faster workflows.
 
-The Classic UI will be retired in spring 2025 and will no longer receive updates. If you still need to access it temporarily, select **Return to Classic UI** from the left navigation menu.
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. If you still need to access it temporarily, select **Return to classic UI** from the left navigation menu.
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
 
@@ -312,6 +310,6 @@ We encourage you to stay in the New UI and take advantage of its benefits!
 
 ## Get support
 
-Contact [Support](https://support.sumologic.com/) or head to our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
+For questions or issues, contact [Support](https://support.sumologic.com/) or join our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
 
 Have feedback? Send it to [our UX Team](mailto:sumologic-ux-research@sumologic.com).
