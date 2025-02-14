@@ -20,28 +20,6 @@ You must have the following [organization role capabilities](/docs/manage/users-
    * Create Organizations
    * Manage Organizations
 
-## Create a child organization with SSO enabled
-
-When you [create a new child organization](/docs/manage/manage-subscription/create-manage-orgs/#create-a-new-child-organization) as an MSSP administrator, SSO is automatically enabled, allowing you to sign in to the child organization without having to provide credentials.
-
-For this to work, you must have already [set up SAML single sign-on](/docs/manage/security/saml/set-up-saml/) for user access to the parent organization.
-
-### Sign in to a child organization automatically
-
-When you open the details of a newly-created child organization, a link for the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization. 
-
-<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
-
-Automatic sign-in works because when you created the child organization, a [custom subdomain](/docs/manage/manage-subscription/manage-org-settings/#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. Therefore, you are already provisioned as a user in the child organization and can access the organization at any time without needing to log in.
-
-If you need more security, you can click **Disable SSO** to turn off single sign-on for the child organization, requiring MSSP administrators to enter credentials to sign in to child organizations. 
-
-### Sign back in with parent org credentials
-
-As an MSSP administrator, if you log out of a child organization that has SSO enabled, the following screen appears. Click the **Login with Parent Org** button to automatically log in using your credentials from the parent organization.
-
-<img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
-
 ## Sync content in child organizations
 
 If you want to ensure that content in one organization is copied to other organizations, you can use the **Content Management** tab to sync the content. You can sync Cloud SIEM [rules](/docs/cse/rules/) and [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/).
