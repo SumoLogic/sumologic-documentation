@@ -244,7 +244,7 @@ To start a fresh exploration, click **New Conversation**. This clears your curre
 
 ### Step 4: Open in Log Search
 
-You can open your Copilot query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality, allowing you to investigate further, refine your query, save the search, and take action as needed.
+You can open your Copilot query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality. This allows you to continue investigating, refine your query, save the search, or take action as needed.
 
 There are two ways to do this:
 
