@@ -23,15 +23,15 @@ In either location, you click the kabob icon to locate the **Share** option and 
 
 ## Sharing notifications
 
-When you share content, the users with whom you have shared it are notified by email. A user can also see shared content in the Library (listed in the left navigation bar). By default, any user or role with which you share content receives an email notification that names the person who is sharing the content, the organization, and the type of content that is shared. You can also add text to the email notification to explain why you think the content is useful to them.
+When you share content, the users with whom you have shared it are notified by email. A user can also see shared content in the library (listed in the left navigation bar). By default, any user or role with which you share content receives an email notification that names the person who is sharing the content, the organization, and the type of content that is shared. You can also add text to the email notification to explain why you think the content is useful to them.
 
 <img src={useBaseUrl('img/content-sharing/Emailnotification.png')} alt="Sharing notification" width="500"/>
 
-To find content in the Library that has been shared with you, click the clock image in the left navigation bar: <img src={useBaseUrl('img/content-sharing/recent-icon.png')} alt="Recent icon" style={{border: '1px solid gray'}} width="30" />
+To find content in the library that has been shared with you, click the clock image in the left navigation bar: <img src={useBaseUrl('img/content-sharing/recent-icon.png')} alt="Recent icon" style={{border: '1px solid gray'}} width="30" />
 
 ## Sharing apps, dashboards, log searches, metric queries, and folders
 
-To share content from the left navigation bar or the Library:
+To share content from the left navigation bar or the library:
 
 1. Click the details icon ![details](/img/content-sharing/details.png) for the content you want to share.
 1. Select **Share** from the dropdown menu.
