@@ -112,7 +112,7 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 ## SSO for child organizations
 
-When you [create a new child organization](/docs/manage/manage-subscription/create-manage-orgs/#create-a-new-child-organization), a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide credentials.
+When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide credentials.
 
 ### Enabling or disabling SSO
 
@@ -138,7 +138,7 @@ When you open the details of a child organization, a link for the child organiza
 
 <img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
 
-Automatic sign-in works because when you created the child organization, a [custom subdomain](/docs/manage/manage-subscription/manage-org-settings/#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. Therefore, you are already provisioned as a user in the child organization and can access the organization at any time without needing to log in.
+Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. Therefore, you are already provisioned as a user in the child organization and can access the organization at any time without needing to log in.
 
 ### Sign back in with parent org credentials
 
