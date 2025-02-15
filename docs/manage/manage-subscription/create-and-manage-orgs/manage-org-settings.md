@@ -1,6 +1,6 @@
 ---
 id: manage-org-settings
-title: Manage Organizational Settings
+title: Manage Organization Settings
 sidebar_label: Manage Org Settings
 description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
 keywords:
@@ -18,7 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex | Professional, Enterprise |
 | Cloud Flex Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
+## Change organization settings on the account
+
+This section has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
 
 For Cloud Flex Credits:
 
@@ -28,7 +30,7 @@ For Cloud Flex:
 
 <img src={useBaseUrl('img/manage/subscriptions/manage-org-links.png')} alt="Manage Organization links" style={{border: '1px solid gray'}} width="600" />
 
-## Change organization name
+### Change organization name
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. Access the appropriate menu for your [account type](#availability):
@@ -37,7 +39,7 @@ For Cloud Flex:
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
-## Change account owner
+### Change account owner
 
 :::important
 After you make this change, you will not be able to edit the account owner.
@@ -54,7 +56,7 @@ After you make this change, you will not be able to edit the account owner.
 If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
-## Delete an organization
+### Delete an organization
 
 :::note
 You can only delete an organization for Free and Trial accounts.
@@ -64,7 +66,6 @@ You can only delete an organization for Free and Trial accounts.
 1. From the details icon at the top, click **Delete Org.**
 1. In the prompt dialog, enter **DELETE** in the text field to confirm the action.
 1. Click **Delete**. <br/><img src={useBaseUrl('img/manage/subscriptions/Delete_Organization_prompt.png')} alt="Delete_Organization_prompt.png" style={{border: '1px solid gray'}} width="300"/>
-
 
 ## Set up a custom subdomain
 
@@ -108,3 +109,39 @@ You must be the account owner of the Sumo Logic account to change the account su
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/manage/subscriptions/change-subdomain-name.png')} style={{border: '1px solid gray'}} alt="change-subdomain-name.png" width="700" />
 1. Click **Change Subdomain** Name to update the name.
 1. You will be automatically logged out and redirected to the new subdomain login page. 
+
+## SSO for child organizations
+
+When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide credentials.
+
+### Enabling or disabling SSO
+
+#### Enable SSO
+
+If a subdomain exists, but SSO is disabled for the child organization, click the **Enable SSO** button:<br/><img src={useBaseUrl('img/manage/subscriptions/enable-sso-button.png')} alt="Enable SSO button" style={{border: '1px solid gray'}} width="250"/>
+
+#### Disable SSO
+
+When a child organization has SSO enabled, the child organization's details display the subdomain URL in the **Subdomain** field, and the **SSO** field says **Enabled**:<br/><img src={useBaseUrl('img/manage/subscriptions/subdomain-and-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="250"/>
+
+If you want to require administrators to enter credentials to sign in to the child organization, click **Disable SSO** to turn off single sign-on.
+
+#### Create a subdomain
+
+If there is no subdomain defined for a child organization, hovering your mouse over the **Enable SSO** button displays the message **Set up custom subdomain before enabling SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/no-subdomain-defined.png')} alt="No subdomain defined" style={{border: '1px solid gray'}} width="300"/>
+
+To set up a custom subdomain for the child organization, see [Set up a custom subdomain](#set-up-a-customsubdomain) above. Once you set up the subdomain, the subdomain's URL will appear and the **Enable SSO** button will be clickable.
+
+### Sign in to a child organization automatically
+
+When you open the details of a child organization, a link for the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization. 
+
+<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
+
+Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. Therefore, you are already provisioned as a user in the child organization and can access the organization at any time without needing to log in.
+
+### Sign back in with parent org credentials
+
+As an administrator, if you log out of a child organization that has SSO enabled, the following screen appears. Click the **Login with Parent Org** button to automatically log in using your credentials from the parent organization.
+
+<img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
