@@ -107,4 +107,4 @@ You must be the account owner of the Sumo Logic account to change the account su
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/manage/subscriptions/change-subdomain-name.png')} style={{border: '1px solid gray'}} alt="change-subdomain-name.png" width="700" />
 1. Click **Change Subdomain** Name to update the name.
-1. You will be automatically logged out and redirected to the new subdomain login page. 
+1. You will be automatically logged out and redirected to the new subdomain login page.
