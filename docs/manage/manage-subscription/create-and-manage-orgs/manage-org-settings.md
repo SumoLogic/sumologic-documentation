@@ -134,7 +134,7 @@ To set up a custom subdomain for the child organization, see [Set up a custom su
 
 ### Sign in to a child organization automatically
 
-When you open the details of a child organization, a link for the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization. 
+When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization. 
 
 <img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
 
