@@ -138,7 +138,7 @@ When you open the details of a child organization, a link to the child organizat
 
 <img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
 
-Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. Therefore, you are already provisioned as a user in the child organization and can access the organization at any time without needing to log in.
+Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
 
 ### Sign back in with parent org credentials
 
