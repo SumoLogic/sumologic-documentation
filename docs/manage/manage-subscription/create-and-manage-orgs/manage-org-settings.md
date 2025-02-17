@@ -2,7 +2,7 @@
 id: manage-org-settings
 title: Manage Organization Settings
 sidebar_label: Manage Org Settings
-description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
+description: An account owner can update organization names, define customized subdomain names, delete orgs, and change the account owner.
 keywords:
     - subdomain
     - orgs
@@ -140,7 +140,7 @@ When you open the details of a child organization, a link to the child organizat
 
 Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
 
-### Sign back in with parent org credentials
+### Sign back in with parent organization credentials
 
 As an administrator, if you log out of a child organization with SSO enabled, the following screen appears. Click **Login with Parent Org** to sign back in automatically using your parent organization credentials.
 
