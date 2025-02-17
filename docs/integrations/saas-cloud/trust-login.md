@@ -168,7 +168,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Unusual account status changes` | This alert is triggered when an unusual event is performed frequently. This alert helps detect potential security threats like account takeovers or insider threats. | Critical | Count > 3 |
+| `Unusual account status changes` | This alert is triggered when an unusual event is performed frequently. This alert helps you to detect potential security threats like account takeovers or insider threats. | Critical | Count > 3 |
 | `Embargoed Geo Location of Events` | This alert is triggered when an event is detected from a location identified as high-risk. This alert helps you monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Critical | Count > 0|
 
 ## Upgrading/Downgrading the Trust Login app (Optional)
