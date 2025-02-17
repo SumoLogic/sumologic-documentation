@@ -118,7 +118,7 @@ When you create a new child organization, a subdomain is automatically created a
 
 #### Enable SSO
 
-If a subdomain exists, but SSO is disabled for the child organization, click the **Enable SSO** button:<br/><img src={useBaseUrl('img/manage/subscriptions/enable-sso-button.png')} alt="Enable SSO button" style={{border: '1px solid gray'}} width="250"/>
+If a subdomain exists, but SSO is disabled for the child organization, click **Enable SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/enable-sso-button.png')} alt="Enable SSO button" style={{border: '1px solid gray'}} width="250"/>
 
 #### Disable SSO
 
