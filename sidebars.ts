@@ -2511,6 +2511,7 @@ integrations: [
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/digital-guardian-arc',
           'integrations/saas-cloud/docusign',
+          'integrations/saas-cloud/dragos',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/druva-cyber-resilience',
