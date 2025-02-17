@@ -142,6 +142,6 @@ Automatic sign-in works because when you created the child organization, a [cust
 
 ### Sign back in with parent org credentials
 
-As an administrator, if you log out of a child organization that has SSO enabled, the following screen appears. Click the **Login with Parent Org** button to automatically log in using your credentials from the parent organization.
+As an administrator, if you log out of a child organization with SSO enabled, the following screen appears. Click **Login with Parent Org** to sign back in automatically using your parent organization credentials.
 
 <img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
