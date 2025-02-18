@@ -12,7 +12,7 @@ Sumo Logic supports syslog clients such as syslog-ng. This document has instruc
 
 Set up Transport Layer Security (TLS).
 
-Download the **DigiCert** certificate from https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.
+Download the **DigiCert** certificate from https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.
 
 ### syslog-ng
 
