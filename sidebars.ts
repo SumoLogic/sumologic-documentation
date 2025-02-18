@@ -2547,6 +2547,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
+          'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vmware-workspace-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
