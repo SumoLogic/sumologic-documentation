@@ -1565,6 +1565,7 @@
   "/cid/1001": "/docs/send-data/installed-collectors/sources/remote-file-source",
   "/cid/10011": "/docs/manage/data-archiving",
   "/cid/1002": "/docs/send-data/installed-collectors/sources/syslog-source",
+  "/cid/10019": "/docs/alerts/monitors/create-monitor",
   "/cid/10020": "/docs/alerts/monitors",
   "/cid/10021": "/docs/alerts/monitors/alert-response-faq",
   "/cid/10022": "/docs/alerts/monitors/muting-schedules",
