@@ -400,7 +400,7 @@ But what if you want to be alerted right away when a certain rule is triggered?
 You want to be alerted right away when your new custom match rule is triggered. Create a custom insight that looks for only this rule.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.
-1. Click **Create**.
+1. Click **Add Custom Insight**.
 1. Give your custom insight a name.
 1. Under **When Signals are created from the following** select **rules**.
 1. In **Type to add a rule**, search for the rule you created in [Write a match rule](#write-a-match-rule) and add it to your custom insight.

@@ -1,7 +1,7 @@
 ---
-id: upgrade-sumo-logic-credits-account
-title: Upgrade a Sumo Logic Credits Account
-sidebar_label: Upgrade a Credits Account
+id: upgrade-sumo-logic-flex-account
+title: Upgrade a Sumo Logic Flex Account
+sidebar_label: Upgrade a Flex Account
 description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page explains how to upgrade a Free or Trial Sumo Logic account to Essentials and adjust existing Essentials plans.
 
-## Prerequisites
-
-You must be an account administrator to upgrade your Sumo Logic plan.
+:::note
+You must be an account *administrator* to upgrade your Sumo Logic plan.
+:::
 
 ## Upgrade a Free or Trial Credits account to Essentials
 
@@ -20,13 +20,13 @@ Using our self-service checkout, you can upgrade for an Essentials plan in minut
 <img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Sumo Logic Essentials upgrade plans" style={{border: '1px solid gray'}} width="700" />
 
 Essentials plans are ideal for:  
-- Small- to medium-sized businesses seeking quick and independent onboarding.  
+- Small to medium-sized businesses seeking quick and independent onboarding.  
 - IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
 
 <details>
 <summary>What's a Sumo Credit?</summary>
 
-Sumo Credit is a unit of measure used to flexibly pay for any products (e.g., logs, metrics, storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
+Sumo Credit is a unit of measure used to flexibly pay for any products (for example; logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
 
 </details>
 
@@ -34,7 +34,7 @@ Steps to upgrade:
 
 1. Navigate to the **Manage Plan** page.
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Manage Plan**.
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Account > Manage Plan**.
 
 1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).
@@ -71,4 +71,4 @@ If your needs exceed Essentials plan capabilities, contact [Sales](https://www.s
 
 ## Cancel your account
 
-Looking to cancel your Sumo Logic subscription? See [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
+Looking to cancel your Sumo Logic subscription? See [Close or Cancel a Sumo Logic Account](/docs/manage/manage-subscription/close-cancel-sumo-account).
