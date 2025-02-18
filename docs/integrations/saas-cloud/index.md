@@ -143,6 +143,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/dragos"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="40"/><h4>Dragos</h4></a>
+  <p>Monitor and analyze your Dragos account.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/dropbox"><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
   <p>Monitor and analyze your Dropbox usage data.</p>
   </div>
