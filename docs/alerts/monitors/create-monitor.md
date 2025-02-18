@@ -211,7 +211,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
 
-<img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data icon" style={{border: '1px solid gray'}} width="700"/>
 
 The recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, switch on the **Edit recovery settings** toggle and then adjust values for the recovery settings accordingly.
 
