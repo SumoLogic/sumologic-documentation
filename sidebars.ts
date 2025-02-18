@@ -155,6 +155,16 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'Elasticsearch',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Kafka',
                       collapsible: true,
                       collapsed: true,
@@ -195,12 +205,32 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'MySQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mysql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/mysql/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Nginx',
                       collapsible: true,
                       collapsed: true,
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
                       items:[
                         'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'PostgreSQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/changelog',
                       ]
                     },
                     {
@@ -243,6 +273,7 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
                       ]
                     },
+                    'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
                   ],
                 },
                 {
@@ -925,20 +956,39 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
-        'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        {
+          type: 'category',
+          label: 'Create and Manage Orgs',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/manage-subscription/create-and-manage-orgs/index'},
+          items: [
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs',
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
+            'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Upgrade Account',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/manage-subscription/upgrade-account/index'},
+          items: [
+            'manage/manage-subscription/upgrade-account/upgrade-credits-account',
+            'manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account',
+            'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
+          ],
+        },
         'manage/manage-subscription/manage-billing-information',
-        'manage/manage-subscription/create-manage-orgs',
-        'manage/manage-subscription/create-manage-orgs-service-providers',
-        'manage/manage-subscription/create-manage-orgs-flex',
-        'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/usage-management',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
-        'manage/manage-subscription/cloud-flex-legacy-accounts',
-        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
       ]
     },
     {
