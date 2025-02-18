@@ -34,7 +34,7 @@ There are four types of template variables you can use as a dashboard filter:
 * Custom List - a custom set of options
 * Metrics Metadata Search - metrics metadata based options 
 * Log Search - logs query based options
-* Scope-based Variable - define scope variables to automatically apply to all log quieries
+* Scope-based Variable - define scope variables to automatically apply to all log queries
 
 ### Add a Custom List variable
 
