@@ -21,7 +21,7 @@ For information about creating log mappers, see [Create a Structured Log Mapping
 
 ### Failed Records dashboard
 
-The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into Cloud SIEM activity. Troubleshooting parser failures is aided by the [Cloud SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#record-analysis-failed-records) dashboard and query found within the app. (The Enterprise Audit - Cloud SIEM app must be installed).
+The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into Cloud SIEM activity. Troubleshooting parser failures is aided by the [Cloud SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#cloud-siem---record-analysis---failed-records) dashboard and query found within the app. (The Enterprise Audit - Cloud SIEM app must be installed).
 
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
