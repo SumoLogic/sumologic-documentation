@@ -71,7 +71,7 @@ To ensure the appropriate Access-Control-\* response headers are set, make sure�
 We strongly recommend sending compressed data to Sumo Logic, as it reduces network usage and ensures faster message delivery.
 :::
 
-You can compress log or metric data prior to upload. Sumo Logic provides two methods to compress your data: the "deflate" or the "gzip" method. In the Content-Encoding header of your request, specify a value of `gzip` (for gzip-compressed) or `deflate` (for zlib-compressed) and include the compressed data as the request body.
+You can compress log or metric data prior to upload. You can send data that has been compressed by either **deflate** or **gzip** method. In the Content-Encoding header of your request, specify a value of `gzip` (for gzip-compressed) or `deflate` (for zlib-compressed) and include the compressed data as the request body.
 
 Below are the key benefits that you can obtain by sending compressed data:
 
