@@ -29,11 +29,12 @@ In the Dashboard top menu bar, click the filter icon to show the variables optio
 
 ## Create a template variable
 
-There are three types of template variables you can use as a dashboard filter:
+There are four types of template variables you can use as a dashboard filter:
 
 * Custom List - a custom set of options
 * Metrics Metadata Search - metrics metadata based options 
 * Log Search - logs query based options
+* Scope-based Variable - define scope variables to automatically apply to all log quieries
 
 ### Add a Custom List variable
 
@@ -46,6 +47,7 @@ To add a Custom List variable to a dashboard, do the following:
 1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Create-Template-Variable-dialog.png')} style={{border:'1px solid gray'}} alt="Create-Template-Variable-dialog" width="800"/>
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
+1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
 1. (Optional) Provide a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard. 
 
@@ -61,6 +63,7 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 1. Select **Metrics Metadata Search** as the **Variable Type**.
 1. The **Fields (key)** is the metadata field you want to use as the filter.
 1. (Optional) **Filters** allow you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
+1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
 1. (Optional) Provide a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
@@ -76,6 +79,24 @@ To add a Logs Search variable to a dashboard, do the following:
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
+1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
+1. (Optional) Enter a **Default Value** for the variable.
+1. Click **Create Template Variable** to apply the variable to the dashboard.
+
+### Add a Scope-based Variable 
+
+With Scope-based variables, you can define a variable automatically applies to all log queries within the scope of the dashboard or panels. With this you can define the key while creating the scope variable and users can select the appropriate value to implement simple filtering for the dashboard. Additionally with Scope-based variables, you can select the specific panels to which the scope variable should be applied.
+
+To add a Scope-based variable to a dashboard, do the following:
+
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/scope-based-varibale.png')} style={{border:'1px solid gray'}} alt="scope-based-varibale" width="800"/>
+1. Select **Scope-based Variable** as the **Variable Type**.
+1. The **Filds (key)** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
+1. (Optional) **Display all values available** will be selected by default. If you want to specify any values, deselect this option and enter the required value(s) in section below.
+1. (Optional) **Apply filter to all panels in dashboard** will be selected by default. If you want to apply this variable to secleted panel, deselect this option and select the panels from the dropdown. You can also click on <img src={useBaseUrl('img/dashboards/filter-template-variables/preview-the-panels.png')} style={{border:'1px solid gray'}} alt="preview-the-panels" width="30"/> to preview and select the dashboard panel to which you want to apply this varibale.
+1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
 1. (Optional) Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
