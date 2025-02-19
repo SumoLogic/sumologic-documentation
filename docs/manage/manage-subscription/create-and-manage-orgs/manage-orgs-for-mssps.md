@@ -37,10 +37,21 @@ If you want to ensure that content in one organization is copied to other organi
    * When you sync rule tuning expressions, select **Include Associated Cloud SIEM Rules** to also sync all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
 1. Click **Sync**. A **Syncing in progress** dialog is displayed. 
 
-### How syncing works
+### FAQs
 
-* When items with the same name already exist in the child organizations, they will be replaced.
-* When errors occur during syncing, attached items will be skipped. After the rest of the items are synchronized, you can investigate the errors in log search and try again.
+#### What to expect when updating Cloud SIEM rules
+
+* **Are rule tuning expressions included?**<br/>No, they are not included, but can be updated separately.
+* **What happens when a rule with the same name already exists?**<br/>It will be replaced in the child organization.
+* **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
+
+#### What to expect when updating Cloud SIEM rule tuning expressions
+
+* **What happens if a tuning expression with the same name already exists?**<br/>It will be replaced in the child organization.
+* **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
+* **What happens if the source tuning expression contains Cloud SIEM rules?**<br/>If the **Include Linked Cloud SIEM Rules** option is selected, existing rules with the same name in the destination organization will be linked to match the source tuning expression.
+* **What if no matching Cloud SIEM rules are found in the destination organization?**<br/>The update will complete with a warning, and missing rules will be logged in the audit log. You can sync those rules separately and re-run the tuning expression update.
+   
 
 ## Multi-insights list page in Cloud SIEM
 
