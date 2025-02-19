@@ -5,6 +5,11 @@ sidebar_label: Changelog
 description: Changelog for RabbitMQ source template for OpenTelemetry.
 ---
 
+## [3.0.0] - 2025-02-25
+
+### Added
+- Metric collection through [RabbitMQ receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver)
+
 ## [2.1.1] - 2025-01-27
 
 ### Fixed
