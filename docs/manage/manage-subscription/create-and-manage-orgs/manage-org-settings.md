@@ -118,7 +118,11 @@ When you create a new child organization, a subdomain is automatically created a
 
 #### Enable SSO
 
-If a subdomain exists, but SSO is disabled for the child organization, click **Enable SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/enable-sso-button.png')} alt="Enable SSO button" style={{border: '1px solid gray'}} width="250"/>
+If a [subdomain](#set-up-a-customsubdomain) exists, but SSO is disabled for the child organization, click **Enable SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/enable-sso-button.png')} alt="Enable SSO button" style={{border: '1px solid gray'}} width="250"/>
+
+If there is no subdomain defined for a child organization, hovering your mouse over the **Enable SSO** button displays the message **Set up custom subdomain before enabling SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/no-subdomain-defined.png')} alt="No subdomain defined" style={{border: '1px solid gray'}} width="300"/>
+
+To set up a custom subdomain for the child organization, see [Set up a custom subdomain](#set-up-a-customsubdomain) above. Once you set up the subdomain, the subdomain's URL will appear and the **Enable SSO** button will be clickable.
 
 #### Disable SSO
 
@@ -126,19 +130,13 @@ When a child organization has SSO enabled, the child organization's details disp
 
 If you want to require administrators to enter credentials to sign in to the child organization, click **Disable SSO** to turn off single sign-on.
 
-#### Create a subdomain
-
-If there is no subdomain defined for a child organization, hovering your mouse over the **Enable SSO** button displays the message **Set up custom subdomain before enabling SSO**:<br/><img src={useBaseUrl('img/manage/subscriptions/no-subdomain-defined.png')} alt="No subdomain defined" style={{border: '1px solid gray'}} width="300"/>
-
-To set up a custom subdomain for the child organization, see [Set up a custom subdomain](#set-up-a-customsubdomain) above. Once you set up the subdomain, the subdomain's URL will appear and the **Enable SSO** button will be clickable.
-
 ### Sign in to a child organization automatically
 
-When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization. 
+When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization.
 
-<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="300"/>
+Automatic sign-in works because when you created the child organization, a [subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
 
-Automatic sign-in works because when you created the child organization, a [custom subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
+<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="400"/>
 
 ### Sign back in with parent organization credentials
 
