@@ -17,7 +17,7 @@ export default function Berry({ mode }: BerryProps) {
           if (!window.Berry) {
             return;
           }
-          
+
           window.Berry.update({
             colorMode: newColorMode,
           })
@@ -48,17 +48,17 @@ function loadBerry(mode: BerryMode) {
         script.src = 'https://www.berryapp.io/js/berry-widget.min.js';
         script.async = true;
         document.head.appendChild(script);
-  
+
         script.onload = () => {
           initBerry(mode);
         }
-  
+
         script.onerror = () => console.error('Failed to load Berry widget script');
       } else {
         initBerry(mode);
       }
     }
-    
+
 function initBerry(mode: BerryMode) {
     if (!window.Berry) {
       console.error("Berry not defined");
@@ -70,7 +70,7 @@ function initBerry(mode: BerryMode) {
         ...(mode === 'inline' ? inlineConfig : popupConfig),
         colorMode: colorMode,
     };
-  
+
     window.Berry.init(config);
   };
 
@@ -82,10 +82,10 @@ function initBerry(mode: BerryMode) {
       return 'light';
     }
   }
-  
+
 
   const commonConfig = {
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MjU5NDg5MTcsImV4cCI6MTc0MTYwODkxNywiYXVkIjoiV2lkZ2V0SW5pdGlhbGl6YXRpb24iLCJvcmdhbml6YXRpb25JZCI6NjN9.oJEGkGq1q3uFD66J916f_ZBrqQjPHP9orUOKFxInG38',
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MjU5NDg5MTcsImV4cCI6MTc3MzE0NDAwMCwiYXVkIjoiV2lkZ2V0SW5pdGlhbGl6YXRpb24iLCJvcmdhbml6YXRpb25JZCI6NjN9.vuE19Wp0nWR0y1l6agTlUjHYqP778J_atl4aUuLW9jM',
     primaryColor: '#021b9a',
     botUrlPath: 'nova',
     showNewChat: true,
