@@ -32,6 +32,7 @@ With your [Sumo Logic trial](/docs/get-started/sign-up), you can access preloade
 :::warning limitations
 * Your trial workflow—Kickstart Data or custom data—is automatically determined by marketing-based user profiling. Manual selection of a workflow is not currently supported.
 * This feature is only available to select trial users during the initial rollout phase.
+* Kickstart Data is available for a maximum of 7 days. After this period, you must begin ingesting your own data to continue using Sumo Logic.
 :::
 
 ### Key benefits
@@ -51,7 +52,7 @@ With your [Sumo Logic trial](/docs/get-started/sign-up), you can access preloade
     * Analyze sample data.
     * Perform log searches.
     * Invite team members to join and explore the platform with you.
-4. **Seamless transition to real data**. After you complete the sample data onboarding steps, you can set up your own data ingestion while continuing to use the platform’s core features. When your trial ends, Kickstart Data is deactivated automatically.
+4. **Seamless transition to real data**. Kickstart Data is available for only 7 days. After that, you must set up your own data ingestion while continuing to use the platform’s core features. When your trial ends, Kickstart Data is deactivated automatically.
 
 You can skip Kickstart Data anytime and begin ingesting your own data.
 
