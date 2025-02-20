@@ -28,18 +28,20 @@ The Sumo Logic app for Azure Active Directory presents information about activit
 
 ## Collect logs for the Azure Active Directory app
 
-To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+To set up the logs collection in Sumo Logic:
+1. Follow the directions outlined in the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) to create an Azure Event Hub with the proper credentials, and to configure the Event Hub Source in Sumo Logic.
+2. Follow the directions outlined in Microsft Entra to [Stream Activity Logs to Event Hub](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub?tabs=SumoLogic).
+    1. Sign in to the Microsoft Entra admin center as at least a Security Administrator.
+    2. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. You can also select Export Settings from either the Audit Logs or Sign-ins page.
+    3. Select **+ Add diagnostic setting** to create a new integration or select **Edit setting** for an existing integration.
+    4. Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
+    5. Select the log categories that you want to stream ([Audit and Sign-in logs](https://docs.microsoft.com/en-us/azure/active-directory/reporting-azure-monitor-diagnostics-overview#supported-reports)).
+    6. Select the **Stream to an event hub** check box.
+    7. Select the Azure subscription, Event Hubs namespace, and event hub where you want to route the logs.
 
-When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
-
-### Export Azure Active Directory logs to Event Hub
-
-In this task, you export logs for your Azure Active Directory app. For related information see [Send Logs to Azure Monitor](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
-
-While exporting logs for an Azure Active Directory app, do the following:
-* **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
-* **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
 <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting" width="800"/>
+
+When you configure the Event Hubs source, define your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
 ## Install the Azure Active Directory app
 
