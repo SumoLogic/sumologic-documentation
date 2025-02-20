@@ -25,12 +25,9 @@ When you create a source template, the following [fields](/docs/manage/fields/) 
 ## Prerequisites
 
 ### For metrics collection
-- Metrics for Redis are collected through OpenTelemetry [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/redisreceiver)
-
-- Receiver uses [INFO command](https://redis.io/docs/latest/commands/info/) to get Redis statistics
-
-- Make sure to set the Redis user's password as an environment variable for OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates.](../st-with-secrets.md). 
-
+- Metrics for Redis are collected through OpenTelemetry [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/redisreceiver).
+- Receiver uses the [INFO command](https://redis.io/docs/latest/commands/info/) to get Redis statistics.
+- Make sure to set the Redis user's password as an environment variable for the OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md). 
 
 ### For logs collection
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
@@ -56,11 +53,10 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/redis.
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
-- **Endpoint**. (default: `localhost:6379`): The hostname and port of the Redis instance,
+- **Endpoint**. (Default: `localhost:6379`.) The hostname and port of the Redis instance,
 separated by a colon.
-- **Username**. Optional. Enter the Redis username, in case you are using specific user for monitoring.
+- **Username**. Optional. Enter the Redis username, in case you are using a specific user for monitoring.
 - **Password Environment Variable Name**. Required. Enter the Redis password environment variable name.
-
 
 import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
 

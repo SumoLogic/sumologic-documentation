@@ -26,15 +26,10 @@ When you create a source template, the following [fields](/docs/manage/fields/) 
 
 ### For metrics collection
 
-- Metric collection is supported for RabbitMQ versions `3.8` and `3.9`.
-
-- Metrics for RabbitMQ are collected through OpenTelemetry [RabbitMQ receiver](https://github.com/
-open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver)
-
+- Metrics collection is supported for RabbitMQ versions `3.8` and `3.9`.
+- Metrics for RabbitMQ are collected through OpenTelemetry [RabbitMQ receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver).
 - The RabbitMQ Management Plugin must be enabled by following the [official instructions](https://www.rabbitmq.com/management.html#getting-started).
-
 - Also, a user with at least [monitoring](https://www.rabbitmq.com/management.html#permissions) level permissions must be used for monitoring.
-
 - Make sure to set the RabbitMQ user's password as an environment variable for OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates.](../st-with-secrets.md).
 
 ### For logs collection
@@ -65,7 +60,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/rabbitmq.
 - **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
 - **DenyList**. Provide path expression describing the files to be excluded.
-- **Endpoint**. (default: `http://localhost:15672`): The URL of the node to be monitored.
+- **Endpoint**. (Default: `http://localhost:15672`.) The URL of the node to be monitored.
 - **Username**. Required. Enter the RabbitMQ username.
 - **Password Environment Variable Name**. Required. Enter the RabbitMQ password environment variable name.
 

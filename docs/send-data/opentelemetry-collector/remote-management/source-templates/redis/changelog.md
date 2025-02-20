@@ -8,7 +8,7 @@ description: Changelog for Redis source template for OpenTelemetry.
 ## [3.0.0] - 2025-02-25
 
 ### Added
-- Metric collection through [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/redisreceiver)
+- Metric collection through [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/redisreceiver).
 
 
 ## [2.1.1] - 2025-01-27
