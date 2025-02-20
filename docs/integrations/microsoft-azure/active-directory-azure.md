@@ -37,9 +37,7 @@ To set up the logs collection in Sumo Logic:
     4. Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
     5. Select the log categories that you want to stream ([Audit and Sign-in logs](https://docs.microsoft.com/en-us/azure/active-directory/reporting-azure-monitor-diagnostics-overview#supported-reports)).
     6. Select the **Stream to an event hub** check box.
-    7. Select the Azure subscription, Event Hubs namespace, and event hub where you want to route the logs.
-
-<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting" width="800"/>
+    7. Select the Azure subscription, Event Hubs namespace, and event hub where you want to route the logs.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting" width="800"/>
 
 When you configure the Event Hubs source, define your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
