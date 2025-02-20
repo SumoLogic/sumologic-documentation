@@ -7,7 +7,7 @@ description: Learn how to manage organizations for Managed Security Service Prov
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage organizations for Managed Security Service Providers (MSSPs). MSSPs in Sumo Logic use [Cloud SIEM](/docs/cse/), and consist of a parent organization with child organizations that have content synced across the organizations, such as Cloud SIEM rules and rule tuning expressions.
+This article describes how to manage organizations for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Prerequisites
 
@@ -22,7 +22,11 @@ You must have the following [organization role capabilities](/docs/manage/users-
 
 ## Sync content in child organizations
 
-If you want to ensure that content in one organization is copied to other organizations, you can use the **Content Management** tab to sync the content. You can sync Cloud SIEM [rules](/docs/cse/rules/) and [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/).
+To ensure that content is consistent across child organizations, use the **Content Management** tab. 
+
+You can sync the following:
+* Cloud SIEM [rules](/docs/cse/rules/)
+* Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Select the **Content Management** tab.
