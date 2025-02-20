@@ -507,6 +507,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source"><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="100"/><h4>Sysdig Secure</h4></a>
+        <p>Collect the scan results from the scanner using the Sysdig API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="120"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
