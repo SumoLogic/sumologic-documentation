@@ -102,7 +102,7 @@ With remote management, you can tag your [OpenTelemetry Collectors](/docs/send-d
 :::note
 - Collector tags will only be editable for collectors with version `0.114.0` and above.
 - For default collector tags, you can only edit the **Values**.
-- System collector tags like `sumo.disco.enabled` cannot be added/updated/deleted.
+- System collector tags like `sumo.disco.enabled` cannot be added, updated, or deleted.
 :::
 
 You can add collector tags during OTEL collector setup as described in the previous section. Follow the below steps to add/update/delete the collector tags after creation:
