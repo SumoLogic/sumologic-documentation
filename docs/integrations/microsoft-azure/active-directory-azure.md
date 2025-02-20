@@ -30,7 +30,7 @@ The Sumo Logic app for Azure Active Directory presents information about activit
 
 To set up the logs collection in Sumo Logic:
 1. Follow the directions outlined in the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) to create an Azure Event Hub with the proper credentials, and to configure the Event Hub Source in Sumo Logic.
-2. Follow the directions outlined in Microsft Entra to [Stream Activity Logs to Event Hub](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub?tabs=SumoLogic).
+2. Follow the directions outlined in Microsoft Entra to [Stream Activity Logs to Event Hub](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub?tabs=SumoLogic).
     1. Sign in to the Microsoft Entra admin center as at least a Security Administrator.
     2. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. You can also select Export Settings from either the Audit Logs or Sign-ins page.
     3. Select **+ Add diagnostic setting** to create a new integration or select **Edit setting** for an existing integration.
