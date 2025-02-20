@@ -115,3 +115,12 @@ You can add collector tags during OTEL collector setup as described in the previ
 1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.<br/><img src={useBaseUrl('img/send-data/mapped-source-templates.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500"/>
 1. If there are any incompatible source templates, [upgrade the source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#upgrade-a-source-template) to ensure compatibility.
 1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.<br/><img src={useBaseUrl('img/send-data/confirm-the-tags.png')} alt="confirm-the-tags" style={{border:'1px solid gray'}} width="500"/>
+
+:::info
+If you try to add/update any collector tags using the API, the following validations will occur in the backend:
+1. Validates if the collector is remotely managed.
+1. Validates if the key/value is empty string.
+1. Validates the agent version.
+1. Validates if the disco tags are added/deleted/updated.
+1. Validates if the default tags are added/deleted.
+:::
