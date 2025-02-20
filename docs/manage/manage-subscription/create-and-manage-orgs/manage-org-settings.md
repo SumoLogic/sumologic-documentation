@@ -70,10 +70,6 @@ You can only delete an organization for Free and Trial accounts.
 
 This section has instructions for setting up a custom subdomain for the URL you use to access Sumo Logic.
 
-:::note
-Custom subdomains are not currently available for Sumo Logic accounts created through third-party integrations that require authentication using those integrations, such as Heroku and Jfrog.
-:::
-
 By default, your Sumo Logic account has a "service" subdomain. For example, `service.sumologic.com`.
 
 If you have multiple Sumo Logic accounts, you may find it useful to configure a custom subdomain for each of your Sumo Logic accounts.
@@ -81,6 +77,11 @@ If you have multiple Sumo Logic accounts, you may find it useful to configure a 
 Custom subdomains can help ensure that requests are authenticated to the right account when links are received. Once configured by your account owner, your custom subdomain will be used in the links Sumo generates when you share queries or dashboards, or the links in alerts and other emails you may receive from your account. These subdomain-enabled links will direct the user to the specified account for authentication.
 
 When you use custom subdomains in combination with SAML integrations [configured with SP initiated login](/docs/manage/security/saml/set-up-saml), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
+
+:::note
+* While subdomains are the preferred method to provide access to multiple accounts, you can also use [multi-account access](/docs/manage/users-roles/users/multi-account-access/).
+* Custom subdomains are not currently available for Sumo Logic accounts created through third-party integrations that require authentication using those integrations, such as Heroku and Jfrog.
+:::
 
 ### Key considerations
 
