@@ -117,7 +117,7 @@ You can add collector tags during OTEL collector setup as described in the previ
 1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.<br/><img src={useBaseUrl('img/send-data/confirm-the-tags.png')} alt="confirm-the-tags" style={{border:'1px solid gray'}} width="500"/>
 
 :::info
-If you try to add/update any collector tags using the API, the following validations will occur in the backend:
+If you try to add or update any collector tags using the API, the following validations will occur in the backend:
 1. Validates if the collector is remotely managed.
 1. Validates if the key/value is empty string.
 1. Validates the agent version.
