@@ -122,5 +122,5 @@ If you try to add/update any collector tags using the API, the following validat
 1. Validates if the key/value is empty string.
 1. Validates the agent version.
 1. Validates if the disco tags are added/deleted/updated.
-1. Validates if the default tags are added/deleted.
+1. Validates if the default tags are added or deleted.
 :::
