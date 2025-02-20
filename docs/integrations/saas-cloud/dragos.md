@@ -2,7 +2,7 @@
 id: dragos
 title: Dragos
 sidebar_label: Dragos
-description: The DocuSign app for Sumo Logic provides deep visibility into industrial cybersecurity by analyzing critical data across addresses, assets, vulnerabilities, zones, and notifications within your Dragos-managed environment.
+description: The Dragos app for Sumo Logic provides deep visibility into industrial cybersecurity by analyzing critical data across addresses, assets, vulnerabilities, zones, and notifications within your Dragos-managed environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -712,13 +712,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `High Severity Notification Detected` | This alert is fired when high-severity security alerts are detected, that may indicate active threats. An immediate investigation is recommended to assess and respond accordingly. | Critical | Count > 0 |
 | `OT Network Under Attack` | This alert is fired when more than five vulnerabilities are associated with active threats in a short period, suggesting a coordinated attack. Urgent intervention is needed to secure the network. | Critical | Count > 5 |
 
-## Upgrade/Downgrade the DocuSign app (Optional)
+## Upgrade/Downgrade the Dragos app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the DocuSign app (Optional)
+## Uninstalling the Dragos app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
