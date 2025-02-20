@@ -29,19 +29,19 @@ The Sumo Logic app for Azure Active Directory presents information about activit
 ## Collect logs for the Azure Active Directory app
 
 To set up the logs collection in Sumo Logic:
-1. Follow the directions outlined in the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) to create an Azure Event Hub with the proper credentials, and to configure the Event Hub Source in Sumo Logic.
-2. Follow the directions outlined in Microsoft Entra to [Stream Activity Logs to Event Hub](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub?tabs=SumoLogic).
+1. Follow the directions outlined in [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) to create an Azure event hub with the proper credentials, and to configure the event hub source in Sumo Logic.
+2. Follow the directions outlined in Microsoft Entra to [stream activity logs to an event hub](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub?tabs=SumoLogic).
     1. Sign in to the Microsoft Entra admin center as at least a Security Administrator.
-    2. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. You can also select Export Settings from either the Audit Logs or Sign-ins page.
-    3. Select **+ Add diagnostic setting** to create a new integration or select **Edit setting** for an existing integration.
-    4. Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
-    5. Select the log categories that you want to stream ([Audit and Sign-in logs](https://docs.microsoft.com/en-us/azure/active-directory/reporting-azure-monitor-diagnostics-overview#supported-reports)).
-    6. Select the **Stream to an event hub** check box.
-    7. Select the Azure subscription, Event Hubs namespace, and event hub where you want to route the logs.
+    1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. You can also select **Export Settings** from either the **Audit Logs** or **Sign-ins** page.
+    1. Select **+ Add diagnostic setting** to create a new integration or select **Edit setting** for an existing integration.
+    1. Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
+    1. Select the log categories that you want to stream ([Audit and Sign-in logs](https://docs.microsoft.com/en-us/azure/active-directory/reporting-azure-monitor-diagnostics-overview#supported-reports)).
+    1. Select the **Stream to an event hub** check box.
+    1. Select the Azure subscription, event hubs namespace, and event hub where you want to route the logs.
 
 <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting" width="800"/>
 
-When you configure the Event Hubs source, define your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
+When you configure the event hubs source, define your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
 ## Install the Azure Active Directory app
 
