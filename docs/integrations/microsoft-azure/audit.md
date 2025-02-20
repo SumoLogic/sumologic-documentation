@@ -30,10 +30,10 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
     1. In the **Activity Log** window, click **Export Activity Logs**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/export-activity-log.png')} style={{border: '1px solid gray'}} alt="activity-log" width="800"/>
     1. Select the log type in **Category details** that you want to ingest.
     1. Select the **Stream to an event hub** checkbox and then select the following:
-        * **Subscription.** Pull-down, select a subscription.
-        * **Event hub namespace.**
-        * **Event hub name (optional).**
-        * **Event hub policy name.** Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.
+        * **Subscription**. Select a subscription.
+        * **Event hub namespace**. Select the namespace.
+        * **Event hub name (optional)**. Select the hub name.
+        * **Event hub policy name**. Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.
           <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-audit.png" width="800"/>
     1. Click **Save.**
 
