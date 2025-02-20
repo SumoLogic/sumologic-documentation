@@ -63,7 +63,7 @@ In this section, we'll show you how to set up source templates for the following
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href=/docs/send-data/opentelemetry-collector/remote-management/source-templates/postgresql"><img src={useBaseUrl('/img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="30"/><h4>PostgreSQL</h4></a><p>Learn how to configure our OTel PostgreSQL source template.</p>
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/postgresql"><img src={useBaseUrl('/img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="30"/><h4>PostgreSQL</h4></a><p>Learn how to configure our OTel PostgreSQL source template.</p>
     </div>
   </div>
     <div className="box smallbox card">
