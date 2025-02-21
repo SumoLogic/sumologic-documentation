@@ -1050,6 +1050,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
