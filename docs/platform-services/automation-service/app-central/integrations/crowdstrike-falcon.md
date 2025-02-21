@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
 ***Version: 1.13  
-Updated: Feb 13, 2025***
+Updated: Feb 21, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -64,5 +64,5 @@ EDR
     + Update Alerts
     + Search into Alerts
     + Alerts CrowdStrike Falcon Daemon
-* February 13, 2025 (v1.13) - Added new action
+* February 21, 2025 (v1.13) - Added new action
     + Get IDP Device Info
