@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## CrowdStrike mapping
 
-Sumo Logic provides a CrowdStrike threat intelligence indicator source out-of-the-box. You can see it in the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) as "CrowdStrike provided by Sumo Logic (s_CrowdStrike)". This source is a default source and cannot be changed or deleted. When performing searches using the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) against this source, use "s_CrowdStrike" as the source name.
+Sumo Logic provides an out-of-the-box a `_sumo_global_feed_cs` source of threat intelligence indicators supplied by Sumo Logic. You can see it in the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). This source is a default source and cannot be changed or deleted. 
 
-In the "s_CrowdStrike" source, the CrowdStrike schema is mapped to normalized values to provide ease of interoperability with the schema from other threat intelligence sources:
+In the threat intelligence datastore, the CrowdStrike schema is mapped to normalized values to provide ease of interoperability with the schema from other threat intelligence sources:
 
-| CrowdStrike schema | Normalized schema in "s_CrowdStrike" source |
+| CrowdStrike schema | Normalized schema in CrowdStrike threat intelligence source |
 |:--|:--|
 | `actor` | `actors` |
 | `id` | `id` |
@@ -29,7 +29,7 @@ In the "s_CrowdStrike" source, the CrowdStrike schema is mapped to normalized va
 
 The CrowdStrike `type` object is mapped to the following normalized type values:
 
-| CrowdStrike type | Normalized type in "s_CrowdStrike" source |
+| CrowdStrike type | Normalized type in CrowdStrike threat intelligence source |
 |:--|:--|
 | `binary_string` | `artifact:payload_bin` | 
 | `bitcoin_address` | `url` | 
@@ -54,7 +54,7 @@ The CrowdStrike `type` object is mapped to the following normalized type values:
 
 In partnership with CrowdStrike, Sumo Logic maintains an updated threat intelligence database that can be correlated with log data through queries. The Sumo Logic/CrowdStrike integration has two parts:
 * Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
-* Sumo Logic customers can use the CrowdStrike database in threat analysis queries of their logs (through the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/)).
+* Sumo Logic customers can use the CrowdStrike database in threat analysis queries of their logs (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
 
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
@@ -64,7 +64,7 @@ The database is updated once per day. We have implemented a multi-layer cache fo
 
 #### Can I export all of the CrowdStrike threats?
 
-No, we do not allow an export of the threat intel feeds because that is confidential to CrowdStrike. However, we will match lookups from your logs against the entire threat database. You only see data returned when you have a match against the database to a specific threat from your log data (for example, IP, domain, email, and so on) via the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/).
+No, we do not allow an export of the threat intel feeds because that is confidential to CrowdStrike. However, we will match lookups from your logs against the entire threat database. You only see data returned when you have a match against the database to a specific threat from your log data (for example, IP, domain, email, and so on).
 
 #### What are different Indicators of Compromise (IOC) types available?
 
@@ -170,7 +170,7 @@ Threats are grouped by actors, which are based on location. Some threats are tie
     * Jackal = Activist groups
     * Spider = Criminal groups
 
-[https://www.crowdstrike.com/blog/meet-the-adversaries/](https://www.crowdstrike.com/blog/meet-the-adversaries/)
+See the [CrowdStrike information about adversaries](https://www.crowdstrike.com/blog/meet-the-adversaries/).
 
 #### What is unverified malicious confidence?
 

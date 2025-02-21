@@ -91,8 +91,8 @@ The following attributes are required:
           * `unknown` (or not set). There is not enough information available to determine the threat type.
 
       The following attributes are optional:
-       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
-       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor1`. 
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
           * `reconnaissance`.  Researching potential targets.
           * `weaponization`. Creation of malware to be used against an identified target.
           * `delivery`. Infiltration of a target’s network and users.
@@ -146,8 +146,8 @@ Columns for the following attributes are required in the upload file:
           * `unknown` (or not set). There is not enough information available to determine the threat type.
 
       The following attributes are optional:
-       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
-       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor3`. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
           * `reconnaissance`.  Researching potential targets.
           * `weaponization`. Creation of malware to be used against an identified target.
           * `delivery`. Infiltration of a target’s network and users.

@@ -7,13 +7,11 @@ description: Perform searches to find matches to data in threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Global feed
+## Use the global feed in a log search
 
 The `_sumo_global_feed_cs` source in the threat intelligence datastore contains threat indicators provided by CrowdStrike and maintained by Sumo Logic. 
 
 <img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
-
-### Use the global feed in a log search
 
 Any Sumo Logic user can use this global feed to search for threats. To use the global feed to search for threats, use `sumo://threat/cs` in log search queries. For example:
 
@@ -30,6 +28,12 @@ For more information about how to use `sumo://threat/cs` in queries, see [Threat
 :::tip
 All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use the global feed to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
 :::
+
+## Use the threatip search operator
+
+To find threats using IP addresses, use the `threatip` search operator. This operator correlates data in the `_sumo_global_feed_cs` threat intelligence source based on IP addresses from your log data.
+
+For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
 <!--
 ## threatlookup operator
