@@ -1,16 +1,16 @@
 ---
 id: microsoft-defender-for-cloud
-title: Microsoft Defender for Cloud
-description: Learn about the Sumo Logic collection process for the Microsoft Defender for Cloud service.
+title: Azure Security - Defender for Cloud
+description: Learn about the Sumo Logic collection process for the Azure Security - Defender for Cloud service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic app for Microsoft Defender for Cloud is a powerful solution designed to provide Azure cloud security analysts with actionable insights into their cloud security posture. By integrating with Microsoft Defender for Cloud, this app delivers advanced monitoring, alerting, and compliance tracking capabilities through purpose-built dashboards tailored to meet the needs of security teams.
+The Sumo Logic app for Azure Security - Defender for Cloud is a powerful solution designed to provide Azure cloud security analysts with actionable insights into their cloud security posture. By integrating with Azure Security - Defender for Cloud, this app delivers advanced monitoring, alerting, and compliance tracking capabilities through purpose-built dashboards tailored to meet the needs of security teams.
 
-Key features of the Microsoft Defender for Cloud app include:
+Key features of the Azure Security - Defender for Cloud app include:
 
 - Gain real-time visibility into security alerts across your Azure environment, categorized by severity (High, Medium, Low, and Informational).
 - Monitor trends in alert activity over time to identify spikes and recurring threats.
@@ -25,12 +25,12 @@ Key features of the Microsoft Defender for Cloud app include:
 - Identify areas requiring immediate action to ensure regulatory adherence for your Azure resources.
 
 :::info
-This app includes [built-in monitors](#microsoft-defender-for-cloud-monitors). For details on creating custom monitors, refer to [Create monitors for Microsoft Defender for Cloud app](#create-monitors-for-microsoft-defender-for-cloud-app).
+This app includes [built-in monitors](#azure-security-defender-for-cloud-monitors). For details on creating custom monitors, refer to [Create monitors for Azure Security Defender for Cloud app](#create-monitors-for-azure-security-defender-for-cloud-app).
 :::
 
 ## Log types
 
-The Microsoft Defender for Cloud app uses the following logs:
+The Azure Security - Defender for Cloud app uses the following logs:
 
 * [Alerts](https://learn.microsoft.com/en-us/azure/defender-for-cloud/managing-and-responding-alerts)
 * [Security recommendations](https://learn.microsoft.com/en-us/azure/defender-for-cloud/review-security-recommendations)
@@ -41,7 +41,7 @@ The Microsoft Defender for Cloud app uses the following logs:
 To forward Microsoft Defender events to Sumo Logic, you can set up an efficient pipeline: **Microsoft Defender** > **Event Hub** > **Sumo Logic (Hosted Collector)**. This setup ensures that security events from Microsoft Defender are seamlessly ingested into Sumo Logic for monitoring and analysis.
 
 1. **[Create a Sumo Logic Azure Event Hub Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/)**. Configure an Event Hub source to receive events from the Azure platform. This will act as the endpoint for the data pipeline.
-1. **[Set up continuous export in Azure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)**. Within the Azure portal, configure the Microsoft Defender for Cloud to export its security events to the Event Hub instance created in the previous step. Continuous export ensures that the events such as alerts, recommendations, and regulatory compliance updates are forwarded in near real-time.
+1. **[Set up continuous export in Azure](https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)**. Within the Azure portal, configure the Azure Security - Defender for Cloud to export its security events to the Event Hub instance created in the previous step. Continuous export ensures that the events such as alerts, recommendations, and regulatory compliance updates are forwarded in near real-time.
 
 ## Sample log messages
 
@@ -308,13 +308,13 @@ _sourceCategory=azure/defender  "Microsoft.Security/regulatoryComplianceStandard
 | fields - _count
 ```
 
-## Installing the Microsoft Defender for Cloud app
+## Installing the Azure Security - Defender for Cloud app
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing the Microsoft Defender for Cloud app
+## Viewing the Azure Security - Defender for Cloud app
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -348,13 +348,13 @@ Detailed remediation steps are included in the Top Action Plans, providing clear
 
 <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Security-Recommendations.png' alt="Microsoft-Defender-for-Cloud-Security-Recommendations" />
 
-## Create monitors for Microsoft Defender for Cloud app
+## Create monitors for Azure Security Defender for Cloud app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Microsoft Defender for Cloud monitors
+### Azure Security Defender for Cloud monitors
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
@@ -386,13 +386,13 @@ If you are not receiving any alerts from the Microsoft Defender to the Event Hub
 There may be a delay in forwarding alerts from Microsoft Defender to the Event Hub instance. If you experience significant delays, reach out to Azure Support for assistance.
 :::
 
-## Upgrade/Downgrade the Microsoft Defender for Cloud app (Optional)
+## Upgrade/Downgrade the Azure Security - Defender for Cloud app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Microsoft Defender for Cloud app (Optional)
+## Uninstalling the Azure Security - Defender for Cloud app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
