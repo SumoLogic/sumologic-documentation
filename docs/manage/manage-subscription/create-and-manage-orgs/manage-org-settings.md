@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex | Professional, Enterprise |
 | Cloud Flex Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
+This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab. The options are at the top of the page under the details icon.
 
 For Cloud Flex Credits:
 
@@ -108,4 +108,4 @@ You must be the account owner of the Sumo Logic account to change the account su
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/manage/subscriptions/change-subdomain-name.png')} style={{border: '1px solid gray'}} alt="change-subdomain-name.png" width="700" />
 1. Click **Change Subdomain** Name to update the name.
-1. You will be automatically logged out and redirected to the new subdomain login page. 
+1. You will be automatically logged out and redirected to the new subdomain login page.
