@@ -16,7 +16,7 @@ You can also add threat intelligence indicators using a collector or the API. Se
 
 ## Threat Intelligence tab
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
  
@@ -31,8 +31,8 @@ You can also add threat intelligence indicators using a collector or the API. Se
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see/docs/security/threat-intelligence/threat-intelligence-mapping/#crowdstrike-mapping/docs/security/threat-intelligence/crowdstrike-threat-intelligence/).
-* The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
+* The `_sumo_global_feed_cs` source is a default source and cannot be changed or deleted. When performing searches against this source, use `_sumo_global_feed_cs` as the source name. For more information, see/docs/security/threat-intelligence/threat-intelligence-mapping/#crowdstrike-mapping/docs/security/threat-intelligence/crowdstrike-threat-intelligence/).
+* The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the `_sumo_global_feed_cs` source).
 :::
 
 ## Add indicators in the Threat Intelligence tab
