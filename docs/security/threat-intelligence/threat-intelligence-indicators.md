@@ -8,7 +8,7 @@ description: Learn how to add and manage indicators from threat intelligence sou
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
 
-The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence data store. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources, including TAXII, ThreatQ, iDefense, and many others. Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
+The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence datastore. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources, including TAXII, ThreatQ, iDefense, and many others. Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
 
 :::tip
 You can also add threat intelligence indicators using a collector or the API. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
@@ -26,12 +26,12 @@ You can also add threat intelligence indicators using a collector or the API. Se
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).
 1. **Status**. The current status of the indicator source (**Enabled** or **Disabled**).
-1. **Source Name**. The source of the threat intelligence indicator file. 
+1. **Source Name**. The name of the threat intelligence indicator file. The name usually indicates the supplier of the indicators. 
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The `_sumo_global_feed_cs` source is a default source and cannot be changed or deleted. When performing searches against this source, use `_sumo_global_feed_cs` as the source name. For more information, see/docs/security/threat-intelligence/threat-intelligence-mapping/#crowdstrike-mapping/docs/security/threat-intelligence/crowdstrike-threat-intelligence/).
+* The `_sumo_global_feed_cs` source is a default source and cannot be changed or deleted.
 * The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the `_sumo_global_feed_cs` source).
 :::
 

@@ -384,12 +384,12 @@ In this section, we'll introduce the following concepts:
           <p>Correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
           </div>
         </div>
-                <div className="box smallbox card">
+        <!-- <div className="box smallbox card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/threatlookup"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatlookup</h4></a>
           <p>Allows you to search logs for matches in threat intelligence indicators.</p>
           </div>
-        </div>
+        </div> -->
         <div className="box smallbox card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/timeslice"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>timeslice()</h4></a>
