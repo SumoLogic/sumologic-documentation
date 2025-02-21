@@ -23,7 +23,7 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
 * **Get Indicators** *(Containment)* - Get Indicators By IDs.
 * **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
-* **Get IDP Device Info** *(Enrichment)* - Search for sensors in your environment by hostname, IP, and other criteria.
+* **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
