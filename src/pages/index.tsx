@@ -89,9 +89,11 @@ export const Home = () => {
       </Button>
     ))}
   </Stack>
+          </Container>
 
+          <Container maxWidth="lg">
             {/* Inline Chatbot Container */}
-            <Box id="inline-berry-chatbot-container" sx={{ my: 4, p: 2, margin: '0 auto', textAlign: 'center' }}>
+            <Box id="inline-berry-chatbot-container" sx={{ my: 4, py: 2, margin: '0 auto', textAlign: 'center' }}>
             {/* The chatbot will render here */}
             </Box>
           </Container>
