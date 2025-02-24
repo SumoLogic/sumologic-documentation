@@ -1,5 +1,5 @@
 ---
-id: microsoft-defender-for-cloud
+id: azure-security-defender-for-cloud
 title: Azure Security - Defender for Cloud
 description: Learn about the Sumo Logic collection process for the Azure Security - Defender for Cloud service.
 ---
@@ -348,13 +348,13 @@ Detailed remediation steps are included in the Top Action Plans, providing clear
 
 <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Security-Recommendations.png' alt="Microsoft-Defender-for-Cloud-Security-Recommendations" />
 
-## Create monitors for Azure Security Defender for Cloud app
+## Create monitors for Azure Security - Defender for Cloud app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Azure Security Defender for Cloud monitors
+### Azure Security - Defender for Cloud monitors
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
