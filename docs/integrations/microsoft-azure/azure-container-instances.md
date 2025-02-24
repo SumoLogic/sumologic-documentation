@@ -22,7 +22,7 @@ For more information on supported dimensions, refer to [Azure documentation](htt
 
 ## Setup
 
-Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to an event hub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
@@ -132,9 +132,9 @@ If this rule already exists, there is no need to create it again.
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an event hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+1. [Configure an HTTP source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Container Instances namespace that you want to monitor.
    1. Choose `Stream to an event hub` as destination.
@@ -164,7 +164,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Error Logs
 
-**Azure Container Instance - Error Logs** This dashboard provides detailed information on what is happening (errors or recent events) in a container.
+The **Azure Container Instance - Error Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container.
 
 Use this dashboard to:
 * View Total Errors.
@@ -177,18 +177,18 @@ Use this dashboard to:
 
 ### Administrative Operations
 
-**Azure Container Instances - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Container Instances resources.
+The **Azure Container Instances - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Container Instances resources.
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure proper functioning of your Container Instances system.
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
-* Track recent write and delete operations to maintain an audit trail of changes made to your azure container instances configuration.
+* Track recent write and delete operations to maintain an audit trail of changes made to your Azure Container Instances configuration.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Administrative-Operations.png')} alt="Azure Container Instances - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Resources
 
-**Azure Container Instances - Resources** use this dashboard to get average memory usage, avg CPU usage, average network bytes received and transmitted per sec.
+The **Azure Container Instances - Resources** dashboard shows average memory usage, avg CPU usage, average network bytes received and transmitted per sec.
 
 Use this dashboard to:
 * Monitor Average Memory and CPU usage and it's trend.
@@ -198,11 +198,11 @@ Use this dashboard to:
 
 ### Policy and Recommendations
 
-**Azure Container Instances - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Container Instances resources.
+The **Azure Container Instances - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Container Instances resources.
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
-* Track and analyze recent recommendations to improve the performance and security of your azure container instances setup.
+* Track and analyze recent recommendations to improve the performance and security of your Azure Container Instances setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Policy-and-Recommendations.png')} alt="Azure Container Instances - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
@@ -211,4 +211,4 @@ Use this dashboard to:
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+To troubleshoot metrics collection, follow the instructions in [Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection) in *Collect Metrics from Azure Monitor*.
