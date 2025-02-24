@@ -40,7 +40,11 @@ In Sumo Logic, records are stored in partitions, which are indexes that enable b
 | NotificationVulnerability         | sec_record_notification   |
 
 
-There is a separate partition for forwarded raw messages for which records were not created, because no log mapper was available.   
+There is a separate partition for forwarded raw messages for which records were not created, because no log mapper was available.
+
+:::tip
+Inventory log data is not stored in any `sec_record*` partitions. You must use `_siemDataType=Inventory` in your query to find inventory data. See [Searching Inventory Data](/docs/cse/administration/inventory-sources-and-data/#searching-inventory-data).
+:::
 
 ### Partition for unparsed or unmapped messages
 
