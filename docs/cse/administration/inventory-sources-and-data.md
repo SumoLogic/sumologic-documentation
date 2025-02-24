@@ -60,13 +60,21 @@ Sumo Logic Sources that collect inventory data generally have a configuration se
 
 ## Searching inventory data
 
-You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
+You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. To find all inventory data, use a search like this:
+
+```
+_siemDataType=Inventory
+```
+
+You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
 ```
 _sourceCategory=AD_inventory
 ```
 
-You can use run a broader search using `_siemDataType=Inventory`
+:::tip
+Inventory logs do not appear in `_index=_sec_record*` partitions. You cannot search for them in those indexes like you can other types of Cloud SIEM data. See [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partitions-with-cloud-siem-data).
+:::
 
 ## Inventory source mappings  
 There are two types of normalized inventory objects, Computers and Users. Some sources only support one type of object, others both. For each inventory source mapped into the normalized inventory object, the original data is stored in the `rawRecord` attribute.

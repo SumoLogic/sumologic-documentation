@@ -8,7 +8,7 @@ description: Learn how to upgrade Cloud Flex (Legacy) account.
 We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality. 
 :::
 
-This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](cloud-flex-legacy-accounts.md): Free, Trial, Professional, and Enterprise.
+This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account): Free, Trial, Professional, and Enterprise.
 
 ## Upgrade options for legacy accounts
 
