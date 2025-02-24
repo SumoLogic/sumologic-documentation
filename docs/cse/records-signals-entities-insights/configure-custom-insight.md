@@ -33,13 +33,15 @@ Typically, signals that a rule generates have the same name as the rule. That is
 
 ### For each involved entity
 
-When the conditions of a custom insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an insight will be generated for *each entity* involved. In other words, if each of the signals in a custom insight configuration fired on a different entity, an insight will be created on each of those entities. The generated insights will include not only the signals that it fired on, but also any related signals.
+By default, when the conditions of a custom insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an insight will be generated for *each entity* involved. In other words, if each of the signals in a custom insight configuration fired on a different entity, an insight will be created on each of those entities. The generated insights will include not only the signals that it fired on, but also any related signals.
 
 ### For only signals defined in the custom insight
 
-You may want to generate insights only on those signals defined in your custom insight. In that case, select the **Only include the signals defined in this custom insight** checkbox under **Strict Signal Configuration**. Any additional signals related to the applicable entity are excluded.
+The default way of generating an insight for each entity may result in custom insights containing more signals than you want. Rather than the summation of all signals attached to entities, perhaps you'd like to have those signals trigger insights directly for an immediate and targeted response.
 
-<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration checkbox" style={{border: '1px solid gray'}} width="300"/>
+In that case, under **Strict Signal Configuration** select **Only include the signals defined in this custom insight**. This generates insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. 
+
+<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration checkbox" style={{border: '1px solid gray'}} width="400"/>
  
 ## Create a custom insight
 
