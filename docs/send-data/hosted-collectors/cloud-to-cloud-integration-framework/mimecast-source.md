@@ -34,7 +34,7 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 To configure the integration, you must use a Client ID and Secret Key. Additionally, the user account associated with your Mimecast credentials must have `basic administrator` access.
 
-Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
+Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Client Secret key.
 
 :::note
 Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation. 
