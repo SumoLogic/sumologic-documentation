@@ -23,12 +23,12 @@ In this section, we'll show you how to set up source templates for the following
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch"><img src={useBaseUrl('/img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="30"/><h4>Elasticsearch</h4></a><p>Learn how to configure our OTel Elasticsearch source template.</p>
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker"><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="110"/><h4>Docker</h4></a><p>Learn how to configure our OTel Docker source template.</p>
     </div>
   </div>
-    <div className="box smallbox card">
+  <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker"><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="110"/><h4>Docker</h4></a><p>Learn how to configure our OTel Docker source template.</p>
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch"><img src={useBaseUrl('/img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="30"/><h4>Elasticsearch</h4></a><p>Learn how to configure our OTel Elasticsearch source template.</p>
     </div>
   </div>
     <div className="box smallbox card">
