@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Strict signal configuration
 
-We're happy to announce that now when you create custom insights, you can select a option to generate insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. This allows you to generate insights for an immediate and targeted response. 
+We're happy to announce that now when you create custom insights, you can select an option to generate insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. This allows you to generate insights for an immediate and targeted response. 
 
 [Learn more](/docs/cse/records-signals-entities-insights/configure-custom-insight/#for-only-signals-defined-in-the-custom-insight).
 
