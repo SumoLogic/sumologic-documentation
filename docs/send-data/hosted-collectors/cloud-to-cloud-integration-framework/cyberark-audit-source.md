@@ -32,17 +32,17 @@ The Audit service provides audit trails for activities, events, and sessions tha
 
 In this configuration, you will set up a CyberArk Audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk Audit supports OAuth authentication. 
 
-Follow the steps and instructions mentioned in the [doc](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the below mentioned parameters to configure the CyberArk Audit source.
-1. Identity Id
-1. App Id
-1. Username(Client ID)
-1. Password(Client Secret)
-1. Tenant URL
-1. API Key
+Follow the instructions in the [CyberArk documentation](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the following parameters to configure the CyberArk Audit source:
+* Identity Id
+* App Id
+* Username (Client ID)
+* Password (Client Secret)
+* Tenant URL
+* API Key
 
 ### Source configuration
 
-When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk Audit Source, follow the steps below:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
