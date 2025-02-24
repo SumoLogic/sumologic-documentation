@@ -2167,6 +2167,7 @@ integrations: [
          'integrations/microsoft-azure/azure-batch',
          'integrations/microsoft-azure/azure-cache-for-redis',
          'integrations/microsoft-azure/azure-cognitive-search',
+         'integrations/microsoft-azure/azure-container-instances',
          'integrations/microsoft-azure/azure-cosmos-db-for-postgresql',
          'integrations/microsoft-azure/azure-cosmos-db',
          'integrations/microsoft-azure/azure-data-explorer',
