@@ -55,7 +55,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **DenyList**. Provide path expression describing the files to be excluded.
 - **Endpoint**. (Default: `localhost:6379`.) The hostname and port of the Redis instance,
 separated by a colon.
-- **Username**. Optional. Enter the Redis username, in case you are using a specific user for monitoring.
+- **Username** (Optional). Enter the Redis username in case you are using a specific user for monitoring.
 - **Password Environment Variable Name**. Required. Enter the Redis password environment variable name.
 
 import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
