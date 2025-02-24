@@ -25,7 +25,7 @@ Key features of the Azure Security - Defender for Cloud app include:
 - Identify areas requiring immediate action to ensure regulatory adherence for your Azure resources.
 
 :::info
-This app includes [built-in monitors](#azure-security-defender-for-cloud-monitors). For details on creating custom monitors, refer to [Create monitors for Azure Security Defender for Cloud app](#create-monitors-for-azure-security-defender-for-cloud-app).
+This app includes [built-in monitors](#azure-security---defender-for-cloud-monitors). For details on creating custom monitors, refer to [Create monitors for Azure Security Defender for Cloud app](#create-monitors-for-azure-security---defender-for-cloud-app).
 :::
 
 ## Log types
