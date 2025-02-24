@@ -32,7 +32,7 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 ### Vendor configuration
 
-The integration must be configured with the Client ID and Secret Key. Also, the user account associated with your Mimecast credentials needs to have `basic administrator` access.
+To configure the integration, you must use a Client ID and Secret Key. Additionally, the user account associated with your Mimecast credentials must have `basic administrator` access.
 
 Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
 
