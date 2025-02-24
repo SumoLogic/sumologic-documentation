@@ -8,7 +8,7 @@ sidebar_label: Optimize Search with Partitions
 
 A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
 
-Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
+Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
 This example shows a customer that created three additional Partitions to separate data by environment.
 
@@ -28,9 +28,21 @@ Consider the following queries:
 * **Query 3**. You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data, is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2.
 * **Query 4**. We want to search for data that is in a custom Partition, as well as data that exists in the Default Index. However, query rewriting does not have the ability to OR indexes together. Instead, another behind-the-scenes feature, Inverse View Rewriting kicks in, we know that the data is NOT contained in the DEV and QA index, so those will be skipped. This query will only scan the Prod index and the Default Index.
 
-You can create partitions for both data tier and flex plans. By default, all data ingested into Sumo Logic will go to the continuous tier unless you specify a different data tier using the routing expression. Only data that goes to a partition can be assigned to Frequent or Infrequent Tier. Costs will be incurred for ingesting the data into Sumo Logic for Continuous, Frequent, and Infrequent tiers. Logs held in the Infrequent tier will also incur costs when the data is subsequently queried for analysis. The number of credits consumed will be based on the volume of data scanned. To learn more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers). 
+You can create partitions within both data tier and flex plans.
 
-In contrast, the Flex plan does not involve configuring data into specific tiers. All data ingested under the Flex plan is classified as Flex data, and pricing is determined by the scanned volume of insights and analytics. This plan also provides access to additional default features, such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
+### Data Tier plans
+
+You can use data tiers if you have a license for Sumo Logic's [Enterprise Suite Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#enterprise-suite) account type. By default, all log data ingested into Sumo Logic is assigned to the `sumologic_default` partition, which operates on the Continuous tier. If you have an Enterprise Suite Credits account type, you have the option to assign some log data to either the Frequent or Infrequent tier by creating a separate partition with a specific routing expression and assigned data tier.
+
+Different data tiers come with varying credit burn rates. Costs will be incurred for ingesting log data into Sumo Logic based on the tier: Continuous, Frequent, and Infrequent. Logs held in the Infrequent tier will also incur costs when the data is subsequently queried for analysis. The number of credits consumed will be determined by the volume of log data scanned. To learn more, refer to the [Data Tier Partitions](/docs/manage/partitions/data-tiers). 
+
+### Flex plans
+
+In contrast, it is recommended to opt for Sumo Logic's Flex account type to use the Flex plan, which does not involve assigning log data to specific tiers. All log data* ingested under a Flex plan is classified as Flex data, and pricing is determined on the volume of log data scanned when running log search queries and dashboards. 
+
+Creating partition is an important method to control the amount of data scanned. You can still create log data partitions with a Flex plan that do not require you to have different data tiers. Depending on the account type chosen within Flex,  you may access additional features such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
+
+*Customers licensed for [Enterprise Suite Flex](/docs/manage/manage-subscription/sumo-logic-flex-accounts/#enterprise-suite-flex) account type can also license [Cloud SIEM](/docs/cse/) solution. With this, the subset of ingested log data forwarded to the Cloud SIEM solution is not categorized as Flex data. Instead of being priced based on the volume of data scanned by queries, the forwarded data is priced based on the volume ingested.
 
 ## What is Query Rewriting?
 
