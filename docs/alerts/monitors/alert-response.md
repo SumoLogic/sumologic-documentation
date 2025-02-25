@@ -155,6 +155,7 @@ The top of the page provides several details and buttons.
 * **L**. The query of the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/l-m-n-labels.png')} alt="labels" width="800"/>
 * **M**. A chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
 * **N**. A table with the raw data that triggered the alert.
+* **O**. The **Open in Copilot** button lets you troubleshoot alerts directly in [Copilot](/docs/search/copilot) while preserving alert context, making investigations seamless. This enables faster root cause analysis by allowing you to jump into Copilot instantly and perform context-aware troubleshooting while maintaining alert details.<br/><img src={useBaseUrl('img/alerts/open-in-copilot.png')} alt="open in copilot button on alert response page" width="400"/>
 
 Below this, as you scroll down on the page, you'll see context cards covered in the next section.
 
@@ -162,13 +163,6 @@ Below this, as you scroll down on the page, you'll see context cards covered in 
 * The Alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
 * Related Alerts and Monitor History show the top 250 alerts.
 :::
-
-<!-- add "Open in Copilot" button to the Alert Response page, allowing you to troubleshoot alerts directly in Copilot. This preserves the alert context, making it seamless to investigate and resolve issues.
-* **Faster root cause analysis**. Jump into Copilot instantly from an alert.  
-* **Context-aware troubleshooting**. Maintain alert details while searching logs.  
-
-link to Copilot doc
--->
 
 ### Alert context cards
 
