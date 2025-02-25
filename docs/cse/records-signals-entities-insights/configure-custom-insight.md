@@ -33,7 +33,7 @@ Typically, signals that a rule generates have the same name as the rule. That is
 
 ### For each involved entity
 
-By default, when the conditions of a custom insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an insight is generated for *each entity* involved. In other words, if each of the signals in a custom insight configuration fire on a different entities, a separate insight is created for each entity. The generated insights will include both the signals that triggered them and any related signals.
+By default, when the conditions of a custom insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an insight is generated for *each entity* involved. In other words, if each of the signals in a custom insight configuration fire on different entities, a separate insight is created for each entity. The generated insights will include both the signals that triggered them and any related signals.
 
 ### For only signals defined in the custom insight
 
