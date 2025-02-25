@@ -12,7 +12,7 @@ description: Parse the common fields in your Palo Alto Network Logs using the FE
 **Sample Log**:
 
 ```
-Jul 13 20:39:44 1,2017/07/13 20:39:44,0009C101317,TRAFFIC,end,1,2017/07/13 20:39:44,10.183.12.108,10.183.51.49,0.0.0.0,0.0.0.0,WinDomain_AUTH_TO_DC,,sumo\mkwan,msrpc,vsys1,ENG_USER,ENG_INFRA,ivlan_712,ivlan_751,Syslog,2017/07/13 20:39:44,1070831,1,65123,135,0,0,0x0,tcp,allow,1194,644,550,12,2017/07/13 20:39:44,40,any,0,3297977305,0x0,10.0.0.0_10.255.255.255,10.0.0.0_10.255.255.255,0,7,5
+Jul 13 20:39:44 1,2017/07/13 20:39:44,0009C101317,TRAFFIC,end,1,2017/07/13 20:39:44,10.183.12.108,10.183.51.49,0.0.0.0,0.0.0.0,WinDomain_AUTH_TO_DC,,sumo\mkwan,msrpc,vsys1,ENG_USER,ENG_INFRA,ivlan_712,ivlan_751,Syslog,2017/07/13 20:39:44,1070831,1,65123,135,0,0,0x0,tcp,allow,1194,644,550,12,1,40,any,0,3297977305,0x0,10.0.0.0_10.255.255.255,10.0.0.0_10.255.255.255,0,7,5
 ```
 
 **Parsing Rule**:
@@ -60,7 +60,7 @@ parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 | threatID      | Palo Alto Networks identifier for known and custom threats.  |  644 |
 |  cat          | For **URL** Subtype, it is the URL Category; For **WildFire** subtype, it is the verdict on the file that is either ‘malware’, ‘phishing’, ‘grayware’, or ‘benign’; For other subtypes, the value is ‘any’.  |  550 |
 | severity      | Severity associated with the threat. |  12 |
-| direction     | Indicates the direction of the attack.  |  2017/07/13 20:39:44 |
+| direction     | Indicates the direction of the attack. It can be client to server or from server to client. </br> `0` - indicates the direction of threat is from client to server. </br> `1` - indicates the direction of threat is from server to client.  |  1 |
 | seqNum        | Sequentially incremented identifier.  |  40 |
 |  action_flags | A bit field indicating if the log was forwarded to Panorama.  |  any |
 |  src_loc      | Source country or Internal region for private addresses.  |  0 |
