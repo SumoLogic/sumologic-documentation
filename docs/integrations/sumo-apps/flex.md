@@ -11,8 +11,22 @@ import Iframe from 'react-iframe';
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
-<details>
-<summary><strong>Micro Lesson</strong>: Viewing the Flex App Dashboards</summary>
+:::sumo Micro Lesson
+Learn how to view the Flex app dashboards.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/5nbwkw5y46??web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Viewing the Flex App Dashboards Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/kn3SVhAIwDk?si=nMQBWvp5Ruo-nOaB"
         width="854px"
         height="480px"
@@ -23,7 +37,9 @@ With Sumo Logic Flex, you gain an efficient and centralized log analytics framew
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-</details>
+-->
+
+:::
     
 ## Log types
 
@@ -211,9 +227,17 @@ The **Flex - Capacity Utilization** dashboard displays the subscribed, actual, a
 
 The **Flex - Credits Consumed** dashboard provides visibility into the total amount of [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) consumed by your organization. This allows you to monitor and control search costs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Credits-Consumed.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" /> 
 
+:::note
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+:::
+
 ### Feature Level Scan Volume
 
 The **Flex - Feature Level Scan Volume** dashboard provides visibility into the scan volume at a feature level in order to monitor and control cost at a feature level.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Feature-Level-Scan-Volume.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+
+:::note
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+:::
 
 ### Log Spikes
 
@@ -231,7 +255,7 @@ The **Flex - Metrics** dashboard helps you review metrics details of your data i
 
 The **Flex - Tracing** dashboard helps to review Tracing details of your data ingest and to identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Tracing.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
 
-## Upgrading the Flex app (Optional)
+## Upgrade/Downgrade the Flex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

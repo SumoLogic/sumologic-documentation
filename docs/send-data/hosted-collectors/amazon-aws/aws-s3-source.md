@@ -63,11 +63,13 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 
 Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from these buckets has the following limitations:
 
-* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
-* S3 Event Notifications Integration is not supported.
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
-* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*`
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
 
 ## S3 Event Notifications Integration
 
@@ -78,19 +80,6 @@ Sumo’s S3 integration combines scan-based discovery and event based discovery 
 Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
-
-<Iframe url="https://www.youtube.com/embed/2vtjPfHQK1Q"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
 
 ## Create an Amazon S3 Source
 

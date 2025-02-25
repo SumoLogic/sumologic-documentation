@@ -17,11 +17,11 @@ The Sumo Logic app for Slack provides monitoring and data analytics for Slack us
 
 Slack logs are in JSON format. The Slack app utilizes the following log types:
 
-* User logs
-* Public channel logs
-* Public message logs
-* Access logs
-* Audit logs
+* [User logs](https://api.slack.com/methods/users.list)
+* [Public Channel logs](https://api.slack.com/methods/conversations.list)
+* [Public Message logs](https://api.slack.com/methods)
+* [Access logs](https://api.slack.com/methods/team.accessLogs)
+* [Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
 
 Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
@@ -37,7 +37,9 @@ Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields
 
 The following table provides sample log messages for the different log types.
 
-[User logs](https://api.slack.com/methods/users.list)
+<details>
+<summary>User logs</summary>
+
 ```json
 {
   "id": "UM27LNGHK",
@@ -61,8 +63,11 @@ The following table provides sample log messages for the different log types.
   "logType": "UserLog"
 }
 ```
+</details>
 
-[Public Channel logs](https://api.slack.com/methods/conversations.list)
+<details>
+<summary>Public Channel logs</summary>
+
 ```json
 {
   "channel_id": "CKN1D8010",
@@ -72,8 +77,11 @@ The following table provides sample log messages for the different log types.
   "teamName": "TestSlack"
 }
 ```
+</details>
 
-[Public Message logs](https://api.slack.com/methods)
+<details>
+<summary>Public Message logs</summary>
+
 ```json
 {
   "type": "message",
@@ -110,8 +118,11 @@ The following table provides sample log messages for the different log types.
   "logType": "ConversationLog"
 }
 ```
+</details>
 
-[Access logs](https://api.slack.com/methods/team.accessLogs)
+<details>
+<summary>Access logs</summary>
+
 ```json
 {
   "user_id": "e65b0476",
@@ -128,8 +139,11 @@ The following table provides sample log messages for the different log types.
   "logType": "AccessLog"
 }
 ```
+</details>
 
-[Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
+<details>
+<summary>Audit logs</summary>
+
 ```json
 {
   "logType": "UserAuditLog",
@@ -187,6 +201,7 @@ The following table provides sample log messages for the different log types.
   }
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -215,15 +230,33 @@ _sourceCategory=Labs/slack
 | limit 20
 ```
 
-## Collect logs for the Slack app
+## Collection configuration and app installation
 
-This legacy solution to pull logs from Slack to Sumo Logic has been replaced with a dedicated Cloud-to-Cloud Integration Framework, [Slack Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source). We recommend using this source instead of the legacy Python collection method.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Slack app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Slack](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Slack app is properly integrated and configured to collect and analyze your Slack data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Slack dashboards
 
@@ -350,7 +383,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack_File_And_App_Audit.png')} alt="Slack dashboards" />
 
-## Upgrading the Slack app (Optional)
+## Upgrade/Downgrade the Slack app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

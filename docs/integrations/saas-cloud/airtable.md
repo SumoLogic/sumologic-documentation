@@ -2,24 +2,24 @@
 id: airtable
 title: Airtable
 sidebar_label: Airtable
-description: The Sumo Logic App for the Airtable App offers functionality for monitoring and analyzing your organization's Airtable audit logs.
+description: The Sumo Logic app for the Airtable app offers functionality for monitoring and analyzing your organization's Airtable audit logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
 
-The Airtable App for Sumo Logic monitors and analyzes your organization's Airtable audit logs, providing insights into user activity, data trends, and security events. This app is based on the Airtable Audit Logs, which provide detailed information on all actions performed in your Airtable account.
+The Airtable app for Sumo Logic monitors and analyzes your organization's Airtable audit logs, providing insights into user activity, data trends, and security events. This app is based on the Airtable Audit Logs, which provide detailed information on all actions performed in your Airtable account.
 
-The Airtable App makes it simple to import data from your Airtable audit logs into Sumo Logic, where you can perform real-time analysis and build dashboards to visualize key metrics. You can monitor security events and gain insights into user activity across your organization.
+The Airtable app makes it simple to import data from your Airtable audit logs into Sumo Logic, where you can perform real-time analysis and build dashboards to visualize key metrics. You can monitor security events and gain insights into user activity across your organization.
 
-The Airtable App allows you to:
+The Airtable app allows you to:
 * Keep track of user activity within your Airtable account in real-time.
 * Analyze user actions, identify failed executions, and track trends over time.
 * View a summary of audit logs in table format, enabling you to identify anomalous behavior and potential security threats.
 * Create customized dashboards to visualize important metrics and track key performance indicators.
 
-The Airtable App also offers a pre-built dashboard that enables you to start monitoring your Airtable audit logs right away. The Airtable App for Sumo Logic is especially useful for organizations that must comply with regulatory requirements or maintain a high level of security. With the ability to monitor user activity and track changes in real time, you can quickly identify potential issues and respond to security incidents as they occur.
+The Airtable app also offers a pre-built dashboard that enables you to start monitoring your Airtable audit logs right away. The Airtable App for Sumo Logic is especially useful for organizations that must comply with regulatory requirements or maintain a high level of security. With the ability to monitor user activity and track changes in real time, you can quickly identify potential issues and respond to security incidents as they occur.
 
 ## Log type
 
@@ -28,6 +28,9 @@ The Sumo Logic app for Airtable consumes Audit logs from your Airtable Enterpris
 To understand how to access detailed records of changes made to the Airtable Enterprise account, refer to the [Airtable Audit logs](https://support.airtable.com/docs/how-to-access-enterprise-audit-logs#interpreting-audit-logs) documentation. This documentation provides information on the different types of logs that are available, how to access them, and what information they contain.
 
 ### Sample log messages
+
+<details>
+<summary>Click to view the sample log message</summary>
 
 ```json
 {
@@ -58,6 +61,7 @@ To understand how to access detailed records of changes made to the Airtable Ent
   }
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -70,13 +74,33 @@ _sourceCategory="Labs/airtable"
 | count_distinct (action_id)
 ```
 
-## Installing the Airtable app
+## Collection configuration and app installation
 
-Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+<CollectionConfiguration/>
 
-<AppInstall2/>
+:::important
+Use the [Cloud-to-Cloud Integration for Airtable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Airtable app is properly integrated and configured to collect and analyze your Airtable data.
+:::
+
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Airtable dashboards​
 
@@ -86,9 +110,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-**Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('img/integrations/saas-cloud/airtable-overview.png')} alt="airtable-overview.png" width="600"/>
+The **Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('img/integrations/saas-cloud/airtable-overview.png')} alt="airtable-overview.png" width="600"/>
 
-## Upgrading the Airtable app (Optional)
+## Upgrade/Downgrade the Airtable app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

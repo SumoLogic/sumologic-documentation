@@ -7,6 +7,10 @@ description: Learn prerequisites and guidelines for deploying the AWS Observabil
 
 This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution. 
 
+:::info
+If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
+:::
+
 ## Prerequisites
 
 * **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
@@ -181,7 +185,7 @@ Here’s a sample `sources.json` file that you can include in your AMI.
 
 Before setting up the AWS Observability solution we recommend testing permissions for both AWS and Sumo Logic by using a test AWS CloudFormation template. To execute this template:
 
-1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/permissionchecker/permissioncheck.template.yaml).
+1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.11.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/>  ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
 1. Click **Create Stack.**

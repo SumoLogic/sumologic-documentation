@@ -6,6 +6,8 @@ description: The Google BigQuery App helps you monitor data and activity in your
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="thumbnail icon" width="50"/>
 
@@ -28,8 +30,49 @@ _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 | transpose row _timeslice column project
 ```
 
+## Collection configuration and app installation
 
-## Collecting logs for the Google BigQuery app
+Choose one of the following methods to configure the Google BigQuery source and install the app:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Cloud-to-cloud source setup and app installation"
+  values={[
+    {label: 'Cloud-to-cloud source setup and app installation', value: 'Cloud-to-cloud source setup and app installation'},
+    {label: 'HTTP source setup and app installation', value: 'HTTP source setup and app installation'}
+  ]}>
+
+<TabItem value="Cloud-to-cloud source setup and app installation">
+
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
+
+<CollectionConfiguration/>
+
+:::important
+Use the [Cloud-to-Cloud Integration for Google BigQuery](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Google BigQuery app is properly integrated and configured to collect and analyze your Google BigQuery data.
+:::
+
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+</TabItem>
+
+<TabItem value="HTTP source setup and app installation">
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
@@ -41,19 +84,19 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 <img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="Google integrations" />
 
-### Configuring collection for GCP uses the following process:
+### Configuring collection for GCP
 
-1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
-2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
-3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+Configuring collection for GCP uses the following process:
 
-See the following sections for configuration instructions.
+[Step 1: Configure a Google Cloud Platform Source](#step-1-configure-a-google-cloud-platform-source). Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.<br/>
+[Step 2: Configure a Pub/Sub Topic for GCP](#step-2-configure-a-pubsub-topic-for-gcp). Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.<br/>
+[Step 3: Create export of Google BigQuery logs from Google Logging](#step-3-create-export-of-google-bigquery-logs-from-google-logging). Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 :::note
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 :::
 
-### Configure a Google Cloud Platform Source
+#### Step 1: Configure a Google Cloud Platform Source
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -68,21 +111,20 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
-4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
+4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" width="400" />
 5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
 6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
 7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
    * ![green check circle.png](/img/reuse/green-check-circle.png) If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
-8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
+8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" width="400" />
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 10. When you are finished configuring the Source, click **Save**.
 
-
-### Configure a Pub/Sub Topic for GCP
+#### Step 2: Configure a Pub/Sub Topic for GCP
 
 You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
@@ -90,8 +132,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
     * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
-
-### Limitations
+##### Limitations
 
 Google limits the volume of data sent from a Topic. Our testing resulted in the following data limits:
 
@@ -108,28 +149,29 @@ We recommend the following:
 * Shard messages across topics within the above data limits.
 * Ask GCP to increase the allowable capacity for the topic.
 
-
-### Create export of Google BigQuery logs from Google Logging
+#### Step 3: Create export of Google BigQuery logs from Google Logging
 
 In this step you export logs to the Pub/Sub topic you created in the previous step.
 
-1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
+1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" width="400" />
 2. Click **Create Sink**. <br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
 3. As part of **Create logs routing sink**, add the following information.
    1. Enter a Sink Name. For example, "gce-vm-instance".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-   4. In **Choose logs to include in sink** section for resource_type, replace "`<resource_variable>`" with "`bigquery_resource`".<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" />
+   4. In **Choose logs to include in sink** section for resource_type, replace "`<resource_variable>`" with "`bigquery_resource`".<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" width="400" />
    5. Click **Create Sync**.
 
-
-## Installing the Google BigQuery app
+### Installing the Google BigQuery app
 
 Now that you have set up log collection, you can install the Google BigQuery App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+</TabItem>
+</Tabs>
 
 ## Viewing Google BigQuery dashboards
 
@@ -253,7 +295,7 @@ See information about users  in Google BigQuery, including query operations, bil
 
 **Location of Users with Errors.** Shows the number of users with errors in the last 24 hours and their location on a map.
 
-## Upgrading the Google BigQuery app (Optional)
+## Upgrade/Downgrade the Google BigQuery app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

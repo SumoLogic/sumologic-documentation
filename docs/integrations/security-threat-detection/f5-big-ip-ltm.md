@@ -91,7 +91,7 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 
 #### Step 2: Use AS3 Declarative language to define a logging profile on BIG-IP
 
-Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile on BIG IP.
+Download [AS3Listener.json from here](https://sumologic-app-data.s3.us-east-1.amazonaws.com/F5LTM/V1/AS3Listener.json), and we will use it to define the logging profile on BIG IP.
 
 Use the following curl command to set logging profile at BIG-IP. Replace `BIG-IP PWD`, `BIG-IP IP`, and `PORT` in the following command:
 
@@ -101,7 +101,7 @@ curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
-Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/sumo.json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
+Download the Sumo Logic `sumo.json` [here](https://sumologic-app-data.s3.us-east-1.amazonaws.com/F5LTM/V1/sumo..json), and replace `SUMOLOGIC_HOST` and `SUMOLOGIC_SECRET_KEY` with values from Sumo Logic HTTP URL created in step 1.
 
 Example: For the Sumo Logic HTTP URL `https://collectors.us2.sumologic.com/receiver/v1/http/test-endpoint`, the above values are as follows:
 * `SUMOLOGIC_HOST`. `collectors.us2.sumologic.com`
@@ -112,6 +112,26 @@ Now, using telemetry, we will define a [Sumo Logic sink](https://clouddocs.f5.co
 ```bash
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
 ```
+:::note
+Contact F5 support team if the above curl commands return an error.
+:::
+
+#### Step 4: Associate logging profiles with virtual servers
+
+To begin collecting telemetry, the logging profiles (LTM and ASM) created by AS3 in [step 2](#step-2-use-as3-declarative-language-to-define-a-logging-profile-on-big-ip) need to be assigned to the BIG-IP virtual server(s).
+
+Follow the below steps to associate LTM logging profile:
+
+1. From the BIG-IP console UI, navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step1.png')} alt="console UI" style={{border: '1px solid gray'}} width="500" />
+1. Select and open the virtual server(s) to update their properties. In the **Configuration** dropdown, change the virtual server configuration setting from **Basic** to **Advanced** to expose the logging properties.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step2.png')} alt="server config" style={{border: '1px solid gray'}} width="500" />
+1. In the **Request Logging Profile**, select the previously created LTM logging profile to the virtual server(s).<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step3.png')} alt="assign LTM logging profile" style={{border: '1px solid gray'}} width="500" />
+1. Click **Update** to save the changes.
+
+Follow the below steps to associate ASM logging profile:
+
+1. After assigning the LTM logging profile to the virtual server, navigate to the **Security** tab and select **Policies** to access the virtual server’s security policy settings.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step5.png')} alt="security" style={{border: '1px solid gray'}} width="500" />
+1. In the **Log Profile**, enable logging and assign the previously created ASM logging profile. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/F5+BIG-IP+Local+Traffic+Manager/step6.png')} alt="assign ASM logging profil" style={{border: '1px solid gray'}} width="500" />
+1. Click **Update** to save the configuration changes.
 
 ## Installing the F5 - BIG-IP LTM app
 
@@ -178,7 +198,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
 
-## Upgrading the F5 - BIG-IP LTM app (Optional)
+## Upgrade/Downgrade the F5 - BIG-IP LTM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

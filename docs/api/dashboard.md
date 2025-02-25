@@ -30,10 +30,9 @@ The Dashboard Management APIs allow you to create, retrieve, update, and delete 
 |US1       |https://api.sumologic.com/docs/#tag/dashboardManagement      |
 |US2       |https://api.us2.sumologic.com/docs/#tag/dashboardManagement  |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Dashboards (all capabilities)
 
--->

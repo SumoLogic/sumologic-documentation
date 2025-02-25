@@ -300,7 +300,7 @@ See the details of user activities including the location, top users, creations 
 
 **Recent User Activity**. See the details of user activities in the last three hours including the timestamp, user, project, method, severity, and operations.
 
-## Upgrading the Google Cloud Audit app (Optional)
+## Upgrade/Downgrade the Google Cloud Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

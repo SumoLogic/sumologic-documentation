@@ -2,7 +2,7 @@
 id: cse-rules-syntax
 title: Cloud SIEM Rules Syntax
 sidebar_label: Rules Syntax
-description: Learn about the functions you can use when writing Cloud SIEM Rules.
+description: Learn about the functions you can use when writing Cloud SIEM rules.
 ---
 
 This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
@@ -364,11 +364,11 @@ The following expression returns "3.141592653589793" (pi):
 
 Returns “true” if a specified array contains a particular value. 
 
-Cloud SIEM rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+Cloud SIEM rules use `array_contains` statements to look for a value in a record field. This is useful if you want to check a record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
-The syntax for checking for the existence of a Match List name or a threat intel list name in a Record’s `listMatches` field is: 
+The syntax for checking for the existence of a Match List name or a threat intel list name in a record’s `listMatches` field is: 
 
 `array_contains(listMatches, 'match_list_name')`
 
@@ -388,7 +388,7 @@ The syntax for checking to see if the the `fieldsTag` field contains a particula
 
 where:
 
-* `field `is the name of a Record field
+* `field `is the name of a record field
 * `keyword-tag` is a keyword tag
 
 **Syntax for matching to a schema key tag**
@@ -399,7 +399,7 @@ The syntax for checking to see if the the `fieldTag` field contains a particular
 
 where:
 
-* `field` is the name of a Record field
+* `field` is the name of a record field
 * `schema-key` is the name of a schema key tag
 * `schema-value` is the value of a schema key tag
 
@@ -1394,7 +1394,12 @@ Filters results based on the value of a boolean expression.  
 
 `... | where <boolean expression>`
 
-**Example**
+**Examples**
 
-`| where jsonArrayContains(field, “vuln_scanner”)`  
+* `| where jsonArrayContains(field, “vuln_scanner”)`
 
+* `| where` can be used at the beginning of an expression, as well as on subsequent lines after another syntax element has been used to start a preceding line. For example:
+   ```
+   | json field=fields "foo" as alias
+   | where toInt(alias) > 5
+   ```

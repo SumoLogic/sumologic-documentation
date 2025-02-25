@@ -30,8 +30,23 @@ Partitions ingest your messages in real time. They differ from scheduled views i
 
 You define the data that will reside in a partition by defining a routing expression, which is similar to a log query, but with certain restrictions in terms of the operators you can include. Each partition's routing expression is applied to all messages as they are ingested to Sumo Logic. If a message matches the partition’s routing expression, it is added to the partition.
 
-## Micro Lesson: Partitions Basics
+## Micro Lesson: Partitions basics
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/p0xs5l91jq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Partitions Basics (New UI) Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/kpQLFVT4uE8"
         width="854px"
         height="480px"
@@ -42,7 +57,9 @@ You define the data that will reside in a partition by defining a routing expres
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
+:::
 
 ## Limitations 
 
@@ -70,7 +87,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Rentention</h4></a>
+  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
   <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
   </div>
 </div>

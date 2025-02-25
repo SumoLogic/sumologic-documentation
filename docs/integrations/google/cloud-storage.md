@@ -210,7 +210,7 @@ See information about buckets in Google Cloud Storage, including operations by b
 
 **Operations Over Time.** Shows number of operations over time in the last 24 hours on a column graph.
 
-## Upgrading the Google Cloud Storage app (Optional)
+## Upgrade/Downgrade the Google Cloud Storage app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

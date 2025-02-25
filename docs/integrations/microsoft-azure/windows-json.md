@@ -160,7 +160,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Application.png')} alt="Windows JSON dashboards" />
 
-## Upgrading the Windows JSON app (Optional)
+## Upgrade/Downgrade the Windows JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

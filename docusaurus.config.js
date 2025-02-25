@@ -248,7 +248,14 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
+      },
+      {
+        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
+      },
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -272,15 +279,15 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
+      id: 'copilot',
+      content: 'Check out 🤖 <b><a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a></b>, our new AI-powered logs assistant!',
       backgroundColor: '#D3BAF7',
       textColor: '#000',
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
@@ -317,6 +324,12 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'grid_view',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'security',
                 label: 'Security',
                 icon: 'security',
@@ -329,9 +342,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'grid_view',
+                sidebarId: 'dashboards',
+                label: 'Dashboards',
+                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -350,12 +363,6 @@ module.exports = {
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'speed',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Dashboards',
-                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',

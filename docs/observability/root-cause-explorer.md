@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 :::warning
-Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
+Root Cause Explorer has been [deprecated](/docs/observability/root-cause-explorer-deprecation). It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/). We recommend using other [Observability](/docs/observability/) tools instead.
 :::
 
 
@@ -469,7 +469,7 @@ _view=sumologic_signals_anomalies
 
 #### Return entities with the most problems
 
-This query uses the [logreduce](/docs/search/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
+This query uses the [logreduce](/docs/search/behavior-insights/logreduce) operator to look for groups of anomalies to assess if some combination of metrics, clusters and so on, account for a large share of overall EOI volume.
 
 ```sql
 _view=sumologic_signals_anomalies

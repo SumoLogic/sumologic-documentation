@@ -36,7 +36,7 @@ Amazon Simple Storage Service (S3) provides a simple web services interface that
 
 This topic details how to collect logs for Amazon S3 Audit and ingest them into Sumo Logic.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the Account page in  Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the Account page in  Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
 ### Prerequisites
 
@@ -122,7 +122,7 @@ This dashboard provides high-level views of threats throughout your S3 Service. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/S3-Threat-Intel.png')} alt="S3 Audit dashboards" />
 
-## Upgrading the Amazon S3 Audit app (Optional)
+## Upgrade/Downgrade the Amazon S3 Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

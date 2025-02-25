@@ -30,11 +30,9 @@ The Tokens Management API allows you to manage [Installation Tokens](/docs/manag
 | US1        | https://api.sumologic.com/docs/#tag/tokensLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/tokensLibraryManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Tokens
-
--->

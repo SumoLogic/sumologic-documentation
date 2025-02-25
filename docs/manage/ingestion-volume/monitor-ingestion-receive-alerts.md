@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#monitoring-account-usage).
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Sumo Logic Credits Account Overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
 With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -29,7 +29,7 @@ You must update all of the indicated fields for the search to save successfully
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85

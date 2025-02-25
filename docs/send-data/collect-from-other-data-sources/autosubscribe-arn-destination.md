@@ -58,7 +58,7 @@ This section describes the parameters you can configure for the Lambda function.
 
 * **UseExistingLogs**—Controls whether this function will be used to create subscription filters for existing log groups. Select "True" if you want to use the function for subscribing to existing log groups.
 
-* **LogGroupTags**: Enter comma-separated key-value pairs for filtering logGroups using tags. For Example, KeyName1=string,KeyName2=string. Only log groups that match any one of the key-value pairs will be subscribed by this Lambda function. Supported only when UseExistingLogs is set to false which means it works only for new log groups, not existing log groups.
+* **LogGroupTags**: Enter comma-separated key-value pairs for filtering logGroups using tags. For Example, KeyName1=string,KeyName2=string. Supported only when UseExistingLogs is set to false.
 
 * **RoleArn:** Provide the AWS Role ARN which has permission to put data into the provided Kinesis Firehose data delivery stream. Keep the value empty, when the destination type is Lambda.
 
