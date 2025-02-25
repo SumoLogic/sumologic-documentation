@@ -101,18 +101,20 @@ Instead, use separate steps:
    <code>| count_distinct(referrer) by status_code</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/fillmissing">fillmissing</a></td>
-   <td>When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if you are grouping by timeslice, then only the timeslices that have data are returned.<br/>This operator allows you to specify groups to present in the output, even if those groups have no data.</td>
-   <td></td>
-   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
-   <td><code>error<br/>| count by _sourceCategory<br/>| fillmissing values("backend", "database", "webapp") in _sourceCategory</code></td>
-  </tr>
-  <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/first-last">first and last</a></td>
    <td>First finds the earliest occurrence in search results, and last finds the result that follows all others, based on the sort order for the query.</td>
    <td>_first<br/>_last</td>
    <td>Not supported in auto refresh dashboards or any continuous query.</td>
    <td><code>| sort by _timeslice<br/>| first(error_message) by hostname</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/median/">median</a></td>
+   <td>Use the median function to find the median value in a set of values.</td>
+   <td>_&lt;field>_pct_50</td>
+   <td></td>
+   <td>
+   Example 1:<br/><code>* | parse "data=*" as data<br/>| pct(data, 50) as median</code><br/>Example 2:<br/><code>| parse "Len: *" as seconds<br/>| pct(seconds,50) as median</code><br/>
+   </td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/min-max">min and max</a></td>
@@ -149,6 +151,13 @@ Instead, use separate steps:
    <td></td>
    <td><code>... | sum(bytes_received) group by hostname</code></td>
   </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/values">values</a></td>
+   <td>The value operator provides all the distinct values of a field enabling you to identify and group data by other fields of interest.</td>
+   <td>_values</td>
+   <td></td>
+   <td><code>... | sum(bytes_received) group by hostname</code></td>
+  </tr>
 </table>
 
 ## Search Operators
@@ -169,6 +178,13 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>_accum</td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
    <td><code>_sourceCategory=IIS (Wyatt OR Luke)<br/>| parse "[user=*]" as cs_username<br/>| timeslice by 1m<br/>| count as requests by _timeslice,cs_username<br/>| sort by _timeslice asc,cs_username<br/>| accum requests as running_total</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/as/">as</a></td>
+   <td>The as operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.</td>
+   <td>_as</td>
+   <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
+   <td><code>| parse "* - - " as ip_addr<br/>| ip_addr as src_ip</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/asn-lookup">asn lookup</a></td>
@@ -206,11 +222,25 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>_sourceCategory=analytics<br/>| parse "ms: *" as time<br/>| bin time width=10, min = 0, max = 500<br/>| count by _bin, _bin_upper<br/>| sort by _bin_upper</code></td>
   </tr>
   <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/cat/">cat</a></td>
+   <td>The cat operator to used to view the contents of a lookup table.</td>
+   <td>_cat</td>
+   <td>Not supported in auto refresh dashboards or scheduled searches.</td>
+   <td><code>cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"</code></td>
+  </tr>
+  <tr>
    <td><a href="/docs/search/search-query-language/search-operators/cidr">CIDR</a></td>
    <td>The CIDR operator allows you to leverage Classless Inter-Domain Routing (CIDS) notations to analyze IP network traffic in order to narrow analysis to specific subnets. CIDR notations specify the routing prefix of IP addresses.</td>
    <td></td>
    <td></td>
    <td><code>(denied OR rejected AND _sourcecategory=firewall <br/>| parse "ip=*," as ip_address<br/>| where compareCIDRPrefix("10.10.1.32", ip_address, toInt(27)) <br/>| count by ip_address</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/compare/">compare</a></td>
+   <td>The compare operator is used with the [Time Compare](/docs/search/time-compare/) button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query.</td>
+   <td>_compare</td>
+   <td>If you want to use `timeslice` with `compare`, do not alias `timeslice`.</td>
+   <td><code>_sourceHost = prod<br/>| timeslice by 1m<br/>| count by _timeslice<br/>| compare timeshift 10m 5</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/concat">concat</a></td>
@@ -234,6 +264,13 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>... | decToHex("4919") as V</code></td>
   </tr>
   <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/dedup/">dedup</a></td>
+   <td>The dedup operator removes duplicate results. You have the option to remove consecutively and by specific fields.</td>
+   <td>_dedup</td>
+   <td></td>
+   <td>Example 1:<br/><code>| dedup by country</code><br/>Example 2:<br/><code>| dedup 1 by service</code></td>
+  </tr>
+  <tr>
    <td><a href="/docs/search/search-query-language/search-operators/diff">diff</a></td>
    <td>The diff operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.</td>
    <td>_diff</td>
@@ -246,6 +283,13 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td></td>
    <td></td>
    <td><code>_sourceCategory=access_logs <br/>| parse "[status=*]" as status_code <br/>| fields method, status_code</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/fillmissing">fillmissing</a></td>
+   <td>When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if you are grouping by timeslice, then only the timeslices that have data are returned.<br/>This operator allows you to specify groups to present in the output, even if those groups have no data.</td>
+   <td></td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
+   <td><code>error<br/>| count by _sourceCategory<br/>| fillmissing values("backend", "database", "webapp") in _sourceCategory</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/filter">filter</a></td>
@@ -274,6 +318,13 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>latitude<br/>longitude<br/>_count<br/>continent<br/>country_code<br/>country_name<br/>region<br/>city<br/>state<br/>postal_code<br/>connection_type<br/>country_cf<br/>state_cf<br/>city_cf</td>
    <td></td>
    <td><code>| parse "remote_ip=*]" as remote_ip<br/>| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = remote_ip<br/>| count by latitude, longitude, country_code, country_name, region, city, postal_code<br/>| sort _count</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/search-operators/formatdate">geoip</a></td>
+   <td>The geoip operator is used to match a [parsed](/docs/search/search-query-language/parse-operators/) IPv4 or IPv6 address to its geographical location on a [map chart](/docs/dashboards/panels/map-charts/).</td>
+   <td></td>
+   <td></td>
+   <td><code>| parse "remote_ip=*]" as remote_ip<br/>| geoip remote_ip<br/>| count by latitude, longitude<br/>| sort _count</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/haversine">haversine</a></td>
