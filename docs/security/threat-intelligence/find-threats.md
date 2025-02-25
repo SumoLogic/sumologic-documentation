@@ -23,7 +23,7 @@ _sourceCategory=cylance "IP Address"
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 ```
 
-For more information about how to use `sumo://threat/cs` in queries, see [Threat optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) in the *Threat Intel Quick Analysis* article.
+For more information about how to use `sumo://threat/cs` in queries, see [Threat Intel optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) in the *Threat Intel Quick Analysis* article.
 
 :::tip
 All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use the global feed to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
