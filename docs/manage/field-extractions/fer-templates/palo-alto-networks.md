@@ -60,7 +60,7 @@ parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 | threatID      | Palo Alto Networks identifier for known and custom threats.  |  644 |
 |  cat          | For **URL** Subtype, it is the URL Category; For **WildFire** subtype, it is the verdict on the file that is either ‘malware’, ‘phishing’, ‘grayware’, or ‘benign’; For other subtypes, the value is ‘any’.  |  550 |
 | severity      | Severity associated with the threat. |  12 |
-| direction     | Indicates the direction of the attack. It can be client to server or from server to client. </br> `0` - indicates the direction of threat is from client to server. </br> `1` - indicates the direction of threat is from server to client.  |  1 |
+| direction     | Indicates the direction of the attack. It can be client to server or from server to client. <br/> `0` - Indicates the direction of threat is from client to server. <br/> `1` - Indicates the direction of threat is from server to client.  |  1 |
 | seqNum        | Sequentially incremented identifier.  |  40 |
 |  action_flags | A bit field indicating if the log was forwarded to Panorama.  |  any |
 |  src_loc      | Source country or Internal region for private addresses.  |  0 |
