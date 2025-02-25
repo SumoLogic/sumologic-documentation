@@ -131,15 +131,15 @@ If this rule already exists, there is no need to create it again.
    | resource_name     | $resourceId._4              |
 
 ### Configure metrics collection
- For metrics collection please follow guidlines mentioned in this [document](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/)
+ For metrics collection please follow guidelines mentioned in this [document](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/)
  While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="500" />
  Also you need to configure namespaces as mentioned below <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
-1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source)
-2. Create and push custom image using [Dockerfile](/static/files/Dockerfile) and [output_conf.yaml](/static/files/output_conf.yaml) onto dockerhub.
-3. Create new resource group in Azure
-4. deploy [logging-sidecar-deploy.yaml](/static/files/logging-sidecar-deploy.yaml) azure template.
+1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+2. Create and push a custom image using a <a href="/files/Dockerfile" target="_blank">Docker file</a> and <a href="/files/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
+3. Create new resource group in Azure.
+4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> Azure template.
 
 #### Activity Logs
 
