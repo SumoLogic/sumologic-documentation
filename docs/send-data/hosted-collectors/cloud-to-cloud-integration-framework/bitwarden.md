@@ -5,7 +5,7 @@ sidebar_label: Bitwarden
 tags:
   - cloud-to-cloud
   - bitwarden
-description: Learn how to collect the event log from the Bitwarden API.
+description: Learn how to collect event logs from the Bitwarden API.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/bitwarden/example.json';
