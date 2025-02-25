@@ -34,13 +34,9 @@ The Bitwarden source will collect the events logs from their API. The event log 
 
 To collect event logs from the Bitwarden API, you must have a Bitwarden Enterprise account. The integration uses OAuth 2.0 Client Credentials. Follow the authentication [instructions in the authentication section of the public API page](https://bitwarden.com/help/public-api/). 
 
-Be sure you know your API base URL.
-
-| Bitwarden API Base URL        | Description                                                    |
-|-------------------------------|----------------------------------------------------------------|
-| `https://api.bitwarden.com`   | Use this URL for most Bitwarden hosted installations.          |
-| `https://api.bitwarden.eu`    | Use this URL for EU based Bitwarden hosted installations.      |
-| `https://your.domain.com/api` | Use this URL if you have a self hosted Bitwarden installation. |
+:::important
+If you are using a Self-Hosted installation, you will also need to fill out your OAuth Token URL. Please see [the details on the Bitwarden site](https://bitwarden.com/help/public-api/).
+:::
 
 ### Source configuration
 
@@ -56,6 +52,8 @@ To configure the Bitwarden Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Bitwarden API Server Base URL**, enter the API Base URL for your Bitwarden installation.
+1. (Optional) In **Self Hosted API Base URL**, enter the API Base URL for your Self-Hosted Bitwarden installation. This field is only available if you select `Self-Hosted` for the server base URL.
+1. (Optional) In **OAuth 2.0 Token Url**, enter the OAuth 2.0 Token URL for your Self-Hosted Bitwarden installation. This field is only available if you select `Self-Hosted` for the server base URL.
 1. In **OAuth 2.0 Client ID**, enter your Bitwarden OAuth 2.0 Client ID.
 1. In **OAuth 2.0 Client Secret**, enter your Bitwarden OAuth 2.0 Client Secret.
 1. (Optional) The **Polling Interval** is set for 15 minutes default, you can adjust it based on your needs.
@@ -73,16 +71,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### Configuration Object
 
-| Parameter         | Type        | Required | Default | Description                                                                                                                                                                                                                              | Example                                       |
-|:------------------|:------------|:---------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------|
-| name              | String      | Yes      | `null`  | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.                                | `"Bitwarden C2C"`                             |
-| description       | String      | No       | `null`  | Type a description of the source.                                                                                                                                                                                                        | `"My Bitwarden event log collection"`         |
-| category          | String      | No       | `null`  | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"bitwarden/eventlogs"`                       |
-| fields            | JSON Object | No       | `null`  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.                                                                                          | `{"_siemForward": false, "fieldA": "valueA"}` |
-| api_base_url      | String      | Yes      | `null`  | The API Base URL for your Bitwarden installation                                                                                                                                                                                         |                                               |
-| api_client_id     | String      | Yes      | `null`  | The Bitwarden OAuth 2.0 Client ID to use to authenticate requests.                                                                                                                                                                       |                                               |
-| api_client_secret | String      | Yes      | `null`  | The Bitwarden OAuth 2.0 Client Secret to use to authenticate requests.                                                                                                                                                                   |                                               |
-| polling_interval  | String      | No       | 15m     | This sets how often the Source checks for data. The polling interval value should be at 5 minutes.                                                                                                                                       |                                               |
+| Parameter   | Type        | Required | Default | Description                                                                                                                                                                                                                              | Example                                       |
+|:------------|:------------|:---------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------|
+| name        | String      | Yes      | `null`  | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.                                | `"Bitwarden C2C"`                             |
+| description | String      | No       | `null`  | Type a description of the source.                                                                                                                                                                                                        | `"My Bitwarden event log collection"`         |
+| category    | String      | No       | `null`  | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"bitwarden/eventlogs"`                       |
+| fields      | JSON Object | No       | `null`  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.                                                                                          | `{"_siemForward": false, "fieldA": "valueA"}` |
+| api_base_url             | String      | Yes         | `https://api.bitwarden.com` or ``https://api.bitwarden.eu` or `self-hosted`                      | The API Base URL for your Bitwarden installation. Use `self-hosted` here if you have a self hosted Bitwarden installation.                                                                                                                                                             |
+| api_self_base_url        | String      | Potentially | `https://your.domain.com/api`                    | Your self hosted Bitwarden base URL.                                                                                                                                                                   |                                               |
+| api_self_oauth_token_url | String      | Potentially | `https://your.domain.com/identity/connect/token` | Your self hosted BitWarden OAuth token URL.                                                                                                                                                                                              |                                               |
+| api_client_id            | String      | Yes         | `null`                                           | The Bitwarden OAuth 2.0 Client ID to use to authenticate requests.                                                                                                                                                                       |                                               |
+| api_client_secret        | String      | Yes         | `null`                                           | The Bitwarden OAuth 2.0 Client Secret to use to authenticate requests.                                                                                                                                                                   |                                               |
+| polling_interval         | String      | No          | `15m`                                            | This sets how often the Source checks for data. The polling interval value should be at 5 minutes.                                                                                                                                       |                                               |
+
 
 ### JSON example
 
