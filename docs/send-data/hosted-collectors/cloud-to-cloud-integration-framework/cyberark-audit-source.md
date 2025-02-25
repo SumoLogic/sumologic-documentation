@@ -32,7 +32,7 @@ The Audit service offers detailed audit trails for activities, events, and sessi
 
 In this configuration, you will set up a CyberArk audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk audit supports OAuth authentication. 
 
-Follow the steps and instructions mentioned in the [CyberArk Documentation](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the below mentioned parameters to configure the CyberArk audit source.
+Follow the instructions mentioned in the [CyberArk Documentation](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the following parameters to configure the CyberArk audit source.
 
 1. Identity Id
 1. App Id
