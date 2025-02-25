@@ -1862,7 +1862,7 @@
   "/cid/1963": "/docs/integrations/sumo-apps/enterprise-audit",
   "/cid/1964": "/docs/integrations/security-threat-detection/f5-big-ip-ltm",
   "/cid/1965": "/docs/integrations/security-threat-detection/netskope",
-  "/cid/19665": "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud",
+  "/cid/19665": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
   "/cid/1966": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source",
   "/cid/1987": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source",
   "/cid/1996": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source",
@@ -4288,5 +4288,6 @@
   "/docs/manage/manage-subscription/create-manage-orgs-service-providers": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
   "/docs/manage/manage-subscription/create-manage-orgs-flex": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
   "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings",
-  "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer"
+  "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
+  "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud"
 }
