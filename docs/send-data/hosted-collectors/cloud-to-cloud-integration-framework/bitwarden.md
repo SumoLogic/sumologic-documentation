@@ -22,9 +22,9 @@ The Bitwarden source will collect the events logs from their API. The event log 
 | API Endpoint       | Data                                                                                                                                                           |
 |:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `/public/events`   | Ingests the events logs into Sumo Logic                                                                                                                        |
-| `/public/groups`   | Used to get the group names so we can include it in the event log data. The integration does not ingest logs directly from this endpoint.                      |
-| `/public/members`  | Used to get the member names and email addresses so we can include it in the event log data. The integration does not ingest logs directly from this endpoint. |
-| `/public/policies` | Used to get the policy type so we can include it in the event log data. The integration does not ingest logs directly from this endpoint.                      |
+| `/public/groups`   | Gets the group names so we can include it in the event log data. The integration does not ingest logs directly from this endpoint.                      |
+| `/public/members`  | Gets the member names and email addresses so we can include it in the event log data. The integration does not ingest logs directly from this endpoint. |
+| `/public/policies` | Gets the policy type so we can include it in the event log data. The integration does not ingest logs directly from this endpoint.                      |
 
 ## Setup
 
