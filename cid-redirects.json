@@ -1752,6 +1752,7 @@
   "/cid/10691": "/docs/metrics/metric-rules-editor",
   "/cid/10692": "/docs/metrics/metric-rules-editor",
   "/cid/106992": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source",
+  "/cid/20016": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source",
   "/cid/1071": "/docs/integrations/web-servers/heroku",
   "/cid/10228": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source",
   "/cid/1072": "/docs/alerts/webhook-connections/microsoft-azure-functions",
