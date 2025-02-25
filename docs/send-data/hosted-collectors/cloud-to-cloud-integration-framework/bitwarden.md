@@ -13,7 +13,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/bitwarden/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/bitwarden/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="250"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="100"/>
 
 The Bitwarden source collects event logs from their API. Many fields in the event log contain unique IDs, making it difficult to interpret the logs without contextual names. To enhance readability, this integration queries the group, member, and policy API endpoints before each poll cycle, ensuring up-to-date lookup information for event log IDs. The event log is then enriched with additional fields, such as group names, member names, member emails, and policy types.
 
