@@ -35,7 +35,7 @@ The Bitwarden source will collect the events logs from their API. The event log 
 To collect event logs from the Bitwarden API, you must have a Bitwarden Enterprise account. The integration uses OAuth 2.0 Client Credentials. Follow the authentication [instructions in the authentication section of the public API page](https://bitwarden.com/help/public-api/). 
 
 :::important
-If you are using a Self-Hosted installation, you will also need to fill out your OAuth Token URL. Please see [the details on the Bitwarden site](https://bitwarden.com/help/public-api/).
+If you are using a Self-Hosted installation, you must also provide your OAuth Token URL. For more details, see [Bitwarden's documentation](https://bitwarden.com/help/public-api/).
 :::
 
 ### Source configuration
