@@ -163,6 +163,13 @@ Below this, as you scroll down on the page, you'll see context cards covered in 
 * Related Alerts and Monitor History show the top 250 alerts.
 :::
 
+<!-- add "Open in Copilot" button to the Alert Response page, allowing you to troubleshoot alerts directly in Copilot. This preserves the alert context, making it seamless to investigate and resolve issues.
+* **Faster root cause analysis**. Jump into Copilot instantly from an alert.  
+* **Context-aware troubleshooting**. Maintain alert details while searching logs.  
+
+link to Copilot doc
+-->
+
 ### Alert context cards
 
 Alert context is system-curated information helps you understand potential underlying symptoms that might be causing the issue. It provides additional insights automatically discovered by the system through data analysis. Using artificial intelligence and machine learning, the system tracks your logs and metrics, identifies patterns that may explain the issue, and presents them as context cards.
