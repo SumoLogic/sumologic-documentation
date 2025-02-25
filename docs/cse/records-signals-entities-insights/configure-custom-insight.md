@@ -52,7 +52,7 @@ To create a custom insight:
 1. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an insight" style={{border: '1px solid gray'}} width="600"/>
 1. In the **Name** field, enter a name for the custom insight.
 1. If you want the custom insight to be generated based on one or more rules firing signals, jump to step 6, below. Otherwise: 
-   1. Leave the **When Signals are created from the following...** clause set to **Signal names**.
+   1. Leave the **When Signals are created with the following...** clause set to **Signal names**.
    2. Enter an expression that matches the name(s) of the signals of interest. For example: `Critical Severity Intrusion Signature *`
    3. Click **Add**.
    4. If you want to, you can enter one or more additional signal expressions.
