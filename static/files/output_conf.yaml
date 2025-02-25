@@ -1,0 +1,18 @@
+pipeline:
+  inputs:
+    - name: tail
+      path: /var/log/nginx/*.log
+  outputs:
+    - name: http
+      format: json_lines
+      compress: gzip
+      match: "*"
+      host: collectors.sumologic.com
+      port: 443
+      tls: on
+      tls.verify: off
+      URI: /receiver/v1/http/[PrivateKey]
+      json_date_key: timestamp
+      header: 
+        - X-Sumo-Fields resource_name=[resource_name],resource_type=[resource_type],provider_name=[provider_name],resource_group=[resource_group],subscription_id=[subscription_id],location=[location]
+        - X-SUMO-Client sumologic-azure-aci-fluentbit

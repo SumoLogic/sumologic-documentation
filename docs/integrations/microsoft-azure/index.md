@@ -116,6 +116,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instances.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-container-instances">Azure Container Instances</a></h4>
+  <p>Learn about the Sumo Logic collection process for the Azure Container Instances service.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql">Azure Cosmos DB for PostgreSQL</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Cosmos DB for PostgreSQL.</p>

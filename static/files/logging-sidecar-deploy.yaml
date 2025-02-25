@@ -1,0 +1,50 @@
+apiVersion: 2018-06-01
+location: westus
+name: compress-nginx-logging
+properties:
+  containers:
+    - name: nginx
+      properties:
+        volumeMounts:
+          - name: nginx-logs
+            mountPath: /var/log/nginx
+            readOnly: false
+        image: index.docker.io/library/nginx
+        ports:
+          - port: 80
+            protocol: TCP
+        resources:
+          requests:
+            cpu: 1.0
+            memoryInGB: 1.5
+    - name: fluentbit
+      properties:
+        image: index.docker.io/{dockerhub-username}/{fluent-bit-custom-imagename}:{tagname}
+        volumeMounts:
+          - name: nginx-logs
+            mountPath: /var/log/nginx
+            readOnly: true
+        command:
+          - /fluent-bit/bin/fluent-bit
+          - -v
+          - -c
+          - /root/output_conf.yaml
+        resources:
+          requests:
+            cpu: 2.0
+            memoryInGB: 1.5
+  imageRegistryCredentials:
+    - server: "index.docker.io"
+      username: "{dockerhub-username}"
+      password: "{dockerhub-password}"
+  osType: Linux
+  restartPolicy: Always
+  ipAddress:
+    ports:
+      - port: 80
+        protocol: TCP
+    type: Public
+  volumes:
+    - name: nginx-logs
+      emptyDir: {}
+type: Microsoft.ContainerInstance/containerGroups
