@@ -91,9 +91,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | password | String | Yes |  `null` | Password for your configured server. | |
 | tenantURL | String | Yes |  `null` | Tenant URL for your configured server. | `https://sumologic.audit.cyberark.cloud` |
 | apiKey | String | Yes |  `null` | API key for your configured server. | |
-| serviceType | []String | No | `null` | Type of audit services to filter data from. |  |
-| statusType | []String | No | `null` | Type of audit statuses to filter data from. |  |
-| actionType | []String | No | `null` | Type of audit actions to filter data from. |  |
+| serviceType | Array | No | `null` | Type of audit services to filter data from. |  |
+| statusType | Array | No | `null` | Type of audit statuses to filter data from. |  |
+| actionType | Array | No | `null` | Type of audit actions to filter data from. |  |
 | pollingIntervalMin | integer | Yes | 5 minutes | Frequency of C2C updates from CyberArk Audit. |  |  
 
 ### JSON example
