@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="250"/>
 
-The Bitwarden source will collect the events logs from their API. The event log will return unique IDs for many of its fields which makes it difficult to understand the logs without the contextual names of those IDs. This integration will additionally query the group, member and policy API endpoints before every poll cycle so it has current lookup information for the event log IDs. The event log is modified to include additional fields from the lookups so data like group names, member names, member emails and policy types can be added.
+The Bitwarden source collects event logs from their API. Many fields in the event log contain unique IDs, making it difficult to interpret the logs without contextual names. To enhance readability, this integration queries the group, member, and policy API endpoints before each poll cycle, ensuring up-to-date lookup information for event log IDs. The event log is then enriched with additional fields, such as group names, member names, member emails, and policy types.
 
 ## Data collected
 
