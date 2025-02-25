@@ -39,7 +39,7 @@ By default, when the conditions of a custom insight configuration are met during
 
 The default way of generating an insight for each entity may result in custom insights containing more signals than you want. Rather than the summation of all signals attached to entities, perhaps you'd like to have those signals trigger insights directly for an immediate and targeted response.
 
-In that case, under **Strict Signal Configuration** select **Only include the signals defined in this custom insight**. This generates insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. 
+In that case, under **Strict Signal Configuration**, select **Only include the signals defined in this custom insight**. This generates insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. 
 
 <img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration checkbox" style={{border: '1px solid gray'}} width="400"/>
  
