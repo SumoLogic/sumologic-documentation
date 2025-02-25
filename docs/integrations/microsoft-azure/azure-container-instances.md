@@ -104,7 +104,7 @@ If this rule already exists, there is no need to create it again.
    resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
    ```
    | Fields extracted | Metric rule    |
-   |------------------|----------------|
+   |:------------------|:----------------|
    | subscription_id  | $resourceId._1 |
    | resource_group   | $resourceId._2 |
    | provider_name    | $resourceId._3 |
