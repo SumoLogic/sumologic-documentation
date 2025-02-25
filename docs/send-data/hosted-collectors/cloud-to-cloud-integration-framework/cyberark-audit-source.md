@@ -43,7 +43,7 @@ Follow the steps and instructions mentioned in the [CyberArk Documentation](http
 
 ### Source configuration
 
-When you create a CyberArk Audit source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, refer to the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk Audit source, follow the steps below:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
