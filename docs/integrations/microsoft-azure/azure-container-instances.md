@@ -131,9 +131,12 @@ If this rule already exists, there is no need to create it again.
    | resource_name     | $resourceId._4              |
 
 ### Configure metrics collection
- For metrics collection please follow guidelines mentioned in this [document](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/)
- While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="500" />
- Also you need to configure namespaces as mentioned below <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+ 
+ For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
+ 
+ While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+ 
+ Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
