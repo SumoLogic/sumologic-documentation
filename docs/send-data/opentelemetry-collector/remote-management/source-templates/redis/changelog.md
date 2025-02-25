@@ -11,7 +11,7 @@ description: Changelog for Redis source template for OpenTelemetry.
 - Metric collection through [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/redisreceiver).
 
 :::note
-Please follow [prerequisite](../#prerequisites) section before upgrading to this version for collecting metrics.
+Please follow [prerequisites](../#prerequisites) section before upgrading to this version for collecting metrics.
 :::
 
 

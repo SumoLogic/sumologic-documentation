@@ -30,7 +30,7 @@ When you create a source template, the following [fields](/docs/manage/fields/) 
 - Metrics for RabbitMQ are collected through OpenTelemetry [RabbitMQ receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver).
 - The RabbitMQ Management Plugin must be enabled by following the [official instructions](https://www.rabbitmq.com/management.html#getting-started).
 - Also, a user with at least [monitoring](https://www.rabbitmq.com/management.html#permissions) level permissions must be used for monitoring.
-- Make sure to set the RabbitMQ user's password as an environment variable for OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates.](../st-with-secrets.md).
+- Make sure to set the RabbitMQ user's password as an environment variable for OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md).
 
 ### For logs collection
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
