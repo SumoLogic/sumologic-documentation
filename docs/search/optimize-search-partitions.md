@@ -38,7 +38,7 @@ Different data tiers come with varying credit burn rates. Costs will be incurred
 
 ### Flex plans
 
-In contrast, it is recommended to opt for Sumo Logic's Flex account type to use the Flex plan, which does not involve assigning log data to specific tiers. All log data* ingested under a Flex plan is classified as Flex data, and pricing is determined on the volume of log data scanned when running interactive log searches, dashboards, monitors and other content that generates log queries. 
+In contrast, it is recommended to opt for Sumo Logic's Flex account type to use the Flex plan, which does not involve assigning log data to specific tiers. All log data* ingested under a Flex plan is classified as Flex data, and pricing is determined on the volume of log data scanned when running interactive log searches, dashboards, monitors, and other content that generates log queries. 
 
 The creation of partitions is supported in Flex plans and it is a useful method for managing costs by controlling the amount of data scanned. Unlike data tier plans, partitions created in a Flex plan do not have different data tiers. Depending on the account type chosen within Flex,  you may access additional features such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
 
