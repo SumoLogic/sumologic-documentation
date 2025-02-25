@@ -1,5 +1,5 @@
 ---
-title: New in Copilot - Dynamic Titles, Alert Troubleshooting, and Pinned Suggestions (Search)
+title: New in Copilot - Dynamic Titles, Alert Troubleshooting, and Pinned Suggestions (Copilot)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - copilot
