@@ -60,7 +60,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
     You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. For example, let's say that you have a file with a modified time of `2025-01-16 16:18:18`, and the log lines within that file contain message timestamps ranging from `2025-01-11` to `2025-01-16`. Now, if **Collection should begin** is set to `2025-01-16`, the entire file will be collected including all the messages with timestamps prior to `2025-01-16`. This is because the **Collection should begin** tis based solely on the file's modified time and not the individual message timestamps within the file.
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. For example, let's say that you have a file with a modified time of `2025-01-16 16:18:18`, and the log lines within that file contain message timestamps ranging from `2025-01-11` to `2025-01-16`. Now, if **Collection should begin** is set to `2025-01-16`, the entire file will be collected including all the messages with timestamps prior to `2025-01-16`. This is because the **Collection should begin** is based solely on the file's modified time and not the individual message timestamps within the file.
      
     :::note
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
