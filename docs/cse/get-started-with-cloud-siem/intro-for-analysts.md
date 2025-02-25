@@ -69,7 +69,7 @@ sso : ip-192-0-2-0 : alex@travellogic.com :
 "Successful Login" : "2024-05-25T22:11:42"
 ```
 
-First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-192-0-2-0`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. 
+First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-192-0-2-0`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. 
 
 ### Extracting security insights from Cloud SIEM
 

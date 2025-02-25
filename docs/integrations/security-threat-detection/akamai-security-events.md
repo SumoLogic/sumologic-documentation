@@ -150,7 +150,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **Akamai Security Events - Threat Intel** dashboard provides an at-a-glance view of threats analyzed using Crowdstrike Threat Feed. Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
+The **Akamai Security Events - Threat Intel** dashboard provides an at-a-glance view of threats analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Threat-Intel.png')} alt="Akamai Security Events dashboards" />
 
