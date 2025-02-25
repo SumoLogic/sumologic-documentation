@@ -58,7 +58,7 @@ To create a custom insight:
    4. If you want to, you can enter one or more additional signal expressions.
    5. If you’ve configured more than one signal expression, use the **in ... order** clause to specify whether the signals must occur in **exact** order, or whether the signals can occur in **any** order. 
 1. If you want the custom insight to be generated based on one or more rules firing signals:
-   1. Change the **When Signals are created from the following...** clause to **rule**. 
+   1. Change the **When Signals are created with the following...** clause to **rule**. 
    2. In the **Type to add a Rule** area, enter a string that the ID of the desired rule contains.
    3. In the list of rules that appears, scroll to the desired rule and click it.
    4. If you want to, you can search for and select one or more additional rules.
