@@ -63,7 +63,7 @@ To configure a CyberArk Audit source, follow the steps below:
 1. (Optional) **Service Type**. Enter the service types to filter the audits.
 1. (Optional) **Status Type**. Enter the status types to filter the audits.
 1. (Optional) **Action Type**. Enter the action types to filter the audits.
-1. **Polling Interval**. The polling interval is the frequency at which the CyberArk Audit C2C source will check for updates from the CyberArk Audit API. Bydefault, the polling interval is set to 5 minutes.
+1. **Polling Interval**. The polling interval is the frequency at which the CyberArk Audit C2C source will check for updates from the CyberArk Audit API. By default, the polling interval is set to 5 minutes.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
