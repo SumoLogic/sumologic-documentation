@@ -131,22 +131,15 @@ If this rule already exists, there is no need to create it again.
    | resource_name     | $resourceId._4              |
 
 ### Configure metrics collection
-
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an event hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
-
-1. [Configure an HTTP source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Container Instances namespace that you want to monitor.
-   1. Choose `Stream to an event hub` as destination.
-   1. Select `AllMetrics`.
-   1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-event-grid-metrics.png')} alt="Azure Container Instances metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instances Tag Location" style={{border: '1px solid gray'}} width="400" />
+ For metrics collection please follow guidlines mentioned in this [document](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/)
+ While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="500" />
+ Also you need to configure namespaces as mentioned below <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
-
-In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
-#### Diagnostic logs
-   #ToDo Replacement for Diagnostic logs
+1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source)
+2. Create and push custom image using [Dockerfile](/static/files/Dockerfile) and [output_conf.yaml](/static/files/output_conf.yaml) onto dockerhub.
+3. Create new resource group in Azure
+4. deploy [logging-sidecar-deploy.yaml](/static/files/logging-sidecar-deploy.yaml) azure template.
 
 #### Activity Logs
 
