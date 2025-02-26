@@ -123,9 +123,9 @@ It may prevent you from searching horizontally without OR’ing partitions toget
 
 This helps users easily identify the correct partition to use.
 
-### Keep your partition broadly scoped with sourceCategory and avoid keywords
+### Keep your partition broadly scoped with _sourceCategory and avoid keywords
 
-Use sourceCategory in your partitions definitions and avoid keywords to keep your partition broadly scoped. You can always narrow down the scope of your search when you query your partition.
+Use _sourceCategory in your partitions definitions and avoid keywords to keep your partition broadly scoped. You can always narrow down the scope of your search when you query your partition.
 
 ### Group similar data together
 
