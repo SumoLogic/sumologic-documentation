@@ -119,7 +119,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability | Description |
 | :-- | :-- |
-| View Organizations	| View the [Organizations](/docs/manage/manage-subscription/create-manage-orgs) UI.|
+| View Organizations	| View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI.|
 | Create Organizations	| Create and provision child organizations.|
 | Change Credits Allocation	| Change the credits allocation for a child organization.|
 | Create Trial Organizations	| Create trial organizations. (For Sumo Logic Service Providers only.)|

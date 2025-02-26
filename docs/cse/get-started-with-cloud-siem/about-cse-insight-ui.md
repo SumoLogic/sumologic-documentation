@@ -80,7 +80,7 @@ If you are logged in to a parent organization with child organizations that also
 
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
 
-To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-manage-orgs/) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list. 
+To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list. 
 
 ## Insight details page
 

@@ -155,6 +155,16 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'Elasticsearch',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Kafka',
                       collapsible: true,
                       collapsed: true,
@@ -195,12 +205,32 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'MySQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/mysql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/mysql/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Nginx',
                       collapsible: true,
                       collapsed: true,
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/nginx/index'},
                       items:[
                         'send-data/opentelemetry-collector/remote-management/source-templates/nginx/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'PostgreSQL',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/postgresql/changelog',
                       ]
                     },
                     {
@@ -243,6 +273,7 @@ module.exports = {
                         'send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog',
                       ]
                     },
+                    'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
                   ],
                 },
                 {
@@ -405,6 +436,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
@@ -469,6 +501,7 @@ module.exports = {
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
@@ -925,20 +958,39 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
-        'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
-        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        {
+          type: 'category',
+          label: 'Create and Manage Orgs',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/manage-subscription/create-and-manage-orgs/index'},
+          items: [
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs',
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
+            'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
+            'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Upgrade Account',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/manage-subscription/upgrade-account/index'},
+          items: [
+            'manage/manage-subscription/upgrade-account/upgrade-credits-account',
+            'manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account',
+            'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
+          ],
+        },
         'manage/manage-subscription/manage-billing-information',
-        'manage/manage-subscription/create-manage-orgs',
-        'manage/manage-subscription/create-manage-orgs-service-providers',
-        'manage/manage-subscription/create-manage-orgs-flex',
-        'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/usage-management',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
-        'manage/manage-subscription/cloud-flex-legacy-accounts',
-        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
       ]
     },
     {
@@ -2073,7 +2125,6 @@ integrations: [
         'integrations/amazon-aws/cost-explorer',
         'integrations/amazon-aws/ec2-cloudwatch-metrics',
         'integrations/amazon-aws/ec2-host-metrics',
-        'integrations/amazon-aws/elastic-load-balancing',
         'integrations/amazon-aws/lambda',
         'integrations/amazon-aws/network-firewall',
         'integrations/amazon-aws/network-load-balancer',
@@ -2146,7 +2197,7 @@ integrations: [
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
-         'integrations/microsoft-azure/microsoft-defender-for-cloud',
+         'integrations/microsoft-azure/azure-security-defender-for-cloud',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
@@ -2456,12 +2507,14 @@ integrations: [
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/code42-incydr',
           'integrations/saas-cloud/crowdstrike-falcon-filevantage',
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/digital-guardian-arc',
           'integrations/saas-cloud/docusign',
+          'integrations/saas-cloud/dragos',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/druva-cyber-resilience',
@@ -2496,6 +2549,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
+          'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vmware-workspace-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
