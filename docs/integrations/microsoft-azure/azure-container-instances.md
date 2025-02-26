@@ -104,7 +104,7 @@ If this rule already exists, there is no need to create it again.
    resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
    ```
    | Fields extracted | Metric rule    |
-   |------------------|----------------|
+   |:-----------------|:---------------|
    | subscription_id  | $resourceId._1 |
    | resource_group   | $resourceId._2 |
    | provider_name    | $resourceId._3 |
@@ -131,19 +131,22 @@ If this rule already exists, there is no need to create it again.
    | resource_name     | $resourceId._4              |
 
 ### Configure metrics collection
- For metrics collection please follow guidlines mentioned in this [document](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/)
- While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="500" />
- Also you need to configure namespaces as mentioned below <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+ 
+ For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
+ 
+ While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+ 
+ Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
-1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source)
-2. Create and push custom image using [Dockerfile](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/Dockerfile) and [output_conf.yaml](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/output_conf.yaml) onto dockerhub.
-3. Create new resource group in Azure
-4. deploy [logging-sidecar-deploy.yaml](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/logging-sidecar-deploy.yaml) azure template.
+1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+2. Create and push a custom image using a <a href="/files/Dockerfile" target="_blank">Docker file</a> and <a href="/files/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
+3. Create new resource group in Azure.
+4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> Azure template.
 
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
 
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
@@ -159,11 +162,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Azure Container Instance - Error Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container.
 
-Use this dashboard to:
-* View Total Errors.
-* Top 10 Errors bar chart.
-* Log Level Error distribution.
-* Error Trend by Container.
+Use this dashboard to view:
+* Total Errors
+* Top 10 Errors bar chart
+* Log Level Error distribution
+* Error Trend by Container
 * Recent Container Logs
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instance-Error-Logs.png')} alt="Azure Container Instance - Error Logs" style={{border: '1px solid gray'}} width="800" />
