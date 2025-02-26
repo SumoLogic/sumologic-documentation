@@ -22,6 +22,7 @@ The web interface autocomplete feature for log search variables has the follow
 * Only dashboards that were viewed in the last 3 days are updated.
 * Up to 10,000 log values and 1,000 metric values are displayed.
 * Values for template variables are based on the time range of the Dashboard.
+* New panels added to the dashboard will automatically adopt any existing scope-based variables to it.
 
 ## Show and hide variables option
 
@@ -86,6 +87,11 @@ To add a Logs Search variable to a dashboard, do the following:
 ### Add a Scope-based Variable 
 
 With Scope-based variables, you can define a variable automatically applies to all log queries within the scope of the dashboard or panels. With this you can define the key while creating the scope variable and users can select the appropriate value to implement simple filtering for the dashboard. Additionally with Scope-based variables, you can select the specific panels to which the scope variable should be applied.
+
+:::info
+- The fields in scope based variable are independent of dashboard and panel time range.
+- Fields in scope based variable will also contain the FER field keys.
+:::
 
 To add a Scope-based variable to a dashboard, do the following:
 
