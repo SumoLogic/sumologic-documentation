@@ -137,9 +137,9 @@ If this rule already exists, there is no need to create it again.
 
 ### Configure logs collection
 1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source)
-2. Create and push custom image using [Dockerfile](/static/files/Dockerfile) and [output_conf.yaml](/static/files/output_conf.yaml) onto dockerhub.
+2. Create and push custom image using [Dockerfile](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/Dockerfile) and [output_conf.yaml](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/output_conf.yaml) onto dockerhub.
 3. Create new resource group in Azure
-4. deploy [logging-sidecar-deploy.yaml](/static/files/logging-sidecar-deploy.yaml) azure template.
+4. deploy [logging-sidecar-deploy.yaml](https://github.com/sachin-sumologic/sumologic-documentation/blob/SUMO-255285-documentation/static/files/logging-sidecar-deploy.yaml) azure template.
 
 #### Activity Logs
 
