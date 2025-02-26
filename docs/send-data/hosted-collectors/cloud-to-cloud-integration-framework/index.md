@@ -123,6 +123,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="icon" width="80" /><h4>Bitwarden</h4></a>
+  <p>Learn how to collect event logs from the Bitwarden API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source"><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="80" /><h4>Box</h4></a>
   <p>The Box API integration ingests events from the GetEvents API.</p>
   </div>
