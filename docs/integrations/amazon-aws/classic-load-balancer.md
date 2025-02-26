@@ -64,9 +64,11 @@ Statistic=Sum | sum by account, region, namespace, loadbalancername
 
 ## Collecting logs and metrics for the AWS Classic Load Balancer
 
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+
 ### Collect Metrics for AWS Classic Load Balancer
 
-Sumo Logic supports collecting metrics using two source types
+Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
@@ -74,41 +76,33 @@ Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 
 * ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account field”.
 
-
 ### Collecting Access Logs for AWS Classic Load Balancer
-
-#### Configure a Collector
-
-See [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
 
 #### Prerequisites
 
-Before you can begin to use the AWS Elastic Load Balancing (ELB) App, complete the following steps:
+Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete the following steps:
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
-
 #### Configure an ELB Source
 
-import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+Configure a [Classic Load Balancing (ELB) Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 
-<Aws3/>
-
-### Field in Field Schema
+## Field in Field Schema
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the **loadbalancername** field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
+## Field Extraction Rule(s)
 
-### Field Extraction Rule(s)
+Create Field Extraction Rule for AWS Classic Load Balancer access logs and Cloudtrail logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-Create Field Extraction Rule for AWS Classic Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+**AWS Classic Load Balancer Access Logs**
 
-```sql
+```sql 
 Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
@@ -122,7 +116,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 | fields loadbalancername, namespace
 ```
 
-#### Create/Update Field Extraction Rule(s) for Classic Load Balancer CloudTrail logs
+**AWS Classic Load Balancer CloudTrail Logs**
 
 ```sql
 Rule Name: AwsObservabilityCLBCloudTrailLogsFER
