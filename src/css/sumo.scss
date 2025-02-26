@@ -1404,8 +1404,7 @@ html[data-theme='dark'] .featureImage {
 
 
 
-// Sumo badges
-
+// Beta badge
 .beta {
   background: #C6007E;
   color: white;
@@ -1417,6 +1416,52 @@ html[data-theme='dark'] .featureImage {
   border-radius: 10px;
 }
 
+/* RSS button - Light Mode */
+html[data-theme="light"] .rss {
+  background: linear-gradient(90deg, #d97706, #b45309);
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 8px;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 16px;
+  border: none;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+/* RSS button - Light Mode Hover */
+html[data-theme="light"] .rss:hover {
+  background: linear-gradient(90deg, #b45309, #92400e);
+  transform: scale(1.02);
+}
+
+/* RSS button - Dark Mode */
+html[data-theme="dark"] .rss {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  color: black; /* Changed from black to white for better contrast */
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 8px;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 16px;
+  border: none;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+/* RSS button - Dark Mode Hover */
+html[data-theme="dark"] .rss:hover {
+  background: linear-gradient(90deg, #d97706, #92400e);
+  transform: scale(1.02);
+}
+
+
+/* Storylane iFrame embed */
 .sl-embed {
   position: relative;
   padding-bottom: calc(49.38% + 27px);
@@ -1425,6 +1470,7 @@ html[data-theme='dark'] .featureImage {
 //transform: scale(1);
 }
 
+/* Storylane iFrame embed */
 .sl-demo {
   position: absolute;
   top: 0;
