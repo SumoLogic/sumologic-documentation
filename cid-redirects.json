@@ -1863,6 +1863,7 @@
   "/cid/1964": "/docs/integrations/security-threat-detection/f5-big-ip-ltm",
   "/cid/1965": "/docs/integrations/security-threat-detection/netskope",
   "/cid/19665": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
+  "/cid/19667": "/docs/integrations/microsoft-azure/azure-container-instances",
   "/cid/1966": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source",
   "/cid/1987": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source",
   "/cid/1996": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source",
