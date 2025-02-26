@@ -10,7 +10,7 @@ In Sumo Logic, you'll need an access key to:
 
 * **Register new Collectors**. When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
 * **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
-* **Run scripts or automation**. Create access keys on [service accounts](/docs/manage/security/service-accounts) to provide authentication for scripts or automation.
+* **Run scripts or automation**. Create access keys to provide authentication for scripts or automation.
 
 ## Prerequisites
 
@@ -21,6 +21,12 @@ In Sumo Logic, you'll need an access key to:
 ## Create an access key
 
 ### From the Personal Access Keys tab
+
+A *personal access key* is a key that you can create to manage access for personal use. 
+
+:::tip
+If you are an administrator who needs to create an access key for system use (such as for API scripts, third party integrations, or infrastructure as code), we recommend you create the access key on a [service account](#from-a-service-account). 
+:::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences > Personal Access Keys**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**.
 1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/><br/>The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
@@ -46,7 +52,9 @@ All personal access keys created in the organization are displayed in the **Acce
 
 ### From the Access Keys tab
 
-Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys tab](#from-the-personal-access-keys-tab).
+The **Access Keys** tab shows all access keys in the system. It provides a central place for administrators to manage access keys.
+
+Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys tab](#from-the-personal-access-keys-tab) or [from a service account](#from-a-service-account).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**.
 1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." style={{border: '1px solid gray'}} width="700"/>
@@ -54,7 +62,7 @@ Administrators can create access keys under **Access Keys** as an alternative to
 
 ### From a Service Account
 
-Administrators can create access keys on a [service account](/docs/manage/security/service-accounts) for use in scripts or automation.
+Administrators can create access keys on a service account for use in scripts or automation. For more information, see [Service Accounts](/docs/manage/security/service-accounts).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
 1. Select a service account.
