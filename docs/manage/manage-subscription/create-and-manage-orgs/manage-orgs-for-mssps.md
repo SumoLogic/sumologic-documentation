@@ -54,15 +54,15 @@ To update content:
 1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The update history displays. The email of the individual who performed the update appears in the **user_email** column, and the updated items appear in the **content** column. <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View history query results" style={{border: '1px solid gray'}} width="800"/>
 1. Investigate any updates that failed and re-run the update if needed. 
 
-### FAQs
+## FAQs
 
-#### What to expect when updating Cloud SIEM rules
+### What to expect when updating Cloud SIEM rules
 
 * **Are rule tuning expressions included?**<br/>No, they are not included, but can be updated separately.
 * **What happens when a rule with the same name already exists?**<br/>It will be replaced in the child organization.
 * **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
 
-#### What to expect when updating Cloud SIEM rule tuning expressions
+### What to expect when updating Cloud SIEM rule tuning expressions
 
 * **What happens if a tuning expression with the same name already exists?**<br/>It will be replaced in the child organization.
 * **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
