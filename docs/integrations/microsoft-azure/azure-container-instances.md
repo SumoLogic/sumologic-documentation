@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure Container Instances, you can collect the following logs and metrics:
 
-* **Audit Logs** The activity log contains subscription-level events that track operations for each Azure resource as seen from outside that resource, for more details refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/monitor-azure-container-instances#azure-activity-log).
+* **Audit Logs**. The activity log contains subscription-level events that track operations for each Azure resource as seen from outside that resource. For more details, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/monitor-azure-container-instances#azure-activity-log).
 * **Resource Logs**. Capture container creation, execution, and failure logs. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-monitor#resource-logs).
 * **Metrics**. Metrics for Azure Container Instances are in the following namespaces:
   * [Microsoft.ContainerInstance/containerGroups](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-containerinstance-containergroups-metrics)
