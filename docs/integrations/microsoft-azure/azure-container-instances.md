@@ -23,14 +23,9 @@ For more information on supported dimensions, refer to [Azure documentation](htt
 
 ## Setup
 
-Azure service sends monitoring data to Azure Monitor, which can then [stream data to an event hub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
+* Application Logs collection using fluent-bit sidecar container using [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
+* Metrics collection using [Azure Metrics Source(BETA)](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
 
-* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
-
-You must explicitly enable diagnostic settings for each domain, namespaces, custom topic, and system topic you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
-
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AzureContainerInstances/Logs`, `Azure/AzureContainerInstances/Metrics`.
 
 ### Configure field in field schema
 
