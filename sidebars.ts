@@ -2829,7 +2829,6 @@ integrations: [
                 'cse/ingestion/ingestion-sources-for-cloud-siem/onelogin',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/osquery',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/palo-alto-firewall',
-                'cse/ingestion/ingestion-sources-for-cloud-siem/sentinelone',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/signal-sciences-waf',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy',
