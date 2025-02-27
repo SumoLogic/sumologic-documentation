@@ -14,6 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure Container Instances, you can collect the following logs and metrics:
 
+* **Audit Logs** The activity log contains subscription-level events that track operations for each Azure resource as seen from outside that resource, for more details refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/monitor-azure-container-instances#azure-activity-log).
 * **Resource Logs**. Capture container creation, execution, and failure logs. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-monitor#resource-logs).
 * **Metrics**. Metrics for Azure Container Instances are in the following namespaces:
   * [Microsoft.ContainerInstance/containerGroups](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-containerinstance-containergroups-metrics)
@@ -92,27 +93,6 @@ Create the following Field Extraction Rule(s) (FER) for Azure Storage by followi
 
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
-#### Azure observability metadata extraction service level
-
-If this rule already exists, there is no need to create it again.
-
-   ```sql
-   Rule Name: AzureObservabilityMetadataExtractionServiceLevel    
-   ```
-   
-   ```sql title="Metric match expression"
-   resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
-   ```
-   | Fields extracted | Metric rule    |
-   |:-----------------|:---------------|
-   | subscription_id  | $resourceId._1 |
-   | resource_group   | $resourceId._2 |
-   | provider_name    | $resourceId._3 |
-   | resource_type    | $resourceId._4 |
-   | resource_name    | $resourceId._5 |
-   | service_type     | $resourceId._6 |
-   | service_name     | $resourceId._7 |
-
 #### Azure observability metadata extraction container instance level
 
    ```sql
@@ -140,9 +120,28 @@ If this rule already exists, there is no need to create it again.
 
 ### Configure logs collection
 1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. Create and push a custom image using a <a href="/files/Dockerfile" target="_blank">Docker file</a> and <a href="/files/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
-3. Create new resource group in Azure.
+2. Create and push a custom image using a <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Dockerfile" target="_blank">Docker file</a> and <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
+3. Use existing resource group or create new in Azure.
+4. Update the <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> file with your own application image whose logs you want to collect. In the file we have used nginx application as an example whose log files(access logs and error logs) are created in a shared volume(/var/log/nginx)
 4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> Azure template.
+   * parameter - /fluent-bit/bin/fluent-bit is fluent-bit executable path
+   * parameter - -c /root/output_conf.yaml is fluent-bit configuration file path
+      * *inputs* parameters in output_conf.yaml
+         * *tail* - read logs command name
+         * *path* is log file path from where fluent bit collector is collecting logs
+      * *outputs* parameters in output_conf.yaml
+          * *name=http* - HTTP Output collector
+          * *format=json_lines*
+          * "compress" - payload compression mechanism(we used gzip)
+          * *match* - log matching rule
+          * *host* - sumologic collector host
+          * *port* - sumologic collector port
+          * *tls=on* - TLS support enabled
+          * *tls.verify=off* - certificate validation disabled
+          * *URI* - sumologic http collector URI
+          * *json_date_key* - name of the date field in output
+          * *header* - X-Sumo-Fields header used to tag fields during logs collection
+5. for more details how to deploy azure container instance group please refer to [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart).
 
 #### Activity Logs
 
