@@ -90,7 +90,7 @@ With Scope-based Variable, you can define a variable automatically applies to al
 
 :::info
 - The fields in the Scope-based Variable are independent of dashboard and panel time range.
-- Fields in scope based variable will also contain the FER field keys.
+- Fields in the Scope-based Variable will also contain the FER field keys.
 :::
 
 To add a Scope-based Variable to a dashboard, do the following:
