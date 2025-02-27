@@ -143,6 +143,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/dragos"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="40"/><h4>Dragos</h4></a>
+  <p>Monitor and analyze your Dragos account.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/dropbox"><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
   <p>Monitor and analyze your Dropbox usage data.</p>
   </div>
@@ -337,6 +343,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/trend-micro-vision-one"><img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="icon" width="140"/><h4>Trend Micro Vision One</h4></a>
   <p>Analyze alert logs to detect potential security risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/trust-login"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="icon" width="100"/><h4>Trust Login</h4></a>
+  <p>Analyze authentication events, user activities, and potential security threats.</p>
   </div>
 </div>
 <div className="box smallbox card">
