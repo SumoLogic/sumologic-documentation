@@ -93,7 +93,7 @@ With Scope-based Variable, you can define a variable automatically applies to al
 - Fields in scope based variable will also contain the FER field keys.
 :::
 
-To add a Scope-based variable to a dashboard, do the following:
+To add a Scope-based Variable to a dashboard, do the following:
 
 1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
 1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
