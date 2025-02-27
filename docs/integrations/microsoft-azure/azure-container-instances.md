@@ -112,35 +112,36 @@ Create the following metrics rules by following the instructions in [Create a me
 
 ### Configure metrics collection
  
- For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
+For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
  
- While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
  
- Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
+
 1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. Create and push a custom image using a <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Dockerfile" target="_blank">Docker file</a> and <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
-3. Use existing resource group or create new in Azure.
-4. Update the <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> file with your own application image whose logs you want to collect. In the file we have used nginx application as an example whose log files(access logs and error logs) are created in a shared volume(/var/log/nginx)
-4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">logging-sidecar-deploy.yaml</a> Azure template.
-   * parameter - /fluent-bit/bin/fluent-bit is fluent-bit executable path
-   * parameter - -c /root/output_conf.yaml is fluent-bit configuration file path
-      * *inputs* parameters in output_conf.yaml
-         * *tail* - read logs command name
-         * *path* is log file path from where fluent bit collector is collecting logs
-      * *outputs* parameters in output_conf.yaml
-          * *name=http* - HTTP Output collector
-          * *format=json_lines*
-          * "compress" - payload compression mechanism(we used gzip)
-          * *match* - log matching rule
-          * *host* - sumologic collector host
-          * *port* - sumologic collector port
-          * *tls=on* - TLS support enabled
-          * *tls.verify=off* - certificate validation disabled
-          * *URI* - sumologic http collector URI
-          * *json_date_key* - name of the date field in output
-          * *header* - X-Sumo-Fields header used to tag fields during logs collection
+3. Use existing resource group or create a new one in Azure.
+4. Update the <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml" target="_blank">**logging-sidecar-deploy.yaml**</a> file with your own application image whose logs you want to collect. In the file we have used nginx application as an example whose log files(access logs and error logs) are created in a shared volume(/var/log/nginx).
+4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">**logging-sidecar-deploy.yaml**</a> Azure template.
+   * parameter - `/fluent-bit/bin/fluent-bit` is fluent-bit executable path.
+   * parameter - `-c /root/output_conf.yaml` is fluent-bit configuration file path.
+      * Inputs parameters in the `output_conf.yaml` file.
+         * **tail**. Read logs command name.
+         * **path**. Log file path from where fluent bit collector is collecting logs.
+      * Outputs parameters in the `output_conf.yaml` file.
+          * **name*. HTTP output collector. By default, the name key will be assigned with *http* as value.
+          * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines* as value, since, Sumo Logic only supports json format log line.
+          * **compress**. Payload compression mechanism. The recommended file type from Sumo Logic is `gzip`.
+          * **match**. Log matching rule.
+          * **host**. Sumo Logic collector host.
+          * **port**. Sumo Logic collector port.
+          * **tls=on**. By default, *on* value will be assigned to enable the TLS support.
+          * **tls.verify**. By default, *off* value will be assigned to disable the certificate validation.
+          * **URI**. Sumo Logic HTTP collector URI.
+          * **json_date_key**. Name of the date field in output.
+          * **header**. X-Sumo-Fields header used to tag fields during logs collection.
 5. for more details how to deploy azure container instance group please refer to [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart).
 
 #### Activity Logs
@@ -159,14 +160,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Error Logs
 
-The **Azure Container Instance - Error Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container.
-
-Use this dashboard to view:
-* Total Errors
-* Top 10 Errors bar chart
-* Log Level Error distribution
-* Error Trend by Container
-* Recent Container Logs
+The **Azure Container Instance - Error Logs** dashboard provides detailed information on the container activity. This dashboard also provides comprehensive overview of Total Errors, Top 10 Errors bar chart, Log Level Error distribution, Error Trend by Container, and Recent Container Logs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instance-Error-Logs.png')} alt="Azure Container Instance - Error Logs" style={{border: '1px solid gray'}} width="800" />
 
@@ -183,10 +177,10 @@ Use this dashboard to:
 
 ### Resources
 
-The **Azure Container Instances - Resources** dashboard shows average memory usage, avg CPU usage, average network bytes received and transmitted per sec.
+The **Azure Container Instances - Resources** dashboard shows average memory usage, avg CPU usage, and average network bytes received and transmitted per sec.
 
 Use this dashboard to:
-* Monitor Average Memory and CPU usage and it's trend.
+* Monitor Average Memory and CPU usage with it's trend.
 * Monitor Average Received and Transmitted network bytes.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Resources.png')} alt="Azure Container Instances - Errors" style={{border: '1px solid gray'}} width="800" />
