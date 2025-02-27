@@ -103,6 +103,8 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 <img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
+You can pin a suggestion for easy access later. Just hover over a suggestion and click **Pin suggestion** (pin icon). The pinned suggestion will stay at the top of your **Suggestions** list within that conversation.
+
 #### Ask a question
 
 In the **Ask Something...** field, you can manually enter a natural language prompt, similar to the prebuilt options under **Suggestions**. You can also use autocompletion—start typing a keyword to see relevant suggestions.
@@ -221,6 +223,10 @@ _sourceCategory=* "{" "}"
 ```
 
 If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding a left curly brace (`{`) to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+
+#### Edit Title
+
+Copilot automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
 
 #### History
 
