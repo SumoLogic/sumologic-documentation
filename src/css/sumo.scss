@@ -1426,7 +1426,6 @@ html[data-theme='dark'] .featureImage {
   display: inline-block;
   margin-bottom: 16px;
   border: none;
-  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 /* RSS Button Hover Effect */
@@ -1434,7 +1433,6 @@ html[data-theme='dark'] .featureImage {
   background: linear-gradient(90deg, #b45309, #92400e);
   color: white;
   text-decoration: none;
-  transform: scale(1.02);
 }
 
 
