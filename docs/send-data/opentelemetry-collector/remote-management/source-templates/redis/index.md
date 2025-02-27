@@ -27,7 +27,7 @@ When you create a source template, the following [fields](/docs/manage/fields/) 
 ### For metrics collection
 - Metrics for Redis are collected through OpenTelemetry [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/redisreceiver).
 - Receiver uses the [INFO command](https://redis.io/docs/latest/commands/info/) to get Redis statistics.
-- Make sure to set the Redis user's password as an environment variable for the OpenTelemetry agent. Refer to the [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md). 
+- Make sure to set the Redis user's password as an environment variable for the OpenTelemetry agent. Refer to [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md). 
 
 ### For logs collection
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
