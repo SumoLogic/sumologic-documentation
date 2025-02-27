@@ -23,8 +23,8 @@ For more information on supported dimensions, refer to [Azure documentation](htt
 
 ## Setup
 
-* Application Logs collection using fluent-bit sidecar container using [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
-* Metrics collection using [Azure Metrics Source(BETA)](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
+* Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
+* Set up metrics collection using [Azure Metrics Source (BETA)](https://help.sumologic.com/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
 
 
 ### Configure field in field schema
