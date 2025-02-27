@@ -123,7 +123,7 @@ Track your Windows Update activities.
 * **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures
 
-## Upgrading the PCI Compliance for Windows JSON app (Optional)
+## Upgrade/Downgrade the PCI Compliance for Windows JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -117,7 +117,7 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 
 To create an SLO from the **Metrics** page:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  
 1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
 1. Click the three-dot kebab icon, then select **Create an SLO**.
 1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).

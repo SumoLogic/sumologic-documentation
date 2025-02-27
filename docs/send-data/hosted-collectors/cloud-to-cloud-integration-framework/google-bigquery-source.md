@@ -26,6 +26,10 @@ Google Cloud’s BigQuery is a fully managed enterprise data warehouse that help
 
 ## Setup
 
+:::note
+Make sure that you have [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer) and [BigQuery Job User](https://cloud.google.com/bigquery/docs/access-control#bigquery.jobUser) permissions when creating the service account for the Big Query source.
+:::
+
 ### Vendor configuration
 
 Follow the below steps to get the Service Account's Credential JSON file to run BigQuery jobs:

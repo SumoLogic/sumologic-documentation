@@ -14,8 +14,8 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 ### Hardware requirements
 
 * OS:
-   * Ubuntu (18.04/20.04)
-   * CentOS 7
+   * Ubuntu 18.04, 20.04, or 24.04 (Version 24.04 is supported in a new beta release of the Automation Bridge)
+   * CentOS 7 or 8
    * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
@@ -82,6 +82,10 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
+:::info
+You must prefix your installation token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
+:::
+
 <img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" style={{border:'1px solid gray'}} width="800"/>
 
 ## Automation bridge installation
@@ -112,8 +116,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 1. Verify that the prefix name of the generated token respects the requirements (see [Get installation token](#get-installation-token)).
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
-   * `1SOAR_URL1`
-   * `1SOAR_TOKEN1`
+   * `SOAR_URL`
+   * `SOAR_TOKEN`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
 And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
@@ -127,9 +131,7 @@ An example of a configuration file would be:
   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
-To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
-
-By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
+To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/). By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
 
 ### Bridge ALIAS
 

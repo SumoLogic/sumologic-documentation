@@ -65,7 +65,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
 
 It returns results like these:
 
-![metric-volume-source-category](/img/ingestion-volume/metric-volume-source-category.png)
+![metric-volume-source-category](/img/manage/ingestion-volume/metric-volume-source-category.png)
 
 ### Metric volume by collector
 
@@ -80,7 +80,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 It returns results like these:
 
-![metric-volume-collector.png](/img/ingestion-volume/metric-volume-collector.png)
+![metric-volume-collector.png](/img/manage/ingestion-volume/metric-volume-collector.png)
 
 ### Metric volume for a specific collector
 

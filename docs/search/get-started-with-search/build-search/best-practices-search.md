@@ -87,8 +87,7 @@ If you need to use parse regex, avoid the use of expensive operations like `.*`.
 
 ## Use partitions and scheduled views
 
-Sumo provides two index-based search optimization features: partitions and scheduled views. When you run a search against an partition or scheduled view, search results are returned more quickly and efficiently because the search is run against a smaller data set. For more
-information, see [Optimize Search Performance](../../optimize-search-performance.md).
+Sumo provides two index-based search optimization features: partitions and scheduled views. When you run a search against an partition or scheduled view, search results are returned more quickly and efficiently because the search is run against a smaller data set. For more information, see [Optimize Search Performance](../../optimize-search-performance.md).
 
 ## Use Search Parameters
 

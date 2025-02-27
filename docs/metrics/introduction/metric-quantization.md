@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo ingests individual metric data points from your metric sources. In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval.
 
-Quantization is the process of aggregating metric data points for time series over an interval, for example, an hour or a minute, using a particular aggregation function: `avg`, `min`, `max`, `sum`, or `count`.
+Quantization is the process of aggregating metric data points for time series over an interval, for example, an hour or a minute, using a particular aggregation function: `avg`, `min`, `max`, `sum`, `count`, or `rate`.
 
 
 ### Quantization terminology
@@ -38,38 +38,20 @@ By default, Sumo uses the `avg` rollup type. You can specify another rollup type
 
 We use the term rollup to refer to the aggregation function Sumo uses when quantizing metrics. This table describes the different rollup types you can select when running a query.
 
-<table>
-  <tr>
-   <td><strong>Rollup type</strong>   </td>
-   <td><strong>Description</strong>   </td>
-  </tr>
-  <tr>
-   <td><code>avg</code> </td>
-   <td>Calculates the average value of the data points for a time series in each bucket. </td>
-  </tr>
-  <tr>
-   <td><code>min</code> </td>
-   <td>Calculates the minimum value among the data points for a time series in each bucket.   </td>
-  </tr>
-  <tr>
-   <td><code>max</code>   </td>
-   <td>Calculates the maximum value among the data points for a time series in each bucket. </td>
-  </tr>
-  <tr>
-   <td><code>sum</code></td>
-   <td>Calculates the sum of the values of the data points for a time series in each bucket. </td>
-  </tr>
-  <tr>
-   <td><code>count</code></td>
-   <td>Calculates the count of data points for a time series in each bucket. </td>
-  </tr>
-</table>
+| Rollup type | Description |
+| :-- | :-- |
+| [`avg`](/docs/metrics/metrics-operators/avg/) | Calculates the average value of the data points for a time series in each bucket. |
+| [`min`](/docs/metrics/metrics-operators/min/) | Calculates the minimum value among the data points for a time series in each bucket. |
+| [`max`](/docs/metrics/metrics-operators/max/) | Calculates the maximum value among the data points for a time series in each bucket. |
+| [`sum`](/docs/metrics/metrics-operators/sum/) | Calculates the sum of the values of the data points for a time series in each bucket. |
+| [`count`](/docs/metrics/metrics-operators/count/) | Calculates the count of data points for a time series in each bucket. |
+| [`rate`](/docs/metrics/metrics-operators/rate/) | Calculates the per-second rate of change between data points in a time series in each bucket.  |
 
 Sumo quantizes metrics upon ingestion and at query time.
 
 ### Quantization at ingestion
 
-Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
+Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, `count`, and `rate`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
 
 ### Automatic quantization at query time
 

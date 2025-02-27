@@ -1,7 +1,7 @@
 ---
 id: account-settings-preferences
 title: Setting Account Preferences and Credentials
-sidebar_label: Account Preferences
+sidebar_label: Account preferences
 description: Update and manage your Sumo Logic account.
 ---
 
@@ -65,10 +65,6 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
     - For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
 1. Scan the QR code displayed on your screen with your TOTP App.
 1. After the TOTP App is configured, enter two consecutive authentication codes.
-
-## My Access Keys
-
-In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 

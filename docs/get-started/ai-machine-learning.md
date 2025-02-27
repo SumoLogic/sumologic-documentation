@@ -16,8 +16,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this document, you'll learn about Sumo Logic features that leverage artificial intelligence (AI), machine learning (ML), and pattern recognition to support cloud security management, mitigate risks, reduce manual workloads for your team, and streamline incident response and resolution.
 
-Our AI and security analytics capabilities allow security and development teams to align around a single source of truth and collect and act on data insights more quickly.
-
 <details>
 <summary>What do these terms mean?</summary>
 
@@ -31,11 +29,9 @@ Pattern learning is fundamental to machine learning and deep learning, where alg
 
 </details>
 
-Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
+Our AI and security analytics capabilities enable security and development teams to align around a unified source of truth, allowing for quicker collection and action on data insights.
 
-<!-- Remove or ask brand to create a cleaner, branded version
-<img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
--->
+Our alerting, security, and remediation features extend beyond visual analytics, providing essential tools to accelerate issue resolution, reduce mean time to respond (MTTR), and empower proactive monitoring and safeguarding of your technology stack against evolving threats.
 
 Sumo Logic provides observability into your technology stack by analyzing the millions of log files created in your environment, detecting anomalies and outlier data, and reporting security issues in a timely fashion with fewer false positives.
 
@@ -53,17 +49,17 @@ With Copilot, you can effortlessly investigate complex issues without writing in
 
 ### LogReduce
 
-LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on string similarity and distill thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, teaching LogReduce for more specific outcomes. [Learn more](/docs/search/logreduce).
+LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on string similarity and distill thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, teaching LogReduce for more specific outcomes. [Learn more](/docs/search/behavior-insights/logreduce).
 
 ### LogCompare
 
-LogCompare simplifies log analysis by enabling easy comparison of log data from different time periods to detect changes or anomalies, facilitating troubleshooting and root cause discovery. By automatically running delta analysis, LogCompare streamlines the process, allowing users to identify significant alterations in log patterns efficiently. Utilizing baseline and target queries, LogCompare clusters logs into patterns and compares them based on the significance of change, providing insights into deviations over time. With intuitive actions like promoting, demoting, and splitting signatures, users can refine their analysis and focus on relevant patterns, ultimately enhancing decision-making and threat detection capabilities. Additionally, LogCompare supports alerts and scheduled searches to notify users of new signatures or significant changes, ensuring proactive monitoring and response to evolving log data [Learn more](/docs/search/logcompare).
+LogCompare simplifies log analysis by enabling easy comparison of log data from different time periods to detect changes or anomalies, facilitating troubleshooting and root cause discovery. By automatically running delta analysis, LogCompare streamlines the process, allowing users to identify significant alterations in log patterns efficiently. Utilizing baseline and target queries, LogCompare clusters logs into patterns and compares them based on the significance of change, providing insights into deviations over time. With intuitive actions like promoting, demoting, and splitting signatures, users can refine their analysis and focus on relevant patterns, ultimately enhancing decision-making and threat detection capabilities. Additionally, LogCompare supports alerts and scheduled searches to notify users of new signatures or significant changes, ensuring proactive monitoring and response to evolving log data. [Learn more](/docs/search/behavior-insights/logcompare).
 
 ### AI-driven Alerts
 
 #### Anomaly Detection
 
-[Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method), powered by machine learning, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response.
+[Anomaly Detection](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), powered by machine learning, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response.
 
 #### Automated playbooks
 

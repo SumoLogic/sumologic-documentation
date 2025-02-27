@@ -47,7 +47,7 @@ _index=sumologic_audit_events accessId api
 
 ## Rotate third-party credentials used in Webhook Connections playbook
 
-Use the playbooks below to assist you in rotating any third-party credentials used in [Webhook Connections](https://help-opensource.sumologic.com/docs/alerts/webhook-connections/). This includes general outbound webhooks and outbound connections to other services (Slack, Jira, PagerDuty, etc).
+Use the playbooks below to assist you in rotating any third-party credentials used in [Webhook Connections](/docs/alerts/webhook-connections/). This includes general outbound webhooks and outbound connections to other services (Slack, Jira, PagerDuty, etc).
 
 ### Rotating third-party credentials used in Webhook Connections
 To properly rotate these credentials, identify the credentials that need to be retired/rotated. 
@@ -57,4 +57,4 @@ To properly rotate these credentials, identify the credentials that need to be r
 1. Replace the old access credentials with the newly created access credentials.
 1. Delete the old access credentials in the corresponding services you are making Connections to.
 
-For more details on configuring specific Webhook Connections, please see our help docs on [Webhook Connections](https://help-opensource.sumologic.com/docs/alerts/webhook-connections/) for the corresponding Webhooks that you use in Sumo Logic.
+For more details on configuring specific Webhook Connections, please see our help docs on [Webhook Connections](/docs/alerts/webhook-connections/) for the corresponding Webhooks that you use in Sumo Logic.

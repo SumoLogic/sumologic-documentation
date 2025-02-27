@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.10
-Updated: July 8, 2024***
+***Version: 1.13  
+Updated: Feb 21, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -23,12 +23,16 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
 * **Get Indicators** *(Containment)* - Get Indicators By IDs.
 * **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
+* **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
+* **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
+* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
+* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
 
@@ -53,6 +57,12 @@ EDR
 * March 21, 2023 (v1.5) - Logo updated
 * July 12, 2023 (v1.8) - Changed fields visibility
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
-* July 8, 2024 (v1.10) - Added new actions
+* October 16, 2024 (v1.10) - Added new actions
     + Create Indicators
     + Get Indicators
+* November 28, 2024 (v1.12) - Added new actions
+    + Update Alerts
+    + Search into Alerts
+    + Alerts CrowdStrike Falcon Daemon
+* February 21, 2025 (v1.13) - Added new action
+    + Get IDP Device Info

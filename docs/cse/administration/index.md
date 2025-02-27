@@ -2,7 +2,7 @@
 slug: /cse/administration
 title: Cloud SIEM Administration
 sidebar_label: Cloud SIEM Administration
-description: Learn how to set up users accounts and roles, create Cloud SIEM Actions, configure Network Blocks, manage custom Insight status and sub-resolutions, and more.
+description: Learn how to set up users accounts and roles, create Cloud SIEM Actions, configure Network Blocks, manage custom insight status and sub-resolutions, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +19,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/create-use-network-blocks"><img src={useBaseUrl('img/icons/operations/microservices.png')} alt="Network icon" width="40"/><h4>Network Blocks</h4></a>
-  <p>Learn about Network Blocks, their purpose, and instructions for setting them up and using them.</p>
+  <p>Learn about network blocks, their purpose, and instructions for setting them up and using them.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -43,7 +43,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/create-cse-context-actions"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Database symbol in a magnifying glass icon" width="40"/><h4>Create Cloud SIEM Context Actions</h4></a>
-  <p>Learn to query an external system for details about an Entity, IOC, or data encountered in a Record.</p>
+  <p>Learn to query an external system for details about an entity, IOC, or data encountered in a record.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -85,19 +85,19 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/manage-custom-insight-resolutions"><img src={useBaseUrl('img/icons/operations/correlation-engine.png')} alt="Bar chart with a gear icon" width="40"/><h4>Manage Custom Insight Resolutions</h4></a>
-  <p>Learn how to create and manage Custom Insight Resolutions.</p>
+  <p>Learn how to create and manage custom insight resolutions.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/manage-custom-insight-statuses"><img src={useBaseUrl('img/icons/operations/retain-and-visualize-logs.png')} alt="Bar chart in a circle icon" width="40"/><h4>Managing Custom Insight Statuses</h4></a>
-  <p>Learn how to create and manage Custom Insight Statuses.</p>
+  <p>Learn how to create and manage custom insight statuses.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/administration/using-sensor-zones"><img src={useBaseUrl('img/icons/cloud/events.png')} alt="Squares icon" width="40"/><h4>Sensor Zones</h4></a>
-  <p>Learn how to use Sensor Zones to distinguish between Cloud SIEM Entities that have the same IP address.</p>
+  <p>Learn how to use Sensor Zones to distinguish between Cloud SIEM entities that have the same IP address.</p>
   </div>
 </div>
 <div className="box smallbox card">

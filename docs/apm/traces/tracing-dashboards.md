@@ -8,18 +8,18 @@ description: Explore and create Tracing dashboards, install apps, and more.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To access APM hierarchies:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
 1. In the upper-left corner of the screen, select an **APM:** hierarchy from the dropdown menu. An expandable list of your hierarchy appears in the panel.
 
-Out-of-the-box dashboards are available as three hierarchies. 
+Out-of-the-box dashboards are available as three hierarchies.
 
 * The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes) to learn how to customize your span attributes and set up application name.
 * The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
-* The **APM: Environment View** displays environments at the top level and breaks down application health by environment (such as `prod` or `dev`), with up to 10 values of **deployment.environment** tag. This view can be useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/> <br/>Services must be active within the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
+* The **APM: Environment View** displays environments at the top level and breaks down application health by environment (such as `prod` or `dev`), with up to 10 values of **deployment.environment** tag. This view can be useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/apm/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/> <br/>Services must be active within the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
 
 Each dashboard is a fully customizable set of panels based on automatically generated metrics using tracing data as input. You can get insight into microservice health by looking at stats from:
 
-* **Latency**: (real-time average) the average time it takes for entry spans for that service to complete. Apart from average you can also select p99, p95, p90, p50 options in the `latency_type` filter to view other percentile aggregations. Percentile aggregations are based on the [metrics histograms](/docs/metrics/introduction/metric-histograms/) feature.<br/> ![latency-type.png](/img/traces/latency-type.png)
+* **Latency**: (real-time average) the average time it takes for entry spans for that service to complete. Apart from average you can also select p99, p95, p90, p50 options in the `latency_type` filter to view other percentile aggregations. Percentile aggregations are based on the [metrics histograms](/docs/metrics/introduction/metric-histograms/) feature.<br/> ![latency-type.png](/img/apm/traces/latency-type.png)
 * **Requests**: (real-time counter) the number of entry spans reported by the service.
 * **Errors**: (real-time counter) the number of entry spans for the service that finished with an error.
 
@@ -34,21 +34,26 @@ Tracing metrics retention has [default metrics retention](/docs/apm/traces/view
 
 ## Installing the Tracing App (Optional)
 
-The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Admin Recommended** folder and is automatically available for all users in the organization.
+The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Installed Apps** folder and is automatically available for all users in the organization.
 
 :::note
-Do not modify or delete content in the **Admin Recommended** folder as it is maintained and updated automatically. If for any reason this gets removed, you can install the App manually from App Catalog.
+Do not modify or delete content in the **Installed Apps** folder as it is maintained by Sumo Logic. If for any reason this gets removed, you can install the App manually from App Catalog.
 :::
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-1. From the **App Catalog**, search for and select the **Tracing - Application Services Health** app.<br/> ![install-tracing-app.png](/img/traces/install-tracing-app.png)
-2. To install the app, click the **Add to Library** button and complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder), or click **New Folder** to add a new folder.<br/> ![Trace app two.png](/img/traces/Trace-app-two.png)
-3. Click **Add to Library**.
+## Upgrade/Downgrade the Tracing App (Optional)
 
-Once an app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Tracing App (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 
 ## Dashboard Panels
 
@@ -60,7 +65,7 @@ See the [Dashboard guide](/docs/dashboards) for additional information and optio
 
 The **Services Table** and **Services Graph** panels display a services list and services map, respectively, for filtered applications and services, with the ability to explore the environment.
 
-To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/services-list-map/#services-dashboard-panels).
+To add a Service Map panel to your Dashboard, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
 ### Trace List panel
 
@@ -72,10 +77,10 @@ You are limited to three Trace List panels in a dashboard.
 
 To add a Trace List panel to your Dashboard:
 1. Open or create a new Dashboard.
-2. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new Dashboard.<br/>  ![add-tracelist.png](/img/traces/add-tracelist.png)   
-    A panel configuration page opens.<br/>  ![create-tracelist.png](/img/traces/create-tracelist.png)
+2. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new Dashboard.<br/>  ![add-tracelist.png](/img/apm/traces/add-tracelist.png)   
+    A panel configuration page opens.<br/>  ![create-tracelist.png](/img/apm/traces/create-tracelist.png)
 3. Configure a [Trace query](view-and-investigate-traces.md) to search for desired set of traces. 
-4. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/> ![timerange.png](/img/traces/timerange.png)
+4. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/> ![timerange.png](/img/apm/traces/timerange.png)
 5. The **Chart Type** is set to Table.
 6. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 7. Select the Table columns of trace data to load in the panel:
@@ -87,12 +92,12 @@ To add a Trace List panel to your Dashboard:
   | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
   | Duration | 12.582 ms | The amount of time the trace spans.  |
   | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-  | Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
+  | Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/apm/span-hover-view.png) |
   | Number of errors | 0 | The number of errors in the trace. |
-  | Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
+  | Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/apm/traces/similar-traces-menu.png) |
 
-8. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('img/traces/tracelist-details.png')} alt="trace-list>" width="400"/>
-9. Click **Add to Dashboard**. The panel loads in your Dashboard to review all traces according to the query.<br/>  ![panel-trace.png](/img/traces/panel-trace.png)
+8. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('img/apm/traces/tracelist-details.png')} alt="trace-list>" width="400"/>
+9. Click **Add to Dashboard**. The panel loads in your Dashboard to review all traces according to the query.<br/>  ![panel-trace.png](/img/apm/traces/panel-trace.png)
 
 
 ### Dashboard Examples

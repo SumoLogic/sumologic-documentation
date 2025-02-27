@@ -155,7 +155,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />
 
-## Upgrading the Cisco ASA app (Optional)
+## Upgrade/Downgrade the Cisco ASA app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

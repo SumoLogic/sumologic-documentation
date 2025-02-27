@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-ui
 title: Tour the Sumo Logic UI
-sidebar_label: Sumo Logic UI
+sidebar_label: Tour the Sumo UI (New)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
@@ -14,8 +14,39 @@ add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This guide introduces you to the new, faster Sumo Logic UI.
+This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience.
 
+<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example Classic UI" style={{border: '1px solid gray'}} width="800" />
+
+With the new UI, you'll benefit from:
+
+* Unified experience across operational and security analytics products.
+* Faster load times with enhanced caching.
+* Stateful URLs that save your session and position when you log back in.
+* Use-case-driven navigation to help you quickly find the features you need.
+
+For a detailed list of updates, [view the release notes](/release-notes-service/2024/12/31/#february-23-2024-user-interface).
+
+## Opt in
+
+To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation panel and click **Switch to New UI**.<br/><img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+
+:::sumo quickstart
+Check out this overview video to get familiar with the New UI.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Sumo Logic's Unified Experience UI Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
@@ -26,32 +57,12 @@ This guide introduces you to the new, faster Sumo Logic UI.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
-:::tip
-New to Sumo Logic? Start with our [Quickstart Guide](/docs/get-started/quickstart) to get up and running fast. You'll be introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. 
-:::
-
-## Benefits
-
-With the New UI, you can expect:
-
-* Unified experience across operational and security analytics products.
-* Faster load times with enhanced caching.
-* Stateful URLs that save your place upon re-login.
-* Use-case-based navigation for streamlined feature discovery.
-
-You can view the full list of updates [here](/release-notes-service/2024/02/23/ui/).
-
-
-## Switching to the New UI
-
-To opt into the new UI, go to the left navigation panel and click **Switch to New UI**.
-
-<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+-->  
+:::   
 
 ## Home
 
-When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab, which provides an at-a-glance view of the following:
+You'll land on the Sumo Logic **Home** page, which provides an at-a-glance view of the following:
 
 * Recently Opened Dashboards
 * Recently Run Searches
@@ -117,7 +128,6 @@ To manage your personal Sumo account preferences:
 1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
-    * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).

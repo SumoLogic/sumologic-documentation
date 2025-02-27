@@ -6,6 +6,11 @@ description: Learn about Network Sensor deployment planning, standard sensor pla
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
+
+:::warning end-of-life
+<SensorEOL/>
+:::
 
 This section has instructions for deploying the Cloud SIEM Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
@@ -41,11 +46,11 @@ Forward proxies, such as HTTP web proxies, broker client connections to the inte
 
 The following diagram Illustrates optimal sensor positioning prior to a web proxy.
 
-<img src={useBaseUrl('img/cse/Network_Sensor_Deployment_Guide_SS_1.png')} alt="Network sensor deployment" width="800"/>
+<img src={useBaseUrl('img/cse/Network_Sensor_Deployment_Guide_SS_1.png')} alt="Network Sensor deployment" width="800"/>
 
-Sumo Logic advises positioning network sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of Cloud SIEM’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
+Sumo Logic advises positioning Network Sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of Cloud SIEM’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
 
-Positioning the network sensor after a forward proxy is not advised. This placement results in the sensor seeing all traffic sourced from the proxy and complicates (or renders impossible) the ability to determine which assets or users on the LAN were the origin of the traffic.
+Positioning the Network Sensor after a forward proxy is not advised. This placement results in the sensor seeing all traffic sourced from the proxy and complicates (or renders impossible) the ability to determine which assets or users on the LAN were the origin of the traffic.
 
 #### Explicit versus transparent forward proxies and server access logs
 
@@ -83,7 +88,7 @@ This section describes resource requirements and prerequisites for Network Senso
 
 ### Host resource requirements
 
-We recommend installing the network sensor on a host with at least two interfaces - one for traffic monitoring and one for management. That way, the sensor doesn't process and upload traffic associated with sensor management for analysis.
+We recommend installing the Network Sensor on a host with at least two interfaces - one for traffic monitoring and one for management. That way, the sensor doesn't process and upload traffic associated with sensor management for analysis.
 
 The system upon which you install the Network Sensor must have the following resources, at a minimum. Depending on expected throughput, additional core, memory, and storage resources may be required, as shown in [Throughput-dependent resource requirements](#throughput-dependent-resource-requirements)
 below. 
@@ -93,7 +98,7 @@ below. 
 | CentOS 7 or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
 
 :::note
-Before you deploy the network sensor, make sure you know the TAP or SPAN interface upon which captured data is available.
+Before you deploy the Network Sensor, make sure you know the TAP or SPAN interface upon which captured data is available.
 :::
 
 ### Prerequisites for CentOS
@@ -122,7 +127,7 @@ reboot
 | 1.75gbps | 10 | 28GB | 500GB |
 | 2gbps+ | Consult your SE. | Consult SE<br/>(Estimate is 4GB per 250Mbs) | Consult your SE. |
 
-### Outbound Firewall Rules
+### Outbound firewall rules
 
 See [Securing access to Sumo Logic infrastructure via DNS name or IP address](/docs/api/getting-started#securing-access-to-sumo-logic-infrastructure-via-dns-name-or-ip-address) for information on how to configure your firewall for outbound access to Sumo Logic.
 
@@ -337,7 +342,7 @@ Configured by wizard? No
 
 ### no_data_cutoff
 
-**Description.** Threshold used to determine when data is being captured by the Network Sensor (value is in Records per second). When Records per second is below this threshold for a status report interval (default is 5 minutes) the report will be counted towards [no_data_restart_threshold](#no_data_restart_threshold). Use this parameter to tune automatic restarts of the Network Sensor when no data is being captured/reported (requires `no_data_restart_threshold` to be set, the recommended value for this parameter is 3, as described below ).
+**Description.** Threshold used to determine when data is being captured by the Network Sensor (value is in records per second). When records per second is below this threshold for a status report interval (default is 5 minutes) the report will be counted towards [no_data_restart_threshold](#no_data_restart_threshold). Use this parameter to tune automatic restarts of the Network Sensor when no data is being captured/reported (requires `no_data_restart_threshold` to be set, the recommended value for this parameter is 3, as described below ).
 
 **Default value.** 3
 

@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/>
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/spans).
 
 :::tip Other Tracing APIs
 See also: [Service Map APIs](/docs/api/service-map) and [Traces APIs](/docs/api/tracing).
@@ -38,15 +38,13 @@ Select the documentation link for your deployment:
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Download Search Results
     * View Collectors
-
--->
 
 ## Endpoints for API access  
 

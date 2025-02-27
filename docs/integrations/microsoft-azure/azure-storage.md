@@ -111,15 +111,16 @@ Create a Field Extraction Rule (FER) for Azure Storage by following the instruct
    ```
 
    ```sql title="Parse Expression"
-   json "resourceId"
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
+   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+    | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
+    | toUpperCase(resourceId) as resourceId
+    | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+    | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+    | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+    | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+    | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
+    | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+    | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
    ```
 ### Configure metric rules
 
@@ -171,6 +172,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
    * Choose `Stream to an event hub` as destination.
    * Select `Transaction`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+4. Tag the location field in the source with right location value.
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
@@ -184,7 +187,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 1. Tag the location field in the source with right location value.
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
    
 #### Activity Logs
 
@@ -429,7 +432,7 @@ Use this dashboard to:
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureStorage/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-## Upgrading the Azure Storage app (optional)
+## Upgrade/Downgrade the Azure Storage app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

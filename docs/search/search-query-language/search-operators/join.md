@@ -99,15 +99,11 @@ returns results similar to:
 | stream-2454 | search-733434 | stream-2454 |
 | stream-7343 | search-854343 | stream-7343 |
 | stream-7343 | search-32342  | stream-7343 |
-| stream-6543 | search-854343 | stream-6543 |
+| stream-6543 | search-455563 | stream-6543 |
 
 ### Performance
 
-The join operator can consume significant processing time. Selectivity
-reduces the number of log messages that must be considered. To improve
-join operator performance, place the parse operators toward the start of
-the query expression, bringing the search anchors to the front of the
-search scope, as in this example:
+The join operator can consume significant processing time. Selectivity reduces the number of log messages that must be considered. To improve join operator performance, place the parse operators toward the start of the query expression, bringing the search anchors to the front of the search scope, as in this example:
 
 ```
 ("starting stream from" OR "starting search") | join

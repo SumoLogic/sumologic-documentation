@@ -102,11 +102,6 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/ingest-budget-v1"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Ingest Budget V1</h4></a>    
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/api/ingest-budget-v2"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Ingest Budget V2</h4></a>    
   </div>
 </div>
@@ -192,7 +187,17 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2 (Beta)</h4></a>  
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/saml-configuration"><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Thumbnail icon" width="50"/><h4>SAML Configuration</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -212,7 +217,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/service-map"><img src={useBaseUrl('img/traces/servicemap.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
+  <a href="/docs/api/service-map"><img src={useBaseUrl('img/apm/services-map-icon.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

@@ -54,6 +54,8 @@ In this step, you create the AWS Kinesis Firehose for Metrics source.
 1. Enter a **Name** for the source.
 1. (Optional) Enter a **Description**.
 1. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.<br/><img src={useBaseUrl('img/send-data/kinesis-aws-source.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
+1. For **AWS Tag Filters** (Optional) , enter keys and values to add filters to your metrics. AWS Tag filters are supported for AWS namespaces but not for custom namespaces.
+**Example** <br/><img src={useBaseUrl('img/send-data/kinesis-aws-tag-filters.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
 1. For **AWS Access** of a Kinesis Metric source, the role requires `tag:GetResources` permission. The Kinesis Log source does not require permissions.
 1. Click **Save**.
 
@@ -79,7 +81,7 @@ In this step, you set up the AWS Metric Streams service to stream metrics to Kin
 
 ## Filter CloudWatch metrics during ingestion
 
-You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics. You can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
+You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics or by using AWS Tag Filters above. While using filters on Metrics Streams in AWS, you can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
 
 :::note
 Inclusive and exclusive filters can’t be combined. You can choose namespaces to exclude or namespaces to include, but not both.

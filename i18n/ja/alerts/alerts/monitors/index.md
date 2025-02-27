@@ -69,9 +69,13 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ## Monitors page
 
-The Monitors page allows you to view, create, and manage Monitors. You can create and organize your Monitors into folders. To access the page go to **Manage Data** \> **Monitoring** \> **Monitors**.
+The Monitors page allows you to view, create, and manage Monitors. You can create and organize your Monitors into folders. 
 
-![monitors page](/img/monitors/monitors-page.png)
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access monitors, in the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui). To access monitors, in the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+
+![monitors page](/img/alerts/monitors/monitors-page.png)
 
 The page displays the following information:
 
@@ -85,17 +89,11 @@ The page displays the following information:
 
 To quickly open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor hover your cursor over its Status and click the icon.
 
-![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
+![monitor shortcut.png](/img/alerts/monitors/monitors-shortcut.png)
 
 At the top of the page, you can:
 
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**.
-
-    ![search monitors input.png](/img/monitors/search-monitors-input.png)
-
-* Click **Add** to:   
-
-![Add monitors page.png](/img/monitors/Add-monitors-page.png)
 
   * create folders for organizing your Monitors.
   * create a [new Monitor](#add-a-monitor).
@@ -109,13 +107,13 @@ At the top of the page, you can:
 
 The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).
 
-![quick menu](/img/monitors/quick-menu-monitors.png)
+![quick menu](/img/alerts/monitors/quick-menu-monitors.png)
 
 ## Details pane
 
 The details pane provides additional information about a selected Monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.
 
-![monitor details](/img/monitors/monitor-details.png)
+![monitor details](/img/alerts/monitors/monitor-details.png)
 
 In the details pane you can see the following details for a Monitor:
 
@@ -144,21 +142,21 @@ Under the **More Actions** menu you can:
 * **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
 * **Delete**.
 
-![monitor more actions](/img/monitors/monitor-actions.png)
+![monitor more actions](/img/alerts/monitors/monitor-actions.png)
 
 ## Add a monitor
 
-On the Monitors page (to access the page go to **Manage Data** \> **Monitoring** \> **Monitors**) click on the **Add** button then **New Monitor** to add a new Monitor. The creation dialog box will appear.
+On the Monitors page, click on the **Add** button then **New Monitor** to add a new Monitor. The creation dialog box will appear.
 
 You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
 
 1. Select a **Monitor Type**, either Logs or Metrics.   
 
-    ![trigger conditions for monitor.png](/img/monitors/trigger-conditions-monitor.png)
+    ![trigger conditions for monitor.png](/img/alerts/monitors/trigger-conditions-monitor.png)
 
 1. Select a **Detection Method**, either Static or Outlier.
 
-    ![outlier detection method.png](/img/monitors/outlier-detection-method.png)
+    ![outlier detection method.png](/img/alerts/monitors/outlier-detection-method.png)
 
     * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
     * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that do not have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
@@ -167,7 +165,7 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
 
 1. **Outlier** detection methods require you to select the **Direction** you want to track. If you chose **Static**, you won't see this option.
 
-    ![outlier detection input on Monitor.png](/img/monitors/outlier-detection-input.png)
+    ![outlier detection input on Monitor.png](/img/alerts/monitors/outlier-detection-input.png)
 
     * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
     * **Down.** Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
@@ -188,11 +186,9 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="log-monitor">
 
-![Logs monitors.png](/img/monitors/logs-monitors.png)
-
 Trigger alerts on:
 
-![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
+![trigger alerts on field.png](/img/alerts/monitors/trigger-alerts-field.png)
 
 You can set the trigger based on the following:
 
@@ -213,7 +209,7 @@ You can set the trigger based on the following:
 
 **Trigger Type: Critical and Warning**  
 
-![logs trigger type 2021.png](/img/monitors/logs-trigger-type.png)
+![logs trigger type 2021.png](/img/alerts/monitors/logs-trigger-type.png)
 
 `Alert when returned row count is <threshold type> <threshold> within <time range>`
 
@@ -227,7 +223,7 @@ You can set the trigger based on the following:
 
 Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
 
-![logs trigger recovery toggle.png](/img/monitors/logs-trigger-recovery-toggle.png)  
+![logs trigger recovery toggle.png](/img/alerts/monitors/logs-trigger-recovery-toggle.png)  
 
 For example, when the alert is set to \> 10 `the recovery would be set to \<= 10` when inferred.
 
@@ -245,7 +241,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 
 **Trigger Type: Critical and Warning**
 
-![monitor outlier logs.png](/img/monitors/monitor-outlier-logs.png)
+![monitor outlier logs.png](/img/alerts/monitors/monitor-outlier-logs.png)
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
@@ -264,7 +260,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 **Trigger Type: Missing Data**  
           
-![logs missing data Jan 2021.png](/img/monitors/logs-missing-data.png)
+![logs missing data Jan 2021.png](/img/alerts/monitors/logs-missing-data.png)
 
 `Alert when missing data within <time range>`
 
@@ -281,7 +277,7 @@ Recover
 </TabItem>
 <TabItem value="metrics">
 
-![metrics query.png](/img/monitors/metrics-query.png)
+![metrics query.png](/img/alerts/monitors/metrics-query.png)
 
 
 <Tabs
@@ -296,7 +292,7 @@ Recover
 
 **Trigger Type: Critical and Warning**
 
-![metrics trigger types.png](/img/monitors/metrics-trigger-types.png)
+![metrics trigger types.png](/img/alerts/monitors/metrics-trigger-types.png)
 
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
@@ -311,7 +307,7 @@ Recover
 
 Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
 
-![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
+![metrics trigger recovery toggle.png](/img/alerts/monitors/metrics-trigger-recovery-toggle.png)  
 
 For example, when the alert is set to \> 10` the recovery would be set to \<= 10` when inferred.
 
@@ -329,7 +325,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 
 **Trigger Type: Critical and Warning**
 
-![monitor metrics outlier triggers.png](/img/monitors/monitor-metrics-outlier-triggers.png)
+![monitor metrics outlier triggers.png](/img/alerts/monitors/monitor-metrics-outlier-triggers.png)
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 
@@ -347,7 +343,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 **Trigger Type: Missing Data**  
 
-![missing.png](/img/monitors/missing.png)
+![missing.png](/img/alerts/monitors/missing.png)
 
 `Alert when missing data <occurrence type> for <time range>`
 
@@ -367,13 +363,13 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 1. (Optional) **Additional Settings** has an **Evaluation Delay** setting. Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.
 
-    ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
+    ![additional settings evaluation delay.png](/img/alerts/monitors/additional-settings-evaluation-delay.png)
 
     If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 1. (Optional) Set **Notifications**, when a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
-    ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
+    ![monitor notifications input.png](/img/alerts/monitors/monitor-notifications-input.png)
 
     Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 
