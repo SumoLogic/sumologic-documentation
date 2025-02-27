@@ -22,7 +22,7 @@ The web interface autocomplete feature for log search variables has the follow
 * Only dashboards that were viewed in the last 3 days are updated.
 * Up to 10,000 log values and 1,000 metric values are displayed.
 * Values for template variables are based on the time range of the Dashboard.
-* New panels added to the dashboard will automatically adopt any existing scope-based variables to it.
+* New panels added to the dashboard will automatically adopt any existing Scope-based Variable to it.
 
 ## Show and hide variables option
 
