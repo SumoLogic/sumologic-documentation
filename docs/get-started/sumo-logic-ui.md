@@ -117,16 +117,7 @@ With the Sumo Logic Administrator role, you can manage user accounts, user roles
 
 #### Content Administrator Library
 
-:::note
-Administrators only.
-:::
-
-To browse the content administrator library:
-
-1. From the left nav, click **Library** > click **Open Library page**.
-1. Click the **View as** dropdown, then select **Content Administrator**.
-
-<img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
+The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open Library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
 
 ### Preferences
 
