@@ -132,7 +132,7 @@ Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl(
          * **path**. Log file path from where fluent bit collector is collecting logs.
       * Outputs parameters in the `output_conf.yaml` file.
           * **name*. HTTP output collector. By default, the name key will be assigned with *http* as value.
-          * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines* as value, since, Sumo Logic only supports json format log line.
+          * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines* as value.
           * **compress**. Payload compression mechanism. The recommended file type from Sumo Logic is `gzip`.
           * **match**. Log matching rule.
           * **host**. Sumo Logic collector host.
