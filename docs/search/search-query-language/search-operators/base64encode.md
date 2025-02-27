@@ -3,8 +3,7 @@ id: base64encode
 title: base64Encode Search Operator
 sidebar_label: base64Encode
 ---
-
-The `base64Encode` operator takes an ASCII string and converts it to a base64 string.
+The `base64Encode` operator takes a base64 string and converts it to ASCII or non-ASCII string
 
 ## Syntax
 
@@ -18,8 +17,18 @@ base64Encode(<string_field>) as <field>
 
 ## Example
 
+The following example returns `base64` with a value of `aGVsbG8gd29ybGQ=`:
+
 ```sql
 | base64Encode("hello world") as base64
 ```
 
-Returns `base64` with a value of `aGVsbG8gd29ybGQ=`.
+The Base64Encode function supports encoding non-ASCII characters in addition to ASCII. The following example returns `base64` with a value of `5LiWIOOCiOOBhOOBoQ==`:
+
+```sql
+|  base64encode("世 よいち") as base64
+```
+
+:::note
+Make sure that the encoding format you are using matches the one with decoding.
+:::
