@@ -34,6 +34,7 @@ You can update the following:
 * Cloud SIEM [rules](/docs/cse/rules/)
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 
+To update content:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Select the **Content Management** tab.
 1. In the **Source** field, select the organization that will provide the source data to be updated in other organizations.
