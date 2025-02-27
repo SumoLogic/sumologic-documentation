@@ -142,7 +142,8 @@ Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl(
           * **URI**. Sumo Logic HTTP collector URI.
           * **json_date_key**. Name of the date field in output.
           * **header**. X-Sumo-Fields header used to tag fields during logs collection.
-5. for more details how to deploy azure container instance group please refer to [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart).
+
+To learn more details on how to deploy azure container instance, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart).
 
 #### Activity Logs
 
