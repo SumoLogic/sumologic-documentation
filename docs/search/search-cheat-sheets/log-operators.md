@@ -266,7 +266,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The formatDate operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, timestamps, etc.</td>
    <td></td>
    <td></td>
-   <td><code>* | formatDate(now(), "YYYY-MM-dd") as today</code></td>
+   <td><code>* | formatDate(now(), "yyyy-MM-dd") as today</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/geo-lookup-map">geo lookup</a></td>
