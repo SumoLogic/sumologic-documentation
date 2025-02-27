@@ -16,7 +16,7 @@ import Iframe from 'react-iframe';
 
 This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience.
 
-<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example Classic UI" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example Classic UI" style={{border: '1px solid gray'}} width="800" />
 
 With the new UI, you'll benefit from:
 
