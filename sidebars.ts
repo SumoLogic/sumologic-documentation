@@ -972,6 +972,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
+            //'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
           ],
         },
         {
@@ -2168,6 +2169,7 @@ integrations: [
          'integrations/microsoft-azure/azure-batch',
          'integrations/microsoft-azure/azure-cache-for-redis',
          'integrations/microsoft-azure/azure-cognitive-search',
+         'integrations/microsoft-azure/azure-container-instances',
          'integrations/microsoft-azure/azure-cosmos-db-for-postgresql',
          'integrations/microsoft-azure/azure-cosmos-db',
          'integrations/microsoft-azure/azure-data-explorer',
