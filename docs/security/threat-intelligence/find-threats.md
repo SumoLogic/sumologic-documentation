@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Use the global feed in a log search
 
-The `_sumo_global_feed_cs` source in the threat intelligence datastore contains threat indicators provided by CrowdStrike and maintained by Sumo Logic. 
+The `_sumo_global_feed_cs` source in the threat intelligence datastore contains threat indicators supplied by third party intel vendors and maintained by Sumo Logic. 
 
 <img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
-Any Sumo Logic user can use this global feed to search for threats. To use the global feed to search for threats, use `sumo://threat/cs` in log search queries. For example:
+Any Sumo Logic user can use this global feed to search for potential threats. To search with the global feed, use `sumo://threat/cs` in log search queries. For example:
 
 ```
 _sourceCategory=cylance "IP Address"

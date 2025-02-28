@@ -7,13 +7,13 @@ description: Learn how to use threat intelligence indicators in Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Threat intelligence indicators can be used in Cloud SIEM to find possible threats. 
+Threat intelligence indicators can be used in Cloud SIEM to find possible threat activity. 
 
 ## hasThreatMatch Cloud SIEM rules language function
 
-Use the `hasThreatMatch` function in Cloud SIEM rules to search incoming records for matches to threat intelligence indicators. 
+Use the `hasThreatMatch` function in Cloud SIEM rules to analyze incoming records for matches to threat intelligence indicators. 
 
-For example, use the function to find all records with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
+For example, use the function to match all records with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
 
 ```
 hasThreatMatch([srcDevice_ip], confidence > 50)

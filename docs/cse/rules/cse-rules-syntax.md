@@ -626,7 +626,7 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
+The `hasThreatMatch` Cloud SIEM rules function matches incoming records in Cloud SIEM to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
 
 **Syntax**
 
@@ -663,7 +663,7 @@ Parameters:
 
 #### Best practice
 
-As a best practice, always include filtering to narrow your search to just the types desired (that is, `type=`). This will ensure that your search results are not overly broad.
+As a best practice, always include filtering to narrow your match to just the types desired (that is, `type=`). This will ensure that your match expressions are not overly broad.
 
 For example:
 * `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))` 

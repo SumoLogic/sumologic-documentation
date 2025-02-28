@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
 
-Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise.
+Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known possible sources of attack and compromise.
 
 Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
@@ -72,7 +72,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the **Threat Intelligence** tab or APIs.
 
-After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used using in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
+After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
 
 <CloudSIEMThreatIntelNote/>
 
