@@ -66,7 +66,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/automox"><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="automox-icon.png" width="60" /><h4>Automox</h4></a>
-  <p>Enhance security monitoring, streamline endpoint management, and boost operational resilience.</p>
+  <p>Gain insights into Automox events and audit data to enhance security monitoring, streamline endpoint management, and boost operational resilience.</p>
   </div>
 </div>
 <div className="box smallbox card">

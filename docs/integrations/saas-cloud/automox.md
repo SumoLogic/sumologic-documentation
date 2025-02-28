@@ -9,17 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox-icon" width="50" />
 
-Automox is a cloud-native endpoint management solution that automates patching, configuration, and security enforcement across various operating systems. This app helps organizations monitor security events, audit system activity, and track patch compliance to reduce vulnerabilities and enhance endpoint security. The Sumo Logic app for Automox provides security and IT teams visibility into endpoint management and security.
+Automox is a cloud-native endpoint management solution that automates patching, configuration, and security enforcement across various operating systems. This app helps you monitor security events, audit system activity, and track patch compliance to reduce vulnerabilities and enhance endpoint security. The Sumo Logic app for Automox helps security and IT teams with visibility into endpoint management and security.
 
-Key features and benefits of Automox include:
+Key features and benefits of the Automox app include:
 
 - **Patch Compliance and Version Tracking**. Gain insights into patch compliance by tracking applied and pending patches across different OS versions.
-- **Security Event Monitoring and Anomaly Detection**. Monitor security events, including policy actions, system modifications, and user activity, to detect anomalies.
+- **Security Event Monitoring and Anomaly Detection**. Monitor security events, including policy actions, system modifications, and user activity to detect anomalies.
 - **Audit and Compliance for Administrative Actions**. Audit administrative actions, authentication logs, and system configuration changes for compliance and forensic investigations.
 - **Trend Analysis for Risk Identification and Security Optimization**. Analyze trends over time to identify potential risks and optimize endpoint security strategies.
 - **Real-Time Alerts for Security and Compliance Response**. Leverage real-time alerts to respond quickly to critical security issues and compliance gaps.
 
-Integrating Automox data into Sumo Logic helps organizations enhance security monitoring, streamline endpoint management, and boost operational resilience.
+Integrating Automox data with Sumo Logic helps organizations enhance security monitoring, streamline endpoint management, and boost operational resilience.
 
 :::info
 This app includes [built-in monitors](#automox-alerts). For details on creating custom monitors, refer to the [Create monitors for Automox app](#create-monitors-for-the-automox-app).
@@ -27,11 +27,14 @@ This app includes [built-in monitors](#automox-alerts). For details on creating 
 
 ## Log types
 
-This app uses Sumo Logic’s [Automox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) to collect [audit logs](https://developer.automox.com/openapi/audit-trail/operation/getAuditEvents/) and [events logs](https://developer.automox.com/openapi/axconsole/operation/getEvents/) from Automox.
+This app uses Sumo Logic’s [Automox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) to collect [audit logs](https://developer.automox.com/openapi/audit-trail/operation/getAuditEvents/) and [events logs](https://developer.automox.com/openapi/axconsole/operation/getEvents/) from the Automox platform.
 
 ## Sample log message
 
-```json title="Event Log"
+<details>
+<summary>Event Log</summary>
+
+```json
 {
     "id": 1245817905,
     "name": "user.create",
@@ -53,8 +56,12 @@ This app uses Sumo Logic’s [Automox Source](/docs/send-data/hosted-collectors/
     "create_time": "2024-09-26 07:30:19.223963"
 }
 ```
+</details>
 
-```json title="Audit Log"
+<details>
+<summary>Audit Log</summary>
+
+```json
 {
     "id": "66f50ffd8be0f28b7ba2f05a7a",
     "activity": "Attach Policy",
@@ -120,7 +127,8 @@ This app uses Sumo Logic’s [Automox Source](/docs/send-data/hosted-collectors/
 }
 
 ```
-    
+</details>
+
 ## Sample queries
 
 ```sql title="Recent Access Activities"
@@ -175,11 +183,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Events
 
-The **Automox - Events** dashboard provides a centralized view of the security and system events across managed endpoints. It highlights key metrics such as total events, user activities, policy actions, and notifications. Events are categorized by Operating System (OS) and event type, enabling administrators to track patches, policies, and system deletions. Geolocation heatmaps identify the event origins, which aids in threat analysis, while time-series visualizations display trends to help detect anomalies. Detailed event logs offer insights into user actions, policy executions, and patch deployments for auditing and compliance. This dashboard assists security teams in monitoring security, enforcing policies, and maintaining system integrity.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Automox/Automox+-+Events.png' alt="Automox-Events-Overview" />
+The **Automox - Events** dashboard provides a centralized view of the security and system events across managed endpoints. It highlights key metrics such as total events, user activities, policy actions, and notifications. Events are categorized by Operating System (OS) and event type, enabling administrators to track patches, policies, and system deletions. Geolocation heatmaps identify the event origins, which aids in threat analysis, while time-series visualizations display trends to help detect anomalies. Detailed event logs offer insights into user actions, policy executions, and patch deployments for auditing and compliance. This dashboard assists security teams in monitoring security, enforcing policies, and maintaining system integrity.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Automox/Automox+-+Events.png' alt="Automox-Events-Overview" />
 
 ### Audit Security
 
-The **Automox - Audit Security** dashboard provides a comprehensive overview of the audit events, enabling security teams monitor system activity and potential risks. Events are categorized by severity (fatal, critical, high, medium, and low) for quick identification of critical issues. The dashboard also includes a breakdown of statuses (success, failure, and unknown) to evaluate the effectiveness of security measures. Events are further classified by type, entity, and web resource, offering insights into account changes, authentication logs, and entity management. Time-series charts track trends, making it easier to identify anomalies. User activity data highlights key individuals involved in security events, supporting investigations and compliance. Furthermore, detailed event summaries provide visibility into authentication attempts, account modifications, and resource deletions, ensuring thorough auditing.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Automox/Automox+-+Audit+Security.png' alt="Automox-Audit-Security-Overview" />
+The **Automox - Audit Security** dashboard provides a comprehensive overview of the audit events, enabling security teams to monitor system activity and potential risks. Events are categorized by severity (fatal, critical, high, medium, and low) for quick identification of critical issues. The dashboard also includes a breakdown of statuses (success, failure, and unknown) to evaluate the effectiveness of security measures. Events are further classified by type, entity, and web resource, offering insights into account changes, authentication logs, and entity management. Time-series charts track trends, making it easier to identify anomalies. User activity data highlights key individuals involved in security events, supporting investigations and compliance. Furthermore, detailed event summaries provide visibility into authentication attempts, account modifications, and resource deletions, ensuring thorough auditing.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Automox/Automox+-+Audit+Security.png' alt="Automox-Audit-Security-Overview" />
 
 ## Create monitors for the Automox app
 
