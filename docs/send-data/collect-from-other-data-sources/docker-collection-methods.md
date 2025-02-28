@@ -70,7 +70,7 @@ Logic collector.
     * No need to bake into any AMIs. Can be fully automated depending on your automation tooling around Docker.
     * The Collector will cache the files in the container, so if a Source is throttled by Sumo, you won’t drop data. Ensure that you have ample space, or use persistent storage.
     * Easy to upgrade: it’s a container, just deploy a new one!
-    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the _sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure _sourceCategory and sourceHost using variables.
+    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the `_sourceCategory` and `sourceHost` for a Docker log source or a Docker stats. For more information, see Configure `_sourceCategory` and `sourceHost` using variables.
 * **Cons**
     * With this method, you cannot collect host metrics from the Docker host. The Collector must be installed on the Docker host to get the host metrics. You can still collect container logs, container metrics and host logs.
     * It’s not as easy to set up this method to monitor selected containers on a host, as opposed to all containers. You might need to configure multiple sources to achieve this goal.
