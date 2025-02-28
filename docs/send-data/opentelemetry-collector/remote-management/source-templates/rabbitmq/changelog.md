@@ -11,7 +11,7 @@ description: Changelog for RabbitMQ source template for OpenTelemetry.
 - Metric collection through [RabbitMQ receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver).
 
 :::note
-We recommend you to follow the [prerequisites](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/#prerequisites) section before upgrading to this version for collecting metrics.
+We recommend you to follow the [prerequisites](/docs/send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/#prerequisites) section before upgrading to this version for collecting metrics.
 :::
 
 
