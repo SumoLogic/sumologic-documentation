@@ -131,7 +131,7 @@ Columns for the following attributes are required in the upload file:
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
-         * `user-account`. User ID. (Entity type in Cloud SIEM is `user_username`.)
+         * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
        * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
@@ -260,7 +260,7 @@ The following attributes are required:
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process:name`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
-         * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `user_username`.)
-         * `user-account:login`. Login name. (Entity type in Cloud SIEM is `user_username`.)       
+         * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
+         * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
        * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.

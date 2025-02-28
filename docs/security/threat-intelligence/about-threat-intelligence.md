@@ -70,7 +70,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
-* **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the **Threat Intelligence** tab or APIs.
+* **The Threat Intelligence tab**. Use this tab to upload your own indicators. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this tab or APIs.
 
 After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
 
