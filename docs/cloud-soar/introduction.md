@@ -46,7 +46,7 @@ As the newest member of your company's SOC team, it’s your task to set up some
 
 Your company's apps and services generate logs, metrics, and tracing data. 
 
-When you ingest that data into Sumo Logic, you have one centralized location to query and visualize all that data. Sumo Logic’s Log Analytics Platform integrates with CrowdStrike’s threat intel database, so you can start getting security alerts and hunt threats. You can learn more in [Additional Security Features](/docs/security/additional-security-features/).
+When you ingest that data into Sumo Logic, you have one centralized location to query and visualize all that data. Sumo Logic’s Log Analytics Platform uses [threat intelligence](/docs/security/threat-intelligence/), so you can start getting security alerts and hunt threats. You can learn more in [Additional Security Features](/docs/security/additional-security-features/).
 
 You can take your security one step further with [Cloud SIEM](/docs/cse/). When you forward your log messages to Cloud SIEM, they are parsed, mapped, and enriched into Cloud SIEM records. These records are compared to security rules. If a rule is triggered, an entity is extracted, a severity score is assigned, and a signal is created. If enough signals with the same entity cluster together, they become an Insight. Insights are likely risks that need your attention. 
 
