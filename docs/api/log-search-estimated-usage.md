@@ -32,7 +32,7 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 | US1        | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType     |
 | US2        | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -40,5 +40,3 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
     * Download Search Results
     * Manage Data Volume Feed
     * View Collectors
-
--->

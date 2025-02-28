@@ -75,10 +75,10 @@ Watch this micro lesson to learn how to create a rule tuning expression.
 
 ## Create a tuning expression
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
-1. On the **Rule Tuning** page, click **Create**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. The **New Rule Tuning Expression** page appears.
-    <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" style={{border: '1px solid gray'}} width="800"/>
+    <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Empty screen to create a rule tuning expression" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
 1. **Description**. Enter a description of the tuning expression.
 1. In the **Tune [selected|all] Rules** section:
@@ -104,14 +104,11 @@ You can also create new tuning expression and apply existing tuning expressions
 
 When you create a tuning expression it is enabled by default. If you disable a tuning expression, rules that it is applied to will behave as if the tuning expression does not exist. 
 
-You can toggle the enablement state of a tuning expression on the **Rule Tuning** page using the control to the left of the delete icon.
+<img src={useBaseUrl('img/cse/enable-on-list.png')} alt="Enable on list page" style={{border: '1px solid gray'}} width="600"/>
 
-<img src={useBaseUrl('img/cse/enable-on-list.png')} alt="Enable on list page" style={{border: '1px solid gray'}} width="800"/>
+You can toggle the enablement state on the details page for a tuning expression.
 
-You can also toggle the enablement state on the details page for a tuning expression.
-
-<img src={useBaseUrl('img/cse/enable-on-details.png')} alt="Enable on details page" style={{border: '1px solid gray'}} width="800"/>
-
+<img src={useBaseUrl('img/cse/enable-on-details.png')} alt="Enable on details page" style={{border: '1px solid gray'}} width="600"/>
 
 ## Testing tuning expressions
 

@@ -13,7 +13,7 @@ To set up collection and install the app, do the following:
         * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
         * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
     1. Click **Next**.
-1. Use the new [Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) to configure the source.
+1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
     1. **Key**. Select either of these options for the data source.
         * Choose **Source Category** and select a source category from the list for **Default Value**.

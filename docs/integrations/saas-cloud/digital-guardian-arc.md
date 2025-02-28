@@ -326,15 +326,33 @@ _sourceCategory="Labs/DigitalGuardian"
 | sort by frequency
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the [Digital Guardian Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source), follow the instructions provided. These instructions will guide you through the process of creating a source using the Digital Guardian Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Digital Guardian ARC app​​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Digital Guardian ARC](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing the Digital Guardian ARC dashboard
 

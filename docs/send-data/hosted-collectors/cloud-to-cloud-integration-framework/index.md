@@ -123,6 +123,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="icon" width="80" /><h4>Bitwarden</h4></a>
+  <p>Learn how to collect event logs from the Bitwarden API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source"><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="80" /><h4>Box</h4></a>
   <p>The Box API integration ingests events from the GetEvents API.</p>
   </div>
@@ -252,7 +258,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
-  <p>Learn how to collect address, asset, vulnerability, and zone details from the Dragos API and send them to Sumo Logic.</p>
+  <p>Learn how to collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -489,6 +495,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Web Security Service</h4></a>
         <p>Learn to receive WSS Access logs from the Symantec WSS API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source"><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="100"/><h4>Sysdig Secure</h4></a>
+        <p>Collect the scan results from the scanner using the Sysdig API.</p>
         </div>
       </div>
       <div className="box smallbox card">

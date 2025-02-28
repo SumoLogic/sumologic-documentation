@@ -151,7 +151,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 | Setting | Required? | Description |
 |:--|:--|:--|
 | `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). |
-| `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Manage your access keys on Preferences page](/docs/manage/security/access-keys#from-the-preferences-page). |
+| `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |
 | `poll_interval` | no | How often the Insight Enrichment Server should check for new insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |

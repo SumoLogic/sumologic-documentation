@@ -128,7 +128,6 @@ To manage your personal Sumo account preferences:
 1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
-    * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).

@@ -107,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/code42-incydr"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
+  <p>Monitor, detect, and respond to potential data threats on your Code42 Incydr platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
   <p>Monitor and analyze file integrity.</p>
   </div>
@@ -137,6 +143,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/dragos"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="40"/><h4>Dragos</h4></a>
+  <p>Monitor and analyze your Dragos account.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/dropbox"><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
   <p>Monitor and analyze your Dropbox usage data.</p>
   </div>
@@ -163,6 +175,18 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/istio"><img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="icon" width="70"/><h4>Istio</h4></a>
   <p>Gain visibility into your Istio and control plane component performance.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/jamf"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="100"/><h4>Jamf</h4></a>
+  <p>Get critical insights into your organization's Jamf environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
+  <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -297,7 +321,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Identify security threats by analyzing alerts and events logs.</p>
   </div>
 </div>
-
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/symantec-endpoint-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Endpoint Security Service</h4></a>
+  <p>Gain insights into the log data and identify potential security threats.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-web-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Web Security Service</h4></a>
@@ -314,6 +343,18 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/trend-micro-vision-one"><img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="icon" width="140"/><h4>Trend Micro Vision One</h4></a>
   <p>Analyze alert logs to detect potential security risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/trust-login"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="icon" width="100"/><h4>Trust Login</h4></a>
+  <p>Analyze authentication events, user activities, and potential security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
+  <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
   </div>
 </div>
 <div className="box smallbox card">
