@@ -18,7 +18,7 @@ In Sumo Logic, threat intelligence indicators are supplied by sources listed on 
 * [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 The sources on the **Threat Intelligence** tab include:
-* **_sumo_global_feed_cs**. This is an out-of-box default source of threat indicators supplied by CrowdStrike and maintained by Sumo Logic. You cannot edit this source.
+* **_sumo_global_feed_cs**. This is an out-of-the-box default source of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit this source.
 * **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. 
 
 Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the global feed to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
