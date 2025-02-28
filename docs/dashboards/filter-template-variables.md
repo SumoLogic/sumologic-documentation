@@ -86,7 +86,7 @@ To add a Logs Search variable to a dashboard, do the following:
 
 ### Add a Scope-based Variable 
 
-With Scope-based Variable, you can define a variable automatically applies to all log queries within the scope of the dashboard or panels. With this you can define the key while creating the scope variable and users can select the appropriate value to implement simple filtering for the dashboard. Additionally with Scope-based Variable, you can select the specific panels to which the scope variable should be applied.
+With Scope-based Variable, you can define a variable that automatically applies to all log queries within the scope of the dashboard or panels. With this you can define the key while creating the scope variable and users can select the appropriate value to implement simple filtering for the dashboard. Additionally with Scope-based Variable, you can select the specific panels to which the scope variable should be applied.
 
 :::info
 - The fields in the Scope-based Variable are independent of dashboard and panel time range.
