@@ -80,7 +80,7 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 After completing the setup, schedule the search to run: 
 
 1. Schedule Query you created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the frequency to **Daily**.
+1. Set the **Run frequency** to **Daily**.
 1. Enter **-32d** for the time range.<br/> ![time range monthly plan.png](/img/manage/ingestion-volume/daily-32d.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
@@ -125,7 +125,7 @@ _index=sumologic_volume sizeInBytes
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Daily**.
+1. Set the **Run frequency** to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limit.png](/img/manage/ingestion-volume/daily-last-24.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
@@ -174,7 +174,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Hourly**.
+1. Set the **Run frequency** to **Hourly**.
 1. Enter **-65m -5m** for the time range.<br/>  ![time range usage spike.png](/img/manage/ingestion-volume/hourly-65.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
@@ -265,6 +265,6 @@ _index=sumologic_audit _sourceCategory=account_management _sourceName=VOLUME_QUO
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Every 15 Minutes.**
+1. Set the **Run frequency** to **Every 15 Minutes**.
 1. Set the time range to the **Last 15 Minutes**.<br/> ![time range throttling alert.png](/img/manage/ingestion-volume/time-throttling.png)
-1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.

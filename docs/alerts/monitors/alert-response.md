@@ -79,21 +79,25 @@ The following is an example Slack payload with the variable:
 
 ## Alert List
 
-The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
+The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time. The list displays up to 1,000 alerts.
 
-To get to your Alert List from the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="200"/>
+To get to your Alert List:
+* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**.
+* From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu.
 
-To search, use the search bar and filters. To sort by category (for example, **Name**, **Severity**, **Status**), click on a column header.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
+To search alerts, use the search bar and filters.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
 
-:::info
-The Alerts List displays up to 1,000 alerts.
-:::
+To sort by category (for example, **Name**, **Severity**, **Status**), click on a column header.
 
-### Resolving alerts
+### Tags
+
+See [Using tags in alerts](/docs/alerts/monitors/settings/#using-tags-in-alerts).
+
+## Resolving alerts
 
 To resolve an alert, click a row to select it, then click **Resolve**.
 
-### Translating thresholds
+## Translating thresholds
 
 Threshold translating allows you to open the alert response page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
 
@@ -114,14 +118,11 @@ To view the alert response chart in Metrics Explorer, follow the steps below:
 Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
+## Alert details
 
-## Alert page
+To view granular details about an individual alert, go to your [Alert List](#alert-list) and click on any row. You'll find details and contextual information to help get to the root cause of the issue quickly.
 
-An alert page is where you can view granular details about an individual alert. To get to an alert page, go to your **Alert List** and click on any alert. You'll see two types of information to help get to the root cause of the issue quickly: alert details and alert context.
-
-### Alert details
-
-The alert details section is an overview of the alert that was triggered to help you understand the issue and its potential impact. This section provides:
+The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help you understand the issue and its potential impact:
 
 * a chart to visualize the alerting KPI before and during the alert.
 * a table with the raw data that triggered the alert.
@@ -131,71 +132,59 @@ The alert details section is an overview of the alert that was triggered to help
 
 The following images label each section of the page with a letter, see the list below the image for a description of what each does.<br/> ![top of the alert response page.png](/img/alerts/monitors/top-alert-response-page.png)
 
-The top of the page provides several details and buttons.
-
 * **A**. Monitor name.
-* **B**. Copies the link to the opened Alert page.
+* **B**. Copies the link to the opened alert page.
 * **C**. Shows the type of monitor trigger condition that triggered the alert (Critical, Warning, or Missing Data).
-* **D**. Status of the Alert (**Active** or **Resolved**).
-* **E**. Refreshes the Alert page.
+* **D**. Status of the alert (**Active** or **Resolved**).
+* **E**. Refreshes the alert page.
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
-   * Text playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/> ![playbook example.png](/img/alerts/monitors/playbook-example.png)
-   * [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/alerts/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
+   * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="playbook example.png" style={{border: '1px solid gray'}} width="250" />
+   * [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/alerts/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
 * **G**. Opens the Monitor that generated this alert.
-* **H**. Resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.
+* **H**. Resolves the alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.
    :::note
    Sumo Logic automatically resolves alerts when the recovery condition defined on the monitor is met. This behavior is not configurable; you cannot prevent Sumo Logic from resolving a monitor. While it is technically possible to set a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended. Doing so may suppress unrelated alerts from being fired.
    :::
    ![alert page sep 23.png](/img/alerts/monitors/alert-page.png)
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/alerts/monitors/k-label.png')} alt="labels" width="300"/>
-  * **Related Alerts**. A panel with Related Alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/alerts/monitors/related-alerts.png')} alt="related alerts" width="200"/>
+  * **Related Alerts**. A panel with related alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/alerts/monitors/related-alerts.png')} alt="related alerts" width="200"/>
     * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
-    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/alerts/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/alerts/monitors/open-new-tab.png) to open the alert in its own Alert page.
+    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/alerts/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/alerts/monitors/open-new-tab.png) to open the alert in its own alert page.
   * **Monitor History**. Shows the past 30 days of similar alerts that were triggered by the monitor (that generated the current alert). Monitor History can be helpful to determine how frequently an alert has fired in the past and if the alert is flaky. You can then quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
 * **L**. The query of the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/l-m-n-labels.png')} alt="labels" width="800"/>
 * **M**. A chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
 * **N**. A table with the raw data that triggered the alert.
 
-Below this, as you scroll down on the page, you'll see context cards covered in the next section.
-
 :::info Limitations
-* The Alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
+* The alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
 * Related Alerts and Monitor History show the top 250 alerts.
 :::
 
-### Alert context cards
+## Alert Context cards
 
-Alert context is system-curated information helps you understand potential underlying symptoms that might be causing the issue. It provides additional insights automatically discovered by the system through data analysis. Using artificial intelligence and machine learning, the system tracks your logs and metrics, identifies patterns that may explain the issue, and presents them as context cards.
+The lower section, **Alert Context** cards, displays system-curated information to help understand potential underlying symptoms that might be causing the issue. It provides additional insights automatically discovered by the system through data analysis. Using artificial intelligence and machine learning, the system tracks your logs and metrics, identifies patterns that may explain the issue, and presents them as context cards.
 
 Depending on the type of data an alert is based on (metrics or logs) and the detection method (static or outlier), you'll see different context cards. You will see a progress spinner labeled **Analyzing alert content** at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.<br/> ![analyzing alert content.png](/img/alerts/monitors/analyzing-alert-content.png)
 
-### Alert tags
+### Log Fluctuations
 
-See [Using tags in alerts](/docs/alerts/monitors/settings/#using-tags-in-alerts).
+The **Log Fluctuations** context card, available for logs monitors, detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
-### Log fluctuations
+* **New**. Log signatures that were only seen after the alert was triggered but not one hour prior to the alert start time.
+* **Missing**. Log signatures that are not present after the alert was created but were present one hour prior to the alert start time, such as **Transaction Succeeded** or **Success**.
+* **Diff**. Log signatures whose counts have changed after the alert when compared to one hour prior to the alert start time.
 
-This card detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
-
-* **New**. Log signatures that were only seen after the Alert was triggered but not one hour prior to the Alert start time.
-* **Gone**. Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as **Transaction Succeeded** or **Success**.
-* **Diff**. Log signatures whose counts have changed after the alert when compared to one hour prior to the Alert start time.
-
-:::note
-The Log Fluctuations card will only work with log monitors at this time. It is not rendered for monitors driven by metrics.
-:::
-
-Use the **Open** button to view the Log Search that provided the Log Fluctuation insights. The box with an arrow icon ![open drilldown button.png](/img/alerts/monitors/open-drilldown-button.png) opens a Log Search pivoted on a given signature.
+Use the **Open** button to view the Log Search that provided the Log Fluctuations insights. The box with an arrow icon ![open drilldown button.png](/img/alerts/monitors/open-drilldown-button.png) opens a Log Search pivoted on a given signature.
 
 ![log fluctuations.png](/img/alerts/monitors/log-fluctuations.png)
 
-* **A**. The name of the card (Log Fluctuation) and a short description of what it does.
+* **A**. The name and description of the card.
 * **B**. A link to open the log query that populated the card, in the log search page.
-* **C**. A summary of the discovered NEW, GONE, and DIFF signatures, and how many log messages belong to each type.
+* **C**. A summary of the discovered NEW, MISSING, and DIFF signatures, and how many log messages belong to each type.
 * **D**. The details about the identified log signature.
 * **E**. A histogram showing how many log messages mapped to the given signature after the alert (red bar) and before (gray bar) the alert.
 * **F**. Option to collapse the expanded details.
-* **G**. Opens a Log Search filtered to the Log messages that mapped to the given signature.
+* **G**. Opens a Log Search filtered to the log messages that mapped to the given signature.
 
 ### Anomalies
 
@@ -203,13 +192,13 @@ This card detects time series anomalies for entities related to the alert. These
 
 Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitoring-distributed-systems/). Anomalies are also presented on a timeline; the length of the anomaly represents its duration. <br/> ![anomalies .png](/img/alerts/monitors/anomalies.png)
 
-* **A**. The name of the card (Anomalies) and a short description of what it does.
+* **A**. Name and description of the context card.
 * **B**. Count of anomalies belonging to each golden signal type.
 * **C**. A timeline view of anomalies with their start time and duration, the domain (e.g. AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
 * **D**. A link to view the anomalies in the **Root Cause Explorer**.
 
 :::note
-Only Anomalies with a start time around 30 minutes before or after the Alert was created show up in the card.
+Only anomalies with a start time around 30 minutes before or after the alert was created show up in the card.
 :::
 
 Hover over an EOI to view key information about the event.<br/> ![eoi-stats.png](/img/alerts/monitors/eoi-stats.png)
@@ -220,7 +209,7 @@ Click on the EOI to open the **Summary View** and **Entity Inspector**.<br/>
 
 This card analyzes log data and surfaces dimensions or key-value pairs that drove it to an alerting state. For example, the card below has identified that ~80% of the alert logs have the field **log.Error** with the value `could not retrieve cart: rpc error: code` and is therefore a recommended item to investigate. <br/>![dimensional explanation.png](/img/alerts/monitors/dimensional-explanation.png)
 
-* **A**. The name of the card (Dimensional Explanations) and a short description of what it does.
+* **A**. Name and description of the context card.
 * **B**. A link to open the log query that populated the card, in the log search page.
 * **C**. Groupings of the discovered key-value pairs by the count of keys and the percentage of log messages found with the key.
 * **D**. The key-value pairs in each group.
@@ -234,7 +223,7 @@ Benchmarks refer to baselines computed from anonymized and aggregated telemetry 
 
 For example, the card below shows that `ServiceUnavailable` error is happening 32 times more often in your AWS account compared with other Sumo Logic customer’s accounts. This AWS error pertains to AWS API calls that are failing at a higher rate than what is expected based on cross-customer baselines. This particular error implies an AWS incident affecting the particular AWS resource type and API. <br/> ![benchmark card.png](/img/alerts/monitors/benchmark.png)
 
-* **A**. The name of the card (Benchmark) and a short description of what it does.
+* **A**. Name and description of the context card.
 * **B**. Count of unusual Benchmarks by golden signal type.
 * **C**. Dimensional detail of the unusual telemetry value.
 * **D**. Comparison of your telemetry value (red bar) against benchmarks computed from other customers (gray bar).
@@ -253,7 +242,7 @@ There are three places from your [Alerts List](#alert-list) to subscribe to a mo
 
 ### From your Monitors list
 
-There are three places from your [Monitors](/docs/alerts/monitors/settings) list to subscribe to a monitor:
+There are three places from your [Monitors list](/docs/alerts/monitors/settings/#accessing-monitors) to subscribe to a monitor:
 
 * Right-click on a row item > click **Subscribe**.
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**.
