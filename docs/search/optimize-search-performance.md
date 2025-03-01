@@ -60,10 +60,10 @@ Here's a quick look at how to choose the right indexed search optimization tool.
 | :-- | :-- | :-- |
 | Run queries against a certain set of data | Choose if the quantity of data to be indexed is more than 2% of the total data. | Choose if the quantity of data to be indexed is less than 2% of the total data. |
 | Use data to identify long-term trends |   | Yes |
-| Segregate data by sourceCategory | Yes |   |
+| Segregate data by _sourceCategory | Yes |   |
 | Have aggregate data ready to query |   | Yes |
 | Use RBAC to deny or grant access to the data set | Yes | Yes |
-| Reuse the fields that I'm parsing for other searches against this same sourceCategory |   |   |
+| Reuse the fields that I'm parsing for other searches against this same _sourceCategory |   |   |
 
 ## How is data added to Partitions and Scheduled Views?
 
