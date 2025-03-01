@@ -70,7 +70,7 @@ When you create a monitor and open the metrics search query in the Metrics Explo
 
 ## Step 1. Set trigger conditions
 
-The first step when creating a new monitor is setting the **Trigger Conditions**.
+The first step when creating a new monitor is setting the **Trigger Conditions**, a thresholds value that must met to trigger an alert. Applicable values include Critical, Warning, and Missing Data. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time.
 
 ### Monitor Type
 
