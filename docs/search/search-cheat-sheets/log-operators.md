@@ -182,7 +182,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The backshift operator compares values as they change over time. Backshift can be used with rollingstd, smooth, or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).</td>
    <td>_backshift</td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
-   <td><code>_sourcecategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
+   <td><code>_sourceCategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/base64decode">base64Decode</a></td>

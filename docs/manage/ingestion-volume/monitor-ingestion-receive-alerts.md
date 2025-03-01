@@ -155,12 +155,12 @@ This hourly alert is generated when both of the following occur:
 
 ```
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
-| parse regex "\"(?<sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| parse regex "\"(?<_sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
 | timeslice 1h
 | bytes/1024/1024/1024 as gbytes
-| sum(gbytes) as gbytes by sourcecategory, _timeslice
-| where !(sourceCategory matches "*_volume")
+| sum(gbytes) as gbytes by _sourcecategory, _timeslice
+| where !(_sourceCategory matches "*_volume")
 | compare timeshift -1w 4 max
 | if(isNull(gbytes_4w_max), 0, gbytes_4w_max) as gbytes_4w_max
 | ((gbytes - gbytes_4w_max) / gbytes) * 100 as pct_increase
