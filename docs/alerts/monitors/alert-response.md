@@ -99,7 +99,7 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 ## Translating thresholds
 
-Threshold translating allows you to open the alert response page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
+Threshold translating allows you to open the alert response page in the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
 
 For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
 
@@ -115,22 +115,20 @@ To view the alert response chart in Metrics Explorer, follow the steps below:
 1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Explorer graph and gain a better understanding of how your monitors are translating into metrics.
 
 :::note
-Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening a Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
 ## Alert details
 
-To view granular details about an individual alert, go to your [Alert List](#alert-list) and click on any row. You'll find details and contextual information to help get to the root cause of the issue quickly.
+To view detailed information about an alert, go to your [Alert List](#alert-list) and click on any row. The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help get to the root cause of an issue quickly, such as:
 
-The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help you understand the issue and its potential impact:
+* A chart visualizing the alerting KPI before and during the alert.
+* A table displaying the raw data that triggered the alert.
+* Related alerts that were firing around the same time.
+* A history of previous occurrences of the alert.
+* Key details such as the trigger time and the condition that caused the alert.
 
-* a chart to visualize the alerting KPI before and during the alert.
-* a table with the raw data that triggered the alert.
-* related alerts firing in the system around the same time.
-* the history of the given alert being fired in the past.
-* basic details about the alert like when it was fired and what triggered it.
-
-The following images label each section of the page with a letter, see the list below the image for a description of what each does.<br/> ![top of the alert response page.png](/img/alerts/monitors/top-alert-response-page.png)
+The following images and lists describe alert element on the page.<br/>![top of the alert response page.png](/img/alerts/monitors/top-alert-response-page.png)
 
 * **A**. Monitor name.
 * **B**. Copies the link to the opened alert page.
@@ -140,10 +138,10 @@ The following images label each section of the page with a letter, see the list
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
    * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="playbook example.png" style={{border: '1px solid gray'}} width="250" />
    * [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/alerts/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
-* **G**. Opens the Monitor that generated this alert.
-* **H**. Resolves the alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.
+* **G**. Opens the monitor that generated this alert.
+* **H**. Resolves the alert. This will also resolve the monitor that generated the alert. The monitor will fire again when the alert condition is met.
    :::note
-   Sumo Logic automatically resolves alerts when the recovery condition defined on the monitor is met. This behavior is not configurable; you cannot prevent Sumo Logic from resolving a monitor. While it is technically possible to set a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended. Doing so may suppress unrelated alerts from being fired.
+   Sumo Logic automatically resolves alerts when the monitor's recovery condition is met. This behavior cannot be modified or disabled. While you could configure a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended, as it may suppress unrelated alerts from being triggered.
    :::
    ![alert page sep 23.png](/img/alerts/monitors/alert-page.png)
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/alerts/monitors/k-label.png')} alt="labels" width="300"/>
@@ -164,27 +162,42 @@ The following images label each section of the page with a letter, see the list
 
 The lower section, **Alert Context** cards, displays system-curated information to help understand potential underlying symptoms that might be causing the issue. It provides additional insights automatically discovered by the system through data analysis. Using artificial intelligence and machine learning, the system tracks your logs and metrics, identifies patterns that may explain the issue, and presents them as context cards.
 
-Depending on the type of data an alert is based on (metrics or logs) and the detection method (static or outlier), you'll see different context cards. You will see a progress spinner labeled **Analyzing alert content** at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.<br/> ![analyzing alert content.png](/img/alerts/monitors/analyzing-alert-content.png)
+Depending on the type of data an alert is based on (metrics or logs) and the detection method (static or outlier), you'll see different context cards. You will see a progress spinner labeled **Analyzing alert context** at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.
+
+### Dimensional Explanations
+
+Dimensional Explanations help you identify the most common dimensions found in the triggered query results, allowing for deeper insight into alert patterns.
+
+When an alert is triggered, Sumo Logic analyzes the query results and highlights the most frequently occurring dimensions. These dimensions help you quickly determine patterns or root causes by comparing alert results to other data.
+
+* **Summary Description**. Displays the most common dimensions found in the alert results compared to all other results.
+* **Dimensional breakdown**. Shows dimensions that appear frequently in alert results, such as `eventname`, `resourceidentity.id`, `severitylevel`, `details.trackerid`, and `eventid`.
+* **Comparison view**. A percentage bar visually represents how often these dimensions appear in alert results compared to other results.
+* **Drill-down analysis**. Click on a dimension to explore the associated log details.
+* **Quick navigation**. Use the **View in Log Search** button to open the results in Log Search for further investigation.
+
+In the example below:<br/><img src={useBaseUrl('img/alerts/monitors/dimensional-explanations.png')} alt="Dimensional Explanations UI" width="700"/>
+* The most common dimensions found in alert results include `details.trackerid`, `eventname`, and `severitylevel`, each appearing in 66.67% of alert results.
+* Other dimensions like `resourceidentity.id` and `eventid` appear in 33.33% of alert results.
+* The color-coded bars indicate the proportion of alert results (red) versus all other results (blue).
+
+By analyzing these dimensions, you can quickly identify recurring issues and improve troubleshooting efficiency.
 
 ### Log Fluctuations
 
 The **Log Fluctuations** context card, available for logs monitors, detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
-* **New**. Log signatures that were only seen after the alert was triggered but not one hour prior to the alert start time.
-* **Missing**. Log signatures that are not present after the alert was created but were present one hour prior to the alert start time, such as **Transaction Succeeded** or **Success**.
-* **Diff**. Log signatures whose counts have changed after the alert when compared to one hour prior to the alert start time.
-
-Use the **Open** button to view the Log Search that provided the Log Fluctuations insights. The box with an arrow icon ![open drilldown button.png](/img/alerts/monitors/open-drilldown-button.png) opens a Log Search pivoted on a given signature.
-
-![log fluctuations.png](/img/alerts/monitors/log-fluctuations.png)
+<img src={useBaseUrl('img/alerts/monitors/log-fluctuations.png')} alt="log fluctuations UI" width="700"/>
 
 * **A**. The name and description of the card.
-* **B**. A link to open the log query that populated the card, in the log search page.
-* **C**. A summary of the discovered NEW, MISSING, and DIFF signatures, and how many log messages belong to each type.
+* **B**. Opens the log query that populated the card, in a [Log Search](/docs/search).
+* **C**. A summary of the discovered NEW, MISSING, and CHANGED signatures, and how many log messages belong to each type.
+   * **NEW**. Log signatures that were only seen after the alert was triggered but not one hour prior to the alert start time.
+   * **MISSING**. Log signatures that are not present after the alert was created but were present one hour prior to the alert start time, such as **Transaction Succeeded** or **Success**.
+   * **CHANGED**. Log signatures whose counts have changed after the alert when compared to one hour prior to the alert start time.
 * **D**. The details about the identified log signature.
 * **E**. A histogram showing how many log messages mapped to the given signature after the alert (red bar) and before (gray bar) the alert.
-* **F**. Option to collapse the expanded details.
-* **G**. Opens a Log Search filtered to the log messages that mapped to the given signature.
+* **F**. Opens a [Log Search](/docs/search) pre-filtered to the log messages that mapped to the given signature.
 
 ### Anomalies
 
@@ -204,18 +217,6 @@ Only anomalies with a start time around 30 minutes before or after the alert wa
 Hover over an EOI to view key information about the event.<br/> ![eoi-stats.png](/img/alerts/monitors/eoi-stats.png)
 
 Click on the EOI to open the **Summary View** and **Entity Inspector**.<br/> ![entity inspector.png](/img/alerts/monitors/entity-inspector.png)
-
-### Dimensional Explanations
-
-This card analyzes log data and surfaces dimensions or key-value pairs that drove it to an alerting state. For example, the card below has identified that ~80% of the alert logs have the field **log.Error** with the value `could not retrieve cart: rpc error: code` and is therefore a recommended item to investigate. <br/>![dimensional explanation.png](/img/alerts/monitors/dimensional-explanation.png)
-
-* **A**. Name and description of the context card.
-* **B**. A link to open the log query that populated the card, in the log search page.
-* **C**. Groupings of the discovered key-value pairs by the count of keys and the percentage of log messages found with the key.
-* **D**. The key-value pairs in each group.
-* **E**. A histogram showing how many log messages with the key-value pair caused the alert (red bar) and did not cause (gray bar) the alert.
-* **F**. Option to collapse the expanded details.
-* **G**. Opens a Log Search filtered to the Log messages that mapped to the given signature.
 
 ### Benchmark
 
@@ -327,6 +328,6 @@ Alert notification preferences give you granular control over specific monitor a
 2. Click on any of the following checkboxes to enable your desired preferences:
    * **Display alert badge when my subscribed monitors are triggered**. the bell icon is displayed in the top nav
    * **Notify about only subscribed monitors**. the bell icon will only push notifications for monitors you're subscribed to
-   * **Enable "Active alerts only" as default filter**. your Alerts list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
-   * **Enable "My subscriptions" as default filter**. your Alerts list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
+   * **Enable "Active alerts only" as default filter**. your Alerts list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" width="450" />
+   * **Enable "My subscriptions" as default filter**. your Alerts list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" width="450" />
 3. Click **Save** when you're done.

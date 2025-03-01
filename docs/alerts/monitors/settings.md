@@ -1,7 +1,7 @@
 ---
 id: settings
 title: Monitors Settings
-description: Monitors continuously query your logs or metrics and send alert  notifications for critical events, warnings, and missing data.
+description: Monitors continuously query your logs or metrics and send alert notifications for critical events, warnings, and missing data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
