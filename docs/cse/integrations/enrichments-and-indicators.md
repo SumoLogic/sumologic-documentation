@@ -40,6 +40,8 @@ No icon is displayed for entities with the **Not Flagged** label.
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
 :::
 
+For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+
 ## Enrichment attributes
 
 The enrichment schema includes support for the following optional attributes:

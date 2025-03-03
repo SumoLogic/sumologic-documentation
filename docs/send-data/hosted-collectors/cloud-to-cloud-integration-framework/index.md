@@ -223,14 +223,12 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
-<!--
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
   <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
   </div>
 </div>
--->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
@@ -315,14 +313,12 @@ In this section, we'll introduce the following concepts:
   <p>Collects a list of users from the Google Workspace Users API.</p>
   </div>
 </div>
-<!--
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel471 Threat Intel</h4></a>
   <p>Learn to collect threat indicators from the Intel471 platform.</p>
   </div>
 </div>
--->
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
@@ -369,6 +365,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/"><img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="thumbnail icon" width="60"/><h4>Mandiant Threat Intel</h4></a>
+  <p>Learn to collect threat indicators from the Mandiant platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -493,6 +495,18 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 1 Client</h4></a>
+        <p>Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
+        <p>Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
         <p>Learn to collect incidents and incident events from the Symantec Endpoint Security platform.</p>
         </div>
@@ -561,6 +575,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Thumbnail icon" width="80"/><h4>Zendesk</h4></a>
         <p>Learn to collect audit logs from the Zendesk platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/zerofox_logo.png')} alt="Thumbnail icon" width="45"/><h4>ZeroFox</h4></a>
+        <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
         </div>
       </div>
       <div className="box smallbox card">
