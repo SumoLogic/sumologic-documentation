@@ -152,6 +152,7 @@ The following images and lists describe alert element on the page.<br/>![top of 
 * **L**. The query of the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/l-m-n-labels.png')} alt="labels" width="800"/>
 * **M**. A chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
 * **N**. A table with the raw data that triggered the alert.
+* **O**. The **Open in Copilot** button lets you troubleshoot alerts directly in [Copilot](/docs/search/copilot) while preserving alert context, making investigations seamless. This enables faster root cause analysis by allowing you to jump into Copilot instantly and perform context-aware troubleshooting while maintaining alert details.<br/><img src={useBaseUrl('img/alerts/open-in-copilot.png')} alt="open in copilot button on alert response page" width="400"/>
 
 :::info Limitations
 * The alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 

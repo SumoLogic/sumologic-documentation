@@ -5,12 +5,22 @@ sidebar_label: Create a Custom Threat Intelligence Source
 description: Learn how to create and manage custom threat sources.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
+
+:::info
+This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use the Sumo Logic threat intelligence indicators framework. For more information, see [Threat Intelligence](/docs/security/threat-intelligence/).
+:::
+-->
 
 This topic has information about setting up a *custom threat intelligence source* in Cloud SIEM, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
 
 You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, domains, URLs, email addresses, and file hashes.
+
+:::note
+You can also use the Sumo Logic threat intelligence framework to add sources. See [Threat Intelligence](/docs/security/threat-intelligence/).
+:::
 
 ## How Cloud SIEM uses indicators
 
@@ -20,7 +30,7 @@ Rule authors can also write rules that look for threat intelligence information 
 
 ## Create a threat intelligence source from Cloud SIEM UI
 
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
 1. Click **Add Source** on the **Threat Intelligence** page. 
 1. In the **Custom** box click **Create**.
 1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. 

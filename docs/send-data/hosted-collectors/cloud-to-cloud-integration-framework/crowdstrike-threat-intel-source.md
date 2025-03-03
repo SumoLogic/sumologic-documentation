@@ -8,12 +8,6 @@ tags:
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike platform.
 ---
 
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/crowdstrike-threat-intel/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-threat-intel/example.json';

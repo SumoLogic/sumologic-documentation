@@ -1,7 +1,7 @@
 ---
 id: mandiant-threat-intel-source
-title: Mandiant Threat Intel Source (Beta)
-sidebar_label: Mandiant Threat Intel (Beta)
+title: Mandiant Threat Intel Source
+sidebar_label: Mandiant Threat Intel
 tags:
   - cloud-to-cloud
   - mandiant-threat-intel
@@ -13,15 +13,11 @@ import MyComponentSource from '!!raw-loader!/files/c2c/mandiant-threat-intel/exa
 import TerraformExample from '!!raw-loader!/files/c2c/mandiant-threat-intel/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
 
-Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. The Mandiant Threat Intel integration ingests the indicators data from Mandiant API and sends it to Sumo Logic as normalized threat indicators.
+The Mandiant Threat Intel source ingests threat intelligence indicators using the Mandiant API and sends them to Sumo Logic as normalized threat indicators. For more information about Sumo Logic threat intelligence, see [About Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
+
+Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. 
 
 ## Data collected
 
