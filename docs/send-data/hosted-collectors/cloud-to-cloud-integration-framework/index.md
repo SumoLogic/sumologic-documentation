@@ -239,6 +239,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <p>Learn to collect audits using the CyberArk SIEM integrations API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source"><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="60"/><h4>Cybereason</h4></a>
   <p>Provides a secure endpoint to receive authentication logs from the Cybereason Malops API.</p>
   </div>
