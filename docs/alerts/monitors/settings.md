@@ -13,7 +13,7 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 ## Accessing Monitors
 
 * In the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Monitoring > Monitors**
-* In the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Monitors**
+* In the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Monitors**.
 
 Here, you'll find columns displaying the following attributes:
 
