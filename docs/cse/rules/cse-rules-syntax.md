@@ -675,7 +675,7 @@ For example:
 Following are the standard indicator types you can filter on:
 * `domain-name`. Domain name. 
 * `email-addr`. Email address. 
-* `file:hashes`. File hash. (If you want to add the hash algorithm, enter `file:hashes.'<HASH-TYPE>'`. For example, `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.)
+* `file:hashes`. File hash. (If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.)
 * `file`. File name. 
 * `ipv4-addr`. IPv4 IP address. 
 * `ipv6-addr`. IPv6 IP address. 
