@@ -5,12 +5,12 @@ resource "sumologic_cloud_to_cloud_source" "cyberark_audit_test_source" {
   }
   config = jsonencode({
 			"name": "CyberArkAudit",
-			"identityId": "abr43969",
+			"identityId": "ac212",
             "appId": "sumologic",
-            "username": "c2c@cyberark.cloud.43969",
-            "password": "rECxxxx__4_xxxx_G4n6",
+            "username": "user@cyberark.cloud.1234",
+            "password": "******",
             "tenantURL": "https://sumologic.audit.cyberark.cloud",
-            "apiKey": "JxxxxxxS9gFJv96LcKcxxxxxxxxxxxxxYqP09OGxxxY",
+            "apiKey": "*******",
             "serviceType": [],
             "statusType": [],
             "actionType": [],
