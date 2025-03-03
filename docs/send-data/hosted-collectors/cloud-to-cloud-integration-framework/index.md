@@ -123,6 +123,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="icon" width="80" /><h4>Bitwarden</h4></a>
+  <p>Learn how to collect event logs from the Bitwarden API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source"><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="80" /><h4>Box</h4></a>
   <p>The Box API integration ingests events from the GetEvents API.</p>
   </div>
@@ -227,6 +233,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
   <p>Before configuring an AWS Source give Sumo Logic access to your AWS product</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <p>Learn to collect audits using the CyberArk SIEM integrations API.</p>
   </div>
 </div>
 <div className="box smallbox card">

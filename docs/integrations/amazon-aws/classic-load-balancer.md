@@ -64,51 +64,66 @@ Statistic=Sum | sum by account, region, namespace, loadbalancername
 
 ## Collecting logs and metrics for the AWS Classic Load Balancer
 
-### Collect Metrics for AWS Classic Load Balancer
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-Sumo Logic supports collecting metrics using two source types
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+### Collect metrics
 
-Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
+1. Sumo Logic supports collecting metrics using two source types:
+   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
+   * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. 
+    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+    1. Keep in mind:
+       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 
-* ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account field”.
-
-
-### Collecting Access Logs for AWS Classic Load Balancer
-
-#### Configure a Collector
-
-See [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
+### Collect access logs
 
 #### Prerequisites
 
-Before you can begin to use the AWS Elastic Load Balancing (ELB) App, complete the following steps:
+Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete the following steps:
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
+#### Collecting access logs for AWS Classic Load Balancer
 
-#### Configure an ELB Source
+1. Configure a Classic Load Balancing (CLB) [Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/#create-an-aws-source).
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
+    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
+    1. Add a **region** field and assign it the value of respective AWS region where the Load Balancer exists.
+    1. Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
+    1. Keep in mind:
+       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 
-import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+### Collect Cloudtrail logs
 
-<Aws3/>
+1. Configure a Classic Load Balancing (CLB) [Cloudtrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
+    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
+    1. Keep in mind:
+       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 
-### Field in Field Schema
+:::note
+Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
+:::
+
+## Field in field schema
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the **loadbalancername** field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
+## Field Extraction Rule(s)
 
-### Field Extraction Rule(s)
+Create a Field Extraction Rule for AWS Classic Load Balancer access logs and Cloudtrail logs. Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-Create Field Extraction Rule for AWS Classic Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+**AWS Classic Load Balancer access logs**
 
-```sql
+```sql 
 Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
@@ -122,7 +137,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 | fields loadbalancername, namespace
 ```
 
-#### Create/Update Field Extraction Rule(s) for Classic Load Balancer CloudTrail logs
+**AWS Classic Load Balancer CloudTrail Logs**
 
 ```sql
 Rule Name: AwsObservabilityCLBCloudTrailLogsFER

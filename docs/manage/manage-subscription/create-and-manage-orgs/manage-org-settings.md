@@ -115,6 +115,20 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials.
 
+### Sign in to a child organization automatically
+
+When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization.
+
+Automatic sign-in works because when you created the child organization, a [subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
+
+<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="400"/>
+
+### Sign back in with parent organization credentials
+
+As an administrator, if you log out of a child organization with SSO enabled, the following screen appears. Click **Login with Parent Org** to sign back in automatically using your parent organization credentials.
+
+<img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
+
 ### Enabling or disabling SSO
 
 #### Enable SSO
@@ -131,16 +145,9 @@ When a child organization has SSO enabled, the child organization's details disp
 
 If you want to require administrators to enter credentials to sign in to the child organization, click **Disable SSO** to turn off single sign-on.
 
-### Sign in to a child organization automatically
+### Limitations
 
-When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization.
-
-Automatic sign-in works because when you created the child organization, a [subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
-
-<img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="400"/>
-
-### Sign back in with parent organization credentials
-
-As an administrator, if you log out of a child organization with SSO enabled, the following screen appears. Click **Login with Parent Org** to sign back in automatically using your parent organization credentials.
-
-<img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
+* By default, the `Administrator` role is used for on-demand user provisioning in child organizations. So when a user from a parent organization signs in to a child organization using the SSO option, they are provisioned with `Administrator` access. 
+* If you want to use another role such as `Analyst` instead of `Administrator` for users logging in to child organizations, you can edit the SAML configuration on child organizations and specify the `Analyst` role in on-demand roles provisioning. See [Configure on-demand roles provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning).
+* In addition, if you have configured roles within your child organizations that match the roles within your parent, you can configure the SAML configuration to enable [on-demand role provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning). 
+* If you choose not to use this SSO feature, click [Disable SSO](#disable-sso) on the child organizations. Then users log in with username and password, or you can manually [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml/) on the child organizations.

@@ -32,7 +32,7 @@ The recommended method is to set `_siemForward = true` and `_parser = <path/to/p
 * At the [source](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/). Logs from an entire source will be forwarded to Cloud SIEM and the specified parser.
 * At the [collector](/docs/send-data/installed-collectors/). Logs from the collector and its child sources will be forwarded to Cloud SIEM and the specified parser
 * Using a [Field Extraction Rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). 
-   * Often used to specify SIEM forwarding and the parser path by `sourceCategory`, but can also be used to filter specific subsets of logs for forwarding to Cloud SIEM (or not forwarded).
+   * Often used to specify SIEM forwarding and the parser path by `_sourceCategory`, but can also be used to filter specific subsets of logs for forwarding to Cloud SIEM (or not forwarded).
    * Sending subsets of logs to Cloud SIEM is useful as not all log data is useful from a security context.
 
 Many [Cloud-To-Cloud (C2C)](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) sources set the `_parser` and `_siemForward` metadata within the parser, bypassing the need to manually specify for these sources.
