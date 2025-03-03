@@ -3,7 +3,7 @@ id: base64encode
 title: base64Encode Search Operator
 sidebar_label: base64Encode
 ---
-The `base64Encode` operator takes an ASCII or non-ASCII string and converts it to base64 string.
+The `base64Encode` operator takes an ASCII or non-ASCII string and converts it to a base64 string.
 
 ## Syntax
 
