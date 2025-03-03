@@ -26,7 +26,7 @@ The following example returns `base64` with a value of `aGVsbG8gd29ybGQ=`:
 The Base64Encode function supports encoding non-ASCII characters in addition to ASCII. The following example returns `base64` with a value of `5LiWIOOCiOOBhOOBoQ==`:
 
 ```sql
-|  base64encode("世 よいち") as base64
+| base64encode("世 よいち") as base64
 ```
 
 :::note
