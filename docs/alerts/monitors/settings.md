@@ -44,7 +44,7 @@ At the top of the page, you can:
 
 ## Monitor Details
 
-The **Monitor Details** tab provides additional information about a selected monitor, the description, Library location, [query](/docs/alerts/monitors/create-monitor/#query), [muting schedules](docs/alerts/monitors/muting-schedules), [notification preferences](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional), [alert grouping](/docs/alerts/monitors/alert-grouping), [trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), and more.
+The **Monitor Details** tab provides additional information about a selected monitor, the description, Library location, [query](/docs/alerts/monitors/create-monitor/#query), [muting schedules](/docs/alerts/monitors/muting-schedules), [notification preferences](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional), [alert grouping](/docs/alerts/monitors/alert-grouping), [trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), and more.
 
 Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} width="600"/>
 
