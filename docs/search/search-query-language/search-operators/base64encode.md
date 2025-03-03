@@ -30,5 +30,5 @@ The Base64Encode function supports encoding non-ASCII characters in addition to 
 ```
 
 :::note
-Make sure that the encoding format you are using matches the one with decoding.
+Make sure that the encoding format you use matches the decoding format.
 :::
