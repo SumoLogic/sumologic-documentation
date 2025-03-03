@@ -40,7 +40,11 @@ To create a role:
 1. **Capabilities**. In this section, click the checkbox beside each capability you want to grant to users with this role. For information about what each capability enables, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 1. Click **Save**. 
 
-### Restrict access using Search Filter and Index Access 
+### Restrict access using Search Filter and Index Access
+
+:::note
+**Index Access** only appears if the feature has been deployed to your environment. For more information, see our [release note](/release-notes-service/2024/12/31/#october-14-2024-manage). 
+:::
 
 Follow this process to restrict access using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
 
