@@ -26,7 +26,7 @@ Following are features available with our security solutions. If you have any qu
 | Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Monitoring | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Alerts | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Threat Intelligence (CrowdStrike threat intel feed and threat analysis app) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Threat Intelligence (threat intel feed and threat analysis app) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Normalization with parsing of unstructured data and Field Extraction Rules | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Normalization with parsing, mapping, and enrichment | | ![check](/img/reuse/check.png) | |
 | Streaming processing | | ![check](/img/reuse/check.png) | |

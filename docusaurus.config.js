@@ -264,6 +264,12 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
+    announcementBar: {
+      id: 'support_us',
+      content: '<html><p style="font-size: 13px; padding-top: 20px">We are aware of the recent CrowdStrike and Microsoft outages. Our operations remain unaffected, and service continues uninterrupted. Thank you for your continued trust in Sumo Logic.</p>',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+    },
     colorMode: {
       defaultMode: 'light',
     },
