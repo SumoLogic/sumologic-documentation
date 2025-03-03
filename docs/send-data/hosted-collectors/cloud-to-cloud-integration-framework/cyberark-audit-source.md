@@ -54,9 +54,9 @@ To configure a CyberArk Audit source, follow the steps below:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
-1. **Identity ID**. Enter your identity ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `abr4338`.
+1. **Identity ID**. Enter your identity ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `ac212`.
 1. **Web Application ID**. Enter your application ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `sumologic`.
-1. **Username**. Enter your username(client-id) collected from the [Vendor configuration](#vendor-configuration) section. For example, `c2c@cyberark.cloud.30488`.
+1. **Username**. Enter your username(client-id) collected from the [Vendor configuration](#vendor-configuration) section. For example, `user@cyberark.cloud.1234`.
 1. **Password**. Enter your password(client-secret) collected from the [Vendor configuration](#vendor-configuration) section.
 1. **Tenant URL**. Enter your tenant URL collected from the [Vendor configuration](#vendor-configuration) section. For example, `https://sumologic.audit.cyberark.cloud`.
 1. **API Key**. Enter your API key collected from the [Vendor configuration](#vendor-configuration) section.
@@ -85,9 +85,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"` |
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
-| identityId | String | Yes | `null` | Identity ID for your CyberArk account. | `abr4338` |
+| identityId | String | Yes | `null` | Identity ID for your CyberArk account. | `ac212` |
 | appId | String | Yes |  `null` | App ID for your CyberArk account. | `sumologic` |
-| username | String | Yes |  `null` | Username(Client ID) for your configured server. | `c2c@cyberark.cloud.30488` |
+| username | String | Yes |  `null` | Username(Client ID) for your configured server. | `myuser@cyberark.cloud.1234` |
 | password | String | Yes |  `null` | Password for your configured server. | |
 | tenantURL | String | Yes |  `null` | Tenant URL for your configured server. | `https://sumologic.audit.cyberark.cloud` |
 | apiKey | String | Yes |  `null` | API key for your configured server. | |
