@@ -270,7 +270,6 @@ Use this type of pagination if the vendor API provides a continuation token in t
 
 **Body**. The source expects a JSON response body, and you will need to provide the **Next Page Continuation Token JPath** as part of this configuration, directing the source to the location of the continuation token. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
 
-Choose where the vendor API uses the continuation token in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed.
 
 #### Numeric Offset
 
