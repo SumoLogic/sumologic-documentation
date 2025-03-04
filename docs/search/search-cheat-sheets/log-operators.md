@@ -54,6 +54,16 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
    <td>The XML operator uses a subset of the XPath 1.0 specification to provide a way for you to parse fields from XML documents. Using it, you can specify what to extract from an XML document using an XPath reference.</td>
    <td><code>| parse xml "/af/minimum/@requested_bytes"</code></td>
   </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/parse-operators/parsedate">parseDate</a></td>
+   <td>The parseDate operator extracts a date or time from a string and provides a timestamp in milliseconds.</td>
+   <td><code>| parseDate(strDate, dateFormat)<br/>| parseDate(strDate, dateFormat, timeZone)</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/parse-operators/parsehex">parseHex</a></td>
+   <td>The parseHex operator allows you to convert a hexadecimal string of 16 or fewer characters to a number.</td>
+   <td><code>| parseHex("12D230") as decimalValue</code></td>
+  </tr>
 </table>
 
 ## Aggregating
@@ -124,6 +134,16 @@ Instead, use separate steps:
    <td><code>| max(request_received) by hour</code></td>
   </tr>
   <tr>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/median">median</a></td>
+   <td>Use the median function to find the median value for a particular field.</td>
+   <td>_&lt;field>_pct_50</td>
+   <td></td>
+   <td>Example 1:<br/>
+   <code>| parse "data=*" as data<br/>| pct(data, 50) as median<br/></code> <br/>
+   Example 2:<br/>
+   <code>| parse "Len: *" as seconds <br/> | pct(seconds,50) as median</code></td>
+  </tr>
+  <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent">most_recent and least_recent</a></td>
    <td>The most_recent and least_recent operators, used with the withtime operator, allow you to order data from newest to oldest.</td>
    <td>_most_recent<br/>_least_recent</td>
@@ -132,10 +152,17 @@ Instead, use separate steps:
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/pct-percentile">pct</a></td>
-   <td>The percentile function (pct) finds the percentile of a given field. Multiple pct functions can be included in one query.</td>
+   <td>The percentile function (pct) finds the specified percentiles of a given field.</td>
    <td>_&lt;fieldname>_pct_&lt;percentile></td>
    <td></td>
    <td><code>| parse "value=*" as value<br/>| pct(value, 95) as value_95pct</code></td>
+  </tr>
+  <tr>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/pct-sampling">pct_sampling</a></td>
+   <td>The percent sampling function <code>pct_sampling</code>, finds the percentile of a given field and </td>
+   <td>_&lt;fieldname>_pct_&lt;percentile></td>
+   <td></td>
+   <td><code>* | parse "data=*" as data<br/>| pct_sampling(data, 95)</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/stddev">stddev</a></td>
@@ -152,10 +179,17 @@ Instead, use separate steps:
    <td><code>... | sum(bytes_received) group by hostname</code></td>
   </tr>
   <tr>
+<<<<<<< Updated upstream
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/values">values</a></td>
    <td>The value operator provides all the distinct values of a field enabling you to identify and group data by other fields of interest.</td>
    <td>_values</td>
    <td></td>
+=======
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/sum">values</a></td>
+   <td>The values operator provides all the distinct values of a field.</td>
+   <td>_values</td>
+   <td>The first 100 distinct values are returned for a field.</td>
+>>>>>>> Stashed changes
    <td><code>... | sum(bytes_received) group by hostname</code></td>
   </tr>
 </table>
