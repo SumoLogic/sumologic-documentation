@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
 
 :::info
-This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use the Sumo Logic threat intelligence indicators framework. For more information, see [Threat Intelligence](/docs/security/threat-intelligence/).
+This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use the Sumo Logic threat intelligence indicators framework. For more information, see [Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/).
 :::
 -->
 
@@ -19,7 +19,7 @@ This topic has information about setting up a *custom threat intelligence source
 You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, domains, URLs, email addresses, and file hashes.
 
 :::note
-You can also use the Sumo Logic threat intelligence framework to add sources. See [Threat Intelligence](/docs/security/threat-intelligence/).
+You can also use the Sumo Logic threat intelligence framework to add sources. See [Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/).
 :::
 
 ## How Cloud SIEM uses indicators

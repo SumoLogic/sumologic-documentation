@@ -171,7 +171,7 @@ See: [Create and Use Network Blocks](/docs/cse/administration/create-use-network
 
 Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, and so on), you can configure these too.
 
-See: [Manage Threat Intelligence Indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/)
+See: [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)
 
 ### Create lists
 Perform the following steps to create lists to allow or suppress information monitored for Cloud SIEM.

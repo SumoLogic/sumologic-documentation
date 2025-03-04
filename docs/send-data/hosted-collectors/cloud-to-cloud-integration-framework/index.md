@@ -579,7 +579,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/zerofox_logo.png')} alt="Thumbnail icon" width="45"/><h4>ZeroFox</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="Thumbnail icon" width="50"/><h4>ZeroFox</h4></a>
         <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
         </div>
       </div>
