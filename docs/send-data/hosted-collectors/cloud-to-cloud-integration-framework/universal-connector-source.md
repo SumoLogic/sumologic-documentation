@@ -262,6 +262,16 @@ Use this type of pagination if the vendor API provides a next URL in the respons
 
 **Body**. The source expects a JSON response body and you will need to provide the **Next Page URL JPath** as part of this configuration pointing the source to the location of the next link. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
 
+#### Continuation Token
+
+Use this type of pagination if the vendor API provides a continuation token in the header or the response body. This pagination will continue until the API returns an empty string for a continuation token. Choose where in the vendor API response this continuation token is provided.
+
+**Headers**. The source will search for a provided key in the response headers from the vendor API to locate the continuation token.
+
+**Body**. The source expects a JSON response body, and you will need to provide the **Next Page Continuation Token JPath** as part of this configuration, directing the source to the location of the continuation token. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
+
+Choose where the vendor API uses the continuation token in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed.
+
 #### Numeric Offset
 
 Use this type of pagination if the vendor API uses a numeric limit and offset value to paginate through the data. This pagination will keep paginating (increasing the offset) until the API returns a response with results less than the limit value. You can use the limit/offset key names in the HTTP request **Headers** or **Parameters** and you can customize the key names if needed.
@@ -272,6 +282,16 @@ Here is an example of the pagination using the values as parameters:
 1. `api/v1/events?offset=100&limit=100`
 1. `api/v1/events?offset=200&limit=100`
 1. `api/v1/events?offset=300&limit=100`
+
+#### Page Based
+
+Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination will continue (by increasing the pageNumber) until the API returns a result less than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed. You can specify the initial pageNumber supported by the vendor.
+
+Here is an example of the pagination using the values as parameters:
+
+1. `api/v1/events?pageNumber=1&pageSize=100`
+1. `api/v1/events?pageNumber=2&pageSize=100`
+1. `api/v1/events?pageNumber=3&pageSize=100`
 
 #### None
 
