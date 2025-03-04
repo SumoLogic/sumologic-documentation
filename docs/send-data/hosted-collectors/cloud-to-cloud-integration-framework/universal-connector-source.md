@@ -284,7 +284,7 @@ Here is an example of the pagination using the values as parameters:
 
 #### Page Based
 
-Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination will continue (by increasing the pageNumber) until the API returns a result less than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed. You can specify the initial pageNumber supported by the vendor.
+Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination will continue (by increasing the pageNumber) until the API returns a result less than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and customize the key names if required. You can also specify the initial pageNumber supported by the vendor.
 
 Here is an example of the pagination using the values as parameters:
 
