@@ -180,15 +180,21 @@ Instead, use separate steps:
   </tr>
   <tr>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/values">values</a></td>
    <td>The value operator provides all the distinct values of a field enabling you to identify and group data by other fields of interest.</td>
    <td>_values</td>
    <td></td>
 =======
+=======
+>>>>>>> Stashed changes
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/sum">values</a></td>
    <td>The values operator provides all the distinct values of a field.</td>
    <td>_values</td>
    <td>The first 100 distinct values are returned for a field.</td>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
    <td><code>... | sum(bytes_received) group by hostname</code></td>
   </tr>
