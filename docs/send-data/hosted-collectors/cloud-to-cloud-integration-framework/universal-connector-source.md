@@ -286,7 +286,7 @@ Here is an example of the pagination using the values as parameters:
 
 Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination will continue (by increasing the pageNumber) until the API returns a result less than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and customize the key names if required. You can also specify the initial pageNumber supported by the vendor.
 
-Here is an example of the pagination using the values as parameters:
+Here is an example of the pagination using values as parameters:
 
 1. `api/v1/events?pageNumber=1&pageSize=100`
 1. `api/v1/events?pageNumber=2&pageSize=100`
