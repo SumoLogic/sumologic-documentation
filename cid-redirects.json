@@ -3298,6 +3298,7 @@
   "/Manage/Security/Set_a_Maximum_Web_Session_Timeout": "/docs/manage/security/set-max-web-session-timeout",
   "/Manage/Security/Set-the-Password-Policy": "/docs/manage/security/set-password-policy",
   "/Manage/Threat-Intel-Ingest": "/docs/security/threat-intelligence",
+  "/docs/platform-services/threat-intelligence-indicators": "/docs/security/threat-intelligence",
   "/Manage/Users-and-Roles": "/docs/manage/users-roles",
   "/Manage/Users-and-Roles/Manage-Roles": "/docs/manage/users-roles",
   "/Manage/Users-and-Roles/Manage-Roles/About-Roles": "/docs/manage/users-roles/roles",
