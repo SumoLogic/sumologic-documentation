@@ -10,7 +10,7 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 
 <img src={useBaseUrl('img/alerts/monitors/monitors-page.png')} alt="Monitors page" style={{border: '1px solid gray'}} width="800" />
 
-## Accessing Monitors
+## Accessing monitors
 
 * In the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Monitoring > Monitors**.
 * In the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Monitors**.
@@ -30,14 +30,14 @@ Here, you'll find columns displaying the following attributes:
 ## Search and filter monitors
 
 At the top of the page, you can:
-* **Search Monitors**. If you know a monitor's name or partial name, enter that in the input field to run a search. <br/><img src={useBaseUrl('img/alerts/monitors/search-monitors.png')} alt="search monitors input" style={{border: '1px solid gray'}} width="400"/>
-* **Add a filter**. Click inside this field to open a list of filters for refining your search by [monitor attributes](#monitors-list). <br/><img src={useBaseUrl('img/alerts/monitors/filter-monitors.png')} alt="search monitors input" style={{border: '1px solid gray'}} width="400"/><br/>
+* **Search Monitors**. If you know a monitor's name or partial name, enter it in the search field to find it quickly. <br/><img src={useBaseUrl('img/alerts/monitors/search-monitors.png')} alt="search monitors input" style={{border: '1px solid gray'}} width="400"/>
+* **Add a filter**. Click inside this field to open a list of filters and refine your search by monitor attributes. <br/><img src={useBaseUrl('img/alerts/monitors/filter-monitors.png')} alt="search monitors input" style={{border: '1px solid gray'}} width="400"/><br/>
    :::tip
    To view all currently triggered monitors, click **Status: All Triggered**.
    :::
 * **Add** > **New Folder**. Creates a folder to organize your monitors.<br/><img src={useBaseUrl('img/alerts/monitors/new-folder.png')} alt="import-folder" style={{border: '1px solid gray'}} width="250"/>
 * **Add** > **New Monitor**. Creates a [new monitor](/docs/alerts/monitors/create-monitor).<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor.png')} alt="new-monitor" style={{border: '1px solid gray'}} width="250"/>
-* **Add** > **Import**. Imports monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#monitor-details-pane) of the original monitor. This function allows you to transfer data immediately.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" style={{border: '1px solid gray'}} width="250"/><br/>
+* **Add** > **Import**. Imports monitors using the exported JSON copied from the [**More Actions** menu](#more-actions) of the original monitor. This function allows you to transfer data immediately.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" style={{border: '1px solid gray'}} width="250"/><br/>
    :::important
    The Sumo Logic JSON format may change without notice, and future compatibility with imported JSON is not guaranteed.
    :::

@@ -41,9 +41,9 @@ variable:
 
 ## Limitations
 
-* The [Alert List](#alert-list) page shows up to 1,000 alerts.
-* On the [Alert page](#alert-page), the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
-* On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts. 
+* The Alert List page shows up to 1,000 alerts.
+* On the Alert page, the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
+* On the Alert page, Related Alerts and Monitor History show the top 250 alerts. 
 
 ## Alert List
 
