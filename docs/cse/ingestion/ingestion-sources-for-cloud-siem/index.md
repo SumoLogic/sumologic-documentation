@@ -151,12 +151,6 @@ In this section, we'll introduce the following concepts:
  </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/sentinelone"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="SentinelOne icon" width="40"/><h4>SentinelOne</h4></a>
-  <p>Learn how to collect SentinelOne log messages and send them to be ingested by Cloud SIEM.</p>
-  </div>
- </div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/signal-sciences-waf"><img src={useBaseUrl('img/cse/signal-sciences.png')} alt="Signal Sciences WAF icon" width="40"/><h4>Signal Sciences WAF</h4></a>
   <p>Lean how to collect Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.</p>
   </div>
