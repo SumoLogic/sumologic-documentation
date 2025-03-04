@@ -264,7 +264,7 @@ Use this type of pagination if the vendor API provides a next URL in the respons
 
 #### Continuation Token
 
-Use this type of pagination if the vendor API provides a continuation token in the header or the response body. This pagination will continue until the API returns an empty string for a continuation token. Choose where in the vendor API response this continuation token is provided.
+Use this type of pagination if the vendor API provides a continuation token in the header or the response body. This pagination will continue until the API returns an empty string for a continuation token. Choose where the vendor API uses the continuation token in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed.
 
 **Headers**. The source will search for a provided key in the response headers from the vendor API to locate the continuation token.
 
