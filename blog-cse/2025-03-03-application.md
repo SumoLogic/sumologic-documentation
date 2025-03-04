@@ -13,4 +13,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We’re excited to introduce Sumo Logic Threat Intelligence, a powerful feature set that enables Cloud SIEM administrators to seamlessly import indicators of Compromise (IoC) files and feeds directly into Sumo Logic to aid in security analysis.
 
-For more information, [see our release note](http://localhost:3000/release-notes-service/2025/03/03/security/) in the *Service* release notes section.
+For more information, [see our release note](/release-notes-service/2025/03/03/security/) in the *Service* release notes section.
