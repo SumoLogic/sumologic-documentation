@@ -129,8 +129,8 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 ## Threat Intel
 | Capability | Description |
 | :-- | :-- |
-| View Threat Intel Data Store | Search log data using [threat intelligence indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/). |
-| Manage Threat Intel Data Store | Create, edit, and delete [threat intelligence indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/). |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intelligence sources on the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. |
 
 ## Cloud SOAR
 

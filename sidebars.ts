@@ -3092,6 +3092,7 @@ integrations: [
         'api/service-map',
         'api/slo-management',
         'api/span-analytics',
+        'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
         'api/user-management',
