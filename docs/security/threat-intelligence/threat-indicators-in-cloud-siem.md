@@ -37,7 +37,7 @@ When a match to a threat indicator in sources is found, labels showing the entit
 | **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="110"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
 | **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Suspicious label" width="125"/> | None |
 
-**Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
+**Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM does not automatically assign an indicator value; enrichments must explicitly define it.
 
 :::note
 Cloud SIEM automatically enriches *signals* with information from your sources in the Sumo Logic threat intelligence datastore. However, unlike [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/), it does not enrich *records*. Even if a match occurs based on the rule expression, the indicator body is not attached to the record. Instead, the signal should contain a list of matched indicator IDs, and the indicators are visible on the matched entities.
