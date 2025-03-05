@@ -119,7 +119,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability | Description |
 | :-- | :-- |
-| View Organizations	| View the [Organizations](/docs/manage/manage-subscription/create-manage-orgs) UI.|
+| View Organizations	| View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI.|
 | Create Organizations	| Create and provision child organizations.|
 | Change Credits Allocation	| Change the credits allocation for a child organization.|
 | Create Trial Organizations	| Create trial organizations. (For Sumo Logic Service Providers only.)|
@@ -127,11 +127,10 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Deactivate Organizations	| Deactivate trial organizations. (For Sumo Logic Service Providers only.)|
 
 ## Threat Intel
-<!-- At GA, link "threat intelligence indicators" to /docs/platform-services/threat-intelligence-indicators -->
 | Capability | Description |
 | :-- | :-- |
-| View Threat Intel Data Store | Search log data using threat intelligence indicators. |
-| Manage Threat Intel Data Store | Create, edit, and delete threat intelligence indicators. |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intelligence sources on the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. |
 
 ## Cloud SOAR
 

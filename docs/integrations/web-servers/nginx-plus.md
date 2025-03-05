@@ -290,82 +290,6 @@ For **FER for Error Logs**, use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-## Installing Nginx Plus Monitors
-
-To install these alerts, you need to have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
-
-Alerts can be installed by either importing them via a JSON or via a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus/nginxplus.json) describing all the monitors.
-2. Replace **$$logs_data_source** and **$$metric_data_source** with logs and metrics data sources respectively. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click **Import** to import monitors from the JSON above.
-
-:::note
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx Plus** folder under **Monitors** to configure them. Refer to [this document](/docs/alerts/monitors/create-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
-:::
-
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys) and access ID for a user that has the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
-3. Download the Sumo Logic Terraform package for Nginx Plus alerts. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/`. Edit the **nginxplus.auto.tfvars** file as per the below instructions:
-   * Add your Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-     ```sql
-     access_id  = "<YOUR SUMO ACCESS ID>"
-     access_key = "<YOUR SUMO ACCESS KEY>"
-     environment = "<DEPLOYMENT>"
-     ```
-   * Add the data source values.
-     * **Metric_data_source** - Sumo Logic data source for nginx plus metrics.
-     * **Logs_data_source** - Sumo Logic data source for logs.
-   * All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false`.
-   * All monitors are configured in a monitor folder called “**Nginx Plus**”, if you would like to change the name of the folder, update the parameter **folder**.
-5. Email and Connection Notification Configuration Examples: Modify the file **nginxplus.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per the below examples.
-   ```bash title="Pagerduty Connection Example"
-   connection_notifications = [
-       {
-         connection_type       = "PagerDuty",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       },
-       {
-         connection_type       = "Webhook",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   ```
-   * Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections). For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-   ```bash title="Email Notifications Example"
-   email_notifications = [
-       {
-         connection_type       = "Email",
-         recipients            = ["abc@example.com"],
-         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-         time_zone             = "PST",
-         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   }
-   ```
-6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/** and run `terraform init`. This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts).
-
-
 ## Installing the Nginx Plus app
 
 This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
@@ -434,7 +358,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Plus - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Threat-Intel.png')} alt="tk" />
 
@@ -566,6 +490,15 @@ Use this dashboard to:
 * Gain information about TCP and UDP error responses: percentage of responses by server, percentage of each type of error responses.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-TCP-UDP-Zones.png')} alt="tk" />
+
+## Installing Nginx Plus monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Plus alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 
 ## Nginx Plus Alerts
 

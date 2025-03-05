@@ -48,7 +48,7 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 When designing partitions, keep the following in mind:
 * **Avoid using queries that are subject to change**. In order to benefit from using Partitions, they should be used for long-term message organization.
 * **Make the query as specific as possible**. Making the query specific will reduce the amount of data in the Partition, which increases search performance.
-* **Keep the query flexible**. Use a flexible query, such as `sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
+* **Keep the query flexible**. Use a flexible query, such as `_sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
 * **Group data together that is most often used together**. For example, create Partitions for categories such as web data, security data, or errors.
 * **Group data together that is used by teams**. Partitions are an excellent way to organize messages by role and teams within your organization.
 * **Avoid including too much data in your partition**. Send between 2% and 20% of your data to a Partition. Including 90% of the data in your index in a Partition won’t improve search performance.

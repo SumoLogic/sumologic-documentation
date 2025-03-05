@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
-With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organizational Settings](/docs/manage/manage-subscription/manage-org-settings).
+With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
 
 ## Documentation
 

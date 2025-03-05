@@ -61,12 +61,12 @@ You can only perform a lookup using fields defined as primary keys. If the key c
 
 * `srcDevice_ip`
 * `eventTime`
-* `sourceCategory`
+* `_sourceCategory`
 
 your lookup query scope must include:
 
 ```sql
-... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and sourceCategory=sourceCategory
+... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and _sourceCategory=sourceCategory
 ```
 
 ## Syntax 
