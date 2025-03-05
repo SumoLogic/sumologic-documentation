@@ -40,7 +40,7 @@ When a match to a threat indicator in sources is found, labels showing the entit
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
 
 :::note
-Although Cloud SIEM automatically enriches *signals* with information from your sources in the Sumo Logic threat intelligence datastore, it does not enrich *records* like it did with [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/). Even if there is a match per the rule expression, the indicator body will not be attached to the record. Instead, the signal should have a list of matched indicator IDs and the indicators will also be visible on the matched entities. 
+Cloud SIEM automatically enriches *signals* with information from your sources in the Sumo Logic threat intelligence datastore. However, unlike [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/), it does not enrich *records*. Even if a match occurs based on the rule expression, the indicator body is not attached to the record. Instead, the signal should contain a list of matched indicator IDs, and the indicators are visible on the matched entities.
 :::
 
 ### Example of a label in the UI
