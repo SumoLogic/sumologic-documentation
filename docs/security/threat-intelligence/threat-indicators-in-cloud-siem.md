@@ -27,7 +27,9 @@ For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#has
 
 ## View threat indicator labels in the Cloud SIEM UI
 
-Entities are automatically enriched with indicator data from the [sources you ingest](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) (but not from the **_sumo_global_feed_cs** global feed). When a match to a threat indicator in your sources is found, labels showing the entity "reputation" will be displayed throughout the Cloud SIEM UI:
+Entities are automatically enriched with indicator data from [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) and [sources you ingest](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) (but not from the **_sumo_global_feed_cs** global feed). 
+
+When a match to a threat indicator in sources is found, labels showing the entity's "reputation" will be displayed throughout the Cloud SIEM UI:
 
 | Reputation value | Label | Icon |
 |:--|:--|:--|
