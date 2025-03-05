@@ -7,7 +7,11 @@ description: Learn how to use threat intelligence indicators in Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Threat intelligence indicators can be used in Cloud SIEM to find possible threat activity. 
+Threat intelligence indicators can be used in Cloud SIEM to find possible threat activity.
+
+:::note
+Previously, Cloud SIEM administrators could add [custom threat intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) in Cloud SIEM. **You can no longer add custom threat intelligence sources in Cloud SIEM**. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework. [Contact Support](https://support.sumologic.com/support/s/) if you still need to create custom sources in Cloud SIEM.
+:::
 
 ## hasThreatMatch Cloud SIEM rules language function
 

@@ -7,11 +7,11 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
+Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs with the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
-* [STIX 2.x JSON format](#stix-2x-json-format)
+* [STIX 2.x JSON format](#stix-2x-json-format) (API use only)
 
 ## Normalized JSON format
 
@@ -157,6 +157,10 @@ Columns for the following attributes are required in the upload file:
           * `actions-on-objectives`. Carrying out cyberattack objectives.
 
 ## STIX 2.x JSON format
+
+:::note
+Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) using this format.
+:::
 
 STIX 2.x JSON format is a method to present JSON data according to the STIX 2.x specification.
 
