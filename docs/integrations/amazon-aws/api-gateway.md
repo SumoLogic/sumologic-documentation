@@ -640,7 +640,7 @@ Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq)
+* Monitor requests coming in from known malicious IP addresses detected via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
