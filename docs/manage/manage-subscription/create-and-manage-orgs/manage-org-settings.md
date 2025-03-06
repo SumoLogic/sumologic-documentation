@@ -113,15 +113,27 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 ## SSO for child organizations
 
-When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials.
+When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. You do not have to set up [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml/) on the child organization to use this feature. 
+
+If you choose not to use this SSO feature, click [Disable SSO](#disable-sso) on the child organizations. Then users log in with username and password, or you can manually set up SAML for single sign-on on the child organizations.
+
+### Role assignment
+
+By default, the `Administrator` role is used for on-demand user provisioning in child organizations. So when a user from a parent organization signs in to a child organization using the SSO option, they are provisioned with `Administrator` access. If you want to use another role such as `Analyst` instead of `Administrator` for users logging in to child organizations, you can edit the SAML configuration on child organizations and specify the `Analyst` role in on-demand roles provisioning. See [Configure on-demand roles provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning).
+
+If you have configured roles within your child organizations that match the roles within your parent, you can configure the SAML configuration to enable [on-demand role provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning).
 
 ### Sign in to a child organization automatically
 
 When you open the details of a child organization, a link to the child organization appears under **Basic Details**. When you click the link, you are automatically signed in to the child organization.
 
-Automatic sign-in works because when you created the child organization, a [subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, you are already provisioned as a user in the child organization and can access it at any time without needing to log in.
-
 <img src={useBaseUrl('img/manage/subscriptions/mssp-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="400"/>
+
+Automatic sign-in works because when the child organization was created, a [subdomain](#set-up-a-customsubdomain) was automatically added, and SSO was enabled by default. As a result, when you click the link to the child organization, you are provisioned as a user in the child organization and can access it at any time without needing to log in.
+
+:::tip
+If you want to change the automatically-generated subdomain name to a preferred domain name, you can sign in to the child organization as an administrator and [change the subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#change-account-subdomain).
+:::
 
 ### Sign back in with parent organization credentials
 
@@ -130,6 +142,8 @@ As an administrator, if you log out of a child organization with SSO enabled, th
 <img src={useBaseUrl('img/manage/subscriptions/mssp-login-with-parent-org.png')} alt="Login with Parent Org button" style={{border: '1px solid gray'}} width="300"/>
 
 ### Enabling or disabling SSO
+
+Although anyone with the View Organizations role capability can access child organizations, only users with the [Manage Organizations role capability](/docs/manage/users-roles/roles/role-capabilities/#organizations) can enable or disable the SSO option.
 
 #### Enable SSO
 
@@ -144,10 +158,3 @@ To set up a custom subdomain for the child organization, see [Set up a custom su
 When a child organization has SSO enabled, the child organization's details display the subdomain URL in the **Subdomain** field, and the **SSO** field says **Enabled**:<br/><img src={useBaseUrl('img/manage/subscriptions/subdomain-and-sso-enabled.png')} alt="SSO enabled for a child organization" style={{border: '1px solid gray'}} width="250"/>
 
 If you want to require administrators to enter credentials to sign in to the child organization, click **Disable SSO** to turn off single sign-on.
-
-### Limitations
-
-* By default, the `Administrator` role is used for on-demand user provisioning in child organizations. So when a user from a parent organization signs in to a child organization using the SSO option, they are provisioned with `Administrator` access. 
-* If you want to use another role such as `Analyst` instead of `Administrator` for users logging in to child organizations, you can edit the SAML configuration on child organizations and specify the `Analyst` role in on-demand roles provisioning. See [Configure on-demand roles provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning).
-* In addition, if you have configured roles within your child organizations that match the roles within your parent, you can configure the SAML configuration to enable [on-demand role provisioning](/docs/manage/security/saml/set-up-saml/#configure-on-demand-roles-provisioning). 
-* If you choose not to use this SSO feature, click [Disable SSO](#disable-sso) on the child organizations. Then users log in with username and password, or you can manually [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml/) on the child organizations.
