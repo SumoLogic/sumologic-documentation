@@ -13,11 +13,11 @@ import MyComponentSource from '!!raw-loader!/files/c2c/zerofox/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/zerofox/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/zerofox_logo.png')} alt="ZeroFox threat intel logo" width="50" />
+<img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="ZeroFox threat intel logo" width="50" />
 
 ZeroFox is a cybersecurity firm specializing in providing cyber threat intelligence services.
 
-The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https://api.zerofox.com/cti/docs/) and sends them to Sumo Logic as normalized threat indicators for analysis.
+The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https://api.zerofox.com/cti/docs/) and sends them to Sumo Logic as normalized threat indicators for analysis. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
 ## Data collected
 

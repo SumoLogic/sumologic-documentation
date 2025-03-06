@@ -381,7 +381,7 @@ In this section, we'll introduce the following concepts:
         <div className="box smallbox card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip</h4></a>
-          <p>Correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
+          <p>Correlates threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
           </div>
         </div>
         <!-- <div className="box smallbox card">
