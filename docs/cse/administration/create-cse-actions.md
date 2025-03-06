@@ -222,7 +222,7 @@ Lookups will consume RF API credits.
 
 ####  View Recorded Future Enrichments
 
-To view an Enrichment that’s been added to an insight or signal, navigate to the item and select the [**Enrichments**](/docs/cse/integrations/enrichments-and-indicators/#enrichments) tab.
+To view an Enrichment that’s been added to an insight or signal, navigate to the item and select the [**Enrichments**](/docs/cse/integrations/enrichments-and-indicators/#enrichments-tab) tab.
 
 ### Slack
 
