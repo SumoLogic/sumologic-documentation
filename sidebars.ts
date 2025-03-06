@@ -2853,6 +2853,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/rules/index'},
           items: [
             'cse/rules/about-cse-rules',
+            'cse/rules/rules-status',
             'cse/rules/before-writing-custom-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/write-match-rule',
