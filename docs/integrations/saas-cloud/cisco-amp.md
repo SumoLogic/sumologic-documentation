@@ -14,7 +14,7 @@ The Sumo Logic app for Cisco AMP provides security analysts with essential tools
 Additionally, the app highlights the top hosts, users, tactics, and techniques, helping analysts recognize trends and potential risks. With this app, they can examine detection types, review recent malicious files, investigate compromised endpoints, and monitor suspicious processes to respond swiftly to security incidents. The app's geolocation features further enhance analysis by mapping the origins of cybersecurity events and emphasizing activities from restricted areas.
 
 :::info
-This app includes [built-in monitors](#cisco-amp-monitors). For details on creating custom monitors, refer to the [Create monitors for Cisco AMP app](#create-monitors-for-cisco-amp-app).
+This app includes [built-in monitors](#cisco-amp-monitors). For details on creating custom monitors, refer to the [Create monitors for the Cisco AMP app](#create-monitors-for-the-cisco-amp-app).
 :::
 
 ## Log types
