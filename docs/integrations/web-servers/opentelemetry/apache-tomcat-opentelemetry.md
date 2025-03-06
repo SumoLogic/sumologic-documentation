@@ -373,7 +373,7 @@ The **Apache Tomcat - Threat Intel** dashboard provides an at-a-glance view of t
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo Logic - CrowdStrike](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png' alt="Threat intel" />
 

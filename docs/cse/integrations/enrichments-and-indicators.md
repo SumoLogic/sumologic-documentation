@@ -1,44 +1,28 @@
 ---
 id: enrichments-and-indicators
-title: Enrichments and threat indicators
-sidebar_label: Enrichments and threat indicators
-description: Learn how enrichments include threat indicators.
+title: Enrichments in Cloud SIEM
+sidebar_label: Enrichments in Cloud SIEM
+description: Learn how enrichments are made to signals, entities, and insights.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
- Enrichments can add [threat indicators](#threat-indicators) to show risk level in insights and entities. 
+ Enrichments add additional information to objects in Cloud SIEM.
 
-## Enrichments
+## Enrichments tab
 
 You can view the results of enrichments in Cloud SIEM by navigating to the **Enrichments** tab (which will appear on the entity, signal, and insight details pages if there are any enrichments to display):
 
 <img src={useBaseUrl('img/cse/enrichments.png')} alt="Examples of enrichments" width="800"/>
 
-The enhancements include:
+Keep in mind that:
 * Enrichments are grouped by entity, not by enrichment source.
 * Groups can be collapsed and expanded.
 * The list can be filtered.
 * Empty fields (fields with a null or empty value) can be optionally hidden.
 * Links, if set by the enrichment, will be displayed and open in a new tab if clicked.
-* Threat indicators, if set by the enrichment, will be displayed.
-
-## Threat indicators
-
-Threat indicators, if set, will be displayed throughout the Cloud SIEM UI either as a full label or as a colored icon depending on the location:
-
-| Label | Description | Icon |
-|:--|:--|:--|
-| **Malicious** | <img src={useBaseUrl('img/cse/indicator-malicious-label.png')} alt="Malicious label" width="100"/> | <img src={useBaseUrl('img/cse/indicator-malicious-icon.png')} alt="Malicious icon" width="30"/> |
-| **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="110"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
-| **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Suspicious label" width="125"/> | None |
-
-No icon is displayed for entities with the **Not Flagged** label.
-
-:::note
-**Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
-:::
+* [Threat indicator labels](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui), if set by the enrichment, will be displayed.
 
 ## Enrichment attributes
 
