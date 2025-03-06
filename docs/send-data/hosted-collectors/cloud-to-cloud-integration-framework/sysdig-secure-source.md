@@ -29,7 +29,7 @@ Sysdig Secure is a comprehensive security platform that provides continuous secu
 To access the API documents, follow the steps below:
 
 1. Log in to your Sysdig tenancy.
-1. Click **Secure Operations**.
+1. On the bottom left of the page, click **Secure Operations**.
 1. Click the **Next Gen API Docs** under the **Help** menu. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig/Sysdig+API+docs.png')} alt="Next-Gen-API-Docs" width="500" />
 
 ## Setup
